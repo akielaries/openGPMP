@@ -13,31 +13,37 @@ import os.path
 
 import pandas as pd
 import plotnine as p9
+import numpy as np
 
-# read compressed data
-zip_df = pd.read_csv("zip.test.gz", header=None, sep=" ")
+
+# our src file we want to download
+src_url = 'https://github.com/tdhock/cs570-spring-2022/raw/master/\
+        data/zip.test.gz'
+src_file = 'zip.test.gz'
+dest_file = os.path.abspath("~/Desktop/Trunk/github/private_repos/\
+        CS499-599_deep-learning/wk-1/zip.test.gz")
+
 
 # method for downloading our source file if DNE on filesystem
-def retrieve(src_url, src_file, dest_file):
+def main(src_url, src_file, dest_file):
     # backbone code from the python.org lib docs
     
     if not os.path.exists(src_file):
-        
-        with urllib.request.urlopen(src_url) as respone:
-            shutil.copyfileobj(response, dest_file)
+        urllib.request.urlopen(src_url, dest_file)
+        #with urllib.request.urlopen(src_url) as respone:
+        #    shutil.copyfileobj(response, dest_file)
+
+    # read in compressed date saving to pandas dataframe
+    zip_df = pd.read_csv("zip.test.gz", header=None, sep=" ")
+
+    # convert dataframe to numpy array exlcuding the first column
+    zip_arr = zip_df.iloc[:,1:].to_numpy() 
 
 
+    """
+    code for plotnine plotting data
+    n_pixels = 16
+    index_vec = np.arange(n_pixels)
 
 
-def main():
-    # our src file we want to download
-    src_url = 'https://github.com/tdhock/cs570-spring-2022/raw/master/\
-            data/zip.test.gz'
-    src_file = 'zip.test.gz'
-    dest_file = os.path.abspath("~/Desktop/Trunk/github/private_repos/\
-            CS499-599_deep-learning/hw-1/zip.test.gz")
-
-    retrieve(src_url, src_file, dest_file)
-
-
-
+    """
