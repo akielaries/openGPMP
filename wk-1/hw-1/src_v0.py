@@ -1,10 +1,3 @@
-"""
-Homework 1 for Professor Hockings CS499-599 Deep Learning course
-Author: Akiel Aries
-
-Details:
-
-"""
 # lib for retrieving src file from web
 import urllib.request
 # lib for reading files on OS
@@ -19,12 +12,8 @@ import numpy as np
 # our src file we want to download
 src_url = 'https://github.com/tdhock/cs570-spring-2022/raw/master/data/zip.test.gz'
 src_file = 'zip.test.gz'
-dest_file = os.path.abspath("")
 
-# method for downloading our source file if DNE on filesystem
 def main():
-    # reading file system for existing src file
-
     """
     backbone code from the python.org lib docs to  
         - check if a file exists in the current directory
@@ -33,11 +22,9 @@ def main():
     if not os.path.isfile(src_file):
         urllib.request.urlretrieve(src_url, src_file)
         print("Downloading src file...")
-        #return True
 
     else:
         print("File already exists in this folder...continuing anyway\n")
-        #return False
         
     # read in downloaded src file as a pandas dataframe 
     zip_df = pd.read_csv(src_file, header=None, sep=" ")
@@ -47,7 +34,6 @@ def main():
     and col specifying. 
     """
     zip_arr = zip_df.iloc[:,1:].to_numpy()
-    #zip_arr.shape 
     # printing shape of array
     print("Shape of our converted array: ", zip_arr.shape, "\n")
 
@@ -62,14 +48,12 @@ def main():
     img_index = 0
     zip_arr[img_index,:]
     
-    for img_index in range(0,9):
+    img_df = pd.DataFrame({
+        "col":np.tile(index_vec, pixels),
+        "row":-np.repeat(index_vec, pixels),
+        "intensity":zip_arr[img_index,:],
+    })
 
-        img_df = pd.DataFrame({
-            "col":np.tile(index_vec, pixels),
-            "row":-np.repeat(index_vec, pixels),
-            "intensity":zip_arr[img_index,:]
-        })
-        pd.concat([img_df])
     # print table of our values col, row, intensity
     print(img_df)
     
@@ -79,20 +63,24 @@ def main():
     gg = p9.ggplot()+p9.ggtitle("index")+p9.geom_raster(
         p9.aes(
             # assign vals to our img properties
+            label = "0-9",
             x = "col",
             y = "row",
             fill = "intensity",),
-        data = img_df)
-    #p9.ggtitle = "digits.png"
-    # display plots 0-9
-        
-    #print("Displaying our plots: ")
+        data = img_df) #+ p9.facet_grid("~col")
+    
+    """
+    attempted to wrap our images 0-9 to be displayed together but was not sure what the
+    observation and label variables are supposed to signify, I was thinking if I set 
+    the initial condition of the loop to img_index 0 and go up to 9, put them in a 
+    pandas dataframe then wrap them that our feed should be correct. I attempted to 
+    use facet_grid but could not get the correct parameters working for the method. This 
+    resulted in incomplete code and not the desired result. I was only able to display a single 
+    hardcoded image with img_index before I ran out of time
+    """
     print(gg)
-
-
 
 if __name__ == '__main__':
     # run main
     main()
-
 
