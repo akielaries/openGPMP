@@ -3,10 +3,10 @@ import numpy as np
 import plotnine as p9
 
 
-companies = ['AA', 'AAPL', 'BA', 'YHOO']
+sources = ['AA', 'AAPL', 'BA', 'YHOO']
 
 d = {}
-for name in companies:
+for name in sources:
     d[name] = pd.DataFrame()
 #    print(list(companies).index('AA'))
 
