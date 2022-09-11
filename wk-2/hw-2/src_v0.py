@@ -8,7 +8,8 @@ import pandas as pd
 import plotnine as p9
 import numpy as np
 # could not figure out how to calculate the mode of a list, using mode from lib
-import statistics
+from statistics import mode
+import sklearn
 from sklearn.model_selection import KFold #train/test splits
 from sklearn.model_selection import GridSearchCV #selecting best # of neighbors
 from sklearn.neighbors import KNeighborsClassifier #nearest_neighbors prediction.
@@ -26,9 +27,6 @@ spam_file = 'spam.data'
 test_cols = 257
 # number of columns in spam file (56) count from zero
 spam_cols = 57
-# dataframe list
-#test_acc_df_list = []
-data_dict = {}
 
 """ 
 our last assignment was only downloading 1 file, to adhere to guidelines and 
@@ -86,7 +84,6 @@ def df_init(src1, src2, src1_cols, src2_cols, data_dict):
     # print our dataframes to visualize in tabular form
     print(df1)
     print(df2)
-    print(data_dict)
     #print(data_dict)
     return df1, df2, data_dict
 
@@ -112,7 +109,8 @@ def train(data_dict):
             clf = GridSearchCV(KNeighborsClassifier(), param_dicts)
             # copy above for linear model. call cv=5 in initial pipe was not
             # recognized; try a call here
-            linear_model = sklearn.linear_model.LogisticRegression(cv=5)
+            #linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
+            linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
             set_data_dict = {}
     
             for set_name, index_vec in index_dict.items():
@@ -138,9 +136,8 @@ def train(data_dict):
             # clf.fit(X=set_data_dict["train"]["X"], y=set_data_dict["train"]["y"]])
             clf.fit(**set_data_dict["train"])
             #mode = max(set(output_vec))
-            import statistics
             MCE = mode(output_vec)
-            linear_model.fit(*set_data_dict["train"])
+            linear_model.fit(**set_data_dict["train"])
             
             clf.best_params_
     
@@ -174,24 +171,27 @@ will make a ggplot to visually examine which learning algorithm is
 best for each data set
 """
 def plot(test_acc_df):
-    gg = (p9.ggplot(test_acc_df,p9.aes(x='test_accuracy_percent',y='algorithm'))
+    gg = (p9.ggplot(test_acc_df,
+            p9.aes(x='test_accuracy_percent'
+            ,y='algorithm'))
           +p9.facet_grid('.~ data_set')
           +p9.geom_point())
     print(gg)
 
 
 def main():
-    #data_dict = {}
-    #test_acc_df = []
-    # retrieve our source files. Spam and zip. 
+    data_dict = {}
+    test_acc_df = []
+    # retrieve our source files. Spam and test. 
     retrieve(test_file, test_url)
     retrieve(spam_file, spam_url)
 
     # call method to initialize our data frames, convert to numpy arrays, 
-    df_init(test_file, spam_file, test_cols, spam_cols, data_dict)
+    (a, b, c) = df_init(test_file, spam_file, test_cols, spam_cols, data_dict)
     # call method to perform our algorithm shown in class and the demo
-    train(data_dict)
-    plot(test_acc_df)
+    d = train(c)
+    # plot our values by passing in the previously filled variable d
+    plot(d)
 
 if __name__ == '__main__':
     # run main
