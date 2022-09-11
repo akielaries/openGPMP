@@ -109,7 +109,6 @@ def train(data_dict):
             clf = GridSearchCV(KNeighborsClassifier(), param_dicts)
             # copy above for linear model. call cv=5 in initial pipe was not
             # recognized; try a call here
-            #linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
             linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
             set_data_dict = {}
     
@@ -136,7 +135,7 @@ def train(data_dict):
             # clf.fit(X=set_data_dict["train"]["X"], y=set_data_dict["train"]["y"]])
             clf.fit(**set_data_dict["train"])
             #mode = max(set(output_vec))
-            MCE = mode(output_vec)
+            featureless_model = mode(output_vec)
             linear_model.fit(**set_data_dict["train"])
             
             clf.best_params_
@@ -147,13 +146,13 @@ def train(data_dict):
             pred_dict = { 
                 "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
                 #TODO add featureless and linear_model.
-                "featureless": MCE,
+                "featureless": featureless_model,
                 "linear_model": linear_model.predict(set_data_dict["test"]["X"])
                 }
     
             for algorithm, pred_vec in pred_dict.items():
                 test_acc_dict = { 
-                    "test_accuracy_percent":(
+                    "test_accuracy_percentage":(
                         pred_vec == set_data_dict["test"]["y"]).mean()*100,
                     "data_set":data_set,
                     "fold_id":fold_id,
@@ -172,26 +171,30 @@ best for each data set
 """
 def plot(test_acc_df):
     gg = (p9.ggplot(test_acc_df,
-            p9.aes(x='test_accuracy_percent'
+            p9.aes(x='test_accuracy_percentage'
             ,y='algorithm'))
+          # .~ spreads vals across columns
           +p9.facet_grid('.~ data_set')
+          # Use geom_point to create scatterplots
           +p9.geom_point())
     print(gg)
 
 
 def main():
     data_dict = {}
-    test_acc_df = []
     # retrieve our source files. Spam and test. 
     retrieve(test_file, test_url)
     retrieve(spam_file, spam_url)
 
     # call method to initialize our data frames, convert to numpy arrays, 
-    (a, b, c) = df_init(test_file, spam_file, test_cols, spam_cols, data_dict)
+    (test, spam, _dict) = df_init(test_file, spam_file, test_cols, 
+                                     spam_cols, data_dict)
+    
     # call method to perform our algorithm shown in class and the demo
-    d = train(c)
+    trained_data = train(_dict)
+    
     # plot our values by passing in the previously filled variable d
-    plot(d)
+    plot(trained_data)
 
 if __name__ == '__main__':
     # run main
