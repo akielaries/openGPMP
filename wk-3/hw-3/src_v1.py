@@ -8,8 +8,10 @@ import pandas as pd
 import plotnine as p9
 import numpy as np
 # could not figure out how to calculate the mode of a list, using mode from lib
-import warnings # silence plethora of warning we get when running this
 from statistics import mode
+# *<---REMOVE B4 SUB--->*
+import glob # find all files in dir w/ *
+import warnings # silence warnings while developing 
 import sklearn
 from sklearn.model_selection import KFold #train/test splits
 from sklearn.model_selection import GridSearchCV #selecting best # of neighbors
@@ -18,6 +20,9 @@ from sklearn.pipeline import make_pipeline # increase iteration sz
 from sklearn.preprocessing import StandardScaler # 
 from sklearn.linear_model import LogisticRegression
 
+# directory for data files
+path = 'data/'
+path_files = glob.glob('data/*')
 # our src files we want to download; test set
 test_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.test.gz'
 test_file = 'zip.test.gz'
@@ -42,44 +47,69 @@ method to download specified files. call from main, pass in
 src files to retrieve
 """
 def retrieve(src_file, src_url):
+    # lets store these files in a directory, create /data if DNE
+    if not os.path.exists(path):
+        os.makedirs(path)
     """
     check if a file exists in the current directory
     retrieve a file given the url
     """
     if not os.path.isfile(src_file):
         urllib.request.urlretrieve(src_url, src_file)
-        print("Downloading " + src_file + " from " + src_url + "...\n")
-
+        print("Downloading " + src_file + " from " + src_url + " into " + 
+            path + "...\n")
+    
     else:
         print(src_file + " already exists in this folder...continuing anyway\n")
+
+"""
+method for removing files when program exits
+"""
+def remove():
+    # traverse files
+    for file in path_files:
+        # if files are in the path, remove
+        if os.path.exists(file):
+            os.remove(file)
 
 """
 MyKNN class, according to *.org guideline, that *should* work just like 
 sklearn.neighbors.KNeighborsClassifier
 """
-class MyKNN():
+class MyKNN:
     """
     instantiate neighbors param stored as an attribute of our instance
         __init__: recieves constructors args initializing new obj
         self: instance of class for attribute manipulation, always first
-        attribute of instance
+        attribute of instance. convention ! keyword
+        member
     """
     def __init__(self, n_neighbors):
         # init neighbors attribute of instance
-        self.member = n_neighbors
-
+        self.nearest = n_neighbors
 
     """
     fit method with X=train_features, y=train_labels, storing data as 
     attributes of our instance
+        features: input data
+        label: output data based on input
     """
     def fit(self, X, y): 
+        # store feats/labs in respective lists; can do for loop for many members
+        self.train_features = []
+        self.train_labels = []
         self.train_features = X
         self.train_labels = y
+
     """
     compute binary vector of predicted class label
+        X = test_features
     """
-    def predict():
+    def predict(self, test_features):
+        # traverse each test data row; features
+        for i in  range(len(test_features)):
+            # compute distances with all of train data
+            np.diff()
         
 
 def main():
@@ -89,8 +119,10 @@ def main():
     # retrieve our data files using retrieve function
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
-    retrieve(test_file, test_url)
+    retrieve(spam_file, spam_url)
 
+    # remove data files on exit from data folder
+    remove()
 
 if __name__ == '__main__':
     main()
