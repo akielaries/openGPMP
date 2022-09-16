@@ -21,17 +21,17 @@ from sklearn.preprocessing import StandardScaler #
 from sklearn.linear_model import LogisticRegression
 
 # directory for data files
-path = 'data/'
-path_files = glob.glob('data/*')
+data_dir = 'data/'
+path_files = glob.glob('data/' + '*')
 # our src files we want to download; test set
 test_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.test.gz'
-test_file = 'zip.test.gz'
+test_file = 'data/zip.test.gz'
 # train set
 train_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.train.gz'
-train_file = 'zip.train.gz'
+train_file = 'data/zip.train.gz'
 # spam set
 spam_url = 'https://hastie.su.domains/ElemStatLearn/datasets/spam.data'
-spam_file = 'spam.data'
+spam_file = 'data/spam.data'
 
 # number of columns in test file (257) count from zero
 conc_cols = 257 
@@ -48,29 +48,28 @@ src files to retrieve
 """
 def retrieve(src_file, src_url):
     # lets store these files in a directory, create /data if DNE
-    if not os.path.exists(path):
-        os.makedirs(path)
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    
     """
     check if a file exists in the current directory
     retrieve a file given the url
     """
     if not os.path.isfile(src_file):
         urllib.request.urlretrieve(src_url, src_file)
-        print("Downloading " + src_file + " from " + src_url + " into " + 
-            path + "...\n")
+
+        print("Downloading src file into " + src_file + " from " + src_url + 
+              "...\n")
     
     else:
         print(src_file + " already exists in this folder...continuing anyway\n")
 
 """
-method for removing files when program exits
+method for removing data directory when program exits
 """
 def remove():
-    # traverse files
-    for file in path_files:
-        # if files are in the path, remove
-        if os.path.exists(file):
-            os.remove(file)
+    shutil.rmtree(data_dir)
+    print("Removing: " + data_dir + "...\n")
 
 """
 MyKNN class, according to *.org guideline, that *should* work just like 
