@@ -18,11 +18,13 @@ from sklearn.pipeline import make_pipeline # increase iteration sz
 from sklearn.preprocessing import StandardScaler # 
 from sklearn.linear_model import LogisticRegression
 
-# our src files we want to download. spam and test sets
+# our src files we want to download; test set
 test_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.test.gz'
 test_file = 'zip.test.gz'
+# train set
 train_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.train.gz'
 train_file = 'zip.train.gz'
+# spam set
 spam_url = 'https://hastie.su.domains/ElemStatLearn/datasets/spam.data'
 spam_file = 'spam.data'
 
@@ -30,9 +32,8 @@ spam_file = 'spam.data'
 conc_cols = 257 
 # number of columns in spam file (56) count from zero
 spam_cols = 57
-
+# split our data set into train and test sets
 kf = KFold(n_splits=3, shuffle=True, random_state=1)
-
 # increase the max iteration from default 100
 pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
 
@@ -53,12 +54,27 @@ def retrieve(src_file, src_url):
         print(src_file + " already exists in this folder...continuing anyway\n")
 
 """
-
+MyKNN class, according to *.org guideline, that *should* work just like 
+sklearn.neighbors.KNeighborsClassifier
 """
+class MyKNN():
+    # instantiate neighbors param stored as an attribute of our instance
+    def __init__(self, n_neighbors):
+        # 
+    """
+    fit method with X=train_features, y=train_labels, storing data as 
+    attributes of our instance
+    """
+    def fit(self, X, y): 
+        self.train_features = X
+        self.train_labels = y
+
+        
 
 def main():
     # supress warnings
     warnings.filterwarnings('ignore')
+
     # retrieve our data files using retrieve function
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)

@@ -203,7 +203,7 @@ def main():
     retrieve(spam_file, spam_url)
     
     # call method to initialize our data frames, convert to numpy arrays, 
-    (test, train, spam, _dict) = df_init(test_file, train_file, spam_file, data_dict)  
+    (test, train, spam, data_dict) = df_init(test_file, train_file, spam_file, data_dict)  
     # call method to perform our algorithm shown in class and the demo
     trained_data = train(_dict)
     
