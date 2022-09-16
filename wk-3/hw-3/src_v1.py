@@ -58,9 +58,17 @@ MyKNN class, according to *.org guideline, that *should* work just like
 sklearn.neighbors.KNeighborsClassifier
 """
 class MyKNN():
-    # instantiate neighbors param stored as an attribute of our instance
+    """
+    instantiate neighbors param stored as an attribute of our instance
+        __init__: recieves constructors args initializing new obj
+        self: instance of class for attribute manipulation, always first
+        attribute of instance
+    """
     def __init__(self, n_neighbors):
-        # 
+        # init neighbors attribute of instance
+        self.member = n_neighbors
+
+
     """
     fit method with X=train_features, y=train_labels, storing data as 
     attributes of our instance
@@ -68,7 +76,10 @@ class MyKNN():
     def fit(self, X, y): 
         self.train_features = X
         self.train_labels = y
-
+    """
+    compute binary vector of predicted class label
+    """
+    def predict():
         
 
 def main():
@@ -83,4 +94,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
