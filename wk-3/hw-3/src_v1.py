@@ -64,12 +64,6 @@ def retrieve(src_file, src_url):
     else:
         print(src_file + " already exists in this folder...continuing anyway\n")
 
-"""
-method for removing data directory when program exits
-"""
-def remove():
-    shutil.rmtree(data_dir)
-    print("Removing: " + data_dir + "...\n")
 
 """
 MyKNN class, according to *.org guideline, that *should* work just like 
@@ -108,8 +102,35 @@ class MyKNN:
         # traverse each test data row; features
         for i in  range(len(test_features)):
             # compute distances with all of train data
-            np.diff()
-        
+            #np.diff()
+
+"""
+MyCV class, according to *.org guideline, that *should* work just like
+sklearn.model_selection.GridSearchCV. this class should perform
+best parameter selection thru cross-validation for any estimator
+
+*<--NOTE-->*: nothing in this class should be specific to the nearest 
+neighbors algorithm! It should not have any reference to “n_neighbors” in 
+the class definition. These methods are sort of copied from the class MyKNN
+"""
+class MyCV:
+
+    def __init__(self, estimator, param_grid, cv):
+        self.train_features = []
+        self.train_labels = []
+
+    def fit(self, X, y):
+
+    def predict(self, test_features):
+
+
+"""
+method for removing data directory when program exits
+"""
+def remove():
+    shutil.rmtree(data_dir)
+    print("Removing: " + data_dir + "...\n")
+
 
 def main():
     # supress warnings
@@ -123,6 +144,7 @@ def main():
     # remove data files on exit from data folder
     remove()
 
+# run main
 if __name__ == '__main__':
     main()
 
