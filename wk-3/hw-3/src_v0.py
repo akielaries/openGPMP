@@ -27,9 +27,14 @@ spam_url = 'https://hastie.su.domains/ElemStatLearn/datasets/spam.data'
 spam_file = 'spam.data'
 
 # number of columns in test file (257) count from zero
-test_cols = 257
+conc_cols = 257
 # number of columns in spam file (56) count from zero
 spam_cols = 57
+
+kf = KFold(n_splits=3, shuffle=True, random_state=1)
+
+# increase the max iteration from default 100
+pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
 
 """ 
 our last assignment was only downloading 1 file, to adhere to guidelines and 
@@ -61,7 +66,7 @@ Hopefully this is allowed!
     Wanted to seperate file into some seperate functions for the sake of 
     readability.
 """
-def df_init(src_test, src_train, src_spam, srco_cols, srct_cols, data_dict):
+def df_init(src_test, src_train, src_spam, data_dict):
     # read in downloaded src file as a pandas dataframe
     # seperate dataframes because different manipulations will be done
     df_test = pd.read_csv(src_test, header=None, sep=" ")
@@ -85,14 +90,15 @@ def df_init(src_test, src_train, src_spam, srco_cols, srct_cols, data_dict):
     first column; iloc for row and col specifying. 
     """
     data_dict = {
-        "test":(df_conc.loc[:,1:].to_numpy(), df_conc[0]),
-        "spam":(df_spam.loc[:,1:].to_numpy(), df_spam[0]),
+        "test":(df_conc.loc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
+        "spam":(df_spam.loc[:,spam_cols-1:].to_numpy(), df_spam[0]),
     }
     # print our dataframes to visualize in tabular form
-    print(df_conc)
-    print(df_spam)
+    #print(df_conc)
+    #print(df_spam)
     #print(data_dict)
-    return df_conc, df_spam, data_dict
+    return df_test, df_conc, df_spam, data_dict
+    print(df_test, df_train, df_spam, data_dict)
 
 """
 algorithm shown in class and from our demo.
@@ -105,7 +111,7 @@ def train(data_dict):
     for data_set, (input_mat, output_vec) in data_dict.items():
         print(data_set)
     
-        kf = KFold(n_splits=3, shuffle=True, random_state=1)
+        # kf = KFold(n_splits=3, shuffle=True, random_state=1)
     
         for fold_id, indices in enumerate(kf.split(input_mat)):
             print(fold_id)
@@ -194,10 +200,9 @@ def main():
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
-    # call method to initialize our data frames, convert to numpy arrays, 
-    (test, train, spam, _dict) = df_init(test_file, train_file, spam_file, 
-                                         test_cols, spam_cols, data_dict)
     
+    # call method to initialize our data frames, convert to numpy arrays, 
+    (test, train, spam, _dict) = df_init(test_file, train_file, spam_file, data_dict)  
     # call method to perform our algorithm shown in class and the demo
     trained_data = train(_dict)
     
