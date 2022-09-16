@@ -36,5 +36,35 @@ kf = KFold(n_splits=3, shuffle=True, random_state=1)
 # increase the max iteration from default 100
 pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
 
+""" 
+method to download specified files. call from main, pass in
+src files to retrieve
+"""
+def retrieve(src_file, src_url):
+    """
+    check if a file exists in the current directory
+    retrieve a file given the url
+    """
+    if not os.path.isfile(src_file):
+        urllib.request.urlretrieve(src_url, src_file)
+        print("Downloading " + src_file + " from " + src_url + "...\n")
 
+    else:
+        print(src_file + " already exists in this folder...continuing anyway\n")
+
+"""
+
+"""
+
+def main():
+    # supress warnings
+    warnings.filterwarnings('ignore')
+    # retrieve our data files using retrieve function
+    retrieve(test_file, test_url)
+    retrieve(train_file, train_url)
+    retrieve(test_file, test_url)
+
+
+if __name__ == '__main__':
+    main()
 
