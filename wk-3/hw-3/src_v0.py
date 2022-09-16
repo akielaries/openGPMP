@@ -84,21 +84,22 @@ def df_init(src_test, src_train, src_spam, data_dict):
     
     # initialize and convert outputs to a label vector
     df_conc_labels = df_conc[0]
-    df_spam_labels = df_spam[0]
+    df_spam_labels = df_spam[spam_cols]
     """
     Convert our dataframe to a dictionary with numpy array exlcuding the 
     first column; iloc for row and col specifying. 
     """
+    
     data_dict = {
         "test":(df_conc.loc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
         "spam":(df_spam.loc[:,spam_cols-1:].to_numpy(), df_spam[0]),
     }
     # print our dataframes to visualize in tabular form
-    #print(df_conc)
-    #print(df_spam)
-    #print(data_dict)
-    return df_test, df_conc, df_spam, data_dict
-    print(df_test, df_train, df_spam, data_dict)
+    print(df_conc)
+    print(df_spam)
+    print(data_dict)
+    return df_conc, df_spam, data_dict
+    #print(df_test, df_train, df_spam, data_dict)
 
 """
 algorithm shown in class and from our demo.
@@ -207,7 +208,7 @@ def main():
     trained_data = train(_dict)
     
     # plot our values by passing in the previously filled variable d
-    plot(trained_data)
+    viz_data = plot(trained_data)
 
 if __name__ == '__main__':
     # run main
