@@ -25,13 +25,13 @@ data_dir = 'data/'
 path_files = glob.glob('data/' + '*')
 # our src files we want to download; test set
 test_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.test.gz'
-test_file = 'data/zip.test.gz'
+test_file = 'zip.test.gz'
 # train set
 train_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.train.gz'
-train_file = 'data/zip.train.gz'
+train_file = 'zip.train.gz'
 # spam set
 spam_url = 'https://hastie.su.domains/ElemStatLearn/datasets/spam.data'
-spam_file = 'data/spam.data'
+spam_file = 'spam.data'
 
 # number of columns in test file (257) count from zero
 conc_cols = 257 
@@ -47,23 +47,16 @@ method to download specified files. call from main, pass in
 src files to retrieve
 """
 def retrieve(src_file, src_url):
-    # lets store these files in a directory, create /data if DNE
-    if not os.path.exists(data_dir):
-        os.makedirs(data_dir)
-    
     """
     check if a file exists in the current directory
     retrieve a file given the url
     """
     if not os.path.isfile(src_file):
         urllib.request.urlretrieve(src_url, src_file)
+        print("Downloading " + src_file + " from " + src_url + "...\n")
 
-        print("Downloading src file into " + src_file + " from " + src_url + 
-              "...\n")
-    
     else:
         print(src_file + " already exists in this folder...continuing anyway\n")
-
 
 """
 MyKNN class, according to *.org guideline, that *should* work just like 
@@ -102,7 +95,7 @@ class MyKNN:
         # traverse each test data row; features
         for i in  range(len(test_features)):
             # compute distances with all of train data
-            #np.diff()
+            np.diff()
 
 """
 MyCV class, according to *.org guideline, that *should* work just like
@@ -119,10 +112,47 @@ class MyCV:
         self.train_features = []
         self.train_labels = []
 
-    def fit(self, X, y):
+    #def fit(self, X, y):
 
-    def predict(self, test_features):
+    #def predict(self, test_features):
 
+def df_init(test_file, train_file, spam_file, data_dict):
+    # read in downloaded src file as a pandas dataframe
+    # seperate dataframes because different manipulations will be done
+    df_test = pd.read_csv(test_file, header=None, sep=" ")
+    df_train = pd.read_csv(train_file, header=None, sep=" ")
+    df_spam = pd.read_csv(spam_file, header=None, sep=" ")
+
+    print("\nDEBUG STMT:    1\n")
+    # reassign concatenated test and train frame
+    df_conc = pd.concat([df_test, df_train])
+
+    # remove any rows which have non-01 labels
+    df_conc[0] = df_conc[0].astype(int)
+    df_spam[0] = df_spam[0].astype(int)
+    df_conc = df_conc[df_conc[0].isin([0, 1])]
+    df_spam = df_spam[df_spam[0].isin([0, 1])]
+
+    # initialize and convert outputs to a label vector
+    df_conc_labels = df_conc[0]
+    df_spam_labels = df_spam[spam_cols]
+    """
+    Convert our dataframe to a dictionary with numpy array exlcuding the 
+    first column; iloc for row and col specifying. 
+    """
+    print("\nDEBUG STMT:    2\n")
+    data_dict = {
+        "test":(df_conc.loc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
+        "spam":(df_spam.loc[:,spam_cols-1:].to_numpy(), df_spam[0]),
+    }
+    # print our dataframes to visualize in tabular form
+    # print(df_conc)
+    # print(df_spam)
+    # print(data_dict)
+    # return df_conc, df_spam, data_dict
+    return df_test, df_train, df_spam, data_dict
+    print(df_test, df_train, df_spam)
+    # print(df_test, df_train, df_spam, data_dict)
 
 """
 method for removing data directory when program exits
@@ -131,18 +161,19 @@ def remove():
     shutil.rmtree(data_dir)
     print("Removing: " + data_dir + "...\n")
 
-
 def main():
     # supress warnings
     warnings.filterwarnings('ignore')
-
+    data_dict = {}
     # retrieve our data files using retrieve function
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
+    (test, train, spam, _dict) = df_init(test_file, train_file, 
+                                             spam_file, data_dict)
 
     # remove data files on exit from data folder
-    remove()
+    # remove()
 
 # run main
 if __name__ == '__main__':
