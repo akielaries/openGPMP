@@ -40,6 +40,7 @@ spam_cols = 57
 kf = KFold(n_splits=3, shuffle=True, random_state=1)
 # increase the max iteration from default 100
 pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+
 """ 
 method to download specified files. call from main, pass in
 src files to retrieve
@@ -62,63 +63,12 @@ def retrieve(src_file, src_url):
         print(src_file + " already exists in this folder...continuing anyway\n")
 
 """
-MyKNN class, according to *.org guideline, that *should* work just like 
-sklearn.neighbors.KNeighborsClassifier
+method to initialize our multiple frames. 
+    - take in src file
+    - create a dataframe
+    - drop specified rows of the src file
+    - convert our data into numpy
 """
-class MyKNN:
-    """
-    instantiate neighbors param stored as an attribute of our instance
-        __init__: recieves constructors args initializing new obj
-        self: instance of class for attribute manipulation, always first
-        attribute of instance. convention ! keyword
-        member
-    """
-    def __init__(self, n_neighbors):
-        # init neighbors attribute of instance
-        self.nearest = n_neighbors
-
-    """
-    fit method with X=train_features, y=train_labels, storing data as 
-    attributes of our instance
-        features: input data
-        label: output data based on input
-    """
-    def fit(self, X, y): 
-        # store feats/labs in respective lists; can do for loop for many members
-        self.train_features = []
-        self.train_labels = []
-        self.train_features = X
-        self.train_labels = y
-
-    """
-    compute binary vector of predicted class label
-        X = test_features
-    """
-    def predict(self, test_features):
-        # traverse each test data row; features
-        for i in  range(len(test_features)):
-            # compute distances with all of train data
-            np.diff()
-
-"""
-MyCV class, according to *.org guideline, that *should* work just like
-sklearn.model_selection.GridSearchCV. this class should perform
-best parameter selection thru cross-validation for any estimator
-
-*<--NOTE-->*: nothing in this class should be specific to the nearest 
-neighbors algorithm! It should not have any reference to “n_neighbors” in 
-the class definition. These methods are sort of copied from the class MyKNN
-"""
-class MyCV:
-
-    def __init__(self, estimator, param_grid, cv):
-        self.train_features = []
-        self.train_labels = []
-
-    #def fit(self, X, y):
-
-    #def predict(self, test_features):
-
 def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     # read in downloaded src file as a pandas dataframe
     # seperate dataframes because different manipulations will be done
@@ -151,7 +101,6 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     # print(df_spam)
     print(data_dict)
     return df_test, df_train, df_spam, df_conc, data_dict
-    #return df_test, df_train, df_spam, data_dict
 
 """
 algorithm shown in class and from our demo.
@@ -231,11 +180,76 @@ def run_algo(data_dict):
     return test_acc_df
 
 """
-method for removing data directory when program exits
+MyKNN class, according to *.org guideline, that *should* work just like 
+sklearn.neighbors.KNeighborsClassifier
 """
-def remove():
-    shutil.rmtree(data_dir)
-    print("Removing: " + data_dir + "...\n")
+class MyKNN:
+    """
+    instantiate neighbors param stored as an attribute of our instance
+        __init__: recieves constructors args initializing new obj
+        self: instance of class for attribute manipulation, always first
+        attribute of instance. convention ! keyword
+        member
+    """
+    def __init__(self, n_neighbors):
+        # init neighbors attribute of instance
+        self.nearest = n_neighbors
+
+    """
+    fit method with X=train_features, y=train_labels, storing data as 
+    attributes of our instance
+        features: input data
+        label: output data based on input
+    """
+    def fit(self, X, y): 
+        # store feats/labs in respective lists; can do for loop for many members
+        self.train_features = []
+        self.train_labels = []
+        self.train_features = X
+        self.train_labels = y
+
+    """
+    compute binary vector of predicted class label
+        X = test_features
+    """
+    def predict(self, test_features):
+        # traverse each test data row; features
+        for i in  range(len(test_features)):
+            # compute distances with all of train data
+            np.diff()
+
+"""
+MyCV class, according to *.org guideline, that *should* work just like
+sklearn.model_selection.GridSearchCV. this class should perform
+best parameter selection thru cross-validation for any estimator
+
+*<--NOTE-->*: nothing in this class should be specific to the nearest 
+neighbors algorithm! It should not have any reference to “n_neighbors” in 
+the class definition. These methods are sort of copied from the class MyKNN
+"""
+class MyCV:
+
+    def __init__(self, estimator, param_grid, cv):
+        self.train_features = []
+        self.train_labels = []
+
+    #def fit(self, X, y):
+
+    #def predict(self, test_features):
+
+"""
+make a ggplot to visually examine which learning algorithm is
+best for each data set
+"""
+def plot(test_acc_df):
+    gg = (p9.ggplot(test_acc_df,
+            p9.aes(x='test_accuracy_percentage'
+            ,y='algorithm'))
+          # .~ spreads vals across columns
+          +p9.facet_grid('.~ data_set')
+          # Use geom_point to create scatterplots
+          +p9.geom_point())
+    print(gg)
 
 def main():
     # supress warnings
@@ -248,12 +262,10 @@ def main():
     conc_file = None
     (test, train, spam, conc, _dict) = df_init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
-    # run our manipulations on our data 
+    # run our manipulations on our data, calling both KNN and CV classes 
     data_set = run_algo(_dict)
     # plot our data
     viz_data = plot(data_set)
-    # remove data files on exit from data folder
-    # remove()
 
 # run main
 if __name__ == '__main__':
