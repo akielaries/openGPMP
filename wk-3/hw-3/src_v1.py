@@ -42,6 +42,10 @@ kf = KFold(n_splits=3, shuffle=True, random_state=1)
 pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
 # declare list for set
 test_acc_df_list = []
+# cv constant used in cv= and cv class call, to minimize reuse of vals
+const_cv = 5
+# neighbors constant val
+const_n = 20
 
 """ 
 method to download specified files. call from main, pass in
@@ -90,6 +94,7 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     # initialize and convert outputs to a label vector
     df_conc_labels = df_conc[0]
     df_spam_labels = df_spam[spam_cols]
+
     """
     Convert our dataframe to a dictionary with numpy array exlcuding the 
     first column; iloc for row and col specifying. 
@@ -99,71 +104,9 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
         "test":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
         "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0]),
     }
+
     return df_test, df_train, df_spam, df_conc, data_dict
 
-"""
-algorithm shown in class and from our demo.
-"""
-def run_algo(data_dict):
-    test_acc_df_list = []
-
-    for data_set, (input_mat, output_vec) in data_dict.items():
-        print(data_set)
-        # pipe.fit(input_mat, output_vec)
-
-        # kf = KFold(n_splits=3, shuffle=True, random_state=1)
-
-        for fold_id, indices in enumerate(kf.split(input_mat)):
-            print(fold_id)
-            index_dict = dict(zip(["train","test"], indices))
-            param_dicts = [{'n_neighbors':[x]} for x in range(1, 21)]
-
-            # does subtrain/validation splits.
-            clf = GridSearchCV(KNeighborsClassifier(), param_dicts)
-            # copy above for linear model. call cv=5 in initial pipe was not
-            # recognized; try a call here
-            linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
-            set_data_dict = {}
-
-            for set_name, index_vec in index_dict.items():
-                set_data_dict[set_name] = {
-                    "X":input_mat[index_vec],
-                    "y":output_vec.iloc[index_vec]
-                    }
-            # * is unpacking a tuple to use as the different positional arguments
-            # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
-            # train models and stub out linear_model
-            # ** is unpacking a dict to use as the named arguments
-            # train models and stub out linear_model and create algo for finding 
-            # mode
-            # clf.fit(X=set_data_dict["train"]["X"], y=set_data_dict["train"]["y"]])
-            clf.fit(**set_data_dict["train"])
-            linear_model.fit(**set_data_dict["train"])
-            featureless_model = mode(output_vec)
-            #clf.best_params_
-
-            cv_df = pd.DataFrame(clf.cv_results_)
-            cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
-
-            pred_dict = {
-                "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
-                "linear_model": linear_model.predict(set_data_dict["test"]["X"]),
-                "featureless": featureless_model
-                }
-
-            for algorithm, pred_vec in pred_dict.items():
-                test_acc_dict = {
-                    "test_accuracy_percentage":(
-                        pred_vec == set_data_dict["test"]["y"]).mean()*100,
-                    "data_set":data_set,
-                    "fold_id":fold_id,
-                    "algorithm":algorithm
-                    }
-                test_acc_df_list.append(pd.DataFrame(test_acc_dict, index=[0]))
-
-    test_acc_df = pd.concat(test_acc_df_list)
-
-    return test_acc_df
 
 """
 MyKNN class, according to *.org guideline, that *should* work just like 
@@ -220,8 +163,86 @@ class MyCV:
         self.train_labels = []
 
     #def fit(self, X, y):
-
+    """
+    much of this code is similar to our run_algo method 
+    should compute the best number of neighbors using K-fold cross-validation, 
+    with the number of folds defined by the cv parameter
+    """
     #def predict(self, test_features):
+
+class algo:
+    """
+    algorithm shown in class and from our demo.
+    """
+    def run_algo(data_dict):
+        test_acc_df_list = []
+
+        for data_set, (input_mat, output_vec) in data_dict.items():
+            print(data_set)
+            # pipe.fit(input_mat, output_vec)
+
+            # kf = KFold(n_splits=3, shuffle=True, random_state=1)
+
+            for fold_id, indices in enumerate(kf.split(input_mat)):
+                print(fold_id)
+                index_dict = dict(zip(["train","test"], indices))
+                param_dicts = [{'n_neighbors':[x]} for x in range(1, 21)]
+
+                # does subtrain/validation splits.
+                clf = GridSearchCV(KNeighborsClassifier(), param_dicts)
+                # copy above for linear model. call cv=5 in initial pipe was not
+                # recognized; try a call here
+                linear_model = sklearn.linear_model.LogisticRegressionCV(cv=const_cv)
+
+                """
+                call our MyCV class to run our models passing in our MyKNN class
+                am unsure of accuracy and placement of this call but am curious 
+                if parameters passed in are what is expected
+                """
+                cv_model = MyCV(MyKNN, param_dicts, const_cv)
+                set_data_dict = {}
+
+                # add in our new parameters be want to be working with 
+                for set_name, index_vec in index_dict.items():
+                    set_data_dict[set_name] = {
+                        "X":input_mat[index_vec],
+                        "y":output_vec.iloc[index_vec]
+                        }
+                # * is unpacking a tuple to use as the different positional arguments
+                # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
+                # train models and stub out linear_model
+                # ** is unpacking a dict to use as the named arguments
+                # train models and stub out linear_model and create algo for finding 
+                # mode
+                # clf.fit(X=set_data_dict["train"]["X"],
+                # y=set_data_dict["train"]["y"]])
+                clf.fit(**set_data_dict["train"])
+                linear_model.fit(**set_data_dict["train"])
+                featureless_model = mode(output_vec)
+                #clf.best_params_
+
+                cv_df = pd.DataFrame(clf.cv_results_)
+                cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
+
+                pred_dict = {
+                    "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
+                    "linear_model": linear_model.predict(set_data_dict["test"]["X"]),
+                    "featureless": featureless_model
+                    }
+
+                for algorithm, pred_vec in pred_dict.items():
+                    test_acc_dict = {
+                        "test_accuracy_percentage":(
+                            pred_vec == set_data_dict["test"]["y"]).mean()*100,
+                        "data_set":data_set,
+                        "fold_id":fold_id,
+                        "algorithm":algorithm
+                        }
+                    test_acc_df_list.append(pd.DataFrame(test_acc_dict, index=[0]))
+
+        test_acc_df = pd.concat(test_acc_df_list)
+
+        return test_acc_df
 
 """
 make a ggplot to visually examine which learning algorithm is
@@ -249,7 +270,8 @@ def main():
     (test, train, spam, conc, _dict) = df_init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    data_set = run_algo(_dict)
+    #data_set = run_algo(_dict)
+    data_set = algo.run_algo(_dict)
     # plot our data
     viz_data = plot(data_set)
 
