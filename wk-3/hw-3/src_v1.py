@@ -3,14 +3,12 @@ import urllib.request
 # lib for reading files on OS
 import os
 # lib used for copying src file info into destination
-import shutil
 import pandas as pd
 import plotnine as p9
 import numpy as np
 # could not figure out how to calculate the mode of a list, using mode from lib
 from statistics import mode
 # *<---REMOVE B4 SUB--->*
-import glob # find all files in dir w/ *
 import warnings # silence warnings while developing 
 import sklearn
 from sklearn.model_selection import KFold #train/test splits
@@ -20,9 +18,9 @@ from sklearn.pipeline import make_pipeline # increase iteration sz
 from sklearn.preprocessing import StandardScaler # 
 from sklearn.linear_model import LogisticRegression
 
+
 # directory for data files
 data_dir = 'data/'
-path_files = glob.glob('data/' + '*')
 # our src files we want to download; test set
 test_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.test.gz'
 test_file = 'data/zip.test.gz'
@@ -47,6 +45,7 @@ const_cv = 5
 # neighbors constant val
 const_n = 20
 
+
 """ 
 method to download specified files. call from main, pass in
 src files to retrieve
@@ -67,6 +66,7 @@ def retrieve(src_file, src_url):
     
     else:
         print(src_file + " already exists in this folder...continuing anyway\n")
+
 
 """
 method to initialize our multiple frames. 
@@ -104,7 +104,10 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
         "test":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
         "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0]),
     }
-
+    # print our dataframes
+    print(df_spam)
+    print(df_conc)
+    # return our values back to the call
     return df_test, df_train, df_spam, df_conc, data_dict
 
 
@@ -227,6 +230,7 @@ class algo:
                 pred_dict = {
                     "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
                     "linear_model": linear_model.predict(set_data_dict["test"]["X"]),
+                    # featureless is inaccurate
                     "featureless": featureless_model
                     }
 
@@ -266,7 +270,7 @@ def main():
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
-    conc_file = None
+    conc_file = 0
     (test, train, spam, conc, _dict) = df_init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
