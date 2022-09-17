@@ -25,14 +25,13 @@ data_dir = 'data/'
 path_files = glob.glob('data/' + '*')
 # our src files we want to download; test set
 test_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.test.gz'
-test_file = 'zip.test.gz'
+test_file = 'data/zip.test.gz'
 # train set
 train_url = 'https://hastie.su.domains/ElemStatLearn/datasets/zip.train.gz'
-train_file = 'zip.train.gz'
+train_file = 'data/zip.train.gz'
 # spam set
 spam_url = 'https://hastie.su.domains/ElemStatLearn/datasets/spam.data'
-spam_file = 'spam.data'
-
+spam_file = 'data/spam.data'
 # number of columns in test file (257) count from zero
 conc_cols = 257 
 # number of columns in spam file (56) count from zero
@@ -41,20 +40,24 @@ spam_cols = 57
 kf = KFold(n_splits=3, shuffle=True, random_state=1)
 # increase the max iteration from default 100
 pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
-
 """ 
 method to download specified files. call from main, pass in
 src files to retrieve
 """
 def retrieve(src_file, src_url):
+    # lets store these files in a directory, create /data if DNE
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    
     """
     check if a file exists in the current directory
     retrieve a file given the url
     """
     if not os.path.isfile(src_file):
         urllib.request.urlretrieve(src_url, src_file)
-        print("Downloading " + src_file + " from " + src_url + "...\n")
-
+        print("Downloading src file into " + src_file + " from " + src_url + 
+              "...\n")
+    
     else:
         print(src_file + " already exists in this folder...continuing anyway\n")
 
@@ -116,14 +119,13 @@ class MyCV:
 
     #def predict(self, test_features):
 
-def df_init(test_file, train_file, spam_file, data_dict):
+def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     # read in downloaded src file as a pandas dataframe
     # seperate dataframes because different manipulations will be done
     df_test = pd.read_csv(test_file, header=None, sep=" ")
     df_train = pd.read_csv(train_file, header=None, sep=" ")
     df_spam = pd.read_csv(spam_file, header=None, sep=" ")
 
-    print("\nDEBUG STMT:    1\n")
     # reassign concatenated test and train frame
     df_conc = pd.concat([df_test, df_train])
 
@@ -140,19 +142,93 @@ def df_init(test_file, train_file, spam_file, data_dict):
     Convert our dataframe to a dictionary with numpy array exlcuding the 
     first column; iloc for row and col specifying. 
     """
-    print("\nDEBUG STMT:    2\n")
     data_dict = {
-        "test":(df_conc.loc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
-        "spam":(df_spam.loc[:,spam_cols-1:].to_numpy(), df_spam[0]),
+        "test":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
+        "spam":(df_spam.iloc[:,spam_cols-1:].to_numpy(), df_spam[0]),
     }
     # print our dataframes to visualize in tabular form
     # print(df_conc)
     # print(df_spam)
-    # print(data_dict)
-    # return df_conc, df_spam, data_dict
-    return df_test, df_train, df_spam, data_dict
-    print(df_test, df_train, df_spam)
-    # print(df_test, df_train, df_spam, data_dict)
+    print(data_dict)
+    return df_test, df_train, df_spam, df_conc, data_dict
+    #return df_test, df_train, df_spam, data_dict
+
+"""
+algorithm shown in class and from our demo.
+"""
+def run_algo(data_dict):
+    test_acc_df_list = []
+    # increase the max iteration from default 100
+    pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+
+    for data_set, (input_mat, output_vec) in data_dict.items():
+        print(data_set)
+
+        # kf = KFold(n_splits=3, shuffle=True, random_state=1)
+
+        for fold_id, indices in enumerate(kf.split(input_mat)):
+            print(fold_id)
+            index_dict = dict(zip(["train","test"], indices))
+            param_dicts = [{'n_neighbors':[x]} for x in range(1, 21)]
+
+            # does subtrain/validation splits.
+            clf = GridSearchCV(KNeighborsClassifier(), param_dicts)
+            # copy above for linear model. call cv=5 in initial pipe was not
+            # recognized; try a call here
+            linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
+            set_data_dict = {}
+
+            for set_name, index_vec in index_dict.items():
+                set_data_dict[set_name] = (
+                    input_mat [ index_vec ],
+                    output_vec.iloc[index_vec]
+                    )
+            # * is unpacking a tuple to use as the different positional arguments
+            # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
+            # train models and stub out linear_model
+            clf.fit(*set_data_dict["train"])
+            # method 2: dict instead of tuple.
+            set_data_dict = {}
+
+            for set_name, index_vec in index_dict.items():
+                set_data_dict[set_name] = {
+                    "X":input_mat[index_vec],
+                    "y":output_vec.iloc[index_vec]
+                    }
+            # ** is unpacking a dict to use as the named arguments
+            # train models and stub out linear_model and create algo for finding 
+            # mode
+            # clf.fit(X=set_data_dict["train"]["X"], y=set_data_dict["train"]["y"]])
+            clf.fit(**set_data_dict["train"])
+            #mode = max(set(output_vec))
+            featureless_model = mode(output_vec)
+            linear_model.fit(**set_data_dict["train"])
+
+            clf.best_params_
+
+            cv_df = pd.DataFrame(clf.cv_results_)
+            cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
+
+            pred_dict = {
+                "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
+                #TODO add featureless and linear_model.
+                "featureless": featureless_model,
+                "linear_model": linear_model.predict(set_data_dict["test"]["X"])
+                }
+
+            for algorithm, pred_vec in pred_dict.items():
+                test_acc_dict = {
+                    "test_accuracy_percentage":(
+                        pred_vec == set_data_dict["test"]["y"]).mean()*100,
+                    "data_set":data_set,
+                    "fold_id":fold_id,
+                    "algorithm":algorithm
+                    }
+                test_acc_df_list.append(pd.DataFrame(test_acc_dict, index=[0]))
+
+    test_acc_df = pd.concat(test_acc_df_list)
+
+    return test_acc_df
 
 """
 method for removing data directory when program exits
@@ -169,9 +245,13 @@ def main():
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
-    (test, train, spam, _dict) = df_init(test_file, train_file, 
-                                             spam_file, data_dict)
-
+    conc_file = None
+    (test, train, spam, conc, _dict) = df_init(test_file, train_file, 
+                                spam_file, conc_file, data_dict)
+    # run our manipulations on our data 
+    data_set = run_algo(_dict)
+    # plot our data
+    viz_data = plot(data_set)
     # remove data files on exit from data folder
     # remove()
 
