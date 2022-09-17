@@ -126,6 +126,8 @@ class MyKNN:
     def __init__(self, n_neighbors):
         # init neighbors attribute of instance
         self.nearest = n_neighbors
+        self.train_features = []
+        self.train_labels = []
 
     """
     fit method with X=train_features, y=train_labels, storing data as 
@@ -135,8 +137,6 @@ class MyKNN:
     """
     def fit(self, X, y): 
         # store feats/labs in respective lists; can do for loop for many members
-        self.train_features = []
-        self.train_labels = []
         self.train_features = X
         self.train_labels = y
 
@@ -154,8 +154,8 @@ class MyKNN:
             # we want to store each iteration in a list representing best param
             best_param = []
             # compute distances with all of train data
-            test_i_features = test_features["test"][test_data_row,:]
-            diff_mat = self.train_features["train"] - test_i_features
+            test_i_features = test_features[test_data_row,:]
+            diff_mat = self.train_features - test_i_features
             """
             Each distance is the square root of the sum of squared 
             differences over all features
@@ -167,11 +167,13 @@ class MyKNN:
             distance_vec = squared_diff_mat.sum(axis=1)
             # sort distances w/ numpy.argsort to find smallest n
             sorted_indices = distance_vec.argsort()
-            nearest_indices = sorted_indices[:nearest]
+            nearest_indices = sorted_indices[:self.nearest]
             
             # append result to set
-            predict_list.append(mode(best_param))
-        return predict_list
+            for final_list  in nearest_indices:
+                best_param.append(self.train_labels[final_list])
+            predict_list.append(best_param)
+        return(predict_list)
             
 
 """
@@ -187,10 +189,12 @@ and is similar to our run_algo method
 class MyCV:
     # from in class demo3 in repo
     def __init__(self, estimator, param_grid, const_cv):
-        self.train = 0
+        self.train_features = []
+        self.train_labels = []
+        self.train_set = None
         self.param_grid = []
         self.folds = const_cv
-        self.est = estimator(self.folds)
+        self.estimator = estimator(self.folds)
         self.best_fit = 0
         self.fold_num = 0
         
@@ -199,37 +203,59 @@ class MyCV:
     with the number of folds defined by the cv parameter
     """
     def fit(self, X, y):
-        self.train_features = []
-        self.train_labels = []
         self.train_features = X
         self.train_labels = y
         self.trained_set = {'X':self.train_features, 'y':self.train_labels}
+        # df for folds
+        folds_df = pd.DataFrame()
         # store defined folds in list
         folds = []
         # assigning random fold ID numbers to each observation
-        fold_vec = np.random.randint(low=0, high=self.n_folds, 
-                                     size=self.zip_labels.size)
+        fold_vec = np.random.randint(low=0, high=self.folds, 
+                                     size=self.train_labels.size)
         # traverse k subtrain/validation splits 
         for folds in range(self.fold_num):
             is_set_dict = {
                 "validation":fold_vec == fold,
                 "subtrain":fold_vec != fold,
             }
+
         # from below algo class
         for fold_id, indices in enumerate(folds):
             print(fold_id)
+            index_dict = dict(zip(["subtrain","validation"], 
+                                  indices)) 
+            param_dicts = [self.param_grid]
+            set_data_dict = {}
 
+            for set_name, index_vec in index_dict.items():
+                set_data_dict[set_name] = {
+                    "X":self.train_features[index_vec],
+                    "y":self.train_labels.iloc[index_vec]
+                }
 
-        self.best_fit = best_set
+            result_dict = {}
+            
+            # from demo3 in class, iterating of param grid prediction sub/val
+            for param_dict in self.param_grid:
+                #param_name, param_value in param_dict.items():
+                setattr(self.estimator, param_name, param_value)
+                self.est.fit(**set_data["subtrain"])
+                self.est.predict(set_data["validation"]["X"])
+                result_dict[param_value] = (prediction == set_data["test"]["y"]).mean()*100
+            # append result
+                result_df = result_df.append(result_dict)
+                avg = dict(result_df.mean())
+                self.best_fit = avg
     """
     should run estimator to predict the best number of neighbors
     which is a set attribute of estimator at the end of fit
     """
     def predict(self, test_features):
         # run our estimator passing in the assigned best estimated set
-        self.est.nearest = self.best_set
-        self.est.fit(**self.trained_set)
-        result = self.est.predict(test_features)
+        self.estimator.nearest = self.best_fit
+        self.estimator.fit(**self.trained_set)
+        result = self.estimator.predict(test_features)
         return result
 
 class algo:
@@ -280,6 +306,7 @@ class algo:
                 # y=set_data_dict["train"]["y"]])
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
+                cv_model.fit(**set_data_dict["train"])
                 featureless_model = mode(output_vec)
                 #clf.best_params_
 
@@ -287,10 +314,11 @@ class algo:
                 cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
 
                 pred_dict = {
-                    "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
-                    "linear_model": linear_model.predict(set_data_dict["test"]["X"]),
+                    "GridSearchCV+KNeighborsClassifier":clf.predict(set_data_dict["test"]["X"]),
+                    "LogisticRegressionCV": linear_model.predict(set_data_dict["test"]["X"]),
+                    "MyCV + My_KNN":cv_model.predict(set_data_dict["test"]["X"]),
                     # featureless is inaccurate
-                    "featureless": featureless_model
+                    "Featureless": featureless_model
                     }
 
                 for algorithm, pred_vec in pred_dict.items():
@@ -341,5 +369,4 @@ def main():
 # run main
 if __name__ == '__main__':
     main()
-
 
