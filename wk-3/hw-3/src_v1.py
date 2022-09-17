@@ -182,25 +182,55 @@ best parameter selection thru cross-validation for any estimator
 *<--NOTE-->*: nothing in this class should be specific to the nearest 
 neighbors algorithm! It should not have any reference to “n_neighbors” in 
 the class definition. These methods are sort of copied from the class MyKNN
+and is similar to our run_algo method
 """
 class MyCV:
-
+    # from in class demo3 in repo
     def __init__(self, estimator, param_grid, const_cv):
-        # self.train_features = []
-        # self.train_labels = []
         self.train = 0
-        self.param_grid = param_grid
-
-    def fit(self, X, y):
-        self.train_features = []
-        self.train_labels = []
-
+        self.param_grid = []
+        self.folds = const_cv
+        self.est = estimator(self.folds)
+        self.best_fit = 0
+        self.fold_num = 0
+        
     """
-    much of this code is similar to our run_algo method 
     should compute the best number of neighbors using K-fold cross-validation, 
     with the number of folds defined by the cv parameter
     """
-    #def predict(self, test_features):
+    def fit(self, X, y):
+        self.train_features = []
+        self.train_labels = []
+        self.train_features = X
+        self.train_labels = y
+        self.trained_set = {'X':self.train_features, 'y':self.train_labels}
+        # store defined folds in list
+        folds = []
+        # assigning random fold ID numbers to each observation
+        fold_vec = np.random.randint(low=0, high=self.n_folds, 
+                                     size=self.zip_labels.size)
+        # traverse k subtrain/validation splits 
+        for folds in range(self.fold_num):
+            is_set_dict = {
+                "validation":fold_vec == fold,
+                "subtrain":fold_vec != fold,
+            }
+        # from below algo class
+        for fold_id, indices in enumerate(folds):
+            print(fold_id)
+
+
+        self.best_fit = best_set
+    """
+    should run estimator to predict the best number of neighbors
+    which is a set attribute of estimator at the end of fit
+    """
+    def predict(self, test_features):
+        # run our estimator passing in the assigned best estimated set
+        self.est.nearest = self.best_set
+        self.est.fit(**self.trained_set)
+        result = self.est.predict(test_features)
+        return result
 
 class algo:
     """
