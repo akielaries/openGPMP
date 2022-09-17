@@ -141,14 +141,38 @@ class MyKNN:
         self.train_labels = y
 
     """
-    compute binary vector of predicted class label
+    compute binary vector of predicted class label from demo3 in class
         X = test_features
     """
     def predict(self, test_features):
+        # declare list to store this computed prediction in
+        # **NOTE** following is from line 33-36 in the demo
+        predict_list = []
+
         # traverse each test data row; features
-        for i in  range(len(test_features)):
+        for test_data_row in range(len(test_features)):
+            # we want to store each iteration in a list representing best param
+            best_param = []
             # compute distances with all of train data
-            np.diff()
+            test_i_features = test_features["test"][test_data_row,:]
+            diff_mat = self.train_features["train"] - test_i_features
+            """
+            Each distance is the square root of the sum of squared 
+            differences over all features
+            """
+            squared_diff_mat = diff_mat ** 2
+            # sum over columns, for each row
+            squared_diff_mat.sum(axis=0) 
+            # sum over rows
+            distance_vec = squared_diff_mat.sum(axis=1)
+            # sort distances w/ numpy.argsort to find smallest n
+            sorted_indices = distance_vec.argsort()
+            nearest_indices = sorted_indices[:nearest]
+            
+            # append result to set
+            predict_list.append(mode(best_param))
+        return predict_list
+            
 
 """
 MyCV class, according to *.org guideline, that *should* work just like
@@ -161,11 +185,16 @@ the class definition. These methods are sort of copied from the class MyKNN
 """
 class MyCV:
 
-    def __init__(self, estimator, param_grid, cv):
+    def __init__(self, estimator, param_grid, const_cv):
+        # self.train_features = []
+        # self.train_labels = []
+        self.train = 0
+        self.param_grid = param_grid
+
+    def fit(self, X, y):
         self.train_features = []
         self.train_labels = []
 
-    #def fit(self, X, y):
     """
     much of this code is similar to our run_algo method 
     should compute the best number of neighbors using K-fold cross-validation, 
