@@ -40,6 +40,8 @@ spam_cols = 57
 kf = KFold(n_splits=3, shuffle=True, random_state=1)
 # increase the max iteration from default 100
 pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+# declare list for set
+test_acc_df_list = []
 
 """ 
 method to download specified files. call from main, pass in
@@ -92,14 +94,11 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     Convert our dataframe to a dictionary with numpy array exlcuding the 
     first column; iloc for row and col specifying. 
     """
+    # create numpy data from vectors
     data_dict = {
         "test":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
-        "spam":(df_spam.iloc[:,spam_cols-1:].to_numpy(), df_spam[0]),
+        "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0]),
     }
-    # print our dataframes to visualize in tabular form
-    # print(df_conc)
-    # print(df_spam)
-    print(data_dict)
     return df_test, df_train, df_spam, df_conc, data_dict
 
 """
@@ -107,11 +106,10 @@ algorithm shown in class and from our demo.
 """
 def run_algo(data_dict):
     test_acc_df_list = []
-    # increase the max iteration from default 100
-    pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
 
     for data_set, (input_mat, output_vec) in data_dict.items():
         print(data_set)
+        # pipe.fit(input_mat, output_vec)
 
         # kf = KFold(n_splits=3, shuffle=True, random_state=1)
 
@@ -128,41 +126,29 @@ def run_algo(data_dict):
             set_data_dict = {}
 
             for set_name, index_vec in index_dict.items():
-                set_data_dict[set_name] = (
-                    input_mat [ index_vec ],
-                    output_vec.iloc[index_vec]
-                    )
-            # * is unpacking a tuple to use as the different positional arguments
-            # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
-            # train models and stub out linear_model
-            clf.fit(*set_data_dict["train"])
-            # method 2: dict instead of tuple.
-            set_data_dict = {}
-
-            for set_name, index_vec in index_dict.items():
                 set_data_dict[set_name] = {
                     "X":input_mat[index_vec],
                     "y":output_vec.iloc[index_vec]
                     }
+            # * is unpacking a tuple to use as the different positional arguments
+            # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
+            # train models and stub out linear_model
             # ** is unpacking a dict to use as the named arguments
             # train models and stub out linear_model and create algo for finding 
             # mode
             # clf.fit(X=set_data_dict["train"]["X"], y=set_data_dict["train"]["y"]])
             clf.fit(**set_data_dict["train"])
-            #mode = max(set(output_vec))
-            featureless_model = mode(output_vec)
             linear_model.fit(**set_data_dict["train"])
-
-            clf.best_params_
+            featureless_model = mode(output_vec)
+            #clf.best_params_
 
             cv_df = pd.DataFrame(clf.cv_results_)
             cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
 
             pred_dict = {
                 "nearest_neighbors":clf.predict(set_data_dict["test"]["X"]),
-                #TODO add featureless and linear_model.
-                "featureless": featureless_model,
-                "linear_model": linear_model.predict(set_data_dict["test"]["X"])
+                "linear_model": linear_model.predict(set_data_dict["test"]["X"]),
+                "featureless": featureless_model
                 }
 
             for algorithm, pred_vec in pred_dict.items():
