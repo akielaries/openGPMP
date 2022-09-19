@@ -210,8 +210,9 @@ class MyCV:
     def fit(self, X, y):
         self.train_features = X
         self.train_labels = y
-        self.trained_set = {'X':self.train_features, 'y':self.train_labels}
-        # df for folds
+        # inputs of our model
+        self.inputs = {'X':self.train_features, 'y':self.train_labels}
+        # create a pd df for folds
         folds_df = pd.DataFrame()
         # store defined folds in list
         fold_index = []
@@ -226,21 +227,27 @@ class MyCV:
         #    }
         # declare folds var for traversing folds and populating subtrain 
         # and validation lists
-        folds = 0
-        for folds in range(self.fold_num):
+        # folds = 0
+        for current_fold in range(self.fold_num):
             # empty list for subtrain and validation
             sub = []
             val = []
             # make sure current element populates the above lists
-            for current_element in range()
-            
-
+            for current_element in range(self.train_features):
+                # maybe use while loop here instead of conditional
+                if fold_vec[current_element] == current_fold:
+                    # append our validation list
+                    val.append(current_element)
+                else:
+                    # append our sub list
+                    sub.append(current_element)
+            # add in sub and val lists into our fold_index list
+            fold_index.append([val, sub])
 
         # from below algo class
         for fold_id, indices in enumerate(fold_index):
-            print(fold_id)
-            index_dict = dict(zip(["subtrain","validation"], 
-                                  indices)) 
+            print("From our MyCV model" + fold_id)
+            index_dict = dict(zip(["subtrain","validation"], indices)) 
             param_dicts = [self.param_grid]
             set_data_dict = {}
 
@@ -249,20 +256,23 @@ class MyCV:
                     "X":self.train_features[index_vec],
                     "y":self.train_labels.iloc[index_vec]
                 }
-
-            result_dict = {}
+            populated_dict = {}
             
+            current_attr = 0
             # from demo3 in class, iterating of param grid prediction sub/val
             for param_dict in self.param_grid:
-                #param_name, param_value in param_dict.items():
-                setattr(self.estimator, param_name, param_value)
-                self.est.fit(**set_data["subtrain"])
-                self.est.predict(set_data["validation"]["X"])
-                result_dict[param_value] = (prediction == set_data["test"]["y"]).mean()*100
-            # append result
-                result_df = result_df.append(result_dict)
-                avg = dict(result_df.mean())
-                self.best_fit = avg
+
+                for param_name, param_val in param_dict.items():
+                    #param_name, param_value in param_dict.items():
+                    setattr(self.estimator, param_name, param_val)
+                    self.estimator.fit(**set_data_dict["subtrain"])
+                    self.estimator.predict(set_data_dict["validation"]["X"])
+                    populated_dict[current_attr] = (prediction == set_data_dict["test"]["y"]).mean()*100
+                    # append result
+                    result_df = result_df.append(result_dict)
+                    avg = dict(result_df.mean())
+                    self.best_fit = avg
+
 
     """
     should run estimator to predict the best number of neighbors
@@ -271,7 +281,7 @@ class MyCV:
     def predict(self, test_features):
         # run our estimator passing in the assigned best estimated set
         self.estimator.nearest = self.best_fit
-        self.estimator.fit(**self.trained_set)
+        self.estimator.fit(**self.inputs)
         result = self.estimator.predict(test_features)
         
         return result
