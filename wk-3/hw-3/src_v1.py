@@ -104,8 +104,6 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     data_spam = df_spam.iloc[:,:spam_cols-1].to_numpy()
     # create numpy data from vectors
     data_dict = {
-        #"zip":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
-        #"spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0])
         "zip":[data_conc, df_conc_labels],
         "spam":[data_spam, df_spam_labels]
     }
@@ -313,8 +311,8 @@ class algo:
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
-                #featureless_model = mode(set_data_dict["train"]["y"])
-                featureless_model = mode(output_vec)
+                featureless_model = mode(set_data_dict["train"]["y"])
+                # featureless_model = mode(output_vec)
                 #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
@@ -339,6 +337,7 @@ class algo:
                     test_acc_df_list.append(pd.DataFrame(test_acc_dict, index=[0]))
 
         test_acc_df = pd.concat(test_acc_df_list)
+        print(test_acc_df)
 
         return test_acc_df
 
