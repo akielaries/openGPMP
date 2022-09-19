@@ -112,7 +112,8 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     }
     
     # return our values back to the call
-    return df_spam, df_conc, data_dict
+    #return df_spam, df_conc, data_dict
+    return data_dict
 
 
 """
@@ -272,8 +273,8 @@ class MyCV:
                     setattr(self.estimator, param_name, param_val)
                 
                 self.estimator.fit(**set_data_dict["subtrain"])
-                future = self.estimator.predict(set_data_dict["validation"]['X'])
-                populated_dict[current_attr] = (future == set_data_dict["validation"]["y"]).mean()*100
+                prediction = self.estimator.predict(set_data_dict["validation"]['X'])
+                populated_dict[current_attr] = (prediction == set_data_dict["validation"]["y"]).mean()*100
                 # update curr attr
                 current_attr += 1
                     
@@ -299,7 +300,7 @@ class MyCV:
 
         # run our estimator passing in the assigned best estimated set
         self.estimator.fit(**self.inputs)
-        future = self.estimator.predict(test_features)
+        prediction = self.estimator.predict(test_features)
         
         return(future)
 
@@ -429,9 +430,11 @@ def main():
         - spam: spam dataframe
         - _dict: data dictionary containing zip + spam frame to plot
     """
-    (spam, conc, _dict) = init_df(test_file, train_file, 
-                                spam_file, conc_file, data_dict)
+    #(spam, conc, _dict) = init_df(test_file, train_file, 
+    #                            spam_file, conc_file, data_dict)
     
+    (_dict) = init_df(test_file, train_file, 
+                                spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
     data_set = algo.run_algo(_dict)
     
