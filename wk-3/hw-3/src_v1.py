@@ -101,12 +101,12 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     """
     # create numpy data from vectors
     data_dict = {
-        "test":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
-        "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0]),
+        "zip":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
+        "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0])
     }
     # print our dataframes
-    print(df_spam)
     print(df_conc)
+    print(df_spam)
     # return our values back to the call
     # return df_test, df_train, df_spam, df_conc, data_dict
     return df_spam, df_conc, data_dict
@@ -271,9 +271,6 @@ class algo:
 
         for data_set, (input_mat, output_vec) in data_dict.items():
             print(data_set)
-            # pipe.fit(input_mat, output_vec)
-
-            # kf = KFold(n_splits=3, shuffle=True, random_state=1)
 
             for fold_id, indices in enumerate(kf.split(input_mat)):
                 print(fold_id)
@@ -298,7 +295,7 @@ class algo:
                 for set_name, index_vec in index_dict.items():
                     set_data_dict[set_name] = {
                         "X":input_mat[index_vec],
-                        "y":output_vec.iloc[index_vec]
+                        "y":output_vec.iloc[index_vec].reset_index(drop=True)
                         }
                 # * is unpacking a tuple to use as the different positional arguments
                 # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
@@ -311,7 +308,7 @@ class algo:
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
-                featureless_model = mode(output_vec)
+                featureless_model = mode(set_data_dict["train"])
                 #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
@@ -365,7 +362,7 @@ def main():
     #(test, train, spam, conc, _dict) = df_init(test_file, train_file, 
     #                            spam_file, conc_file, data_dict)
 
-    (spam, conc, _dict, ) = df_init(test_file, train_file, 
+    (spam, conc, _dict) = df_init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
     #data_set = run_algo(_dict)
