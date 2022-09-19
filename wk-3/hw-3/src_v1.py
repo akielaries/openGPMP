@@ -197,7 +197,7 @@ class MyCV:
         self.train_features = []
         self.train_labels = []
         self.train_set = None
-        self.param_grid = []
+        self.param_grid = param_grid
         self.folds = const_cv
         self.estimator = estimator(self.folds)
         self.best_fit = 0
@@ -214,19 +214,30 @@ class MyCV:
         # df for folds
         folds_df = pd.DataFrame()
         # store defined folds in list
-        folds = []
+        fold_index = []
         # assigning random fold ID numbers to each observation
         fold_vec = np.random.randint(low=0, high=self.folds, 
                                      size=self.train_labels.size)
         # traverse k subtrain/validation splits 
+        #for folds in range(self.fold_num):
+        #    is_set_dict = {
+        #        "validation":fold_vec == fold,
+        #        "subtrain":fold_vec != fold,
+        #    }
+        # declare folds var for traversing folds and populating subtrain 
+        # and validation lists
+        folds = 0
         for folds in range(self.fold_num):
-            is_set_dict = {
-                "validation":fold_vec == fold,
-                "subtrain":fold_vec != fold,
-            }
+            # empty list for subtrain and validation
+            sub = []
+            val = []
+            # make sure current element populates the above lists
+            for current_element in range()
+            
+
 
         # from below algo class
-        for fold_id, indices in enumerate(folds):
+        for fold_id, indices in enumerate(fold_index):
             print(fold_id)
             index_dict = dict(zip(["subtrain","validation"], 
                                   indices)) 
@@ -252,6 +263,7 @@ class MyCV:
                 result_df = result_df.append(result_dict)
                 avg = dict(result_df.mean())
                 self.best_fit = avg
+
     """
     should run estimator to predict the best number of neighbors
     which is a set attribute of estimator at the end of fit
@@ -261,6 +273,7 @@ class MyCV:
         self.estimator.nearest = self.best_fit
         self.estimator.fit(**self.trained_set)
         result = self.estimator.predict(test_features)
+        
         return result
 
 
