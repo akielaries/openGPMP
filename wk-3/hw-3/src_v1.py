@@ -87,9 +87,10 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
 
     # remove any rows which have non-01 labels
     df_conc[0] = df_conc[0].astype(int)
-    df_spam[0] = df_spam[0].astype(int)
+    # df_spam[0] = df_spam[0].astype(int)
     df_conc = df_conc[df_conc[0].isin([0, 1])]
-    df_spam = df_spam[df_spam[0].isin([0, 1])]
+    # df_spam = df_spam[df_spam[0].isin([0, 1])]
+    df_conc = df_conc.drop(columns=[conc_cols])
 
     # initialize and convert outputs to a label vector
     df_conc_labels = df_conc[0]
@@ -101,12 +102,12 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     """
     # create numpy data from vectors
     data_dict = {
-        "zip":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
-        "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0])
+        "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0]),
+        "zip":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0])
     }
     # print our dataframes
-    print(df_conc)
     print(df_spam)
+    print(df_conc)
     # return our values back to the call
     # return df_test, df_train, df_spam, df_conc, data_dict
     return df_spam, df_conc, data_dict
@@ -295,7 +296,7 @@ class algo:
                 for set_name, index_vec in index_dict.items():
                     set_data_dict[set_name] = {
                         "X":input_mat[index_vec],
-                        "y":output_vec.iloc[index_vec].reset_index(drop=True)
+                        "y":output_vec.iloc[index_vec]
                         }
                 # * is unpacking a tuple to use as the different positional arguments
                 # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
@@ -308,7 +309,8 @@ class algo:
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
-                featureless_model = mode(set_data_dict["train"])
+                #featureless_model = mode(set_data_dict["train"]["y"])
+                featureless_model = mode(output_vec)
                 #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
@@ -358,7 +360,7 @@ def main():
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
-    conc_file = 0
+    conc_file = None
     #(test, train, spam, conc, _dict) = df_init(test_file, train_file, 
     #                            spam_file, conc_file, data_dict)
 
