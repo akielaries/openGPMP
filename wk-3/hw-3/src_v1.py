@@ -432,12 +432,9 @@ def main():
     (spam, conc, _dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     
-    pdb.set_trace()
     # run our manipulations on our data, calling both KNN and CV classes 
     data_set = algo.run_algo(_dict)
     
-    traceback.print_stack()
-    pdb.set_trace()
     # plot our data
     viz_data = plot(data_set)
 
