@@ -108,7 +108,8 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     print(df_spam)
     print(df_conc)
     # return our values back to the call
-    return df_test, df_train, df_spam, df_conc, data_dict
+    # return df_test, df_train, df_spam, df_conc, data_dict
+    return df_spam, df_conc, data_dict
 
 
 """
@@ -172,8 +173,10 @@ class MyKNN:
             # append result to set
             for final_list  in nearest_indices:
                 best_param.append(self.train_labels[final_list])
+            
             predict_list.append(best_param)
-        return(predict_list)
+
+        return predict_list
             
 
 """
@@ -258,6 +261,7 @@ class MyCV:
         result = self.estimator.predict(test_features)
         return result
 
+
 class algo:
     """
     algorithm shown in class and from our demo.
@@ -314,9 +318,9 @@ class algo:
                 cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
 
                 pred_dict = {
-                    "GridSearchCV+KNeighborsClassifier":clf.predict(set_data_dict["test"]["X"]),
+                    "GridSearchCV + KNeighborsClassifier":clf.predict(set_data_dict["test"]["X"]),
                     "LogisticRegressionCV": linear_model.predict(set_data_dict["test"]["X"]),
-                    "MyCV + My_KNN":cv_model.predict(set_data_dict["test"]["X"]),
+                    "MyCV + MyKNN":cv_model.predict(set_data_dict["test"]["X"]),
                     # featureless is inaccurate
                     "Featureless": featureless_model
                     }
@@ -358,7 +362,10 @@ def main():
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
     conc_file = 0
-    (test, train, spam, conc, _dict) = df_init(test_file, train_file, 
+    #(test, train, spam, conc, _dict) = df_init(test_file, train_file, 
+    #                            spam_file, conc_file, data_dict)
+
+    (spam, conc, _dict, ) = df_init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
     #data_set = run_algo(_dict)
