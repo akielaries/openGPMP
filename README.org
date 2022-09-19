@@ -1,0 +1,57 @@
+CS 499/599 at Northern Arizona University, Fall 2022
+
+Class title: Contemporary developments, topic Deep Learning.
+
+Class number: CS 499-002 (5893).
+
+Dates: Aug 29, 2022-Dec 16, 2022
+
+Meeting time/place: MWF 9:10-10, ENG 314.
+
+** Textbooks
+
+These provide background/theory about the algorithms we study in this class.
+   
+The readings are from [[https://www.deeplearningbook.org/][Deep Learning]] by Goodfellow, et al., which is
+freely available online.
+
+- The [[https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-4.html#%25_toc_%25_sec_1.2.3][SICP]] book, 1.2.3 "Orders of Growth," has a brief description in
+  general terms (not specific to machine learning).
+- The [[https://arizona-nau.primo.exlibrisgroup.com/discovery/fulldisplay?vid=01NAU_INST:01NAU&search_scope=MyInst_and_CI&tab=Everything&docid=alma991007591689703842&lang=en&context=L&adaptor=Local%2520Search%2520Engine&query=any,contains,algorithms%2520introduction&offset=0&virtualBrowse=true][CLRS]] book has a more detailed description in Chapter 3, "Growth
+  of Functions" (not specific to machine learning).
+
+** Software 
+
+The links below provide practical advice about how to write the code
+necessary for the homeworks, and please read [[file:installation.org][my instructions to
+install all of the necessary software]].
+
+Python documentation and introductory tutorials:
+- numpy is a python module for multi-dimensional arrays (vectors,
+  matrices, etc). It is useful for storing numeric data sets and doing
+  various computations in learning algorithms (vectorized functions,
+  matrix multiplication, etc). [[https://numpy.org/doc/stable/user/absolute_beginners.html][NumPy: the absolute basics for
+  beginners]], [[https://www.w3schools.com/python/numpy/numpy_intro.asp][W3Schools]], [[https://www.tutorialspoint.com/numpy/numpy_introduction.htm][TutorialsPoint]].
+- pandas is a python module for data reading and manipulation. Whereas
+  every column in a numpy matrix is the same type (typically double),
+  columns in a pandas DataFrame can be different types (string, int,
+  etc). [[https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html][10 minutes to pandas]], [[https://www.w3schools.com/python/pandas/pandas_intro.asp][W3Schools]], [[https://www.tutorialspoint.com/python_pandas/python_pandas_introduction.htm][TutorialsPoint]].
+- [[https://pyjanitor-devs.github.io/pyjanitor/][janitor]] is a python module for data cleaning and reshaping. It is
+  useful for getting data into the right format for learning or
+  visualization.
+- seaborn.objects is a python module for data visualization based on
+  the grammar of graphics, similar to ggplot2 in R. [[https://aeturrell.github.io/python4DS/data-visualise.html][Data Visualisation
+  chapter of Python for Data Science online book]].
+- plotnine is a python module for data visualization based on the
+  grammar of graphics, similar to ggplot2 in R: [[https://plotnine.readthedocs.io/en/stable/index.html][docs]], [[tutorials]], [[https://tdhock.github.io/blog/2021/data-reshape-viz-update/][My
+  2021 blog post comparing R and python libraries for data reshaping
+  and visualization]].
+- Scikit-learn is a python module which implements various standard
+  machine learning algorithms. [[https://scikit-learn.org/stable/user_guide.html][User guide]]: [[https://scikit-learn.org/stable/modules/neighbors.html][Nearest Neighbors]], [[https://scikit-learn.org/stable/modules/linear_model.html][Linear
+  Models]].
+- torch is a python module which is similar to numpy, but with two key
+  differences which are useful for machine learning: (1) makes it easy
+  to use automatic differentiation, and (2) computations can be easily
+  performed on GPU for increased speed. [[https://pytorch.org/tutorials/beginner/nlp/pytorch_tutorial.html][Introduction to pytorch
+  tutorial]].
+
