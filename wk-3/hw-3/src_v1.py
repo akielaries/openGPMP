@@ -100,10 +100,14 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
     Convert our dataframe to a dictionary with numpy array exlcuding the 
     first column; iloc for row and col specifying. 
     """
+    data_conc = df_conc.iloc[:,1:conc_cols-1].to_numpy()
+    data_spam = df_spam.iloc[:,:spam_cols-1].to_numpy()
     # create numpy data from vectors
     data_dict = {
-        "spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0]),
-        "zip":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0])
+        #"zip":(df_conc.iloc[:,1:conc_cols-1].to_numpy(), df_conc[0]),
+        #"spam":(df_spam.iloc[:,:spam_cols-1].to_numpy(), df_spam[0])
+        "zip":[data_conc, df_conc_labels],
+        "spam":[data_spam, df_spam_labels]
     }
     # print our dataframes
     print(df_spam)
