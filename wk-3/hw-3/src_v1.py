@@ -155,7 +155,7 @@ class MyKNN:
         # traverse each test data row; features
         for test_data_row in range(len(test_features)):
             # we want to store each iteration in a list representing best param
-            best_param = []
+            best_param_list = []
             # compute distances with all of train data
             test_i_features = test_features[test_data_row,:]
             diff_mat = self.train_features - test_i_features
@@ -173,12 +173,12 @@ class MyKNN:
             nearest_indices = sorted_indices[:self.nearest]
             
             # append result to set
-            for final_list  in nearest_indices:
-                best_param.append(self.train_labels[final_list])
+            for final_list in nearest_indices:
+                best_param_list.append(self.train_labels[final_list])
             
-            predict_list.append(best_param)
+            predict_list.append(mode(best_param_list))
 
-        return predict_list
+        return(predict_list)
             
 
 """
@@ -236,7 +236,7 @@ class MyCV:
             sub = []
             val = []
             # make sure current element populates the above lists
-            for current_element in range(self.train_features):
+            for current_element in range(len(self.train_features)):
                 # maybe use while loop here instead of conditional
                 if fold_vec[current_element] == current_fold:
                     # append our validation list
@@ -249,7 +249,7 @@ class MyCV:
 
         # from below algo class
         for fold_id, indices in enumerate(fold_index):
-            print("From our MyCV model" + fold_id)
+            print(fold_id)
             index_dict = dict(zip(["subtrain","validation"], indices)) 
             # param_dicts = [self.param_grid]
             set_data_dict = {}
@@ -263,25 +263,26 @@ class MyCV:
             
             current_attr = 0
             # from demo3 in class, iterating of param grid prediction sub/val
-            for param_dict in self.param_grid:
+            for param in self.param_grid:
 
-                for param_name, param_val in param_dict.items():
+                for param_name, param_val in param.items():
                     setattr(self.estimator, param_name, param_val)
-                    self.estimator.fit(**set_data_dict["subtrain"])
-                    future = self.estimator.predict(set_data_dict["validation"]["X"])
-                    populated_dict[current_attr] = (future == set_data_dict["validation"]["y"]).mean()*100
-                    # update curr attr
-                    current_attr += 1
+                
+                self.estimator.fit(**set_data_dict["subtrain"])
+                future = self.estimator.predict(set_data_dict["validation"]["X"])
+                populated_dict[current_attr] = (future == set_data_dict["validation"]["y"]).mean()*100
+                # update curr attr
+                current_attr += 1
                     
-                    # append result into our dict
-                    best_param = best_param.append(populated_dict)
+            # append result into our dict
+            best_param = best_param.append(populated_dict)
                     
-                    # calculate the average of our params given the fold
-                    avg = dict(best_param.mean())
-                    # from the calculated average determine best fit using max()
-                    determined_result = max(avg, key = avg.get)
-                    # store our determine result in our param_grid 
-                    self.train_set = self.param_grid[determined_result]
+        # calculate the average of our params given the fold
+        avg = dict(best_param.mean())
+        # from the calculated average determine best fit using max()
+        determined_result = max(avg, key = avg.get)
+        # store our determine result in our param_grid 
+        self.best_fit = self.param_grid[determined_result]
 
     """
     should run estimator to predict the best number of neighbors
@@ -295,9 +296,9 @@ class MyCV:
 
         # run our estimator passing in the assigned best estimated set
         self.estimator.fit(**self.inputs)
-        result = self.estimator.predict(test_features)
+        future = self.estimator.predict(test_features)
         
-        return result
+        return future
 
 
 class algo:
