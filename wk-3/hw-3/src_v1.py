@@ -383,6 +383,7 @@ make a ggplot to visually examine which learning algorithm is
 best for each data set
 """
 def plot(test_acc_df):
+    # define plot variable
     gg = (p9.ggplot(test_acc_df,
             p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
           # .~ spreads vals across columns
@@ -395,19 +396,35 @@ def plot(test_acc_df):
 def main():
     # supress warnings
     warnings.filterwarnings('ignore')
+
+    # empty dictionary representing data frames
     data_dict = {}
+    
     # retrieve our data files using retrieve function
     retrieve(test_file, test_url)
     retrieve(train_file, train_url)
     retrieve(spam_file, spam_url)
     conc_file = None
-    #(test, train, spam, conc, _dict) = df_init(test_file, train_file, 
-    #                            spam_file, conc_file, data_dict)
-
+    
+    """
+    initialize out respective data frames
+    passed in:
+        - test file
+        - train file 
+        - spam file 
+        - empty file that represents concatenated test + train files
+        - empty dictionary representing our final dataframes
+    returns:
+        - conc: concatenated test + train dataframes
+        - spam: spam dataframe
+        - _dict: data dictionary containing zip + spam frame to plot
+    """
     (spam, conc, _dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
+    
     # run our manipulations on our data, calling both KNN and CV classes 
     data_set = algo.run_algo(_dict)
+    
     # plot our data
     viz_data = plot(data_set)
 
