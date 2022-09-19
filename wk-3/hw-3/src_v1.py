@@ -75,7 +75,7 @@ method to initialize our multiple frames.
     - drop specified rows of the src file
     - convert our data into numpy
 """
-def df_init(test_file, train_file, spam_file, conc_file, data_dict):
+def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     # read in downloaded src file as a pandas dataframe
     # seperate dataframes because different manipulations will be done
     df_test = pd.read_csv(test_file, header=None, sep=" ")
@@ -266,21 +266,30 @@ class MyCV:
                     #param_name, param_value in param_dict.items():
                     setattr(self.estimator, param_name, param_val)
                     self.estimator.fit(**set_data_dict["subtrain"])
-                    self.estimator.predict(set_data_dict["validation"]["X"])
-                    populated_dict[current_attr] = (prediction == set_data_dict["test"]["y"]).mean()*100
-                    # append result
-                    result_df = result_df.append(result_dict)
-                    avg = dict(result_df.mean())
-                    self.best_fit = avg
-
+                    future = self.estimator.predict(set_data_dict["validation"]["X"])
+                    populated_dict[current_attr] = (prediction == set_data_dict["validation"]["y"]).mean()*100
+                    # update curr attr
+                    current_attr += 1
+                    # append result into our dict
+                    folds_df = folds_df.append(populated_dict)
+                    # calculate the average of our params given the fold
+                    avg = dict(folds_df.mean())
+                    # from the calculated average determine best fit using max()
+                    determined_result = max(avg, key = avg.get)
+                    # store our determine result in our param_grid 
+                    self.train_set = self.param_grid[determined_result]
 
     """
     should run estimator to predict the best number of neighbors
     which is a set attribute of estimator at the end of fit
     """
     def predict(self, test_features):
+        # traverse thru our models and append into our esimator
+            # from above ^
+        for param_name, param_val in self.train_set.items():
+            setattr(self.estimator, param_name, param_val)
+
         # run our estimator passing in the assigned best estimated set
-        self.estimator.nearest = self.best_fit
         self.estimator.fit(**self.inputs)
         result = self.estimator.predict(test_features)
         
@@ -375,9 +384,9 @@ best for each data set
 """
 def plot(test_acc_df):
     gg = (p9.ggplot(test_acc_df,
-            p9.aes(x='test_accuracy_percentage', y='algorithm'))
+            p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
           # .~ spreads vals across columns
-          +p9.facet_grid('. ~ data_set')
+          +p9.facet_grid('.~data_set')
           # Use geom_point to create scatterplots
           +p9.geom_point())
     print(gg)
@@ -395,10 +404,9 @@ def main():
     #(test, train, spam, conc, _dict) = df_init(test_file, train_file, 
     #                            spam_file, conc_file, data_dict)
 
-    (spam, conc, _dict) = df_init(test_file, train_file, 
+    (spam, conc, _dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    #data_set = run_algo(_dict)
     data_set = algo.run_algo(_dict)
     # plot our data
     viz_data = plot(data_set)
