@@ -196,12 +196,15 @@ class MyCV:
     def __init__(self, estimator, param_grid, const_cv):
         self.train_features = []
         self.train_labels = []
-        self.train_set = None
-        self.param_grid = param_grid
+        self.inputs = None
+
+        self.param_grid = param_grid      
         self.folds = const_cv
+
         self.estimator = estimator(self.folds)
-        self.best_fit = 0
-        self.fold_num = 0
+        self.best_fit = None
+        
+        #self.fold_num = 0
         
     """
     should compute the best number of neighbors using K-fold cross-validation, 
@@ -213,7 +216,7 @@ class MyCV:
         # inputs of our model
         self.inputs = {'X':self.train_features, 'y':self.train_labels}
         # create a pd df for folds
-        folds_df = pd.DataFrame()
+        best_param = pd.DataFrame()
         # store defined folds in list
         fold_index = []
         # assigning random fold ID numbers to each observation
@@ -228,7 +231,7 @@ class MyCV:
         # declare folds var for traversing folds and populating subtrain 
         # and validation lists
         # folds = 0
-        for current_fold in range(self.fold_num):
+        for current_fold in range(self.folds):
             # empty list for subtrain and validation
             sub = []
             val = []
@@ -242,13 +245,13 @@ class MyCV:
                     # append our sub list
                     sub.append(current_element)
             # add in sub and val lists into our fold_index list
-            fold_index.append([val, sub])
+            fold_index.append([sub, val])
 
         # from below algo class
         for fold_id, indices in enumerate(fold_index):
             print("From our MyCV model" + fold_id)
             index_dict = dict(zip(["subtrain","validation"], indices)) 
-            param_dicts = [self.param_grid]
+            # param_dicts = [self.param_grid]
             set_data_dict = {}
 
             for set_name, index_vec in index_dict.items():
@@ -263,17 +266,18 @@ class MyCV:
             for param_dict in self.param_grid:
 
                 for param_name, param_val in param_dict.items():
-                    #param_name, param_value in param_dict.items():
                     setattr(self.estimator, param_name, param_val)
                     self.estimator.fit(**set_data_dict["subtrain"])
                     future = self.estimator.predict(set_data_dict["validation"]["X"])
-                    populated_dict[current_attr] = (prediction == set_data_dict["validation"]["y"]).mean()*100
+                    populated_dict[current_attr] = (future == set_data_dict["validation"]["y"]).mean()*100
                     # update curr attr
                     current_attr += 1
+                    
                     # append result into our dict
-                    folds_df = folds_df.append(populated_dict)
+                    best_param = best_param.append(populated_dict)
+                    
                     # calculate the average of our params given the fold
-                    avg = dict(folds_df.mean())
+                    avg = dict(best_param.mean())
                     # from the calculated average determine best fit using max()
                     determined_result = max(avg, key = avg.get)
                     # store our determine result in our param_grid 
@@ -286,7 +290,7 @@ class MyCV:
     def predict(self, test_features):
         # traverse thru our models and append into our esimator
             # from above ^
-        for param_name, param_val in self.train_set.items():
+        for param_name, param_val in self.best_fit.items():
             setattr(self.estimator, param_name, param_val)
 
         # run our estimator passing in the assigned best estimated set
@@ -345,6 +349,7 @@ class algo:
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
                 featureless_model = mode(output_vec)
+                #featureless_model = mode(set_data_dict["train"]["y"])
                 #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
