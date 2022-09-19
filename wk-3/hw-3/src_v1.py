@@ -108,10 +108,9 @@ def df_init(test_file, train_file, spam_file, conc_file, data_dict):
         "spam":[data_spam, df_spam_labels]
     }
     # print our dataframes
-    print(df_spam)
-    print(df_conc)
+    # print(df_spam)
+    # print(df_conc)
     # return our values back to the call
-    # return df_test, df_train, df_spam, df_conc, data_dict
     return df_spam, df_conc, data_dict
 
 
@@ -275,6 +274,8 @@ class algo:
         for data_set, (input_mat, output_vec) in data_dict.items():
             print(data_set)
 
+            pipe.fit(input_mat, output_vec)
+
             for fold_id, indices in enumerate(kf.split(input_mat)):
                 print(fold_id)
                 index_dict = dict(zip(["train","test"], indices))
@@ -311,8 +312,7 @@ class algo:
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
-                featureless_model = mode(set_data_dict["train"]["y"])
-                # featureless_model = mode(output_vec)
+                featureless_model = mode(output_vec)
                 #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
@@ -337,8 +337,13 @@ class algo:
                     test_acc_df_list.append(pd.DataFrame(test_acc_dict, index=[0]))
 
         test_acc_df = pd.concat(test_acc_df_list)
+        """
+        print our final data dict to view accuracy percentage, dataset,
+        fold_id, and algo used
+        """
         print(test_acc_df)
 
+        # return data frame for passing into plot
         return test_acc_df
 
 """
@@ -347,13 +352,13 @@ best for each data set
 """
 def plot(test_acc_df):
     gg = (p9.ggplot(test_acc_df,
-            p9.aes(x='test_accuracy_percentage'
-            ,y='algorithm'))
+            p9.aes(x='test_accuracy_percentage', y='algorithm'))
           # .~ spreads vals across columns
-          +p9.facet_grid('.~ data_set')
+          +p9.facet_grid('. ~ data_set')
           # Use geom_point to create scatterplots
           +p9.geom_point())
     print(gg)
+
 
 def main():
     # supress warnings
