@@ -1,3 +1,6 @@
+# import for debugging with pdb
+import pdb
+import traceback
 # lib for retrieving src file from web
 import urllib.request
 # lib for reading files on OS
@@ -107,9 +110,7 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
         "zip":[data_conc, df_conc_labels],
         "spam":[data_spam, df_spam_labels]
     }
-    # print our dataframes
-    # print(df_spam)
-    # print(df_conc)
+    
     # return our values back to the call
     return df_spam, df_conc, data_dict
 
@@ -155,7 +156,7 @@ class MyKNN:
         # traverse each test data row; features
         for test_data_row in range(len(test_features)):
             # we want to store each iteration in a list representing best param
-            best_param_list = []
+            neighbors_list = []
             # compute distances with all of train data
             test_i_features = test_features[test_data_row,:]
             diff_mat = self.train_features - test_i_features
@@ -174,9 +175,9 @@ class MyKNN:
             
             # append result to set
             for final_list in nearest_indices:
-                best_param_list.append(self.train_labels[final_list])
+                neighbors_list.append(self.train_labels[final_list])
             
-            predict_list.append(mode(best_param_list))
+            predict_list.append(mode(neighbors_list))
 
         return(predict_list)
             
@@ -193,13 +194,13 @@ and is similar to our run_algo method
 """
 class MyCV:
     # from in class demo3 in repo
-    def __init__(self, estimator, param_grid, const_cv):
+    def __init__(self, estimator, param_grid, cv):
         self.train_features = []
         self.train_labels = []
         self.inputs = None
 
         self.param_grid = param_grid      
-        self.folds = const_cv
+        self.folds = cv
 
         self.estimator = estimator(self.folds)
         self.best_fit = None
@@ -249,7 +250,8 @@ class MyCV:
 
         # from below algo class
         for fold_id, indices in enumerate(fold_index):
-            print(fold_id)
+            print("Subfold:" + str(fold_id))
+
             index_dict = dict(zip(["subtrain","validation"], indices)) 
             # param_dicts = [self.param_grid]
             set_data_dict = {}
@@ -259,8 +261,9 @@ class MyCV:
                     "X":self.train_features[index_vec],
                     "y":self.train_labels.iloc[index_vec]
                 }
+            # empty populated dict 
             populated_dict = {}
-            
+            # current attribute iterator used in the following traversal
             current_attr = 0
             # from demo3 in class, iterating of param grid prediction sub/val
             for param in self.param_grid:
@@ -269,7 +272,7 @@ class MyCV:
                     setattr(self.estimator, param_name, param_val)
                 
                 self.estimator.fit(**set_data_dict["subtrain"])
-                future = self.estimator.predict(set_data_dict["validation"]["X"])
+                future = self.estimator.predict(set_data_dict["validation"]['X'])
                 populated_dict[current_attr] = (future == set_data_dict["validation"]["y"]).mean()*100
                 # update curr attr
                 current_attr += 1
@@ -298,7 +301,7 @@ class MyCV:
         self.estimator.fit(**self.inputs)
         future = self.estimator.predict(test_features)
         
-        return future
+        return(future)
 
 
 class algo:
@@ -322,7 +325,7 @@ class algo:
                 clf = GridSearchCV(KNeighborsClassifier(), param_dicts)
                 # copy above for linear model. call cv=5 in initial pipe was not
                 # recognized; try a call here
-                linear_model = sklearn.linear_model.LogisticRegressionCV(cv=const_cv)
+                linear_model = sklearn.linear_model.LogisticRegressionCV(cv=5)
 
                 """
                 call our MyCV class to run our models passing in our MyKNN class
@@ -349,8 +352,8 @@ class algo:
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
-                featureless_model = mode(output_vec)
-                #featureless_model = mode(set_data_dict["train"]["y"])
+                #featureless_model = mode(output_vec)
+                featureless_model = mode(set_data_dict["train"]['y'])
                 #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
@@ -400,6 +403,7 @@ def plot(test_acc_df):
 
 
 def main():
+
     # supress warnings
     warnings.filterwarnings('ignore')
 
@@ -428,9 +432,12 @@ def main():
     (spam, conc, _dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     
+    pdb.set_trace()
     # run our manipulations on our data, calling both KNN and CV classes 
     data_set = algo.run_algo(_dict)
     
+    traceback.print_stack()
+    pdb.set_trace()
     # plot our data
     viz_data = plot(data_set)
 
