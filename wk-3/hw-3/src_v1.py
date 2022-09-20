@@ -91,7 +91,7 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     df_spam = pd.read_csv(spam_file, header=None, sep=" ")
 
     # reassign concatenated test and train frame
-    df_conc = pd.concat([df_test, df_train])
+    df_conc = pd.concat([df_train, df_test])
 
     # remove any rows which have non-01 labels
     df_conc[0] = df_conc[0].astype(int)
@@ -108,8 +108,8 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     Convert our dataframe to a dictionary with numpy array exlcuding the 
     first column; iloc for row and col specifying. 
     """
-    data_conc = df_conc.iloc[:,1:conc_cols-1].to_numpy()
-    data_spam = df_spam.iloc[:,:spam_cols-1].to_numpy()
+    data_conc = df_conc.iloc[:, 1:256].to_numpy()
+    data_spam = df_spam.iloc[:, :56].to_numpy()
     # create numpy data from vectors
     data_dict = {
         "zip":[data_conc, df_conc_labels],
@@ -195,9 +195,9 @@ class MyKNN:
 
             # append result to set
             for final_list in nearest_indices:
-                #neighbors_list.append(self.train_labels[final_list])
+                neighbors_list.append(self.train_labels[final_list])
                 #print(self.train_labels[5])
-                neighbors_list.append(self.train_labels[5])
+                #neighbors_list.append(self.train_labels[5])
             
             predict_list.append(mode(neighbors_list))
 
@@ -458,10 +458,10 @@ def main():
     """
     #(spam, conc, _dict) = init_df(test_file, train_file, 
     #                            spam_file, conc_file, data_dict)
-    (_dict) = init_df(test_file, train_file, 
+    (data_dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    data_set = algo.run_algo(_dict)
+    data_set = algo.run_algo(data_dict)
     
     # plot our data
     viz_data = plot(data_set)
