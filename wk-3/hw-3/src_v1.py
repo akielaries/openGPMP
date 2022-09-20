@@ -54,11 +54,11 @@ const_cv = 5
 const_n = 20
 
 
-""" 
-method to download specified files. call from main, pass in
-src files to retrieve
-"""
 def retrieve(src_file, src_url):
+    """ 
+    method to download specified files. call from main, pass in
+    src files to retrieve
+    """
     # lets store these files in a directory, create /data if DNE
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
@@ -76,14 +76,14 @@ def retrieve(src_file, src_url):
         print(src_file + " already exists in this folder...continuing anyway\n")
 
 
-"""
-method to initialize our multiple frames. 
-    - take in src file
-    - create a dataframe
-    - drop specified rows of the src file
-    - convert our data into numpy
-"""
 def init_df(test_file, train_file, spam_file, conc_file, data_dict):
+    """
+    method to initialize our multiple frames. 
+        - take in src file
+        - create a dataframe
+        - drop specified rows of the src file
+        - convert our data into numpy
+    """
     # read in downloaded src file as a pandas dataframe
     # seperate dataframes because different manipulations will be done
     df_test = pd.read_csv(test_file, header=None, sep=" ")
