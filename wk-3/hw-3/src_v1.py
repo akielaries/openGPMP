@@ -173,15 +173,27 @@ class MyKNN:
             squared_diff_mat = diff_mat ** 2
             # sum over columns, for each row
             squared_diff_mat.sum(axis=0) 
+            print(type(squared_diff_mat))
+
             # sum over rows
             distance_vec = squared_diff_mat.sum(axis=1)
+            print(type(distance_vec))
+            
             # sort distances w/ numpy.argsort to find smallest n
             sorted_indices = distance_vec.argsort()
             nearest_indices = sorted_indices[:self.nearest]
             
+            # debug, populate this correctly
+            print(nearest_indices)
+            print(type(self.train_labels))
+            
             # append result to set
+            print(self.train_labels)
+
             for final_list in nearest_indices:
-                neighbors_list.append(self.train_labels[final_list])
+                #neighbors_list.append(self.train_labels[final_list])
+                #print(self.train_labels[5])
+                neighbors_list.append(self.train_labels[5])
             
             predict_list.append(mode(neighbors_list))
 
@@ -448,5 +460,4 @@ def main():
 # run main
 if __name__ == '__main__':
     main()
-
 
