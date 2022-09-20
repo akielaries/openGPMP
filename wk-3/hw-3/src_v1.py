@@ -12,13 +12,18 @@ import numpy as np
 # could not figure out how to calculate the mode of a list, using mode from lib
 from statistics import mode
 # *<---REMOVE B4 SUB--->*
-import warnings # silence warnings while developing 
+# silence warnings while developing
+import warnings
 import sklearn
-from sklearn.model_selection import KFold #train/test splits
-from sklearn.model_selection import GridSearchCV #selecting best # of neighbors
-from sklearn.neighbors import KNeighborsClassifier #nearest_neighbors prediction.
-from sklearn.pipeline import make_pipeline # increase iteration sz
-from sklearn.preprocessing import StandardScaler # 
+#train/test splits
+from sklearn.model_selection import KFold 
+#selecting best # of neighbors
+from sklearn.model_selection import GridSearchCV
+#nearest_neighbors prediction
+from sklearn.neighbors import KNeighborsClassifier 
+# increase iteration sz
+from sklearn.pipeline import make_pipeline 
+from sklearn.preprocessing import StandardScaler  
 from sklearn.linear_model import LogisticRegression
 
 
@@ -432,7 +437,6 @@ def main():
     """
     #(spam, conc, _dict) = init_df(test_file, train_file, 
     #                            spam_file, conc_file, data_dict)
-    
     (_dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
@@ -444,4 +448,5 @@ def main():
 # run main
 if __name__ == '__main__':
     main()
+
 
