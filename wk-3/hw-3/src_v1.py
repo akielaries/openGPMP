@@ -121,40 +121,44 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     return data_dict
 
 
-"""
-MyKNN class, according to *.org guideline, that *should* work just like 
-sklearn.neighbors.KNeighborsClassifier
-"""
 class MyKNN:
     """
-    instantiate neighbors param stored as an attribute of our instance
-        __init__: recieves constructors args initializing new obj
-        self: instance of class for attribute manipulation, always first
-        attribute of instance. convention ! keyword
-        member
+    MyKNN class, according to *.org guideline, that *should* work just like 
+    sklearn.neighbors.KNeighborsClassifier
     """
+
     def __init__(self, n_neighbors):
+        """
+        instantiate neighbors param stored as an attribute of our instance
+            __init__: recieves constructors args initializing new obj
+            self: instance of class for attribute manipulation, always first
+            attribute of instance. convention ! keyword
+            member
+        """
         # init neighbors attribute of instance
         self.nearest = n_neighbors
         self.train_features = []
         self.train_labels = []
 
-    """
-    fit method with X=train_features, y=train_labels, storing data as 
-    attributes of our instance
-        features: input data
-        label: output data based on input
-    """
     def fit(self, X, y): 
+        """
+        fit method with X=train_features, y=train_labels, storing data as 
+        attributes of our instance
+            features: input data
+            label: output data based on input
+        """
         # store feats/labs in respective lists; can do for loop for many members
         self.train_features = X
         self.train_labels = y
 
-    """
-    compute binary vector of predicted class label from demo3 in class
-        X = test_features
-    """
     def predict(self, test_features):
+        """
+        compute binary vector of predicted class label from demo3 in class
+            X = test_features
+            y = train_labels
+        features represent data we want to pass in, labels represent the data
+        we run our computations on
+        """
         # declare list to store this computed prediction in
         # **NOTE** following is from line 33-36 in the demo
         predict_list = []
@@ -198,21 +202,23 @@ class MyKNN:
             predict_list.append(mode(neighbors_list))
 
         return(predict_list)
-            
 
-"""
-MyCV class, according to *.org guideline, that *should* work just like
-sklearn.model_selection.GridSearchCV. this class should perform
-best parameter selection thru cross-validation for any estimator
-
-*<--NOTE-->*: nothing in this class should be specific to the nearest 
-neighbors algorithm! It should not have any reference to “n_neighbors” in 
-the class definition. These methods are sort of copied from the class MyKNN
-and is similar to our run_algo method
-"""
 class MyCV:
+    """
+    MyCV class, according to *.org guideline, that *should* work just like
+    sklearn.model_selection.GridSearchCV. this class should perform
+    best parameter selection thru cross-validation for any estimator
+
+    *<--NOTE-->*: nothing in this class should be specific to the nearest
+    neighbors algorithm! It should not have any reference to “n_neighbors” in
+    the class definition. These methods are sort of copied from the class MyKNN
+    and is similar to our run_algo method
+    """
     # from in class demo3 in repo
     def __init__(self, estimator, param_grid, cv):
+        """
+        describe this constructor
+        """
         self.train_features = []
         self.train_labels = []
         self.inputs = None
@@ -225,11 +231,11 @@ class MyCV:
         
         #self.fold_num = 0
         
-    """
-    should compute the best number of neighbors using K-fold cross-validation, 
-    with the number of folds defined by the cv parameter
-    """
     def fit(self, X, y):
+        """
+        should compute the best number of neighbors using K-fold cross-validation,
+        with the number of folds defined by the cv parameter
+        """
         self.train_features = X
         self.train_labels = y
         # inputs of our model
@@ -305,11 +311,12 @@ class MyCV:
         # store our determine result in our param_grid 
         self.best_fit = self.param_grid[determined_result]
 
-    """
-    should run estimator to predict the best number of neighbors
-    which is a set attribute of estimator at the end of fit
-    """
+    
     def predict(self, test_features):
+        """
+        should run estimator to predict the best number of neighbors
+        which is a set attribute of estimator at the end of fit
+        """
         # traverse thru our models and append into our esimator
             # from above ^
         for param_name, param_val in self.best_fit.items():
@@ -405,11 +412,13 @@ class algo:
         # return data frame for passing into plot
         return test_acc_df
 
-"""
-make a ggplot to visually examine which learning algorithm is
-best for each data set
-"""
+
 def plot(test_acc_df):
+    """
+    make a ggplot to visually examine which learning algorithm is
+    best for each data set
+    """
+
     # define plot variable
     gg = (p9.ggplot(test_acc_df,
             p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
