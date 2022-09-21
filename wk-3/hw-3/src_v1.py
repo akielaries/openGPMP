@@ -433,7 +433,6 @@ class algo:
 
 
 def main():
-
     # supress warnings
     warnings.filterwarnings('ignore')
 
@@ -457,7 +456,7 @@ def main():
     returns:
         - conc: concatenated test + train dataframes
         - spam: spam dataframe
-        - _dict: data dictionary containing zip + spam frame to plot
+        - data_dict: data dictionary containing zip + spam frame to plot
     """
     (data_dict) = data.init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)

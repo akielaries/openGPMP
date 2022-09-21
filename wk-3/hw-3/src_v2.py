@@ -332,10 +332,18 @@ class MyCV:
         return future
 
 class algo:
-    """
-    algorithm shown in class and from our demo.
-    """
-    def run(data_dict):
+
+    #def __init__():
+    #    """
+    #    constructor
+    #    ....
+    #    """
+    
+
+    def predict(data_dict):
+        """
+        algorithms shown from first class demo that we've been working with
+        """
         #test_acc_df_list = []
 
         for data_set, (input_mat, output_vec) in data_dict.items():
@@ -379,6 +387,7 @@ class algo:
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
+                
                 featureless_model = mode(set_data_dict["train"]['y'])
 
                 cv_df = pd.DataFrame(clf.cv_results_)
@@ -416,24 +425,29 @@ class algo:
         return test_acc_df
 
 
-    def plot(test_acc_df):
-        """
-        make a ggplot to visually examine which learning algorithm is
-        best for each data set
-        """
+def plot(test_acc_df):
+    """
+    make a ggplot to visually examine which learning algorithm is
+    best for each data set
+    """
 
-        # define plot variable
-        gg = (p9.ggplot(test_acc_df,
-                p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
-              # .~ spreads vals across columns
-              +p9.facet_grid('.~data_set')
-              # Use geom_point to create scatterplots
-              +p9.geom_point())
-        print(gg)
+    # define plot variable
+    gg = (p9.ggplot(test_acc_df,
+        + p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
+        # .~ spreads vals across columns
+        +p9.facet_grid('.~data_set')
+        # Use geom_point to create scatterplots
+        +p9.geom_point()
+        # for sizing our plot
+        # +p9.theme(figure_size=(16, 8))
+        #+p9.options.figure_size = (16, 8)
+        )
+    
+    
+    print(gg)
 
 
 def main():
-
     # supress warnings
     warnings.filterwarnings('ignore')
 
@@ -444,6 +458,7 @@ def main():
     data.retrieve(test_file, test_url)
     data.retrieve(train_file, train_url)
     data.retrieve(spam_file, spam_url)
+    # to be populated
     conc_file = None
     
     """
@@ -457,15 +472,15 @@ def main():
     returns:
         - conc: concatenated test + train dataframes
         - spam: spam dataframe
-        - _dict: data dictionary containing zip + spam frame to plot
+        - data_dict: data dictionary containing zip + spam frame to plot
     """
     (data_dict) = data.init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    data_set = algo.run(data_dict)
+    data_set = algo.predict(data_dict)
     
     # plot our data
-    viz_data = algo.plot(data_set)
+    viz_data = plot(data_set)
 
 # run main
 if __name__ == '__main__':
