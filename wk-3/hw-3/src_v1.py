@@ -333,7 +333,7 @@ class algo:
     """
     algorithm shown in class and from our demo.
     """
-    def run_algo(data_dict):
+    def run(data_dict):
         #test_acc_df_list = []
 
         for data_set, (input_mat, output_vec) in data_dict.items():
@@ -366,28 +366,29 @@ class algo:
                         "X":input_mat[index_vec],
                         "y":output_vec.iloc[index_vec].reset_index(drop=True)
                         }
-                # * is unpacking a tuple to use as the different positional arguments
-                # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
-                # train models and stub out linear_model
-                # ** is unpacking a dict to use as the named arguments
-                # train models and stub out linear_model and create algo for finding 
-                # mode
-                # clf.fit(X=set_data_dict["train"]["X"],
-                # y=set_data_dict["train"]["y"]])
+                """
+                * is unpacking a tuple to use as the different positional arguments
+                clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
+                train models and stub out linear_model
+                ** is unpacking a dict to use as the named arguments
+                train models and stub out linear_model and create algo for finding 
+                mode
+                """
                 clf.fit(**set_data_dict["train"])
                 linear_model.fit(**set_data_dict["train"])
                 cv_model.fit(**set_data_dict["train"])
-                #featureless_model = mode(output_vec)
                 featureless_model = mode(set_data_dict["train"]['y'])
-                #clf.best_params_
 
                 cv_df = pd.DataFrame(clf.cv_results_)
                 cv_df.loc[:,["param_n_neighbors","mean_test_score"]]
 
                 pred_dict = {
-                    "GridSearchCV + KNeighborsClassifier":clf.predict(set_data_dict["test"]["X"]),
-                    "LogisticRegressionCV": linear_model.predict(set_data_dict["test"]["X"]),
-                    "MyCV + MyKNN":cv_model.predict(set_data_dict["test"]["X"]),
+                    "GridSearchCV \n + \nKNeighborsClassifier": \
+                            clf.predict(set_data_dict["test"]["X"]),
+                    "LogisticRegressionCV": \
+                            linear_model.predict(set_data_dict["test"]["X"]),
+                    "MyCV + MyKNN": \
+                            cv_model.predict(set_data_dict["test"]["X"]),
                     # featureless is inaccurate
                     "Featureless": featureless_model
                     }
@@ -413,20 +414,20 @@ class algo:
         return test_acc_df
 
 
-def plot(test_acc_df):
-    """
-    make a ggplot to visually examine which learning algorithm is
-    best for each data set
-    """
+    def plot(test_acc_df):
+        """
+        make a ggplot to visually examine which learning algorithm is
+        best for each data set
+        """
 
-    # define plot variable
-    gg = (p9.ggplot(test_acc_df,
-            p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
-          # .~ spreads vals across columns
-          +p9.facet_grid('.~data_set')
-          # Use geom_point to create scatterplots
-          +p9.geom_point())
-    print(gg)
+        # define plot variable
+        gg = (p9.ggplot(test_acc_df,
+                p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
+              # .~ spreads vals across columns
+              +p9.facet_grid('.~data_set')
+              # Use geom_point to create scatterplots
+              +p9.geom_point())
+        print(gg)
 
 
 def main():
@@ -456,15 +457,13 @@ def main():
         - spam: spam dataframe
         - _dict: data dictionary containing zip + spam frame to plot
     """
-    #(test, train, spam, conc, data_dict) = init_df(test_file, train_file, 
-    #                            spam_file, conc_file, data_dict)
     (data_dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    data_set = algo.run_algo(data_dict)
+    data_set = algo.run(data_dict)
     
     # plot our data
-    viz_data = plot(data_set)
+    viz_data = algo.plot(data_set)
 
 # run main
 if __name__ == '__main__':
