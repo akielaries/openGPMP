@@ -117,9 +117,6 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     }
     
     # return our values back to the call
-    #return df_test, df_train, df_spam, df_conc, data_dict
-    print('\n')
-    print(data_dict)
     return data_dict
 
 
@@ -137,8 +134,16 @@ class MyKNN:
             attribute of instance. convention ! keyword
             member
         """
-        # init neighbors attribute of instance
-        self.nearest = n_neighbors
+        """
+        issues iterating over int types, int obj ! subscriptable, etc
+        use conditional to determine if folds are declared as list or int
+        adjust accordingly
+        """
+        if isinstance(n_neighbors, list):
+            self.n_neighbors = n_neighbors[0]
+        else:
+            self.n_neighbors = n_neighbors
+
         self.train_features = []
         self.train_labels = []
 
@@ -162,13 +167,16 @@ class MyKNN:
         we run our computations on
         """
         # declare list to store this computed prediction in
-        # **NOTE** following is from line 33-36 in the demo
-        predict_list = []
+        future_list = []
 
         # traverse each test data row; features
         for test_data_row in range(len(test_features)):
             # we want to store each iteration in a list representing best param
             neighbors_list = []
+
+            if isinstance(self.n_neighbors, list):
+                self.n_neighbors = self.n_neighbors[0]
+
             # compute distances with all of train data
             test_i_features = test_features[test_data_row,:]
             diff_mat = self.train_features - test_i_features
@@ -179,31 +187,21 @@ class MyKNN:
             squared_diff_mat = diff_mat ** 2
             # sum over columns, for each row
             squared_diff_mat.sum(axis=0) 
-            #print(type(squared_diff_mat))
 
             # sum over rows
             distance_vec = squared_diff_mat.sum(axis=1)
-            #print(type(distance_vec))
-            
             # sort distances w/ numpy.argsort to find smallest n
             sorted_indices = distance_vec.argsort()
-            nearest_indices = sorted_indices[:self.nearest]
+            # n_neighbors is list type, must convert to int type 
+            nearest_indices = sorted_indices[:self.n_neighbors]
             
-            # debug, populate this correctly
-            #print(nearest_indices)
-            #print(type(self.train_labels))
-            
-            #print(self.train_labels)
-
             # append result to set
             for final_list in nearest_indices:
                 neighbors_list.append(self.train_labels[final_list])
-                #print(self.train_labels[5])
-                #neighbors_list.append(self.train_labels[5])
             
-            predict_list.append(mode(neighbors_list))
+            future_list.append(mode(neighbors_list))
 
-        return(predict_list)
+        return future_list
 
 class MyCV:
     """
@@ -216,7 +214,6 @@ class MyCV:
     the class definition. These methods are sort of copied from the class MyKNN
     and is similar to our run_algo method
     """
-    # from in class demo3 in repo
     def __init__(self, estimator, param_grid, cv):
         """
         describe this constructor
@@ -224,14 +221,10 @@ class MyCV:
         self.train_features = []
         self.train_labels = []
         self.inputs = None
-
         self.param_grid = param_grid      
         self.folds = cv
-
         self.estimator = estimator(self.folds)
         self.best_fit = None
-        
-        #self.fold_num = 0
         
     def fit(self, X, y):
         """
@@ -242,10 +235,13 @@ class MyCV:
         self.train_labels = y
         # inputs of our model
         self.inputs = {'X':self.train_features, 'y':self.train_labels}
+        
         # create a pd df for folds
         best_param = pd.DataFrame()
+        
         # store defined folds in list
         fold_index = []
+        
         # assigning random fold ID numbers to each observation
         fold_vec = np.random.randint(low=0, high=self.folds, 
                                      size=self.train_labels.size)
@@ -255,9 +251,10 @@ class MyCV:
         #        "validation":fold_vec == fold,
         #        "subtrain":fold_vec != fold,
         #    }
-        # declare folds var for traversing folds and populating subtrain 
-        # and validation lists
-        # folds = 0
+        """
+        declare folds var for traversing folds and populating subtrain 
+        and validation lists
+        """
         for current_fold in range(self.folds):
             # empty list for subtrain and validation
             sub = []
@@ -276,7 +273,7 @@ class MyCV:
 
         # from below algo class
         for fold_id, indices in enumerate(fold_index):
-            print("Subfold:" + str(fold_id))
+            print("SUBFOLD: " + str(fold_id))
 
             index_dict = dict(zip(["subtrain","validation"], indices)) 
             # param_dicts = [self.param_grid]
@@ -285,26 +282,28 @@ class MyCV:
             for set_name, index_vec in index_dict.items():
                 set_data_dict[set_name] = {
                     "X":self.train_features[index_vec],
-                    "y":self.train_labels.iloc[index_vec]
+                    "y":self.train_labels.iloc[index_vec].reset_index(drop=True)
                 }
             # empty populated dict 
             populated_dict = {}
             # current attribute iterator used in the following traversal
             current_attr = 0
             # from demo3 in class, iterating of param grid prediction sub/val
-            for param in self.param_grid:
-
-                for param_name, param_val in param.items():
+            for param_index in self.param_grid:
+                for param_name, param_val in param_index.items():
                     setattr(self.estimator, param_name, param_val)
                 
                 self.estimator.fit(**set_data_dict["subtrain"])
-                prediction = self.estimator.predict(set_data_dict["validation"]['X'])
-                populated_dict[current_attr] = (prediction == set_data_dict["validation"]["y"]).mean()*100
+                future = self.estimator.predict(set_data_dict["validation"]['X'])
+                
+                populated_dict[current_attr] = \
+                    (future == set_data_dict["validation"]["y"]).mean()*100
+                
                 # update curr attr
                 current_attr += 1
                     
             # append result into our dict
-            best_param = best_param.append(populated_dict)
+            best_param = best_param.append(populated_dict, ignore_index=True)
                     
         # calculate the average of our params given the fold
         avg = dict(best_param.mean())
@@ -312,7 +311,6 @@ class MyCV:
         determined_result = max(avg, key = avg.get)
         # store our determine result in our param_grid 
         self.best_fit = self.param_grid[determined_result]
-
     
     def predict(self, test_features):
         """
@@ -326,25 +324,25 @@ class MyCV:
 
         # run our estimator passing in the assigned best estimated set
         self.estimator.fit(**self.inputs)
-        prediction = self.estimator.predict(test_features)
-        
-        return(future)
-
+        # assign prediction to future val 
+        future = self.estimator.predict(test_features)
+        # return our prediction
+        return future
 
 class algo:
     """
     algorithm shown in class and from our demo.
     """
     def run_algo(data_dict):
-        test_acc_df_list = []
+        #test_acc_df_list = []
 
         for data_set, (input_mat, output_vec) in data_dict.items():
-            print(data_set)
+            print("SET: " + str(data_set))
 
             pipe.fit(input_mat, output_vec)
 
             for fold_id, indices in enumerate(kf.split(input_mat)):
-                print(fold_id)
+                print("FOLD: " + str(fold_id))
                 index_dict = dict(zip(["train","test"], indices))
                 param_dicts = [{'n_neighbors':[x]} for x in range(1, 21)]
 
@@ -366,7 +364,7 @@ class algo:
                 for set_name, index_vec in index_dict.items():
                     set_data_dict[set_name] = {
                         "X":input_mat[index_vec],
-                        "y":output_vec.iloc[index_vec]
+                        "y":output_vec.iloc[index_vec].reset_index(drop=True)
                         }
                 # * is unpacking a tuple to use as the different positional arguments
                 # clf.fit(set_data_dict["train"][0], set_data_dict["train"][1])
