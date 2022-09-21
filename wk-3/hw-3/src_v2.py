@@ -432,16 +432,12 @@ def plot(test_acc_df):
     """
 
     # define plot variable
-    gg = (p9.ggplot(test_acc_df,
-        + p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
+    gg = (p9.ggplot(test_acc_df, 
+        p9.aes(x = 'test_accuracy_percentage', y = 'algorithm'))
         # .~ spreads vals across columns
         +p9.facet_grid('.~data_set')
         # Use geom_point to create scatterplots
-        +p9.geom_point()
-        # for sizing our plot
-        # +p9.theme(figure_size=(16, 8))
-        #+p9.options.figure_size = (16, 8)
-        )
+        +p9.geom_point())
     
     
     print(gg)
