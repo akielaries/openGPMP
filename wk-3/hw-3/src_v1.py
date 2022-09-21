@@ -117,7 +117,9 @@ def init_df(test_file, train_file, spam_file, conc_file, data_dict):
     }
     
     # return our values back to the call
-    #return df_spam, df_conc, data_dict
+    #return df_test, df_train, df_spam, df_conc, data_dict
+    print('\n')
+    print(data_dict)
     return data_dict
 
 
@@ -456,7 +458,7 @@ def main():
         - spam: spam dataframe
         - _dict: data dictionary containing zip + spam frame to plot
     """
-    #(spam, conc, _dict) = init_df(test_file, train_file, 
+    #(test, train, spam, conc, data_dict) = init_df(test_file, train_file, 
     #                            spam_file, conc_file, data_dict)
     (data_dict) = init_df(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
