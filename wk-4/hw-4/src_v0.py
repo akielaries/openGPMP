@@ -205,6 +205,30 @@ class MyKNN:
 
         return future_list
 
+
+class MyLogReg:
+    """
+    logistic regression class
+    """
+    def __init__(self, max_iterations, step_size):
+
+    
+    def fit(self, X, y):
+        """
+        fit method 
+        
+        X :
+            - matrix of numeric inputs
+            - one row for each subtrain observation,
+            - one column for each feature, already scaled
+        y : 
+            - vector of binary outputs
+            - corresponding label for each subtrain observation
+        if input labels are 0/1, convert to -1 and 1 for learning
+        with logistic loss
+        """
+
+
 class MyCV:
     """
     MyCV class, according to *.org guideline, that *should* work just like
@@ -330,6 +354,7 @@ class MyCV:
         future = self.estimator.predict(test_features)
         # return our prediction
         return future
+
 
 class algo:
     def predict(data_dict):
