@@ -206,6 +206,65 @@ class MyKNN:
         return future_list
 
 
+
+class MyLogReg:
+    """
+    logistic regression class
+    """
+    def __init__(self, max_iterations, step_size):
+        self.max_iterations = max_iterations
+        self.step_size = step_size
+    
+    def fit(self, X, y):
+        """
+        fit method 
+        
+        X :
+            - matrix of numeric inputs
+            - one row for each subtrain observation,
+            - one column for each feature, already scaled
+        y : 
+            - vector of binary outputs
+            - corresponding label for each subtrain observation
+        if input labels are 0/1, convert to -1 and 1 for learning
+        with logistic loss
+        """
+
+    def run():
+        """
+        run our gradient decent algorithm
+        - initialize intercept & wt vector w/ sz equal to the num of cols
+        in scaled_mat
+        - traverse from 0->max_iterations to iteratively computer lin model
+        params that minimize avg log loss over subtrain
+        - each iteration, take a step w/ self.step_size, in the negative
+        gradient direction
+            * computer prediceted scores given current wts and intercept
+            * compute gradients of wts and intercept
+            * use gradients to update wts and intercept
+        - each iteration should also compute avg log loss on subtrain (
+        validation if exists) and stored in attribute of the instance
+        - at the end save learned wts/intercepts as coef_ and intercept_ 
+        attributes of the class (vals should be similar to logress class in
+        scikit-learn)
+        """
+
+    def decision_function(X):
+        """
+        use learned wts and intercept to compute a real-valued score
+        (larger for more likely to be predicted positive)
+        """
+    
+    def predict(X):
+        """
+        use np.where to threshold the predicted vals from decision_function
+        and obtain vector of predicted classes 
+        (1 if predicted val is pos, 0 otherwise)
+        """
+
+class MyLogRegCV:
+
+
 class MyCV:
     """
     MyCV class, according to *.org guideline, that *should* work just like
@@ -334,7 +393,7 @@ class MyCV:
 
 
 class algo:
-    def run(data_dict):
+    def predict(data_dict):
         """
         algorithms shown from first class demo that we've been working with
         """
@@ -467,7 +526,7 @@ def main():
     (data_dict) = data.init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    data_set = algo.run(data_dict)
+    data_set = algo.predict(data_dict)
     
     # plot our data
     viz_data = algo.plot(data_set)
