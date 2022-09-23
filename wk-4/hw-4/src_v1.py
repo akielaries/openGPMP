@@ -393,7 +393,7 @@ class MyCV:
 
 
 class algo:
-    def predict(data_dict):
+    def run(data_dict):
         """
         algorithms shown from first class demo that we've been working with
         """
@@ -526,7 +526,7 @@ def main():
     (data_dict) = data.init(test_file, train_file, 
                                 spam_file, conc_file, data_dict)
     # run our manipulations on our data, calling both KNN and CV classes 
-    data_set = algo.predict(data_dict)
+    data_set = algo.run(data_dict)
     
     # plot our data
     viz_data = algo.plot(data_set)
