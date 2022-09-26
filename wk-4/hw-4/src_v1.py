@@ -263,6 +263,10 @@ class MyLogReg:
         """
 
 class MyLogRegCV:
+    def __init__():
+        
+
+    def fit(self, X, y):
 
 
 class MyCV:
