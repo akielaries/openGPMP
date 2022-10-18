@@ -1,0 +1,21 @@
+# Overview
+
+Working on turning projects for CS 499 Contemporary Developments, Deep Learning, 
+into a reusable package. 
+
+Implementation of several statistical algorithms used for deep learning. 
+
+# Methods
+## Cross Validation
+A resampling technique, the idea of this method is to train our model by utilizing 
+the subsets of our data set then proceeding to evaluate + compare against the original.
+Essential, use some part(s) of the data set for training, other part(s) for testing.
+
+#### K-Fold Cross Validation
+Split our data into a `k` number of subsets also referenced to as folds, and perform
+training/learning on the subsets leaving one `(k - 1)` for the final evaluation of 
+the trained model. The method involves iterating `k`
+
+
+.......
+
