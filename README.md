@@ -1,7 +1,6 @@
 # Overview
-
-Working on turning projects for CS 499 Contemporary Developments, Deep Learning, 
-into a reusable package. 
+Work in progress repository turning the original Python based projects for 
+CS 499 Contemporary Developments, Deep Learning, into a reusable C++ package. 
 
 Implementation of several statistical algorithms used for deep learning. 
 
