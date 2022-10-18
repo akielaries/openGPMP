@@ -14,7 +14,8 @@ Essentially, use some part(s) of the data set for training, other part(s) for te
 #### K-Fold Cross Validation
 Split our data into a `k` number of subsets also called folds, and perform
 training/learning on the subsets leaving one `(k - 1)` for the final evaluation of 
-the trained model. The method involves iterating `k`
+the trained model. The method involves iterating `k` number of times using a different
+fold each time for testing against.
 
 
 .......
