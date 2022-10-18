@@ -9,7 +9,7 @@ Implementation of several statistical algorithms used for deep learning.
 ## Cross Validation
 A resampling technique, the idea of this method is to train our model by utilizing 
 the subsets of our data set then proceeding to evaluate + compare against the original.
-Essential, use some part(s) of the data set for training, other part(s) for testing.
+Essentially, use some part(s) of the data set for training, other part(s) for testing.
 
 #### K-Fold Cross Validation
 Split our data into a `k` number of subsets also called folds, and perform
