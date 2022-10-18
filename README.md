@@ -12,7 +12,7 @@ the subsets of our data set then proceeding to evaluate + compare against the or
 Essential, use some part(s) of the data set for training, other part(s) for testing.
 
 #### K-Fold Cross Validation
-Split our data into a `k` number of subsets also referenced to as folds, and perform
+Split our data into a `k` number of subsets also called folds, and perform
 training/learning on the subsets leaving one `(k - 1)` for the final evaluation of 
 the trained model. The method involves iterating `k`
 
