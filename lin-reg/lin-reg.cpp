@@ -1,7 +1,7 @@
 /*
  * taking a look at implementing regression in c++
  */
-
+#include <string>
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
@@ -20,7 +20,7 @@ class regression {
     float coeff;
     
     // Store the constant term in the best fitting line
-    float constTerm;
+    float constant;
     
     // Contains sum of product of all (i-th x) and (i-th y)
     float sum_xy;
@@ -44,7 +44,7 @@ public:
      */
     regression() {
         coeff = 0;
-        constTerm = 0;
+        constant = 0;
         sum_y = 0;
         sum_y_square = 0;
         sum_x_square = 0;
@@ -53,9 +53,8 @@ public:
     }
  
     // Function that calculate the coefficient/slope of the best fitting line
-    void calculateCoefficient() {
+    void calculate_coefficient() {
         float N = x.size();
-        printf("%f\n", N);
         float numerator
             = (N * sum_xy - sum_x * sum_y);
         float denominator
@@ -67,47 +66,46 @@ public:
      * Member function that will calculate the constant term of the best 
      * fitting line
      */
-    void calculateConstantTerm() {
+    void calculate_constant() {
         float N = x.size();
-        printf("%f\n", N);
         float numerator
             = (sum_y * sum_x_square - sum_x * sum_xy);
         float denominator
             = (N * sum_x_square - sum_x * sum_x);
-        constTerm = numerator / denominator;
+        constant = numerator / denominator;
     }
  
     // Function that return the number of entries (xi, yi) in the data set
-    int sizeOfData() {
+    int data_size() {
         return x.size();
     }
  
     // Function that return the coefficient/slope of the best fitting line
-    float coefficient() {
+    float return_coefficient() {
         if (coeff == 0)
-            calculateCoefficient();
+            calculate_coefficient();
         return coeff;
     }
  
     // Function that return the constant term of the best fitting line
-    float constant() {
-        if (constTerm == 0)
-            calculateConstantTerm();
-        return constTerm;
+    float return_constant() {
+        if (constant == 0)
+            calculate_constant();
+        return constant;
     }
  
     // Function that print the best fitting line
-    void PrintBestFittingLine() {
-        if (coeff == 0 && constTerm == 0) {
-            calculateCoefficient();
-            calculateConstantTerm();
+    void best_fit() {
+        if (coeff == 0 && constant == 0) {
+            calculate_coefficient();
+            calculate_constant();
         }
         cout << "The best fitting line is y = "
-             << coeff << "x + " << constTerm << endl;
+             << coeff << "x + " << constant << endl;
     }
  
     // Function to take input from the dataset
-    void takeInput(int n) {
+    void get_input(int n) {
         for (int i = 0; i < n; i++) {
             /*
              * In a csv file all the values of xi and yi are separated by 
@@ -128,7 +126,7 @@ public:
     }
  
     // Function to show the data set
-    void showData() {
+    void show_data() {
         for (int i = 0; i < 62; i++) {
             printf("_");
         }
@@ -149,11 +147,11 @@ public:
  
     // Function to predict the value corresponding to some input
     float predict(float x) {
-        return coeff * x + constTerm;
+        return coeff * x + constant;
     }
  
     // Function that returns overall sum of square of errors
-    float errorSquare() {
+    float error_square() {
         float ans = 0;
         for (int i = 0;
              i < x.size(); i++) {
@@ -166,7 +164,7 @@ public:
      * Functions that return the error i.e the difference between the actual 
      * value and value predicted by our model
      */
-    float errorIn(float num) {
+    float error_in(float num) {
         for (int i = 0;
              i < x.size(); i++) {
             if (num == x[i]) {
@@ -176,32 +174,45 @@ public:
         return 0;
     }
 };
- 
-void num_rows(char file) {
-    printf("number of rows: ");
+
+int num_rows(const char* input) {
+    int num = 0;
+    string row;
+    
+    // create input file stream
+    ifstream file(input);
+
+    while (getline(file, row)) {
+        num++;
+    }
+
+    return num;
 
 } 
 
 int main() {
-    freopen("input.txt", "r",
-            stdin);
+    const char* test_file = "input.txt";
+    freopen(test_file, "r", stdin);
     regression reg;
  
     // Number of pairs of (xi, yi) in the dataset
-    int n;
-    cin >> n;
+    // int n;
+    // cin >> n;
  
-    printf("%d\n", n);
+    int n = num_rows(test_file);
+    // cin >> n;
+
+    printf("Number of rows in data set: %d\n", n);
     // Calling function takeInput to take input of n pairs
-    reg.takeInput(n);
+    reg.get_input(n);
  
     // Printing the best fitting line
-    reg.PrintBestFittingLine();
+    reg.best_fit();
     cout << "Predicted value at 2060 = "
          << reg.predict(2060) << endl;
     cout << "The errorSquared  = "
-         << reg.errorSquare() << endl;
+         << reg.error_square() << endl;
     cout << "Error in 2050 = "
-         << reg.errorIn(2050) << endl;
+         << reg.error_in(2050) << endl;
 }
 
