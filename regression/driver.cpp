@@ -3,7 +3,10 @@
  */
 #include <iostream>
 #include <stdio.h>
-#
+#include "LR.h"
+
+using namespace std;
+
 
 int main() {
     const char* test_file = "../data/test_input.csv";
