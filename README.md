@@ -1,10 +1,13 @@
-# Overview
-Work in progress repository turning the original Python based projects for 
-CS 499 Contemporary Developments, Deep Learning, into a reusable C++ package. 
+# Overview (Work In Progress)
+Reusable mathematics library written in C++ inspired from the original Python based projects for 
+CS 499 Contemporary Developments, Deep Learning, as well as work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
 
-Implementation of several algorithms used in deep learning. 
+The goal is to make a reusable mathematics library similar to the use of `math.h` allowing users to call within their own projects.
+Starting with some implementations of basics of different mathematical topics like calculus, statistics, etc. in conjunction with 
+more advanced algorithms seen in topics like Linear Algebra, Deep Learning and much more. 
 
-# Methods
+
+# Deep Learning
 ## Cross Validation
 A resampling technique, the idea of this method is to train our model by utilizing 
 the subsets of our data set then proceeding to evaluate + compare against the original.
