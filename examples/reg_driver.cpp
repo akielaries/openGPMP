@@ -3,7 +3,7 @@
  */
 #include <iostream>
 #include <stdio.h>
-#include "LR.h"
+#include "../include/LR.hpp"
 
 using namespace std;
 

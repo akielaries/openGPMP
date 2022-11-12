@@ -6,7 +6,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "LR.h"
+#include "../../include/LR.hpp"
 
 using namespace std;
 
