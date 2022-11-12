@@ -9,7 +9,7 @@ using namespace std;
 
 
 int main() {
-    const char* test_file = "../data/test_input.csv";
+    const char* test_file = "data/test_input.csv";
     freopen(test_file, "r", stdin);
     regression reg;
  
