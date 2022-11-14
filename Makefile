@@ -13,6 +13,10 @@ SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 LR			= $(SRCDIR)/regression/linreg.cpp
 LRDRV		= $(PROJDIR)/examples/reg_driver.cpp
 LRBIN		= lin_reg
+# FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
+BLA			= $(SRCDIR)/LA/la_ops.cpp
+BLADRV		= $(PROJDIR)/examples/la_ops_driver.cpp
+BLABIN		= la_ops
 
 LIBDIR		= $(PROJDIR)/include
 
@@ -21,6 +25,9 @@ lin-reg:
 	${CC} ${LR} ${LRDRV} -o ${LRBIN}
 	./${LRBIN}
 
+la-ops:
+	${CC} ${BLA} ${BLADRV} -o ${BLABIN}
+	./${BLABIN}
 
 clean:
 	rm -f ${LRBIN}
