@@ -10,7 +10,7 @@ SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 
 # FILES FOR REGRESSION
-LR			= $(SRCDIR)/regression/LR.cpp
+LR			= $(SRCDIR)/regression/linreg.cpp
 LRDRV		= $(PROJDIR)/examples/reg_driver.cpp
 LRBIN		= lin_reg
 

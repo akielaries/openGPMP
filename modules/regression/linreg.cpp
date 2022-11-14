@@ -6,7 +6,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "../../include/LR.hpp"
+#include "../../include/linreg.hpp"
 
 using namespace std;
 

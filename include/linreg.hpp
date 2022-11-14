@@ -3,8 +3,8 @@
  * between a dependent variable with a given set of independent variables.
  */
 
-#ifndef LR_H
-#define LR_H
+#ifndef LINREG_H
+#define LINREG_H
 #include <vector>
 #include <stdio.h>
 

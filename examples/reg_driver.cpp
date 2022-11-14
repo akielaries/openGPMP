@@ -3,13 +3,13 @@
  */
 #include <iostream>
 #include <stdio.h>
-#include "../include/LR.hpp"
+#include "../include/linreg.hpp"
 
 using namespace std;
 
 
 int main() {
-    const char* test_file = "data/test_input.csv";
+    const char* test_file = "data/school_scores.csv";
     freopen(test_file, "r", stdin);
     regression reg;
  
@@ -19,6 +19,7 @@ int main() {
  
     int n = num_rows(test_file);
     // cin >> n;
+    printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS\n");
 
     printf("Number of rows in data set: %d\n", n);
     // Calling function takeInput to take input of n pairs
@@ -29,83 +30,65 @@ int main() {
 
     
     /* CALCULATING PREDICTIONS */
-    cout << "Predicted value at 250 = "
-         << reg.predict(250) << endl;
+    int v1 = 1995;
+    float v1_v = reg.predict(v1);
+    float v1_e = reg.error_in(v1);
+    printf("Predicted value at %d   = %f\n", v1, v1_v);
+    printf("Error value at %d       = %f\n\n", v1, v1_e);
 
-    cout << "Predicted value at 500 = "
-         << reg.predict(500) << endl;
-    
-    cout << "Predicted value at 1000 = "
-         << reg.predict(1000) << endl;
-    
-    cout << "Predicted value at 1500 = "
-         << reg.predict(1500) << endl;
-    
-    cout << "Predicted value at 2000 = "
-         << reg.predict(2000) << endl;
-    
-    cout << "Predicted value at 2500 = "
-         << reg.predict(2500) << endl;
-    
-    cout << "Predicted value at 3000 = "
-         << reg.predict(3000) << endl;
+    int v2 = 1997;
+    float v2_v = reg.predict(v2);
+    float v2_e = reg.error_in(v2);
+    printf("Predicted value at %d   = %f\n", v2, v2_v);
+    printf("Error value at %d       = %f\n\n", v2, v2_e);
 
-    cout << "Predicted value at 3500 = "
-         << reg.predict(3500) << endl;
-    
-    cout << "Predicted value at 4000 = "
-         << reg.predict(4000) << endl;
-    
-    cout << "Predicted value at 4500 = "
-         << reg.predict(4500) << endl;
-    
-    cout << "Predicted value at 5000 = "
-         << reg.predict(5000) << endl;
-    
-    cout << "Predicted value at 5500 = "
-         << reg.predict(5500) << endl;
+    int v3 = 1999;
+    float v3_v = reg.predict(v3);
+    float v3_e = reg.error_in(v3);
+    printf("Predicted value at %d   = %f\n", v3, v3_v);
+    printf("Error value at %d       = %f\n\n", v3, v3_e);
 
-    cout << "The errorSquared  = "
-         << reg.error_square() << endl;
-    
+    int v4 = 2001;
+    float v4_v = reg.predict(v4);
+    float v4_e = reg.error_in(v4);
+    printf("Predicted value at %d   = %f\n", v4, v4_v);
+    printf("Error value at %d       = %f\n\n", v4, v4_e);
 
-    /* CALCULATING ERRORS */
+    int v5 = 2003;
+    float v5_v = reg.predict(v5);
+    float v5_e = reg.error_in(v5);
+    printf("Predicted value at %d   = %f\n", v5, v5_v);
+    printf("Error value at %d       = %f\n\n", v5, v5_e);
 
-    cout << "Error value at 250 = "
-         << reg.error_in(250) << endl;
+    int v6 = 2005;
+    float v6_v = reg.predict(v6);
+    float v6_e = reg.error_in(v6);
+    printf("Predicted value at %d   = %f\n", v6, v6_v);
+    printf("Error value at %d       = %f\n\n", v6, v6_e);
 
-    cout << "Error value at 500 = "
-         << reg.error_in(500) << endl;
-    
-    cout << "Error value at 1000 = "
-         << reg.error_in(1000) << endl;
-    
-    cout << "Error value at 1500 = "
-         << reg.error_in(1500) << endl;
-    
-    cout << "Error value at 2000 = "
-         << reg.error_in(2000) << endl;
-    
-    cout << "Error value at 2500 = "
-         << reg.error_in(2500) << endl;
+    int v7 = 2006;
+    float v7_v = reg.predict(v7);
+    float v7_e = reg.error_in(v7);
+    printf("Predicted value at %d   = %f\n", v7, v7_v);
+    printf("Error value at %d       = %f\n\n", v7, v7_e);
 
-    cout << "Error value at 3000 = "
-         << reg.error_in(3000) << endl;
+    int v8 = 2007;
+    float v8_v = reg.predict(v8);
+    float v8_e = reg.error_in(v8);
+    printf("Predicted value at %d   = %f\n", v8, v8_v);
+    printf("Error value at %d       = %f\n\n", v8, v8_e);
 
-    cout << "Error value at 3500 = "
-         << reg.error_in(3500) << endl;
-    
-    cout << "Error value at 4000 = "
-         << reg.error_in(4000) << endl;
-    
-    cout << "Error value at 4500 = "
-         << reg.error_in(4500) << endl;
-    
-    cout << "Error value at 5000 = "
-         << reg.error_in(5000) << endl;
-    
-    cout << "Error value at 5500 = "
-         << reg.error_in(5500) << endl;
+    int v10 = 2016;
+    float v10_v = reg.predict(v10);
+    float v10_e = reg.error_in(v10);
+    printf("Predicted value at %d   = %f\n", v10, v10_v);
+    printf("Error value at %d       = %f\n\n", v10, v10_e);
+
+    int v11 = 2017;
+    float v11_v = reg.predict(v11);
+    float v11_e = reg.error_in(v11);
+    printf("Predicted value at %d   = %f\n", v11, v11_v);
+    printf("Error value at %d       = %f\n\n", v11, v11_e);
 
 }
 
