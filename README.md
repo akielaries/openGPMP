@@ -6,8 +6,9 @@ as well as work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM).
 The goal is to make a reusable mathematics library similar to the use of 
 `math.h` allowing users to call within their own projects.
 Starting with some implementations of basics of different mathematical topics 
-like calculus, statistics, etc. in conjunction with more advanced algorithms 
-seen in topics like Linear Algebra, Deep Learning and much more. 
+like calculus, statistics, linear algebra, etc. in conjunction with more advanced 
+algorithms seen in the blend of such topics, branches of Machine Learning, image processing 
+and much more. 
 Look in the `examples/` folder for details on using these tools in your own
 project. 
 
@@ -24,6 +25,9 @@ $ make lin-reg
 # to remove the generated binary
 $ make clean
 ```
+As I progress through different mathematical operations I will provide more 
+examples as driver files in `examples/` folder with some corresponding 
+documentation. 
 
 # Modules
 ## Deep Learning
