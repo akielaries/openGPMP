@@ -21,12 +21,12 @@ class la_operations {
          * vectors of the same dimension size are just scalars as they only 
          * contain magnitude. vectors contain both magnitude + direction
          */
-        // function to add two or more vectors
+        // function to add two 1D vectors
         // template <typename T>
         float scalar_add();
-        // function to subtract two or more vectors
+        // function to subtract two 1D vectors
         float scalar_sub();
-        // function to multiply two or more vectors
+        // function to multiply two 1D vectors
         float scalar_mult();
 };
 

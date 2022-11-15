@@ -99,8 +99,8 @@ int main()
     Vector V3(0, 7, 3), V4(1, 2, 0);
     cout << "V3 + V4 = " << (V3 + V4);
 
-    Vector V5(1, 2, 3, 4), V6(4, 3, 2, 1);
-    cout << "V5 + V6 = " << (V5 + V6);
+    // Vector V5(1, 2, 3, 4), V6(4, 3, 2, 1);
+    // cout << "V5 + V6 = " << (V5 + V6);
 
     return 0;
 }
