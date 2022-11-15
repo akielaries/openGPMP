@@ -3,18 +3,17 @@
  * between a dependent variable with a given set of independent variables.
  */
 
-#ifndef LINREG_H
-#define LINREG_H
+#ifndef RMLINREG_H
+#define RMLINREG_H
 #include <vector>
 #include <stdio.h>
 
-using namespace std;
 
 class regression {
     // Dynamic array which is going to contain all (i-th x)
-    vector<float> x;
+    std::vector<float> x;
     // Dynamic array which is going to contain all (i-th y)
-    vector<float> y;
+    std::vector<float> y;
     // Store the coefficient/slope in the best fitting line
     float coeff;
     // Store the constant term in the best fitting line

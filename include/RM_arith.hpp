@@ -2,12 +2,11 @@
  * definitions for basic Linear Algebra operations 
  */
 
-#ifndef LAOPS_H
-#define LAOPS_H
+#ifndef RMARITH_H
+#define RMARITH_H
 #include <vector>
 #include <stdio.h>
 
-using namespace std;
 
 class la_operations {
     std::vector<int> x;

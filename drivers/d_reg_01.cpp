@@ -1,11 +1,10 @@
-/*
+/* RM-pkg
+ * TESTING LINEAR REGRESSION
  * test driver program for our implementation of linear regression 
  */
 #include <iostream>
 #include <stdio.h>
 #include "../include/LR.hpp"
-
-using namespace std;
 
 
 int main() {

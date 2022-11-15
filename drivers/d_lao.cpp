@@ -1,4 +1,5 @@
-/*
+/* RM-pkg
+ * TESTING BASIC LINEAR ALGEBRA OPERATIONS
  * test driver program on the implementations for some basic Linear Algebra
  * operations. 
  */
@@ -8,7 +9,6 @@
 #include <cassert>
 #include "../include/la_ops.hpp"
 
-using namespace std;
 
 template <typename V1, typename V2>
 auto vsum(V1& v1, V2& v2) {
@@ -20,9 +20,9 @@ auto vsum(V1& v1, V2& v2) {
     
     for (iter; iter < v1.size(); iter++) {
         auto sum = v1[iter] + v2[iter];
-        cout << sum << endl;
+        std::cout << sum << endl;
     }
-    cout << "before return" << sum << endl;
+    std::cout << "before return" << sum << endl;
     return sum;
 
     //while (v1_iter != v1.end() ** v2_iter != v2.end()) {

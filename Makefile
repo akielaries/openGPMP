@@ -11,11 +11,11 @@ SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 
 # FILES FOR REGRESSION
 LR			= $(SRCDIR)/regression/linreg.cpp
-LRDRV		= $(PROJDIR)/drivers/reg_driver.cpp
+LRDRV		= $(PROJDIR)/drivers/d_reg.cpp
 LRBIN		= lin_reg
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
-BLA			= $(SRCDIR)/LA/la_ops.cpp
-BLADRV		= $(PROJDIR)/drivers/la_ops_driver.cpp
+BLA			= $(SRCDIR)/LINALG/la_ops.cpp
+BLADRV		= $(PROJDIR)/drivers/d_lao.cpp
 BLABIN		= la_ops
 
 LIBDIR		= $(PROJDIR)/include
