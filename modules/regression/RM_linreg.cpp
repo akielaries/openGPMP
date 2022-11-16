@@ -6,9 +6,8 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "../../include/linreg.hpp"
+#include "../../include/RM_linreg.hpp"
 
-using namespace std;
 
 /*
  * Constructor to provide the default values to all the terms in the object 
@@ -68,8 +67,8 @@ void regression::best_fit() {
         calculate_coeffecient();
         calculate_constant();
     }
-    cout << "The best fitting line is y = "
-        << coeff << "x + " << constant << endl;
+    std::cout << "The best fitting line is y = "
+        << coeff << "x + " << constant << std::endl;
     }
  
 // Function to take input from the dataset

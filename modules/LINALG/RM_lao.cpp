@@ -7,9 +7,8 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "../../include/la_ops.hpp"
+#include "../../include/RM_lao.hpp"
 
-using namespace std;
 
 /*
  * Constructor to provide the default values to all the terms in the object 

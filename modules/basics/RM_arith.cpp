@@ -15,19 +15,16 @@
  * Constructor to provide the default values to all the terms in the object 
  * of class la_ops
  */
-la_ops::la_ops() {
-    coeff = 0;
-    constant = 0;
-    sum_y = 0;
-    sum_y_square = 0;
-    sum_x_square = 0;
-    sum_x = 0;
-    sum_xy = 0;
-}
- 
-// adding two or more vectors
-float la_ops::scalar_add() {
+//template<typename T>
+//arith<T>::arith(){}
 
+template<typename T>
+inline T rm_sum(T t) {
+    return t;
 }
 
+template<typename T, typename... Ts>
+inline auto rm_sum(T t, Ts... ts) {
+    return t+rm_sum(ts...);
+}
 

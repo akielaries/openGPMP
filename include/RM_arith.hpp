@@ -1,5 +1,5 @@
 /*
- * definitions for basic Linear Algebra operations 
+ * definitions for basic arithmetic operations 
  */
 
 #ifndef RMARITH_H
@@ -8,27 +8,19 @@
 #include <stdio.h>
 
 
-class la_operations {
-    std::vector<int> x;
-    std::vector<int> y;
-
+class arith {
 
     public:
-        la_operations();
-        
-        /*
-         * vectors of the same dimension size are just scalars as they only 
-         * contain magnitude. vectors contain both magnitude + direction
-         */
-        // function to add two 1D vectors
-        // template <typename T>
-        float scalar_add();
-        // function to subtract two 1D vectors
-        float scalar_sub();
-        // function to multiply two 1D vectors
-        float scalar_mult();
-};
+        // arith();
+        template<typename T>
+        inline T rm_sum(T t);
 
+        template<typename T, typename... Ts>
+        inline auto rm_sum(T t, Ts... ts);
+
+
+
+};
 
 #endif
 
