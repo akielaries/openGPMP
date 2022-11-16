@@ -4,16 +4,17 @@ originally inspired from Python based coursework for CS 499 Contemporary Develop
 Deep Learning, as well as work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
 
 The goal is to make a reusable mathematics library similar to the use of 
-`math.h` allowing users to call within their own projects.
+math.h allowing users to call within their own projects.
 Starting with some implementations of basics of different mathematical topics 
-like calculus, statistics, linear algebra, etc. in conjunction with more advanced 
+like arithmetic, calculus, statistics, linear algebra, etc. in conjunction with more advanced 
 algorithms seen in the blend of such topics, branches of Machine Learning, image processing 
 and much more. 
-Look in the `examples/` folder for details on using these tools in your own
-project. 
+Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder for examples 
+on using these tools in your own project. 
 
 # Run Examples
 So far I have only been able to create semi-working example using Linear-Regression.
+All examples in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
 ```
 # clone the repo and enter
 $ git clone git@github.com:akielaries/RM-pkg.git 
@@ -26,10 +27,21 @@ $ make lin-reg
 $ make clean
 ```
 As I progress through different mathematical operations I will provide more 
-examples as driver files in `examples/` folder with some corresponding 
+examples as driver files in drivers folder with some corresponding 
 documentation. 
 
 # Modules
+## Arithmetic
+Basic operations of addition, subtraction, multiplication, and division were implemented in a
+way to accept `n` arguments of `n` types. Meaning calling any of the respective functions allows
+numerous parameters to be passed in of various numeric data type. This acts as the basis for many
+of the basic functionalities of this package.
+
+## Calculus
+## Statistics
+## Linear Algebra
+### Vector Operations
+
 ## Deep Learning
 ### Cross Validation
 A resampling technique, the idea of this method is to train our model by utilizing 
@@ -44,4 +56,3 @@ fold each time for testing against.
 
 
 .......
-
