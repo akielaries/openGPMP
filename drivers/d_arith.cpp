@@ -7,6 +7,7 @@
 #include <cassert>
 #include "../include/RM_arith.hpp"
 
+/*
 template<typename T>
 inline T rm_sum(T t){
     return t;
@@ -16,6 +17,7 @@ template<typename T, typename... Ts>
 inline auto rm_sum(T t, Ts... ts){
     return t+rm_sum(ts...);
 }
+*/
 
 int main(){
     /*
@@ -30,35 +32,59 @@ int main(){
      */
 
     // declare our arithmetic class object
-//    rm_sum<int>();
+    arith ar;
 
     // declare some variables
     int a = 10;
     int b = 8;
     int c = 3;
-
     double d = 1.25;
     float e = 1.85;
     float f = 2.75;
     long g = 1.35;
 
-    // you can assign your result as a different type than the params
-    float r0 = rm_sum(a, b, c);
-    int r1 = rm_sum(d, e, f, g);
-    float r2 = rm_sum(d, e, f, g);
+    /* 
+     * starting with addition operations with different data types. 
+     * you can assign your result as a different type than the params
+     */
+    float r0 = ar.rm_add(a, b, c);
+    int r1 = ar.rm_add(d, e, f, g);
+    float r2 = ar.rm_add(d, e, f, g);
 
-    std::cout << "Sum 0 = " << r0 << '\n';
-    std::cout << "Sum 1 = " << r1 << '\n';
-    std::cout << "Sum 2 = " << r2 << '\n';
+    printf("%d + %d + %d = %f\n", a, b, c, r0);
+    printf("%f + %f + %f + %ld = %d\n", d, e, f, g, r1);
+    printf("%f + %f + %f + %ld = %f\n\n", d, e, f, g, r2);
+
+    /*
+     * subtraction  
+     */
+    int r3 = ar.rm_sub(a, b, c);
+    int r4 = ar.rm_sub(d, e, f ,g);
+    float r5 = ar.rm_sub(d ,e, f, g);
+
+    printf("%d - %d - %d = %d\n", a, b, c, r3);
+    printf("%f - %f - %f - %d = %d\n", d, e, f, g, r4);
+    printf("%f - %f - %f - %f = %f\n\n", d, e, f, g, r5);
+
+    /*
+     * multiplication 
+     */
+    int r6 = ar.rm_mult(a, b, c);
+    int r7 = ar.rm_mult(d, e, f ,g);
+    double r8 = ar.rm_mult(d ,e, f, g);
+
+    printf("%d * %d * %d = %d\n", a, b, c, r6);
+    printf("%f * %f * %f * %d = %d\n", d, e, f, g, r7);
+    printf("%f * %f * %f * %ld = %f\n\n", d, e, f, g, r8);
 
     // you can also directly print
-    // 
     /*
     std::cout << ar.rm_sum(2.5, 2) <<'\n'
             << ar.rm_sum(2, 2.5) <<'\n'
             << ar.rm_sum(1u, 2.5, 3.f, '0') <<'\n'
             << ar.rm_sum(4.2, 1, 1.223) <<'\n';
     */
+
     return 0;
 }
 

@@ -25,7 +25,7 @@ BLABIN		= la_ops
 LIBDIR		= $(PROJDIR)/include
 
 arith:
-	${CC} ${AR} ${ARDRV} -o ${ARBIN}
+	${CC} ${ARDRV} -o ${ARBIN}
 	./${ARBIN}
 
 
@@ -38,5 +38,7 @@ la-ops:
 	./${BLABIN}
 
 clean:
+	rm -f ${ARBIN}
 	rm -f ${LRBIN}
+	rm -f ${BLABIN}
 

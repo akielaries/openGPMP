@@ -13,17 +13,21 @@ Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) fo
 on using these tools in your own project. 
 
 # Run Examples
-So far I have only been able to create semi-working example using Linear-Regression.
-All examples in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
+So far I have only been able to create semi-working example using basic arithmetic operations
+and Linear-Regression.
+All examples are in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
 ```
 # clone the repo and enter
 $ git clone git@github.com:akielaries/RM-pkg.git 
 $ cd RM-pkg
 
-# compile + run the Linear-Regression example using the provided Makefile
+# compile + run the arithmetic operation example using the provided Makefile
+$ make arith
+
+# compile + run the Linear-Regression example 
 $ make lin-reg
 
-# to remove the generated binary
+# to remove the generated binaries
 $ make clean
 ```
 As I progress through different mathematical operations I will provide more 
