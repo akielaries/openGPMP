@@ -81,7 +81,7 @@ void regression::get_input(int n) {
         char comma;
         float xi;
         float yi;
-        cin >> xi >> comma >> yi;
+        std::cin >> xi >> comma >> yi;
         sum_xy += xi * yi;
         sum_x += xi;
         sum_y += yi;
@@ -138,10 +138,10 @@ float regression::error_in(float num) {
 
 int num_rows(const char* input) {
     int num = 0;
-    string row;
+    std::string row;
     
     // create input file stream
-    ifstream file(input);
+    std::ifstream file(input);
 
     while (getline(file, row)) {
         num++;
@@ -154,7 +154,7 @@ int num_rows(const char* input) {
 int num_col(const char* input) {
     int num = 0;
     string col;
-    ifstream file(input);
+    std::ifstream file(input);
 
     return col;
 

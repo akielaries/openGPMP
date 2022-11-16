@@ -4,9 +4,7 @@
  */
 #include <iostream>
 #include <stdio.h>
-#include "../include/linreg.hpp"
-
-using namespace std;
+#include "../include/RM_linreg.hpp"
 
 
 int main() {

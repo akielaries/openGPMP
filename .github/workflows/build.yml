@@ -1,0 +1,17 @@
+name: Build and Test RM-pkg
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: initalize github repo
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: docker build . --file Dockerfile 
