@@ -7,17 +7,6 @@
 #include <cassert>
 #include "../include/RM_arith.hpp"
 
-/*
-template<typename T>
-inline T rm_sum(T t){
-    return t;
-}
-
-template<typename T, typename... Ts>
-inline auto rm_sum(T t, Ts... ts){
-    return t+rm_sum(ts...);
-}
-*/
 
 int main(){
     /*
