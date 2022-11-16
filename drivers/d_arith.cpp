@@ -29,6 +29,13 @@ int main(){
      * Ideally if you want to perform the summation or product on a list
      * type structure of numbers you may want to implement it on your 
      * own, this implementation is just for fun :)
+     * 
+     * steps to perform arithmetic operations:
+     * 1. declare arith object (see RM_arith.hpp)
+     * 2. declare some variables initializing to values 
+     * 3. using the declared arith object call the operations, 
+     * rm_add, rm_sub, rm_mult
+     * 4. print out the values if you want or manipulate them further
      */
 
     // declare our arithmetic class object
