@@ -2,6 +2,8 @@
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
 originally inspired from Python based coursework for CS 499 Contemporary Developments, 
 Deep Learning, as well as work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
+The project welcomes contributes and is in extreme need, if interested see 
+[here](https://github.com/akielaries/RM-pkg/blob/main/CONTRIBUTING.md)!
 
 The goal is to make a reusable mathematics library similar to the use of 
 math.h allowing users to call within their own projects.
