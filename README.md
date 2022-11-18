@@ -1,4 +1,5 @@
 ![BuildTest](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)
+![Configure](https://github.com/akielaries/RM-pkg/actions/workflows/config.yml/badge.svg)
 # Overview (Work In Progress)
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
 originally inspired from Python based coursework for CS 499 Contemporary Developments, 
@@ -16,16 +17,22 @@ Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) fo
 on using these tools in your own project. 
 
 # Run Examples
-So far I have only been able to create semi-working example using basic arithmetic operations
-and Linear-Regression.
+So far I have only been able to create semi-working example using basic arithmetic operations, 
+calculus operations such as simple derivatives as well as Linear-Regression.
 All examples are in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
 ```
 # clone the repo and enter
 $ git clone git@github.com:akielaries/RM-pkg.git 
 $ cd RM-pkg
 
+# to run all examples 
+$ ./test.sh
+
 # compile + run the arithmetic operation example using the provided Makefile
 $ make arith
+
+# compile + run derivative operations example 
+$ make calculus
 
 # compile + run the Linear-Regression example 
 $ make lin-reg

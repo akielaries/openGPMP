@@ -1,0 +1,19 @@
+name: Config + Test RM-pkg Modules
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: initalize github repo
+        uses: actions/checkout@v3
+      - name: configure
+        run: ./config
+      - name: make
+        run: make arith
+

@@ -28,6 +28,7 @@ BLABIN		= la_ops
 
 LIBDIR		= $(PROJDIR)/include
 
+
 arith:
 	${CC} ${ARDRV} -o ${ARBIN}
 	./${ARBIN}
