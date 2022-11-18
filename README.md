@@ -2,11 +2,12 @@
 ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)
 ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)
 ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg)
+
 # Overview (Work In Progress)
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
 originally inspired from Python based coursework for CS 499 Contemporary Developments, 
 Deep Learning, as well as work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
-The project welcomes contributes and is in extreme need, if interested see 
+The project welcomes contributors and is in extreme need, if interested see 
 [here](https://github.com/akielaries/RM-pkg/blob/main/CONTRIBUTING.md)!
 
 The goal is to make a reusable mathematics library similar to the use of 
