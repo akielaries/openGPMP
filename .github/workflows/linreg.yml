@@ -1,4 +1,4 @@
-name: Config + Test RM-pkg Modules
+name: Build Lin-Reg Module
 
 on:
   push:
@@ -17,5 +17,5 @@ jobs:
         run: ./configure.sh
       
       - name: make
-        run: make arith
+        run: make lin-reg
 

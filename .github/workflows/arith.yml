@@ -1,4 +1,4 @@
-name: All RM-pkg Modules
+name: Build Arithmetic Module
 
 on:
   push:
@@ -7,11 +7,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: initalize github repo
         uses: actions/checkout@v3
+      
+      - name: configure
+        run: ./configure.sh
+      
+      - name: make
+        run: make arith
 
-      - name: Build
-        run: docker build . --file Dockerfile 
