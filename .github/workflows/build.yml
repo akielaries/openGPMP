@@ -13,5 +13,10 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v3
 
-      - name: Build
-        run: docker build . --file Dockerfile 
+      - name: configure
+        run: ./configure.sh
+    
+      - name: build all
+        run: ./test.sh
+
+
