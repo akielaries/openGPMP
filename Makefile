@@ -13,6 +13,10 @@ SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 AR			= $(SRCDIR)/basics/RM_arith.cpp
 ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
+# FILES FOR CALCULUS OPERATIONS
+CALC		= $(SRCDIR)/calculus/RM_deriv.cpp
+CALCDRV		= $(PROJDIR)/drivers/d_deriv.cpp
+CALCBIN		= calc
 # FILES FOR REGRESSION
 LR			= $(SRCDIR)/regression/RM_linreg.cpp
 LRDRV		= $(PROJDIR)/drivers/d_reg.cpp
@@ -28,6 +32,9 @@ arith:
 	${CC} ${ARDRV} -o ${ARBIN}
 	./${ARBIN}
 
+calculus:
+	${CC} ${CALC} ${CALCDRV} -o ${CALCBIN}
+	./${CALCBIN}
 
 lin-reg:
 	${CC} ${LR} ${LRDRV} -o ${LRBIN}
@@ -39,6 +46,7 @@ la-ops:
 
 clean:
 	rm -f ${ARBIN}
+	rm -f ${CALCBIN}
 	rm -f ${LRBIN}
 	rm -f ${BLABIN}
 

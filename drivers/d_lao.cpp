@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../include/la_ops.hpp"
+#include "../include/RM_lao.hpp"
 
 
 template <typename V1, typename V2>
@@ -20,9 +20,9 @@ auto vsum(V1& v1, V2& v2) {
     
     for (iter; iter < v1.size(); iter++) {
         auto sum = v1[iter] + v2[iter];
-        std::cout << sum << endl;
+        std::cout << sum << std::endl;
     }
-    std::cout << "before return" << sum << endl;
+    std::cout << "before return" << sum << std::endl;
     return sum;
 
     //while (v1_iter != v1.end() ** v2_iter != v2.end()) {
