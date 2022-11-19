@@ -6,9 +6,7 @@
 #include <sstream>
 #include <string>
 #include <iostream>
-#include <fstream>
 #include <stdio.h>
-#include <vector>
 #include "../../include/RM_deriv.hpp"
 
 
@@ -36,7 +34,7 @@ long long calculus::derivativeTerm(std::string pTerm, long long val) {
     return coeff * power * pow(val, power - 1);
 }
  
-long long calculus::rm_deriv(std::string& poly, int val) {
+long long calculus::rm_deriv_at(std::string& poly, int val) {
     long long ans = 0;
  
     // We use istringstream to get input in tokens
@@ -59,3 +57,26 @@ long long calculus::rm_deriv(std::string& poly, int val) {
     return ans;
 }
  
+std::string calculus::rm_deriv(std::string& poly) {
+    long long ans = 0;
+ 
+    // We use istringstream to get input in tokens
+    std::istringstream is(poly);
+ 
+    std::string pTerm;
+    while (is >> pTerm) {
+ 
+        // If the token is equal to '+' then
+        // continue with the string
+        if (pTerm == "+")
+            continue;
+       
+ 
+        // Otherwise find the derivative of that
+        // particular term
+        else
+            ans = ans;
+    }
+    return poly;
+}
+
