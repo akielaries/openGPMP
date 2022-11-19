@@ -23,7 +23,7 @@ int main() {
     calculus calc;
 
     // we can declare our equation as a string for ease of use
-    std::string st0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x";
+    std::string st0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";
     //std::string st0 = "4x^3 + 3x^1";
     std::string st1 = "1x^3";
 

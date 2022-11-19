@@ -1,7 +1,7 @@
-![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)
-![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)
-![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg)
-![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg)
+![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg) <br>
+![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg) <br>
+![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) <br>
+![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) <br>
 
 # Overview (Work In Progress)
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
