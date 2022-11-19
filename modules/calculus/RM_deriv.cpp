@@ -65,15 +65,14 @@ std::string calculus::rm_deriv(std::string& poly) {
  
     std::string pTerm;
     while (is >> pTerm) {
- 
-        // If the token is equal to '+' then
-        // continue with the string
+        // std::cout << "poly = " << poly << std::endl;
+        // std::cout << "pTerm = " << pTerm << std:: endl;
+        
+        // If the token is equal to '+' then continue with the string
         if (pTerm == "+")
             continue;
        
- 
-        // Otherwise find the derivative of that
-        // particular term
+        // Otherwise find the derivative of that particular term
         else
             ans = ans;
     }

@@ -42,7 +42,7 @@ lin-reg:
 	./${LRBIN}
 
 la-ops:
-	${CC} ${BLA} ${BLADRV} -o ${BLABIN}
+	${CC} ${BLADRV} -o ${BLABIN}
 	./${BLABIN}
 
 clean:

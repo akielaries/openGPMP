@@ -1,6 +1,7 @@
 ![BuildTest](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)
 ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)
 ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)
+![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg)
 ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg)
 
 # Overview (Work In Progress)

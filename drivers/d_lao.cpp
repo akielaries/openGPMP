@@ -30,6 +30,7 @@ auto vsum(V1& v1, V2& v2) {
 }
 
 int main() {
+    std::cout << "VECTOR ADDITION EXAMPLE" << std::endl;
     // initialize class obj
     //la_operations la;
  
@@ -50,9 +51,9 @@ int main() {
     // iterate over vector 1
     for (i; i < v1.size(); i++) {
         int sum = v1[i] + v2[i];
-        //printf("sum - %d\n", sum);
+        printf("[%d] + [%d] = %d\n", v1[i], v2[i], sum);
     }
-    printf("sum %d\n", sum);
+    //printf("sum %d\n", sum);
 
     return 0;
 

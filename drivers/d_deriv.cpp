@@ -29,6 +29,8 @@ int main() {
     std::string deriv_result0 = calc.rm_deriv(st0);
 
     printf("f(x) = %s \n", st0.c_str());
+    printf("DEBUGGING THIS\n");
+    printf("df/dx of f(x) = %s\n", deriv_result0.c_str());
     printf("\n");
 
     /* 
