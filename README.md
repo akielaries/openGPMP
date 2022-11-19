@@ -21,7 +21,9 @@ on using these tools in your own project.
 
 # Run Examples
 So far I have only been able to create semi-working example using basic arithmetic operations, 
-calculus operations such as simple derivatives as well as Linear-Regression.
+calculus operations such as simple derivatives as well as Linear-Regression. Within many of the
+driver examples the use of `printf()` over `std::cout` is often used for easier and more readable 
+displaying of our values. 
 All examples are in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
 ```
 # clone the repo and enter
