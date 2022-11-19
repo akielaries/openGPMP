@@ -15,6 +15,7 @@
 make arith
 make lin-reg
 make calculus
+make la-ops
 # delete generated binaries
 make clean
 
