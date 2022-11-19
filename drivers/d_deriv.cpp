@@ -25,6 +25,12 @@ int main() {
      * this specific derivative function calculates the derivative of a 
      * polynomial at a given value
      */
+
+    long long deriv_result0 = calc.rm_deriv(st0, val0);
+    std::cout << "f(x) = " << st0 << '\n' 
+            << "df/dx = " << deriv_result0 
+            << std::endl;
+
     std::cout << calc.rm_deriv(st0, val0) << std::endl;
     std::cout << calc.rm_deriv(st1, val1) << std::endl;
 
