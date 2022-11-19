@@ -1,5 +1,6 @@
 # Overview (Work In Progress)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
+![Codady Analysis](https://github.com/akielaries/RM-pkg/actions/workflows/codacy.yml/badge.svg)
 Modules |
 --------|
 ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg) |
