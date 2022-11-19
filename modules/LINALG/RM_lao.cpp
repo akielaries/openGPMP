@@ -25,7 +25,19 @@ la_ops::la_ops() {
 }
  
 // adding two or more vectors
-float la_ops::scalar_add() {
+float la_ops::vector_add(vector0, vector1) {
+    int i = 0;
+
+    // declare data structure to store sums of vectors indices
+    // arr?
+
+    // traverse vectors, add elements
+    for (i; i < vector0.size(); i++) {
+        int sum = vector0[i] + vector1[i];
+        // append arr?
+    }
+    // return arr?
+    return sum;
 
 }
 
