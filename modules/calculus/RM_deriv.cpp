@@ -31,6 +31,8 @@ long long calculus::derivativeTerm(std::string pTerm, long long val) {
     long long power = atol(powStr.c_str());
  
     // For ax^n, we return anx^(n-1)
+
+    //printf("DEBUGGING DERIVTERM\n\n");
     return coeff * power * pow(val, power - 1);
 }
  
@@ -43,14 +45,11 @@ long long calculus::rm_deriv_at(std::string& poly, int val) {
     std::string pTerm;
     while (is >> pTerm) {
  
-        // If the token is equal to '+' then
-        // continue with the string
+        // If the token is equal to '+' then continue with the string
         if (pTerm == "+")
             continue;
        
- 
-        // Otherwise find the derivative of that
-        // particular term
+        // Otherwise find the derivative of that particular term
         else
             ans = (ans + derivativeTerm(pTerm, val));
     }

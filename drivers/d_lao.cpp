@@ -2,6 +2,10 @@
  * TESTING BASIC LINEAR ALGEBRA OPERATIONS
  * test driver program on the implementations for some basic Linear Algebra
  * operations. 
+ *
+ * For operations on vectors (addition, subtraction) the sizes of the vectors
+ * must be of equal length. This is to follow traditional rules in 
+ * Linear Algebra vector operations.
  */
 #include <iostream>
 #include <stdio.h>
@@ -29,17 +33,29 @@ auto vsum(V1& v1, V2& v2) {
     //}
 }
 
+std::vector<int> v_add(std::vector<int> vector0, std::vector<int> vector1) {
+    std::cout << vector0<int> << std::endl;
+    std::cout << vector1<int> << std::endl;
+
+    return vector0, vector1;
+
+}
+
+
 int main() {
     std::cout << "VECTOR ADDITION EXAMPLE" << std::endl;
     // initialize class obj
     //la_operations la;
  
-    //printf("BASIC LINEAR ALGEBRA OPERATIONS \n");
-
     // create vectors like arrays
     std::vector<int> v1 = {0, 7, 3, 4};
     std::vector<int> v2 = {1, 2, 0, 1};
     
+    //int result = vsum(v1, v1);
+    //std::cout << result << std::endl;
+
+
+    printf("\n\n");
     //auto result = vsum(v1, v2);
     //cout << vsum(v1, v2) << endl;
     
