@@ -45,9 +45,21 @@ la-ops:
 	${CC} ${BLA} ${BLADRV} -o ${BLABIN}
 	./${BLABIN}
 
-clean:
+clean-mods:
 	rm -f ${ARBIN}
 	rm -f ${CALCBIN}
 	rm -f ${LRBIN}
 	rm -f ${BLABIN}
+
+# testing created modules
+# test arith
+TSARDRV		= $(PROJDIR)/tests/t_arith.cpp
+TSARBIN		= t_arith
+
+test-arith:
+	${CC} ${TSARDRV} -o ${TSARBIN}
+	./${TSARBIN}
+
+clean-tests:
+	rm -f ${}
 
