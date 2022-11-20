@@ -11,7 +11,11 @@ class calculus {
 
     public:
         long long derivativeTerm(std::string pTerm, long long val);
+
+        //long long rm_deriv_term(std::string& poly, long long val);
+
         long long rm_deriv_at(std::string& poly, int val);
+        
         std::string rm_deriv(std::string& poly);
 
 };

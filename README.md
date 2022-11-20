@@ -1,14 +1,14 @@
-# Overview (Work In Progress)
+# Overview 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
 ![Codacy Analysis](https://github.com/akielaries/RM-pkg/actions/workflows/codacy.yml/badge.svg) 
 ![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)
 
 Module | Status |
 -------|--------|
-Arithmetic |![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg) |
-Calculus |![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg) |
-Linear Algebra |![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) |
-Linear Regression |![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) |
+Arithmetic (mostly finished)    |![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg) |
+Calculus (in progress)          |![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg) |
+Linear Algebra (in progress)    |![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) |
+Linear Regression (in progress) |![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) |
 
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
 originally inspired from Python based coursework for CS 499 Contemporary Developments, 

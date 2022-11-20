@@ -15,7 +15,13 @@ int main() {
     /*
      * When calling the rm_deriv() and rm_deriv_at() functions, the 
      * polynomial must be passed in as a string with the following format:
-     * 
+     * 3x^2 + 7x^4 + 2x^1
+     *
+     * keep in mind : 
+     * 1. adding a space in between each operand
+     * 2. using correct variables in your equation
+     * 3. adding a power notation (^1) to every variable even if only
+     * raised to 1
      */
     std::cout << "DERIVATIVE EXAMPLE\n\n";
 
@@ -49,7 +55,7 @@ int main() {
     int val0 = 2;
     int val1 = 3;
     long long deriv_result2 = calc.rm_deriv_at(st0, val0);
-    std::cout << deriv_result2 << std::endl;
+    std::cout << "df'/dx = " << deriv_result2 << std::endl;
 
     /*
     printf("f(x) = %s \n", st0.c_str());

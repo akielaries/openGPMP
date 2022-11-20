@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include "../../include/RM_deriv.hpp"
 
-
+/*
 long long calculus::derivativeTerm(std::string pTerm, long long val) {
     // Get coefficient
     std::string coeffStr = "";
@@ -18,7 +18,6 @@ long long calculus::derivativeTerm(std::string pTerm, long long val) {
     for (i = 0; pTerm[i] != 'x'; i++) {
         coeffStr.push_back(pTerm[i]);
     }
-    
     long long coeff = atol(coeffStr.c_str());
  
     // Get Power (Skip 2 characters for x and ^)
@@ -27,15 +26,48 @@ long long calculus::derivativeTerm(std::string pTerm, long long val) {
     for (i = i + 2; i != pTerm.size(); i++) {
         powStr.push_back(pTerm[i]);
     }
-
-    long long power = atol(powStr.c_str());
+    long long expo = atol(powStr.c_str());
  
     // For ax^n, we return anx^(n-1)
 
-    //printf("DEBUGGING DERIVTERM\n\n");
-    return coeff * power * pow(val, power - 1);
+    long long result = coeff * expo * pow(val, expo - 1);
+
+    return coeff * expo * pow(val, expo - 1);
 }
+*/ 
+
+long long calculus::derivativeTerm(std::string pTerm, long long val) {
+
+    printf("DEBUGGING DERIVTERM\n\n"); 
+    // Get coefficient
+    std::string coeffStr = "";
+    int i;
+    
+    for (i = 0; pTerm[i] != 'x'; i++) {
+        coeffStr.push_back(pTerm[i]);
+    }
+    long long coeff = atol(coeffStr.c_str());
  
+    // Get Power (Skip 2 characters for x and ^)
+    std::string powStr = "";
+    
+    for (i = i + 2; i != pTerm.size(); i++) {
+        powStr.push_back(pTerm[i]);
+        printf("powStr = %s \n", powStr.c_str());
+    }
+    long long expo = atol(powStr.c_str());
+ 
+    // For ax^n, we return anx^(n-1)
+    printf("powStr = %s \n", powStr.c_str());
+    printf("pTerm = %s \n", pTerm.c_str());
+    printf("coeff = %lld \n", coeff);
+    printf("Exponent = %lld \n", expo);
+
+    long long result = coeff * expo * pow(val, expo - 1);
+
+    return coeff * expo * pow(val, expo - 1);
+}
+
 long long calculus::rm_deriv_at(std::string& poly, int val) {
     long long ans = 0;
  
@@ -53,6 +85,8 @@ long long calculus::rm_deriv_at(std::string& poly, int val) {
         else
             ans = (ans + derivativeTerm(pTerm, val));
     }
+    printf("\nDEBUGGING DERIV AT\n\n");
+    printf("ans = %lld\n", ans);
     return ans;
 }
  
