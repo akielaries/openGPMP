@@ -29,7 +29,7 @@ Linear Regression   |*in progress*      | ![lin-reg](https://github.com/akielari
 Number Theory       |*in progress*      | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | *(in progress)* |
 
 > :warning: *These modules will eventually be provided with some documentation on the underlying
-functions of each module respectively.*
+functions used.*
 
 ## Arithmetic
 Basic operations of addition, subtraction, multiplication, and division were implemented in a
