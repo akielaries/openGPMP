@@ -15,7 +15,7 @@ ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
 # FILES FOR CALCULUS OPERATIONS
 CALC		= $(SRCDIR)/calculus/RM_deriv.cpp
-CALCDRV		= $(PROJDIR)/drivers/d_deriv.cpp
+CALCDRV		= $(PROJDIR)/drivers/calc/d_deriv.cpp
 CALCBIN		= calc
 # FILES FOR REGRESSION
 LR			= $(SRCDIR)/regression/RM_linreg.cpp
