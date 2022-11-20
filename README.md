@@ -28,6 +28,9 @@ Linear Algebra      |*in progress*      | ![lin-alg](https://github.com/akielari
 Linear Regression   |*in progress*      | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) | *(in progress)* |
 Number Theory       |*in progress*      | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | *(in progress)* |
 
+> :warning: *These modules will eventually be provided with some documentation on the underlying
+functions of each module respectively.*
+
 ## Arithmetic
 Basic operations of addition, subtraction, multiplication, and division were implemented in a
 way to accept `n` arguments of `n` types. Meaning calling any of the respective functions allows
@@ -35,11 +38,44 @@ numerous parameters to be passed in of various numeric data type. This acts as t
 of the basic functionalities of this package.
 
 ## Calculus
-## Statistics
+### Differential
+The derivative of a function of a real variable measures the sensitivity to change of the function value 
+(output value) with respect to a change in its argument (input value). For example, the derivative of the 
+position of a moving object with respect to time is the object's velocity: this measures how quickly the 
+position of the object changes when time advances.
+
 ## Linear Algebra
 ### Vector Operations
+#### Vector Addition
+Two vectors of the same size can be added together by adding the corresponding elements, to form another 
+vector of the same size, called the sum of the vectors. Vector addition is denoted by the symbol +. 
+(Thus the symbol + is overloaded to mean scalar addition when scalars appear on its left- and right-hand 
+sides, and vector addition when vectors appear on its left- and right-hand sides.)
+#### Vector/Scalar Multiplication
+Another operation is scalar multiplication or scalar-vector multiplication, in which a vector is multiplied 
+by a scalar (i.e., number), which is done by multiplying every element of the vector by the scalar. Scalar 
+multiplication is denoted by juxtaposition, typically with the scalar on the left.
+
+## Number Theory
+### Rivest Cipher 4 (RC4) Encryption Algorithm
+A stream cipher algorithm created by Ron Rivest (creator of RSA) previously declared insecure. RC4 generates a pseudorandom 
+stream of bits (a keystream). As with any stream cipher, these can be used for encryption by combining it with the plaintext 
+using bitwise exclusive or; decryption is performed the same way (since exclusive or with given data is an involution). This 
+is similar to the one-time pad, except that generated pseudorandom bits, rather than a prepared stream, are used.
+To generate the keystream, the cipher makes use of a secret internal state which consists of two parts:
+
+1. A permutation of all 256 possible bytes (denoted "S" below).
+2. Two 8-bit index-pointers (denoted "i" and "j").
+The permutation is initialized with a variable-length key, typically between 40 and 2048 bits, using the key-scheduling 
+algorithm (KSA). Once this has been completed, the stream of bits is generated using the pseudo-random generation algorithm (PRGA).
+
 
 ## Deep Learning
+### Linear Regression
+A linear approach for modelling the relationship between a scalar response and one or more explanatory variables 
+(also known as dependent and independent variables). In linear regression, the relationships are modeled using 
+linear predictor functions whose unknown model parameters are estimated from the data. Such models are called linear models.
+
 ### Cross Validation
 A resampling technique, the idea of this method is to train our model by utilizing 
 the subsets of our data set then proceeding to evaluate + compare against the original.
@@ -74,6 +110,9 @@ $ make calculus
 
 # compile + run the Linear-Regression example 
 $ make lin-reg
+
+# compile + run the RC4 Encryption Algo example from the Number Theory Module
+$ make num-theory
 
 # to remove the generated binaries
 $ make clean
