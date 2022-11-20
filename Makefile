@@ -26,6 +26,11 @@ BLA			= $(SRCDIR)/LINALG/RM_lao.cpp
 BLADRV		= $(PROJDIR)/drivers/d_lao.cpp
 BLABIN		= la_ops
 
+# FILES FOR NUMBER THEORY OPERATIONS
+RC			= $(SRCDIR)/number_theory/RM_rc4.cpp
+RCDRV		= $(PROJDIR)/drivers/number_theory/d_rc4.cpp
+RCBIN		= rc4
+
 LIBDIR		= $(PROJDIR)/include
 
 
@@ -45,11 +50,16 @@ la-ops:
 	${CC} ${BLA} ${BLADRV} -o ${BLABIN}
 	./${BLABIN}
 
+num-theory: 
+	${CC} ${RC} ${RCDRV} -o ${RCBIN}
+	./${RCBIN}
+
 clean-mods:
 	rm -f ${ARBIN}
 	rm -f ${CALCBIN}
 	rm -f ${LRBIN}
 	rm -f ${BLABIN}
+	rm -f ${RCBIN}
 
 # testing created modules
 # test arith

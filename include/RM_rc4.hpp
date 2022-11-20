@@ -17,13 +17,16 @@ class RC4 {
 
     public:
         /* swaps two values in a traditional way using chars */
-        void swap_values();
+        void trad_swap(unsigned char *a, unsigned char *b);
         /* swaps two values using the XOR operator */
-        void XOR_swap();
-        /* the RC4 encryption algorithm */
-        void RC4();
-        void PRGA();
-        void KSA();
+        void XOR_swap(unsigned char *a, unsigned char *b);
+        /* Key Scheduling Algorithm */
+        void KSA(char *key, unsigned char *S);
+        /* Pseudo-Random Generation Algorithm */
+        void PRGA(unsigned char *S, char *plaintext,
+                    unsigned char *ciphertext);
+        /* compute our hash using the the RC4 encryption algorithm */
+        void compute(char *key, char *plaintext, unsigned char *ciphertext);
 
 };
 

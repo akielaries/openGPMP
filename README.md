@@ -26,6 +26,7 @@ Arithmetic          |*mostly finished*  | ![Arith](https://github.com/akielaries
 Calculus            |*in progress*      | ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)      | *(in progress)* |
 Linear Algebra      |*in progress*      | ![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) | *(in progress)* |
 Linear Regression   |*in progress*      | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) | *(in progress)* |
+Number Theory       |*in progress*      | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | *(in progress)* |
 
 ## Arithmetic
 Basic operations of addition, subtraction, multiplication, and division were implemented in a
