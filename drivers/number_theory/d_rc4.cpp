@@ -32,13 +32,7 @@ int main() {
     std::string key2    = "Secret";
     std::string text2   = "Attack at dawn";
 
-    /*
-    if (argc < 3) {
-        printf("Usage: %s <key> <plaintext>", argv[0]);
-        return EXIT_FAILURE;
-    }
-    */
-
+    // declare a ciphertext pointer and allocate memory
     unsigned char *ciphertext = (unsigned char *)malloc(sizeof(int) * strlen(text0));
   
     if (ciphertext == NULL) {
