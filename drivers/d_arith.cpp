@@ -12,7 +12,7 @@ int main(){
     /*
      * This functionality was really only implemented for practice 
      * for dealing with complex algorithms and equations later. There
-     * a plethora of way to store data and then perform basic arithmetic 
+     * a plethora of ways to store data and then perform basic arithmetic 
      * operations so it is trivial to reinvent the wheel for these types
      * of operations. 
      * Ideally if you want to perform the summation or product on a list
