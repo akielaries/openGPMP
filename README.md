@@ -68,6 +68,8 @@ theoretical and is difficult to view its applications in a comprehensible sense.
 Number Theory, this module will also focus on encryption algorithms.
 
 ### Cryptography
+#### Caesar Cipher
+#### Monoalphabetic Substitution Keyword Cipher
 #### Rivest Cipher 2 (RC2) Encryption Algorithm
 #### Rivest Cipher 4 (RC4) Encryption Algorithm
 A stream cipher algorithm created by Ron Rivest (creator of RSA) previously declared insecure. RC4 generates a pseudorandom 
