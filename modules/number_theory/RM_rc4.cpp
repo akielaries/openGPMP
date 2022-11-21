@@ -9,7 +9,7 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/RM_rc4.hpp"
+#include "../../include/rc4.hpp"
 
 void RC4::byte_swap(uint8_t *a, uint8_t *b) {
 	uint8_t swapped = * a;

@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 #include <cassert>
-#include "../../include/RM_deriv.hpp"
+#include "../../include/deriv.hpp"
 
 
 int main() {

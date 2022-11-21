@@ -27,8 +27,8 @@ BLADRV		= $(PROJDIR)/drivers/d_lao.cpp
 BLABIN		= la_ops
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
-CCIPH		= $(SRCDIR)/number_theory/RM_ccipher.cpp
-CCIPHDRV	= $(PROJDIR)/drivers/number_theory/d_ccipher.cpp
+CCIPH		= $(SRCDIR)/number_theory/RM_cipher.cpp
+CCIPHDRV	= $(PROJDIR)/drivers/number_theory/d_cipher.cpp
 CCIPHBIN	= ccipher
 
 RC2			= $(SRCDIR)/number_theory/RM_rc2.cpp

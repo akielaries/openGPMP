@@ -4,7 +4,7 @@
  */
 #include <iostream>
 #include <stdio.h>
-#include "../include/RM_linreg.hpp"
+#include "../include/linreg.hpp"
 
 
 int main() {

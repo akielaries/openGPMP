@@ -6,7 +6,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "../../include/RM_linreg.hpp"
+#include "../../include/linreg.hpp"
 
 
 /*

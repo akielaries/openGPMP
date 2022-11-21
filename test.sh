@@ -15,7 +15,6 @@
 make arith
 make lin-reg
 make calculus
-make la-ops
+make num-theory
 # delete generated binaries
-make clean
-
+make clean-mods

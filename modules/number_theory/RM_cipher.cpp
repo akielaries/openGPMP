@@ -9,7 +9,7 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/RM_ccipher.hpp"
+#include "../../include/cipher.hpp"
 
 
 std::string CIPHER::C_cipher(std::string plaintext, int key) {
