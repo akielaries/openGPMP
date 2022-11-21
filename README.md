@@ -135,3 +135,9 @@ $ make clean
 As I progress through different mathematical operations I will provide more 
 examples as driver files in drivers folder with some corresponding 
 documentation. 
+
+# Future
+* fuzzing /num theory module
+* test custom crypto algo 
+* open src algos, interpolate?
+* lateral development on this is ideal but for sanity stick to math related to school / work
