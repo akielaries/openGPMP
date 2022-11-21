@@ -13,6 +13,7 @@ int main() {
     /*
      * Provide some details on how to use this algorithm
      */
+    std::cout << "<------------------------------------------------------>\n\n";
     std::cout << "RIVEST CIPHER (RC4) EXAMPLE\n\n";
 
     // declare RC4 class obj
