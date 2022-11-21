@@ -63,8 +63,8 @@ multiplication is denoted by juxtaposition, typically with the scalar on the lef
 ## Number Theory
 A branch of pure mathematics with applications in cryptography, phyics, others areas of computation, etc. 
 that primarily deals with the study of integers, integer valued functions, prime numbers, as well as 
-the attributes and properties made out integers and their functions. This topic of mathematics is quite
-theoretical and is difficult to view its applications in a comprehensible sense. Beyond the basics of 
+the attributes and properties made from integers and their functions. This topic of mathematics is quite
+theoretical and is difficult to view the applications in a comprehensible sense. Beyond the basics of 
 Number Theory, this module will also focus on encryption algorithms.
 
 ### Cryptography
