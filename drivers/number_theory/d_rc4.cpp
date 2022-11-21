@@ -13,7 +13,7 @@ int main() {
     /*
      * Provide some details on how to use this algorithm
      */
-    std::cout << "RIVEST CIPHER (RC*) EXAMPLE\n\n";
+    std::cout << "RIVEST CIPHER (RC4) EXAMPLE\n\n";
 
     // declare RC4 class obj
     RC4 rc;
@@ -27,33 +27,41 @@ int main() {
     char* key0    = (char*)"Key";
     char* text0   = (char*)"Plaintext";
     // expected hash = 1021BF0420
-    std::string key1    = "Wiki";
-    std::string text1   = "pedia";
+    char* key1    = (char*)"Wiki";
+    char* text1   = (char*)"pedia";
     // expected hash = 45A01F645FC35B383552544B9BF5
-    std::string key2    = "Secret";
-    std::string text2   = "Attack at dawn";
+    char* key2    = (char*)"Secret";
+    char* text2   = (char*)"Attack at dawn";
+
+    // bool value for using tradition char swap vs XOR swap
+    bool x_swap = true;
+    bool t_swap = false;
 
     // declare a ciphertext pointer and allocate memory
-    unsigned char *ciphertext = (unsigned char *)malloc(sizeof(int) * strlen(text0));
+    unsigned char *hashtext_0 = (unsigned char *)malloc(sizeof(int) * 
+                                strlen(text0));
   
-    if (ciphertext == NULL) {
-        fprintf(stderr, "[-] Failed to allocate memory");
-        exit(EXIT_FAILURE);
-    }
-
+    printf("String before hash : %s\n", text0);
     /*
      * the main arguments are <key> & <plaintext> + allocated memory of
-     * ciphertext
+     * ciphertext as well as the swap type (x_swap true/false)
      */
-    rc.compute(key0, text0, ciphertext);
-    
+    rc.compute(key0, text0, hashtext_0, x_swap);
+    printf("hash text = %02hhx\n\n", hashtext_0);
+    printf("String after hash : ");
+
     // printing the computed hashes 
     for (size_t i = 0, len = strlen(text0); i < len; i++) {
-        printf("|x%02hhx| ", ciphertext[i]);
+        if (x_swap == true) {
+            printf("|x%02hhx| ", hashtext_0[i]);
+        }
+        else {
+            printf("%02hhX", hashtext_0[i]);
+        }
     }
     printf("\n");
 
-    free(ciphertext);
+    free(hashtext_0);
     return EXIT_SUCCESS;
 }
 

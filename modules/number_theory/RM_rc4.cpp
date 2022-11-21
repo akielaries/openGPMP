@@ -24,7 +24,10 @@ void RC4::XOR_swap(unsigned char *a, unsigned char *b) {
     *a ^= *b;
 }
 
-void RC4::KSA(char *key, unsigned char *S) {
+void RC4::KSA(char *key, 
+                unsigned char *S,
+                bool swap_type) {
+
     uint32_t len = strlen(key);
     int j = 0;
 
@@ -34,12 +37,22 @@ void RC4::KSA(char *key, unsigned char *S) {
 
     for (int i = 0; i < BYTE_LIMIT; i++) {
         j = (j + S[i] + key[i % len]) & BITS;
-        XOR_swap(&S[i], &S[j]);
+        
+        // choose swap algorithm based off swap_type
+        if (swap_type == true) {
+            XOR_swap(&S[i], &S[j]);
+        }
+        else {
+            trad_swap(&S[i], &S[j]);
+        }
     }
 }
 
-void RC4::PRGA(unsigned char *S, char *plaintext, 
-                unsigned char *ciphertext) {
+void RC4::PRGA(unsigned char *S, 
+                char *plaintext, 
+                unsigned char *ciphertext, 
+                bool swap_type) {
+    
     int i = 0;
     int j = 0;
 
@@ -47,17 +60,38 @@ void RC4::PRGA(unsigned char *S, char *plaintext,
         i = (i + 1) & BITS;
         j = (j + S[i]) & BITS;
 
-        XOR_swap(&S[i], &S[j]);
+        // choose swap algorithm based off swap_type
+        if (swap_type == true) {
+            XOR_swap(&S[i], &S[j]);
+        }
+        else {
+            trad_swap(&S[i], &S[j]);
+        }
         uint32_t rnd = S[(S[i] + S[j]) & BITS];
 
         ciphertext[n] = rnd ^ plaintext[n];
     }
 }
 
-void RC4::compute(char *key, char *plaintext, unsigned char *ciphertext) {
+void RC4::display_hash(unsigned char *ciphertext) {
+    // initialize array to store ciphertext in
+    printf("cipher text = %s\n", ciphertext);
+    // append array with values from ciphertext
+    
+    // return array
+}
 
+void RC4::compute(char *key, 
+                char *plaintext, 
+                unsigned char *ciphertext, 
+                bool swap_type) {
+
+    if (ciphertext == NULL) {
+        printf("Error Allocating Memory\n");
+        exit(EXIT_FAILURE);
+    }
     unsigned char S[BYTE_LIMIT];
-    KSA(key, S);
-    PRGA(S, plaintext, ciphertext);
+    KSA(key, S, swap_type);
+    PRGA(S, plaintext, ciphertext, swap_type);
 }
 
