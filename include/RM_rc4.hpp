@@ -16,6 +16,8 @@
 class RC4 {
 
     public:
+        /* swaps two values using uint8_t type */
+        void byte_swap(uint8_t *a, uint8_t *b);
         /* swaps two values in a traditional way using chars */
         void trad_swap(unsigned char *a, unsigned char *b);
         /* swaps two values using the XOR operator */
