@@ -28,8 +28,12 @@ Linear Algebra      |*in progress*      | ![lin-alg](https://github.com/akielari
 Linear Regression   |*in progress*      | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) | *(in progress)* |
 Number Theory       |*in progress*      | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | *(in progress)* |
 
-> :warning: *These modules will eventually be provided with some documentation on the underlying
-functions used.*
+> :warning: *These modules will eventually be provided with their own documentation and references 
+on the underlying functions used as well as background/history. As development progresses, modules 
+are added, and documentation is updated/created, the existing modules be encapsulated by 'suites' 
+and the modules within will hold relevance to the overarching suite. As this happens the READEME
+will be trimmed down to what modules are shown and references to more in depth documentation on
+said modules.*
 
 ## Arithmetic
 Basic operations of addition, subtraction, multiplication, and division were implemented in a
@@ -57,7 +61,15 @@ by a scalar (i.e., number), which is done by multiplying every element of the ve
 multiplication is denoted by juxtaposition, typically with the scalar on the left.
 
 ## Number Theory
-### Rivest Cipher 4 (RC4) Encryption Algorithm
+A branch of pure mathematics with applications in cryptography, phyics, others areas of computation, etc. 
+that primarily deals with the study of integers, integer valued functions, prime numbers, as well as 
+the attributes and properties made out integers and their functions. This topic of mathematics is quite
+theoretical and is difficult to view its applications in a comprehensible sense. Beyond the basics of 
+Number Theory, this module will also focus on encryption algorithms.
+
+### Cryptography
+#### Rivest Cipher 2 (RC2) Encryption Algorithm
+#### Rivest Cipher 4 (RC4) Encryption Algorithm
 A stream cipher algorithm created by Ron Rivest (creator of RSA) previously declared insecure. RC4 generates a pseudorandom 
 stream of bits (a keystream). As with any stream cipher, these can be used for encryption by combining it with the plaintext 
 using bitwise exclusive or; decryption is performed the same way (since exclusive or with given data is an involution). This 
@@ -68,7 +80,8 @@ To generate the keystream, the cipher makes use of a secret internal state which
 2. Two 8-bit index-pointers (denoted "i" and "j").
 The permutation is initialized with a variable-length key, typically between 40 and 2048 bits, using the key-scheduling 
 algorithm (KSA). Once this has been completed, the stream of bits is generated using the pseudo-random generation algorithm (PRGA).
-
+### Rivest Cipher 5 (RC5) Encryption Algorithm
+### Rivest Cipher 6 (RC6) Encryption Algorithm
 
 ## Deep Learning
 ### Linear Regression
