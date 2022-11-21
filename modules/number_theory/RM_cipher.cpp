@@ -1,7 +1,5 @@
 /*
- * This file shows the implementation of the Rivest Cipher 4 (RC4) 
- * encryption algorithm created by Ron Rivest using either a traditional
- * swap method or with the XOR operator
+ * This file shows the implementation of some basic stream cipher algorithms
  */
 #include <cstdlib>
 #include <cmath>
