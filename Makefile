@@ -27,9 +27,9 @@ BLADRV		= $(PROJDIR)/drivers/d_lao.cpp
 BLABIN		= la_ops
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
-CCIPH		= $(SRCDIR)/number_theory/RM_cipher.cpp
-CCIPHDRV	= $(PROJDIR)/drivers/number_theory/d_cipher.cpp
-CCIPHBIN	= ccipher
+CIPH		= $(SRCDIR)/number_theory/RM_cipher.cpp
+CIPHDRV	= $(PROJDIR)/drivers/number_theory/d_cipher.cpp
+CIPHBIN	= cipher
 
 RC2			= $(SRCDIR)/number_theory/RM_rc2.cpp
 RC2DRV		= $(PROJDIR)/drivers/number_theory/d_rc2.cpp
@@ -67,8 +67,8 @@ num-theory:
 	${CC} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
-	${CC} ${CCIPH} ${CCIPHDRV} -o ${CCIPHBIN}
-	./${CCIPHBIN}
+	${CC} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	./${CIPHBIN}
 
 clean-mods:
 	rm -f ${ARBIN}
@@ -76,7 +76,7 @@ clean-mods:
 	rm -f ${LRBIN}
 	rm -f ${BLABIN}
 	rm -f ${RC4BIN}
-	rm -f ${CCIPHBIN}
+	rm -f ${CIPHBIN}
 
 # testing created modules
 # test arith
