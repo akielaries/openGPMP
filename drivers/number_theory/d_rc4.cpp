@@ -1,6 +1,6 @@
 /* RM-pkg
  * Testing the RC4 stream cipher encryption algorithm on fields
- * of test
+ * of text using a XOR and tradition swap method.
  */
 #include <iostream>
 #include <stdio.h>
@@ -13,7 +13,7 @@ int main() {
     /*
      * Provide some details on how to use this algorithm
      */
-    std::cout << "DERIVATIVE EXAMPLE\n\n";
+    std::cout << "RIVEST CIPHER (RC*) EXAMPLE\n\n";
 
     // declare RC4 class obj
     RC4 rc;
@@ -21,6 +21,7 @@ int main() {
     /*
      * declare some key values and strings to hash
      * these first 3 plaintext strings are verified from the RC4 wiki
+     * and will be displayed when using a traditional swap method 
      */
     // expected hash = BBF316E8D940AF0AD3
     char* key0    = (char*)"Key";
@@ -39,6 +40,7 @@ int main() {
         fprintf(stderr, "[-] Failed to allocate memory");
         exit(EXIT_FAILURE);
     }
+
     /*
      * the main arguments are <key> & <plaintext> + allocated memory of
      * ciphertext
@@ -47,12 +49,11 @@ int main() {
     
     // printing the computed hashes 
     for (size_t i = 0, len = strlen(text0); i < len; i++) {
-        printf("\\x%02hhx ", ciphertext[i]);
+        printf("|x%02hhx| ", ciphertext[i]);
     }
+    printf("\n");
 
     free(ciphertext);
     return EXIT_SUCCESS;
-
-
 }
 

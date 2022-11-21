@@ -5,10 +5,11 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../modules/basics/RM_arith.hpp"
+#include "../include/RM_arith.hpp"
 
 
 int main(){
+    std::cout << "TESTING ARITHMETIC OPERATIONS\n" << std::endl;
     /*
      * This functionality was really only implemented for practice 
      * for dealing with complex algorithms and equations later. There
