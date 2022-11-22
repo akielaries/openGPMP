@@ -16,6 +16,8 @@ int main() {
     std::cout << "<------------------------------------------------------>\n\n";
     std::cout << "RIVEST CIPHER (RC4) EXAMPLE\n\n";
 
+    /*<--------------------------------INIT--------------------------------->*/
+
     // declare RC4 class obj
     RC4 rc;
 
@@ -34,21 +36,28 @@ int main() {
     char* key2    = (char*)"Secret";
     char* text2   = (char*)"Attack at dawn";
 
-    // bool value for using tradition char swap vs XOR swap
-    bool x_swap = true;
-    bool t_swap = false;
+    /*
+     * char value for using one of the following 
+     * XOR swap         0 
+     * traditional swap 1
+     * byte swap        2
+     */
+    int x_swap = 0;
+    int t_swap = 1;
+    int b_swap = 2;
 
     // declare a ciphertext pointer and allocate memory
     unsigned char *hashtext_0 = (unsigned char *)malloc(sizeof(int) * 
                                 strlen(text0));
   
     printf("String before hash : %s\n", text0);
+
+    /*<-------------------------------COMPUTE-------------------------------->*/
     /*
      * the main arguments are <key> & <plaintext> + allocated memory of
      * ciphertext as well as the swap type (x_swap true/false)
      */
     rc.compute(key0, text0, hashtext_0, x_swap);
-    printf("hash text = %02hhx\n\n", hashtext_0);
     printf("String after hash : ");
 
     // printing the computed hashes 

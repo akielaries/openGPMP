@@ -32,7 +32,7 @@ void RC4::XOR_swap(unsigned char *a, unsigned char *b) {
 
 void RC4::KSA(char *key, 
                 unsigned char *S,
-                bool swap_type) {
+                int swap_type) {
 
     uint32_t len = strlen(key);
     int j = 0;
@@ -43,13 +43,20 @@ void RC4::KSA(char *key,
 
     for (int i = 0; i < BYTE_LIMIT; i++) {
         j = (j + S[i] + key[i % len]) & BITS;
-        
+
         // choose swap algorithm based off swap_type
-        if (swap_type == true) {
+        if (swap_type == 0) {
             XOR_swap(&S[i], &S[j]);
         }
-        else {
+        else if (swap_type == 1) {
             trad_swap(&S[i], &S[j]);
+        }
+        else if (swap_type == 2) {
+            byte_swap(&S[i], &S[j]);
+        }
+        else {
+            std::cout << "[-] Error performing swap in KSA" << std::endl;
+            exit(EXIT_FAILURE);
         }
     }
 }
@@ -57,7 +64,7 @@ void RC4::KSA(char *key,
 void RC4::PRGA(unsigned char *S, 
                 char *plaintext, 
                 unsigned char *ciphertext, 
-                bool swap_type) {
+                int swap_type) {
     
     int i = 0;
     int j = 0;
@@ -67,12 +74,20 @@ void RC4::PRGA(unsigned char *S,
         j = (j + S[i]) & BITS;
 
         // choose swap algorithm based off swap_type
-        if (swap_type == true) {
+        if (swap_type == 0) {
             XOR_swap(&S[i], &S[j]);
         }
-        else {
+        else if (swap_type == 1) {
             trad_swap(&S[i], &S[j]);
         }
+        else if (swap_type == 2) {
+            byte_swap(&S[i], &S[j]);
+        }
+        else {
+            std::cout << "[-] Error performing swap in PRGA" << std::endl;
+            exit(EXIT_FAILURE);
+        }
+
         uint32_t rnd = S[(S[i] + S[j]) & BITS];
 
         ciphertext[n] = rnd ^ plaintext[n];
@@ -80,22 +95,23 @@ void RC4::PRGA(unsigned char *S,
 }
 
 void RC4::display_hash(unsigned char *ciphertext) {
-    // initialize array to store ciphertext in
+    // initialize string to store ciphertext in
     printf("cipher text = %s\n", ciphertext);
-    // append array with values from ciphertext
+    // append string with values from ciphertext
     
-    // return array
+    // return string?
 }
 
 void RC4::compute(char *key, 
                 char *plaintext, 
                 unsigned char *ciphertext, 
-                bool swap_type) {
+                int swap_type) {
 
     if (ciphertext == NULL) {
-        printf("Error Allocating Memory\n");
+        printf("[-] Error Allocating Memory\n");
         exit(EXIT_FAILURE);
     }
+
     unsigned char S[BYTE_LIMIT];
     KSA(key, S, swap_type);
     PRGA(S, plaintext, ciphertext, swap_type);
