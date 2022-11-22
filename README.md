@@ -20,13 +20,13 @@ Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) fo
 on using these tools in your own project. 
 
 # Modules
-Module | Dev Status | Build Status | Unit Tests |
--------|------------|--------|-----------|
-Arithmetic          |*mostly finished*  | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)    | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/t_arith.yml/badge.svg) |
-Calculus            |*in progress*      | ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)      | *(in progress)* |
-Linear Algebra      |*in progress*      | ![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) | *(in progress)* |
-Linear Regression   |*in progress*      | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) | *(in progress)* |
-Number Theory       |*in progress*      | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | *(in progress)* |
+Module | Build Status | Unit Tests | Fuzzing |
+-------|--------------|------------|---------|
+Arithmetic          | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)    | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/t_arith.yml/badge.svg) | *Coming Soon* |
+Calculus            | ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)      | *In Progress* | *Coming Soon* |
+Linear Algebra      | ![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) | *In Progress* | *Coming Soon* |
+Linear Regression   | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) | *In Progress* | *Coming Soon* |
+Number Theory       | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | *In Progress* | *In Progress* |
 
 > :warning: *These modules will eventually be provided with their own documentation and references 
 on the underlying functions used as well as background/history. As development progresses, modules 
