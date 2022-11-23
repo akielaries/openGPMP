@@ -83,7 +83,7 @@ clean-mods:
 
 # testing created modules
 # using gtest
-GTFLAGS		= -lgtest -lpthread
+GTFLAGS		= -pthread -lgtest 
 
 VG			= valgrind
 VGFLAGS		= --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck
