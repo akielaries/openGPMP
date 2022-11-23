@@ -44,6 +44,10 @@ and the modules within will hold relevance to the overarching suite. As this hap
 will be trimmed down to what modules are shown and references to more in depth documentation on
 said modules.*
 
+### Test Coverage
+![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ)
+
+
 ## Arithmetic
 Basic operations of addition, subtraction, multiplication, and division were implemented in a
 way to accept `n` arguments of `n` types. Meaning calling any of the respective functions allows
