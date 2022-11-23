@@ -52,18 +52,3 @@ jobs:
           files: .coverage/lcov.info
 
 
-      - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ github.token }}
-
-
-      - name: Upload to coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install --upgrade pip setuptools cpp-coveralls
-          coveralls -E ".*CMakeFiles.*" -E ".*tests/.*.cpp.*" --exclude "venv" --exclude "build/_deps"
-
