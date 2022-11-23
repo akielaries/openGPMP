@@ -21,7 +21,14 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Configure
-        run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make install && sudo cp *.so /usr/lib && sudo ln -s /usr/lib/libgtest.so /usr/local/lib/libgtest.so && sudo ln -s /usr/lib/libgtest_main.so /usr/local/lib/libgtest_main.so
+        run: |
+          sudo apt-get install libgtest-dev && 
+          cd /usr/src/gtest && 
+          sudo cmake CMakeLists.txt && 
+          sudo make && 
+          sudo cp *.so /usr/lib && 
+          sudo ln -s /usr/lib/libgtest.so /usr/local/lib/libgtest.so && 
+          sudo ln -s /usr/lib/libgtest_main.so /usr/local/lib/libgtest_main.so
       
       - name: Set up
         run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Werror" ..
