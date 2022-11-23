@@ -20,6 +20,14 @@ Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) fo
 on using these tools in your own project. 
 
 # Modules
+These modules are tested by compiling a test driver file with a main() function
+against the source `.cpp` file of the respective module, running a suite of afl 
+tools against the compiles binaries. To analyze for memory leaks, within the 
+Makefile of the project, there are checks using valgrind, for unit testing
+I made use of googletest (Google produces some fun OSS), there are suites of 
+cases testing each module.
+
+
 Module | Build Status | Unit Tests | Fuzzing |
 -------|--------------|------------|---------|
 Arithmetic          | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)    | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/t_arith.yml/badge.svg) | *Coming Soon* |
