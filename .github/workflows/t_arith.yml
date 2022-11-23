@@ -31,11 +31,6 @@ jobs:
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
       
-      - name: Set up
-        run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Werror" ..
-
-      - name: Install gtest
-        run: make 
 
       - name: gtest on Arith 
         run: make test-arith
