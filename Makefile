@@ -82,14 +82,25 @@ clean-mods:
 	rm -f ${CIPHBIN}
 
 # testing created modules
+# using gtest
+GTFLAGS		= -lgtest_main -lgtest
+
+TMEM		= $(PROJDIR)/tests/t_memleak.cpp
+TMEMBIN		= t_memleak
+
 # test arith
 TSARDRV		= $(PROJDIR)/tests/t_arith.cpp
 TSARBIN		= t_arith
+
+# testing memory
+test-mem:
+	${CC} ${TMEM} ${GTFLAGS} -o ${TMEMBIN}
+	./${TMEMBIN}
 
 test-arith:
 	${CC} ${TSARDRV} -o ${TSARBIN}
 	./${TSARBIN}
 
 clean-tests:
-	rm -f ${}
+	rm -f ${TMEMBIN}
 
