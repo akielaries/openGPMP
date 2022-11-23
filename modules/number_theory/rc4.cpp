@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "../../include/rc4.hpp"
 
+
 void RC4::byte_swap(uint8_t *a, uint8_t *b) {
 	uint8_t swapped = * a;
 	swapped = *a;
@@ -96,7 +97,7 @@ void RC4::PRGA(unsigned char *S,
 
 void RC4::display_hash(unsigned char *ciphertext) {
     // initialize string to store ciphertext in
-    printf("cipher text = %s\n", ciphertext);
+    std::cout << ciphertext << std::endl;
     // append string with values from ciphertext
     
     // return string?
@@ -108,7 +109,7 @@ void RC4::compute(char *key,
                 int swap_type) {
 
     if (ciphertext == NULL) {
-        printf("[-] Error Allocating Memory\n");
+        std::cout << "[-] Error Allocating Memory\n";
         exit(EXIT_FAILURE);
     }
 

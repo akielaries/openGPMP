@@ -63,15 +63,15 @@ la-ops:
 	./${BLABIN}
 
 num-theory: 
+	# BASIC STREAM CIPHERS
+	${CC} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
 	${CC} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
 	${CC} ${RC5} ${RC5DRV} -o ${RC5BIN}
 	./${RC5BIN}
-
-	${CC} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
-	./${CIPHBIN}
 
 clean-mods:
 	rm -f ${ARBIN}
