@@ -85,6 +85,9 @@ clean-mods:
 # using gtest
 GTFLAGS		= -lgtest_main -lgtest
 
+VG			= valgrind
+VGFLAGS		= --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck
+
 TMEM		= $(PROJDIR)/tests/t_memleak.cpp
 TMEMBIN		= t_memleak
 
@@ -93,12 +96,16 @@ TSARDRV		= $(PROJDIR)/tests/t_arith.cpp
 TSARBIN		= t_arith
 
 # testing memory
-test-mem:
+test-gtest:
 	${CC} ${TMEM} ${GTFLAGS} -o ${TMEMBIN}
 	./${TMEMBIN}
 
+# test memory leaks of generated module binaries
+test-leaks:
+	${VG} ${VGFLAGS} ./${TMEMBIN}
+
 test-arith:
-	${CC} ${TSARDRV} -o ${TSARBIN}
+	${CC} ${TSARDRV} ${GTFLAGS} -o ${TSARBIN}
 	./${TSARBIN}
 
 clean-tests:
