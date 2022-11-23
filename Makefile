@@ -85,6 +85,15 @@ clean-mods:
 # using gtest
 GTFLAGS		= -pthread -lgtest 
 
+GCOV		= gcov
+LCOV		= lcov
+GCOVFLAGS	= -fprofile-arcs -ftest-coverage
+LCOVFLAGS1	= --capture --directory 
+LCOVFLAGS2	= --output-file
+COVREPORT	= ./lcov.info
+GENREPORT	= genhtml
+GENFLAGS	= --output-directory
+
 VG			= valgrind
 VGFLAGS		= --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck
 
@@ -105,7 +114,7 @@ test-leaks:
 	${VG} ${VGFLAGS} ./${TMEMBIN}
 
 test-arith:
-	${CC} ${TSARDRV} ${GTFLAGS} -o ${TSARBIN}
+	${CC} ${TSARDRV} ${GTFLAGS} -o ${TSARBIN} ${GCOVFLAGS}
 	./${TSARBIN}
 
 clean-tests:
