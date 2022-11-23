@@ -2,7 +2,7 @@ add_library(example)
 
 target_sources(example
   PUBLIC
-    arith.hpp
+    arith.h
   )
 
 target_include_directories(example
