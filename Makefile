@@ -90,19 +90,30 @@ LCOV		= lcov
 GCOVFLAGS	= -fprofile-arcs -ftest-coverage
 LCOVFLAGS1	= --capture --directory 
 LCOVFLAGS2	= --output-file
-COVREPORT	= ./lcov.info
+
+COVDIR		= $(PROJDIR)/.coverage
+COVREPORT	= lcov.info
+STORE_COV	= $(addprefix $(COVDIR), $(COVREPORT))
+
+# clean these coverage files
+GCDALEFTOVERS	= $(shell find $(PROJDIR) -name '*.gcda')
+GCNOLEFTOVERS	= $(shell find $(PROJDIR) -name '*.gcno')
+GCOVLEFTOVERS	= $(shell find $(PROJDIR) -name '*.gcov')
+
 GENREPORT	= genhtml
 GENFLAGS	= --output-directory
 
 VG			= valgrind
 VGFLAGS		= --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck
 
-TMEM		= $(PROJDIR)/tests/t_memleak.cpp
+TMEM		= $(PROJDIR)/tests/misc/t_memleak.cpp
 TMEMBIN		= t_memleak
 
 # test arith
-TSARDRV		= $(PROJDIR)/tests/t_arith.cpp
+TSARDIR		= $(PROJDIR)/tests/arith
+TSARDRV		= $(PROJDIR)/tests/arith/t_arith.cpp
 TSARBIN		= t_arith
+
 
 # testing memory
 test-gtest: 
@@ -114,11 +125,19 @@ test-leaks:
 	${VG} ${VGFLAGS} ./${TMEMBIN}
 
 test-arith:
+	# cd ${TSARDIR}
 	${CC} ${TSARDRV} ${GTFLAGS} -o ${TSARBIN} ${GCOVFLAGS}
 	./${TSARBIN}
+
+cov-arith:
+	${GCOV} ${TSARDRV}
+	${LCOV} ${LCOVFLAGS1} . ${LCOVFLAGS2} ${COVREPORT}
+	rm -f ${GCDALEFTOVERS} 
+	rm -f ${GCNOLEFTOVERS}
+	rm -f ${GCOVLEFTOVERS}
+	${STORE_COV}
 
 clean-tests:
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
-
 
