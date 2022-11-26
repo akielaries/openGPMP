@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../include/arith.h"
+#include "../include/arith.hpp"
 
 
 int main(){

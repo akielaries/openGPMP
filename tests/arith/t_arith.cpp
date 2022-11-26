@@ -1,7 +1,7 @@
 /*
  * Testing Arithmetic Operations
  */
-#include "../../include/arith.h"
+#include "../../include/arith.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 
@@ -30,8 +30,8 @@ namespace {
     // subtraction
     TEST(arith_test, sub_positive) {
         EXPECT_EQ(5, ar.rm_sub(10, 8, 3));
-        //EXPECT_EQ(1, ar.rm_sub(1.25, 1.85, 2.75));
-        // EXPECT_EQ(-7, ar.rm_sub(3, 3, 7));
+        EXPECT_EQ(1, ar.rm_sub(1.25, 1.85, 2.75));
+        EXPECT_EQ(-7, ar.rm_sub(3, 3, 7));
     }
 }
 

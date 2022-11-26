@@ -137,7 +137,15 @@ cov-arith:
 	rm -f ${GCOVLEFTOVERS}
 	${STORE_COV}
 
+CALCTESTDRV = ${PROJDIR}/tests/calc/t_calc.cpp
+TCALCBIN	= t_calc
+
+test-calc:
+	${CC} ${CALCTESTDRV} ${CALC} ${GTFLAGS} -o ${TCALCBIN}
+	./${TCALCBIN}
+
 clean-tests:
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
+	rm -f ${TCALCBIN}
 
