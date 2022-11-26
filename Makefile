@@ -124,27 +124,17 @@ test-gtest:
 test-leaks: 
 	${VG} ${VGFLAGS} ./${TMEMBIN}
 
+TEST_ARITH = $(PROJDIR)/tests/test_arith.sh
+
 test-arith:
-	# cd ${TSARDIR}
-	${CC} ${TSARDRV} ${GTFLAGS} -o ${TSARBIN} ${GCOVFLAGS}
-	./${TSARBIN}
-
-cov-arith:
-	${GCOV} ${TSARDRV}
-	${LCOV} ${LCOVFLAGS1} . ${LCOVFLAGS2} ${COVREPORT}
-	rm -f ${GCDALEFTOVERS} 
-	rm -f ${GCNOLEFTOVERS}
-	rm -f ${GCOVLEFTOVERS}
-	${STORE_COV}
-
-CALCTESTDRV = ${PROJDIR}/tests/calc/t_calc.cpp
-TCALCBIN	= t_calc
+	cd tests/arith && ./test_arith.sh
 
 test-calc:
-	${CC} ${CALCTESTDRV} ${CALC} ${GTFLAGS} -o ${TCALCBIN}
-	./${TCALCBIN}
+	cd tests/calc && ./test_calc.sh
+
 
 clean-tests:
+	find . -name "web" -type d -delete
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}
