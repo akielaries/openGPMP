@@ -21,13 +21,6 @@ Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) fo
 on using these tools in your own project. 
 
 # Modules
-These modules are tested by compiling a test driver file with a main() function
-against the source `.cpp` file of the respective module, running a suite of afl 
-tools against the compiles binaries. To analyze for memory leaks, within the 
-Makefile of the project, there are checks using valgrind, for unit testing
-I made use of googletest (Google produces some fun OSS), there are suites of 
-cases testing each module.
-
 
 Module | Build Status | Unit Tests | Fuzzing |
 -------|--------------|------------|---------|
@@ -39,12 +32,13 @@ Number Theory       | ![num-theory](https://github.com/akielaries/RM-pkg/actions
 
 > :warning: *These modules will eventually be provided with their own documentation and references 
 on the underlying functions used as well as background/history. As development progresses, modules 
-are added, and documentation is updated/created, the existing modules be encapsulated by 'suites' 
+are added, and documentation is updated/created, the existing modules will be encapsulated by 'suites' 
 and the modules within will hold relevance to the overarching suite. As this happens the READEME
 will be trimmed down to what modules are shown and references to more in depth documentation on
 said modules.*
 
 ### Test Coverage
+Testing is done with googletest and fuzzing with AFL.
 ![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ)
 
 
