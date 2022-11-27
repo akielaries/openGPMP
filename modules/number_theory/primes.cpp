@@ -27,7 +27,7 @@ int basics::power (int x, unsigned int y, int p) {
     return res;
 }
 
-int greatest_power(int n, int p) {
+int basics::greatest_power(int n, int p) {
     int x = 0;
  
     // Calculate x = n/p + n/(p^2) + n/(p^3) + ....
@@ -170,7 +170,7 @@ bool primality::solovoy_strassen(long long p, int iterations) {
     return true;
 }
 
-bool carmichael_number(int n) {
+bool primality::carmichael_number(int n) {
     for (int b = 2; b < n; b++) {
         // If "b" is relatively prime to n
         if (gcd(b, n) == 1)
@@ -280,10 +280,4 @@ int primality::ETF(unsigned int n) {
 
     return result;
 }
-
-
-
-
-
-
 
