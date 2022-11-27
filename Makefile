@@ -124,16 +124,11 @@ test-gtest:
 test-leaks: 
 	${VG} ${VGFLAGS} ./${TMEMBIN}
 
-TEST_ARITH = $(PROJDIR)/tests/test_arith.sh
-
-test-arith:
-	cd tests/arith && ./test_arith.sh
-
-test-calc:
-	cd tests/calc && ./test_calc.sh
+run-tests:
+	cd tests/ && sh -x test_all.sh
 
 clean-tests:
-	find . -name "web" -type d -delete
+	cd tests/ && rm -f *.gc* web/ RM_tests
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}

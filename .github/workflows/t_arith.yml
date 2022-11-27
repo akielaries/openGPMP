@@ -1,4 +1,4 @@
-name: Test AM
+name: Test RM-pkg
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
         run: make 
 
       - name: gtest on Arith 
-        run: make test-arith
+        run: make run-tests
 
       - name: Setup python
         uses: actions/setup-python@v4

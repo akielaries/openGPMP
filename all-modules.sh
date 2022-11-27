@@ -12,8 +12,10 @@
 
 # build + run tests in the makefile 
 make arith
-make lin-reg
 make calculus
+make lin-reg
 make num-theory
+
 # delete generated binaries
 make clean-mods
+
