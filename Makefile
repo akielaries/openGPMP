@@ -70,8 +70,8 @@ num-theory:
 	${CC} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
-	${CC} ${RC5} ${RC5DRV} -o ${RC5BIN}
-	./${RC5BIN}
+	#${CC} ${RC5} ${RC5DRV} -o ${RC5BIN}
+	#./${RC5BIN}
 
 clean-mods:
 	rm -f ${ARBIN}
