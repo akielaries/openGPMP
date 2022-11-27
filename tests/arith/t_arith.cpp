@@ -35,9 +35,11 @@ namespace {
     }
 }
 
+/*
 int main() {
     InitGoogleTest();
     
     return RUN_ALL_TESTS();
 }
+*/
 
