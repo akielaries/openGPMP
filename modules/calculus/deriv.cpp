@@ -7,7 +7,7 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/deriv.hpp"
+#include "../../include/calculus/deriv.hpp"
 
 /*
 long long calculus::derivativeTerm(std::string pTerm, long long val) {

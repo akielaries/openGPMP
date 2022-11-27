@@ -1,7 +1,7 @@
 /*
  * Testing the implementation of random cipher algorithms
  */
-#include "../../include/cipher.hpp"
+#include "../../include/number_theory/cipher.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 

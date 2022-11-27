@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <math.h>
+#include "../../include/number_theory/rc5.hpp"
 
 uint32_t shift_left(uint32_t v, uint32_t n) {
 }

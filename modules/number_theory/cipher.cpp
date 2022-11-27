@@ -7,7 +7,7 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/cipher.hpp"
+#include "../../include/number_theory/cipher.hpp"
 
 
 std::string CIPHER::C_cipher(std::string plaintext, int key) {

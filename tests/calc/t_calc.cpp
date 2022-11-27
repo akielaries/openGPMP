@@ -1,7 +1,7 @@
 /*
  * Testing Calculus Operations
  */
-#include "../../include/deriv.hpp"
+#include "../../include/calculus/deriv.hpp"
 #include <string>
 #include <limits.h>
 #include <gtest/gtest.h>

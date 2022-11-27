@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include "../../include/rc4.hpp"
+#include "../../include/number_theory/rc4.hpp"
 
 
 int main() {

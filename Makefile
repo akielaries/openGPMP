@@ -18,7 +18,7 @@ CALC		= $(SRCDIR)/calculus/deriv.cpp
 CALCDRV		= $(PROJDIR)/drivers/calc/d_deriv.cpp
 CALCBIN		= calc
 # FILES FOR REGRESSION
-LR			= $(SRCDIR)/regression/linreg.cpp
+LR			= $(SRCDIR)/ML_DL/linreg.cpp
 LRDRV		= $(PROJDIR)/drivers/d_reg.cpp
 LRBIN		= lin_reg
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS

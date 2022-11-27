@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include "../../include/cipher.hpp"
+#include "../../include/number_theory/cipher.hpp"
 
 
 int main() {

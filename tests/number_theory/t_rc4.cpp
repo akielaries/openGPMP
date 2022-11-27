@@ -2,7 +2,7 @@
  * Testing an implementation of RC4 encryption algorithm based off 
  * verified plaintext->hash conversions
  */
-#include "../../include/rc4.hpp"
+#include "../../include/number_theory/rc4.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 

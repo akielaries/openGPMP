@@ -7,7 +7,7 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "../../include/lao.hpp"
+#include "../../include/linalg/lao.hpp"
 
 
 /*

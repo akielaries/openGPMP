@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../include/lao.hpp"
+#include "../include/linalg/lao.hpp"
 
 
 template <typename V1, typename V2>
@@ -40,7 +40,6 @@ std::vector<int> v_add(std::vector<int> vector0, std::vector<int> vector1) {
     return vector0, vector1;
 
 }
-
 
 int main() {
     std::cout << "VECTOR ADDITION EXAMPLE" << std::endl;
