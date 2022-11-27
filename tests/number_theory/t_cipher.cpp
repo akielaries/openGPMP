@@ -54,11 +54,19 @@ namespace {
         EXPECT_EQ(expected_3, hashtext_3);
     }
 
-    /*
-    TEST(rc4_test, hash_BYTE) {
+    TEST(kcipher_test, keyword_1) {
+        std::string text_4 = "Password";
+        std::string key_shift_4 = "Password";
 
+        // encode
+        std::string encoded_text_1 = cc.KC_encode(key_shift_4);
+        // cipher
+        std::string hashtext_4 = cc.KC_cipher(text_4, key_shift_4);
+        
+        std::string expected_4 = "KPNNVJMW";
+        
+        EXPECT_EQ(expected_4, hashtext_4);
     }
-    */
 }
 
 /*
