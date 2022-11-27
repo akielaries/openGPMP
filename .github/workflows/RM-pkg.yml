@@ -46,17 +46,6 @@ jobs:
       - name: gtest on RM-pkg
         run: make run-tests
 
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-
-      - name: Run Codacy Coverage
-        uses: codacy/codacy-coverage-reporter-action@master
-        with: 
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: .coverage/lcov.info
-      
       - name: Codecov Sync     
         uses: codecov/codecov-action@v3
         with:
