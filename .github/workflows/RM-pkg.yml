@@ -45,8 +45,14 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
+
+      - name: Run Codacy Coverage
+        uses: codacy/codacy-coverage-reporter-action@master
+        with: 
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: .coverage/lcov.info
       
-      - name: codecov sync        
+      - name: Codecov Sync     
         uses: codecov/codecov-action@v3
         with:
           files: .coverage/lcov.info
