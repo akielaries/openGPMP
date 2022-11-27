@@ -17,6 +17,7 @@ lcov --directory . --capture --output-file lcov.info
 # move lcov file to .coverage
 mv lcov.info ../.coverage
 
+
 #rm -
 #rm -f *.gc*
 #rm -rf web/
