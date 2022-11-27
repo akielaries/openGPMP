@@ -132,7 +132,6 @@ test-arith:
 test-calc:
 	cd tests/calc && ./test_calc.sh
 
-
 clean-tests:
 	find . -name "web" -type d -delete
 	rm -f ${TMEMBIN}
