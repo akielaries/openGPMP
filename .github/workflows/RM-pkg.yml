@@ -18,7 +18,13 @@ jobs:
 
     steps:
       - name: initalize github repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
       - name: install deps
         run: | 
           sudo apt install lcov
@@ -34,17 +40,11 @@ jobs:
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
       
-
       - name: Install gtest
         run: make 
 
       - name: gtest on Arith 
         run: make run-tests
-
-      - name: Setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
 
       - name: Run Codacy Coverage
         uses: codacy/codacy-coverage-reporter-action@master
