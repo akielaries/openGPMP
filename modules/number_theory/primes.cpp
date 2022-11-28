@@ -7,13 +7,13 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/number_theory/basics.hpp"
+#include "../../include/number_theory/primes.hpp"
 
 
 int basics::power (int x, unsigned int y, int p) {
-    int res = 1;      // Initialize result
-    x = x % p;  // Update x if it is more than or
-                // equal to p
+    int res = 1;    // Initialize result
+    x = x % p;      // Update x if it is more than or
+                    // equal to p
     
     while (y > 0) {
         // If y is odd, multiply x with result
@@ -67,19 +67,20 @@ long long primality::modulo(long long base,
 }
 
 
-bool primality::isPrime(int num) {
-    if (num <= 1)
+bool primality::is_prime(int n) {
+    if (n <= 1)
         return false;
  
+    int iter = 2;
     // Check from 2 to n-1
-    for (int i = 2; i < num; i++)
-        if (num % i == 0)
+    for (iter; iter < n; iter++)
+        if (n % iter == 0)
             return false;
  
     return true;
 }
 
-bool primality::miller_rabin(int n, int k) {
+bool primality::miller_rabin(int d, int n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n > 4
     int a = 2 + rand() % (n - 4);
  
@@ -94,12 +95,14 @@ bool primality::miller_rabin(int n, int k) {
     // (i)   d does not reach n-1
     // (ii)  (x^2) % n is not 1
     // (iii) (x^2) % n is not n-1
-    while (d != n-1) {
+    while (d != n - 1) {
         x = (x * x) % n;
         d *= 2;
  
-        if (x == 1)      return false;
-        if (x == n-1)    return true;
+        if (x == 1)      
+            return false;
+        if (x == n-1)    
+            return true;
     }
  
     // Return composite
@@ -151,14 +154,14 @@ int primality::jacobian_number(long long a, long long n) {
     return 0;
 }
 
-bool primality::solovoy_strassen(long long p, int iterations) {
+bool primality::solovoy_strassen(long long p, int iters) {
     if (p < 2)
         return false;
     
     if (p != 2 && p % 2 == 0)
         return false;
  
-    for (int i = 0; i < iterations; i++) {
+    for (int i = 0; i < iters; i++) {
         // Generate a random number a
         long long a = rand() % (p - 1) + 1;
         long long jacobian = (p + jacobian_number(a, p)) % p;
@@ -240,11 +243,11 @@ void primality::pollard_rho(long long int n) {
     long long int c = (rand() % (n - 1)) + 1;
 
     /* Initialize candidate divisor (or result) */
-    long long int d = 1; 
+    long long int divisor = 1; 
  
     /* until the prime factor isn't obtained.
        If n is prime, return n */
-    while (d == 1) {
+    while (divisor == 1) {
         /* Tortoise Move: x(i+1) = f(x(i)) */
         x = (modular_pow(x, 2, n) + c + n) % n;
  
@@ -253,15 +256,15 @@ void primality::pollard_rho(long long int n) {
         y = (modular_pow(y, 2, n) + c + n) % n;
  
         /* check gcd of |x-y| and n */
-        d = __gcd(abs(x - y), n);
+        divisor = __gcd(abs(x - y), n);
  
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
-        if (d == n) return pollard_rho(n);
+        if (divisor == n) 
+            return pollard_rho(n);
     }
  
-    return d;
-
+    return divisor;
 }
 
 /*
@@ -271,11 +274,12 @@ void primality::pollard_rho(long long int n) {
 int primality::ETF(unsigned int n) {
     unsigned int result = 1;
 
-    for (int i = 2; i < n; i++) {
-        if (gcd(i, n) == 1) {
+    int index = 2;
+    
+    for (index; index < n; index++) {
+        if (gcd(index, n) == 1) {
             result++;
         }
-    
     }
 
     return result;
