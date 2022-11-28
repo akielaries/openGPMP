@@ -21,7 +21,7 @@ jobs:
         
       - name: Export Codacy token
         run: |
-          export CODACY_PROJECT_TOKEN = ${{ secrets.CODACY_PROJECT_TOKEN }}
+          export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }}
 
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@master
