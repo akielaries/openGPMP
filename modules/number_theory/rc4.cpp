@@ -97,38 +97,37 @@ void RC4::PRGA(unsigned char *S,
     }
 }
 
-std::string RC4::display_hash(char *plaintext, unsigned char *hashtext) {
+std::string RC4::store_hash(char *plaintext, 
+                unsigned char *hashtext, 
+                int swap_type) {
+
+    // length of our plaintext
     int len = strlen((char*)plaintext);
     // for snprintf declare a buffer
     char buffer[len + 1];
     int size = sizeof(buffer);
     int result = 0;
     
-    //size_t index = 0;
-    //int len = strlen((char*)plaintext);
-
     // initialize empty string
     std::string stored_text = "";
-    //unsigned char *text_arr[ciphertext.length() + 1];
-    //for (int x = 0; x < sizeof(text_arr); x++) {
-    printf("for loop hash text = \n");
+    
+    // traverse the hashtext appending each block to a string
     for (size_t index = 0, len = strlen(plaintext); 
                             index < len; index++) {
-
-        stored_text += snprintf(buffer, size, "%02hhx", hashtext[index]);
-
-        //printf("%02hhX", hashtext[index]);
-        //auto ht_index = std::to_string(hashtext[index]);
-        //stored_text += ht_index;
-
-        //stored_text += hashtext[index];
-        //stored_text.append(len, hashtext[index]);
-        //stored_text += hashtext[index];
-        //stored_text.push_back(hashtext[index]);
-        // text_arr[x] = stored_text[x];
+        if (swap_type == 0) {
+            snprintf(buffer, size, "|x%02hhx|", hashtext[index]);
+        }
+        // to format our hash to a string for future manipulation
+        else {
+            snprintf(buffer, size, "%02hhX", hashtext[index]);
+        }
+        // append the declared string
+        stored_text += std::string(buffer);
     }
+    /*
     printf("\nDISPLAY RESULT = %s\n", stored_text.c_str());
-
+    std::cout << "COUT DISPLAY RESULT : " << stored_text << std::endl;
+    */
     return stored_text;
 
 }

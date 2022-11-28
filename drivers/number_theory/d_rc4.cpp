@@ -58,20 +58,47 @@ int main() {
      * ciphertext as well as the swap type (x_swap true/false)
      */
 
-    unsigned char *computed_text = rc.compute(key0, text0, hashtext_0, x_swap);
-
+    unsigned char *computed_text = rc.compute(key0, 
+                                            text0, 
+                                            hashtext_0, 
+                                            x_swap);
     /*
-     * function to display the computed hash, to store the hash, 
-     * you will need to work your own magic
+     * function to store the computed hash 
      */
-    printf("DISPLAY TEXT = ");
-    std::string display_text = rc.display_hash(text0, hashtext_0);
+    std::string display_text = rc.store_hash(text0, hashtext_0, x_swap);
+    std::cout << "COMPUTED HASH = " << display_text << std::endl;
 
+
+    /*<------------------------------------------------------------------>*/
+    printf("String before hash: %s\n", text1);
+    unsigned char *hashtext_1 = (unsigned char *)malloc(sizeof(int) *
+                                strlen(text1));
+    
+    unsigned char *computed_text1 = rc.compute(key1, 
+                                            text1,
+                                            hashtext_1,
+                                            x_swap);
+
+    std::string display_text1 = rc.store_hash(text1, hashtext_1, x_swap);
+    std::cout << "COMPUTED HASH (TSWAP) = " << display_text1 << std::endl;
+    /*<------------------------------------------------------------------>*/
+    printf("String before hash: %s\n", text2);
+    unsigned char *hashtext_2 = (unsigned char *)malloc(sizeof(int) *
+                                strlen(text2));
+    
+    unsigned char *computed_text2 = rc.compute(key2, 
+                                            text2,
+                                            hashtext_2,
+                                            x_swap);
+
+    std::string display_text2 = rc.store_hash(text2, hashtext_2, x_swap);
+    std::cout << "COMPUTED HASH (TSWAP) = " << display_text2 << std::endl;
     //printf("String after hash : \n");
     printf("\n");
 
 
 
+    /*
     printf("<------- PRINTING WITH DRIVER FOR LOOP ------->\n\n");
     // printing the computed hashes 
     for (size_t i = 0, len = strlen(text0); i < len; i++) {
@@ -82,6 +109,7 @@ int main() {
             printf("%02hhX", hashtext_0[i]);
         }
     }
+    */
     printf("\n\n");
 
     free(hashtext_0);

@@ -32,9 +32,10 @@ class RC4 {
                     char *plaintext,
                     unsigned char *ciphertext,
                     int swap_type);
-        /* functoin to display our hashed text */
-        std::string display_hash(char *plaintext, 
-                    unsigned char *hashtext);
+        /* function to display our hashed text */
+        std::string store_hash(char *plaintext, 
+                    unsigned char *hashtext, 
+                    int swap_type);
         /* compute our hash using the the RC4 encryption algorithm */
         unsigned char* compute(char *key, 
                     char *plaintext, 
