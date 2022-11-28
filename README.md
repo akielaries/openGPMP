@@ -69,7 +69,7 @@ Status |
 
 More documentation on the modules can be seen in the documentation I had made here: https://github.com/akielaries/RMdocs
 
-# Run Examples
+# Examples
 All examples are in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
 ```
 # clone the repo and enter
@@ -100,9 +100,60 @@ $ make run-tests
 # clean up generated test files
 $ make clean-tests
 ```
+
+Example driver file for running Caesar Cipher & Mono-Alphabetic Substitution
+Keyword cipher:
+``` cpp
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <vector>
+#include <RM-pkg/number_theory/cipher.hpp>
+
+int main() {
+    // declare CIPHER class obj
+    CIPHER cc;
+    
+    /* TESTING CAESAR CIPHER */
+    std::string text0 = "Plaintext";
+    int shift_key_0 = 5;
+    std::string hashtext_0 = cc.C_cipher(text0, shift_key_0);
+    std::cout << "Hashtext0 = " << hashtext_0 << std::endl;
+    
+    std::string text1 = "ATTACKATONCE";
+    int shift_key_1 = 4;
+    std::string hashtext_1 = cc.C_cipher(text1, shift_key_1);
+    std::cout << "Hashtext1 = " << hashtext_1 << std::endl; 
+
+    /* TESTING MONOALPHABETIC SUBSTITUION KEYWORD CIPHER */
+    std::cout << "\nMONOALPHABETIC SUBSTITUION KEYWORD CIPHER EXAMPLE\n\n";
+
+    std::string shift_key_2 = "Computer";
+    std::string text2 = "Password";
+    // encode the plaintext
+    std::string encoded_text = cc.KC_encode(shift_key_2);
+    // call the cipher function
+    std::string hashtext_2 = cc.KC_cipher(text2 , encoded_text);
+    
+    std::cout << "Hashtext2 = " << hashtext_2 << std::endl;
+
+    return 0;
+}
+```
 As I progress through different mathematical operations I will provide more 
 examples as driver files in drivers folder with some corresponding 
 documentation. 
+
+# Installation
+For now there is not much use of this package unless you wanted to include the 
+definition + implementation files in your own project with a little modification.
+The use of Makefiles + shell scripts to compile modules, tests, clean generated files,
+and more for development purposes. When the package reaches a *publishable state*, I 
+will create an installation process with CMake compiling the source files into a clean
+object for your standard directories with callable headers in `usr/include`. Since I 
+use Linux as my main development environment, installation instructions will make the 
+assumption you are using the same. Builds/tests for OSX will also be in development in
+later stages.
 
 # Future
 * fuzzing /num theory module
