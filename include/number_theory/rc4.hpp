@@ -4,6 +4,7 @@
 
 #ifndef RMRC4_H
 #define RMRC4_H
+#include <string>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,9 +33,10 @@ class RC4 {
                     unsigned char *ciphertext,
                     int swap_type);
         /* functoin to display our hashed text */
-        void display_hash(unsigned char *ciphertext);
+        std::string display_hash(char *plaintext, 
+                    unsigned char *hashtext);
         /* compute our hash using the the RC4 encryption algorithm */
-        void compute(char *key, 
+        unsigned char* compute(char *key, 
                     char *plaintext, 
                     unsigned char *ciphertext, 
                     int swap_type);

@@ -4,9 +4,11 @@
  * swap method or with the XOR operator
  */
 #include <cstdlib>
+#include <stdlib.h>
 #include <cmath>
 #include <sstream>
 #include <string>
+#include <string.h>
 #include <iostream>
 #include <stdio.h>
 #include "../../include/number_theory/rc4.hpp"
@@ -95,15 +97,43 @@ void RC4::PRGA(unsigned char *S,
     }
 }
 
-void RC4::display_hash(unsigned char *ciphertext) {
-    // initialize string to store ciphertext in
-    std::cout << ciphertext << std::endl;
-    // append string with values from ciphertext
+std::string RC4::display_hash(char *plaintext, unsigned char *hashtext) {
+    int len = strlen((char*)plaintext);
+    // for snprintf declare a buffer
+    char buffer[len + 1];
+    int size = sizeof(buffer);
+    int result = 0;
     
-    // return string?
+    //size_t index = 0;
+    //int len = strlen((char*)plaintext);
+
+    // initialize empty string
+    std::string stored_text = "";
+    //unsigned char *text_arr[ciphertext.length() + 1];
+    //for (int x = 0; x < sizeof(text_arr); x++) {
+    printf("for loop hash text = \n");
+    for (size_t index = 0, len = strlen(plaintext); 
+                            index < len; index++) {
+
+        stored_text += snprintf(buffer, size, "%02hhx", hashtext[index]);
+
+        //printf("%02hhX", hashtext[index]);
+        //auto ht_index = std::to_string(hashtext[index]);
+        //stored_text += ht_index;
+
+        //stored_text += hashtext[index];
+        //stored_text.append(len, hashtext[index]);
+        //stored_text += hashtext[index];
+        //stored_text.push_back(hashtext[index]);
+        // text_arr[x] = stored_text[x];
+    }
+    printf("\nDISPLAY RESULT = %s\n", stored_text.c_str());
+
+    return stored_text;
+
 }
 
-void RC4::compute(char *key, 
+unsigned char* RC4::compute(char *key, 
                 char *plaintext, 
                 unsigned char *ciphertext, 
                 int swap_type) {
@@ -116,5 +146,7 @@ void RC4::compute(char *key,
     unsigned char S[BYTE_LIMIT];
     KSA(key, S, swap_type);
     PRGA(S, plaintext, ciphertext, swap_type);
+    
+    return ciphertext;
 }
 

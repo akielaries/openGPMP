@@ -57,9 +57,22 @@ int main() {
      * the main arguments are <key> & <plaintext> + allocated memory of
      * ciphertext as well as the swap type (x_swap true/false)
      */
-    rc.compute(key0, text0, hashtext_0, x_swap);
-    printf("String after hash : ");
 
+    unsigned char *computed_text = rc.compute(key0, text0, hashtext_0, x_swap);
+
+    /*
+     * function to display the computed hash, to store the hash, 
+     * you will need to work your own magic
+     */
+    printf("DISPLAY TEXT = ");
+    std::string display_text = rc.display_hash(text0, hashtext_0);
+
+    //printf("String after hash : \n");
+    printf("\n");
+
+
+
+    printf("<------- PRINTING WITH DRIVER FOR LOOP ------->\n\n");
     // printing the computed hashes 
     for (size_t i = 0, len = strlen(text0); i < len; i++) {
         if (x_swap == true) {
@@ -69,7 +82,7 @@ int main() {
             printf("%02hhX", hashtext_0[i]);
         }
     }
-    printf("\n");
+    printf("\n\n");
 
     free(hashtext_0);
     return EXIT_SUCCESS;
