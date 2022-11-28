@@ -68,7 +68,8 @@ int main() {
     std::string display_text = rc.store_hash(text0, hashtext_0, x_swap);
     std::cout << "COMPUTED HASH = " << display_text << std::endl;
 
-
+    // free whats no longer in use
+    free(hashtext_0);
     /*<------------------------------------------------------------------>*/
     printf("String before hash: %s\n", text1);
     unsigned char *hashtext_1 = (unsigned char *)malloc(sizeof(int) *
@@ -81,6 +82,8 @@ int main() {
 
     std::string display_text1 = rc.store_hash(text1, hashtext_1, x_swap);
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text1 << std::endl;
+
+    free(hashtext_1);
     /*<------------------------------------------------------------------>*/
     printf("String before hash: %s\n", text2);
     unsigned char *hashtext_2 = (unsigned char *)malloc(sizeof(int) *
@@ -93,26 +96,10 @@ int main() {
 
     std::string display_text2 = rc.store_hash(text2, hashtext_2, x_swap);
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text2 << std::endl;
-    //printf("String after hash : \n");
-    printf("\n");
 
-
-
-    /*
-    printf("<------- PRINTING WITH DRIVER FOR LOOP ------->\n\n");
-    // printing the computed hashes 
-    for (size_t i = 0, len = strlen(text0); i < len; i++) {
-        if (x_swap == true) {
-            printf("|x%02hhx| ", hashtext_0[i]);
-        }
-        else {
-            printf("%02hhX", hashtext_0[i]);
-        }
-    }
-    */
     printf("\n\n");
 
-    free(hashtext_0);
+    free(hashtext_2);
     return EXIT_SUCCESS;
 }
 
