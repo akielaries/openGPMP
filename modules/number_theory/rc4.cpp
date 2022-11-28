@@ -124,12 +124,7 @@ std::string RC4::store_hash(char *plaintext,
         // append the declared string
         stored_text += std::string(buffer);
     }
-    /*
-    printf("\nDISPLAY RESULT = %s\n", stored_text.c_str());
-    std::cout << "COUT DISPLAY RESULT : " << stored_text << std::endl;
-    */
     return stored_text;
-
 }
 
 unsigned char* RC4::compute(char *key, 
