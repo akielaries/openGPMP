@@ -1,5 +1,6 @@
 /*
- * Implementing various derivative related functions in C++
+ * Some core concepts seen in Number Theory primarily prime number based
+ * equations, formulas, algorithms. 
  */
 #include <cstdlib>
 #include <cmath>
@@ -80,6 +81,9 @@ bool primality::is_prime(int n) {
     return true;
 }
 
+/*
+ * determining if a given number is likely to be prime
+ */
 bool primality::miller_rabin(int d, int n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n > 4
     int a = 2 + rand() % (n - 4);
@@ -109,7 +113,9 @@ bool primality::miller_rabin(int d, int n) {
     return false;
 }
 
-
+/*
+ * another algorithm capable of finding primes
+ */
 int primality::jacobian_number(long long a, long long n) {
     if (!a)
         return 0;// (0/n) = 0
@@ -153,7 +159,11 @@ int primality::jacobian_number(long long a, long long n) {
  
     return 0;
 }
-
+/*
+ * primality test determining if a number is composite or probably prime.
+ * 
+ * a^(p-1)/2 = (a/p) (mod p)
+ */
 bool primality::solovoy_strassen(long long p, int iters) {
     if (p < 2)
         return false;
@@ -173,6 +183,11 @@ bool primality::solovoy_strassen(long long p, int iters) {
     return true;
 }
 
+/*
+ * Absolute Fermat Pseudoprimes referred to as Carmichael Numbers
+ * are composite integers satisfying the congruence forumla below
+ * b^n - 1 = b (mod n)
+ */
 bool primality::carmichael_number(int n) {
     for (int b = 2; b < n; b++) {
         // If "b" is relatively prime to n
@@ -219,7 +234,17 @@ void primality::sieve_of_eratosthenes(int n) {
 /*
  * algorithm for integer factorization proportial to the runtime of the 
  * square root of the size of the smallest prime factor of the composite
- * factor being factorized
+ * factor being factorized. Given a positive and composite integer n, 
+ * find a divisor of it.
+ *
+ * x_n-1 = x^2_n + a(mod n)
+ *
+ * n = 1111, set x_0 = 2 & f(x) = x^2 + 1
+ *
+ * x_1 = 5
+ * x_2 = 26         gcd(26 - 5, 1111) = 1
+ * x_3 = 677
+ * x_4 = 598        gcd(698 - 26, 1111) = 11
  */
 void primality::pollard_rho(long long int n) {
     /* initialize random seed */
@@ -270,6 +295,15 @@ void primality::pollard_rho(long long int n) {
 /*
  * Euler's Totient Function counts the positive numbers up until a given 
  * integer
+ *
+ * Definition: For any positive integer n, Φ(n) is the number of all positive 
+ * integers less than or equal to n that are relatively prime to n.
+ *
+ * Example: Φ(1) = 1
+ *          Φ(2) = 1
+ *          Φ(3) = 2
+ *          Φ(4) = 2
+ *          Φ(5) = 4
  */
 int primality::ETF(unsigned int n) {
     unsigned int result = 1;

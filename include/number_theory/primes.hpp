@@ -39,7 +39,7 @@ class primality {
                 long long exponent, 
                 long long mod);
         
-        /* satifies congruence relation:b^n - 1 = b (mod n)*/
+        /* satifies congruence relation:b^n - 1 = b (mod n) */
         bool carmichael_num(int n);
         
         /* finds the prime numbers up to a limit */
