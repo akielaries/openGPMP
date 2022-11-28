@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        run: |
+          export CODACY_PROJECT_TOKEN = ${{ secrets.CODACY_PROJECT_TOKEN }}
 
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@master
