@@ -145,6 +145,14 @@ examples as driver files in drivers folder with some corresponding
 documentation. 
 
 # Installation
+## Dependencies
+The use of `libxbgi` graphics library is seen in some modules of this project for
+visualization of different mathematical algorithms such as Mandelbrot Fractal Sets.
+To install this library simply run the dependencies.sh shell script
+```
+./dependencies.sh
+```
+
 For now there is not much use of this package unless you wanted to include the 
 definition + implementation files in your own project with a little modification.
 The use of Makefiles + shell scripts to compile modules, tests, clean generated files,
