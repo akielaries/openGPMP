@@ -5,6 +5,7 @@
 #ifndef RMARITH_H
 #define RMARITH_H
 #include <vector>
+#include <iostream>
 #include <stdio.h>
 
 
@@ -18,6 +19,8 @@ class arith {
          */
         template<typename T>
         inline T rm_add(T t) {
+
+            std::cout << "TESTING------------>"<<std::endl;
             return t;
         }
 

@@ -44,9 +44,17 @@ int main(){
      * starting with addition operations with different data types. 
      * you can assign your result as a different type than the params
      */
+    clock_t adding;
+    adding = clock();
+
     float r0 = ar.rm_add(a, b, c);
     int r1 = ar.rm_add(d, e, f, g);
     float r2 = ar.rm_add(d, e, f, g);
+
+    adding = clock() - adding;
+    // return time in seconds
+    double add_time = ((double)adding) / CLOCKS_PER_SEC;
+    printf("rm_add() performed in: %f seconds\n\n", add_time);
 
     printf("%d + %d + %d = %f\n", a, b, c, r0);
     printf("%f + %f + %f + %ld = %d\n", d, e, f, g, r1);
