@@ -64,7 +64,7 @@ Status |
    - Cross-Validation
    - K-Nearest Neighbors
 5. Number Theory
-   - Basics
+   - Primes
    - Cryptography
 
 More documentation on the modules can be seen in the documentation I had made here: https://github.com/akielaries/RMdocs
