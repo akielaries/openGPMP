@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <time.h>
 #include "../../include/number_theory/rc4.hpp"
 
 
@@ -57,6 +58,8 @@ int main() {
      * the main arguments are <key> & <plaintext> + allocated memory of
      * ciphertext as well as the swap type (x_swap true/false)
      */
+    clock_t a;
+    a = clock();
 
     unsigned char *computed_text = rc.compute(key0, 
                                             text0, 
@@ -70,29 +73,40 @@ int main() {
 
     // free whats no longer in use
     free(hashtext_0);
+    a = clock() - a;
+    double a_time = ((double)a) / CLOCKS_PER_SEC;
+    printf("a_time = %f sec(s)\n\n", a_time);
     /*<------------------------------------------------------------------>*/
     printf("String before hash: %s\n", text1);
     unsigned char *hashtext_1 = (unsigned char *)malloc(sizeof(int) *
                                 strlen(text1));
     
+    clock_t b;
+    b = clock();
+
     unsigned char *computed_text1 = rc.compute(key1, 
                                             text1,
                                             hashtext_1,
-                                            x_swap);
+                                            t_swap);
 
     std::string display_text1 = rc.store_hash(text1, hashtext_1, x_swap);
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text1 << std::endl;
 
     free(hashtext_1);
+    b = clock() - b;
+    double b_time = ((double)b) / CLOCKS_PER_SEC;
+    printf("b_time = %f sec(s)\n\n", b_time);
     /*<------------------------------------------------------------------>*/
     printf("String before hash: %s\n", text2);
     unsigned char *hashtext_2 = (unsigned char *)malloc(sizeof(int) *
                                 strlen(text2));
     
+    clock_t c;
+    c = clock();
     unsigned char *computed_text2 = rc.compute(key2, 
                                             text2,
                                             hashtext_2,
-                                            x_swap);
+                                            t_swap);
 
     std::string display_text2 = rc.store_hash(text2, hashtext_2, x_swap);
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text2 << std::endl;
@@ -100,6 +114,9 @@ int main() {
     printf("\n\n");
 
     free(hashtext_2);
+    c = clock() - c;
+    double c_time = ((double)c) / CLOCKS_PER_SEC;
+    printf("c_time = %f sec(s)\n\n", c_time);
     return EXIT_SUCCESS;
 }
 

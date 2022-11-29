@@ -2,6 +2,7 @@
  * TESTING BASIC ARITHMETIC OPERATIONS
  */
 #include <iostream>
+#include <time.h>
 #include <stdio.h>
 #include <vector>
 #include <cassert>
@@ -39,6 +40,8 @@ int main(){
     float e = 1.85;
     float f = 2.75;
     long g = 1.35;
+    float y = 9743298223.945;
+    float z = 34895542235.8854;
 
     /* 
      * starting with addition operations with different data types. 
@@ -50,23 +53,31 @@ int main(){
     float r0 = ar.rm_add(a, b, c);
     int r1 = ar.rm_add(d, e, f, g);
     float r2 = ar.rm_add(d, e, f, g);
+    float r99 = ar.rm_add(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
 
     adding = clock() - adding;
-    // return time in seconds
     double add_time = ((double)adding) / CLOCKS_PER_SEC;
     printf("rm_add() performed in: %f seconds\n\n", add_time);
 
     printf("%d + %d + %d = %f\n", a, b, c, r0);
     printf("%f + %f + %f + %ld = %d\n", d, e, f, g, r1);
     printf("%f + %f + %f + %ld = %f\n\n", d, e, f, g, r2);
+    printf("Big result #1 = %f\n\n", r99);
 
     /*
      * subtraction  
      */
+    clock_t subbing;
+    subbing = clock();
+
     int r3 = ar.rm_sub(a, b, c);
     int r4 = ar.rm_sub(d, e, f ,g);
     float r5 = ar.rm_sub(d ,e, f, g);
 
+    subbing = clock() - subbing;
+    double sub_time = ((double)subbing) / CLOCKS_PER_SEC;
+    printf("rm_sub() performed in: %f seconds\n\n", sub_time);
+    
     printf("%d - %d - %d = %d\n", a, b, c, r3);
     printf("%f - %f - %f - %d = %d\n", d, e, f, g, r4);
     printf("%f - %f - %f - %f = %f\n\n", d, e, f, g, r5);
@@ -74,13 +85,22 @@ int main(){
     /*
      * multiplication 
      */
+    clock_t multing;
+    multing = clock();
+
     int r6 = ar.rm_mult(a, b, c);
     int r7 = ar.rm_mult(d, e, f ,g);
     double r8 = ar.rm_mult(d ,e, f, g);
+    float r98 = ar.rm_mult(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
+
+    multing = clock() - multing;
+    double mult_time = ((double)multing) / CLOCKS_PER_SEC;
+    printf("rm_mult() performed in: %f seconds\n\n", mult_time);
 
     printf("%d * %d * %d = %d\n", a, b, c, r6);
     printf("%f * %f * %f * %d = %d\n", d, e, f, g, r7);
     printf("%f * %f * %f * %ld = %f\n\n", d, e, f, g, r8);
+    printf("Big result #2 = %f\n\n", r98);
 
     // you can also directly print
     /*

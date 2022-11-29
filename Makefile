@@ -1,7 +1,7 @@
 # define our project director
 PROJDIR     = $(realpath $(CURDIR))
 
-CC 			= g++
+CC 			= g++ -lpthread -fopenmp
 VERBOSE 	= TRUE
 
 CFLAGS 		= -Wall -Wextra -g
@@ -64,14 +64,18 @@ la-ops:
 
 num-theory: 
 	# BASIC STREAM CIPHERS
-	${CC} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
-	./${CIPHBIN}
+	#${CC} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	#./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
 	${CC} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
 	#${CC} ${RC5} ${RC5DRV} -o ${RC5BIN}
 	#./${RC5BIN}
+
+complex:
+	${CC} modules/complex/Mandelbrot.cpp /usr/lib/libXbgi.a -lX11 -lm -std=c++0x -o Mandelbrot
+	./Mandelbrot
 
 clean-mods:
 	rm -f ${ARBIN}
@@ -80,6 +84,7 @@ clean-mods:
 	rm -f ${BLABIN}
 	rm -f ${RC4BIN}
 	rm -f ${CIPHBIN}
+	rm -f Mandelbrot
 
 # testing created modules
 # using gtest

@@ -11,6 +11,7 @@
 #include <string.h>
 #include <iostream>
 #include <stdio.h>
+#include <omp.h>
 #include "../../include/number_theory/rc4.hpp"
 
 
@@ -58,7 +59,7 @@ void RC4::KSA(char *key,
             byte_swap(&S[i], &S[j]);
         }
         else {
-            std::cout << "[-] Error performing swap in KSA" << std::endl;
+            std::cout << "[-] Error performing swap in KSA\n";
             exit(EXIT_FAILURE);
         }
     }
@@ -87,7 +88,7 @@ void RC4::PRGA(unsigned char *S,
             byte_swap(&S[i], &S[j]);
         }
         else {
-            std::cout << "[-] Error performing swap in PRGA" << std::endl;
+            std::cout << "[-] Error performing swap in PRGA\n";
             exit(EXIT_FAILURE);
         }
 
