@@ -9,6 +9,9 @@
 
 // Function to draw mandelbrot set
 void fractal(float left, float top, float xside, float yside) {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_POINTS);
+
 	float xscale, yscale, zx, zy, cx, tempx, cy;
 	int x, y, i, j;
 	int maxx, maxy, count;
@@ -72,10 +75,12 @@ void fractal(float left, float top, float xside, float yside) {
 			putpixel(x, y, count);
 		}
 	}
+    glEnd();
+    glFlush();
 }
 
 // Driver code
-int main() {
+int main(int argc, char** argv) {
 	// gm is Graphics mode which is
 	// a computer display mode that
 	// generates image using pixels.
@@ -104,10 +109,12 @@ int main() {
 	// initgraph initializes the
 	// graphics system by loading a
 	// graphics driver from disk
-	// initgraph(&gd, &gm, driver);
-    glutInit(&gd, driver);
+	initgraph(&gd, &gm, driver);
+    //glutInit(&gd, driver);
+    glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(1366, 768);
+    glutInitWindowPosition(0, 0);
 
 	// Function calling
 	fractal(left, top, xside, yside);
@@ -119,6 +126,7 @@ int main() {
 	// all memory allocated by
 	// graphics system
 	// closegraph();
+    glutMainLoop();
 
 	return 0;
 }
