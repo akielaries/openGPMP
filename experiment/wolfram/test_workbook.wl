@@ -1,0 +1,25 @@
+(* ::Package:: *)
+
+(* ::Input:: *)
+(*Needs["CCodeGenerator`"]*)
+(*c = Compile[{x}, x^2];*)
+(*file = CCodeGenerate[c, "fun", "CodeTarget" -> ""]*)
+(*FilePrint[file]*)
+(**)
+(*Needs["CCodeGenerator`"]*)
+(*b = Compile[{x}, x^3];*)
+(*file2 = CCodeGenerate[b, "fun2", "CodeTarget" -> ""]*)
+(*FilePrint[file2]*)
+(**)
+(*c1=Compile[{{x}},x^3];*)
+(*file3=CCodeGenerate[{c,c1},{"fun","fun1"}]*)
+(*FilePrint[file3]*)
+(**)
+(*Needs["CCodeGenerator`"]*)
+(*comp1=Compile[{{x}},x^3];*)
+(*file4 = CCodeGenerate[comp1, "fun4", "CodeTarget" -> ""]*)
+(*FilePrint[file4]*)
+(**)
+
+
+
