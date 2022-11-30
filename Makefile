@@ -35,7 +35,7 @@ calculus:
 
 # FILES FOR REGRESSION
 LR			= $(SRCDIR)/ML_DL/linreg.cpp
-LRDRV		= $(PROJDIR)/drivers/d_reg.cpp
+LRDRV		= $(PROJDIR)/drivers/ML_DL/d_reg.cpp
 LRBIN		= lin_reg
 
 lin-reg:
@@ -45,7 +45,7 @@ lin-reg:
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
 BLA			= $(SRCDIR)/LINALG/lao.cpp
-BLADRV		= $(PROJDIR)/drivers/d_lao.cpp
+BLADRV		= $(PROJDIR)/drivers/LINALG/d_lao.cpp
 BLABIN		= la_ops
 
 lin-alg:
@@ -72,8 +72,8 @@ RC5BIN		= rc5
 
 num-theory: 
 	# BASIC STREAM CIPHERS
-	#${CXX} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
-	#./${CIPHBIN}
+	${CXX} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
 	${CXX} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
@@ -82,12 +82,20 @@ num-theory:
 	#./${RC5BIN}
 
 
-	./${LRBIN}
-
+TORUS			= $(SRCDIR)/complex/torus.cpp
+TORUS_ANIM		= $(SRCDIR)/complex/torus_animated.cpp
+TORUSDRV		= $(PROJDIR)/drivers/complex/d_torus.cpp
+TORUSBIN		= torus
+TORUS_ANIM_BIN	= torus_anim
 
 complex:
-	${CXX} modules/complex/Mandelbrot.cpp /usr/lib/libXbgi.a -lX11 -lm -std=c++0x -o Mandelbrot
-	./Mandelbrot
+	# run regular 3D torus
+	${CXX} ${TORUS} ${TORUSDRV} ${CXX_VIZ} -o ${TORUSBIN}
+	./${TORUSBIN}
+	# run animated torus
+	${CXX} ${TORUS_ANIM} ${TORUSDRV} ${CXX_VIZ} - o ${TORUS_ANIM_BIN}
+	./{TORUS_ANIM_BIN}
+
 
 clean-mods:
 	rm -f ${ARBIN}
