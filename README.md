@@ -30,6 +30,7 @@ Calculus            | ![Calc](https://github.com/akielaries/RM-pkg/actions/workf
 Linear Algebra      | ![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) | 
 Linear Regression   | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/linreg.yml/badge.svg) |
 Number Theory       | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | 
+Complex             | ![complex](https://github.com/akielaries/RM-pkg/actions/workflows/complex.yml/badge.svg) | 
 
 > :warning: *These modules will eventually be provided with their own documentation and references 
 on the underlying functions used as well as background/history. As development progresses, modules 
