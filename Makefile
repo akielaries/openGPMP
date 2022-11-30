@@ -7,6 +7,7 @@ VERBOSE 	= TRUE
 
 CXX_DBG 	= -Wall -Wextra -g
 CXX_THREAD	= -lpthread -fopenmp 
+LIBXBGI		= /usr/lib/libXbgi.a
 CXX_VIZ		= ${LIBXBGI} -lX11 -lGL -lGLU -lglut -lm
 
 
