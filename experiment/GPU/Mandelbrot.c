@@ -104,18 +104,21 @@ int main() {
 	// initgraph initializes the
 	// graphics system by loading a
 	// graphics driver from disk
-	initgraph(&gd, &gm, driver);
+	// initgraph(&gd, &gm, driver);
+    glutInit(&gd, driver);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(1366, 768);
 
 	// Function calling
 	fractal(left, top, xside, yside);
 
-	getch();
+	// getch();
 
 	// closegraph function closes the
 	// graphics mode and deallocates
 	// all memory allocated by
 	// graphics system
-	closegraph();
+	// closegraph();
 
 	return 0;
 }
