@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../include/linalg/lao.hpp"
+#include "../../include/linalg/lao.hpp"
 
 
 template <typename V1, typename V2>

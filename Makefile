@@ -45,8 +45,8 @@ lin-reg:
 
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
-BLA			= $(SRCDIR)/LINALG/lao.cpp
-BLADRV		= $(PROJDIR)/drivers/LINALG/d_lao.cpp
+BLA			= $(SRCDIR)/linalg/lao.cpp
+BLADRV		= $(PROJDIR)/drivers/linalg/d_lao.cpp
 BLABIN		= la_ops
 
 lin-alg:
