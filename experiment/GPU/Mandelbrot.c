@@ -79,6 +79,17 @@ void fractal(float left, float top, float xside, float yside) {
     glFlush();
 }
 
+void display() {
+    float left, top, xside, yside;
+
+    left = -1.74;
+	top = -0.25;
+	xside = 0.25;
+	yside = 0.45;
+    
+    fractal(left, top, xside, yside);
+}
+
 // Driver code
 int main(int argc, char** argv) {
 	// gm is Graphics mode which is
@@ -117,7 +128,7 @@ int main(int argc, char** argv) {
     glutInitWindowPosition(0, 0);
 
 	// Function calling
-	fractal(left, top, xside, yside);
+	//fractal(left, top, xside, yside);
 
 	// getch();
 
@@ -126,7 +137,11 @@ int main(int argc, char** argv) {
 	// all memory allocated by
 	// graphics system
 	// closegraph();
+    glutCreateWindow("Mandelbrot Fractals with openGL");
+    glutDisplayFunc(display);
     glutMainLoop();
+
+    getch();
 
 	return 0;
 }
