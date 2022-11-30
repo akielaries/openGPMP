@@ -1,3 +1,10 @@
+# This is the Makefile used to run the modules with their respective driver
+# methods as well as corresponding unit tests done with Google's gtest. This
+# Makefile is only important in testing and developing within this repository
+# there are seperate files available for demonstrating how to create a Makefile
+# for your own projects which are much more simple.
+
+
 # define our project director
 PROJDIR     = $(realpath $(CURDIR))
 
