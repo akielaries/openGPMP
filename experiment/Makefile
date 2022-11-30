@@ -48,9 +48,28 @@ openGL_torus_animated:
 	${CXX} ${GPU_03} ${CXXFLAGS} ${CXXFLAGS2} -o ${GPU_BIN_03} 
 	./${GPU_BIN_03}
 
+
+GPU_04		= $(PROJDIR)/GPU/openGL_astronomy_animated.cpp
+GPU_BIN_04	= openGL_torus_animated
+
+openGL_astronomy_animated:
+	${CXX} ${GPU_04} ${CXXFLAGS} ${CXXFLAGS2} -o ${GPU_BIN_04} 
+	./${GPU_BIN_04}
+
+
+GPU_05		= $(PROJDIR)/GPU/openGL_bounce.cpp
+GPU_BIN_05	= openGL_bounce
+
+openGL_bounce:
+	${CXX} ${GPU_05} ${CXXFLAGS} ${CXXFLAGS2} -o ${GPU_BIN_05} 
+	./${GPU_BIN_05}
+
+
 clean_bins:
 	rm -f ${GPU_BIN_0}
 	rm -f ${GPU_BIN_01}
 	rm -f ${GPU_BIN_02}
 	rm -f ${GPU_BIN_03}
+	rm -f ${GPU_BIN_04}
+	rm -f ${GPU_BIN_05}
 

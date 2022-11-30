@@ -1,5 +1,5 @@
 /*
- * Testing openGL with drawing a simple triangle with shades
+ * Testing openGL with drawing an animate torus
  */
 #include<stdio.h>
 #include<GL/glut.h>
