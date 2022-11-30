@@ -1,10 +1,14 @@
 # define our project director
 PROJDIR     = $(realpath $(CURDIR))
 
-CC 			= g++ -lpthread -fopenmp
+CC			= gcc
+CXX 		= g++
 VERBOSE 	= TRUE
 
-CFLAGS 		= -Wall -Wextra -g
+CXX_DBG 	= -Wall -Wextra -g
+CXX_THREAD	= -lpthread -fopenmp 
+CXX_VIZ		= ${LIBXBGI} -lX11 -lGL -lGLU -lglut -lm
+
 
 SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
@@ -13,18 +17,41 @@ SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 AR			= $(SRCDIR)/basics/arith.cpp
 ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
+
+arith:
+	${CXX} ${ARDRV} -o ${ARBIN}
+	./${ARBIN}
+
+
 # FILES FOR CALCULUS OPERATIONS
 CALC		= $(SRCDIR)/calculus/deriv.cpp
 CALCDRV		= $(PROJDIR)/drivers/calc/d_deriv.cpp
 CALCBIN		= calc
+
+calculus:
+	${CXX} ${CALC} ${CALCDRV} -o ${CALCBIN}
+	./${CALCBIN}
+
+
 # FILES FOR REGRESSION
 LR			= $(SRCDIR)/ML_DL/linreg.cpp
 LRDRV		= $(PROJDIR)/drivers/d_reg.cpp
 LRBIN		= lin_reg
+
+lin-reg:
+	${CXX} ${LR} ${LRDRV} -o ${LRBIN}
+	./${LRBIN}
+
+
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
 BLA			= $(SRCDIR)/LINALG/lao.cpp
 BLADRV		= $(PROJDIR)/drivers/d_lao.cpp
 BLABIN		= la_ops
+
+lin-alg:
+	${CXX} ${BLA} ${BLADRV} -o ${BLABIN}
+	./${BLABIN}
+
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
 CIPH		= $(SRCDIR)/number_theory/cipher.cpp
@@ -43,38 +70,23 @@ RC5			= $(SRCDIR)/number_theory/rc5.cpp
 RC5DRV		= $(PROJDIR)/drivers/number_theory/d_rc5.cpp
 RC5BIN		= rc5
 
-LIBDIR		= $(PROJDIR)/include
-
-
-arith:
-	${CC} ${ARDRV} -o ${ARBIN}
-	./${ARBIN}
-
-calculus:
-	${CC} ${CALC} ${CALCDRV} -o ${CALCBIN}
-	./${CALCBIN}
-
-lin-reg:
-	${CC} ${LR} ${LRDRV} -o ${LRBIN}
-	./${LRBIN}
-
-la-ops:
-	${CC} ${BLA} ${BLADRV} -o ${BLABIN}
-	./${BLABIN}
-
 num-theory: 
 	# BASIC STREAM CIPHERS
-	#${CC} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	#${CXX} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
 	#./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
-	${CC} ${RC4} ${RC4DRV} -o ${RC4BIN}
+	${CXX} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
-	#${CC} ${RC5} ${RC5DRV} -o ${RC5BIN}
+	#${CXX} ${RC5} ${RC5DRV} -o ${RC5BIN}
 	#./${RC5BIN}
 
+
+	./${LRBIN}
+
+
 complex:
-	${CC} modules/complex/Mandelbrot.cpp /usr/lib/libXbgi.a -lX11 -lm -std=c++0x -o Mandelbrot
+	${CXX} modules/complex/Mandelbrot.cpp /usr/lib/libXbgi.a -lX11 -lm -std=c++0x -o Mandelbrot
 	./Mandelbrot
 
 clean-mods:
@@ -122,7 +134,7 @@ TSARBIN		= t_arith
 
 # testing memory
 test-gtest: 
-	${CC} ${TMEM} ${GTFLAGS} -o ${TMEMBIN}
+	${CXX} ${TMEM} ${GTFLAGS} -o ${TMEMBIN}
 	./${TMEMBIN}
 
 # test memory leaks of generated module binaries
