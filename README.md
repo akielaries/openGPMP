@@ -47,7 +47,7 @@ but mostly the up to date fuzzer [AFL++](https://github.com/AFLplusplus/AFLplusp
 #### Unit Testing Coverage
 Status |
 -------|
-![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/RM-pkg.yml/badge.svg) |
+![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg) |
 ![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ) |
 
 #### Fuzzing
