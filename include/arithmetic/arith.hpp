@@ -18,35 +18,42 @@ class arith {
          * Addition
          */
         template<typename T>
-        inline T rm_add(T t) {
+        inline T add(T t) {
             return t;
         }
-
         template<typename T, typename... Ts>
-        inline auto rm_add(T t, Ts... ts) {
-            return t + rm_add(ts...);
+        inline auto add(T t, Ts... ts) {
+            return t + add(ts...);
         }
         
         // subtraction
         template<typename X>
-        inline X rm_sub(X x) {
+        inline X sub(X x) {
             return x;
         }
-
         template<typename X, typename... Xy>
-        inline auto rm_sub(X x, Xy... xy) {
-            return x - rm_sub(xy...);
+        inline auto sub(X x, Xy... xy) {
+            return x - sub(xy...);
         }
 
         // multiplication
         template<typename W>
-        inline W rm_mult(W w) {
+        inline W mult(W w) {
             return w;
         }
-
         template<typename W, typename... Wv>
-        inline auto rm_mult(W w, Wv... wv) {
-            return w * rm_mult(wv...);
+        inline auto mult(W w, Wv... wv) {
+            return w * mult(wv...);
+        }
+
+        // multiplication
+        template<typename Z>
+        inline Z exp(Z z) {
+            return z;
+        }
+        template<typename Z, typename... Zy>
+        inline auto exp(Z z, Zy... zy) {
+            return z *= exp(zy...);
         }
 
 };

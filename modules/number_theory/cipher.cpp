@@ -14,7 +14,7 @@ std::string CIPHER::C_cipher(std::string plaintext, int key) {
     std::string hashtext = "";
 
     int i = 0;
-    for (i; i < plaintext.length(); i++) {
+    for (i; unsigned(i) < plaintext.length(); i++) {
         // inject transformation
         if (isupper(plaintext[i])) {
             // upper case
@@ -34,8 +34,10 @@ std::string CIPHER::KC_encode(std::string key) {
     // This array represents the 26 letters of alphabets
     bool arr[26] = {0};
  
+    int i = 0;
+
     // This loop inserts the keyword at the start of the encoded string
-    for (int i=0; i<key.size(); i++) {
+    for (i; unsigned(i) < key.size(); i++) {
         if(key[i] >= 'A' && key[i] <= 'Z') {
             /*
              * To check whether the character is inserted earlier 
@@ -47,15 +49,15 @@ std::string CIPHER::KC_encode(std::string key) {
             }
         }
         else if (key[i] >= 'a' && key[i] <= 'z') {
-            if (arr[key[i]-97] == 0) {
+            if (arr[key[i] - 97] == 0) {
                 encoded += key[i] - 32;
-                arr[key[i]-97] = 1;
+                arr[key[i] - 97] = 1;
             }
         }
     }
  
     // This loop inserts the remaining characters in the encoded string.
-    for (int i=0; i<26; i++) {
+    for (i; i < 26; i++) {
         if(arr[i] == 0) {
             arr[i]=1;
             encoded += char(i + 65);
@@ -72,7 +74,7 @@ std::string CIPHER::KC_cipher(std::string plaintext, std::string encoded_text) {
      * and numbers remain same.
      */
     int i = 0;
-    for (i; i < plaintext.size(); i++) {
+    for (i; unsigned(i) < plaintext.size(); i++) {
         if (plaintext[i] >= 'a' && plaintext[i] <= 'z') {
             int pos = plaintext[i] - 97;
             cipher += encoded_text[pos];

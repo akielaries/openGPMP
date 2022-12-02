@@ -11,7 +11,7 @@
 #include <string.h>
 #include <iostream>
 #include <stdio.h>
-#include <omp.h>
+// #include <omp.h>
 #include "../../include/number_theory/rc4.hpp"
 
 

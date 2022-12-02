@@ -13,9 +13,9 @@ CXX 		= g++
 VERBOSE 	= TRUE
 
 CXX_DBG 	= -Wall -Wextra -g
-CXX_THREAD	= -lpthread -fopenmp 
+CXX_THREAD	= -lpthread  
 LIBXBGI		= /usr/lib/libXbgi.a
-CXX_VIZ		= ${LIBXBGI} -lX11 -lGL -lGLU -lglut -lm
+CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
 
 
 SRCDIR		= $(PROJDIR)/modules
@@ -27,7 +27,7 @@ ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
 
 arith:
-	${CXX} ${ARDRV} -o ${ARBIN}
+	${CXX} ${CXX_DBG} ${ARDRV} -o ${ARBIN}
 	./${ARBIN}
 
 
@@ -37,7 +37,7 @@ CALCDRV		= $(PROJDIR)/drivers/calc/d_deriv.cpp
 CALCBIN		= calc
 
 calculus:
-	${CXX} ${CALC} ${CALCDRV} -o ${CALCBIN}
+	${CXX} ${CXX_DBG} ${CALC} ${CALCDRV} -o ${CALCBIN}
 	./${CALCBIN}
 
 
@@ -47,7 +47,7 @@ LRDRV		= $(PROJDIR)/drivers/ML_DL/d_reg.cpp
 LRBIN		= lin_reg
 
 lin-reg:
-	${CXX} ${LR} ${LRDRV} -o ${LRBIN}
+	${CXX} ${CXX_DBG} ${LR} ${LRDRV} -o ${LRBIN}
 	./${LRBIN}
 
 
@@ -57,7 +57,7 @@ BLADRV		= $(PROJDIR)/drivers/linalg/d_lao.cpp
 BLABIN		= la_ops
 
 lin-alg:
-	${CXX} ${BLA} ${BLADRV} -o ${BLABIN}
+	${CXX} ${CXX_DBG} ${BLA} ${BLADRV} -o ${BLABIN}
 	./${BLABIN}
 
 
@@ -80,10 +80,10 @@ RC5BIN		= rc5
 
 num-theory: 
 	# BASIC STREAM CIPHERS
-	${CXX} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	${CXX} ${CXX_DBG} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
 	./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
-	${CXX} ${RC4} ${RC4DRV} -o ${RC4BIN}
+	${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
 	#${CXX} ${RC5} ${RC5DRV} -o ${RC5BIN}

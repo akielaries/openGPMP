@@ -39,7 +39,7 @@ class RC4 {
         /* compute our hash using the the RC4 encryption algorithm */
         unsigned char* compute(char *key, 
                     char *plaintext, 
-                    unsigned char *ciphertext, 
+                    unsigned char *hashtext, 
                     int swap_type);
 
 };
