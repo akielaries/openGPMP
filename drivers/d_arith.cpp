@@ -50,10 +50,10 @@ int main(){
     clock_t adding;
     adding = clock();
 
-    float r0 = ar.rm_add(a, b, c);
-    int r1 = ar.rm_add(d, e, f, g);
-    float r2 = ar.rm_add(d, e, f, g);
-    float r99 = ar.rm_add(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
+    float r0 = ar.add(a, b, c);
+    int r1 = ar.add(d, e, f, g);
+    float r2 = ar.add(d, e, f, g);
+    float r99 = ar.add(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
 
     adding = clock() - adding;
     double add_time = ((double)adding) / CLOCKS_PER_SEC;
@@ -70,9 +70,9 @@ int main(){
     clock_t subbing;
     subbing = clock();
 
-    int r3 = ar.rm_sub(a, b, c);
-    int r4 = ar.rm_sub(d, e, f ,g);
-    float r5 = ar.rm_sub(d ,e, f, g);
+    int r3 = ar.sub(a, b, c);
+    int r4 = ar.sub(d, e, f ,g);
+    float r5 = ar.sub(d ,e, f, g);
 
     subbing = clock() - subbing;
     double sub_time = ((double)subbing) / CLOCKS_PER_SEC;
@@ -88,10 +88,10 @@ int main(){
     clock_t multing;
     multing = clock();
 
-    int r6 = ar.rm_mult(a, b, c);
-    int r7 = ar.rm_mult(d, e, f ,g);
-    double r8 = ar.rm_mult(d ,e, f, g);
-    float r98 = ar.rm_mult(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
+    int r6 = ar.mult(a, b, c);
+    int r7 = ar.mult(d, e, f ,g);
+    double r8 = ar.mult(d ,e, f, g);
+    float r98 = ar.mult(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
 
     multing = clock() - multing;
     double mult_time = ((double)multing) / CLOCKS_PER_SEC;
