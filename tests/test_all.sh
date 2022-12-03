@@ -12,12 +12,12 @@ g++ --coverage arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
 
 #number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
 # generate lcov files
-lcov --directory . --capture --output-file lcov.txt
+lcov --directory . --capture --output-file lcov.info
 # move lcov file to .coverage
-mv lcov.txt ../.coverage
+mv lcov.info ../.coverage
 
 # cd into root directory and run gcovr from here
-cd ../ && gcovr --xml-pretty >> lcov.xml && mv lcov.xml .coverage/
+cd ../ && gcovr --xml-pretty >> codecov.xml && mv codecov.xml .coverage/
 
 #rm -
 #rm -f *.gc*
