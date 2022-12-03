@@ -67,10 +67,11 @@ bool Primality::is_prime(int n) {
     return true;
 }
 
+
 /*
  * determining if a given number is likely to be prime
  */
-bool Primality::miller_rabin(int d, int n) {
+bool Primality::compute_miller_rabin(int d, int n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n > 4
     int a = 2 + rand() % (n - 4);
  
@@ -97,6 +98,40 @@ bool Primality::miller_rabin(int d, int n) {
  
     // Return composite
     return false;
+}
+
+void Primality::miller_rabin(int iters, int minimum, int maximum) {
+    int d = iters - 1;
+    int min_val = minimum;
+    int max_val = maximum;
+
+    while (d % 2 == 0) {
+        d /= 2;
+    }
+    std::cout << "1 loop min_val: " << min_val << std::endl;
+
+    // traverse from the min to max
+    for (min_val; min_val < max_val; min_val++) {
+        std::cout << "2 loop min_val: " << min_val << std::endl;
+    
+        // traverse given number of iterations
+        for (int i = 0; i < iters; i++) {
+            std::cout << "Traverse iters: " << i << std::endl;
+            std::cout << "Iters: " << iters << std::endl;
+            std::cout << "3 loop min_val: " << min_val << std::endl;
+        
+            // determine primes with miller_rabin method
+            if (!compute_miller_rabin(d, min_val)) {
+            
+                //std::cout << "d = " << d << std::endl;
+            }
+
+            else {
+                std::cout << min_val << ", ";
+            }
+        }
+    }
+    std::cout << "\n";
 }
 
 /*

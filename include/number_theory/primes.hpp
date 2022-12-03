@@ -15,8 +15,11 @@ class Primality {
         bool is_prime(int n);
 
         /* algorithm determining if a given number is likely to be prime */
-        bool miller_rabin(int n, int k);
-        
+        bool compute_miller_rabin(int d, int n);
+
+        /* miller-rabin driver, prints values that satisfy */
+        void miller_rabin(int inters, int minimum, int maximum);
+
         /* algorithms finding a prime number */
         int jacobian_number(long long a, long long n);
         
@@ -45,6 +48,17 @@ class Primality {
         /* Eulers Totient Function */
         int ETF(unsigned int n);
 };
+
+// class within a class?
+// class Miller_Rabin {
+//  private:
+//      values used by all three functions?
+//
+//  public:
+//      bool compute_miller_rabin();
+//      bool miller_rabbin_prime();
+//      void miller_rabin();
+// };
 
 #endif
 

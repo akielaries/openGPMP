@@ -11,7 +11,7 @@ using ::testing::DoubleLE;
 
 
 namespace {
-    arith ar;
+    Arith ar;
 
     // test case, test name
     TEST(arith_test, add_positive) {
