@@ -13,7 +13,7 @@ CXX 		= g++
 VERBOSE 	= TRUE
 
 CXX_DBG 	= -Wall -Wextra -g
-CXX_THREAD	= -lpthread  
+# CXX_THREAD	= -lpthread  
 LIBXBGI		= /usr/lib/libXbgi.a
 CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
 
