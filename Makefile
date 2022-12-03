@@ -136,7 +136,7 @@ LCOVFLAGS1	= --capture --directory
 LCOVFLAGS2	= --output-file
 
 COVDIR		= $(PROJDIR)/.coverage
-COVREPORT	= lcov.xml
+COVREPORT	= lcov.info
 STORE_COV	= $(addprefix $(COVDIR), $(COVREPORT))
 
 # clean these coverage files
