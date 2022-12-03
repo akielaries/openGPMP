@@ -13,10 +13,10 @@ g++ --coverage arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
 
 #number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
 # generate lcov files
-lcov --directory . --capture --output-file lcov.info
+lcov --directory . --capture --output-file lcov.xml
 
 # move lcov file to .coverage
-mv lcov.info ../.coverage
+mv lcov.xml ../.coverage
 
 
 #rm -
