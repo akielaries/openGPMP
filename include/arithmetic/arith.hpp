@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <algorithm>
 
-class arith {
+class Arith {
 
     public:
         /*
