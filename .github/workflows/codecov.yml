@@ -49,9 +49,9 @@ jobs:
 
       - name: Codecov Sync     
         uses: codecov/codecov-action@v3
-        ignore:
-          - "tests/"
         with:
           files: .coverage/lcov.xml
           name: codecov-umbrella
           verbose: true
+          ignore:
+            - "tests/"
