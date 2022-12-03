@@ -19,7 +19,3 @@ mv lcov.info ../.coverage
 # cd into root directory and run gcovr from here
 cd ../ && gcovr --xml-pretty >> codecov.xml && mv codecov.xml .coverage/
 
-#rm -
-#rm -f *.gc*
-#rm -rf web/
-
