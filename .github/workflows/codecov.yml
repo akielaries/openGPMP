@@ -28,7 +28,7 @@ jobs:
       - name: install deps
         run: | 
           sudo apt install lcov
-          pip install gcovr
+          pip -e install gcovr
       
       - name: Configure
         run: |
