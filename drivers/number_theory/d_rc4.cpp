@@ -47,13 +47,15 @@ int main() {
     int t_swap = 1;
     int b_swap = 2;
 
+    /*<------------------------------------------------------------------>*/
+
     // declare a ciphertext pointer and allocate memory
     unsigned char *hashtext_0 = (unsigned char *)malloc(sizeof(int) * 
                                 strlen(text0));
   
+    std::cout << "HASHTEXT_0: " << hashtext_0 << std::endl;
     printf("String before hash : %s\n", text0);
 
-    /*<-------------------------------COMPUTE-------------------------------->*/
     /*
      * the main arguments are <key> & <plaintext> + allocated memory of
      * ciphertext as well as the swap type (x_swap true/false)
@@ -65,11 +67,12 @@ int main() {
                                             text0, 
                                             hashtext_0, 
                                             x_swap);
+    std::cout << "computed_text addr: " << &computed_text << std::endl;
     /*
      * function to store the computed hash 
      */
     std::string display_text = rc.store_hash(text0, hashtext_0, x_swap);
-    std::cout << "COMPUTED HASH = " << display_text << std::endl;
+    std::cout << "COMPUTED HASH(XSWAP) = " << display_text << std::endl;
 
     // free whats no longer in use
     free(hashtext_0);
@@ -88,8 +91,8 @@ int main() {
                                             text1,
                                             hashtext_1,
                                             t_swap);
-
-    std::string display_text1 = rc.store_hash(text1, hashtext_1, x_swap);
+    std::cout << "computed_text1 addr: " << &computed_text1 << std::endl;
+    std::string display_text1 = rc.store_hash(text1, hashtext_1, t_swap);
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text1 << std::endl;
 
     free(hashtext_1);
@@ -106,12 +109,10 @@ int main() {
     unsigned char *computed_text2 = rc.compute(key2, 
                                             text2,
                                             hashtext_2,
-                                            t_swap);
-
-    std::string display_text2 = rc.store_hash(text2, hashtext_2, x_swap);
-    std::cout << "COMPUTED HASH (TSWAP) = " << display_text2 << std::endl;
-
-    printf("\n\n");
+                                            b_swap);
+    std::cout << "computed_text2 addr: " << &computed_text2 << std::endl;
+    std::string display_text2 = rc.store_hash(text2, hashtext_2, b_swap);
+    std::cout << "COMPUTED HASH (BSWAP) = " << display_text2 << std::endl;
 
     free(hashtext_2);
     c = clock() - c;

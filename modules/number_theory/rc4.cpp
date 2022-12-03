@@ -107,7 +107,6 @@ std::string RC4::store_hash(char *plaintext,
     // for snprintf declare a buffer
     char buffer[len + 1];
     int size = sizeof(buffer);
-    int result = 0;
     
     // initialize empty string
     std::string stored_text = "";

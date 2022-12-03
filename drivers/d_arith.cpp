@@ -45,7 +45,6 @@ int main(){
 
     /* 
      * starting with addition operations with different data types. 
-     * you can assign your result as a different type than the params
      */
     clock_t adding;
     adding = clock();
@@ -79,8 +78,8 @@ int main(){
     printf("rm_sub() performed in: %f seconds\n\n", sub_time);
     
     printf("%d - %d - %d = %d\n", a, b, c, r3);
-    printf("%f - %f - %f - %d = %d\n", d, e, f, g, r4);
-    printf("%f - %f - %f - %f = %f\n\n", d, e, f, g, r5);
+    printf("%f - %f - %f - %ld = %d\n", d, e, f, g, r4);
+    printf("%f - %f - %f - %ld = %f\n\n", d, e, f, g, r5);
 
     /*
      * multiplication 
@@ -98,7 +97,7 @@ int main(){
     printf("rm_mult() performed in: %f seconds\n\n", mult_time);
 
     printf("%d * %d * %d = %d\n", a, b, c, r6);
-    printf("%f * %f * %f * %d = %d\n", d, e, f, g, r7);
+    printf("%f * %f * %f * %ld = %d\n", d, e, f, g, r7);
     printf("%f * %f * %f * %ld = %f\n\n", d, e, f, g, r8);
     printf("Big result #2 = %f\n\n", r98);
 

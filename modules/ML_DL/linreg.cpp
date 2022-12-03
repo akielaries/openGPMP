@@ -100,7 +100,7 @@ void regression::show_data() {
     printf("\n\n");
     printf("|%15s%5s %15s%5s%20s\n", "X", "", "Y", "", "|");
 
-    for (int i = 0; i < x.size(); i++) {
+    for (int i = 0; unsigned(i) < x.size(); i++) {
         printf("|%20f %20f%20s\n", x[i], y[i], "|");
     }
  
@@ -118,7 +118,7 @@ float regression::predict(float x) {
 // Function that returns overall sum of square of errors
 float regression::error_square() {
     float ans = 0;
-    for (int i = 0; i < x.size(); i++) {
+    for (int i = 0; unsigned(i) < x.size(); i++) {
         ans += ((predict(x[i]) - y[i]) * (predict(x[i]) - y[i]));
     }
     return ans;
@@ -128,7 +128,7 @@ float regression::error_square() {
  * value and value predicted by our model
  */
 float regression::error_in(float num) {
-    for (int i = 0; i < x.size(); i++) {
+    for (int i = 0; unsigned(i) < x.size(); i++) {
         if (num == x[i]) {
             return (y[i] - predict(x[i]));
         }
