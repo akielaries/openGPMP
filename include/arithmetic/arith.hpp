@@ -7,7 +7,7 @@
 #include <vector>
 #include <iostream>
 #include <stdio.h>
-
+#include <algorithm>
 
 class arith {
 
@@ -46,7 +46,7 @@ class arith {
             return w * mult(wv...);
         }
 
-        // multiplication
+        // exponentiation
         template<typename Z>
         inline Z exp(Z z) {
             return z;
@@ -55,7 +55,17 @@ class arith {
         inline auto exp(Z z, Zy... zy) {
             return z *= exp(zy...);
         }
+};
 
+class Basics {
+    
+    public:
+        /* raise to a power */
+        int power (int x, unsigned int y, int p);
+        /* greatest power of two given integers */
+        int greatest_power(int n, int p);
+        /* greatest common factor */
+        int gcd(int x, int y);
 };
 
 #endif

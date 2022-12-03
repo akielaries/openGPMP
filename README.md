@@ -79,7 +79,7 @@ $ git clone git@github.com:akielaries/RM-pkg.git
 $ cd RM-pkg
 
 # to run all examples 
-$ ./all-modules.sh
+$ ./all.sh
 
 # compile + run the arithmetic operation example using the provided Makefile
 $ make arith

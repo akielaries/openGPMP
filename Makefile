@@ -22,7 +22,7 @@ SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 
 # FILES FOR ARITHMETIC
-AR			= $(SRCDIR)/basics/arith.cpp
+AR			= $(SRCDIR)/arithmetic/arith.cpp
 ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
 
@@ -62,6 +62,10 @@ lin-alg:
 
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
+PRIMES		= $(SRCDIR)/number_theory/primes.cpp
+PRIMESDRV	= $(PROJDIR)/drivers/number_theory/d_primes.cpp
+PRIMESBIN	= primes
+
 CIPH		= $(SRCDIR)/number_theory/cipher.cpp
 CIPHDRV		= $(PROJDIR)/drivers/number_theory/d_cipher.cpp
 CIPHBIN		= cipher
@@ -79,12 +83,15 @@ RC5DRV		= $(PROJDIR)/drivers/number_theory/d_rc5.cpp
 RC5BIN		= rc5
 
 num-theory: 
+	# PRIMES
+	${CXX} ${CXX_DBG} ${AR} ${PRIMES} ${PRIMESDRV} -o ${PRIMESBIN}
+	./${PRIMESBIN}
 	# BASIC STREAM CIPHERS
-	${CXX} ${CXX_DBG} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
-	./${CIPHBIN}
+	#${CXX} ${CXX_DBG} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	#./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
-	${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
-	./${RC4BIN}
+	#${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
+	#./${RC4BIN}
 
 	#${CXX} ${RC5} ${RC5DRV} -o ${RC5BIN}
 	#./${RC5BIN}
@@ -102,7 +109,7 @@ complex:
 	./${TORUSBIN}
 	# run animated torus
 	${CXX} ${TORUS_ANIM} ${TORUSDRV} ${CXX_VIZ} - o ${TORUS_ANIM_BIN}
-	./{TORUS_ANIM_BIN}
+	./${TORUS_ANIM_BIN}
 
 
 clean-mods:
@@ -110,9 +117,13 @@ clean-mods:
 	rm -f ${CALCBIN}
 	rm -f ${LRBIN}
 	rm -f ${BLABIN}
+	rm -f ${PRIMESBIN}
 	rm -f ${RC4BIN}
 	rm -f ${CIPHBIN}
-	rm -f Mandelbrot
+
+	#rm -f ${TORUSBIN}
+	#rm -f ${TORUS_ANIM_BIN}
+	#rm -f Mandelbrot
 
 # testing created modules
 # using gtest

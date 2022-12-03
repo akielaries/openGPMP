@@ -4,62 +4,32 @@
  */
 #include <cstdlib>
 #include <cmath>
-#include <sstream>
+#include <string>
+#include <cstring>
+#include <algorithm>
 #include <string>
 #include <iostream>
 #include <stdio.h>
 #include "../../include/number_theory/primes.hpp"
+#include "../../include/arithmetic/arith.hpp"
 
 
-int basics::power (int x, unsigned int y, int p) {
-    int res = 1;    // Initialize result
-    x = x % p;      // Update x if it is more than or
-                    // equal to p
-    
-    while (y > 0) {
-        // If y is odd, multiply x with result
-        if (y & 1)
-            res = (res*x) % p;
- 
-        // y must be even now
-        y = y>>1; // y = y/2
-        x = (x*x) % p;
-    }
-    return res;
-}
+// declare Basics and Primality class objects
+Basics basics;
+Primality prim;
 
-int basics::greatest_power(int n, int p) {
-    int x = 0;
- 
-    // Calculate x = n/p + n/(p^2) + n/(p^3) + ....
-    while (n) {
-        n /= p;
-        x += n;
-    }
-    return x;
-}
 
-int basics::gcd(int x, int y) {
-    if(x < y)
-        return gcd(y, x);
-    
-    else if(x % y == 0)
-        return y;
-    
-    else 
-        return gcd(y, x % y); 
-}
-
-long long primality::modulo(long long base, 
-        long long exponent,
-        long long mod) {
+long long int Primality::modulo(long long int base, 
+        long long int exponent,
+        long long int mod) {
 
     long long x = 1;
     long long y = base;
-    while (exponent > 0) {
-        if (exponent % 2 == 1)
-            x = (x * y) % mod;
 
+    while (exponent > 0) {
+        if (exponent % 2 == 1) {
+            x = (x * y) % mod;
+        }
         y = (y * y) % mod;
         exponent = exponent / 2;
     }
@@ -67,14 +37,30 @@ long long primality::modulo(long long base,
     return x % mod;
 }
 
+long long int Primality::modulo_pow(long long int base, 
+        long long int exponent,
+        long long int mod) {
 
-bool primality::is_prime(int n) {
+    long long x = 1;
+    long long y = base;
+
+    while (exponent > 0) {
+        if (exponent & 1) {
+            x = (x * y) % mod;
+        }
+        exponent = exponent >> 1;
+        y = (y * y) % mod;
+    }
+
+    return x;
+}
+
+bool Primality::is_prime(int n) {
     if (n <= 1)
         return false;
  
-    int iter = 2;
     // Check from 2 to n-1
-    for (iter; iter < n; iter++)
+    for (int iter = 2; iter < n; iter++)
         if (n % iter == 0)
             return false;
  
@@ -84,12 +70,12 @@ bool primality::is_prime(int n) {
 /*
  * determining if a given number is likely to be prime
  */
-bool primality::miller_rabin(int d, int n) {
+bool Primality::miller_rabin(int d, int n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n > 4
     int a = 2 + rand() % (n - 4);
  
     // Compute a^d % n
-    int x = power(a, d, n);
+    int x = basics.power(a, d, n);
  
     if (x == 1  || x == n-1)
        return true;
@@ -116,7 +102,7 @@ bool primality::miller_rabin(int d, int n) {
 /*
  * another algorithm capable of finding primes
  */
-int primality::jacobian_number(long long a, long long n) {
+int Primality::jacobian_number(long long a, long long n) {
     if (!a)
         return 0;// (0/n) = 0
  
@@ -143,7 +129,7 @@ int primality::jacobian_number(long long a, long long n) {
             if (n % 8 == 3 || n % 8 == 5)
                 ans = -ans;
         }
-        swap(a, n);
+        std::swap(a, n);
 
         if (a % 4 == 3 && n % 4 == 3)
             ans = -ans;
@@ -164,7 +150,7 @@ int primality::jacobian_number(long long a, long long n) {
  * 
  * a^(p-1)/2 = (a/p) (mod p)
  */
-bool primality::solovoy_strassen(long long p, int iters) {
+bool Primality::solovoy_strassen(long long p, int iters) {
     if (p < 2)
         return false;
     
@@ -188,14 +174,12 @@ bool primality::solovoy_strassen(long long p, int iters) {
  * are composite integers satisfying the congruence forumla below
  * b^n - 1 = b (mod n)
  */
-bool primality::carmichael_number(int n) {
+bool Primality::carmichael_num(int n) {
     for (int b = 2; b < n; b++) {
         // If "b" is relatively prime to n
-        if (gcd(b, n) == 1)
- 
-            // And pow(b, n-1)%n is not 1,
-            // return false.
-            if (power(b, n - 1, n) != 1)
+        if (basics.gcd(b, n) == 1)
+            // And pow(b, n-1)%n is not 1, return false.
+            if (basics.power(b, n - 1, n) != 1)
                 return false;
     }
     return true;
@@ -206,7 +190,7 @@ bool primality::carmichael_number(int n) {
  * logical arithmetic operations, the greek algorithm sieve of Eratosthenes
  * is able to capture all prime numbers to any given limit
  */
-void primality::sieve_of_eratosthenes(int n) {
+void Primality::sieve_of_eratosthenes(int n) {
     // Create a boolean array "prime[0..n]" and initialize
     // all entries it as true. A value in prime[i] will
     // finally be false if i is Not a prime, else true.
@@ -246,7 +230,7 @@ void primality::sieve_of_eratosthenes(int n) {
  * x_3 = 677
  * x_4 = 598        gcd(698 - 26, 1111) = 11
  */
-void primality::pollard_rho(long long int n) {
+long long int Primality::pollard_rho(long long int n) {
     /* initialize random seed */
     srand (time(NULL));
  
@@ -274,15 +258,17 @@ void primality::pollard_rho(long long int n) {
        If n is prime, return n */
     while (divisor == 1) {
         /* Tortoise Move: x(i+1) = f(x(i)) */
-        x = (modular_pow(x, 2, n) + c + n) % n;
+        // take power 
+        // calculate modulus
+        x = (modulo_pow(x, 2, n) + c + n) % n;
  
         /* Hare Move: y(i+1) = f(f(y(i))) */
-        y = (modular_pow(y, 2, n) + c + n) % n;
-        y = (modular_pow(y, 2, n) + c + n) % n;
+        y = (modulo_pow(y, 2, n) + c + n) % n;
+        y = (modulo_pow(y, 2, n) + c + n) % n;
  
         /* check gcd of |x-y| and n */
-        divisor = __gcd(abs(x - y), n);
- 
+        divisor = basics.gcd(abs(x - y), n);
+        //divisor = std::__gcd(abs(x - y), n);
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
         if (divisor == n) 
@@ -305,13 +291,11 @@ void primality::pollard_rho(long long int n) {
  *          Φ(4) = 2
  *          Φ(5) = 4
  */
-int primality::ETF(unsigned int n) {
+int Primality::ETF(unsigned int n) {
     unsigned int result = 1;
-
-    int index = 2;
     
-    for (index; index < n; index++) {
-        if (gcd(index, n) == 1) {
+    for (int index = 2; unsigned(index) < n; index++) {
+        if (basics.gcd(index, n) == 1) {
             result++;
         }
     }

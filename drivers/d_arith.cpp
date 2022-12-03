@@ -30,7 +30,7 @@ int main(){
      */
 
     // declare our arithmetic class object
-    arith ar;
+    Arith ar;
 
     // declare some variables
     int a = 10;
