@@ -17,8 +17,11 @@ class Primality {
         /* algorithm determining if a given number is likely to be prime */
         bool compute_miller_rabin(int d, int n);
 
+        /* modified primes algorithm using the compute_miller_rabin method */
+        bool miller_rabin_prime(int n, int iters);
+
         /* miller-rabin driver, prints values that satisfy */
-        void miller_rabin(int inters, int minimum, int maximum);
+        void miller_rabin(int inters, int min_val, int max_val);
 
         /* algorithms finding a prime number */
         int jacobian_number(long long a, long long n);

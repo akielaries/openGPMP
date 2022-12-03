@@ -13,11 +13,11 @@ int Basics::power(int x, unsigned int y, int p) {
     while (y > 0) {
         // If y is odd, multiply x with result
         if (y & 1)
-            res = (res*x) % p;
+            res = (res * x) % p;
 
         // y must be even now
-        y = y>>1; // y = y/2
-        x = (x*x) % p;
+        y = y >> 1; // y = y/2
+        x = (x * x) % p;
     }
     return res;
 }

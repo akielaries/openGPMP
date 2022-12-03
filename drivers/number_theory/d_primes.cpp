@@ -20,12 +20,13 @@ int main() {
     is_it ? std::cout << "true\n" : 
         std::cout << "false\n" << std::endl;
 
-    int b = 17;
+    int b = 2;
     bool is_it2 = p.is_prime(b);
 
     std::cout << b << " is prime? : ";
     is_it2? std::cout << "true\n" : 
             std::cout << "false\n" << std::endl;
+    std::cout << "\n";
 
     std::cout << "<--------- MILLER-RABIN METHOD --------->\n";
     int min_num = 1;
@@ -37,8 +38,8 @@ int main() {
      * calculate the solution, the method doesn't return a value, 
      * prints the values
      */
-    std::cout << "Prime numbers smaller than " << max_num << std::endl;
     p.miller_rabin(iters, min_num, max_num);
+    p.miller_rabin(iters, 25, 50);
 
 
     std::cout << "\n";

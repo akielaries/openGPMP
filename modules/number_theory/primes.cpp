@@ -67,7 +67,6 @@ bool Primality::is_prime(int n) {
     return true;
 }
 
-
 /*
  * determining if a given number is likely to be prime
  */
@@ -92,7 +91,7 @@ bool Primality::compute_miller_rabin(int d, int n) {
  
         if (x == 1)      
             return false;
-        if (x == n-1)    
+        if (x == n - 1)    
             return true;
     }
  
@@ -100,35 +99,45 @@ bool Primality::compute_miller_rabin(int d, int n) {
     return false;
 }
 
-void Primality::miller_rabin(int iters, int minimum, int maximum) {
-    int d = iters - 1;
-    int min_val = minimum;
-    int max_val = maximum;
+bool Primality::miller_rabin_prime(int n, int iters) {
+    /*
+     * this method will return true if n is prime, iters will determine
+     * accuracy
+     */
+    // these are corner cases
+    if (n <= 1 || n == 4)
+        return false;
+    if (n <= 3)
+        return true;
 
-    while (d % 2 == 0) {
-        d /= 2;
+    // odd will represent an odd number
+    int odd = n - 1;
+    while (odd % 2 == 0) {
+        odd /= 2;
     }
-    std::cout << "1 loop min_val: " << min_val << std::endl;
+
+    // iterate given the iters paramater
+    for (int i = 0; i < iters; i ++) {
+        // compute using the Miller-Rabin method
+        if (!compute_miller_rabin(odd, n)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void Primality::miller_rabin(int iters, int min_val, int max_val) {
+    std::cout << "Primes between " << min_val << 
+                " and " << max_val << std::endl;
+    //int d = iters - 1;
+    //int min_val = minimum;
+    //int max_val = maximum;
 
     // traverse from the min to max
-    for (min_val; min_val < max_val; min_val++) {
-        std::cout << "2 loop min_val: " << min_val << std::endl;
-    
-        // traverse given number of iterations
-        for (int i = 0; i < iters; i++) {
-            std::cout << "Traverse iters: " << i << std::endl;
-            std::cout << "Iters: " << iters << std::endl;
-            std::cout << "3 loop min_val: " << min_val << std::endl;
-        
-            // determine primes with miller_rabin method
-            if (!compute_miller_rabin(d, min_val)) {
-            
-                //std::cout << "d = " << d << std::endl;
-            }
-
-            else {
-                std::cout << min_val << ", ";
-            }
+    for (; min_val < max_val; min_val++) {
+    //while (min_val < max_val) {
+        if (miller_rabin_prime(min_val, iters)) {
+            std::cout << min_val << " ";
         }
     }
     std::cout << "\n";
