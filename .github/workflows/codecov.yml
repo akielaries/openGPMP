@@ -28,6 +28,7 @@ jobs:
       - name: install deps
         run: | 
           sudo apt install lcov
+          pip install gcovr
       
       - name: Configure
         run: |
@@ -49,6 +50,6 @@ jobs:
       - name: Codecov Sync     
         uses: codecov/codecov-action@v3
         with:
-          files: .coverage/lcov.xml
+          files: .coverage/codecov.xml
           name: codecov-umbrella
           verbose: true
