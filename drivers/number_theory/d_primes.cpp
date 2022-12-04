@@ -40,6 +40,33 @@ int main() {
      */
     p.miller_rabin(iters, min_num, max_num);
     p.miller_rabin(iters, 25, 50);
+    p.miller_rabin(iters, 30, 3000);
+
+    std::cout << "\n";
+    
+    std::cout << "<--------- CARMICHAEL NUMBERS --------->\n";
+    int cm_test = 500;
+    bool carm_num = p.carmichael_num(cm_test);
+
+    int cm_test1 = 561;
+    bool carm_num1 = p.carmichael_num(cm_test1);
+
+    int cm_test2 = 1105;
+    bool carm_num2 = p.carmichael_num(cm_test2);
+    
+    std::cout << cm_test << " is a carmichael number : ";
+    carm_num? std::cout << "true\n" :
+            std::cout << "false\n";
+
+    std::cout << cm_test1 << " is a carmichael number : ";
+    carm_num1? std::cout << "true\n" :
+            std::cout << "false\n";
+
+    std::cout << cm_test2 << " is a carmichael number : ";
+    carm_num2? std::cout << "true\n" :
+            std::cout << "false\n";
+
+    std::cout << "\n";
 
 
     std::cout << "\n";
