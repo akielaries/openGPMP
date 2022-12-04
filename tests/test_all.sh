@@ -3,6 +3,7 @@
 # test all modules together with googletest. produce ONE .info coverage
 # file for the whole test suite. 
 g++ --coverage arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
+    calc/t_calc.cpp ../modules/calculus/deriv.cpp \
     -lgtest -lgtest_main -o RM_tests -fprofile-arcs -ftest-coverage -fPIC
 
 # run compiled binary
