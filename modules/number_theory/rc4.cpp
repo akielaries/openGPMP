@@ -59,7 +59,7 @@ void RC4::KSA(char *key,
             byte_swap(&S[i], &S[j]);
         }
         else {
-            std::cout << "[-] Error performing swap in KSA\n";
+            std::cout << "Error performing swap in KSA\n";
             exit(EXIT_FAILURE);
         }
     }
