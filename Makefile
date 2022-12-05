@@ -90,8 +90,8 @@ num-theory:
 	#${CXX} ${CXX_DBG} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
 	#./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
-	#${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
-	#./${RC4BIN}
+	${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
+	./${RC4BIN}
 
 	#${CXX} ${RC5} ${RC5DRV} -o ${RC5BIN}
 	#./${RC5BIN}
