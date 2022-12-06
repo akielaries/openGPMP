@@ -43,7 +43,7 @@ int main() {
      * traditional swap 1
      * byte swap        2
      */
-    int x_swap = 4;
+    int x_swap = 0;
     int t_swap = 1;
     int b_swap = 2;
 

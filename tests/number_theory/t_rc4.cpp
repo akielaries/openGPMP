@@ -146,52 +146,54 @@ namespace {
         EXPECT_EQ(ptext_22, displayed_22);
     }
 
-    TEST(rc4_test, KSA_error) {
+    TEST(rc4_test, SWAP_error_4) {
         int swap_FALSE = 4;
-        //std::string expected_error_text = "[-] Error performing swap in KSA";
-        const std::string expected_error_text = "WRONG";
+        std::string expected_error_text = "[-] Invalid swap_type";
 
         /*BEGIN RC4 ITERATIONS*/
         std::string ptext_FALSE = "1021BF0420";
         unsigned char *hashtext_FALSE = (unsigned char *)malloc(sizeof(int) *
                 strlen(text_2));
-        unsigned char *computed_FALSE = rc.compute(key_2,
-                                                text_2,
-                                                hashtext_FALSE,
-                                                swap_FALSE);
-        //std::string displayed_FALSE = rc.store_hash(text_2,
-        //                                        hashtext_FALSE,
-        //                                        swap_FALSE);
-        //EXPECT_DEATH(rc.store_hash(text_2, hashtext_FALSE, swap_FALSE), 
-        //            expected_error_text);
 
-        EXPECT_EXIT(rc.store_hash(text_2, hashtext_FALSE, swap_FALSE),
-                    testing::ExitedWithCode(EXIT_FAILURE),
-                    expected_error_text);
+        EXPECT_THROW(rc.compute(key_2, text_2, hashtext_FALSE, swap_FALSE),
+                        std::runtime_error);
+
+        ASSERT_THROW(rc.compute(key_2, text_2, hashtext_FALSE, swap_FALSE),
+                        std::runtime_error);
     }
 
-    TEST(rc4_test, PRGA_error) {
-        int swap_FALSE = 4;
-        //std::string expected_error_text = "[-] Error performing swap in KSA";
-        const std::string expected_error_text = "WRONG";
+    TEST(rc4_test, SWAP_error_127) {
+        int swap_FALSE_127 = 127;
+        std::string expected_error_text_127 = "[-] Invalid swap_type";
 
         /*BEGIN RC4 ITERATIONS*/
-        std::string ptext_FALSE = "1021BF0420";
-        unsigned char *hashtext_FALSE = (unsigned char *)malloc(sizeof(int) *
+        std::string ptext_FALSE_127 = "1021BF0420";
+        unsigned char *hashtext_FALSE_127 = (unsigned char *)malloc(sizeof(int) *
                 strlen(text_2));
-        unsigned char *computed_FALSE = rc.compute(key_2,
-                                                text_2,
-                                                hashtext_FALSE,
-                                                swap_FALSE);
-        //std::string displayed_FALSE = rc.store_hash(text_2,
-        //                                        hashtext_FALSE,
-        //                                        swap_FALSE);
-        //EXPECT_DEATH(rc.store_hash(text_2, hashtext_FALSE, swap_FALSE), 
-        //            expected_error_text);
 
-        EXPECT_EXIT(rc.store_hash(text_2, hashtext_FALSE, swap_FALSE),
-                    testing::ExitedWithCode(EXIT_FAILURE),
-                    expected_error_text);
+        EXPECT_THROW(rc.compute(key_2, text_2, hashtext_FALSE_127, 
+                    swap_FALSE_127), std::runtime_error);
+
+        ASSERT_THROW(rc.compute(key_2, text_2, hashtext_FALSE_127, 
+                    swap_FALSE_127), std::runtime_error);
     }
+
+    TEST(rc4_test, NULL_ciphertext) {
+        int swap_NULL = 0;
+        std::string expected_error_text_127 = "[-] Error Allocating Memory";
+
+        /*BEGIN RC4 ITERATIONS*/
+        std::string ptext_NULL = "1021BF0420";
+        unsigned char *hashtext_NULL = nullptr;
+            //(unsigned char *)malloc(sizeof(int) *
+            //    strlen(swap_NULL));
+
+        EXPECT_THROW(rc.compute(key_2, text_2, hashtext_NULL, 
+                    swap_NULL), std::runtime_error);
+
+        ASSERT_THROW(rc.compute(key_2, text_2, hashtext_NULL, 
+                    swap_NULL), std::runtime_error);
+    }
+
 }
 

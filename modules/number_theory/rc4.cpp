@@ -58,10 +58,6 @@ void RC4::KSA(char *key,
         else if (swap_type == 2) {
             byte_swap(&S[i], &S[j]);
         }
-        else {
-            std::cout << "Error performing swap in KSA\n";
-            exit(EXIT_FAILURE);
-        }
     }
 }
 
@@ -86,10 +82,6 @@ void RC4::PRGA(unsigned char *S,
         }
         else if (swap_type == 2) {
             byte_swap(&S[i], &S[j]);
-        }
-        else {
-            std::cout << "[-] Error performing swap in PRGA\n";
-            exit(EXIT_FAILURE);
         }
 
         uint32_t rnd = S[(S[i] + S[j]) & BITS];
@@ -133,14 +125,20 @@ unsigned char* RC4::compute(char *key,
                 int swap_type) {
 
     if (ciphertext == NULL) {
-        std::cout << "[-] Error Allocating Memory\n";
-        exit(EXIT_FAILURE);
+        throw std::runtime_error("[-] Error Allocating Memory");
     }
 
-    unsigned char S[BYTE_LIMIT];
-    KSA(key, S, swap_type);
-    PRGA(S, plaintext, ciphertext, swap_type);
-    
+    // check for swap types 1-3
+    if (0 <= swap_type && swap_type <= 2) {
+        unsigned char S[BYTE_LIMIT];
+        KSA(key, S, swap_type);
+        PRGA(S, plaintext, ciphertext, swap_type);
+    }
+
+    else if (swap_type > 2) {
+        throw std::runtime_error("[-] Invalid swap_type");
+    }
+
     return ciphertext;
 }
 
