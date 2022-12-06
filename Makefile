@@ -177,3 +177,8 @@ clean-tests:
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}
 
+PROJECTBIN	= libRM-pkg.so
+
+RM-pkg:
+	${CXX} -shared -o ${PROJECTBIN} ${CXX_DBG} -fPIC ${AR} ${CALC} ${LR} ${PRIMES} ${CIPH} ${RC4}
+
