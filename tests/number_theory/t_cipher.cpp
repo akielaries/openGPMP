@@ -47,7 +47,7 @@ namespace {
         // encode
         std::string encoded_text_0 = cc.KC_encode(key_shift_3);
         // cipher
-        std::string hashtext_3 = cc.KC_cipher(text_3, key_shift_3);
+        std::string hashtext_3 = cc.KC_cipher(text_3, encoded_text_0);
         
         std::string expected_3 = "JCNNWILP";
         
@@ -61,7 +61,7 @@ namespace {
         // encode
         std::string encoded_text_1 = cc.KC_encode(key_shift_4);
         // cipher
-        std::string hashtext_4 = cc.KC_cipher(text_4, key_shift_4);
+        std::string hashtext_4 = cc.KC_cipher(text_4, encoded_text_1);
         
         std::string expected_4 = "KPNNVJMW";
         

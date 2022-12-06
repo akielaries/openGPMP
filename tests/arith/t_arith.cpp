@@ -30,8 +30,8 @@ namespace {
     // subtraction
     TEST(arith_test, sub_positive) {
         EXPECT_EQ(5, ar.sub(10, 8, 3));
-        EXPECT_EQ(1, ar.sub(1.25, 1.85, 2.75));
-        EXPECT_EQ(-7, ar.sub(3, 3, 7));
+        EXPECT_EQ(2.15, ar.sub(1.25, 1.85, 2.75));
+        EXPECT_EQ(7, ar.sub(3, 3, 7));
     }
 }
 
