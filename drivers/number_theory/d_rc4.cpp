@@ -36,6 +36,9 @@ int main() {
     // expected hash = 45A01F645FC35B383552544B9BF5
     char* key2    = (char*)"Secret";
     char* text2   = (char*)"Attack at dawn";
+    
+    char* key3    = (char*)"1";
+    char* text3   = (char*)"username";
 
     /*
      * char value for using one of the following 
@@ -118,6 +121,27 @@ int main() {
     c = clock() - c;
     double c_time = ((double)c) / CLOCKS_PER_SEC;
     printf("c_time = %f sec(s)\n\n", c_time);
+
+    /*<------------------------------------------------------------------>*/
+    printf("String before hash: %s\n", text3);
+    unsigned char *hashtext_3 = (unsigned char *)malloc(sizeof(int) *
+                                strlen(text3));
+    
+    clock_t d;
+    d = clock();
+    unsigned char *computed_text3 = rc.compute(key3, 
+                                            text3,
+                                            hashtext_3,
+                                            x_swap);
+    std::cout << "computed_text2 addr: " << &computed_text3 << std::endl;
+    std::string display_text3 = rc.store_hash(text2, hashtext_3, x_swap);
+    std::cout << "COMPUTED HASH (XSWAP) = " << display_text3 << std::endl;
+
+    free(hashtext_3);
+    d = clock() - d;
+    double d_time = ((double)d) / CLOCKS_PER_SEC;
+    printf("d_time = %f sec(s)\n\n", d_time);
+
     return EXIT_SUCCESS;
 }
 
