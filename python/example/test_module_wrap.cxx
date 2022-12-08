@@ -3130,6 +3130,7 @@ namespace swig {
 
     /* MODULE HEADER FILE */
     #include "test_module.hpp"
+    extern double var_foo;
 
 
 SWIGINTERN int
@@ -3346,6 +3347,9 @@ SWIGINTERNINLINE PyObject*
   return PyInt_FromLong((long) value);
 }
 
+
+  #define SWIG_From_double   PyFloat_FromDouble 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3399,6 +3403,29 @@ SWIGINTERN PyObject *_wrap_my_mod(PyObject *self, PyObject *args) {
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN int Swig_var_var_foo_set(PyObject *_val) {
+  {
+    double val;
+    int res = SWIG_AsVal_double(_val, &val);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""var_foo""' of type '""double""'");
+    }
+    var_foo = static_cast< double >(val);
+  }
+  return 0;
+fail:
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_var_foo_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_From_double(static_cast< double >(var_foo));
+  return pyobj;
 }
 
 
@@ -3887,6 +3914,17 @@ SWIG_init(void) {
   
   SWIG_InstallConstants(d,swig_const_table);
   
+  globals = SWIG_globals();
+  if (!globals) {
+    PyErr_SetString(PyExc_TypeError, "Failure to create SWIG globals.");
+#if PY_VERSION_HEX >= 0x03000000
+    return NULL;
+#else
+    return;
+#endif
+  }
+  PyDict_SetItemString(md, "cvar", globals);
+  SWIG_addvarlink(globals, "var_foo", Swig_var_var_foo_get, Swig_var_var_foo_set);
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

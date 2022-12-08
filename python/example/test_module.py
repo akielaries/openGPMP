@@ -65,3 +65,5 @@ def fact(n1):
 def my_mod(m, n):
     return _test_module.my_mod(m, n)
 
+cvar = _test_module.cvar
+
