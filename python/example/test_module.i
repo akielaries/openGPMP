@@ -9,7 +9,7 @@ will include headers within */
     extern double var_foo;
 %}
 
-/* EXPLICITLY list functions and variables to include */
+/* EXPLICITLY list functions and variables to include */ 
 long long int fact(long long int n1);
 int my_mod(int m, int n);
 extern double var_foo;
