@@ -80,6 +80,7 @@ namespace {
      */
     TEST(prime_test, compute_miller_rabin) {
         EXPECT_EQ(true, p.compute_miller_rabin(7, 5));
+        EXPECT_EQ(true, p.compute_miller_rabin(7, 1));
         EXPECT_EQ(true, p.compute_miller_rabin(1049, 5));
         EXPECT_EQ(true, p.compute_miller_rabin(2999, 5));
         EXPECT_EQ(true, p.compute_miller_rabin(4, 2));
@@ -91,6 +92,7 @@ namespace {
         EXPECT_EQ(true, p.miller_rabin_prime(1049, 4));
         EXPECT_EQ(true, p.miller_rabin_prime(5, 4));
         EXPECT_EQ(true, p.miller_rabin_prime(2999, 4));
+        EXPECT_EQ(true, p.miller_rabin_prime(3, 4));
         EXPECT_EQ(false, p.miller_rabin_prime(3000, 4));
         EXPECT_EQ(false, p.miller_rabin_prime(4, 4));
         EXPECT_EQ(false, p.miller_rabin_prime(104032, 4));
