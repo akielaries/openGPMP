@@ -1,0 +1,36 @@
+name: Python API
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+      - name: initalize github repo
+        uses: actions/checkout@v2
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: install deps
+        run: | 
+          sudo apt install lcov
+          pip install gcovr
+
+      - name: Build Python API
+        run: |
+          python python/example/test_module.py
+      
