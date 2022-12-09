@@ -38,6 +38,7 @@ namespace {
         bool fetched_4 = p.is_prime(is_prime_4);
         EXPECT_EQ(actual_4, fetched_4);
     }
+
     TEST(prime_test, carmichael) {
         int is_cm_0 = 561;
         bool actual_cm_0 = true;
@@ -48,6 +49,13 @@ namespace {
         bool actual_cm_1 = false;
         bool  carm_fetched_1 = p.carmichael_num(is_cm_1); 
         EXPECT_EQ(actual_cm_1, carm_fetched_1);
+    }
+    
+    TEST(prime_test, mod_pow) {
+        EXPECT_EQ(1, p.mod_pow(3, 2, 2));
+        EXPECT_EQ(4, p.mod_pow(5, 2, 7));
+        EXPECT_EQ(2, p.mod_pow(8, 9, 3));
+        EXPECT_EQ(4, p.mod_pow(2, 30, 5));
     }
 
     // TEST(prime_test, miller_rabbin) {}

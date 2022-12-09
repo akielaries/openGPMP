@@ -29,13 +29,8 @@ class Primality {
         /* determine if var_p is composite or probably prime */
         bool solovoy_strassen(long long p, int iters);
         
-        /* perform binary exponentiation */
-        long long int modulo(long long int base, 
-                long long int exponent, 
-                long long int mod);
-
         /* modulo + power of input */
-        long long int modulo_pow(long long int base,
+        long long int mod_pow(long long int base,
                 long long int exponent,
                 long long int mod);
         
@@ -51,17 +46,6 @@ class Primality {
         /* Eulers Totient Function */
         int ETF(unsigned int n);
 };
-
-// class within a class?
-// class Miller_Rabin {
-//  private:
-//      values used by all three functions?
-//
-//  public:
-//      bool compute_miller_rabin();
-//      bool miller_rabbin_prime();
-//      void miller_rabin();
-// };
 
 #endif
 

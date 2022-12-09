@@ -18,25 +18,7 @@ Basics basics;
 Primality prim;
 
 
-long long int Primality::modulo(long long int base, 
-        long long int exponent,
-        long long int mod) {
-
-    long long x = 1;
-    long long y = base;
-
-    while (exponent > 0) {
-        if (exponent % 2 == 1) {
-            x = (x * y) % mod;
-        }
-        y = (y * y) % mod;
-        exponent = exponent / 2;
-    }
-
-    return x % mod;
-}
-
-long long int Primality::modulo_pow(long long int base, 
+long long int Primality::mod_pow(long long int base, 
         long long int exponent,
         long long int mod) {
 
@@ -74,7 +56,7 @@ bool Primality::compute_miller_rabin(int d, int n) {
     int a = 2 + rand() % (n - 4);
  
     // Compute a^d % n
-    int x = basics.power(a, d, n);
+    int x = mod_pow(a, d, n);
  
     if (x == 1  || x == n-1)
        return true;
@@ -204,7 +186,7 @@ bool Primality::solovoy_strassen(long long p, int iters) {
         // Generate a random number a
         long long a = rand() % (p - 1) + 1;
         long long jacobian = (p + jacobian_number(a, p)) % p;
-        long long mod = modulo(a, (p - 1) / 2, p);
+        long long mod = mod_pow(a, (p - 1) / 2, p);
  
         if (!jacobian || mod != jacobian)
             return false;
@@ -222,7 +204,7 @@ bool Primality::carmichael_num(int n) {
         // If "b" is relatively prime to n
         if (basics.gcd(b, n) == 1)
             // And pow(b, n-1)%n is not 1, return false.
-            if (basics.power(b, n - 1, n) != 1)
+            if (mod_pow(b, n - 1, n) != 1)
                 return false;
     }
     return true;
@@ -303,11 +285,11 @@ long long int Primality::pollard_rho(long long int n) {
         /* Tortoise Move: x(i+1) = f(x(i)) */
         // take power 
         // calculate modulus
-        x = (modulo_pow(x, 2, n) + c + n) % n;
+        x = (mod_pow(x, 2, n) + c + n) % n;
  
         /* Hare Move: y(i+1) = f(f(y(i))) */
-        y = (modulo_pow(y, 2, n) + c + n) % n;
-        y = (modulo_pow(y, 2, n) + c + n) % n;
+        y = (mod_pow(y, 2, n) + c + n) % n;
+        y = (mod_pow(y, 2, n) + c + n) % n;
  
         /* check gcd of |x-y| and n */
         divisor = basics.gcd(abs(x - y), n);

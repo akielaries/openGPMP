@@ -60,8 +60,6 @@ class Arith {
 class Basics {
     
     public:
-        /* raise to a power */
-        int power (int x, unsigned int y, int p);
         /* greatest power of two given integers */
         int greatest_power(int n, int p);
         /* greatest common factor */

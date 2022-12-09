@@ -67,6 +67,27 @@ int main() {
             std::cout << "false\n";
 
     std::cout << "\n";
+    
+    int pow_a = 3;
+    int pow_b = 2;
+    int pow_c = 2;
+    // returns (a^b) % c
+    int pow_res = p.mod_pow(pow_a, pow_b, pow_c);
+    printf("%d ^ %d %% %d = %d\n", pow_a, pow_b, pow_c, pow_res);
+
+    int pow_d = 5;
+    int pow_e = 2;
+    int pow_f = 7;
+
+    int pow_res_1 = p.mod_pow(pow_d, pow_e, pow_f);
+    printf("%d ^ %d %% %d = %d\n", pow_d, pow_e, pow_f, pow_res_1);
+
+    int pow_g = 8;
+    int pow_h = 9;
+    int pow_i = 3;
+
+    int pow_res_2 = p.mod_pow(pow_g, pow_h, pow_i);
+    printf("%d ^ %d %% %d = %d\n", pow_g, pow_h, pow_i, pow_res_2);
 
 
     std::cout << "\n";

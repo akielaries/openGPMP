@@ -27,7 +27,7 @@ ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
 
 arith:
-	${CXX} ${CXX_DBG} ${ARDRV} -o ${ARBIN}
+	${CXX} ${CXX_DBG} ${AR} ${ARDRV} -o ${ARBIN}
 	./${ARBIN}
 
 
