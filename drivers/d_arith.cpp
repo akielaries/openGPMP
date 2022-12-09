@@ -92,7 +92,29 @@ int main(){
      * arithmetic basics
      */
     Basics ba;
-    
+    int r10 = 10;
+    int r11 = 3;
+    int r12 = ba.greatest_power(r10, r11);
+    printf("The greatest power of %d that divides %d! = %d\n", 
+            r10, r11, r12);
+
+    int r13 = 7;
+    int r14 = 3;
+    int r15 = ba.greatest_power(r13, r14);
+    printf("The greatest power of %d that divides %d! = %d\n", 
+            r13, r14, r15);
+
+
+    int r16 = 2;
+    int r17 = 4;
+    int r18 = ba.gcd(r16, r17);
+    printf("The GCD of %d & %d = %d\n", r16, r17, r18);
+
+    int r19 = 232;
+    int r20 = 96;
+    int r21 = ba.gcd(r19, r20);
+    printf("The GCD of %d & %d = %d\n", r19, r20, r21);
+
     return 0;
 }
 

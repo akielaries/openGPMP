@@ -35,7 +35,24 @@ namespace {
     }
 }
 
+namespace {
+    Basics ba;
+    
+    // greatest power
+    TEST(basics, greatest_pow) {
+        EXPECT_EQ(4, ba.greatest_power(10, 3));
+        EXPECT_EQ(2, ba.greatest_power(7, 3));
+    }
 
+    // greatest common divisor
+    TEST(basics, greatest_common_divisor) {
+        EXPECT_EQ(2, ba.gcd(2, 4));
+        EXPECT_EQ(6, ba.gcd(2198466, 96096));
+        EXPECT_EQ(11, ba.gcd(66, 11));
+        EXPECT_EQ(8, ba.gcd(232, 96));
+        EXPECT_EQ(10, ba.gcd(1703210, 20320));
+    }
+}
 /*
 int main() {
     InitGoogleTest();

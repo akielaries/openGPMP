@@ -62,7 +62,7 @@ class Basics {
     public:
         /* greatest power of two given integers */
         int greatest_power(int n, int p);
-        /* greatest common factor */
+        /* greatest common divisor */
         int gcd(int x, int y);
 };
 
