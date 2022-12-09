@@ -170,6 +170,7 @@ test-leaks:
 
 run-tests:
 	cd tests/ && sh -x test_all.sh
+	gcovr
 
 clean-tests:
 	cd tests/ && rm -f *.gc* web/ RM_tests

@@ -97,5 +97,11 @@ namespace {
         EXPECT_EQ(false, p.miller_rabin_prime(4, 4));
         EXPECT_EQ(false, p.miller_rabin_prime(104032, 4));
     }
+
+    // TEST(prime_test, miller_rabin) {}
+    
+    TEST(prime_test, solovoy_strassen) {
+        EXPECT_EQ(false, p.solovoy_strassen(15, 50));
+    }
 }
 

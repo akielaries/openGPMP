@@ -67,7 +67,9 @@ int main() {
             std::cout << "false\n";
 
     std::cout << "\n";
-    
+    /*
+     * Power Modulo function
+     */
     int pow_a = 3;
     int pow_b = 2;
     int pow_c = 2;
@@ -91,6 +93,21 @@ int main() {
 
     bool cmp = p.miller_rabin_prime(5, 4);
     std::cout << "miller_rabin_prime: " << cmp << "\n";
+    std::cout << "\n";
+    /*
+     * Jacobian
+     */
+    
+
+    /*
+     * Solovay-Strassen Primality Test
+     */
+    int ss_0 = 15;
+    if (p.solovoy_strassen(ss_0, 50))
+        printf("%d is prime\n",ss_0);
+    else
+        printf("%d is composite\n",ss_0);
+
 
     std::cout << "\n";
     return 0;
