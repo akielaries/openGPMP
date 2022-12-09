@@ -47,6 +47,11 @@ namespace {
         bool actual_6 = false;
         bool fetched_6 = p.is_prime(is_prime_6);
         EXPECT_EQ(actual_6, fetched_6);
+
+        int is_prime_7 = 1;
+        bool actual_7 = false;
+        bool fetched_7 = p.is_prime(is_prime_7);
+        EXPECT_EQ(actual_7, fetched_7);
     }
 
     TEST(prime_test, carmichael) {
