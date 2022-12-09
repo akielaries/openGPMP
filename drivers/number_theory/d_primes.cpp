@@ -89,6 +89,8 @@ int main() {
     int pow_res_2 = p.mod_pow(pow_g, pow_h, pow_i);
     printf("%d ^ %d %% %d = %d\n", pow_g, pow_h, pow_i, pow_res_2);
 
+    bool cmp = p.miller_rabin_prime(5, 4);
+    std::cout << "miller_rabin_prime: " << cmp << "\n";
 
     std::cout << "\n";
     return 0;

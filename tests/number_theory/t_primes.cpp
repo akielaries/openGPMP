@@ -73,6 +73,27 @@ namespace {
         EXPECT_EQ(4, p.mod_pow(2, 30, 5));
     }
 
-    // TEST(prime_test, miller_rabbin) {}
+    /*
+     * this test case in itself is not vary useful as it acts
+     * as a utility function on the overall algorithm that 
+     * computes primes using the Miller-Rabin method
+     */
+    TEST(prime_test, compute_miller_rabin) {
+        EXPECT_EQ(true, p.compute_miller_rabin(7, 5));
+        EXPECT_EQ(true, p.compute_miller_rabin(1049, 5));
+        EXPECT_EQ(true, p.compute_miller_rabin(2999, 5));
+        EXPECT_EQ(true, p.compute_miller_rabin(4, 2));
+        EXPECT_EQ(true, p.compute_miller_rabin(200392, 5));
+        EXPECT_EQ(true, p.compute_miller_rabin(90, 5));
+    }
+
+    TEST(prime_test, miller_rabin_prime) {
+        EXPECT_EQ(true, p.miller_rabin_prime(1049, 4));
+        EXPECT_EQ(true, p.miller_rabin_prime(5, 4));
+        EXPECT_EQ(true, p.miller_rabin_prime(2999, 4));
+        EXPECT_EQ(false, p.miller_rabin_prime(3000, 4));
+        EXPECT_EQ(false, p.miller_rabin_prime(4, 4));
+        EXPECT_EQ(false, p.miller_rabin_prime(104032, 4));
+    }
 }
 
