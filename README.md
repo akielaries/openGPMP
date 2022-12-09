@@ -21,7 +21,7 @@ then converted to C++ code for the package.
 Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder for examples 
 on using these tools in your own project. 
 
-# Programming Language API Bindings
+## Programming Language API Bindings
 The goal of this project is to also develop as unilaterally as possible, so as I develop the modules
 for RM-pkg, the programming language bindings will come along with it. Perhaps other languages will
 be explored.
