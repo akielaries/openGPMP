@@ -21,6 +21,15 @@ then converted to C++ code for the package.
 Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder for examples 
 on using these tools in your own project. 
 
+# Programming Language API Bindings
+The goal of this project is to also develop as unilaterally as possible, so as I develop the modules
+for RM-pkg, the programming language bindings will come along with it. Perhaps other languages will
+be explored.
+Language | Tool | Status |
+---------|------|--------|
+Python   | Swig |![PyBuild](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)|
+Julia    | TBD  | TBD    |
+
 # Modules
 
 Module | Build Status | 
@@ -30,14 +39,7 @@ Calculus            | ![Calc](https://github.com/akielaries/RM-pkg/actions/workf
 Linear Algebra      | ![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) | 
 Machine/Deep Learning | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg) |
 Number Theory       | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | 
-Topology/Complex             | ![complex](https://github.com/akielaries/RM-pkg/actions/workflows/complex.yml/badge.svg) | 
-
-> :warning: *These modules will eventually be provided with their own documentation and references 
-on the underlying functions used as well as background/history. As development progresses, modules 
-are added, and documentation is updated/created, the existing modules will be encapsulated by 'suites' 
-and the modules within will hold relevance to the overarching suite. As this happens the READEME
-will be trimmed down to what modules are shown and references to more in depth documentation on
-said modules.*
+Topology/Complex    | ![complex](https://github.com/akielaries/RM-pkg/actions/workflows/complex.yml/badge.svg) | 
 
 ### Testing
 RM-pkg makes use of a few methods of testing. Unit testing + fuzzing is done with the help of Google's 
@@ -69,7 +71,8 @@ Status |
    - Primes
    - Cryptography
 
-More documentation on the modules can be seen in the documentation I had made here: https://github.com/akielaries/RMdocs
+More documentation on the modules can be seen in the research-formatted LaTeX paper I had made 
+[here](https://github.com/akielaries/RMdocs/blob/main/src/RM-pkg_paper.pdf)
 
 # Examples
 All examples are in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
@@ -81,18 +84,6 @@ $ cd RM-pkg
 # to run all examples 
 $ ./all.sh
 
-# compile + run the arithmetic operation example using the provided Makefile
-$ make arith
-
-# compile + run derivative operations example 
-$ make calculus
-
-# compile + run the Linear-Regression example 
-$ make lin-reg
-
-# compile + run the RC4 Encryption Algo example from the Number Theory Module
-$ make num-theory
-
 # to remove the generated binaries
 $ make clean-mods
 
@@ -103,7 +94,7 @@ $ make run-tests
 $ make clean-tests
 ```
 
-Example driver file for running Caesar Cipher & Mono-Alphabetic Substitution
+Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
 Keyword cipher:
 ``` cpp
 #include <iostream>
