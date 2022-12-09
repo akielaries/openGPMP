@@ -102,6 +102,11 @@ namespace {
     
     TEST(prime_test, solovoy_strassen) {
         EXPECT_EQ(false, p.solovoy_strassen(15, 50));
+        EXPECT_EQ(false, p.solovoy_strassen(25, 50));
+        EXPECT_EQ(false, p.solovoy_strassen(104032, 50));
+        EXPECT_EQ(true, p.solovoy_strassen(3, 50));
+        EXPECT_EQ(true, p.solovoy_strassen(2999, 50));
+        EXPECT_EQ(true, p.solovoy_strassen(1049, 50));
     }
 }
 
