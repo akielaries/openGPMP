@@ -42,8 +42,14 @@ int main() {
     std::string encoded_text = cc.KC_encode(shift_key_2);
     // call the cipher function
     std::string hashtext_2 = cc.KC_cipher(text2 , encoded_text);
-    
     std::cout << "Hashtext2 = " << hashtext_2 << std::endl;
+
+    std::string text_4 = "P455W0RD";
+    std::string key_shift_4 = "IN1T_d";
+    
+    std::string encoded_text_4 = cc.KC_encode(key_shift_4);
+    std::string hashtext_4 = cc.KC_cipher(text_4, encoded_text_4);
+    std::cout << "Hashtext4 = " << hashtext_4 << std::endl;
 
     return 0;
 

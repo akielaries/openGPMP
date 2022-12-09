@@ -67,7 +67,22 @@ namespace {
         
         EXPECT_EQ(expected_4, hashtext_4);
     }
+
+    TEST(kcipher_test, error_cipher_text) {
+        std::string text_4 = "P455W0RD";
+        std::string key_shift_4 = "IN1T_d";
+
+        // encode
+        std::string encoded_text_1 = cc.KC_encode(key_shift_4);
+        // cipher
+        std::string hashtext_4 = cc.KC_cipher(text_4, encoded_text_1);
+        
+        std::string expected_4 = "O455W0QD";
+        
+        EXPECT_EQ(expected_4, hashtext_4);
+    }
 }
+
 
 /*
 int main() {
