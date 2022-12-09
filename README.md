@@ -30,16 +30,16 @@ Language | Tool | Status |
 Python   | Swig |![PyBuild](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)|
 Julia    | TBD  | TBD    |
 
-# Modules
+## Modules
 
 Module | Build Status | 
 -------|--------------|
 Arithmetic          | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)    | 
 Calculus            | ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)      | 
-Linear Algebra      | ![lin-alg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg) | 
+Linear Algebra      | In Progress | 
 Machine/Deep Learning | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg) |
 Number Theory       | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | 
-Topology/Complex    | ![complex](https://github.com/akielaries/RM-pkg/actions/workflows/complex.yml/badge.svg) | 
+Topology/Complex    | In Progress | 
 
 ### Testing
 RM-pkg makes use of a few methods of testing. Unit testing + fuzzing is done with the help of Google's 
