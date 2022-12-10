@@ -7,9 +7,9 @@
 from sys import version_info as _swig_python_version_info
 # Import the low-level C/C++ module
 if __package__ or "." in __name__:
-    from . import _arithmetic
+    from . import _RM_pkg
 else:
-    import _arithmetic
+    import _RM_pkg
 
 try:
     import builtins as __builtin__
@@ -63,15 +63,58 @@ class Basics(object):
     __repr__ = _swig_repr
 
     def greatest_power(self, n, p):
-        return _arithmetic.Basics_greatest_power(self, n, p)
+        return _RM_pkg.Basics_greatest_power(self, n, p)
 
     def rm_gcd(self, x, y):
-        return _arithmetic.Basics_rm_gcd(self, x, y)
+        return _RM_pkg.Basics_rm_gcd(self, x, y)
 
     def __init__(self):
-        _arithmetic.Basics_swiginit(self, _arithmetic.new_Basics())
-    __swig_destroy__ = _arithmetic.delete_Basics
+        _RM_pkg.Basics_swiginit(self, _RM_pkg.new_Basics())
+    __swig_destroy__ = _RM_pkg.delete_Basics
 
-# Register Basics in _arithmetic:
-_arithmetic.Basics_swigregister(Basics)
+# Register Basics in _RM_pkg:
+_RM_pkg.Basics_swigregister(Basics)
+class Primality(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def is_prime(self, n):
+        return _RM_pkg.Primality_is_prime(self, n)
+
+    def compute_miller_rabin(self, d, n):
+        return _RM_pkg.Primality_compute_miller_rabin(self, d, n)
+
+    def miller_rabin_prime(self, n, iters):
+        return _RM_pkg.Primality_miller_rabin_prime(self, n, iters)
+
+    def miller_rabin(self, inters, min_val, max_val):
+        return _RM_pkg.Primality_miller_rabin(self, inters, min_val, max_val)
+
+    def jacobian_number(self, a, n):
+        return _RM_pkg.Primality_jacobian_number(self, a, n)
+
+    def solovoy_strassen(self, p, iters):
+        return _RM_pkg.Primality_solovoy_strassen(self, p, iters)
+
+    def mod_pow(self, base, exponent, mod):
+        return _RM_pkg.Primality_mod_pow(self, base, exponent, mod)
+
+    def carmichael_num(self, n):
+        return _RM_pkg.Primality_carmichael_num(self, n)
+
+    def sieve_of_eratosthenes(self, n):
+        return _RM_pkg.Primality_sieve_of_eratosthenes(self, n)
+
+    def pollard_rho(self, n):
+        return _RM_pkg.Primality_pollard_rho(self, n)
+
+    def ETF(self, n):
+        return _RM_pkg.Primality_ETF(self, n)
+
+    def __init__(self):
+        _RM_pkg.Primality_swiginit(self, _RM_pkg.new_Primality())
+    __swig_destroy__ = _RM_pkg.delete_Primality
+
+# Register Primality in _RM_pkg:
+_RM_pkg.Primality_swigregister(Primality)
 
