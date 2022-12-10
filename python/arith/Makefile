@@ -25,9 +25,7 @@ compile-ARITH-lib:
 clean:
 	rm -rf __pycache__
 	rm -f *.o
-	rm -f *.so
 	rm -f *.cxx
-	rm -f arithmetic.py
 
 test:
 	ls ${SRC_DIR}

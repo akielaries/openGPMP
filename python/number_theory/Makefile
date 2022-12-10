@@ -1,5 +1,6 @@
 
 CXX				= g++
+CXX_DBG     = -Wall -Wextra -g
 
 pypath			= -I/usr/include/python3.10
 
@@ -13,21 +14,21 @@ swig_files		= number_theory.i
 run-swig:
 	swig -c++ -python ${swig_files}
 
+primes 			= $(MOD_DIR)/number_theory/primes.cpp
+arith			= $(MOD_DIR)/arithmetic/arith.cpp
 compile-NM:
-	${CXX} -O2 -fPIC -c ${MOD_DIR}/number_theory/primes.cpp
+	${CXX} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes}
 
 compile-NM-wrapper:
-	${CXX} -O2 -fPIC -c number_theory_wrap.cxx ${pypath}
+	${CXX} ${CXX_DBG} -O2 -fPIC -c number_theory_wrap.cxx ${pypath}
 
 compile-NM-lib:
-	${CXX} -shared primes.o number_theory_wrap.o -o _number_theory.so
+	${CXX} ${CXX_DBG} -shared primes.o number_theory_wrap.o -o _number_theory.so
 
 clean:
 	rm -rf __pycache__
 	rm -f *.o
-	rm -f *.so
 	rm -f *.cxx
-	rm -f number_theory.py
 
 test:
 	ls ${SRC_DIR}

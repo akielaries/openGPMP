@@ -16,14 +16,14 @@ int Basics::greatest_power(int n, int p) {
     return x;
 }
 
-int Basics::gcd(int x, int y) {
+int Basics::rm_gcd(int x, int y) {
     if(x < y)
-        return gcd(y, x);
+        return rm_gcd(y, x);
 
     else if(x % y == 0)
         return y;
 
     else
-        return gcd(y, x % y);
+        return rm_gcd(y, x % y);
 }
 

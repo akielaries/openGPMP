@@ -16,4 +16,9 @@ compile-wrapper:
 compile-lib:
 	g++ -shared test_module.o test_module_wrap.o -o _test_module.so
 
+clean:
+	rm -rf __pycache__
+	rm -f *.o
+	rm -f *.so
+	rm -f *.cxx
 

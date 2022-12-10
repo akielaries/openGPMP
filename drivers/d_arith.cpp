@@ -7,6 +7,7 @@
 #include <vector>
 #include <cassert>
 #include "../include/arithmetic/arith.hpp"
+#include "../include/arithmetic/arithbase.hpp"
 
 
 int main(){
@@ -107,12 +108,12 @@ int main(){
 
     int r16 = 2;
     int r17 = 4;
-    int r18 = ba.gcd(r16, r17);
+    int r18 = ba.rm_gcd(r16, r17);
     printf("The GCD of %d & %d = %d\n", r16, r17, r18);
 
     int r19 = 232;
     int r20 = 96;
-    int r21 = ba.gcd(r19, r20);
+    int r21 = ba.rm_gcd(r19, r20);
     printf("The GCD of %d & %d = %d\n", r19, r20, r21);
 
     return 0;

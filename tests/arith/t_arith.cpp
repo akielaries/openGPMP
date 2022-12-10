@@ -2,6 +2,7 @@
  * Testing Arithmetic Operations
  */
 #include "../../include/arithmetic/arith.hpp"
+#include "../../include/arithmetic/arithbase.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 
@@ -46,11 +47,11 @@ namespace {
 
     // greatest common divisor
     TEST(basics, greatest_common_divisor) {
-        EXPECT_EQ(2, ba.gcd(2, 4));
-        EXPECT_EQ(6, ba.gcd(2198466, 96096));
-        EXPECT_EQ(11, ba.gcd(66, 11));
-        EXPECT_EQ(8, ba.gcd(232, 96));
-        EXPECT_EQ(10, ba.gcd(1703210, 20320));
+        EXPECT_EQ(2, ba.rm_gcd(2, 4));
+        EXPECT_EQ(6, ba.rm_gcd(2198466, 96096));
+        EXPECT_EQ(11, ba.rm_gcd(66, 11));
+        EXPECT_EQ(8, ba.rm_gcd(232, 96));
+        EXPECT_EQ(10, ba.rm_gcd(1703210, 20320));
     }
 }
 /*
