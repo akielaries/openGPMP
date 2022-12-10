@@ -178,6 +178,9 @@ clean-tests:
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}
 
+clean-misc:
+	rm -rf */__pycache__
+
 PROJECTBIN	= libRM-pkg.so
 
 RM-pkg:
