@@ -11,7 +11,7 @@
 #include <string>
 
 // monoalphabetic substitution cipher class
-class CIPHER {
+class Cipher {
 
     public:
         /* compute the caesar cipher of a given string with a shift key */

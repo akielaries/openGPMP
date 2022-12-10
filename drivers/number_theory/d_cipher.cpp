@@ -16,7 +16,7 @@ int main() {
     std::cout << "<------------------------------------------------------>\n\n";
 
     // declare CIPHER class obj
-    CIPHER cc;
+    Cipher cc;
 
     /*
      * declare some key values and strings to hash

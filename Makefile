@@ -181,8 +181,8 @@ clean-tests:
 clean-misc:
 	rm -rf */__pycache__
 
-PROJECTBIN	= libRM-pkg.so
+PROJECTBIN	= libRM_pkg.so
 
 RM-pkg:
-	${CXX} -shared -o ${PROJECTBIN} ${CXX_DBG} -fPIC ${AR} ${CALC} ${LR} ${PRIMES} ${CIPH} ${RC4}
+	${CXX} ${CXX_DBG} -shared -fPIC ${AR} ${PRIMES} ${CIPH} ${RC4} -o ${PROJECTBIN}
 

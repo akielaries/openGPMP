@@ -17,19 +17,21 @@ run-swig:
 
 primes 			= $(MOD_DIR)/number_theory/primes.cpp
 arith			= $(MOD_DIR)/arithmetic/arith.cpp
+cipher			= $(MOD_DIR)/number_theory/cipher.cpp
+rc4				= $(MOD_DIR)/number_theory/rc4.cpp
 compile:
-	${CXX} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes}
+	${CXX} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
 
 compile-wrapper:
 	${CXX} ${CXX_DBG} -O2 -fPIC -c RM_pkg_wrap.cxx ${pypath}
 
-
+PKG		= _RM_pkg.so
 compile-lib:
-	${CXX} ${CXX_DBG} -shared arith.o primes.o RM_pkg_wrap.o -o _RM_pkg.so
-
+	${CXX} ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o RM_pkg_wrap.o -o ${PKG}
+	mv ${PKG} RM_pkg.py examples/
 
 clean:
-	rm -rf __pycache__
+	rm -rf */__pycache__
 	rm -f *.o
 	rm -f *.cxx
 

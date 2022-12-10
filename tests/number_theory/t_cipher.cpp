@@ -11,7 +11,7 @@ using ::testing::DoubleLE;
 
 
 namespace {
-    CIPHER cc;
+    Cipher cc;
 
     TEST(ccipher_test, caesar_0) {
         std::string text_0 = "Plaintext";

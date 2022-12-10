@@ -117,4 +117,56 @@ class Primality(object):
 
 # Register Primality in _RM_pkg:
 _RM_pkg.Primality_swigregister(Primality)
+BITS = _RM_pkg.BITS
+BYTE_LIMIT = _RM_pkg.BYTE_LIMIT
+class RC4(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def byte_swap(self, a, b):
+        return _RM_pkg.RC4_byte_swap(self, a, b)
+
+    def trad_swap(self, a, b):
+        return _RM_pkg.RC4_trad_swap(self, a, b)
+
+    def XOR_swap(self, a, b):
+        return _RM_pkg.RC4_XOR_swap(self, a, b)
+
+    def KSA(self, key, S, swap_type):
+        return _RM_pkg.RC4_KSA(self, key, S, swap_type)
+
+    def PRGA(self, S, plaintext, ciphertext, swap_type):
+        return _RM_pkg.RC4_PRGA(self, S, plaintext, ciphertext, swap_type)
+
+    def store_hash(self, plaintext, hashtext, swap_type):
+        return _RM_pkg.RC4_store_hash(self, plaintext, hashtext, swap_type)
+
+    def compute(self, key, plaintext, hashtext, swap_type):
+        return _RM_pkg.RC4_compute(self, key, plaintext, hashtext, swap_type)
+
+    def __init__(self):
+        _RM_pkg.RC4_swiginit(self, _RM_pkg.new_RC4())
+    __swig_destroy__ = _RM_pkg.delete_RC4
+
+# Register RC4 in _RM_pkg:
+_RM_pkg.RC4_swigregister(RC4)
+class Cipher(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def C_cipher(self, plaintext, key):
+        return _RM_pkg.Cipher_C_cipher(self, plaintext, key)
+
+    def KC_encode(self, key):
+        return _RM_pkg.Cipher_KC_encode(self, key)
+
+    def KC_cipher(self, plaintext, encoded_text):
+        return _RM_pkg.Cipher_KC_cipher(self, plaintext, encoded_text)
+
+    def __init__(self):
+        _RM_pkg.Cipher_swiginit(self, _RM_pkg.new_Cipher())
+    __swig_destroy__ = _RM_pkg.delete_Cipher
+
+# Register Cipher in _RM_pkg:
+_RM_pkg.Cipher_swigregister(Cipher)
 
