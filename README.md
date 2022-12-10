@@ -1,7 +1,7 @@
 # Overview 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
-![Codacy Analysis](https://github.com/akielaries/RM-pkg/actions/workflows/codacy.yml/badge.svg) 
-![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)
+[![Codacy Analysis](https://github.com/akielaries/RM-pkg/actions/workflows/codacy.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) 
+[![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)](https://github.com/akielaries/RM-pkg/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Coverage)
 
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
@@ -27,18 +27,18 @@ for RM-pkg, the programming language bindings will come along with it. Perhaps o
 be explored.
 Language | Tool | Status |
 ---------|------|--------|
-Python   | Swig |![PyBuild](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)|
-Julia    | TBD  | TBD    |
+Python   | Swig |[![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
+Julia    | TBD  |![Jl](https://img.shields.io/badge/Julia%20API-0%25-red)|
 
 ## Modules
 
 Module | Build Status | 
 -------|--------------|
-Arithmetic          | ![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)    | 
-Calculus            | ![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)      | 
+Arithmetic          | [![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)    | 
+Calculus            | [![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)      | 
 Linear Algebra      | In Progress | 
-Machine/Deep Learning | ![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg) |
-Number Theory       | ![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg) | 
+Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
+Number Theory       | [![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
 Topology/Complex    | In Progress | 
 
 ### Testing
@@ -49,8 +49,8 @@ but mostly the up to date fuzzer [AFL++](https://github.com/AFLplusplus/AFLplusp
 #### Unit Testing Coverage
 Status |
 -------|
-![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg) |
-![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ) |
+[![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
+[![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ)](https://github.com/akielaries/RM-pkg/actions/) |
 
 #### Fuzzing
 *Coming Soon...*
