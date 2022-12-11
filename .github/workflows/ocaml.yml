@@ -1,0 +1,33 @@
+name: OCaml API
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        ocaml-compiler:
+          - 4.13.x
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+      - name: initalize github repo
+        uses: actions/checkout@v2
+
+      - name: Use OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+      - name: Build OCaml API
+        run: |
+          cd ocaml && make link compile run
+      
