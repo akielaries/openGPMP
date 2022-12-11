@@ -22,10 +22,11 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v2
 
-      - name: Use OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@v2
-        with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+      - name: Install OCaml Dependencies
+        run: |
+          sudo apt-get install ocaml &&
+          sudo apt-get install opam &&
+          opam init
 
       - name: Build OCaml API
         run: |

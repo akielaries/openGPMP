@@ -1,8 +1,8 @@
 
 link:
-	ocamlc -I lib -c TEST_RM.ml
+	ocamlc -I lib/ -c TEST_RM.ml
 compile:
-	ocamlc -I lib TEST_RM.cmo -o example
+	ocamlc -I lib/ TEST_RM.cmo -o example
 run:
 	./example
 

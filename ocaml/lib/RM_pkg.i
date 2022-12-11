@@ -9,6 +9,7 @@
     #include "../../include/number_theory/cipher.hpp"
 %}
 %include stl.i
+%include <stl.i>
 
 
 %include "../../include/arithmetic/arith.hpp"
