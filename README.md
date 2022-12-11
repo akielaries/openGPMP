@@ -1,6 +1,5 @@
 # Overview 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
-[![Codacy Analysis](https://github.com/akielaries/RM-pkg/actions/workflows/codacy.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) 
 [![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)](https://github.com/akielaries/RM-pkg/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Coverage)
 
@@ -25,22 +24,23 @@ on using these tools in your own project.
 The goal of this project is to also develop as unilaterally as possible, so as I develop the modules
 for RM-pkg, the programming language bindings will come along with it. Perhaps other languages will
 be explored.
-Language | Tool | Status |
----------|------|--------|
-Python   | Swig |[![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
-OCaml    | Swig | ![OCaml](https://badgen.net/badge/OCaml%20API/In%20Progress/yellow?icon=github) |
-Julia    | Cxx.jl, CxxWrap.jl | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
-R        | Swig | ![R](https://badgen.net/badge/R%20API/In%20Progress/red?icon=github) |
+Language |  Status |
+---------|------|
+![cpp](https://badgen.net/badge/C++17/g++12/pink?icon=github) | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
+![pybuild](https://badgen.net/badge/Python/v3.x) | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
+![OCaml](https://badgen.net/badge/OCaml/v4.13.1/green?icon=github) | ![OCamlbuild](https://badgen.net/badge/OCaml%20API/In%20Progress/yellow?icon=github) |
+![juliabuild](https://badgen.net/badge/Julia/v1.8.3/purple?icon=github) | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
+![rbuild](https://badgen.net/badge/R/v4.2.2/cyan?icon=github) | ![R](https://badgen.net/badge/R%20API/In%20Progress/red?icon=github) |
 ## Modules
 
 Module | Build Status | 
 -------|--------------|
 Arithmetic          | [![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)    | 
 Calculus            | [![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)      | 
-Linear Algebra      | In Progress | 
+Linear Algebra      | ![In Progress](https://badgen.net/badge/LM/In%20Progress/yellow?icon=github) | 
 Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 Number Theory       | [![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
-Topology/Complex    | In Progress | 
+Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
 
 ### Testing
 RM-pkg makes use of a few methods of testing. Unit testing + fuzzing is done with the help of Google's 
