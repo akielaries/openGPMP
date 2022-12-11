@@ -28,8 +28,9 @@ be explored.
 Language | Tool | Status |
 ---------|------|--------|
 Python   | Swig |[![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
-Julia    | TBD  |![Jl](https://img.shields.io/badge/Julia%20API-0%25-red)|
-
+OCaml    | Swig | ![OCaml](https://badgen.net/badge/OCaml%20API/In%20Progress/red?icon=github) |
+Julia    | Cxx.jl, CxxWrap.jl | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/yellow?icon=github) |
+R        | Swig | ![R](https://badgen.net/badge/R%20API/In%20Progress/red?icon=github) |
 ## Modules
 
 Module | Build Status | 
