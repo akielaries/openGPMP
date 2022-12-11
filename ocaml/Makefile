@@ -13,8 +13,12 @@ INC_DIR			= $(SRC_DIR)/include/
 swig_files		= RM_pkg.i
 run-swig:
 	swig -c++ -ocaml ${swig_files}
-	swig -c++ -ocaml -co RM_pkg.mli ; swig -c++ -ocaml -co RM_pkg.ml
-
+	swig -ocaml -co swig.mli ; swig -ocaml -co swig.ml
+	ocamlc -c swig.mli ; ocamlc -c swig.ml
+	cp RM_pkg_wrap.cxx RM_pkg_wrap.c
+	ocamlc -c -ccopt -xc++ RM_pkg_wrap.c
+	ocamlc -c RM_pkg.mli
+	ocamlc -c RM_pkg.ml
 
 primes 			= $(MOD_DIR)/number_theory/primes.cpp
 arith			= $(MOD_DIR)/arithmetic/arith.cpp
@@ -33,8 +37,8 @@ compile-lib:
 
 clean:
 	rm -f *.o
-	rm -f *.cxx
-	rm -f *.c
+	rm -f *.cmo
+	rm -f *.cmi
 
 test:
 	ls ${SRC_DIR}
