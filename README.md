@@ -26,11 +26,11 @@ for RM-pkg, the programming language bindings will come along with it. Perhaps o
 be explored.
 Language |  Status |
 ---------|------|
-![cpp](https://badgen.net/badge/C++17/g++12/pink?icon=github) | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
-![pybuild](https://badgen.net/badge/Python/v3.x) | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
-![OCaml](https://badgen.net/badge/OCaml/v4.13.1/green?icon=github) | ![OCamlbuild](https://badgen.net/badge/OCaml%20API/In%20Progress/yellow?icon=github) |
-![juliabuild](https://badgen.net/badge/Julia/v1.8.3/purple?icon=github) | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
-![rbuild](https://badgen.net/badge/R/v4.2.2/cyan?icon=github) | ![R](https://badgen.net/badge/R%20API/In%20Progress/red?icon=github) |
+C++17/g++12  | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
+Python v3.x    | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
+OCaml v4.13.1  | ![OCamlbuild](https://badgen.net/badge/OCaml%20API/In%20Progress/yellow?icon=github) |
+Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
+R v4.2.2       | ![R](https://badgen.net/badge/R%20API/In%20Progress/red?icon=github) |
 ## Modules
 
 Module | Build Status | 
