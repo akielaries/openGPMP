@@ -26,7 +26,7 @@ for RM-pkg, the programming language bindings will come along with it. Perhaps o
 be explored.
 Language |  Status |
 ---------|------|
-C++17/g++12  | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
+C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 Python v3.x    | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
 OCaml v4.13.1  | ![OCamlbuild](https://badgen.net/badge/OCaml%20API/In%20Progress/yellow?icon=github) |
 Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
