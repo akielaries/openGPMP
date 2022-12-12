@@ -1,0 +1,2 @@
+example:
+	Rscript example.R
