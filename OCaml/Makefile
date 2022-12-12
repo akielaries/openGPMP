@@ -9,3 +9,4 @@ run:
 clean:
 	rm -rf *.cmo
 	rm -rf *.cmi
+	rm -rf example
