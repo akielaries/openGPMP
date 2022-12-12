@@ -29,10 +29,10 @@ Language |  Status |
 C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 Python v3.x    | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
 OCaml v4.13.1  | [![OCaml](https://github.com/akielaries/RM-pkg/actions/workflows/ocaml.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
-Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
 R v4.2.2       | ![R](https://badgen.net/badge/R%20API/In%20Progress/red?icon=github) |
-## Modules
+Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
 
+## Modules
 Module | Build Status | 
 -------|--------------|
 Arithmetic          | [![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
