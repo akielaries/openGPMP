@@ -13,7 +13,7 @@ swig_files		= RM_pkg.i
 run-swig:
 	swig -c++ -ocaml -co swigp4.ml
 	swig -c++ -ocaml ${swig_files}
-	for file in swig.mli swig.ml swigp4.ml ; do swig -ocaml -co $$file ; done
+	for file in swig.mli swig.ml swigp4.ml ; do swig -c++ -ocaml -co $$file ; done
 	swig -ocaml -co swig.mli ; swig -ocaml -co swig.ml
 	ocamlc -c swig.mli ; ocamlc -c swig.ml
 	ocamlc -I `camlp4 -where` -pp 'camlp4o pa_extend.cmo q_MLast.cmo' -c swigp4.ml
@@ -21,6 +21,8 @@ run-swig:
 	ocamlc -c -ccopt -xc++ RM_pkg_wrap.c
 	ocamlc -c RM_pkg.mli
 	ocamlc -c RM_pkg.ml
+final-compile:
+	ocamlmktop -custom swig.cmo -I `camlp4 -where` camlp4o.cma swigp4.cmo RM_pkg_wrap.o RM_pkg.cmo -o example
 
 primes 			= $(MOD_DIR)/number_theory/primes.cpp
 arith			= $(MOD_DIR)/arithmetic/arith.cpp
@@ -41,6 +43,15 @@ clean:
 	rm -f *.o
 	rm -f *.cmo
 	rm -f *.cmi
+
+clean-all:
+	rm -f *.o
+	rm -f *.cmo
+	rm -f *.cmi
+	rm -f *.c
+	rm -f *.cxx
+	rm -f swig*
+	rm -f RM_pkg.m*
 
 test:
 	ls ${SRC_DIR}
