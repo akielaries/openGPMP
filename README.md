@@ -43,18 +43,13 @@ Number Theory       | [![num-theory](https://github.com/akielaries/RM-pkg/action
 Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
 
 ### Testing
-RM-pkg makes use of a few methods of testing. Unit testing + fuzzing is done with the help of Google's 
-[googletest](https://github.com/google/googletest) and [AFL](https://github.com/google/afl),
-but mostly the up to date fuzzer [AFL++](https://github.com/AFLplusplus/AFLplusplus).
+Unit testing is done using Google's [googletest](https://github.com/google/googletest) framework.
 
 #### Unit Testing Coverage
 Status |
 -------|
 [![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 [![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ)](https://github.com/akielaries/RM-pkg/actions/) |
-
-#### Fuzzing
-*Coming Soon...*
 
 #### Details
 1. Arithmetic
@@ -163,9 +158,3 @@ To install this library simply run the dependencies.sh shell script
 ```
 ./dependencies.sh
 ```
-
-# Future
-* fuzzing /num theory module
-* test custom crypto algo 
-* open src algos, interpolate?
-* lateral development on this is ideal but for sanity stick to math related to school / work
