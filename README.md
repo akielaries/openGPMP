@@ -15,7 +15,7 @@ math.h allowing users to call within their own projects.
 Starting with some implementations of basics of different mathematical topics 
 like arithmetic, calculus, statistics, linear algebra, etc. in conjunction with more advanced 
 algorithms seen in the blend of such topics, branches of Machine Learning, image processing 
-and much more. MSome of the implementations seen in the package were first prototypes in 
+and much more. Some of the implementations seen in the package were first prototypes in 
 Wolfram Mathetmatica, then translated to C++ code for the package.
 Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder for examples 
 on using these tools in your own project. 
