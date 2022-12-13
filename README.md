@@ -2,21 +2,17 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
 [![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)](https://github.com/akielaries/RM-pkg/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Coverage)
-[![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)
 
-RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
-originally inspired from Python based coursework for CS 499 Contemporary Developments, 
-Deep Learning, as well as work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
+RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ with a primary
+focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
+as well as a range of language API's for integration with pre-existing projects.
+RM-pkg is originally inspired from uundergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
 The project welcomes contributors and is in need of mathematics focused/interested programmers
 comfortable in C and C++. If interested see 
 [here](https://github.com/akielaries/RM-pkg/blob/main/CONTRIBUTING.md)!
 
-The goal is to make a reusable mathematics library similar to the use of 
-math.h allowing users to call within their own projects.
-Starting with some implementations of basics of different mathematical topics 
-like arithmetic, calculus, statistics, linear algebra, etc. in conjunction with more advanced 
-algorithms seen in the blend of such topics, branches of Machine Learning, image processing 
-and much more. Some of the implementations seen in the package were first prototypes in 
+The goal is to make a reusable mathematics library similar to the use of math.h allowing users to call 
+within their own projects. Some of the implementations seen in the package were first prototypes in 
 Wolfram Mathetmatica, then translated to C++ code for the package.
 Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder for examples 
 on using these tools in your own project. 
