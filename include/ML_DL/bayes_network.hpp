@@ -1,8 +1,8 @@
 /*
  * Bayes Network
  */
-#ifndef BN_HPP
-#define BN_HPP
+#ifndef BAYES_NETWORK_HPP
+#define BAYES_NETWORK_HPP
 #include <vector>
 #include <stdio.h>
 
