@@ -6,7 +6,10 @@ source("../lib/RM_pkg.R")
 out <- "Welcome to RM-pkg's R API."
 print(out)
 
-x <- Basics_rm_gcd
-print(x)
-y <- x(2,3)
+ba <- Basics
+
+sapply(c, (ba), function(o) {
+           x <- o$rm_gcd(3,4)
+           sprintf("Hello")
+})
 
