@@ -2,6 +2,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
 [![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)](https://github.com/akielaries/RM-pkg/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Coverage)
+[![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)
 
 RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ 
 originally inspired from Python based coursework for CS 499 Contemporary Developments, 
@@ -28,8 +29,8 @@ Language |  Status |
 ---------|------|
 C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 Python v3.x    | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
-OCaml v4.13.1  | [![OCaml](https://github.com/akielaries/RM-pkg/actions/workflows/ocaml.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
-R v4.2.2       | [![R](https://github.com/akielaries/RM-pkg/actions/workflows/r.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
+OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)|
+R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
 Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
 
 ## Modules
@@ -41,15 +42,6 @@ Linear Algebra      | ![In Progress](https://badgen.net/badge/LM/In%20Progress/y
 Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 Number Theory       | [![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
 Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
-
-### Testing
-Unit testing is done using Google's [googletest](https://github.com/google/googletest) framework.
-
-#### Unit Testing Coverage
-Status |
--------|
-[![RM-pkg](https://github.com/akielaries/RM-pkg/actions/workflows/codecov.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
-[![img](https://codecov.io/gh/akielaries/RM-pkg/branch/main/graphs/sunburst.svg?token=KJBGLP8DYJ)](https://github.com/akielaries/RM-pkg/actions/) |
 
 #### Details
 1. Arithmetic
