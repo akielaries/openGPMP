@@ -18,7 +18,7 @@ Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) fo
 on using these tools in your own project. 
 
 ## API Bindings
-The goal of this project is to also develop as unilaterally as possible, so as I develop the modules
+The goal of this project is to also develop as laterally as possible, so as I develop the modules
 for RM-pkg, the programming language bindings will come along with it. Perhaps other languages will
 be explored.
 Language |  Status |
