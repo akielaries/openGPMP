@@ -10,10 +10,11 @@
 # this script acts as the main "runner" for RM-pkg demonstrating its
 # functionality by running each modules driver file 
 
-# build + run tests in the makefile 
+# build + run test drivers in Makefile 
 make arith
 make calculus
-make lin-reg
+make linalg
+make ml_dl
 make num-theory
 
 # delete generated binaries

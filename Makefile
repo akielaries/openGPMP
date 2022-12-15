@@ -46,19 +46,19 @@ LR			= $(SRCDIR)/ML_DL/linreg.cpp
 LRDRV		= $(PROJDIR)/drivers/ML_DL/d_reg.cpp
 LRBIN		= lin_reg
 
-lin-reg:
+ml_dl:
 	${CXX} ${CXX_DBG} ${LR} ${LRDRV} -o ${LRBIN}
 	./${LRBIN}
 
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
-BLA			= $(SRCDIR)/linalg/lao.cpp
-BLADRV		= $(PROJDIR)/drivers/linalg/d_lao.cpp
-BLABIN		= la_ops
+LINALG		= $(SRCDIR)/linalg/lao.cpp
+LINALGDRV	= $(PROJDIR)/drivers/linalg/d_linalg_ops.cpp
+LINALGBIN	= linalg_ops
 
 lin-alg:
-	${CXX} ${CXX_DBG} ${BLA} ${BLADRV} -o ${BLABIN}
-	./${BLABIN}
+	${CXX} ${CXX_DBG} ${LINALG} ${LINALGDRV} -o ${LINALGBIN}
+	./${LINALGBIN}
 
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
@@ -116,7 +116,7 @@ clean-mods:
 	rm -f ${ARBIN}
 	rm -f ${CALCBIN}
 	rm -f ${LRBIN}
-	rm -f ${BLABIN}
+	rm -f ${LINALGBIN}
 	rm -f ${PRIMESBIN}
 	rm -f ${RC4BIN}
 	rm -f ${CIPHBIN}
@@ -181,6 +181,7 @@ clean-tests:
 clean-misc:
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
+
 
 PROJECTBIN	= libRM_pkg.so
 

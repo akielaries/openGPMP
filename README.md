@@ -34,7 +34,7 @@ Module | Build Status |
 -------|--------------|
 Arithmetic          | [![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
 Calculus            | [![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
-Linear Algebra      | ![In Progress](https://badgen.net/badge/LM/In%20Progress/yellow?icon=github) | 
+Linear Algebra      | [![linalg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
 Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
 Number Theory       | [![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
 Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
