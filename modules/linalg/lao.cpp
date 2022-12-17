@@ -10,7 +10,7 @@
 #include "../../include/linalg/lao.hpp"
 
 
-int rm::Vectors::add(int a, int b) {
+int mtpk::Vectors::add(int a, int b) {
     int c = a + b;
     return c;
 }

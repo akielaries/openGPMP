@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from examples import RM_pkg
+from examples import openMTPK
 
 help(RM_pkg)
 
