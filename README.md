@@ -1,34 +1,34 @@
-![img](https://github.com/akielaries/RM-pkg/blob/main/docs/rm-pkg.svg)
+![img](https://github.com/akielaries/openMTPK/blob/main/docs/openMTPK.svg)
 --------------------------------------------------------------------------------
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
-[![license](https://img.shields.io/github/license/akielaries/RM-pkg?color=%23228B22)](https://github.com/akielaries/RM-pkg/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/akielaries/openMTPK?color=%23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Coverage)
 
 
 # Overview 
-RM-pkg is a <ins>**R**</ins>eusable <ins>**M**</ins>athematics library written in C++ with a primary
+openMTPK is an open-source (intended) mathematics package written in C++ with a primary
 focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
 as well as a range of language API's for integration with pre-existing projects.
-RM-pkg is originally inspired from uundergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
+openMTPK is originally inspired from uundergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
 The project welcomes contributors and is in need of mathematics focused/interested programmers
 comfortable in C and C++. If interested see 
-[here](https://github.com/akielaries/RM-pkg/blob/main/CONTRIBUTING.md)!
+[here](https://github.com/akielaries/openMTPK/blob/main/CONTRIBUTING.md)!
 
 The goal is to make a reusable mathematics library similar to the use of math.h allowing users to call 
 within their own projects. Some of the implementations seen in the package were first prototypes in 
 Wolfram Mathetmatica, then translated to C++ code for the package.
-Look in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder for examples 
+Look in the [drivers](https://github.com/akielaries/openMTPK/tree/main/drivers) folder for examples 
 on using these tools in your own project. 
 
 ## API Bindings
 The goal of this project is to also develop as laterally as possible, so as I develop the modules
-for RM-pkg, the programming language bindings will come along with it. Perhaps other languages will
+for openMTPK, the programming language bindings will come along with it. Perhaps other languages will
 be explored.
 Language |  Status |
 ---------|------|
-C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/RM-pkg/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
-Python v3.x    | [![Py](https://github.com/akielaries/RM-pkg/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/)|
+C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
 OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)|
 R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
 Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
@@ -36,11 +36,11 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
 ## Modules
 Module | Build Status | 
 -------|--------------|
-Arithmetic          | [![Arith](https://github.com/akielaries/RM-pkg/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
-Calculus            | [![Calc](https://github.com/akielaries/RM-pkg/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
-Linear Algebra      | [![linalg](https://github.com/akielaries/RM-pkg/actions/workflows/linalg.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
-Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/RM-pkg/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) |
-Number Theory       | [![num-theory](https://github.com/akielaries/RM-pkg/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/RM-pkg/actions/) | 
+Arithmetic          | [![Arith](https://github.com/akielaries/openMTPK/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
+Calculus            | [![Calc](https://github.com/akielaries/openMTPK/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
+Linear Algebra      | [![linalg](https://github.com/akielaries/openMTPK/actions/workflows/linalg.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
+Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/openMTPK/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+Number Theory       | [![num-theory](https://github.com/akielaries/openMTPK/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
 Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
 
 #### Details
@@ -60,14 +60,14 @@ Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/y
    - Cryptography
 
 More documentation on the modules can be seen in the research-formatted LaTeX paper I had made 
-[here](https://github.com/akielaries/RMdocs/blob/main/src/RM-pkg_paper.pdf)
+[here](https://github.com/akielaries/openMTPK-docs/blob/main/src/openMTPK_paper.pdf)
 
 # Examples
-All examples are in the [drivers](https://github.com/akielaries/RM-pkg/tree/main/drivers) folder
+All examples are in the [drivers](https://github.com/akielaries/openMTPK/tree/main/drivers) folder
 ```
 # clone the repo and enter
-$ git clone git@github.com:akielaries/RM-pkg.git 
-$ cd RM-pkg
+$ git clone git@github.com:akielaries/openMTPK.git 
+$ cd openMTPK
 
 # to run all examples 
 $ ./all.sh
@@ -89,7 +89,7 @@ Keyword cipher:
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <RM-pkg/number_theory/cipher.hpp>
+#include <openMTPK/number_theory/cipher.hpp>
 
 int main() {
     // declare CIPHER class obj
@@ -117,7 +117,7 @@ int main() {
 A Python example showing the same functionalities.
 ```python
 #!/usr/bin/python3.10
-from RM_pkg import Cipher
+from openMTPK import Cipher
 
 c = Cipher()
 cipertext_0 = c.C_cipher('Plaintext', 5)
