@@ -2,11 +2,11 @@
 --------------------------------------------------------------------------------
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openMTPK&amp;utm_campaign=Badge_Grade)
-[![license](https://img.shields.io/github/license/akielaries/openMTPK?color=%23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/akielaries/openMTPK?color=23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&utm_medium=referral&utm_content=akielaries/openMTPK&utm_campaign=Badge_Coverage)
 
 # Overview 
-openMTPK is an open-source (intended) mathematics package written in C++ with a primary
+**openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
 focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
 as well as a range of language API's for integration with pre-existing projects.
 openMTPK is originally inspired from uundergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
@@ -85,9 +85,7 @@ Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
 Keyword cipher:
 ``` cpp
 #include <iostream>
-#include <stdio.h>
 #include <string>
-#include <vector>
 #include <openMTPK/number_theory/cipher.hpp>
 
 int main() {
