@@ -1,4 +1,4 @@
-name: RM-pkg Core
+name: openMTPK Core
 
 on:
   push:
@@ -30,6 +30,6 @@ jobs:
           sudo apt install lcov
           pip install gcovr
       
-      - name: Build RM-pkg
+      - name: Build openMTPK
         run: sh -x all.sh
 

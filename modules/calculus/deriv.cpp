@@ -36,7 +36,7 @@ long long calculus::derivativeTerm(std::string pTerm, long long val) {
 }
 */ 
 
-long long calculus::derivativeTerm(std::string pTerm, long long val) {
+long long calculus::derivative_term(std::string pTerm, long long val) {
 
     printf("DEBUGGING DERIVTERM\n\n"); 
     // Get coefficient
@@ -68,7 +68,7 @@ long long calculus::derivativeTerm(std::string pTerm, long long val) {
     return coeff * expo * pow(val, expo - 1);
 }
 
-long long calculus::rm_deriv_at(std::string& poly, int val) {
+long long calculus::deriv_at(std::string& poly, int val) {
     long long ans = 0;
  
     // We use istringstream to get input in tokens
@@ -83,14 +83,14 @@ long long calculus::rm_deriv_at(std::string& poly, int val) {
        
         // Otherwise find the derivative of that particular term
         else
-            ans = (ans + derivativeTerm(pTerm, val));
+            ans = (ans + derivative_term(pTerm, val));
     }
     printf("\nDEBUGGING DERIV AT\n\n");
     printf("ans = %lld\n", ans);
     return ans;
 }
  
-std::string calculus::rm_deriv(std::string& poly) {
+std::string calculus::deriv(std::string& poly) {
     long long ans = 0;
  
     // We use istringstream to get input in tokens

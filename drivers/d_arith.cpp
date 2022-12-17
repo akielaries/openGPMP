@@ -1,4 +1,4 @@
-/* RM-pkg
+/* 
  * TESTING BASIC ARITHMETIC OPERATIONS
  */
 #include <iostream>

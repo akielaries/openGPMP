@@ -1,5 +1,4 @@
-/* RM-pkg
- * Testing the RC5 stream cipher encryption algorithm on fields
+/* Testing the RC5 stream cipher encryption algorithm on fields
  * of text.
  */
 #include <iostream>

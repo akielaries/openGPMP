@@ -1,7 +1,6 @@
-/* RM-pkg
- * TESTING DERIVATIVE OPERATIONS
+/* TESTING DERIVATIVE OPERATIONS
  * Test driver showing how to use different derivative-based operations
- * in RM-pkg
+ * in openMTPK.
  */
 #include <iostream>
 #include <stdio.h>
@@ -54,7 +53,7 @@ int main() {
     std::cout << "First derivative at a given value.\n";
     int val0 = 2;
     int val1 = 3;
-    long long deriv_result2 = calc.rm_deriv_at(st0, val0);
+    long long deriv_result2 = calc.deriv_at(st0, val0);
     std::cout << "df'/dx = " << deriv_result2 << std::endl;
 
     /*

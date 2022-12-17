@@ -1,8 +1,8 @@
-# Example using RM-pkg's R API
+# Example using openMTPK's R API
 
-dyn.load(paste("lib/RM_pkg", .Platform$dynlib.ext, sep=""))
-source("lib/RM_pkg.R")
+dyn.load(paste("lib/openMTPK", .Platform$dynlib.ext, sep=""))
+source("lib/openMTPK.R")
 
-out <- "Welcome to RM-pkg's R API."
+out <- "Welcome to openMTPK's R API."
 print(out)
 

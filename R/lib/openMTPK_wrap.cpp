@@ -3092,7 +3092,7 @@ SWIGINTERN R_CallMethodDef CallEntries[] = {
    {NULL, NULL, 0}
 };
 
-extern "C" SWIGEXPORT void R_init_RM_pkg(DllInfo *dll) {
+extern "C" SWIGEXPORT void R_init_openMTPK(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
 
 

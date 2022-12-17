@@ -5,7 +5,7 @@
 # the SWIG interface file instead.
 
 ##   Generated via the command line invocation:
-##	 swig -c++ -r -o RM_pkg_wrap.cpp RM_pkg.i
+##	 swig -c++ -r -o openMTPK_wrap.cpp openMTPK.i
 
 
 #                         srun.swg                            #
@@ -205,7 +205,7 @@ function(x) {print(as(x, "character"))})))
     warning("using only the first element of p");
   };
   
-  ;.Call('R_swig_Basics_greatest_power', self, n, p, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Basics_greatest_power', self, n, p, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -230,7 +230,7 @@ class(`Basics_greatest_power`) = c("SWIGFunction", class('Basics_greatest_power'
     warning("using only the first element of y");
   };
   
-  ;.Call('R_swig_Basics_rm_gcd', self, x, y, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Basics_rm_gcd', self, x, y, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -242,7 +242,7 @@ class(`Basics_rm_gcd`) = c("SWIGFunction", class('Basics_rm_gcd'))
 
 `Basics` = function()
 {
-  ;ans = .Call('R_swig_new_Basics', PACKAGE='RM_pkg');
+  ;ans = .Call('R_swig_new_Basics', PACKAGE='openMTPK');
   ans <- if (is.null(ans)) ans
   else new("_p_Basics", ref=ans);
   
@@ -259,7 +259,7 @@ class(`Basics`) = c("SWIGFunction", class('Basics'))
 `delete_Basics` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
-  ;.Call('R_swig_delete_Basics', self, PACKAGE='RM_pkg');
+  ;.Call('R_swig_delete_Basics', self, PACKAGE='openMTPK');
   
 }
 
@@ -296,7 +296,7 @@ setMethod('delete', '_p_Basics', function(obj) {delete_Basics(obj)})
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_is_prime', self, n, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_is_prime', self, n, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -321,7 +321,7 @@ class(`Primality_is_prime`) = c("SWIGFunction", class('Primality_is_prime'))
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_compute_miller_rabin', self, d, n, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_compute_miller_rabin', self, d, n, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -346,7 +346,7 @@ class(`Primality_compute_miller_rabin`) = c("SWIGFunction", class('Primality_com
     warning("using only the first element of iters");
   };
   
-  ;.Call('R_swig_Primality_miller_rabin_prime', self, n, iters, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_miller_rabin_prime', self, n, iters, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -377,7 +377,7 @@ class(`Primality_miller_rabin_prime`) = c("SWIGFunction", class('Primality_mille
     warning("using only the first element of max_val");
   };
   
-  ;.Call('R_swig_Primality_miller_rabin', self, inters, min_val, max_val, PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_miller_rabin', self, inters, min_val, max_val, PACKAGE='openMTPK');
   
 }
 
@@ -402,7 +402,7 @@ class(`Primality_miller_rabin`) = c("SWIGFunction", class('Primality_miller_rabi
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_jacobian_number', self, a, n, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_jacobian_number', self, a, n, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -427,7 +427,7 @@ class(`Primality_jacobian_number`) = c("SWIGFunction", class('Primality_jacobian
     warning("using only the first element of iters");
   };
   
-  ;.Call('R_swig_Primality_solovoy_strassen', self, p, iters, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_solovoy_strassen', self, p, iters, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -458,7 +458,7 @@ class(`Primality_solovoy_strassen`) = c("SWIGFunction", class('Primality_solovoy
     warning("using only the first element of mod");
   };
   
-  ;.Call('R_swig_Primality_mod_pow', self, base, exponent, mod, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_mod_pow', self, base, exponent, mod, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -477,7 +477,7 @@ class(`Primality_mod_pow`) = c("SWIGFunction", class('Primality_mod_pow'))
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_carmichael_num', self, n, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_carmichael_num', self, n, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -496,7 +496,7 @@ class(`Primality_carmichael_num`) = c("SWIGFunction", class('Primality_carmichae
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_sieve_of_eratosthenes', self, n, PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_sieve_of_eratosthenes', self, n, PACKAGE='openMTPK');
   
 }
 
@@ -515,7 +515,7 @@ class(`Primality_sieve_of_eratosthenes`) = c("SWIGFunction", class('Primality_si
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_pollard_rho', self, n, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_pollard_rho', self, n, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -534,7 +534,7 @@ class(`Primality_pollard_rho`) = c("SWIGFunction", class('Primality_pollard_rho'
     warning("using only the first element of n");
   };
   
-  ;.Call('R_swig_Primality_ETF', self, n, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Primality_ETF', self, n, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -546,7 +546,7 @@ class(`Primality_ETF`) = c("SWIGFunction", class('Primality_ETF'))
 
 `Primality` = function()
 {
-  ;ans = .Call('R_swig_new_Primality', PACKAGE='RM_pkg');
+  ;ans = .Call('R_swig_new_Primality', PACKAGE='openMTPK');
   ans <- if (is.null(ans)) ans
   else new("_p_Primality", ref=ans);
   
@@ -563,7 +563,7 @@ class(`Primality`) = c("SWIGFunction", class('Primality'))
 `delete_Primality` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
-  ;.Call('R_swig_delete_Primality', self, PACKAGE='RM_pkg');
+  ;.Call('R_swig_delete_Primality', self, PACKAGE='openMTPK');
   
 }
 
@@ -596,7 +596,7 @@ setMethod('delete', '_p_Primality', function(obj) {delete_Primality(obj)})
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
   if (inherits(a, "ExternalReference")) a = slot(a,"ref"); 
   if (inherits(b, "ExternalReference")) b = slot(b,"ref"); 
-  ;.Call('R_swig_RC4_byte_swap', self, a, b, PACKAGE='RM_pkg');
+  ;.Call('R_swig_RC4_byte_swap', self, a, b, PACKAGE='openMTPK');
   
 }
 
@@ -611,7 +611,7 @@ class(`RC4_byte_swap`) = c("SWIGFunction", class('RC4_byte_swap'))
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
   a = as.integer(a);
   b = as.integer(b);
-  ;.Call('R_swig_RC4_trad_swap', self, a, b, PACKAGE='RM_pkg');
+  ;.Call('R_swig_RC4_trad_swap', self, a, b, PACKAGE='openMTPK');
   
 }
 
@@ -626,7 +626,7 @@ class(`RC4_trad_swap`) = c("SWIGFunction", class('RC4_trad_swap'))
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
   a = as.integer(a);
   b = as.integer(b);
-  ;.Call('R_swig_RC4_XOR_swap', self, a, b, PACKAGE='RM_pkg');
+  ;.Call('R_swig_RC4_XOR_swap', self, a, b, PACKAGE='openMTPK');
   
 }
 
@@ -647,7 +647,7 @@ class(`RC4_XOR_swap`) = c("SWIGFunction", class('RC4_XOR_swap'))
     warning("using only the first element of swap_type");
   };
   
-  ;.Call('R_swig_RC4_KSA', self, key, S, swap_type, PACKAGE='RM_pkg');
+  ;.Call('R_swig_RC4_KSA', self, key, S, swap_type, PACKAGE='openMTPK');
   
 }
 
@@ -669,7 +669,7 @@ class(`RC4_KSA`) = c("SWIGFunction", class('RC4_KSA'))
     warning("using only the first element of swap_type");
   };
   
-  ;.Call('R_swig_RC4_PRGA', self, S, plaintext, ciphertext, swap_type, PACKAGE='RM_pkg');
+  ;.Call('R_swig_RC4_PRGA', self, S, plaintext, ciphertext, swap_type, PACKAGE='openMTPK');
   
 }
 
@@ -690,7 +690,7 @@ class(`RC4_PRGA`) = c("SWIGFunction", class('RC4_PRGA'))
     warning("using only the first element of swap_type");
   };
   
-  ;.Call('R_swig_RC4_store_hash', self, plaintext, hashtext, swap_type, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_RC4_store_hash', self, plaintext, hashtext, swap_type, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -712,7 +712,7 @@ class(`RC4_store_hash`) = c("SWIGFunction", class('RC4_store_hash'))
     warning("using only the first element of swap_type");
   };
   
-  ;ans = .Call('R_swig_RC4_compute', self, key, plaintext, hashtext, swap_type, PACKAGE='RM_pkg');
+  ;ans = .Call('R_swig_RC4_compute', self, key, plaintext, hashtext, swap_type, PACKAGE='openMTPK');
   ans <- if (is.null(ans)) ans
   else new("_p_unsigned_char", ref=ans);
   
@@ -728,7 +728,7 @@ class(`RC4_compute`) = c("SWIGFunction", class('RC4_compute'))
 
 `RC4` = function()
 {
-  ;ans = .Call('R_swig_new_RC4', PACKAGE='RM_pkg');
+  ;ans = .Call('R_swig_new_RC4', PACKAGE='openMTPK');
   ans <- if (is.null(ans)) ans
   else new("_p_RC4", ref=ans);
   
@@ -745,7 +745,7 @@ class(`RC4`) = c("SWIGFunction", class('RC4'))
 `delete_RC4` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
-  ;.Call('R_swig_delete_RC4', self, PACKAGE='RM_pkg');
+  ;.Call('R_swig_delete_RC4', self, PACKAGE='openMTPK');
   
 }
 
@@ -783,7 +783,7 @@ setMethod('delete', '_p_RC4', function(obj) {delete_RC4(obj)})
     warning("using only the first element of key");
   };
   
-  ;.Call('R_swig_Cipher_C_cipher', self, plaintext, key, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Cipher_C_cipher', self, plaintext, key, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -797,7 +797,7 @@ class(`Cipher_C_cipher`) = c("SWIGFunction", class('Cipher_C_cipher'))
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
   key = as(key, "character"); 
-  ;.Call('R_swig_Cipher_KC_encode', self, key, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Cipher_KC_encode', self, key, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -812,7 +812,7 @@ class(`Cipher_KC_encode`) = c("SWIGFunction", class('Cipher_KC_encode'))
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
   plaintext = as(plaintext, "character"); 
   encoded_text = as(encoded_text, "character"); 
-  ;.Call('R_swig_Cipher_KC_cipher', self, plaintext, encoded_text, as.logical(.copy), PACKAGE='RM_pkg');
+  ;.Call('R_swig_Cipher_KC_cipher', self, plaintext, encoded_text, as.logical(.copy), PACKAGE='openMTPK');
   
 }
 
@@ -824,7 +824,7 @@ class(`Cipher_KC_cipher`) = c("SWIGFunction", class('Cipher_KC_cipher'))
 
 `Cipher` = function()
 {
-  ;ans = .Call('R_swig_new_Cipher', PACKAGE='RM_pkg');
+  ;ans = .Call('R_swig_new_Cipher', PACKAGE='openMTPK');
   ans <- if (is.null(ans)) ans
   else new("_p_Cipher", ref=ans);
   
@@ -841,7 +841,7 @@ class(`Cipher`) = c("SWIGFunction", class('Cipher'))
 `delete_Cipher` = function(self)
 {
   if (inherits(self, "ExternalReference")) self = slot(self,"ref"); 
-  ;.Call('R_swig_delete_Cipher', self, PACKAGE='RM_pkg');
+  ;.Call('R_swig_delete_Cipher', self, PACKAGE='openMTPK');
   
 }
 

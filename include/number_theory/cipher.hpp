@@ -2,8 +2,8 @@
  * definitions for derivative operations operations 
  */
 
-#ifndef RMCIPHER_H
-#define RMCIPHER_H
+#ifndef CIPHER_H
+#define CIPHER_H
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>

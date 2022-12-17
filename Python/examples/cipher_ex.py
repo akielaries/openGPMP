@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from RM_pkg import Cipher
+from openMTPK import Cipher
 
 print("Using the Number Theory module in Python")
 print("Methods of the Cipher class:\n\

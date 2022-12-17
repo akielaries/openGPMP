@@ -2,8 +2,8 @@
  * definitions for derivative operations operations 
  */
 
-#ifndef RMRC5_H
-#define RMRC5_H
+#ifndef RC5_H
+#define RC5_H
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>

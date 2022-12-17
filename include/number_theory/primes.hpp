@@ -2,8 +2,8 @@
  * definitions for basic arithmetic operations 
  */
 
-#ifndef RMPRIMESH
-#define RMPRIMESH
+#ifndef PRIMESH
+#define PRIMESH
 #include <vector>
 #include <stdio.h>
 

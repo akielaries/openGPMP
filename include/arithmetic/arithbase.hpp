@@ -2,8 +2,8 @@
  * definitions for basic arithmetic operations 
  */
 
-#ifndef RMARITHBASE_H
-#define RMARITHBASE_H
+#ifndef ARITHBASE_HPP
+#define ARITHBASE_HPP
 #include <vector>
 #include <iostream>
 #include <stdio.h>

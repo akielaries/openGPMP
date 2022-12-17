@@ -173,7 +173,7 @@ run-tests:
 	gcovr
 
 clean-tests:
-	cd tests/ && rm -f *.gc* web/ RM_tests
+	cd tests/ && rm -f *.gc* web/ openMPTK_tests
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}
@@ -183,8 +183,8 @@ clean-misc:
 	rm -rf __pycache__
 
 
-PROJECTBIN	= libRM_pkg.so
+PROJECTBIN	= libopenMPTK.so
 
-RM-pkg:
+openMPTK:
 	${CXX} ${CXX_DBG} -shared -fPIC ${AR} ${PRIMES} ${CIPH} ${RC4} -o ${PROJECTBIN}
 

@@ -2,8 +2,8 @@
  * definitions for derivative operations operations 
  */
 
-#ifndef RMRC4_H
-#define RMRC4_H
+#ifndef RC4_H
+#define RC4_H
 #include <string>
 #include <stdint.h>
 #include <stdio.h>

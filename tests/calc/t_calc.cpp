@@ -19,7 +19,7 @@ namespace {
         std::string string_0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";
         int x_0 = 2;
 
-        EXPECT_EQ(128, calc.rm_deriv_at(string_0, x_0));
+        EXPECT_EQ(128, calc.deriv_at(string_0, x_0));
 
     }
 

@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from RM_pkg import RC4
+from openMTPK import RC4
 
 print("Using the Number Theory module in Python")
 print("Methods of the RC4 class:\n\

@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from RM_pkg import Primality
+from openMTPK import Primality
 
 print("Using the Number Theory module in Python")
 print("Methods of Primality class\n\

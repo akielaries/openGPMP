@@ -10,7 +10,7 @@ MOD_DIR			= $(SRC_DIR)/modules/
 INC_DIR			= $(SRC_DIR)/include/
 
 
-swig_files		= RM_pkg.i
+swig_files		= openMTPK.i
 run-swig:
 	swig -c++ -python ${swig_files}
 
@@ -23,12 +23,12 @@ compile:
 	${CXX} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
 
 compile-wrapper:
-	${CXX} ${CXX_DBG} -O2 -fPIC -c RM_pkg_wrap.cxx ${pypath}
+	${CXX} ${CXX_DBG} -O2 -fPIC -c openMTPK_wrap.cxx ${pypath}
 
-PKG		= _RM_pkg.so
+PKG		= _openMTPK.so
 compile-lib:
-	${CXX} ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o RM_pkg_wrap.o -o ${PKG}
-	mv ${PKG} RM_pkg.py examples/
+	${CXX} ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o openMTPK_wrap.o -o ${PKG}
+	mv ${PKG} openMTPK.py examples/
 
 clean:
 	rm -rf */__pycache__

@@ -1,5 +1,4 @@
-/* RM-pkg
- * Testing the RC4 stream cipher encryption algorithm on fields
+/* Testing the openMTPK stream cipher encryption algorithm on fields
  * of text using a XOR and tradition swap method.
  */
 #include <iostream>

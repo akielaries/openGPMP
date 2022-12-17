@@ -1,5 +1,4 @@
-/* RM-pkg
- * testing basic encryption algorithms with stream ciphers specifically 
+/* testing basic encryption algorithms with stream ciphers specifically 
  * caesar cipher
  */
 #include <iostream>

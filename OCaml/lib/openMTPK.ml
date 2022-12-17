@@ -15,7 +15,7 @@ type c_enum_value = [
 ]
 
 type c_obj = c_enum_value c_obj_t
-let module_name = "RM_pkg"
+let module_name = "openMTPK"
 
 exception BadArgs of string
 exception BadMethodName of c_obj * string * string
@@ -39,103 +39,103 @@ exception InvalidDirectorCall of c_obj
     v
       
 
-external _Basics_greatest_power_f : c_obj list -> c_obj list = "_wrap_Basics_greatest_powerRM_pkg" ;;
+external _Basics_greatest_power_f : c_obj list -> c_obj list = "_wrap_Basics_greatest_poweropenMTPK" ;;
 let _Basics_greatest_power arg = match _Basics_greatest_power_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Basics_rm_gcd_f : c_obj list -> c_obj list = "_wrap_Basics_rm_gcdRM_pkg" ;;
+external _Basics_rm_gcd_f : c_obj list -> c_obj list = "_wrap_Basics_rm_gcdopenMTPK" ;;
 let _Basics_rm_gcd arg = match _Basics_rm_gcd_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _new_Basics_f : c_obj list -> c_obj list = "_wrap_new_BasicsRM_pkg" ;;
+external _new_Basics_f : c_obj list -> c_obj list = "_wrap_new_BasicsopenMTPK" ;;
 let _new_Basics arg = match _new_Basics_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if true then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _delete_Basics_f : c_obj list -> c_obj list = "_wrap_delete_BasicsRM_pkg" ;;
+external _delete_Basics_f : c_obj list -> c_obj list = "_wrap_delete_BasicsopenMTPK" ;;
 let _delete_Basics arg = match _delete_Basics_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_is_prime_f : c_obj list -> c_obj list = "_wrap_Primality_is_primeRM_pkg" ;;
+external _Primality_is_prime_f : c_obj list -> c_obj list = "_wrap_Primality_is_primeopenMTPK" ;;
 let _Primality_is_prime arg = match _Primality_is_prime_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_compute_miller_rabin_f : c_obj list -> c_obj list = "_wrap_Primality_compute_miller_rabinRM_pkg" ;;
+external _Primality_compute_miller_rabin_f : c_obj list -> c_obj list = "_wrap_Primality_compute_miller_rabinopenMTPK" ;;
 let _Primality_compute_miller_rabin arg = match _Primality_compute_miller_rabin_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_miller_rabin_prime_f : c_obj list -> c_obj list = "_wrap_Primality_miller_rabin_primeRM_pkg" ;;
+external _Primality_miller_rabin_prime_f : c_obj list -> c_obj list = "_wrap_Primality_miller_rabin_primeopenMTPK" ;;
 let _Primality_miller_rabin_prime arg = match _Primality_miller_rabin_prime_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_miller_rabin_f : c_obj list -> c_obj list = "_wrap_Primality_miller_rabinRM_pkg" ;;
+external _Primality_miller_rabin_f : c_obj list -> c_obj list = "_wrap_Primality_miller_rabinopenMTPK" ;;
 let _Primality_miller_rabin arg = match _Primality_miller_rabin_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_jacobian_number_f : c_obj list -> c_obj list = "_wrap_Primality_jacobian_numberRM_pkg" ;;
+external _Primality_jacobian_number_f : c_obj list -> c_obj list = "_wrap_Primality_jacobian_numberopenMTPK" ;;
 let _Primality_jacobian_number arg = match _Primality_jacobian_number_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_solovoy_strassen_f : c_obj list -> c_obj list = "_wrap_Primality_solovoy_strassenRM_pkg" ;;
+external _Primality_solovoy_strassen_f : c_obj list -> c_obj list = "_wrap_Primality_solovoy_strassenopenMTPK" ;;
 let _Primality_solovoy_strassen arg = match _Primality_solovoy_strassen_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_mod_pow_f : c_obj list -> c_obj list = "_wrap_Primality_mod_powRM_pkg" ;;
+external _Primality_mod_pow_f : c_obj list -> c_obj list = "_wrap_Primality_mod_powopenMTPK" ;;
 let _Primality_mod_pow arg = match _Primality_mod_pow_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_carmichael_num_f : c_obj list -> c_obj list = "_wrap_Primality_carmichael_numRM_pkg" ;;
+external _Primality_carmichael_num_f : c_obj list -> c_obj list = "_wrap_Primality_carmichael_numopenMTPK" ;;
 let _Primality_carmichael_num arg = match _Primality_carmichael_num_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_sieve_of_eratosthenes_f : c_obj list -> c_obj list = "_wrap_Primality_sieve_of_eratosthenesRM_pkg" ;;
+external _Primality_sieve_of_eratosthenes_f : c_obj list -> c_obj list = "_wrap_Primality_sieve_of_eratosthenesopenMTPK" ;;
 let _Primality_sieve_of_eratosthenes arg = match _Primality_sieve_of_eratosthenes_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_pollard_rho_f : c_obj list -> c_obj list = "_wrap_Primality_pollard_rhoRM_pkg" ;;
+external _Primality_pollard_rho_f : c_obj list -> c_obj list = "_wrap_Primality_pollard_rhoopenMTPK" ;;
 let _Primality_pollard_rho arg = match _Primality_pollard_rho_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Primality_ETF_f : c_obj list -> c_obj list = "_wrap_Primality_ETFRM_pkg" ;;
+external _Primality_ETF_f : c_obj list -> c_obj list = "_wrap_Primality_ETFopenMTPK" ;;
 let _Primality_ETF arg = match _Primality_ETF_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _new_Primality_f : c_obj list -> c_obj list = "_wrap_new_PrimalityRM_pkg" ;;
+external _new_Primality_f : c_obj list -> c_obj list = "_wrap_new_PrimalityopenMTPK" ;;
 let _new_Primality arg = match _new_Primality_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if true then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _delete_Primality_f : c_obj list -> c_obj list = "_wrap_delete_PrimalityRM_pkg" ;;
+external _delete_Primality_f : c_obj list -> c_obj list = "_wrap_delete_PrimalityopenMTPK" ;;
 let _delete_Primality arg = match _delete_Primality_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
@@ -143,91 +143,91 @@ let _delete_Primality arg = match _delete_Primality_f ((fnhelper arg)) with
 | lst -> C_list lst ;;
 external _BITS : c_obj -> Swig.c_obj = "_wrap_BITS" 
 external _BYTE_LIMIT : c_obj -> Swig.c_obj = "_wrap_BYTE_LIMIT" 
-external _RC4_byte_swap_f : c_obj list -> c_obj list = "_wrap_RC4_byte_swapRM_pkg" ;;
+external _RC4_byte_swap_f : c_obj list -> c_obj list = "_wrap_RC4_byte_swapopenMTPK" ;;
 let _RC4_byte_swap arg = match _RC4_byte_swap_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _RC4_trad_swap_f : c_obj list -> c_obj list = "_wrap_RC4_trad_swapRM_pkg" ;;
+external _RC4_trad_swap_f : c_obj list -> c_obj list = "_wrap_RC4_trad_swapopenMTPK" ;;
 let _RC4_trad_swap arg = match _RC4_trad_swap_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _RC4_XOR_swap_f : c_obj list -> c_obj list = "_wrap_RC4_XOR_swapRM_pkg" ;;
+external _RC4_XOR_swap_f : c_obj list -> c_obj list = "_wrap_RC4_XOR_swapopenMTPK" ;;
 let _RC4_XOR_swap arg = match _RC4_XOR_swap_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _RC4_KSA_f : c_obj list -> c_obj list = "_wrap_RC4_KSARM_pkg" ;;
+external _RC4_KSA_f : c_obj list -> c_obj list = "_wrap_RC4_KSAopenMTPK" ;;
 let _RC4_KSA arg = match _RC4_KSA_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _RC4_PRGA_f : c_obj list -> c_obj list = "_wrap_RC4_PRGARM_pkg" ;;
+external _RC4_PRGA_f : c_obj list -> c_obj list = "_wrap_RC4_PRGAopenMTPK" ;;
 let _RC4_PRGA arg = match _RC4_PRGA_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _RC4_store_hash_f : c_obj list -> c_obj list = "_wrap_RC4_store_hashRM_pkg" ;;
+external _RC4_store_hash_f : c_obj list -> c_obj list = "_wrap_RC4_store_hashopenMTPK" ;;
 let _RC4_store_hash arg = match _RC4_store_hash_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _RC4_compute_f : c_obj list -> c_obj list = "_wrap_RC4_computeRM_pkg" ;;
+external _RC4_compute_f : c_obj list -> c_obj list = "_wrap_RC4_computeopenMTPK" ;;
 let _RC4_compute arg = match _RC4_compute_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _new_RC4_f : c_obj list -> c_obj list = "_wrap_new_RC4RM_pkg" ;;
+external _new_RC4_f : c_obj list -> c_obj list = "_wrap_new_RC4openMTPK" ;;
 let _new_RC4 arg = match _new_RC4_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if true then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _delete_RC4_f : c_obj list -> c_obj list = "_wrap_delete_RC4RM_pkg" ;;
+external _delete_RC4_f : c_obj list -> c_obj list = "_wrap_delete_RC4openMTPK" ;;
 let _delete_RC4 arg = match _delete_RC4_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Cipher_C_cipher_f : c_obj list -> c_obj list = "_wrap_Cipher_C_cipherRM_pkg" ;;
+external _Cipher_C_cipher_f : c_obj list -> c_obj list = "_wrap_Cipher_C_cipheropenMTPK" ;;
 let _Cipher_C_cipher arg = match _Cipher_C_cipher_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Cipher_KC_encode_f : c_obj list -> c_obj list = "_wrap_Cipher_KC_encodeRM_pkg" ;;
+external _Cipher_KC_encode_f : c_obj list -> c_obj list = "_wrap_Cipher_KC_encodeopenMTPK" ;;
 let _Cipher_KC_encode arg = match _Cipher_KC_encode_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _Cipher_KC_cipher_f : c_obj list -> c_obj list = "_wrap_Cipher_KC_cipherRM_pkg" ;;
+external _Cipher_KC_cipher_f : c_obj list -> c_obj list = "_wrap_Cipher_KC_cipheropenMTPK" ;;
 let _Cipher_KC_cipher arg = match _Cipher_KC_cipher_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _new_Cipher_f : c_obj list -> c_obj list = "_wrap_new_CipherRM_pkg" ;;
+external _new_Cipher_f : c_obj list -> c_obj list = "_wrap_new_CipheropenMTPK" ;;
 let _new_Cipher arg = match _new_Cipher_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if true then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external _delete_Cipher_f : c_obj list -> c_obj list = "_wrap_delete_CipherRM_pkg" ;;
+external _delete_Cipher_f : c_obj list -> c_obj list = "_wrap_delete_CipheropenMTPK" ;;
 let _delete_Cipher arg = match _delete_Cipher_f ((fnhelper arg)) with
   [] -> C_void
 | [x] -> (if false then Gc.finalise 
   (fun x -> ignore ((invoke x) "~" C_void)) x) ; x
 | lst -> C_list lst ;;
-external f_init : unit -> unit = "f_RM_pkg_init" ;;
+external f_init : unit -> unit = "f_openMTPK_init" ;;
 let _ = f_init ()
 let enum_to_int x (v : c_obj) =
    match v with
@@ -237,11 +237,11 @@ let enum_to_int x (v : c_obj) =
            `Int x -> (Swig.C_int x)
            | _ -> raise (LabelNotFromThisEnum v))
 ) | _ -> (C_int (get_int v))
-let _ = Callback.register "RM_pkg_enum_to_int" enum_to_int
+let _ = Callback.register "openMTPK_enum_to_int" enum_to_int
 let int_to_enum x y =
     match (x : c_enum_type) with
       `unknown -> C_enum (`Int y)
-let _ = Callback.register "RM_pkg_int_to_enum" int_to_enum
+let _ = Callback.register "openMTPK_int_to_enum" int_to_enum
 
 let create_Basics_from_ptr raw_ptr =
   C_obj 

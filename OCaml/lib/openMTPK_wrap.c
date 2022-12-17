@@ -9,7 +9,7 @@
 
 #define SWIG_VERSION 0x040100
 #define SWIGOCAML
-#define SWIG_MODULE "RM_pkg"
+#define SWIG_MODULE "openMTPK"
 
 /* -----------------------------------------------------------------------------
  *  This section contains generic SWIG labels for method/variable
@@ -1703,7 +1703,7 @@ std::string SwigString_AsString(CAML_VALUE o) {
 
 static int _swig_wrap_BITS = 255;
 static int _swig_wrap_BYTE_LIMIT = 256;
-SWIGEXT CAML_VALUE _wrap_Basics_greatest_powerRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Basics_greatest_poweropenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1734,7 +1734,7 @@ SWIGEXT CAML_VALUE _wrap_Basics_greatest_powerRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Basics_rm_gcdRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Basics_rm_gcdopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1765,7 +1765,7 @@ SWIGEXT CAML_VALUE _wrap_Basics_rm_gcdRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_new_BasicsRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_new_BasicsopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1782,7 +1782,7 @@ SWIGEXT CAML_VALUE _wrap_new_BasicsRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_delete_BasicsRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_delete_BasicsopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1802,7 +1802,7 @@ SWIGEXT CAML_VALUE _wrap_delete_BasicsRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_is_primeRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_is_primeopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1829,7 +1829,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_is_primeRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_compute_miller_rabinRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_compute_miller_rabinopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1860,7 +1860,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_compute_miller_rabinRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_miller_rabin_primeRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_miller_rabin_primeopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1891,7 +1891,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_miller_rabin_primeRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_miller_rabinRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_miller_rabinopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1923,7 +1923,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_miller_rabinRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_jacobian_numberRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_jacobian_numberopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1954,7 +1954,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_jacobian_numberRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_solovoy_strassenRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_solovoy_strassenopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -1985,7 +1985,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_solovoy_strassenRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_mod_powRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_mod_powopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2020,7 +2020,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_mod_powRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_carmichael_numRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_carmichael_numopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2047,7 +2047,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_carmichael_numRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_sieve_of_eratosthenesRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_sieve_of_eratosthenesopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2071,7 +2071,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_sieve_of_eratosthenesRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_pollard_rhoRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_pollard_rhoopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2098,7 +2098,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_pollard_rhoRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Primality_ETFRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Primality_ETFopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2125,7 +2125,7 @@ SWIGEXT CAML_VALUE _wrap_Primality_ETFRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_new_PrimalityRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_new_PrimalityopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2142,7 +2142,7 @@ SWIGEXT CAML_VALUE _wrap_new_PrimalityRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_delete_PrimalityRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_delete_PrimalityopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2188,7 +2188,7 @@ SWIGEXT CAML_VALUE _wrap_BYTE_LIMIT(CAML_VALUE args) {
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_byte_swapRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_byte_swapopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2216,7 +2216,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_byte_swapRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_trad_swapRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_trad_swapopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2244,7 +2244,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_trad_swapRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_XOR_swapRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_XOR_swapopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2272,7 +2272,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_XOR_swapRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_KSARM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_KSAopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2304,7 +2304,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_KSARM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_PRGARM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_PRGAopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2340,7 +2340,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_PRGARM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_store_hashRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_store_hashopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2375,7 +2375,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_store_hashRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_RC4_computeRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_RC4_computeopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2414,7 +2414,7 @@ SWIGEXT CAML_VALUE _wrap_RC4_computeRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_new_RC4RM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_new_RC4openMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2431,7 +2431,7 @@ SWIGEXT CAML_VALUE _wrap_new_RC4RM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_delete_RC4RM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_delete_RC4openMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2451,7 +2451,7 @@ SWIGEXT CAML_VALUE _wrap_delete_RC4RM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Cipher_C_cipherRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Cipher_C_cipheropenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2485,7 +2485,7 @@ SWIGEXT CAML_VALUE _wrap_Cipher_C_cipherRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Cipher_KC_encodeRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Cipher_KC_encodeopenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2515,7 +2515,7 @@ SWIGEXT CAML_VALUE _wrap_Cipher_KC_encodeRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_Cipher_KC_cipherRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_Cipher_KC_cipheropenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2552,7 +2552,7 @@ SWIGEXT CAML_VALUE _wrap_Cipher_KC_cipherRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_new_CipherRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_new_CipheropenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2569,7 +2569,7 @@ SWIGEXT CAML_VALUE _wrap_new_CipherRM_pkg (CAML_VALUE args)
 }
 
 
-SWIGEXT CAML_VALUE _wrap_delete_CipherRM_pkg (CAML_VALUE args)
+SWIGEXT CAML_VALUE _wrap_delete_CipheropenMTPK (CAML_VALUE args)
 {
   CAMLparam1(args);
   SWIG_CAMLlocal2(swig_result,rv);
@@ -2627,7 +2627,7 @@ static swig_cast_info *swig_cast_initial[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (END) -------- */
 
-#define SWIG_init f_RM_pkg_init
+#define SWIG_init f_openMTPK_init
 /* -----------------------------------------------------------------------------
  * Type initialization:
  * This problem is tough by the requirement that no dynamic

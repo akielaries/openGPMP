@@ -5,8 +5,8 @@ CIPHER	= ../../modules/number_theory/cipher.cpp
 RC4		= ../../modules/number_theory/rc4.cpp
 
 r-swig:
-	swig -c++ -r -o RM_pkg_wrap.cpp RM_pkg.i
-	R CMD SHLIB -o RM_pkg.so RM_pkg_wrap.cpp ${ARITH} ${PRIMES} ${CIPHER} ${RC4}
+	swig -c++ -r -o openMTPK_wrap.cpp openMTPK.i
+	R CMD SHLIB -o openMTPK.so openMTPK_wrap.cpp ${ARITH} ${PRIMES} ${CIPHER} ${RC4}
 
 
 clean:

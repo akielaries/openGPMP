@@ -1,5 +1,4 @@
-/* RM-pkg
- * TESTING BASIC LINEAR ALGEBRA OPERATIONS
+/* TESTING BASIC LINEAR ALGEBRA OPERATIONS
  * test driver program on the implementations for some basic Linear Algebra
  * operations. 
  *
@@ -15,7 +14,7 @@
 
 
 int main() {
-    rm::Vectors f;
+    mtpk::Vectors f;
     std::cout << "VECTOR/MATRIX OPERATIONS EXAMPLE" << std::endl;
 
     int x = f.add(1,3);

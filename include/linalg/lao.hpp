@@ -2,8 +2,8 @@
  * definitions for basic Linear Algebra operations on vectors and matrix spaces 
  */
 
-#ifndef RMLAOPS_H
-#define RMLAOPS_H
+#ifndef LAOPS_H
+#define LAOPS_H
 
 #include <stdio.h>
 #include <vector>
@@ -14,7 +14,7 @@
 #include <functional>
 #include <random>
 
-namespace rm {
+namespace mtpk {
 class Vectors {
     std::vector<int> x;
     std::vector<int> y;

@@ -1,5 +1,4 @@
-/* RM-pkg
- * TESTING LINEAR REGRESSION
+/* TESTING LINEAR REGRESSION
  * test driver program for our implementation of linear regression 
  */
 #include <iostream>

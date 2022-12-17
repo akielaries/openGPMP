@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from RM_pkg import Basics
+from openMTPK import Basics
 
 b = Basics()
 

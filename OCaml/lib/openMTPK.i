@@ -1,6 +1,6 @@
-/* CORE RM-pkg PYTHON API SWIG INTERFACE FILE */
+/* CORE openMTPK PYTHON API SWIG INTERFACE FILE */
 
-%module RM_pkg
+%module openMTPK
 %include "std_string.i"
 %{
     #include "../../include/arithmetic/arith.hpp"
