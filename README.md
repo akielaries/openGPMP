@@ -1,4 +1,4 @@
-![img](https://github.com/akielaries/openMTPK/blob/main/docs/openMTPK.svg)
+![img](https://github.com/akielaries/RM-pkg/blob/main/docs/openMTPK.svg)
 --------------------------------------------------------------------------------
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/RM-pkg/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/RM-pkg&amp;utm_campaign=Badge_Grade)
