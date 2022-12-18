@@ -9,21 +9,20 @@
 **openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
 focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
 as well as a range of language API's for integration with pre-existing projects.
-openMTPK is originally inspired from uundergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
+openMTPK is originally inspired from undergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
 The project welcomes contributors and is in need of mathematics focused/interested programmers
 comfortable in C and C++. If interested see 
 [here](https://github.com/akielaries/openMTPK/blob/main/CONTRIBUTING.md)!
 
-The goal is to make a reusable mathematics library similar to the use of math.h allowing users to call 
+The goal is to make a reusable mathematics library allowing users to call 
 within their own projects. Some of the implementations seen in the package were first prototypes in 
-Wolfram Mathetmatica, then translated to C++ code for the package.
+Wolfram Mathetmatica, then translated to C++ for the package.
 Look in the [drivers](https://github.com/akielaries/openMTPK/tree/main/drivers) folder for examples 
 on using these tools in your own project. 
 
 ## API Bindings
-The goal of this project is to also develop as laterally as possible, so as I develop the modules
-for openMTPK, the programming language bindings will come along with it. Perhaps other languages will
-be explored.
+As development progresses language bindings will be polished. More languages
+such as Julia and MATLAB will be explored in the future.
 Language |  Status |
 ---------|------|
 C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
