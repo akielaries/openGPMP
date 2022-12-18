@@ -42,8 +42,8 @@ calculus:
 
 
 # FILES FOR REGRESSION
-LR			= $(SRCDIR)/ML_DL/linreg.cpp
-LRDRV		= $(PROJDIR)/drivers/ML_DL/d_reg.cpp
+LR			= $(SRCDIR)/ml/linreg.cpp
+LRDRV		= $(PROJDIR)/drivers/ml/d_reg.cpp
 LRBIN		= lin_reg
 
 ml_dl:
@@ -187,4 +187,6 @@ PROJECTBIN	= libopenMPTK.so
 
 openMPTK:
 	${CXX} ${CXX_DBG} -shared -fPIC ${AR} ${PRIMES} ${CIPH} ${RC4} -o ${PROJECTBIN}
+
+
 
