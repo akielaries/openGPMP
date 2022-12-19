@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from examples import openMTPK
+from lib import openMTPK
 
 help(openMTPK)
 

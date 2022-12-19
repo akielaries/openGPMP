@@ -7,10 +7,10 @@ g++ --coverage arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
     number_theory/t_cipher.cpp ../modules/number_theory/cipher.cpp \
     number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
     number_theory/t_primes.cpp ../modules/number_theory/primes.cpp \
-    -lgtest -lgtest_main -o RM_tests -fprofile-arcs -ftest-coverage -fPIC
+    -lgtest -lgtest_main -o openMTPK_tests -fprofile-arcs -ftest-coverage -fPIC
 
 # run compiled binary
-./RM_tests
+./openMTPK_tests
 
 #number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
 # generate lcov files

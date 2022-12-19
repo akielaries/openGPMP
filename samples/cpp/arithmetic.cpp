@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../include/arithmetic/arith.hpp"
-#include "../include/arithmetic/arithbase.hpp"
+#include "../../include/arithmetic/arith.hpp"
+#include "../../include/arithmetic/arithbase.hpp"
 
 
 int main(){

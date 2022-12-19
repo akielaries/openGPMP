@@ -23,7 +23,7 @@ SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 
 # FILES FOR ARITHMETIC
 AR			= $(SRCDIR)/arithmetic/arith.cpp
-ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
+ARDRV		= $(PROJDIR)/samples/cpp/arithmetic.cpp
 ARBIN		= arith
 
 arith:
@@ -33,7 +33,7 @@ arith:
 
 # FILES FOR CALCULUS OPERATIONS
 CALC		= $(SRCDIR)/calculus/deriv.cpp
-CALCDRV		= $(PROJDIR)/drivers/calc/d_deriv.cpp
+CALCDRV		= $(PROJDIR)/samples/cpp/deriv.cpp
 CALCBIN		= calc
 
 calculus:
@@ -43,7 +43,7 @@ calculus:
 
 # FILES FOR REGRESSION
 LR			= $(SRCDIR)/ml/linreg.cpp
-LRDRV		= $(PROJDIR)/drivers/ml/d_reg.cpp
+LRDRV		= $(PROJDIR)/samples/cpp/reg.cpp
 LRBIN		= lin_reg
 
 ml_dl:
@@ -53,7 +53,7 @@ ml_dl:
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
 LINALG		= $(SRCDIR)/linalg/lao.cpp
-LINALGDRV	= $(PROJDIR)/drivers/linalg/d_linalg_ops.cpp
+LINALGDRV	= $(PROJDIR)/samples/cpp/linalg_ops.cpp
 LINALGBIN	= linalg_ops
 
 lin-alg:
@@ -63,23 +63,23 @@ lin-alg:
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
 PRIMES		= $(SRCDIR)/number_theory/primes.cpp
-PRIMESDRV	= $(PROJDIR)/drivers/number_theory/d_primes.cpp
+PRIMESDRV	= $(PROJDIR)/samples/cpp/primes.cpp
 PRIMESBIN	= primes
 
 CIPH		= $(SRCDIR)/number_theory/cipher.cpp
-CIPHDRV		= $(PROJDIR)/drivers/number_theory/d_cipher.cpp
+CIPHDRV		= $(PROJDIR)/samples/cpp/cipher.cpp
 CIPHBIN		= cipher
 
 RC2			= $(SRCDIR)/number_theory/rc2.cpp
-RC2DRV		= $(PROJDIR)/drivers/number_theory/d_rc2.cpp
+RC2DRV		= $(PROJDIR)/samples/cpp/rc2.cpp
 RC2BIN		= rc2
 
 RC4			= $(SRCDIR)/number_theory/rc4.cpp
-RC4DRV		= $(PROJDIR)/drivers/number_theory/d_rc4.cpp
+RC4DRV		= $(PROJDIR)/samples/cpp/rc4.cpp
 RC4BIN		= rc4
 
 RC5			= $(SRCDIR)/number_theory/rc5.cpp
-RC5DRV		= $(PROJDIR)/drivers/number_theory/d_rc5.cpp
+RC5DRV		= $(PROJDIR)/samples/cpp/rc5.cpp
 RC5BIN		= rc5
 
 num-theory: 
@@ -99,7 +99,7 @@ num-theory:
 
 TORUS			= $(SRCDIR)/complex/torus.cpp
 TORUS_ANIM		= $(SRCDIR)/complex/torus_animated.cpp
-TORUSDRV		= $(PROJDIR)/drivers/complex/d_torus.cpp
+TORUSDRV		= $(PROJDIR)/samples/cpp/torus.cpp
 TORUSBIN		= torus
 TORUS_ANIM_BIN	= torus_anim
 
