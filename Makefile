@@ -17,82 +17,80 @@ CXX_DBG 	= -Wall -Wextra -g
 LIBXBGI		= /usr/lib/libXbgi.a
 CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
 
-OPM			= -lopenMTPK
-
 
 SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 
 # FILES FOR ARITHMETIC
 AR			= $(SRCDIR)/arithmetic/arith.cpp
-ARDRV		= $(PROJDIR)/samples/cpp/arithmetic.cpp
+ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
 ARBIN		= arith
 
 arith:
-	${CXX} ${CXX_DBG} ${ARDRV} ${OPM} -o ${ARBIN}
+	${CXX} ${CXX_DBG} ${AR} ${ARDRV} -o ${ARBIN}
 	./${ARBIN}
 
 
 # FILES FOR CALCULUS OPERATIONS
 CALC		= $(SRCDIR)/calculus/deriv.cpp
-CALCDRV		= $(PROJDIR)/samples/cpp/deriv.cpp
+CALCDRV		= $(PROJDIR)/drivers/calc/d_deriv.cpp
 CALCBIN		= calc
 
 calculus:
-	${CXX} ${CXX_DBG} ${CALCDRV} ${OPM} -o ${CALCBIN}
+	${CXX} ${CXX_DBG} ${CALC} ${CALCDRV} -o ${CALCBIN}
 	./${CALCBIN}
 
 
 # FILES FOR REGRESSION
-LR			= $(SRCDIR)/ml/linreg.cpp
-LRDRV		= $(PROJDIR)/samples/cpp/reg.cpp
+LR			= $(SRCDIR)/ML_DL/linreg.cpp
+LRDRV		= $(PROJDIR)/drivers/ML_DL/d_reg.cpp
 LRBIN		= lin_reg
 
 ml_dl:
-	${CXX} ${CXX_DBG} ${LRDRV} ${OPM} -o ${LRBIN}
+	${CXX} ${CXX_DBG} ${LR} ${LRDRV} -o ${LRBIN}
 	./${LRBIN}
 
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
 LINALG		= $(SRCDIR)/linalg/lao.cpp
-LINALGDRV	= $(PROJDIR)/samples/cpp/linalg_ops.cpp
+LINALGDRV	= $(PROJDIR)/drivers/linalg/d_linalg_ops.cpp
 LINALGBIN	= linalg_ops
 
 lin-alg:
-	${CXX} ${CXX_DBG} ${LINALGDRV} ${OPM} -o ${LINALGBIN}
+	${CXX} ${CXX_DBG} ${LINALG} ${LINALGDRV} -o ${LINALGBIN}
 	./${LINALGBIN}
 
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
 PRIMES		= $(SRCDIR)/number_theory/primes.cpp
-PRIMESDRV	= $(PROJDIR)/samples/cpp/primes.cpp
+PRIMESDRV	= $(PROJDIR)/drivers/number_theory/d_primes.cpp
 PRIMESBIN	= primes
 
 CIPH		= $(SRCDIR)/number_theory/cipher.cpp
-CIPHDRV		= $(PROJDIR)/samples/cpp/cipher.cpp
+CIPHDRV		= $(PROJDIR)/drivers/number_theory/d_cipher.cpp
 CIPHBIN		= cipher
 
 RC2			= $(SRCDIR)/number_theory/rc2.cpp
-RC2DRV		= $(PROJDIR)/samples/cpp/rc2.cpp
+RC2DRV		= $(PROJDIR)/drivers/number_theory/d_rc2.cpp
 RC2BIN		= rc2
 
 RC4			= $(SRCDIR)/number_theory/rc4.cpp
-RC4DRV		= $(PROJDIR)/samples/cpp/rc4.cpp
+RC4DRV		= $(PROJDIR)/drivers/number_theory/d_rc4.cpp
 RC4BIN		= rc4
 
 RC5			= $(SRCDIR)/number_theory/rc5.cpp
-RC5DRV		= $(PROJDIR)/samples/cpp/rc5.cpp
+RC5DRV		= $(PROJDIR)/drivers/number_theory/d_rc5.cpp
 RC5BIN		= rc5
 
 num-theory: 
 	# PRIMES
-	${CXX} ${CXX_DBG} ${PRIMESDRV} ${OPM} -o ${PRIMESBIN}
+	${CXX} ${CXX_DBG} ${AR} ${PRIMES} ${PRIMESDRV} -o ${PRIMESBIN}
 	./${PRIMESBIN}
 	# BASIC STREAM CIPHERS
-	${CXX} ${CXX_DBG} ${CIPHDRV} ${OPM} -o ${CIPHBIN}
+	${CXX} ${CXX_DBG} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
 	./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
-	${CXX} ${CXX_DBG} ${RC4DRV} ${OPM} -o ${RC4BIN}
+	${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
 	./${RC4BIN}
 
 	#${CXX} ${RC5} ${RC5DRV} -o ${RC5BIN}
@@ -101,7 +99,7 @@ num-theory:
 
 TORUS			= $(SRCDIR)/complex/torus.cpp
 TORUS_ANIM		= $(SRCDIR)/complex/torus_animated.cpp
-TORUSDRV		= $(PROJDIR)/samples/cpp/torus.cpp
+TORUSDRV		= $(PROJDIR)/drivers/complex/d_torus.cpp
 TORUSBIN		= torus
 TORUS_ANIM_BIN	= torus_anim
 
@@ -183,5 +181,4 @@ clean-tests:
 clean-misc:
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
-
 
