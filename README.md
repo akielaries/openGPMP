@@ -32,16 +32,6 @@ R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
 Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
 
 ## Modules
-Module | Build Status | 
--------|--------------|
-Arithmetic          | [![Arith](https://github.com/akielaries/openMTPK/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Calculus            | [![Calc](https://github.com/akielaries/openMTPK/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Linear Algebra      | [![linalg](https://github.com/akielaries/openMTPK/actions/workflows/linalg.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/openMTPK/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-Number Theory       | [![num-theory](https://github.com/akielaries/openMTPK/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
-
-#### Details
 1. Arithmetic
 2. Calculus
    - Differential
@@ -53,6 +43,8 @@ Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/y
    - Linear Regression
    - Cross-Validation
    - K-Nearest Neighbors
+   - Neural Networks
+   - Bayes Classifier
 5. Number Theory
    - Primes
    - Cryptography
