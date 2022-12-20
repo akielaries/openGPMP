@@ -6,7 +6,7 @@
 
 
 # define our project director
-PROJDIR     = $(realpath $(CURDIR))
+PROJDIR     = $(realpath $(CURDIR))../
 
 CC			= gcc
 CXX 		= g++
@@ -23,7 +23,7 @@ SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
 
 # FILES FOR ARITHMETIC
 AR			= $(SRCDIR)/arithmetic/arith.cpp
-ARDRV		= $(PROJDIR)/drivers/d_arith.cpp
+ARDRV		= drivers/d_arith.cpp
 ARBIN		= arith
 
 arith:
