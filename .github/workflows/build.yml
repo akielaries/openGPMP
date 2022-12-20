@@ -29,13 +29,11 @@ jobs:
         run: | 
           sudo apt install lcov
           pip install gcovr
-          mkdir build
       
       - name: setup CMake
         uses: ashutoshvarma/action-cmake-build@master
         with:
           build-dir: build
-          cc: gcc
           cxx: g++
           build-type: Release
           install-build: true
