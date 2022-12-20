@@ -2,22 +2,70 @@
  * definitions for basic arithmetic operations 
  */
 
-#ifndef ARITH_H
-#define ARITH_H
+#ifndef ARITHMETIC_HPP
+#define ARITHMETIC_HPP
 #include <vector>
 #include <iostream>
 #include <stdio.h>
 #include <algorithm>
 
+class Arith {
+
+    public:
+        /*
+         * It is easiest to include the implementation of our template
+         * methods in our header files
+         * Addition
+         */
+        template<typename T>
+        inline T add(T t) {
+            return t;
+        }
+        template<typename T, typename... Ts>
+        inline auto add(T t, Ts... ts) {
+            return t + add(ts...);
+        }
+        
+        // subtraction
+        template<typename X>
+        inline X sub(X x) {
+            return x;
+        }
+        template<typename X, typename... Xy>
+        inline auto sub(X x, Xy... xy) {
+            return x - sub(xy...);
+        }
+
+        // multiplication
+        template<typename W>
+        inline W mult(W w) {
+            return w;
+        }
+        template<typename W, typename... Wv>
+        inline auto mult(W w, Wv... wv) {
+            return w * mult(wv...);
+        }
+
+        // exponentiation
+        template<typename Z>
+        inline Z exp(Z z) {
+            return z;
+        }
+        template<typename Z, typename... Zy>
+        inline auto exp(Z z, Zy... zy) {
+            return z *= exp(zy...);
+        }
+};
 
 class Basics {
-    
+
     public:
         /* greatest power of two given integers */
         int greatest_power(int n, int p);
         /* greatest common divisor */
         int rm_gcd(int x, int y);
 };
+
 
 #endif
 

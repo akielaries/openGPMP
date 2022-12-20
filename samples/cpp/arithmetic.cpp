@@ -7,8 +7,7 @@
 #include <vector>
 #include <cassert>
 #include "../../include/arithmetic/arith.hpp"
-#include "../../include/arithmetic/arithbase.hpp"
-
+//#include <openMTPK/arith.hpp>
 
 int main(){
     std::cout << "TESTING ARITHMETIC OPERATIONS\n" << std::endl;
