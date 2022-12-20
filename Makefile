@@ -175,7 +175,7 @@ run-tests:
 	gcovr
 
 clean-tests:
-	cd tests/ && rm -f *.gc* web/ openMPTK_tests
+	cd tests/ && rm -f *.gc* web/ openMTPK_tests
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}
@@ -183,12 +183,5 @@ clean-tests:
 clean-misc:
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
-
-
-PROJECTBIN	= libopenMPTK.so
-
-openMPTK:
-	${CXX} ${CXX_DBG} -shared -fPIC ${AR} ${PRIMES} ${CIPH} ${RC4} -o ${PROJECTBIN}
-
 
 
