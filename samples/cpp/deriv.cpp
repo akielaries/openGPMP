@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 #include <cassert>
-#include "../../include/calculus/deriv.hpp"
+#include <openMTPK/deriv.hpp>
 
 
 int main() {

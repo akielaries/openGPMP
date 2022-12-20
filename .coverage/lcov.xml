@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
-<coverage line-rate="0.8962962962962963" function-rate="0.9553571428571429" branch-rate="0.3440934065934066" lines-covered="484" lines-valid="540" functions-covered="107" functions-valid="112" branches-covered="501" branches-valid="1456" complexity="0.0" timestamp="1671445417" version="gcovr 5.2">
+<coverage line-rate="0.8962962962962963" function-rate="0.9553571428571429" branch-rate="0.3440934065934066" lines-covered="484" lines-valid="540" functions-covered="107" functions-valid="112" branches-covered="501" branches-valid="1456" complexity="0.0" timestamp="1671532415" version="gcovr 5.2">
   <sources>
     <source>.</source>
   </sources>
   <packages>
     <package name="include.arithmetic" line-rate="1.0" function-rate="1.0" branch-rate="0.0" complexity="0.0">
       <classes>
-        <class name="arithbase_hpp" filename="include/arithmetic/arithbase.hpp" line-rate="1.0" branch-rate="0.0" complexity="0.0">
+        <class name="arith_hpp" filename="include/arithmetic/arith.hpp" line-rate="1.0" branch-rate="0.0" complexity="0.0">
           <methods/>
           <lines>
             <line number="21" hits="3" branch="false"/>
@@ -31,30 +31,30 @@
         <class name="arith_cpp" filename="modules/arithmetic/arith.cpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
           <methods/>
           <lines>
+            <line number="7" hits="2" branch="false"/>
             <line number="8" hits="2" branch="false"/>
-            <line number="9" hits="2" branch="false"/>
-            <line number="12" hits="7" branch="true" condition-coverage="100% (2/2)">
+            <line number="11" hits="7" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
+            <line number="12" hits="5" branch="false"/>
             <line number="13" hits="5" branch="false"/>
-            <line number="14" hits="5" branch="false"/>
-            <line number="16" hits="2" branch="false"/>
-            <line number="19" hits="3474" branch="false"/>
-            <line number="20" hits="3474" branch="true" condition-coverage="100% (2/2)">
+            <line number="15" hits="2" branch="false"/>
+            <line number="18" hits="3474" branch="false"/>
+            <line number="19" hits="3474" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
-            <line number="21" hits="562" branch="false"/>
-            <line number="23" hits="2912" branch="true" condition-coverage="100% (2/2)">
+            <line number="20" hits="562" branch="false"/>
+            <line number="22" hits="2912" branch="true" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="0" type="jump" coverage="100%"/>
               </conditions>
             </line>
-            <line number="24" hits="566" branch="false"/>
-            <line number="27" hits="2346" branch="false"/>
+            <line number="23" hits="566" branch="false"/>
+            <line number="26" hits="2346" branch="false"/>
           </lines>
         </class>
       </classes>
@@ -826,7 +826,12 @@
         <class name="t_arith_cpp" filename="tests/arith/t_arith.cpp" line-rate="1.0" branch-rate="0.25" complexity="0.0">
           <methods/>
           <lines>
-            <line number="18" hits="8" branch="false"/>
+            <line number="17" hits="8" branch="false"/>
+            <line number="18" hits="2" branch="true" condition-coverage="25% (3/12)">
+              <conditions>
+                <condition number="0" type="jump" coverage="25%"/>
+              </conditions>
+            </line>
             <line number="19" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
@@ -837,25 +842,25 @@
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="21" hits="2" branch="true" condition-coverage="25% (3/12)">
+            <line number="22" hits="2" branch="false"/>
+            <line number="25" hits="8" branch="false"/>
+            <line number="26" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="23" hits="2" branch="false"/>
-            <line number="26" hits="8" branch="false"/>
             <line number="27" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="28" hits="2" branch="true" condition-coverage="25% (3/12)">
+            <line number="28" hits="2" branch="false"/>
+            <line number="31" hits="8" branch="false"/>
+            <line number="32" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="29" hits="2" branch="false"/>
-            <line number="32" hits="8" branch="false"/>
             <line number="33" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
@@ -866,25 +871,25 @@
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="35" hits="2" branch="true" condition-coverage="25% (3/12)">
+            <line number="35" hits="2" branch="false"/>
+            <line number="42" hits="8" branch="false"/>
+            <line number="43" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="36" hits="2" branch="false"/>
-            <line number="43" hits="8" branch="false"/>
             <line number="44" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="45" hits="2" branch="true" condition-coverage="25% (3/12)">
+            <line number="45" hits="2" branch="false"/>
+            <line number="48" hits="8" branch="false"/>
+            <line number="49" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="46" hits="2" branch="false"/>
-            <line number="49" hits="8" branch="false"/>
             <line number="50" hits="2" branch="true" condition-coverage="25% (3/12)">
               <conditions>
                 <condition number="0" type="jump" coverage="25%"/>
@@ -905,12 +910,7 @@
                 <condition number="0" type="jump" coverage="25%"/>
               </conditions>
             </line>
-            <line number="54" hits="2" branch="true" condition-coverage="25% (3/12)">
-              <conditions>
-                <condition number="0" type="jump" coverage="25%"/>
-              </conditions>
-            </line>
-            <line number="55" hits="2" branch="false"/>
+            <line number="54" hits="2" branch="false"/>
           </lines>
         </class>
       </classes>

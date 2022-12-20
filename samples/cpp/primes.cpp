@@ -3,8 +3,8 @@
  * of the Number Theory module
  *
  */
-#include "../../include/number_theory/primes.hpp"
 #include <iostream>
+#include <openMTPK/primes.hpp>
 
 int main() {
     std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;

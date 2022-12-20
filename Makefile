@@ -17,6 +17,8 @@ CXX_DBG 	= -Wall -Wextra -g
 LIBXBGI		= /usr/lib/libXbgi.a
 CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
 
+OPM			= -lopenMTPK
+
 
 SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
@@ -27,7 +29,7 @@ ARDRV		= $(PROJDIR)/samples/cpp/arithmetic.cpp
 ARBIN		= arith
 
 arith:
-	${CXX} ${CXX_DBG} ${AR} ${ARDRV} -o ${ARBIN}
+	${CXX} ${CXX_DBG} ${ARDRV} ${OPM} -o ${ARBIN}
 	./${ARBIN}
 
 
@@ -37,7 +39,7 @@ CALCDRV		= $(PROJDIR)/samples/cpp/deriv.cpp
 CALCBIN		= calc
 
 calculus:
-	${CXX} ${CXX_DBG} ${CALC} ${CALCDRV} -o ${CALCBIN}
+	${CXX} ${CXX_DBG} ${CALCDRV} ${OPM} -o ${CALCBIN}
 	./${CALCBIN}
 
 
@@ -47,7 +49,7 @@ LRDRV		= $(PROJDIR)/samples/cpp/reg.cpp
 LRBIN		= lin_reg
 
 ml_dl:
-	${CXX} ${CXX_DBG} ${LR} ${LRDRV} -o ${LRBIN}
+	${CXX} ${CXX_DBG} ${LRDRV} ${OPM} -o ${LRBIN}
 	./${LRBIN}
 
 
@@ -57,7 +59,7 @@ LINALGDRV	= $(PROJDIR)/samples/cpp/linalg_ops.cpp
 LINALGBIN	= linalg_ops
 
 lin-alg:
-	${CXX} ${CXX_DBG} ${LINALG} ${LINALGDRV} -o ${LINALGBIN}
+	${CXX} ${CXX_DBG} ${LINALGDRV} ${OPM} -o ${LINALGBIN}
 	./${LINALGBIN}
 
 
@@ -84,13 +86,13 @@ RC5BIN		= rc5
 
 num-theory: 
 	# PRIMES
-	${CXX} ${CXX_DBG} ${AR} ${PRIMES} ${PRIMESDRV} -o ${PRIMESBIN}
+	${CXX} ${CXX_DBG} ${PRIMESDRV} ${OPM} -o ${PRIMESBIN}
 	./${PRIMESBIN}
 	# BASIC STREAM CIPHERS
-	${CXX} ${CXX_DBG} ${CIPH} ${CIPHDRV} -o ${CIPHBIN}
+	${CXX} ${CXX_DBG} ${CIPHDRV} ${OPM} -o ${CIPHBIN}
 	./${CIPHBIN}
 	# RIVEST CIPHER ALGORITHMS, RC2, RC4, RC5, RC6
-	${CXX} ${CXX_DBG} ${RC4} ${RC4DRV} -o ${RC4BIN}
+	${CXX} ${CXX_DBG} ${RC4DRV} ${OPM} -o ${RC4BIN}
 	./${RC4BIN}
 
 	#${CXX} ${RC5} ${RC5DRV} -o ${RC5BIN}

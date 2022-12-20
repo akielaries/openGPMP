@@ -30,6 +30,19 @@ jobs:
           sudo apt install lcov
           pip install gcovr
       
-      - name: Build openMTPK
+      - name: setup CMake
+        uses: jwlawson/actions-setup-cmake@v1.13
+        with:
+          cmake-version: '3.24'
+
+      - name: build openMTPK lib
+        run: | 
+          LD_LIBRARY_PATH=/usr/local/lib
+          mkdir build && cd build
+          cmake ..
+          make
+          make install
+
+      - name: openMTPK examples
         run: sh -x all.sh
 

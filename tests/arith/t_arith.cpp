@@ -2,7 +2,6 @@
  * Testing Arithmetic Operations
  */
 #include "../../include/arithmetic/arith.hpp"
-#include "../../include/arithmetic/arithbase.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 

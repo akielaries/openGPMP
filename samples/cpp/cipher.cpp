@@ -5,8 +5,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include "../../include/number_theory/cipher.hpp"
-//#include <openMTPK/cipher.hpp>
+#include <openMTPK/cipher.hpp>
 
 
 int main() {

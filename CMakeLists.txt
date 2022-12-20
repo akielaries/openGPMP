@@ -22,6 +22,7 @@ set(SOURCE_FILES
     modules/ml/linreg.cpp
     modules/number_theory/cipher.cpp
     modules/number_theory/rc4.cpp
+    modules/number_theory/primes.cpp
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})

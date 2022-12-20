@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include <time.h>
-#include "../../include/complex/torus.hpp"
+#include <openMTPK/torus.hpp>
 
 
 int main() {

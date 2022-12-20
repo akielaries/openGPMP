@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include <time.h>
-#include "../../include/number_theory/rc4.hpp"
+#include <openMTPK/rc4.hpp>
 
 
 int main() {

@@ -130,19 +130,33 @@ print(hashtext)
 ```
 
 # Installation
-For now there is not much use of this package unless you wanted to include the 
-definition + implementation files in your own project with a little modification.
-The use of Makefiles + shell scripts to compile modules, tests, clean generated files,
-and more for development purposes. When the package reaches a *publishable state*, I 
-will create an installation process with CMake compiling the source files into a clean
-object for your standard directories with callable headers in `usr/include`. Since I 
-use Linux as my main development environment, installation instructions will make the 
-assumption you are using the same. Builds/tests for OSX will also be in development in
-later stages.
-## Dependencies
-The use of `libxbgi` graphics library is seen in some modules of this project for
-visualization of different mathematical algorithms such as Mandelbrot Fractal Sets.
-To install this library simply run the dependencies.sh shell script
+Requirements are loose and mostly tied to what openMTPK was tested and used on.
+* Linux/OSX
+* CMake
+* g++
 ```
-./dependencies.sh
+# clone repo
+$ git clone git@github.com:akielaries/openMTPK.git
+$ cd oepnMTPK
+# create build dir
+$ mkdir build && cd build
+# create necessary objects and static library
+$ cmake ..
+$ make
+# install necessary headers and library in correct directories
+$ sudo make install
 ```
+To test the installation build some of the example drivers in the projects 
+[samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
+```
+# compile yourself
+$ cd samples
+$ g++ cipher.cpp -lopenMTPK -o cipher
+$ g++ arith.cpp -lopenMTPK -o arith
+# script to test all modules and their drivers
+# using the projects root makefile
+$ make arith
+$ make num-theory
+...
+```
+

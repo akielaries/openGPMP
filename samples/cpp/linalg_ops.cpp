@@ -10,8 +10,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include "../../include/linalg/lao.hpp"
-
+#include <openMTPK/lao.hpp>
 
 int main() {
     mtpk::Vectors f;
