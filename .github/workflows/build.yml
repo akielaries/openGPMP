@@ -26,15 +26,10 @@ jobs:
 
       - name: Configure CMake
         run: |
-          LD_LIBRARY_PATH=/usr/local/lib &&
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
       - name: Build
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} &&
           make install
-
-      - name: openMTPK samples
-        working-directory: ${{github.workspace}}
-        run: sh -x all.sh
 
