@@ -15,37 +15,27 @@ jobs:
     defaults:
       run:
         shell: bash -l {0}
+        
+        env:
+          # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+          BUILD_TYPE: Release
 
-    steps:
-      - name: initalize github repo
-        uses: actions/checkout@v2
+          steps:
+            - uses: actions/checkout@v3
 
-      - name: Setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+            - name: Configure CMake
+              # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is 
+              # only required if you are using a single-configuration generator such as make.
+              run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: install deps
-        run: | 
-          sudo apt install lcov
-          pip install gcovr
-      
-      - name: setup CMake
-        uses: ashutoshvarma/action-cmake-build@master
-        with:
-          build-dir: build
-          cxx: g++
-          build-type: Release
-          install-build: true
+            - name: Build
+              # Build your program with the given configuration
+              run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-      - name: build openMTPK lib
-        run: | 
-          LD_LIBRARY_PATH=/usr/local/lib
-          mkdir build && cd build
-          cmake ..
-          make
-          make install
+            - name: Test
+              working-directory: ${{github.workspace}}
+              run: make run-tests
 
-      - name: openMTPK examples
-        run: sh -x all.sh
+            - name: openMTPK examples
+              run: sh -x all.sh
 
