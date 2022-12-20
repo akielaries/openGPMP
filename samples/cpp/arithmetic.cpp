@@ -8,6 +8,7 @@
 #include <cassert>
 #include <openMTPK/arith.hpp>
 
+
 int main(){
     std::cout << "TESTING ARITHMETIC OPERATIONS\n" << std::endl;
     /*
