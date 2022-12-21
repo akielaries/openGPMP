@@ -86,7 +86,7 @@ Keyword cipher:
 ``` cpp
 #include <iostream>
 #include <string>
-#include <openMTPK/number_theory/cipher.hpp>
+#include <openMTPK/cipher.hpp>
 
 int main() {
     // declare CIPHER class obj
