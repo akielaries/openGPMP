@@ -28,6 +28,7 @@ Language |  Status |
 C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
 OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)|
+Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Unstable/yellow?icon=github) |
 R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
 Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
 
@@ -146,6 +147,13 @@ $ make
 # install necessary headers and library in correct directories
 $ sudo make install
 ```
+> **Note**
+> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party 
+> libs are located if not, run the following:
+```
+$ LD_LIBRARY_PATH=/usr/local/lib
+```
+
 To test the installation build some of the example drivers in the projects 
 [samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
 ```
