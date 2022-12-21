@@ -41,7 +41,7 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
    - Vector Operations
    - Matrix Operations
 4. Machine/Deep Learning
-   - Linear Regression
+   - Regression
    - Cross-Validation
    - K-Nearest Neighbors
    - Neural Networks
@@ -53,6 +53,10 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
 5. Number Theory
    - Primes
    - Cryptography
+6. Topology/Complex
+   - Dynamical Systems
+   - Topology
+   - Spline
 
 More documentation on the modules can be seen in the research-formatted LaTeX paper I had made 
 [here](https://github.com/akielaries/openMTPK-docs/blob/main/src/openMTPK_paper.pdf)
