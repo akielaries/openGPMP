@@ -27,7 +27,7 @@ compile-wrapper:
 PKG		= _openMTPK.so
 compile-lib:
 	${CXX} ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o openMTPK_wrap.o -o ${PKG}
-	mv ${PKG} openMTPK.py examples/
+	#mv ${PKG} openMTPK.py examples/
 
 clean:
 	rm -rf */__pycache__

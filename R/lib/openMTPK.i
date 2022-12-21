@@ -1,4 +1,4 @@
-/* CORE openMTPK PYTHON API SWIG INTERFACE FILE */
+/* CORE openMTPK R API SWIG INTERFACE FILE */
 
 %module openMTPK
 %include "std_string.i"
