@@ -2,9 +2,13 @@ name: openMTPK Core
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, dev ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
 
 jobs:
   build-and-test:
@@ -20,16 +24,10 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v2
 
-      - name: Setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+      - name: Configure CMake
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: install deps
-        run: | 
-          sudo apt install lcov
-          pip install gcovr
-      
-      - name: Build openMTPK
-        run: sh -x all.sh
-
+      - name: Build
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}

@@ -1,11 +1,10 @@
-
 CXX				= g++
 CXX_DBG     	= -Wall -Wextra -g
 
 pypath			= -I/usr/include/python3.10
 
 API_DIR			= $(realpath $(CURDIR))
-SRC_DIR			= $(API_DIR)/../
+SRC_DIR			= $(API_DIR)/../../
 MOD_DIR			= $(SRC_DIR)/modules/
 INC_DIR			= $(SRC_DIR)/include/
 
@@ -28,7 +27,7 @@ compile-wrapper:
 PKG		= _openMTPK.so
 compile-lib:
 	${CXX} ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o openMTPK_wrap.o -o ${PKG}
-	mv ${PKG} openMTPK.py examples/
+	#mv ${PKG} openMTPK.py examples/
 
 clean:
 	rm -rf */__pycache__

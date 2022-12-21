@@ -28,20 +28,11 @@ Language |  Status |
 C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/python.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
 OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)|
+Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Unstable/yellow?icon=github) |
 R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
 Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
 
 ## Modules
-Module | Build Status | 
--------|--------------|
-Arithmetic          | [![Arith](https://github.com/akielaries/openMTPK/actions/workflows/arith.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Calculus            | [![Calc](https://github.com/akielaries/openMTPK/actions/workflows/calc.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Linear Algebra      | [![linalg](https://github.com/akielaries/openMTPK/actions/workflows/linalg.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Machine/Deep Learning | [![lin-reg](https://github.com/akielaries/openMTPK/actions/workflows/ml_dl.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-Number Theory       | [![num-theory](https://github.com/akielaries/openMTPK/actions/workflows/numtheory.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/yellow?icon=github) | 
-
-#### Details
 1. Arithmetic
 2. Calculus
    - Differential
@@ -53,6 +44,12 @@ Topology/Complex    | ![In Progress](https://badgen.net/badge/TM/In%20Progress/y
    - Linear Regression
    - Cross-Validation
    - K-Nearest Neighbors
+   - Neural Networks
+     - Naive
+     - Multi-layer Perceptron
+     - Bayes
+     - Kohonen (Self-Organizing Map)
+   - Bayes Classifier
 5. Number Theory
    - Primes
    - Cryptography
@@ -130,19 +127,70 @@ print(hashtext)
 ```
 
 # Installation
-For now there is not much use of this package unless you wanted to include the 
-definition + implementation files in your own project with a little modification.
-The use of Makefiles + shell scripts to compile modules, tests, clean generated files,
-and more for development purposes. When the package reaches a *publishable state*, I 
-will create an installation process with CMake compiling the source files into a clean
-object for your standard directories with callable headers in `usr/include`. Since I 
-use Linux as my main development environment, installation instructions will make the 
-assumption you are using the same. Builds/tests for OSX will also be in development in
-later stages.
-## Dependencies
-The use of `libxbgi` graphics library is seen in some modules of this project for
-visualization of different mathematical algorithms such as Mandelbrot Fractal Sets.
-To install this library simply run the dependencies.sh shell script
+Requirements are loose and mostly tied to what openMTPK was tested and used on.
+The current installation does not allow for the building of the packages language
+bindings, limiting use to the core c++ lib. See below on how to build the bindings 
+from source if interested.
+## Requirements
+* Linux/OSX
+* CMake
+* g++
 ```
-./dependencies.sh
+# clone repo
+$ git clone git@github.com:akielaries/openMTPK.git
+$ cd oepnMTPK
+# create build dir
+$ mkdir build && cd build
+# create necessary objects and static library
+$ cmake ..
+$ make
+# install necessary headers and library in correct directories
+$ sudo make install
 ```
+> **Note**
+> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party 
+> libs are located if not, run the following:
+```
+$ LD_LIBRARY_PATH=/usr/local/lib
+```
+
+To test the installation build some of the example drivers in the projects 
+[samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
+```
+# compile yourself
+$ cd samples
+$ g++ cipher.cpp -lopenMTPK -o cipher
+$ g++ arith.cpp -lopenMTPK -o arith
+# script to test all modules and their drivers
+# using the projects root makefile
+$ make arith
+$ make num-theory
+...
+```
+## Build Bindings
+The binding process leverages the use of Swig, specifically the fork authored by *sethrj*
+that makes use of the Fortran binding process. See [here](https://github.com/swig-fortran/swig).
+Each API comes with a custom Makefile for compiling a wrapper for the respective language, but
+does not take care of storing files in necessary filepaths needed by the compiler/interpreter. 
+### Install Swig
+```
+# clone the fork of Swig
+$ git clone git@github.com:swig-fortran/swig.git
+$ cd swig/
+# run autotools
+$ ./autogen.sh
+# install
+$ make
+$ make check
+$ make install
+```
+### Install Bindings
+Bindings are currently supported for Python, OCaml, R, and Fortran. Simply
+enter any of the languages lib directories and run the following
+```
+$ cd <API_NAME>/lib
+$ make run-swig
+```
+If you wish to use the generated bindings globally, move the necessary files to the path 
+needed by the compiler/interpreter.
+

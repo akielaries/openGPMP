@@ -2,9 +2,9 @@ name: Unit Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, dev ]
 
 jobs:
   build-and-test:
@@ -39,10 +39,7 @@ jobs:
           cd /usr/src/gtest/lib &&
           sudo cp -a libgtest.a libgtest_main.a /usr/lib && 
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
-          sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
-      
-      - name: Install gtest
-        run: make 
+          sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a 
 
       - name: gtest on openMPTK
         run: make run-tests
