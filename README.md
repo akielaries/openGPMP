@@ -44,6 +44,10 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
    - Cross-Validation
    - K-Nearest Neighbors
    - Neural Networks
+     - Naive
+     - Multi-layer Perceptron
+     - Bayes
+     - Kohonen (Self-Organizing Map)
    - Bayes Classifier
 5. Number Theory
    - Primes
@@ -123,6 +127,10 @@ print(hashtext)
 
 # Installation
 Requirements are loose and mostly tied to what openMTPK was tested and used on.
+The current installation does not allow for the building of the packages language
+bindings, limiting use to the core c++ lib. See below on how to build the bindings 
+from source if interested.
+## Requirements
 * Linux/OSX
 * CMake
 * g++
@@ -151,4 +159,30 @@ $ make arith
 $ make num-theory
 ...
 ```
+## Build Bindings
+The binding process leverages the use of Swig, specifically the fork authored by *sethrj*
+that makes use of the Fortran binding process. See [here](https://github.com/swig-fortran/swig).
+Each API comes with a custom Makefile for compiling a wrapper for the respective language, but
+does not take care of storing files in necessary filepaths needed by the compiler/interpreter. 
+### Install Swig
+```
+# clone the fork of Swig
+$ git clone git@github.com:swig-fortran/swig.git
+$ cd swig/
+# run autotools
+$ ./autogen.sh
+# install
+$ make
+$ make check
+$ make install
+```
+### Install Bindings
+Bindings are currently supported for Python, OCaml, R, and Fortran. Simply
+enter any of the languages lib directories and run the following
+```
+$ cd <API_NAME>/lib
+$ make run-swig
+```
+If you wish to use the generated bindings globally, move the necessary files to the path 
+needed by the compiler/interpreter.
 

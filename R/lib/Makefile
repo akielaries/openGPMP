@@ -9,9 +9,6 @@ r-swig:
 	R CMD SHLIB -o openMTPK.so openMTPK_wrap.cpp ${ARITH} ${PRIMES} ${CIPHER} ${RC4}
 
 
-clean:
-	rm -rf *.cmo
-	rm -rf *.cmi
 	rm -rf example
 
 clean-all:

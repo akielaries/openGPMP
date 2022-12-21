@@ -1,11 +1,10 @@
-
 CXX				= g++
 CXX_DBG     	= -Wall -Wextra -g
 
 pypath			= -I/usr/include/python3.10
 
 API_DIR			= $(realpath $(CURDIR))
-SRC_DIR			= $(API_DIR)/../
+SRC_DIR			= $(API_DIR)/../../
 MOD_DIR			= $(SRC_DIR)/modules/
 INC_DIR			= $(SRC_DIR)/include/
 
