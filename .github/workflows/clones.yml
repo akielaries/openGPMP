@@ -1,0 +1,51 @@
+name: Clone Count v2
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  run:
+    name: Make GitHub Traffic to Badge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Traffic
+        id: traffic
+        uses: ./
+        with:
+          my_token: ${{ secrets.TRAFFIC_TOKEN }}
+          #(default) static_list: ${{ github.repository }}
+          #(default) traffic_branch: traffic
+          #(default) views_color: brightgreen
+          #(default) clones_color: brightgreen
+          #(default) views_week_color: brightgreen
+          #(default) clones_week_color: brightgreen
+          #(default) total_views_color: brightgreen
+          #(default) total_clones_color: brightgreen
+          #(default) total_views_week_color: brightgreen
+          #(default) total_clones_week_color: brightgreen
+          #(default) logo: github
+          year: 2019
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.9.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: ${{ steps.traffic.outputs.traffic_branch }}
+          publish_dir: ${{ steps.traffic.outputs.traffic_path }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          full_commit_message: ${{ github.event.head_commit.message }}
+
+      - name: Show Traffic Data
+        run: |
+          echo ${{ steps.traffic.outputs.traffic_branch }}
+          echo ${{ steps.traffic.outputs.traffic_path }}
+          cd ${{ steps.traffic.outputs.traffic_path }}
+          ls -a
+
