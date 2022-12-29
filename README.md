@@ -63,7 +63,7 @@ More documentation on the modules can be seen in the research-formatted LaTeX pa
 [here](https://github.com/akielaries/openMTPK-docs/blob/main/src/openMTPK_paper.pdf)
 
 # Examples
-All examples are in the [drivers](https://github.com/akielaries/openMTPK/tree/main/drivers) folder
+All examples are in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
 ```
 # clone the repo and enter
 $ git clone git@github.com:akielaries/openMTPK.git 
