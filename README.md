@@ -60,7 +60,8 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
    - Spline
 
 More documentation on the modules can be seen in the research-formatted LaTeX paper I had made 
-[here](https://github.com/akielaries/openMTPK-docs/blob/main/src/openMTPK_paper.pdf)
+[here](https://github.com/akielaries/openMTPK-docs/blob/main/src/openMTPK_paper.pdf) as well
+as the project [docs](https://openmtpk-docs.readthedocs.io/en/latest/index.html).
 
 # Examples
 All examples are in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
