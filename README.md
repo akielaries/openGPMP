@@ -18,7 +18,7 @@ comfortable in C and C++. If interested see
 The goal is to make a reusable mathematics library allowing users to call 
 within their own projects. Some of the implementations seen in the package were first prototypes in 
 Wolfram Mathetmatica, then translated to C++ for the package.
-Look in the [drivers](https://github.com/akielaries/openMTPK/tree/main/drivers) folder for examples 
+Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
 on using these tools in your own project. 
 
 ## API Bindings
