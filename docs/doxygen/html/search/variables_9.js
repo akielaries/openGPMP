@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['initialize_0',['initialize',['../fun_8c.html#a67873a0d99c67d8c1d5bba0c85aa0412',1,'fun.c']]],
-  ['initially_5fallocated_5f_1',['initially_allocated_',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker.html#a508e2e46087cf6d2c62e1695867e0526',1,'anonymous_namespace{t_memleak.cpp}::LeakChecker']]],
-  ['instance_5flist_2',['instance_list',['../classKF__CV.html#a8fdfe2894f67646e0d00fce0b48d8471',1,'KF_CV']]],
-  ['intersphinx_5fdisabled_5fdomains_3',['intersphinx_disabled_domains',['../namespaceconf.html#add30bc2b840e6f9095377f0fce483e84',1,'conf']]],
-  ['intersphinx_5fmapping_4',['intersphinx_mapping',['../namespaceconf.html#a8375f4f963de3ac8026eaa9beced9564',1,'conf']]]
+  ['weights_0',['weights',['../classnaive__network.html#acfbfc6a3c655ff00b2918ced849fcc17',1,'naive_network']]],
+  ['wt_1',['wt',['../structneuron.html#a4cb1f895dc9634f84d164516d528f9a9',1,'neuron']]],
+  ['wt_5flast_2',['wt_last',['../structneuron.html#aebca9364a2cd3a6c9840e5d4b5300144',1,'neuron']]],
+  ['wt_5fsaved_3',['wt_saved',['../structneuron.html#ab9b97237103868ca649b4d9e8bd68cff',1,'neuron']]]
 ];
