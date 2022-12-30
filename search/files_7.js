@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['naive_5fnetwork_2ecpp_0',['naive_network.cpp',['../naive__network_8cpp.html',1,'']]],
-  ['naive_5fnetwork_2ehpp_1',['naive_network.hpp',['../naive__network_8hpp.html',1,'']]]
+  ['mandelbrot_2ecpp_0',['Mandelbrot.cpp',['../Mandelbrot_8cpp.html',1,'']]],
+  ['mlp_5fnetwork_2ecpp_1',['mlp_network.cpp',['../mlp__network_8cpp.html',1,'']]],
+  ['mlp_5fnetwork_2ehpp_2',['mlp_network.hpp',['../mlp__network_8hpp.html',1,'']]],
+  ['modules_2emd_3',['Modules.md',['../Modules_8md.html',1,'']]]
 ];
