@@ -122,18 +122,18 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                                    {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> b = 2; b &lt; n; b++) {</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">// If &quot;b&quot; is relatively prime to n</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a>.<a class="code" href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">rm_gcd</a>(b, n) == 1)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">op_gcd</a>(b, n) == 1)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// And pow(b, n-1)%n is not 1, return false.</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">mod_pow</a>(b, n - 1, n) != 1)</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
-<div class="ttc" id="aclassBasics_html_a4fe37d0a07d61d2b351b714a12405707"><div class="ttname"><a href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">Basics::rm_gcd</a></div><div class="ttdeci">int rm_gcd(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00018">arith.cpp:18</a></div></div>
 <div class="ttc" id="aclassPrimality_html_a5c095723bcb653c92833b2424ce07479"><div class="ttname"><a href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">Primality::mod_pow</a></div><div class="ttdeci">long long int mod_pow(long long int base, long long int exponent, long long int mod)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00021">primes.cpp:21</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_adcdb46a004ccf192215aa282b23c4e64"><div class="ttname"><a href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a></div><div class="ttdeci">Basics basics</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00017">primes.cpp:17</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Basics_html_aea4f43ee216de88e00d487a4598fcea4"><div class="ttname"><a href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int op_gcd(int x, int y)</div><div class="ttdoc">Find Greatest Common Divisor.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00018">arith.cpp:18</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_aa984413d595262e996d3f8b4fb7f82b6"><div class="ttname"><a href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a></div><div class="ttdeci">mtpk::Basics ba</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00017">primes.cpp:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a>, <a class="el" href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">mod_pow()</a>, and <a class="el" href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">Basics::rm_gcd()</a>.</p>
+<p class="reference">References <a class="el" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>, <a class="el" href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">mod_pow()</a>, and <a class="el" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd()</a>.</p>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> result = 1;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 2; unsigned(index) &lt; n; index++) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a>.<a class="code" href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">rm_gcd</a>(index, n) == 1) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">op_gcd</a>(index, n) == 1) {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            result++;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
@@ -228,7 +228,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a>, and <a class="el" href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">Basics::rm_gcd()</a>.</p>
+<p class="reference">References <a class="el" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>, and <a class="el" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd()</a>.</p>
 
 </div>
 </div>
@@ -561,7 +561,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        y = (<a class="code" href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">mod_pow</a>(y, 2, n) + c + n) % n;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">/* check gcd of |x-y| and n */</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        divisor = <a class="code" href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a>.<a class="code" href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">rm_gcd</a>(abs(x - y), n);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        divisor = <a class="code" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">op_gcd</a>(abs(x - y), n);</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="comment">//divisor = std::__gcd(abs(x - y), n);</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="comment">/* retry if the algorithm fails to find prime factor</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">         * with chosen x and c */</span></div>
@@ -573,7 +573,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
 <div class="ttc" id="aclassPrimality_html_a626afbe841185a8f29afaddbfc2c41b8"><div class="ttname"><a href="classPrimality.html#a626afbe841185a8f29afaddbfc2c41b8">Primality::pollard_rho</a></div><div class="ttdeci">long long int pollard_rho(long long int n)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00258">primes.cpp:258</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64">basics</a>, <a class="el" href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">mod_pow()</a>, and <a class="el" href="classBasics.html#a4fe37d0a07d61d2b351b714a12405707">Basics::rm_gcd()</a>.</p>
+<p class="reference">References <a class="el" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>, <a class="el" href="classPrimality.html#a5c095723bcb653c92833b2424ce07479">mod_pow()</a>, and <a class="el" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd()</a>.</p>
 
 </div>
 </div>

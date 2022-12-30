@@ -9,6 +9,6 @@ var searchData=
   ['mlp_6',['MLP',['../classMLP.html#ac70a9a0b94a67e2a51ac7df495883d71',1,'MLP']]],
   ['mod_5fpow_7',['mod_pow',['../classPrimality.html#a5c095723bcb653c92833b2424ce07479',1,'Primality']]],
   ['mouse_8',['mouse',['../torus__animated_8cpp.html#ac76a5d78172a826cd6ee9512b89a86c0',1,'torus_animated.cpp']]],
-  ['mult_9',['mult',['../classmtpk_1_1Matrices.html#afc5f698d5ab8b37937f63db7771fdcdc',1,'mtpk::Matrices::mult()'],['../classArith.html#ac48175b4c378e182615bb45ef9129784',1,'Arith::mult(W w, Wv... wv)'],['../classArith.html#ab08330bc29b9706df7abebeaa9ed0d27',1,'Arith::mult(W w)']]],
+  ['mult_9',['mult',['../classmtpk_1_1Matrices.html#afc5f698d5ab8b37937f63db7771fdcdc',1,'mtpk::Matrices::mult()'],['../classmtpk_1_1Arith.html#a409a1df7f2bf049e15a98854f91c025d',1,'mtpk::Arith::mult(W w, Wv... wv)'],['../classmtpk_1_1Arith.html#a7f289a5972d9d7a0862b88228684738e',1,'mtpk::Arith::mult(W w)']]],
   ['mult_5felem_10',['mult_elem',['../classmtpk_1_1Matrices.html#afc343c60e9e861344457bed4ed16ea4d',1,'mtpk::Matrices']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['k_0',['K',['../classCV.html#aa944185c953fe18a106a4c8ad04559c1',1,'CV']]]
+  ['mean_5fstdev_0',['mean_stdev',['../structsummary.html#ad0fd3c6d9043eda3a2210d74e9641640',1,'summary']]]
 ];

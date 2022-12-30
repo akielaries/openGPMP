@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['back_5fprop_5ferr_0',['back_prop_err',['../classMLP.html#abc15b285d05e6d2b106a3dbb38dab111',1,'MLP']]],
-  ['backward_5fprop_1',['backward_prop',['../classnaive__network.html#a1280bc04418d35abfb0df4aad490123b',1,'naive_network']]],
-  ['basics_2',['Basics',['../classBasics.html',1,'']]],
-  ['basics_3',['basics',['../primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64',1,'primes.cpp']]],
+  ['ba_0',['ba',['../primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6',1,'primes.cpp']]],
+  ['back_5fprop_5ferr_1',['back_prop_err',['../classMLP.html#abc15b285d05e6d2b106a3dbb38dab111',1,'MLP']]],
+  ['backward_5fprop_2',['backward_prop',['../classnaive__network.html#a1280bc04418d35abfb0df4aad490123b',1,'naive_network']]],
+  ['basics_3',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk']]],
   ['bayes_5fclf_4',['bayes_clf',['../classbayes__clf.html',1,'']]],
   ['bayes_5fclf_2ehpp_5',['bayes_clf.hpp',['../bayes__clf_8hpp.html',1,'']]],
   ['bayes_5fnetwork_2ehpp_6',['bayes_network.hpp',['../bayes__network_8hpp.html',1,'']]],

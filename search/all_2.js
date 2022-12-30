@@ -21,11 +21,8 @@ var searchData=
   ['compute_5fclass_5fsumm_18',['compute_class_summ',['../bayes__clf_8hpp.html#a2fb7da90eb7a2130e44e59edc30a18b8',1,'bayes_clf.hpp']]],
   ['compute_5fmiller_5frabin_19',['compute_miller_rabin',['../classPrimality.html#a4928335bf2bf8e0a123f46e33b0a4b47',1,'Primality']]],
   ['concatenate_20',['concatenate',['../classmtpk_1_1Matrices.html#aee252cfe61cead578f0217ce2e664f11',1,'mtpk::Matrices']]],
-  ['conf_21',['conf',['../namespaceconf.html',1,'']]],
-  ['conf_2epy_22',['conf.py',['../conf_8py.html',1,'']]],
-  ['constant_23',['constant',['../classregression.html#a1717e795b3456b24c1ed9ce9e3066095',1,'regression']]],
-  ['copyright_24',['copyright',['../namespaceconf.html#a33fa97cf51dcb25970fbf53f10159589',1,'conf']]],
-  ['csvreader_25',['CSVReader',['../classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741',1,'CSVReader::CSVReader()'],['../classCSVReader.html',1,'CSVReader']]],
-  ['current_5frot_26',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]],
-  ['cv_27',['CV',['../classCV.html',1,'']]]
+  ['constant_21',['constant',['../classregression.html#a1717e795b3456b24c1ed9ce9e3066095',1,'regression']]],
+  ['csvreader_22',['CSVReader',['../classCSVReader.html',1,'CSVReader'],['../classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741',1,'CSVReader::CSVReader()']]],
+  ['current_5frot_23',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]],
+  ['cv_24',['CV',['../classCV.html',1,'']]]
 ];

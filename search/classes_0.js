@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arith_0',['Arith',['../classArith.html',1,'']]]
+  ['arith_0',['Arith',['../classmtpk_1_1Arith.html',1,'mtpk']]]
 ];

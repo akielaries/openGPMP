@@ -5,5 +5,5 @@ var searchData=
   ['get_5ftest_5ffold_2',['get_test_fold',['../classCV.html#a01bcedd7ac82c3d90443c58b2c5556a4',1,'CV::get_test_fold()'],['../classKF__CV.html#a5e395262ff659eeb7c94d49d682cd88f',1,'KF_CV::get_test_fold()']]],
   ['get_5ftrain_5ffold_3',['get_train_fold',['../classCV.html#a896654e17094b98abba22f33ca415521',1,'CV::get_train_fold()'],['../classKF__CV.html#a7955735594315ba9050a6aea223b6f76',1,'KF_CV::get_train_fold()']]],
   ['getdata_4',['getData',['../classCSVReader.html#af2163896e28024634611f9d5fd281622',1,'CSVReader']]],
-  ['greatest_5fpower_5',['greatest_power',['../classBasics.html#abe5cae1d3477bc05fd15577c242e33f2',1,'Basics']]]
+  ['greatest_5fpower_5',['greatest_power',['../classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf',1,'mtpk::Basics']]]
 ];
