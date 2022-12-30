@@ -197,7 +197,9 @@ Requirements</h2>
 <ul>
 <li>Linux/OSX</li>
 <li>CMake</li>
-<li>g++ <div class="fragment"><div class="line"># clone repo</div>
+<li>g++</li>
+</ul>
+<div class="fragment"><div class="line"># clone repo</div>
 <div class="line">$ git clone git@github.com:akielaries/openMTPK.git</div>
 <div class="line">$ cd oepnMTPK</div>
 <div class="line"># create build dir</div>
@@ -211,9 +213,7 @@ Requirements</h2>
 <p><b>Note</b> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party libs are located if not, run the following: </p>
 </blockquote>
 <div class="fragment"><div class="line">$ LD_LIBRARY_PATH=/usr/local/lib</div>
-</div><!-- fragment --></li>
-</ul>
-<p>To test the installation build some of the example drivers in the projects <a href="https://github.com/akielaries/openMTPK/tree/main/samples">samples</a> directory. </p><div class="fragment"><div class="line"># compile yourself</div>
+</div><!-- fragment --><p>To test the installation build some of the example drivers in the projects <a href="https://github.com/akielaries/openMTPK/tree/main/samples">samples</a> directory. </p><div class="fragment"><div class="line"># compile yourself</div>
 <div class="line">$ cd samples</div>
 <div class="line">$ g++ cipher.cpp -lopenMTPK -o cipher</div>
 <div class="line">$ g++ arith.cpp -lopenMTPK -o arith</div>
