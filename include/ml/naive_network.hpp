@@ -13,7 +13,8 @@ typedef Eigen::RowVectorXf RowVector;
 typedef Eigen::VectorXf ColVector;
 
 
-class naive_network {
+namespace mtpk {
+class Naive_Net {
     public:
         // contructor
         naive_network(std::vector<uint> topology, 
@@ -44,6 +45,8 @@ class naive_network {
         /* learning rate  */
         Scalar learning_rate;
 };
+
+} // namespace
 
 #endif
 
