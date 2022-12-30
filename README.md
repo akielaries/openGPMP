@@ -1,6 +1,5 @@
 ![img](https://github.com/akielaries/RM-pkg/blob/main/docs/openMTPK.svg)
 --------------------------------------------------------------------------------
-[![Documentation Status](https://readthedocs.org/projects/openmtpk/badge/?version=latest)](https://openmtpk.readthedocs.io/en/latest/?badge=latest)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openMTPK&amp;utm_campaign=Badge_Grade)
 [![license](https://img.shields.io/github/license/akielaries/openMTPK?color=23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&utm_medium=referral&utm_content=akielaries/openMTPK&utm_campaign=Badge_Coverage)
@@ -59,7 +58,7 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
    - Topology
    - Spline
 
-For more details view the project [documentation](https://openmtpk.readthedocs.io/en/latest/index.html).
+For more details view the project [documentation](https://akielaries.github.io/openMTPK/).
 
 # Examples
 All examples are in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
