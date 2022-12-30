@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['naive_5fnetwork_0',['naive_network',['../classnaive__network.html',1,'']]],
-  ['neuron_1',['neuron',['../structneuron.html',1,'']]]
+  ['rc4_0',['RC4',['../classRC4.html',1,'']]],
+  ['rc5_1',['RC5',['../classRC5.html',1,'']]],
+  ['regression_2',['regression',['../classregression.html',1,'']]]
 ];

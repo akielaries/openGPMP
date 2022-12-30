@@ -31,37 +31,29 @@ Definition at line \mbox{\hyperlink{cipher_8hpp_source_l00014}{14}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source}{cipher.\+cpp}}.
+Definition at line \mbox{\hyperlink{cipher_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{cipher_8cpp_source}{cipher.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00013                                                        \{}
-\DoxyCodeLine{00014     std::string \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00014     std::string hashtext = \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{00015 }
 \DoxyCodeLine{00016     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; unsigned(i) < plaintext.length(); i++) \{}
 \DoxyCodeLine{00017         \textcolor{comment}{// inject transformation}}
 \DoxyCodeLine{00018         \textcolor{keywordflow}{if} (isupper(plaintext[i])) \{}
 \DoxyCodeLine{00019             \textcolor{comment}{// upper case}}
-\DoxyCodeLine{00020             \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}} += char(\textcolor{keywordtype}{int}(plaintext[i] + key -\/ 65) \% 26 + 65);}
+\DoxyCodeLine{00020             hashtext += char(\textcolor{keywordtype}{int}(plaintext[i] + key -\/ 65) \% 26 + 65);}
 \DoxyCodeLine{00021         \}}
 \DoxyCodeLine{00022         \textcolor{keywordflow}{else} \{}
 \DoxyCodeLine{00023             \textcolor{comment}{// lower case}}
-\DoxyCodeLine{00024             \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}} += char(\textcolor{keywordtype}{int}(plaintext[i] + key -\/ 97) \% 26 + 97);}
+\DoxyCodeLine{00024             hashtext += char(\textcolor{keywordtype}{int}(plaintext[i] + key -\/ 97) \% 26 + 97);}
 \DoxyCodeLine{00025         \}}
 \DoxyCodeLine{00026     \}}
 \DoxyCodeLine{00027 }
-\DoxyCodeLine{00028     \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}};}
+\DoxyCodeLine{00028     \textcolor{keywordflow}{return} hashtext;}
 \DoxyCodeLine{00029 \} }
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{Python.\+examples.\+cipher\+\_\+ex\+::hashtext}}.
-
-
-
-Referenced by \mbox{\hyperlink{samples_2cpp_2cipher_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a284ae4d30b2f2ef5a2dbadd06039e513}{anonymous\+\_\+namespace\{t\+\_\+cipher.\+cpp\}\+::\+TEST()}}.
-
 \mbox{\Hypertarget{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}\label{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}} 
 \index{Cipher@{Cipher}!KC\_cipher@{KC\_cipher}}
 \index{KC\_cipher@{KC\_cipher}!Cipher@{Cipher}}
@@ -70,7 +62,7 @@ Referenced by \mbox{\hyperlink{samples_2cpp_2cipher_8cpp_ae66f6b31b5ad750f1fe042
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source}{cipher.\+cpp}}.
+Definition at line \mbox{\hyperlink{cipher_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{cipher_8cpp_source}{cipher.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -84,12 +76,12 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source_
 \DoxyCodeLine{00073     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; unsigned(i) < plaintext.size(); i++) \{}
 \DoxyCodeLine{00074         \textcolor{keywordflow}{if} (plaintext[i] >= \textcolor{charliteral}{'a'} \&\& plaintext[i] <= \textcolor{charliteral}{'z'}) \{}
 \DoxyCodeLine{00075             \textcolor{keywordtype}{int} pos = plaintext[i] -\/ 97;}
-\DoxyCodeLine{00076             cipher += \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a25bf42403e5121962ea2c4a45646569b}{encoded\_text}}[pos];}
+\DoxyCodeLine{00076             cipher += encoded\_text[pos];}
 \DoxyCodeLine{00077         \}}
 \DoxyCodeLine{00078 }
 \DoxyCodeLine{00079         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (plaintext[i] >= \textcolor{charliteral}{'A'} \&\& plaintext[i] <= \textcolor{charliteral}{'Z'}) \{}
 \DoxyCodeLine{00080             \textcolor{keywordtype}{int} pos = plaintext[i] -\/ 65;}
-\DoxyCodeLine{00081             cipher += \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a25bf42403e5121962ea2c4a45646569b}{encoded\_text}}[pos];}
+\DoxyCodeLine{00081             cipher += encoded\_text[pos];}
 \DoxyCodeLine{00082         \}}
 \DoxyCodeLine{00083         }
 \DoxyCodeLine{00084         \textcolor{keywordflow}{else} \{}
@@ -100,14 +92,6 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source_
 \DoxyCodeLine{00089 \}}
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a25bf42403e5121962ea2c4a45646569b}{Python.\+examples.\+cipher\+\_\+ex\+::encoded\+\_\+text}}.
-
-
-
-Referenced by \mbox{\hyperlink{samples_2cpp_2cipher_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a4292aa7615d8709eaea67b57dcb98db8}{anonymous\+\_\+namespace\{t\+\_\+cipher.\+cpp\}\+::\+TEST()}}.
-
 \mbox{\Hypertarget{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}\label{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}} 
 \index{Cipher@{Cipher}!KC\_encode@{KC\_encode}}
 \index{KC\_encode@{KC\_encode}!Cipher@{Cipher}}
@@ -116,7 +100,7 @@ Referenced by \mbox{\hyperlink{samples_2cpp_2cipher_8cpp_ae66f6b31b5ad750f1fe042
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source}{cipher.\+cpp}}.
+Definition at line \mbox{\hyperlink{cipher_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{cipher_8cpp_source}{cipher.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -158,11 +142,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2cipher_8cpp_source_
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{samples_2cpp_2cipher_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a4292aa7615d8709eaea67b57dcb98db8}{anonymous\+\_\+namespace\{t\+\_\+cipher.\+cpp\}\+::\+TEST()}}.
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/number\+\_\+theory/\mbox{\hyperlink{cipher_8hpp}{cipher.\+hpp}}\item 
-modules/number\+\_\+theory/\mbox{\hyperlink{modules_2number__theory_2cipher_8cpp}{cipher.\+cpp}}\end{DoxyCompactItemize}
+modules/number\+\_\+theory/\mbox{\hyperlink{cipher_8cpp}{cipher.\+cpp}}\end{DoxyCompactItemize}

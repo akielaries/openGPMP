@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['init_0',['init',['../openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;openGL_bounce.cpp'],['../openGL__torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;openGL_torus.cpp'],['../openGL__torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;openGL_torus_animated.cpp'],['../modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus.cpp'],['../torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus_animated.cpp']]],
-  ['initialize_1',['initialize',['../fun_8c.html#a67873a0d99c67d8c1d5bba0c85aa0412',1,'fun.c']]],
-  ['initialize_5ffun_2',['Initialize_fun',['../fun_8c.html#a26627fd68401cdca37f74f7ac87bf70f',1,'fun.c']]],
-  ['initially_5fallocated_5f_3',['initially_allocated_',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker.html#a508e2e46087cf6d2c62e1695867e0526',1,'anonymous_namespace{t_memleak.cpp}::LeakChecker']]],
-  ['installation_4',['Installation',['../md_docs_source_Installation.html',1,'']]],
-  ['installation_2emd_5',['Installation.md',['../Installation_8md.html',1,'']]],
-  ['instance_5flist_6',['instance_list',['../classKF__CV.html#a8fdfe2894f67646e0d00fce0b48d8471',1,'KF_CV']]],
-  ['intersphinx_5fdisabled_5fdomains_7',['intersphinx_disabled_domains',['../namespaceconf.html#add30bc2b840e6f9095377f0fce483e84',1,'conf']]],
-  ['intersphinx_5fmapping_8',['intersphinx_mapping',['../namespaceconf.html#a8375f4f963de3ac8026eaa9beced9564',1,'conf']]],
-  ['is_5fprime_9',['is_prime',['../structopenmtpk_1_1primality.html#a978b089e2fb92e3ab48676c044fab466',1,'openmtpk::primality::is_prime()'],['../classPrimality.html#aa00343cb6fa77239717833d27f201f03',1,'Primality::is_prime()'],['../classopenMTPK_1_1Primality.html#a23cb2043ad547a34d1106b14cfded364',1,'openMTPK.Primality.is_prime()']]]
+  ['k_0',['K',['../classCV.html#aa944185c953fe18a106a4c8ad04559c1',1,'CV']]],
+  ['k_2dfoldcv_2ecpp_1',['k-foldCV.cpp',['../k-foldCV_8cpp.html',1,'']]],
+  ['k_2dfoldcv_2ehpp_2',['k-foldCV.hpp',['../k-foldCV_8hpp.html',1,'']]],
+  ['k_2dnn_2ecpp_3',['k-NN.cpp',['../k-NN_8cpp.html',1,'']]],
+  ['k_2dnn_2eh_4',['k-NN.h',['../k-NN_8h.html',1,'']]],
+  ['kc_5fcipher_5',['KC_cipher',['../classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4',1,'Cipher']]],
+  ['kc_5fencode_6',['KC_encode',['../classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609',1,'Cipher']]],
+  ['kf_5fcv_7',['KF_CV',['../classKF__CV.html',1,'KF_CV&lt; T &gt;'],['../classKF__CV.html#a687269047adf841c07540711b0464046',1,'KF_CV::KF_CV()']]],
+  ['knn_8',['KNN',['../k-NN_8cpp.html#a15264defbbec1a36f588050dc4850ee6',1,'KNN(vector&lt; Company &gt; &amp;data, Company &amp;test, int k, double(*distanceFunction)(Company &amp;, Company &amp;)):&#160;k-NN.cpp'],['../k-NN_8h.html#a15264defbbec1a36f588050dc4850ee6',1,'KNN(vector&lt; Company &gt; &amp;data, Company &amp;test, int k, double(*distanceFunction)(Company &amp;, Company &amp;)):&#160;k-NN.cpp']]],
+  ['kohonen_5fnetwork_9',['Kohonen_network',['../classKohonen__network.html',1,'']]],
+  ['kohonen_5fnetwork_2ehpp_10',['kohonen_network.hpp',['../kohonen__network_8hpp.html',1,'']]],
+  ['ksa_11',['KSA',['../classRC4.html#a8d0de8b7bdf64701875569ea90309310',1,'RC4::KSA()'],['../classRC5.html#ab984d44b40653fcd0fcadb8b65f9764e',1,'RC5::KSA()']]]
 ];

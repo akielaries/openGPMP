@@ -1,16 +1,13 @@
 var searchData=
 [
-  ['n_0',['N',['../classKF__CV.html#a5f9280a48d34c93c9a34bb773bf88ba6',1,'KF_CV']]],
-  ['naive_5fnetwork_1',['naive_network',['../classnaive__network.html#ad2b9b85640a808babbc9e8235a093b81',1,'naive_network::naive_network()'],['../classnaive__network.html',1,'naive_network']]],
-  ['naive_5fnetwork_2ecpp_2',['naive_network.cpp',['../naive__network_8cpp.html',1,'']]],
-  ['naive_5fnetwork_2ehpp_3',['naive_network.hpp',['../naive__network_8hpp.html',1,'']]],
-  ['name_4',['name',['../structswig__type__info.html#aa6c9f9ed3037043b6d346162cf932daf',1,'swig_type_info::name()'],['../namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f',1,'setup.name()']]],
-  ['neuron_5',['neuron',['../structneuron.html',1,'']]],
-  ['neuron_5flayers_6',['neuron_layers',['../classnaive__network.html#a639c2823ce4b03e7de2b114751f65814',1,'naive_network']]],
-  ['neuron_5fptr_7',['neuron_ptr',['../structlayer.html#a4cc427923d4fa08f4e2bb7958569a66d',1,'layer']]],
-  ['next_8',['next',['../structswig__module__info.html#adc59649870cda1ab12f45e57de99e572',1,'swig_module_info::next()'],['../structswig__cast__info.html#a2fc1b5702ec07bc23135df5c5db8e53e',1,'swig_cast_info::next()']]],
-  ['num_9',['num',['../classmtpk_1_1Matrices.html#a724515366cec081773b13949a8e62c00',1,'mtpk::Matrices']]],
-  ['num_5flayers_10',['num_layers',['../classMLP.html#a8c68dc241a0b7f93049b05ccdae44ea9',1,'MLP']]],
-  ['num_5fneurons_11',['num_neurons',['../structlayer.html#a910bb3b94d8862da72b14f4719e834f9',1,'layer']]],
-  ['num_5frows_12',['num_rows',['../linreg_8hpp.html#a2be8a4476f266240d1275548cd1134ef',1,'num_rows(const char *input):&#160;linreg.cpp'],['../linreg_8cpp.html#a2be8a4476f266240d1275548cd1134ef',1,'num_rows(const char *input):&#160;linreg.cpp']]]
+  ['pi_0',['pi',['../torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
+  ['pollard_5frho_1',['pollard_rho',['../classPrimality.html#a626afbe841185a8f29afaddbfc2c41b8',1,'Primality']]],
+  ['predict_2',['predict',['../classbayes__clf.html#af2d17e4c8ded87a3f7ffd34d968aaa71',1,'bayes_clf::predict()'],['../classregression.html#ac6da5948c4ad3af918f676c80dfdf81d',1,'regression::predict()']]],
+  ['prga_3',['PRGA',['../classRC4.html#a65e83a2f7ff67b6f1da40958a84bf549',1,'RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
+  ['prim_4',['prim',['../primes_8cpp.html#a1821f895d1f0fdfbe6224a075b8ed333',1,'primes.cpp']]],
+  ['primality_5',['Primality',['../classPrimality.html',1,'']]],
+  ['primes_2ecpp_6',['primes.cpp',['../primes_8cpp.html',1,'']]],
+  ['primes_2ehpp_7',['primes.hpp',['../primes_8hpp.html',1,'']]],
+  ['prob_5fby_5fsumm_8',['prob_by_summ',['../bayes__clf_8hpp.html#a3e2b710b383bea5b414174839e66d268',1,'bayes_clf.hpp']]],
+  ['prop_5fsignal_9',['prop_signal',['../classMLP.html#aa34296cb27a96b668c3e49bdf4af0697',1,'MLP']]]
 ];

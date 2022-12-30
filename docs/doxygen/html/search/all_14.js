@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['u_0',['u',['../openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff',1,'openGL_astronomy_animated.cpp']]],
-  ['uninitialize_5ffun_1',['Uninitialize_fun',['../fun_8c.html#a9b552bccf890d1b44234b76ffcc8a78b',1,'fun.c']]],
-  ['unique_5flabel_2',['unique_label',['../classbayes__clf.html#a16cb7e4931146a5f5c238d836a2b90c1',1,'bayes_clf']]],
-  ['update_3',['update',['../classBall.html#af30f4707d26a6e7ba0af1dd8cac37684',1,'Ball::update()'],['../classKohonen__network.html#a5ea420b23df99944d93b36a9496684be',1,'Kohonen_network::update()']]],
-  ['update_5fweights_4',['update_weights',['../classnaive__network.html#aa2b250c6bba33bf221d6eca939a81f1a',1,'naive_network']]],
-  ['usage_5',['Usage',['../md_docs_source_Usage.html',1,'']]],
-  ['usage_2emd_6',['Usage.md',['../Usage_8md.html',1,'']]],
-  ['userdata_7',['userData',['../structRCallbackFunctionData.html#ad5a02efdca2ea494a9ba732b979b59d5',1,'RCallbackFunctionData']]]
+  ['weights_0',['weights',['../classnaive__network.html#acfbfc6a3c655ff00b2918ced849fcc17',1,'naive_network']]],
+  ['weights_5fadjust_1',['weights_adjust',['../classMLP.html#a2f1e0e12cd526f282290a253ded8ebef',1,'MLP']]],
+  ['weights_5fran_2',['weights_ran',['../classMLP.html#a5a7600d28b6588c5122f431eaf9182ba',1,'MLP']]],
+  ['weights_5frestore_3',['weights_restore',['../classMLP.html#a9acf4fc570ceffd3ff8dbe97167f8faf',1,'MLP']]],
+  ['weights_5fsave_4',['weights_save',['../classMLP.html#ae264327326870aa5ffe43420f6bce90f',1,'MLP']]],
+  ['welcome_20to_20openmtpk_27s_20documentation_2e_5',['Welcome to openMTPK&apos;s documentation.',['../index.html',1,'']]],
+  ['wt_6',['wt',['../structneuron.html#a4cb1f895dc9634f84d164516d528f9a9',1,'neuron']]],
+  ['wt_5flast_7',['wt_last',['../structneuron.html#aebca9364a2cd3a6c9840e5d4b5300144',1,'neuron']]],
+  ['wt_5fsaved_8',['wt_saved',['../structneuron.html#ab9b97237103868ca649b4d9e8bd68cff',1,'neuron']]]
 ];

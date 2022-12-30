@@ -7,13 +7,13 @@
 \item 
 bool \mbox{\hyperlink{k-NN_8h_ae07612d249d520ffdc46849324a31fb9}{comparison}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&rhs)
 \item 
-double \mbox{\hyperlink{k-NN_8h_a216eb8e0e43db49b56551d8df0c9d000}{euclidean\+Distance}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}})
+double \mbox{\hyperlink{k-NN_8h_a216eb8e0e43db49b56551d8df0c9d000}{euclidean\+Distance}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}})
 \item 
-double \mbox{\hyperlink{k-NN_8h_a59b40b8582eeb0410afcea1c328267b7}{manhattan\+Distance}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}})
+double \mbox{\hyperlink{k-NN_8h_a59b40b8582eeb0410afcea1c328267b7}{manhattan\+Distance}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}})
 \item 
-void \mbox{\hyperlink{k-NN_8h_a91599ec4f74a72f07af0d53665025e52}{fill\+Distances}} (vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&data, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, double($\ast$distance\+Function)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&))
+void \mbox{\hyperlink{k-NN_8h_a91599ec4f74a72f07af0d53665025e52}{fill\+Distances}} (vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&data, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, double($\ast$distance\+Function)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&))
 \item 
-bool \mbox{\hyperlink{k-NN_8h_a15264defbbec1a36f588050dc4850ee6}{KNN}} (vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&data, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, int k, double($\ast$distance\+Function)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&))
+bool \mbox{\hyperlink{k-NN_8h_a15264defbbec1a36f588050dc4850ee6}{KNN}} (vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&data, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, int k, double($\ast$distance\+Function)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&))
 \end{DoxyCompactItemize}
 
 
@@ -56,14 +56,14 @@ Definition at line \mbox{\hyperlink{k-NN_8cpp_source_l00112}{112}} of file \mbox
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00112                                                       \{}
-\DoxyCodeLine{00113     \textcolor{keywordflow}{return} sqrt(pow((lhs.\mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{turnover}} -\/ \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover), 2) + }
-\DoxyCodeLine{00114             pow((lhs.\mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{characteristics}} -\/ \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics), 2));}
+\DoxyCodeLine{00113     \textcolor{keywordflow}{return} sqrt(pow((lhs.\mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{turnover}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover), 2) + }
+\DoxyCodeLine{00114             pow((lhs.\mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{characteristics}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics), 2));}
 \DoxyCodeLine{00115 \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{Company\+::characteristics}}, \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}, and \mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{Company\+::turnover}}.
+References \mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{Company\+::characteristics}}, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}, and \mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{Company\+::turnover}}.
 
 
 
@@ -83,14 +83,14 @@ Definition at line \mbox{\hyperlink{k-NN_8cpp_source_l00122}{122}} of file \mbox
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00123                                                        \{}
 \DoxyCodeLine{00124     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < data.size(); ++i) \{}
-\DoxyCodeLine{00125         data[i].distance = distanceFunction(data[i], \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}});}
+\DoxyCodeLine{00125         data[i].distance = distanceFunction(data[i], \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}});}
 \DoxyCodeLine{00126     \}}
 \DoxyCodeLine{00127 \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
+References \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
 
 
 
@@ -110,7 +110,7 @@ Definition at line \mbox{\hyperlink{k-NN_8cpp_source_l00129}{129}} of file \mbox
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00130                                                        \{}
 \DoxyCodeLine{00131     \textcolor{comment}{//filling the distances between all points and test}}
-\DoxyCodeLine{00132     \mbox{\hyperlink{k-NN_8cpp_a91599ec4f74a72f07af0d53665025e52}{fillDistances}}(data, \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, distanceFunction);}
+\DoxyCodeLine{00132     \mbox{\hyperlink{k-NN_8cpp_a91599ec4f74a72f07af0d53665025e52}{fillDistances}}(data, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, distanceFunction);}
 \DoxyCodeLine{00133 }
 \DoxyCodeLine{00134     \textcolor{comment}{//sorting so that we can get the k nearest}}
 \DoxyCodeLine{00135     sort(data.begin(), data.end(), \mbox{\hyperlink{k-NN_8cpp_ae07612d249d520ffdc46849324a31fb9}{comparison}});}
@@ -130,18 +130,18 @@ Definition at line \mbox{\hyperlink{k-NN_8cpp_source_l00129}{129}} of file \mbox
 \DoxyCodeLine{00149 \textcolor{comment}{     * those k, we are deciding whether the test example is successful or not.}}
 \DoxyCodeLine{00150 \textcolor{comment}{     */}}
 \DoxyCodeLine{00151     \textcolor{keywordflow}{if} (countSuccesful == countUnsuccesful) \{}
-\DoxyCodeLine{00152         \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = data[0].success;}
+\DoxyCodeLine{00152         \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = data[0].success;}
 \DoxyCodeLine{00153     \}}
 \DoxyCodeLine{00154     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00155         \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = countSuccesful > countUnsuccesful ? true : \textcolor{keyword}{false};}
+\DoxyCodeLine{00155         \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = countSuccesful > countUnsuccesful ? true : \textcolor{keyword}{false};}
 \DoxyCodeLine{00156     \}}
-\DoxyCodeLine{00157     \textcolor{keywordflow}{return} \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success;}
+\DoxyCodeLine{00157     \textcolor{keywordflow}{return} \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success;}
 \DoxyCodeLine{00158 \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{k-NN_8cpp_ae07612d249d520ffdc46849324a31fb9}{comparison()}}, \mbox{\hyperlink{k-NN_8cpp_a91599ec4f74a72f07af0d53665025e52}{fill\+Distances()}}, and \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
+References \mbox{\hyperlink{k-NN_8cpp_ae07612d249d520ffdc46849324a31fb9}{comparison()}}, \mbox{\hyperlink{k-NN_8cpp_a91599ec4f74a72f07af0d53665025e52}{fill\+Distances()}}, and \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
 
 
 
@@ -160,12 +160,12 @@ Definition at line \mbox{\hyperlink{k-NN_8cpp_source_l00117}{117}} of file \mbox
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00117                                                       \{}
-\DoxyCodeLine{00118     \textcolor{keywordflow}{return} (abs(lhs.\mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{turnover}} -\/ \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover) + }
-\DoxyCodeLine{00119             abs(lhs.\mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{characteristics}} -\/ \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics));}
+\DoxyCodeLine{00118     \textcolor{keywordflow}{return} (abs(lhs.\mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{turnover}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover) + }
+\DoxyCodeLine{00119             abs(lhs.\mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{characteristics}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics));}
 \DoxyCodeLine{00120 \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{Company\+::characteristics}}, \mbox{\hyperlink{modules_2number__theory_2rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}, and \mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{Company\+::turnover}}.
+References \mbox{\hyperlink{classCompany_a2960df5751351480f6818d3973f77e5b}{Company\+::characteristics}}, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}, and \mbox{\hyperlink{classCompany_a54429f45ecfb26672650fc4e4017570e}{Company\+::turnover}}.
 

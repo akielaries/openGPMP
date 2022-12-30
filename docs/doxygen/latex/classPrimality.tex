@@ -47,16 +47,16 @@ Definition at line \mbox{\hyperlink{primes_8hpp_source_l00011}{11}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00202                                     \{}
-\DoxyCodeLine{00203     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} = 2; \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} < n; \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}}++) \{}
+\DoxyCodeLine{00203     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} b = 2; b < n; b++) \{}
 \DoxyCodeLine{00204         \textcolor{comment}{// If "{}b"{} is relatively prime to n}}
-\DoxyCodeLine{00205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}}, n) == 1)}
+\DoxyCodeLine{00205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(b, n) == 1)}
 \DoxyCodeLine{00206             \textcolor{comment}{// And pow(b, n-\/1)\%n is not 1, return false.}}
-\DoxyCodeLine{00207             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}}, n -\/ 1, n) != 1)}
+\DoxyCodeLine{00207             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(b, n -\/ 1, n) != 1)}
 \DoxyCodeLine{00208                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{00209     \}}
 \DoxyCodeLine{00210     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
@@ -65,11 +65,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{Python.\+examples.\+arithmetic\+::b}}, \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, and \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{Basics\+::rm\+\_\+gcd()}}.
-
-
-
-Referenced by \mbox{\hyperlink{openMTPK__wrap_8cpp_a07601cb9373d058b77e099ee57e25ff8}{R\+\_\+swig\+\_\+\+Primality\+\_\+carmichael\+\_\+num()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_af52ff185d5d2881084885a716e563d3d}{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST()}}.
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, and \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
 
 \mbox{\Hypertarget{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}\label{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}} 
 \index{Primality@{Primality}!compute\_miller\_rabin@{compute\_miller\_rabin}}
@@ -79,7 +75,7 @@ Referenced by \mbox{\hyperlink{openMTPK__wrap_8cpp_a07601cb9373d058b77e099ee57e2
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -119,7 +115,7 @@ References \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mo
 
 
 
-Referenced by \mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\+\_\+rabin\+\_\+prime()}}, \mbox{\hyperlink{openMTPK__wrap_8cpp_acf5f6898e755c36e06afc53196316488}{R\+\_\+swig\+\_\+\+Primality\+\_\+compute\+\_\+miller\+\_\+rabin()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a7d2473bbd826c7a329b9dde463327347}{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST()}}.
+Referenced by \mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\+\_\+rabin\+\_\+prime()}}.
 
 \mbox{\Hypertarget{classPrimality_a334ba4925bdd37b5f6dfea94465afb1b}\label{classPrimality_a334ba4925bdd37b5f6dfea94465afb1b}} 
 \index{Primality@{Primality}!ETF@{ETF}}
@@ -129,7 +125,7 @@ Referenced by \mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -137,7 +133,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \DoxyCodeLine{00320     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} result = 1;}
 \DoxyCodeLine{00321     }
 \DoxyCodeLine{00322     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} index = 2; unsigned(index) < n; index++) \{}
-\DoxyCodeLine{00323         \textcolor{keywordflow}{if} (\mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(index, n) == 1) \{}
+\DoxyCodeLine{00323         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(index, n) == 1) \{}
 \DoxyCodeLine{00324             result++;}
 \DoxyCodeLine{00325         \}}
 \DoxyCodeLine{00326     \}}
@@ -148,7 +144,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, and \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{Basics\+::rm\+\_\+gcd()}}.
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, and \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
 
 \mbox{\Hypertarget{classPrimality_aa00343cb6fa77239717833d27f201f03}\label{classPrimality_aa00343cb6fa77239717833d27f201f03}} 
 \index{Primality@{Primality}!is\_prime@{is\_prime}}
@@ -158,7 +154,7 @@ References \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf1
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -175,10 +171,6 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \DoxyCodeLine{00049 \}}
 
 \end{DoxyCode}
-
-
-Referenced by \mbox{\hyperlink{openMTPK__wrap_8cpp_a2cab503d2a2fd649128bc4a2bfa993fb}{R\+\_\+swig\+\_\+\+Primality\+\_\+is\+\_\+prime()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a98691371b022fa03d1f451f4c798037a}{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST()}}.
-
 \mbox{\Hypertarget{classPrimality_a7bd351acce09b9003b38519d992a25ed}\label{classPrimality_a7bd351acce09b9003b38519d992a25ed}} 
 \index{Primality@{Primality}!jacobian\_number@{jacobian\_number}}
 \index{jacobian\_number@{jacobian\_number}!Primality@{Primality}}
@@ -187,7 +179,7 @@ Referenced by \mbox{\hyperlink{openMTPK__wrap_8cpp_a2cab503d2a2fd649128bc4a2bfa9
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -248,7 +240,7 @@ Referenced by \mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -282,7 +274,7 @@ References \mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{mi
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -320,7 +312,7 @@ References \mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{co
 
 
 
-Referenced by \mbox{\hyperlink{classPrimality_ab0da263da6230ef57e1d3ca3471b88d9}{miller\+\_\+rabin()}}, \mbox{\hyperlink{openMTPK__wrap_8cpp_a986d8f409cc0902dabb27552665de142}{R\+\_\+swig\+\_\+\+Primality\+\_\+miller\+\_\+rabin\+\_\+prime()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a4681e33230fe0874bec63a70f11ff8d1}{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST()}}.
+Referenced by \mbox{\hyperlink{classPrimality_ab0da263da6230ef57e1d3ca3471b88d9}{miller\+\_\+rabin()}}.
 
 \mbox{\Hypertarget{classPrimality_a5c095723bcb653c92833b2424ce07479}\label{classPrimality_a5c095723bcb653c92833b2424ce07479}} 
 \index{Primality@{Primality}!mod\_pow@{mod\_pow}}
@@ -330,7 +322,7 @@ Referenced by \mbox{\hyperlink{classPrimality_ab0da263da6230ef57e1d3ca3471b88d9}
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -353,7 +345,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \end{DoxyCode}
 
 
-Referenced by \mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{carmichael\+\_\+num()}}, \mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\+\_\+miller\+\_\+rabin()}}, \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}{pollard\+\_\+rho()}}, \mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\+\_\+strassen()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a82a37bb2a27034b898ad4d3640ff967b}{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST()}}.
+Referenced by \mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{carmichael\+\_\+num()}}, \mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\+\_\+miller\+\_\+rabin()}}, \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}{pollard\+\_\+rho()}}, and \mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\+\_\+strassen()}}.
 
 \mbox{\Hypertarget{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}\label{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}} 
 \index{Primality@{Primality}!pollard\_rho@{pollard\_rho}}
@@ -363,7 +355,7 @@ Referenced by \mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00258}{258}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -386,7 +378,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \DoxyCodeLine{00274     \textcolor{comment}{/* the constant in f(x).}}
 \DoxyCodeLine{00275 \textcolor{comment}{     * Algorithm can be re-\/run with a different c}}
 \DoxyCodeLine{00276 \textcolor{comment}{     * if it throws failure for a composite. */}}
-\DoxyCodeLine{00277     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{c}} = (rand() \% (n -\/ 1)) + 1;}
+\DoxyCodeLine{00277     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} c = (rand() \% (n -\/ 1)) + 1;}
 \DoxyCodeLine{00278 }
 \DoxyCodeLine{00279     \textcolor{comment}{/* Initialize candidate divisor (or result) */}}
 \DoxyCodeLine{00280     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} divisor = 1; }
@@ -397,14 +389,14 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \DoxyCodeLine{00285         \textcolor{comment}{/* Tortoise Move: x(i+1) = f(x(i)) */}}
 \DoxyCodeLine{00286         \textcolor{comment}{// take power }}
 \DoxyCodeLine{00287         \textcolor{comment}{// calculate modulus}}
-\DoxyCodeLine{00288         x = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(x, 2, n) + \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{c}} + n) \% n;}
+\DoxyCodeLine{00288         x = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(x, 2, n) + c + n) \% n;}
 \DoxyCodeLine{00289  }
 \DoxyCodeLine{00290         \textcolor{comment}{/* Hare Move: y(i+1) = f(f(y(i))) */}}
-\DoxyCodeLine{00291         y = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(y, 2, n) + \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{c}} + n) \% n;}
-\DoxyCodeLine{00292         y = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(y, 2, n) + \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{c}} + n) \% n;}
+\DoxyCodeLine{00291         y = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(y, 2, n) + c + n) \% n;}
+\DoxyCodeLine{00292         y = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(y, 2, n) + c + n) \% n;}
 \DoxyCodeLine{00293  }
 \DoxyCodeLine{00294         \textcolor{comment}{/* check gcd of |x-\/y| and n */}}
-\DoxyCodeLine{00295         divisor = \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(abs(x -\/ y), n);}
+\DoxyCodeLine{00295         divisor = \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(abs(x -\/ y), n);}
 \DoxyCodeLine{00296         \textcolor{comment}{//divisor = std::\_\_gcd(abs(x -\/ y), n);}}
 \DoxyCodeLine{00297         \textcolor{comment}{/* retry if the algorithm fails to find prime factor}}
 \DoxyCodeLine{00298 \textcolor{comment}{         * with chosen x and c */}}
@@ -418,7 +410,7 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{Python.\+examples.\+cipher\+\_\+ex\+::c}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}{pollard\+\_\+rho()}}, and \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{Basics\+::rm\+\_\+gcd()}}.
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}, and \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}{pollard\+\_\+rho()}}.
 
 
 
@@ -432,7 +424,7 @@ Referenced by \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -443,29 +435,25 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \DoxyCodeLine{00222     \textcolor{keywordtype}{bool} prime[n + 1];}
 \DoxyCodeLine{00223     memset(prime, \textcolor{keyword}{true}, \textcolor{keyword}{sizeof}(prime));}
 \DoxyCodeLine{00224  }
-\DoxyCodeLine{00225     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} = 2; \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} * \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} <= n; \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}++) \{}
+\DoxyCodeLine{00225     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 2; p * p <= n; p++) \{}
 \DoxyCodeLine{00226         \textcolor{comment}{// If prime[p] is not changed, then it is a prime}}
-\DoxyCodeLine{00227         \textcolor{keywordflow}{if} (prime[\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}] == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00227         \textcolor{keywordflow}{if} (prime[p] == \textcolor{keyword}{true}) \{}
 \DoxyCodeLine{00228             \textcolor{comment}{// Update all multiples of p greater than or}}
 \DoxyCodeLine{00229             \textcolor{comment}{// equal to the square of it numbers which are}}
 \DoxyCodeLine{00230             \textcolor{comment}{// multiple of p and are less than p\string^2 are}}
 \DoxyCodeLine{00231             \textcolor{comment}{// already been marked.}}
-\DoxyCodeLine{00232             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} * \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}; i <= n; i += \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}})}
+\DoxyCodeLine{00232             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = p * p; i <= n; i += p)}
 \DoxyCodeLine{00233                 prime[i] = \textcolor{keyword}{false};}
 \DoxyCodeLine{00234         \}}
 \DoxyCodeLine{00235     \}}
 \DoxyCodeLine{00236  }
 \DoxyCodeLine{00237     \textcolor{comment}{// Print all prime numbers}}
-\DoxyCodeLine{00238     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} = 2; \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} <= n; \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}++)}
-\DoxyCodeLine{00239         \textcolor{keywordflow}{if} (prime[\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}])}
-\DoxyCodeLine{00240             std::cout << \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} << \textcolor{stringliteral}{"{} "{}} << std::endl;}
+\DoxyCodeLine{00238     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} p = 2; p <= n; p++)}
+\DoxyCodeLine{00239         \textcolor{keywordflow}{if} (prime[p])}
+\DoxyCodeLine{00240             std::cout << p << \textcolor{stringliteral}{"{} "{}} << std::endl;}
 \DoxyCodeLine{00241 \}}
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{Python.\+examples.\+primes\+\_\+ex\+::p}}.
-
 \mbox{\Hypertarget{classPrimality_a8705a1468d5a995f5e835a0b992fae28}\label{classPrimality_a8705a1468d5a995f5e835a0b992fae28}} 
 \index{Primality@{Primality}!solovoy\_strassen@{solovoy\_strassen}}
 \index{solovoy\_strassen@{solovoy\_strassen}!Primality@{Primality}}
@@ -474,22 +462,22 @@ References \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source}{primes.\+cpp}}.
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00178                                                        \{}
-\DoxyCodeLine{00179     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} < 2)}
+\DoxyCodeLine{00179     \textcolor{keywordflow}{if} (p < 2)}
 \DoxyCodeLine{00180         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{00181     }
-\DoxyCodeLine{00182     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} != 2 \&\& \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} \% 2 == 0)}
+\DoxyCodeLine{00182     \textcolor{keywordflow}{if} (p != 2 \&\& p \% 2 == 0)}
 \DoxyCodeLine{00183         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
 \DoxyCodeLine{00184  }
 \DoxyCodeLine{00185     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < iters; i++) \{}
 \DoxyCodeLine{00186         \textcolor{comment}{// Generate a random number a}}
-\DoxyCodeLine{00187         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} a = rand() \% (\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} -\/ 1) + 1;}
-\DoxyCodeLine{00188         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} jacobian = (\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} + \mbox{\hyperlink{classPrimality_a7bd351acce09b9003b38519d992a25ed}{jacobian\_number}}(a, \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}})) \% \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}};}
-\DoxyCodeLine{00189         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} mod = \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(a, (\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}} -\/ 1) / 2, \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}});}
+\DoxyCodeLine{00187         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} a = rand() \% (p -\/ 1) + 1;}
+\DoxyCodeLine{00188         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} jacobian = (p + \mbox{\hyperlink{classPrimality_a7bd351acce09b9003b38519d992a25ed}{jacobian\_number}}(a, p)) \% p;}
+\DoxyCodeLine{00189         \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} mod = \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(a, (p -\/ 1) / 2, p);}
 \DoxyCodeLine{00190  }
 \DoxyCodeLine{00191         \textcolor{keywordflow}{if} (!jacobian || mod != jacobian)}
 \DoxyCodeLine{00192             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
@@ -500,15 +488,11 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2primes_8cpp_source_
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{classPrimality_a7bd351acce09b9003b38519d992a25ed}{jacobian\+\_\+number()}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, and \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{Python.\+examples.\+primes\+\_\+ex\+::p}}.
-
-
-
-Referenced by \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST()}}.
+References \mbox{\hyperlink{classPrimality_a7bd351acce09b9003b38519d992a25ed}{jacobian\+\_\+number()}}, and \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/number\+\_\+theory/\mbox{\hyperlink{primes_8hpp}{primes.\+hpp}}\item 
-modules/number\+\_\+theory/\mbox{\hyperlink{modules_2number__theory_2primes_8cpp}{primes.\+cpp}}\end{DoxyCompactItemize}
+modules/number\+\_\+theory/\mbox{\hyperlink{primes_8cpp}{primes.\+cpp}}\end{DoxyCompactItemize}

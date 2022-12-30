@@ -1,27 +1,5 @@
 var searchData=
 [
-  ['c_0',['c',['../namespacePython_1_1examples_1_1cipher__ex.html#aeb66488dc83c62a7504d9a60ec29fee2',1,'Python::examples::cipher_ex']]],
-  ['cache_5flayers_1',['cache_layers',['../classnaive__network.html#a5d4474832f286d25f3cc9b57c6747991',1,'naive_network']]],
-  ['calc_2',['calc',['../namespaceanonymous__namespace_02t__calc_8cpp_03.html#aa7a08275405c91310efb85846ff0d965',1,'anonymous_namespace{t_calc.cpp}']]],
-  ['callbackfunctiondatastack_3',['callbackFunctionDataStack',['../openMTPK__wrap_8cpp.html#ad6c6aabae8db8b5599b97fab7e677ea9',1,'openMTPK_wrap.cpp']]],
-  ['callentries_4',['CallEntries',['../openMTPK__wrap_8cpp.html#a9788cbaaf4eb782e0ef5c1f25bb2d556',1,'openMTPK_wrap.cpp']]],
-  ['camera_5',['camera',['../openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'openGL_bounce.cpp']]],
-  ['cast_6',['cast',['../structswig__type__info.html#ae535f16234db99893f07880cb94a848e',1,'swig_type_info']]],
-  ['cast_5finitial_7',['cast_initial',['../structswig__module__info.html#a14e4f7b0c9e0ff10543475c269b83507',1,'swig_module_info']]],
-  ['cc_8',['cc',['../namespaceanonymous__namespace_02t__cipher_8cpp_03.html#a02a1438c6089ade00f4d065df23dcd6d',1,'anonymous_namespace{t_cipher.cpp}']]],
-  ['characteristics_9',['characteristics',['../classCompany.html#a2960df5751351480f6818d3973f77e5b',1,'Company']]],
-  ['checkerboard_10',['checkerboard',['../openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0',1,'openGL_bounce.cpp']]],
-  ['ciph_11',['ciph',['../namespacePython_1_1examples_1_1cipher__ex.html#aa96ab8655dd400aaa99c5ca88a8438b3',1,'Python::examples::cipher_ex']]],
-  ['ciph_5f1_12',['ciph_1',['../namespacePython_1_1examples_1_1cipher__ex.html#aad4d9b6b15b98bb7573ff0fbd898c221',1,'Python::examples::cipher_ex']]],
-  ['class_5fprob_13',['class_prob',['../structsummary.html#a37f7b8afe3d9b1e8aa2dff9c1b23a879',1,'summary']]],
-  ['clientdata_14',['clientdata',['../structswig__module__info.html#a39999692b76f191b66a5ce746681dc84',1,'swig_module_info::clientdata()'],['../structswig__type__info.html#a2e1f9087e639dd7c8c131fbc6e399194',1,'swig_type_info::clientdata()']]],
-  ['cmemflags_15',['cmemflags',['../structSwigClassWrapper.html#aa0d2a75d455159e29bb9bb9d672dc952',1,'SwigClassWrapper::cmemflags()'],['../structopenmtpk_1_1swigclasswrapper.html#a55bb848468a7eb5187cf21e74cb4a69e',1,'openmtpk::swigclasswrapper::cmemflags()']]],
-  ['coeff_16',['coeff',['../classregression.html#aa2129c50634e185ee8790cd29dd7d499',1,'regression']]],
-  ['color_17',['color',['../classBall.html#a7ea265e067c1515233d2bd2a186fadc5',1,'Ball']]],
-  ['cols_18',['cols',['../classmtpk_1_1Matrices.html#a2c635ae1bb4616560e15115bc9b2cc27',1,'mtpk::Matrices']]],
-  ['constant_19',['constant',['../classregression.html#a1717e795b3456b24c1ed9ce9e3066095',1,'regression']]],
-  ['converter_20',['converter',['../structswig__cast__info.html#aa630fddfbb1bf9c97a03f9479ba32f76',1,'swig_cast_info']]],
-  ['copyright_21',['copyright',['../namespaceconf.html#a33fa97cf51dcb25970fbf53f10159589',1,'conf']]],
-  ['cptr_22',['cptr',['../structopenmtpk_1_1swigclasswrapper.html#a387f7d884315e348fc251f4855482b5f',1,'openmtpk::swigclasswrapper::cptr()'],['../structSwigClassWrapper.html#a93be2ea27ab2a3848d4a078a2e6c5b95',1,'SwigClassWrapper::cptr()']]],
-  ['current_5frot_23',['current_rot',['../openGL__astronomy__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_astronomy_animated.cpp'],['../openGL__torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_torus_animated.cpp'],['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;torus_animated.cpp']]]
+  ['err_0',['err',['../structneuron.html#ad79332397cf2c367cd6d421bfe8e2c1d',1,'neuron']]],
+  ['ex_1',['ex',['../structneuron.html#a7f1c4a2af6c01336cbfae3d7f1a0014c',1,'neuron']]]
 ];

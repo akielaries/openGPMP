@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['b_0',['b',['../namespacePython_1_1examples_1_1arithmetic.html#a2e87815af2636fcd423f3e6568e74fd8',1,'Python::examples::arithmetic']]],
-  ['ba_1',['ba',['../namespaceanonymous__namespace_02t__arith_8cpp_03.html#a191b99f8aab79b3a04dc81b11fbe1843',1,'anonymous_namespace{t_arith.cpp}']]],
-  ['balls_2',['balls',['../openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0',1,'openGL_bounce.cpp']]],
-  ['basics_3',['basics',['../modules_2number__theory_2primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64',1,'primes.cpp']]],
-  ['bits_4',['BITS',['../namespaceopenMTPK.html#a8dfa31a969910f15b95eddafaee9cda9',1,'openMTPK']]],
-  ['byte_5flimit_5',['BYTE_LIMIT',['../namespaceopenMTPK.html#aa5567afc1753d78c2bcac42b056642c3',1,'openMTPK']]]
+  ['dalpha_0',['dAlpha',['../classMLP.html#a3b33932fbf87af2463d192336e97ac37',1,'MLP']]],
+  ['data_1',['data',['../classmtpk_1_1Matrices.html#adb2ecec222f453d3ecfa7a52f6640afd',1,'mtpk::Matrices']]],
+  ['davgtesterror_2',['dAvgTestError',['../classMLP.html#a5333c9dd1d4a658b77673cee4f345644',1,'MLP']]],
+  ['delimeter_3',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
+  ['deltas_4',['deltas',['../classnaive__network.html#aa6284373cccfcde2cf82a8e03a6014a1',1,'naive_network']]],
+  ['deta_5',['dEta',['../classMLP.html#af272cadd9f2af6d1a474307aac131136',1,'MLP']]],
+  ['dgain_6',['dGain',['../classMLP.html#ab81cbb1d1e18c7aa708bc25cc9f73f1f',1,'MLP']]],
+  ['dim_7',['dim',['../classmtpk_1_1Matrices.html#ae4cc1f03137fa119a6bb60d8bafc2f3e',1,'mtpk::Matrices']]],
+  ['distance_8',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
+  ['dmae_9',['dMAE',['../classMLP.html#a6b6f762a37d6c6dfd0bd5565e8042a42',1,'MLP']]],
+  ['dmse_10',['dMSE',['../classMLP.html#a9be4db567e38e5339abf1b7b9686f704',1,'MLP']]]
 ];

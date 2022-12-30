@@ -4,7 +4,7 @@
 #include "../../include/arithmetic/arith.hpp"
     
 
-int Basics::greatest_power(int n, int p) {
+int mtpk::Basics::greatest_power(int n, int p) {
     int x = 0;
 
     // Calculate x = n/p + n/(p^2) + n/(p^3) + ....
@@ -15,14 +15,14 @@ int Basics::greatest_power(int n, int p) {
     return x;
 }
 
-int Basics::rm_gcd(int x, int y) {
+int mtpk::Basics::op_gcd(int x, int y) {
     if(x < y)
-        return rm_gcd(y, x);
+        return op_gcd(y, x);
 
     else if(x % y == 0)
         return y;
 
     else
-        return rm_gcd(y, x % y);
+        return op_gcd(y, x % y);
 }
 

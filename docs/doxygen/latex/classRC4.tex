@@ -39,22 +39,18 @@ Definition at line \mbox{\hyperlink{rc4_8hpp_source_l00017}{17}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00018                                           \{}
 \DoxyCodeLine{00019     uint8\_t swapped = * a;}
 \DoxyCodeLine{00020     swapped = *a;}
-\DoxyCodeLine{00021     *a = *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
-\DoxyCodeLine{00022     *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} = swapped;}
+\DoxyCodeLine{00021     *a = *b;}
+\DoxyCodeLine{00022     *b = swapped;}
 \DoxyCodeLine{00023 \}}
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{Python.\+examples.\+arithmetic\+::b}}.
-
 
 
 Referenced by \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()}}, and \mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{PRGA()}}.
@@ -67,7 +63,7 @@ Referenced by \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -96,10 +92,6 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00
 
 References \mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\+\_\+\+LIMIT}}, \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()}}, and \mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{PRGA()}}.
 
-
-
-Referenced by \mbox{\hyperlink{samples_2cpp_2rc4_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a40ac3bbe655c6ba181ceca8da1be6cc6}{anonymous\+\_\+namespace\{t\+\_\+rc4.\+cpp\}\+::\+TEST()}}.
-
 \mbox{\Hypertarget{classRC4_a8d0de8b7bdf64701875569ea90309310}\label{classRC4_a8d0de8b7bdf64701875569ea90309310}} 
 \index{RC4@{RC4}!KSA@{KSA}}
 \index{KSA@{KSA}!RC4@{RC4}}
@@ -108,7 +100,7 @@ Referenced by \mbox{\hyperlink{samples_2cpp_2rc4_8cpp_ae66f6b31b5ad750f1fe042a70
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -154,7 +146,7 @@ Referenced by \mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compu
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -201,7 +193,7 @@ Referenced by \mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compu
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
@@ -220,11 +212,11 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00
 \DoxyCodeLine{00107     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} index = 0, len = strlen(plaintext); }
 \DoxyCodeLine{00108                             index < len; index++) \{}
 \DoxyCodeLine{00109         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
-\DoxyCodeLine{00110             snprintf(buffer, size, \textcolor{stringliteral}{"{}|x\%02hhx|"{}}, \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}}[index]);}
+\DoxyCodeLine{00110             snprintf(buffer, size, \textcolor{stringliteral}{"{}|x\%02hhx|"{}}, hashtext[index]);}
 \DoxyCodeLine{00111         \}}
 \DoxyCodeLine{00112         \textcolor{comment}{// to format our hash to a string for future manipulation}}
 \DoxyCodeLine{00113         \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00114             snprintf(buffer, size, \textcolor{stringliteral}{"{}\%02hhX"{}}, \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}}[index]);}
+\DoxyCodeLine{00114             snprintf(buffer, size, \textcolor{stringliteral}{"{}\%02hhX"{}}, hashtext[index]);}
 \DoxyCodeLine{00115         \}}
 \DoxyCodeLine{00116         \textcolor{comment}{// append the declared string}}
 \DoxyCodeLine{00117         stored\_text += std::string(buffer);}
@@ -233,14 +225,6 @@ Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00
 \DoxyCodeLine{00120 \}}
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{Python.\+examples.\+cipher\+\_\+ex\+::hashtext}}.
-
-
-
-Referenced by \mbox{\hyperlink{samples_2cpp_2rc4_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a40ac3bbe655c6ba181ceca8da1be6cc6}{anonymous\+\_\+namespace\{t\+\_\+rc4.\+cpp\}\+::\+TEST()}}.
-
 \mbox{\Hypertarget{classRC4_a9eed557512a32f5eaf97f65cd31cabd1}\label{classRC4_a9eed557512a32f5eaf97f65cd31cabd1}} 
 \index{RC4@{RC4}!trad\_swap@{trad\_swap}}
 \index{trad\_swap@{trad\_swap}!RC4@{RC4}}
@@ -249,21 +233,17 @@ Referenced by \mbox{\hyperlink{samples_2cpp_2rc4_8cpp_ae66f6b31b5ad750f1fe042a70
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00025                                                       \{}
 \DoxyCodeLine{00026     \textcolor{keywordtype}{int} swapped = *a;}
-\DoxyCodeLine{00027     *a = *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
-\DoxyCodeLine{00028     *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} = swapped;}
+\DoxyCodeLine{00027     *a = *b;}
+\DoxyCodeLine{00028     *b = swapped;}
 \DoxyCodeLine{00029 \}}
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{Python.\+examples.\+arithmetic\+::b}}.
-
 
 
 Referenced by \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()}}, and \mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{PRGA()}}.
@@ -276,21 +256,17 @@ Referenced by \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()
 
 
 
-Definition at line \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{modules_2number__theory_2rc4_8cpp_source}{rc4.\+cpp}}.
+Definition at line \mbox{\hyperlink{rc4_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{rc4_8cpp_source}{rc4.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00031                                                      \{}
-\DoxyCodeLine{00032     *a \string^= *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
-\DoxyCodeLine{00033     *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} \string^= *a;}
-\DoxyCodeLine{00034     *a \string^= *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
+\DoxyCodeLine{00032     *a \string^= *b;}
+\DoxyCodeLine{00033     *b \string^= *a;}
+\DoxyCodeLine{00034     *a \string^= *b;}
 \DoxyCodeLine{00035 \}}
 
 \end{DoxyCode}
-
-
-References \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{Python.\+examples.\+arithmetic\+::b}}.
-
 
 
 Referenced by \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()}}, and \mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{PRGA()}}.
@@ -300,4 +276,4 @@ Referenced by \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA()
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/number\+\_\+theory/\mbox{\hyperlink{rc4_8hpp}{rc4.\+hpp}}\item 
-modules/number\+\_\+theory/\mbox{\hyperlink{modules_2number__theory_2rc4_8cpp}{rc4.\+cpp}}\end{DoxyCompactItemize}
+modules/number\+\_\+theory/\mbox{\hyperlink{rc4_8cpp}{rc4.\+cpp}}\end{DoxyCompactItemize}

@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['lao_2ecpp_0',['lao.cpp',['../lao_8cpp.html',1,'']]],
-  ['lao_2ehpp_1',['lao.hpp',['../lao_8hpp.html',1,'']]],
-  ['layer_2',['layer',['../structlayer.html',1,'']]],
-  ['layer_5fptr_3',['layer_ptr',['../classMLP.html#a60d940da20cfc176e791ff849cfde708',1,'MLP']]],
-  ['leakchecker_4',['LeakChecker',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker.html',1,'anonymous_namespace{t_memleak.cpp}']]],
-  ['learning_5frate_5',['learning_rate',['../classnaive__network.html#a983e1c37881f1002b2592e43b83f930c',1,'naive_network']]],
-  ['linalg_5fops_2ecpp_6',['linalg_ops.cpp',['../linalg__ops_8cpp.html',1,'']]],
-  ['linreg_2ecpp_7',['linreg.cpp',['../linreg_8cpp.html',1,'']]],
-  ['linreg_2ehpp_8',['linreg.hpp',['../linreg_8hpp.html',1,'']]]
+  ['n_0',['N',['../classKF__CV.html#a5f9280a48d34c93c9a34bb773bf88ba6',1,'KF_CV']]],
+  ['naive_5fnetwork_1',['naive_network',['../classnaive__network.html',1,'naive_network'],['../classnaive__network.html#ad2b9b85640a808babbc9e8235a093b81',1,'naive_network::naive_network()']]],
+  ['naive_5fnetwork_2ecpp_2',['naive_network.cpp',['../naive__network_8cpp.html',1,'']]],
+  ['naive_5fnetwork_2ehpp_3',['naive_network.hpp',['../naive__network_8hpp.html',1,'']]],
+  ['neuron_4',['neuron',['../structneuron.html',1,'']]],
+  ['neuron_5flayers_5',['neuron_layers',['../classnaive__network.html#a639c2823ce4b03e7de2b114751f65814',1,'naive_network']]],
+  ['neuron_5fptr_6',['neuron_ptr',['../structlayer.html#a4cc427923d4fa08f4e2bb7958569a66d',1,'layer']]],
+  ['num_7',['num',['../classmtpk_1_1Matrices.html#a724515366cec081773b13949a8e62c00',1,'mtpk::Matrices']]],
+  ['num_5flayers_8',['num_layers',['../classMLP.html#a8c68dc241a0b7f93049b05ccdae44ea9',1,'MLP']]],
+  ['num_5fneurons_9',['num_neurons',['../structlayer.html#a910bb3b94d8862da72b14f4719e834f9',1,'layer']]],
+  ['num_5frows_10',['num_rows',['../linreg_8hpp.html#a2be8a4476f266240d1275548cd1134ef',1,'num_rows(const char *input):&#160;linreg.cpp'],['../linreg_8cpp.html#a2be8a4476f266240d1275548cd1134ef',1,'num_rows(const char *input):&#160;linreg.cpp']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['layer_0',['layer',['../structlayer.html',1,'']]],
-  ['leakchecker_1',['LeakChecker',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker.html',1,'anonymous_namespace{t_memleak.cpp}']]]
+  ['naive_5fnetwork_0',['naive_network',['../classnaive__network.html',1,'']]],
+  ['neuron_1',['neuron',['../structneuron.html',1,'']]]
 ];

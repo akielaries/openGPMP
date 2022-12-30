@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['dalpha_0',['dAlpha',['../classMLP.html#a3b33932fbf87af2463d192336e97ac37',1,'MLP']]],
-  ['data_1',['data',['../structopenmtpk_1_1swigarraywrapper.html#a7ea4b46e5517223c375a89d07040468b',1,'openmtpk::swigarraywrapper::data()'],['../structSwigArrayWrapper.html#ad8f6cc44691cdbdecae71d147111e612',1,'SwigArrayWrapper::data()'],['../classmtpk_1_1Matrices.html#adb2ecec222f453d3ecfa7a52f6640afd',1,'mtpk::Matrices::data()']]],
-  ['davgtesterror_2',['dAvgTestError',['../classMLP.html#a5333c9dd1d4a658b77673cee4f345644',1,'MLP']]],
-  ['day_3',['day',['../openGL__astronomy__animated_8cpp.html#a4c11afc03fc3ee49bab660def6558f2a',1,'openGL_astronomy_animated.cpp']]],
-  ['dcast_4',['dcast',['../structswig__type__info.html#a07df4bedf85be77b23756b531b60e0dd',1,'swig_type_info']]],
-  ['delimeter_5',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
-  ['deltas_6',['deltas',['../classnaive__network.html#aa6284373cccfcde2cf82a8e03a6014a1',1,'naive_network']]],
-  ['depth_7',['depth',['../classCheckerboard.html#aca22dc89081ced7191306112d44c9e04',1,'Checkerboard']]],
-  ['deta_8',['dEta',['../classMLP.html#af272cadd9f2af6d1a474307aac131136',1,'MLP']]],
-  ['dgain_9',['dGain',['../classMLP.html#ab81cbb1d1e18c7aa708bc25cc9f73f1f',1,'MLP']]],
-  ['dim_10',['dim',['../classmtpk_1_1Matrices.html#ae4cc1f03137fa119a6bb60d8bafc2f3e',1,'mtpk::Matrices']]],
-  ['direction_11',['direction',['../classBall.html#adc4f8d08852930ccd37ab5b8b53e352c',1,'Ball']]],
-  ['displaylistid_12',['displayListId',['../classCheckerboard.html#a5801397eeed1c18d0f4a12d732768723',1,'Checkerboard']]],
-  ['distance_13',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
-  ['dmae_14',['dMAE',['../classMLP.html#a6b6f762a37d6c6dfd0bd5565e8042a42',1,'MLP']]],
-  ['dmse_15',['dMSE',['../classMLP.html#a9be4db567e38e5339abf1b7b9686f704',1,'MLP']]],
-  ['dtheta_16',['dTheta',['../classCamera.html#ab90bf60861459ca8c52c2d295903a4e6',1,'Camera']]],
-  ['du_17',['du',['../openGL__astronomy__animated_8cpp.html#a05e32724a12468fadef696a24b65b03d',1,'openGL_astronomy_animated.cpp']]],
-  ['dy_18',['dy',['../classCamera.html#a4e374ad2733cb535f64ea9cea2b9ff06',1,'Camera']]]
+  ['filename_0',['fileName',['../classCSVReader.html#a0a90d62a46349a148272cb0e087cd191',1,'CSVReader']]],
+  ['fps_1',['FPS',['../torus__animated_8cpp.html#ac5090a6568797128b0a5545228bb8b75',1,'torus_animated.cpp']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['contributing_0',['Contributing',['../md_docs_CONTRIBUTING.html',1,'']]]
+  ['examples_0',['Examples',['../md_docs_source_Examples.html',1,'']]]
 ];

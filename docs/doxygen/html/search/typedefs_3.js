@@ -1,10 +1,5 @@
 var searchData=
 [
   ['scalar_0',['Scalar',['../naive__network_8hpp.html#aacf5954d048aaaaef04620896706921d',1,'naive_network.hpp']]],
-  ['summary_1',['summary',['../bayes__clf_8hpp.html#ae71f211dfbaec172e613463e6951c7c7',1,'bayes_clf.hpp']]],
-  ['swig_5fcast_5finfo_2',['swig_cast_info',['../openMTPK__wrap_8c.html#a2c404e2141b7c13a227b2ea617bc0051',1,'swig_cast_info():&#160;openMTPK_wrap.c'],['../OCaml_2lib_2openMTPK__wrap_8cxx.html#a2c404e2141b7c13a227b2ea617bc0051',1,'swig_cast_info():&#160;openMTPK_wrap.cxx'],['../openMTPK__wrap_8cpp.html#a2c404e2141b7c13a227b2ea617bc0051',1,'swig_cast_info():&#160;openMTPK_wrap.cpp']]],
-  ['swig_5fconverter_5ffunc_3',['swig_converter_func',['../openMTPK__wrap_8c.html#a7ae711e3bf6b447f91dcdba2241f14b5',1,'swig_converter_func():&#160;openMTPK_wrap.c'],['../OCaml_2lib_2openMTPK__wrap_8cxx.html#a7ae711e3bf6b447f91dcdba2241f14b5',1,'swig_converter_func():&#160;openMTPK_wrap.cxx'],['../openMTPK__wrap_8cpp.html#a7ae711e3bf6b447f91dcdba2241f14b5',1,'swig_converter_func():&#160;openMTPK_wrap.cpp']]],
-  ['swig_5fdycast_5ffunc_4',['swig_dycast_func',['../openMTPK__wrap_8c.html#a9def33514f88f4c4012c02865e657fc9',1,'swig_dycast_func():&#160;openMTPK_wrap.c'],['../openMTPK__wrap_8cpp.html#a9def33514f88f4c4012c02865e657fc9',1,'swig_dycast_func():&#160;openMTPK_wrap.cpp'],['../OCaml_2lib_2openMTPK__wrap_8cxx.html#a9def33514f88f4c4012c02865e657fc9',1,'swig_dycast_func():&#160;openMTPK_wrap.cxx']]],
-  ['swig_5fmodule_5finfo_5',['swig_module_info',['../openMTPK__wrap_8c.html#acc16355bc37d880dce024f159638a992',1,'swig_module_info():&#160;openMTPK_wrap.c'],['../OCaml_2lib_2openMTPK__wrap_8cxx.html#acc16355bc37d880dce024f159638a992',1,'swig_module_info():&#160;openMTPK_wrap.cxx'],['../openMTPK__wrap_8cpp.html#acc16355bc37d880dce024f159638a992',1,'swig_module_info():&#160;openMTPK_wrap.cpp']]],
-  ['swig_5ftype_5finfo_6',['swig_type_info',['../openMTPK__wrap_8c.html#aa5de455851efa4fc1fab83d99611f4cd',1,'swig_type_info():&#160;openMTPK_wrap.c'],['../OCaml_2lib_2openMTPK__wrap_8cxx.html#aa5de455851efa4fc1fab83d99611f4cd',1,'swig_type_info():&#160;openMTPK_wrap.cxx'],['../openMTPK__wrap_8cpp.html#aa5de455851efa4fc1fab83d99611f4cd',1,'swig_type_info():&#160;openMTPK_wrap.cpp']]]
+  ['summary_1',['summary',['../bayes__clf_8hpp.html#ae71f211dfbaec172e613463e6951c7c7',1,'bayes_clf.hpp']]]
 ];
