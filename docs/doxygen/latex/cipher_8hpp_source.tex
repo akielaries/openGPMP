@@ -1,0 +1,33 @@
+\hypertarget{cipher_8hpp_source}{}\doxysection{cipher.\+hpp}
+\label{cipher_8hpp_source}\index{include/number\_theory/cipher.hpp@{include/number\_theory/cipher.hpp}}
+\mbox{\hyperlink{cipher_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00002}00002 \textcolor{comment}{ * definitions for derivative operations operations }}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#ifndef CIPHER\_H}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#define CIPHER\_H}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00013}00013 \textcolor{comment}{// monoalphabetic substitution cipher class}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00014}\mbox{\hyperlink{classCipher}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{classCipher}{Cipher}} \{}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00016}00016     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00017}00017         \textcolor{comment}{/* compute the caesar cipher of a given string with a shift key */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00018}00018         std::string \mbox{\hyperlink{classCipher_a6e954be6a2630d25862f7aa62495642d}{C\_cipher}}(std::string plaintext, \textcolor{keywordtype}{int} key); }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00019}00019         \textcolor{comment}{/* encode and prepare the given string for the cipher */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00020}00020         std::string \mbox{\hyperlink{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}{KC\_encode}}(std::string key);}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00021}00021         \textcolor{comment}{/* compute the keyword cipher of a given string */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00022}00022         std::string \mbox{\hyperlink{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}{KC\_cipher}}(std::string plaintext, std::string \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a25bf42403e5121962ea2c4a45646569b}{encoded\_text}});}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00024}00024 \};}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00027}00027 }
+
+\end{DoxyCode}

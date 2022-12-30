@@ -1,0 +1,151 @@
+\hypertarget{namespaceopenMTPK}{}\doxysection{open\+MTPK Namespace Reference}
+\label{namespaceopenMTPK}\index{openMTPK@{openMTPK}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classopenMTPK_1_1__SwigNonDynamicMeta}{\+\_\+\+Swig\+Non\+Dynamic\+Meta}}
+\item 
+class \mbox{\hyperlink{classopenMTPK_1_1Cipher}{Cipher}}
+\item 
+class \mbox{\hyperlink{classopenMTPK_1_1Primality}{Primality}}
+\item 
+class \mbox{\hyperlink{classopenMTPK_1_1RC4}{RC4}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceopenMTPK_ae27329aafa03c2e7af797f7e2ab786e8}{\+\_\+swig\+\_\+repr}} (self)
+\item 
+def \mbox{\hyperlink{namespaceopenMTPK_ae3cfe140cb224d183a4dcd6b1435c234}{\+\_\+swig\+\_\+setattr\+\_\+nondynamic\+\_\+instance\+\_\+variable}} (set)
+\item 
+def \mbox{\hyperlink{namespaceopenMTPK_aa77eb2fcba74e384ea9fb7455da24789}{\+\_\+swig\+\_\+setattr\+\_\+nondynamic\+\_\+class\+\_\+variable}} (set)
+\item 
+def \mbox{\hyperlink{namespaceopenMTPK_a8805f337227b864c35c4a84eda87e437}{\+\_\+swig\+\_\+add\+\_\+metaclass}} (metaclass)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceopenMTPK_a8dfa31a969910f15b95eddafaee9cda9}{BITS}} = \+\_\+open\+MTPK.\+BITS
+\item 
+\mbox{\hyperlink{namespaceopenMTPK_aa5567afc1753d78c2bcac42b056642c3}{BYTE\+\_\+\+LIMIT}} = \+\_\+open\+MTPK.\+BYTE\+\_\+\+LIMIT
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceopenMTPK_a8805f337227b864c35c4a84eda87e437}\label{namespaceopenMTPK_a8805f337227b864c35c4a84eda87e437}} 
+\index{openMTPK@{openMTPK}!\_swig\_add\_metaclass@{\_swig\_add\_metaclass}}
+\index{\_swig\_add\_metaclass@{\_swig\_add\_metaclass}!openMTPK@{openMTPK}}
+\doxysubsubsection{\texorpdfstring{\_swig\_add\_metaclass()}{\_swig\_add\_metaclass()}}
+{\footnotesize\ttfamily def open\+MTPK.\+\_\+swig\+\_\+add\+\_\+metaclass (\begin{DoxyParamCaption}\item[{}]{metaclass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyVerb}Class decorator for adding a metaclass to a SWIG wrapped class - a slimmed down version of six.add_metaclass\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{openMTPK_8py_source_l00049}{49}} of file \mbox{\hyperlink{openMTPK_8py_source}{open\+MTPK.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceopenMTPK_a8805f337227b864c35c4a84eda87e437}{\_swig\_add\_metaclass}}(metaclass):}
+\DoxyCodeLine{00050     \textcolor{stringliteral}{"{}"{}"{}Class decorator for adding a metaclass to a SWIG wrapped class -\/ a slimmed down version of six.add\_metaclass"{}"{}"{}}}
+\DoxyCodeLine{00051     \textcolor{keyword}{def }wrapper(cls):}
+\DoxyCodeLine{00052         \textcolor{keywordflow}{return} metaclass(cls.\_\_name\_\_, cls.\_\_bases\_\_, cls.\_\_dict\_\_.copy())}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} wrapper}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceopenMTPK_ae27329aafa03c2e7af797f7e2ab786e8}\label{namespaceopenMTPK_ae27329aafa03c2e7af797f7e2ab786e8}} 
+\index{openMTPK@{openMTPK}!\_swig\_repr@{\_swig\_repr}}
+\index{\_swig\_repr@{\_swig\_repr}!openMTPK@{openMTPK}}
+\doxysubsubsection{\texorpdfstring{\_swig\_repr()}{\_swig\_repr()}}
+{\footnotesize\ttfamily def open\+MTPK.\+\_\+swig\+\_\+repr (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openMTPK_8py_source_l00019}{19}} of file \mbox{\hyperlink{openMTPK_8py_source}{open\+MTPK.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceopenMTPK_ae27329aafa03c2e7af797f7e2ab786e8}{\_swig\_repr}}(self):}
+\DoxyCodeLine{00020     \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{00021         strthis = \textcolor{stringliteral}{"{}proxy of "{}} + self.this.\_\_repr\_\_()}
+\DoxyCodeLine{00022     \textcolor{keywordflow}{except} \_\_builtin\_\_.Exception:}
+\DoxyCodeLine{00023         strthis = \textcolor{stringliteral}{"{}"{}}}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}<\%s.\%s; \%s >"{}} \% (self.\_\_class\_\_.\_\_module\_\_, self.\_\_class\_\_.\_\_name\_\_, strthis,)}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceopenMTPK_aa77eb2fcba74e384ea9fb7455da24789}\label{namespaceopenMTPK_aa77eb2fcba74e384ea9fb7455da24789}} 
+\index{openMTPK@{openMTPK}!\_swig\_setattr\_nondynamic\_class\_variable@{\_swig\_setattr\_nondynamic\_class\_variable}}
+\index{\_swig\_setattr\_nondynamic\_class\_variable@{\_swig\_setattr\_nondynamic\_class\_variable}!openMTPK@{openMTPK}}
+\doxysubsubsection{\texorpdfstring{\_swig\_setattr\_nondynamic\_class\_variable()}{\_swig\_setattr\_nondynamic\_class\_variable()}}
+{\footnotesize\ttfamily def open\+MTPK.\+\_\+swig\+\_\+setattr\+\_\+nondynamic\+\_\+class\+\_\+variable (\begin{DoxyParamCaption}\item[{}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openMTPK_8py_source_l00040}{40}} of file \mbox{\hyperlink{openMTPK_8py_source}{open\+MTPK.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceopenMTPK_aa77eb2fcba74e384ea9fb7455da24789}{\_swig\_setattr\_nondynamic\_class\_variable}}(set):}
+\DoxyCodeLine{00041     \textcolor{keyword}{def }set\_class\_attr(cls, name, value):}
+\DoxyCodeLine{00042         \textcolor{keywordflow}{if} hasattr(cls, name) \textcolor{keywordflow}{and} \textcolor{keywordflow}{not} isinstance(getattr(cls, name), property):}
+\DoxyCodeLine{00043             set(cls, name, value)}
+\DoxyCodeLine{00044         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00045             \textcolor{keywordflow}{raise} AttributeError(\textcolor{stringliteral}{"{}You cannot add class attributes to \%s"{}} \% cls)}
+\DoxyCodeLine{00046     \textcolor{keywordflow}{return} set\_class\_attr}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceopenMTPK_ae3cfe140cb224d183a4dcd6b1435c234}\label{namespaceopenMTPK_ae3cfe140cb224d183a4dcd6b1435c234}} 
+\index{openMTPK@{openMTPK}!\_swig\_setattr\_nondynamic\_instance\_variable@{\_swig\_setattr\_nondynamic\_instance\_variable}}
+\index{\_swig\_setattr\_nondynamic\_instance\_variable@{\_swig\_setattr\_nondynamic\_instance\_variable}!openMTPK@{openMTPK}}
+\doxysubsubsection{\texorpdfstring{\_swig\_setattr\_nondynamic\_instance\_variable()}{\_swig\_setattr\_nondynamic\_instance\_variable()}}
+{\footnotesize\ttfamily def open\+MTPK.\+\_\+swig\+\_\+setattr\+\_\+nondynamic\+\_\+instance\+\_\+variable (\begin{DoxyParamCaption}\item[{}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openMTPK_8py_source_l00027}{27}} of file \mbox{\hyperlink{openMTPK_8py_source}{open\+MTPK.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceopenMTPK_ae3cfe140cb224d183a4dcd6b1435c234}{\_swig\_setattr\_nondynamic\_instance\_variable}}(set):}
+\DoxyCodeLine{00028     \textcolor{keyword}{def }set\_instance\_attr(self, name, value):}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} name == \textcolor{stringliteral}{"{}this"{}}:}
+\DoxyCodeLine{00030             set(self, name, value)}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{elif} name == \textcolor{stringliteral}{"{}thisown"{}}:}
+\DoxyCodeLine{00032             self.this.own(value)}
+\DoxyCodeLine{00033         \textcolor{keywordflow}{elif} hasattr(self, name) \textcolor{keywordflow}{and} isinstance(getattr(type(self), name), property):}
+\DoxyCodeLine{00034             set(self, name, value)}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00036             \textcolor{keywordflow}{raise} AttributeError(\textcolor{stringliteral}{"{}You cannot add instance attributes to \%s"{}} \% self)}
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} set\_instance\_attr}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceopenMTPK_a8dfa31a969910f15b95eddafaee9cda9}\label{namespaceopenMTPK_a8dfa31a969910f15b95eddafaee9cda9}} 
+\index{openMTPK@{openMTPK}!BITS@{BITS}}
+\index{BITS@{BITS}!openMTPK@{openMTPK}}
+\doxysubsubsection{\texorpdfstring{BITS}{BITS}}
+{\footnotesize\ttfamily open\+MTPK.\+BITS = \+\_\+open\+MTPK.\+BITS}
+
+
+
+Definition at line \mbox{\hyperlink{openMTPK_8py_source_l00104}{104}} of file \mbox{\hyperlink{openMTPK_8py_source}{open\+MTPK.\+py}}.
+
+\mbox{\Hypertarget{namespaceopenMTPK_aa5567afc1753d78c2bcac42b056642c3}\label{namespaceopenMTPK_aa5567afc1753d78c2bcac42b056642c3}} 
+\index{openMTPK@{openMTPK}!BYTE\_LIMIT@{BYTE\_LIMIT}}
+\index{BYTE\_LIMIT@{BYTE\_LIMIT}!openMTPK@{openMTPK}}
+\doxysubsubsection{\texorpdfstring{BYTE\_LIMIT}{BYTE\_LIMIT}}
+{\footnotesize\ttfamily open\+MTPK.\+BYTE\+\_\+\+LIMIT = \+\_\+open\+MTPK.\+BYTE\+\_\+\+LIMIT}
+
+
+
+Definition at line \mbox{\hyperlink{openMTPK_8py_source_l00105}{105}} of file \mbox{\hyperlink{openMTPK_8py_source}{open\+MTPK.\+py}}.
+

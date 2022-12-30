@@ -1,0 +1,102 @@
+\hypertarget{openGL__tri_8cpp}{}\doxysection{experiment/\+GPU/open\+GL\+\_\+tri.cpp File Reference}
+\label{openGL__tri_8cpp}\index{experiment/GPU/openGL\_tri.cpp@{experiment/GPU/openGL\_tri.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$GL/glut.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{openGL__tri_8cpp_a1daf785e3f68d293c7caa1c756d5cb74}{pi}}~3.\+142857
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{openGL__tri_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}} ()
+\item 
+int \mbox{\hyperlink{openGL__tri_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{openGL__tri_8cpp_a1daf785e3f68d293c7caa1c756d5cb74}\label{openGL__tri_8cpp_a1daf785e3f68d293c7caa1c756d5cb74}} 
+\index{openGL\_tri.cpp@{openGL\_tri.cpp}!pi@{pi}}
+\index{pi@{pi}!openGL\_tri.cpp@{openGL\_tri.cpp}}
+\doxysubsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily \#define pi~3.\+142857}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__tri_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{openGL__tri_8cpp_source}{open\+GL\+\_\+tri.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{openGL__tri_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}\label{openGL__tri_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}} 
+\index{openGL\_tri.cpp@{openGL\_tri.cpp}!display@{display}}
+\index{display@{display}!openGL\_tri.cpp@{openGL\_tri.cpp}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__tri_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{openGL__tri_8cpp_source}{open\+GL\+\_\+tri.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010                \{}
+\DoxyCodeLine{00011     \textcolor{comment}{// setting every pixel in frame buffer to a clear color}}
+\DoxyCodeLine{00012     glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     \textcolor{comment}{// being drawing}}
+\DoxyCodeLine{00015     glBegin(GL\_POLYGON);}
+\DoxyCodeLine{00016         glColor3f(1, 0, 1); glVertex3f(-\/0.6, -\/0.75, 0.5);}
+\DoxyCodeLine{00017         glColor3f(0, 1, 0); glVertex3f(0.6, -\/0.75, 0);}
+\DoxyCodeLine{00018         glColor3f(0, 0, 1); glVertex3f(0, 0.75, 0);}
+\DoxyCodeLine{00019     glEnd();}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     \textcolor{comment}{// flush the draw cmd to display image immediately}}
+\DoxyCodeLine{00022     glFlush();}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{openGL__tri_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{openGL__tri_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{openGL__tri_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{openGL\_tri.cpp@{openGL\_tri.cpp}!main@{main}}
+\index{main@{main}!openGL\_tri.cpp@{openGL\_tri.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__tri_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{openGL__tri_8cpp_source}{open\+GL\+\_\+tri.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026                                 \{}
+\DoxyCodeLine{00027     glutInit(\&argc, argv);}
+\DoxyCodeLine{00028     glutInitDisplayMode(GLUT\_SINGLE | GLUT\_RGB);}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{comment}{// Position window at (80,80)-\/(480,380) and give it a title.}}
+\DoxyCodeLine{00031     glutInitWindowPosition(80, 80);}
+\DoxyCodeLine{00032     glutInitWindowSize(1000, 800);}
+\DoxyCodeLine{00033     glutCreateWindow(\textcolor{stringliteral}{"{}A Shaded Triangle"{}});}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{// Tell GLUT that whenever the main window needs to be repainted that it}}
+\DoxyCodeLine{00036     \textcolor{comment}{// should call the function display().}}
+\DoxyCodeLine{00037     glutDisplayFunc(\mbox{\hyperlink{openGL__tri_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}});}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     glutMainLoop();}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{openGL__tri_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display()}}.
+

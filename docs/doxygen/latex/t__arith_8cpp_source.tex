@@ -1,0 +1,69 @@
+\hypertarget{t__arith_8cpp_source}{}\doxysection{t\+\_\+arith.\+cpp}
+\label{t__arith_8cpp_source}\index{tests/arith/t\_arith.cpp@{tests/arith/t\_arith.cpp}}
+\mbox{\hyperlink{t__arith_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00002}00002 \textcolor{comment}{ * Testing Arithmetic Operations}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../../include/arithmetic/arith.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00008}00008 using ::testing::InitGoogleTest;}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00009}00009 using ::testing::FloatLE;}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00010}00010 using ::testing::DoubleLE;}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00013}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03}{00013}} \textcolor{keyword}{namespace }\{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00014}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{00014}}     \mbox{\hyperlink{classArith}{Arith}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}};}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00016}00016     \textcolor{comment}{// test case, test name}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00017}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a9b20797f347fcae52e3413675c6c6015}{00017}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a6bc89ae612d741dbbb8e498ca7e5e345}{TEST}}(arith\_test, add\_positive) \{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00018}00018         EXPECT\_EQ(46094, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}}(93, 106, 3551, 42344));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00019}00019         EXPECT\_EQ(21, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}}(10, 8, 3));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00020}00020         EXPECT\_EQ(6.85, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}}(1.25, 1.85, 2.75, 1));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00021}00021         }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00024}00024     \textcolor{comment}{// multiplication (product) testing}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00025}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a64374acf9f3489dda186c9c6339aa7cd}{00025}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a6bc89ae612d741dbbb8e498ca7e5e345}{TEST}}(arith\_test, mult\_positive) \{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00026}00026         EXPECT\_EQ(240, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult}}(10, 8, 3));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00027}00027         EXPECT\_EQ(6.359375, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult}}(1.25, 1.85, 2.75, 1));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00030}00030     \textcolor{comment}{// subtraction}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00031}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a799e1f5fe14444faf478d4afd9f94c7b}{00031}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a6bc89ae612d741dbbb8e498ca7e5e345}{TEST}}(arith\_test, sub\_positive) \{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00032}00032         EXPECT\_EQ(5, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}}(10, 8, 3));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00033}00033         EXPECT\_EQ(2.15, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}}(1.25, 1.85, 2.75));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00034}00034         EXPECT\_EQ(7, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a86f2638b0bd1331143bd667b98d94348}{ar}}.\mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}}(3, 3, 7));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00038}00038 \textcolor{keyword}{namespace }\{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00039}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{00039}}     \mbox{\hyperlink{classBasics}{Basics}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}};}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00041}00041     \textcolor{comment}{// greatest power}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00042}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a477432de1720b4ded90a6eb63184bacf}{00042}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a6bc89ae612d741dbbb8e498ca7e5e345}{TEST}}(\mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, greatest\_pow) \{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00043}00043         EXPECT\_EQ(4, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_abe5cae1d3477bc05fd15577c242e33f2}{greatest\_power}}(10, 3));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00044}00044         EXPECT\_EQ(2, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_abe5cae1d3477bc05fd15577c242e33f2}{greatest\_power}}(7, 3));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00047}00047     \textcolor{comment}{// greatest common divisor}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00048}\mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a6bc89ae612d741dbbb8e498ca7e5e345}{00048}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a6bc89ae612d741dbbb8e498ca7e5e345}{TEST}}(\mbox{\hyperlink{modules_2number__theory_2primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, greatest\_common\_divisor) \{}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00049}00049         EXPECT\_EQ(2, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(2, 4));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00050}00050         EXPECT\_EQ(6, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(2198466, 96096));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00051}00051         EXPECT\_EQ(11, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(66, 11));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00052}00052         EXPECT\_EQ(8, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(232, 96));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00053}00053         EXPECT\_EQ(10, \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a191b99f8aab79b3a04dc81b11fbe1843}{ba}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(1703210, 20320));}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00056}00056 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00057}00057 \textcolor{comment}{int main() \{}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00058}00058 \textcolor{comment}{    InitGoogleTest();}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00059}00059 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00060}00060 \textcolor{comment}{    return RUN\_ALL\_TESTS();}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00061}00061 \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00062}00062 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{t__arith_8cpp_source_l00063}00063 }
+
+\end{DoxyCode}

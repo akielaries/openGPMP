@@ -1,0 +1,234 @@
+\hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03}{}\doxysection{anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\} Namespace Reference}
+\label{namespaceanonymous__namespace_02t__primes_8cpp_03}\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a98691371b022fa03d1f451f4c798037a}{TEST}} (prime\+\_\+test, is\+\_\+prime)
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_af52ff185d5d2881084885a716e563d3d}{TEST}} (prime\+\_\+test, carmichael)
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a82a37bb2a27034b898ad4d3640ff967b}{TEST}} (prime\+\_\+test, mod\+\_\+pow)
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a7d2473bbd826c7a329b9dde463327347}{TEST}} (prime\+\_\+test, compute\+\_\+miller\+\_\+rabin)
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a4681e33230fe0874bec63a70f11ff8d1}{TEST}} (prime\+\_\+test, miller\+\_\+rabin\+\_\+prime)
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}} (prime\+\_\+test, solovoy\+\_\+strassen)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPrimality}{Primality}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_af52ff185d5d2881084885a716e563d3d}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_af52ff185d5d2881084885a716e563d3d}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{prime\+\_\+test}]{,  }\item[{carmichael}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057                                  \{}
+\DoxyCodeLine{00058         \textcolor{keywordtype}{int} is\_cm\_0 = 561;}
+\DoxyCodeLine{00059         \textcolor{keywordtype}{bool} actual\_cm\_0 = \textcolor{keyword}{true};}
+\DoxyCodeLine{00060         \textcolor{keywordtype}{bool}  carm\_fetched\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{carmichael\_num}}(is\_cm\_0); }
+\DoxyCodeLine{00061         EXPECT\_EQ(actual\_cm\_0, carm\_fetched\_0);}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063         \textcolor{keywordtype}{int} is\_cm\_1 = 560;}
+\DoxyCodeLine{00064         \textcolor{keywordtype}{bool} actual\_cm\_1 = \textcolor{keyword}{false};}
+\DoxyCodeLine{00065         \textcolor{keywordtype}{bool}  carm\_fetched\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{carmichael\_num}}(is\_cm\_1); }
+\DoxyCodeLine{00066         EXPECT\_EQ(actual\_cm\_1, carm\_fetched\_1);}
+\DoxyCodeLine{00067     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{Primality\+::carmichael\+\_\+num()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.
+
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_a7d2473bbd826c7a329b9dde463327347}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_a7d2473bbd826c7a329b9dde463327347}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{prime\+\_\+test}]{,  }\item[{compute\+\_\+miller\+\_\+rabin}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081                                            \{}
+\DoxyCodeLine{00082         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(7, 5));}
+\DoxyCodeLine{00083         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(7, 1));}
+\DoxyCodeLine{00084         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(1049, 5));}
+\DoxyCodeLine{00085         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(2999, 5));}
+\DoxyCodeLine{00086         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(4, 2));}
+\DoxyCodeLine{00087         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(200392, 5));}
+\DoxyCodeLine{00088         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(90, 5));}
+\DoxyCodeLine{00089     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{Primality\+::compute\+\_\+miller\+\_\+rabin()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.
+
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_a98691371b022fa03d1f451f4c798037a}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_a98691371b022fa03d1f451f4c798037a}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{prime\+\_\+test}]{,  }\item[{is\+\_\+prime}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                \{}
+\DoxyCodeLine{00016         \textcolor{keywordtype}{int} is\_prime\_0 = 2;}
+\DoxyCodeLine{00017         \textcolor{keywordtype}{bool} actual\_0 = \textcolor{keyword}{true};}
+\DoxyCodeLine{00018         \textcolor{keywordtype}{bool} fetched\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_0);}
+\DoxyCodeLine{00019         EXPECT\_EQ(actual\_0, fetched\_0);}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{keywordtype}{int} is\_prime\_1 = 3;}
+\DoxyCodeLine{00022         \textcolor{keywordtype}{bool} actual\_1 = \textcolor{keyword}{true};}
+\DoxyCodeLine{00023         \textcolor{keywordtype}{bool} fetched\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_1);}
+\DoxyCodeLine{00024         EXPECT\_EQ(actual\_1, fetched\_1);}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         \textcolor{keywordtype}{int} is\_prime\_2 = 9;}
+\DoxyCodeLine{00027         \textcolor{keywordtype}{bool} actual\_2 = \textcolor{keyword}{false};}
+\DoxyCodeLine{00028         \textcolor{keywordtype}{bool} fetched\_2 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_2);}
+\DoxyCodeLine{00029         EXPECT\_EQ(actual\_2, fetched\_2);}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         \textcolor{keywordtype}{int} is\_prime\_3 = 8191;}
+\DoxyCodeLine{00032         \textcolor{keywordtype}{bool} actual\_3 = \textcolor{keyword}{true};}
+\DoxyCodeLine{00033         \textcolor{keywordtype}{bool} fetched\_3 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_3);}
+\DoxyCodeLine{00034         EXPECT\_EQ(actual\_3, fetched\_3);}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036         \textcolor{keywordtype}{int} is\_prime\_4 = 524287;}
+\DoxyCodeLine{00037         \textcolor{keywordtype}{bool} actual\_4 = \textcolor{keyword}{true};}
+\DoxyCodeLine{00038         \textcolor{keywordtype}{bool} fetched\_4 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_4);}
+\DoxyCodeLine{00039         EXPECT\_EQ(actual\_4, fetched\_4);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keywordtype}{int} is\_prime\_5 = 6;}
+\DoxyCodeLine{00042         \textcolor{keywordtype}{bool} actual\_5 = \textcolor{keyword}{false};}
+\DoxyCodeLine{00043         \textcolor{keywordtype}{bool} fetched\_5 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_5);}
+\DoxyCodeLine{00044         EXPECT\_EQ(actual\_5, fetched\_5);}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{keywordtype}{int} is\_prime\_6 = 2400530;}
+\DoxyCodeLine{00047         \textcolor{keywordtype}{bool} actual\_6 = \textcolor{keyword}{false};}
+\DoxyCodeLine{00048         \textcolor{keywordtype}{bool} fetched\_6 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_6);}
+\DoxyCodeLine{00049         EXPECT\_EQ(actual\_6, fetched\_6);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051         \textcolor{keywordtype}{int} is\_prime\_7 = 1;}
+\DoxyCodeLine{00052         \textcolor{keywordtype}{bool} actual\_7 = \textcolor{keyword}{false};}
+\DoxyCodeLine{00053         \textcolor{keywordtype}{bool} fetched\_7 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_7);}
+\DoxyCodeLine{00054         EXPECT\_EQ(actual\_7, fetched\_7);}
+\DoxyCodeLine{00055     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{Primality\+::is\+\_\+prime()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.
+
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_a4681e33230fe0874bec63a70f11ff8d1}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_a4681e33230fe0874bec63a70f11ff8d1}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{prime\+\_\+test}]{,  }\item[{miller\+\_\+rabin\+\_\+prime}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091                                          \{}
+\DoxyCodeLine{00092         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(1049, 4));}
+\DoxyCodeLine{00093         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(5, 4));}
+\DoxyCodeLine{00094         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(2999, 4));}
+\DoxyCodeLine{00095         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(3, 4));}
+\DoxyCodeLine{00096         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(3000, 4));}
+\DoxyCodeLine{00097         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(4, 4));}
+\DoxyCodeLine{00098         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(104032, 4));}
+\DoxyCodeLine{00099     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{Primality\+::miller\+\_\+rabin\+\_\+prime()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.
+
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_a82a37bb2a27034b898ad4d3640ff967b}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_a82a37bb2a27034b898ad4d3640ff967b}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{prime\+\_\+test}]{,  }\item[{mod\+\_\+pow}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069                               \{}
+\DoxyCodeLine{00070         EXPECT\_EQ(1, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(3, 2, 2));}
+\DoxyCodeLine{00071         EXPECT\_EQ(4, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(5, 2, 7));}
+\DoxyCodeLine{00072         EXPECT\_EQ(2, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(8, 9, 3));}
+\DoxyCodeLine{00073         EXPECT\_EQ(4, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(2, 30, 5));}
+\DoxyCodeLine{00074     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{Primality\+::mod\+\_\+pow()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.
+
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{prime\+\_\+test}]{,  }\item[{solovoy\+\_\+strassen}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103                                        \{}
+\DoxyCodeLine{00104         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(15, 50));}
+\DoxyCodeLine{00105         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(25, 50));}
+\DoxyCodeLine{00106         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(104032, 50));}
+\DoxyCodeLine{00107         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(3, 50));}
+\DoxyCodeLine{00108         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(2999, 50));}
+\DoxyCodeLine{00109         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(1049, 50));}
+\DoxyCodeLine{00110     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}, and \mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{Primality\+::solovoy\+\_\+strassen()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}\label{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}} 
+\index{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}!p@{p}}
+\index{p@{p}!anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_primes.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPrimality}{Primality}} anonymous\+\_\+namespace\{t\+\_\+primes.\+cpp\}\+::p}
+
+
+
+Definition at line \mbox{\hyperlink{t__primes_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{t__primes_8cpp_source}{t\+\_\+primes.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a98691371b022fa03d1f451f4c798037a}{TEST()}}.
+

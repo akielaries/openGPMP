@@ -1,0 +1,205 @@
+\hypertarget{t__rc4_8cpp_source}{}\doxysection{t\+\_\+rc4.\+cpp}
+\label{t__rc4_8cpp_source}\index{tests/number\_theory/t\_rc4.cpp@{tests/number\_theory/t\_rc4.cpp}}
+\mbox{\hyperlink{t__rc4_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00002}00002 \textcolor{comment}{ * Testing an implementation of RC4 encryption algorithm based off }}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00003}00003 \textcolor{comment}{ * verified plaintext-\/>hash conversions}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00004}00004 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}../../include/number\_theory/rc4.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00012}00012 using ::testing::InitGoogleTest;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00013}00013 using ::testing::FloatLE;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00014}00014 using ::testing::DoubleLE;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00017}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03}{00017}} \textcolor{keyword}{namespace }\{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00018}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{00018}}     \mbox{\hyperlink{classRC4}{RC4}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00020}00020     \textcolor{comment}{// BBF316E8D940AF0AD3}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00021}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad84fa17660b9bdfaa5a1f894343b5558}{00021}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad84fa17660b9bdfaa5a1f894343b5558}{key\_0}}    = (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}Key"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00022}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{00022}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}   = (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}Plaintext"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00023}00023     \textcolor{comment}{// 1021BF0420}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00024}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a62d591c76709cbf2b4fc260a8ea36666}{00024}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a62d591c76709cbf2b4fc260a8ea36666}{key\_1}}    = (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}Wiki"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00025}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{00025}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}}   = (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}pedia"{}};        }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00026}00026     \textcolor{comment}{// 45A01F645FC35B383552544B9BF5}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00027}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{00027}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}    = (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}Secret"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00028}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{00028}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}   = (\textcolor{keywordtype}{char}*)\textcolor{stringliteral}{"{}Attack at dawn"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00029}00029     }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00030}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a40ac3bbe655c6ba181ceca8da1be6cc6}{00030}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{TEST}}(rc4\_test, hash\_XOR) \{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00031}00031         \textcolor{keywordtype}{int} x\_swap = 0;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00032}00032         std::string ptext\_0 = \textcolor{stringliteral}{"{}|xbb||xf3||x16||xe8||xd9||x40||xaf||x0a||xd3|"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00033}00033         \textcolor{comment}{// allocate memory for the ciphertext pointer}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00034}00034         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_0 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) * }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00035}00035                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00036}00036         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad84fa17660b9bdfaa5a1f894343b5558}{key\_0}}, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00037}00037                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00038}00038                                                 hashtext\_0, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00039}00039                                                 x\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00040}00040         std::string displayed\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00041}00041                                                 hashtext\_0,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00042}00042                                                 x\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00043}00043         EXPECT\_EQ(ptext\_0 , displayed\_0);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00044}00044         \textcolor{comment}{/*<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00045}00045         std::string ptext\_01 = \textcolor{stringliteral}{"{}|x10||x21||xbf||x04||x20|"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00046}00046         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_01 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00047}00047                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00048}00048         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_01 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a62d591c76709cbf2b4fc260a8ea36666}{key\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00049}00049                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00050}00050                                                 hashtext\_01,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00051}00051                                                 x\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00052}00052         std::string displayed\_01 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00053}00053                                                 hashtext\_01,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00054}00054                                                 x\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00055}00055         EXPECT\_EQ(ptext\_01, displayed\_01);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00056}00056         \textcolor{comment}{/*<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00057}00057         std::string ptext\_02 =}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00058}00058         \textcolor{stringliteral}{"{}|x45||xa0||x1f||x64||x5f||xc3||x5b||x38||x35||x52||x54||x4b||x9b||xf5|"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00059}00059         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_02 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00060}00060                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00061}00061         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_02 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00062}00062                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00063}00063                                                 hashtext\_02,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00064}00064                                                 x\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00065}00065         std::string displayed\_02 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00066}00066                                                 hashtext\_02,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00067}00067                                                 x\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00068}00068         EXPECT\_EQ(ptext\_02, displayed\_02);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00070}00070     }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00071}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_afd100eb8f2ca7f623b0203a7f8d75bc3}{00071}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{TEST}}(rc4\_test, hash\_TRAD) \{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00072}00072         \textcolor{keywordtype}{int} t\_swap = 1;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00073}00073         std::string ptext\_1 = \textcolor{stringliteral}{"{}BBF316E8D940AF0AD3"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00074}00074         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_10 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00075}00075                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00076}00076         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_10 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad84fa17660b9bdfaa5a1f894343b5558}{key\_0}}, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00077}00077                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00078}00078                                                 hashtext\_10, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00079}00079                                                 t\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00080}00080         std::string displayed\_10 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00081}00081                                                 hashtext\_10,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00082}00082                                                 t\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00083}00083         EXPECT\_EQ(ptext\_1, displayed\_10);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00084}00084         \textcolor{comment}{/*<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00085}00085         std::string ptext\_11 = \textcolor{stringliteral}{"{}1021BF0420"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00086}00086         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_11 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00087}00087                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00088}00088         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_11 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a62d591c76709cbf2b4fc260a8ea36666}{key\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00089}00089                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00090}00090                                                 hashtext\_11,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00091}00091                                                 t\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00092}00092         std::string displayed\_11 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00093}00093                                                 hashtext\_11,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00094}00094                                                 t\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00095}00095         EXPECT\_EQ(ptext\_11, displayed\_11);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00096}00096         \textcolor{comment}{/*<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00097}00097         std::string ptext\_12 = \textcolor{stringliteral}{"{}45A01F645FC35B383552544B9BF5"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00098}00098         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_12 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00099}00099                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00100}00100         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_12 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00101}00101                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00102}00102                                                 hashtext\_12,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00103}00103                                                 t\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00104}00104         std::string displayed\_12 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00105}00105                                                 hashtext\_12,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00106}00106                                                 t\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00107}00107         EXPECT\_EQ(ptext\_12, displayed\_12);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00110}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a7020cd5bc4f1f41617a4134e1e699a22}{00110}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{TEST}}(rc4\_test, hash\_BYTE) \{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00111}00111         \textcolor{keywordtype}{int} b\_swap = 2;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00112}00112         std::string ptext\_2 = \textcolor{stringliteral}{"{}BBF316E8D940AF0AD3"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00113}00113         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_20 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00114}00114                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00115}00115         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_20 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad84fa17660b9bdfaa5a1f894343b5558}{key\_0}}, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00116}00116                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00117}00117                                                 hashtext\_20, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00118}00118                                                 b\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00119}00119         std::string displayed\_20 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00120}00120                                                 hashtext\_20,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00121}00121                                                 b\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00122}00122         EXPECT\_EQ(ptext\_2, displayed\_20);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00123}00123         \textcolor{comment}{/*<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00124}00124         std::string ptext\_21 = \textcolor{stringliteral}{"{}1021BF0420"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00125}00125         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_21 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00126}00126                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00127}00127         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_21 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a62d591c76709cbf2b4fc260a8ea36666}{key\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00128}00128                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00129}00129                                                 hashtext\_21,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00130}00130                                                 b\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00131}00131         std::string displayed\_21 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00132}00132                                                 hashtext\_21,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00133}00133                                                 b\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00134}00134         EXPECT\_EQ(ptext\_21, displayed\_21);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00135}00135         \textcolor{comment}{/*<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00136}00136         std::string ptext\_22 = \textcolor{stringliteral}{"{}45A01F645FC35B383552544B9BF5"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00137}00137         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_22 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00138}00138                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00139}00139         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *computed\_22 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00140}00140                                                 \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00141}00141                                                 hashtext\_22,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00142}00142                                                 b\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00143}00143         std::string displayed\_22 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{store\_hash}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}},}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00144}00144                                                 hashtext\_22,}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00145}00145                                                 b\_swap);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00146}00146         EXPECT\_EQ(ptext\_22, displayed\_22);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00147}00147     \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00149}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a9223870a19eebc3967eabe806133501b}{00149}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{TEST}}(rc4\_test, SWAP\_error\_4) \{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00150}00150         \textcolor{keywordtype}{int} swap\_FALSE = 4;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00151}00151         std::string expected\_error\_text = \textcolor{stringliteral}{"{}[-\/] Invalid swap\_type"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00153}00153         \textcolor{comment}{/*BEGIN RC4 ITERATIONS*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00154}00154         std::string ptext\_FALSE = \textcolor{stringliteral}{"{}1021BF0420"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00155}00155         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_FALSE = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00156}00156                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00158}00158         EXPECT\_THROW(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, hashtext\_FALSE, swap\_FALSE),}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00159}00159                         std::runtime\_error);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00161}00161         ASSERT\_THROW(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, hashtext\_FALSE, swap\_FALSE),}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00162}00162                         std::runtime\_error);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00165}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_acb09d810d87187042bbf5d8fcd54fb5d}{00165}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{TEST}}(rc4\_test, SWAP\_error\_127) \{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00166}00166         \textcolor{keywordtype}{int} swap\_FALSE\_127 = 127;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00167}00167         std::string expected\_error\_text\_127 = \textcolor{stringliteral}{"{}[-\/] Invalid swap\_type"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00168}00168 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00169}00169         \textcolor{comment}{/*BEGIN RC4 ITERATIONS*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00170}00170         std::string ptext\_FALSE\_127 = \textcolor{stringliteral}{"{}1021BF0420"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00171}00171         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_FALSE\_127 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}) *}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00172}00172                 strlen(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}));}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00174}00174         EXPECT\_THROW(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, hashtext\_FALSE\_127, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00175}00175                     swap\_FALSE\_127), std::runtime\_error);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00177}00177         ASSERT\_THROW(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, hashtext\_FALSE\_127, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00178}00178                     swap\_FALSE\_127), std::runtime\_error);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00179}00179     \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00181}\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{00181}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a54885a20960739800e983250d53363b7}{TEST}}(rc4\_test, NULL\_ciphertext) \{}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00182}00182         \textcolor{keywordtype}{int} swap\_NULL = 0;}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00183}00183         std::string expected\_error\_text\_127 = \textcolor{stringliteral}{"{}[-\/] Error Allocating Memory"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00185}00185         \textcolor{comment}{/*BEGIN RC4 ITERATIONS*/}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00186}00186         std::string ptext\_NULL = \textcolor{stringliteral}{"{}1021BF0420"{}};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00187}00187         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *hashtext\_NULL = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00188}00188             \textcolor{comment}{//(unsigned char *)malloc(sizeof(int) *}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00189}00189             \textcolor{comment}{//    strlen(swap\_NULL));}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00191}00191         EXPECT\_THROW(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, hashtext\_NULL, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00192}00192                     swap\_NULL), std::runtime\_error);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00194}00194         ASSERT\_THROW(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_af188fa7756d0b8e9f1aa9960868b6a55}{rc}}.\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{compute}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a2d4bf26006b2cd7d0f85678088acff72}{key\_2}}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, hashtext\_NULL, }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00195}00195                     swap\_NULL), std::runtime\_error);}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00196}00196     \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00198}00198 \}}
+\DoxyCodeLine{\Hypertarget{t__rc4_8cpp_source_l00199}00199 }
+
+\end{DoxyCode}

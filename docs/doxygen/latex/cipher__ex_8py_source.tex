@@ -1,0 +1,32 @@
+\hypertarget{cipher__ex_8py_source}{}\doxysection{cipher\+\_\+ex.\+py}
+\label{cipher__ex_8py_source}\index{Python/examples/cipher\_ex.py@{Python/examples/cipher\_ex.py}}
+\mbox{\hyperlink{cipher__ex_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00001}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex}{00001}} \textcolor{comment}{\#!/usr/bin/python3.10}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00002}00002 \textcolor{keyword}{from} openMTPK \textcolor{keyword}{import} Cipher}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00004}00004 print(\textcolor{stringliteral}{"{}Using the Number Theory module in Python"{}})}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00005}00005 print(\textcolor{stringliteral}{"{}Methods of the Cipher class:\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00006}00006 \textcolor{stringliteral}{    -\/ C\_cipher(plaintext, key)\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00007}00007 \textcolor{stringliteral}{        : takes in plain text and key for shifting text\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00008}00008 \textcolor{stringliteral}{    \(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00009}00009 \textcolor{stringliteral}{    -\/ KC\_encode(key)\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00010}00010 \textcolor{stringliteral}{        : pass in key to encode for corresponding algorithm\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00011}00011 \textcolor{stringliteral}{    -\/ KC\_cipher(plaintext, encoded\_text)\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00012}00012 \textcolor{stringliteral}{        : recieves encoded key text, plaintext, returning cipher\(\backslash\)n"{}})}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00014}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{00014}} c = \mbox{\hyperlink{classopenMTPK_1_1Cipher}{Cipher}}()}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00015}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aa96ab8655dd400aaa99c5ca88a8438b3}{00015}} ciph = c.C\_cipher(\textcolor{stringliteral}{'Plaintext'}, 5)}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00016}00016 print(ciph)}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00018}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aad4d9b6b15b98bb7573ff0fbd898c221}{00018}} ciph\_1 = c.C\_cipher(\textcolor{stringliteral}{'ATTACKATONCE'}, 4)}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00019}00019 print(ciph\_1)}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00021}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a28cfaddfb20a1fa7b0493a600bbefb7f}{00021}} text = \textcolor{stringliteral}{"{}Password"{}}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00022}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_acb098060f7f6f7babcd044243aa5b800}{00022}} shift = \textcolor{stringliteral}{"{}Computer"{}}}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00023}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a25bf42403e5121962ea2c4a45646569b}{00023}} encoded\_text = c.KC\_encode(shift);}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00024}\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{00024}} hashtext = c.KC\_cipher(text, encoded\_text);}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00025}00025 print(hashtext)}
+\DoxyCodeLine{\Hypertarget{cipher__ex_8py_source_l00026}00026 }
+
+\end{DoxyCode}

@@ -1,0 +1,136 @@
+\hypertarget{samples_2cpp_2primes_8cpp}{}\doxysection{samples/cpp/primes.cpp File Reference}
+\label{samples_2cpp_2primes_8cpp}\index{samples/cpp/primes.cpp@{samples/cpp/primes.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$open\+MTPK/primes.\+hpp$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{samples_2cpp_2primes_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{samples_2cpp_2primes_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{samples_2cpp_2primes_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{primes.cpp@{primes.cpp}!main@{main}}
+\index{main@{main}!primes.cpp@{primes.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{samples_2cpp_2primes_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{samples_2cpp_2primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009            \{}
+\DoxyCodeLine{00010     std::cout << \textcolor{stringliteral}{"{}BASIC NUMBER THEORY OPERATIONS\(\backslash\)n"{}} << std::endl;}
+\DoxyCodeLine{00011     \textcolor{comment}{// declare primality class object}}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classPrimality}{Primality}} \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}};}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014     std::cout << \textcolor{stringliteral}{"{}<-\/-\/-\/-\/-\/-\/-\/-\/-\/ IS IT PRIME? -\/-\/-\/-\/-\/-\/-\/-\/-\/>\(\backslash\)n"{}};}
+\DoxyCodeLine{00015     \textcolor{keywordtype}{int} a = 9;}
+\DoxyCodeLine{00016     \textcolor{comment}{// check if an integer is prime or not}}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{bool} is\_it = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.is\_prime(a);}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     std::cout << a << \textcolor{stringliteral}{"{} is prime? : "{}};}
+\DoxyCodeLine{00020     is\_it ? std::cout << \textcolor{stringliteral}{"{}true\(\backslash\)n"{}} : }
+\DoxyCodeLine{00021         std::cout << \textcolor{stringliteral}{"{}false\(\backslash\)n"{}} << std::endl;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023     \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} = 2;}
+\DoxyCodeLine{00024     \textcolor{keywordtype}{bool} is\_it2 = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.is\_prime(\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}});}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     std::cout << \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} << \textcolor{stringliteral}{"{} is prime? : "{}};}
+\DoxyCodeLine{00027     is\_it2? std::cout << \textcolor{stringliteral}{"{}true\(\backslash\)n"{}} : }
+\DoxyCodeLine{00028             std::cout << \textcolor{stringliteral}{"{}false\(\backslash\)n"{}} << std::endl;}
+\DoxyCodeLine{00029     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031     std::cout << \textcolor{stringliteral}{"{}<-\/-\/-\/-\/-\/-\/-\/-\/-\/ MILLER-\/RABIN METHOD -\/-\/-\/-\/-\/-\/-\/-\/-\/>\(\backslash\)n"{}};}
+\DoxyCodeLine{00032     \textcolor{keywordtype}{int} min\_num = 1;}
+\DoxyCodeLine{00033     \textcolor{comment}{// display the prime numbers smaller than a given value}}
+\DoxyCodeLine{00034     \textcolor{keywordtype}{int} max\_num = 100;}
+\DoxyCodeLine{00035     \textcolor{comment}{// number of iterations}}
+\DoxyCodeLine{00036     \textcolor{keywordtype}{int} iters = 4;}
+\DoxyCodeLine{00037     \textcolor{comment}{/*}}
+\DoxyCodeLine{00038 \textcolor{comment}{     * calculate the solution, the method doesn't return a value, }}
+\DoxyCodeLine{00039 \textcolor{comment}{     * prints the values}}
+\DoxyCodeLine{00040 \textcolor{comment}{     */}}
+\DoxyCodeLine{00041     \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.miller\_rabin(iters, min\_num, max\_num);}
+\DoxyCodeLine{00042     \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.miller\_rabin(iters, 25, 50);}
+\DoxyCodeLine{00043     \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.miller\_rabin(iters, 30, 3000);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00046     }
+\DoxyCodeLine{00047     std::cout << \textcolor{stringliteral}{"{}<-\/-\/-\/-\/-\/-\/-\/-\/-\/ CARMICHAEL NUMBERS -\/-\/-\/-\/-\/-\/-\/-\/-\/>\(\backslash\)n"{}};}
+\DoxyCodeLine{00048     \textcolor{keywordtype}{int} cm\_test = 500;}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{bool} carm\_num = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.carmichael\_num(cm\_test);}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \textcolor{keywordtype}{int} cm\_test1 = 561;}
+\DoxyCodeLine{00052     \textcolor{keywordtype}{bool} carm\_num1 = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.carmichael\_num(cm\_test1);}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \textcolor{keywordtype}{int} cm\_test2 = 1105;}
+\DoxyCodeLine{00055     \textcolor{keywordtype}{bool} carm\_num2 = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.carmichael\_num(cm\_test2);}
+\DoxyCodeLine{00056     }
+\DoxyCodeLine{00057     std::cout << cm\_test << \textcolor{stringliteral}{"{} is a carmichael number : "{}};}
+\DoxyCodeLine{00058     carm\_num? std::cout << \textcolor{stringliteral}{"{}true\(\backslash\)n"{}} :}
+\DoxyCodeLine{00059             std::cout << \textcolor{stringliteral}{"{}false\(\backslash\)n"{}};}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     std::cout << cm\_test1 << \textcolor{stringliteral}{"{} is a carmichael number : "{}};}
+\DoxyCodeLine{00062     carm\_num1? std::cout << \textcolor{stringliteral}{"{}true\(\backslash\)n"{}} :}
+\DoxyCodeLine{00063             std::cout << \textcolor{stringliteral}{"{}false\(\backslash\)n"{}};}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     std::cout << cm\_test2 << \textcolor{stringliteral}{"{} is a carmichael number : "{}};}
+\DoxyCodeLine{00066     carm\_num2? std::cout << \textcolor{stringliteral}{"{}true\(\backslash\)n"{}} :}
+\DoxyCodeLine{00067             std::cout << \textcolor{stringliteral}{"{}false\(\backslash\)n"{}};}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00070     \textcolor{comment}{/*}}
+\DoxyCodeLine{00071 \textcolor{comment}{     * Power Modulo function}}
+\DoxyCodeLine{00072 \textcolor{comment}{     */}}
+\DoxyCodeLine{00073     \textcolor{keywordtype}{int} pow\_a = 3;}
+\DoxyCodeLine{00074     \textcolor{keywordtype}{int} pow\_b = 2;}
+\DoxyCodeLine{00075     \textcolor{keywordtype}{int} pow\_c = 2;}
+\DoxyCodeLine{00076     \textcolor{comment}{// returns (a\string^b) \% c}}
+\DoxyCodeLine{00077     \textcolor{keywordtype}{int} pow\_res = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.mod\_pow(pow\_a, pow\_b, pow\_c);}
+\DoxyCodeLine{00078     printf(\textcolor{stringliteral}{"{}\%d \string^ \%d \%\% \%d = \%d\(\backslash\)n"{}}, pow\_a, pow\_b, pow\_c, pow\_res);}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordtype}{int} pow\_d = 5;}
+\DoxyCodeLine{00081     \textcolor{keywordtype}{int} pow\_e = 2;}
+\DoxyCodeLine{00082     \textcolor{keywordtype}{int} pow\_f = 7;}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{keywordtype}{int} pow\_res\_1 = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.mod\_pow(pow\_d, pow\_e, pow\_f);}
+\DoxyCodeLine{00085     printf(\textcolor{stringliteral}{"{}\%d \string^ \%d \%\% \%d = \%d\(\backslash\)n"{}}, pow\_d, pow\_e, pow\_f, pow\_res\_1);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{keywordtype}{int} pow\_g = 8;}
+\DoxyCodeLine{00088     \textcolor{keywordtype}{int} pow\_h = 9;}
+\DoxyCodeLine{00089     \textcolor{keywordtype}{int} pow\_i = 3;}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordtype}{int} pow\_res\_2 = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.mod\_pow(pow\_g, pow\_h, pow\_i);}
+\DoxyCodeLine{00092     printf(\textcolor{stringliteral}{"{}\%d \string^ \%d \%\% \%d = \%d\(\backslash\)n"{}}, pow\_g, pow\_h, pow\_i, pow\_res\_2);}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094     \textcolor{keywordtype}{bool} cmp = \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.miller\_rabin\_prime(5, 4);}
+\DoxyCodeLine{00095     std::cout << \textcolor{stringliteral}{"{}miller\_rabin\_prime: "{}} << cmp << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00096     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00097     \textcolor{comment}{/*}}
+\DoxyCodeLine{00098 \textcolor{comment}{     * Jacobian}}
+\DoxyCodeLine{00099 \textcolor{comment}{     */}}
+\DoxyCodeLine{00100     }
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{comment}{/*}}
+\DoxyCodeLine{00103 \textcolor{comment}{     * Solovay-\/Strassen Primality Test}}
+\DoxyCodeLine{00104 \textcolor{comment}{     */}}
+\DoxyCodeLine{00105     \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a650a91c0e3e0062900389ce47e7ba682}{ss\_0}} = 15;}
+\DoxyCodeLine{00106     \textcolor{keywordflow}{if} (\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{p}}.solovoy\_strassen(\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a650a91c0e3e0062900389ce47e7ba682}{ss\_0}}, 50))}
+\DoxyCodeLine{00107         printf(\textcolor{stringliteral}{"{}\%d is prime\(\backslash\)n"{}},\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a650a91c0e3e0062900389ce47e7ba682}{ss\_0}});}
+\DoxyCodeLine{00108     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00109         printf(\textcolor{stringliteral}{"{}\%d is composite\(\backslash\)n"{}},\mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a650a91c0e3e0062900389ce47e7ba682}{ss\_0}});}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00113     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00114 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{Python.\+examples.\+arithmetic\+::b}}, \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a55e6470d2d79197d11a870dea0cfda0d}{Python.\+examples.\+primes\+\_\+ex\+::p}}, and \mbox{\hyperlink{namespacePython_1_1examples_1_1primes__ex_a650a91c0e3e0062900389ce47e7ba682}{Python.\+examples.\+primes\+\_\+ex\+::ss\+\_\+0}}.
+

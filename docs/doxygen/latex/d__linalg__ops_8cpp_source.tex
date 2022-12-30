@@ -1,0 +1,33 @@
+\hypertarget{d__linalg__ops_8cpp_source}{}\doxysection{d\+\_\+linalg\+\_\+ops.\+cpp}
+\label{d__linalg__ops_8cpp_source}\index{tests/drivers/linalg/d\_linalg\_ops.cpp@{tests/drivers/linalg/d\_linalg\_ops.cpp}}
+\mbox{\hyperlink{d__linalg__ops_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00001}00001 \textcolor{comment}{/* TESTING BASIC LINEAR ALGEBRA OPERATIONS}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00002}00002 \textcolor{comment}{ * test driver program on the implementations for some basic Linear Algebra}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00003}00003 \textcolor{comment}{ * operations. }}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00004}00004 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00005}00005 \textcolor{comment}{ * For operations on vectors (addition, subtraction) the sizes of the vectors}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00006}00006 \textcolor{comment}{ * must be of equal length. This is to follow traditional rules in }}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00007}00007 \textcolor{comment}{ * Linear Algebra vector operations.}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00008}00008 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include "{}../../include/linalg/lao.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00016}\mbox{\hyperlink{d__linalg__ops_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00016}} \textcolor{keywordtype}{int} \mbox{\hyperlink{d__linalg__ops_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00017}00017     \mbox{\hyperlink{classmtpk_1_1Vectors}{mtpk::Vectors}} f;}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00018}00018     std::cout << \textcolor{stringliteral}{"{}VECTOR/MATRIX OPERATIONS EXAMPLE"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00020}00020     \textcolor{keywordtype}{int} x = f.\mbox{\hyperlink{classmtpk_1_1Vectors_ad05497ff07db8f8ad8b0607a371dd05b}{add}}(1,3);}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00021}00021     std::cout << \textcolor{stringliteral}{"{}Sum = "{}} << x << std::endl;}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00024}00024     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{d__linalg__ops_8cpp_source_l00027}00027 }
+
+\end{DoxyCode}
