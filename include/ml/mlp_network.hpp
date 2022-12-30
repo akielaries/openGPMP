@@ -16,24 +16,32 @@
  */
 struct neuron { 
     // exit
-    double  x;
+    double ex;
     // error
-    double  e;
+    double err;
     // weight
-    double* w;
+    double* wt;
     // last weight
-    double* dw;
+    double* wt_last;
     // saved weight
-    double* wsave;
+    double* wt_saved;
 };
 
 struct layer {
-    int     num_neurons;
+    int num_neurons;
     neuron* neuron_ptr;
 };
 
 class MLP {
-    int    num_ayers;
+    /* initialize random values for the network */
+    void rand_init();
+    /* check that random is an integer */
+    int rand_int(int low, int hi);
+    /*check random is a real number */
+    double rand_real(double low, double hi);
+
+    /*return the number of layers in the network */
+    int num_layers;
     layer* layer_ptr;
 
     double dMSE;
@@ -41,20 +49,23 @@ class MLP {
 
     void weights_ran();
 
-    void set_in_sig(double* input);
-    void get_out_sig(double* output);
+    void set_signal_in(double* input);
+    void get_signal_out(double* output);
 
     void weights_save();
     void weights_restore();
 
-    void prop_Sig();
+    /* propogate given the signal */
+    void prop_signal();
+    /* returns the computed output error */
     void output_err(double* target);
+    /* returns the computed error from backwards propogation */
     void back_prop_err();
+    /*adjust weights */
     void weights_adjust();
-
+    /* simulate the Multi-Layer Perceptron Neual Network */
     void simulate(double* input, double* output, 
                 double* target, bool training);
-
 
     public:
         double dEta;
@@ -62,10 +73,14 @@ class MLP {
         double dGain;
         double dAvgTestError;
 
+        /* CONSTRUCT */
         MLP(int nl, int npl[]);
+        /* DECONSTRUCT */
         ~MLP();
 
+        /* method to train the network given data*/
         int train(const char* fnames);
+        /* method to test given data*/
         int test (const char* fname);
         int evaluate();
 
