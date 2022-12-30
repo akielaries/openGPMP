@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['owndata_0',['owndata',['../structswig__type__info.html#a93c25d5903cbfcb82208eea7227c32bd',1,'swig_type_info']]]
+  ['unique_5flabel_0',['unique_label',['../classbayes__clf.html#a16cb7e4931146a5f5c238d836a2b90c1',1,'bayes_clf']]]
 ];

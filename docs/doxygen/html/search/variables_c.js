@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['magenta_0',['MAGENTA',['../openGL__bounce_8cpp.html#a3614a44b501c2ddc43d2be5b12c52ee6',1,'openGL_bounce.cpp']]],
-  ['maximumheight_1',['maximumHeight',['../classBall.html#a33894dace962684b65523c2d09f79a16',1,'Ball']]],
-  ['mean_5fstdev_2',['mean_stdev',['../structsummary.html#ad0fd3c6d9043eda3a2210d74e9641640',1,'summary']]],
-  ['mod_5f0_3',['mod_0',['../namespacePython_1_1examples_1_1primes__ex.html#aa17acd75323017defd5ca7b2892f4d61',1,'Python::examples::primes_ex']]],
-  ['mod_5f1_4',['mod_1',['../namespacePython_1_1examples_1_1primes__ex.html#a28dc619fde5e669c251890108e78c6a7',1,'Python::examples::primes_ex']]]
+  ['spinning_0',['spinning',['../torus__animated_8cpp.html#acd3bb90a36adc8d910a078425a19fdd8',1,'torus_animated.cpp']]],
+  ['success_1',['success',['../classCompany.html#a9e3e963105856de6488014086bac5198',1,'Company']]],
+  ['sum_5fx_2',['sum_x',['../classregression.html#a2349df1023977dbb0ed0abd66b56d975',1,'regression']]],
+  ['sum_5fx_5fsquare_3',['sum_x_square',['../classregression.html#a8164fb40a1b1dd7db91dc2f68e91a2cb',1,'regression']]],
+  ['sum_5fxy_4',['sum_xy',['../classregression.html#a52acbaa203633f699c67c82695c65a34',1,'regression']]],
+  ['sum_5fy_5',['sum_y',['../classregression.html#a52f0138a92d86fd009e4e9e6d6e3c0d9',1,'regression']]],
+  ['sum_5fy_5fsquare_6',['sum_y_square',['../classregression.html#a1545934f54c19f618090ca1491951815',1,'regression']]],
+  ['summary_7',['Summary',['../classbayes__clf.html#a83f7fba6bfedd4e2613f92bb7e0c7e09',1,'bayes_clf']]]
 ];

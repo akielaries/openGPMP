@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['layer_5fptr_0',['layer_ptr',['../classMLP.html#a60d940da20cfc176e791ff849cfde708',1,'MLP']]],
-  ['learning_5frate_1',['learning_rate',['../classnaive__network.html#a983e1c37881f1002b2592e43b83f930c',1,'naive_network']]]
+  ['err_0',['err',['../structneuron.html#ad79332397cf2c367cd6d421bfe8e2c1d',1,'neuron']]],
+  ['ex_1',['ex',['../structneuron.html#a7f1c4a2af6c01336cbfae3d7f1a0014c',1,'neuron']]]
 ];
