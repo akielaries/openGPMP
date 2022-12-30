@@ -2,15 +2,21 @@
 # from Python import examples
 from openMTPK import Basics
 
-b = Basics()
 
-r1 = b.op_gcd(1703210, 20320)
-r2 = b.op_gcd(2198466, 96096)
-r3 = b.greatest_power(232, 96)
-r4 = b.greatest_power(10, 3)
+def main():
+    b = Basics()
 
-print(r1)
-print(r2)
-print(r3)
-print(r4)
+    r1 = b.op_gcd(1703210, 20320)
+    r2 = b.op_gcd(2198466, 96096)
+    r3 = b.greatest_power(232, 96)
+    r4 = b.greatest_power(10, 3)
+
+    print(r1)
+    print(r2)
+    print(r3)
+    print(r4)
+
+
+if __name__ == '__main__':
+    main()
 
