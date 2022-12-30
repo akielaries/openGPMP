@@ -19,7 +19,7 @@ mathematics/logic behind them, future developments, and more.
 Contents
 --------
 1. [Installation](Installation.md)
-2. [Usage](../doxygen/html/annotated.html)
+2. [Usage](annotated.html)
 3. [APIs](APIs.md)
 4. [Modules](Modules.md)
 
