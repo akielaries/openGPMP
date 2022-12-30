@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['add_0',['add',['../classArith.html#a9fd26f381e4c351d46941019f2ff3a87',1,'Arith::add(T t)'],['../classArith.html#a5f8d5504512ae476da80f1a030eb99e0',1,'Arith::add(T t, Ts... ts)'],['../classmtpk_1_1Vectors.html#ad05497ff07db8f8ad8b0607a371dd05b',1,'mtpk::Vectors::add()'],['../classmtpk_1_1Matrices.html#af6c91a43ad060bd1fd4f23528f104659',1,'mtpk::Matrices::add(Matrices &amp;target)']]],
-  ['all_1',['all',['../classmtpk_1_1Matrices.html#ab29e56f2a056e2db996726c157a9e12f',1,'mtpk::Matrices']]],
-  ['arith_2',['Arith',['../classArith.html',1,'']]],
-  ['arith_2ecpp_3',['arith.cpp',['../arith_8cpp.html',1,'']]],
-  ['arith_2ehpp_4',['arith.hpp',['../arith_8hpp.html',1,'']]]
+  ['back_5fprop_5ferr_0',['back_prop_err',['../classMLP.html#abc15b285d05e6d2b106a3dbb38dab111',1,'MLP']]],
+  ['backward_5fprop_1',['backward_prop',['../classnaive__network.html#a1280bc04418d35abfb0df4aad490123b',1,'naive_network']]],
+  ['basics_2',['Basics',['../classBasics.html',1,'']]],
+  ['basics_3',['basics',['../primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64',1,'primes.cpp']]],
+  ['bayes_5fclf_4',['bayes_clf',['../classbayes__clf.html',1,'']]],
+  ['bayes_5fclf_2ehpp_5',['bayes_clf.hpp',['../bayes__clf_8hpp.html',1,'']]],
+  ['bayes_5fnetwork_2ehpp_6',['bayes_network.hpp',['../bayes__network_8hpp.html',1,'']]],
+  ['best_5ffit_7',['best_fit',['../classregression.html#ad2f2b1544449df120b91c72b66a01933',1,'regression']]],
+  ['bits_8',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
+  ['byte_5flimit_9',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],
+  ['byte_5fswap_10',['byte_swap',['../classRC4.html#adaf2482857cea29d3e872621a80cb8cb',1,'RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
 ];
