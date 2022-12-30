@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['naive_5fnetwork_0',['naive_network',['../classnaive__network.html',1,'']]],
-  ['neuron_1',['neuron',['../structneuron.html',1,'']]]
+  ['naive_5fnet_248',['Naive_Net',['../classmtpk_1_1Naive__Net.html',1,'mtpk']]],
+  ['neuron_249',['neuron',['../structneuron.html',1,'']]]
 ];
