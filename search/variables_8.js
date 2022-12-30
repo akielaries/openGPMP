@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unique_5flabel_0',['unique_label',['../classbayes__clf.html#a16cb7e4931146a5f5c238d836a2b90c1',1,'bayes_clf']]]
+  ['mean_5fstdev_0',['mean_stdev',['../structsummary.html#ad0fd3c6d9043eda3a2210d74e9641640',1,'summary']]]
 ];
