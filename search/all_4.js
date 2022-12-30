@@ -10,7 +10,9 @@ var searchData=
   ['euclideandistance_7',['euclideanDistance',['../k-NN_8h.html#a216eb8e0e43db49b56551d8df0c9d000',1,'euclideanDistance(Company &amp;lhs, Company &amp;test):&#160;k-NN.cpp'],['../k-NN_8cpp.html#a216eb8e0e43db49b56551d8df0c9d000',1,'euclideanDistance(Company &amp;lhs, Company &amp;test):&#160;k-NN.cpp']]],
   ['evaluate_8',['evaluate',['../classMLP.html#ad842ae1e83ed92230cb99a1de81ad976',1,'MLP']]],
   ['ex_9',['ex',['../structneuron.html#a7f1c4a2af6c01336cbfae3d7f1a0014c',1,'neuron']]],
-  ['exp_10',['exp',['../classArith.html#a8e80f0cb33a1025d4702b9d1b806da8e',1,'Arith::exp(Z z)'],['../classArith.html#abd92ced8791aefbf5da298edf94d2594',1,'Arith::exp(Z z, Zy... zy)']]],
-  ['expand_11',['expand',['../classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443',1,'RC5::expand()'],['../rc5_8cpp.html#a99e9fb46d2e7aeb5ffe1393c4fdaf3c0',1,'expand():&#160;rc5.cpp']]],
-  ['extensions_12',['extensions',['../namespaceconf.html#ae475e080536acb271a0a0efe56c3ba42',1,'conf']]]
+  ['examples_10',['Examples',['../md_docs_source_Examples.html',1,'']]],
+  ['examples_2emd_11',['Examples.md',['../Examples_8md.html',1,'']]],
+  ['exp_12',['exp',['../classArith.html#abd92ced8791aefbf5da298edf94d2594',1,'Arith::exp(Z z, Zy... zy)'],['../classArith.html#a8e80f0cb33a1025d4702b9d1b806da8e',1,'Arith::exp(Z z)']]],
+  ['expand_13',['expand',['../classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443',1,'RC5::expand()'],['../rc5_8cpp.html#a99e9fb46d2e7aeb5ffe1393c4fdaf3c0',1,'expand():&#160;rc5.cpp']]],
+  ['extensions_14',['extensions',['../namespaceconf.html#ae475e080536acb271a0a0efe56c3ba42',1,'conf']]]
 ];
