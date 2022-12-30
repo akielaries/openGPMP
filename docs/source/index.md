@@ -20,7 +20,7 @@ Contents
 --------
 
 1. [Installation](Installation.md)
-   Usage
-   APIs
-   Modules
+2. [Usage](../html/annotated.html)
+3. [APIs](APIs.md)
+4. [Modules](Modules.md)
    

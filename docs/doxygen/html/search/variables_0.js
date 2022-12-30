@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basics_0',['basics',['../primes_8cpp.html#adcdb46a004ccf192215aa282b23c4e64',1,'primes.cpp']]]
+  ['author_0',['author',['../namespaceconf.html#a637c239d256432248aa8d9f3ab0b8c52',1,'conf']]]
 ];
