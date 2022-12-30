@@ -138,6 +138,7 @@ from source if interested.
 * Linux/OSX
 * CMake
 * g++
+
 ```
 # clone repo
 $ git clone git@github.com:akielaries/openMTPK.git
