@@ -1,0 +1,55 @@
+\hypertarget{naive__network_8hpp_source}{}\doxysection{naive\+\_\+network.\+hpp}
+\label{naive__network_8hpp_source}\index{include/ml/naive\_network.hpp@{include/ml/naive\_network.hpp}}
+\mbox{\hyperlink{naive__network_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef NAIVE\_NET\_HPP}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define NAIVE\_NET\_HPP}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include <eigen3/Eigen/Eigen>}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00010}\mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{00010}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}};}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00011}\mbox{\hyperlink{naive__network_8hpp_aca89ce710ee8842221a0df25940c6a36}{00011}} \textcolor{keyword}{typedef} Eigen::MatrixXf \mbox{\hyperlink{naive__network_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}};}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00012}\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{00012}} \textcolor{keyword}{typedef} Eigen::RowVectorXf \mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}};}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00013}\mbox{\hyperlink{naive__network_8hpp_a9f8f99187c9577dde49b0c3491137d2f}{00013}} \textcolor{keyword}{typedef} Eigen::VectorXf \mbox{\hyperlink{naive__network_8hpp_a9f8f99187c9577dde49b0c3491137d2f}{ColVector}};}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00016}\mbox{\hyperlink{classnaive__network}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{classnaive__network}{naive\_network}} \{}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00017}00017     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00018}00018         \textcolor{comment}{// contructor}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00019}\mbox{\hyperlink{classnaive__network_ad2b9b85640a808babbc9e8235a093b81}{00019}}         \mbox{\hyperlink{classnaive__network_ad2b9b85640a808babbc9e8235a093b81}{naive\_network}}(std::vector<uint> topology, }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00020}00020                     \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}} learningRate = \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}}(0.005));}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00022}00022         \textcolor{comment}{/* perform forward propagation */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00023}\mbox{\hyperlink{classnaive__network_a1cf577fb3dc24dbee6521153ed0c3a41}{00023}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnaive__network_a1cf577fb3dc24dbee6521153ed0c3a41}{forward\_prop}}(\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}}\& input);}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00024}00024         \textcolor{comment}{/* perform backward propagation*/}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00025}\mbox{\hyperlink{classnaive__network_a1280bc04418d35abfb0df4aad490123b}{00025}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnaive__network_a1280bc04418d35abfb0df4aad490123b}{backward\_prop}}(\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}}\& output);}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00026}00026         \textcolor{comment}{/* calculate neuron errors */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00027}\mbox{\hyperlink{classnaive__network_a3a47ffae20dc919a1c0068e6a63b2be4}{00027}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnaive__network_a3a47ffae20dc919a1c0068e6a63b2be4}{errors}}(\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}}\& output);}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00028}00028         \textcolor{comment}{/* update weights of neuron connections */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00029}\mbox{\hyperlink{classnaive__network_aa2b250c6bba33bf221d6eca939a81f1a}{00029}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnaive__network_aa2b250c6bba33bf221d6eca939a81f1a}{update\_weights}}();}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00030}00030         \textcolor{comment}{/* train neural network given vector of data points */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00031}\mbox{\hyperlink{classnaive__network_a57c1fd568a0a355e9d13744b22c812bf}{00031}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classnaive__network_a57c1fd568a0a355e9d13744b22c812bf}{train}}(std::vector<RowVector*> data);}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00034}00034         \textcolor{comment}{/* Naive Network storage objects */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00036}00036         \textcolor{comment}{/* store layers of the network*/}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00037}\mbox{\hyperlink{classnaive__network_a639c2823ce4b03e7de2b114751f65814}{00037}}         std::vector<RowVector*> \mbox{\hyperlink{classnaive__network_a639c2823ce4b03e7de2b114751f65814}{neuron\_layers}}; }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00038}00038         \textcolor{comment}{/* stored un-\/evaluated values of the layers */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00039}\mbox{\hyperlink{classnaive__network_a5d4474832f286d25f3cc9b57c6747991}{00039}}         std::vector<RowVector*> \mbox{\hyperlink{classnaive__network_a5d4474832f286d25f3cc9b57c6747991}{cache\_layers}}; }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00040}00040         \textcolor{comment}{/* stores error contribution of each neuron */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00041}\mbox{\hyperlink{classnaive__network_aa6284373cccfcde2cf82a8e03a6014a1}{00041}}         std::vector<RowVector*> \mbox{\hyperlink{classnaive__network_aa6284373cccfcde2cf82a8e03a6014a1}{deltas}}; }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00042}00042         \textcolor{comment}{/* the connection weight */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00043}\mbox{\hyperlink{classnaive__network_acfbfc6a3c655ff00b2918ced849fcc17}{00043}}         std::vector<Matrix*> \mbox{\hyperlink{classnaive__network_acfbfc6a3c655ff00b2918ced849fcc17}{weights}}; }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00044}00044         \textcolor{comment}{/* learning rate  */}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00045}\mbox{\hyperlink{classnaive__network_a983e1c37881f1002b2592e43b83f930c}{00045}}         \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}} \mbox{\hyperlink{classnaive__network_a983e1c37881f1002b2592e43b83f930c}{learning\_rate}};}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00046}00046 \};}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{naive__network_8hpp_source_l00049}00049 }
+
+\end{DoxyCode}

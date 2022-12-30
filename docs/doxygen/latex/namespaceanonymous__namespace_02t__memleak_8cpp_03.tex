@@ -1,0 +1,55 @@
+\hypertarget{namespaceanonymous__namespace_02t__memleak_8cpp_03}{}\doxysection{anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\} Namespace Reference}
+\label{namespaceanonymous__namespace_02t__memleak_8cpp_03}\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker}{Leak\+Checker}}
+\item 
+class \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}{Water}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__memleak_8cpp_03_ab2d440885682af53a5ddae103eb62322}{TEST}} (Listeners\+Test, Does\+Not\+Leak)
+\item 
+\mbox{\hyperlink{namespaceanonymous__namespace_02t__memleak_8cpp_03_a851cf8f1d5cbfbcf38474c0dcb0c7668}{TEST}} (Listeners\+Test, Leaks\+Water)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__memleak_8cpp_03_ab2d440885682af53a5ddae103eb62322}\label{namespaceanonymous__namespace_02t__memleak_8cpp_03_ab2d440885682af53a5ddae103eb62322}} 
+\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{Listeners\+Test}]{,  }\item[{Does\+Not\+Leak}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093                                  \{}
+\DoxyCodeLine{00094   \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}{Water}}* water = \textcolor{keyword}{new} \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}{Water}};}
+\DoxyCodeLine{00095   \textcolor{keyword}{delete} water;}
+\DoxyCodeLine{00096 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceanonymous__namespace_02t__memleak_8cpp_03_a851cf8f1d5cbfbcf38474c0dcb0c7668}\label{namespaceanonymous__namespace_02t__memleak_8cpp_03_a851cf8f1d5cbfbcf38474c0dcb0c7668}} 
+\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}}!TEST@{TEST}}
+\index{TEST@{TEST}!anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::\+TEST (\begin{DoxyParamCaption}\item[{Listeners\+Test}]{,  }\item[{Leaks\+Water}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100                                 \{}
+\DoxyCodeLine{00101   \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}{Water}}* water = \textcolor{keyword}{new} \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}{Water}};}
+\DoxyCodeLine{00102   EXPECT\_TRUE(water != \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00103 \}}
+
+\end{DoxyCode}

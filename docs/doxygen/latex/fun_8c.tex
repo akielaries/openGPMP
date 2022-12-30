@@ -1,0 +1,134 @@
+\hypertarget{fun_8c}{}\doxysection{experiment/wolfram/fun.c File Reference}
+\label{fun_8c}\index{experiment/wolfram/fun.c@{experiment/wolfram/fun.c}}
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wolfram\+RTL.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fun.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DLLEXPORT int \mbox{\hyperlink{fun_8c_a26627fd68401cdca37f74f7ac87bf70f}{Initialize\+\_\+fun}} (Wolfram\+Library\+Data lib\+Data)
+\item 
+DLLEXPORT void \mbox{\hyperlink{fun_8c_a9b552bccf890d1b44234b76ffcc8a78b}{Uninitialize\+\_\+fun}} (Wolfram\+Library\+Data lib\+Data)
+\item 
+DLLEXPORT int \mbox{\hyperlink{fun_8c_ab33c388848b2bcc87f422ef75c6d2783}{fun}} (Wolfram\+Library\+Data lib\+Data, mreal A1, mreal $\ast$Res)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static Wolfram\+Compile\+Library\+\_\+\+Functions \mbox{\hyperlink{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}{fun\+Struct\+Compile}}
+\item 
+static mbool \mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fun_8c_ab33c388848b2bcc87f422ef75c6d2783}\label{fun_8c_ab33c388848b2bcc87f422ef75c6d2783}} 
+\index{fun.c@{fun.c}!fun@{fun}}
+\index{fun@{fun}!fun.c@{fun.c}}
+\doxysubsubsection{\texorpdfstring{fun()}{fun()}}
+{\footnotesize\ttfamily DLLEXPORT int fun (\begin{DoxyParamCaption}\item[{Wolfram\+Library\+Data}]{lib\+Data,  }\item[{mreal}]{A1,  }\item[{mreal $\ast$}]{Res }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{fun_8c_source_l00025}{25}} of file \mbox{\hyperlink{fun_8c_source}{fun.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025                                                                     \{}
+\DoxyCodeLine{00026   mreal R0\_0;}
+\DoxyCodeLine{00027   mreal R0\_1;}
+\DoxyCodeLine{00028   R0\_0 = A1;}
+\DoxyCodeLine{00029   R0\_1 = R0\_0 * R0\_0;}
+\DoxyCodeLine{00030   *Res = R0\_1;}
+\DoxyCodeLine{00031   \mbox{\hyperlink{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}{funStructCompile}}-\/>WolframLibraryData\_cleanUp(libData, 1);}
+\DoxyCodeLine{00032   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}{fun\+Struct\+Compile}}.
+
+
+
+Referenced by \mbox{\hyperlink{openMTPK__wrap_8cpp_aa169f32f9d87614f07358a4f99deeff8}{R\+\_\+\+SWIG\+\_\+push\+Callback\+Function\+Data()}}, and \mbox{\hyperlink{openMTPK__wrap_8cpp_a3005e6038d3322bff198a6a520546df3}{R\+\_\+\+SWIG\+\_\+\+R\+\_\+push\+Callback\+Function\+Data()}}.
+
+\mbox{\Hypertarget{fun_8c_a26627fd68401cdca37f74f7ac87bf70f}\label{fun_8c_a26627fd68401cdca37f74f7ac87bf70f}} 
+\index{fun.c@{fun.c}!Initialize\_fun@{Initialize\_fun}}
+\index{Initialize\_fun@{Initialize\_fun}!fun.c@{fun.c}}
+\doxysubsubsection{\texorpdfstring{Initialize\_fun()}{Initialize\_fun()}}
+{\footnotesize\ttfamily DLLEXPORT int Initialize\+\_\+fun (\begin{DoxyParamCaption}\item[{Wolfram\+Library\+Data}]{lib\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{fun_8c_source_l00011}{11}} of file \mbox{\hyperlink{fun_8c_source}{fun.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011                                                          \{}
+\DoxyCodeLine{00012   \textcolor{keywordflow}{if} (\mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}}) \{}
+\DoxyCodeLine{00013     \mbox{\hyperlink{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}{funStructCompile}} = libData-\/>compileLibraryFunctions;}
+\DoxyCodeLine{00014     \mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}} = 0;}
+\DoxyCodeLine{00015   \}}
+\DoxyCodeLine{00016   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00017 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}{fun\+Struct\+Compile}}, and \mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}}.
+
+\mbox{\Hypertarget{fun_8c_a9b552bccf890d1b44234b76ffcc8a78b}\label{fun_8c_a9b552bccf890d1b44234b76ffcc8a78b}} 
+\index{fun.c@{fun.c}!Uninitialize\_fun@{Uninitialize\_fun}}
+\index{Uninitialize\_fun@{Uninitialize\_fun}!fun.c@{fun.c}}
+\doxysubsubsection{\texorpdfstring{Uninitialize\_fun()}{Uninitialize\_fun()}}
+{\footnotesize\ttfamily DLLEXPORT void Uninitialize\+\_\+fun (\begin{DoxyParamCaption}\item[{Wolfram\+Library\+Data}]{lib\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{fun_8c_source_l00019}{19}} of file \mbox{\hyperlink{fun_8c_source}{fun.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019                                                             \{}
+\DoxyCodeLine{00020   \textcolor{keywordflow}{if} (!\mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}}) \{}
+\DoxyCodeLine{00021     \mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}} = 1;}
+\DoxyCodeLine{00022   \}}
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}{initialize}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}\label{fun_8c_a81dfe71fb4536bd7f5628a7919089fab}} 
+\index{fun.c@{fun.c}!funStructCompile@{funStructCompile}}
+\index{funStructCompile@{funStructCompile}!fun.c@{fun.c}}
+\doxysubsubsection{\texorpdfstring{funStructCompile}{funStructCompile}}
+{\footnotesize\ttfamily Wolfram\+Compile\+Library\+\_\+\+Functions fun\+Struct\+Compile\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{fun_8c_source_l00005}{5}} of file \mbox{\hyperlink{fun_8c_source}{fun.\+c}}.
+
+
+
+Referenced by \mbox{\hyperlink{fun_8c_ab33c388848b2bcc87f422ef75c6d2783}{fun()}}, and \mbox{\hyperlink{fun_8c_a26627fd68401cdca37f74f7ac87bf70f}{Initialize\+\_\+fun()}}.
+
+\mbox{\Hypertarget{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}\label{fun_8c_a67873a0d99c67d8c1d5bba0c85aa0412}} 
+\index{fun.c@{fun.c}!initialize@{initialize}}
+\index{initialize@{initialize}!fun.c@{fun.c}}
+\doxysubsubsection{\texorpdfstring{initialize}{initialize}}
+{\footnotesize\ttfamily mbool initialize = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{fun_8c_source_l00007}{7}} of file \mbox{\hyperlink{fun_8c_source}{fun.\+c}}.
+
+
+
+Referenced by \mbox{\hyperlink{fun_8c_a26627fd68401cdca37f74f7ac87bf70f}{Initialize\+\_\+fun()}}, and \mbox{\hyperlink{fun_8c_a9b552bccf890d1b44234b76ffcc8a78b}{Uninitialize\+\_\+fun()}}.
+

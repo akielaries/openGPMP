@@ -1,0 +1,273 @@
+\hypertarget{classArith}{}\doxysection{Arith Class Reference}
+\label{classArith}\index{Arith@{Arith}}
+
+
+Arithmetic Template Class. Each method is variadic taking \textquotesingle{}n\textquotesingle{} params.  
+
+
+
+
+{\ttfamily \#include $<$arith.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}} (T t)
+\begin{DoxyCompactList}\small\item\em Addition method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\auto \mbox{\hyperlink{classArith_a5f8d5504512ae476da80f1a030eb99e0}{add}} (T t, Ts... ts)
+\item 
+{\footnotesize template$<$typename X $>$ }\\X \mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}} (X x)
+\begin{DoxyCompactList}\small\item\em Subtraction method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename X , typename... Xy$>$ }\\auto \mbox{\hyperlink{classArith_adc399d104d82a42c0d129502fdbf8766}{sub}} (X x, Xy... xy)
+\item 
+{\footnotesize template$<$typename W $>$ }\\W \mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult}} (W w)
+\begin{DoxyCompactList}\small\item\em Multiplication method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename W , typename... Wv$>$ }\\auto \mbox{\hyperlink{classArith_ac48175b4c378e182615bb45ef9129784}{mult}} (W w, Wv... wv)
+\item 
+{\footnotesize template$<$typename Z $>$ }\\Z \mbox{\hyperlink{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}{exp}} (Z z)
+\begin{DoxyCompactList}\small\item\em Exponentiation method. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Z , typename... Zy$>$ }\\auto \mbox{\hyperlink{classArith_abd92ced8791aefbf5da298edf94d2594}{exp}} (Z z, Zy... zy)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arithmetic Template Class. Each method is variadic taking \textquotesingle{}n\textquotesingle{} params. 
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArith_a9fd26f381e4c351d46941019f2ff3a87}\label{classArith_a9fd26f381e4c351d46941019f2ff3a87}} 
+\index{Arith@{Arith}!add@{add}}
+\index{add@{add}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Arith\+::add (\begin{DoxyParamCaption}\item[{T}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Addition method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}n\textquotesingle{}} & addends \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027                           \{}
+\DoxyCodeLine{00028             \textcolor{keywordflow}{return} t;}
+\DoxyCodeLine{00029         \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classArith_a5f8d5504512ae476da80f1a030eb99e0}{add()}}, \mbox{\hyperlink{arithmetic_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a9b20797f347fcae52e3413675c6c6015}{anonymous\+\_\+namespace\{t\+\_\+arith.\+cpp\}\+::\+TEST()}}.
+
+\mbox{\Hypertarget{classArith_a5f8d5504512ae476da80f1a030eb99e0}\label{classArith_a5f8d5504512ae476da80f1a030eb99e0}} 
+\index{Arith@{Arith}!add@{add}}
+\index{add@{add}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename... Ts$>$ \\
+auto Arith\+::add (\begin{DoxyParamCaption}\item[{T}]{t,  }\item[{Ts...}]{ts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031                                        \{}
+\DoxyCodeLine{00032             \textcolor{keywordflow}{return} t + \mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}}(ts...);}
+\DoxyCodeLine{00033         \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add()}}.
+
+\mbox{\Hypertarget{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}\label{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}} 
+\index{Arith@{Arith}!exp@{exp}}
+\index{exp@{exp}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{exp()}{exp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Z $>$ \\
+Z Arith\+::exp (\begin{DoxyParamCaption}\item[{Z}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Exponentiation method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base} & \\
+\hline
+{\em \textquotesingle{}n\textquotesingle{}} & powers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071                           \{}
+\DoxyCodeLine{00072             \textcolor{keywordflow}{return} z;}
+\DoxyCodeLine{00073         \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classArith_abd92ced8791aefbf5da298edf94d2594}{exp()}}.
+
+\mbox{\Hypertarget{classArith_abd92ced8791aefbf5da298edf94d2594}\label{classArith_abd92ced8791aefbf5da298edf94d2594}} 
+\index{Arith@{Arith}!exp@{exp}}
+\index{exp@{exp}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{exp()}{exp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Z , typename... Zy$>$ \\
+auto Arith\+::exp (\begin{DoxyParamCaption}\item[{Z}]{z,  }\item[{Zy...}]{zy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00075}{75}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075                                        \{}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{return} z *= \mbox{\hyperlink{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}{exp}}(zy...);}
+\DoxyCodeLine{00077         \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}{exp()}}.
+
+\mbox{\Hypertarget{classArith_ab08330bc29b9706df7abebeaa9ed0d27}\label{classArith_ab08330bc29b9706df7abebeaa9ed0d27}} 
+\index{Arith@{Arith}!mult@{mult}}
+\index{mult@{mult}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{mult()}{mult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename W $>$ \\
+W Arith\+::mult (\begin{DoxyParamCaption}\item[{W}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplication method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \textquotesingle{}n\textquotesingle{}} & factors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                            \{}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{return} w;}
+\DoxyCodeLine{00058         \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{arithmetic_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, \mbox{\hyperlink{classArith_ac48175b4c378e182615bb45ef9129784}{mult()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a64374acf9f3489dda186c9c6339aa7cd}{anonymous\+\_\+namespace\{t\+\_\+arith.\+cpp\}\+::\+TEST()}}.
+
+\mbox{\Hypertarget{classArith_ac48175b4c378e182615bb45ef9129784}\label{classArith_ac48175b4c378e182615bb45ef9129784}} 
+\index{Arith@{Arith}!mult@{mult}}
+\index{mult@{mult}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{mult()}{mult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename W , typename... Wv$>$ \\
+auto Arith\+::mult (\begin{DoxyParamCaption}\item[{W}]{w,  }\item[{Wv...}]{wv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060                                         \{}
+\DoxyCodeLine{00061             \textcolor{keywordflow}{return} w * \mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult}}(wv...);}
+\DoxyCodeLine{00062         \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult()}}.
+
+\mbox{\Hypertarget{classArith_aca36b830de5c5ac30e71875764e4d81f}\label{classArith_aca36b830de5c5ac30e71875764e4d81f}} 
+\index{Arith@{Arith}!sub@{sub}}
+\index{sub@{sub}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{sub()}{sub()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename X $>$ \\
+X Arith\+::sub (\begin{DoxyParamCaption}\item[{X}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtraction method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minuend} & \\
+\hline
+{\em \textquotesingle{}n\textquotesingle{}} & subtrahends \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+difference 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042                           \{}
+\DoxyCodeLine{00043             \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00044         \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{arithmetic_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, \mbox{\hyperlink{classArith_adc399d104d82a42c0d129502fdbf8766}{sub()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__arith_8cpp_03_a799e1f5fe14444faf478d4afd9f94c7b}{anonymous\+\_\+namespace\{t\+\_\+arith.\+cpp\}\+::\+TEST()}}.
+
+\mbox{\Hypertarget{classArith_adc399d104d82a42c0d129502fdbf8766}\label{classArith_adc399d104d82a42c0d129502fdbf8766}} 
+\index{Arith@{Arith}!sub@{sub}}
+\index{sub@{sub}!Arith@{Arith}}
+\doxysubsubsection{\texorpdfstring{sub()}{sub()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename X , typename... Xy$>$ \\
+auto Arith\+::sub (\begin{DoxyParamCaption}\item[{X}]{x,  }\item[{Xy...}]{xy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{arith_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{arith_8hpp_source}{arith.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046                                        \{}
+\DoxyCodeLine{00047             \textcolor{keywordflow}{return} x -\/ \mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}}(xy...);}
+\DoxyCodeLine{00048         \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/arithmetic/\mbox{\hyperlink{arith_8hpp}{arith.\+hpp}}\end{DoxyCompactItemize}

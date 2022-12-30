@@ -1,0 +1,120 @@
+\hypertarget{openGL__astronomy__animated_8cpp_source}{}\doxysection{open\+GL\+\_\+astronomy\+\_\+animated.\+cpp}
+\label{openGL__astronomy__animated_8cpp_source}\index{experiment/GPU/openGL\_astronomy\_animated.cpp@{experiment/GPU/openGL\_astronomy\_animated.cpp}}
+\mbox{\hyperlink{openGL__astronomy__animated_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00002}00002 \textcolor{comment}{ * Testing openGL with drawing an animate torus}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include<stdio.h>}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include<GL/glut.h>}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include<math.h>}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00008}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a1daf785e3f68d293c7caa1c756d5cb74}{00008}} \textcolor{preprocessor}{\#define pi 3.142857}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00010}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{00010}} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00011}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}{00011}} \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}{FPS}} = 20;}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00013}00013 \textcolor{comment}{// keep track of current orentation}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00014}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{00014}} \textcolor{keyword}{static} GLfloat \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} = 0.0;}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00017}00017 \textcolor{comment}{// In the GLUT library someone put the polar regions on the z-\/axis -\/ yech!!}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00018}00018 \textcolor{comment}{// We fixed it so that they are on the y-\/axis.  We do this by rotating -\/90}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00019}00019 \textcolor{comment}{// degrees about the x-\/axis which brings (0,0,1) to (0,1,0).}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00020}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac59bce56778c437e364e26e534769352}{00020}} \textcolor{keywordtype}{void} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac59bce56778c437e364e26e534769352}{myWireSphere}}(GLfloat radius, \textcolor{keywordtype}{int} slices, \textcolor{keywordtype}{int} stacks) \{}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00021}00021     glPushMatrix();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00022}00022     glRotatef(-\/90.0, 1.0, 0.0, 0.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00023}00023     glutWireSphere(radius, slices, stacks);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00024}00024     glPopMatrix();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00025}00025 \}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00027}00027 \textcolor{comment}{// In our solar system simulation we keep track of the current "{}year"{} and}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00028}00028 \textcolor{comment}{// current "{}day"{} in global variables.  Actually we just make the planet go}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00029}00029 \textcolor{comment}{// around the sun in increments of 5 degrees (the "{}year"{}) and rotate the}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00030}00030 \textcolor{comment}{// planet on its own axis in increments of 10 degrees (the "{}day"{}).}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00031}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a4c11afc03fc3ee49bab660def6558f2a}{00031}} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_abeac221e38b7b9ce7df8722c842bf671}{year}} = 0, \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a4c11afc03fc3ee49bab660def6558f2a}{day}} = 0;}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00033}00033 \textcolor{comment}{// As usual, the routine to display the current state of the system is}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00034}00034 \textcolor{comment}{// bracketed with a clearing of the window and a glFlush call.  Immediately}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00035}00035 \textcolor{comment}{// within those calls the drawing code itself is bracketed by pushing and}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00036}00036 \textcolor{comment}{// popping the current transformation.  And also as usual, we are assuming the}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00037}00037 \textcolor{comment}{// current matrix mode is GL\_MODELVIEW.  We finish with a SwapBuffers call}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00038}00038 \textcolor{comment}{// because we'll animate.}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00039}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{00039}} \textcolor{keywordtype}{void} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}}() \{}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00040}00040     glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00041}00041     glPushMatrix();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00043}00043     \textcolor{comment}{// Draw sun: a yellow sphere of radius 1 centered at the origin.}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00044}00044     glColor3f(1.0, 1.0, 0.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00045}00045     \mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac59bce56778c437e364e26e534769352}{myWireSphere}}(1.0, 15, 15);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00047}00047     \textcolor{comment}{// Draw planet: a blue sphere of radius 0.2, 2 units away from sun, with}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00048}00048     \textcolor{comment}{// a white "{}pole"{} for its axis.}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00049}00049     glRotatef((GLfloat)\mbox{\hyperlink{openGL__astronomy__animated_8cpp_abeac221e38b7b9ce7df8722c842bf671}{year}}, 0.0, 1.0, 0.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00050}00050     glTranslatef (2.0, 0.0, 0.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00051}00051     glRotatef((GLfloat)\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a4c11afc03fc3ee49bab660def6558f2a}{day}}, 0.0, 1.0, 0.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00052}00052     glColor3f(0.0, 0.0, 1.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00053}00053     \mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac59bce56778c437e364e26e534769352}{myWireSphere}}(0.2, 15, 15);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00054}00054     glColor3f(1, 1, 1);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00055}00055     glBegin(GL\_LINES);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00056}00056         glVertex3f(0, -\/0.3, 0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00057}00057         glVertex3f(0, 0.3, 0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00058}00058     glEnd();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00060}00060     glPopMatrix();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00061}00061     glFlush();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00062}00062     glutSwapBuffers();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00063}00063 \}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00065}00065 \textcolor{comment}{// Viewing routines.  Basically the camera is sitting on a comet orbiting}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00066}00066 \textcolor{comment}{// the sun with a "{}year"{} 8 times that of the planet.  To animate we have}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00067}00067 \textcolor{comment}{// the function nextAnimationFrame() registered as the idle function.  It}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00068}00068 \textcolor{comment}{// increments the value of u (to "{}move"{} the camera), ticks off another}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00069}00069 \textcolor{comment}{// portion of a day and portion of a year, then reorients the camera and}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00070}00070 \textcolor{comment}{// refreshes the display.}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00071}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac0b468475b86fb96775f432e1f7f92ff}{00071}} \textcolor{keyword}{static} GLfloat \mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac0b468475b86fb96775f432e1f7f92ff}{u}} = 0.0;                 \textcolor{comment}{// curve parameter for comet pos}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00072}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a05e32724a12468fadef696a24b65b03d}{00072}} \textcolor{keyword}{static} GLfloat \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a05e32724a12468fadef696a24b65b03d}{du}} = 0.1;                \textcolor{comment}{// amt to increment u each frame}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00074}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{00074}} \textcolor{keywordtype}{void} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}(\textcolor{keywordtype}{int} v) \{}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00075}00075     \mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac0b468475b86fb96775f432e1f7f92ff}{u}} += \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a05e32724a12468fadef696a24b65b03d}{du}};}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00076}00076     \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a4c11afc03fc3ee49bab660def6558f2a}{day}} = (\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a4c11afc03fc3ee49bab660def6558f2a}{day}} + 1) \% 360;}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00077}00077     \mbox{\hyperlink{openGL__astronomy__animated_8cpp_abeac221e38b7b9ce7df8722c842bf671}{year}} = (\mbox{\hyperlink{openGL__astronomy__animated_8cpp_abeac221e38b7b9ce7df8722c842bf671}{year}} + 2) \% 360;}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00078}00078     glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00079}00079     gluLookAt(20*cos(\mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac0b468475b86fb96775f432e1f7f92ff}{u}}/8.0)+12,5*sin(\mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac0b468475b86fb96775f432e1f7f92ff}{u}}/8.0)+1,10*cos(\mbox{\hyperlink{openGL__astronomy__animated_8cpp_ac0b468475b86fb96775f432e1f7f92ff}{u}}/8.0)+2, 0,0,0, 0,1,0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00080}00080     glutPostRedisplay();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00081}00081     glutTimerFunc(1000/60, \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}, v);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00082}00082 \}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00084}00084 \textcolor{comment}{// As usual we reset the projection transformation whenever the window is}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00085}00085 \textcolor{comment}{// reshaped.  This is done (of course) by setting the current matrix mode}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00086}00086 \textcolor{comment}{// to GL\_PROJECTION and then setting the matrix.  It is easiest to use the}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00087}00087 \textcolor{comment}{// perspective-\/projection-\/making matrix from the GL utiltiy library.  Here}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00088}00088 \textcolor{comment}{// we set a perspective camera with a 60-\/degree vertical field of view,}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00089}00089 \textcolor{comment}{// an aspect ratio to perfectly map into the system window, a near clipping}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00090}00090 \textcolor{comment}{// plane distance of 1.0 and a far clipping distance of 40.0.  The last}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00091}00091 \textcolor{comment}{// thing done is to reset the current matrix mode to GL\_MODELVIEW, as}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00092}00092 \textcolor{comment}{// that is expected in all the calls to display().}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00093}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}{00093}} \textcolor{keywordtype}{void} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}{reshape}}(GLint w, GLint h) \{}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00094}00094     glViewport(0, 0, w, h);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00095}00095     glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00096}00096     glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00097}00097     gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 40.0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00098}00098     glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00099}00099 \}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00101}00101 \textcolor{comment}{// The usual main() for a GLUT application.}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00102}\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00102}} \textcolor{keywordtype}{int} \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00103}00103     glutInit(\&argc, argv);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00104}00104     glutInitDisplayMode (GLUT\_DOUBLE | GLUT\_RGB | GLUT\_DEPTH);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00105}00105     glutInitWindowSize(800, 600);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00106}00106     glutCreateWindow(\textcolor{stringliteral}{"{}Comet, Planet Simulation"{}});}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00107}00107     glutDisplayFunc(\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}});}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00108}00108     glutReshapeFunc(\mbox{\hyperlink{openGL__astronomy__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}{reshape}});}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00109}00109     glutTimerFunc(100, \mbox{\hyperlink{openGL__astronomy__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}, 0);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00110}00110     glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00111}00111     glutMainLoop();}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{openGL__astronomy__animated_8cpp_source_l00114}00114 }
+
+\end{DoxyCode}

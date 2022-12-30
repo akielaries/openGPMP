@@ -1,0 +1,231 @@
+\hypertarget{Mandelbrot_8c}{}\doxysection{experiment/\+GPU/\+Mandelbrot.c File Reference}
+\label{Mandelbrot_8c}\index{experiment/GPU/Mandelbrot.c@{experiment/GPU/Mandelbrot.c}}
+{\ttfamily \#include $<$graphics.\+h$>$}\newline
+{\ttfamily \#include $<$GL/glut.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Mandelbrot_8c_a20651bf0d2fba0cc012cbe9d2cec3335}{MAXCOUNT}}~100
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Mandelbrot_8c_a2cd501dd888cff55029d5490fb5e1c0f}{fractal}} (float left, float top, float xside, float yside)
+\item 
+void \mbox{\hyperlink{Mandelbrot_8c_a1e5b20fed15743656bb6d2e6a6ea6269}{display}} ()
+\item 
+int \mbox{\hyperlink{Mandelbrot_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Mandelbrot_8c_a20651bf0d2fba0cc012cbe9d2cec3335}\label{Mandelbrot_8c_a20651bf0d2fba0cc012cbe9d2cec3335}} 
+\index{Mandelbrot.c@{Mandelbrot.c}!MAXCOUNT@{MAXCOUNT}}
+\index{MAXCOUNT@{MAXCOUNT}!Mandelbrot.c@{Mandelbrot.c}}
+\doxysubsubsection{\texorpdfstring{MAXCOUNT}{MAXCOUNT}}
+{\footnotesize\ttfamily \#define MAXCOUNT~100}
+
+
+
+Definition at line \mbox{\hyperlink{Mandelbrot_8c_source_l00007}{7}} of file \mbox{\hyperlink{Mandelbrot_8c_source}{Mandelbrot.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Mandelbrot_8c_a1e5b20fed15743656bb6d2e6a6ea6269}\label{Mandelbrot_8c_a1e5b20fed15743656bb6d2e6a6ea6269}} 
+\index{Mandelbrot.c@{Mandelbrot.c}!display@{display}}
+\index{display@{display}!Mandelbrot.c@{Mandelbrot.c}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mandelbrot_8c_source_l00082}{82}} of file \mbox{\hyperlink{Mandelbrot_8c_source}{Mandelbrot.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082                \{}
+\DoxyCodeLine{00083     \textcolor{keywordtype}{float} left, top, xside, yside;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     left = -\/1.74;}
+\DoxyCodeLine{00086     top = -\/0.25;}
+\DoxyCodeLine{00087     xside = 0.25;}
+\DoxyCodeLine{00088     yside = 0.45;}
+\DoxyCodeLine{00089     }
+\DoxyCodeLine{00090     \mbox{\hyperlink{Mandelbrot_8c_a2cd501dd888cff55029d5490fb5e1c0f}{fractal}}(left, top, xside, yside);}
+\DoxyCodeLine{00091 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Mandelbrot_8c_a2cd501dd888cff55029d5490fb5e1c0f}{fractal()}}.
+
+
+
+Referenced by \mbox{\hyperlink{Mandelbrot_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{Mandelbrot_8c_a2cd501dd888cff55029d5490fb5e1c0f}\label{Mandelbrot_8c_a2cd501dd888cff55029d5490fb5e1c0f}} 
+\index{Mandelbrot.c@{Mandelbrot.c}!fractal@{fractal}}
+\index{fractal@{fractal}!Mandelbrot.c@{Mandelbrot.c}}
+\doxysubsubsection{\texorpdfstring{fractal()}{fractal()}}
+{\footnotesize\ttfamily void fractal (\begin{DoxyParamCaption}\item[{float}]{left,  }\item[{float}]{top,  }\item[{float}]{xside,  }\item[{float}]{yside }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mandelbrot_8c_source_l00011}{11}} of file \mbox{\hyperlink{Mandelbrot_8c_source}{Mandelbrot.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011                                                               \{}
+\DoxyCodeLine{00012     glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{00013     glBegin(GL\_POINTS);}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015     \textcolor{keywordtype}{float} xscale, yscale, zx, zy, cx, tempx, cy;}
+\DoxyCodeLine{00016     \textcolor{keywordtype}{int} x, y, i, j;}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{int} maxx, maxy, count;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{comment}{// getting maximum value of x-\/axis of screen}}
+\DoxyCodeLine{00020     maxx = getmaxx();}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022     \textcolor{comment}{// getting maximum value of y-\/axis of screen}}
+\DoxyCodeLine{00023     maxy = getmaxy();}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025     \textcolor{comment}{// setting up the xscale and yscale}}
+\DoxyCodeLine{00026     xscale = xside / maxx;}
+\DoxyCodeLine{00027     yscale = yside / maxy;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{comment}{// calling rectangle function}}
+\DoxyCodeLine{00030     \textcolor{comment}{// where required image will be seen}}
+\DoxyCodeLine{00031     rectangle(0, 0, maxx, maxy);}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033     \textcolor{comment}{// scanning every point in that rectangular area.}}
+\DoxyCodeLine{00034     \textcolor{comment}{// Each point represents a Complex number (x + yi).}}
+\DoxyCodeLine{00035     \textcolor{comment}{// Iterate that complex number}}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{for} (y = 1; y <= maxy -\/ 1; y++) \{}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{for} (x = 1; x <= maxx -\/ 1; x++) \{}
+\DoxyCodeLine{00038             \textcolor{comment}{// c\_real}}
+\DoxyCodeLine{00039             cx = x * xscale + left;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041             \textcolor{comment}{// c\_imaginary}}
+\DoxyCodeLine{00042             cy = y * yscale + top;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044             \textcolor{comment}{// z\_real}}
+\DoxyCodeLine{00045             zx = 0;}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047             \textcolor{comment}{// z\_imaginary}}
+\DoxyCodeLine{00048             zy = 0;}
+\DoxyCodeLine{00049             count = 0;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051             \textcolor{comment}{// Calculate whether c(c\_real + c\_imaginary) belongs}}
+\DoxyCodeLine{00052             \textcolor{comment}{// to the Mandelbrot set or not and draw a pixel}}
+\DoxyCodeLine{00053             \textcolor{comment}{// at coordinates (x, y) accordingly}}
+\DoxyCodeLine{00054             \textcolor{comment}{// If you reach the Maximum number of iterations}}
+\DoxyCodeLine{00055             \textcolor{comment}{// and If the distance from the origin is}}
+\DoxyCodeLine{00056             \textcolor{comment}{// greater than 2 exit the loop}}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{while} ((zx * zx + zy * zy < 4) \&\& (count < \mbox{\hyperlink{Mandelbrot_8c_a20651bf0d2fba0cc012cbe9d2cec3335}{MAXCOUNT}})) \{}
+\DoxyCodeLine{00058                 \textcolor{comment}{// Calculate Mandelbrot function}}
+\DoxyCodeLine{00059                 \textcolor{comment}{// z = z*z + c where z is a complex number}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061                 \textcolor{comment}{// tempx = z\_real*\_real -\/ z\_imaginary*z\_imaginary + c\_real}}
+\DoxyCodeLine{00062                 tempx = zx * zx -\/ zy * zy + cx;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064                 \textcolor{comment}{// 2*z\_real*z\_imaginary + c\_imaginary}}
+\DoxyCodeLine{00065                 zy = 2 * zx * zy + cy;}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067                 \textcolor{comment}{// Updating z\_real = tempx}}
+\DoxyCodeLine{00068                 zx = tempx;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070                 \textcolor{comment}{// Increment count}}
+\DoxyCodeLine{00071                 count = count + 1;}
+\DoxyCodeLine{00072             \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074             \textcolor{comment}{// To display the created fractal}}
+\DoxyCodeLine{00075             putpixel(x, y, count);}
+\DoxyCodeLine{00076         \}}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     glEnd();}
+\DoxyCodeLine{00079     glFlush();}
+\DoxyCodeLine{00080 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Mandelbrot_8c_a20651bf0d2fba0cc012cbe9d2cec3335}{MAXCOUNT}}.
+
+
+
+Referenced by \mbox{\hyperlink{Mandelbrot_8c_a1e5b20fed15743656bb6d2e6a6ea6269}{display()}}.
+
+\mbox{\Hypertarget{Mandelbrot_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{Mandelbrot_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{Mandelbrot.c@{Mandelbrot.c}!main@{main}}
+\index{main@{main}!Mandelbrot.c@{Mandelbrot.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Mandelbrot_8c_source_l00094}{94}} of file \mbox{\hyperlink{Mandelbrot_8c_source}{Mandelbrot.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094                                 \{}
+\DoxyCodeLine{00095     \textcolor{comment}{// gm is Graphics mode which is}}
+\DoxyCodeLine{00096     \textcolor{comment}{// a computer display mode that}}
+\DoxyCodeLine{00097     \textcolor{comment}{// generates image using pixels.}}
+\DoxyCodeLine{00098     \textcolor{comment}{// DETECT is a macro defined in}}
+\DoxyCodeLine{00099     \textcolor{comment}{// "{}graphics.h"{} header file}}
+\DoxyCodeLine{00100     \textcolor{keywordtype}{int} gd = DETECT, gm, errorcode;}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{keywordtype}{float} left, top, xside, yside;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104     \textcolor{comment}{// setting the left, top, xside and yside}}
+\DoxyCodeLine{00105     \textcolor{comment}{// for the screen and image to be displayed}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107     \textcolor{comment}{/*}}
+\DoxyCodeLine{00108 \textcolor{comment}{    left = -\/1;}}
+\DoxyCodeLine{00109 \textcolor{comment}{    top = 0;}}
+\DoxyCodeLine{00110 \textcolor{comment}{    xside = 0;}}
+\DoxyCodeLine{00111 \textcolor{comment}{    yside = 0.2;}}
+\DoxyCodeLine{00112 \textcolor{comment}{    */}}
+\DoxyCodeLine{00113     left = -\/1.74;}
+\DoxyCodeLine{00114     top = -\/0.25;}
+\DoxyCodeLine{00115     xside = 0.25;}
+\DoxyCodeLine{00116     yside = 0.45;}
+\DoxyCodeLine{00117     }
+\DoxyCodeLine{00118     \textcolor{keywordtype}{char} driver[] = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{comment}{// initgraph initializes the}}
+\DoxyCodeLine{00121     \textcolor{comment}{// graphics system by loading a}}
+\DoxyCodeLine{00122     \textcolor{comment}{// graphics driver from disk}}
+\DoxyCodeLine{00123     initgraph(\&gd, \&gm, driver);}
+\DoxyCodeLine{00124     \textcolor{comment}{//glutInit(\&gd, driver);}}
+\DoxyCodeLine{00125     glutInit(\&argc, argv);}
+\DoxyCodeLine{00126     glutInitDisplayMode(GLUT\_SINGLE | GLUT\_RGB);}
+\DoxyCodeLine{00127     glutInitWindowSize(1366, 768);}
+\DoxyCodeLine{00128     glutInitWindowPosition(0, 0);}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130     \textcolor{comment}{// Function calling}}
+\DoxyCodeLine{00131     \textcolor{comment}{//fractal(left, top, xside, yside);}}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{comment}{// getch();}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \textcolor{comment}{// closegraph function closes the}}
+\DoxyCodeLine{00136     \textcolor{comment}{// graphics mode and deallocates}}
+\DoxyCodeLine{00137     \textcolor{comment}{// all memory allocated by}}
+\DoxyCodeLine{00138     \textcolor{comment}{// graphics system}}
+\DoxyCodeLine{00139     \textcolor{comment}{// closegraph();}}
+\DoxyCodeLine{00140     glutCreateWindow(\textcolor{stringliteral}{"{}Mandelbrot Fractals with openGL"{}});}
+\DoxyCodeLine{00141     glutDisplayFunc(\mbox{\hyperlink{Mandelbrot_8c_a1e5b20fed15743656bb6d2e6a6ea6269}{display}});}
+\DoxyCodeLine{00142     glutMainLoop();}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144     getch();}
+\DoxyCodeLine{00145 }
+\DoxyCodeLine{00146     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00147 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Mandelbrot_8c_a1e5b20fed15743656bb6d2e6a6ea6269}{display()}}.
+

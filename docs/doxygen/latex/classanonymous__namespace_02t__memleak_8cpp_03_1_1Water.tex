@@ -1,0 +1,98 @@
+\hypertarget{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}{}\doxysection{anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::Water Class Reference}
+\label{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water}\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_aa7304c76af848955d5d2792e0f31e034}{operator new}} (size\+\_\+t allocation\+\_\+size)
+\item 
+void \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a734b34f55870100773606a694bfe13af}{operator delete}} (void $\ast$block, size\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_abea1961608c5cebe8173108dcd8dff31}{allocated}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a4f746440e170c1524e6cb97824993f46}{allocated\+\_\+}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_abea1961608c5cebe8173108dcd8dff31}\label{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_abea1961608c5cebe8173108dcd8dff31}} 
+\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}!allocated@{allocated}}
+\index{allocated@{allocated}!anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}}
+\doxysubsubsection{\texorpdfstring{allocated()}{allocated()}}
+{\footnotesize\ttfamily static int anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::\+Water\+::allocated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a4f746440e170c1524e6cb97824993f46}{allocated\_}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a734b34f55870100773606a694bfe13af}\label{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a734b34f55870100773606a694bfe13af}} 
+\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}}
+\doxysubsubsection{\texorpdfstring{operator delete()}{operator delete()}}
+{\footnotesize\ttfamily void anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::\+Water\+::operator delete (\begin{DoxyParamCaption}\item[{void $\ast$}]{block,  }\item[{size\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                                               \{}
+\DoxyCodeLine{00057     \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a4f746440e170c1524e6cb97824993f46}{allocated\_}}-\/-\/;}
+\DoxyCodeLine{00058     free(block);}
+\DoxyCodeLine{00059   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_aa7304c76af848955d5d2792e0f31e034}\label{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_aa7304c76af848955d5d2792e0f31e034}} 
+\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}!operator new@{operator new}}
+\index{operator new@{operator new}!anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}}
+\doxysubsubsection{\texorpdfstring{operator new()}{operator new()}}
+{\footnotesize\ttfamily void $\ast$ anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::\+Water\+::operator new (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{allocation\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051                                              \{}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a4f746440e170c1524e6cb97824993f46}{allocated\_}}++;}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} malloc(allocation\_size);}
+\DoxyCodeLine{00054   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a4f746440e170c1524e6cb97824993f46}\label{classanonymous__namespace_02t__memleak_8cpp_03_1_1Water_a4f746440e170c1524e6cb97824993f46}} 
+\index{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}!allocated\_@{allocated\_}}
+\index{allocated\_@{allocated\_}!anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water@{anonymous\_namespace\lcurly{}t\_memleak.cpp\rcurly{}::Water}}
+\doxysubsubsection{\texorpdfstring{allocated\_}{allocated\_}}
+{\footnotesize\ttfamily int anonymous\+\_\+namespace\{t\+\_\+memleak.\+cpp\}\+::\+Water\+::allocated\+\_\+ = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{t__memleak_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{t__memleak_8cpp_source}{t\+\_\+memleak.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/misc/\mbox{\hyperlink{t__memleak_8cpp}{t\+\_\+memleak.\+cpp}}\end{DoxyCompactItemize}

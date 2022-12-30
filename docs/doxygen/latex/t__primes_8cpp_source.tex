@@ -1,0 +1,118 @@
+\hypertarget{t__primes_8cpp_source}{}\doxysection{t\+\_\+primes.\+cpp}
+\label{t__primes_8cpp_source}\index{tests/number\_theory/t\_primes.cpp@{tests/number\_theory/t\_primes.cpp}}
+\mbox{\hyperlink{t__primes_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00002}00002 \textcolor{comment}{ * Driver for showing how to use the core basic and elementary functionalities}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00003}00003 \textcolor{comment}{ * of the Number Theory module}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00004}00004 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00005}00005 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}../../include/number\_theory/primes.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00011}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03}{00011}} \textcolor{keyword}{namespace }\{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00012}00012     \textcolor{comment}{// declare primality class object}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00013}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{00013}}     \mbox{\hyperlink{classPrimality}{Primality}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00015}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a98691371b022fa03d1f451f4c798037a}{00015}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}}(prime\_test, is\_prime) \{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00016}00016         \textcolor{keywordtype}{int} is\_prime\_0 = 2;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00017}00017         \textcolor{keywordtype}{bool} actual\_0 = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00018}00018         \textcolor{keywordtype}{bool} fetched\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_0);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00019}00019         EXPECT\_EQ(actual\_0, fetched\_0);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00021}00021         \textcolor{keywordtype}{int} is\_prime\_1 = 3;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00022}00022         \textcolor{keywordtype}{bool} actual\_1 = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00023}00023         \textcolor{keywordtype}{bool} fetched\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_1);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00024}00024         EXPECT\_EQ(actual\_1, fetched\_1);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00026}00026         \textcolor{keywordtype}{int} is\_prime\_2 = 9;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00027}00027         \textcolor{keywordtype}{bool} actual\_2 = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00028}00028         \textcolor{keywordtype}{bool} fetched\_2 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_2);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00029}00029         EXPECT\_EQ(actual\_2, fetched\_2);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00031}00031         \textcolor{keywordtype}{int} is\_prime\_3 = 8191;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00032}00032         \textcolor{keywordtype}{bool} actual\_3 = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00033}00033         \textcolor{keywordtype}{bool} fetched\_3 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_3);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00034}00034         EXPECT\_EQ(actual\_3, fetched\_3);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00036}00036         \textcolor{keywordtype}{int} is\_prime\_4 = 524287;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00037}00037         \textcolor{keywordtype}{bool} actual\_4 = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00038}00038         \textcolor{keywordtype}{bool} fetched\_4 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_4);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00039}00039         EXPECT\_EQ(actual\_4, fetched\_4);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00041}00041         \textcolor{keywordtype}{int} is\_prime\_5 = 6;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00042}00042         \textcolor{keywordtype}{bool} actual\_5 = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00043}00043         \textcolor{keywordtype}{bool} fetched\_5 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_5);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00044}00044         EXPECT\_EQ(actual\_5, fetched\_5);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00046}00046         \textcolor{keywordtype}{int} is\_prime\_6 = 2400530;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00047}00047         \textcolor{keywordtype}{bool} actual\_6 = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00048}00048         \textcolor{keywordtype}{bool} fetched\_6 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_6);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00049}00049         EXPECT\_EQ(actual\_6, fetched\_6);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00051}00051         \textcolor{keywordtype}{int} is\_prime\_7 = 1;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00052}00052         \textcolor{keywordtype}{bool} actual\_7 = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00053}00053         \textcolor{keywordtype}{bool} fetched\_7 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa00343cb6fa77239717833d27f201f03}{is\_prime}}(is\_prime\_7);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00054}00054         EXPECT\_EQ(actual\_7, fetched\_7);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00057}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_af52ff185d5d2881084885a716e563d3d}{00057}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}}(prime\_test, carmichael) \{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00058}00058         \textcolor{keywordtype}{int} is\_cm\_0 = 561;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00059}00059         \textcolor{keywordtype}{bool} actual\_cm\_0 = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00060}00060         \textcolor{keywordtype}{bool}  carm\_fetched\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{carmichael\_num}}(is\_cm\_0); }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00061}00061         EXPECT\_EQ(actual\_cm\_0, carm\_fetched\_0);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00063}00063         \textcolor{keywordtype}{int} is\_cm\_1 = 560;}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00064}00064         \textcolor{keywordtype}{bool} actual\_cm\_1 = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00065}00065         \textcolor{keywordtype}{bool}  carm\_fetched\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{carmichael\_num}}(is\_cm\_1); }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00066}00066         EXPECT\_EQ(actual\_cm\_1, carm\_fetched\_1);}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00069}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a82a37bb2a27034b898ad4d3640ff967b}{00069}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}}(prime\_test, mod\_pow) \{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00070}00070         EXPECT\_EQ(1, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(3, 2, 2));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00071}00071         EXPECT\_EQ(4, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(5, 2, 7));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00072}00072         EXPECT\_EQ(2, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(8, 9, 3));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00073}00073         EXPECT\_EQ(4, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(2, 30, 5));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00076}00076     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00077}00077 \textcolor{comment}{     * this test case in itself is not vary useful as it acts}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00078}00078 \textcolor{comment}{     * as a utility function on the overall algorithm that }}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00079}00079 \textcolor{comment}{     * computes primes using the Miller-\/Rabin method}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00080}00080 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00081}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a7d2473bbd826c7a329b9dde463327347}{00081}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}}(prime\_test, compute\_miller\_rabin) \{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00082}00082         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(7, 5));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00083}00083         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(7, 1));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00084}00084         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(1049, 5));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00085}00085         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(2999, 5));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00086}00086         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(4, 2));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00087}00087         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(200392, 5));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00088}00088         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}{compute\_miller\_rabin}}(90, 5));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00091}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a4681e33230fe0874bec63a70f11ff8d1}{00091}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}}(prime\_test, miller\_rabin\_prime) \{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00092}00092         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(1049, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00093}00093         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(5, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00094}00094         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(2999, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00095}00095         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(3, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00096}00096         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(3000, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00097}00097         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(4, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00098}00098         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a398e2ee039d0bdddb2b46914d48c88c2}{miller\_rabin\_prime}}(104032, 4));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00101}00101     \textcolor{comment}{// TEST(prime\_test, miller\_rabin) \{\}}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00102}00102     }
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00103}\mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{00103}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a6cb6dee22830cc47c195d2f3578301c3}{TEST}}(prime\_test, solovoy\_strassen) \{}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00104}00104         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(15, 50));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00105}00105         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(25, 50));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00106}00106         EXPECT\_EQ(\textcolor{keyword}{false}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(104032, 50));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00107}00107         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(3, 50));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00108}00108         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(2999, 50));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00109}00109         EXPECT\_EQ(\textcolor{keyword}{true}, \mbox{\hyperlink{namespaceanonymous__namespace_02t__primes_8cpp_03_a16dea3699b34ae294dd601aac4795e4d}{p}}.\mbox{\hyperlink{classPrimality_a8705a1468d5a995f5e835a0b992fae28}{solovoy\_strassen}}(1049, 50));}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00111}00111 \}}
+\DoxyCodeLine{\Hypertarget{t__primes_8cpp_source_l00112}00112 }
+
+\end{DoxyCode}

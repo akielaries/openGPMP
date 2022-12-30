@@ -1,0 +1,51 @@
+\hypertarget{structswig_1_1DestructorPolicy}{}\doxysection{swig\+::Destructor\+Policy\texorpdfstring{$<$}{<} T, A \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structswig_1_1DestructorPolicy}\index{swig::DestructorPolicy$<$ T, A $>$@{swig::DestructorPolicy$<$ T, A $>$}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{structswig_1_1DestructorPolicy_a0a4d000ca4eb71989516905d6f4a068f}{destroy}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T, \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{Assignment\+Type}} A$>$\newline
+struct swig\+::\+Destructor\+Policy$<$ T, A $>$}
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00267}{267}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structswig_1_1DestructorPolicy_a0a4d000ca4eb71989516905d6f4a068f}\label{structswig_1_1DestructorPolicy_a0a4d000ca4eb71989516905d6f4a068f}} 
+\index{swig::DestructorPolicy$<$ T, A $>$@{swig::DestructorPolicy$<$ T, A $>$}!destroy@{destroy}}
+\index{destroy@{destroy}!swig::DestructorPolicy$<$ T, A $>$@{swig::DestructorPolicy$<$ T, A $>$}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily template$<$class T , \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{Assignment\+Type}} A$>$ \\
+static \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{structswig_1_1DestructorPolicy}{swig\+::\+Destructor\+Policy}}$<$ T, A $>$\+::destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}}}]{self }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00268}{268}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00268                                                          \{}
+\DoxyCodeLine{00269     \textcolor{keyword}{delete} \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(self.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}});}
+\DoxyCodeLine{00270     \textcolor{keywordflow}{return} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}{SwigClassWrapper\_uninitialized}}();}
+\DoxyCodeLine{00271   \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}{Swig\+Class\+Wrapper\+\_\+uninitialized()}}.
+
+
+
+Referenced by \mbox{\hyperlink{structswig_1_1AssignmentPolicy_a4690edb2d9a035d7a2d6e036e7aff392}{swig\+::\+Assignment\+Policy$<$ T, A $>$\+::destroy()}}, and \mbox{\hyperlink{structswig_1_1AssignmentPolicy_3_01T_00_01ASSIGNMENT__SMARTPTR_01_4_a892cd3f82df0fe9ff017efbe943caeb5}{swig\+::\+Assignment\+Policy$<$ T, ASSIGNMENT\+\_\+\+SMARTPTR $>$\+::destroy()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Fortran/lib/\mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx}{open\+MTPK\+\_\+wrap.\+cxx}}\end{DoxyCompactItemize}
