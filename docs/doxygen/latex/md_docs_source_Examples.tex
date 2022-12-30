@@ -1,0 +1,45 @@
+Example C++ driver file for running Caesar \mbox{\hyperlink{classCipher}{Cipher}} \& Mono-\/\+Alphabetic Substitution Keyword cipher\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <openMTPK/cipher.hpp>}}
+\DoxyCodeLine{\textcolor{keywordtype}{int} \mbox{\hyperlink{Mandelbrot_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{    \textcolor{comment}{// declare CIPHER class obj}}
+\DoxyCodeLine{    \mbox{\hyperlink{classCipher}{Cipher}} cc;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* CAESAR CIPHER */}}
+\DoxyCodeLine{    std::string text0 = \textcolor{stringliteral}{"{}Plaintext"{}};}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} shift\_key\_0 = 5;}
+\DoxyCodeLine{    std::string hashtext\_0 = cc.\mbox{\hyperlink{classCipher_a6e954be6a2630d25862f7aa62495642d}{C\_cipher}}(text0, shift\_key\_0);}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}Hashtext0 = "{}} << hashtext\_0 << std::endl;}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{comment}{/* TESTING MONOALPHABETIC SUBSTITUION KEYWORD CIPHER */}}
+\DoxyCodeLine{    std::string shift\_key\_2 = \textcolor{stringliteral}{"{}Computer"{}};}
+\DoxyCodeLine{    std::string text2 = \textcolor{stringliteral}{"{}Password"{}};}
+\DoxyCodeLine{    \textcolor{comment}{// encode the plaintext}}
+\DoxyCodeLine{    std::string encoded\_text = cc.\mbox{\hyperlink{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}{KC\_encode}}(shift\_key\_2);}
+\DoxyCodeLine{    \textcolor{comment}{// call the cipher function}}
+\DoxyCodeLine{    std::string hashtext\_2 = cc.\mbox{\hyperlink{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}{KC\_cipher}}(text2 , encoded\_text);}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}Hashtext2 = "{}} << hashtext\_2 << std::endl;}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ A Python example showing the same functionalities. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{\#!/usr/bin/python3.10}}
+\DoxyCodeLine{\textcolor{keyword}{from} openMTPK \textcolor{keyword}{import} Cipher}
+\DoxyCodeLine{c = \mbox{\hyperlink{classCipher}{Cipher}}()}
+\DoxyCodeLine{cipertext\_0 = c.C\_cipher(\textcolor{stringliteral}{'Plaintext'}, 5)}
+\DoxyCodeLine{print(ciphertext\_0)}
+\DoxyCodeLine{ciphertext\_1 = c.C\_cipher(\textcolor{stringliteral}{'ATTACKATONCE'}, 4)}
+\DoxyCodeLine{print(ciphertext\_1)}
+\DoxyCodeLine{text = \textcolor{stringliteral}{"{}Password"{}}}
+\DoxyCodeLine{shift = \textcolor{stringliteral}{"{}Computer"{}}}
+\DoxyCodeLine{encoded\_text = c.KC\_encode(shift);}
+\DoxyCodeLine{hashtext = c.KC\_cipher(text, encoded\_text);}
+\DoxyCodeLine{print(hashtext)}
+
+\end{DoxyCode}
+ 
