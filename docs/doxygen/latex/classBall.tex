@@ -1,0 +1,202 @@
+\hypertarget{classBall}{}\doxysection{Ball Class Reference}
+\label{classBall}\index{Ball@{Ball}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBall_a6c7fcd03555c596aa7ecd65302a08fb9}{Ball}} (double r, GLfloat $\ast$c, double h, double \mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}, double \mbox{\hyperlink{classBall_ae1e106fca4e6d53ef41b0797743e48c9}{z}})
+\item 
+void \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classBall_ae75638f44296592c288bf7c87590fee0}{radius}}
+\item 
+GLfloat $\ast$ \mbox{\hyperlink{classBall_a7ea265e067c1515233d2bd2a186fadc5}{color}}
+\item 
+double \mbox{\hyperlink{classBall_a33894dace962684b65523c2d09f79a16}{maximum\+Height}}
+\item 
+double \mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}
+\item 
+double \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}}
+\item 
+double \mbox{\hyperlink{classBall_ae1e106fca4e6d53ef41b0797743e48c9}{z}}
+\item 
+int \mbox{\hyperlink{classBall_adc4f8d08852930ccd37ab5b8b53e352c}{direction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBall_a6c7fcd03555c596aa7ecd65302a08fb9}\label{classBall_a6c7fcd03555c596aa7ecd65302a08fb9}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{GLfloat $\ast$}]{c,  }\item[{double}]{h,  }\item[{double}]{x,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073                                                                 :}
+\DoxyCodeLine{00074             \mbox{\hyperlink{classBall_ae75638f44296592c288bf7c87590fee0}{radius}}(\mbox{\hyperlink{namespacePython_1_1examples_1_1rc4__ex_a38557a39ed73328a62f48f1ab090cdf2}{r}}), \mbox{\hyperlink{classBall_a7ea265e067c1515233d2bd2a186fadc5}{color}}(\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_aeb66488dc83c62a7504d9a60ec29fee2}{c}}), \mbox{\hyperlink{classBall_a33894dace962684b65523c2d09f79a16}{maximumHeight}}(h), \mbox{\hyperlink{classBall_adc4f8d08852930ccd37ab5b8b53e352c}{direction}}(-\/1),}
+\DoxyCodeLine{00075             \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}}(h), \mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}(\mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}), \mbox{\hyperlink{classBall_ae1e106fca4e6d53ef41b0797743e48c9}{z}}(\mbox{\hyperlink{classBall_ae1e106fca4e6d53ef41b0797743e48c9}{z}}) \{}
+\DoxyCodeLine{00076         \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBall_af30f4707d26a6e7ba0af1dd8cac37684}\label{classBall_af30f4707d26a6e7ba0af1dd8cac37684}} 
+\index{Ball@{Ball}!update@{update}}
+\index{update@{update}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Ball\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078                       \{}
+\DoxyCodeLine{00079             \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}} += \mbox{\hyperlink{classBall_adc4f8d08852930ccd37ab5b8b53e352c}{direction}} * 0.05;}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}} > \mbox{\hyperlink{classBall_a33894dace962684b65523c2d09f79a16}{maximumHeight}}) \{}
+\DoxyCodeLine{00082                 \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}} = \mbox{\hyperlink{classBall_a33894dace962684b65523c2d09f79a16}{maximumHeight}}; \mbox{\hyperlink{classBall_adc4f8d08852930ccd37ab5b8b53e352c}{direction}} = -\/1;}
+\DoxyCodeLine{00083             \} }
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}} < \mbox{\hyperlink{classBall_ae75638f44296592c288bf7c87590fee0}{radius}}) \{}
+\DoxyCodeLine{00086                 \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}} = \mbox{\hyperlink{classBall_ae75638f44296592c288bf7c87590fee0}{radius}}; \mbox{\hyperlink{classBall_adc4f8d08852930ccd37ab5b8b53e352c}{direction}} = 1;}
+\DoxyCodeLine{00087             \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089             glPushMatrix();}
+\DoxyCodeLine{00090             glMaterialfv(GL\_FRONT, GL\_AMBIENT\_AND\_DIFFUSE, \mbox{\hyperlink{classBall_a7ea265e067c1515233d2bd2a186fadc5}{color}});}
+\DoxyCodeLine{00091             glTranslated(\mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}, \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}}, \mbox{\hyperlink{classBall_ae1e106fca4e6d53ef41b0797743e48c9}{z}});}
+\DoxyCodeLine{00092             glutSolidSphere(\mbox{\hyperlink{classBall_ae75638f44296592c288bf7c87590fee0}{radius}}, 30, 30);}
+\DoxyCodeLine{00093             glPopMatrix();}
+\DoxyCodeLine{00094         \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classBall_a7ea265e067c1515233d2bd2a186fadc5}{color}}, \mbox{\hyperlink{classBall_adc4f8d08852930ccd37ab5b8b53e352c}{direction}}, \mbox{\hyperlink{classBall_a33894dace962684b65523c2d09f79a16}{maximum\+Height}}, \mbox{\hyperlink{classBall_ae75638f44296592c288bf7c87590fee0}{radius}}, \mbox{\hyperlink{classBall_a60894aab5e27e93bacf2393b9110a049}{x}}, \mbox{\hyperlink{classBall_a17d73231eab81d0e74cf28d0068fe5cb}{y}}, and \mbox{\hyperlink{classBall_ae1e106fca4e6d53ef41b0797743e48c9}{z}}.
+
+
+
+Referenced by \mbox{\hyperlink{openGL__bounce_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBall_a7ea265e067c1515233d2bd2a186fadc5}\label{classBall_a7ea265e067c1515233d2bd2a186fadc5}} 
+\index{Ball@{Ball}!color@{color}}
+\index{color@{color}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily GLfloat$\ast$ Ball\+::color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+\mbox{\Hypertarget{classBall_adc4f8d08852930ccd37ab5b8b53e352c}\label{classBall_adc4f8d08852930ccd37ab5b8b53e352c}} 
+\index{Ball@{Ball}!direction@{direction}}
+\index{direction@{direction}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily int Ball\+::direction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+\mbox{\Hypertarget{classBall_a33894dace962684b65523c2d09f79a16}\label{classBall_a33894dace962684b65523c2d09f79a16}} 
+\index{Ball@{Ball}!maximumHeight@{maximumHeight}}
+\index{maximumHeight@{maximumHeight}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{maximumHeight}{maximumHeight}}
+{\footnotesize\ttfamily double Ball\+::maximum\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+\mbox{\Hypertarget{classBall_ae75638f44296592c288bf7c87590fee0}\label{classBall_ae75638f44296592c288bf7c87590fee0}} 
+\index{Ball@{Ball}!radius@{radius}}
+\index{radius@{radius}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily double Ball\+::radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+\mbox{\Hypertarget{classBall_a60894aab5e27e93bacf2393b9110a049}\label{classBall_a60894aab5e27e93bacf2393b9110a049}} 
+\index{Ball@{Ball}!x@{x}}
+\index{x@{x}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily double Ball\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+\mbox{\Hypertarget{classBall_a17d73231eab81d0e74cf28d0068fe5cb}\label{classBall_a17d73231eab81d0e74cf28d0068fe5cb}} 
+\index{Ball@{Ball}!y@{y}}
+\index{y@{y}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily double Ball\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+\mbox{\Hypertarget{classBall_ae1e106fca4e6d53ef41b0797743e48c9}\label{classBall_ae1e106fca4e6d53ef41b0797743e48c9}} 
+\index{Ball@{Ball}!z@{z}}
+\index{z@{z}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily double Ball\+::z\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__bounce_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{openGL__bounce_8cpp_source}{open\+GL\+\_\+bounce.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classBall_af30f4707d26a6e7ba0af1dd8cac37684}{update()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+experiment/\+GPU/\mbox{\hyperlink{openGL__bounce_8cpp}{open\+GL\+\_\+bounce.\+cpp}}\end{DoxyCompactItemize}

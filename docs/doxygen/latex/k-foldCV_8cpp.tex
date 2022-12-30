@@ -1,0 +1,126 @@
+\hypertarget{k-foldCV_8cpp}{}\doxysection{modules/ml/k-\/fold\+CV.cpp File Reference}
+\label{k-foldCV_8cpp}\index{modules/ml/k-\/foldCV.cpp@{modules/ml/k-\/foldCV.cpp}}
+{\ttfamily \#include \char`\"{}k-\/fold\+CV.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{k-foldCV_8cpp_a0082dfdaa822ecb188be28ffccbf75ba}{TEST\+\_\+\+CASE}} (\char`\"{}KF\+\_\+\+CV-\/test\+Small\+Sample10\+Fold\char`\"{})
+\item 
+\mbox{\hyperlink{k-foldCV_8cpp_a512be6fe9ffcaf26f34b10cef455b461}{TEST\+\_\+\+CASE}} (\char`\"{}KF\+\_\+\+CV-\/test\+Small\+Sample5\+Fold\char`\"{})
+\item 
+\mbox{\hyperlink{k-foldCV_8cpp_a11a773177a8c1a7d6ed364feb34f55b9}{TEST\+\_\+\+CASE}} (\char`\"{}KF\+\_\+\+CV-\/test\+Large\+Sample10\+Fold\char`\"{})
+\item 
+\mbox{\hyperlink{k-foldCV_8cpp_a30992701a37e72ffb3f1892840172303}{TEST\+\_\+\+CASE}} (\char`\"{}KFCV-\/test\+Large\+Sample5\+Fold\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{k-foldCV_8cpp_a11a773177a8c1a7d6ed364feb34f55b9}\label{k-foldCV_8cpp_a11a773177a8c1a7d6ed364feb34f55b9}} 
+\index{k-\/foldCV.cpp@{k-\/foldCV.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!k-\/foldCV.cpp@{k-\/foldCV.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}KF\+\_\+\+CV-\/test\+Large\+Sample10\+Fold\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026                                          \{}
+\DoxyCodeLine{00027     vector<int> large\_sample;}
+\DoxyCodeLine{00028     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 1000; i++)\{}
+\DoxyCodeLine{00029         large\_sample.emplace\_back(i);}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031     \mbox{\hyperlink{classKF__CV}{KF\_CV<int>}} kF\_CV = \mbox{\hyperlink{classKF__CV}{KF\_CV<int>}}(large\_sample, 10, 1);}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 10; i++)\{}
+\DoxyCodeLine{00033         REQUIRE(100 == kF\_CV.\mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{get\_test\_fold}}(i).size());}
+\DoxyCodeLine{00034         REQUIRE(900 == kF\_CV.\mbox{\hyperlink{classKF__CV_a7955735594315ba9050a6aea223b6f76}{get\_train\_fold}}(i).size());}
+\DoxyCodeLine{00035     \}}
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{KF\+\_\+\+CV$<$ T $>$\+::get\+\_\+test\+\_\+fold()}}, and \mbox{\hyperlink{classKF__CV_a7955735594315ba9050a6aea223b6f76}{KF\+\_\+\+CV$<$ T $>$\+::get\+\_\+train\+\_\+fold()}}.
+
+\mbox{\Hypertarget{k-foldCV_8cpp_a0082dfdaa822ecb188be28ffccbf75ba}\label{k-foldCV_8cpp_a0082dfdaa822ecb188be28ffccbf75ba}} 
+\index{k-\/foldCV.cpp@{k-\/foldCV.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!k-\/foldCV.cpp@{k-\/foldCV.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}KF\+\_\+\+CV-\/test\+Small\+Sample10\+Fold\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009                                          \{}
+\DoxyCodeLine{00010     vector<string> small\_sample = \{}
+\DoxyCodeLine{00011         \textcolor{stringliteral}{"{}1"{}}, \textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}3"{}}, \textcolor{stringliteral}{"{}4"{}}, \textcolor{stringliteral}{"{}5"{}}, \textcolor{stringliteral}{"{}6"{}}, \textcolor{stringliteral}{"{}7"{}}, \textcolor{stringliteral}{"{}8"{}}, \textcolor{stringliteral}{"{}9"{}}, \textcolor{stringliteral}{"{}10"{}}\};}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classKF__CV}{KF\_CV<string>}} kF\_CV = \mbox{\hyperlink{classKF__CV}{KF\_CV<string>}}(smallSample, 10, 1);}
+\DoxyCodeLine{00013     vector<string> test\_sample = kF\_CV.\mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{get\_test\_fold}}(0);}
+\DoxyCodeLine{00014     REQUIRE(test\_sample[0] == \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00015 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{KF\+\_\+\+CV$<$ T $>$\+::get\+\_\+test\+\_\+fold()}}.
+
+\mbox{\Hypertarget{k-foldCV_8cpp_a512be6fe9ffcaf26f34b10cef455b461}\label{k-foldCV_8cpp_a512be6fe9ffcaf26f34b10cef455b461}} 
+\index{k-\/foldCV.cpp@{k-\/foldCV.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!k-\/foldCV.cpp@{k-\/foldCV.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}KF\+\_\+\+CV-\/test\+Small\+Sample5\+Fold\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017                                         \{}
+\DoxyCodeLine{00018     vector<string> small\_sample = \{}
+\DoxyCodeLine{00019         \textcolor{stringliteral}{"{}1"{}}, \textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}3"{}}, \textcolor{stringliteral}{"{}4"{}}, \textcolor{stringliteral}{"{}5"{}}, \textcolor{stringliteral}{"{}6"{}}, \textcolor{stringliteral}{"{}7"{}}, \textcolor{stringliteral}{"{}8"{}}, \textcolor{stringliteral}{"{}9"{}}, \textcolor{stringliteral}{"{}10"{}}\};}
+\DoxyCodeLine{00020     \mbox{\hyperlink{classKF__CV}{KF\_CV<string>}} kF\_CV = \mbox{\hyperlink{classKF__CV}{KF\_CV<string>}}(small\_sample, 5, 1);}
+\DoxyCodeLine{00021     vector<string> test\_sample = kF\_CV.\mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{get\_test\_fold}}(0);}
+\DoxyCodeLine{00022     REQUIRE(test\_sample[0] == \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00023     REQUIRE(test\_sample[1] == \textcolor{stringliteral}{"{}7"{}});}
+\DoxyCodeLine{00024 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{KF\+\_\+\+CV$<$ T $>$\+::get\+\_\+test\+\_\+fold()}}.
+
+\mbox{\Hypertarget{k-foldCV_8cpp_a30992701a37e72ffb3f1892840172303}\label{k-foldCV_8cpp_a30992701a37e72ffb3f1892840172303}} 
+\index{k-\/foldCV.cpp@{k-\/foldCV.cpp}!TEST\_CASE@{TEST\_CASE}}
+\index{TEST\_CASE@{TEST\_CASE}!k-\/foldCV.cpp@{k-\/foldCV.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_CASE()}{TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily TEST\+\_\+\+CASE (\begin{DoxyParamCaption}\item[{\char`\"{}KFCV-\/test\+Large\+Sample5\+Fold\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038                                        \{}
+\DoxyCodeLine{00039     vector<int> large\_sample;}
+\DoxyCodeLine{00040     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 1000; i++)\{}
+\DoxyCodeLine{00041         large\_sample.emplace\_back(i);}
+\DoxyCodeLine{00042     \}}
+\DoxyCodeLine{00043     \mbox{\hyperlink{classKF__CV}{KF\_CV<int>}} kF\_CV = \mbox{\hyperlink{classKF__CV}{KF\_CV<int>}}(large\_sample, 5, 1);}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++)\{}
+\DoxyCodeLine{00045         REQUIRE(200 == kF\_CV.\mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{get\_test\_fold}}(i).size());}
+\DoxyCodeLine{00046         REQUIRE(800 == kF\_CV.\mbox{\hyperlink{classKF__CV_a7955735594315ba9050a6aea223b6f76}{get\_train\_fold}}(i).size());}
+\DoxyCodeLine{00047     \}}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classKF__CV_a5e395262ff659eeb7c94d49d682cd88f}{KF\+\_\+\+CV$<$ T $>$\+::get\+\_\+test\+\_\+fold()}}, and \mbox{\hyperlink{classKF__CV_a7955735594315ba9050a6aea223b6f76}{KF\+\_\+\+CV$<$ T $>$\+::get\+\_\+train\+\_\+fold()}}.
+

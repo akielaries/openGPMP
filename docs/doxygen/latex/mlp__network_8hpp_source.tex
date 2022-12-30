@@ -1,0 +1,98 @@
+\hypertarget{mlp__network_8hpp_source}{}\doxysection{mlp\+\_\+network.\+hpp}
+\label{mlp__network_8hpp_source}\index{include/ml/mlp\_network.hpp@{include/ml/mlp\_network.hpp}}
+\mbox{\hyperlink{mlp__network_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00002}00002 \textcolor{comment}{ * Multi-\/Layer Perceptron Neural Network}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#ifndef MLP\_NETWORK\_HPP}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#define MLP\_NETWORK\_HPP}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00010}00010 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00011}00011 \textcolor{comment}{ * TODO }}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00012}00012 \textcolor{comment}{ * Think of using extended or derived classes}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00014}00014 \textcolor{comment}{ * Weights : MLP}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00016}00016 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00017}\mbox{\hyperlink{structneuron}{00017}} \textcolor{keyword}{struct }\mbox{\hyperlink{structneuron}{neuron}} \{ }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00018}00018     \textcolor{comment}{// exit}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00019}\mbox{\hyperlink{structneuron_a7f1c4a2af6c01336cbfae3d7f1a0014c}{00019}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structneuron_a7f1c4a2af6c01336cbfae3d7f1a0014c}{ex}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00020}00020     \textcolor{comment}{// error}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00021}\mbox{\hyperlink{structneuron_ad79332397cf2c367cd6d421bfe8e2c1d}{00021}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{structneuron_ad79332397cf2c367cd6d421bfe8e2c1d}{err}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00022}00022     \textcolor{comment}{// weight}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00023}\mbox{\hyperlink{structneuron_a4cb1f895dc9634f84d164516d528f9a9}{00023}}     \textcolor{keywordtype}{double}* \mbox{\hyperlink{structneuron_a4cb1f895dc9634f84d164516d528f9a9}{wt}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00024}00024     \textcolor{comment}{// last weight}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00025}\mbox{\hyperlink{structneuron_aebca9364a2cd3a6c9840e5d4b5300144}{00025}}     \textcolor{keywordtype}{double}* \mbox{\hyperlink{structneuron_aebca9364a2cd3a6c9840e5d4b5300144}{wt\_last}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00026}00026     \textcolor{comment}{// saved weight}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00027}\mbox{\hyperlink{structneuron_ab9b97237103868ca649b4d9e8bd68cff}{00027}}     \textcolor{keywordtype}{double}* \mbox{\hyperlink{structneuron_ab9b97237103868ca649b4d9e8bd68cff}{wt\_saved}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00028}00028 \};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00030}\mbox{\hyperlink{structlayer}{00030}} \textcolor{keyword}{struct }\mbox{\hyperlink{structlayer}{layer}} \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00031}\mbox{\hyperlink{structlayer_a910bb3b94d8862da72b14f4719e834f9}{00031}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structlayer_a910bb3b94d8862da72b14f4719e834f9}{num\_neurons}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00032}\mbox{\hyperlink{structlayer_a4cc427923d4fa08f4e2bb7958569a66d}{00032}}     \mbox{\hyperlink{structneuron}{neuron}}* \mbox{\hyperlink{structlayer_a4cc427923d4fa08f4e2bb7958569a66d}{neuron\_ptr}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00033}00033 \};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00035}\mbox{\hyperlink{classMLP}{00035}} \textcolor{keyword}{class }\mbox{\hyperlink{classMLP}{MLP}} \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00036}00036     \textcolor{comment}{/* initialize random values for the network */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a14b6b4b858e63dafcce3641263bdc003}{rand\_init}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00038}00038     \textcolor{comment}{/* check that random is an integer */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00039}00039     \textcolor{keywordtype}{int} \mbox{\hyperlink{classMLP_a499f241e3914aeb8f02300908e30bbc5}{rand\_int}}(\textcolor{keywordtype}{int} low, \textcolor{keywordtype}{int} hi);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00040}00040     \textcolor{comment}{/*check random is a real number */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00041}00041     \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_a6ac667aa13dcde0e16886f16b7879395}{rand\_real}}(\textcolor{keywordtype}{double} low, \textcolor{keywordtype}{double} hi);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00043}00043     \textcolor{comment}{/*return the number of layers in the network */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00044}\mbox{\hyperlink{classMLP_a8c68dc241a0b7f93049b05ccdae44ea9}{00044}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{classMLP_a8c68dc241a0b7f93049b05ccdae44ea9}{num\_layers}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00045}\mbox{\hyperlink{classMLP_a60d940da20cfc176e791ff849cfde708}{00045}}     \mbox{\hyperlink{structlayer}{layer}}* \mbox{\hyperlink{classMLP_a60d940da20cfc176e791ff849cfde708}{layer\_ptr}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00047}\mbox{\hyperlink{classMLP_a9be4db567e38e5339abf1b7b9686f704}{00047}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_a9be4db567e38e5339abf1b7b9686f704}{dMSE}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00048}\mbox{\hyperlink{classMLP_a6b6f762a37d6c6dfd0bd5565e8042a42}{00048}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_a6b6f762a37d6c6dfd0bd5565e8042a42}{dMAE}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00050}\mbox{\hyperlink{classMLP_a5a7600d28b6588c5122f431eaf9182ba}{00050}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a5a7600d28b6588c5122f431eaf9182ba}{weights\_ran}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00052}\mbox{\hyperlink{classMLP_a7805c5930339d178eec3bc8ae96e870f}{00052}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a7805c5930339d178eec3bc8ae96e870f}{set\_signal\_in}}(\textcolor{keywordtype}{double}* input);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00053}\mbox{\hyperlink{classMLP_a27f0b585a0f6a98ac9c5e81e4e0c1191}{00053}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a27f0b585a0f6a98ac9c5e81e4e0c1191}{get\_signal\_out}}(\textcolor{keywordtype}{double}* output);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00055}\mbox{\hyperlink{classMLP_ae264327326870aa5ffe43420f6bce90f}{00055}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_ae264327326870aa5ffe43420f6bce90f}{weights\_save}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00056}\mbox{\hyperlink{classMLP_a9acf4fc570ceffd3ff8dbe97167f8faf}{00056}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a9acf4fc570ceffd3ff8dbe97167f8faf}{weights\_restore}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00058}00058     \textcolor{comment}{/* propogate given the signal */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00059}\mbox{\hyperlink{classMLP_aa34296cb27a96b668c3e49bdf4af0697}{00059}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_aa34296cb27a96b668c3e49bdf4af0697}{prop\_signal}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00060}00060     \textcolor{comment}{/* returns the computed output error */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00061}\mbox{\hyperlink{classMLP_ad180cd56224071695babaea9a4feddeb}{00061}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_ad180cd56224071695babaea9a4feddeb}{output\_err}}(\textcolor{keywordtype}{double}* target);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00062}00062     \textcolor{comment}{/* returns the computed error from backwards propogation */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00063}\mbox{\hyperlink{classMLP_abc15b285d05e6d2b106a3dbb38dab111}{00063}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_abc15b285d05e6d2b106a3dbb38dab111}{back\_prop\_err}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00064}00064     \textcolor{comment}{/*adjust weights */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00065}\mbox{\hyperlink{classMLP_a2f1e0e12cd526f282290a253ded8ebef}{00065}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a2f1e0e12cd526f282290a253ded8ebef}{weights\_adjust}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00066}00066     \textcolor{comment}{/* simulate the Multi-\/Layer Perceptron Neual Network */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00067}\mbox{\hyperlink{classMLP_a1596a7a23ff98fed9f7314a6df9dcc6b}{00067}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a1596a7a23ff98fed9f7314a6df9dcc6b}{simulate}}(\textcolor{keywordtype}{double}* input, \textcolor{keywordtype}{double}* output, }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00068}00068                 \textcolor{keywordtype}{double}* target, \textcolor{keywordtype}{bool} training);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00070}00070     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00071}\mbox{\hyperlink{classMLP_af272cadd9f2af6d1a474307aac131136}{00071}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_af272cadd9f2af6d1a474307aac131136}{dEta}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00072}\mbox{\hyperlink{classMLP_a3b33932fbf87af2463d192336e97ac37}{00072}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_a3b33932fbf87af2463d192336e97ac37}{dAlpha}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00073}\mbox{\hyperlink{classMLP_ab81cbb1d1e18c7aa708bc25cc9f73f1f}{00073}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_ab81cbb1d1e18c7aa708bc25cc9f73f1f}{dGain}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00074}\mbox{\hyperlink{classMLP_a5333c9dd1d4a658b77673cee4f345644}{00074}}         \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_a5333c9dd1d4a658b77673cee4f345644}{dAvgTestError}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00076}00076         \textcolor{comment}{/* CONSTRUCT */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00077}\mbox{\hyperlink{classMLP_ac70a9a0b94a67e2a51ac7df495883d71}{00077}}         \mbox{\hyperlink{classMLP_ac70a9a0b94a67e2a51ac7df495883d71}{MLP}}(\textcolor{keywordtype}{int} nl, \textcolor{keywordtype}{int} npl[]);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00078}00078         \textcolor{comment}{/* DECONSTRUCT */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00079}\mbox{\hyperlink{classMLP_a56225921399a54b0741e3d0778cf3026}{00079}}         \mbox{\hyperlink{classMLP_a56225921399a54b0741e3d0778cf3026}{\string~MLP}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00081}00081         \textcolor{comment}{/* method to train the network given data*/}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00082}\mbox{\hyperlink{classMLP_aa2451ae9f546b204252bbc99f1dd8071}{00082}}         \textcolor{keywordtype}{int} \mbox{\hyperlink{classMLP_aa2451ae9f546b204252bbc99f1dd8071}{train}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fnames);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00083}00083         \textcolor{comment}{/* method to test given data*/}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00084}\mbox{\hyperlink{classMLP_ada85e68bd8e1b0f36fdfff8be8e5b96f}{00084}}         \textcolor{keywordtype}{int} \mbox{\hyperlink{classMLP_ada85e68bd8e1b0f36fdfff8be8e5b96f}{test}} (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fname);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00085}\mbox{\hyperlink{classMLP_ad842ae1e83ed92230cb99a1de81ad976}{00085}}         \textcolor{keywordtype}{int} \mbox{\hyperlink{classMLP_ad842ae1e83ed92230cb99a1de81ad976}{evaluate}}();}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00087}\mbox{\hyperlink{classMLP_ac04a4d8596bde156c4e1c76d07cdedb7}{00087}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_ac04a4d8596bde156c4e1c76d07cdedb7}{run}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* fname, \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& maxiter);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00089}00089 \};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00091}00091 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8hpp_source_l00092}00092 }
+
+\end{DoxyCode}

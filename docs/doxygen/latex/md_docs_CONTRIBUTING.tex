@@ -1,0 +1,28 @@
+RM-\/pkg welcomes any and all contributors! There are {\bfseries{two}} ways to contribute to RM-\/pkg \hypertarget{md_docs_CONTRIBUTING_autotoc_md1}{}\doxysection{Bug fixes}\label{md_docs_CONTRIBUTING_autotoc_md1}
+
+\begin{DoxyItemize}
+\item If you have a bug fix please submit a pull request with details highlighting what you are fixing, how you replicated it, and how you tested your fix.
+\end{DoxyItemize}\hypertarget{md_docs_CONTRIBUTING_autotoc_md2}{}\doxysection{New Features}\label{md_docs_CONTRIBUTING_autotoc_md2}
+
+\begin{DoxyItemize}
+\item If you have an idea on some mathematical algorithm that can be used in this package, please...
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item see if the idea already exists in one of the \href{https://github.com/akielaries/RM-pkg/tree/main/modules}{\texttt{ modules}}
+\item create/add to an existing modules code + the corresponding {\ttfamily .hpp} file in the \href{https://github.com/akielaries/RM-pkg/tree/main/include}{\texttt{ includes}} directory.
+\item create a driver with your {\ttfamily \mbox{\hyperlink{sample__threads_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}} function and store in the \href{https://github.com/akielaries/RM-pkg/tree/main/drivers}{\texttt{ drivers}} directory.
+\item confirm your implementations work correctly.
+\item if necessary add your example to the projects \href{https://github.com/akielaries/RM-pkg/tree/main/Makefile}{\texttt{ Makefile}} that shows different examples running.
+\item pretty up any miscsubmit pull request
+\end{DoxyEnumerate}\hypertarget{md_docs_CONTRIBUTING_autotoc_md3}{}\doxysection{Goal}\label{md_docs_CONTRIBUTING_autotoc_md3}
+The {\bfseries{goal}} is to incorporate different mathematical topics into modules. These modules will serve as $\ast$\char`\"{}abstract\char`\"{}$\ast$ topics and code within them to then be reused by users and the package itself. Each modules code will have corresponding {\ttfamily \mbox{\hyperlink{sample__threads_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}} functions in the \href{https://github.com/akielaries/RM-pkg/tree/main/drivers}{\texttt{ drivers}} directory showing examples on how to implement said modules.
+
+
+\begin{DoxyItemize}
+\item For example, a linear algebra module would contain a module named {\ttfamily LINALG} that could contain {\ttfamily .cpp} implementation files with their corresponding headers in in the includes folder mentioned previously. The specific module directory can contain whatever new implementation files or add to an existing file.
+\begin{DoxyItemize}
+\item For example, if you have the idea to add operations on Vectors (addition, subtraction, multiplication, division) but see that addition and subtraction are already implemented in a file called {\ttfamily la\+\_\+basics.\+cpp} you would add your implementations into that file instead of creating a new one.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Hopefully these guidelines are clear enough for you to begin contributing to this project. As always email me \href{mailto:akiel@akiel.org}{\texttt{ akiel@akiel.\+org}} for questions. 

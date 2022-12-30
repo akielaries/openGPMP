@@ -1,0 +1,91 @@
+\hypertarget{samples_2cpp_2deriv_8cpp}{}\doxysection{samples/cpp/deriv.cpp File Reference}
+\label{samples_2cpp_2deriv_8cpp}\index{samples/cpp/deriv.cpp@{samples/cpp/deriv.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$open\+MTPK/deriv.\+hpp$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{samples_2cpp_2deriv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{samples_2cpp_2deriv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{samples_2cpp_2deriv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{deriv.cpp@{deriv.cpp}!main@{main}}
+\index{main@{main}!deriv.cpp@{deriv.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{samples_2cpp_2deriv_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{samples_2cpp_2deriv_8cpp_source}{deriv.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013            \{}
+\DoxyCodeLine{00014     \textcolor{comment}{/*}}
+\DoxyCodeLine{00015 \textcolor{comment}{     * When calling the rm\_deriv() and rm\_deriv\_at() functions, the }}
+\DoxyCodeLine{00016 \textcolor{comment}{     * polynomial must be passed in as a string with the following format:}}
+\DoxyCodeLine{00017 \textcolor{comment}{     * 3x\string^2 + 7x\string^4 + 2x\string^1}}
+\DoxyCodeLine{00018 \textcolor{comment}{     *}}
+\DoxyCodeLine{00019 \textcolor{comment}{     * keep in mind : }}
+\DoxyCodeLine{00020 \textcolor{comment}{     * 1. adding a space in between each operand}}
+\DoxyCodeLine{00021 \textcolor{comment}{     * 2. using correct variables in your equation}}
+\DoxyCodeLine{00022 \textcolor{comment}{     * 3. adding a power notation (\string^1) to every variable even if only}}
+\DoxyCodeLine{00023 \textcolor{comment}{     * raised to 1}}
+\DoxyCodeLine{00024 \textcolor{comment}{     */}}
+\DoxyCodeLine{00025     std::cout << \textcolor{stringliteral}{"{}DERIVATIVE EXAMPLE\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{comment}{// declare calculus class obj}}
+\DoxyCodeLine{00028     \mbox{\hyperlink{classcalculus}{calculus}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__calc_8cpp_03_aa7a08275405c91310efb85846ff0d965}{calc}};}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     \textcolor{comment}{// we can declare our equation as a string for ease of use}}
+\DoxyCodeLine{00031     std::string st0 = \textcolor{stringliteral}{"{}4x\string^3 + 3x\string^1 + 2x\string^2 + 5x\string^1 + 2x\string^4"{}};}
+\DoxyCodeLine{00032     \textcolor{comment}{//std::string st0 = "{}4x\string^3 + 3x\string^1"{};}}
+\DoxyCodeLine{00033     std::string st1 = \textcolor{stringliteral}{"{}1x\string^3"{}};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{comment}{/*}}
+\DoxyCodeLine{00036 \textcolor{comment}{     * this derivative function finds the first derivative of a given }}
+\DoxyCodeLine{00037 \textcolor{comment}{     * polynomial}}
+\DoxyCodeLine{00038 \textcolor{comment}{     */}}
+\DoxyCodeLine{00039     std::cout << \textcolor{stringliteral}{"{}Finding the first derivative of a given polynomial.\(\backslash\)n"{}};}
+\DoxyCodeLine{00040     \textcolor{comment}{// std::string deriv\_result0 = calc.rm\_deriv(st0);}}
+\DoxyCodeLine{00041     \textcolor{comment}{/*}}
+\DoxyCodeLine{00042 \textcolor{comment}{}}
+\DoxyCodeLine{00043 \textcolor{comment}{    printf("{}f(x) = \%s \(\backslash\)n"{}, st0.c\_str());}}
+\DoxyCodeLine{00044 \textcolor{comment}{    printf("{}DEBUGGING THIS\(\backslash\)n"{});}}
+\DoxyCodeLine{00045 \textcolor{comment}{    //printf("{}df/dx of f(x) = \%s\(\backslash\)n"{}, deriv\_result0.c\_str());}}
+\DoxyCodeLine{00046 \textcolor{comment}{    printf("{}\(\backslash\)n"{});}}
+\DoxyCodeLine{00047 \textcolor{comment}{    */}}
+\DoxyCodeLine{00048     std::cout << \textcolor{stringliteral}{"{}<-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/>\(\backslash\)n"{}} << std::endl;}
+\DoxyCodeLine{00049     \textcolor{comment}{/* }}
+\DoxyCodeLine{00050 \textcolor{comment}{     * this specific derivative function calculates the derivative of a }}
+\DoxyCodeLine{00051 \textcolor{comment}{     * polynomial at a given value}}
+\DoxyCodeLine{00052 \textcolor{comment}{     */}}
+\DoxyCodeLine{00053     std::cout << \textcolor{stringliteral}{"{}First derivative at a given value.\(\backslash\)n"{}};}
+\DoxyCodeLine{00054     \textcolor{keywordtype}{int} val0 = 2;}
+\DoxyCodeLine{00055     \textcolor{keywordtype}{int} val1 = 3;}
+\DoxyCodeLine{00056     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} deriv\_result2 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__calc_8cpp_03_aa7a08275405c91310efb85846ff0d965}{calc}}.\mbox{\hyperlink{classcalculus_aad5ef27ed419c445a631524fc1aa8127}{deriv\_at}}(st0, val0);}
+\DoxyCodeLine{00057     std::cout << \textcolor{stringliteral}{"{}df'/dx = "{}} << deriv\_result2 << std::endl;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{comment}{/*}}
+\DoxyCodeLine{00060 \textcolor{comment}{    printf("{}f(x) = \%s \(\backslash\)n"{}, st0.c\_str());}}
+\DoxyCodeLine{00061 \textcolor{comment}{    printf("{}df/dx of f(x) at x = \%d = \%lld\(\backslash\)n\(\backslash\)n"{}, val0, deriv\_result2);}}
+\DoxyCodeLine{00062 \textcolor{comment}{}}
+\DoxyCodeLine{00063 \textcolor{comment}{    long long deriv\_result3 = calc.rm\_deriv\_at(st1, val1);}}
+\DoxyCodeLine{00064 \textcolor{comment}{}}
+\DoxyCodeLine{00065 \textcolor{comment}{    printf("{}f(x) = \%s \(\backslash\)n"{}, st1.c\_str());}}
+\DoxyCodeLine{00066 \textcolor{comment}{    printf("{}df/dx of f(x) at x = \%d = \%lld\(\backslash\)n"{}, val1, deriv\_result3);}}
+\DoxyCodeLine{00067 \textcolor{comment}{    */}}
+\DoxyCodeLine{00068     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{namespaceanonymous__namespace_02t__calc_8cpp_03_aa7a08275405c91310efb85846ff0d965}{anonymous\+\_\+namespace\{t\+\_\+calc.\+cpp\}\+::calc}}, and \mbox{\hyperlink{classcalculus_aad5ef27ed419c445a631524fc1aa8127}{calculus\+::deriv\+\_\+at()}}.
+

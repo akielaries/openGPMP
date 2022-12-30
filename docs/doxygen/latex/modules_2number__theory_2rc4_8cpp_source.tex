@@ -1,0 +1,150 @@
+\hypertarget{modules_2number__theory_2rc4_8cpp_source}{}\doxysection{rc4.\+cpp}
+\label{modules_2number__theory_2rc4_8cpp_source}\index{modules/number\_theory/rc4.cpp@{modules/number\_theory/rc4.cpp}}
+\mbox{\hyperlink{modules_2number__theory_2rc4_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00002}00002 \textcolor{comment}{ * This file shows the implementation of the Rivest Cipher 4 (RC4) }}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00003}00003 \textcolor{comment}{ * encryption algorithm created by Ron Rivest using either a traditional}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00004}00004 \textcolor{comment}{ * swap method or with the XOR operator}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00005}00005 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00013}00013 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00014}00014 \textcolor{comment}{// \#include <omp.h>}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00015}00015 \textcolor{preprocessor}{\#include "{}../../include/number\_theory/rc4.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00018}\mbox{\hyperlink{classRC4_adaf2482857cea29d3e872621a80cb8cb}{00018}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRC4_adaf2482857cea29d3e872621a80cb8cb}{RC4::byte\_swap}}(uint8\_t *a, uint8\_t *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}}) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00019}00019     uint8\_t swapped = * a;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00020}00020     swapped = *a;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00021}00021     *a = *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00022}00022     *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} = swapped;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00025}\mbox{\hyperlink{classRC4_a9eed557512a32f5eaf97f65cd31cabd1}{00025}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRC4_a9eed557512a32f5eaf97f65cd31cabd1}{RC4::trad\_swap}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *a, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}}) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00026}00026     \textcolor{keywordtype}{int} swapped = *a;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00027}00027     *a = *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00028}00028     *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} = swapped;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00031}\mbox{\hyperlink{classRC4_a857f76dfb7b22916ad210891f8818104}{00031}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRC4_a857f76dfb7b22916ad210891f8818104}{RC4::XOR\_swap}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *a, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}}) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00032}00032     *a \string^= *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00033}00033     *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}} \string^= *a;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00034}00034     *a \string^= *\mbox{\hyperlink{namespacePython_1_1examples_1_1arithmetic_a2e87815af2636fcd423f3e6568e74fd8}{b}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00037}\mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{00037}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{RC4::KSA}}(\textcolor{keywordtype}{char} *key, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00038}00038                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *S,}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00039}00039                 \textcolor{keywordtype}{int} swap\_type) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00041}00041     uint32\_t len = strlen(key);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00042}00042     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00044}00044     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\_LIMIT}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00045}00045         S[i] = i;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00048}00048     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\_LIMIT}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00049}00049         j = (j + S[i] + key[i \% len]) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00051}00051         \textcolor{comment}{// choose swap algorithm based off swap\_type}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00052}00052         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00053}00053             \mbox{\hyperlink{classRC4_a857f76dfb7b22916ad210891f8818104}{XOR\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00054}00054         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00055}00055         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 1) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00056}00056             \mbox{\hyperlink{classRC4_a9eed557512a32f5eaf97f65cd31cabd1}{trad\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00058}00058         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 2) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00059}00059             \mbox{\hyperlink{classRC4_adaf2482857cea29d3e872621a80cb8cb}{byte\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00060}00060         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00062}00062 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00064}\mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{00064}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{RC4::PRGA}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *S, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00065}00065                 \textcolor{keywordtype}{char} *plaintext, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00066}00066                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ciphertext, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00067}00067                 \textcolor{keywordtype}{int} swap\_type) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00068}00068     }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00069}00069     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00070}00070     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00072}00072     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} n = 0, len = strlen(plaintext); n < len; n++) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00073}00073         i = (i + 1) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00074}00074         j = (j + S[i]) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00076}00076         \textcolor{comment}{// choose swap algorithm based off swap\_type}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00077}00077         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00078}00078             \mbox{\hyperlink{classRC4_a857f76dfb7b22916ad210891f8818104}{XOR\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00079}00079         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00080}00080         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 1) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00081}00081             \mbox{\hyperlink{classRC4_a9eed557512a32f5eaf97f65cd31cabd1}{trad\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00082}00082         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00083}00083         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 2) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00084}00084             \mbox{\hyperlink{classRC4_adaf2482857cea29d3e872621a80cb8cb}{byte\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00087}00087         uint32\_t rnd = S[(S[i] + S[j]) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}}];}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00089}00089         ciphertext[n] = rnd \string^ plaintext[n];}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00093}\mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{00093}} std::string \mbox{\hyperlink{classRC4_a8925d178acbb55053cc58aa10206e135}{RC4::store\_hash}}(\textcolor{keywordtype}{char} *plaintext, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00094}00094                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *\mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}}, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00095}00095                 \textcolor{keywordtype}{int} swap\_type) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00097}00097     \textcolor{comment}{// length of our plaintext}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00098}00098     \textcolor{keywordtype}{int} len = strlen((\textcolor{keywordtype}{char}*)plaintext);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00099}00099     \textcolor{comment}{// for snprintf declare a buffer}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00100}00100     \textcolor{keywordtype}{char} buffer[len + 1];}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00101}00101     \textcolor{keywordtype}{int} size = \textcolor{keyword}{sizeof}(buffer);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00102}00102     }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00103}00103     \textcolor{comment}{// initialize empty string}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00104}00104     std::string stored\_text = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00105}00105     }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00106}00106     \textcolor{comment}{// traverse the hashtext appending each block to a string}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00107}00107     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} index = 0, len = strlen(plaintext); }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00108}00108                             index < len; index++) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00109}00109         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00110}00110             snprintf(buffer, size, \textcolor{stringliteral}{"{}|x\%02hhx|"{}}, \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}}[index]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00111}00111         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00112}00112         \textcolor{comment}{// to format our hash to a string for future manipulation}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00113}00113         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00114}00114             snprintf(buffer, size, \textcolor{stringliteral}{"{}\%02hhX"{}}, \mbox{\hyperlink{namespacePython_1_1examples_1_1cipher__ex_a54567a24989a5a75efced5ec8b797caa}{hashtext}}[index]);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00115}00115         \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00116}00116         \textcolor{comment}{// append the declared string}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00117}00117         stored\_text += std::string(buffer);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00119}00119     \textcolor{keywordflow}{return} stored\_text;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00120}00120 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00122}\mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{00122}} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* \mbox{\hyperlink{classRC4_af3943e593ed70b833b3045cf0c9f3c55}{RC4::compute}}(\textcolor{keywordtype}{char} *key, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00123}00123                 \textcolor{keywordtype}{char} *plaintext, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00124}00124                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ciphertext, }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00125}00125                 \textcolor{keywordtype}{int} swap\_type) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00127}00127     \textcolor{keywordflow}{if} (ciphertext == NULL) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00128}00128         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}[-\/] Error Allocating Memory"{}});}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00129}00129     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00131}00131     \textcolor{comment}{// check for swap types 1-\/3}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00132}00132     \textcolor{keywordflow}{if} (0 <= swap\_type \&\& swap\_type <= 2) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00133}00133         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} S[\mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\_LIMIT}}];}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00134}00134         \mbox{\hyperlink{classRC4_a8d0de8b7bdf64701875569ea90309310}{KSA}}(key, S, swap\_type);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00135}00135         \mbox{\hyperlink{classRC4_a65e83a2f7ff67b6f1da40958a84bf549}{PRGA}}(S, plaintext, ciphertext, swap\_type);}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00136}00136     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00138}00138     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type > 2) \{}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00139}00139         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}[-\/] Invalid swap\_type"{}});}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00140}00140     \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00142}00142     \textcolor{keywordflow}{return} ciphertext;}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00143}00143 \}}
+\DoxyCodeLine{\Hypertarget{modules_2number__theory_2rc4_8cpp_source_l00144}00144 }
+
+\end{DoxyCode}

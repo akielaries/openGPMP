@@ -1,5 +1,8 @@
-/*
- * definitions for basic arithmetic operations 
+/**
+ * @file
+ * 
+ * @section DESCRITPTION 
+ * Definitions for basic arithmetic operations 
  */
 
 #ifndef ARITH_HPP
@@ -9,13 +12,16 @@
 #include <stdio.h>
 #include <algorithm>
 
+/**
+ * @brief Arithmetic Template Class. Each method is variadic taking 'n' params.
+ */
 class Arith {
 
     public:
-        /*
-         * It is easiest to include the implementation of our template
-         * methods in our header files
-         * Addition
+        /**
+         * @brief Addition method
+         * @param 'n' addends 
+         * @return sum
          */
         template<typename T>
         inline T add(T t) {
@@ -25,8 +31,13 @@ class Arith {
         inline auto add(T t, Ts... ts) {
             return t + add(ts...);
         }
-        
-        // subtraction
+
+        /**
+         * @brief Subtraction method
+         * @param minuend
+         * @param 'n' subtrahends
+         * @return difference
+         */
         template<typename X>
         inline X sub(X x) {
             return x;
@@ -36,7 +47,11 @@ class Arith {
             return x - sub(xy...);
         }
 
-        // multiplication
+        /**
+         * @brief Multiplication method
+         * @param 'n' factors
+         * @return product
+         */
         template<typename W>
         inline W mult(W w) {
             return w;
@@ -46,7 +61,12 @@ class Arith {
             return w * mult(wv...);
         }
 
-        // exponentiation
+        /**
+         * @brief Exponentiation method
+         * @param base
+         * @param 'n' powers
+         * @return product
+         */
         template<typename Z>
         inline Z exp(Z z) {
             return z;

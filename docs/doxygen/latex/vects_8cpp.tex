@@ -1,0 +1,78 @@
+\hypertarget{vects_8cpp}{}\doxysection{experiment/wolfram/vects.cpp File Reference}
+\label{vects_8cpp}\index{experiment/wolfram/vects.cpp@{experiment/wolfram/vects.cpp}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVector}{Vector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{vects_8cpp_a3c7541b9ece284442186e4a6dd1ee4f9}{operator$<$$<$}} (ostream \&out, const \mbox{\hyperlink{classVector}{Vector}} \&v)
+\item 
+int \mbox{\hyperlink{vects_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vects_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{vects_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{vects.cpp@{vects.cpp}!main@{main}}
+\index{main@{main}!vects.cpp@{vects.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vects_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{vects_8cpp_source}{vects.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086 \{}
+\DoxyCodeLine{00087     \textcolor{comment}{// Let us Take the vector quantites :}}
+\DoxyCodeLine{00088     \textcolor{comment}{// V1 = 3i + 4j + 2k}}
+\DoxyCodeLine{00089     \textcolor{comment}{// V2 = 6i + 3j + 9k}}
+\DoxyCodeLine{00090     \mbox{\hyperlink{classVector}{Vector}} V1(3, 4, 2), V2(6, 3, 9);}
+\DoxyCodeLine{00091   }
+\DoxyCodeLine{00092     cout << \textcolor{stringliteral}{"{}V1 = "{}} << V1;}
+\DoxyCodeLine{00093     cout << \textcolor{stringliteral}{"{}V2 = "{}} << V2;}
+\DoxyCodeLine{00094   }
+\DoxyCodeLine{00095     cout << \textcolor{stringliteral}{"{}V1 + V2 = "{}} << (V1 + V2);}
+\DoxyCodeLine{00096     cout << \textcolor{stringliteral}{"{}Dot Product is : "{}} << (V1 \string^ V2);}
+\DoxyCodeLine{00097     cout << \textcolor{stringliteral}{"{}Cross Product is : "{}} << (V1 * V2);}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099     \mbox{\hyperlink{classVector}{Vector}} V3(0, 7, 3), V4(1, 2, 0);}
+\DoxyCodeLine{00100     cout << \textcolor{stringliteral}{"{}V3 + V4 = "{}} << (V3 + V4);}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{comment}{// Vector V5(1, 2, 3, 4), V6(4, 3, 2, 1);}}
+\DoxyCodeLine{00103     \textcolor{comment}{// cout << "{}V5 + V6 = "{} << (V5 + V6);}}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00106 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{vects_8cpp_a3c7541b9ece284442186e4a6dd1ee4f9}\label{vects_8cpp_a3c7541b9ece284442186e4a6dd1ee4f9}} 
+\index{vects.cpp@{vects.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!vects.cpp@{vects.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classVector}{Vector}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{vects_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{vects_8cpp_source}{vects.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073 \{}
+\DoxyCodeLine{00074     out << v.\mbox{\hyperlink{classVector_a6bd76336af82fac1ba5c3e0b5e4060df}{x}} << \textcolor{stringliteral}{"{}i "{}};}
+\DoxyCodeLine{00075     \textcolor{keywordflow}{if} (v.\mbox{\hyperlink{classVector_a23dd3816f60a6c3bc9af4971088eb2fd}{y}} >= 0)}
+\DoxyCodeLine{00076         out << \textcolor{stringliteral}{"{}+ "{}};}
+\DoxyCodeLine{00077     out << v.\mbox{\hyperlink{classVector_a23dd3816f60a6c3bc9af4971088eb2fd}{y}} << \textcolor{stringliteral}{"{}j "{}};}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{if} (v.\mbox{\hyperlink{classVector_a68bd214a001554482aabba4c514a53fe}{z}} >= 0)}
+\DoxyCodeLine{00079         out << \textcolor{stringliteral}{"{}+ "{}};}
+\DoxyCodeLine{00080     out << v.\mbox{\hyperlink{classVector_a68bd214a001554482aabba4c514a53fe}{z}} << \textcolor{stringliteral}{"{}k"{}} << endl;}
+\DoxyCodeLine{00081     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{00082 \}}
+
+\end{DoxyCode}

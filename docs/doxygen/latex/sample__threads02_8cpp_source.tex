@@ -1,0 +1,31 @@
+\hypertarget{sample__threads02_8cpp_source}{}\doxysection{sample\+\_\+threads02.\+cpp}
+\label{sample__threads02_8cpp_source}\index{experiment/CPU/sample\_threads02.cpp@{experiment/CPU/sample\_threads02.cpp}}
+\mbox{\hyperlink{sample__threads02_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <stdio.h>}       \textcolor{comment}{/* standard I/O routines                 */}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <pthread.h>}     \textcolor{comment}{/* pthread functions and data structures */}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <omp.h>}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00006}\mbox{\hyperlink{sample__threads02_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00006}} \textcolor{keywordtype}{int} \mbox{\hyperlink{sample__threads02_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00007}00007     }
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00008}00008     \textcolor{comment}{// spawn threads}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00009}00009 \textcolor{preprocessor}{    \#pragma omp parallel }}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00011}00011         \textcolor{keywordtype}{int} nthreads = omp\_get\_num\_threads();}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00012}00012         \textcolor{keywordtype}{int} thread\_id = omp\_get\_thread\_num();}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00014}00014 \textcolor{preprocessor}{        \#pragma omp single}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00015}00015         \{}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00016}00016             printf(\textcolor{stringliteral}{"{}Number of threads = \%d\(\backslash\)n"{}}, nthreads);}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00017}00017             printf(\textcolor{stringliteral}{"{}Thread id = \%d\(\backslash\)n"{}}, thread\_id);}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00018}00018         \}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00019}00019     \} \textcolor{comment}{// insert barrier}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00021}00021     \textcolor{comment}{// return 0;}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{sample__threads02_8cpp_source_l00025}00025 }
+
+\end{DoxyCode}

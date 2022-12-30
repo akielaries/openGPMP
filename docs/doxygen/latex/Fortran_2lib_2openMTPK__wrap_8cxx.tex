@@ -1,0 +1,1483 @@
+\hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx}{}\doxysection{Fortran/lib/open\+MTPK\+\_\+wrap.cxx File Reference}
+\label{Fortran_2lib_2openMTPK__wrap_8cxx}\index{Fortran/lib/openMTPK\_wrap.cxx@{Fortran/lib/openMTPK\_wrap.cxx}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}../../include/number\+\_\+theory/primes.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/number\+\_\+theory/rc4.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/number\+\_\+theory/cipher.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}}
+\item 
+struct \mbox{\hyperlink{structswig_1_1DestructorPolicy}{swig\+::\+Destructor\+Policy$<$ T, A $>$}}
+\item 
+struct \mbox{\hyperlink{structswig_1_1DestructorPolicy_3_01T_00_01ASSIGNMENT__NODESTRUCT_01_4}{swig\+::\+Destructor\+Policy$<$ T, ASSIGNMENT\+\_\+\+NODESTRUCT $>$}}
+\item 
+struct \mbox{\hyperlink{structswig_1_1AssignmentPolicy}{swig\+::\+Assignment\+Policy$<$ T, A $>$}}
+\item 
+struct \mbox{\hyperlink{structswig_1_1AssignmentPolicy_3_01T_00_01ASSIGNMENT__SMARTPTR_01_4}{swig\+::\+Assignment\+Policy$<$ T, ASSIGNMENT\+\_\+\+SMARTPTR $>$}}
+\item 
+struct \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceswig}{swig}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a7e84031693895e512662f5b390c6d0e4}{SWIGTEMPLATEDISAMBIGUATOR}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a6d0a7c65b3712775e92c8bdb7acdd0ee}{SWIGINLINE}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a6ee41cd160d397aa76668bf4db65e2d1}{SWIGUNUSED}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a6a54164d0685c632e7540c5ad32a453a}{SWIGUNUSEDPARM}}(p)~p \mbox{\hyperlink{openMTPK__wrap_8cpp_a6ee41cd160d397aa76668bf4db65e2d1}{SWIGUNUSED}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}}~static \mbox{\hyperlink{openMTPK__wrap_8cpp_a6ee41cd160d397aa76668bf4db65e2d1}{SWIGUNUSED}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_afc5b08bb3c3cd2e3fb2e34b775346153}{SWIGINTERNINLINE}}~\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{openMTPK__wrap_8cpp_a6d0a7c65b3712775e92c8bdb7acdd0ee}{SWIGINLINE}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_adcd6410456ea7a76147d3ad95b9bcb36}{SWIGSTDCALL}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_abc5a10b0cd5747fbd5684dea2205b06e}{SWIGEXTERN}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ae6a9192e57f07494b0d61c7dc682052d}{SWIG\+\_\+exception\+\_\+impl}}(DECL,  CODE,  MSG,  RETURNNULL)~ \{ throw std\+::logic\+\_\+error(\char`\"{}In \char`\"{} DECL \char`\"{}\+: \char`\"{} MSG); \}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}(PTR,  TYPENAME,  FNAME,  FUNCNAME,  RETURNNULL)
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a8180a5d9a951bc3a9c5852fce5fde4e8}{SWIG\+\_\+\+VERSION}}~0x040101
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ae2556a09842725084aa618b804e9720f}{SWIGFORTRAN}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ad0771df5a83c43ead6f17ce78c30bcd2}{SWIGPOLICY\+\_\+\+Primality}}~\mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a3b99fa4a8d347ce034cfbbc8b951c034}{SWIGPOLICY\+\_\+\+RC4}}~\mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aab1a9fdac616deedf71d8600509e34b4}{SWIGPOLICY\+\_\+\+Cipher}}~\mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a2ceb4fa38a81545311ed99dad04fcde3}{SWIG\+\_\+contract\+\_\+assert}}(RETURNNULL,  EXPR,  MSG)~ if (!(EXPR)) \{ \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ae6a9192e57f07494b0d61c7dc682052d}{SWIG\+\_\+exception\+\_\+impl}}(\char`\"{}\$decl\char`\"{}, SWIG\+\_\+\+Value\+Error, MSG, RETURNNULL); \}
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a6dc8f6b962375bf647fc53ecbeca2d20}{SWIG\+\_\+as\+\_\+voidptr}}(a)~const\+\_\+cast$<$ void $\ast$ $>$(static\+\_\+cast$<$ const void $\ast$ $>$(a))
+\item 
+\#define \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a46d91724837c8d2846b0b27f8bf1626c}{SWIG\+\_\+as\+\_\+voidptrptr}}(a)~((void)\mbox{\hyperlink{openMTPK__wrap_8cpp_a6dc8f6b962375bf647fc53ecbeca2d20}{SWIG\+\_\+as\+\_\+voidptr}}($\ast$a),reinterpret\+\_\+cast$<$ void$\ast$$\ast$ $>$(a))
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041a}{Swig\+Mem\+Flags}} \{ \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\+\_\+\+MEM\+\_\+\+OWN}} = 0x01
+, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}} = 0x02
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{swig\+::\+Assignment\+Type}} \{ \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}
+, \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a5085bac3f2d0c1ed696e9a50db15bdcd}{swig\+::\+ASSIGNMENT\+\_\+\+NODESTRUCT}}
+, \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a9522534370f414eb02f8ddc240ebf4fc}{swig\+::\+ASSIGNMENT\+\_\+\+SMARTPTR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}{Swig\+Class\+Wrapper\+\_\+uninitialized}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{namespaceswig_a41e7f2fe0c503394c143aa5bf2e097c2}{swig\+::capture}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} other)
+\item 
+{\footnotesize template$<$class T , \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{swig\+::\+Assignment\+Type}} A$>$ }\\\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aacc9230e739a536cf9cf1b5cf3c5e689}{SWIG\+\_\+assign}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$self, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} other)
+\item 
+{\footnotesize template$<$class T , \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{swig\+::\+Assignment\+Type}} A$>$ }\\\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a99ef90e91b3903d864ae5f9090049b53}{SWIG\+\_\+free\+\_\+rvalue}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} other)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{Swig\+Array\+Wrapper\+\_\+uninitialized}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a16a572ef116b327d58453f67ace9ef50}{\+\_\+wrap\+\_\+\+Primality\+\_\+is\+\_\+prime}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aca0e61ba7f861de0eaf6682c1ad19b55}{\+\_\+wrap\+\_\+\+Primality\+\_\+compute\+\_\+miller\+\_\+rabin}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2, int const $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a42e11a1250f7ded158e31057b610893e}{\+\_\+wrap\+\_\+\+Primality\+\_\+miller\+\_\+rabin\+\_\+prime}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2, int const $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a7bec2fe74033b48af9a7f7503ef49412}{\+\_\+wrap\+\_\+\+Primality\+\_\+miller\+\_\+rabin}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2, int const $\ast$farg3, int const $\ast$farg4)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a91a47cbb8e8b97cf06d92a1ed9d68d37}{\+\_\+wrap\+\_\+\+Primality\+\_\+jacobian\+\_\+number}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, long long const $\ast$farg2, long long const $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aef743e7684874b43386172ff21223400}{\+\_\+wrap\+\_\+\+Primality\+\_\+solovoy\+\_\+strassen}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, long long const $\ast$farg2, int const $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} long long \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a437eca04685889e966eb1f903d368c4c}{\+\_\+wrap\+\_\+\+Primality\+\_\+mod\+\_\+pow}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, long long const $\ast$farg2, long long const $\ast$farg3, long long const $\ast$farg4)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a1a6e4ac0f07056014819ece7d57271e3}{\+\_\+wrap\+\_\+\+Primality\+\_\+carmichael\+\_\+num}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aee9ad648900416a1f568711e9bf78d21}{\+\_\+wrap\+\_\+\+Primality\+\_\+sieve\+\_\+of\+\_\+eratosthenes}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} long long \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a7338e1414d93e420dd66dcc5673c3383}{\+\_\+wrap\+\_\+\+Primality\+\_\+pollard\+\_\+rho}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, long long const $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a62507fc442844a795649a6a94f7c849e}{\+\_\+wrap\+\_\+\+Primality\+\_\+\+ETF}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, int const $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a50e13b1d17c5c8c712435d4d2c80be09}{\+\_\+wrap\+\_\+new\+\_\+\+Primality}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_af5ede5581ca18b20109177f83053986a}{\+\_\+wrap\+\_\+delete\+\_\+\+Primality}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a756fbfe2558c104951574b59dd9a381c}{\+\_\+wrap\+\_\+\+Primality\+\_\+op\+\_\+assign\+\_\+\+\_\+}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a5578b0aaac00efad0287bd727a2c3926}{\+\_\+wrap\+\_\+\+BITS\+\_\+get}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a7ecc7eec534e076b4b0a69ae15134e9c}{\+\_\+wrap\+\_\+\+BYTE\+\_\+\+LIMIT\+\_\+get}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a4961d1993e2fdfd0c46c3e729d515247}{\+\_\+wrap\+\_\+\+RC4\+\_\+byte\+\_\+swap}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a13d57826ef9bf912e0bffc2813537821}{\+\_\+wrap\+\_\+\+RC4\+\_\+trad\+\_\+swap}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a315903b67a1d4f99c8ecb6dbe7638c67}{\+\_\+wrap\+\_\+\+RC4\+\_\+\+XOR\+\_\+swap}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ae4b7b04d1502e69bdc65638e3070e61a}{\+\_\+wrap\+\_\+\+RC4\+\_\+\+KSA}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg3, int const $\ast$farg4)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a8eadc930e7d60f1f780d3552af5dfcbc}{\+\_\+wrap\+\_\+\+RC4\+\_\+\+PRGA}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg3, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg4, int const $\ast$farg5)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a9fb2c7109cb00498a074d6b9ac46b6e1}{\+\_\+wrap\+\_\+\+RC4\+\_\+store\+\_\+hash}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg3, int const $\ast$farg4)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ad41c39a52847a3ef3263bfd6f04b098d}{\+\_\+wrap\+\_\+\+RC4\+\_\+compute}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg3, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg4, int const $\ast$farg5)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a10920337c8ba93b57f81dec952fa9094}{\+\_\+wrap\+\_\+new\+\_\+\+RC4}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a0b0c0d04eab9e9d5675aebdf24234702}{\+\_\+wrap\+\_\+delete\+\_\+\+RC4}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a17c4fa77e9d867ec77a245a52c48e0fd}{\+\_\+wrap\+\_\+\+RC4\+\_\+op\+\_\+assign\+\_\+\+\_\+}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a2421c96dbbb4af259e1f92c79d16f0a5}{\+\_\+wrap\+\_\+\+Cipher\+\_\+\+C\+\_\+cipher}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg2, int const $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a70c6a5a3fe85b163cbc51818b737b09c}{\+\_\+wrap\+\_\+\+Cipher\+\_\+\+KC\+\_\+encode}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg2)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a26eea61093f9d592d86787cea3ccbc70}{\+\_\+wrap\+\_\+\+Cipher\+\_\+\+KC\+\_\+cipher}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg2, \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$farg3)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a77710b8b2f971001db6f3f155c8df055}{\+\_\+wrap\+\_\+new\+\_\+\+Cipher}} ()
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aaf95cddf351ac98970d3dee91e3020e6}{\+\_\+wrap\+\_\+delete\+\_\+\+Cipher}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1)
+\item 
+\mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a761c6e939d9042a83d0abce7b7ef2fbe}{\+\_\+wrap\+\_\+\+Cipher\+\_\+op\+\_\+assign\+\_\+\+\_\+}} (\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg1, \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$farg2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a6dc8f6b962375bf647fc53ecbeca2d20}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a6dc8f6b962375bf647fc53ecbeca2d20}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_as\_voidptr@{SWIG\_as\_voidptr}}
+\index{SWIG\_as\_voidptr@{SWIG\_as\_voidptr}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_as\_voidptr}{SWIG\_as\_voidptr}}
+{\footnotesize\ttfamily \#define SWIG\+\_\+as\+\_\+voidptr(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~const\+\_\+cast$<$ void $\ast$ $>$(static\+\_\+cast$<$ const void $\ast$ $>$(a))}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00236}{236}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a46d91724837c8d2846b0b27f8bf1626c}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a46d91724837c8d2846b0b27f8bf1626c}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_as\_voidptrptr@{SWIG\_as\_voidptrptr}}
+\index{SWIG\_as\_voidptrptr@{SWIG\_as\_voidptrptr}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_as\_voidptrptr}{SWIG\_as\_voidptrptr}}
+{\footnotesize\ttfamily \#define SWIG\+\_\+as\+\_\+voidptrptr(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~((void)\mbox{\hyperlink{openMTPK__wrap_8cpp_a6dc8f6b962375bf647fc53ecbeca2d20}{SWIG\+\_\+as\+\_\+voidptr}}($\ast$a),reinterpret\+\_\+cast$<$ void$\ast$$\ast$ $>$(a))}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00237}{237}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_check\_nonnull@{SWIG\_check\_nonnull}}
+\index{SWIG\_check\_nonnull@{SWIG\_check\_nonnull}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_check\_nonnull}{SWIG\_check\_nonnull}}
+{\footnotesize\ttfamily \#define SWIG\+\_\+check\+\_\+nonnull(\begin{DoxyParamCaption}\item[{}]{PTR,  }\item[{}]{TYPENAME,  }\item[{}]{FNAME,  }\item[{}]{FUNCNAME,  }\item[{}]{RETURNNULL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (!(PTR)) \{ \(\backslash\)}
+\DoxyCodeLine{    SWIG\_exception\_impl(FUNCNAME, \mbox{\hyperlink{OCaml_2lib_2openMTPK__wrap_8cxx_aa11fe417abd4c5a02d31cc1a51dee007}{SWIG\_NullReferenceError}}, \(\backslash\)}
+\DoxyCodeLine{                        \textcolor{stringliteral}{"{}Cannot pass null "{}} TYPENAME \textcolor{stringliteral}{"{} (class "{}} FNAME \textcolor{stringliteral}{"{}) "{}} \(\backslash\)}
+\DoxyCodeLine{                        \textcolor{stringliteral}{"{}as a reference"{}}, RETURNNULL); \(\backslash\)}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00152}{152}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a2ceb4fa38a81545311ed99dad04fcde3}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a2ceb4fa38a81545311ed99dad04fcde3}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_contract\_assert@{SWIG\_contract\_assert}}
+\index{SWIG\_contract\_assert@{SWIG\_contract\_assert}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_contract\_assert}{SWIG\_contract\_assert}}
+{\footnotesize\ttfamily \#define SWIG\+\_\+contract\+\_\+assert(\begin{DoxyParamCaption}\item[{}]{RETURNNULL,  }\item[{}]{EXPR,  }\item[{}]{MSG }\end{DoxyParamCaption})~ if (!(EXPR)) \{ \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ae6a9192e57f07494b0d61c7dc682052d}{SWIG\+\_\+exception\+\_\+impl}}(\char`\"{}\$decl\char`\"{}, SWIG\+\_\+\+Value\+Error, MSG, RETURNNULL); \}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00232}{232}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ae6a9192e57f07494b0d61c7dc682052d}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ae6a9192e57f07494b0d61c7dc682052d}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_exception\_impl@{SWIG\_exception\_impl}}
+\index{SWIG\_exception\_impl@{SWIG\_exception\_impl}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_exception\_impl}{SWIG\_exception\_impl}}
+{\footnotesize\ttfamily \#define SWIG\+\_\+exception\+\_\+impl(\begin{DoxyParamCaption}\item[{}]{DECL,  }\item[{}]{CODE,  }\item[{}]{MSG,  }\item[{}]{RETURNNULL }\end{DoxyParamCaption})~ \{ throw std\+::logic\+\_\+error(\char`\"{}In \char`\"{} DECL \char`\"{}\+: \char`\"{} MSG); \}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00142}{142}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a8180a5d9a951bc3a9c5852fce5fde4e8}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a8180a5d9a951bc3a9c5852fce5fde4e8}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_VERSION@{SWIG\_VERSION}}
+\index{SWIG\_VERSION@{SWIG\_VERSION}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_VERSION}{SWIG\_VERSION}}
+{\footnotesize\ttfamily \#define SWIG\+\_\+\+VERSION~0x040101}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00170}{170}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aea3c8b056dcc8c1ab93f6b825cd1371b}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aea3c8b056dcc8c1ab93f6b825cd1371b}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGEXPORT@{SWIGEXPORT}}
+\index{SWIGEXPORT@{SWIGEXPORT}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGEXPORT}{SWIGEXPORT}}
+{\footnotesize\ttfamily \#define SWIGEXPORT}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00094}{94}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_abc5a10b0cd5747fbd5684dea2205b06e}\label{Fortran_2lib_2openMTPK__wrap_8cxx_abc5a10b0cd5747fbd5684dea2205b06e}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGEXTERN@{SWIGEXTERN}}
+\index{SWIGEXTERN@{SWIGEXTERN}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGEXTERN}{SWIGEXTERN}}
+{\footnotesize\ttfamily \#define SWIGEXTERN}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00137}{137}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ae2556a09842725084aa618b804e9720f}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ae2556a09842725084aa618b804e9720f}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGFORTRAN@{SWIGFORTRAN}}
+\index{SWIGFORTRAN@{SWIGFORTRAN}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGFORTRAN}{SWIGFORTRAN}}
+{\footnotesize\ttfamily \#define SWIGFORTRAN}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00171}{171}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a6d0a7c65b3712775e92c8bdb7acdd0ee}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a6d0a7c65b3712775e92c8bdb7acdd0ee}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGINLINE@{SWIGINLINE}}
+\index{SWIGINLINE@{SWIGINLINE}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGINLINE}{SWIGINLINE}}
+{\footnotesize\ttfamily \#define SWIGINLINE}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00031}{31}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a8f2319f775e5b9d5906c9ef25d9b819a}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a8f2319f775e5b9d5906c9ef25d9b819a}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGINTERN@{SWIGINTERN}}
+\index{SWIGINTERN@{SWIGINTERN}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGINTERN}{SWIGINTERN}}
+{\footnotesize\ttfamily \#define SWIGINTERN~static \mbox{\hyperlink{openMTPK__wrap_8cpp_a6ee41cd160d397aa76668bf4db65e2d1}{SWIGUNUSED}}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00066}{66}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_afc5b08bb3c3cd2e3fb2e34b775346153}\label{Fortran_2lib_2openMTPK__wrap_8cxx_afc5b08bb3c3cd2e3fb2e34b775346153}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGINTERNINLINE@{SWIGINTERNINLINE}}
+\index{SWIGINTERNINLINE@{SWIGINTERNINLINE}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGINTERNINLINE}{SWIGINTERNINLINE}}
+{\footnotesize\ttfamily \#define SWIGINTERNINLINE~\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{openMTPK__wrap_8cpp_a6d0a7c65b3712775e92c8bdb7acdd0ee}{SWIGINLINE}}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00071}{71}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aab1a9fdac616deedf71d8600509e34b4}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aab1a9fdac616deedf71d8600509e34b4}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGPOLICY\_Cipher@{SWIGPOLICY\_Cipher}}
+\index{SWIGPOLICY\_Cipher@{SWIGPOLICY\_Cipher}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGPOLICY\_Cipher}{SWIGPOLICY\_Cipher}}
+{\footnotesize\ttfamily \#define SWIGPOLICY\+\_\+\+Cipher~\mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00174}{174}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ad0771df5a83c43ead6f17ce78c30bcd2}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ad0771df5a83c43ead6f17ce78c30bcd2}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGPOLICY\_Primality@{SWIGPOLICY\_Primality}}
+\index{SWIGPOLICY\_Primality@{SWIGPOLICY\_Primality}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGPOLICY\_Primality}{SWIGPOLICY\_Primality}}
+{\footnotesize\ttfamily \#define SWIGPOLICY\+\_\+\+Primality~\mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00172}{172}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a3b99fa4a8d347ce034cfbbc8b951c034}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a3b99fa4a8d347ce034cfbbc8b951c034}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGPOLICY\_RC4@{SWIGPOLICY\_RC4}}
+\index{SWIGPOLICY\_RC4@{SWIGPOLICY\_RC4}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGPOLICY\_RC4}{SWIGPOLICY\_RC4}}
+{\footnotesize\ttfamily \#define SWIGPOLICY\+\_\+\+RC4~\mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8a75d8f80d62f95ee8bee2f47de97bdce8}{swig\+::\+ASSIGNMENT\+\_\+\+DEFAULT}}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00173}{173}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_adcd6410456ea7a76147d3ad95b9bcb36}\label{Fortran_2lib_2openMTPK__wrap_8cxx_adcd6410456ea7a76147d3ad95b9bcb36}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGSTDCALL@{SWIGSTDCALL}}
+\index{SWIGSTDCALL@{SWIGSTDCALL}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGSTDCALL}{SWIGSTDCALL}}
+{\footnotesize\ttfamily \#define SWIGSTDCALL}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00104}{104}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a7e84031693895e512662f5b390c6d0e4}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a7e84031693895e512662f5b390c6d0e4}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGTEMPLATEDISAMBIGUATOR@{SWIGTEMPLATEDISAMBIGUATOR}}
+\index{SWIGTEMPLATEDISAMBIGUATOR@{SWIGTEMPLATEDISAMBIGUATOR}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGTEMPLATEDISAMBIGUATOR}{SWIGTEMPLATEDISAMBIGUATOR}}
+{\footnotesize\ttfamily \#define SWIGTEMPLATEDISAMBIGUATOR}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00022}{22}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a6ee41cd160d397aa76668bf4db65e2d1}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a6ee41cd160d397aa76668bf4db65e2d1}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGUNUSED@{SWIGUNUSED}}
+\index{SWIGUNUSED@{SWIGUNUSED}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGUNUSED}{SWIGUNUSED}}
+{\footnotesize\ttfamily \#define SWIGUNUSED}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00046}{46}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a6a54164d0685c632e7540c5ad32a453a}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a6a54164d0685c632e7540c5ad32a453a}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIGUNUSEDPARM@{SWIGUNUSEDPARM}}
+\index{SWIGUNUSEDPARM@{SWIGUNUSEDPARM}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIGUNUSEDPARM}{SWIGUNUSEDPARM}}
+{\footnotesize\ttfamily \#define SWIGUNUSEDPARM(\begin{DoxyParamCaption}\item[{}]{p }\end{DoxyParamCaption})~p \mbox{\hyperlink{openMTPK__wrap_8cpp_a6ee41cd160d397aa76668bf4db65e2d1}{SWIGUNUSED}}}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00060}{60}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041a}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041a}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SwigMemFlags@{SwigMemFlags}}
+\index{SwigMemFlags@{SwigMemFlags}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SwigMemFlags}{SwigMemFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041a}{Swig\+Mem\+Flags}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SWIG\_MEM\_OWN@{SWIG\_MEM\_OWN}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_MEM\_OWN@{SWIG\_MEM\_OWN}}}\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}} 
+SWIG\+\_\+\+MEM\+\_\+\+OWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SWIG\_MEM\_RVALUE@{SWIG\_MEM\_RVALUE}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_MEM\_RVALUE@{SWIG\_MEM\_RVALUE}}}\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}} 
+SWIG\+\_\+\+MEM\+\_\+\+RVALUE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00146}{146}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146                   \{}
+\DoxyCodeLine{00147     \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\_MEM\_OWN}} = 0x01,}
+\DoxyCodeLine{00148     \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}} = 0x02,}
+\DoxyCodeLine{00149 \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a5578b0aaac00efad0287bd727a2c3926}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a5578b0aaac00efad0287bd727a2c3926}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_BITS\_get@{\_wrap\_BITS\_get}}
+\index{\_wrap\_BITS\_get@{\_wrap\_BITS\_get}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_BITS\_get()}{\_wrap\_BITS\_get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+BITS\+\_\+get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00612}{612}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00612                                 \{}
+\DoxyCodeLine{00613   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00614   \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{00615   }
+\DoxyCodeLine{00616   result = (int)(255);}
+\DoxyCodeLine{00617   fresult = (int)(result);}
+\DoxyCodeLine{00618   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00619 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a7ecc7eec534e076b4b0a69ae15134e9c}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a7ecc7eec534e076b4b0a69ae15134e9c}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_BYTE\_LIMIT\_get@{\_wrap\_BYTE\_LIMIT\_get}}
+\index{\_wrap\_BYTE\_LIMIT\_get@{\_wrap\_BYTE\_LIMIT\_get}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_BYTE\_LIMIT\_get()}{\_wrap\_BYTE\_LIMIT\_get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+BYTE\+\_\+\+LIMIT\+\_\+get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00622}{622}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00622                                       \{}
+\DoxyCodeLine{00623   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00624   \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{00625   }
+\DoxyCodeLine{00626   result = (int)(256);}
+\DoxyCodeLine{00627   fresult = (int)(result);}
+\DoxyCodeLine{00628   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00629 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a2421c96dbbb4af259e1f92c79d16f0a5}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a2421c96dbbb4af259e1f92c79d16f0a5}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Cipher\_C\_cipher@{\_wrap\_Cipher\_C\_cipher}}
+\index{\_wrap\_Cipher\_C\_cipher@{\_wrap\_Cipher\_C\_cipher}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Cipher\_C\_cipher()}{\_wrap\_Cipher\_C\_cipher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \+\_\+wrap\+\_\+\+Cipher\+\_\+\+C\+\_\+cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg2,  }\item[{int const $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00780}{780}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00780                                                                                                                       \{}
+\DoxyCodeLine{00781   \mbox{\hyperlink{structSwigArrayWrapper}{SwigArrayWrapper}} fresult ;}
+\DoxyCodeLine{00782   \mbox{\hyperlink{classCipher}{Cipher}} *arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *) 0 ;}
+\DoxyCodeLine{00783   std::string arg2 ;}
+\DoxyCodeLine{00784   \textcolor{keywordtype}{int} arg3 ;}
+\DoxyCodeLine{00785   std::string result;}
+\DoxyCodeLine{00786   }
+\DoxyCodeLine{00787   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Cipher *"{}}, \textcolor{stringliteral}{"{}Cipher"{}}, \textcolor{stringliteral}{"{}Cipher::C\_cipher(std::string,int)"{}}, \textcolor{keywordflow}{return} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{SwigArrayWrapper\_uninitialized}}());}
+\DoxyCodeLine{00788   arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00789   (\&arg2)-\/>assign(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}), farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00790   arg3 = (int)(*farg3);}
+\DoxyCodeLine{00791   result = (arg1)-\/>C\_cipher(arg2,arg3);}
+\DoxyCodeLine{00792   fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} = (\&result)-\/>size();}
+\DoxyCodeLine{00793   \textcolor{keywordflow}{if} (fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} > 0) \{}
+\DoxyCodeLine{00794     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = malloc(fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00795     memcpy(fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}, (\&result)-\/>c\_str(), fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00796   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00797     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = NULL;}
+\DoxyCodeLine{00798   \}}
+\DoxyCodeLine{00799   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00800 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, \mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{Swig\+Array\+Wrapper\+::size}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{Swig\+Array\+Wrapper\+\_\+uninitialized()}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a26eea61093f9d592d86787cea3ccbc70}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a26eea61093f9d592d86787cea3ccbc70}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Cipher\_KC\_cipher@{\_wrap\_Cipher\_KC\_cipher}}
+\index{\_wrap\_Cipher\_KC\_cipher@{\_wrap\_Cipher\_KC\_cipher}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Cipher\_KC\_cipher()}{\_wrap\_Cipher\_KC\_cipher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \+\_\+wrap\+\_\+\+Cipher\+\_\+\+KC\+\_\+cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00824}{824}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00824                                                                                                                               \{}
+\DoxyCodeLine{00825   \mbox{\hyperlink{structSwigArrayWrapper}{SwigArrayWrapper}} fresult ;}
+\DoxyCodeLine{00826   \mbox{\hyperlink{classCipher}{Cipher}} *arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *) 0 ;}
+\DoxyCodeLine{00827   std::string arg2 ;}
+\DoxyCodeLine{00828   std::string arg3 ;}
+\DoxyCodeLine{00829   std::string result;}
+\DoxyCodeLine{00830   }
+\DoxyCodeLine{00831   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Cipher *"{}}, \textcolor{stringliteral}{"{}Cipher"{}}, \textcolor{stringliteral}{"{}Cipher::KC\_cipher(std::string,std::string)"{}}, \textcolor{keywordflow}{return} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{SwigArrayWrapper\_uninitialized}}());}
+\DoxyCodeLine{00832   arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00833   (\&arg2)-\/>assign(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}), farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00834   (\&arg3)-\/>assign(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(farg3-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}), farg3-\/>\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00835   result = (arg1)-\/>KC\_cipher(arg2,arg3);}
+\DoxyCodeLine{00836   fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} = (\&result)-\/>size();}
+\DoxyCodeLine{00837   \textcolor{keywordflow}{if} (fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} > 0) \{}
+\DoxyCodeLine{00838     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = malloc(fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00839     memcpy(fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}, (\&result)-\/>c\_str(), fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00840   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00841     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = NULL;}
+\DoxyCodeLine{00842   \}}
+\DoxyCodeLine{00843   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00844 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, \mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{Swig\+Array\+Wrapper\+::size}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{Swig\+Array\+Wrapper\+\_\+uninitialized()}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a70c6a5a3fe85b163cbc51818b737b09c}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a70c6a5a3fe85b163cbc51818b737b09c}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Cipher\_KC\_encode@{\_wrap\_Cipher\_KC\_encode}}
+\index{\_wrap\_Cipher\_KC\_encode@{\_wrap\_Cipher\_KC\_encode}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Cipher\_KC\_encode()}{\_wrap\_Cipher\_KC\_encode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \+\_\+wrap\+\_\+\+Cipher\+\_\+\+KC\+\_\+encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00803}{803}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00803                                                                                                      \{}
+\DoxyCodeLine{00804   \mbox{\hyperlink{structSwigArrayWrapper}{SwigArrayWrapper}} fresult ;}
+\DoxyCodeLine{00805   \mbox{\hyperlink{classCipher}{Cipher}} *arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *) 0 ;}
+\DoxyCodeLine{00806   std::string arg2 ;}
+\DoxyCodeLine{00807   std::string result;}
+\DoxyCodeLine{00808   }
+\DoxyCodeLine{00809   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Cipher *"{}}, \textcolor{stringliteral}{"{}Cipher"{}}, \textcolor{stringliteral}{"{}Cipher::KC\_encode(std::string)"{}}, \textcolor{keywordflow}{return} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{SwigArrayWrapper\_uninitialized}}());}
+\DoxyCodeLine{00810   arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00811   (\&arg2)-\/>assign(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char} *\textcolor{keyword}{>}(farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}), farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00812   result = (arg1)-\/>KC\_encode(arg2);}
+\DoxyCodeLine{00813   fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} = (\&result)-\/>size();}
+\DoxyCodeLine{00814   \textcolor{keywordflow}{if} (fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} > 0) \{}
+\DoxyCodeLine{00815     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = malloc(fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00816     memcpy(fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}, (\&result)-\/>c\_str(), fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00817   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00818     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = NULL;}
+\DoxyCodeLine{00819   \}}
+\DoxyCodeLine{00820   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00821 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, \mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{Swig\+Array\+Wrapper\+::size}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{Swig\+Array\+Wrapper\+\_\+uninitialized()}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a761c6e939d9042a83d0abce7b7ef2fbe}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a761c6e939d9042a83d0abce7b7ef2fbe}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Cipher\_op\_assign\_\_@{\_wrap\_Cipher\_op\_assign\_\_}}
+\index{\_wrap\_Cipher\_op\_assign\_\_@{\_wrap\_Cipher\_op\_assign\_\_}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Cipher\_op\_assign\_\_()}{\_wrap\_Cipher\_op\_assign\_\_()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+Cipher\+\_\+op\+\_\+assign\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00866}{866}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00866                                                                                            \{}
+\DoxyCodeLine{00867   \mbox{\hyperlink{classCipher}{Cipher}} *arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *) 0 ;}
+\DoxyCodeLine{00868   \mbox{\hyperlink{classCipher}{Cipher}} *arg2 = 0 ;}
+\DoxyCodeLine{00869   }
+\DoxyCodeLine{00870   (void)\textcolor{keyword}{sizeof}(arg1);}
+\DoxyCodeLine{00871   (void)\textcolor{keyword}{sizeof}(arg2);}
+\DoxyCodeLine{00872   SWIG\_assign<Cipher, SWIGPOLICY\_Cipher>(farg1, *farg2);}
+\DoxyCodeLine{00873   }
+\DoxyCodeLine{00874 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aaf95cddf351ac98970d3dee91e3020e6}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aaf95cddf351ac98970d3dee91e3020e6}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_delete\_Cipher@{\_wrap\_delete\_Cipher}}
+\index{\_wrap\_delete\_Cipher@{\_wrap\_delete\_Cipher}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_delete\_Cipher()}{\_wrap\_delete\_Cipher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+delete\+\_\+\+Cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00858}{858}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00858                                                              \{}
+\DoxyCodeLine{00859   \mbox{\hyperlink{classCipher}{Cipher}} *arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *) 0 ;}
+\DoxyCodeLine{00860   }
+\DoxyCodeLine{00861   arg1 = (\mbox{\hyperlink{classCipher}{Cipher}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00862   \textcolor{keyword}{delete} arg1;}
+\DoxyCodeLine{00863 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_af5ede5581ca18b20109177f83053986a}\label{Fortran_2lib_2openMTPK__wrap_8cxx_af5ede5581ca18b20109177f83053986a}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_delete\_Primality@{\_wrap\_delete\_Primality}}
+\index{\_wrap\_delete\_Primality@{\_wrap\_delete\_Primality}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_delete\_Primality()}{\_wrap\_delete\_Primality()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+delete\+\_\+\+Primality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00593}{593}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00593                                                                 \{}
+\DoxyCodeLine{00594   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00595   }
+\DoxyCodeLine{00596   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00597   \textcolor{keyword}{delete} arg1;}
+\DoxyCodeLine{00598 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a0b0c0d04eab9e9d5675aebdf24234702}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a0b0c0d04eab9e9d5675aebdf24234702}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_delete\_RC4@{\_wrap\_delete\_RC4}}
+\index{\_wrap\_delete\_RC4@{\_wrap\_delete\_RC4}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_delete\_RC4()}{\_wrap\_delete\_RC4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+delete\+\_\+\+RC4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00761}{761}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00761                                                           \{}
+\DoxyCodeLine{00762   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00763   }
+\DoxyCodeLine{00764   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00765   \textcolor{keyword}{delete} arg1;}
+\DoxyCodeLine{00766 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a77710b8b2f971001db6f3f155c8df055}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a77710b8b2f971001db6f3f155c8df055}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_new\_Cipher@{\_wrap\_new\_Cipher}}
+\index{\_wrap\_new\_Cipher@{\_wrap\_new\_Cipher}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_new\_Cipher()}{\_wrap\_new\_Cipher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \+\_\+wrap\+\_\+new\+\_\+\+Cipher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00847}{847}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00847                                                \{}
+\DoxyCodeLine{00848   \mbox{\hyperlink{structSwigClassWrapper}{SwigClassWrapper}} fresult ;}
+\DoxyCodeLine{00849   \mbox{\hyperlink{classCipher}{Cipher}} *result = 0 ;}
+\DoxyCodeLine{00850   }
+\DoxyCodeLine{00851   result = (\mbox{\hyperlink{classCipher}{Cipher}} *)\textcolor{keyword}{new} \mbox{\hyperlink{classCipher}{Cipher}}();}
+\DoxyCodeLine{00852   fresult.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} = (\textcolor{keywordtype}{void}*)result;}
+\DoxyCodeLine{00853   fresult.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} = \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}} | (1 ? \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\_MEM\_OWN}} : 0);}
+\DoxyCodeLine{00854   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00855 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\+\_\+\+MEM\+\_\+\+OWN}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a50e13b1d17c5c8c712435d4d2c80be09}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a50e13b1d17c5c8c712435d4d2c80be09}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_new\_Primality@{\_wrap\_new\_Primality}}
+\index{\_wrap\_new\_Primality@{\_wrap\_new\_Primality}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_new\_Primality()}{\_wrap\_new\_Primality()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \+\_\+wrap\+\_\+new\+\_\+\+Primality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00582}{582}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00582                                                   \{}
+\DoxyCodeLine{00583   \mbox{\hyperlink{structSwigClassWrapper}{SwigClassWrapper}} fresult ;}
+\DoxyCodeLine{00584   \mbox{\hyperlink{classPrimality}{Primality}} *result = 0 ;}
+\DoxyCodeLine{00585   }
+\DoxyCodeLine{00586   result = (\mbox{\hyperlink{classPrimality}{Primality}} *)\textcolor{keyword}{new} \mbox{\hyperlink{classPrimality}{Primality}}();}
+\DoxyCodeLine{00587   fresult.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} = (\textcolor{keywordtype}{void}*)result;}
+\DoxyCodeLine{00588   fresult.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} = \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}} | (1 ? \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\_MEM\_OWN}} : 0);}
+\DoxyCodeLine{00589   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00590 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\+\_\+\+MEM\+\_\+\+OWN}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a10920337c8ba93b57f81dec952fa9094}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a10920337c8ba93b57f81dec952fa9094}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_new\_RC4@{\_wrap\_new\_RC4}}
+\index{\_wrap\_new\_RC4@{\_wrap\_new\_RC4}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_new\_RC4()}{\_wrap\_new\_RC4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \+\_\+wrap\+\_\+new\+\_\+\+RC4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00750}{750}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00750                                             \{}
+\DoxyCodeLine{00751   \mbox{\hyperlink{structSwigClassWrapper}{SwigClassWrapper}} fresult ;}
+\DoxyCodeLine{00752   \mbox{\hyperlink{classRC4}{RC4}} *result = 0 ;}
+\DoxyCodeLine{00753   }
+\DoxyCodeLine{00754   result = (\mbox{\hyperlink{classRC4}{RC4}} *)\textcolor{keyword}{new} \mbox{\hyperlink{classRC4}{RC4}}();}
+\DoxyCodeLine{00755   fresult.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} = (\textcolor{keywordtype}{void}*)result;}
+\DoxyCodeLine{00756   fresult.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} = \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}} | (1 ? \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\_MEM\_OWN}} : 0);}
+\DoxyCodeLine{00757   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00758 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\+\_\+\+MEM\+\_\+\+OWN}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a1a6e4ac0f07056014819ece7d57271e3}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a1a6e4ac0f07056014819ece7d57271e3}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_carmichael\_num@{\_wrap\_Primality\_carmichael\_num}}
+\index{\_wrap\_Primality\_carmichael\_num@{\_wrap\_Primality\_carmichael\_num}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_carmichael\_num()}{\_wrap\_Primality\_carmichael\_num()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+carmichael\+\_\+num (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00526}{526}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00526                                                                                          \{}
+\DoxyCodeLine{00527   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00528   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00529   \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00530   \textcolor{keywordtype}{bool} result;}
+\DoxyCodeLine{00531   }
+\DoxyCodeLine{00532   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::carmichael\_num(int)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00533   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00534   arg2 = (\textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00535   result = (bool)(arg1)-\/>carmichael\_num(arg2);}
+\DoxyCodeLine{00536   fresult = (result ? 1 : 0);}
+\DoxyCodeLine{00537   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00538 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aca0e61ba7f861de0eaf6682c1ad19b55}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aca0e61ba7f861de0eaf6682c1ad19b55}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_compute\_miller\_rabin@{\_wrap\_Primality\_compute\_miller\_rabin}}
+\index{\_wrap\_Primality\_compute\_miller\_rabin@{\_wrap\_Primality\_compute\_miller\_rabin}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_compute\_miller\_rabin()}{\_wrap\_Primality\_compute\_miller\_rabin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+compute\+\_\+miller\+\_\+rabin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2,  }\item[{int const $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00424}{424}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00424                                                                                                                  \{}
+\DoxyCodeLine{00425   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00426   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00427   \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00428   \textcolor{keywordtype}{int} arg3 ;}
+\DoxyCodeLine{00429   \textcolor{keywordtype}{bool} result;}
+\DoxyCodeLine{00430   }
+\DoxyCodeLine{00431   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::compute\_miller\_rabin(int,int)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00432   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00433   arg2 = (\textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00434   arg3 = (int)(*farg3);}
+\DoxyCodeLine{00435   result = (bool)(arg1)-\/>compute\_miller\_rabin(arg2,arg3);}
+\DoxyCodeLine{00436   fresult = (result ? 1 : 0);}
+\DoxyCodeLine{00437   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00438 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a62507fc442844a795649a6a94f7c849e}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a62507fc442844a795649a6a94f7c849e}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_ETF@{\_wrap\_Primality\_ETF}}
+\index{\_wrap\_Primality\_ETF@{\_wrap\_Primality\_ETF}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_ETF()}{\_wrap\_Primality\_ETF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+\+ETF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00567}{567}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00567                                                                               \{}
+\DoxyCodeLine{00568   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00569   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00570   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00571   \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{00572   }
+\DoxyCodeLine{00573   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::ETF(unsigned int)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00574   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00575   arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00576   result = (int)(arg1)-\/>ETF(arg2);}
+\DoxyCodeLine{00577   fresult = (int)(result);}
+\DoxyCodeLine{00578   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00579 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a16a572ef116b327d58453f67ace9ef50}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a16a572ef116b327d58453f67ace9ef50}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_is\_prime@{\_wrap\_Primality\_is\_prime}}
+\index{\_wrap\_Primality\_is\_prime@{\_wrap\_Primality\_is\_prime}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_is\_prime()}{\_wrap\_Primality\_is\_prime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+is\+\_\+prime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00409}{409}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00409                                                                                    \{}
+\DoxyCodeLine{00410   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00411   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00412   \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00413   \textcolor{keywordtype}{bool} result;}
+\DoxyCodeLine{00414   }
+\DoxyCodeLine{00415   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::is\_prime(int)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00416   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00417   arg2 = (\textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00418   result = (bool)(arg1)-\/>is\_prime(arg2);}
+\DoxyCodeLine{00419   fresult = (result ? 1 : 0);}
+\DoxyCodeLine{00420   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00421 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a91a47cbb8e8b97cf06d92a1ed9d68d37}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a91a47cbb8e8b97cf06d92a1ed9d68d37}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_jacobian\_number@{\_wrap\_Primality\_jacobian\_number}}
+\index{\_wrap\_Primality\_jacobian\_number@{\_wrap\_Primality\_jacobian\_number}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_jacobian\_number()}{\_wrap\_Primality\_jacobian\_number()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+jacobian\+\_\+number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{long long const $\ast$}]{farg2,  }\item[{long long const $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00473}{473}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00473                                                                                                                         \{}
+\DoxyCodeLine{00474   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00475   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00476   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg2 ;}
+\DoxyCodeLine{00477   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg3 ;}
+\DoxyCodeLine{00478   \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{00479   }
+\DoxyCodeLine{00480   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::jacobian\_number(long long,long long)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00481   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00482   arg2 = (\textcolor{keywordtype}{long} \textcolor{keywordtype}{long})(*farg2);}
+\DoxyCodeLine{00483   arg3 = (\textcolor{keywordtype}{long} long)(*farg3);}
+\DoxyCodeLine{00484   result = (int)(arg1)-\/>jacobian\_number(arg2,arg3);}
+\DoxyCodeLine{00485   fresult = (int)(result);}
+\DoxyCodeLine{00486   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00487 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a7bec2fe74033b48af9a7f7503ef49412}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a7bec2fe74033b48af9a7f7503ef49412}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_miller\_rabin@{\_wrap\_Primality\_miller\_rabin}}
+\index{\_wrap\_Primality\_miller\_rabin@{\_wrap\_Primality\_miller\_rabin}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_miller\_rabin()}{\_wrap\_Primality\_miller\_rabin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+Primality\+\_\+miller\+\_\+rabin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2,  }\item[{int const $\ast$}]{farg3,  }\item[{int const $\ast$}]{farg4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00458}{458}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00458                                                                                                                             \{}
+\DoxyCodeLine{00459   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00460   \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00461   \textcolor{keywordtype}{int} arg3 ;}
+\DoxyCodeLine{00462   \textcolor{keywordtype}{int} arg4 ;}
+\DoxyCodeLine{00463   }
+\DoxyCodeLine{00464   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::miller\_rabin(int,int,int)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00465   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00466   arg2 = (\textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00467   arg3 = (int)(*farg3);}
+\DoxyCodeLine{00468   arg4 = (int)(*farg4);}
+\DoxyCodeLine{00469   (arg1)-\/>miller\_rabin(arg2,arg3,arg4);}
+\DoxyCodeLine{00470 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a42e11a1250f7ded158e31057b610893e}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a42e11a1250f7ded158e31057b610893e}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_miller\_rabin\_prime@{\_wrap\_Primality\_miller\_rabin\_prime}}
+\index{\_wrap\_Primality\_miller\_rabin\_prime@{\_wrap\_Primality\_miller\_rabin\_prime}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_miller\_rabin\_prime()}{\_wrap\_Primality\_miller\_rabin\_prime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+miller\+\_\+rabin\+\_\+prime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2,  }\item[{int const $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00441}{441}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00441                                                                                                                \{}
+\DoxyCodeLine{00442   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00443   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00444   \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00445   \textcolor{keywordtype}{int} arg3 ;}
+\DoxyCodeLine{00446   \textcolor{keywordtype}{bool} result;}
+\DoxyCodeLine{00447   }
+\DoxyCodeLine{00448   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::miller\_rabin\_prime(int,int)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00449   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00450   arg2 = (\textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00451   arg3 = (int)(*farg3);}
+\DoxyCodeLine{00452   result = (bool)(arg1)-\/>miller\_rabin\_prime(arg2,arg3);}
+\DoxyCodeLine{00453   fresult = (result ? 1 : 0);}
+\DoxyCodeLine{00454   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00455 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a437eca04685889e966eb1f903d368c4c}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a437eca04685889e966eb1f903d368c4c}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_mod\_pow@{\_wrap\_Primality\_mod\_pow}}
+\index{\_wrap\_Primality\_mod\_pow@{\_wrap\_Primality\_mod\_pow}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_mod\_pow()}{\_wrap\_Primality\_mod\_pow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} long long \+\_\+wrap\+\_\+\+Primality\+\_\+mod\+\_\+pow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{long long const $\ast$}]{farg2,  }\item[{long long const $\ast$}]{farg3,  }\item[{long long const $\ast$}]{farg4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00507}{507}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00507                                                                                                                                               \{}
+\DoxyCodeLine{00508   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} fresult ;}
+\DoxyCodeLine{00509   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00510   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg2 ;}
+\DoxyCodeLine{00511   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg3 ;}
+\DoxyCodeLine{00512   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg4 ;}
+\DoxyCodeLine{00513   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} result;}
+\DoxyCodeLine{00514   }
+\DoxyCodeLine{00515   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::mod\_pow(long long,long long,long long)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00516   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00517   arg2 = (\textcolor{keywordtype}{long} \textcolor{keywordtype}{long})(*farg2);}
+\DoxyCodeLine{00518   arg3 = (\textcolor{keywordtype}{long} long)(*farg3);}
+\DoxyCodeLine{00519   arg4 = (\textcolor{keywordtype}{long} long)(*farg4);}
+\DoxyCodeLine{00520   result = (\textcolor{keywordtype}{long} long)(arg1)-\/>mod\_pow(arg2,arg3,arg4);}
+\DoxyCodeLine{00521   fresult = (\textcolor{keywordtype}{long} long)(result);}
+\DoxyCodeLine{00522   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00523 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a756fbfe2558c104951574b59dd9a381c}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a756fbfe2558c104951574b59dd9a381c}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_op\_assign\_\_@{\_wrap\_Primality\_op\_assign\_\_}}
+\index{\_wrap\_Primality\_op\_assign\_\_@{\_wrap\_Primality\_op\_assign\_\_}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_op\_assign\_\_()}{\_wrap\_Primality\_op\_assign\_\_()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+Primality\+\_\+op\+\_\+assign\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00601}{601}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00601                                                                                               \{}
+\DoxyCodeLine{00602   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00603   \mbox{\hyperlink{classPrimality}{Primality}} *arg2 = 0 ;}
+\DoxyCodeLine{00604   }
+\DoxyCodeLine{00605   (void)\textcolor{keyword}{sizeof}(arg1);}
+\DoxyCodeLine{00606   (void)\textcolor{keyword}{sizeof}(arg2);}
+\DoxyCodeLine{00607   SWIG\_assign<Primality, SWIGPOLICY\_Primality>(farg1, *farg2);}
+\DoxyCodeLine{00608   }
+\DoxyCodeLine{00609 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a7338e1414d93e420dd66dcc5673c3383}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a7338e1414d93e420dd66dcc5673c3383}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_pollard\_rho@{\_wrap\_Primality\_pollard\_rho}}
+\index{\_wrap\_Primality\_pollard\_rho@{\_wrap\_Primality\_pollard\_rho}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_pollard\_rho()}{\_wrap\_Primality\_pollard\_rho()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} long long \+\_\+wrap\+\_\+\+Primality\+\_\+pollard\+\_\+rho (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{long long const $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00552}{552}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00552                                                                                                   \{}
+\DoxyCodeLine{00553   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} fresult ;}
+\DoxyCodeLine{00554   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00555   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg2 ;}
+\DoxyCodeLine{00556   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} result;}
+\DoxyCodeLine{00557   }
+\DoxyCodeLine{00558   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::pollard\_rho(long long)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00559   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00560   arg2 = (\textcolor{keywordtype}{long} \textcolor{keywordtype}{long})(*farg2);}
+\DoxyCodeLine{00561   result = (\textcolor{keywordtype}{long} long)(arg1)-\/>pollard\_rho(arg2);}
+\DoxyCodeLine{00562   fresult = (\textcolor{keywordtype}{long} long)(result);}
+\DoxyCodeLine{00563   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00564 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aee9ad648900416a1f568711e9bf78d21}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aee9ad648900416a1f568711e9bf78d21}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_sieve\_of\_eratosthenes@{\_wrap\_Primality\_sieve\_of\_eratosthenes}}
+\index{\_wrap\_Primality\_sieve\_of\_eratosthenes@{\_wrap\_Primality\_sieve\_of\_eratosthenes}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_sieve\_of\_eratosthenes()}{\_wrap\_Primality\_sieve\_of\_eratosthenes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+Primality\+\_\+sieve\+\_\+of\+\_\+eratosthenes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{int const $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00541}{541}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00541                                                                                                  \{}
+\DoxyCodeLine{00542   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00543   \textcolor{keywordtype}{int} arg2 ;}
+\DoxyCodeLine{00544   }
+\DoxyCodeLine{00545   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::sieve\_of\_eratosthenes(int)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00546   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00547   arg2 = (\textcolor{keywordtype}{int})(*farg2);}
+\DoxyCodeLine{00548   (arg1)-\/>sieve\_of\_eratosthenes(arg2);}
+\DoxyCodeLine{00549 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aef743e7684874b43386172ff21223400}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aef743e7684874b43386172ff21223400}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_Primality\_solovoy\_strassen@{\_wrap\_Primality\_solovoy\_strassen}}
+\index{\_wrap\_Primality\_solovoy\_strassen@{\_wrap\_Primality\_solovoy\_strassen}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_Primality\_solovoy\_strassen()}{\_wrap\_Primality\_solovoy\_strassen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} int \+\_\+wrap\+\_\+\+Primality\+\_\+solovoy\+\_\+strassen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{long long const $\ast$}]{farg2,  }\item[{int const $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00490}{490}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00490                                                                                                                    \{}
+\DoxyCodeLine{00491   \textcolor{keywordtype}{int} fresult ;}
+\DoxyCodeLine{00492   \mbox{\hyperlink{classPrimality}{Primality}} *arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *) 0 ;}
+\DoxyCodeLine{00493   \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} arg2 ;}
+\DoxyCodeLine{00494   \textcolor{keywordtype}{int} arg3 ;}
+\DoxyCodeLine{00495   \textcolor{keywordtype}{bool} result;}
+\DoxyCodeLine{00496   }
+\DoxyCodeLine{00497   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}Primality *"{}}, \textcolor{stringliteral}{"{}Primality"{}}, \textcolor{stringliteral}{"{}Primality::solovoy\_strassen(long long,int)"{}}, \textcolor{keywordflow}{return} 0);}
+\DoxyCodeLine{00498   arg1 = (\mbox{\hyperlink{classPrimality}{Primality}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00499   arg2 = (\textcolor{keywordtype}{long} \textcolor{keywordtype}{long})(*farg2);}
+\DoxyCodeLine{00500   arg3 = (int)(*farg3);}
+\DoxyCodeLine{00501   result = (bool)(arg1)-\/>solovoy\_strassen(arg2,arg3);}
+\DoxyCodeLine{00502   fresult = (result ? 1 : 0);}
+\DoxyCodeLine{00503   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00504 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a4961d1993e2fdfd0c46c3e729d515247}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a4961d1993e2fdfd0c46c3e729d515247}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_byte\_swap@{\_wrap\_RC4\_byte\_swap}}
+\index{\_wrap\_RC4\_byte\_swap@{\_wrap\_RC4\_byte\_swap}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_byte\_swap()}{\_wrap\_RC4\_byte\_swap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+RC4\+\_\+byte\+\_\+swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00632}{632}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00632                                                                                                                \{}
+\DoxyCodeLine{00633   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00634   uint8\_t *arg2 = (uint8\_t *) 0 ;}
+\DoxyCodeLine{00635   uint8\_t *arg3 = (uint8\_t *) 0 ;}
+\DoxyCodeLine{00636   }
+\DoxyCodeLine{00637   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::byte\_swap(uint8\_t *,uint8\_t *)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00638   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00639   arg2 = (uint8\_t *)farg2-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00640   arg3 = (uint8\_t *)farg3-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00641   (arg1)-\/>byte\_swap(arg2,arg3);}
+\DoxyCodeLine{00642 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ad41c39a52847a3ef3263bfd6f04b098d}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ad41c39a52847a3ef3263bfd6f04b098d}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_compute@{\_wrap\_RC4\_compute}}
+\index{\_wrap\_RC4\_compute@{\_wrap\_RC4\_compute}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_compute()}{\_wrap\_RC4\_compute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} \+\_\+wrap\+\_\+\+RC4\+\_\+compute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg3,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg4,  }\item[{int const $\ast$}]{farg5 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00728}{728}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00728                                                                                                                                                                     \{}
+\DoxyCodeLine{00729   \mbox{\hyperlink{structSwigClassWrapper}{SwigClassWrapper}} fresult ;}
+\DoxyCodeLine{00730   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00731   \textcolor{keywordtype}{char} *arg2 = (\textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00732   \textcolor{keywordtype}{char} *arg3 = (\textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00733   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg4 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00734   \textcolor{keywordtype}{int} arg5 ;}
+\DoxyCodeLine{00735   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *result = 0 ;}
+\DoxyCodeLine{00736   }
+\DoxyCodeLine{00737   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::compute(char *,char *,unsigned char *,int)"{}}, \textcolor{keywordflow}{return} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}{SwigClassWrapper\_uninitialized}}());}
+\DoxyCodeLine{00738   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00739   arg2 = (\textcolor{keywordtype}{char} *)(farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}});}
+\DoxyCodeLine{00740   arg3 = (\textcolor{keywordtype}{char} *)(farg3-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}});}
+\DoxyCodeLine{00741   arg4 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg4-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00742   arg5 = (\textcolor{keywordtype}{int})(*farg5);}
+\DoxyCodeLine{00743   result = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(arg1)-\/>compute(arg2,arg3,arg4,arg5);}
+\DoxyCodeLine{00744   fresult.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} = (\textcolor{keywordtype}{void}*)result;}
+\DoxyCodeLine{00745   fresult.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} = \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}} | (0 ? \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\_MEM\_OWN}} : 0);}
+\DoxyCodeLine{00746   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00747 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\+\_\+\+MEM\+\_\+\+OWN}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}{Swig\+Class\+Wrapper\+\_\+uninitialized()}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ae4b7b04d1502e69bdc65638e3070e61a}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ae4b7b04d1502e69bdc65638e3070e61a}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_KSA@{\_wrap\_RC4\_KSA}}
+\index{\_wrap\_RC4\_KSA@{\_wrap\_RC4\_KSA}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_KSA()}{\_wrap\_RC4\_KSA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+RC4\+\_\+\+KSA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg3,  }\item[{int const $\ast$}]{farg4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00671}{671}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00671                                                                                                                            \{}
+\DoxyCodeLine{00672   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00673   \textcolor{keywordtype}{char} *arg2 = (\textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00674   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00675   \textcolor{keywordtype}{int} arg4 ;}
+\DoxyCodeLine{00676   }
+\DoxyCodeLine{00677   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::KSA(char *,unsigned char *,int)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00678   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00679   arg2 = (\textcolor{keywordtype}{char} *)(farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}});}
+\DoxyCodeLine{00680   arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg3-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00681   arg4 = (\textcolor{keywordtype}{int})(*farg4);}
+\DoxyCodeLine{00682   (arg1)-\/>KSA(arg2,arg3,arg4);}
+\DoxyCodeLine{00683 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a17c4fa77e9d867ec77a245a52c48e0fd}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a17c4fa77e9d867ec77a245a52c48e0fd}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_op\_assign\_\_@{\_wrap\_RC4\_op\_assign\_\_}}
+\index{\_wrap\_RC4\_op\_assign\_\_@{\_wrap\_RC4\_op\_assign\_\_}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_op\_assign\_\_()}{\_wrap\_RC4\_op\_assign\_\_()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+RC4\+\_\+op\+\_\+assign\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00769}{769}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00769                                                                                         \{}
+\DoxyCodeLine{00770   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00771   \mbox{\hyperlink{classRC4}{RC4}} *arg2 = 0 ;}
+\DoxyCodeLine{00772   }
+\DoxyCodeLine{00773   (void)\textcolor{keyword}{sizeof}(arg1);}
+\DoxyCodeLine{00774   (void)\textcolor{keyword}{sizeof}(arg2);}
+\DoxyCodeLine{00775   SWIG\_assign<RC4, SWIGPOLICY\_RC4>(farg1, *farg2);}
+\DoxyCodeLine{00776   }
+\DoxyCodeLine{00777 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a8eadc930e7d60f1f780d3552af5dfcbc}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a8eadc930e7d60f1f780d3552af5dfcbc}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_PRGA@{\_wrap\_RC4\_PRGA}}
+\index{\_wrap\_RC4\_PRGA@{\_wrap\_RC4\_PRGA}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_PRGA()}{\_wrap\_RC4\_PRGA()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+RC4\+\_\+\+PRGA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg3,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg4,  }\item[{int const $\ast$}]{farg5 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00686}{686}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00686                                                                                                                                                      \{}
+\DoxyCodeLine{00687   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00688   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00689   \textcolor{keywordtype}{char} *arg3 = (\textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00690   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg4 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00691   \textcolor{keywordtype}{int} arg5 ;}
+\DoxyCodeLine{00692   }
+\DoxyCodeLine{00693   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::PRGA(unsigned char *,char *,unsigned char *,int)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00694   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00695   arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg2-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00696   arg3 = (\textcolor{keywordtype}{char} *)(farg3-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}});}
+\DoxyCodeLine{00697   arg4 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg4-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00698   arg5 = (\textcolor{keywordtype}{int})(*farg5);}
+\DoxyCodeLine{00699   (arg1)-\/>PRGA(arg2,arg3,arg4,arg5);}
+\DoxyCodeLine{00700 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a9fb2c7109cb00498a074d6b9ac46b6e1}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a9fb2c7109cb00498a074d6b9ac46b6e1}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_store\_hash@{\_wrap\_RC4\_store\_hash}}
+\index{\_wrap\_RC4\_store\_hash@{\_wrap\_RC4\_store\_hash}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_store\_hash()}{\_wrap\_RC4\_store\_hash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} \+\_\+wrap\+\_\+\+RC4\+\_\+store\+\_\+hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg3,  }\item[{int const $\ast$}]{farg4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00703}{703}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00703                                                                                                                                               \{}
+\DoxyCodeLine{00704   \mbox{\hyperlink{structSwigArrayWrapper}{SwigArrayWrapper}} fresult ;}
+\DoxyCodeLine{00705   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00706   \textcolor{keywordtype}{char} *arg2 = (\textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00707   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00708   \textcolor{keywordtype}{int} arg4 ;}
+\DoxyCodeLine{00709   std::string result;}
+\DoxyCodeLine{00710   }
+\DoxyCodeLine{00711   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::store\_hash(char *,unsigned char *,int)"{}}, \textcolor{keywordflow}{return} \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{SwigArrayWrapper\_uninitialized}}());}
+\DoxyCodeLine{00712   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00713   arg2 = (\textcolor{keywordtype}{char} *)(farg2-\/>\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}});}
+\DoxyCodeLine{00714   arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg3-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00715   arg4 = (\textcolor{keywordtype}{int})(*farg4);}
+\DoxyCodeLine{00716   result = (arg1)-\/>store\_hash(arg2,arg3,arg4);}
+\DoxyCodeLine{00717   fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} = (\&result)-\/>size();}
+\DoxyCodeLine{00718   \textcolor{keywordflow}{if} (fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} > 0) \{}
+\DoxyCodeLine{00719     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = malloc(fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00720     memcpy(fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}}, (\&result)-\/>c\_str(), fresult.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}});}
+\DoxyCodeLine{00721   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00722     fresult.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = NULL;}
+\DoxyCodeLine{00723   \}}
+\DoxyCodeLine{00724   \textcolor{keywordflow}{return} fresult;}
+\DoxyCodeLine{00725 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, \mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{Swig\+Array\+Wrapper\+::size}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}{Swig\+Array\+Wrapper\+\_\+uninitialized()}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a13d57826ef9bf912e0bffc2813537821}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a13d57826ef9bf912e0bffc2813537821}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_trad\_swap@{\_wrap\_RC4\_trad\_swap}}
+\index{\_wrap\_RC4\_trad\_swap@{\_wrap\_RC4\_trad\_swap}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_trad\_swap()}{\_wrap\_RC4\_trad\_swap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+RC4\+\_\+trad\+\_\+swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00645}{645}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00645                                                                                                                \{}
+\DoxyCodeLine{00646   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00647   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00648   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00649   }
+\DoxyCodeLine{00650   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::trad\_swap(unsigned char *,unsigned char *)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00651   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00652   arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg2-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00653   arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg3-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00654   (arg1)-\/>trad\_swap(arg2,arg3);}
+\DoxyCodeLine{00655 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a315903b67a1d4f99c8ecb6dbe7638c67}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a315903b67a1d4f99c8ecb6dbe7638c67}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!\_wrap\_RC4\_XOR\_swap@{\_wrap\_RC4\_XOR\_swap}}
+\index{\_wrap\_RC4\_XOR\_swap@{\_wrap\_RC4\_XOR\_swap}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{\_wrap\_RC4\_XOR\_swap()}{\_wrap\_RC4\_XOR\_swap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_aea3c8b056dcc8c1ab93f6b825cd1371b}{SWIGEXPORT}} void \+\_\+wrap\+\_\+\+RC4\+\_\+\+XOR\+\_\+swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg1,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg2,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{farg3 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00658}{658}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00658                                                                                                               \{}
+\DoxyCodeLine{00659   \mbox{\hyperlink{classRC4}{RC4}} *arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *) 0 ;}
+\DoxyCodeLine{00660   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00661   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *) 0 ;}
+\DoxyCodeLine{00662   }
+\DoxyCodeLine{00663   \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\_check\_nonnull}}(farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}, \textcolor{stringliteral}{"{}RC4 *"{}}, \textcolor{stringliteral}{"{}RC4"{}}, \textcolor{stringliteral}{"{}RC4::XOR\_swap(unsigned char *,unsigned char *)"{}}, \textcolor{keywordflow}{return} );}
+\DoxyCodeLine{00664   arg1 = (\mbox{\hyperlink{classRC4}{RC4}} *)farg1-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00665   arg2 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg2-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00666   arg3 = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)farg3-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}};}
+\DoxyCodeLine{00667   (arg1)-\/>XOR\_swap(arg2,arg3);}
+\DoxyCodeLine{00668 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ab4c596c3059df2760e3b28e7dc27797c}{SWIG\+\_\+check\+\_\+nonnull}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_aacc9230e739a536cf9cf1b5cf3c5e689}\label{Fortran_2lib_2openMTPK__wrap_8cxx_aacc9230e739a536cf9cf1b5cf3c5e689}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_assign@{SWIG\_assign}}
+\index{SWIG\_assign@{SWIG\_assign}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_assign()}{SWIG\_assign()}}
+{\footnotesize\ttfamily template$<$class T , \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{swig\+::\+Assignment\+Type}} A$>$ \\
+\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} void SWIG\+\_\+assign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} $\ast$}]{self,  }\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}}}]{other }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00342}{342}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00342                                                                             \{}
+\DoxyCodeLine{00343   \textcolor{keyword}{typedef} \mbox{\hyperlink{structswig_1_1AssignmentPolicy}{swig::AssignmentPolicy<T, A>}} Policy\_t;}
+\DoxyCodeLine{00344 }
+\DoxyCodeLine{00345   \textcolor{keywordflow}{if} (self-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} == NULL) \{}
+\DoxyCodeLine{00346     \textcolor{comment}{/* LHS is unassigned */}}
+\DoxyCodeLine{00347     \textcolor{keywordflow}{if} (other.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} \& \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}}) \{}
+\DoxyCodeLine{00348       \textcolor{comment}{/* Capture pointer from RHS, clear 'moving' flag */}}
+\DoxyCodeLine{00349       *self = \mbox{\hyperlink{namespaceswig_a41e7f2fe0c503394c143aa5bf2e097c2}{swig::capture}}(other);}
+\DoxyCodeLine{00350     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00351       \textcolor{comment}{/* Aliasing another class; clear ownership or copy smart pointer */}}
+\DoxyCodeLine{00352       *self = Policy\_t::alias(other);}
+\DoxyCodeLine{00353     \}}
+\DoxyCodeLine{00354   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (other.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} == NULL) \{}
+\DoxyCodeLine{00355     \textcolor{comment}{/* Replace LHS with a null pointer */}}
+\DoxyCodeLine{00356     *self = Policy\_t::destroy(*self);}
+\DoxyCodeLine{00357   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (self-\/>\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} == other.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}}) \{}
+\DoxyCodeLine{00358     \textcolor{comment}{/* Self-\/assignment: ignore */}}
+\DoxyCodeLine{00359   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (other.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} \& \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}}) \{}
+\DoxyCodeLine{00360     \textcolor{comment}{/* Transferred ownership from a variable that's about to be lost.}}
+\DoxyCodeLine{00361 \textcolor{comment}{     * Move-\/assign and delete the transient data */}}
+\DoxyCodeLine{00362     *self = Policy\_t::move\_alias(*self, other);}
+\DoxyCodeLine{00363   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00364     \textcolor{comment}{/* RHS shouldn't be deleted, alias to LHS */}}
+\DoxyCodeLine{00365     *self = Policy\_t::copy\_alias(*self, other);}
+\DoxyCodeLine{00366   \}}
+\DoxyCodeLine{00367 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{namespaceswig_a41e7f2fe0c503394c143aa5bf2e097c2}{swig\+::capture()}}, \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a99ef90e91b3903d864ae5f9090049b53}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a99ef90e91b3903d864ae5f9090049b53}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SWIG\_free\_rvalue@{SWIG\_free\_rvalue}}
+\index{SWIG\_free\_rvalue@{SWIG\_free\_rvalue}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SWIG\_free\_rvalue()}{SWIG\_free\_rvalue()}}
+{\footnotesize\ttfamily template$<$class T , \mbox{\hyperlink{namespaceswig_adaea0443c4d9d46d2be40755bf341ce8}{swig\+::\+Assignment\+Type}} A$>$ \\
+\mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} void SWIG\+\_\+free\+\_\+rvalue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}}}]{other }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00370}{370}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00370                                                          \{}
+\DoxyCodeLine{00371   \textcolor{keyword}{typedef} \mbox{\hyperlink{structswig_1_1AssignmentPolicy}{swig::AssignmentPolicy<T, A>}} Policy\_t;}
+\DoxyCodeLine{00372   \textcolor{keywordflow}{if} (other.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} \& \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\_MEM\_RVALUE}} }
+\DoxyCodeLine{00373       \&\& other.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} \& \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\_MEM\_OWN}}) \{}
+\DoxyCodeLine{00374     \textcolor{comment}{/* We own *and* are being passed an expiring value */}}
+\DoxyCodeLine{00375     Policy\_t::destroy(other);}
+\DoxyCodeLine{00376   \}}
+\DoxyCodeLine{00377 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa55c50f7e335daded1acd935493cdec2d}{SWIG\+\_\+\+MEM\+\_\+\+OWN}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_aad9bff4a12823146283e80dd877b041aa64ecf4cf9086675653db9152fa9336cc}{SWIG\+\_\+\+MEM\+\_\+\+RVALUE}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}\label{Fortran_2lib_2openMTPK__wrap_8cxx_a402e6aebd294670d90870eec6c077473}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SwigArrayWrapper\_uninitialized@{SwigArrayWrapper\_uninitialized}}
+\index{SwigArrayWrapper\_uninitialized@{SwigArrayWrapper\_uninitialized}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SwigArrayWrapper\_uninitialized()}{SwigArrayWrapper\_uninitialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{structSwigArrayWrapper}{Swig\+Array\+Wrapper}} Swig\+Array\+Wrapper\+\_\+uninitialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00398}{398}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00398                                                              \{}
+\DoxyCodeLine{00399   \mbox{\hyperlink{structSwigArrayWrapper}{SwigArrayWrapper}} result;}
+\DoxyCodeLine{00400   result.\mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{data}} = NULL;}
+\DoxyCodeLine{00401   result.\mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{size}} = 0;}
+\DoxyCodeLine{00402   \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00403 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigArrayWrapper_ad8f6cc44691cdbdecae71d147111e612}{Swig\+Array\+Wrapper\+::data}}, and \mbox{\hyperlink{structSwigArrayWrapper_a292930573ca7580e840947d681c264c7}{Swig\+Array\+Wrapper\+::size}}.
+
+
+
+Referenced by \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a2421c96dbbb4af259e1f92c79d16f0a5}{\+\_\+wrap\+\_\+\+Cipher\+\_\+\+C\+\_\+cipher()}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a26eea61093f9d592d86787cea3ccbc70}{\+\_\+wrap\+\_\+\+Cipher\+\_\+\+KC\+\_\+cipher()}}, \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a70c6a5a3fe85b163cbc51818b737b09c}{\+\_\+wrap\+\_\+\+Cipher\+\_\+\+KC\+\_\+encode()}}, and \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_a9fb2c7109cb00498a074d6b9ac46b6e1}{\+\_\+wrap\+\_\+\+RC4\+\_\+store\+\_\+hash()}}.
+
+\mbox{\Hypertarget{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}\label{Fortran_2lib_2openMTPK__wrap_8cxx_ade9d7ea71bea9524855dbbef85974dd3}} 
+\index{openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}!SwigClassWrapper\_uninitialized@{SwigClassWrapper\_uninitialized}}
+\index{SwigClassWrapper\_uninitialized@{SwigClassWrapper\_uninitialized}!openMTPK\_wrap.cxx@{openMTPK\_wrap.cxx}}
+\doxysubsubsection{\texorpdfstring{SwigClassWrapper\_uninitialized()}{SwigClassWrapper\_uninitialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{openMTPK__wrap_8cpp_a8f2319f775e5b9d5906c9ef25d9b819a}{SWIGINTERN}} \mbox{\hyperlink{structSwigClassWrapper}{Swig\+Class\+Wrapper}} Swig\+Class\+Wrapper\+\_\+uninitialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source_l00256}{256}} of file \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_source}{open\+MTPK\+\_\+wrap.\+cxx}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00256                                                              \{}
+\DoxyCodeLine{00257     \mbox{\hyperlink{structSwigClassWrapper}{SwigClassWrapper}} result;}
+\DoxyCodeLine{00258     result.\mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{cptr}} = NULL;}
+\DoxyCodeLine{00259     result.\mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{cmemflags}} = 0;}
+\DoxyCodeLine{00260     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00261 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structSwigClassWrapper_aa0d2a75d455159e29bb9bb9d672dc952}{Swig\+Class\+Wrapper\+::cmemflags}}, and \mbox{\hyperlink{structSwigClassWrapper_a93be2ea27ab2a3848d4a078a2e6c5b95}{Swig\+Class\+Wrapper\+::cptr}}.
+
+
+
+Referenced by \mbox{\hyperlink{Fortran_2lib_2openMTPK__wrap_8cxx_ad41c39a52847a3ef3263bfd6f04b098d}{\+\_\+wrap\+\_\+\+RC4\+\_\+compute()}}, \mbox{\hyperlink{structswig_1_1DestructorPolicy_a0a4d000ca4eb71989516905d6f4a068f}{swig\+::\+Destructor\+Policy$<$ T, A $>$\+::destroy()}}, and \mbox{\hyperlink{structswig_1_1DestructorPolicy_3_01T_00_01ASSIGNMENT__NODESTRUCT_01_4_ac5df60c926308059989327727d5df101}{swig\+::\+Destructor\+Policy$<$ T, ASSIGNMENT\+\_\+\+NODESTRUCT $>$\+::destroy()}}.
+

@@ -1,0 +1,158 @@
+\hypertarget{classcalculus}{}\doxysection{calculus Class Reference}
+\label{classcalculus}\index{calculus@{calculus}}
+
+
+{\ttfamily \#include $<$deriv.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+long long \mbox{\hyperlink{classcalculus_a04827e15bb0302f9e779e5b3c01c6399}{derivative\+\_\+term}} (std\+::string p\+Term, long long val)
+\item 
+long long \mbox{\hyperlink{classcalculus_aad5ef27ed419c445a631524fc1aa8127}{deriv\+\_\+at}} (std\+::string \&poly, int val)
+\item 
+std\+::string \mbox{\hyperlink{classcalculus_add2ff67733292a5fa3a72f81c170205c}{deriv}} (std\+::string \&poly)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{deriv_8hpp_source_l00010}{10}} of file \mbox{\hyperlink{deriv_8hpp_source}{deriv.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcalculus_add2ff67733292a5fa3a72f81c170205c}\label{classcalculus_add2ff67733292a5fa3a72f81c170205c}} 
+\index{calculus@{calculus}!deriv@{deriv}}
+\index{deriv@{deriv}!calculus@{calculus}}
+\doxysubsubsection{\texorpdfstring{deriv()}{deriv()}}
+{\footnotesize\ttfamily std\+::string calculus\+::deriv (\begin{DoxyParamCaption}\item[{std\+::string \&}]{poly }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{modules_2calculus_2deriv_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{modules_2calculus_2deriv_8cpp_source}{deriv.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093                                          \{}
+\DoxyCodeLine{00094     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ans = 0;}
+\DoxyCodeLine{00095  }
+\DoxyCodeLine{00096     \textcolor{comment}{// We use istringstream to get input in tokens}}
+\DoxyCodeLine{00097     std::istringstream is(poly);}
+\DoxyCodeLine{00098  }
+\DoxyCodeLine{00099     std::string pTerm;}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{while} (is >> pTerm) \{}
+\DoxyCodeLine{00101         \textcolor{comment}{// std::cout << "{}poly = "{} << poly << std::endl;}}
+\DoxyCodeLine{00102         \textcolor{comment}{// std::cout << "{}pTerm = "{} << pTerm << std:: endl;}}
+\DoxyCodeLine{00103         }
+\DoxyCodeLine{00104         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
+\DoxyCodeLine{00105         \textcolor{keywordflow}{if} (pTerm == \textcolor{stringliteral}{"{}+"{}})}
+\DoxyCodeLine{00106             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00107        }
+\DoxyCodeLine{00108         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00110             ans = ans;}
+\DoxyCodeLine{00111     \}}
+\DoxyCodeLine{00112     \textcolor{keywordflow}{return} poly;}
+\DoxyCodeLine{00113 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcalculus_aad5ef27ed419c445a631524fc1aa8127}\label{classcalculus_aad5ef27ed419c445a631524fc1aa8127}} 
+\index{calculus@{calculus}!deriv\_at@{deriv\_at}}
+\index{deriv\_at@{deriv\_at}!calculus@{calculus}}
+\doxysubsubsection{\texorpdfstring{deriv\_at()}{deriv\_at()}}
+{\footnotesize\ttfamily long long calculus\+::deriv\+\_\+at (\begin{DoxyParamCaption}\item[{std\+::string \&}]{poly,  }\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{modules_2calculus_2deriv_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{modules_2calculus_2deriv_8cpp_source}{deriv.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071                                                      \{}
+\DoxyCodeLine{00072     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ans = 0;}
+\DoxyCodeLine{00073  }
+\DoxyCodeLine{00074     \textcolor{comment}{// We use istringstream to get input in tokens}}
+\DoxyCodeLine{00075     std::istringstream is(poly);}
+\DoxyCodeLine{00076  }
+\DoxyCodeLine{00077     std::string pTerm;}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{while} (is >> pTerm) \{}
+\DoxyCodeLine{00079  }
+\DoxyCodeLine{00080         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
+\DoxyCodeLine{00081         \textcolor{keywordflow}{if} (pTerm == \textcolor{stringliteral}{"{}+"{}})}
+\DoxyCodeLine{00082             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00083        }
+\DoxyCodeLine{00084         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
+\DoxyCodeLine{00085         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00086             ans = (ans + \mbox{\hyperlink{classcalculus_a04827e15bb0302f9e779e5b3c01c6399}{derivative\_term}}(pTerm, val));}
+\DoxyCodeLine{00087     \}}
+\DoxyCodeLine{00088     printf(\textcolor{stringliteral}{"{}\(\backslash\)nDEBUGGING DERIV AT\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00089     printf(\textcolor{stringliteral}{"{}ans = \%lld\(\backslash\)n"{}}, ans);}
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00091 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classcalculus_a04827e15bb0302f9e779e5b3c01c6399}{derivative\+\_\+term()}}.
+
+
+
+Referenced by \mbox{\hyperlink{samples_2cpp_2deriv_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}, and \mbox{\hyperlink{namespaceanonymous__namespace_02t__calc_8cpp_03_a34845c27ecad82cb75e5b21f6d3c9ce5}{anonymous\+\_\+namespace\{t\+\_\+calc.\+cpp\}\+::\+TEST()}}.
+
+\mbox{\Hypertarget{classcalculus_a04827e15bb0302f9e779e5b3c01c6399}\label{classcalculus_a04827e15bb0302f9e779e5b3c01c6399}} 
+\index{calculus@{calculus}!derivative\_term@{derivative\_term}}
+\index{derivative\_term@{derivative\_term}!calculus@{calculus}}
+\doxysubsubsection{\texorpdfstring{derivative\_term()}{derivative\_term()}}
+{\footnotesize\ttfamily long long calculus\+::derivative\+\_\+term (\begin{DoxyParamCaption}\item[{std\+::string}]{p\+Term,  }\item[{long long}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{modules_2calculus_2deriv_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{modules_2calculus_2deriv_8cpp_source}{deriv.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039                                                                   \{}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     printf(\textcolor{stringliteral}{"{}DEBUGGING DERIVTERM\(\backslash\)n\(\backslash\)n"{}}); }
+\DoxyCodeLine{00042     \textcolor{comment}{// Get coefficient}}
+\DoxyCodeLine{00043     std::string coeffStr = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00044     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \textcolor{keywordflow}{for} (i = 0; pTerm[i] != \textcolor{charliteral}{'x'}; i++) \{}
+\DoxyCodeLine{00047         coeffStr.push\_back(pTerm[i]);}
+\DoxyCodeLine{00048     \}}
+\DoxyCodeLine{00049     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} coeff = atol(coeffStr.c\_str());}
+\DoxyCodeLine{00050  }
+\DoxyCodeLine{00051     \textcolor{comment}{// Get Power (Skip 2 characters for x and \string^)}}
+\DoxyCodeLine{00052     std::string powStr = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00053     }
+\DoxyCodeLine{00054     \textcolor{keywordflow}{for} (i = i + 2; i != pTerm.size(); i++) \{}
+\DoxyCodeLine{00055         powStr.push\_back(pTerm[i]);}
+\DoxyCodeLine{00056         printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} expo = atol(powStr.c\_str());}
+\DoxyCodeLine{00059  }
+\DoxyCodeLine{00060     \textcolor{comment}{// For ax\string^n, we return anx\string^(n-\/1)}}
+\DoxyCodeLine{00061     printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
+\DoxyCodeLine{00062     printf(\textcolor{stringliteral}{"{}pTerm = \%s \(\backslash\)n"{}}, pTerm.c\_str());}
+\DoxyCodeLine{00063     printf(\textcolor{stringliteral}{"{}coeff = \%lld \(\backslash\)n"{}}, coeff);}
+\DoxyCodeLine{00064     printf(\textcolor{stringliteral}{"{}Exponent = \%lld \(\backslash\)n"{}}, expo);}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} result = coeff * expo * pow(val, expo -\/ 1);}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordflow}{return} coeff * expo * pow(val, expo -\/ 1);}
+\DoxyCodeLine{00069 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classcalculus_aad5ef27ed419c445a631524fc1aa8127}{deriv\+\_\+at()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/calculus/\mbox{\hyperlink{deriv_8hpp}{deriv.\+hpp}}\item 
+modules/calculus/\mbox{\hyperlink{modules_2calculus_2deriv_8cpp}{deriv.\+cpp}}\end{DoxyCompactItemize}

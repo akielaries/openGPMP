@@ -1,0 +1,43 @@
+\hypertarget{mlp__network_8cpp_source}{}\doxysection{mlp\+\_\+network.\+cpp}
+\label{mlp__network_8cpp_source}\index{modules/ml/mlp\_network.cpp@{modules/ml/mlp\_network.cpp}}
+\mbox{\hyperlink{mlp__network_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00002}00002 \textcolor{comment}{ * Implementation of a Multi-\/Layered Perceptron Neural Network}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../../include/ml/mlp\_network.cpp"{}}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00011}00011 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00012}00012 \textcolor{comment}{ * Initialize randomly generated values for network's method}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00013}00013 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00014}\mbox{\hyperlink{classMLP_a14b6b4b858e63dafcce3641263bdc003}{00014}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMLP_a14b6b4b858e63dafcce3641263bdc003}{MLP::rand\_init}}() \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00015}00015     srand((\textcolor{keywordtype}{unsigned}) time(NULL));}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00018}00018 \textcolor{comment}{/* verify the random is an integer */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00019}\mbox{\hyperlink{classMLP_a499f241e3914aeb8f02300908e30bbc5}{00019}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classMLP_a499f241e3914aeb8f02300908e30bbc5}{MLP::rand\_int}}(\textcolor{keywordtype}{int} hi, \textcolor{keywordtype}{int} low) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00020}00020     \textcolor{keywordflow}{return} rand() \% (hi -\/ low + 1) + low;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00023}00023 \textcolor{comment}{/* verify generated random is a real number */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00024}\mbox{\hyperlink{classMLP_a6ac667aa13dcde0e16886f16b7879395}{00024}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classMLP_a6ac667aa13dcde0e16886f16b7879395}{MLP::rand\_real}}() \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00025}00025     \textcolor{keywordflow}{return} ((\textcolor{keywordtype}{double}) rand() / RAND\_MAX) * (hi -\/ low) + low;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00028}00028 \textcolor{comment}{/* MLP CONTRUCTOR */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00029}00029 \mbox{\hyperlink{classMLP_ac70a9a0b94a67e2a51ac7df495883d71}{MLP::MLP}}(\textcolor{keywordtype}{int} nl, \textcolor{keywordtype}{int} npl):num\_layers(0), layer\_ptr(0),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00030}00030     dEta(0.25),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00031}00031     dAlpha(0.9),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00032}00032     dGain(1.0),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00033}00033     dMSE(0.0),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00034}00034     dMAE(0.0),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00035}00035     dAvgTestError(0.0)}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00037}00037 }
+
+\end{DoxyCode}

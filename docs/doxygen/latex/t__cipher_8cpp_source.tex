@@ -1,0 +1,100 @@
+\hypertarget{t__cipher_8cpp_source}{}\doxysection{t\+\_\+cipher.\+cpp}
+\label{t__cipher_8cpp_source}\index{tests/number\_theory/t\_cipher.cpp@{tests/number\_theory/t\_cipher.cpp}}
+\mbox{\hyperlink{t__cipher_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00002}00002 \textcolor{comment}{ * Testing the implementation of random cipher algorithms}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../../include/number\_theory/cipher.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <limits.h>}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00008}00008 using ::testing::InitGoogleTest;}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00009}00009 using ::testing::FloatLE;}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00010}00010 using ::testing::DoubleLE;}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00013}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03}{00013}} \textcolor{keyword}{namespace }\{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00014}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{00014}}     \mbox{\hyperlink{classCipher}{Cipher}} \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00016}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a284ae4d30b2f2ef5a2dbadd06039e513}{00016}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{TEST}}(ccipher\_test, caesar\_0) \{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00017}00017         std::string \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}} = \textcolor{stringliteral}{"{}Plaintext"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00018}00018         \textcolor{keywordtype}{int} key\_shift\_0 = 5;}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00019}00019         std::string hashtext\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a6e954be6a2630d25862f7aa62495642d}{C\_cipher}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_ad9b07f00ccf5d1c239484be38f27e77e}{text\_0}}, key\_shift\_0);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00020}00020         std::string expected\_0 = \textcolor{stringliteral}{"{}Uqfnsyjcy"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00022}00022         EXPECT\_EQ(expected\_0, hashtext\_0);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00024}00024     }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00025}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a5db6ea09b88ddf83db74c583b7cd33ba}{00025}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{TEST}}(ccipher\_test, caesar\_1) \{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00026}00026         std::string \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}} = \textcolor{stringliteral}{"{}ATTACKATONCE"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00027}00027         \textcolor{keywordtype}{int} key\_shift\_1 = 4;}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00028}00028         std::string hashtext\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a6e954be6a2630d25862f7aa62495642d}{C\_cipher}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a895a5640d92567eae232758678db95c9}{text\_1}}, key\_shift\_1);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00029}00029         std::string expected\_1 = \textcolor{stringliteral}{"{}EXXEGOEXSRGI"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00030}00030     }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00031}00031         EXPECT\_EQ(expected\_1, hashtext\_1);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00034}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a0fec54e5453f64389d397560716e6f9e}{00034}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{TEST}}(ccipher\_test, caesar\_2) \{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00035}00035         std::string \mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}} = \textcolor{stringliteral}{"{}EaSyPASsWorD"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00036}00036         \textcolor{keywordtype}{int} key\_shift\_2 = 14;}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00037}00037         std::string hashtext\_2 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a6e954be6a2630d25862f7aa62495642d}{C\_cipher}}(\mbox{\hyperlink{namespaceanonymous__namespace_02t__rc4_8cpp_03_a31f0728cbd661a8c08f57b4ef26f875f}{text\_2}}, key\_shift\_2);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00038}00038         std::string expected\_2 = \textcolor{stringliteral}{"{}SoGmDOGgKcfR"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00039}00039     }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00040}00040         EXPECT\_EQ(expected\_2, hashtext\_2);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00042}00042     }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00043}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a4292aa7615d8709eaea67b57dcb98db8}{00043}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{TEST}}(kcipher\_test, keyword\_0) \{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00044}00044         std::string text\_3 = \textcolor{stringliteral}{"{}Password"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00045}00045         std::string key\_shift\_3 = \textcolor{stringliteral}{"{}Computer"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00047}00047         \textcolor{comment}{// encode}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00048}00048         std::string encoded\_text\_0 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}{KC\_encode}}(key\_shift\_3);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00049}00049         \textcolor{comment}{// cipher}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00050}00050         std::string hashtext\_3 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}{KC\_cipher}}(text\_3, encoded\_text\_0);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00051}00051         }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00052}00052         std::string expected\_3 = \textcolor{stringliteral}{"{}JCNNWILP"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00053}00053         }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00054}00054         EXPECT\_EQ(expected\_3, hashtext\_3);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00057}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a47a75d30218f86f8a813e7cdf9561fd7}{00057}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{TEST}}(kcipher\_test, keyword\_1) \{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00058}00058         std::string text\_4 = \textcolor{stringliteral}{"{}Password"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00059}00059         std::string key\_shift\_4 = \textcolor{stringliteral}{"{}Password"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00061}00061         \textcolor{comment}{// encode}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00062}00062         std::string encoded\_text\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}{KC\_encode}}(key\_shift\_4);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00063}00063         \textcolor{comment}{// cipher}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00064}00064         std::string hashtext\_4 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}{KC\_cipher}}(text\_4, encoded\_text\_1);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00065}00065         }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00066}00066         std::string expected\_4 = \textcolor{stringliteral}{"{}KPNNVJMW"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00067}00067         }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00068}00068         EXPECT\_EQ(expected\_4, hashtext\_4);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00071}\mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{00071}}     \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_aca8a869e31ef7e26f8f841074608d458}{TEST}}(kcipher\_test, error\_cipher\_text) \{}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00072}00072         std::string text\_4 = \textcolor{stringliteral}{"{}P455W0RD"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00073}00073         std::string key\_shift\_4 = \textcolor{stringliteral}{"{}IN1T\_d"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00075}00075         \textcolor{comment}{// encode}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00076}00076         std::string encoded\_text\_1 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a6f3a0e66584c1a7193a84dab0bf6d609}{KC\_encode}}(key\_shift\_4);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00077}00077         \textcolor{comment}{// cipher}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00078}00078         std::string hashtext\_4 = \mbox{\hyperlink{namespaceanonymous__namespace_02t__cipher_8cpp_03_a02a1438c6089ade00f4d065df23dcd6d}{cc}}.\mbox{\hyperlink{classCipher_a831912aca3c6b8e7c4444a30bf5772f4}{KC\_cipher}}(text\_4, encoded\_text\_1);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00079}00079         }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00080}00080         std::string expected\_4 = \textcolor{stringliteral}{"{}O455W0QD"{}};}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00082}00082         EXPECT\_EQ(expected\_4, hashtext\_4);}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00084}00084 \}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00087}00087 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00088}00088 \textcolor{comment}{int main() \{}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00089}00089 \textcolor{comment}{    InitGoogleTest();}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00090}00090 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00091}00091 \textcolor{comment}{    return RUN\_ALL\_TESTS();}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00092}00092 \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00093}00093 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{t__cipher_8cpp_source_l00094}00094 }
+
+\end{DoxyCode}

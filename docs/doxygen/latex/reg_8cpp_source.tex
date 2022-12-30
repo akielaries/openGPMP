@@ -1,0 +1,98 @@
+\hypertarget{reg_8cpp_source}{}\doxysection{reg.\+cpp}
+\label{reg_8cpp_source}\index{samples/cpp/reg.cpp@{samples/cpp/reg.cpp}}
+\mbox{\hyperlink{reg_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00001}00001 \textcolor{comment}{/* TESTING LINEAR REGRESSION}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00002}00002 \textcolor{comment}{ * test driver program for our implementation of linear regression }}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <openMTPK/linreg.hpp>}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00009}\mbox{\hyperlink{reg_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00009}} \textcolor{keywordtype}{int} \mbox{\hyperlink{reg_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00010}00010     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* test\_file = \textcolor{stringliteral}{"{}data/school\_scores.csv"{}};}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00011}00011     freopen(test\_file, \textcolor{stringliteral}{"{}r"{}}, stdin);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00012}00012     \mbox{\hyperlink{classregression}{regression}} reg;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00013}00013  }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00014}00014     \textcolor{comment}{// Number of pairs of (xi, yi) in the dataset}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00015}00015     \textcolor{comment}{// int n;}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00016}00016     \textcolor{comment}{// cin >> n;}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00017}00017  }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00018}00018     \textcolor{keywordtype}{int} n = \mbox{\hyperlink{linreg_8hpp_a2be8a4476f266240d1275548cd1134ef}{num\_rows}}(test\_file);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00019}00019     \textcolor{comment}{// cin >> n;}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00020}00020     printf(\textcolor{stringliteral}{"{}LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00022}00022     printf(\textcolor{stringliteral}{"{}Number of rows in data set: \%d\(\backslash\)n"{}}, n);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00023}00023     \textcolor{comment}{// Calling function takeInput to take input of n pairs}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00024}00024     reg.\mbox{\hyperlink{classregression_aafab16d163128a9ec5ca97d30bd1042e}{get\_input}}(n);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00025}00025  }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00026}00026     \textcolor{comment}{// Printing the best fitting line}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00027}00027     reg.\mbox{\hyperlink{classregression_ad2f2b1544449df120b91c72b66a01933}{best\_fit}}();}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00029}00029     }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00030}00030     \textcolor{comment}{/* CALCULATING PREDICTIONS */}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00031}00031     \textcolor{keywordtype}{int} v1 = 1995;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00032}00032     \textcolor{keywordtype}{float} v1\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v1);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00033}00033     \textcolor{keywordtype}{float} v1\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v1);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00034}00034     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v1, v1\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00035}00035     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v1, v1\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00037}00037     \textcolor{keywordtype}{int} v2 = 1997;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00038}00038     \textcolor{keywordtype}{float} v2\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v2);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00039}00039     \textcolor{keywordtype}{float} v2\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v2);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00040}00040     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v2, v2\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00041}00041     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v2, v2\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00043}00043     \textcolor{keywordtype}{int} v3 = 1999;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00044}00044     \textcolor{keywordtype}{float} v3\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v3);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00045}00045     \textcolor{keywordtype}{float} v3\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v3);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00046}00046     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v3, v3\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00047}00047     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v3, v3\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00049}00049     \textcolor{keywordtype}{int} v4 = 2001;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00050}00050     \textcolor{keywordtype}{float} v4\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v4);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00051}00051     \textcolor{keywordtype}{float} v4\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v4);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00052}00052     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v4, v4\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00053}00053     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v4, v4\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00055}00055     \textcolor{keywordtype}{int} v5 = 2003;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00056}00056     \textcolor{keywordtype}{float} v5\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v5);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00057}00057     \textcolor{keywordtype}{float} v5\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v5);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00058}00058     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v5, v5\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00059}00059     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v5, v5\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00061}00061     \textcolor{keywordtype}{int} v6 = 2005;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00062}00062     \textcolor{keywordtype}{float} v6\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v6);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00063}00063     \textcolor{keywordtype}{float} v6\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v6);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00064}00064     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v6, v6\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00065}00065     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v6, v6\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00067}00067     \textcolor{keywordtype}{int} v7 = 2006;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00068}00068     \textcolor{keywordtype}{float} v7\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v7);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00069}00069     \textcolor{keywordtype}{float} v7\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v7);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00070}00070     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v7, v7\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00071}00071     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v7, v7\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00073}00073     \textcolor{keywordtype}{int} v8 = 2007;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00074}00074     \textcolor{keywordtype}{float} v8\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v8);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00075}00075     \textcolor{keywordtype}{float} v8\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v8);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00076}00076     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v8, v8\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00077}00077     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v8, v8\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00079}00079     \textcolor{keywordtype}{int} v10 = 2016;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00080}00080     \textcolor{keywordtype}{float} v10\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v10);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00081}00081     \textcolor{keywordtype}{float} v10\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v10);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00082}00082     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v10, v10\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00083}00083     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v10, v10\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00085}00085     \textcolor{keywordtype}{int} v11 = 2017;}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00086}00086     \textcolor{keywordtype}{float} v11\_v = reg.\mbox{\hyperlink{classregression_ac6da5948c4ad3af918f676c80dfdf81d}{predict}}(v11);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00087}00087     \textcolor{keywordtype}{float} v11\_e = reg.\mbox{\hyperlink{classregression_a8a87d10ce100ec40f1560364a77c1a9c}{error\_in}}(v11);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00088}00088     printf(\textcolor{stringliteral}{"{}Predicted value at \%d   = \%f\(\backslash\)n"{}}, v11, v11\_v);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00089}00089     printf(\textcolor{stringliteral}{"{}Error value at \%d       = \%f\(\backslash\)n\(\backslash\)n"{}}, v11, v11\_e);}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{reg_8cpp_source_l00092}00092 }
+
+\end{DoxyCode}

@@ -1,0 +1,141 @@
+\hypertarget{classnaive__network}{}\doxysection{naive\+\_\+network Class Reference}
+\label{classnaive__network}\index{naive\_network@{naive\_network}}
+
+
+{\ttfamily \#include $<$naive\+\_\+network.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnaive__network_ad2b9b85640a808babbc9e8235a093b81}{naive\+\_\+network}} (std\+::vector$<$ uint $>$ topology, \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}} learning\+Rate=\mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}}(0.\+005))
+\item 
+void \mbox{\hyperlink{classnaive__network_a1cf577fb3dc24dbee6521153ed0c3a41}{forward\+\_\+prop}} (\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&input)
+\item 
+void \mbox{\hyperlink{classnaive__network_a1280bc04418d35abfb0df4aad490123b}{backward\+\_\+prop}} (\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&output)
+\item 
+void \mbox{\hyperlink{classnaive__network_a3a47ffae20dc919a1c0068e6a63b2be4}{errors}} (\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&output)
+\item 
+void \mbox{\hyperlink{classnaive__network_aa2b250c6bba33bf221d6eca939a81f1a}{update\+\_\+weights}} ()
+\item 
+void \mbox{\hyperlink{classnaive__network_a57c1fd568a0a355e9d13744b22c812bf}{train}} (std\+::vector$<$ \mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ \mbox{\hyperlink{classnaive__network_a639c2823ce4b03e7de2b114751f65814}{neuron\+\_\+layers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ \mbox{\hyperlink{classnaive__network_a5d4474832f286d25f3cc9b57c6747991}{cache\+\_\+layers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ \mbox{\hyperlink{classnaive__network_aa6284373cccfcde2cf82a8e03a6014a1}{deltas}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__network_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} $\ast$ $>$ \mbox{\hyperlink{classnaive__network_acfbfc6a3c655ff00b2918ced849fcc17}{weights}}
+\item 
+\mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}} \mbox{\hyperlink{classnaive__network_a983e1c37881f1002b2592e43b83f930c}{learning\+\_\+rate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{naive__network_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{naive__network_8hpp_source}{naive\+\_\+network.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnaive__network_ad2b9b85640a808babbc9e8235a093b81}\label{classnaive__network_ad2b9b85640a808babbc9e8235a093b81}} 
+\index{naive\_network@{naive\_network}!naive\_network@{naive\_network}}
+\index{naive\_network@{naive\_network}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{naive\_network()}{naive\_network()}}
+{\footnotesize\ttfamily naive\+\_\+network\+::naive\+\_\+network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint $>$}]{topology,  }\item[{\mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}}}]{learning\+Rate = {\ttfamily \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}}(0.005)} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnaive__network_a1280bc04418d35abfb0df4aad490123b}\label{classnaive__network_a1280bc04418d35abfb0df4aad490123b}} 
+\index{naive\_network@{naive\_network}!backward\_prop@{backward\_prop}}
+\index{backward\_prop@{backward\_prop}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{backward\_prop()}{backward\_prop()}}
+{\footnotesize\ttfamily void naive\+\_\+network\+::backward\+\_\+prop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&}]{output }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnaive__network_a3a47ffae20dc919a1c0068e6a63b2be4}\label{classnaive__network_a3a47ffae20dc919a1c0068e6a63b2be4}} 
+\index{naive\_network@{naive\_network}!errors@{errors}}
+\index{errors@{errors}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{errors()}{errors()}}
+{\footnotesize\ttfamily void naive\+\_\+network\+::errors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&}]{output }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnaive__network_a1cf577fb3dc24dbee6521153ed0c3a41}\label{classnaive__network_a1cf577fb3dc24dbee6521153ed0c3a41}} 
+\index{naive\_network@{naive\_network}!forward\_prop@{forward\_prop}}
+\index{forward\_prop@{forward\_prop}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{forward\_prop()}{forward\_prop()}}
+{\footnotesize\ttfamily void naive\+\_\+network\+::forward\+\_\+prop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&}]{input }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnaive__network_a57c1fd568a0a355e9d13744b22c812bf}\label{classnaive__network_a57c1fd568a0a355e9d13744b22c812bf}} 
+\index{naive\_network@{naive\_network}!train@{train}}
+\index{train@{train}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily void naive\+\_\+network\+::train (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classnaive__network_aa2b250c6bba33bf221d6eca939a81f1a}\label{classnaive__network_aa2b250c6bba33bf221d6eca939a81f1a}} 
+\index{naive\_network@{naive\_network}!update\_weights@{update\_weights}}
+\index{update\_weights@{update\_weights}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{update\_weights()}{update\_weights()}}
+{\footnotesize\ttfamily void naive\+\_\+network\+::update\+\_\+weights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classnaive__network_a5d4474832f286d25f3cc9b57c6747991}\label{classnaive__network_a5d4474832f286d25f3cc9b57c6747991}} 
+\index{naive\_network@{naive\_network}!cache\_layers@{cache\_layers}}
+\index{cache\_layers@{cache\_layers}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{cache\_layers}{cache\_layers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}}$\ast$$>$ naive\+\_\+network\+::cache\+\_\+layers}
+
+
+
+Definition at line \mbox{\hyperlink{naive__network_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{naive__network_8hpp_source}{naive\+\_\+network.\+hpp}}.
+
+\mbox{\Hypertarget{classnaive__network_aa6284373cccfcde2cf82a8e03a6014a1}\label{classnaive__network_aa6284373cccfcde2cf82a8e03a6014a1}} 
+\index{naive\_network@{naive\_network}!deltas@{deltas}}
+\index{deltas@{deltas}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{deltas}{deltas}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}}$\ast$$>$ naive\+\_\+network\+::deltas}
+
+
+
+Definition at line \mbox{\hyperlink{naive__network_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{naive__network_8hpp_source}{naive\+\_\+network.\+hpp}}.
+
+\mbox{\Hypertarget{classnaive__network_a983e1c37881f1002b2592e43b83f930c}\label{classnaive__network_a983e1c37881f1002b2592e43b83f930c}} 
+\index{naive\_network@{naive\_network}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{naive__network_8hpp_aacf5954d048aaaaef04620896706921d}{Scalar}} naive\+\_\+network\+::learning\+\_\+rate}
+
+
+
+Definition at line \mbox{\hyperlink{naive__network_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{naive__network_8hpp_source}{naive\+\_\+network.\+hpp}}.
+
+\mbox{\Hypertarget{classnaive__network_a639c2823ce4b03e7de2b114751f65814}\label{classnaive__network_a639c2823ce4b03e7de2b114751f65814}} 
+\index{naive\_network@{naive\_network}!neuron\_layers@{neuron\_layers}}
+\index{neuron\_layers@{neuron\_layers}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{neuron\_layers}{neuron\_layers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__network_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}}$\ast$$>$ naive\+\_\+network\+::neuron\+\_\+layers}
+
+
+
+Definition at line \mbox{\hyperlink{naive__network_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{naive__network_8hpp_source}{naive\+\_\+network.\+hpp}}.
+
+\mbox{\Hypertarget{classnaive__network_acfbfc6a3c655ff00b2918ced849fcc17}\label{classnaive__network_acfbfc6a3c655ff00b2918ced849fcc17}} 
+\index{naive\_network@{naive\_network}!weights@{weights}}
+\index{weights@{weights}!naive\_network@{naive\_network}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__network_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}}$\ast$$>$ naive\+\_\+network\+::weights}
+
+
+
+Definition at line \mbox{\hyperlink{naive__network_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{naive__network_8hpp_source}{naive\+\_\+network.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{naive__network_8hpp}{naive\+\_\+network.\+hpp}}\end{DoxyCompactItemize}

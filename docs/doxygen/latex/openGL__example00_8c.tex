@@ -1,0 +1,144 @@
+\hypertarget{openGL__example00_8c}{}\doxysection{experiment/\+GPU/open\+GL\+\_\+example00.c File Reference}
+\label{openGL__example00_8c}\index{experiment/GPU/openGL\_example00.c@{experiment/GPU/openGL\_example00.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$GL/glut.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{openGL__example00_8c_a1daf785e3f68d293c7caa1c756d5cb74}{pi}}~3.\+142857
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{openGL__example00_8c_a631696ca6a7d57f00a5331b0aeafcee2}{my\+Init}} (void)
+\item 
+void \mbox{\hyperlink{openGL__example00_8c_a4ea013001a5fb47853d0fab8f8de35cd}{display}} (void)
+\item 
+int \mbox{\hyperlink{openGL__example00_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{openGL__example00_8c_a1daf785e3f68d293c7caa1c756d5cb74}\label{openGL__example00_8c_a1daf785e3f68d293c7caa1c756d5cb74}} 
+\index{openGL\_example00.c@{openGL\_example00.c}!pi@{pi}}
+\index{pi@{pi}!openGL\_example00.c@{openGL\_example00.c}}
+\doxysubsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily \#define pi~3.\+142857}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__example00_8c_source_l00008}{8}} of file \mbox{\hyperlink{openGL__example00_8c_source}{open\+GL\+\_\+example00.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{openGL__example00_8c_a4ea013001a5fb47853d0fab8f8de35cd}\label{openGL__example00_8c_a4ea013001a5fb47853d0fab8f8de35cd}} 
+\index{openGL\_example00.c@{openGL\_example00.c}!display@{display}}
+\index{display@{display}!openGL\_example00.c@{openGL\_example00.c}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__example00_8c_source_l00029}{29}} of file \mbox{\hyperlink{openGL__example00_8c_source}{open\+GL\+\_\+example00.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030 \{}
+\DoxyCodeLine{00031     glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{00032     glBegin(GL\_POINTS);}
+\DoxyCodeLine{00033     \textcolor{keywordtype}{float} x, y, i;}
+\DoxyCodeLine{00034       }
+\DoxyCodeLine{00035     \textcolor{comment}{// iterate y up to 2*pi, i.e., 360 degree}}
+\DoxyCodeLine{00036     \textcolor{comment}{// with small increment in angle as}}
+\DoxyCodeLine{00037     \textcolor{comment}{// glVertex2i just draws a point on specified co-\/ordinate}}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{for} ( i = 0; i < (2 * \mbox{\hyperlink{openGL__example00_8c_a1daf785e3f68d293c7caa1c756d5cb74}{pi}}); i += 0.001)}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040         \textcolor{comment}{// let 200 is radius of circle and as,}}
+\DoxyCodeLine{00041         \textcolor{comment}{// circle is defined as x=r*cos(i) and y=r*sin(i)}}
+\DoxyCodeLine{00042         x = 200 * cos(i);}
+\DoxyCodeLine{00043         y = 200 * sin(i);}
+\DoxyCodeLine{00044           }
+\DoxyCodeLine{00045         glVertex2i(x, y);}
+\DoxyCodeLine{00046     \}}
+\DoxyCodeLine{00047     glEnd();}
+\DoxyCodeLine{00048     glFlush();}
+\DoxyCodeLine{00049 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{openGL__example00_8c_a1daf785e3f68d293c7caa1c756d5cb74}{pi}}.
+
+
+
+Referenced by \mbox{\hyperlink{openGL__example00_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+
+\mbox{\Hypertarget{openGL__example00_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{openGL__example00_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{openGL\_example00.c@{openGL\_example00.c}!main@{main}}
+\index{main@{main}!openGL\_example00.c@{openGL\_example00.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__example00_8c_source_l00051}{51}} of file \mbox{\hyperlink{openGL__example00_8c_source}{open\+GL\+\_\+example00.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052 \{}
+\DoxyCodeLine{00053     glutInit(\&argc, argv);}
+\DoxyCodeLine{00054     glutInitDisplayMode(GLUT\_SINGLE | GLUT\_RGB);}
+\DoxyCodeLine{00055       }
+\DoxyCodeLine{00056     \textcolor{comment}{// giving window size in X-\/ and Y-\/ direction}}
+\DoxyCodeLine{00057     glutInitWindowSize(1366, 768);}
+\DoxyCodeLine{00058     glutInitWindowPosition(0, 0);}
+\DoxyCodeLine{00059       }
+\DoxyCodeLine{00060     \textcolor{comment}{// Giving name to window}}
+\DoxyCodeLine{00061     glutCreateWindow(\textcolor{stringliteral}{"{}Circle Drawing"{}});}
+\DoxyCodeLine{00062     \mbox{\hyperlink{openGL__example00_8c_a631696ca6a7d57f00a5331b0aeafcee2}{myInit}}();}
+\DoxyCodeLine{00063       }
+\DoxyCodeLine{00064     glutDisplayFunc(\mbox{\hyperlink{openGL__example00_8c_a4ea013001a5fb47853d0fab8f8de35cd}{display}});}
+\DoxyCodeLine{00065     glutMainLoop();}
+\DoxyCodeLine{00066 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{openGL__example00_8c_a4ea013001a5fb47853d0fab8f8de35cd}{display()}}, and \mbox{\hyperlink{openGL__example00_8c_a631696ca6a7d57f00a5331b0aeafcee2}{my\+Init()}}.
+
+\mbox{\Hypertarget{openGL__example00_8c_a631696ca6a7d57f00a5331b0aeafcee2}\label{openGL__example00_8c_a631696ca6a7d57f00a5331b0aeafcee2}} 
+\index{openGL\_example00.c@{openGL\_example00.c}!myInit@{myInit}}
+\index{myInit@{myInit}!openGL\_example00.c@{openGL\_example00.c}}
+\doxysubsubsection{\texorpdfstring{myInit()}{myInit()}}
+{\footnotesize\ttfamily void my\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{openGL__example00_8c_source_l00011}{11}} of file \mbox{\hyperlink{openGL__example00_8c_source}{open\+GL\+\_\+example00.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{00013     \textcolor{comment}{// making background color black as first }}
+\DoxyCodeLine{00014     \textcolor{comment}{// 3 arguments all are 0.0}}
+\DoxyCodeLine{00015     glClearColor(0.0, 0.0, 0.0, 1.0);}
+\DoxyCodeLine{00016       }
+\DoxyCodeLine{00017     \textcolor{comment}{// making picture color green (in RGB mode), as middle argument is 1.0}}
+\DoxyCodeLine{00018     glColor3f(0.0, 1.0, 0.0);}
+\DoxyCodeLine{00019       }
+\DoxyCodeLine{00020     \textcolor{comment}{// breadth of picture boundary is 1 pixel}}
+\DoxyCodeLine{00021     glPointSize(1.0);}
+\DoxyCodeLine{00022     glMatrixMode(GL\_PROJECTION); }
+\DoxyCodeLine{00023     glLoadIdentity();}
+\DoxyCodeLine{00024       }
+\DoxyCodeLine{00025     \textcolor{comment}{// setting window dimension in X-\/ and Y-\/ direction}}
+\DoxyCodeLine{00026     gluOrtho2D(-\/780, 780, -\/420, 420);}
+\DoxyCodeLine{00027 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{openGL__example00_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
+

@@ -1,0 +1,65 @@
+\hypertarget{openGL__torus_8cpp_source}{}\doxysection{open\+GL\+\_\+torus.\+cpp}
+\label{openGL__torus_8cpp_source}\index{experiment/GPU/openGL\_torus.cpp@{experiment/GPU/openGL\_torus.cpp}}
+\mbox{\hyperlink{openGL__torus_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00002}00002 \textcolor{comment}{ * Drawing a simple 3 dimensional torus}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00003}00003 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include<stdio.h>}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include<GL/glut.h>}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include<math.h>}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00008}\mbox{\hyperlink{openGL__torus_8cpp_a1daf785e3f68d293c7caa1c756d5cb74}{00008}} \textcolor{preprocessor}{\#define pi 3.142857}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00009}00009   }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00010}\mbox{\hyperlink{openGL__torus_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{00010}} \textcolor{keywordtype}{void} \mbox{\hyperlink{openGL__torus_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}}() \{}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00011}00011     \textcolor{comment}{// setting every pixel in frame buffer to a clear color}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00012}00012     glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00014}00014     glColor3f(1.0, 1.0, 1.0);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00015}00015     glutWireTorus(0.5, 3, 15, 30);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00017}00017     \textcolor{comment}{// being drawing}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00018}00018     glBegin(GL\_POLYGON);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00019}00019         glColor3f(1, 0, 0); glVertex3f(0, 0, 0); glVertex3f(10, 0, 0);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00020}00020         glColor3f(0, 1, 0); glVertex3f(0, 0, 0); glVertex3f(0, 10, 0);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00021}00021         glColor3f(0, 0, 1); glVertex3f(0, 0, 0); glVertex3f(0, 0, 10);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00022}00022     glEnd();}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00024}00024     \textcolor{comment}{// flush the draw cmd to display image immediately}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00025}00025     glFlush();}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00029}\mbox{\hyperlink{openGL__torus_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{00029}} \textcolor{keywordtype}{void} \mbox{\hyperlink{openGL__torus_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init}}() \{}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00030}00030     glClearColor(0.0, 0.0, 0.0, 1.0);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00031}00031     glColor3f(1.0, 1.0, 1.0);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00033}00033     glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00034}00034     glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00035}00035     gluPerspective(60.0, 4.0/3.0, 1, 40);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00037}00037     glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00038}00038     glLoadIdentity();}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00039}00039     gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00043}\mbox{\hyperlink{openGL__torus_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00043}} \textcolor{keywordtype}{int} \mbox{\hyperlink{openGL__torus_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv) \{}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00044}00044     glutInit(\&argc, argv);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00045}00045     glutInitDisplayMode(GLUT\_SINGLE | GLUT\_RGB);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00047}00047     \textcolor{comment}{// Position window at (80,80)-\/(480,380) and give it a title.}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00048}00048     glutInitWindowPosition(80, 80);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00049}00049     glutInitWindowSize(1000, 800);}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00050}00050     glutCreateWindow(\textcolor{stringliteral}{"{}A Torus on a Plane"{}});}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00052}00052     \textcolor{comment}{// Tell GLUT that whenever the main window needs to be repainted that it}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00053}00053     \textcolor{comment}{// should call the function display().}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00054}00054     glutDisplayFunc(\mbox{\hyperlink{openGL__torus_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}});}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00055}00055     \mbox{\hyperlink{openGL__torus_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init}}();}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00056}00056     glutMainLoop();}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{openGL__torus_8cpp_source_l00059}00059 }
+
+\end{DoxyCode}
