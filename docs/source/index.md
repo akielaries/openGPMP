@@ -13,16 +13,13 @@ code for the package. Look in the drivers folder for examples on using these too
 own project. This paper will highlight the modules in use, the mathematics/logic behind 
 them, future developments, and more.
 
-.. note::
-
-   This project is under active development.
+> **Note**
+> This project is under active development.
 
 Contents
 --------
 
-.. toctree::
-
-   Installation
+1. [Installation](Installation.md)
    Usage
    APIs
    Modules
