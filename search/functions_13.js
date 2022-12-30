@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vector_0',['Vector',['../classVector.html#a28f13ee3d46d3e4c6e2e340a28b5e600',1,'Vector']]],
-  ['vsum_1',['vsum',['../vects2_8cpp.html#a9f6bd45c5d1be76f1b869c1ab6648602',1,'vects2.cpp']]]
+  ['xor_5fswap_0',['XOR_swap',['../classRC4.html#a857f76dfb7b22916ad210891f8818104',1,'RC4::XOR_swap()'],['../classRC5.html#ae7d8912d64c5460d1f2de3344515a179',1,'RC5::XOR_swap()']]]
 ];

@@ -1,16 +1,8 @@
 var searchData=
 [
-  ['ontestend_0',['OnTestEnd',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker.html#a3100ca81f089369d4446cd1557b6d26a',1,'anonymous_namespace{t_memleak.cpp}::LeakChecker']]],
-  ['onteststart_1',['OnTestStart',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1LeakChecker.html#a8636b9aed48e0ad0eb591d4ddc1b1ab3',1,'anonymous_namespace{t_memleak.cpp}::LeakChecker']]],
-  ['operator_20delete_2',['operator delete',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1Water.html#a734b34f55870100773606a694bfe13af',1,'anonymous_namespace{t_memleak.cpp}::Water']]],
-  ['operator_20new_3',['operator new',['../classanonymous__namespace_02t__memleak_8cpp_03_1_1Water.html#aa7304c76af848955d5d2792e0f31e034',1,'anonymous_namespace{t_memleak.cpp}::Water']]],
-  ['operator_21_3d_4',['operator!=',['../classmtpk_1_1Matrices.html#a6802bc20d8aefba8434fa6a3fab5d476',1,'mtpk::Matrices']]],
-  ['operator_28_29_5',['operator()',['../classmtpk_1_1Matrices.html#aac6587ca5a043af522984a00fcb944ae',1,'mtpk::Matrices']]],
-  ['operator_2a_6',['operator*',['../classVector.html#a76993ec8af4c7490177a9f899e3a6356',1,'Vector']]],
-  ['operator_2b_7',['operator+',['../classVector.html#abaef65985e13ec3799dfcbdaf273c896',1,'Vector::operator+()'],['../classmtpk_1_1Matrices.html#a9b59a5f66f4cff17b5c40a4d9b239607',1,'mtpk::Matrices::operator+()']]],
-  ['operator_2d_8',['operator-',['../classVector.html#a80ed2a39e0e6a5966ad23f339ff1f31a',1,'Vector::operator-()'],['../classmtpk_1_1Matrices.html#aa56356f61716a67eb1ed895dbd8d7bfb',1,'mtpk::Matrices::operator-()'],['../classmtpk_1_1Matrices.html#a9e3af9ad96511286cd9663562ffb931a',1,'mtpk::Matrices::operator-(Matrices &amp;target)']]],
-  ['operator_3c_3c_9',['operator&lt;&lt;',['../vects_8cpp.html#a3c7541b9ece284442186e4a6dd1ee4f9',1,'vects.cpp']]],
-  ['operator_3d_3d_10',['operator==',['../classmtpk_1_1Matrices.html#a1c207047553d16660844f3145946e05b',1,'mtpk::Matrices']]],
-  ['operator_5e_11',['operator^',['../classVector.html#ab58edfd4d89229d9119707eff9ec9d99',1,'Vector']]],
-  ['output_5ferr_12',['output_err',['../classMLP.html#ad180cd56224071695babaea9a4feddeb',1,'MLP']]]
+  ['pollard_5frho_0',['pollard_rho',['../classPrimality.html#a626afbe841185a8f29afaddbfc2c41b8',1,'Primality']]],
+  ['predict_1',['predict',['../classbayes__clf.html#af2d17e4c8ded87a3f7ffd34d968aaa71',1,'bayes_clf::predict()'],['../classregression.html#ac6da5948c4ad3af918f676c80dfdf81d',1,'regression::predict()']]],
+  ['prga_2',['PRGA',['../classRC4.html#a65e83a2f7ff67b6f1da40958a84bf549',1,'RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
+  ['prob_5fby_5fsumm_3',['prob_by_summ',['../bayes__clf_8hpp.html#a3e2b710b383bea5b414174839e66d268',1,'bayes_clf.hpp']]],
+  ['prop_5fsignal_4',['prop_signal',['../classMLP.html#aa34296cb27a96b668c3e49bdf4af0697',1,'MLP']]]
 ];

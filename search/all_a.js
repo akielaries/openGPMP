@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['jacobian_5fnumber_0',['jacobian_number',['../structopenmtpk_1_1primality.html#a20e8f9660aa9eac5be5fb2ec91d92545',1,'openmtpk::primality::jacobian_number()'],['../classPrimality.html#a7bd351acce09b9003b38519d992a25ed',1,'Primality::jacobian_number()'],['../classopenMTPK_1_1Primality.html#aad428ae36fd70d90c526cc41e7b2f868',1,'openMTPK.Primality.jacobian_number()']]]
+  ['kc_5fcipher_0',['KC_cipher',['../classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4',1,'Cipher']]],
+  ['kc_5fencode_1',['KC_encode',['../classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609',1,'Cipher']]],
+  ['kohonen_5fnetwork_2',['Kohonen_network',['../classKohonen__network.html',1,'']]],
+  ['kohonen_5fnetwork_2ehpp_3',['kohonen_network.hpp',['../kohonen__network_8hpp.html',1,'']]],
+  ['ksa_4',['KSA',['../classRC4.html#a8d0de8b7bdf64701875569ea90309310',1,'RC4::KSA()'],['../classRC5.html#ab984d44b40653fcd0fcadb8b65f9764e',1,'RC5::KSA()']]]
 ];

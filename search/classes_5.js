@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kf_5fcv_0',['KF_CV',['../classKF__CV.html',1,'']]],
-  ['kohonen_5fnetwork_1',['Kohonen_network',['../classKohonen__network.html',1,'']]]
+  ['matrices_0',['Matrices',['../classmtpk_1_1Matrices.html',1,'mtpk']]],
+  ['mlp_1',['MLP',['../classMLP.html',1,'']]]
 ];
