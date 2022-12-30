@@ -43,7 +43,7 @@ calculus:
 	./${CALCBIN}
 
 
-# FILES FOR REGRESSION
+# FILES FOR THE MACHINE LEARNING MODULE
 LR			= $(SRCDIR)/ml/linreg.cpp
 LRDRV		= $(PROJDIR)/samples/cpp/reg.cpp
 LRBIN		= lin_reg
@@ -184,4 +184,6 @@ clean-misc:
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
 
+openMTPK-docs:
+	doxygen
 

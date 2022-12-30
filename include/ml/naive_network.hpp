@@ -18,6 +18,7 @@ class naive_network {
         // contructor
         naive_network(std::vector<uint> topology, 
                     Scalar learningRate = Scalar(0.005));
+
         /* perform forward propagation */
         void forward_prop(RowVector& input);
         /* perform backward propagation*/
@@ -30,7 +31,7 @@ class naive_network {
         void train(std::vector<RowVector*> data);
 
 
-        // Naive Network storage objects
+        /* Naive Network storage objects */
 
         /* store layers of the network*/
         std::vector<RowVector*> neuron_layers; 
