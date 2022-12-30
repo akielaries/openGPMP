@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['pi_0',['pi',['../openGL__astronomy__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_astronomy_animated.cpp'],['../openGL__bounce_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_bounce.cpp'],['../openGL__example00_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_example00.c'],['../openGL__torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus.cpp'],['../openGL__torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus_animated.cpp'],['../openGL__tri_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_tri.cpp'],['../modules_2complex_2torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]]
-];
