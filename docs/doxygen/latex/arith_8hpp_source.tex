@@ -3,64 +3,64 @@
 \mbox{\hyperlink{arith_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00001}00001 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#ifndef ARITH\_HPP}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#define ARITH\_HPP}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#ifndef ARITH\_HPP}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#define ARITH\_HPP}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00013}00013 }
 \DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00014}00014 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00018}\mbox{\hyperlink{classArith}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{classArith}{Arith}} \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00019}00019 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00020}00020     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00026}00026         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00027}\mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{00027}}         \textcolor{keyword}{inline} T \mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}}(T t) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00028}00028             \textcolor{keywordflow}{return} t;}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00029}00029         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00030}00030         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Ts>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00031}\mbox{\hyperlink{classArith_a5f8d5504512ae476da80f1a030eb99e0}{00031}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classArith_a5f8d5504512ae476da80f1a030eb99e0}{add}}(T t, Ts... ts) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00032}00032             \textcolor{keywordflow}{return} t + \mbox{\hyperlink{classArith_a9fd26f381e4c351d46941019f2ff3a87}{add}}(ts...);}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00033}00033         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00034}00034 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00041}00041         \textcolor{keyword}{template}<\textcolor{keyword}{typename} X>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00042}\mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{00042}}         \textcolor{keyword}{inline} X \mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}}(X x) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00043}00043             \textcolor{keywordflow}{return} x;}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00044}00044         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00045}00045         \textcolor{keyword}{template}<\textcolor{keyword}{typename} X, \textcolor{keyword}{typename}... Xy>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00046}\mbox{\hyperlink{classArith_adc399d104d82a42c0d129502fdbf8766}{00046}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classArith_adc399d104d82a42c0d129502fdbf8766}{sub}}(X x, Xy... xy) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00047}00047             \textcolor{keywordflow}{return} x -\/ \mbox{\hyperlink{classArith_aca36b830de5c5ac30e71875764e4d81f}{sub}}(xy...);}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00048}00048         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00049}00049 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00055}00055         \textcolor{keyword}{template}<\textcolor{keyword}{typename} W>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00056}\mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{00056}}         \textcolor{keyword}{inline} W \mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult}}(W w) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00057}00057             \textcolor{keywordflow}{return} w;}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00058}00058         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00059}00059         \textcolor{keyword}{template}<\textcolor{keyword}{typename} W, \textcolor{keyword}{typename}... Wv>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00060}\mbox{\hyperlink{classArith_ac48175b4c378e182615bb45ef9129784}{00060}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classArith_ac48175b4c378e182615bb45ef9129784}{mult}}(W w, Wv... wv) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00061}00061             \textcolor{keywordflow}{return} w * \mbox{\hyperlink{classArith_ab08330bc29b9706df7abebeaa9ed0d27}{mult}}(wv...);}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00062}00062         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00063}00063 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00070}00070         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Z>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00071}\mbox{\hyperlink{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}{00071}}         \textcolor{keyword}{inline} Z \mbox{\hyperlink{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}{exp}}(Z z) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00072}00072             \textcolor{keywordflow}{return} z;}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00073}00073         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00074}00074         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Z, \textcolor{keyword}{typename}... Zy>}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00075}\mbox{\hyperlink{classArith_abd92ced8791aefbf5da298edf94d2594}{00075}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classArith_abd92ced8791aefbf5da298edf94d2594}{exp}}(Z z, Zy... zy) \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00076}00076             \textcolor{keywordflow}{return} z *= \mbox{\hyperlink{classArith_a8e80f0cb33a1025d4702b9d1b806da8e}{exp}}(zy...);}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00077}00077         \}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00078}00078 \};}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00079}00079 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00080}\mbox{\hyperlink{classBasics}{00080}} \textcolor{keyword}{class }\mbox{\hyperlink{classBasics}{Basics}} \{}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00081}00081 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00082}00082     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00083}00083         \textcolor{comment}{/* greatest power of two given integers */}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00084}00084         \textcolor{keywordtype}{int} \mbox{\hyperlink{classBasics_abe5cae1d3477bc05fd15577c242e33f2}{greatest\_power}}(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} p);}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00085}00085         \textcolor{comment}{/* greatest common divisor */}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00086}00086         \textcolor{keywordtype}{int} \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00087}00087 \};}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00088}00088 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00089}00089 }
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00090}00090 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00015}\mbox{\hyperlink{namespacemtpk}{00015}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00019}\mbox{\hyperlink{classmtpk_1_1Arith}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Arith}{Arith}} \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00021}00021     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00027}00027         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00028}\mbox{\hyperlink{classmtpk_1_1Arith_aa0ed51fb270c8960489a4df51f5176d1}{00028}}         \textcolor{keyword}{inline} T \mbox{\hyperlink{classmtpk_1_1Arith_aa0ed51fb270c8960489a4df51f5176d1}{add}}(T t) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00029}00029             \textcolor{keywordflow}{return} t;}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00030}00030         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00031}00031         \textcolor{keyword}{template}<\textcolor{keyword}{typename} T, \textcolor{keyword}{typename}... Ts>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00032}\mbox{\hyperlink{classmtpk_1_1Arith_ab2184415aa3b6dabe3534f28a481651b}{00032}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classmtpk_1_1Arith_ab2184415aa3b6dabe3534f28a481651b}{add}}(T t, Ts... ts) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00033}00033             \textcolor{keywordflow}{return} t + \mbox{\hyperlink{classmtpk_1_1Arith_aa0ed51fb270c8960489a4df51f5176d1}{add}}(ts...);}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00034}00034         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00042}00042         \textcolor{keyword}{template}<\textcolor{keyword}{typename} X>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00043}\mbox{\hyperlink{classmtpk_1_1Arith_a1672e18f29fe03712fe9cd0242ae77e6}{00043}}         \textcolor{keyword}{inline} X \mbox{\hyperlink{classmtpk_1_1Arith_a1672e18f29fe03712fe9cd0242ae77e6}{sub}}(X x) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00044}00044             \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00045}00045         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00046}00046         \textcolor{keyword}{template}<\textcolor{keyword}{typename} X, \textcolor{keyword}{typename}... Xy>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00047}\mbox{\hyperlink{classmtpk_1_1Arith_a3e973dd60b9505ad4055cb3a67fa6f1c}{00047}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classmtpk_1_1Arith_a3e973dd60b9505ad4055cb3a67fa6f1c}{sub}}(X x, Xy... xy) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00048}00048             \textcolor{keywordflow}{return} x -\/ \mbox{\hyperlink{classmtpk_1_1Arith_a1672e18f29fe03712fe9cd0242ae77e6}{sub}}(xy...);}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00049}00049         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00056}00056         \textcolor{keyword}{template}<\textcolor{keyword}{typename} W>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00057}\mbox{\hyperlink{classmtpk_1_1Arith_a7f289a5972d9d7a0862b88228684738e}{00057}}         \textcolor{keyword}{inline} W \mbox{\hyperlink{classmtpk_1_1Arith_a7f289a5972d9d7a0862b88228684738e}{mult}}(W w) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00058}00058             \textcolor{keywordflow}{return} w;}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00059}00059         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00060}00060         \textcolor{keyword}{template}<\textcolor{keyword}{typename} W, \textcolor{keyword}{typename}... Wv>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00061}\mbox{\hyperlink{classmtpk_1_1Arith_a409a1df7f2bf049e15a98854f91c025d}{00061}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classmtpk_1_1Arith_a409a1df7f2bf049e15a98854f91c025d}{mult}}(W w, Wv... wv) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00062}00062             \textcolor{keywordflow}{return} w * \mbox{\hyperlink{classmtpk_1_1Arith_a7f289a5972d9d7a0862b88228684738e}{mult}}(wv...);}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00063}00063         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00071}00071         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Z>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00072}\mbox{\hyperlink{classmtpk_1_1Arith_aee45ba55998804b2ca2068c057c3ddc3}{00072}}         \textcolor{keyword}{inline} Z \mbox{\hyperlink{classmtpk_1_1Arith_aee45ba55998804b2ca2068c057c3ddc3}{exp}}(Z z) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00073}00073             \textcolor{keywordflow}{return} z;}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00074}00074         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00075}00075         \textcolor{keyword}{template}<\textcolor{keyword}{typename} Z, \textcolor{keyword}{typename}... Zy>}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00076}\mbox{\hyperlink{classmtpk_1_1Arith_a9128cb825f753feaecda8fa98ff6dd0b}{00076}}         \textcolor{keyword}{inline} \textcolor{keyword}{auto} \mbox{\hyperlink{classmtpk_1_1Arith_a9128cb825f753feaecda8fa98ff6dd0b}{exp}}(Z z, Zy... zy) \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00077}00077             \textcolor{keywordflow}{return} z *= \mbox{\hyperlink{classmtpk_1_1Arith_aee45ba55998804b2ca2068c057c3ddc3}{exp}}(zy...);}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00078}00078         \}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00079}00079 \};}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00084}\mbox{\hyperlink{classmtpk_1_1Basics}{00084}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Basics}{Basics}} \{}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00086}00086     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00093}00093         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1Basics_a8bce04d60584754bd3582ccc00be7eaf}{greatest\_power}}(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} p);}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00100}00100         \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00101}00101 \};}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00102}00102 \} \textcolor{comment}{// namespace}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00104}00104 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{arith_8hpp_source_l00105}00105 }
 
 \end{DoxyCode}

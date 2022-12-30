@@ -30,7 +30,7 @@ int main(){
      */
 
     // declare our arithmetic class object
-    Arith ar;
+    mtpk::Arith ar;
 
     // declare some variables
     int a = 10;
@@ -91,7 +91,7 @@ int main(){
     /*
      * arithmetic basics
      */
-    Basics ba;
+    mtpk::Basics ba;
     int r10 = 10;
     int r11 = 3;
     int r12 = ba.greatest_power(r10, r11);
@@ -107,12 +107,12 @@ int main(){
 
     int r16 = 2;
     int r17 = 4;
-    int r18 = ba.rm_gcd(r16, r17);
+    int r18 = ba.op_gcd(r16, r17);
     printf("The GCD of %d & %d = %d\n", r16, r17, r18);
 
     int r19 = 232;
     int r20 = 96;
-    int r21 = ba.rm_gcd(r19, r20);
+    int r21 = ba.op_gcd(r19, r20);
     printf("The GCD of %d & %d = %d\n", r19, r20, r21);
 
     return 0;

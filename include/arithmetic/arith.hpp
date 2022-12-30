@@ -1,7 +1,6 @@
 /**
  * @file
- * 
- * @section DESCRITPTION 
+ *  
  * Definitions for basic arithmetic operations 
  */
 
@@ -12,6 +11,8 @@
 #include <stdio.h>
 #include <algorithm>
 
+
+namespace mtpk {
 /**
  * @brief Arithmetic Template Class. Each method is variadic taking 'n' params.
  */
@@ -77,15 +78,28 @@ class Arith {
         }
 };
 
+/**
+ * @brief Arithmetic-based basics Class.
+ */
 class Basics {
 
     public:
-        /* greatest power of two given integers */
+        /**
+         * @brief Find greatest power
+         * @param n: (int)
+         * @param p: (int)
+         * @return result: (int)
+         */
         int greatest_power(int n, int p);
-        /* greatest common divisor */
-        int rm_gcd(int x, int y);
+        /**
+         * @brief Find Greatest Common Divisor
+         * @param x: (int)
+         * @param y: (int)
+         * @return result: (int)
+         */
+        int op_gcd(int x, int y);
 };
-
+} // namespace
 
 #endif
 

@@ -12,6 +12,6 @@ var searchData=
   ['split_9',['split',['../classCSVReader.html#a4a28ea5ad3943a0778215874cbf1da66',1,'CSVReader']]],
   ['sqr_5ferr_10',['sqr_err',['../classmtpk_1_1Matrices.html#a236106abaa1fe488c9080b81cb1f85e9',1,'mtpk::Matrices']]],
   ['store_5fhash_11',['store_hash',['../classRC4.html#a8925d178acbb55053cc58aa10206e135',1,'RC4']]],
-  ['sub_12',['sub',['../classArith.html#aca36b830de5c5ac30e71875764e4d81f',1,'Arith::sub(X x)'],['../classArith.html#adc399d104d82a42c0d129502fdbf8766',1,'Arith::sub(X x, Xy... xy)'],['../classmtpk_1_1Matrices.html#aa27853396bf629fd6b51b3e2ca999d2e',1,'mtpk::Matrices::sub(Matrices &amp;target)']]],
+  ['sub_12',['sub',['../classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6',1,'mtpk::Arith::sub(X x)'],['../classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c',1,'mtpk::Arith::sub(X x, Xy... xy)'],['../classmtpk_1_1Matrices.html#aa27853396bf629fd6b51b3e2ca999d2e',1,'mtpk::Matrices::sub(Matrices &amp;target)']]],
   ['sum_13',['sum',['../classmtpk_1_1Matrices.html#ad4d2b163b4841e7035419776c47fda30',1,'mtpk::Matrices::sum()'],['../classmtpk_1_1Matrices.html#af8cf0d27b9a25e323eb808da3e97b886',1,'mtpk::Matrices::sum(size_t dimension)']]]
 ];

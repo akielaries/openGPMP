@@ -18,7 +18,7 @@
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00014}00014 }
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00015}00015 }
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00016}00016 \textcolor{comment}{// declare Basics and Primality class objects}}
-\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00017}\mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{00017}} \mbox{\hyperlink{classBasics}{Basics}} \mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}};}
+\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00017}\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{00017}} \mbox{\hyperlink{classmtpk_1_1Basics}{mtpk::Basics}} \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}};}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00018}\mbox{\hyperlink{primes_8cpp_a1821f895d1f0fdfbe6224a075b8ed333}{00018}} \mbox{\hyperlink{classPrimality}{Primality}} \mbox{\hyperlink{primes_8cpp_a1821f895d1f0fdfbe6224a075b8ed333}{prim}};}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00019}00019 }
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00020}00020 }
@@ -206,7 +206,7 @@
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00202}\mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{00202}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classPrimality_aa37d71124bce59af692d285d7c370983}{Primality::carmichael\_num}}(\textcolor{keywordtype}{int} n) \{}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00203}00203     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} b = 2; b < n; b++) \{}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00204}00204         \textcolor{comment}{// If "{}b"{} is relatively prime to n}}
-\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00205}00205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(b, n) == 1)}
+\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00205}00205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(b, n) == 1)}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00206}00206             \textcolor{comment}{// And pow(b, n-\/1)\%n is not 1, return false.}}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00207}00207             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(b, n -\/ 1, n) != 1)}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00208}00208                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
@@ -296,7 +296,7 @@
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00292}00292         y = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(y, 2, n) + c + n) \% n;}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00293}00293  }
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00294}00294         \textcolor{comment}{/* check gcd of |x-\/y| and n */}}
-\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00295}00295         divisor = \mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(abs(x -\/ y), n);}
+\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00295}00295         divisor = \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(abs(x -\/ y), n);}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00296}00296         \textcolor{comment}{//divisor = std::\_\_gcd(abs(x -\/ y), n);}}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00297}00297         \textcolor{comment}{/* retry if the algorithm fails to find prime factor}}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00298}00298 \textcolor{comment}{         * with chosen x and c */}}
@@ -324,7 +324,7 @@
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00320}00320     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} result = 1;}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00321}00321     }
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00322}00322     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} index = 2; unsigned(index) < n; index++) \{}
-\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00323}00323         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(index, n) == 1) \{}
+\DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00323}00323         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(index, n) == 1) \{}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00324}00324             result++;}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00325}00325         \}}
 \DoxyCodeLine{\Hypertarget{primes_8cpp_source_l00326}00326     \}}

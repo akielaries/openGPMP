@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unique_5flabel_0',['unique_label',['../classbayes__clf.html#a16cb7e4931146a5f5c238d836a2b90c1',1,'bayes_clf']]]
+  ['x_0',['x',['../classmtpk_1_1Vectors.html#adeb61594e3594f4f2451374a8f341e71',1,'mtpk::Vectors::x()'],['../classregression.html#a242e8923fa28398d42fca3672ecedf61',1,'regression::x()']]]
 ];

@@ -14,7 +14,7 @@
 
 
 // declare Basics and Primality class objects
-Basics basics;
+mtpk::Basics ba;
 Primality prim;
 
 
@@ -202,7 +202,7 @@ bool Primality::solovoy_strassen(long long p, int iters) {
 bool Primality::carmichael_num(int n) {
     for (int b = 2; b < n; b++) {
         // If "b" is relatively prime to n
-        if (basics.rm_gcd(b, n) == 1)
+        if (ba.op_gcd(b, n) == 1)
             // And pow(b, n-1)%n is not 1, return false.
             if (mod_pow(b, n - 1, n) != 1)
                 return false;
@@ -292,7 +292,7 @@ long long int Primality::pollard_rho(long long int n) {
         y = (mod_pow(y, 2, n) + c + n) % n;
  
         /* check gcd of |x-y| and n */
-        divisor = basics.rm_gcd(abs(x - y), n);
+        divisor = ba.op_gcd(abs(x - y), n);
         //divisor = std::__gcd(abs(x - y), n);
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
@@ -320,7 +320,7 @@ int Primality::ETF(unsigned int n) {
     unsigned int result = 1;
     
     for (int index = 2; unsigned(index) < n; index++) {
-        if (basics.rm_gcd(index, n) == 1) {
+        if (ba.op_gcd(index, n) == 1) {
             result++;
         }
     }

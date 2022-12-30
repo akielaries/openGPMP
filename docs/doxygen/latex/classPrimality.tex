@@ -54,7 +54,7 @@ Definition at line \mbox{\hyperlink{primes_8cpp_source_l00202}{202}} of file \mb
 \DoxyCodeLine{00202                                     \{}
 \DoxyCodeLine{00203     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} b = 2; b < n; b++) \{}
 \DoxyCodeLine{00204         \textcolor{comment}{// If "{}b"{} is relatively prime to n}}
-\DoxyCodeLine{00205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(b, n) == 1)}
+\DoxyCodeLine{00205         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(b, n) == 1)}
 \DoxyCodeLine{00206             \textcolor{comment}{// And pow(b, n-\/1)\%n is not 1, return false.}}
 \DoxyCodeLine{00207             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(b, n -\/ 1, n) != 1)}
 \DoxyCodeLine{00208                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
@@ -65,7 +65,7 @@ Definition at line \mbox{\hyperlink{primes_8cpp_source_l00202}{202}} of file \mb
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, and \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{Basics\+::rm\+\_\+gcd()}}.
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, and \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
 
 \mbox{\Hypertarget{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}\label{classPrimality_a4928335bf2bf8e0a123f46e33b0a4b47}} 
 \index{Primality@{Primality}!compute\_miller\_rabin@{compute\_miller\_rabin}}
@@ -133,7 +133,7 @@ Definition at line \mbox{\hyperlink{primes_8cpp_source_l00319}{319}} of file \mb
 \DoxyCodeLine{00320     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} result = 1;}
 \DoxyCodeLine{00321     }
 \DoxyCodeLine{00322     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} index = 2; unsigned(index) < n; index++) \{}
-\DoxyCodeLine{00323         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(index, n) == 1) \{}
+\DoxyCodeLine{00323         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(index, n) == 1) \{}
 \DoxyCodeLine{00324             result++;}
 \DoxyCodeLine{00325         \}}
 \DoxyCodeLine{00326     \}}
@@ -144,7 +144,7 @@ Definition at line \mbox{\hyperlink{primes_8cpp_source_l00319}{319}} of file \mb
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, and \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{Basics\+::rm\+\_\+gcd()}}.
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, and \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
 
 \mbox{\Hypertarget{classPrimality_aa00343cb6fa77239717833d27f201f03}\label{classPrimality_aa00343cb6fa77239717833d27f201f03}} 
 \index{Primality@{Primality}!is\_prime@{is\_prime}}
@@ -396,7 +396,7 @@ Definition at line \mbox{\hyperlink{primes_8cpp_source_l00258}{258}} of file \mb
 \DoxyCodeLine{00292         y = (\mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\_pow}}(y, 2, n) + c + n) \% n;}
 \DoxyCodeLine{00293  }
 \DoxyCodeLine{00294         \textcolor{comment}{/* check gcd of |x-\/y| and n */}}
-\DoxyCodeLine{00295         divisor = \mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}.\mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{rm\_gcd}}(abs(x -\/ y), n);}
+\DoxyCodeLine{00295         divisor = \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{op\_gcd}}(abs(x -\/ y), n);}
 \DoxyCodeLine{00296         \textcolor{comment}{//divisor = std::\_\_gcd(abs(x -\/ y), n);}}
 \DoxyCodeLine{00297         \textcolor{comment}{/* retry if the algorithm fails to find prime factor}}
 \DoxyCodeLine{00298 \textcolor{comment}{         * with chosen x and c */}}
@@ -410,7 +410,7 @@ Definition at line \mbox{\hyperlink{primes_8cpp_source_l00258}{258}} of file \mb
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{primes_8cpp_adcdb46a004ccf192215aa282b23c4e64}{basics}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}{pollard\+\_\+rho()}}, and \mbox{\hyperlink{classBasics_a4fe37d0a07d61d2b351b714a12405707}{Basics\+::rm\+\_\+gcd()}}.
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, \mbox{\hyperlink{classPrimality_a5c095723bcb653c92833b2424ce07479}{mod\+\_\+pow()}}, \mbox{\hyperlink{classmtpk_1_1Basics_aea4f43ee216de88e00d487a4598fcea4}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}, and \mbox{\hyperlink{classPrimality_a626afbe841185a8f29afaddbfc2c41b8}{pollard\+\_\+rho()}}.
 
 
 

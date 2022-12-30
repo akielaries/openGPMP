@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['cache_5flayers_0',['cache_layers',['../classnaive__network.html#a5d4474832f286d25f3cc9b57c6747991',1,'naive_network']]],
-  ['characteristics_1',['characteristics',['../classCompany.html#a2960df5751351480f6818d3973f77e5b',1,'Company']]],
-  ['class_5fprob_2',['class_prob',['../structsummary.html#a37f7b8afe3d9b1e8aa2dff9c1b23a879',1,'summary']]],
-  ['coeff_3',['coeff',['../classregression.html#aa2129c50634e185ee8790cd29dd7d499',1,'regression']]],
-  ['cols_4',['cols',['../classmtpk_1_1Matrices.html#a2c635ae1bb4616560e15115bc9b2cc27',1,'mtpk::Matrices']]],
-  ['constant_5',['constant',['../classregression.html#a1717e795b3456b24c1ed9ce9e3066095',1,'regression']]],
-  ['copyright_6',['copyright',['../namespaceconf.html#a33fa97cf51dcb25970fbf53f10159589',1,'conf']]],
-  ['current_5frot_7',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]]
+  ['dalpha_0',['dAlpha',['../classMLP.html#a3b33932fbf87af2463d192336e97ac37',1,'MLP']]],
+  ['data_1',['data',['../classmtpk_1_1Matrices.html#adb2ecec222f453d3ecfa7a52f6640afd',1,'mtpk::Matrices']]],
+  ['davgtesterror_2',['dAvgTestError',['../classMLP.html#a5333c9dd1d4a658b77673cee4f345644',1,'MLP']]],
+  ['delimeter_3',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
+  ['deltas_4',['deltas',['../classnaive__network.html#aa6284373cccfcde2cf82a8e03a6014a1',1,'naive_network']]],
+  ['deta_5',['dEta',['../classMLP.html#af272cadd9f2af6d1a474307aac131136',1,'MLP']]],
+  ['dgain_6',['dGain',['../classMLP.html#ab81cbb1d1e18c7aa708bc25cc9f73f1f',1,'MLP']]],
+  ['dim_7',['dim',['../classmtpk_1_1Matrices.html#ae4cc1f03137fa119a6bb60d8bafc2f3e',1,'mtpk::Matrices']]],
+  ['distance_8',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
+  ['dmae_9',['dMAE',['../classMLP.html#a6b6f762a37d6c6dfd0bd5565e8042a42',1,'MLP']]],
+  ['dmse_10',['dMSE',['../classMLP.html#a9be4db567e38e5339abf1b7b9686f704',1,'MLP']]]
 ];
