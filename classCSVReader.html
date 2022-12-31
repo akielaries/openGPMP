@@ -72,6 +72,8 @@ $(function() {
 <div class="title">CSVReader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -94,7 +96,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="k-NN_8cpp_source.html#l00051">51</a> of file <a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nearest__neighbors_8hpp_source.html#l00051">51</a> of file <a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af22e7e980aa6c46c0017d0e1991e3741"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af22e7e980aa6c46c0017d0e1991e3741">&#9670;&nbsp;</a></span>CSVReader()</h2>
@@ -130,13 +132,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-NN_8cpp_source.html#l00053">53</a> of file <a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nearest__neighbors_8hpp_source.html#l00053">53</a> of file <a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                     :</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">fileName</a>(<a class="code" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">fileName</a>),</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">delimeter</a>(<a class="code" href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">delimeter</a>)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {}</div>
-<div class="ttc" id="aclassCSVReader_html_a0a90d62a46349a148272cb0e087cd191"><div class="ttname"><a href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">CSVReader::fileName</a></div><div class="ttdeci">string fileName</div><div class="ttdef"><b>Definition:</b> <a href="k-NN_8cpp_source.html#l00078">k-NN.cpp:78</a></div></div>
-<div class="ttc" id="aclassCSVReader_html_abff43d8d9971224af07ba44c912ebec9"><div class="ttname"><a href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">CSVReader::delimeter</a></div><div class="ttdeci">string delimeter</div><div class="ttdef"><b>Definition:</b> <a href="k-NN_8cpp_source.html#l00079">k-NN.cpp:79</a></div></div>
+<div class="ttc" id="aclassCSVReader_html_a0a90d62a46349a148272cb0e087cd191"><div class="ttname"><a href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">CSVReader::fileName</a></div><div class="ttdeci">string fileName</div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8hpp_source.html#l00078">nearest_neighbors.hpp:78</a></div></div>
+<div class="ttc" id="aclassCSVReader_html_abff43d8d9971224af07ba44c912ebec9"><div class="ttname"><a href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">CSVReader::delimeter</a></div><div class="ttdeci">string delimeter</div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8hpp_source.html#l00079">nearest_neighbors.hpp:79</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -164,7 +166,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-NN_8cpp_source.html#l00062">62</a> of file <a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nearest__neighbors_8hpp_source.html#l00062">62</a> of file <a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                     {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ifstream file(this-&gt;<a class="code" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">fileName</a>);</div>
@@ -179,9 +181,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        file.close();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> data;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="ttc" id="aclassCSVReader_html_aa3f91c1fd40076a96ca0be593b9b59bc"><div class="ttname"><a href="classCSVReader.html#aa3f91c1fd40076a96ca0be593b9b59bc">CSVReader::split</a></div><div class="ttdeci">vector&lt; string &gt; split(string target, string delim)</div><div class="ttdef"><b>Definition:</b> <a href="k-NN_8cpp_source.html#l00084">k-NN.cpp:84</a></div></div>
+<div class="ttc" id="aclassCSVReader_html_aa3f91c1fd40076a96ca0be593b9b59bc"><div class="ttname"><a href="classCSVReader.html#aa3f91c1fd40076a96ca0be593b9b59bc">CSVReader::split</a></div><div class="ttdeci">vector&lt; string &gt; split(string target, string delim)</div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8hpp_source.html#l00084">nearest_neighbors.hpp:84</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="k-NN_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="nearest__neighbors_8hpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
 </div>
@@ -219,7 +221,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-NN_8cpp_source.html#l00084">84</a> of file <a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nearest__neighbors_8hpp_source.html#l00084">84</a> of file <a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        vector&lt;string&gt; v;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (!target.empty()) {</div>
@@ -264,7 +266,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-NN_8cpp_source.html#l00079">79</a> of file <a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nearest__neighbors_8hpp_source.html#l00079">79</a> of file <a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>.</p>
 
 </div>
 </div>
@@ -288,12 +290,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-NN_8cpp_source.html#l00078">78</a> of file <a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nearest__neighbors_8hpp_source.html#l00078">78</a> of file <a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>modules/ml/<a class="el" href="k-NN_8cpp_source.html">k-NN.cpp</a></li>
+<li>modules/ml/<a class="el" href="nearest__neighbors_8hpp_source.html">nearest_neighbors.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

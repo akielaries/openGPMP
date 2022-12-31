@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['update_403',['update',['../classKohonen__network.html#a5ea420b23df99944d93b36a9496684be',1,'Kohonen_network']]],
-  ['update_5fweights_404',['update_weights',['../classmtpk_1_1NaiveNet.html#af8ff3d701589673dc55e26e733a07397',1,'mtpk::NaiveNet']]]
+  ['update_406',['update',['../classmtpk_1_1KohonenNet.html#a613ae89039f153c18f2bccfaebb9f67c',1,'mtpk::KohonenNet']]],
+  ['update_5fweights_407',['update_weights',['../classmtpk_1_1NaiveNet.html#af8ff3d701589673dc55e26e733a07397',1,'mtpk::NaiveNet']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mean_5fstdev_438',['mean_stdev',['../structsummary.html#ad0fd3c6d9043eda3a2210d74e9641640',1,'summary']]]
+  ['mean_5fstdev_441',['mean_stdev',['../structmtpk_1_1summary.html#a002123af14bcc65ba1056678d3305b2c',1,'mtpk::summary']]]
 ];

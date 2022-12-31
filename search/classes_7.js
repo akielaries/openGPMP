@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['primality_250',['Primality',['../classPrimality.html',1,'']]]
+  ['primality_253',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]]
 ];

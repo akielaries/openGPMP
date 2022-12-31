@@ -71,22 +71,28 @@ $(function() {
 <div class="title">kohonen_network.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="kohonen__network_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KOHONEN_NETWORK_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define KOHONEN_NETWORK_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classKohonen__network.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classKohonen__network.html">Kohonen_network</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classKohonen__network.html#a1409309eef5a6cd5b25b20aba226e765">    7</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classKohonen__network.html#a1409309eef5a6cd5b25b20aba226e765">choice</a>(weights, sample);</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classKohonen__network.html#a5ea420b23df99944d93b36a9496684be">    8</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classKohonen__network.html#a5ea420b23df99944d93b36a9496684be">update</a>(weights, sample, J, alpha);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="ttc" id="aclassKohonen__network_html"><div class="ttname"><a href="classKohonen__network.html">Kohonen_network</a></div><div class="ttdef"><b>Definition:</b> <a href="kohonen__network_8hpp_source.html#l00006">kohonen_network.hpp:6</a></div></div>
-<div class="ttc" id="aclassKohonen__network_html_a1409309eef5a6cd5b25b20aba226e765"><div class="ttname"><a href="classKohonen__network.html#a1409309eef5a6cd5b25b20aba226e765">Kohonen_network::choice</a></div><div class="ttdeci">int choice(weights, sample)</div></div>
-<div class="ttc" id="aclassKohonen__network_html_a5ea420b23df99944d93b36a9496684be"><div class="ttname"><a href="classKohonen__network.html#a5ea420b23df99944d93b36a9496684be">Kohonen_network::update</a></div><div class="ttdeci">int update(weights, sample, J, alpha)</div></div>
+<a href="kohonen__network_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef KOHONEN_NETWORK_HPP</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define KOHONEN_NETWORK_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classmtpk_1_1KohonenNet.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1KohonenNet.html">KohonenNet</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classmtpk_1_1KohonenNet.html#a52b809ea60380e860424b73d3ce59415">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1KohonenNet.html#a52b809ea60380e860424b73d3ce59415">choice</a>(weights, sample);</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classmtpk_1_1KohonenNet.html#a613ae89039f153c18f2bccfaebb9f67c">   20</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1KohonenNet.html#a613ae89039f153c18f2bccfaebb9f67c">update</a>(weights, sample, J, alpha);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="ttc" id="aclassmtpk_1_1KohonenNet_html"><div class="ttname"><a href="classmtpk_1_1KohonenNet.html">mtpk::KohonenNet</a></div><div class="ttdoc">Kohonen Neural Network Cluster Class.</div><div class="ttdef"><b>Definition:</b> <a href="kohonen__network_8hpp_source.html#l00018">kohonen_network.hpp:18</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1KohonenNet_html_a52b809ea60380e860424b73d3ce59415"><div class="ttname"><a href="classmtpk_1_1KohonenNet.html#a52b809ea60380e860424b73d3ce59415">mtpk::KohonenNet::choice</a></div><div class="ttdeci">int choice(weights, sample)</div></div>
+<div class="ttc" id="aclassmtpk_1_1KohonenNet_html_a613ae89039f153c18f2bccfaebb9f67c"><div class="ttname"><a href="classmtpk_1_1KohonenNet.html#a613ae89039f153c18f2bccfaebb9f67c">mtpk::KohonenNet::update</a></div><div class="ttdeci">int update(weights, sample, J, alpha)</div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00021">arith.hpp:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

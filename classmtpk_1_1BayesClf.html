@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: bayes_clf Class Reference</title>
+<title>openMTPK: mtpk::BayesClf Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,45 +61,53 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacemtpk.html">mtpk</a></li><li class="navelem"><a class="el" href="classmtpk_1_1BayesClf.html">BayesClf</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="classbayes__clf-members.html">List of all members</a>  </div>
+<a href="classmtpk_1_1BayesClf-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">bayes_clf Class Reference</div>  </div>
+<div class="title">mtpk::BayesClf Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Bayes Classified Class based on assumptions of independence.  
+ <a href="classmtpk_1_1BayesClf.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5cce3c9ecdc80e0cd6379219796522e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayes__clf.html#a5cce3c9ecdc80e0cd6379219796522e6">fit</a> (std::vector&lt; std::vector&lt; float &gt;&gt; dataset)</td></tr>
-<tr class="separator:a5cce3c9ecdc80e0cd6379219796522e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2d17e4c8ded87a3f7ffd34d968aaa71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayes__clf.html#af2d17e4c8ded87a3f7ffd34d968aaa71">predict</a> (const std::vector&lt; float &gt; &amp;test_data)</td></tr>
-<tr class="separator:af2d17e4c8ded87a3f7ffd34d968aaa71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24b06a538e4c97496302c7bf6e635dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesClf.html#aa24b06a538e4c97496302c7bf6e635dd">fit</a> (std::vector&lt; std::vector&lt; float &gt;&gt; dataset)</td></tr>
+<tr class="separator:aa24b06a538e4c97496302c7bf6e635dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b85a5b7f5b713ff8befd5236a60b9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesClf.html#a25b85a5b7f5b713ff8befd5236a60b9f">predict</a> (const std::vector&lt; float &gt; &amp;test_data)</td></tr>
+<tr class="separator:a25b85a5b7f5b713ff8befd5236a60b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a83f7fba6bfedd4e2613f92bb7e0c7e09"><td class="memItemLeft" align="right" valign="top">std::vector&lt; class_summary &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayes__clf.html#a83f7fba6bfedd4e2613f92bb7e0c7e09">Summary</a></td></tr>
-<tr class="separator:a83f7fba6bfedd4e2613f92bb7e0c7e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16cb7e4931146a5f5c238d836a2b90c1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbayes__clf.html#a16cb7e4931146a5f5c238d836a2b90c1">unique_label</a></td></tr>
-<tr class="separator:a16cb7e4931146a5f5c238d836a2b90c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09191f8089a13847a75a12a9c405206f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; class_summary &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesClf.html#a09191f8089a13847a75a12a9c405206f">Summary</a></td></tr>
+<tr class="separator:a09191f8089a13847a75a12a9c405206f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a25e8ce050c08a3d080fa5150df1f10"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesClf.html#a9a25e8ce050c08a3d080fa5150df1f10">unique_label</a></td></tr>
+<tr class="separator:a9a25e8ce050c08a3d080fa5150df1f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00014">14</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<div class="textblock"><p>Bayes Classified Class based on assumptions of independence. </p>
+
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00025">25</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5cce3c9ecdc80e0cd6379219796522e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cce3c9ecdc80e0cd6379219796522e6">&#9670;&nbsp;</a></span>fit()</h2>
+<a id="aa24b06a538e4c97496302c7bf6e635dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24b06a538e4c97496302c7bf6e635dd">&#9670;&nbsp;</a></span>fit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void bayes_clf::fit </td>
+          <td class="memname">void mtpk::BayesClf::fit </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::vector&lt; float &gt;&gt;&#160;</td>
           <td class="paramname"><em>dataset</em></td><td>)</td>
@@ -110,14 +118,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af2d17e4c8ded87a3f7ffd34d968aaa71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2d17e4c8ded87a3f7ffd34d968aaa71">&#9670;&nbsp;</a></span>predict()</h2>
+<a id="a25b85a5b7f5b713ff8befd5236a60b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b85a5b7f5b713ff8befd5236a60b9f">&#9670;&nbsp;</a></span>predict()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int bayes_clf::predict </td>
+          <td class="memname">int mtpk::BayesClf::predict </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
           <td class="paramname"><em>test_data</em></td><td>)</td>
@@ -129,8 +137,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a83f7fba6bfedd4e2613f92bb7e0c7e09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83f7fba6bfedd4e2613f92bb7e0c7e09">&#9670;&nbsp;</a></span>Summary</h2>
+<a id="a09191f8089a13847a75a12a9c405206f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09191f8089a13847a75a12a9c405206f">&#9670;&nbsp;</a></span>Summary</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +147,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;class_summary&gt; bayes_clf::Summary</td>
+          <td class="memname">std::vector&lt;class_summary&gt; mtpk::BayesClf::Summary</td>
         </tr>
       </table>
   </td>
@@ -149,12 +157,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00016">16</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00027">27</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a16cb7e4931146a5f5c238d836a2b90c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16cb7e4931146a5f5c238d836a2b90c1">&#9670;&nbsp;</a></span>unique_label</h2>
+<a id="a9a25e8ce050c08a3d080fa5150df1f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a25e8ce050c08a3d080fa5150df1f10">&#9670;&nbsp;</a></span>unique_label</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +171,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;float&gt; bayes_clf::unique_label</td>
+          <td class="memname">std::vector&lt;float&gt; mtpk::BayesClf::unique_label</td>
         </tr>
       </table>
   </td>
@@ -173,7 +181,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00017">17</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00028">28</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 
 </div>
 </div>

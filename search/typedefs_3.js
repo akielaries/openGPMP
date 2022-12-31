@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scalar_466',['Scalar',['../naive__network_8hpp.html#aacf5954d048aaaaef04620896706921d',1,'naive_network.hpp']]],
-  ['summary_467',['summary',['../bayes__clf_8hpp.html#ae71f211dfbaec172e613463e6951c7c7',1,'bayes_clf.hpp']]]
+  ['scalar_469',['Scalar',['../naive__network_8hpp.html#aacf5954d048aaaaef04620896706921d',1,'naive_network.hpp']]],
+  ['summary_470',['summary',['../namespacemtpk.html#a085f33bc2f6ca9e783087360d000cece',1,'mtpk']]]
 ];

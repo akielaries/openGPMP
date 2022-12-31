@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['basics_236',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk']]],
-  ['bayes_5fclf_237',['bayes_clf',['../classbayes__clf.html',1,'']]]
+  ['basics_238',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk']]],
+  ['bayesclf_239',['BayesClf',['../classmtpk_1_1BayesClf.html',1,'mtpk']]],
+  ['bayesnet_240',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unique_5flabel_456',['unique_label',['../classbayes__clf.html#a16cb7e4931146a5f5c238d836a2b90c1',1,'bayes_clf']]]
+  ['unique_5flabel_459',['unique_label',['../classmtpk_1_1BayesClf.html#a9a25e8ce050c08a3d080fa5150df1f10',1,'mtpk::BayesClf']]]
 ];
