@@ -1,7 +1,7 @@
 Welcome to openMTPK's documentation.
 ===================================
 **openMTPK** is a open-source mathematics package written in C++ with language 
-bindings available for Fortran, OCaml, Python, and R. View the The goal is to 
+bindings available for Fortran, OCaml, Python, and R. The goal is to 
 make a reusable mathematics library covering an array of topics for an array of 
 uses. 
 
