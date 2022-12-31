@@ -1,5 +1,6 @@
 /**
  * @file
+ * @author Akiel Aries
  *  
  * Definitions for basic arithmetic operations 
  */
@@ -14,11 +15,13 @@
 
 /**
  * @brief The core openMTPK namespace
+ *
+ * @details This namespace wraps all classes and methods used within the library
  */
 namespace mtpk {
 
 /**
- * @brief Arithmetic Template Class. Each method is variadic taking 'n' params.
+ * Arithmetic Template Class. Each method is variadic taking 'n' params.
  */
 class Arith {
 
@@ -26,7 +29,7 @@ class Arith {
         /**
          * @brief Addition method
          * 
-         * @param 'n' addends 
+         * @tparam 'n' addends 
          * 
          * @return sum
          */
@@ -42,8 +45,8 @@ class Arith {
         /**
          * @brief Subtraction method
          * 
-         * @param minuend
-         * @param 'n' subtrahends
+         * @tparam minuend
+         * @tparam 'n' subtrahends
          * 
          * @return difference
          */
@@ -59,7 +62,7 @@ class Arith {
         /**
          * @brief Multiplication method
          * 
-         * @param 'n' factors
+         * @tparam 'n' factors
          * 
          * @return product
          */
@@ -75,8 +78,8 @@ class Arith {
         /**
          * @brief Exponentiation method
          * 
-         * @param base
-         * @param 'n' powers
+         * @tparam base
+         * @tparam 'n' powers
          * 
          * @return product
          */
@@ -99,8 +102,8 @@ class Basics {
         /**
          * @brief Find greatest power of 2 itegers
          * 
-         * @param n : integer 1
-         * @param p : integer 2
+         * @param[in] n : integer 1
+         * @param[in] p : integer 2
          * 
          * @return result : (int)
          */
@@ -109,8 +112,8 @@ class Basics {
         /**
          * @brief Find Greatest Common Divisor of 2 integers
          * 
-         * @param x : integer 1
-         * @param y : integer 2
+         * @param[in] x : integer 1
+         * @param[in] y : integer 2
          * 
          * @return result : (int)
          */

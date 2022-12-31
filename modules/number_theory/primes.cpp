@@ -15,7 +15,7 @@
 
 // declare Basics and Primality class objects
 mtpk::Basics ba;
-Primality prim;
+mtpk::Primality prim;
 
 
 long long int Primality::mod_pow(long long int base, 
@@ -58,14 +58,14 @@ bool Primality::compute_miller_rabin(int d, int n) {
     // Compute a^d % n
     int x = mod_pow(a, d, n);
  
-    if (x == 1  || x == n-1)
+    if (x == 1  || x == n - 1)
        return true;
  
     // Keep squaring x while one of the following doesn't
     // happen
-    // (i)   d does not reach n-1
-    // (ii)  (x^2) % n is not 1
-    // (iii) (x^2) % n is not n-1
+    // (I)   d does not reach n-1
+    // (II)  (x^2) % n is not 1
+    // (III) (x^2) % n is not n-1
     while (d != n - 1) {
         x = (x * x) % n;
         d *= 2;

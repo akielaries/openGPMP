@@ -12,7 +12,7 @@
 namespace mtpk {
 
 /**
- * @brief Calculus Class with methods pertaining to basic operations.
+ * Calculus Class with methods pertaining to basic operations.
  */
 class Calculus {
 
@@ -20,8 +20,9 @@ class Calculus {
         /**
          * @brief Find the coeffecients and exponents of a polynomial 
          * 
-         * @param p_term : Coeffecients of the polynomial (string)
-         * @param val : 'x' term to find from given polynomial (long long int)
+         * @param[in] p_term : Coeffecients of the polynomial (string)
+         * @param[in] val : 'x' term to find from given polynomial 
+         * (long long int)
          *
          * @return result : formatted coeffecients + exponents
          */
@@ -30,8 +31,8 @@ class Calculus {
         /**
          * @brief Find the derivative of a function with x = val
          *
-         * @param poly : polynomial (string)
-         * @param val : value to solve for (int)
+         * @param[in] poly : polynomial (string)
+         * @param[in] val : value to solve for (int)
          *
          * @return result : result of the solved x
          */
@@ -40,7 +41,7 @@ class Calculus {
         /**
          * @brief Calculate the derivative of a function, not solving for x
          * 
-         * @param poly : polynomial (string)
+         * @param[in] poly : polynomial (string)
          *
          * @returns result : derived function (string) 
          */
