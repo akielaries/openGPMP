@@ -5,7 +5,7 @@ var searchData=
   ['error_5fin_67',['error_in',['../classregression.html#a8a87d10ce100ec40f1560364a77c1a9c',1,'regression']]],
   ['error_5fsquare_68',['error_square',['../classregression.html#a25c029fa58cf84649d45bc09c3597e64',1,'regression']]],
   ['errors_69',['errors',['../classmtpk_1_1NaiveNet.html#aee1f88544b22a04ff741ea3e94a2d352',1,'mtpk::NaiveNet']]],
-  ['etf_70',['ETF',['../classmtpk_1_1Primality.html#a334ba4925bdd37b5f6dfea94465afb1b',1,'mtpk::Primality']]],
+  ['etf_70',['ETF',['../classmtpk_1_1Primality.html#a445c670da88b72b7fbe37d28d3c5841c',1,'mtpk::Primality']]],
   ['euclideandistance_71',['euclideanDistance',['../nearest__neighbors_8hpp.html#a216eb8e0e43db49b56551d8df0c9d000',1,'euclideanDistance(Company &amp;lhs, Company &amp;test):&#160;nearest_neighbors.hpp'],['../nearest__neighbor_8hpp.html#a216eb8e0e43db49b56551d8df0c9d000',1,'euclideanDistance(Company &amp;lhs, Company &amp;test):&#160;nearest_neighbors.hpp']]],
   ['evaluate_72',['evaluate',['../classMLP.html#ad842ae1e83ed92230cb99a1de81ad976',1,'MLP']]],
   ['ex_73',['ex',['../structneuron.html#a7f1c4a2af6c01336cbfae3d7f1a0014c',1,'neuron']]],
