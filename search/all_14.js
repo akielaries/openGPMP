@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['weights_222',['weights',['../classmtpk_1_1Naive__Net.html#acf812287413a98ee2606834ee504ccdb',1,'mtpk::Naive_Net']]],
+  ['weights_222',['weights',['../classmtpk_1_1NaiveNet.html#ac7d504285bccce80bcd1407e23620404',1,'mtpk::NaiveNet']]],
   ['weights_5fadjust_223',['weights_adjust',['../classMLP.html#a2f1e0e12cd526f282290a253ded8ebef',1,'MLP']]],
   ['weights_5fran_224',['weights_ran',['../classMLP.html#a5a7600d28b6588c5122f431eaf9182ba',1,'MLP']]],
   ['weights_5frestore_225',['weights_restore',['../classMLP.html#a9acf4fc570ceffd3ff8dbe97167f8faf',1,'MLP']]],

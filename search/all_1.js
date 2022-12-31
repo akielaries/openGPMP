@@ -2,7 +2,7 @@ var searchData=
 [
   ['ba_7',['ba',['../primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6',1,'primes.cpp']]],
   ['back_5fprop_5ferr_8',['back_prop_err',['../classMLP.html#abc15b285d05e6d2b106a3dbb38dab111',1,'MLP']]],
-  ['backward_5fprop_9',['backward_prop',['../classmtpk_1_1Naive__Net.html#a827feb836e3b7cb9b56be5d47c1ddd19',1,'mtpk::Naive_Net']]],
+  ['backward_5fprop_9',['backward_prop',['../classmtpk_1_1NaiveNet.html#a17e3858224c9c6873cb396c2c855d253',1,'mtpk::NaiveNet']]],
   ['basics_10',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk']]],
   ['bayes_5fclf_11',['bayes_clf',['../classbayes__clf.html',1,'']]],
   ['bayes_5fclf_2ehpp_12',['bayes_clf.hpp',['../bayes__clf_8hpp.html',1,'']]],

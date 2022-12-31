@@ -71,39 +71,33 @@ $(function() {
 <div class="title">deriv.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="deriv_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * definitions for derivative operations operations </span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef DERIV_HPP</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define DERIV_HPP</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classcalculus.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcalculus.html">calculus</a> {</div>
+<a href="deriv_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef DERIV_HPP</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define DERIV_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="comment">/* finding coeffs and exponents of the function */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classcalculus.html#a04827e15bb0302f9e779e5b3c01c6399">derivative_term</a>(std::string pTerm, <span class="keywordtype">long</span> <span class="keywordtype">long</span> val);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="comment">//long long rm_deriv_term(std::string&amp; poly, long long val);</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">/* finding the derivative of a function with x = to a certain value */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classcalculus.html#aad5ef27ed419c445a631524fc1aa8127">deriv_at</a>(std::string&amp; poly, <span class="keywordtype">int</span> val);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">/* </span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">         * calculate the derivative of a given polynomial, returning the </span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">         * derivative as a string</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string <a class="code" href="classcalculus.html#add2ff67733292a5fa3a72f81c170205c">deriv</a>(std::string&amp; poly);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classmtpk_1_1Calculus.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Calculus.html">Calculus</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classmtpk_1_1Calculus.html#a6d927409f1f558e7a7138e51ba9e43e2">derivative_term</a>(std::string p_term, <span class="keywordtype">long</span> <span class="keywordtype">long</span> val);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="ttc" id="aclasscalculus_html"><div class="ttname"><a href="classcalculus.html">calculus</a></div><div class="ttdef"><b>Definition:</b> <a href="deriv_8hpp_source.html#l00010">deriv.hpp:10</a></div></div>
-<div class="ttc" id="aclasscalculus_html_a04827e15bb0302f9e779e5b3c01c6399"><div class="ttname"><a href="classcalculus.html#a04827e15bb0302f9e779e5b3c01c6399">calculus::derivative_term</a></div><div class="ttdeci">long long derivative_term(std::string pTerm, long long val)</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00039">deriv.cpp:39</a></div></div>
-<div class="ttc" id="aclasscalculus_html_aad5ef27ed419c445a631524fc1aa8127"><div class="ttname"><a href="classcalculus.html#aad5ef27ed419c445a631524fc1aa8127">calculus::deriv_at</a></div><div class="ttdeci">long long deriv_at(std::string &amp;poly, int val)</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00071">deriv.cpp:71</a></div></div>
-<div class="ttc" id="aclasscalculus_html_add2ff67733292a5fa3a72f81c170205c"><div class="ttname"><a href="classcalculus.html#add2ff67733292a5fa3a72f81c170205c">calculus::deriv</a></div><div class="ttdeci">std::string deriv(std::string &amp;poly)</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00093">deriv.cpp:93</a></div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code" href="classmtpk_1_1Calculus.html#a84a3c7882f79d4d2b06ca33dbecfbff4">deriv_at</a>(std::string&amp; poly, <span class="keywordtype">int</span> val);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::string <a class="code" href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">deriv</a>(std::string&amp; poly);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="ttc" id="aclassmtpk_1_1Calculus_html"><div class="ttname"><a href="classmtpk_1_1Calculus.html">mtpk::Calculus</a></div><div class="ttdoc">Calculus Class with methods pertaining to basic operations.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8hpp_source.html#l00017">deriv.hpp:17</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Calculus_html_a47c9d1bc11315662c6f9e1183f5ec7ee"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">mtpk::Calculus::deriv</a></div><div class="ttdeci">std::string deriv(std::string &amp;poly)</div><div class="ttdoc">Calculate the derivative of a function, not solving for x.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00093">deriv.cpp:93</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Calculus_html_a6d927409f1f558e7a7138e51ba9e43e2"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a6d927409f1f558e7a7138e51ba9e43e2">mtpk::Calculus::derivative_term</a></div><div class="ttdeci">long long derivative_term(std::string p_term, long long val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00039">deriv.cpp:39</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Calculus_html_a84a3c7882f79d4d2b06ca33dbecfbff4"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a84a3c7882f79d4d2b06ca33dbecfbff4">mtpk::Calculus::deriv_at</a></div><div class="ttdeci">long long deriv_at(std::string &amp;poly, int val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00071">deriv.cpp:71</a></div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00018">arith.hpp:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

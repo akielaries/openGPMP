@@ -7,7 +7,7 @@ var searchData=
   ['torus_2ecpp_211',['torus.cpp',['../torus_8cpp.html',1,'']]],
   ['torus_5fanimated_2ecpp_212',['torus_animated.cpp',['../torus__animated_8cpp.html',1,'']]],
   ['trad_5fswap_213',['trad_swap',['../classRC5.html#a141c61c2a2bb74853be1e2db177e015e',1,'RC5::trad_swap()'],['../classRC4.html#a9eed557512a32f5eaf97f65cd31cabd1',1,'RC4::trad_swap()']]],
-  ['train_214',['train',['../classmtpk_1_1Naive__Net.html#aa5257017b699184184a1d4cced62a1a1',1,'mtpk::Naive_Net::train()'],['../classMLP.html#aa2451ae9f546b204252bbc99f1dd8071',1,'MLP::train()']]],
+  ['train_214',['train',['../classmtpk_1_1NaiveNet.html#aafffd50093040c64ca5f01801e43d5ae',1,'mtpk::NaiveNet::train()'],['../classMLP.html#aa2451ae9f546b204252bbc99f1dd8071',1,'MLP::train()']]],
   ['transformcharacteristics_215',['transformCharacteristics',['../classCompany.html#affde01a77ead56d1e789565eeb487676',1,'Company']]],
   ['transpose_216',['transpose',['../classmtpk_1_1Matrices.html#a16029f401b9fa1c6692398f9aeb44e4c',1,'mtpk::Matrices']]],
   ['turnover_217',['turnover',['../classCompany.html#a54429f45ecfb26672650fc4e4017570e',1,'Company']]]

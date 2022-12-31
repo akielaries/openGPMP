@@ -96,15 +96,20 @@ $(function() {
 <div class="ttc" id="aclassCipher_html_a6e954be6a2630d25862f7aa62495642d"><div class="ttname"><a href="classCipher.html#a6e954be6a2630d25862f7aa62495642d">Cipher::C_cipher</a></div><div class="ttdeci">std::string C_cipher(std::string plaintext, int key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00013">cipher.cpp:13</a></div></div>
 <div class="ttc" id="aclassCipher_html_a6f3a0e66584c1a7193a84dab0bf6d609"><div class="ttname"><a href="classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609">Cipher::KC_encode</a></div><div class="ttdeci">std::string KC_encode(std::string key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00031">cipher.cpp:31</a></div></div>
 <div class="ttc" id="aclassCipher_html_a831912aca3c6b8e7c4444a30bf5772f4"><div class="ttname"><a href="classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4">Cipher::KC_cipher</a></div><div class="ttdeci">std::string KC_cipher(std::string plaintext, std::string encoded_text)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00066">cipher.cpp:66</a></div></div>
-</div><!-- fragment --><p> A Python example showing the same functionalities. </p><div class="fragment"><div class="line">#!/usr/bin/python3.10</div>
+</div><!-- fragment --><p>A Python example showing the same functionalities.</p>
+<div class="fragment"><div class="line">#!/usr/bin/python3.10</div>
 <div class="line">from openMTPK import Cipher</div>
+<div class="line"> </div>
 <div class="line">c = Cipher()</div>
 <div class="line">cipertext_0 = c.C_cipher(&#39;Plaintext&#39;, 5)</div>
 <div class="line">print(ciphertext_0)</div>
+<div class="line"> </div>
 <div class="line">ciphertext_1 = c.C_cipher(&#39;ATTACKATONCE&#39;, 4)</div>
 <div class="line">print(ciphertext_1)</div>
+<div class="line"> </div>
 <div class="line">text = &quot;Password&quot;</div>
 <div class="line">shift = &quot;Computer&quot;</div>
+<div class="line"> </div>
 <div class="line">encoded_text = c.KC_encode(shift);</div>
 <div class="line">hashtext = c.KC_cipher(text, encoded_text);</div>
 <div class="line">print(hashtext)</div>

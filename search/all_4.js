@@ -4,7 +4,7 @@ var searchData=
   ['err_65',['err',['../structneuron.html#ad79332397cf2c367cd6d421bfe8e2c1d',1,'neuron']]],
   ['error_5fin_66',['error_in',['../classregression.html#a8a87d10ce100ec40f1560364a77c1a9c',1,'regression']]],
   ['error_5fsquare_67',['error_square',['../classregression.html#a25c029fa58cf84649d45bc09c3597e64',1,'regression']]],
-  ['errors_68',['errors',['../classmtpk_1_1Naive__Net.html#aa5260dc26ff9ab604ea29ac06014fba9',1,'mtpk::Naive_Net']]],
+  ['errors_68',['errors',['../classmtpk_1_1NaiveNet.html#aee1f88544b22a04ff741ea3e94a2d352',1,'mtpk::NaiveNet']]],
   ['etf_69',['ETF',['../classPrimality.html#a334ba4925bdd37b5f6dfea94465afb1b',1,'Primality']]],
   ['euclideandistance_70',['euclideanDistance',['../k-NN_8h.html#a216eb8e0e43db49b56551d8df0c9d000',1,'euclideanDistance(Company &amp;lhs, Company &amp;test):&#160;k-NN.cpp'],['../k-NN_8cpp.html#a216eb8e0e43db49b56551d8df0c9d000',1,'euclideanDistance(Company &amp;lhs, Company &amp;test):&#160;k-NN.cpp']]],
   ['evaluate_71',['evaluate',['../classMLP.html#ad842ae1e83ed92230cb99a1de81ad976',1,'MLP']]],

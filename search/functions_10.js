@@ -5,7 +5,7 @@ var searchData=
   ['test_5fcase_397',['TEST_CASE',['../k-foldCV_8cpp.html#a0082dfdaa822ecb188be28ffccbf75ba',1,'TEST_CASE(&quot;KF_CV-testSmallSample10Fold&quot;):&#160;k-foldCV.cpp'],['../k-foldCV_8cpp.html#a512be6fe9ffcaf26f34b10cef455b461',1,'TEST_CASE(&quot;KF_CV-testSmallSample5Fold&quot;):&#160;k-foldCV.cpp'],['../k-foldCV_8cpp.html#a11a773177a8c1a7d6ed364feb34f55b9',1,'TEST_CASE(&quot;KF_CV-testLargeSample10Fold&quot;):&#160;k-foldCV.cpp'],['../k-foldCV_8cpp.html#a30992701a37e72ffb3f1892840172303',1,'TEST_CASE(&quot;KFCV-testLargeSample5Fold&quot;):&#160;k-foldCV.cpp']]],
   ['timer_398',['timer',['../torus__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3',1,'torus_animated.cpp']]],
   ['trad_5fswap_399',['trad_swap',['../classRC4.html#a9eed557512a32f5eaf97f65cd31cabd1',1,'RC4::trad_swap()'],['../classRC5.html#a141c61c2a2bb74853be1e2db177e015e',1,'RC5::trad_swap()']]],
-  ['train_400',['train',['../classMLP.html#aa2451ae9f546b204252bbc99f1dd8071',1,'MLP::train()'],['../classmtpk_1_1Naive__Net.html#aa5257017b699184184a1d4cced62a1a1',1,'mtpk::Naive_Net::train()']]],
+  ['train_400',['train',['../classMLP.html#aa2451ae9f546b204252bbc99f1dd8071',1,'MLP::train()'],['../classmtpk_1_1NaiveNet.html#aafffd50093040c64ca5f01801e43d5ae',1,'mtpk::NaiveNet::train()']]],
   ['transformcharacteristics_401',['transformCharacteristics',['../classCompany.html#affde01a77ead56d1e789565eeb487676',1,'Company']]],
   ['transpose_402',['transpose',['../classmtpk_1_1Matrices.html#a16029f401b9fa1c6692398f9aeb44e4c',1,'mtpk::Matrices']]]
 ];

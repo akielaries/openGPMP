@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cache_5flayers_412',['cache_layers',['../classmtpk_1_1Naive__Net.html#a336eb047e406a60fc47427e20a744e36',1,'mtpk::Naive_Net']]],
+  ['cache_5flayers_412',['cache_layers',['../classmtpk_1_1NaiveNet.html#a616122707e97a97f6877f53ffbec1a4a',1,'mtpk::NaiveNet']]],
   ['characteristics_413',['characteristics',['../classCompany.html#a2960df5751351480f6818d3973f77e5b',1,'Company']]],
   ['class_5fprob_414',['class_prob',['../structsummary.html#a37f7b8afe3d9b1e8aa2dff9c1b23a879',1,'summary']]],
   ['coeff_415',['coeff',['../classregression.html#aa2129c50634e185ee8790cd29dd7d499',1,'regression']]],

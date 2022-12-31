@@ -78,14 +78,14 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf">    7</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf">mtpk::Basics::greatest_power</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> p) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> x = 0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> result = 0;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// Calculate x = n/p + n/(p^2) + n/(p^3) + ....</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">while</span> (n) {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        n /= p;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        x += n;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        result += n;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
@@ -99,8 +99,8 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> op_gcd(y, x % y);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_a8bce04d60584754bd3582ccc00be7eaf"><div class="ttname"><a href="classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf">mtpk::Basics::greatest_power</a></div><div class="ttdeci">int greatest_power(int n, int p)</div><div class="ttdoc">Find greatest power.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00007">arith.cpp:7</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_aea4f43ee216de88e00d487a4598fcea4"><div class="ttname"><a href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int op_gcd(int x, int y)</div><div class="ttdoc">Find Greatest Common Divisor.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00018">arith.cpp:18</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Basics_html_a8bce04d60584754bd3582ccc00be7eaf"><div class="ttname"><a href="classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf">mtpk::Basics::greatest_power</a></div><div class="ttdeci">int greatest_power(int n, int p)</div><div class="ttdoc">Find greatest power of 2 itegers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00007">arith.cpp:7</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Basics_html_aea4f43ee216de88e00d487a4598fcea4"><div class="ttname"><a href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int op_gcd(int x, int y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00018">arith.cpp:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

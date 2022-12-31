@@ -1,10 +1,10 @@
 var searchData=
 [
   ['c_5fcipher_18',['C_cipher',['../classCipher.html#a6e954be6a2630d25862f7aa62495642d',1,'Cipher']]],
-  ['cache_5flayers_19',['cache_layers',['../classmtpk_1_1Naive__Net.html#a336eb047e406a60fc47427e20a744e36',1,'mtpk::Naive_Net']]],
+  ['cache_5flayers_19',['cache_layers',['../classmtpk_1_1NaiveNet.html#a616122707e97a97f6877f53ffbec1a4a',1,'mtpk::NaiveNet']]],
   ['calculate_5fcoeffecient_20',['calculate_coeffecient',['../classregression.html#ac18919b7d89fb22ee48de5e1ff3a804e',1,'regression']]],
   ['calculate_5fconstant_21',['calculate_constant',['../classregression.html#a0906c6b326cde7d4b2ceef59a5a62af3',1,'regression']]],
-  ['calculus_22',['calculus',['../classcalculus.html',1,'']]],
+  ['calculus_22',['Calculus',['../classmtpk_1_1Calculus.html',1,'mtpk']]],
   ['carmichael_5fnum_23',['carmichael_num',['../classPrimality.html#aa37d71124bce59af692d285d7c370983',1,'Primality']]],
   ['characteristics_24',['characteristics',['../classCompany.html#a2960df5751351480f6818d3973f77e5b',1,'Company']]],
   ['choice_25',['choice',['../classKohonen__network.html#a1409309eef5a6cd5b25b20aba226e765',1,'Kohonen_network']]],
