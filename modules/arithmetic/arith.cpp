@@ -5,14 +5,14 @@
     
 
 int mtpk::Basics::greatest_power(int n, int p) {
-    int x = 0;
+    int result = 0;
 
     // Calculate x = n/p + n/(p^2) + n/(p^3) + ....
     while (n) {
         n /= p;
-        x += n;
+        result += n;
     }
-    return x;
+    return result;
 }
 
 int mtpk::Basics::op_gcd(int x, int y) {

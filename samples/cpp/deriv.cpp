@@ -25,7 +25,7 @@ int main() {
     std::cout << "DERIVATIVE EXAMPLE\n\n";
 
     // declare calculus class obj
-    calculus calc;
+    mtpk::Calculus calc;
 
     // we can declare our equation as a string for ease of use
     std::string st0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";

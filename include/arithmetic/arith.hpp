@@ -12,7 +12,11 @@
 #include <algorithm>
 
 
+/**
+ * @brief The core openMTPK namespace
+ */
 namespace mtpk {
+
 /**
  * @brief Arithmetic Template Class. Each method is variadic taking 'n' params.
  */
@@ -21,7 +25,9 @@ class Arith {
     public:
         /**
          * @brief Addition method
+         * 
          * @param 'n' addends 
+         * 
          * @return sum
          */
         template<typename T>
@@ -35,8 +41,10 @@ class Arith {
 
         /**
          * @brief Subtraction method
+         * 
          * @param minuend
          * @param 'n' subtrahends
+         * 
          * @return difference
          */
         template<typename X>
@@ -50,7 +58,9 @@ class Arith {
 
         /**
          * @brief Multiplication method
+         * 
          * @param 'n' factors
+         * 
          * @return product
          */
         template<typename W>
@@ -64,8 +74,10 @@ class Arith {
 
         /**
          * @brief Exponentiation method
+         * 
          * @param base
          * @param 'n' powers
+         * 
          * @return product
          */
         template<typename Z>
@@ -79,26 +91,32 @@ class Arith {
 };
 
 /**
- * @brief Arithmetic-based basics Class.
+ * @brief Arithmetic Basics Class based on Arithmetic operations
  */
 class Basics {
 
     public:
         /**
-         * @brief Find greatest power
-         * @param n: (int)
-         * @param p: (int)
-         * @return result: (int)
+         * @brief Find greatest power of 2 itegers
+         * 
+         * @param n : integer 1
+         * @param p : integer 2
+         * 
+         * @return result : (int)
          */
         int greatest_power(int n, int p);
+
         /**
-         * @brief Find Greatest Common Divisor
-         * @param x: (int)
-         * @param y: (int)
-         * @return result: (int)
+         * @brief Find Greatest Common Divisor of 2 integers
+         * 
+         * @param x : integer 1
+         * @param y : integer 2
+         * 
+         * @return result : (int)
          */
         int op_gcd(int x, int y);
 };
+
 } // namespace
 
 #endif
