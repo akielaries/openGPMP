@@ -1,5 +1,7 @@
-/*
- * definitions for derivative operations operations 
+/** 
+ * @file
+ *
+ * Definitions for derivative operations
  */
 
 #ifndef DERIV_HPP
@@ -7,23 +9,46 @@
 #include <string>
 
 
-class calculus {
+namespace mtpk {
+
+/**
+ * Calculus Class with methods pertaining to basic operations.
+ */
+class Calculus {
 
     public:
-        /* finding coeffs and exponents of the function */
-        long long derivative_term(std::string pTerm, long long val);
-        //long long rm_deriv_term(std::string& poly, long long val);
+        /**
+         * @brief Find the coeffecients and exponents of a polynomial 
+         * 
+         * @param[in] p_term : Coeffecients of the polynomial (string)
+         * @param[in] val : 'x' term to find from given polynomial 
+         * (long long int)
+         *
+         * @return result : formatted coeffecients + exponents
+         */
+        long long derivative_term(std::string p_term, long long val);
 
-        /* finding the derivative of a function with x = to a certain value */
+        /**
+         * @brief Find the derivative of a function with x = val
+         *
+         * @param[in] poly : polynomial (string)
+         * @param[in] val : value to solve for (int)
+         *
+         * @return result : result of the solved x
+         */
         long long deriv_at(std::string& poly, int val);
         
-        /* 
-         * calculate the derivative of a given polynomial, returning the 
-         * derivative as a string
+        /**
+         * @brief Calculate the derivative of a function, not solving for x
+         * 
+         * @param[in] poly : polynomial (string)
+         *
+         * @returns result : derived function (string) 
          */
         std::string deriv(std::string& poly);
-
 };
+
+} // namespace
 
 #endif
 

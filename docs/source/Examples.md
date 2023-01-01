@@ -27,17 +27,23 @@ int main() {
     return 0;
 }
 ```
+
 A Python example showing the same functionalities.
+
 ```python
 #!/usr/bin/python3.10
 from openMTPK import Cipher
+
 c = Cipher()
 cipertext_0 = c.C_cipher('Plaintext', 5)
 print(ciphertext_0)
+
 ciphertext_1 = c.C_cipher('ATTACKATONCE', 4)
 print(ciphertext_1)
+
 text = "Password"
 shift = "Computer"
+
 encoded_text = c.KC_encode(shift);
 hashtext = c.KC_cipher(text, encoded_text);
 print(hashtext)

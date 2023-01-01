@@ -15,10 +15,10 @@
 
 // declare Basics and Primality class objects
 mtpk::Basics ba;
-Primality prim;
+mtpk::Primality prim;
 
 
-long long int Primality::mod_pow(long long int base, 
+long long int mtpk::Primality::mod_pow(long long int base, 
         long long int exponent,
         long long int mod) {
 
@@ -36,7 +36,7 @@ long long int Primality::mod_pow(long long int base,
     return x;
 }
 
-bool Primality::is_prime(int n) {
+bool mtpk::Primality::is_prime(int n) {
     if (n <= 1)
         return false;
  
@@ -51,21 +51,21 @@ bool Primality::is_prime(int n) {
 /*
  * determining if a given number is likely to be prime
  */
-bool Primality::compute_miller_rabin(int d, int n) {
+bool mtpk::Primality::compute_miller_rabin(int d, int n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n > 4
     int a = 2 + rand() % (n - 4);
  
     // Compute a^d % n
     int x = mod_pow(a, d, n);
  
-    if (x == 1  || x == n-1)
+    if (x == 1  || x == n - 1)
        return true;
  
     // Keep squaring x while one of the following doesn't
     // happen
-    // (i)   d does not reach n-1
-    // (ii)  (x^2) % n is not 1
-    // (iii) (x^2) % n is not n-1
+    // (I)   d does not reach n-1
+    // (II)  (x^2) % n is not 1
+    // (III) (x^2) % n is not n-1
     while (d != n - 1) {
         x = (x * x) % n;
         d *= 2;
@@ -80,7 +80,7 @@ bool Primality::compute_miller_rabin(int d, int n) {
     return false;
 }
 
-bool Primality::miller_rabin_prime(int n, int iters) {
+bool mtpk::Primality::miller_rabin_prime(int n, int iters) {
     /*
      * this method will return true if n is prime, iters will determine
      * accuracy
@@ -107,7 +107,7 @@ bool Primality::miller_rabin_prime(int n, int iters) {
     return true;
 }
 
-void Primality::miller_rabin(int iters, int min_val, int max_val) {
+void mtpk::Primality::miller_rabin(int iters, int min_val, int max_val) {
     std::cout << "Primes between " << min_val << 
                 " and " << max_val << std::endl;
     //int d = iters - 1;
@@ -127,7 +127,7 @@ void Primality::miller_rabin(int iters, int min_val, int max_val) {
 /*
  * another algorithm capable of finding primes
  */
-int Primality::jacobian_number(long long a, long long n) {
+int mtpk::Primality::jacobian_number(long long a, long long n) {
     if (!a)
         return 0;// (0/n) = 0
  
@@ -175,7 +175,7 @@ int Primality::jacobian_number(long long a, long long n) {
  * 
  * a^(p-1)/2 = (a/p) (mod p)
  */
-bool Primality::solovoy_strassen(long long p, int iters) {
+bool mtpk::Primality::solovoy_strassen(long long p, int iters) {
     if (p < 2)
         return false;
     
@@ -199,7 +199,7 @@ bool Primality::solovoy_strassen(long long p, int iters) {
  * are composite integers satisfying the congruence forumla below
  * b^n - 1 = b (mod n)
  */
-bool Primality::carmichael_num(int n) {
+bool mtpk::Primality::carmichael_num(int n) {
     for (int b = 2; b < n; b++) {
         // If "b" is relatively prime to n
         if (ba.op_gcd(b, n) == 1)
@@ -215,7 +215,7 @@ bool Primality::carmichael_num(int n) {
  * logical arithmetic operations, the greek algorithm sieve of Eratosthenes
  * is able to capture all prime numbers to any given limit
  */
-void Primality::sieve_of_eratosthenes(int n) {
+void mtpk::Primality::sieve_of_eratosthenes(int n) {
     // Create a boolean array "prime[0..n]" and initialize
     // all entries it as true. A value in prime[i] will
     // finally be false if i is Not a prime, else true.
@@ -255,7 +255,7 @@ void Primality::sieve_of_eratosthenes(int n) {
  * x_3 = 677
  * x_4 = 598        gcd(698 - 26, 1111) = 11
  */
-long long int Primality::pollard_rho(long long int n) {
+long long int mtpk::Primality::pollard_rho(long long int n) {
     /* initialize random seed */
     srand (time(NULL));
  
@@ -316,7 +316,7 @@ long long int Primality::pollard_rho(long long int n) {
  *          Φ(4) = 2
  *          Φ(5) = 4
  */
-int Primality::ETF(unsigned int n) {
+int mtpk::Primality::ETF(unsigned int n) {
     unsigned int result = 1;
     
     for (int index = 2; unsigned(index) < n; index++) {
