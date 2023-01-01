@@ -2,7 +2,7 @@
 from openMTPK import Cipher
 
 
-    def main():
+def main():
     print("Using the Number Theory module in Python")
     print("Methods of the Cipher class:\n\
         - C_cipher(plaintext, key)\n\
@@ -22,11 +22,10 @@ from openMTPK import Cipher
 
     text = "Password"
     shift = "Computer"
-    encoded_text = c.KC_encode(shift);
-    hashtext = c.KC_cipher(text, encoded_text);
+    encoded_text = c.KC_encode(shift)
+    hashtext = c.KC_cipher(text, encoded_text)
     print(hashtext)
 
 
 if __name__ == '__main__':
     main()
-

@@ -2,7 +2,7 @@
 from openMTPK import RC4
 
 
-    def main():
+def main():
     print("Using the Number Theory module in Python")
     print("Methods of the RC4 class:\n\
         - byte_swap(a, b)\n\
@@ -20,10 +20,8 @@ from openMTPK import RC4
         - compute(key, plaintext, hashtext, swap_type)\n\
             : driver for RC4 algorithm\n")
 
-
     r = RC4()
 
 
 if __name__ == '__main__':
     main()
-

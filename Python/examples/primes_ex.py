@@ -3,6 +3,8 @@
 from ..lib import openMTPK
 
 #from openMTPK import Primality
+
+
 def main():
     print("Using the Number Theory module in Python")
     print("Methods of Primality class\n\
@@ -37,6 +39,6 @@ def main():
     print(ss_0)
     print(ss_1)
 
+
 if __name__ == '__main__':
     main()
-

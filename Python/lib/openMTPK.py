@@ -16,12 +16,14 @@ try:
 except ImportError:
     import __builtin__
 
+
 def _swig_repr(self):
     try:
         strthis = "proxy of " + self.this.__repr__()
     except __builtin__.Exception:
         strthis = ""
-    return "<%s.%s; %s >" % (self.__class__.__module__, self.__class__.__name__, strthis,)
+    return "<%s.%s; %s >" % (self.__class__.__module__,
+                             self.__class__.__name__, strthis,)
 
 
 def _swig_setattr_nondynamic_instance_variable(set):
@@ -33,7 +35,9 @@ def _swig_setattr_nondynamic_instance_variable(set):
         elif hasattr(self, name) and isinstance(getattr(type(self), name), property):
             set(self, name, value)
         else:
-            raise AttributeError("You cannot add instance attributes to %s" % self)
+            raise AttributeError(
+                "You cannot add instance attributes to %s" %
+                self)
     return set_instance_attr
 
 
@@ -59,7 +63,11 @@ class _SwigNonDynamicMeta(type):
 
 
 class Primality(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def is_prime(self, n):
@@ -99,12 +107,19 @@ class Primality(object):
         _openMTPK.Primality_swiginit(self, _openMTPK.new_Primality())
     __swig_destroy__ = _openMTPK.delete_Primality
 
+
 # Register Primality in _openMTPK:
 _openMTPK.Primality_swigregister(Primality)
 BITS = _openMTPK.BITS
 BYTE_LIMIT = _openMTPK.BYTE_LIMIT
+
+
 class RC4(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def byte_swap(self, a, b):
@@ -132,10 +147,17 @@ class RC4(object):
         _openMTPK.RC4_swiginit(self, _openMTPK.new_RC4())
     __swig_destroy__ = _openMTPK.delete_RC4
 
+
 # Register RC4 in _openMTPK:
 _openMTPK.RC4_swigregister(RC4)
+
+
 class Cipher(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def C_cipher(self, plaintext, key):
@@ -151,6 +173,6 @@ class Cipher(object):
         _openMTPK.Cipher_swiginit(self, _openMTPK.new_Cipher())
     __swig_destroy__ = _openMTPK.delete_Cipher
 
+
 # Register Cipher in _openMTPK:
 _openMTPK.Cipher_swigregister(Cipher)
-
