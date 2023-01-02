@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rowvector_503',['RowVector',['../naive__network_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_network.hpp']]]
+  ['rowvector_517',['RowVector',['../naive__network_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_network.hpp']]]
 ];
