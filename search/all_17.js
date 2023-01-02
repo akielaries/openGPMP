@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emlp_236',['~MLP',['../classMLP.html#a56225921399a54b0741e3d0778cf3026',1,'MLP']]]
+  ['zeros_255',['zeros',['../structmtpk_1_1mtx.html#a1d0a2cdd2e9d7a09de5c0fda0cc32bca',1,'mtpk::mtx']]]
 ];

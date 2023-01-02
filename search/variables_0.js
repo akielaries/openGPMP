@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ba_414',['ba',['../primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6',1,'primes.cpp']]]
+  ['activations_444',['activations',['../classmtpk_1_1mlp_1_1SecondaryNet.html#ac3a52bc05feda917b3a3c60385256e19',1,'mtpk::mlp::SecondaryNet']]]
 ];

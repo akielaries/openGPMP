@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxcount_473',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]]
+  ['classification_508',['CLASSIFICATION',['../ml_8hpp.html#a669750181416ae68a4b4684e5006f733',1,'ml.hpp']]]
 ];

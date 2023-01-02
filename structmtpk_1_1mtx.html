@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: layer Struct Reference</title>
+<title>openMTPK: mtpk::mtx&lt; T &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,63 +61,79 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacemtpk.html">mtpk</a></li><li class="navelem"><a class="el" href="structmtpk_1_1mtx.html">mtx</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structlayer-members.html">List of all members</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="structmtpk_1_1mtx-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">layer Struct Reference</div>  </div>
+<div class="title">mtpk::mtx&lt; T &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="lao_8hpp_source.html">lao.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a910bb3b94d8862da72b14f4719e834f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlayer.html#a910bb3b94d8862da72b14f4719e834f9">num_neurons</a></td></tr>
-<tr class="separator:a910bb3b94d8862da72b14f4719e834f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cc427923d4fa08f4e2bb7958569a66d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structneuron.html">neuron</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlayer.html#a4cc427923d4fa08f4e2bb7958569a66d">neuron_ptr</a></td></tr>
-<tr class="separator:a4cc427923d4fa08f4e2bb7958569a66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a1d0a2cdd2e9d7a09de5c0fda0cc32bca"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtpk_1_1Matrix.html">Matrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtpk_1_1mtx.html#a1d0a2cdd2e9d7a09de5c0fda0cc32bca">zeros</a> (size_t rows, size_t cols)</td></tr>
+<tr class="separator:a1d0a2cdd2e9d7a09de5c0fda0cc32bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00030">30</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4cc427923d4fa08f4e2bb7958569a66d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cc427923d4fa08f4e2bb7958569a66d">&#9670;&nbsp;</a></span>neuron_ptr</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+struct mtpk::mtx&lt; T &gt;</h3>
+
+
+<p class="definition">Definition at line <a class="el" href="lao_8hpp_source.html#l00387">387</a> of file <a class="el" href="lao_8hpp_source.html">lao.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1d0a2cdd2e9d7a09de5c0fda0cc32bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0a2cdd2e9d7a09de5c0fda0cc32bca">&#9670;&nbsp;</a></span>zeros()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structneuron.html">neuron</a>* layer::neuron_ptr</td>
+          <td class="memname">static <a class="el" href="classmtpk_1_1Matrix.html">Matrix</a>&lt;T&gt; <a class="el" href="structmtpk_1_1mtx.html">mtpk::mtx</a>&lt; T &gt;::zeros </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00032">32</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a910bb3b94d8862da72b14f4719e834f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a910bb3b94d8862da72b14f4719e834f9">&#9670;&nbsp;</a></span>num_neurons</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">int layer::num_neurons</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00031">31</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="lao_8hpp_source.html#l00388">388</a> of file <a class="el" href="lao_8hpp_source.html">lao.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                                     {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/ml/<a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a></li>
+<li>include/linalg/<a class="el" href="lao_8hpp_source.html">lao.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

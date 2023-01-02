@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['op_5fgcd_362',['op_gcd',['../classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4',1,'mtpk::Basics']]],
-  ['operator_21_3d_363',['operator!=',['../classmtpk_1_1Matrices.html#af8484da256495fa9af13a4458a5659fe',1,'mtpk::Matrices']]],
-  ['operator_28_29_364',['operator()',['../classmtpk_1_1Matrices.html#a96178060977252c37d6c273158c7201c',1,'mtpk::Matrices']]],
-  ['operator_2b_365',['operator+',['../classmtpk_1_1Matrices.html#a9b59a5f66f4cff17b5c40a4d9b239607',1,'mtpk::Matrices']]],
-  ['operator_2d_366',['operator-',['../classmtpk_1_1Matrices.html#aa56356f61716a67eb1ed895dbd8d7bfb',1,'mtpk::Matrices::operator-()'],['../classmtpk_1_1Matrices.html#a9e3af9ad96511286cd9663562ffb931a',1,'mtpk::Matrices::operator-(Matrices &amp;target)']]],
-  ['operator_3d_3d_367',['operator==',['../classmtpk_1_1Matrices.html#a6755d3f6e27c4b978b3def21b2a89ecb',1,'mtpk::Matrices']]],
-  ['output_5ferr_368',['output_err',['../classMLP.html#ad180cd56224071695babaea9a4feddeb',1,'MLP']]]
+  ['op_5fgcd_388',['op_gcd',['../classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4',1,'mtpk::Basics']]],
+  ['operator_21_3d_389',['operator!=',['../classmtpk_1_1Matrix.html#affd9ce853d46e066ebf8576d6a28788c',1,'mtpk::Matrix']]],
+  ['operator_28_29_390',['operator()',['../classmtpk_1_1Matrix.html#ae2b6c5e45c1bb272e708e07a1124d26b',1,'mtpk::Matrix']]],
+  ['operator_2b_391',['operator+',['../classmtpk_1_1Matrix.html#a5008703f3d548d849a3a8c8d85627c71',1,'mtpk::Matrix']]],
+  ['operator_2d_392',['operator-',['../classmtpk_1_1Matrix.html#ae018657d5dee4e30284560326ca6eb78',1,'mtpk::Matrix::operator-()'],['../classmtpk_1_1Matrix.html#ae57fdc7f66576033b1fe78b3e0e39548',1,'mtpk::Matrix::operator-(Matrices &amp;target)']]],
+  ['operator_3d_3d_393',['operator==',['../classmtpk_1_1Matrix.html#a9ee014f432e95afc2ef79a8239db1167',1,'mtpk::Matrix']]],
+  ['output_5ferr_394',['output_err',['../classmtpk_1_1mlp_1_1PrimaryNet.html#a9856c8b53bc640704f7430dfa2537b47',1,'mtpk::mlp::PrimaryNet']]]
 ];

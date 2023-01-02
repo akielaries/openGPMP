@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unique_5flabel_459',['unique_label',['../classmtpk_1_1BayesClf.html#a9a25e8ce050c08a3d080fa5150df1f10',1,'mtpk::BayesClf']]]
+  ['turnover_492',['turnover',['../classCompany.html#a54429f45ecfb26672650fc4e4017570e',1,'Company']]]
 ];
