@@ -1,0 +1,47 @@
+name: Releasing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+
+jobs:
+  versioning_job:
+    runs-on: ubuntu-latest
+    name: RainMachine Parsers versioning
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: codfish/semantic-release-action@v2
+        id: semantic
+        with:
+          # specify default branches to add support for the `main` branch
+          # which semantic-release doesn't have as a default yet.
+          branches: |
+            [
+              '+([0-9])?(.{+([0-9]),x}).x',
+              'main',
+              'next',
+              'next-major',
+              {
+                name: 'beta',
+                prerelease: true
+              },
+              {
+                name: 'alpha',
+                prerelease: true
+              }
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: |
+          echo $RELEASE_VERSION
+          echo $RELEASE_MAJOR
+          echo $RELEASE_MINOR
+          echo $RELEASE_PATCH
+
