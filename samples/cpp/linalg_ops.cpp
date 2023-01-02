@@ -10,7 +10,8 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include <openMTPK/lao.hpp>
+#include <openMTPK/vectors.hpp>
+#include <openMTPK/matrix.hpp>
 
 
 int main() {
