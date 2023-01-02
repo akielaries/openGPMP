@@ -1,11 +1,22 @@
-/*
- * Multi-Layer Perceptron Neural Network
+/**
+ * @file
+ *
+ * Multi-Layer Perceptron Neural Networks containing a 
+ * Primary and Secondary network
  */
 #ifndef MLP_NETWORK_HPP
 #define MLP_NETWORK_HPP
 #include <vector>
 #include <stdio.h>
+#include "../linalg/lao.hpp"
 
+
+namespace mtpk {
+
+/**
+ * @brief openMTPK Multi-Layer Perceptron namespace
+ */
+namespace mlp {
 
 /*
  * TODO 
@@ -32,7 +43,11 @@ struct layer {
     neuron* neuron_ptr;
 };
 
-class MLP {
+
+/**
+ * @brief Primary Multi-Layer Perceptron Class
+ */
+class PrimaryNet {
     /* initialize random values for the network */
     void rand_init();
     /* check that random is an integer */
@@ -47,7 +62,7 @@ class MLP {
     double dMSE;
     double dMAE;
 
-    void weights_ran();
+    void weights_rank();
 
     void set_signal_in(double* input);
     void get_signal_out(double* output);
@@ -87,6 +102,49 @@ class MLP {
         void run(const char* fname, const int& maxiter);
 
 };
+
+/**
+ * @brief Secondary Multi-Layer Perceptron Class making use of 
+ * the Linear Algebra module
+ */
+template<typename T>
+class SecondaryNet {
+    public:
+        /**
+         * @brief Sigmoid activation function
+         *
+         * @param[in] x : (float)
+         */
+        inline float sigmoid(float x) {
+            return 1.0f / (1 + exp(-x));
+        }
+
+        /**
+         * @brief Sigmoid Derivative for backwards propogation
+         *
+         * @param[in] x : (float)
+         */
+        inline float sigmoid_deriv(float x) {
+            return (x * (1 - x));
+        }
+
+        std::vector<size_t> layer_units;
+        std::vector<Matrix<T>> bias_vectors;
+        std::vector<Matrix<T>> wt_matrices;
+        std::vector<Matrix<T>> activations;
+
+        float lr;
+
+        /**
+         * @brief Secondary Multi-Layer Perceptron Constructor
+         */
+
+
+};
+
+} // namespace mlp
+
+} // namespace mtpk
 
 #endif
 

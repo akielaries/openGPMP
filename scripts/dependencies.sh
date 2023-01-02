@@ -24,3 +24,12 @@ make
 # install
 sudo make install
 
+cd ~
+
+# install OpenCL dependencies
+sudo apt install opencl-headers ocl-icd-opencl-dev -y
+
+# install openMP
+sudo apt install libomp-dev
+
+

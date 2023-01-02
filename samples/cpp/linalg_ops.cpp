@@ -12,11 +12,13 @@
 #include <cassert>
 #include <openMTPK/lao.hpp>
 
+
 int main() {
     mtpk::Vectors f;
     std::cout << "VECTOR/MATRIX OPERATIONS EXAMPLE" << std::endl;
 
-    int x = f.add(1,3);
+    int x = f.add(1, 3);
+
     std::cout << "Sum = " << x << std::endl;
 
 

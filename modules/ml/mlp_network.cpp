@@ -25,7 +25,7 @@ double MLP::rand_real() {
     return ((double) rand() / RAND_MAX) * (hi - low) + low;
 }
 
-/* MLP CONTRUCTOR */
+/* MLP CONSTRUCTOR */
 MLP::MLP(int nl, int npl):num_layers(0), layer_ptr(0),
     dEta(0.25),
     dAlpha(0.9),

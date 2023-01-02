@@ -1,7 +1,7 @@
 /**
  * @file
  *
- * Definitions for the Naive Bayes Classifier Class
+ * Definitions for the Naive Bayes Classifier
  */
 #ifndef BAYES_CLF_HPP
 #define BAYES_CLF_HPP
@@ -20,7 +20,7 @@ typedef struct summary {
 } summary;
 
 /**
- * @brief Bayes Classified Class based on assumptions of independence
+ * @brief Bayes Classifier Class based on assumptions of independence
  */
 class BayesClf {
     private:
