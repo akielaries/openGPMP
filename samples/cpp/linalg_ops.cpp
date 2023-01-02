@@ -22,6 +22,13 @@ int main() {
     std::cout << "Sum = " << x << std::endl;
 
 
+    auto MTX = mtx<float>::randn(2, 2);
+    MTX.print_mtx();
+
+    (MTX-MTX).print_mtx();
+
+
+
     return 0;
 
 }

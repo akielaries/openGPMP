@@ -1,11 +1,11 @@
 /**
  * @ file
  *
- * Definitions for Matrix and Vector operations
+ * Definitions for Matrix and Scalar operations
  */
 
-#ifndef LAOPS_H
-#define LAOPS_H
+#ifndef MATRIX_HPP
+#define MATRIX_HPP
 
 #include <stdio.h>
 #include <vector>
@@ -20,29 +20,7 @@
 namespace mtpk {
 
 /**
- * @brief Operations related to Vectors and Scalars
- */
-class Vectors {
-    std::vector<int> x;
-    std::vector<int> y;
-
-
-    public:
-        /*
-         * vectors of the same dimension size are just scalars as they only 
-         * contain magnitude. vectors contain both magnitude + direction
-         */
-        // function to add two 1D vectors
-        // template <typename T>
-        //float scalar_add();
-        // function to subtract two 1D vectors
-        //float scalar_sub();
-        // function to multiply two 1D vectors
-        //float scalar_mult();
-        int add(int a, int b);
-};
-
-/**
+ * @class Matrix
  * @brief Matrix and Scalar operations
  */
 template<typename Type>
@@ -384,14 +362,59 @@ class Matrix {
 };
 
 template<typename T>
+/**
+ * @struct mtx
+ * @brief Matrix struct
+ */
 struct mtx {
+    /**
+     * @brief Matrix zeros method
+     */
     static Matrix<T> zeros(size_t rows, size_t cols) {
-        
+        Matrix<T> MTX{rows, cols};
+        // fill by index
+        MTX.fill_index(T(0));
+        return MTX;
+    }
+    
+    static Matrix<T> ones(size_t rows, size_t cols) {
+        Matrix<T> MTX{rows, cols};
+        MTX.fill_index(T(1));
+        return MTX;
+    }
+    
+    static Matrix<T> randn(size_t rows, size_t cols) {
+        Matrix<T> MTX{rows, cols};
+
+        std::random_device rd{};
+        std::mt19937 gen{rd()};
+        T n(MTX.num);
+        T stdev{1 / sqrt(n)};
+        std::normal_distribution<T> d{0, stdev};
+
+        for (size_t r = 0; r < rows; ++r) {
+            for (int c = 0; c < cols; ++c) {
+            MTX(r, c) = d(gen);
+            }
+        }
+        return MTX;
+    }
+    static Matrix<T> rand(size_t rows, size_t cols) {
+        Matrix<T> MTX{rows, cols};
+
+        std::random_device rd{};
+        std::mt19937 gen{rd()};
+        std::uniform_real_distribution<T> d{0, 1};
+
+        for (size_t r = 0; r < rows; ++r) {
+          for (int c = 0; c < cols; ++c) {
+            MTX(r, c) = d(gen);
+            }
+        }
+        return MTX;
     }
 
 };
-
-
 
 } // namespace 
 

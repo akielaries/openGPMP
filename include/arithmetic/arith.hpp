@@ -14,14 +14,20 @@
 
 
 /**
+ * @namespace mtpk
+ *
  * @brief The core openMTPK namespace
  *
- * @details This namespace wraps all classes and methods used within the library
+ * @details This namespace wraps all classes and methods used within the
+ * library
  */
 namespace mtpk {
 
 /**
- * Arithmetic Template Class. Each method is variadic taking 'n' params.
+ * @class Arith
+ * 
+ * @brief Arithmetic Template Class. Each method is variadic taking 'n' 
+ * params.
  */
 class Arith {
 
