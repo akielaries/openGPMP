@@ -20,6 +20,6 @@ var searchData=
   ['mouse_138',['mouse',['../torus__animated_8cpp.html#ac76a5d78172a826cd6ee9512b89a86c0',1,'torus_animated.cpp']]],
   ['mtpk_139',['mtpk',['../namespacemtpk.html',1,'']]],
   ['mtx_140',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]],
-  ['mult_141',['mult',['../classmtpk_1_1Matrix.html#acca1afde3a4ed8ac9ee746008ac1fc47',1,'mtpk::Matrix::mult()'],['../classmtpk_1_1Arith.html#a409a1df7f2bf049e15a98854f91c025d',1,'mtpk::Arith::mult(W w, Wv... wv)'],['../classmtpk_1_1Arith.html#a7f289a5972d9d7a0862b88228684738e',1,'mtpk::Arith::mult(W w)']]],
-  ['mult_5felem_142',['mult_elem',['../classmtpk_1_1Matrix.html#a30d9cb2a27c3e6955a2100af165fac8b',1,'mtpk::Matrix']]]
+  ['mult_141',['mult',['../classmtpk_1_1Matrix.html#aaf09c65a0c5214525caf887405a522fc',1,'mtpk::Matrix::mult()'],['../classmtpk_1_1Arith.html#a409a1df7f2bf049e15a98854f91c025d',1,'mtpk::Arith::mult(W w, Wv... wv)'],['../classmtpk_1_1Arith.html#a7f289a5972d9d7a0862b88228684738e',1,'mtpk::Arith::mult(W w)']]],
+  ['mult_5felem_142',['mult_elem',['../classmtpk_1_1Matrix.html#a49a39c9cf80d1a8f36c5c5f865c1682b',1,'mtpk::Matrix']]]
 ];

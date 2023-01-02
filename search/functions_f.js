@@ -14,6 +14,6 @@ var searchData=
   ['split_422',['split',['../classCSVReader.html#aa3f91c1fd40076a96ca0be593b9b59bc',1,'CSVReader']]],
   ['sqr_5ferr_423',['sqr_err',['../classmtpk_1_1Matrix.html#aa62b01721821d8c55e3f23a210d8e817',1,'mtpk::Matrix']]],
   ['store_5fhash_424',['store_hash',['../classRC4.html#a8925d178acbb55053cc58aa10206e135',1,'RC4']]],
-  ['sub_425',['sub',['../classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6',1,'mtpk::Arith::sub(X x)'],['../classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c',1,'mtpk::Arith::sub(X x, Xy... xy)'],['../classmtpk_1_1Matrix.html#a6845d016a01822955ae842fe89e9894b',1,'mtpk::Matrix::sub(Matrices &amp;target)']]],
+  ['sub_425',['sub',['../classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6',1,'mtpk::Arith::sub(X x)'],['../classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c',1,'mtpk::Arith::sub(X x, Xy... xy)'],['../classmtpk_1_1Matrix.html#ac1c5e89b18de38e09deb85e19deb074f',1,'mtpk::Matrix::sub(Matrix &amp;target)']]],
   ['sum_426',['sum',['../classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186',1,'mtpk::Matrix::sum()'],['../classmtpk_1_1Matrix.html#a91afb24f516534ae4c0510a8e6855a47',1,'mtpk::Matrix::sum(size_t dimension)']]]
 ];
