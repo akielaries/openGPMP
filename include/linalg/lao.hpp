@@ -90,7 +90,7 @@ class Matrix {
          *
          * @todo optimize this with threading
          */
-        Matrix mult(Matrices &target) {
+        Matrix mult(Matrix &target) {
             assert(cols == target.rows);
             Matrix res(rows, target.cols);
 
@@ -121,7 +121,7 @@ class Matrix {
         /*
          * Multiply by the element
          */
-        Matrix mult_elem(Matrices &target) {
+        Matrix mult_elem(Matrix &target) {
             assert(dim == target.dim);
             Matrix res((*this));
 
@@ -147,7 +147,7 @@ class Matrix {
         /*
          * Matrix Addition
          */
-        Matrix add(Matrices &target) {
+        Matrix add(Matrix &target) {
             assert(dim == target.dim);
             Matrix res(rows, target.cols);
 
@@ -158,7 +158,7 @@ class Matrix {
             }
             return res;
         }
-        Matrix operator+(Matrices &target) {
+        Matrix operator+(Matrix &target) {
             return add(target);   
         }
 
@@ -190,15 +190,15 @@ class Matrix {
         /*
          * Matrix subtraction
          */
-        Matrix sub(Matrices &target) {
+        Matrix sub(Matrix &target) {
             Matrix target_neg = -target;
             return add(target_neg);
         }
-        Matrix operator-(Matrices &target) {
+        Matrix operator-(Matrix &target) {
             return sub(target);
         }
 
-        Matrix<ushort> operator==(Matrices &target) {
+        Matrix<ushort> operator==(Matrix &target) {
             assert(dim == target.dim);
             Matrix<ushort> res(rows, cols);
 
@@ -213,7 +213,7 @@ class Matrix {
             return res;
         }
         
-        Matrix<ushort> operator!=(Matrices &target) {
+        Matrix<ushort> operator!=(Matrix &target) {
             return (!(*this)) == target;
         }
 
@@ -267,7 +267,7 @@ class Matrix {
          */
         Matrix sum(size_t dimension) {
             assert(0 <= dimension && dimension < 2);
-            auto res = (dimension = 0) ? Matrix{1, cols} : Matrices{rows, 1};
+            auto res = (dimension = 0) ? Matrix{1, cols} : Matrix{rows, 1};
 
             if (dimension == 0) {
                 for (size_t c = 0; c < cols; ++c) {
@@ -303,7 +303,7 @@ class Matrix {
         /*
          * Concatenate two given matrices
          */
-        Matrix concatenate(Matrices target, size_t dimension) {
+        Matrix concatenate(Matrix target, size_t dimension) {
             (dimension == 0) ? assert(rows == target.rows) : 
                                 assert(cols == target.cols);
 
