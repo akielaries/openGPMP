@@ -67,35 +67,34 @@ $(function() {
 <div class="title">Examples </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Example C++ driver file for running Caesar <a class="el" href="classCipher.html">Cipher</a> &amp; Mono-Alphabetic Substitution Keyword cipher: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="textblock"><p>Example C++ driver file for running Caesar <a class="el" href="classCipher.html">Cipher</a> &amp; Mono-Alphabetic Substitution Keyword cipher: </p><div class="fragment"><div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;openMTPK/cipher.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;openMTPK/number_theory.hpp&gt;</span></div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code" href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    <span class="comment">// declare CIPHER class obj</span></div>
-<div class="line">    <a class="code" href="classCipher.html">Cipher</a> cc;</div>
+<div class="line">    mtpk::Cipher cc;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">/* CAESAR CIPHER */</span></div>
 <div class="line">    std::string text0 = <span class="stringliteral">&quot;Plaintext&quot;</span>;</div>
 <div class="line">    <span class="keywordtype">int</span> shift_key_0 = 5;</div>
-<div class="line">    std::string hashtext_0 = cc.<a class="code" href="classCipher.html#a6e954be6a2630d25862f7aa62495642d">C_cipher</a>(text0, shift_key_0);</div>
+<div class="line">    std::string hashtext_0 = cc.C_cipher(text0, shift_key_0);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Hashtext0 = &quot;</span> &lt;&lt; hashtext_0 &lt;&lt; std::endl;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">/* TESTING MONOALPHABETIC SUBSTITUION KEYWORD CIPHER */</span></div>
 <div class="line">    std::string shift_key_2 = <span class="stringliteral">&quot;Computer&quot;</span>;</div>
 <div class="line">    std::string text2 = <span class="stringliteral">&quot;Password&quot;</span>;</div>
 <div class="line">    <span class="comment">// encode the plaintext</span></div>
-<div class="line">    std::string encoded_text = cc.<a class="code" href="classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609">KC_encode</a>(shift_key_2);</div>
+<div class="line">    std::string encoded_text = cc.KC_encode(shift_key_2);</div>
 <div class="line">    <span class="comment">// call the cipher function</span></div>
-<div class="line">    std::string hashtext_2 = cc.<a class="code" href="classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4">KC_cipher</a>(text2 , encoded_text);</div>
+<div class="line">    std::string hashtext_2 = cc.KC_cipher(text2 , encoded_text);</div>
 <div class="line">    </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Hashtext2 = &quot;</span> &lt;&lt; hashtext_2 &lt;&lt; std::endl;</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aMandelbrot_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="Mandelbrot_8cpp_source.html#l00078">Mandelbrot.cpp:78</a></div></div>
-<div class="ttc" id="aclassCipher_html"><div class="ttname"><a href="classCipher.html">Cipher</a></div><div class="ttdef"><b>Definition:</b> <a href="cipher_8hpp_source.html#l00014">cipher.hpp:14</a></div></div>
-<div class="ttc" id="aclassCipher_html_a6e954be6a2630d25862f7aa62495642d"><div class="ttname"><a href="classCipher.html#a6e954be6a2630d25862f7aa62495642d">Cipher::C_cipher</a></div><div class="ttdeci">std::string C_cipher(std::string plaintext, int key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00013">cipher.cpp:13</a></div></div>
-<div class="ttc" id="aclassCipher_html_a6f3a0e66584c1a7193a84dab0bf6d609"><div class="ttname"><a href="classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609">Cipher::KC_encode</a></div><div class="ttdeci">std::string KC_encode(std::string key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00031">cipher.cpp:31</a></div></div>
-<div class="ttc" id="aclassCipher_html_a831912aca3c6b8e7c4444a30bf5772f4"><div class="ttname"><a href="classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4">Cipher::KC_cipher</a></div><div class="ttdeci">std::string KC_cipher(std::string plaintext, std::string encoded_text)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00066">cipher.cpp:66</a></div></div>
 </div><!-- fragment --><p>A Python example showing the same functionalities.</p>
 <div class="fragment"><div class="line">#!/usr/bin/python3.10</div>
 <div class="line">from openMTPK import Cipher</div>
