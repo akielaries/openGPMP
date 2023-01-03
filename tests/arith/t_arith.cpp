@@ -1,7 +1,7 @@
 /*
  * Testing Arithmetic Operations
  */
-#include "../../include/arithmetic/arith.hpp"
+#include "../../include/arithmetic.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 
@@ -11,7 +11,7 @@ using ::testing::DoubleLE;
 
 
 namespace {
-    Arith ar;
+    mtpk::Arith ar;
 
     // test case, test name
     TEST(arith_test, add_positive) {
@@ -36,7 +36,7 @@ namespace {
 }
 
 namespace {
-    Basics ba;
+    mtpk::Basics ba;
     
     // greatest power
     TEST(basics, greatest_pow) {
@@ -46,11 +46,11 @@ namespace {
 
     // greatest common divisor
     TEST(basics, greatest_common_divisor) {
-        EXPECT_EQ(2, ba.rm_gcd(2, 4));
-        EXPECT_EQ(6, ba.rm_gcd(2198466, 96096));
-        EXPECT_EQ(11, ba.rm_gcd(66, 11));
-        EXPECT_EQ(8, ba.rm_gcd(232, 96));
-        EXPECT_EQ(10, ba.rm_gcd(1703210, 20320));
+        EXPECT_EQ(2, ba.op_gcd(2, 4));
+        EXPECT_EQ(6, ba.op_gcd(2198466, 96096));
+        EXPECT_EQ(11, ba.op_gcd(66, 11));
+        EXPECT_EQ(8, ba.op_gcd(232, 96));
+        EXPECT_EQ(10, ba.op_gcd(1703210, 20320));
     }
 }
 /*

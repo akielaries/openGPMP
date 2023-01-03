@@ -8,7 +8,7 @@
 #define MLP_NETWORK_HPP
 #include <vector>
 #include <stdio.h>
-#include "../linalg/lao.hpp"
+#include "../linalg.hpp"
 
 
 namespace mtpk {

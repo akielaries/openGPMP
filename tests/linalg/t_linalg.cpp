@@ -1,7 +1,7 @@
 /*
  * Testing Linear Algebra Operations
  */
-#include "../../include/linalg/lao.hpp"
+#include "../../include/linalg.hpp"
 #include <string>
 #include <limits.h>
 #include <gtest/gtest.h>

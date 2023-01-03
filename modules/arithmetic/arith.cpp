@@ -1,7 +1,7 @@
 /*
  * stubbed out implementation file for arithmetic operations
  */
-#include "../../include/arithmetic/arith.hpp"
+#include "../../include/arithmetic/arith_ops.hpp"
     
 
 int mtpk::Basics::greatest_power(int n, int p) {

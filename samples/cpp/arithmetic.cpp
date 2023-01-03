@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include <openMTPK/arith.hpp>
+#include <openMTPK/arithmetic.hpp>
 
 
 int main(){

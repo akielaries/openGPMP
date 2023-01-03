@@ -10,7 +10,7 @@
 
 namespace {
     // declare primality class object
-    Primality p;
+    mtpk::Primality p;
 
     TEST(prime_test, is_prime) {
         int is_prime_0 = 2;

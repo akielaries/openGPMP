@@ -10,8 +10,7 @@
 #include <stdio.h>
 #include <vector>
 #include <cassert>
-#include <openMTPK/vectors.hpp>
-#include <openMTPK/matrix.hpp>
+#include <openMTPK/linalg.hpp>
 
 
 int main() {
@@ -23,10 +22,10 @@ int main() {
     std::cout << "Sum = " << x << std::endl;
 
 
-    auto MTX = mtx<float>::randn(2, 2);
-    MTX.print_mtx();
+    //auto MTX = mtx<float>::randn(2, 2);
+    //MTX.print_mtx();
 
-    (MTX-MTX).print_mtx();
+    //(MTX-MTX).print_mtx();
 
 
 

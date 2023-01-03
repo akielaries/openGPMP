@@ -4,12 +4,12 @@
  *
  */
 #include <iostream>
-#include <openMTPK/primes.hpp>
+#include <openMTPK/number_theory/primes.hpp>
 
 int main() {
     std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;
     // declare primality class object
-    Primality p;
+    mtpk::Primality p;
 
     std::cout << "<--------- IS IT PRIME? --------->\n";
     int a = 9;

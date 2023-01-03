@@ -7,7 +7,8 @@
 #include <fstream>
 #include <stdio.h>
 #include <vector>
-#include "../../include/linalg/lao.hpp"
+#include "../../include/linalg/vectors.hpp"
+#include "../../include/linalg/matrix.hpp"
 
 
 int mtpk::Vectors::add(int a, int b) {

@@ -3,7 +3,7 @@
  */
 #include <iostream>
 #include <stdio.h>
-#include <openMTPK/linreg.hpp>
+#include <openMTPK/ml/linreg.hpp>
 
 
 int main() {

@@ -70,7 +70,7 @@
  */
 #define CLASSIFICATION
 #include "ml/bayes_clf.hpp"
-#include "ml/nearest_neighbors.hpp"
+#include "ml/nearest_neighbor.hpp"
 // #include "ml/decision_tree"
 // #include "ml/rand_forest"
 // #include "ml/support_vector"

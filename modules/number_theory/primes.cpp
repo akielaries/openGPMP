@@ -10,7 +10,8 @@
 #include <iostream>
 #include <stdio.h>
 #include "../../include/number_theory/primes.hpp"
-#include "../../include/arithmetic/arith.hpp"
+#include "../../include/arithmetic/arith_base.hpp"
+#include "../../include/arithmetic/arith_ops.hpp"
 
 
 // declare Basics and Primality class objects

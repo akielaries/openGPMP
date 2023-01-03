@@ -53,7 +53,7 @@
  * @details Encompasses Vector and Scalar operations
  */
 #define MATRIX
-#include "linalg/vector.hpp"
+#include "linalg/vectors.hpp"
 /*****************************************************************************/
 
 #endif

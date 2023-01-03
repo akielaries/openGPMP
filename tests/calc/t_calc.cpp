@@ -12,7 +12,7 @@ using ::testing::DoubleLE;
 
 
 namespace {
-    calculus calc;
+    mtpk::Calculus calc;
 
     // Test Derivative Operations
     TEST(deriv_test, deriv_at_val) {

@@ -12,6 +12,18 @@ endif()
 
 include(GNUInstallDirs)
 
+
+############################################################
+# Run tests specified in Makefile
+############################################################
+enable_testing()
+
+#add_subdirectory(tests)
+
+add_custom_target(TESTS COMMAND make run-tests
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/
+)
+
 ############################################################
 # Create a library
 ############################################################
@@ -38,20 +50,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     PRIVATE modules
 )
 
-# headers to declare as public
-set(OPM_INCLUDES
-    ${PROJECT_SOURCE_DIR}/include/arithmetic/arith.hpp
-    ${PROJECT_SOURCE_DIR}/include/calculus/deriv.hpp
-    ${PROJECT_SOURCE_DIR}/include/linalg/lao.hpp
-    ${PROJECT_SOURCE_DIR}/include/ml/linreg.hpp
-    ${PROJECT_SOURCE_DIR}/include/number_theory/cipher.hpp
-    ${PROJECT_SOURCE_DIR}/include/number_theory/rc4.hpp
-    ${PROJECT_SOURCE_DIR}/include/number_theory/primes.hpp
-)
-
 set_target_properties(${PROJECT_NAME} 
     PROPERTIES
-    PUBLIC_HEADER "${OPM_INCLUDES}"
     VERSION ${PROJECT_VERSION}
 )
 
@@ -59,8 +59,11 @@ install(TARGETS ${PROJECT_NAME} EXPORT openMTPKConfig
     ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR}
-    PUBLIC_HEADER 
-        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openMTPK"
+)
+
+# install include directory to /usr/local/include/openMTPK
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openMTPK"
 )
 
 install(EXPORT openMTPKConfig DESTINATION share/openMTPK/cmake)
