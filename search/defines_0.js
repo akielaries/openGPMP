@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bits_520',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
-  ['byte_5flimit_521',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]]
+  ['arithmetic_5fbasics_526',['ARITHMETIC_BASICS',['../arithmetic_8hpp.html#a3ac73acc5270fe9bca0a0be4cfa8cdce',1,'arithmetic.hpp']]],
+  ['arithmetic_5foperations_527',['ARITHMETIC_OPERATIONS',['../arithmetic_8hpp.html#a0d09f94b00747f87dcec11d4f9a1149b',1,'arithmetic.hpp']]]
 ];

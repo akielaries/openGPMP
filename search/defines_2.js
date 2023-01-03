@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matrix_523',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp'],['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp']]],
-  ['maxcount_524',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]]
+  ['classification_530',['CLASSIFICATION',['../ml_8hpp.html#a669750181416ae68a4b4684e5006f733',1,'ml.hpp']]]
 ];

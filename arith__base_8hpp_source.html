@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/arithmetic/arith.hpp Source File</title>
+<title>openMTPK: include/arithmetic/arith_base.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,12 +68,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">arith.hpp</div>  </div>
+<div class="title">arith_base.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="arith_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ARITH_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define ARITH_HPP</span></div>
+<a href="arith__base_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ARITH_BASE_HPP</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define ARITH_BASE_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -120,32 +120,22 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#a9128cb825f753feaecda8fa98ff6dd0b">   97</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code" href="classmtpk_1_1Arith.html#a9128cb825f753feaecda8fa98ff6dd0b">exp</a>(Z z, Zy... zy) {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">return</span> z *= <a class="code" href="classmtpk_1_1Arith.html#aee45ba55998804b2ca2068c057c3ddc3">exp</a>(zy...);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classmtpk_1_1Basics.html">  105</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Basics.html">Basics</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf">greatest_power</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> p);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">op_gcd</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html"><div class="ttname"><a href="classmtpk_1_1Arith.html">mtpk::Arith</a></div><div class="ttdoc">Arithmetic Template Class. Each method is variadic taking 'n' params.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00032">arith.hpp:32</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a1672e18f29fe03712fe9cd0242ae77e6"><div class="ttname"><a href="classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6">mtpk::Arith::sub</a></div><div class="ttdeci">X sub(X x)</div><div class="ttdoc">Subtraction method.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00060">arith.hpp:60</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a3e973dd60b9505ad4055cb3a67fa6f1c"><div class="ttname"><a href="classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c">mtpk::Arith::sub</a></div><div class="ttdeci">auto sub(X x, Xy... xy)</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00064">arith.hpp:64</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a409a1df7f2bf049e15a98854f91c025d"><div class="ttname"><a href="classmtpk_1_1Arith.html#a409a1df7f2bf049e15a98854f91c025d">mtpk::Arith::mult</a></div><div class="ttdeci">auto mult(W w, Wv... wv)</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00080">arith.hpp:80</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a7f289a5972d9d7a0862b88228684738e"><div class="ttname"><a href="classmtpk_1_1Arith.html#a7f289a5972d9d7a0862b88228684738e">mtpk::Arith::mult</a></div><div class="ttdeci">W mult(W w)</div><div class="ttdoc">Multiplication method.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00076">arith.hpp:76</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a9128cb825f753feaecda8fa98ff6dd0b"><div class="ttname"><a href="classmtpk_1_1Arith.html#a9128cb825f753feaecda8fa98ff6dd0b">mtpk::Arith::exp</a></div><div class="ttdeci">auto exp(Z z, Zy... zy)</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00097">arith.hpp:97</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_aa0ed51fb270c8960489a4df51f5176d1"><div class="ttname"><a href="classmtpk_1_1Arith.html#aa0ed51fb270c8960489a4df51f5176d1">mtpk::Arith::add</a></div><div class="ttdeci">T add(T t)</div><div class="ttdoc">Addition method.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00043">arith.hpp:43</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_ab2184415aa3b6dabe3534f28a481651b"><div class="ttname"><a href="classmtpk_1_1Arith.html#ab2184415aa3b6dabe3534f28a481651b">mtpk::Arith::add</a></div><div class="ttdeci">auto add(T t, Ts... ts)</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00047">arith.hpp:47</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_aee45ba55998804b2ca2068c057c3ddc3"><div class="ttname"><a href="classmtpk_1_1Arith.html#aee45ba55998804b2ca2068c057c3ddc3">mtpk::Arith::exp</a></div><div class="ttdeci">Z exp(Z z)</div><div class="ttdoc">Exponentiation method.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00093">arith.hpp:93</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html"><div class="ttname"><a href="classmtpk_1_1Basics.html">mtpk::Basics</a></div><div class="ttdoc">Arithmetic Basics Class based on Arithmetic operations.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8hpp_source.html#l00105">arith.hpp:105</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_a8bce04d60584754bd3582ccc00be7eaf"><div class="ttname"><a href="classmtpk_1_1Basics.html#a8bce04d60584754bd3582ccc00be7eaf">mtpk::Basics::greatest_power</a></div><div class="ttdeci">int greatest_power(int n, int p)</div><div class="ttdoc">Find greatest power of 2 itegers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00007">arith.cpp:7</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_aea4f43ee216de88e00d487a4598fcea4"><div class="ttname"><a href="classmtpk_1_1Basics.html#aea4f43ee216de88e00d487a4598fcea4">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int op_gcd(int x, int y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00018">arith.cpp:18</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html"><div class="ttname"><a href="classmtpk_1_1Arith.html">mtpk::Arith</a></div><div class="ttdoc">Arithmetic Template Class. Each method is variadic taking 'n' params.</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00032">arith_base.hpp:32</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_a1672e18f29fe03712fe9cd0242ae77e6"><div class="ttname"><a href="classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6">mtpk::Arith::sub</a></div><div class="ttdeci">X sub(X x)</div><div class="ttdoc">Subtraction method.</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00060">arith_base.hpp:60</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_a3e973dd60b9505ad4055cb3a67fa6f1c"><div class="ttname"><a href="classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c">mtpk::Arith::sub</a></div><div class="ttdeci">auto sub(X x, Xy... xy)</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00064">arith_base.hpp:64</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_a409a1df7f2bf049e15a98854f91c025d"><div class="ttname"><a href="classmtpk_1_1Arith.html#a409a1df7f2bf049e15a98854f91c025d">mtpk::Arith::mult</a></div><div class="ttdeci">auto mult(W w, Wv... wv)</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00080">arith_base.hpp:80</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_a7f289a5972d9d7a0862b88228684738e"><div class="ttname"><a href="classmtpk_1_1Arith.html#a7f289a5972d9d7a0862b88228684738e">mtpk::Arith::mult</a></div><div class="ttdeci">W mult(W w)</div><div class="ttdoc">Multiplication method.</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00076">arith_base.hpp:76</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_a9128cb825f753feaecda8fa98ff6dd0b"><div class="ttname"><a href="classmtpk_1_1Arith.html#a9128cb825f753feaecda8fa98ff6dd0b">mtpk::Arith::exp</a></div><div class="ttdeci">auto exp(Z z, Zy... zy)</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00097">arith_base.hpp:97</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_aa0ed51fb270c8960489a4df51f5176d1"><div class="ttname"><a href="classmtpk_1_1Arith.html#aa0ed51fb270c8960489a4df51f5176d1">mtpk::Arith::add</a></div><div class="ttdeci">T add(T t)</div><div class="ttdoc">Addition method.</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00043">arith_base.hpp:43</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_ab2184415aa3b6dabe3534f28a481651b"><div class="ttname"><a href="classmtpk_1_1Arith.html#ab2184415aa3b6dabe3534f28a481651b">mtpk::Arith::add</a></div><div class="ttdeci">auto add(T t, Ts... ts)</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00047">arith_base.hpp:47</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Arith_html_aee45ba55998804b2ca2068c057c3ddc3"><div class="ttname"><a href="classmtpk_1_1Arith.html#aee45ba55998804b2ca2068c057c3ddc3">mtpk::Arith::exp</a></div><div class="ttdeci">Z exp(Z z)</div><div class="ttdoc">Exponentiation method.</div><div class="ttdef"><b>Definition:</b> <a href="arith__base_8hpp_source.html#l00093">arith_base.hpp:93</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
