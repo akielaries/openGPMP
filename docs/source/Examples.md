@@ -2,12 +2,17 @@
 Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
 Keyword cipher:
 ```cpp
+/**
+ * Showing the Cipher Class functionalities
+ */
 #include <iostream>
 #include <string>
-#include <openMTPK/cipher.hpp>
+#include <openMTPK/number_theory.hpp>
+
+
 int main() {
     // declare CIPHER class obj
-    Cipher cc;
+    mtpk::Cipher cc;
     
     /* CAESAR CIPHER */
     std::string text0 = "Plaintext";

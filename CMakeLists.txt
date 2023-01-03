@@ -14,15 +14,12 @@ include(GNUInstallDirs)
 
 
 ############################################################
-# Run tests specified in Makefile
+# Run Tests
 ############################################################
 enable_testing()
 
-#add_subdirectory(tests)
 
-add_custom_target(TESTS COMMAND make run-tests
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/
-)
+#add_subdirectory(tests)
 
 ############################################################
 # Create a library
