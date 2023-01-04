@@ -146,7 +146,7 @@ $ cd oepnMTPK
 # create build dir
 $ mkdir build && cd build
 # create necessary objects and static library
-$ cmake ..
+$ cmake -S ..
 $ make
 # install necessary headers and library in correct directories
 $ sudo make install

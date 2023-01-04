@@ -1,31 +1,62 @@
 # Download and install GoogleTest
-include(ExternalProject)
-ExternalProject_Add(googletest
-    GIT_REPOSITORY    https://github.com/google/googletest.git
-    GIT_TAG           main
-    SOURCE_DIR        "${CMAKE_BINARY_DIR}/googletest-src"
-    BINARY_DIR        "${CMAKE_BINARY_DIR}/googletest-build"
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND     ""
-    INSTALL_COMMAND   ""
-    TEST_COMMAND      ""
+
+
+include(FetchContent)
+
+#find_package(GTest REQUIRED)
+
+# check if installation is present
+#if(NOT GTEST_FOUND)
+    FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+    )
+    FetchContent_MakeAvailable(googletest)
+    #endif()
+
+#FetchContent_MakeAvailable(googletest)
+
+
+# source files that will be tested 
+set(TEST_SOURCES
+    ../modules/arithmetic/arith.cpp
+    ../modules/calculus/deriv.cpp
+    ../modules/number_theory/cipher.cpp
+    ../modules/number_theory/rc4.cpp
+    ../modules/number_theory/primes.cpp
+
 )
 
-# TESTS
-add_executable(test_openMTPK arith/t_arith.cpp)
+# test files
+set(TEST_FILES
+    arith/t_arith.cpp
+    calc/t_calc.cpp
+    number_theory/t_cipher.cpp
+    number_theory/t_rc4.cpp
+    number_theory/t_primes.cpp
+)
 
-# use googletest
-add_dependencies(test_openMTPK gtest)
-include_directories(${source_dir}/include)
-target_link_libraries(test_openMTPK openMTPK gtest gtest_main pthread)
+# create executable
+add_executable(
+    test_openMTPK 
+    ${TEST_SOURCES}
+    ${TEST_FILES}
+)
 
-#target_link_libraries(test_openMTPK ${binary_dir}/libgtest_main.a)
-
-
+# enable testing
 enable_testing()
 
-add_test(NAME    test_openMTPK
-         COMMAND test_openMTPK)
+# link the libraries together with the test binary
+target_link_libraries(
+    test_openMTPK 
+    GTest::gtest_main 
+    pthread
 
+)
 
+include(GoogleTest)
+gtest_discover_tests(test_openMTPK)
+
+# Add a custom target for running the tests
+add_custom_target(check COMMAND test_openMTPK)
 

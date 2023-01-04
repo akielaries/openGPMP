@@ -16,10 +16,12 @@ include(GNUInstallDirs)
 ############################################################
 # Run Tests
 ############################################################
+#find_package(GTest REQUIRED)
+
 enable_testing()
 
 
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
 ############################################################
 # Create a library
@@ -66,4 +68,7 @@ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 install(EXPORT openMTPKConfig DESTINATION share/openMTPK/cmake)
 
 export(TARGETS ${PROJECT_NAME} FILE openMTPKConfig.cmake)
+
+# make tests passing a requirement for the library to build
+add_dependencies(${PROJECT_NAME} check)
 
