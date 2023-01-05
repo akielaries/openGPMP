@@ -38,7 +38,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3 :: Only',
-        'License :: OSI Approved :: GPL-3.0 License',
+        'License :: OSI Approved :: GPL-3.0 license',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
