@@ -1,6 +1,6 @@
 #!/usr/bin/python3.10
 # from Python import examples
-from openMTPK import Basics
+from openmtpk import Basics
 
 
 def main():

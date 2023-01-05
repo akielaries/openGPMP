@@ -1,4 +1,4 @@
 __version__ = "0.3.2"
 
-from .openMTPK import *
+from .openmtpk import *
 

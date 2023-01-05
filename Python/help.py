@@ -1,4 +1,4 @@
 #!/usr/bin/python3.10
-from openMTPK import openMTPK
+from openmtpk import openmtpk
 
-help(openMTPK)
+help(openmtpk)
