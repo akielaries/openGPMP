@@ -20,14 +20,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
           sudo apt-get install swig
-          cd Python/openmtpk &&
-          make compile compile-wrapper compile-lib clean
+          #cd Python/openmtpk &&
+          #make compile compile-wrapper compile-lib clean
 
       - name: Build and publish
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
+          cd Python/openmtpk 
           python setup.py sdist bdist_wheel
           twine upload --repository pypi dist/*
 
