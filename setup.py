@@ -42,10 +42,10 @@ setuptools.setup(
     ],
     python_requires='>=3.6',
     # install_requires=['Pillow'],
-    #extras_require={
-    #    'dev': ['check-manifest'],
+    extras_require={
+        'dev': ['check-manifest'],
         # 'test': ['coverage'],
-    #},
+    },
     # entry_points={
     #     'console_scripts': [  # This can provide executable scripts
     #         'run=examplepy:main',
