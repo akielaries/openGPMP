@@ -19,6 +19,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
+          cd Python/openmtpk && 
+          make compile compile-wrapper compile-lib clean
+
       - name: Build and publish
         env:
           TWINE_USERNAME: __token__
