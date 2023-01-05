@@ -5,6 +5,8 @@
 [![license](https://img.shields.io/github/license/akielaries/openMTPK?color=23228B22)](https://github.com/akielaries/openMTPK/blob/main/docs/LICENSE)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&utm_medium=referral&utm_content=akielaries/openMTPK&utm_campaign=Badge_Coverage)
 ![clones](https://raw.githubusercontent.com/akielaries/openMTPK/traffic/traffic-openMTPK/clones.svg)
+[![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
+
 
 # Overview 
 **openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
@@ -60,6 +62,88 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
    - Spline
 
 For more details view the project [documentation](https://akielaries.github.io/openMTPK/).
+
+# Installation
+Requirements are loose and mostly tied to what openMTPK was tested and used on.
+The current installation does not allow for the building of the packages language
+bindings, limiting use to the core c++ lib. See below on how to build the bindings 
+from source if interested.
+## Requirements
+* Linux/OSX
+* CMake
+* g++
+
+```
+# clone repo
+$ git clone git@github.com:akielaries/openMTPK.git
+$ cd openMTPK
+# create build dir
+$ mkdir build && cd build
+# create necessary objects and static library
+$ cmake -S ..
+$ make
+# install necessary headers and library in correct directories
+$ sudo make install
+```
+> **Note**
+> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party 
+> libs are located if not, run the following:
+```
+$ LD_LIBRARY_PATH=/usr/local/lib
+```
+
+To test the installation build some of the example drivers in the projects 
+[samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
+```
+# compile yourself
+$ cd samples
+$ g++ cipher.cpp -lopenMTPK -o cipher
+$ g++ arith.cpp -lopenMTPK -o arith
+# script to test all modules and their drivers
+# using the projects root makefile
+$ make arith
+$ make num-theory
+...
+```
+## Python
+For the Python API of openMTPK simply install with pip.
+```
+$ pip install openmtpk
+```
+Run an example in the `samples/python` to verify installation.
+```
+$ python3 arithmetic.py
+```
+
+### Bindings (BETA)
+> **Note** These instructions are specific for the OCaml, R, and Fortran. 
+
+The binding process leverages the use of Swig, specifically the fork authored by *sethrj*
+that makes use of the Fortran binding process. See [here](https://github.com/swig-fortran/swig).
+Each API comes with a custom Makefile for compiling a wrapper for the respective language, but
+does not take care of storing files in necessary filepaths needed by the compiler/interpreter. 
+### Install Swig
+```
+# clone the fork of Swig
+$ git clone git@github.com:swig-fortran/swig.git
+$ cd swig/
+# run autotools
+$ ./autogen.sh
+# install
+$ make
+$ make check
+$ make install
+```
+### Install Bindings
+Bindings are currently being tested for OCaml, R, and Fortran. Simply
+enter any of the languages lib directories and run the following
+```
+$ cd <API_NAME>/lib
+$ make run-swig
+```
+If you wish to use the generated bindings globally, move the necessary files to the path 
+needed by the compiler/interpreter.
+
 
 # Examples
 All examples are in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
@@ -129,74 +213,3 @@ encoded_text = c.KC_encode(shift);
 hashtext = c.KC_cipher(text, encoded_text);
 print(hashtext)
 ```
-
-# Installation
-Requirements are loose and mostly tied to what openMTPK was tested and used on.
-The current installation does not allow for the building of the packages language
-bindings, limiting use to the core c++ lib. See below on how to build the bindings 
-from source if interested.
-## Requirements
-* Linux/OSX
-* CMake
-* g++
-
-```
-# clone repo
-$ git clone git@github.com:akielaries/openMTPK.git
-$ cd oepnMTPK
-# create build dir
-$ mkdir build && cd build
-# create necessary objects and static library
-$ cmake -S ..
-$ make
-# install necessary headers and library in correct directories
-$ sudo make install
-```
-> **Note**
-> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party 
-> libs are located if not, run the following:
-```
-$ LD_LIBRARY_PATH=/usr/local/lib
-```
-
-To test the installation build some of the example drivers in the projects 
-[samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
-```
-# compile yourself
-$ cd samples
-$ g++ cipher.cpp -lopenMTPK -o cipher
-$ g++ arith.cpp -lopenMTPK -o arith
-# script to test all modules and their drivers
-# using the projects root makefile
-$ make arith
-$ make num-theory
-...
-```
-## Build Bindings
-The binding process leverages the use of Swig, specifically the fork authored by *sethrj*
-that makes use of the Fortran binding process. See [here](https://github.com/swig-fortran/swig).
-Each API comes with a custom Makefile for compiling a wrapper for the respective language, but
-does not take care of storing files in necessary filepaths needed by the compiler/interpreter. 
-### Install Swig
-```
-# clone the fork of Swig
-$ git clone git@github.com:swig-fortran/swig.git
-$ cd swig/
-# run autotools
-$ ./autogen.sh
-# install
-$ make
-$ make check
-$ make install
-```
-### Install Bindings
-Bindings are currently supported for Python, OCaml, R, and Fortran. Simply
-enter any of the languages lib directories and run the following
-```
-$ cd <API_NAME>/lib
-$ make run-swig
-```
-If you wish to use the generated bindings globally, move the necessary files to the path 
-needed by the compiler/interpreter.
-
-
