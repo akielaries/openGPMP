@@ -12,6 +12,7 @@ subprocess.call(['make compile compile-wrapper compile-lib clean',
 
 setuptools.setup(
     name='openmtpk',
+    version='0.0.4',
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
