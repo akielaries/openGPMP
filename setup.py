@@ -23,7 +23,7 @@ setuptools.setup(
     },
     package_dir={'': 'Python/openMTPK'},
     packages=setuptools.find_packages(where='Python/openMTPK'),
-    package_data={'': ['Python/openMTPK/openMTPK.so']},
+    package_data={'': ['Python/openMTPK/_openMTPK.so']},
     classifiers=[
         # see https://pypi.org/classifiers/
         'Development Status :: 5 - Production/Stable',
@@ -38,7 +38,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3 :: Only',
-        'License :: OSI Approved :: GPL-3.0 license',
+        'License :: OSI Approved :: MIT license',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
