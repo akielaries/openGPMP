@@ -35,7 +35,7 @@ setuptools.setup(
     include_package_data=True,
     classifiers=[
         # see https://pypi.org/classifiers/
-        'Development Status ::  4 - Beta',
+        'Development Status :: 4 - Beta',
 
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
