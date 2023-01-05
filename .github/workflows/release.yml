@@ -21,6 +21,7 @@ jobs:
           pip install setuptools wheel twine
           sudo apt-get install swig
           cd Python/openmtpk &&
+          make run-swig
           make compile 
           make compile-wrapper 
           make compile-lib
