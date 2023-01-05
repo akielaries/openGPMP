@@ -1,8 +1,7 @@
 #!/usr/bin/python3.10
 #from lib.openMTPK import Primality
-from ..lib import openMTPK
 
-#from openMTPK import Primality
+from openMTPK import Primality
 
 
 def main():
