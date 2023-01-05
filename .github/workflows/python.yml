@@ -7,30 +7,32 @@ on:
     branches: [ main, dev ]
 
 jobs:
-  build-and-test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-    defaults:
-      run:
-        shell: bash -l {0}
-
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - name: initalize github repo
-        uses: actions/checkout@v3
-
-      - name: Setup python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
-
-      - name: install deps
-        run: | 
-          sudo apt install lcov
-          pip install gcovr
-
-      - name: Build Python API
+          python-version: "3.x"
+      - name: Install dependencies
         run: |
-          python Python/help.py
-      
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+          sudo apt-get install swig
+          cd Python/openmtpk &&
+          make run-swig
+          make compile 
+          make compile-wrapper 
+          make compile-lib
+
+      - name: Build and publish
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload --repository pypi dist/*
+
+
+
