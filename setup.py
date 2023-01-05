@@ -9,7 +9,7 @@ setuptools.setup(
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
-    keywords='openMTPK, example, pypi, package',
+    keywords='openmtpk, example, pypi, package',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/akielaries/openMTPK',
@@ -21,8 +21,8 @@ setuptools.setup(
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
-    package_dir={'': 'Python/openMTPK'},
-    packages=setuptools.find_packages(where='Python/openMTPK'),
+    package_dir={'': 'Python'},
+    packages=setuptools.find_packages(where='Python'),
     package_data={'': ['Python/openMTPK/_openMTPK.so']},
     classifiers=[
         # see https://pypi.org/classifiers/
