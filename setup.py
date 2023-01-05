@@ -21,9 +21,10 @@ setuptools.setup(
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
+    #packages=[''],
     package_dir={'': 'Python'},
     packages=setuptools.find_packages(where='Python'),
-    package_data={'': ['Python/openMTPK/_openMTPK.so']},
+    package_data={'': ['Python/openMTPK/_openmtpk.so']},
     classifiers=[
         # see https://pypi.org/classifiers/
         'Development Status :: 5 - Production/Stable',
