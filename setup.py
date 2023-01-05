@@ -4,6 +4,9 @@ import setuptools
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
+subprocess.call(['make compile compile-wrapper compile-lib clean', 
+                 'Python/openmtpk'])
+
 setuptools.setup(
     name='openmtpk',
     author='Akiel Aries',
