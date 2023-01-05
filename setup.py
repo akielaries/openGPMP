@@ -32,6 +32,7 @@ setuptools.setup(
     package_dir={'': 'Python'},
     packages=setuptools.find_packages(where='Python'),
     package_data={'': ['Python/openmtpk/_openmtpk.so']},
+    include_package_data=True,
     classifiers=[
         # see https://pypi.org/classifiers/
         'Development Status :: 5 - Production/Stable',
