@@ -138,6 +138,7 @@ from source if interested.
 ## Requirements
 * Linux/OSX
 * CMake
+* Swig (for bindings)
 * g++
 
 ```
@@ -177,6 +178,7 @@ The binding process leverages the use of Swig, specifically the fork authored by
 that makes use of the Fortran binding process. See [here](https://github.com/swig-fortran/swig).
 Each API comes with a custom Makefile for compiling a wrapper for the respective language, but
 does not take care of storing files in necessary filepaths needed by the compiler/interpreter. 
+
 ### Install Swig
 ```
 # clone the fork of Swig
@@ -190,6 +192,10 @@ $ make check
 $ make install
 ```
 ### Install Bindings
+```
+# install Python binding for openMTPK
+$ pip install openmtpk
+```
 Bindings are currently supported for Python, OCaml, R, and Fortran. Simply
 enter any of the languages lib directories and run the following
 ```
