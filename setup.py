@@ -12,7 +12,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='openmtpk',
-    version='0.0.9',
+    version='0.0.10',
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
@@ -35,7 +35,7 @@ setuptools.setup(
     include_package_data=True,
     classifiers=[
         # see https://pypi.org/classifiers/
-        'Development Status :: 5 - Production/Stable',
+        'Development Status ::  4 - Beta',
 
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',

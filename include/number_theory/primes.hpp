@@ -4,8 +4,8 @@
  * Definitions for operations related to prime numbers
  */
 
-#ifndef PRIMESH
-#define PRIMESH
+#ifndef PRIMES_HPP
+#define PRIMES_HPP
 #include <vector>
 #include <stdio.h>
 
