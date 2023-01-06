@@ -6,14 +6,14 @@ on:
   pull_request:
     branches: [ main ]
   
-strategy:
-  matrix:
-    os: [ ubuntu-latest, macos-latest ]
-
 jobs:
   deploy:
     runs-on: ${{ matrix.os }} 
-    steps:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest]
+
+      steps:
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
