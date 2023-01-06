@@ -31,9 +31,6 @@ jobs:
 
           if [ "$RUNNER_OS" == "macOS" ] ; then
           brew install python
-          else
-            echo "OS ERROR"
-            exit 1
           fi
 
       - name: Install Swig
