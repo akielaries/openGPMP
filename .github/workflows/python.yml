@@ -2,16 +2,16 @@ name: Python
 
 on:
   push:
-    branches: [ main , dev ]
-  pull_request:
-    branches: [ main , dev ]
+    branches: [ main ]
+  #pull_request:
+  #  branches: [ main , dev ]
   
 jobs:
   deploy:
     runs-on: ${{ matrix.os }} 
     strategy:
       matrix:
-        os: [ macos-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
       - uses: actions/checkout@v2
@@ -40,9 +40,9 @@ jobs:
             exit 1
           fi
 
-          cd Python/openmtpk &&
-          make run-swig
-          python3 setup.py build_ext --inplace
+          #cd Python/openmtpk &&
+          #make run-swig
+          #python3 setup.py build_ext --inplace
           #make compile 
           #make compile-wrapper 
           #make compile-lib
@@ -52,6 +52,6 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: |
-          python setup.py sdist bdist_wheel
+          #python setup.py sdist bdist_wheel
           twine upload --repository pypi dist/*
 

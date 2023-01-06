@@ -1,7 +1,22 @@
 #from setuptools import setup, find_packages
 import setuptools
+from setuptools import setup, dist
+from setuptools.command.install import install
+import os
 import subprocess
 import platform
+
+# execute swig wrapping and respective setup.py
+os.system('cd Python/openmtpk &&\
+        make run-swig &&\
+        cd ../ &&\
+        python3 setup.py build_ext --inplace &&\
+        make clean')
+
+# BINARY DISTRIBUTION (with a Python wrapper)
+class BinaryDistribution(dist.Distribution):
+    def has_ext_modules(foo):
+        return True
 
 if platform.system() == 'Darwin':
     pkg_data = {'': ['Python/openmtpk/*.so']}
@@ -19,7 +34,8 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='openmtpk',
-    version='0.4.97',
+    distclass=BinaryDistribution,
+    version='0.4.96',
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
@@ -35,10 +51,12 @@ setuptools.setup(
     },
     #packages=[''],
     package_dir={'': 'Python'},
-    packages=setuptools.find_packages(where='Python'),
+    packages=setuptools.find_packages(where='Python', 
+                                      exclude=['openmtpk/setup.py']),
     # shared object is dependent on operating system
     package_data=pkg_data,
     include_package_data=True,
+    #exclude_package_data={'': 'Python/openmtpk/setup.py'},
     classifiers=[
         # see https://pypi.org/classifiers/
         'Development Status :: 4 - Beta',
@@ -69,6 +87,6 @@ setuptools.setup(
     # },
 )
 
-
-
+os.system('cd Python/openmtpk &&\
+        make clean')
 
