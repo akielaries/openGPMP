@@ -2,17 +2,17 @@ name: Python
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main , dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ main , dev ]
   
-strategy:
-  matrix:
-    os: [ ubuntu-latest, macos-latest ]
-
 jobs:
   deploy:
     runs-on: ${{ matrix.os }} 
+    strategy:
+      matrix:
+        os: [ macos-latest ]
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -29,6 +29,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
 
+          #if [ "$RUNNER_OS" == "macOS" ] ; then
+          #  brew install python
+          #fi
+
       - name: Install Swig
         shell: bash
         run: |
@@ -43,9 +47,10 @@ jobs:
 
           cd Python/openmtpk &&
           make run-swig
-          make compile 
-          make compile-wrapper 
-          make compile-lib
+          python3 setup.py build_ext --inplace
+          #make compile 
+          #make compile-wrapper 
+          #make compile-lib
 
       - name: Build and publish
         env:
@@ -54,6 +59,4 @@ jobs:
         run: |
           python setup.py sdist bdist_wheel
           twine upload --repository pypi dist/*
-
-
 
