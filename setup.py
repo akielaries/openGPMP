@@ -1,7 +1,12 @@
 #from setuptools import setup, find_packages
 import setuptools
 import subprocess
+import platform
 
+if platform.system() == 'Darwin':
+    pkg_data = {'': ['Python/openmtpk/*.so']}
+else:
+    pkg_data = {'': ['Python/openmtpk/_openmtpk.so']}
 
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
@@ -9,6 +14,8 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 #subprocess.call(['make compile compile-wrapper compile-lib clean', 
 #                 '-C',
 #                 'Python/openmtpk'])
+
+
 
 setuptools.setup(
     name='openmtpk',
@@ -25,13 +32,12 @@ setuptools.setup(
         'Bug Reports':
         'https://github.com/akielaries/openMTPK/issues',
         'Source Code': 'https://github.com/akielaries/openMTPK/',
-        # 'Funding': '',
-        # 'Say Thanks!': '',
     },
     #packages=[''],
     package_dir={'': 'Python'},
     packages=setuptools.find_packages(where='Python'),
-    package_data={'': ['Python/openmtpk/_openmtpk.so']},
+    # shared object is dependent on operating system
+    package_data=pkg_data,
     include_package_data=True,
     classifiers=[
         # see https://pypi.org/classifiers/

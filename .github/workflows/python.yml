@@ -47,9 +47,10 @@ jobs:
 
           cd Python/openmtpk &&
           make run-swig
-          make compile 
-          make compile-wrapper 
-          make compile-lib
+          python3 setup.py build_ext --inplace
+          #make compile 
+          #make compile-wrapper 
+          #make compile-lib
 
       - name: Build and publish
         env:
