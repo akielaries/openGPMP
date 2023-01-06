@@ -19,14 +19,14 @@ arith			= $(MOD_DIR)/arithmetic/arith.cpp
 cipher			= $(MOD_DIR)/number_theory/cipher.cpp
 rc4				= $(MOD_DIR)/number_theory/rc4.cpp
 compile:
-	${CXX} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
+	${CXX} --std=c++17 ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
 
 compile-wrapper:
-	${CXX} ${CXX_DBG} -O2 -fPIC -c openmtpk_wrap.cxx ${pypath}
+	${CXX} --std=c++17 ${CXX_DBG} -O2 -fPIC -c openmtpk_wrap.cxx ${pypath}
 
 PKG		= _openmtpk.so
 compile-lib:
-	${CXX} ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o openmtpk_wrap.o -o ${PKG}
+	${CXX} --std=c++17 ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o openmtpk_wrap.o -o ${PKG}
 	#mv ${PKG} openMTPK.py examples/
 
 clean:
