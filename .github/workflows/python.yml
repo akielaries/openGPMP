@@ -29,13 +29,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
 
-      - name: Install Swig
+      - name: Install Swig and Headers
         shell: bash
         run: |
           if [ "$RUNNER_OS" == "Linux" ] ; then
             sudo apt-get install swig
           elif [ "$RUNNER_OS" == "macOS" ] ; then
             brew install swig
+            xcode-select --install
           else
             echo "OS ERROR"
             exit 1
