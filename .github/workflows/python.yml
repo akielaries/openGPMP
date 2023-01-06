@@ -4,14 +4,14 @@ on:
   push:
     branches: [ main , dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ main , dev ]
   
 jobs:
   deploy:
     runs-on: ${{ matrix.os }} 
     strategy:
       matrix:
-        os: [ ubuntu-latest]
+        os: [ ubuntu-latest, macos-latest ]
 
     steps:
       - uses: actions/checkout@v2

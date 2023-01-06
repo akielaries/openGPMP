@@ -1,41 +1,80 @@
-CXX				= g++
-CXX_DBG     	= -Wall -Wextra -g
+# Makefile for wrapping openMTPK for Python with Swig.
+# Working for both OSX and LINUX
 
-pypath			= -I/usr/include/python3.10
+# DETECT OPERATING SYSTEM
+OS			:= $(shell uname)
 
-API_DIR			= $(realpath $(CURDIR))
-SRC_DIR			= $(API_DIR)/../../
-MOD_DIR			= $(SRC_DIR)/modules/
-INC_DIR			= $(SRC_DIR)/include/
+check-os:
+	echo ${OS} DETECTED
+
+CXX			= g++
+CXX_DBG     = -Wall -Wextra -g
+STD			= --std=c++17
+
+pypathLINUX	= -I/usr/include/python3.10
+pypathOSX	= -I/usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Headers
+
+API_DIR		= $(realpath $(CURDIR))
+SRC_DIR		= $(API_DIR)/../../
+MOD_DIR		= $(SRC_DIR)/modules/
+INC_DIR		= $(SRC_DIR)/include/
 
 
-swig_files		= openmtpk.i
+##############################################################################
+# RUN SWIG
+##############################################################################
+swig_files	= openmtpk.i
 run-swig:
 	swig -c++ -python ${swig_files}
 
-
-primes 			= $(MOD_DIR)/number_theory/primes.cpp
-arith			= $(MOD_DIR)/arithmetic/arith.cpp
-cipher			= $(MOD_DIR)/number_theory/cipher.cpp
-rc4				= $(MOD_DIR)/number_theory/rc4.cpp
+##############################################################################
+# COMPILE openMTPK SOURCES
+##############################################################################
+primes 		= $(MOD_DIR)/number_theory/primes.cpp
+arith		= $(MOD_DIR)/arithmetic/arith.cpp
+cipher		= $(MOD_DIR)/number_theory/cipher.cpp
+rc4			= $(MOD_DIR)/number_theory/rc4.cpp
 compile:
-	${CXX} --std=c++17 ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
+	${CXX} ${STD} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
 
+##############################################################################
+# COMPILE WRAPPED SOURCE FILE 
+##############################################################################
 compile-wrapper:
-	${CXX} --std=c++17 ${CXX_DBG} -O2 -fPIC -c openmtpk_wrap.cxx ${pypath}
+# LINUX
+ifeq ($(OS), Linux)
+	${CXX} ${STD} ${CXX_DBG} -O2 -fPIC -c openmtpk_wrap.cxx ${pypathLINUX}
+endif
 
-PKG		= _openmtpk.so
+# MACOSX
+ifeq ($(OS), Darwin)
+	${CXX} ${STD} ${CXX_DBG} -O2 -fPIC -c openmtpk_wrap.cxx ${pypathOSX}
+endif
+
+##############################################################################
+# COMPILE SOURCE OBJECTS 
+##############################################################################
+pkgLINUX	= _openmtpk.so
+pkgOSX		= _openmtpk.co
+
+src_objs	= arith.o primes.o cipher.o rc4.o openmtpk_wrap.o
 compile-lib:
-	${CXX} --std=c++17 ${CXX_DBG} -shared arith.o primes.o cipher.o rc4.o openmtpk_wrap.o -o ${PKG}
-	#mv ${PKG} openMTPK.py examples/
+# LINUX
+ifeq ($(OS), Linux)
+	${CXX} ${STD} ${CXX_DBG} -shared ${src_objs} -o ${pkgLINUX}
+endif
+
+# MACOSX
+ifeq ($(OS), Darwin)
+	 ${CXX} ${STD} ${CXX_DBG} -shared ${src_objs} -o ${pkgOSX}
+endif
+
 
 clean:
 	rm -rf */__pycache__
 	rm -f *.o
 	rm -f *.cxx
-
-test:
-	ls ${SRC_DIR}
-	ls ${MOD_DIR}
-	ls ${INC_DIR}
+	rm -f openmtpk.py
+	rm -f *.co
+	rm -f *.so
 
