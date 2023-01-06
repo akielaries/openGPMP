@@ -19,7 +19,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='openmtpk',
-    version='0.4.0',
+    version='0.4.1',
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
