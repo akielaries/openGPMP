@@ -75,6 +75,4 @@ clean:
 	rm -f *.o
 	rm -f *.cxx
 	rm -f openmtpk.py
-	rm -f *.co
-	rm -f *.so
 
