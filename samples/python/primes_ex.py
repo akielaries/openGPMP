@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-
-#from lib.openMTPK import Primality
-
 from openmtpk import Primality
 
 

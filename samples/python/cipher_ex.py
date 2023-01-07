@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from openMTPK import Cipher
+from openmtpk import Cipher
 
 
 def main():
