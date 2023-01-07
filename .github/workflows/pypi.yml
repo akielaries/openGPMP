@@ -46,18 +46,15 @@ jobs:
     needs: [ compile_wheels, build_plat ]
     runs-on: ubuntu-latest
     steps: 
-      - name: Install PYPI Publish Dependencies
-        uses: actions/setup-python@v2
+      - uses: actions/download-artifact@v3
         with:
-          python-version: "3.x"
+          # unpacks default artifact into dist/
+          # if `name: artifact` is omitted, the action will create extra parent dir
+          name: artifact
+          path: dist
 
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install setuptools wheel twine
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-          run: |
-            twine upload --repository pypi dist/*
+      - uses: pypa/gh-action-pypi-publish@v1.5.0
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
 
