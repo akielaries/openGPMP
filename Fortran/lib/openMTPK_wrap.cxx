@@ -169,7 +169,7 @@ enum AssignmentType {
 
 #define SWIG_VERSION 0x040101
 #define SWIGFORTRAN
-#define SWIGPOLICY_Primality swig::ASSIGNMENT_DEFAULT
+#define SWIGPOLICY_mtpk_Primality swig::ASSIGNMENT_DEFAULT
 #define SWIGPOLICY_RC4 swig::ASSIGNMENT_DEFAULT
 #define SWIGPOLICY_Cipher swig::ASSIGNMENT_DEFAULT
 
@@ -408,12 +408,12 @@ SWIGINTERN SwigArrayWrapper SwigArrayWrapper_uninitialized() {
 extern "C" {
 SWIGEXPORT int _wrap_Primality_is_prime(SwigClassWrapper *farg1, int const *farg2) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   int arg2 ;
   bool result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::is_prime(int)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::is_prime(int)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (int)(*farg2);
   result = (bool)(arg1)->is_prime(arg2);
   fresult = (result ? 1 : 0);
@@ -423,13 +423,13 @@ SWIGEXPORT int _wrap_Primality_is_prime(SwigClassWrapper *farg1, int const *farg
 
 SWIGEXPORT int _wrap_Primality_compute_miller_rabin(SwigClassWrapper *farg1, int const *farg2, int const *farg3) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   int arg2 ;
   int arg3 ;
   bool result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::compute_miller_rabin(int,int)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::compute_miller_rabin(int,int)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (int)(*farg2);
   arg3 = (int)(*farg3);
   result = (bool)(arg1)->compute_miller_rabin(arg2,arg3);
@@ -440,13 +440,13 @@ SWIGEXPORT int _wrap_Primality_compute_miller_rabin(SwigClassWrapper *farg1, int
 
 SWIGEXPORT int _wrap_Primality_miller_rabin_prime(SwigClassWrapper *farg1, int const *farg2, int const *farg3) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   int arg2 ;
   int arg3 ;
   bool result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::miller_rabin_prime(int,int)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::miller_rabin_prime(int,int)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (int)(*farg2);
   arg3 = (int)(*farg3);
   result = (bool)(arg1)->miller_rabin_prime(arg2,arg3);
@@ -456,13 +456,13 @@ SWIGEXPORT int _wrap_Primality_miller_rabin_prime(SwigClassWrapper *farg1, int c
 
 
 SWIGEXPORT void _wrap_Primality_miller_rabin(SwigClassWrapper *farg1, int const *farg2, int const *farg3, int const *farg4) {
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   int arg2 ;
   int arg3 ;
   int arg4 ;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::miller_rabin(int,int,int)", return );
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::miller_rabin(int,int,int)", return );
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (int)(*farg2);
   arg3 = (int)(*farg3);
   arg4 = (int)(*farg4);
@@ -472,13 +472,13 @@ SWIGEXPORT void _wrap_Primality_miller_rabin(SwigClassWrapper *farg1, int const 
 
 SWIGEXPORT int _wrap_Primality_jacobian_number(SwigClassWrapper *farg1, long long const *farg2, long long const *farg3) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   long long arg2 ;
   long long arg3 ;
   int result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::jacobian_number(long long,long long)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::jacobian_number(long long,long long)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (long long)(*farg2);
   arg3 = (long long)(*farg3);
   result = (int)(arg1)->jacobian_number(arg2,arg3);
@@ -489,13 +489,13 @@ SWIGEXPORT int _wrap_Primality_jacobian_number(SwigClassWrapper *farg1, long lon
 
 SWIGEXPORT int _wrap_Primality_solovoy_strassen(SwigClassWrapper *farg1, long long const *farg2, int const *farg3) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   long long arg2 ;
   int arg3 ;
   bool result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::solovoy_strassen(long long,int)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::solovoy_strassen(long long,int)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (long long)(*farg2);
   arg3 = (int)(*farg3);
   result = (bool)(arg1)->solovoy_strassen(arg2,arg3);
@@ -506,14 +506,14 @@ SWIGEXPORT int _wrap_Primality_solovoy_strassen(SwigClassWrapper *farg1, long lo
 
 SWIGEXPORT long long _wrap_Primality_mod_pow(SwigClassWrapper *farg1, long long const *farg2, long long const *farg3, long long const *farg4) {
   long long fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   long long arg2 ;
   long long arg3 ;
   long long arg4 ;
   long long result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::mod_pow(long long,long long,long long)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::mod_pow(long long,long long,long long)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (long long)(*farg2);
   arg3 = (long long)(*farg3);
   arg4 = (long long)(*farg4);
@@ -525,12 +525,12 @@ SWIGEXPORT long long _wrap_Primality_mod_pow(SwigClassWrapper *farg1, long long 
 
 SWIGEXPORT int _wrap_Primality_carmichael_num(SwigClassWrapper *farg1, int const *farg2) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   int arg2 ;
   bool result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::carmichael_num(int)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::carmichael_num(int)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (int)(*farg2);
   result = (bool)(arg1)->carmichael_num(arg2);
   fresult = (result ? 1 : 0);
@@ -539,11 +539,11 @@ SWIGEXPORT int _wrap_Primality_carmichael_num(SwigClassWrapper *farg1, int const
 
 
 SWIGEXPORT void _wrap_Primality_sieve_of_eratosthenes(SwigClassWrapper *farg1, int const *farg2) {
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   int arg2 ;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::sieve_of_eratosthenes(int)", return );
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::sieve_of_eratosthenes(int)", return );
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (int)(*farg2);
   (arg1)->sieve_of_eratosthenes(arg2);
 }
@@ -551,12 +551,12 @@ SWIGEXPORT void _wrap_Primality_sieve_of_eratosthenes(SwigClassWrapper *farg1, i
 
 SWIGEXPORT long long _wrap_Primality_pollard_rho(SwigClassWrapper *farg1, long long const *farg2) {
   long long fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   long long arg2 ;
   long long result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::pollard_rho(long long)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::pollard_rho(long long)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (long long)(*farg2);
   result = (long long)(arg1)->pollard_rho(arg2);
   fresult = (long long)(result);
@@ -566,12 +566,12 @@ SWIGEXPORT long long _wrap_Primality_pollard_rho(SwigClassWrapper *farg1, long l
 
 SWIGEXPORT int _wrap_Primality_ETF(SwigClassWrapper *farg1, int const *farg2) {
   int fresult ;
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   unsigned int arg2 ;
   int result;
   
-  SWIG_check_nonnull(farg1->cptr, "Primality *", "Primality", "Primality::ETF(unsigned int)", return 0);
-  arg1 = (Primality *)farg1->cptr;
+  SWIG_check_nonnull(farg1->cptr, "mtpk::Primality *", "Primality", "mtpk::Primality::ETF(unsigned int)", return 0);
+  arg1 = (mtpk::Primality *)farg1->cptr;
   arg2 = (unsigned int)(*farg2);
   result = (int)(arg1)->ETF(arg2);
   fresult = (int)(result);
@@ -581,9 +581,9 @@ SWIGEXPORT int _wrap_Primality_ETF(SwigClassWrapper *farg1, int const *farg2) {
 
 SWIGEXPORT SwigClassWrapper _wrap_new_Primality() {
   SwigClassWrapper fresult ;
-  Primality *result = 0 ;
+  mtpk::Primality *result = 0 ;
   
-  result = (Primality *)new Primality();
+  result = (mtpk::Primality *)new mtpk::Primality();
   fresult.cptr = (void*)result;
   fresult.cmemflags = SWIG_MEM_RVALUE | (1 ? SWIG_MEM_OWN : 0);
   return fresult;
@@ -591,20 +591,20 @@ SWIGEXPORT SwigClassWrapper _wrap_new_Primality() {
 
 
 SWIGEXPORT void _wrap_delete_Primality(SwigClassWrapper *farg1) {
-  Primality *arg1 = (Primality *) 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
   
-  arg1 = (Primality *)farg1->cptr;
+  arg1 = (mtpk::Primality *)farg1->cptr;
   delete arg1;
 }
 
 
 SWIGEXPORT void _wrap_Primality_op_assign__(SwigClassWrapper *farg1, SwigClassWrapper *farg2) {
-  Primality *arg1 = (Primality *) 0 ;
-  Primality *arg2 = 0 ;
+  mtpk::Primality *arg1 = (mtpk::Primality *) 0 ;
+  mtpk::Primality *arg2 = 0 ;
   
   (void)sizeof(arg1);
   (void)sizeof(arg2);
-  SWIG_assign<Primality, SWIGPOLICY_Primality>(farg1, *farg2);
+  SWIG_assign<mtpk::Primality, SWIGPOLICY_mtpk_Primality>(farg1, *farg2);
   
 }
 

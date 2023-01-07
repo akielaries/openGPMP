@@ -16,7 +16,7 @@ module openmtpk
   type(C_PTR), public :: cptr = C_NULL_PTR
   integer(C_INT), public :: cmemflags = 0
  end type
- ! class Primality
+ ! class mtpk::Primality
  type, public :: Primality
   type(SwigClassWrapper), public :: swigdata
  contains
