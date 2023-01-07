@@ -1,4 +1,4 @@
-![img](/docs/openMTPK.svg)
+![](https://raw.githubusercontent.com/akielaries/openMTPK/139970427fb9092a12ccc87e736186b32316d46f/docs/openMTPK.svg)
 --------------------------------------------------------------------------------
 ![Version](https://img.shields.io/github/v/release/akielaries/openMTPK?color=%23BF40BF)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openMTPK&amp;utm_campaign=Badge_Grade)
