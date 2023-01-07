@@ -13,12 +13,14 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
+
     defaults:
       run:
         shell: bash -l {0}
 
     steps:
-      - uses: actions/checkout@v3
+      - name: initalize github repo
+        uses: actions/checkout@v3
 
       - name: Install GNU Fortran
         uses: modflowpy/install-gfortran-action@v1
