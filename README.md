@@ -198,11 +198,11 @@ int main() {
 ```
 A Python example showing the same functionalities.
 ```python
-#!/usr/bin/python3.10
-from openMTPK import Cipher
+#!/usr/bin/python3
+from openmtpk import Cipher
 
 c = Cipher()
-cipertext_0 = c.C_cipher('Plaintext', 5)
+ciphertext_0 = c.C_cipher('Plaintext', 5)
 print(ciphertext_0)
 
 ciphertext_1 = c.C_cipher('ATTACKATONCE', 4)
