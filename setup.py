@@ -53,7 +53,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 setuptools.setup(
     name='openmtpk',
     distclass=BinaryDistribution,
-    version='0.5.0',
+    version='0.5.1',
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
