@@ -27,7 +27,6 @@ jobs:
           pip install setuptools wheel twine
           if [ "$RUNNER_OS" == "macOS" ] ; then
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            brew install linux-headers
           fi
 
       - name: Install Swig
