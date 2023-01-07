@@ -8,13 +8,24 @@ import os
 import subprocess
 import platform
 
+import urllib.request
+import json
+
+# get recent version, use pip bump to bump the version
+req = urllib.request.Request(f'https://pypi.python.org/pypi/openmtpk/json')
+r = urllib.request.urlopen(req)
+
+if r.code == 200:
+    t = json.loads(r.read())
+    releases = t.get('releases', [])
+    if releases:
+        new_version = sorted(releases)[-1]
+
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
 # execute swig wrapping and respective setup.py
 os.system('cd Python/openmtpk &&\
         make run-swig')
-
-#python3 setup.py build_ext --inplace
 
 # openMTPK source files for SWIG interfacing
 foo = Extension(
@@ -33,27 +44,15 @@ class BinaryDistribution(dist.Distribution):
     def has_ext_modules(foo):
         return True
 
-def move_so():
-    os.system('cp *.so openmtpk/')
-
-if platform.system() == 'Darwin':
-    pkg_data = {'': ['Python/openmtpk/*.so']}
-else:
-    pkg_data = {'': ['Python/openmtpk/*.so']}
-
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
-
-#subprocess.call(['make compile compile-wrapper compile-lib clean', 
-#                 '-C',
-#                 'Python/openmtpk'])
-
 
 
 setuptools.setup(
     name='openmtpk',
     distclass=BinaryDistribution,
-    version='0.5.5',
+    # get version from PyPI package, use bump to increment
+    version=new_version,
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
@@ -67,16 +66,14 @@ setuptools.setup(
         'https://github.com/akielaries/openMTPK/issues',
         'Source Code': 'https://github.com/akielaries/openMTPK/',
     },
-    #packages=['Python/openmtpk'],
     package_dir={'': 'Python'},
     packages=setuptools.find_packages(where='Python', 
                                       exclude=['*.cxx']),
     # shared object is dependent on operating system
-    # package_data={'': ['*x86_64-linux-gnu.so']},
     include_package_data=True,
     classifiers=[
         # see https://pypi.org/classifiers/
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
 
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
@@ -97,14 +94,6 @@ setuptools.setup(
         'dev': ['check-manifest'],
         # 'test': ['coverage'],
     },
-    # move generated .so to the openmtpk dir
-    #move_so(),
-    # entry_points={
-    #     'console_scripts': [  # This can provide executable scripts
-    #         'run=examplepy:main',
-    # You can execute `run` in bash to run `main()` in src/examplepy/__init__.py
-    #     ],
-    # },
 )
 
 os.system('rm -rf build/')
