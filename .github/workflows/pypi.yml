@@ -42,6 +42,7 @@ jobs:
           path: dist/*.tar.gz
 
   publish:
+    name: Publish to PYPI
     needs: [ compile_wheels, build_plat ]
     runs-on: ubuntu-latest
     steps: 
@@ -58,6 +59,5 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
           run: |
-
             twine upload --repository pypi dist/*
 
