@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from openMTPK import RC4
+from openmtpk import RC4
 
 
 def main():
