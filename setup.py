@@ -17,9 +17,15 @@ r = urllib.request.urlopen(req)
 
 if r.code == 200:
     t = json.loads(r.read())
-    releases = t.get('releases', [])
+    releases = t.get('releases', []) 
     if releases:
-        new_version = sorted(releases)[-1]
+        latest_version = sorted(releases)[-1]
+        bump_version = latest_version
+        bump_version = bump_version.split('.')
+        bump_version[2] = str(int(bump_version[2]) + 1)
+        concat_version = '.'.join(bump_version)
+        new_version = concat_version
+
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 

@@ -34,12 +34,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Bump
-        run: pip install bump
-
-      - name: Bump PyPI Version
-        run: bump
-
       - name: Build sdist
         run: pipx run build --sdist
 
