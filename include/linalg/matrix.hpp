@@ -32,7 +32,7 @@ class Matrix {
         std::vector<Type> data;
         std::tuple<size_t, size_t> dim;
         
-        int num = rows * cols;
+        int num_elements = rows * cols;
         
         /**
          * @brief Matrix Class constructor initializing empty vector
@@ -40,10 +40,11 @@ class Matrix {
          * @param[in] rows : size of rows
          * @param[in] cols : size of columns 
          */
-        Matrix(size_t rows, size_t cols) {
+        Matrix(size_t rows, size_t cols) : 
+            cols(cols), rows(rows), data({}) {
             // initialize an empty vector for storage
             data.resize(cols * rows, Type());
-            dim = {rows, cols};
+            dim = std::make_tuple(rows, cols);
         }
         Matrix() : cols(0), rows(0), data({}) {dim = {rows, cols};};
 
@@ -204,7 +205,7 @@ class Matrix {
                         counter++;
                 }
             }
-            return (counter == num);
+            return (counter == num_elements);
         }
 
         /*
@@ -266,7 +267,7 @@ class Matrix {
         
         // Compute mean of matrix by elements
         Matrix mean() {
-            auto m = Type(num);
+            auto m = Type(num_elements);
             return sum().scalar_mult(1 / m);
         }
 
@@ -342,6 +343,13 @@ class Matrix {
             return res;
         }
 
+        void print_shape() {
+            std::cout << "Matrix Size([" << 
+                rows << ", " << cols << 
+                "])" << std::endl;
+        }
+
+
         void print_mtx() {
             for (size_t r = 0; r < rows; ++r) {
                 for (int c = 0; c < cols; ++c) {
@@ -388,7 +396,7 @@ struct mtx {
 
         std::random_device rd{};
         std::mt19937 gen{rd()};
-        T n(MTX.num);
+        T n(MTX.num_elements);
         T stdev{1 / sqrt(n)};
         std::normal_distribution<T> d{0, stdev};
 
