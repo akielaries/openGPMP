@@ -11,20 +11,15 @@ import platform
 import urllib.request
 import json
 
-# get recent version, use pip bump to bump the version
-req = urllib.request.Request(f'https://pypi.python.org/pypi/openmtpk/json')
-r = urllib.request.urlopen(req)
-
-if r.code == 200:
-    t = json.loads(r.read())
-    releases = t.get('releases', []) 
-    if releases:
-        latest_version = sorted(releases)[-1]
-        bump_version = latest_version
-        bump_version = bump_version.split('.')
-        bump_version[2] = str(int(bump_version[2]) + 1)
-        concat_version = '.'.join(bump_version)
-        new_version = concat_version
+# get recent version, bump the version
+with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as url:
+    data = json.load(url)
+    latest_version = (data['info']['version'])
+    bump_version = latest_version
+    bump_version = bump_version.split('.')
+    bump_version[2] = str(int(bump_version[2]) + 1)
+    concat_version = '.'.join(bump_version)
+    new_version = concat_version
 
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
