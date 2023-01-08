@@ -32,10 +32,13 @@ run-swig:
 ##############################################################################
 primes 		= $(MOD_DIR)/number_theory/primes.cpp
 arith		= $(MOD_DIR)/arithmetic/arith.cpp
+calc		= $(MOD_DIR)/calculus/deriv.cpp
+linalg		= $(MOD_DIR)/linalg/lao.cpp
+linreg		= $(MOD_DIR)/ml/linreg.cpp
 cipher		= $(MOD_DIR)/number_theory/cipher.cpp
 rc4			= $(MOD_DIR)/number_theory/rc4.cpp
 compile:
-	${CXX} ${STD} ${CXX_DBG} -O2 -fPIC -c ${arith} ${primes} ${cipher} ${rc4}
+	${CXX} ${STD} ${CXX_DBG} -O2 -fPIC -c ${arith} ${calc} ${primes} ${linalg} ${linreg} ${cipher} ${rc4}
 
 ##############################################################################
 # COMPILE WRAPPED SOURCE FILE 
@@ -55,9 +58,9 @@ endif
 # COMPILE SOURCE OBJECTS 
 ##############################################################################
 pkgLINUX	= _openmtpk.so
-pkgOSX		= _openmtpk.co
+pkgOSX		= _openmtpk.so
 
-src_objs	= arith.o primes.o cipher.o rc4.o openmtpk_wrap.o
+src_objs	= arith.o deriv.o lao.o linreg.o primes.o cipher.o rc4.o openmtpk_wrap.o
 compile-lib:
 # LINUX
 ifeq ($(OS), Linux)
@@ -73,6 +76,7 @@ endif
 clean:
 	rm -rf */__pycache__
 	rm -f *.o
+	rm -f *.so
 	rm -f *.cxx
 	rm -f openmtpk.py
 

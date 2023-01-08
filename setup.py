@@ -1,3 +1,8 @@
+"""
+Main entrypoint for building the openMTPK Python API. 
+Leverages SWIG, setuptools, and a few other dependencies.
+"""
+
 #from setuptools import setup, find_packages
 import setuptools
 from setuptools import setup, dist
