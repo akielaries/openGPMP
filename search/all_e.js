@@ -10,6 +10,7 @@ var searchData=
   ['primes_2ecpp_181',['primes.cpp',['../primes_8cpp.html',1,'']]],
   ['primes_2ehpp_182',['primes.hpp',['../primes_8hpp.html',1,'']]],
   ['print_5fmtx_183',['print_mtx',['../classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6',1,'mtpk::Matrix']]],
-  ['prob_5fby_5fsumm_184',['prob_by_summ',['../namespacemtpk.html#a6e1371eac1dbf20cfe4ba17fe02eb1a4',1,'mtpk']]],
-  ['prop_5fsignal_185',['prop_signal',['../classmtpk_1_1mlp_1_1PrimaryNet.html#a06e28d9835e56de105034fbaaeaa8879',1,'mtpk::mlp::PrimaryNet']]]
+  ['print_5fshape_184',['print_shape',['../classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56',1,'mtpk::Matrix']]],
+  ['prob_5fby_5fsumm_185',['prob_by_summ',['../namespacemtpk.html#a6e1371eac1dbf20cfe4ba17fe02eb1a4',1,'mtpk']]],
+  ['prop_5fsignal_186',['prop_signal',['../classmtpk_1_1mlp_1_1PrimaryNet.html#a06e28d9835e56de105034fbaaeaa8879',1,'mtpk::mlp::PrimaryNet']]]
 ];

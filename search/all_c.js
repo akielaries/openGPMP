@@ -11,7 +11,7 @@ var searchData=
   ['neuron_159',['neuron',['../structmtpk_1_1mlp_1_1neuron.html',1,'mtpk::mlp']]],
   ['neuron_5flayers_160',['neuron_layers',['../classmtpk_1_1NaiveNet.html#a6120d822d57b0c0d28994e4317e18915',1,'mtpk::NaiveNet']]],
   ['neuron_5fptr_161',['neuron_ptr',['../structmtpk_1_1mlp_1_1layer.html#a916b8be35defdd5fdace756560e5c292',1,'mtpk::mlp::layer']]],
-  ['num_162',['num',['../classmtpk_1_1Matrix.html#ae97f131a17a7c36256494805d04ebc98',1,'mtpk::Matrix']]],
+  ['num_5felements_162',['num_elements',['../classmtpk_1_1Matrix.html#aa268a4e51cea0039d2a7c688dc3e0804',1,'mtpk::Matrix']]],
   ['num_5flayers_163',['num_layers',['../classmtpk_1_1mlp_1_1PrimaryNet.html#a22feaf7172ef7a64608cfeaba789f407',1,'mtpk::mlp::PrimaryNet']]],
   ['num_5fneurons_164',['num_neurons',['../structmtpk_1_1mlp_1_1layer.html#a5a7d544256e03cc35149dd61e95fe278',1,'mtpk::mlp::layer']]],
   ['num_5frows_165',['num_rows',['../linreg_8hpp.html#a2be8a4476f266240d1275548cd1134ef',1,'num_rows(const char *input):&#160;linreg.cpp'],['../linreg_8cpp.html#a2be8a4476f266240d1275548cd1134ef',1,'num_rows(const char *input):&#160;linreg.cpp']]]
