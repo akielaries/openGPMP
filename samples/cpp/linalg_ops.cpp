@@ -1,21 +1,34 @@
 /*
  * Linear Algebra Sample File
  *
- * test driver program on the implementations for some basic Linear Algebra
- * operations. 
+ * The Matrix Class is capable of creating both Vectors and Matrices alike
  *
- * For operations on vectors (addition, subtraction) the sizes of the vectors
- * must be of equal length. This is to follow traditional rules in 
- * Linear Algebra vector operations.
+ * BY DEFINITION:
+ * A scalar is a single number, like 3, -5, 0.368, etc,
+ * A vector is a list of numbers (can be in a row or column),
+ *      [ 2 -4 3 ]
+ *      OR
+ *    _____
+ *    | 2 |
+ *    | -4|
+ *    | 3 |
+ *    |___|  
+ *
+ * A matrix is an array of numbers (one or more rows, one or more columns).
+ *      3 x 5
+ *    3 7 5 8 7 
+ *    0 4 1 5 5 
+ *    1 2 0 7 6 
+ *
  */
 #include <iostream>
 #include <stdio.h>
 #include <vector>
 #include <cassert>
 
-#include <openMTPK/linalg.hpp>
-//#include "../../include/linalg/vectors.hpp"
-//#include "../../include/linalg/matrix.hpp"
+//#include <openMTPK/linalg.hpp>
+#include "../../include/linalg/vectors.hpp"
+#include "../../include/linalg/matrix.hpp"
 
 
 int main() {
@@ -28,19 +41,25 @@ int main() {
     std::cout << "Sum = " << x << "\n\n";
 
     // declaring matrix with random negative floats
-    std::cout << "Creating 2x2 matrix (MAT1) of random negative floats\n"; 
+    std::cout << "Creating 2x2 matrix of random negative floats\n"; 
     auto matrix_neg = mtpk::mtx<float>::randn(2, 2);
     matrix_neg.print_shape();
     matrix_neg.print_mtx();
 
     // declaring matrix with random positive floats
-    std::cout << "Creating 2x2 matrix (MAT1) of random positive floats\n"; 
+    std::cout << "Creating 2x2 matrix of random positive floats\n"; 
     auto matrix_pos = mtpk::mtx<float>::rand(2, 2);
     matrix_pos.print_shape();
     matrix_pos.print_mtx();
 
-    std::cout << "Multiply each element of the matrix(MAT1) by itself" << "\n";
+    // multiply each element of matrix_pos by a number
+    std::cout << "Multiply each element of the matrix by a number" << "\n";
     (matrix_pos.scalar_mult(2.f)).print_mtx();
+    (matrix_pos.scalar_mult(3.f)).print_mtx();
+
+    // multiply each element of matrix_pos by itself
+    std::cout << "Multiply each element of the matrix by itself" << "\n";
+    (matrix_pos.mult_elem(matrix_pos)).print_mtx();
 
 
     // declare a matrix of zeros with 3 x 5 dimensions
@@ -61,6 +80,8 @@ int main() {
     matrix_one.print_shape();
     matrix_one.print_mtx();
 
+
     return 0;
+
 }
 

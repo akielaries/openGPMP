@@ -43,6 +43,7 @@ class Arith {
         inline T add(T t) {
             return t;
         }
+
         template<typename T, typename... Ts>
         inline auto add(T t, Ts... ts) {
             return t + add(ts...);

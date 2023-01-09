@@ -61,7 +61,7 @@ class Primality {
          *
          * @return Void 
          */
-        void miller_rabin(int inters, int min_val, int max_val);
+        void miller_rabin(int iters, int min_val, int max_val);
 
         /* algorithms finding a prime number */
         int jacobian_number(long long a, long long n);

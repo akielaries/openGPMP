@@ -4,10 +4,13 @@
  * FOR ARITHMETIC CLASS */
 %module openmtpk
 %include "std_string.i"
+%include "linalg.i"
 %{
     #include "../../include/arithmetic/arith_ops.hpp"
 
     #include "../../include/calculus/deriv.hpp"
+
+    #include "../../include/linalg/vectors.hpp"
 
     #include "../../include/ml/bayes_network.hpp"
     #include "../../include/ml/k-foldCV.hpp"
@@ -22,6 +25,8 @@
 %include "../../include/arithmetic/arith_ops.hpp"
 
 %include "../../include/calculus/deriv.hpp"
+
+%include "../../include/linalg/vectors.hpp"
 
 %include "../../include/ml/bayes_network.hpp"
 %include "../../include/ml/k-foldCV.hpp"
