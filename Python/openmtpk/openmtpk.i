@@ -10,8 +10,6 @@
 
     #include "../../include/calculus/deriv.hpp"
 
-    #include "../../include/linalg/vectors.hpp"
-
     #include "../../include/ml/linreg.hpp"
 
     #include "../../include/number_theory/primes.hpp"
@@ -22,8 +20,6 @@
 %include "../../include/arithmetic/arith_ops.hpp"
 
 %include "../../include/calculus/deriv.hpp"
-
-%include "../../include/linalg/vectors.hpp"
 
 %include "../../include/ml/linreg.hpp"
 

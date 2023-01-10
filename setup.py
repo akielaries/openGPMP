@@ -41,7 +41,6 @@ foo = Extension(
         sources=['Python/openmtpk/openmtpk_wrap.cxx',
              'modules/arithmetic/arith.cpp',
              'modules/calculus/deriv.cpp',
-             'modules/linalg/lao.cpp',
              'modules/ml/linreg.cpp',
              'modules/number_theory/primes.cpp',
              'modules/number_theory/rc4.cpp',
@@ -53,17 +52,6 @@ foo = Extension(
 class BinaryDistribution(dist.Distribution):
     def has_ext_modules(foo):
         return True
-
-class custom_build_ext(build_ext):
-    def build_extensions(self):
-        # Override the compiler executables. Importantly, this
-        # removes the "default" compiler flags that would
-        # otherwise get passed on to to the compiler, i.e.,
-        # distutils.sysconfig.get_var("CFLAGS").
-        self.compiler.set_executable("compiler_so", "g++")
-        self.compiler.set_executable("compiler_cxx", "g++")
-        self.compiler.set_executable("linker_so", "g++")
-        build_ext.build_extensions(self)
 
 
 with open('README.md', 'r', encoding='utf-8') as fh:
