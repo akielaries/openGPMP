@@ -28,6 +28,7 @@ with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as ur
 
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
+os.environ["CC"] = "g++-4.7" os.environ["CXX"] = "g++-4.7"
 
 # execute swig wrapping and respective setup.py
 os.system('cd Python/openmtpk &&\
@@ -52,6 +53,18 @@ foo = Extension(
 class BinaryDistribution(dist.Distribution):
     def has_ext_modules(foo):
         return True
+
+class custom_build_ext(build_ext):
+    def build_extensions(self):
+        # Override the compiler executables. Importantly, this
+        # removes the "default" compiler flags that would
+        # otherwise get passed on to to the compiler, i.e.,
+        # distutils.sysconfig.get_var("CFLAGS").
+        self.compiler.set_executable("compiler_so", "g++")
+        self.compiler.set_executable("compiler_cxx", "g++")
+        self.compiler.set_executable("linker_so", "g++")
+        build_ext.build_extensions(self)
+
 
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
