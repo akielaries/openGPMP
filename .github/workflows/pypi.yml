@@ -24,8 +24,7 @@ jobs:
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.11.4
         env:
-          CIBW_ENVIRONMENT: "CC='g++' CXX='g++'"
-          CIBW_ENVIRONMENT: "CFLAGS='-std=c++17' CXXFLAGS='-std=c++17'"
+          CIBW_ENVIRONMENT: "CC='g++' CXX='g++' CFLAGS='-std=c++17' CXXFLAGS='-std=c++17'"
 
       - uses: actions/upload-artifact@v3
         with:
