@@ -83,7 +83,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../../include/number_theory/cipher.hpp&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCipher.html#a6e954be6a2630d25862f7aa62495642d">   13</a></span>&#160;std::string <a class="code" href="classCipher.html#a6e954be6a2630d25862f7aa62495642d">Cipher::C_cipher</a>(std::string plaintext, <span class="keywordtype">int</span> key) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCipher.html#a081b31e8726e3e857aa30ca6d5c47429">   13</a></span>&#160;std::string <a class="code" href="classCipher.html#a081b31e8726e3e857aa30ca6d5c47429">Cipher::caesar</a>(std::string plaintext, <span class="keywordtype">int</span> key) {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::string hashtext = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; unsigned(i) &lt; plaintext.length(); i++) {</div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> hashtext;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609">   31</a></span>&#160;std::string <a class="code" href="classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609">Cipher::KC_encode</a>(std::string key) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classCipher.html#ad4db0c0dec3554e8e1d6049ff2d3a40b">   31</a></span>&#160;std::string <a class="code" href="classCipher.html#ad4db0c0dec3554e8e1d6049ff2d3a40b">Cipher::keyword_encode</a>(std::string key) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string encoded = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// This array represents the 26 letters of alphabets</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> arr[26] = {0};</div>
@@ -136,34 +136,36 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> encoded;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4">   66</a></span>&#160;std::string <a class="code" href="classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4">Cipher::KC_cipher</a>(std::string plaintext, std::string encoded_text) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::string cipher = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classCipher.html#a3d946f3ec8e6c964c82fc58364821244">   66</a></span>&#160;std::string <a class="code" href="classCipher.html#a3d946f3ec8e6c964c82fc58364821244">Cipher::keyword</a>(std::string plaintext, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            std::string encoded_text) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     * This loop ciphered the message. Spaces, special characters </span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     * and numbers remain same.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; unsigned(i) &lt; plaintext.size(); i++) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (plaintext[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; plaintext[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">int</span> pos = plaintext[i] - 97;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            cipher += encoded_text[pos];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (plaintext[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; plaintext[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordtype">int</span> pos = plaintext[i] - 65;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            cipher += encoded_text[pos];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            cipher += plaintext[i];</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> cipher;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="ttc" id="aclassCipher_html_a6e954be6a2630d25862f7aa62495642d"><div class="ttname"><a href="classCipher.html#a6e954be6a2630d25862f7aa62495642d">Cipher::C_cipher</a></div><div class="ttdeci">std::string C_cipher(std::string plaintext, int key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00013">cipher.cpp:13</a></div></div>
-<div class="ttc" id="aclassCipher_html_a6f3a0e66584c1a7193a84dab0bf6d609"><div class="ttname"><a href="classCipher.html#a6f3a0e66584c1a7193a84dab0bf6d609">Cipher::KC_encode</a></div><div class="ttdeci">std::string KC_encode(std::string key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00031">cipher.cpp:31</a></div></div>
-<div class="ttc" id="aclassCipher_html_a831912aca3c6b8e7c4444a30bf5772f4"><div class="ttname"><a href="classCipher.html#a831912aca3c6b8e7c4444a30bf5772f4">Cipher::KC_cipher</a></div><div class="ttdeci">std::string KC_cipher(std::string plaintext, std::string encoded_text)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00066">cipher.cpp:66</a></div></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::string cipher = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     * This loop ciphered the message. Spaces, special characters </span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     * and numbers remain same.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; unsigned(i) &lt; plaintext.size(); i++) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (plaintext[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; plaintext[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">int</span> pos = plaintext[i] - 97;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            cipher += encoded_text[pos];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (plaintext[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; plaintext[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">int</span> pos = plaintext[i] - 65;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            cipher += encoded_text[pos];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            cipher += plaintext[i];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> cipher;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="ttc" id="aclassCipher_html_a081b31e8726e3e857aa30ca6d5c47429"><div class="ttname"><a href="classCipher.html#a081b31e8726e3e857aa30ca6d5c47429">Cipher::caesar</a></div><div class="ttdeci">std::string caesar(std::string plaintext, int key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00013">cipher.cpp:13</a></div></div>
+<div class="ttc" id="aclassCipher_html_a3d946f3ec8e6c964c82fc58364821244"><div class="ttname"><a href="classCipher.html#a3d946f3ec8e6c964c82fc58364821244">Cipher::keyword</a></div><div class="ttdeci">std::string keyword(std::string plaintext, std::string encoded_text)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00066">cipher.cpp:66</a></div></div>
+<div class="ttc" id="aclassCipher_html_ad4db0c0dec3554e8e1d6049ff2d3a40b"><div class="ttname"><a href="classCipher.html#ad4db0c0dec3554e8e1d6049ff2d3a40b">Cipher::keyword_encode</a></div><div class="ttdeci">std::string keyword_encode(std::string key)</div><div class="ttdef"><b>Definition:</b> <a href="cipher_8cpp_source.html#l00031">cipher.cpp:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
