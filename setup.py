@@ -28,7 +28,6 @@ with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as ur
 
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
-os.environ["CC"] = "g++-4.7" os.environ["CXX"] = "g++-4.7"
 
 # execute swig wrapping and respective setup.py
 os.system('cd Python/openmtpk &&\
