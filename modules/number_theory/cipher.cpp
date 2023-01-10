@@ -10,7 +10,7 @@
 #include "../../include/number_theory/cipher.hpp"
 
 
-std::string Cipher::C_cipher(std::string plaintext, int key) {
+std::string Cipher::caesar(std::string plaintext, int key) {
     std::string hashtext = "";
 
     for (int i = 0; unsigned(i) < plaintext.length(); i++) {
@@ -28,7 +28,7 @@ std::string Cipher::C_cipher(std::string plaintext, int key) {
     return hashtext;
 } 
 
-std::string Cipher::KC_encode(std::string key) {
+std::string Cipher::keyword_encode(std::string key) {
     std::string encoded = "";
     // This array represents the 26 letters of alphabets
     bool arr[26] = {0};
@@ -63,7 +63,9 @@ std::string Cipher::KC_encode(std::string key) {
     return encoded;
 }
 
-std::string Cipher::KC_cipher(std::string plaintext, std::string encoded_text) {
+std::string Cipher::keyword(std::string plaintext, 
+                            std::string encoded_text) {
+
     std::string cipher = "";
 
     /*

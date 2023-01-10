@@ -54,7 +54,9 @@ int main() {
 
     // multiply each element of matrix_pos by a number
     std::cout << "Multiply each element of the matrix by a number" << "\n";
+    std::cout << "By 2\n";
     (matrix_pos.scalar_mult(2.f)).print_mtx();
+    std::cout << "By 3\n";
     (matrix_pos.scalar_mult(3.f)).print_mtx();
 
     // multiply each element of matrix_pos by itself

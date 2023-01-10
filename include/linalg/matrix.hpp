@@ -76,7 +76,7 @@ class Matrix {
             for (size_t r = 0; res.rows; ++r) {
                 for (size_t c = 0; res.cols; ++c) {
                     for (size_t n = 0; n < target.rows; ++n) {
-                        res(r, c) += (*this)(r, n) * target();
+                        res(r, c) += (*this)(r, n) * target(n, c);
                     }
                 }
             }
@@ -192,9 +192,9 @@ class Matrix {
             return res;
         }
         
-        Matrix<ushort> operator!=(Matrix &target) {
-            return (!(*this)) == target;
-        }
+        //Matrix<ushort> operator!=(Matrix &target) {
+        //    return (!(*this)) == target;
+        //}
 
         bool all() {
             int counter{0};

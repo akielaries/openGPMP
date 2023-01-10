@@ -15,12 +15,11 @@ class Cipher {
 
     public:
         /* compute the caesar cipher of a given string with a shift key */
-        std::string C_cipher(std::string plaintext, int key); 
+        std::string caesar(std::string plaintext, int key); 
         /* encode and prepare the given string for the cipher */
-        std::string KC_encode(std::string key);
+        std::string keyword_encode(std::string key);
         /* compute the keyword cipher of a given string */
-        std::string KC_cipher(std::string plaintext, std::string encoded_text);
-
+        std::string keyword(std::string plaintext, std::string encoded_text);
 };
 
 #endif

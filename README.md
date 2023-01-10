@@ -180,16 +180,16 @@ int main() {
     /* CAESAR CIPHER */
     std::string text0 = "Plaintext";
     int shift_key_0 = 5;
-    std::string hashtext_0 = cc.C_cipher(text0, shift_key_0);
+    std::string hashtext_0 = cc.caesar(text0, shift_key_0);
     std::cout << "Hashtext0 = " << hashtext_0 << std::endl;
     
     /* TESTING MONOALPHABETIC SUBSTITUION KEYWORD CIPHER */
     std::string shift_key_2 = "Computer";
     std::string text2 = "Password";
     // encode the plaintext
-    std::string encoded_text = cc.KC_encode(shift_key_2);
+    std::string encoded_text = cc.keyword_encode(shift_key_2);
     // call the cipher function
-    std::string hashtext_2 = cc.KC_cipher(text2 , encoded_text);
+    std::string hashtext_2 = cc.keyword(text2 , encoded_text);
     
     std::cout << "Hashtext2 = " << hashtext_2 << std::endl;
 
@@ -202,15 +202,15 @@ A Python example showing the same functionalities.
 from openmtpk import Cipher
 
 c = Cipher()
-ciphertext_0 = c.C_cipher('Plaintext', 5)
+ciphertext_0 = c.caesar('Plaintext', 5)
 print(ciphertext_0)
 
-ciphertext_1 = c.C_cipher('ATTACKATONCE', 4)
+ciphertext_1 = c.caesar('ATTACKATONCE', 4)
 print(ciphertext_1)
 
 text = "Password"
 shift = "Computer"
-encoded_text = c.KC_encode(shift);
-hashtext = c.KC_cipher(text, encoded_text);
+encoded_text = c.keyword_encode(shift);
+hashtext = c.keyword(text, encoded_text);
 print(hashtext)
 ```
