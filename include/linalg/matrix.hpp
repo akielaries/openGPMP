@@ -177,9 +177,9 @@ class Matrix {
             return sub(target);
         }
 
-        Matrix<ushort> operator==(Matrix &target) {
+        Matrix<unsigned short> operator==(Matrix &target) {
             assert(dim == target.dim);
-            Matrix<ushort> res(rows, cols);
+            Matrix<unsigned short> res(rows, cols);
 
             for (int r = 0; r < rows; ++r) {
                 for (int c = 0; c < cols; ++c) {
