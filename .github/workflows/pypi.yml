@@ -24,7 +24,7 @@ jobs:
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.11.4
         env:
-          CIBW_BEFORE_TEST: CC=gcc CXX=g++
+          CIBW_BEFORE_TEST: CC=g++ CXX=g++
 
       - uses: actions/upload-artifact@v3
         with:
