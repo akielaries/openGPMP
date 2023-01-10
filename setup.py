@@ -8,6 +8,7 @@ import setuptools
 from setuptools import setup, dist
 from setuptools.extension import Extension
 from setuptools.command.install import install
+from setuptools.command.build_ext import build_ext
 
 import os
 import subprocess
