@@ -1,3 +1,6 @@
+# ********** WARNING ********** 
+# THIS MAKEFILE IS NOT A PART OF THE OFFICIAL INSTALLATION PROCESS SEE BELOW :
+#
 # This is the Makefile used to run the modules with their respective driver
 # methods as well as corresponding unit tests done with Google's gtest. This
 # Makefile is only important in testing and developing within this repository

@@ -87,8 +87,9 @@ $ make
 $ sudo make install
 ```
 > **Note**
-> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party 
-> libs are located if not, run the following:
+> Keep the build directory for easy uninstallation. This process asumes your 
+> STDLIB path is /usr/local/lib, where most 3rd-party libs are located if not, 
+> run the following:
 ```
 $ LD_LIBRARY_PATH=/usr/local/lib
 ```
@@ -105,6 +106,13 @@ $ g++ arith.cpp -lopenMTPK -o arith
 $ make arith
 $ make num-theory
 ...
+```
+## Uninstall
+To uninstall files related to openMTPK, simply run the following:
+```
+# enter the build dir from installation
+$ cd build
+$ sudo make uninstall
 ```
 ## Python
 For the Python API of openMTPK simply install with pip.
