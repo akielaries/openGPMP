@@ -7,6 +7,7 @@
 #define LINREG_H
 #include <vector>
 #include <stdio.h>
+#include <cstdint>
 
 namespace mtpk {
 

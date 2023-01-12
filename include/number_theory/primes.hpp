@@ -8,6 +8,7 @@
 #define PRIMES_HPP
 #include <vector>
 #include <stdio.h>
+#include <cstdint>
 
 
 namespace mtpk {
