@@ -47,7 +47,7 @@ struct layer {
 /**
  * @brief Primary Multi-Layer Perceptron Class
  */
-class PrimaryNet {
+class PrimaryMLP {
     /* initialize random values for the network */
     void rand_init();
     /* check that random is an integer */
@@ -138,7 +138,14 @@ class SecondaryNet {
         /**
          * @brief Secondary Multi-Layer Perceptron Constructor
          */
-
+        explicit SecondaryMLP(std::vector<size_t> layer_units, 
+                                    long double lr = .001f) :
+            layer_units(layer_units),
+            wt_matrices(),
+            bias_vectors(),
+            lr(lr) {
+            
+            }
 
 };
 
