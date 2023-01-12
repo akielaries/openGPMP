@@ -7,7 +7,8 @@
 #include <string>
 #include <vector>
 #include <cassert>
-#include <openMTPK/calculus/deriv.hpp>
+//#include <openMTPK/calculus/deriv.hpp>
+#include "../../include/calculus/deriv.hpp"
 
 
 int main() {
@@ -53,7 +54,7 @@ int main() {
     std::cout << "First derivative at a given value.\n";
     int val0 = 2;
     int val1 = 3;
-    long long deriv_result2 = calc.deriv_at(st0, val0);
+    int64_t deriv_result2 = calc.deriv_at(st0, val0);
     std::cout << "df'/dx = " << deriv_result2 << std::endl;
 
     /*

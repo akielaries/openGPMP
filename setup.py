@@ -62,7 +62,7 @@ setuptools.setup(
     name='openmtpk',
     distclass=BinaryDistribution,
     # get version from PyPI package, use bump to increment
-    version=new_version,
+    version='0.6.0',
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',

@@ -26,9 +26,9 @@
 #include <vector>
 #include <cassert>
 
-//#include <openMTPK/linalg.hpp>
-#include "../../include/linalg/vectors.hpp"
-#include "../../include/linalg/matrix.hpp"
+#include <openMTPK/linalg.hpp>
+//#include "../../include/linalg/vectors.hpp"
+//#include "../../include/linalg/matrix.hpp"
 
 
 int main() {

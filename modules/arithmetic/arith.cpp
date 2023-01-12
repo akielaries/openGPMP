@@ -4,8 +4,8 @@
 #include "../../include/arithmetic/arith_ops.hpp"
     
 
-int mtpk::Basics::greatest_power(int n, int p) {
-    int result = 0;
+int64_t mtpk::Basics::greatest_power(int64_t n, int64_t p) {
+    int64_t result = 0;
 
     // Calculate x = n/p + n/(p^2) + n/(p^3) + ....
     while (n) {
@@ -15,7 +15,7 @@ int mtpk::Basics::greatest_power(int n, int p) {
     return result;
 }
 
-int mtpk::Basics::op_gcd(int x, int y) {
+int64_t mtpk::Basics::op_gcd(int64_t x, int64_t y) {
     if(x < y)
         return op_gcd(y, x);
 

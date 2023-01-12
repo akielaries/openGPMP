@@ -19,8 +19,8 @@ namespace mtpk {
  * @brief Operations related to Vectors and Scalars
  */
 class Vectors {
-    std::vector<int> x;
-    std::vector<int> y;
+    std::vector<int64_t> x;
+    std::vector<int64_t> y;
 
 
     public:
@@ -35,7 +35,7 @@ class Vectors {
         //float scalar_sub();
         // function to multiply two 1D vectors
         //float scalar_mult();
-        int add(int a, int b);
+        int64_t add(int64_t a, int64_t b);
 };
 
 } // namespace

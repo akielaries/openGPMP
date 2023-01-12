@@ -10,18 +10,18 @@
 #include "../../include/number_theory/cipher.hpp"
 
 
-std::string Cipher::caesar(std::string plaintext, int key) {
+std::string Cipher::caesar(std::string plaintext, int64_t key) {
     std::string hashtext = "";
 
-    for (int i = 0; unsigned(i) < plaintext.length(); i++) {
+    for (int64_t i = 0; uint64_t(i) < plaintext.length(); i++) {
         // inject transformation
         if (isupper(plaintext[i])) {
             // upper case
-            hashtext += char(int(plaintext[i] + key - 65) % 26 + 65);
+            hashtext += char(int64_t(plaintext[i] + key - 65) % 26 + 65);
         }
         else {
             // lower case
-            hashtext += char(int(plaintext[i] + key - 97) % 26 + 97);
+            hashtext += char(int64_t(plaintext[i] + key - 97) % 26 + 97);
         }
     }
 
@@ -34,7 +34,7 @@ std::string Cipher::keyword_encode(std::string key) {
     bool arr[26] = {0};
  
     // This loop inserts the keyword at the start of the encoded string
-    for (int i = 0; unsigned(i) < key.size(); i++) {
+    for (int64_t i = 0; uint64_t(i) < key.size(); i++) {
         if(key[i] >= 'A' && key[i] <= 'Z') {
             /*
              * To check whether the character is inserted earlier 
@@ -54,7 +54,7 @@ std::string Cipher::keyword_encode(std::string key) {
     }
  
     // This loop inserts the remaining characters in the encoded string.
-    for (int i = 0; i < 26; i++) {
+    for (int64_t i = 0; i < 26; i++) {
         if(arr[i] == 0) {
             arr[i]=1;
             encoded += char(i + 65);
@@ -72,14 +72,14 @@ std::string Cipher::keyword(std::string plaintext,
      * This loop ciphered the message. Spaces, special characters 
      * and numbers remain same.
      */
-    for (int i = 0; unsigned(i) < plaintext.size(); i++) {
+    for (int64_t i = 0; uint64_t(i) < plaintext.size(); i++) {
         if (plaintext[i] >= 'a' && plaintext[i] <= 'z') {
-            int pos = plaintext[i] - 97;
+            int64_t pos = plaintext[i] - 97;
             cipher += encoded_text[pos];
         }
 
         else if (plaintext[i] >= 'A' && plaintext[i] <= 'Z') {
-            int pos = plaintext[i] - 65;
+            int64_t pos = plaintext[i] - 65;
             cipher += encoded_text[pos];
         }
         

@@ -16,8 +16,8 @@ namespace mtpk {
  * Referred to as Self-Organizing Map
  */
 class KohonenNet {
-    int choice(weights, sample);
-    int update(weights, sample, J, alpha);
+    int64_t choice(weights, sample);
+    int64_t update(weights, sample, J, alpha);
 
 };
 

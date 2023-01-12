@@ -11,8 +11,8 @@
 #include "../../include/linalg/matrix.hpp"
 
 
-int mtpk::Vectors::add(int a, int b) {
-    int c = a + b;
+int64_t mtpk::Vectors::add(int64_t a, int64_t b) {
+    int64_t c = a + b;
     return c;
 }
 

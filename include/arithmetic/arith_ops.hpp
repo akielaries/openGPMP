@@ -29,7 +29,7 @@ class Basics {
          * 
          * @return result : (int)
          */
-        int greatest_power(int n, int p);
+        int64_t greatest_power(int64_t n, int64_t p);
 
         /**
          * @brief Find Greatest Common Divisor of 2 integers
@@ -39,7 +39,7 @@ class Basics {
          * 
          * @return result : (int)
          */
-        int op_gcd(int x, int y);
+        int64_t op_gcd(int64_t x, int64_t y);
 };
 
 } // namespace

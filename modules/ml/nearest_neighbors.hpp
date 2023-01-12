@@ -17,7 +17,7 @@ using namespace std;
 */
 class Company {
 public:
-	Company(int turnover, string characteristics, bool success) :
+	Company(int64_t turnover, string characteristics, bool success) :
 		turnover(turnover), success(success), distance(-1)
 	{
 		this->characteristics = transformCharacteristics(characteristics);
@@ -25,8 +25,8 @@ public:
 
 	// distance from test point
 	double distance;
-	int turnover;
-	int characteristics;
+	int64_t turnover;
+	int64_t characteristics;
 	bool success;
 private:
 	/*
@@ -34,11 +34,11 @@ private:
     * as strings to number. It is geting the ASCII code as decimal number and 
     * retuning the total sum of all characters within the string.
 	*/
-	int transformCharacteristics(string& c) {
-		unsigned sum = 0;
+	int64_t transformCharacteristics(string& c) {
+		uint64_t sum = 0;
 		for (size_t i = 0; i < c.size(); ++i) {
 			if (c[i] != ' ') {
-				sum += (int)c[i];
+				sum += (int64_t)c[i];
 			}
 		}
 		return sum;
@@ -109,12 +109,12 @@ bool comparison(Company& lhs, Company& rhs) {
 	return lhs.distance < rhs.distance;
 }
 
-double euclideanDistance(Company& lhs, Company& test) {
+long double euclideanDistance(Company& lhs, Company& test) {
 	return sqrt(pow((lhs.turnover - test.turnover), 2) + 
             pow((lhs.characteristics - test.characteristics), 2));
 }
 
-double manhattanDistance(Company& lhs, Company& test) {
+long double manhattanDistance(Company& lhs, Company& test) {
 	return (abs(lhs.turnover - test.turnover) + 
             abs(lhs.characteristics - test.characteristics));
 }
@@ -134,9 +134,9 @@ bool KNN(vector<Company>& data, Company& test, int k,
 	//sorting so that we can get the k nearest
 	sort(data.begin(), data.end(), comparison);
 
-	int countSuccesful = 0;
-	int countUnsuccesful = 0;
-	for (int i = 0; i < k; ++i) {
+	int64_t countSuccesful = 0;
+	int64_t countUnsuccesful = 0;
+	for (int64_t i = 0; i < k; ++i) {
 		if (data[i].success) {
 			++countSuccesful;
 		}

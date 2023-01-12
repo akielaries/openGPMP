@@ -7,7 +7,7 @@
 #include <string>
 #include <stdio.h>
 
-typedef float Scalar;
+typedef long double Scalar;
 typedef Eigen::MatrixXf Matrix;
 typedef Eigen::RowVectorXf RowVector;
 typedef Eigen::VectorXf ColVector;

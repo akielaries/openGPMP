@@ -20,71 +20,71 @@ class Primality {
         /**
          * @brief Determine if an integer is prime
          *
-         * @param[in] n : any number (int)
+         * @param[in] n : any number (int64_t)
          *
          * @return : true/false (bool)
          */
-        bool is_prime(int n);
+        bool is_prime(int64_t n);
 
         /**
          * @brief Algorithm determining liklihood a number is prime
          *
-         * @param[in] d : target number (int)
-         * @param[in] n : target - 1 (int)
+         * @param[in] d : target number (int64_t)
+         * @param[in] n : target - 1 (int64_t)
          *
          * @pre miller_rabin_prime()
          * 
          * @return true/false (bool)
          */
-        bool compute_miller_rabin(int d, int n);
+        bool compute_miller_rabin(int64_t d, int64_t n);
 
         /**
          * @brief Modified primes algorithm
          *
-         * @param[in] n : target number (int)
-         * @param[in] iters : iterations determine accuracy (int)
+         * @param[in] n : target number (int64_t)
+         * @param[in] iters : iterations determine accuracy (int64_t)
          *
          * @pre miller_rabin()
          *
          * return true/false (bool)
          */
-        bool miller_rabin_prime(int n, int iters);
+        bool miller_rabin_prime(int64_t n, int64_t iters);
 
         /**
          * @brief Miller-Rabin driver, prints values that satisfy conditions
          * @note Finds the primes in a given range
          *
-         * @param[in] iters : iterations determine accuracy (int)
-         * @param[in] min_val : bottom end of range (int)
-         * @param[in] max_val : top end of range (int)
+         * @param[in] iters : iterations determine accuracy (int64_t)
+         * @param[in] min_val : bottom end of range (int64_t)
+         * @param[in] max_val : top end of range (int64_t)
          * @param[out] result : values within range that satisfy
          *
          * @return Void 
          */
-        void miller_rabin(int iters, int min_val, int max_val);
+        void miller_rabin(int64_t iters, int64_t min_val, int64_t max_val);
 
         /* algorithms finding a prime number */
-        int jacobian_number(long long a, long long n);
+        int64_t jacobian_number(int64_t a, int64_t n);
         
         /* determine if var_p is composite or probably prime */
-        bool solovoy_strassen(long long p, int iters);
+        bool solovoy_strassen(int64_t p, int64_t iters);
         
         /* modulo + power of input */
-        long long int mod_pow(long long int base,
-                long long int exponent,
-                long long int mod);
+        int64_t mod_pow(int64_t base,
+                int64_t exponent,
+                int64_t mod);
         
         /* satifies congruence relation:b^n - 1 = b (mod n) */
-        bool carmichael_num(int n);
+        bool carmichael_num(int64_t n);
         
         /* finds the prime numbers up to a limit */
-        void sieve_of_eratosthenes(int n);
+        void sieve_of_eratosthenes(int64_t n);
         
         /* integer factorization */
-        long long int pollard_rho(long long int n);
+        int64_t pollard_rho(int64_t n);
         
         /* Eulers Totient Function */
-        int ETF(unsigned int n);
+        int64_t ETF(uint64_t n);
 };
 
 } // namespace

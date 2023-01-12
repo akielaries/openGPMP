@@ -27,19 +27,19 @@ namespace mlp {
  */
 struct neuron { 
     // exit
-    double ex;
+    long double ex;
     // error
-    double err;
+    long double err;
     // weight
-    double* wt;
+    long double* wt;
     // last weight
-    double* wt_last;
+    long double* wt_last;
     // saved weight
-    double* wt_saved;
+    long double* wt_saved;
 };
 
 struct layer {
-    int num_neurons;
+    int64_t num_neurons;
     neuron* neuron_ptr;
 };
 
@@ -51,21 +51,21 @@ class PrimaryNet {
     /* initialize random values for the network */
     void rand_init();
     /* check that random is an integer */
-    int rand_int(int low, int hi);
+    int64_t rand_int(int64_t low, int64_t hi);
     /*check random is a real number */
-    double rand_real(double low, double hi);
+    long double rand_real(long double low, long double hi);
 
     /*return the number of layers in the network */
-    int num_layers;
+    int64_t num_layers;
     layer* layer_ptr;
 
-    double dMSE;
-    double dMAE;
+    long double dMSE;
+    long double dMAE;
 
     void weights_rank();
 
-    void set_signal_in(double* input);
-    void get_signal_out(double* output);
+    void set_signal_in(long double* input);
+    void get_signal_out(long double* output);
 
     void weights_save();
     void weights_restore();
@@ -73,33 +73,33 @@ class PrimaryNet {
     /* propogate given the signal */
     void prop_signal();
     /* returns the computed output error */
-    void output_err(double* target);
+    void output_err(long double* target);
     /* returns the computed error from backwards propogation */
     void back_prop_err();
     /*adjust weights */
     void weights_adjust();
     /* simulate the Multi-Layer Perceptron Neual Network */
-    void simulate(double* input, double* output, 
-                double* target, bool training);
+    void simulate(long double* input, long double* output, 
+                long double* target, bool training);
 
     public:
-        double dEta;
-        double dAlpha;
-        double dGain;
-        double dAvgTestError;
+        long double dEta;
+        long double dAlpha;
+        long double dGain;
+        long double dAvgTestError;
 
         /* CONSTRUCT */
-        MLP(int nl, int npl[]);
+        MLP(int64_t nl, int64_t npl[]);
         /* DECONSTRUCT */
         ~MLP();
 
         /* method to train the network given data*/
-        int train(const char* fnames);
+        int64_t train(const char* fnames);
         /* method to test given data*/
-        int test (const char* fname);
-        int evaluate();
+        int64_t test (const char* fname);
+        int64_t evaluate();
 
-        void run(const char* fname, const int& maxiter);
+        void run(const char* fname, const int64_t& maxiter);
 
 };
 
@@ -115,7 +115,7 @@ class SecondaryNet {
          *
          * @param[in] x : (float)
          */
-        inline float sigmoid(float x) {
+        inline long double sigmoid(long double x) {
             return 1.0f / (1 + exp(-x));
         }
 
@@ -124,7 +124,7 @@ class SecondaryNet {
          *
          * @param[in] x : (float)
          */
-        inline float sigmoid_deriv(float x) {
+        inline long double sigmoid_deriv(long double x) {
             return (x * (1 - x));
         }
 
@@ -133,7 +133,7 @@ class SecondaryNet {
         std::vector<Matrix<T>> wt_matrices;
         std::vector<Matrix<T>> activations;
 
-        float lr;
+        long double lr;
 
         /**
          * @brief Secondary Multi-Layer Perceptron Constructor

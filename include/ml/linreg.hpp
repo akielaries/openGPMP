@@ -8,29 +8,30 @@
 #include <vector>
 #include <stdio.h>
 
+namespace mtpk {
 
-class regression {
+class Regression {
     // Dynamic array which is going to contain all (i-th x)
-    std::vector<float> x;
+    std::vector<long double> x;
     // Dynamic array which is going to contain all (i-th y)
-    std::vector<float> y;
+    std::vector<long double> y;
     // Store the coefficient/slope in the best fitting line
-    float coeff;
+    long double coeff;
     // Store the constant term in the best fitting line
-    float constant;
+    long double constant;
     // Contains sum of product of all (i-th x) and (i-th y)
-    float sum_xy;
+    long double sum_xy;
     // Contains sum of all (i-th x)
-    float sum_x;
+    long double sum_x;
     // Contains sum of all (i-th y)
-    float sum_y;
+    long double sum_y;
     // Contains sum of square of all (i-th x)
-    float sum_x_square;
+    long double sum_x_square;
     // Contains sum of square of all (i-th y)
-    float sum_y_square;
+    long double sum_y_square;
 
     public:
-        regression();
+        Regression();
         /*{
             coeff;
             constant;
@@ -49,31 +50,31 @@ class regression {
          */
         void calculate_constant();
         // Function that return the number of entries (xi, yi) in the data set
-        int data_size();
+        int64_t data_size();
         // Function that return the coefficient/slope of the best fitting line
-        float return_coeffecient();
+        long double return_coeffecient();
         // Function that return the constant term of the best fitting line
-        float return_constant();
+        long double return_constant();
         // Function that print the best fitting line
         void best_fit();
         // Function to take input from the dataset
-        void get_input(int n);
+        void get_input(int64_t n);
         // Function to show the data set
         void show_data();
         // Function to predict the value corresponding to some input
-        float predict(float x);
+        long double predict(long double x);
         // Function that returns overall sum of square of errors
-        float error_square(); 
+        long double error_square(); 
         /*
          * Functions that return the error i.e the difference between the actual 
          * value and value predicted by our model
          */
-        float error_in(float num);
+        long double error_in(long double num);
+        // function that calculates the number of rows in a file
+        int64_t num_rows(const char* input);
 };
 
-// function that calculates the number of rows in a file
-int num_rows(const char* input);
-
+} // namespace
 
 #endif
 

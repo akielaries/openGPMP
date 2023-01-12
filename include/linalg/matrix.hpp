@@ -32,7 +32,7 @@ class Matrix {
         std::vector<Type> data;
         std::tuple<size_t, size_t> dim;
         
-        int num_elements = rows * cols;
+        int64_t num_elements = rows * cols;
         
         /**
          * @brief Matrix Class constructor initializing empty vector
@@ -181,8 +181,8 @@ class Matrix {
             assert(dim == target.dim);
             Matrix<unsigned short> res(rows, cols);
 
-            for (int r = 0; r < rows; ++r) {
-                for (int c = 0; c < cols; ++c) {
+            for (int64_t r = 0; r < rows; ++r) {
+                for (int64_t c = 0; c < cols; ++c) {
                     if ((*this)(r, c) - target(r, c) == 0.)
                         res(r, c) = 1;
                     else
@@ -197,10 +197,10 @@ class Matrix {
         //}
 
         bool all() {
-            int counter{0};
+            int64_t counter{0};
 
-            for (int r = 0; r < rows; ++r) {
-                for (int c = 0; c < cols; ++c) {
+            for (int64_t r = 0; r < rows; ++r) {
+                for (int64_t c = 0; c < cols; ++c) {
                     if ((*this)(r, c))
                         counter++;
                 }
@@ -352,7 +352,7 @@ class Matrix {
 
         void print_mtx() {
             for (size_t r = 0; r < rows; ++r) {
-                for (int c = 0; c < cols; ++c) {
+                for (int64_t c = 0; c < cols; ++c) {
                     std::cout << (*this)(r, c) << " ";
                 }
                 std::cout << std::endl;
@@ -362,7 +362,7 @@ class Matrix {
 
         void fill_index(Type val) {
             for (size_t r = 0; r < rows; ++r) {
-                for (int c = 0; c < cols; ++c) {
+                for (int64_t c = 0; c < cols; ++c) {
                     (*this)(r, c) = val;
                 }
             }
@@ -401,7 +401,7 @@ struct mtx {
         std::normal_distribution<T> d{0, stdev};
 
         for (size_t r = 0; r < rows; ++r) {
-            for (int c = 0; c < cols; ++c) {
+            for (int64_t c = 0; c < cols; ++c) {
             MTX(r, c) = d(gen);
             }
         }
@@ -415,7 +415,7 @@ struct mtx {
         std::uniform_real_distribution<T> d{0, 1};
 
         for (size_t r = 0; r < rows; ++r) {
-          for (int c = 0; c < cols; ++c) {
+          for (int64_t c = 0; c < cols; ++c) {
             MTX(r, c) = d(gen);
             }
         }

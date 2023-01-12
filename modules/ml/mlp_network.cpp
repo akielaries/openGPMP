@@ -12,21 +12,23 @@
  * Initialize randomly generated values for network's method
  */
 void MLP::rand_init() {
-    srand((unsigned) time(NULL));
+    srand((uint64_t) time(NULL));
 }
 
 /* verify the random is an integer */
-int MLP::rand_int(int hi, int low) {
+int64_t MLP::rand_int(int64_t hi, int64_t low) {
     return rand() % (hi - low + 1) + low;
 }
 
 /* verify generated random is a real number */
-double MLP::rand_real() {
-    return ((double) rand() / RAND_MAX) * (hi - low) + low;
+long double MLP::rand_real() {
+    return ((long double) rand() / RAND_MAX) * (hi - low) + low;
 }
 
 /* MLP CONSTRUCTOR */
-MLP::MLP(int nl, int npl):num_layers(0), layer_ptr(0),
+MLP::MLP(int64_t nl, int64_t npl) : 
+    num_layers(0), 
+    layer_ptr(0),
     dEta(0.25),
     dAlpha(0.9),
     dGain(1.0),

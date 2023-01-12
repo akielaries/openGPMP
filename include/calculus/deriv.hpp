@@ -26,7 +26,7 @@ class Calculus {
          *
          * @return result : formatted coeffecients + exponents
          */
-        long long derivative_term(std::string p_term, long long val);
+        int64_t derivative_term(std::string p_term, int64_t val);
 
         /**
          * @brief Find the derivative of a function with x = val
@@ -36,7 +36,7 @@ class Calculus {
          *
          * @return result : result of the solved x
          */
-        long long deriv_at(std::string& poly, int val);
+        int64_t deriv_at(std::string& poly, int64_t val);
         
         /**
          * @brief Calculate the derivative of a function, not solving for x
