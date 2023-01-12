@@ -75,8 +75,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a081b31e8726e3e857aa30ca6d5c47429"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipher.html#a081b31e8726e3e857aa30ca6d5c47429">caesar</a> (std::string plaintext, int key)</td></tr>
-<tr class="separator:a081b31e8726e3e857aa30ca6d5c47429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5714fcfb2eddb24e7dfa78a83cc7949"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipher.html#ad5714fcfb2eddb24e7dfa78a83cc7949">caesar</a> (std::string plaintext, int64_t key)</td></tr>
+<tr class="separator:ad5714fcfb2eddb24e7dfa78a83cc7949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4db0c0dec3554e8e1d6049ff2d3a40b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipher.html#ad4db0c0dec3554e8e1d6049ff2d3a40b">keyword_encode</a> (std::string key)</td></tr>
 <tr class="separator:ad4db0c0dec3554e8e1d6049ff2d3a40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d946f3ec8e6c964c82fc58364821244"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipher.html#a3d946f3ec8e6c964c82fc58364821244">keyword</a> (std::string plaintext, std::string encoded_text)</td></tr>
@@ -86,8 +86,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="cipher_8hpp_source.html#l00014">14</a> of file <a class="el" href="cipher_8hpp_source.html">cipher.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a081b31e8726e3e857aa30ca6d5c47429"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a081b31e8726e3e857aa30ca6d5c47429">&#9670;&nbsp;</a></span>caesar()</h2>
+<a id="ad5714fcfb2eddb24e7dfa78a83cc7949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5714fcfb2eddb24e7dfa78a83cc7949">&#9670;&nbsp;</a></span>caesar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -101,7 +101,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">int64_t&#160;</td>
           <td class="paramname"><em>key</em>&#160;</td>
         </tr>
         <tr>
@@ -113,18 +113,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="cipher_8cpp_source.html#l00013">13</a> of file <a class="el" href="cipher_8cpp_source.html">cipher.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                     {</div>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                         {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::string hashtext = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; unsigned(i) &lt; plaintext.length(); i++) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; uint64_t(i) &lt; plaintext.length(); i++) {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">// inject transformation</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">if</span> (isupper(plaintext[i])) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="comment">// upper case</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            hashtext += char(<span class="keywordtype">int</span>(plaintext[i] + key - 65) % 26 + 65);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            hashtext += char(int64_t(plaintext[i] + key - 65) % 26 + 65);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="comment">// lower case</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            hashtext += char(<span class="keywordtype">int</span>(plaintext[i] + key - 97) % 26 + 97);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            hashtext += char(int64_t(plaintext[i] + key - 97) % 26 + 97);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -168,14 +168,14 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     * This loop ciphered the message. Spaces, special characters </span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     * and numbers remain same.</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; unsigned(i) &lt; plaintext.size(); i++) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; uint64_t(i) &lt; plaintext.size(); i++) {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (plaintext[i] &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; plaintext[i] &lt;= <span class="charliteral">&#39;z&#39;</span>) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">int</span> pos = plaintext[i] - 97;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            int64_t pos = plaintext[i] - 97;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            cipher += encoded_text[pos];</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (plaintext[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; plaintext[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">int</span> pos = plaintext[i] - 65;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            int64_t pos = plaintext[i] - 65;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            cipher += encoded_text[pos];</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
@@ -211,7 +211,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> arr[26] = {0};</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// This loop inserts the keyword at the start of the encoded string</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; unsigned(i) &lt; key.size(); i++) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; uint64_t(i) &lt; key.size(); i++) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(key[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; key[i] &lt;= <span class="charliteral">&#39;Z&#39;</span>) {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">/*</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">             * To check whether the character is inserted earlier </span></div>
@@ -231,7 +231,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// This loop inserts the remaining characters in the encoded string.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 26; i++) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 26; i++) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span>(arr[i] == 0) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            arr[i]=1;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            encoded += char(i + 65);</div>

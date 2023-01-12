@@ -79,12 +79,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d927409f1f558e7a7138e51ba9e43e2"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Calculus.html#a6d927409f1f558e7a7138e51ba9e43e2">derivative_term</a> (std::string p_term, long long val)</td></tr>
-<tr class="memdesc:a6d927409f1f558e7a7138e51ba9e43e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the coeffecients and exponents of a polynomial.  <a href="classmtpk_1_1Calculus.html#a6d927409f1f558e7a7138e51ba9e43e2">More...</a><br /></td></tr>
-<tr class="separator:a6d927409f1f558e7a7138e51ba9e43e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a3c7882f79d4d2b06ca33dbecfbff4"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Calculus.html#a84a3c7882f79d4d2b06ca33dbecfbff4">deriv_at</a> (std::string &amp;poly, int val)</td></tr>
-<tr class="memdesc:a84a3c7882f79d4d2b06ca33dbecfbff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the derivative of a function with x = val.  <a href="classmtpk_1_1Calculus.html#a84a3c7882f79d4d2b06ca33dbecfbff4">More...</a><br /></td></tr>
-<tr class="separator:a84a3c7882f79d4d2b06ca33dbecfbff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a284a811f1cea8a9e33a0e348612a6050"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">derivative_term</a> (std::string p_term, int64_t val)</td></tr>
+<tr class="memdesc:a284a811f1cea8a9e33a0e348612a6050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the coeffecients and exponents of a polynomial.  <a href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">More...</a><br /></td></tr>
+<tr class="separator:a284a811f1cea8a9e33a0e348612a6050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1c4fdc45fccf75cd81ca5a63cff7e2"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">deriv_at</a> (std::string &amp;poly, int64_t val)</td></tr>
+<tr class="memdesc:a4c1c4fdc45fccf75cd81ca5a63cff7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the derivative of a function with x = val.  <a href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">More...</a><br /></td></tr>
+<tr class="separator:a4c1c4fdc45fccf75cd81ca5a63cff7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47c9d1bc11315662c6f9e1183f5ec7ee"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">deriv</a> (std::string &amp;poly)</td></tr>
 <tr class="memdesc:a47c9d1bc11315662c6f9e1183f5ec7ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the derivative of a function, not solving for x.  <a href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">More...</a><br /></td></tr>
 <tr class="separator:a47c9d1bc11315662c6f9e1183f5ec7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00093">93</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                             {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> ans = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    int64_t ans = 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::istringstream is(poly);</div>
@@ -144,14 +144,14 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a84a3c7882f79d4d2b06ca33dbecfbff4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84a3c7882f79d4d2b06ca33dbecfbff4">&#9670;&nbsp;</a></span>deriv_at()</h2>
+<a id="a4c1c4fdc45fccf75cd81ca5a63cff7e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1c4fdc45fccf75cd81ca5a63cff7e2">&#9670;&nbsp;</a></span>deriv_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long long mtpk::Calculus::deriv_at </td>
+          <td class="memname">int64_t mtpk::Calculus::deriv_at </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;&#160;</td>
           <td class="paramname"><em>poly</em>, </td>
@@ -159,7 +159,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">int64_t&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
         </tr>
         <tr>
@@ -181,8 +181,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>result : result of the solved x </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00071">71</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                         {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> ans = 0;</div>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                           {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    int64_t ans = 0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::istringstream is(poly);</div>
@@ -196,24 +196,24 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;       </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Otherwise find the derivative of that particular term</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ans = (ans + <a class="code" href="classmtpk_1_1Calculus.html#a6d927409f1f558e7a7138e51ba9e43e2">derivative_term</a>(p_term, val));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ans = (ans + <a class="code" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">derivative_term</a>(p_term, val));</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    printf(<span class="stringliteral">&quot;\nDEBUGGING DERIV AT\n\n&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    printf(<span class="stringliteral">&quot;ans = %lld\n&quot;</span>, ans);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    printf(<span class="stringliteral">&quot;ans = %ld\n&quot;</span>, ans);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> ans;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a6d927409f1f558e7a7138e51ba9e43e2"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a6d927409f1f558e7a7138e51ba9e43e2">mtpk::Calculus::derivative_term</a></div><div class="ttdeci">long long derivative_term(std::string p_term, long long val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00039">deriv.cpp:39</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Calculus_html_a284a811f1cea8a9e33a0e348612a6050"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">mtpk::Calculus::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00039">deriv.cpp:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a6d927409f1f558e7a7138e51ba9e43e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d927409f1f558e7a7138e51ba9e43e2">&#9670;&nbsp;</a></span>derivative_term()</h2>
+<a id="a284a811f1cea8a9e33a0e348612a6050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a284a811f1cea8a9e33a0e348612a6050">&#9670;&nbsp;</a></span>derivative_term()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long long mtpk::Calculus::derivative_term </td>
+          <td class="memname">int64_t mtpk::Calculus::derivative_term </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>p_term</em>, </td>
@@ -221,7 +221,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">long long&#160;</td>
+          <td class="paramtype">int64_t&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
         </tr>
         <tr>
@@ -243,17 +243,17 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>result : formatted coeffecients + exponents </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00039">39</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                       {</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                   {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    printf(<span class="stringliteral">&quot;DEBUGGING DERIVTERM\n\n&quot;</span>); </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Get coefficient</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string coeffStr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    int64_t i;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (i = 0; p_term[i] != <span class="charliteral">&#39;x&#39;</span>; i++) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        coeffStr.push_back(p_term[i]);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> coeff = atol(coeffStr.c_str());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    int64_t coeff = atol(coeffStr.c_str());</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Get Power (Skip 2 characters for x and ^)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::string powStr = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -262,15 +262,15 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        powStr.push_back(p_term[i]);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        printf(<span class="stringliteral">&quot;powStr = %s \n&quot;</span>, powStr.c_str());</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> expo = atol(powStr.c_str());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    int64_t expo = atol(powStr.c_str());</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// For ax^n, we return anx^(n-1)</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    printf(<span class="stringliteral">&quot;powStr = %s \n&quot;</span>, powStr.c_str());</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    printf(<span class="stringliteral">&quot;p_term = %s \n&quot;</span>, p_term.c_str());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    printf(<span class="stringliteral">&quot;coeff = %lld \n&quot;</span>, coeff);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    printf(<span class="stringliteral">&quot;Exponent = %lld \n&quot;</span>, expo);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    printf(<span class="stringliteral">&quot;coeff = %ld \n&quot;</span>, coeff);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    printf(<span class="stringliteral">&quot;Exponent = %ld \n&quot;</span>, expo);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">long</span> result = coeff * expo * pow(val, expo - 1);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    int64_t result = coeff * expo * pow(val, expo - 1);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> coeff * expo * pow(val, expo - 1);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>

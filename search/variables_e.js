@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['turnover_516',['turnover',['../classCompany.html#a54429f45ecfb26672650fc4e4017570e',1,'Company']]]
+  ['turnover_517',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]]
 ];

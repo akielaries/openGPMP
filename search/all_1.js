@@ -8,7 +8,7 @@ var searchData=
   ['bayes_5fnetwork_2ehpp_18',['bayes_network.hpp',['../bayes__network_8hpp.html',1,'']]],
   ['bayesclf_19',['BayesClf',['../classmtpk_1_1BayesClf.html',1,'mtpk']]],
   ['bayesnet_20',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]],
-  ['best_5ffit_21',['best_fit',['../classregression.html#ad2f2b1544449df120b91c72b66a01933',1,'regression']]],
+  ['best_5ffit_21',['best_fit',['../classmtpk_1_1Regression.html#ad4906faaedcc78a6bdfddef423459a86',1,'mtpk::Regression']]],
   ['bias_5fvectors_22',['bias_vectors',['../classmtpk_1_1mlp_1_1SecondaryNet.html#a21e480752cb36664a9d8cc088e805c1f',1,'mtpk::mlp::SecondaryNet']]],
   ['bits_23',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
   ['byte_5flimit_24',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],

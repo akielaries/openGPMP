@@ -193,7 +193,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        std::uniform_real_distribution&lt;T&gt; d{0, 1};</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; cols; ++c) {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;          <span class="keywordflow">for</span> (int64_t c = 0; c &lt; cols; ++c) {</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            MTX(r, c) = d(gen);</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            }</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        }</div>
@@ -249,7 +249,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        std::normal_distribution&lt;T&gt; d{0, stdev};</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> c = 0; c &lt; cols; ++c) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">for</span> (int64_t c = 0; c &lt; cols; ++c) {</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            MTX(r, c) = d(gen);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            }</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
