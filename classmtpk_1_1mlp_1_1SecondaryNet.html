@@ -89,6 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf7f71a3b3a9843e5aad67bf4e08af63"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryNet.html#aaf7f71a3b3a9843e5aad67bf4e08af63">sigmoid_deriv</a> (long double x)</td></tr>
 <tr class="memdesc:aaf7f71a3b3a9843e5aad67bf4e08af63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid Derivative for backwards propogation.  <a href="classmtpk_1_1mlp_1_1SecondaryNet.html#aaf7f71a3b3a9843e5aad67bf4e08af63">More...</a><br /></td></tr>
 <tr class="separator:aaf7f71a3b3a9843e5aad67bf4e08af63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b998b571df400fb6dff587b3ee7f9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a06b998b571df400fb6dff587b3ee7f9f">SecondaryMLP</a> (std::vector&lt; size_t &gt; <a class="el" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a590c4178c3a4279640ec00983eae884b">layer_units</a>, long double <a class="el" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a489c35dd20ab562bec9171e082f0de8e">lr</a>=.001f)</td></tr>
+<tr class="memdesc:a06b998b571df400fb6dff587b3ee7f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secondary Multi-Layer Perceptron Constructor.  <a href="classmtpk_1_1mlp_1_1SecondaryNet.html#a06b998b571df400fb6dff587b3ee7f9f">More...</a><br /></td></tr>
+<tr class="separator:a06b998b571df400fb6dff587b3ee7f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -111,6 +114,59 @@ class mtpk::mlp::SecondaryNet&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00111">111</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a06b998b571df400fb6dff587b3ee7f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b998b571df400fb6dff587b3ee7f9f">&#9670;&nbsp;</a></span>SecondaryMLP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryNet.html">mtpk::mlp::SecondaryNet</a>&lt; T &gt;::SecondaryMLP </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; size_t &gt;&#160;</td>
+          <td class="paramname"><em>layer_units</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long double&#160;</td>
+          <td class="paramname"><em>lr</em> = <code>.001f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Secondary Multi-Layer Perceptron Constructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00141">141</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                                            :</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a590c4178c3a4279640ec00983eae884b">layer_units</a>(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a590c4178c3a4279640ec00983eae884b">layer_units</a>),</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a86dd1de99f1c3ab4a0d77f5d899f6443">wt_matrices</a>(),</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a21e480752cb36664a9d8cc088e805c1f">bias_vectors</a>(),</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a489c35dd20ab562bec9171e082f0de8e">lr</a>(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryNet.html#a489c35dd20ab562bec9171e082f0de8e">lr</a>) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            }</div>
+<div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryNet_html_a21e480752cb36664a9d8cc088e805c1f"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryNet.html#a21e480752cb36664a9d8cc088e805c1f">mtpk::mlp::SecondaryNet::bias_vectors</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; bias_vectors</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00132">mlp_network.hpp:132</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryNet_html_a489c35dd20ab562bec9171e082f0de8e"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryNet.html#a489c35dd20ab562bec9171e082f0de8e">mtpk::mlp::SecondaryNet::lr</a></div><div class="ttdeci">long double lr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00136">mlp_network.hpp:136</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryNet_html_a590c4178c3a4279640ec00983eae884b"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryNet.html#a590c4178c3a4279640ec00983eae884b">mtpk::mlp::SecondaryNet::layer_units</a></div><div class="ttdeci">std::vector&lt; size_t &gt; layer_units</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00131">mlp_network.hpp:131</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryNet_html_a86dd1de99f1c3ab4a0d77f5d899f6443"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryNet.html#a86dd1de99f1c3ab4a0d77f5d899f6443">mtpk::mlp::SecondaryNet::wt_matrices</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; wt_matrices</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00133">mlp_network.hpp:133</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a33c4d13320d2b6cf7968932d950ae6ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33c4d13320d2b6cf7968932d950ae6ec">&#9670;&nbsp;</a></span>sigmoid()</h2>
 

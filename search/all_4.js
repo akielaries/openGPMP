@@ -7,7 +7,7 @@ var searchData=
   ['errors_77',['errors',['../classmtpk_1_1NaiveNet.html#aee1f88544b22a04ff741ea3e94a2d352',1,'mtpk::NaiveNet']]],
   ['etf_78',['ETF',['../classmtpk_1_1Primality.html#a8dbb0834d183be7d8a855ea346a2b120',1,'mtpk::Primality']]],
   ['euclideandistance_79',['euclideanDistance',['../classmtpk_1_1NearestNeighbor.html#ae9f33c856d549afad30b260b2e82ecd7',1,'mtpk::NearestNeighbor::euclideanDistance()'],['../nearest__neighbors_8hpp.html#aea167cf8a07bdeab4cc68fae7a02806e',1,'euclideanDistance():&#160;nearest_neighbors.hpp']]],
-  ['evaluate_80',['evaluate',['../classmtpk_1_1mlp_1_1PrimaryNet.html#ac7680ce5b2dae8c5ac97db6f635a408a',1,'mtpk::mlp::PrimaryNet']]],
+  ['evaluate_80',['evaluate',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#aeb70cbf41e3f4ce5934137777fd4d8e7',1,'mtpk::mlp::PrimaryMLP']]],
   ['ex_81',['ex',['../structmtpk_1_1mlp_1_1neuron.html#a8054dc80494bf59eb54ec8e4630ad28a',1,'mtpk::mlp::neuron']]],
   ['examples_82',['Examples',['../md_docs_source_Examples.html',1,'']]],
   ['examples_2emd_83',['Examples.md',['../Examples_8md.html',1,'']]],

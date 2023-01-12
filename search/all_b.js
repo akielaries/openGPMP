@@ -14,7 +14,7 @@ var searchData=
   ['miller_5frabin_136',['miller_rabin',['../classmtpk_1_1Primality.html#a80e778a98a010f0ee157c4be1d8315d3',1,'mtpk::Primality']]],
   ['miller_5frabin_5fprime_137',['miller_rabin_prime',['../classmtpk_1_1Primality.html#ab1ca68ee9884d4f7e156334130c2c434',1,'mtpk::Primality']]],
   ['ml_2ehpp_138',['ml.hpp',['../ml_8hpp.html',1,'']]],
-  ['mlp_139',['MLP',['../classmtpk_1_1mlp_1_1PrimaryNet.html#aaf65ca2eaf38d0e66990057bbf23f3aa',1,'mtpk::mlp::PrimaryNet']]],
+  ['mlp_139',['MLP',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a25740424f4592d2fc2f9e89301e67c2f',1,'mtpk::mlp::PrimaryMLP']]],
   ['mlp_140',['mlp',['../namespacemtpk_1_1mlp.html',1,'mtpk']]],
   ['mlp_5fnetwork_2ecpp_141',['mlp_network.cpp',['../mlp__network_8cpp.html',1,'']]],
   ['mlp_5fnetwork_2ehpp_142',['mlp_network.hpp',['../mlp__network_8hpp.html',1,'']]],

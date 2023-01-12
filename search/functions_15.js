@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7emlp_468',['~MLP',['../classmtpk_1_1mlp_1_1PrimaryNet.html#a5e2a76b110a480aa2a33282d957ce208',1,'mtpk::mlp::PrimaryNet']]]
+  ['_7emlp_470',['~MLP',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a79fc1eba8896649aff83a65ac301b25d',1,'mtpk::mlp::PrimaryMLP']]]
 ];
