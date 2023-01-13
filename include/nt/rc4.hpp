@@ -1,5 +1,19 @@
-/*
- * definitions for derivative operations operations 
+/** 
+ * @file
+ * Definitions for derivative operations operations 
+ * @details The RC4 algorithm in this case used 5 methods all dependent off 
+ * eachother with only 2 being available to the user and 1 optional. 
+ * Required:
+ * 1. mtpk::RC4::compute(): 
+ *      - key (char *)
+ *      - text (char *)
+ *      - hashtext (allocated unsigned char * w/ size & length of text)
+ *      - swap type (int 0-2)
+ *          - XOR swap, char swap, byte swap
+ * 2. mtpk::RC4::store_hash():
+ *      - text
+ *      - hashtext : previously declared and passed into compute()
+ *      - swap type
  */
 
 #ifndef RC4_H
@@ -14,6 +28,12 @@
 #define BITS 255
 #define BYTE_LIMIT 256
 
+namespace mtpk {
+
+/**
+ * @class
+ * @brief Rivest-Cipher 4 Encryption Algorithm Class
+ */
 class RC4 {
 
     public:
@@ -43,6 +63,8 @@ class RC4 {
                     int swap_type);
 
 };
+
+} // namespace
 
 #endif
 

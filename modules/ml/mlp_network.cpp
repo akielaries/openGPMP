@@ -11,22 +11,22 @@
 /*
  * Initialize randomly generated values for network's method
  */
-void MLP::rand_init() {
+void mtpk::mlp::PrimaryMLP::rand_init() {
     srand((uint64_t) time(NULL));
 }
 
 /* verify the random is an integer */
-int64_t MLP::rand_int(int64_t hi, int64_t low) {
+int64_t mtpk::mlp::PrimaryMLP::rand_int(int64_t hi, int64_t low) {
     return rand() % (hi - low + 1) + low;
 }
 
 /* verify generated random is a real number */
-long double MLP::rand_real() {
+long double mtpk::mlp::PrimaryMLP::rand_real() {
     return ((long double) rand() / RAND_MAX) * (hi - low) + low;
 }
 
 /* MLP CONSTRUCTOR */
-MLP::MLP(int64_t nl, int64_t npl) : 
+mtpk::mlp::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl) : 
     num_layers(0), 
     layer_ptr(0),
     dEta(0.25),
@@ -35,5 +35,10 @@ MLP::MLP(int64_t nl, int64_t npl) :
     dMSE(0.0),
     dMAE(0.0),
     dAvgTestError(0.0)
+
+
+
+
+
 
 

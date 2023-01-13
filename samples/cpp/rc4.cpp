@@ -6,12 +6,15 @@
 #include <string>
 #include <vector>
 #include <time.h>
-#include <openMTPK/number_theory/rc4.hpp>
+#include <openMTPK/nt/rc4.hpp>
+//#include "../../include/nt/rc4.hpp"
 
 
 int main() {
     /*
-     * Provide some details on how to use this algorithm
+     * The RC4 algorithm in this case used 5 methods all dependent off 
+     * eachother with only 2 being required by the user and 1 optional. 
+     *  1. compute(): requires 
      */
     std::cout << "<------------------------------------------------------>\n\n";
     std::cout << "RIVEST CIPHER (RC4) EXAMPLE\n\n";
@@ -19,7 +22,7 @@ int main() {
     /*<--------------------------------INIT--------------------------------->*/
 
     // declare RC4 class obj
-    RC4 rc;
+    mtpk::RC4 rc;
 
     /*
      * declare some key values and strings to hash
@@ -27,17 +30,17 @@ int main() {
      * and will be displayed when using a traditional swap method 
      */
     // expected hash = BBF316E8D940AF0AD3
-    char* key0    = (char*)"Key";
-    char* text0   = (char*)"Plaintext";
+    char *key0    = (char*)"Key";
+    char *text0   = (char*)"Plaintext";
     // expected hash = 1021BF0420
-    char* key1    = (char*)"Wiki";
-    char* text1   = (char*)"pedia";
+    char *key1    = (char*)"Wiki";
+    char *text1   = (char*)"pedia";
     // expected hash = 45A01F645FC35B383552544B9BF5
-    char* key2    = (char*)"Secret";
-    char* text2   = (char*)"Attack at dawn";
+    char *key2    = (char*)"Secret";
+    char *text2   = (char*)"Attack at dawn";
     
-    char* key3    = (char*)"1";
-    char* text3   = (char*)"username";
+    char *key3    = (char*)"1";
+    char *text3   = (char*)"username";
 
     /*
      * char value for using one of the following 

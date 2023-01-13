@@ -16,7 +16,7 @@ CC			= gcc
 CXX 		= g++
 VERBOSE 	= TRUE
 
-CXX_DBG 	= -Wall -Wextra -g
+CXX_DBG 	= -Wno-unused-result -Wsign-compare -DNDEBUG -g -O3 -Wall -Wextra
 # CXX_THREAD	= -lpthread  
 LIBXBGI		= /usr/lib/libXbgi.a
 CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
@@ -68,23 +68,23 @@ lin-alg:
 
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
-PRIMES		= $(SRCDIR)/number_theory/primes.cpp
+PRIMES		= $(SRCDIR)/nt/primes.cpp
 PRIMESDRV	= $(PROJDIR)/samples/cpp/primes.cpp
 PRIMESBIN	= primes
 
-CIPH		= $(SRCDIR)/number_theory/cipher.cpp
+CIPH		= $(SRCDIR)/nt/cipher.cpp
 CIPHDRV		= $(PROJDIR)/samples/cpp/cipher.cpp
 CIPHBIN		= cipher
 
-RC2			= $(SRCDIR)/number_theory/rc2.cpp
+RC2			= $(SRCDIR)/nt/rc2.cpp
 RC2DRV		= $(PROJDIR)/samples/cpp/rc2.cpp
 RC2BIN		= rc2
 
-RC4			= $(SRCDIR)/number_theory/rc4.cpp
+RC4			= $(SRCDIR)/nt/rc4.cpp
 RC4DRV		= $(PROJDIR)/samples/cpp/rc4.cpp
 RC4BIN		= rc4
 
-RC5			= $(SRCDIR)/number_theory/rc5.cpp
+RC5			= $(SRCDIR)/nt/rc5.cpp
 RC5DRV		= $(PROJDIR)/samples/cpp/rc5.cpp
 RC5BIN		= rc5
 

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <openMTPK/number_theory/cipher.hpp>
+#include <openMTPK/nt/cipher.hpp>
 
 
 int main() {
@@ -15,7 +15,7 @@ int main() {
     std::cout << "<------------------------------------------------------>\n\n";
 
     // declare CIPHER class obj
-    Cipher cc;
+    mtpk::Cipher cc;
 
     /*
      * declare some key values and strings to hash

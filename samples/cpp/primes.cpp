@@ -4,7 +4,7 @@
  *
  */
 #include <iostream>
-#include <openMTPK/number_theory/primes.hpp>
+#include <openMTPK/nt/primes.hpp>
 
 int main() {
     std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;

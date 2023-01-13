@@ -3,7 +3,7 @@
  * of the Number Theory module
  *
  */
-#include "../../include/number_theory/primes.hpp"
+#include "../../include/nt/primes.hpp"
 #include <gtest/gtest.h>
 #include <iostream>
 

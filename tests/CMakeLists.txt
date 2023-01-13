@@ -21,9 +21,9 @@ include(FetchContent)
 set(TEST_SOURCES
     ../modules/arithmetic/arith.cpp
     ../modules/calculus/deriv.cpp
-    ../modules/number_theory/cipher.cpp
-    ../modules/number_theory/rc4.cpp
-    ../modules/number_theory/primes.cpp
+    ../modules/nt/cipher.cpp
+    ../modules/nt/rc4.cpp
+    ../modules/nt/primes.cpp
 
 )
 
@@ -31,9 +31,9 @@ set(TEST_SOURCES
 set(TEST_FILES
     arith/t_arith.cpp
     calc/t_calc.cpp
-    number_theory/t_cipher.cpp
-    number_theory/t_rc4.cpp
-    number_theory/t_primes.cpp
+    nt/t_cipher.cpp
+    nt/t_rc4.cpp
+    nt/t_primes.cpp
 )
 
 # create executable

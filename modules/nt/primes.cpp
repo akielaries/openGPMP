@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/number_theory/primes.hpp"
+#include "../../include/nt/primes.hpp"
 #include "../../include/arithmetic/arith_base.hpp"
 #include "../../include/arithmetic/arith_ops.hpp"
 

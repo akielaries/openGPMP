@@ -11,30 +11,29 @@
 #include <string.h>
 #include <iostream>
 #include <stdio.h>
-// #include <omp.h>
-#include "../../include/number_theory/rc4.hpp"
+#include "../../include/nt/rc4.hpp"
 
 
-void RC4::byte_swap(uint8_t *a, uint8_t *b) {
-	uint8_t swapped = * a;
+void mtpk::RC4::byte_swap(uint8_t *a, uint8_t *b) {
+	uint8_t swapped = *a;
 	swapped = *a;
 	*a = *b;
 	*b = swapped;
 }
 
-void RC4::trad_swap(unsigned char *a, unsigned char *b) {
+void mtpk::RC4::trad_swap(unsigned char *a, unsigned char *b) {
     int swapped = *a;
     *a = *b;
     *b = swapped;
 }
 
-void RC4::XOR_swap(unsigned char *a, unsigned char *b) {
+void mtpk::RC4::XOR_swap(unsigned char *a, unsigned char *b) {
     *a ^= *b;
     *b ^= *a;
     *a ^= *b;
 }
 
-void RC4::KSA(char *key, 
+void mtpk::RC4::KSA(char *key, 
                 unsigned char *S,
                 int swap_type) {
 
@@ -61,7 +60,7 @@ void RC4::KSA(char *key,
     }
 }
 
-void RC4::PRGA(unsigned char *S, 
+void mtpk::RC4::PRGA(unsigned char *S, 
                 char *plaintext, 
                 unsigned char *ciphertext, 
                 int swap_type) {
@@ -90,7 +89,7 @@ void RC4::PRGA(unsigned char *S,
     }
 }
 
-std::string RC4::store_hash(char *plaintext, 
+std::string mtpk::RC4::store_hash(char *plaintext, 
                 unsigned char *hashtext, 
                 int swap_type) {
 
@@ -119,7 +118,7 @@ std::string RC4::store_hash(char *plaintext,
     return stored_text;
 }
 
-unsigned char* RC4::compute(char *key, 
+unsigned char *mtpk::RC4::compute(char *key, 
                 char *plaintext, 
                 unsigned char *ciphertext, 
                 int swap_type) {

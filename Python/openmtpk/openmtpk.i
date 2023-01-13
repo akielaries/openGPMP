@@ -12,9 +12,9 @@
 
     #include "../../include/ml/linreg.hpp"
 
-    #include "../../include/number_theory/primes.hpp"
-    #include "../../include/number_theory/rc4.hpp"
-    #include "../../include/number_theory/cipher.hpp"
+    #include "../../include/nt/primes.hpp"
+    #include "../../include/nt/rc4.hpp"
+    #include "../../include/nt/cipher.hpp"
 %}
 
 %include "../../include/arithmetic/arith_ops.hpp"
@@ -23,8 +23,8 @@
 
 %include "../../include/ml/linreg.hpp"
 
-%include "../../include/number_theory/primes.hpp"
-%include "../../include/number_theory/rc4.hpp"
-%include "../../include/number_theory/cipher.hpp"
+%include "../../include/nt/primes.hpp"
+%include "../../include/nt/rc4.hpp"
+%include "../../include/nt/cipher.hpp"
 
 

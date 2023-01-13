@@ -7,10 +7,10 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
-#include "../../include/number_theory/cipher.hpp"
+#include "../../include/nt/cipher.hpp"
 
 
-std::string Cipher::caesar(std::string plaintext, int64_t key) {
+std::string mtpk::Cipher::caesar(std::string plaintext, int64_t key) {
     std::string hashtext = "";
 
     for (int64_t i = 0; uint64_t(i) < plaintext.length(); i++) {
@@ -28,7 +28,7 @@ std::string Cipher::caesar(std::string plaintext, int64_t key) {
     return hashtext;
 } 
 
-std::string Cipher::keyword_encode(std::string key) {
+std::string mtpk::Cipher::keyword_encode(std::string key) {
     std::string encoded = "";
     // This array represents the 26 letters of alphabets
     bool arr[26] = {0};
@@ -63,7 +63,7 @@ std::string Cipher::keyword_encode(std::string key) {
     return encoded;
 }
 
-std::string Cipher::keyword(std::string plaintext, 
+std::string mtpk::Cipher::keyword(std::string plaintext, 
                             std::string encoded_text) {
 
     std::string cipher = "";

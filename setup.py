@@ -42,9 +42,9 @@ foo = Extension(
              'modules/arithmetic/arith.cpp',
              'modules/calculus/deriv.cpp',
              'modules/ml/linreg.cpp',
-             'modules/number_theory/primes.cpp',
-             'modules/number_theory/rc4.cpp',
-             'modules/number_theory/cipher.cpp'],
+             'modules/nt/primes.cpp',
+             'modules/nt/rc4.cpp',
+             'modules/nt/cipher.cpp'],
         extra_compile_args=['-std=c++17']     
 )
 
@@ -107,4 +107,5 @@ setuptools.setup(
 )
 
 os.system('rm -rf build/')
+os.system('cd Python && rm -rf openmtpk.egg-info && cd openmtpk && make clean')
 

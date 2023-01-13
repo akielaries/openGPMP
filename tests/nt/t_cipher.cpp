@@ -1,7 +1,7 @@
 /*
  * Testing the implementation of random cipher algorithms
  */
-#include "../../include/number_theory/cipher.hpp"
+#include "../../include/nt/cipher.hpp"
 #include <limits.h>
 #include <gtest/gtest.h>
 
@@ -11,7 +11,7 @@ using ::testing::DoubleLE;
 
 
 namespace {
-    Cipher cc;
+    mtpk::Cipher cc;
 
     TEST(ccipher_test, caesar_0) {
         std::string text_0 = "Plaintext";

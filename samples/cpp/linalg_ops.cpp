@@ -40,15 +40,15 @@ int main() {
 
     std::cout << "Sum = " << x << "\n\n";
 
-    // declaring matrix with random negative floats
+    // declaring matrix with random negative decimals
     std::cout << "Creating 2x2 matrix of random negative floats\n"; 
-    auto matrix_neg = mtpk::mtx<float>::randn(2, 2);
+    auto matrix_neg = mtpk::mtx<double>::randn(2, 2);
     matrix_neg.print_shape();
     matrix_neg.print_mtx();
 
-    // declaring matrix with random positive floats
+    // declaring matrix with random positive decimals
     std::cout << "Creating 2x2 matrix of random positive floats\n"; 
-    auto matrix_pos = mtpk::mtx<float>::rand(2, 2);
+    auto matrix_pos = mtpk::mtx<double>::rand(2, 2);
     matrix_pos.print_shape();
     matrix_pos.print_mtx();
 
@@ -66,7 +66,7 @@ int main() {
 
     // declare a matrix of zeros with 3 x 5 dimensions
     std::cout << "Creating 3x5 matrix of 0's" << "\n"; 
-    auto matrix_zero = mtpk::Matrix<float>(3, 5);
+    auto matrix_zero = mtpk::Matrix<double>(3, 5);
     matrix_zero.print_shape();
     matrix_zero.print_mtx();
 

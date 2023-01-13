@@ -7,7 +7,11 @@
 #ifndef MLP_NETWORK_HPP
 #define MLP_NETWORK_HPP
 #include <vector>
+#include <random>
+#include <utility>
+#include <cassert>
 #include <stdio.h>
+
 #include "../linalg.hpp"
 
 
@@ -89,9 +93,9 @@ class PrimaryMLP {
         long double dAvgTestError;
 
         /* CONSTRUCT */
-        MLP(int64_t nl, int64_t npl[]);
+        PrimaryMLP(int64_t nl, int64_t npl[]);
         /* DECONSTRUCT */
-        ~MLP();
+        ~PrimaryMLP();
 
         /* method to train the network given data*/
         int64_t train(const char* fnames);
@@ -99,7 +103,7 @@ class PrimaryMLP {
         int64_t test (const char* fname);
         int64_t evaluate();
 
-        void run(const char* fname, const int64_t& maxiter);
+        void run(const char* fname, const int64_t& max_iters);
 
 };
 
@@ -108,7 +112,7 @@ class PrimaryMLP {
  * the Linear Algebra module
  */
 template<typename T>
-class SecondaryNet {
+class SecondaryMLP {
     public:
         /**
          * @brief Sigmoid activation function
@@ -144,7 +148,7 @@ class SecondaryNet {
             wt_matrices(),
             bias_vectors(),
             lr(lr) {
-            
+
             }
 
 };

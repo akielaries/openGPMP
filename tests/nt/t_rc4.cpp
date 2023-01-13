@@ -2,7 +2,7 @@
  * Testing an implementation of RC4 encryption algorithm based off 
  * verified plaintext->hash conversions
  */
-#include "../../include/number_theory/rc4.hpp"
+#include "../../include/nt/rc4.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -15,7 +15,7 @@ using ::testing::DoubleLE;
 
 
 namespace {
-    RC4 rc;
+    mtpk::RC4 rc;
 
     // BBF316E8D940AF0AD3
     char* key_0    = (char*)"Key";

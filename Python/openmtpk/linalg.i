@@ -26,5 +26,5 @@
 //%template(mtxI) mtpk::mtx<int>;
 
 
-%module openmtpk
+%module linalg
 

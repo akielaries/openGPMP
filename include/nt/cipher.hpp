@@ -10,6 +10,8 @@
 #include <string.h>
 #include <string>
 
+namespace mtpk {
+
 // monoalphabetic substitution cipher class
 class Cipher {
 
@@ -21,6 +23,8 @@ class Cipher {
         /* compute the keyword cipher of a given string */
         std::string keyword(std::string plaintext, std::string encoded_text);
 };
+
+} // namespace
 
 #endif
 
