@@ -83,15 +83,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abd90b5e5cee3845a7f95a14d42dbe69f"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#abd90b5e5cee3845a7f95a14d42dbe69f">sigmoid</a> (long double x)</td></tr>
-<tr class="memdesc:abd90b5e5cee3845a7f95a14d42dbe69f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid activation function.  <a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#abd90b5e5cee3845a7f95a14d42dbe69f">More...</a><br /></td></tr>
-<tr class="separator:abd90b5e5cee3845a7f95a14d42dbe69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee90a17bcc94689047f4d84ea93e4062"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#aee90a17bcc94689047f4d84ea93e4062">sigmoid_activ</a> (long double x)</td></tr>
+<tr class="memdesc:aee90a17bcc94689047f4d84ea93e4062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid activation function.  <a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#aee90a17bcc94689047f4d84ea93e4062">More...</a><br /></td></tr>
+<tr class="separator:aee90a17bcc94689047f4d84ea93e4062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8521e9927c9d33c2768f738154ec6ff"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af8521e9927c9d33c2768f738154ec6ff">sigmoid_deriv</a> (long double x)</td></tr>
 <tr class="memdesc:af8521e9927c9d33c2768f738154ec6ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid Derivative for backwards propogation.  <a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af8521e9927c9d33c2768f738154ec6ff">More...</a><br /></td></tr>
 <tr class="separator:af8521e9927c9d33c2768f738154ec6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e41555216b9cf5c931ad14b3772cee5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5">SecondaryMLP</a> (std::vector&lt; size_t &gt; <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>, long double <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af91126b4792e7f070437ee07d80617fb">lr</a>=.001f)</td></tr>
-<tr class="memdesc:a8e41555216b9cf5c931ad14b3772cee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secondary Multi-Layer Perceptron Constructor.  <a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5">More...</a><br /></td></tr>
 <tr class="separator:a8e41555216b9cf5c931ad14b3772cee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15bc2cae42b5ae1b11cb73695b19d1c7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7">prop_forward</a> (<a class="el" href="classmtpk_1_1Matrix.html">Matrix</a>&lt; T &gt; x)</td></tr>
+<tr class="separator:a15bc2cae42b5ae1b11cb73695b19d1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -149,27 +150,47 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Secondary Multi-Layer Perceptron Constructor Initialize a set of weights + biases for each layer set to random Gaussian Noise related values </p>
 
-<p>Secondary Multi-Layer Perceptron Constructor. </p>
-
-<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00145">145</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                            :</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>),</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">wt_matrices</a>(),</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">bias_vectors</a>(),</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af91126b4792e7f070437ee07d80617fb">lr</a>(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af91126b4792e7f070437ee07d80617fb">lr</a>) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00147">147</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                            :</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>),</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">wt_matrices</a>(),</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">bias_vectors</a>(),</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af91126b4792e7f070437ee07d80617fb">lr</a>(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af91126b4792e7f070437ee07d80617fb">lr</a>) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="comment">// traverse the elements</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>.size() - 1; ++i) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="comment">// size of inputs</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <span class="keywordtype">size_t</span> inputs{<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>[i]};</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    <span class="comment">// size of outputs</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keywordtype">size_t</span> outputs{<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>[i + 1]};</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="comment">// set to random Guassian Noise related values</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="comment">// weights</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <span class="keyword">auto</span> gauss_wt = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;T&gt;::randn</a>(outputs, inputs);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">wt_matrices</a>.push_back(gauss_wt);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="comment">// biases</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <span class="keyword">auto</span> bias_wt = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;T&gt;::randn</a>(outputs, 1);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">bias_vectors</a>.push_back(bias_wt);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    <span class="comment">// activation function</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e">activations</a>.resize(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>.size());</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            }</div>
 <div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryMLP_html_a3d10aa72eb56202b601c76c2d4f72040"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">mtpk::mlp::SecondaryMLP::layer_units</a></div><div class="ttdeci">std::vector&lt; size_t &gt; layer_units</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00135">mlp_network.hpp:135</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryMLP_html_a41a63bc12069bf667bc058df7541820e"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e">mtpk::mlp::SecondaryMLP::activations</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; activations</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00138">mlp_network.hpp:138</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryMLP_html_a6d03772109ab89d5d254dafe02113125"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">mtpk::mlp::SecondaryMLP::wt_matrices</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; wt_matrices</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00137">mlp_network.hpp:137</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryMLP_html_ab6199e367c1fb40dda6f8193b51c2dd2"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">mtpk::mlp::SecondaryMLP::bias_vectors</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; bias_vectors</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00136">mlp_network.hpp:136</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryMLP_html_af91126b4792e7f070437ee07d80617fb"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#af91126b4792e7f070437ee07d80617fb">mtpk::mlp::SecondaryMLP::lr</a></div><div class="ttdeci">long double lr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00140">mlp_network.hpp:140</a></div></div>
+<div class="ttc" id="astructmtpk_1_1mtx_html_a97b03f5f01387e000198f1db437681be"><div class="ttname"><a href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx::randn</a></div><div class="ttdeci">static Matrix&lt; T &gt; randn(size_t rows, size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00394">matrix.hpp:394</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e">mtpk::mlp::SecondaryMLP&lt; T &gt;::activations</a>, <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">mtpk::mlp::SecondaryMLP&lt; T &gt;::bias_vectors</a>, <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">mtpk::mlp::SecondaryMLP&lt; T &gt;::layer_units</a>, <a class="el" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt; T &gt;::randn()</a>, and <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">mtpk::mlp::SecondaryMLP&lt; T &gt;::wt_matrices</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abd90b5e5cee3845a7f95a14d42dbe69f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd90b5e5cee3845a7f95a14d42dbe69f">&#9670;&nbsp;</a></span>sigmoid()</h2>
+<a id="a15bc2cae42b5ae1b11cb73695b19d1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15bc2cae42b5ae1b11cb73695b19d1c7">&#9670;&nbsp;</a></span>prop_forward()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +201,59 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">long double <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html">mtpk::mlp::SecondaryMLP</a>&lt; T &gt;::sigmoid </td>
+          <td class="memname">auto <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html">mtpk::mlp::SecondaryMLP</a>&lt; T &gt;::prop_forward </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmtpk_1_1Matrix.html">Matrix</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Forward passes compute the activations at a specific layer. This method saves the results to the activations <a class="el" href="classmtpk_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> passing it forwards to use as an input paramater on the next layer </p>
+
+<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00177">177</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                       {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            assert(get&lt;0&gt;(x.shape) == <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>[0] &amp;&amp; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    get&lt;1&gt;(x.shape));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="comment">// input = to previously declared acitvations method</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e">activations</a>[0] = x;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <a class="code" href="naive__network_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> prev(x);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="comment">// traverse layer units</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">for</span> (int64_t i = 0; i &lt; <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">layer_units</a>.size() - 1; ++i) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <a class="code" href="naive__network_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> y = <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">wt_matrices</a>[i].mult(prev);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                y = y + <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">bias_vectors</a>[i];</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                y = y.apply_function(<a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#aee90a17bcc94689047f4d84ea93e4062">sigmoid_activ</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <a class="code" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e">activations</a>[i + 1] = y;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                prev = y;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">return</span> prev;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
+<div class="ttc" id="aclassmtpk_1_1mlp_1_1SecondaryMLP_html_aee90a17bcc94689047f4d84ea93e4062"><div class="ttname"><a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#aee90a17bcc94689047f4d84ea93e4062">mtpk::mlp::SecondaryMLP::sigmoid_activ</a></div><div class="ttdeci">long double sigmoid_activ(long double x)</div><div class="ttdoc">Sigmoid activation function.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8hpp_source.html#l00122">mlp_network.hpp:122</a></div></div>
+<div class="ttc" id="anaive__network_8hpp_html_aca89ce710ee8842221a0df25940c6a36"><div class="ttname"><a href="naive__network_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a></div><div class="ttdeci">Eigen::MatrixXf Matrix</div><div class="ttdef"><b>Definition:</b> <a href="naive__network_8hpp_source.html#l00011">naive_network.hpp:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e">mtpk::mlp::SecondaryMLP&lt; T &gt;::activations</a>, <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2">mtpk::mlp::SecondaryMLP&lt; T &gt;::bias_vectors</a>, <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a3d10aa72eb56202b601c76c2d4f72040">mtpk::mlp::SecondaryMLP&lt; T &gt;::layer_units</a>, <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#aee90a17bcc94689047f4d84ea93e4062">mtpk::mlp::SecondaryMLP&lt; T &gt;::sigmoid_activ()</a>, and <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a6d03772109ab89d5d254dafe02113125">mtpk::mlp::SecondaryMLP&lt; T &gt;::wt_matrices</a>.</p>
+
+</div>
+</div>
+<a id="aee90a17bcc94689047f4d84ea93e4062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee90a17bcc94689047f4d84ea93e4062">&#9670;&nbsp;</a></span>sigmoid_activ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long double <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html">mtpk::mlp::SecondaryMLP</a>&lt; T &gt;::sigmoid_activ </td>
           <td>(</td>
           <td class="paramtype">long double&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -203,10 +276,12 @@ template&lt;typename T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00122">122</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                  {</div>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                        {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">return</span> 1.0f / (1 + exp(-x));</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7">mtpk::mlp::SecondaryMLP&lt; T &gt;::prop_forward()</a>.</p>
+
 </div>
 </div>
 <a id="af8521e9927c9d33c2768f738154ec6ff"></a>
@@ -267,6 +342,8 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00138">138</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7">mtpk::mlp::SecondaryMLP&lt; T &gt;::prop_forward()</a>, and <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5">mtpk::mlp::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
+
 </div>
 </div>
 <a id="ab6199e367c1fb40dda6f8193b51c2dd2"></a>
@@ -285,6 +362,8 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00136">136</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7">mtpk::mlp::SecondaryMLP&lt; T &gt;::prop_forward()</a>, and <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5">mtpk::mlp::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
+
 </div>
 </div>
 <a id="a3d10aa72eb56202b601c76c2d4f72040"></a>
@@ -302,6 +381,8 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00135">135</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7">mtpk::mlp::SecondaryMLP&lt; T &gt;::prop_forward()</a>, and <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5">mtpk::mlp::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>
 </div>
@@ -338,6 +419,8 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00137">137</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7">mtpk::mlp::SecondaryMLP&lt; T &gt;::prop_forward()</a>, and <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5">mtpk::mlp::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>
 </div>
