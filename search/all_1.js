@@ -9,8 +9,8 @@ var searchData=
   ['bayesclf_19',['BayesClf',['../classmtpk_1_1BayesClf.html',1,'mtpk']]],
   ['bayesnet_20',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]],
   ['best_5ffit_21',['best_fit',['../classmtpk_1_1Regression.html#ad4906faaedcc78a6bdfddef423459a86',1,'mtpk::Regression']]],
-  ['bias_5fvectors_22',['bias_vectors',['../classmtpk_1_1mlp_1_1SecondaryNet.html#a21e480752cb36664a9d8cc088e805c1f',1,'mtpk::mlp::SecondaryNet']]],
+  ['bias_5fvectors_22',['bias_vectors',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#ab6199e367c1fb40dda6f8193b51c2dd2',1,'mtpk::mlp::SecondaryMLP']]],
   ['bits_23',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
   ['byte_5flimit_24',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],
-  ['byte_5fswap_25',['byte_swap',['../classRC4.html#adaf2482857cea29d3e872621a80cb8cb',1,'RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
+  ['byte_5fswap_25',['byte_swap',['../classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332',1,'mtpk::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
 ];
