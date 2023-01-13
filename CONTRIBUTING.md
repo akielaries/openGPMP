@@ -1,37 +1,51 @@
 # Contributing
 
-openMTPK welcomes any and all contributors! There are **two** ways to contribute to RM-pkg
-## Bug fixes
-* If you have a bug fix please submit a pull request with details highlighting what you are fixing, how you 
-replicated it, and how you tested your fix. 
+openMTPK welcomes any and all contributors! There are **many** ways to contribute to openMTPK. New implementations, updates to source code, documentations, language API, and much more. 
 
-## New Feature
-This process is very loose and only serves as a vague guideline to contribute. The most help is needed with testing and veryfing how some of the machine learning algorithms operate. Although the project is in a young immature state, The goal is to act as a lightweight replacement for popular machine learning libraries while also providing other mathematical features. Scikit-learn, torch, and TensorFlow are all popular examples, openMTPK strives to offer many of the same functionalities. 
+# Needed Help
+
+These are the current fixes, ideas, and implementations involved with openMTPK. Contributors are welcome to open a pull request, the maintainer ([me](github.com/akielaries)), will take care of assuring passing tests and checks as far as github workflows.
+
+1. The `Machine and Deep Learning Module` a continuous effort and I find is the most important and reusable module of the openMTPK project for programmers, students, researchers, etc. also meaning it requires the most help regarding implementations, tests, verifications, and any effort helping assure the accuracy of the implemented models. 
+   
+   *  To prove the existing and future implemented models and methods provide some use, benchmarking/comparisons against industry-grade and open-source projects like **PyTorch**, **TensorFlow (including the Keras interface)**, and **Sci-kit Learn** will prove beneficial. 
+
+2. Perfecting the **Linux** and **OSX** installations with `CMake`. 
+   
+   * **Windows** is not currently on my agenda, installation and support for Windows systems is handed off to contributors. 
+   
+   * `CMake` installation currently only works with **Linux**, issues arise on **OSX** when it comes to the steps regarding GoogleTest.
+
+3. Creating bindings for languages.
+   
+   * The stable `Python API` makes use of **SWIG** and **distutils** to wrap the source C++ code into a shared library, creating an overarching `openmtpk.py` file depending on the compiled C++ lib and acting as the callable Python module, making use of **Github Actions** to publish the package to PyPI with support for just about all `Linux` distros and `OSX` versions and platform architectures, see [here](https://pypi.org/project/openmtpk/#files). If this process can be polished it is highly welcomed. 
+   
+   * Properly implementing, testing, and updating the unstable/inprogress APIs for `R`, `OCaml`, and `Fortran`. 
+     
+     * This will require knowledge of the languages and openMTPK in order to create samples for the respective languages in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder.
+     
+     * As of now partial working steps for doing this with **SWIG** is present in each of the respective languages folders. 
+
+4* Formalize openMTPK for real world applications.
+   
+   * Threading, accelration, optimization. This could include creating a 1-stop-shop implementation using some sort of cross-platform library/framework/technique that enable CPU and/or GPU exploitation just like popular libraries that are capable of handling extremely large data sets (PyTorch, TensorFlow, etc.)
+
+5* Updates to Documentation published with Doxygen to https://akielaries.github.io/openMTPK/. 
+
+## 
+
+# Bug fixes
+
+* If you have a bug fix please submit a pull request with details highlighting what you are fixing, how you replicated it, and how you tested your fix. 
 
 
-* If you have an idea on some mathematical algorithm that can be used in this package, please...
-1. see if the idea already exists in one of the [modules](https://github.com/akielaries/openMTPK/tree/main/modules) or if an existing 
-2. create/add to an existing modules code + the corresponding `.hpp` file in the [includes](https://github.com/akielaries/openMTPK/tree/main/include)
-directory.
-3. If applicable, create a driver with your `main()` function that acts as a sample of what you implemented and store in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples)
-directory.
-4. confirm your implementations work correctly, create or add to the existing test suite if applicible. 
-5. if necessary add your example to the projects [Makefile](https://github.com/akielaries/openMTPK/tree/main/Makefile) that shows 
-different examples running. 
-6. pretty up any commits squash if needed for the pull request. 
 
-## Goal
-The **goal** is to incorporate different mathematical topics into modules. These modules will serve as 
-*"abstract"* topics and code within them to then be reused by users and the package itself. Each modules 
-code will have corresponding `main()` functions in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) 
-directory showing examples on how to implement said modules. 
+# Code Style
+
+openMTPK attempts to follow the neat [Google C++ Style Guide]([Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). 
 
 
-* For example, a linear algebra module would contain a module named `linalg` that could contain `.cpp` implementation files
-with their corresponding headers in in the includes folder mentioned previously. The specific module directory can contain whatever
-new implementation files or add to an existing file.
-  * For example, if you have the idea to add operations on Vectors (addition, subtraction, multiplication, division) but see that 
-  addition and subtraction are already implemented in a file called `la_basics.cpp` you would add your implementations into that file
-  instead of creating a new one. 
+
+
 
 Hopefully these guidelines are clear enough for you to begin contributing to this project. As always email me akiel@akiel.org for questions.
