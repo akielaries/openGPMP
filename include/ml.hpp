@@ -69,8 +69,8 @@
  *  * Support Vector
  */
 #define CLASSIFICATION
-#include "ml/bayes_clf.hpp"
-#include "ml/nearest_neighbor.hpp"
+// #include "ml/bayes_clf.hpp"
+// #include "ml/nearest_neighbor.hpp"
 // #include "ml/decision_tree"
 // #include "ml/rand_forest"
 // #include "ml/support_vector"
@@ -86,7 +86,7 @@
  *  * Permutation Test
  */
 #define RESAMPLING
-#include "ml/k-foldCV.hpp"
+// #include "ml/k-foldCV.hpp"
 // #include "ml/bootstrap.hpp"
 // #include "ml/perm_test.hpp"
 
@@ -100,10 +100,10 @@
  *  * Kohonen Network
  *  * Multi-Layer Perceptron
  */
-#define NEURAL_NETWORKS
-#include "ml/naive_network.hpp"
-#include "ml/bayes_network.hpp"
-#include "ml/kohonen_network.hpp"
+// #define NEURAL_NETWORKS
+// #include "ml/naive_network.hpp"
+// #include "ml/bayes_network.hpp"
+// #include "ml/kohonen_network.hpp"
 #include "ml/mlp_network.hpp"
 /*****************************************************************************/
 
