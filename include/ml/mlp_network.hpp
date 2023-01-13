@@ -31,7 +31,7 @@ namespace mlp {
  */
 struct neuron { 
     // exit
-    long double ex;
+    long double sortir;
     // error
     long double err;
     // weight
@@ -119,7 +119,7 @@ class SecondaryMLP {
          *
          * @param[in] x : (float)
          */
-        inline long double sigmoid(long double x) {
+        inline long double sigmoid_activ(long double x) {
             return 1.0f / (1 + exp(-x));
         }
 
@@ -140,7 +140,9 @@ class SecondaryMLP {
         long double lr;
 
         /**
-         * @brief Secondary Multi-Layer Perceptron Constructor
+         * @details Secondary Multi-Layer Perceptron Constructor
+         * Initialize a set of weights + biases for each layer 
+         * set to random Gaussian Noise related values
          */
         explicit SecondaryMLP(std::vector<size_t> layer_units, 
                                     long double lr = .001f) :
@@ -149,8 +151,46 @@ class SecondaryMLP {
             bias_vectors(),
             lr(lr) {
 
-            }
+                // traverse the elements
+                for (size_t i = 0; i < layer_units.size() - 1; ++i) {
+                    // size of inputs
+                    size_t inputs{layer_units[i]};
+                    // size of outputs
+                    size_t outputs{layer_units[i + 1]};
 
+                    // set to random Guassian Noise related values
+                    // weights
+                    auto gauss_wt = mtpk::mtx<T>::randn(outputs, inputs);
+                    wt_matrices.push_back(gauss_wt);
+                    // biases
+                    auto bias_wt = mtpk::mtx<T>::randn(outputs, 1);
+                    bias_vectors.push_back(bias_wt);
+                    // activation function
+                    activations.resize(layer_units.size());
+                }
+            }
+        /**
+         * @details Forward passes compute the activations at a specific
+         * layer. This method saves the results to the activations Matrix
+         * passing it forwards to use as an input paramater on the next layer
+         */
+        auto prop_forward(Matrix<T> x) {
+            assert(get<0>(x.shape) == layer_units[0] && 
+                    get<1>(x.shape));
+            // input = to previously declared acitvations method
+            activations[0] = x;
+            Matrix prev(x);
+
+            // traverse layer units
+            for (int64_t i = 0; i < layer_units.size() - 1; ++i) {
+                Matrix y = wt_matrices[i].mult(prev);
+                y = y + bias_vectors[i];
+                y = y.apply_function(sigmoid_activ);
+                activations[i + 1] = y;
+                prev = y;
+            }
+            return prev;
+        }
 };
 
 } // namespace mlp

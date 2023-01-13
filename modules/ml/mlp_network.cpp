@@ -1,7 +1,7 @@
 /*
  * Implementation of a Multi-Layered Perceptron Neural Network
  */
-#include "../../include/ml/mlp_network.cpp"
+#include "../../include/ml/mlp_network.hpp"
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
@@ -21,12 +21,13 @@ int64_t mtpk::mlp::PrimaryMLP::rand_int(int64_t hi, int64_t low) {
 }
 
 /* verify generated random is a real number */
-long double mtpk::mlp::PrimaryMLP::rand_real() {
+long double mtpk::mlp::PrimaryMLP::rand_real(long double low, 
+                                            long double hi) {
     return ((long double) rand() / RAND_MAX) * (hi - low) + low;
 }
 
 /* MLP CONSTRUCTOR */
-mtpk::mlp::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl) : 
+mtpk::mlp::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[]) : 
     num_layers(0), 
     layer_ptr(0),
     dEta(0.25),
@@ -35,7 +36,9 @@ mtpk::mlp::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl) :
     dMSE(0.0),
     dMAE(0.0),
     dAvgTestError(0.0)
-
+    { 
+        int64_t i, j;
+}
 
 
 

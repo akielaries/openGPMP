@@ -51,11 +51,16 @@ calculus:
 LR			= $(SRCDIR)/ml/linreg.cpp
 LRDRV		= $(PROJDIR)/samples/cpp/reg.cpp
 LRBIN		= lin_reg
+MLP			= $(SRCDIR)/ml/mlp_network.cpp
+MLPDRV		= $(PROJDIR)/samples/cpp/mlp.cpp
+MLPBIN		= MLP
 
 ml_dl:
 	${CXX} ${CXX_DBG} ${LRDRV} ${OPM} -o ${LRBIN}
 	./${LRBIN}
-
+mlp:
+	${CXX} ${CXX_DBG} ${MLPDRV} ${MLP} ${OPM} -o ${MLPBIN}
+	./${MLPBIN}
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS
 LINALG		= $(SRCDIR)/linalg/lao.cpp
