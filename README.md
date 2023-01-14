@@ -28,7 +28,7 @@ As development progresses language bindings will be polished. More languages
 such as Julia and MATLAB will be explored in the future.
 Language |  Status |
 ---------|------|
-C++17/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+C++20/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
 OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)|
 Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Unstable/yellow?icon=github) |
@@ -71,7 +71,7 @@ from source if interested.
 ## Requirements
 * Linux/OSX
 * CMake
-* C++17
+* C++20
 * g++12
 
 ```

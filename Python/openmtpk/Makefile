@@ -9,7 +9,7 @@ check-os:
 
 CXX			= g++
 CXX_DBG     = -Wall -Wextra -g
-STD			= --std=c++17
+STD			= --std=c++20
 
 pypathLINUX	= -I/usr/include/python3.10
 pypathOSX	= -I/usr/local/Cellar/python@3.9/3.9.6/Frameworks/Python.framework/Headers
