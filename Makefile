@@ -131,6 +131,7 @@ clean-mods:
 	rm -f ${PRIMESBIN}
 	rm -f ${RC4BIN}
 	rm -f ${CIPHBIN}
+	rm -f ${MLPBIN}
 
 	#rm -f ${TORUSBIN}
 	#rm -f ${TORUS_ANIM_BIN}
