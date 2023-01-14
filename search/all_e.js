@@ -13,6 +13,7 @@ var searchData=
   ['print_5fmtx_182',['print_mtx',['../classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6',1,'mtpk::Matrix']]],
   ['print_5fshape_183',['print_shape',['../classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56',1,'mtpk::Matrix']]],
   ['prob_5fby_5fsumm_184',['prob_by_summ',['../namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5',1,'mtpk']]],
-  ['prop_5fforward_185',['prop_forward',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a15bc2cae42b5ae1b11cb73695b19d1c7',1,'mtpk::mlp::SecondaryMLP']]],
-  ['prop_5fsignal_186',['prop_signal',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a2473eb9b3462a381d0a49163a28ea4de',1,'mtpk::mlp::PrimaryMLP']]]
+  ['prop_5fbackwards_185',['prop_backwards',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a3bb02b611028c0b1304e6954daf688e2',1,'mtpk::mlp::SecondaryMLP']]],
+  ['prop_5fforwards_186',['prop_forwards',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#abcd8bf08cd44b2ac5c5a35132a15960a',1,'mtpk::mlp::SecondaryMLP']]],
+  ['prop_5fsignal_187',['prop_signal',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a2473eb9b3462a381d0a49163a28ea4de',1,'mtpk::mlp::PrimaryMLP']]]
 ];
