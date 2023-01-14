@@ -95,6 +95,8 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a74759f080dc7a7147e08428a57ada6d7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1mlp.html#a74759f080dc7a7147e08428a57ada6d7">init_SecondaryMLP</a> (size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</td></tr>
 <tr class="separator:a74759f080dc7a7147e08428a57ada6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224a81e84fd23e7901087f2a9075fd2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1mlp.html#a224a81e84fd23e7901087f2a9075fd2e">train</a> (auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</td></tr>
+<tr class="separator:a224a81e84fd23e7901087f2a9075fd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>openMTPK Multi-Layer Perceptron namespace </p>
@@ -144,18 +146,67 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This methods acts as a helper to the <a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html" title="Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.">SecondaryMLP</a> class Model. the create_SecondaryMLP method will return an initialized model given the dimensions of the inputs and outputs as well as specs related to the hidden layers of the network </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00248">248</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                          {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    std::vector&lt;size_t&gt; layer_units;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    layer_units.push_back(inputs);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; hidden_layers; ++i) {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        layer_units.push_back(hidden_layer_units);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    layer_units.push_back(outputs);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    SecondaryMLP&lt;long double&gt; model_SecondaryMLP(layer_units, 0.01);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">return</span> model_SecondaryMLP;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00250">250</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                          {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    std::vector&lt;size_t&gt; layer_units;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    layer_units.push_back(inputs);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; hidden_layers; ++i) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        layer_units.push_back(hidden_layer_units);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    layer_units.push_back(outputs);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    SecondaryMLP&lt;long double&gt; model_SecondaryMLP(layer_units, 0.01);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> model_SecondaryMLP;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a224a81e84fd23e7901087f2a9075fd2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224a81e84fd23e7901087f2a9075fd2e">&#9670;&nbsp;</a></span>train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtpk::mlp::train </td>
+          <td>(</td>
+          <td class="paramtype">auto&#160;</td>
+          <td class="paramname"><em>initialized_model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>data_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>iterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>print_increment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html" title="Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.">SecondaryMLP</a> training method </p>
+
+<p class="definition">Definition at line <a class="el" href="mlp__network_8hpp_source.html#l00269">269</a> of file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                      {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    std::fstream input(data_file.c_str());</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    std::cout &lt;&lt; data_file &lt;&lt; iterations &lt;&lt; print_increment;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
