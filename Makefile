@@ -13,7 +13,7 @@
 PROJDIR     = $(realpath $(CURDIR))
 
 CC			= gcc
-CXX 		= g++
+CXX 		= g++ -std=c++20
 VERBOSE 	= TRUE
 
 CXX_DBG 	= -Wno-unused-result -Wsign-compare -DNDEBUG -g -O3 -Wall -Wextra
@@ -59,7 +59,7 @@ ml_dl:
 	${CXX} ${CXX_DBG} ${LRDRV} ${OPM} -o ${LRBIN}
 	./${LRBIN}
 mlp:
-	${CXX} ${CXX_DBG} ${MLPDRV} ${MLP} ${OPM} -o ${MLPBIN}
+	${CXX} ${CXX_DBG} ${MLPDRV} -o ${MLPBIN}
 	./${MLPBIN}
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS

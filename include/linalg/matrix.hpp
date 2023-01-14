@@ -401,7 +401,7 @@ struct mtx {
         std::normal_distribution<T> d{0, stdev};
 
         for (size_t r = 0; r < rows; ++r) {
-            for (int64_t c = 0; c < cols; ++c) {
+            for (uint64_t c = 0; c < cols; ++c) {
             MTX(r, c) = d(gen);
             }
         }

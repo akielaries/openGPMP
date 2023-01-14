@@ -115,6 +115,19 @@ template<typename T>
 class SecondaryMLP {
     public:
         /**
+         * @details Logging function for collecting the results
+         */
+        void log(auto &file, const auto &x, const auto &y, const auto &y_hat){
+            // mean squared error
+            auto mse = (y.data[0] - y_hat.data[0]);
+            mse = mse*mse;
+            file << mse << " "
+                << x.data[0] << " "
+                << y.data[0] << " "
+                << y_hat.data[0] << " \n";
+        }
+
+        /**
          * @brief Sigmoid activation function
          *
          * @param[in] x : (float)
@@ -145,7 +158,7 @@ class SecondaryMLP {
          * set to random Gaussian Noise related values
          */
         explicit SecondaryMLP(std::vector<size_t> layer_units, 
-                                    long double lr = .001f) :
+                                    long double lr = .001) :
             layer_units(layer_units),
             wt_mtx(),
             bias_vectors(),
@@ -182,7 +195,7 @@ class SecondaryMLP {
             Matrix prev(x);
 
             // traverse layer units
-            for (int64_t i = 0; i < layer_units.size() - 1; ++i) {
+            for (uint64_t i = 0; i < layer_units.size() - 1; ++i) {
                 Matrix y = wt_mtx[i].mult(prev);
                 y = y + bias_vectors[i];
                 y = y.apply_function(sigmoid_activ);
@@ -220,11 +233,33 @@ class SecondaryMLP {
 
                 // adjust the networks weights based on propagation technique
                 bias_vectors[i] = bias_vectors[i].add(gradients);
-                bias_wt_mtx[i] = wt_mtx[i].add(gradients_wt);
+                wt_mtx[i] = wt_mtx[i].add(gradients_wt);
                 err = prior_errs;
             }
         }
 };
+
+/**
+ * This methods acts as a helper to the SecondaryMLP class Model.
+ * the create_SecondaryMLP method will return an initialized model given
+ * the dimensions of the inputs and outputs as well as specs related
+ * to the hidden layers of the network
+ */
+auto init_SecondaryMLP(size_t inputs,
+                size_t outputs,
+                size_t hidden_layer_units,
+                int64_t hidden_layers,
+                float lr) {
+    std::vector<size_t> layer_units;
+    layer_units.push_back(inputs);
+    
+    for (uint64_t i = 0; i < hidden_layers; ++i) {
+        layer_units.push_back(hidden_layer_units);
+    }
+    layer_units.push_back(outputs);
+    SecondaryMLP<long double> model_SecondaryMLP(layer_units, 0.01);
+    return model_SecondaryMLP;
+}
 
 } // namespace mlp
 

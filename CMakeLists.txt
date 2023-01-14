@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_FLAGS "-Wno-unused-result -Wsign-compare -DNDEBUG -g -O3 -Wall")
 
 project(openMTPK VERSION 0.5 LANGUAGES CXX)
@@ -33,7 +33,7 @@ set(SOURCE_FILES
     modules/calculus/deriv.cpp
     modules/linalg/lao.cpp
     modules/ml/linreg.cpp
-    modules/ml/mlp_network.cpp
+    #modules/ml/mlp_network.cpp
     modules/nt/cipher.cpp
     modules/nt/rc4.cpp
     modules/nt/primes.cpp
