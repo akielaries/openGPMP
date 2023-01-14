@@ -1,20 +1,15 @@
 var searchData=
 [
-  ['scalar_5fadd_441',['scalar_add',['../classmtpk_1_1Matrix.html#a51c19c6e0a1ddc3c895c2b1f3cf83097',1,'mtpk::Matrix']]],
-  ['scalar_5fmult_442',['scalar_mult',['../classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10',1,'mtpk::Matrix']]],
-  ['secondarymlp_443',['SecondaryMLP',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a8e41555216b9cf5c931ad14b3772cee5',1,'mtpk::mlp::SecondaryMLP']]],
-  ['set_5fsignal_5fin_444',['set_signal_in',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a3ed2efe6142ddf0761d9503cc5e56d7f',1,'mtpk::mlp::PrimaryMLP']]],
-  ['shift_5fleft_445',['shift_left',['../classRC5.html#aaff32327548c82f78c779fd0420c3782',1,'RC5::shift_left()'],['../rc5_8cpp.html#a16858db3d092c804e199a1dea1f2c7e8',1,'shift_left(uint32_t v, uint32_t n):&#160;rc5.cpp']]],
-  ['shift_5fright_446',['shift_right',['../rc5_8cpp.html#a31cd9bd46e1fab3782647b3619683f8b',1,'shift_right():&#160;rc5.cpp'],['../classRC5.html#a3f33a715574965175a89af9f6cf9a04e',1,'RC5::shift_right()']]],
-  ['show_5fdata_447',['show_data',['../classmtpk_1_1Regression.html#ab3674e16f03ed1c0c44a230d5485897d',1,'mtpk::Regression']]],
-  ['sieve_5fof_5feratosthenes_448',['sieve_of_eratosthenes',['../classmtpk_1_1Primality.html#a242f6c2c9f2957c884169bec1b1f3824',1,'mtpk::Primality']]],
-  ['sigmoid_5factiv_449',['sigmoid_activ',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#aee90a17bcc94689047f4d84ea93e4062',1,'mtpk::mlp::SecondaryMLP']]],
-  ['sigmoid_5fderiv_450',['sigmoid_deriv',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#af8521e9927c9d33c2768f738154ec6ff',1,'mtpk::mlp::SecondaryMLP']]],
-  ['simulate_451',['simulate',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a41d67dd362dcdb6bdc0b3d0773a18495',1,'mtpk::mlp::PrimaryMLP']]],
-  ['solovoy_5fstrassen_452',['solovoy_strassen',['../classmtpk_1_1Primality.html#a29bf92a65aa8061c3a616cc3e8bf5c3a',1,'mtpk::Primality']]],
-  ['split_453',['split',['../classCSVReader.html#aa3f91c1fd40076a96ca0be593b9b59bc',1,'CSVReader']]],
-  ['sqr_5ferr_454',['sqr_err',['../classmtpk_1_1Matrix.html#aa62b01721821d8c55e3f23a210d8e817',1,'mtpk::Matrix']]],
-  ['store_5fhash_455',['store_hash',['../classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0',1,'mtpk::RC4']]],
-  ['sub_456',['sub',['../classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6',1,'mtpk::Arith::sub(X x)'],['../classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c',1,'mtpk::Arith::sub(X x, Xy... xy)'],['../classmtpk_1_1Matrix.html#ac1c5e89b18de38e09deb85e19deb074f',1,'mtpk::Matrix::sub(Matrix &amp;target)']]],
-  ['sum_457',['sum',['../classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186',1,'mtpk::Matrix::sum()'],['../classmtpk_1_1Matrix.html#a91afb24f516534ae4c0510a8e6855a47',1,'mtpk::Matrix::sum(size_t dimension)']]]
+  ['rand_434',['rand',['../structmtpk_1_1mtx.html#a672570f8832dff00d202613257093546',1,'mtpk::mtx']]],
+  ['rand_5finit_435',['rand_init',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#affdde88ce944f86a6a0f9151ec44cd27',1,'mtpk::mlp::PrimaryMLP']]],
+  ['rand_5fint_436',['rand_int',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a586888c68fae348a666ef4b717bbe14f',1,'mtpk::mlp::PrimaryMLP']]],
+  ['rand_5freal_437',['rand_real',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a0ed7e8e8b47025c35d30543c1918c8f7',1,'mtpk::mlp::PrimaryMLP']]],
+  ['randn_438',['randn',['../structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be',1,'mtpk::mtx']]],
+  ['regression_439',['Regression',['../classmtpk_1_1Regression.html#a5b62e71165bfe376142faa9db989637d',1,'mtpk::Regression']]],
+  ['reshape_440',['reshape',['../torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'torus_animated.cpp']]],
+  ['return_5fcoeffecient_441',['return_coeffecient',['../classmtpk_1_1Regression.html#a5e3e5f2e7ae67263e085ec4ff47d91e1',1,'mtpk::Regression']]],
+  ['return_5fconstant_442',['return_constant',['../classmtpk_1_1Regression.html#a68a861fa71210c708e716738be28c1b5',1,'mtpk::Regression']]],
+  ['rotate_5fleft_443',['rotate_left',['../classRC5.html#ae1fe017f0adfcc82c0661f452067d89f',1,'RC5::rotate_left()'],['../rc5_8cpp.html#ae44a7eb005369d52e6666b6cfc5b0e19',1,'rotate_left():&#160;rc5.cpp']]],
+  ['rotate_5fright_444',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
+  ['run_445',['run',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a272a1f3cec3d1a27308ac4c8174a7d17',1,'mtpk::mlp::PrimaryMLP']]]
 ];

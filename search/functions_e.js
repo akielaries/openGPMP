@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['rand_429',['rand',['../structmtpk_1_1mtx.html#a672570f8832dff00d202613257093546',1,'mtpk::mtx']]],
-  ['rand_5finit_430',['rand_init',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#affdde88ce944f86a6a0f9151ec44cd27',1,'mtpk::mlp::PrimaryMLP']]],
-  ['rand_5fint_431',['rand_int',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a586888c68fae348a666ef4b717bbe14f',1,'mtpk::mlp::PrimaryMLP']]],
-  ['rand_5freal_432',['rand_real',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a0ed7e8e8b47025c35d30543c1918c8f7',1,'mtpk::mlp::PrimaryMLP']]],
-  ['randn_433',['randn',['../structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be',1,'mtpk::mtx']]],
-  ['regression_434',['Regression',['../classmtpk_1_1Regression.html#a5b62e71165bfe376142faa9db989637d',1,'mtpk::Regression']]],
-  ['reshape_435',['reshape',['../torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'torus_animated.cpp']]],
-  ['return_5fcoeffecient_436',['return_coeffecient',['../classmtpk_1_1Regression.html#a5e3e5f2e7ae67263e085ec4ff47d91e1',1,'mtpk::Regression']]],
-  ['return_5fconstant_437',['return_constant',['../classmtpk_1_1Regression.html#a68a861fa71210c708e716738be28c1b5',1,'mtpk::Regression']]],
-  ['rotate_5fleft_438',['rotate_left',['../classRC5.html#ae1fe017f0adfcc82c0661f452067d89f',1,'RC5::rotate_left()'],['../rc5_8cpp.html#ae44a7eb005369d52e6666b6cfc5b0e19',1,'rotate_left():&#160;rc5.cpp']]],
-  ['rotate_5fright_439',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
-  ['run_440',['run',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a272a1f3cec3d1a27308ac4c8174a7d17',1,'mtpk::mlp::PrimaryMLP']]]
+  ['pollard_5frho_424',['pollard_rho',['../classmtpk_1_1Primality.html#a6da2179ebf40c84b2f30429a0e1fa45c',1,'mtpk::Primality']]],
+  ['predict_425',['predict',['../classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4',1,'mtpk::BayesClf::predict()'],['../classmtpk_1_1Regression.html#a23c69bb92a889bf4f7d8409cc3f33715',1,'mtpk::Regression::predict()']]],
+  ['prga_426',['PRGA',['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
+  ['primarymlp_427',['PrimaryMLP',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a713aa21a3c0b88b1aa76e5af2c350bf5',1,'mtpk::mlp::PrimaryMLP']]],
+  ['print_5fmtx_428',['print_mtx',['../classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6',1,'mtpk::Matrix']]],
+  ['print_5fshape_429',['print_shape',['../classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56',1,'mtpk::Matrix']]],
+  ['prob_5fby_5fsumm_430',['prob_by_summ',['../namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5',1,'mtpk']]],
+  ['prop_5fbackwards_431',['prop_backwards',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a3bb02b611028c0b1304e6954daf688e2',1,'mtpk::mlp::SecondaryMLP']]],
+  ['prop_5fforwards_432',['prop_forwards',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#abcd8bf08cd44b2ac5c5a35132a15960a',1,'mtpk::mlp::SecondaryMLP']]],
+  ['prop_5fsignal_433',['prop_signal',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a2473eb9b3462a381d0a49163a28ea4de',1,'mtpk::mlp::PrimaryMLP']]]
 ];
