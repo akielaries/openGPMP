@@ -10,6 +10,7 @@
 #include <random>
 #include <utility>
 #include <cassert>
+#include <fstream>
 #include <stdio.h>
 
 #include "../linalg.hpp"
@@ -237,6 +238,7 @@ class SecondaryMLP {
                 err = prior_errs;
             }
         }
+
 };
 
 /**
@@ -253,12 +255,25 @@ auto init_SecondaryMLP(size_t inputs,
     std::vector<size_t> layer_units;
     layer_units.push_back(inputs);
     
-    for (uint64_t i = 0; i < hidden_layers; ++i) {
+    for (int64_t i = 0; i < hidden_layers; ++i) {
         layer_units.push_back(hidden_layer_units);
     }
     layer_units.push_back(outputs);
     SecondaryMLP<long double> model_SecondaryMLP(layer_units, 0.01);
     return model_SecondaryMLP;
+}
+
+/**
+ * @details SecondaryMLP training method
+ */
+void train(auto initialized_model,
+            const std::string data_file, 
+            uint64_t iterations, 
+            uint64_t print_increment) {
+
+    std::fstream input(data_file.c_str());
+    std::cout << data_file << iterations << print_increment;
+
 }
 
 } // namespace mlp
