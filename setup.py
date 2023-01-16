@@ -41,6 +41,7 @@ foo = Extension(
         sources=['Python/openmtpk/openmtpk_wrap.cxx',
              'modules/arithmetic/arith.cpp',
              'modules/calculus/deriv.cpp',
+             'modules/linalg/lao.cpp',
              'modules/ml/linreg.cpp',
              'modules/nt/primes.cpp',
              'modules/nt/rc4.cpp',
