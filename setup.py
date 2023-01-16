@@ -46,7 +46,7 @@ foo = Extension(
              'modules/nt/primes.cpp',
              'modules/nt/rc4.cpp',
              'modules/nt/cipher.cpp'],
-        extra_compile_args=['-std=c++20']
+        extra_compile_args=['-std=c++2a']
 )
 
 # BINARY DISTRIBUTION (with a Python wrapper)
