@@ -28,27 +28,3 @@
 %include "../../include/nt/rc4.hpp"
 %include "../../include/nt/cipher.hpp"
 
-//%include "linalg.i"
-
-//%rename(arith_ops) arith_ops;
-//%rename(arith_ops_) arith_ops_;
-
-//%{
-//    namespace openmtpk {
-//        %include "../../include/arithmetic/arith_ops.hpp"
-
-//        %include "../../include/calculus/deriv.hpp"
-
-//        %include "../../include/ml/linreg.hpp"
-
-//        %include "../../include/nt/primes.hpp"
-//        %include "../../include/nt/rc4.hpp"
-//        %include "../../include/nt/cipher.hpp"
-
-//        %include "linalg.i"
-//    }
-//%}
-
-//%rename(openmtpk:arith_opst) arith_ops;
-//%rename(openmtpk::arith_ops_) arith_ops_;
-

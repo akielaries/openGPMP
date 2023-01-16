@@ -16,7 +16,8 @@ methods instead of declaring a method for each type.
         an INTEGER type mtx struct is not possible given floating
         point requirements for certain cases of cassert
 """
-from openmtpk import Matrix, mtx
+#from openmtpk import Matrix, mtx
+import openmtpk.linalg
 
 # create and print a 3x4 matrix of zeros
 print('** Method to create Matrix of zeros **')
