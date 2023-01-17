@@ -1,4 +1,4 @@
-module RM_pkg
+module openMTPK 
     using CxxWrap
     @wrapmodule("../")
 
@@ -7,5 +7,4 @@ module RM_pkg
   end
 end
 
-using .RM_pkg
-
+using .openMTPK
