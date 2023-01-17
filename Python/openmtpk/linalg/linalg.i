@@ -3,16 +3,22 @@
 
 %include "std_string.i"
 %include <std_vector.i>
+%include <typemaps.i>
+%include <stdint.i>
+
 %nodefaultctor;
 
+%module linalg
+
+
 %{
-    #include "../../include/linalg/matrix.hpp"
-    #include "../../include/linalg/vectors.hpp"
+    #include "../../../include/linalg/matrix.hpp"
+    #include "../../../include/linalg/vectors.hpp"
     using namespace mtpk;
 %}
 
-%include "../../include/linalg/matrix.hpp"
-%include "../../include/linalg/vectors.hpp"
+%include "../../../include/linalg/matrix.hpp"
+%include "../../../include/linalg/vectors.hpp"
 
 // rename operators
 %rename(__add__) mtpk::Matrix::operator+;
@@ -28,5 +34,4 @@
 //%template(mtxI) mtpk::mtx<int>;
 
 
-%module openmtpk
 

@@ -30,39 +30,74 @@ with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as ur
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
-# execute swig wrapping and respective setup.py
-#os.system('cd Python/openmtpk &&\
-#        make run-swig')
 
-# openMTPK source files for SWIG interfacing
-foo = Extension(
-        'openmtpk._openmtpk',
-        include_dirs=[os.path.join(this_dir, 'include')],
-        sources=['Python/openmtpk/openmtpk.i',
-            #'Python/openmtpk/openmtpk_wrap.cxx',
+# arithmetic module related information
+arithmetic = Extension(
+        'openmtpk.arithmetic._arithmetic',
+        include_dirs=[os.path.join(this_dir, 'include/arithmetic')],
+        sources=[
+            'Python/openmtpk/arithmetic/arithmetic.i',
+            'modules/arithmetic/arith.cpp'],
+        extra_compile_args=['-std=c++2a'],
+        swig_opts=['-Wall','-c++'],
+)
+
+# calculus module related information
+calculus = Extension(
+        'openmtpk.calculus._calculus',
+        include_dirs=[os.path.join(this_dir, 'include/calculus')],
+        sources=[
+            'Python/openmtpk/calculus/calculus.i',
+            'modules/calculus/deriv.cpp'],
+        extra_compile_args=['-std=c++2a'],
+        swig_opts=['-c++'],
+)
+
+# machine learning module related information
+ml = Extension(
+        'openmtpk.ml._ml',
+        include_dirs=[os.path.join(this_dir, 'include/ml')],
+        sources=[
+            'Python/openmtpk/ml/ml.i',
+            'modules/ml/linreg.cpp'],
+        extra_compile_args=['-std=c++2a'],
+        swig_opts=['-c++'],
+)
+
+# linear algebra module related information
+linalg = Extension(
+        'openmtpk.linalg._linalg',
+        include_dirs=[os.path.join(this_dir, 'include/linalg')],
+        sources=[
+            'Python/openmtpk/linalg/linalg.i',
+            'modules/linalg/lao.cpp'],
+        extra_compile_args=['-std=c++2a'],
+        swig_opts=['-c++'],
+)
+
+# number_theory module related information
+nt = Extension(
+        'openmtpk.nt._nt',
+        include_dirs=[os.path.join(this_dir, 'include/nt')],
+        sources=[
+            'Python/openmtpk/nt/nt.i',
             'modules/arithmetic/arith.cpp',
-            'modules/calculus/deriv.cpp',
-            'modules/linalg/lao.cpp',
-            'modules/ml/linreg.cpp',
             'modules/nt/primes.cpp',
             'modules/nt/rc4.cpp',
             'modules/nt/cipher.cpp'],
         extra_compile_args=['-std=c++2a'],
-        swig_opts=['-c++', '-python']
-)
-
-nt = Extension(
-        'openmtpk.linalg',
-        include_dirs=[os.path.join(this_dir, 'include/linalg')],
-        sources=['modules/linalg/lao.cpp']
+        swig_opts=['-c++'],
 )
 
 # BINARY DISTRIBUTION (with a Python wrapper)
 class BinaryDistribution(dist.Distribution):
-    def has_ext_modules(foo):
+    def has_ext_modules(modules):
         return True
 
+# openmtpk Python API modules
+modules = [arithmetic,calculus,ml,linalg,nt]
 
+# use the project readme as the description 
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
@@ -86,19 +121,40 @@ def build_pkg():
             'https://github.com/akielaries/openMTPK/issues',
             'Source Code': 'https://github.com/akielaries/openMTPK/',
         },
+        ext_modules=modules,
         package_dir={'': 'Python'},
-        packages=setuptools.find_packages(where='Python', 
-                                          exclude=['*.cxx']),
+        #packages=setuptools.find_packages(where='Python'),
+        #package_data={'openmtpk': ['linalg/*', 'nt/*']},
+        #packages=setuptools.find_packages(),
+        packages=['openmtpk',
+                  'openmtpk.arithmetic',
+                  'openmtpk.calculus',
+                  'openmtpk.linalg',
+                  'openmtpk.ml',
+                  'openmtpk.nt', 
+                  ],
+        #packages=setuptools.find_packages(),
+        #cmdclass={'install': install, 'build_ext': build_ext},
         # shared object is dependent on operating system
         include_package_data=True,
         classifiers=[
             # see https://pypi.org/classifiers/
             'Development Status :: 4 - Beta',
-
             'Intended Audience :: Science/Research',
             'Intended Audience :: Developers',
-
+            'Intended Audience :: Education',
+            'Intended Audience :: Information Technology',
+            'Topic :: Scientific/Engineering',
+            'Topic :: Scientific/Engineering :: Mathematics',
+            'Topic :: Scientific/Engineering :: Artificial Intelligence',
+            'Topic :: Software Development',
             'Topic :: Software Development :: Build Tools',
+            'Topic :: Software Development :: Libraries',
+            'Topic :: Software Development :: Libraries :: Python Modules',
+            'Topic :: Utilities',
+            'Topic :: Education',
+            'Topic :: Education :: Testing',
+            'Topic :: Documentation',
             'Programming Language :: C++',
             'Programming Language :: C',
             'Programming Language :: Python :: 3',
@@ -108,15 +164,13 @@ def build_pkg():
             'Programming Language :: Python :: 3.9',
             'Programming Language :: Python :: 3.10',
             'Programming Language :: Python :: 3 :: Only',
-
-            'Topic :: Software Development',
-            'Topic :: Scientific/Engineering',
-
+            'Programming Language :: Fortran',
+            'Programming Language :: R',
+            'Programming Language :: OCaml',
             'Operating System :: POSIX',
             'Operating System :: Unix',
             'Operating System :: MacOS',
         ],
-        ext_modules=[foo],
         python_requires='>=3.6',
         # install_requires=['Pillow'],
         extras_require={
@@ -125,11 +179,9 @@ def build_pkg():
         },
     )
 
-    os.system('rm -rf build/')
+    #os.system('rm -rf build/')
 #os.system('cd Python && rm -rf openmtpk.egg-info && cd openmtpk && make clean')
 
 if __name__ == '__main__':
     build_pkg()
-
-
 

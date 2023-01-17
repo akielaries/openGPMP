@@ -1,10 +1,9 @@
 #!/usr/bin/python3.10
-# from Python import examples
-from openmtpk import Basics
+from openmtpk import arithmetic as ar
 
 
 def main():
-    b = Basics()
+    b = ar.Basics()
 
     r1 = b.op_gcd(1703210, 20320)
     r2 = b.op_gcd(2198466, 96096)
