@@ -4,22 +4,21 @@ openMTPK Machine Learning Module
 The Machine Learning Module features multiple methods and techniques most
 of which are in progress.
 
-FEATURES : 
+FEATURES :
     CLASS : Linreg
         - Features methods related to prime numbers
-    METHODS : 
+    METHODS :
 
-    USAGE : 
+    USAGE :
         >> import openmtpk
         >> linreg = openmtpk.ml.linreg()
-        OR 
+        OR
         >> from openmtpk import ml
 """
 
 from openmtpk.ml.ml import (
-        Regression,
+    Regression,
 )
 
 __all__: list[str]
 __path__: list[str]
-

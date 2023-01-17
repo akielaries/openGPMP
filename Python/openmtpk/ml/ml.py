@@ -16,12 +16,14 @@ try:
 except ImportError:
     import __builtin__
 
+
 def _swig_repr(self):
     try:
         strthis = "proxy of " + self.this.__repr__()
     except __builtin__.Exception:
         strthis = ""
-    return "<%s.%s; %s >" % (self.__class__.__module__, self.__class__.__name__, strthis,)
+    return "<%s.%s; %s >" % (self.__class__.__module__,
+                             self.__class__.__name__, strthis,)
 
 
 def _swig_setattr_nondynamic_instance_variable(set):
@@ -33,7 +35,9 @@ def _swig_setattr_nondynamic_instance_variable(set):
         elif hasattr(self, name) and isinstance(getattr(type(self), name), property):
             set(self, name, value)
         else:
-            raise AttributeError("You cannot add instance attributes to %s" % self)
+            raise AttributeError(
+                "You cannot add instance attributes to %s" %
+                self)
     return set_instance_attr
 
 
@@ -59,7 +63,11 @@ class _SwigNonDynamicMeta(type):
 
 
 class SwigPyIterator(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
 
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined - class is abstract")
@@ -113,13 +121,21 @@ class SwigPyIterator(object):
 
     def __sub__(self, *args):
         return _ml.SwigPyIterator___sub__(self, *args)
+
     def __iter__(self):
         return self
 
+
 # Register SwigPyIterator in _ml:
 _ml.SwigPyIterator_swigregister(SwigPyIterator)
+
+
 class Regression(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def __init__(self):
@@ -162,6 +178,6 @@ class Regression(object):
         return _ml.Regression_num_rows(self, input)
     __swig_destroy__ = _ml.delete_Regression
 
+
 # Register Regression in _ml:
 _ml.Regression_swigregister(Regression)
-

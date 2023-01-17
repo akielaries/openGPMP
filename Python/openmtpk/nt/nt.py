@@ -16,12 +16,14 @@ try:
 except ImportError:
     import __builtin__
 
+
 def _swig_repr(self):
     try:
         strthis = "proxy of " + self.this.__repr__()
     except __builtin__.Exception:
         strthis = ""
-    return "<%s.%s; %s >" % (self.__class__.__module__, self.__class__.__name__, strthis,)
+    return "<%s.%s; %s >" % (self.__class__.__module__,
+                             self.__class__.__name__, strthis,)
 
 
 def _swig_setattr_nondynamic_instance_variable(set):
@@ -33,7 +35,9 @@ def _swig_setattr_nondynamic_instance_variable(set):
         elif hasattr(self, name) and isinstance(getattr(type(self), name), property):
             set(self, name, value)
         else:
-            raise AttributeError("You cannot add instance attributes to %s" % self)
+            raise AttributeError(
+                "You cannot add instance attributes to %s" %
+                self)
     return set_instance_attr
 
 
@@ -59,7 +63,11 @@ class _SwigNonDynamicMeta(type):
 
 
 class SwigPyIterator(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
 
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined - class is abstract")
@@ -113,13 +121,21 @@ class SwigPyIterator(object):
 
     def __sub__(self, *args):
         return _nt.SwigPyIterator___sub__(self, *args)
+
     def __iter__(self):
         return self
 
+
 # Register SwigPyIterator in _nt:
 _nt.SwigPyIterator_swigregister(SwigPyIterator)
+
+
 class Basics(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def greatest_power(self, n, p):
@@ -132,10 +148,17 @@ class Basics(object):
         _nt.Basics_swiginit(self, _nt.new_Basics())
     __swig_destroy__ = _nt.delete_Basics
 
+
 # Register Basics in _nt:
 _nt.Basics_swigregister(Basics)
+
+
 class Primality(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def is_prime(self, n):
@@ -175,12 +198,19 @@ class Primality(object):
         _nt.Primality_swiginit(self, _nt.new_Primality())
     __swig_destroy__ = _nt.delete_Primality
 
+
 # Register Primality in _nt:
 _nt.Primality_swigregister(Primality)
 BITS = _nt.BITS
 BYTE_LIMIT = _nt.BYTE_LIMIT
+
+
 class RC4(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def byte_swap(self, a, b):
@@ -208,10 +238,17 @@ class RC4(object):
         _nt.RC4_swiginit(self, _nt.new_RC4())
     __swig_destroy__ = _nt.delete_RC4
 
+
 # Register RC4 in _nt:
 _nt.RC4_swigregister(RC4)
+
+
 class Cipher(object):
-    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    thisown = property(
+        lambda x: x.this.own(),
+        lambda x,
+        v: x.this.own(v),
+        doc="The membership flag")
     __repr__ = _swig_repr
 
     def caesar(self, plaintext, key):
@@ -227,6 +264,6 @@ class Cipher(object):
         _nt.Cipher_swiginit(self, _nt.new_Cipher())
     __swig_destroy__ = _nt.delete_Cipher
 
+
 # Register Cipher in _nt:
 _nt.Cipher_swigregister(Cipher)
-

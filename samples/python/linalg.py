@@ -6,7 +6,7 @@ for both Doubles and Integers
 
 The template Matrix class and mtx struct were converted to type double
 methods instead of declaring a method for each type.
-    *NOTE* there is a respective 'INTEGER' version of each method that 
+    *NOTE* there is a respective 'INTEGER' version of each method that
     defaulted to type double, my recommendation is to use the default
     methods that converted to type double as data will more than likely
     follow the scheme.
@@ -20,7 +20,7 @@ from openmtpk import linalg as la
 
 # create and print a 3x4 matrix of zeros
 print('** Method to create Matrix of zeros **')
-mtx_z1 = la.Matrix(3,4)
+mtx_z1 = la.Matrix(3, 4)
 mtx_z1.print_shape()
 mtx_z1.print_mtx()
 
@@ -64,5 +64,3 @@ print('** Multiply each element of mtx_pos, mtx_neg respectively\
 
 mtx_pos.mult_elem(mtx_pos).print_mtx()
 mtx_neg.mult_elem(mtx_pos).print_mtx()
-
-

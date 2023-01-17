@@ -1,18 +1,17 @@
 """
 openMTPK Calculus Module
 =============================
-The Calculus Module... TODO 
+The Calculus Module... TODO
 
-    USAGE : 
+    USAGE :
         >> import openmtpk
-        OR 
+        OR
         >> from openmtpk import calculus
 """
 
 from openmtpk.calculus.calculus import (
-        Calculus,
+    Calculus,
 )
 
 __all__: list[str]
 __path__: list[str]
-

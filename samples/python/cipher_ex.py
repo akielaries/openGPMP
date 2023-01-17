@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from openmtpk import nt 
+from openmtpk import nt
 
 
 def main():

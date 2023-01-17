@@ -2,12 +2,12 @@
 openMTPK Number Theory Module
 =============================
 The Number Theory Module encapsulates methods related to prime numbers as
-well as cryptography/encryption algorithms. 
+well as cryptography/encryption algorithms.
 
-FEATURES : 
+FEATURES :
     CLASS : Primality
         - Features methods related to prime numbers
-    METHODS : 
+    METHODS :
         is_prime
         miller_rabin
         jacobian_number
@@ -32,19 +32,18 @@ FEATURES :
     CLASS : Cipher
         - Contains methods related to Caesar Cipher and a Keyword Swap Cipher
 
-    USAGE : 
+    USAGE :
         >> import openmtpk
         >> prime_num = openmtpk.nt.primality.is_prime(2999)
-        OR 
+        OR
         >> from openmtpk import nt
 """
 
 from openmtpk.nt.nt import (
-        Primality,
-        RC4,
-        Cipher,
+    Primality,
+    RC4,
+    Cipher,
 )
 
 __all__: list[str]
 __path__: list[str]
-

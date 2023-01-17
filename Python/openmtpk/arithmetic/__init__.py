@@ -1,18 +1,17 @@
 """
 openMTPK Arithmetic Module
 ==========================
-The Arithmetic Module... TODO 
+The Arithmetic Module... TODO
 
-    USAGE : 
+    USAGE :
         >> import openmtpk
-        OR 
+        OR
         >> from openmtpk import arithmetic
 """
 
 from openmtpk.arithmetic.arithmetic import (
-        Basics,
+    Basics,
 )
 
 __all__: list[str]
 __path__: list[str]
-
