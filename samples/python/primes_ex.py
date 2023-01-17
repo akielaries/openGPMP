@@ -1,24 +1,10 @@
 #!/usr/bin/python3
 
-from openmtpk import Primality
+from openmtpk import nt
 
 
 def main():
-    print("Using the Number Theory module in Python")
-    print("Methods of Primality class\n\
-        - is_prime(n)\n\
-        - miller_rabin(self, inters, min_val, max_val)\n\
-            - primes within a range\n\
-        - solovoy_strassen(p, iters)\n\
-        - mod_pow(base, exponent, mod)\n\
-        - carmichael_num(n)\n\
-        - sieve_of_eratosthenes(n)\n\
-            : prime up to a limit\n\
-        - pollard_rho(n)\n\
-        - ETF(n)\n\
-            : Eulers Totient Function\n")
-
-    p = Primality()
+    p = nt.Primality()
 
     prime_0 = p.is_prime(2999)
     prime_1 = p.carmichael_num(561)

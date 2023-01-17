@@ -102,86 +102,84 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 
-def build_pkg():
-    setuptools.setup(
-        name='openmtpk',
-        distclass=BinaryDistribution,
-        # get version from PyPI package, use bump to increment
-        version=new_version,
-        author='Akiel Aries',
-        author_email='akiel@akiel.org',
-        description='openMTPK Python API',
-        keywords='openmtpk, example, pypi, package',
-        long_description=long_description,
-        long_description_content_type='text/markdown',
-        url='https://github.com/akielaries/openMTPK',
-        project_urls={
-            'Documentation': 'https://akielaries.github.io/openMTPK/',
-            'Bug Reports':
-            'https://github.com/akielaries/openMTPK/issues',
-            'Source Code': 'https://github.com/akielaries/openMTPK/',
-        },
-        ext_modules=modules,
-        package_dir={'': 'Python'},
-        #packages=setuptools.find_packages(where='Python'),
-        #package_data={'openmtpk': ['linalg/*', 'nt/*']},
-        #packages=setuptools.find_packages(),
-        packages=['openmtpk',
-                  'openmtpk.arithmetic',
-                  'openmtpk.calculus',
-                  'openmtpk.linalg',
-                  'openmtpk.ml',
-                  'openmtpk.nt', 
-                  ],
-        #packages=setuptools.find_packages(),
-        #cmdclass={'install': install, 'build_ext': build_ext},
-        # shared object is dependent on operating system
-        include_package_data=True,
-        classifiers=[
-            # see https://pypi.org/classifiers/
-            'Development Status :: 4 - Beta',
-            'Intended Audience :: Science/Research',
-            'Intended Audience :: Developers',
-            'Intended Audience :: Education',
-            'Intended Audience :: Information Technology',
-            'Topic :: Scientific/Engineering',
-            'Topic :: Scientific/Engineering :: Mathematics',
-            'Topic :: Scientific/Engineering :: Artificial Intelligence',
-            'Topic :: Software Development',
-            'Topic :: Software Development :: Build Tools',
-            'Topic :: Software Development :: Libraries',
-            'Topic :: Software Development :: Libraries :: Python Modules',
-            'Topic :: Utilities',
-            'Topic :: Education',
-            'Topic :: Education :: Testing',
-            'Topic :: Documentation',
-            'Programming Language :: C++',
-            'Programming Language :: C',
-            'Programming Language :: Python :: 3',
-            'Programming Language :: Python :: 3.6',
-            'Programming Language :: Python :: 3.7',
-            'Programming Language :: Python :: 3.8',
-            'Programming Language :: Python :: 3.9',
-            'Programming Language :: Python :: 3.10',
-            'Programming Language :: Python :: 3 :: Only',
-            'Programming Language :: Fortran',
-            'Programming Language :: R',
-            'Programming Language :: OCaml',
-            'Operating System :: POSIX',
-            'Operating System :: Unix',
-            'Operating System :: MacOS',
-        ],
-        python_requires='>=3.6',
-        # install_requires=['Pillow'],
-        extras_require={
-            'dev': ['check-manifest'],
-            # 'test': ['coverage'],
-        },
-    )
+#def build_pkg():
+setuptools.setup(
+    name='openmtpk',
+    distclass=BinaryDistribution,
+    # get version from PyPI package, use bump to increment
+    version=new_version,
+    author='Akiel Aries',
+    author_email='akiel@akiel.org',
+    description='openMTPK Python API',
+    keywords='openmtpk, example, pypi, package',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    url='https://github.com/akielaries/openMTPK',
+    project_urls={
+        'Documentation': 'https://akielaries.github.io/openMTPK/',
+        'Bug Reports':
+        'https://github.com/akielaries/openMTPK/issues',
+        'Source Code': 'https://github.com/akielaries/openMTPK/',
+    },
+    package_dir={'': 'Python'},
+    #packages=setuptools.find_packages(where='Python'),
+    #package_data={'openmtpk': ['linalg/*', 'nt/*']},
+    #packages=setuptools.find_packages(),
+    packages=['openmtpk',
+              'openmtpk.arithmetic',
+              'openmtpk.calculus',
+              'openmtpk.linalg',
+              'openmtpk.ml',
+              'openmtpk.nt', 
+              ],
+    #packages=setuptools.find_packages(),
+    ext_modules=modules,
+    include_package_data=True,
+    classifiers=[
+        # see https://pypi.org/classifiers/
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Science/Research',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Education',
+        'Intended Audience :: Information Technology',
+        'Topic :: Scientific/Engineering',
+        'Topic :: Scientific/Engineering :: Mathematics',
+        'Topic :: Scientific/Engineering :: Artificial Intelligence',
+        'Topic :: Software Development',
+        'Topic :: Software Development :: Build Tools',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Utilities',
+        'Topic :: Education',
+        'Topic :: Education :: Testing',
+        'Topic :: Documentation',
+        'Programming Language :: C++',
+        'Programming Language :: C',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Fortran',
+        'Programming Language :: R',
+        'Programming Language :: OCaml',
+        'Operating System :: POSIX',
+        'Operating System :: Unix',
+        'Operating System :: MacOS',
+    ],
+    python_requires='>=3.6',
+    # install_requires=['Pillow'],
+    extras_require={
+        'dev': ['check-manifest'],
+        # 'test': ['coverage'],
+    },
+)
 
     #os.system('rm -rf build/')
 #os.system('cd Python && rm -rf openmtpk.egg-info && cd openmtpk && make clean')
 
-if __name__ == '__main__':
-    build_pkg()
+#if __name__ == '__main__':
+#    build_pkg()
 

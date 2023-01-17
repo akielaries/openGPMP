@@ -1,5 +1,5 @@
 #!/usr/bin/python3.10
-from openmtpk import RC4
+from openmtpk import nt
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
         - compute(key, plaintext, hashtext, swap_type)\n\
             : driver for RC4 algorithm\n")
 
-    r = RC4()
+    r = nt.RC4()
 
 
 if __name__ == '__main__':
