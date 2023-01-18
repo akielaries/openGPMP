@@ -1,17 +1,14 @@
 """
-openMTPK Calculus Module
-=============================
-The Calculus Module... TODO
+openMTPK
+========
+Python API for C++ based Mathematics Package. See the following links for
+details and documentation: 
+    SOURCE CODE : https://github.com/akielaries/openMTPK/
+    DOCS        : https://akielaries.github.io/openMTPK/
+    PyPI        : https://pypi.org/project/openmtpk/
 
-    USAGE :
-        >> import openmtpk
-        OR
-        >> from openmtpk import calculus
 """
-
-from openmtpk.calculus.calculus import (
-    Calculus,
-)
 
 __all__: list[str]
 __path__: list[str]
+
