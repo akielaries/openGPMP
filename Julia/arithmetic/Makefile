@@ -15,7 +15,7 @@ CPPFLAGS += -MMD
 
 LINK.o = $(CXX) $(LDFLAGS) $(TARGET_ARCH)
 
-CC_FILES = jlArithmetic.cxx ${arith}
+CC_FILES = jlArithmetic.cxx 
 
 .PHONY: all clean run_demo
 
