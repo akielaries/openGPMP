@@ -26,20 +26,22 @@ on using these tools in your own project.
 ## API Bindings
 As development progresses language bindings will be polished. More languages
 such as Julia and MATLAB will be explored in the future.
-Language |  Status |
----------|------|
-C++20/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
-OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)|
-Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Unstable/yellow?icon=github) |
-R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
-Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) |
+Language |  Status | Linux | Darwin | 
+---------|---------|-------|--------|
+C++20/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | :heavy_check_mark: | :x: |
+Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| :heavy_check_mark: | :heavy_check_mark: |
+OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Unstable/yellow?icon=github)| :white_check_mark: | :x: |
+Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Unstable/yellow?icon=github) | :white_check_mark: | :x: |
+R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)| :white_check_mark: | :x: |
+Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red?icon=github) | :white_check_mark: | :x: |
 
 ## Modules
+During early stages, modules will be developed in breadth while focusing on depth
+in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress.
+
 1. Arithmetic
 2. Calculus
    - Differential
-   - Integral
 3. Linear Algebra
    - Vector Operations
    - Matrix Operations
@@ -48,11 +50,7 @@ Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/In%20Progress/red
    - Cross-Validation
    - K-Nearest Neighbors
    - Neural Networks
-     - Naive
-     - Multi-layer Perceptron
-     - Bayes
-     - Kohonen (Self-Organizing Map)
-   - Bayes Classifier
+   - Classifiers
 5. Number Theory
    - Primes
    - Cryptography
