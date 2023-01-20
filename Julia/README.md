@@ -13,13 +13,12 @@ currently makes use of a custom `Makefile` to build the API.
 # Usage
 Julia is not inherently an Object-Oriented Programming Language,
 however, the source C++ code makes use of namespaces and classes.
-In openMTPK, each Class of and its encapsulated method are housed
-in an overarching namespace `mtpk`. Thus to use methods of a given
-class use this syntax:
+In openMTPK, each Class and its encapsulated method are housed
+in an overarching namespace `mtpk`. Thus to initialize a class to
+use its methods, consider this syntax:
 ```
     mtpk!<Class Name>
 ```
-
 So for the class `Basics` that houses the method `greatest_power()`
 we would call it with:
 ```
@@ -35,5 +34,5 @@ we force this since the source C++ code does.
 1. Issues regarding latency between the compiled shared library and the Julia
 interface.
 2. No formal installation process. 
-
-
+3. Issues regarding **wrapit** being able to deal with templates, pointers as paramaters,
+and some other functionalities of openMTPK.
