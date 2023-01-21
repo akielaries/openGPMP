@@ -19,9 +19,9 @@
 namespace mtpk {
 
 /**
- * @brief openMTPK Multi-Layer Perceptron namespace
+ * @brief openMTPK Machine Learning namespace
  */
-namespace mlp {
+namespace ml {
 
 /*
  * TODO 
@@ -64,7 +64,14 @@ class PrimaryMLP {
     int64_t num_layers;
     layer* layer_ptr;
 
+    /**
+     * @brief Derivative Mean Squared Error
+     */
     long double dMSE;
+
+    /**
+     * @brief Derivative Mean Absolute Error
+     */
     long double dMAE;
 
     void weights_rank();
@@ -74,6 +81,8 @@ class PrimaryMLP {
 
     void weights_save();
     void weights_restore();
+    /*adjust weights */
+    void weights_adjust();
 
     /* propogate given the signal */
     void prop_signal();
@@ -81,8 +90,6 @@ class PrimaryMLP {
     void output_err(long double* target);
     /* returns the computed error from backwards propogation */
     void back_prop_err();
-    /*adjust weights */
-    void weights_adjust();
     /* simulate the Multi-Layer Perceptron Neual Network */
     void simulate(long double* input, long double* output, 
                 long double* target, bool training);
@@ -241,42 +248,8 @@ class SecondaryMLP {
 
 };
 
-/**
- * This methods acts as a helper to the SecondaryMLP class Model.
- * the create_SecondaryMLP method will return an initialized model given
- * the dimensions of the inputs and outputs as well as specs related
- * to the hidden layers of the network
- */
-auto init_SecondaryMLP(size_t inputs,
-                size_t outputs,
-                size_t hidden_layer_units,
-                int64_t hidden_layers,
-                float lr) {
-    std::vector<size_t> layer_units;
-    layer_units.push_back(inputs);
-    
-    for (int64_t i = 0; i < hidden_layers; ++i) {
-        layer_units.push_back(hidden_layer_units);
-    }
-    layer_units.push_back(outputs);
-    SecondaryMLP<long double> model_SecondaryMLP(layer_units, 0.01);
-    return model_SecondaryMLP;
-}
 
-/**
- * @details SecondaryMLP training method
- */
-void train(auto initialized_model,
-            const std::string data_file, 
-            uint64_t iterations, 
-            uint64_t print_increment) {
-
-    std::fstream input(data_file.c_str());
-    std::cout << data_file << iterations << print_increment;
-
-}
-
-} // namespace mlp
+} // namespace ml
 
 } // namespace mtpk
 

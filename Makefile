@@ -59,7 +59,7 @@ ml_dl:
 	${CXX} ${CXX_DBG} ${LRDRV} ${OPM} -o ${LRBIN}
 	./${LRBIN}
 mlp:
-	${CXX} ${CXX_DBG} ${MLPDRV} -o ${MLPBIN}
+	${CXX} ${CXX_DBG} ${MLP} ${MLPDRV} -o ${MLPBIN}
 	./${MLPBIN}
 
 # FILES FOR BASIC LINEAR ALGEBRA OPERATIONS

@@ -101,10 +101,10 @@
  *  * Multi-Layer Perceptron
  */
 // #define NEURAL_NETWORKS
-// #include "ml/naive_network.hpp"
-// #include "ml/bayes_network.hpp"
-// #include "ml/kohonen_network.hpp"
-#include "ml/mlp_network.hpp"
+// #include "ml/naive_net.hpp"
+// #include "ml/bayes_net.hpp"
+// #include "ml/kohonen_net.hpp"
+#include "ml/mlp_net.hpp"
 /*****************************************************************************/
 
 #endif
