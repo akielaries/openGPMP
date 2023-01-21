@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['ba_13',['ba',['../primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6',1,'primes.cpp']]],
-  ['back_5fprop_5ferr_14',['back_prop_err',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1a02f22009bb07dbd283708bdb6c098f',1,'mtpk::ml::PrimaryMLP']]],
-  ['backward_5fprop_15',['backward_prop',['../classmtpk_1_1NaiveNet.html#a17e3858224c9c6873cb396c2c855d253',1,'mtpk::NaiveNet']]],
-  ['basics_16',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk']]],
-  ['bayes_5fclf_2ehpp_17',['bayes_clf.hpp',['../bayes__clf_8hpp.html',1,'']]],
-  ['bayes_5fnet_2ehpp_18',['bayes_net.hpp',['../bayes__net_8hpp.html',1,'']]],
-  ['bayesclf_19',['BayesClf',['../classmtpk_1_1BayesClf.html',1,'mtpk']]],
-  ['bayesnet_20',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]],
-  ['best_5ffit_21',['best_fit',['../classmtpk_1_1Regression.html#ad4906faaedcc78a6bdfddef423459a86',1,'mtpk::Regression']]],
-  ['bias_5fvectors_22',['bias_vectors',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254',1,'mtpk::ml::SecondaryMLP']]],
-  ['bits_23',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
-  ['byte_5flimit_24',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],
-  ['byte_5fswap_25',['byte_swap',['../classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332',1,'mtpk::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
+  ['activations_6',['activations',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5',1,'mtpk::ml::SecondaryMLP']]],
+  ['add_7',['add',['../classmtpk_1_1Arith.html#aa0ed51fb270c8960489a4df51f5176d1',1,'mtpk::Arith::add(T t)'],['../classmtpk_1_1Arith.html#ab2184415aa3b6dabe3534f28a481651b',1,'mtpk::Arith::add(T t, Ts... ts)'],['../classmtpk_1_1Matrix.html#a695fff8b43b7aea5bcfaaed827cff600',1,'mtpk::Matrix::add()'],['../classmtpk_1_1Vectors.html#a4fb9434e406936d8be052c99f18f727f',1,'mtpk::Vectors::add()']]],
+  ['all_8',['all',['../classmtpk_1_1Matrix.html#ae379c776e20abfaa0edb975a3d6e25a5',1,'mtpk::Matrix']]],
+  ['apis_9',['APIs',['../md_docs_source_APIs.html',1,'']]],
+  ['apis_2emd_10',['APIs.md',['../APIs_8md.html',1,'']]],
+  ['apply_5ffunc_11',['apply_func',['../classmtpk_1_1Matrix.html#ac50233d491e4f5a443c2747f6081e028',1,'mtpk::Matrix']]],
+  ['arith_12',['Arith',['../classmtpk_1_1Arith.html',1,'mtpk']]],
+  ['arith_2ecpp_13',['arith.cpp',['../arith_8cpp.html',1,'']]],
+  ['arith_5fbase_2ehpp_14',['arith_base.hpp',['../arith__base_8hpp.html',1,'']]],
+  ['arith_5fops_2ehpp_15',['arith_ops.hpp',['../arith__ops_8hpp.html',1,'']]],
+  ['arithmetic_2ehpp_16',['arithmetic.hpp',['../arithmetic_8hpp.html',1,'']]],
+  ['arithmetic_5fbasics_17',['ARITHMETIC_BASICS',['../arithmetic_8hpp.html#a3ac73acc5270fe9bca0a0be4cfa8cdce',1,'arithmetic.hpp']]],
+  ['arithmetic_5foperations_18',['ARITHMETIC_OPERATIONS',['../arithmetic_8hpp.html#a0d09f94b00747f87dcec11d4f9a1149b',1,'arithmetic.hpp']]]
 ];

@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['x_544',['x',['../classmtpk_1_1Tensors.html#a1870acfccda0ea474b5bbf7201b9197c',1,'mtpk::Tensors::x()'],['../classmtpk_1_1Vectors.html#a457e8a55b3bc8fb04918973548153ab1',1,'mtpk::Vectors::x()'],['../classmtpk_1_1Regression.html#a2bf04911a754e4416108fd449c60c1d5',1,'mtpk::Regression::x()']]]
+  ['weights_541',['weights',['../classmtpk_1_1NaiveNet.html#ac7d504285bccce80bcd1407e23620404',1,'mtpk::NaiveNet']]],
+  ['wt_542',['wt',['../structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5',1,'mtpk::ml::neuron']]],
+  ['wt_5flast_543',['wt_last',['../structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24',1,'mtpk::ml::neuron']]],
+  ['wt_5fmtx_544',['wt_mtx',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855',1,'mtpk::ml::SecondaryMLP']]],
+  ['wt_5fsaved_545',['wt_saved',['../structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a',1,'mtpk::ml::neuron']]]
 ];

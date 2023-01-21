@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rows_527',['rows',['../classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b',1,'mtpk::Matrix']]]
+  ['prim_528',['prim',['../primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8',1,'primes.cpp']]]
 ];

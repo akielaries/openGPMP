@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_545',['y',['../classmtpk_1_1Tensors.html#a158d9da13ff55bc2904b3c91be1a5b85',1,'mtpk::Tensors::y()'],['../classmtpk_1_1Vectors.html#a3507b05366f61c6cf61023f5829fa5c7',1,'mtpk::Vectors::y()'],['../classmtpk_1_1Regression.html#aca3ddb812974ea7cbb7cd9f730129f68',1,'mtpk::Regression::y()']]]
+  ['x_546',['x',['../classmtpk_1_1Tensors.html#a1870acfccda0ea474b5bbf7201b9197c',1,'mtpk::Tensors::x()'],['../classmtpk_1_1Vectors.html#a457e8a55b3bc8fb04918973548153ab1',1,'mtpk::Vectors::x()'],['../classmtpk_1_1Regression.html#a2bf04911a754e4416108fd449c60c1d5',1,'mtpk::Regression::x()']]]
 ];

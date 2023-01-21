@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['x_276',['x',['../classmtpk_1_1Tensors.html#a1870acfccda0ea474b5bbf7201b9197c',1,'mtpk::Tensors::x()'],['../classmtpk_1_1Vectors.html#a457e8a55b3bc8fb04918973548153ab1',1,'mtpk::Vectors::x()'],['../classmtpk_1_1Regression.html#a2bf04911a754e4416108fd449c60c1d5',1,'mtpk::Regression::x()']]],
-  ['xor_5fswap_277',['XOR_swap',['../classmtpk_1_1RC4.html#a241338bfc1131ece12f8964fb14a407c',1,'mtpk::RC4::XOR_swap()'],['../classRC5.html#ae7d8912d64c5460d1f2de3344515a179',1,'RC5::XOR_swap()']]]
+  ['weights_268',['weights',['../classmtpk_1_1NaiveNet.html#ac7d504285bccce80bcd1407e23620404',1,'mtpk::NaiveNet']]],
+  ['weights_5fadjust_269',['weights_adjust',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3fb446ddfd3e01c0b2f61db8e8cf66f7',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frank_270',['weights_rank',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a890a0708da13185a7898d1d874e96b08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frestore_271',['weights_restore',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ac86d80e12567b45439eae866932b6c08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5fsave_272',['weights_save',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1de057913c17181e734e39e8aea845c1',1,'mtpk::ml::PrimaryMLP']]],
+  ['welcome_20to_20openmtpk_27s_20documentation_2e_273',['Welcome to openMTPK&apos;s documentation.',['../index.html',1,'']]],
+  ['wt_274',['wt',['../structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5',1,'mtpk::ml::neuron']]],
+  ['wt_5flast_275',['wt_last',['../structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24',1,'mtpk::ml::neuron']]],
+  ['wt_5fmtx_276',['wt_mtx',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855',1,'mtpk::ml::SecondaryMLP']]],
+  ['wt_5fsaved_277',['wt_saved',['../structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a',1,'mtpk::ml::neuron']]]
 ];

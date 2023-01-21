@@ -1,14 +1,10 @@
 var searchData=
 [
-  ['dalpha_499',['dAlpha',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a463ecd8a4fe20413584aa053ea099f2d',1,'mtpk::ml::PrimaryMLP']]],
-  ['data_500',['data',['../classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466',1,'mtpk::Matrix']]],
-  ['davgtesterror_501',['dAvgTestError',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a7e648a19d8637e59c143f6c2a53e19e6',1,'mtpk::ml::PrimaryMLP']]],
-  ['delimeter_502',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
-  ['deltas_503',['deltas',['../classmtpk_1_1NaiveNet.html#a1190dd5df3910d4c7fb8cc91bb68037b',1,'mtpk::NaiveNet']]],
-  ['deta_504',['dEta',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a8bc04bc17a148818b25fb26ff259cd09',1,'mtpk::ml::PrimaryMLP']]],
-  ['dgain_505',['dGain',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a19502765a08340892423bec644663bf0',1,'mtpk::ml::PrimaryMLP']]],
-  ['dim_506',['dim',['../classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e',1,'mtpk::Matrix']]],
-  ['distance_507',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
-  ['dmae_508',['dMAE',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a064ec70d23a9d294eb2d7c6a79e01d1a',1,'mtpk::ml::PrimaryMLP']]],
-  ['dmse_509',['dMSE',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a572890ce6f444e261386158110b740f7',1,'mtpk::ml::PrimaryMLP']]]
+  ['cache_5flayers_500',['cache_layers',['../classmtpk_1_1NaiveNet.html#a616122707e97a97f6877f53ffbec1a4a',1,'mtpk::NaiveNet']]],
+  ['characteristics_501',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
+  ['class_5fprob_502',['class_prob',['../structmtpk_1_1summary.html#ab48f21085196941c2b72409cd2b0ad73',1,'mtpk::summary']]],
+  ['coeff_503',['coeff',['../classmtpk_1_1Regression.html#a3f170c11889f14d2052c9df865b886cd',1,'mtpk::Regression']]],
+  ['cols_504',['cols',['../classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875',1,'mtpk::Matrix']]],
+  ['constant_505',['constant',['../classmtpk_1_1Regression.html#a8f13a116c7fee8fad02ec95727c33719',1,'mtpk::Regression']]],
+  ['current_5frot_506',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]]
 ];

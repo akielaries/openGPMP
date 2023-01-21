@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ba_490',['ba',['../primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6',1,'primes.cpp']]],
-  ['bias_5fvectors_491',['bias_vectors',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254',1,'mtpk::ml::SecondaryMLP']]]
+  ['activations_497',['activations',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5',1,'mtpk::ml::SecondaryMLP']]]
 ];

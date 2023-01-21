@@ -1,19 +1,10 @@
 var searchData=
 [
-  ['pi_174',['pi',['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp'],['../torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp']]],
-  ['pollard_5frho_175',['pollard_rho',['../classmtpk_1_1Primality.html#a6da2179ebf40c84b2f30429a0e1fa45c',1,'mtpk::Primality']]],
-  ['predict_176',['predict',['../classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4',1,'mtpk::BayesClf::predict()'],['../classmtpk_1_1Regression.html#a23c69bb92a889bf4f7d8409cc3f33715',1,'mtpk::Regression::predict()']]],
-  ['prga_177',['PRGA',['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
-  ['prim_178',['prim',['../primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8',1,'primes.cpp']]],
-  ['primality_179',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
-  ['primarymlp_180',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml::PrimaryMLP'],['../classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5',1,'mtpk::ml::PrimaryMLP::PrimaryMLP()']]],
-  ['primes_181',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]],
-  ['primes_2ecpp_182',['primes.cpp',['../primes_8cpp.html',1,'']]],
-  ['primes_2ehpp_183',['primes.hpp',['../primes_8hpp.html',1,'']]],
-  ['print_5fmtx_184',['print_mtx',['../classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6',1,'mtpk::Matrix']]],
-  ['print_5fshape_185',['print_shape',['../classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56',1,'mtpk::Matrix']]],
-  ['prob_5fby_5fsumm_186',['prob_by_summ',['../namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5',1,'mtpk']]],
-  ['prop_5fbackwards_187',['prop_backwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7',1,'mtpk::ml::SecondaryMLP']]],
-  ['prop_5fforwards_188',['prop_forwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e',1,'mtpk::ml::SecondaryMLP']]],
-  ['prop_5fsignal_189',['prop_signal',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ae925fb9444753b64a109a668e77c8c0c',1,'mtpk::ml::PrimaryMLP']]]
+  ['ones_168',['ones',['../structmtpk_1_1mtx.html#a844bc20fffd518adf98003889a6a1df8',1,'mtpk::mtx']]],
+  ['op_5fgcd_169',['op_gcd',['../classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e',1,'mtpk::Basics']]],
+  ['operator_28_29_170',['operator()',['../classmtpk_1_1Matrix.html#ae2b6c5e45c1bb272e708e07a1124d26b',1,'mtpk::Matrix']]],
+  ['operator_2b_171',['operator+',['../classmtpk_1_1Matrix.html#a5f69f6466f892bd9e6f4680fc00387ee',1,'mtpk::Matrix']]],
+  ['operator_2d_172',['operator-',['../classmtpk_1_1Matrix.html#ae018657d5dee4e30284560326ca6eb78',1,'mtpk::Matrix::operator-()'],['../classmtpk_1_1Matrix.html#a9ef5c73d07b88d53517799bc6c2dc9d1',1,'mtpk::Matrix::operator-(Matrix &amp;target)']]],
+  ['operator_3d_3d_173',['operator==',['../classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c',1,'mtpk::Matrix']]],
+  ['output_5ferr_174',['output_err',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a397daab2ad5b66cec3315ad2c994b3b2',1,'mtpk::ml::PrimaryMLP']]]
 ];
