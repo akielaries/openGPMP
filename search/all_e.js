@@ -6,14 +6,14 @@ var searchData=
   ['prga_177',['PRGA',['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
   ['prim_178',['prim',['../primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8',1,'primes.cpp']]],
   ['primality_179',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
-  ['primarymlp_180',['PrimaryMLP',['../classmtpk_1_1mlp_1_1PrimaryMLP.html',1,'mtpk::mlp::PrimaryMLP'],['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a713aa21a3c0b88b1aa76e5af2c350bf5',1,'mtpk::mlp::PrimaryMLP::PrimaryMLP()']]],
+  ['primarymlp_180',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml::PrimaryMLP'],['../classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5',1,'mtpk::ml::PrimaryMLP::PrimaryMLP()']]],
   ['primes_181',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]],
   ['primes_2ecpp_182',['primes.cpp',['../primes_8cpp.html',1,'']]],
   ['primes_2ehpp_183',['primes.hpp',['../primes_8hpp.html',1,'']]],
   ['print_5fmtx_184',['print_mtx',['../classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6',1,'mtpk::Matrix']]],
   ['print_5fshape_185',['print_shape',['../classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56',1,'mtpk::Matrix']]],
   ['prob_5fby_5fsumm_186',['prob_by_summ',['../namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5',1,'mtpk']]],
-  ['prop_5fbackwards_187',['prop_backwards',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a3bb02b611028c0b1304e6954daf688e2',1,'mtpk::mlp::SecondaryMLP']]],
-  ['prop_5fforwards_188',['prop_forwards',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#abcd8bf08cd44b2ac5c5a35132a15960a',1,'mtpk::mlp::SecondaryMLP']]],
-  ['prop_5fsignal_189',['prop_signal',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a2473eb9b3462a381d0a49163a28ea4de',1,'mtpk::mlp::PrimaryMLP']]]
+  ['prop_5fbackwards_187',['prop_backwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7',1,'mtpk::ml::SecondaryMLP']]],
+  ['prop_5fforwards_188',['prop_forwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e',1,'mtpk::ml::SecondaryMLP']]],
+  ['prop_5fsignal_189',['prop_signal',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ae925fb9444753b64a109a668e77c8c0c',1,'mtpk::ml::PrimaryMLP']]]
 ];

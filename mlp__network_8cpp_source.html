@@ -74,54 +74,61 @@ $(function() {
 <a href="mlp__network_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Implementation of a Multi-Layered Perceptron Neural Network</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../include/ml/mlp_network.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../include/ml/mlp_net.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Initialize randomly generated values for network&#39;s method</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#affdde88ce944f86a6a0f9151ec44cd27">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#affdde88ce944f86a6a0f9151ec44cd27">mtpk::mlp::PrimaryMLP::rand_init</a>() {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    srand((uint64_t) time(NULL));</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* verify the random is an integer */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a586888c68fae348a666ef4b717bbe14f">   19</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a586888c68fae348a666ef4b717bbe14f">mtpk::mlp::PrimaryMLP::rand_int</a>(int64_t hi, int64_t low) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> rand() % (hi - low + 1) + low;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/* verify generated random is a real number */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a0ed7e8e8b47025c35d30543c1918c8f7">   24</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a0ed7e8e8b47025c35d30543c1918c8f7">mtpk::mlp::PrimaryMLP::rand_real</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> low, </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                            <span class="keywordtype">long</span> <span class="keywordtype">double</span> hi) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">long</span> <span class="keywordtype">double</span>) rand() / RAND_MAX) * (hi - low) + low;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/* MLP CONSTRUCTOR */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a713aa21a3c0b88b1aa76e5af2c350bf5">   30</a></span>&#160;<a class="code" href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a713aa21a3c0b88b1aa76e5af2c350bf5">mtpk::mlp::PrimaryMLP::PrimaryMLP</a>(int64_t nl, int64_t npl[]) : </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    num_layers(0), </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    layer_ptr(0),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    dEta(0.25),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    dAlpha(0.9),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    dGain(1.0),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    dMSE(0.0),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    dMAE(0.0),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dAvgTestError(0.0)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    { </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        int64_t i, j;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacemtpk_1_1ml.html">mtpk::ml</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Initialize randomly generated values for network&#39;s method</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a">mtpk::ml::PrimaryMLP::rand_init</a>() {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    srand((uint64_t) time(NULL));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* verify the random is an integer */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a1944148b92b8b2c0d9cccac3b6f91071">   20</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a1944148b92b8b2c0d9cccac3b6f91071">mtpk::ml::PrimaryMLP::rand_int</a>(int64_t hi, int64_t low) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> rand() % (hi - low + 1) + low;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* verify generated random is a real number */</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">   25</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">mtpk::ml::PrimaryMLP::rand_real</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> low, </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                            <span class="keywordtype">long</span> <span class="keywordtype">double</span> hi) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">long</span> <span class="keywordtype">double</span>) rand() / RAND_MAX) * (hi - low) + low;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/* MLP CONSTRUCTOR */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">   31</a></span>&#160;<a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">mtpk::ml::PrimaryMLP::PrimaryMLP</a>(int64_t nl, int64_t npl[]) : </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    num_layers(0), </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    layer_ptr(0),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    dEta(0.25),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    dAlpha(0.9),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    dGain(1.0),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    dMSE(0.0),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    dMAE(0.0),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    dAvgTestError(0.0) { </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    int64_t i, j;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// create network layers</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4">num_layers</a> = nl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a> = <span class="keyword">new</span> <a class="code" href="structmtpk_1_1ml_1_1layer.html">layer</a>[nl];</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="ttc" id="aclassmtpk_1_1mlp_1_1PrimaryMLP_html_a0ed7e8e8b47025c35d30543c1918c8f7"><div class="ttname"><a href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a0ed7e8e8b47025c35d30543c1918c8f7">mtpk::mlp::PrimaryMLP::rand_real</a></div><div class="ttdeci">long double rand_real(long double low, long double hi)</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00024">mlp_network.cpp:24</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1mlp_1_1PrimaryMLP_html_a586888c68fae348a666ef4b717bbe14f"><div class="ttname"><a href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a586888c68fae348a666ef4b717bbe14f">mtpk::mlp::PrimaryMLP::rand_int</a></div><div class="ttdeci">int64_t rand_int(int64_t low, int64_t hi)</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00019">mlp_network.cpp:19</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1mlp_1_1PrimaryMLP_html_a713aa21a3c0b88b1aa76e5af2c350bf5"><div class="ttname"><a href="classmtpk_1_1mlp_1_1PrimaryMLP.html#a713aa21a3c0b88b1aa76e5af2c350bf5">mtpk::mlp::PrimaryMLP::PrimaryMLP</a></div><div class="ttdeci">PrimaryMLP(int64_t nl, int64_t npl[])</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00030">mlp_network.cpp:30</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1mlp_1_1PrimaryMLP_html_affdde88ce944f86a6a0f9151ec44cd27"><div class="ttname"><a href="classmtpk_1_1mlp_1_1PrimaryMLP.html#affdde88ce944f86a6a0f9151ec44cd27">mtpk::mlp::PrimaryMLP::rand_init</a></div><div class="ttdeci">void rand_init()</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00014">mlp_network.cpp:14</a></div></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a18eb4946937035f12809fcc9b672a727"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">mtpk::ml::PrimaryMLP::rand_real</a></div><div class="ttdeci">long double rand_real(long double low, long double hi)</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00025">mlp_network.cpp:25</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a1944148b92b8b2c0d9cccac3b6f91071"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a1944148b92b8b2c0d9cccac3b6f91071">mtpk::ml::PrimaryMLP::rand_int</a></div><div class="ttdeci">int64_t rand_int(int64_t low, int64_t hi)</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00020">mlp_network.cpp:20</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a27753bc0c2fa1fb57f272c35b2f3f9f4"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4">mtpk::ml::PrimaryMLP::num_layers</a></div><div class="ttdeci">int64_t num_layers</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00064">mlp_net.hpp:64</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a66629db6d9a859905bda220e982a0a7a"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a">mtpk::ml::PrimaryMLP::rand_init</a></div><div class="ttdeci">void rand_init()</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00015">mlp_network.cpp:15</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a74005f6700a488e456b95f06e3a416d5"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">mtpk::ml::PrimaryMLP::PrimaryMLP</a></div><div class="ttdeci">PrimaryMLP(int64_t nl, int64_t npl[])</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00031">mlp_network.cpp:31</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_ab44d549917a926ca38f278440071322a"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">mtpk::ml::PrimaryMLP::layer_ptr</a></div><div class="ttdeci">layer * layer_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00065">mlp_net.hpp:65</a></div></div>
+<div class="ttc" id="anamespacemtpk_1_1ml_html"><div class="ttname"><a href="namespacemtpk_1_1ml.html">mtpk::ml</a></div><div class="ttdoc">openMTPK Machine Learning namespace</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00024">mlp_net.hpp:24</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html">mtpk::ml::layer</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00046">mlp_net.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

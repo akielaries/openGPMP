@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_403',['log',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a100d54666d72e393d7491f8a11687051',1,'mtpk::mlp::SecondaryMLP']]]
+  ['log_410',['log',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ad63d2ad6e58fb2136ca4ad2338a1ee69',1,'mtpk::ml::SecondaryMLP']]]
 ];

@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['dalpha_489',['dAlpha',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a7e6472c52e5a33ee184abef0200ceb71',1,'mtpk::mlp::PrimaryMLP']]],
-  ['data_490',['data',['../classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466',1,'mtpk::Matrix']]],
-  ['davgtesterror_491',['dAvgTestError',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#ad1533d72ca89d61b9bd47a09cecc0160',1,'mtpk::mlp::PrimaryMLP']]],
-  ['delimeter_492',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
-  ['deltas_493',['deltas',['../classmtpk_1_1NaiveNet.html#a1190dd5df3910d4c7fb8cc91bb68037b',1,'mtpk::NaiveNet']]],
-  ['deta_494',['dEta',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#aa1b68dd3de41e9f1769132d741b934a0',1,'mtpk::mlp::PrimaryMLP']]],
-  ['dgain_495',['dGain',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a8cebf63147ecdbb46e54af40889a5251',1,'mtpk::mlp::PrimaryMLP']]],
-  ['dim_496',['dim',['../classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e',1,'mtpk::Matrix']]],
-  ['distance_497',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
-  ['dmae_498',['dMAE',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a7987f9afa35c62c9c2cc3a305087e855',1,'mtpk::mlp::PrimaryMLP']]],
-  ['dmse_499',['dMSE',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a6d7f0e6741e5bb0656c11731fb0e7e7b',1,'mtpk::mlp::PrimaryMLP']]]
+  ['dalpha_499',['dAlpha',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a463ecd8a4fe20413584aa053ea099f2d',1,'mtpk::ml::PrimaryMLP']]],
+  ['data_500',['data',['../classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466',1,'mtpk::Matrix']]],
+  ['davgtesterror_501',['dAvgTestError',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a7e648a19d8637e59c143f6c2a53e19e6',1,'mtpk::ml::PrimaryMLP']]],
+  ['delimeter_502',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
+  ['deltas_503',['deltas',['../classmtpk_1_1NaiveNet.html#a1190dd5df3910d4c7fb8cc91bb68037b',1,'mtpk::NaiveNet']]],
+  ['deta_504',['dEta',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a8bc04bc17a148818b25fb26ff259cd09',1,'mtpk::ml::PrimaryMLP']]],
+  ['dgain_505',['dGain',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a19502765a08340892423bec644663bf0',1,'mtpk::ml::PrimaryMLP']]],
+  ['dim_506',['dim',['../classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e',1,'mtpk::Matrix']]],
+  ['distance_507',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
+  ['dmae_508',['dMAE',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a064ec70d23a9d294eb2d7c6a79e01d1a',1,'mtpk::ml::PrimaryMLP']]],
+  ['dmse_509',['dMSE',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a572890ce6f444e261386158110b740f7',1,'mtpk::ml::PrimaryMLP']]]
 ];

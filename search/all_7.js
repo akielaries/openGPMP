@@ -2,7 +2,7 @@ var searchData=
 [
   ['index_2emd_99',['index.md',['../index_8md.html',1,'']]],
   ['init_100',['init',['../torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus.cpp'],['../torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus_animated.cpp']]],
-  ['init_5fsecondarymlp_101',['init_SecondaryMLP',['../namespacemtpk_1_1mlp.html#a74759f080dc7a7147e08428a57ada6d7',1,'mtpk::mlp']]],
+  ['init_5fsecondarymlp_101',['init_SecondaryMLP',['../classmtpk_1_1ml_1_1Utils.html#a8159d81108850538f08102d8a9c52e2d',1,'mtpk::ml::Utils']]],
   ['installation_102',['Installation',['../md_docs_source_Installation.html',1,'']]],
   ['installation_2emd_103',['Installation.md',['../Installation_8md.html',1,'']]],
   ['instance_5flist_104',['instance_list',['../classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6',1,'mtpk::KF_CV']]],

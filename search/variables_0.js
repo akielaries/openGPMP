@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['activations_479',['activations',['../classmtpk_1_1mlp_1_1SecondaryMLP.html#a41a63bc12069bf667bc058df7541820e',1,'mtpk::mlp::SecondaryMLP']]]
+  ['activations_489',['activations',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5',1,'mtpk::ml::SecondaryMLP']]]
 ];

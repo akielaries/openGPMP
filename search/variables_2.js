@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['cache_5flayers_482',['cache_layers',['../classmtpk_1_1NaiveNet.html#a616122707e97a97f6877f53ffbec1a4a',1,'mtpk::NaiveNet']]],
-  ['characteristics_483',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
-  ['class_5fprob_484',['class_prob',['../structmtpk_1_1summary.html#ab48f21085196941c2b72409cd2b0ad73',1,'mtpk::summary']]],
-  ['coeff_485',['coeff',['../classmtpk_1_1Regression.html#a3f170c11889f14d2052c9df865b886cd',1,'mtpk::Regression']]],
-  ['cols_486',['cols',['../classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875',1,'mtpk::Matrix']]],
-  ['constant_487',['constant',['../classmtpk_1_1Regression.html#a8f13a116c7fee8fad02ec95727c33719',1,'mtpk::Regression']]],
-  ['current_5frot_488',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]]
+  ['cache_5flayers_492',['cache_layers',['../classmtpk_1_1NaiveNet.html#a616122707e97a97f6877f53ffbec1a4a',1,'mtpk::NaiveNet']]],
+  ['characteristics_493',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
+  ['class_5fprob_494',['class_prob',['../structmtpk_1_1summary.html#ab48f21085196941c2b72409cd2b0ad73',1,'mtpk::summary']]],
+  ['coeff_495',['coeff',['../classmtpk_1_1Regression.html#a3f170c11889f14d2052c9df865b886cd',1,'mtpk::Regression']]],
+  ['cols_496',['cols',['../classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875',1,'mtpk::Matrix']]],
+  ['constant_497',['constant',['../classmtpk_1_1Regression.html#a8f13a116c7fee8fad02ec95727c33719',1,'mtpk::Regression']]],
+  ['current_5frot_498',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]]
 ];

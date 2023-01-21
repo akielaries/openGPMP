@@ -1,9 +1,9 @@
 var searchData=
 [
   ['rand_190',['rand',['../structmtpk_1_1mtx.html#a672570f8832dff00d202613257093546',1,'mtpk::mtx']]],
-  ['rand_5finit_191',['rand_init',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#affdde88ce944f86a6a0f9151ec44cd27',1,'mtpk::mlp::PrimaryMLP']]],
-  ['rand_5fint_192',['rand_int',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a586888c68fae348a666ef4b717bbe14f',1,'mtpk::mlp::PrimaryMLP']]],
-  ['rand_5freal_193',['rand_real',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a0ed7e8e8b47025c35d30543c1918c8f7',1,'mtpk::mlp::PrimaryMLP']]],
+  ['rand_5finit_191',['rand_init',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a',1,'mtpk::ml::PrimaryMLP']]],
+  ['rand_5fint_192',['rand_int',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1944148b92b8b2c0d9cccac3b6f91071',1,'mtpk::ml::PrimaryMLP']]],
+  ['rand_5freal_193',['rand_real',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727',1,'mtpk::ml::PrimaryMLP']]],
   ['randn_194',['randn',['../structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be',1,'mtpk::mtx']]],
   ['rc4_195',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk']]],
   ['rc4_2ecpp_196',['rc4.cpp',['../rc4_8cpp.html',1,'']]],
@@ -21,6 +21,6 @@ var searchData=
   ['rotate_5fleft_208',['rotate_left',['../classRC5.html#ae1fe017f0adfcc82c0661f452067d89f',1,'RC5::rotate_left()'],['../rc5_8cpp.html#ae44a7eb005369d52e6666b6cfc5b0e19',1,'rotate_left():&#160;rc5.cpp']]],
   ['rotate_5fright_209',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
   ['rows_210',['rows',['../classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b',1,'mtpk::Matrix']]],
-  ['rowvector_211',['RowVector',['../naive__network_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_network.hpp']]],
-  ['run_212',['run',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a272a1f3cec3d1a27308ac4c8174a7d17',1,'mtpk::mlp::PrimaryMLP']]]
+  ['rowvector_211',['RowVector',['../naive__net_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_net.hpp']]],
+  ['run_212',['run',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a18a8db269edeca400bb6029f6ca236f2',1,'mtpk::ml::PrimaryMLP']]]
 ];

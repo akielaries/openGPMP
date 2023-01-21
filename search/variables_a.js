@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['n_510',['N',['../classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c',1,'mtpk::KF_CV']]],
-  ['neuron_5flayers_511',['neuron_layers',['../classmtpk_1_1NaiveNet.html#a6120d822d57b0c0d28994e4317e18915',1,'mtpk::NaiveNet']]],
-  ['neuron_5fptr_512',['neuron_ptr',['../structmtpk_1_1mlp_1_1layer.html#a916b8be35defdd5fdace756560e5c292',1,'mtpk::mlp::layer']]],
-  ['num_5felements_513',['num_elements',['../classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23',1,'mtpk::Matrix']]],
-  ['num_5flayers_514',['num_layers',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a8c1bde8bef06e33b1003e02eb66f5e70',1,'mtpk::mlp::PrimaryMLP']]],
-  ['num_5fneurons_515',['num_neurons',['../structmtpk_1_1mlp_1_1layer.html#ad4333a701dc99ea1ccd5872a455fe1ec',1,'mtpk::mlp::layer']]]
+  ['n_520',['N',['../classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c',1,'mtpk::KF_CV']]],
+  ['neuron_5flayers_521',['neuron_layers',['../classmtpk_1_1NaiveNet.html#a6120d822d57b0c0d28994e4317e18915',1,'mtpk::NaiveNet']]],
+  ['neuron_5fptr_522',['neuron_ptr',['../structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf',1,'mtpk::ml::layer']]],
+  ['num_5felements_523',['num_elements',['../classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23',1,'mtpk::Matrix']]],
+  ['num_5flayers_524',['num_layers',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4',1,'mtpk::ml::PrimaryMLP']]],
+  ['num_5fneurons_525',['num_neurons',['../structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218',1,'mtpk::ml::layer']]]
 ];

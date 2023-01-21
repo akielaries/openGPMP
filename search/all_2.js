@@ -15,7 +15,7 @@ var searchData=
   ['classification_38',['CLASSIFICATION',['../ml_8hpp.html#a669750181416ae68a4b4684e5006f733',1,'ml.hpp']]],
   ['coeff_39',['coeff',['../classmtpk_1_1Regression.html#a3f170c11889f14d2052c9df865b886cd',1,'mtpk::Regression']]],
   ['cols_40',['cols',['../classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875',1,'mtpk::Matrix']]],
-  ['colvector_41',['ColVector',['../naive__network_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_network.hpp']]],
+  ['colvector_41',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]],
   ['company_42',['Company',['../classCompany.html#a14cf06ae9062513049fd61ba32e7ad50',1,'Company::Company()'],['../classCompany.html',1,'Company']]],
   ['comparison_43',['comparison',['../classmtpk_1_1NearestNeighbor.html#a064dee2c9dea483a712060777fee172c',1,'mtpk::NearestNeighbor::comparison()'],['../nearest__neighbors_8hpp.html#ae07612d249d520ffdc46849324a31fb9',1,'comparison():&#160;nearest_neighbors.hpp']]],
   ['compute_44',['compute',['../classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664',1,'mtpk::RC4::compute()'],['../classRC5.html#a83718fea487a833eb2ea84a536d178f0',1,'RC5::compute()']]],

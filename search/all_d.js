@@ -6,5 +6,5 @@ var searchData=
   ['operator_2b_170',['operator+',['../classmtpk_1_1Matrix.html#a5f69f6466f892bd9e6f4680fc00387ee',1,'mtpk::Matrix']]],
   ['operator_2d_171',['operator-',['../classmtpk_1_1Matrix.html#ae018657d5dee4e30284560326ca6eb78',1,'mtpk::Matrix::operator-()'],['../classmtpk_1_1Matrix.html#a9ef5c73d07b88d53517799bc6c2dc9d1',1,'mtpk::Matrix::operator-(Matrix &amp;target)']]],
   ['operator_3d_3d_172',['operator==',['../classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c',1,'mtpk::Matrix']]],
-  ['output_5ferr_173',['output_err',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#adc0b6b46abce8b1d0adff6c4dc20007e',1,'mtpk::mlp::PrimaryMLP']]]
+  ['output_5ferr_173',['output_err',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a397daab2ad5b66cec3315ad2c994b3b2',1,'mtpk::ml::PrimaryMLP']]]
 ];

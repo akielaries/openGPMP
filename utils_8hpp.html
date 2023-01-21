@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/ml/mlp_network.hpp File Reference</title>
+<title>openMTPK: include/ml/utils.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,33 +69,22 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">mlp_network.hpp File Reference</div>  </div>
+<div class="title">utils.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;random&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="linalg_8hpp_source.html">../linalg.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>&quot;</code><br />
 </div>
-<p><a href="mlp__network_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="utils_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtpk_1_1mlp_1_1neuron.html">mtpk::mlp::neuron</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtpk_1_1mlp_1_1layer.html">mtpk::mlp::layer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1PrimaryMLP.html">mtpk::mlp::PrimaryMLP</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary Multi-Layer Perceptron Class.  <a href="classmtpk_1_1mlp_1_1PrimaryMLP.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1mlp_1_1SecondaryMLP.html">mtpk::mlp::SecondaryMLP&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.  <a href="classmtpk_1_1mlp_1_1SecondaryMLP.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Utils.html">mtpk::ml::Utils</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -103,21 +92,14 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacemtpk"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk.html">mtpk</a></td></tr>
 <tr class="memdesc:namespacemtpk"><td class="mdescLeft">&#160;</td><td class="mdescRight">The core openMTPK namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacemtpk_1_1mlp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1mlp.html">mtpk::mlp</a></td></tr>
-<tr class="memdesc:namespacemtpk_1_1mlp"><td class="mdescLeft">&#160;</td><td class="mdescRight">openMTPK Multi-Layer Perceptron namespace <br /></td></tr>
+<tr class="memitem:namespacemtpk_1_1ml"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1ml.html">mtpk::ml</a></td></tr>
+<tr class="memdesc:namespacemtpk_1_1ml"><td class="mdescLeft">&#160;</td><td class="mdescRight">openMTPK Machine Learning namespace <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a74759f080dc7a7147e08428a57ada6d7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1mlp.html#a74759f080dc7a7147e08428a57ada6d7">mtpk::mlp::init_SecondaryMLP</a> (size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</td></tr>
-<tr class="separator:a74759f080dc7a7147e08428a57ada6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a224a81e84fd23e7901087f2a9075fd2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1mlp.html#a224a81e84fd23e7901087f2a9075fd2e">mtpk::mlp::train</a> (auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</td></tr>
-<tr class="separator:a224a81e84fd23e7901087f2a9075fd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Multi-Layer Perceptron Neural Networks containing a Primary and Secondary network </p>
+<div class="textblock"><p>Training methods and initializers used for the openMTPK Machine Learning module </p>
 
-<p class="definition">Definition in file <a class="el" href="mlp__network_8hpp_source.html">mlp_network.hpp</a>.</p>
+<p class="definition">Definition in file <a class="el" href="utils_8hpp_source.html">utils.hpp</a>.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

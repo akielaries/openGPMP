@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['weights_5fadjust_472',['weights_adjust',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#af71416873dbd90289b337a191aaec8d9',1,'mtpk::mlp::PrimaryMLP']]],
-  ['weights_5frank_473',['weights_rank',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a11c6f4dc2cd2ca2c021921245cb43f7d',1,'mtpk::mlp::PrimaryMLP']]],
-  ['weights_5frestore_474',['weights_restore',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#aa00f56f5c16e7fda7e03be95640bfc0f',1,'mtpk::mlp::PrimaryMLP']]],
-  ['weights_5fsave_475',['weights_save',['../classmtpk_1_1mlp_1_1PrimaryMLP.html#a0d44c5f2ef90735485d0c194f6579277',1,'mtpk::mlp::PrimaryMLP']]]
+  ['weights_5fadjust_482',['weights_adjust',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3fb446ddfd3e01c0b2f61db8e8cf66f7',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frank_483',['weights_rank',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a890a0708da13185a7898d1d874e96b08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frestore_484',['weights_restore',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ac86d80e12567b45439eae866932b6c08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5fsave_485',['weights_save',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1de057913c17181e734e39e8aea845c1',1,'mtpk::ml::PrimaryMLP']]]
 ];
