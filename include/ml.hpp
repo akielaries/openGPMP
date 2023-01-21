@@ -31,6 +31,12 @@
 #ifndef ML_HPP
 #define ML_HPP
 
+/**
+ * @brief \b ML \b Module \b Utilities
+ * Trainers, Testers, Initalizers
+ */
+#define UTILS
+#include "ml/utils.hpp"
 
 /**
  * @brief \b Regression \b Algorithms

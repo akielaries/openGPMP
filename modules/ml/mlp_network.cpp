@@ -31,12 +31,12 @@ long double mtpk::ml::PrimaryMLP::rand_real(long double low,
 mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[]) : 
     num_layers(0), 
     layer_ptr(0),
-    dEta(0.25),
-    dAlpha(0.9),
-    dGain(1.0),
-    dMSE(0.0),
-    dMAE(0.0),
-    dAvgTestError(0.0) { 
+    _Eta(0.25),
+    _Alpha(0.9),
+    _Gain(1.0),
+    _MSE(0.0),
+    _MAE(0.0),
+    _AvgTestError(0.0) { 
     
     int64_t i, j;
 

@@ -65,14 +65,14 @@ class PrimaryMLP {
     layer* layer_ptr;
 
     /**
-     * @brief Derivative Mean Squared Error
+     * @brief Mean Squared Error
      */
-    long double dMSE;
+    long double _MSE;
 
     /**
-     * @brief Derivative Mean Absolute Error
+     * @brief Mean Absolute Error
      */
-    long double dMAE;
+    long double _MAE;
 
     void weights_rank();
 
@@ -95,10 +95,10 @@ class PrimaryMLP {
                 long double* target, bool training);
 
     public:
-        long double dEta;
-        long double dAlpha;
-        long double dGain;
-        long double dAvgTestError;
+        long double _Eta;
+        long double _Alpha;
+        long double _Gain;
+        long double _AvgTestError;
 
         /* CONSTRUCT */
         PrimaryMLP(int64_t nl, int64_t npl[]);

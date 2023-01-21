@@ -33,7 +33,7 @@ set(SOURCE_FILES
     modules/calculus/deriv.cpp
     modules/linalg/lao.cpp
     modules/ml/linreg.cpp
-    #modules/ml/mlp_network.cpp
+    modules/ml/mlp_network.cpp
     modules/nt/cipher.cpp
     modules/nt/rc4.cpp
     modules/nt/primes.cpp
