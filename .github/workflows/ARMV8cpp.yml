@@ -1,4 +1,4 @@
-name: PyARM7
+name: CoreARM8
 
 on:
   push:
@@ -10,14 +10,14 @@ jobs:
   PyNix:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: Test openMTPK Python on ARMv7
+    name: Test openMTPK on ARMv8
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
         name: Run commands
         id: runcmd
         with:
-          arch: armv7
+          arch: armv8
           distro: ubuntu_latest
 
           # Not required, but speeds up builds by storing container images in
@@ -29,17 +29,19 @@ jobs:
             uname -a
             echo ::set-output name=uname::$(uname -a)
 
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
+      - name: initalize github repo
+        uses: actions/checkout@v3
 
-      - name: Test openMTPK install on ubuntu ARMv7
-        run: | 
-          pip install openmtpk
+      - name: Configure CMake
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Test openMTPK install on ubuntu ARMv8
+        run: |
+          #cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+          cd build && sudo make
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
-
+      
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
