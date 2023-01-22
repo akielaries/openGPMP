@@ -35,6 +35,11 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Test openMTPK install on bullseye ARMv6
+        run: | 
+          pip install openmtpk
+          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
