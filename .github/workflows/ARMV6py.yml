@@ -3,7 +3,7 @@ name: PyARM6
 on:
   workflow_run:
     workflows: ["CoreARM6"]
-    branches: [ main , dev ]
+    #branches: [ main , dev ]
     types: 
       - completed
   #pull_request:
@@ -39,7 +39,7 @@ jobs:
           python-version: "3.x"
 
       - name: Test openMTPK install on bullseye ARMv6
-        if: ${{ success(github.workflow.workflow_runs.CoreARM6.jobs.PyNix) }}
+        #if: ${{ success(github.workflow.workflow_runs.CoreARM6.jobs.PyNix) }}
         run: |
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
