@@ -2,14 +2,18 @@ name: PyPPC64LE
 
 on:
   push:
-    branches: [ main , dev ]
+    branches: [ main ]
   #pull_request:
   #  branches: [ main , dev ]
   
 jobs:
+  publish:
+    uses: ./.github/workflows/pypi.yml
+
   PyNix:
     # The host should always be Linux
     runs-on: ubuntu-latest
+    needs: publish
     name: Test openMTPK Python on PPC64LE
     steps:
       - uses: actions/checkout@v3
