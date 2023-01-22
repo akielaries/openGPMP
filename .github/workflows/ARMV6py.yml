@@ -1,0 +1,37 @@
+name: PyARM6
+
+on:
+  push:
+    branches: [ main , dev ]
+  #pull_request:
+  #  branches: [ main , dev ]
+  
+jobs:
+  PyNix:
+    # The host should always be Linux
+    runs-on: ubuntu-latest
+    name: Test openMTPK Python on ARMv6
+    steps:
+      - uses: actions/checkout@v3
+      - uses: uraimo/run-on-arch-action@v2
+        name: Run commands
+        id: runcmd
+        with:
+          arch: armv6
+          distro: bullseye
+
+          # Not required, but speeds up builds by storing container images in
+          # a GitHub package registry.
+          githubToken: ${{ github.token }}
+
+          # Set an output parameter `uname` for use in subsequent steps
+          run: |
+            uname -a
+            echo ::set-output name=uname::$(uname -a)
+
+      - name: Get the output
+        # Echo the `uname` output parameter from the `runcmd` step
+        run: |
+          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+
+
