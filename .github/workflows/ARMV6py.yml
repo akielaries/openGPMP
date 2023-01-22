@@ -1,18 +1,24 @@
 name: PyARM6
 
+#on:
+#  workflow_run:
+#    workflows: ["CoreARM6"]
+#    branches: [ main , dev ]
+#    types: 
+#      - completed
 on:
-  workflow_run:
-    workflows: ["CoreARM6"]
-    #branches: [ main , dev ]
-    types: 
-      - completed
+  workflow_dispatch:
+
   #pull_request:
   #  branches: [ main , dev ]
   
 jobs:
+  publish:
+    uses: .github/workflows/pypi.yml
   PyNix:
     # The host should always be Linux
     runs-on: ubuntu-latest
+    needs: publish
     name: Test openMTPK Python on ARMv6
     steps:
       - uses: actions/checkout@v3
