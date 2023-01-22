@@ -7,6 +7,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&utm_medium=referral&utm_content=akielaries/openMTPK&utm_campaign=Badge_Coverage)
 ![clones](https://raw.githubusercontent.com/akielaries/openMTPK/traffic/traffic-openMTPK/clones.svg)
 [![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
+[![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)
 
 # Overview
 
@@ -33,16 +34,27 @@ different target languages. The focus on APIs early on was to start the process 
 manageable size allowing for modularity with new developments and injecting into the language binding 
 simultaneously.
 
-Language |  Status | Darwin | Linux | RPi |
----------|---------|--------|-------|--------------|
-C++20(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | ![osx](https://badgen.net/badge/OSX/failing/red?icon=github)|![linux](https://badgen.net/badge/Debian/passing/green?icon=github)|![rpi](https://badgen.net/badge/Raspbian/passing/green?icon=github)|
-Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| ![osx](https://badgen.net/badge/OSX/passing/green?icon=github)|![linux](https://badgen.net/badge/Debian/passing/green?icon=github)|![rpi](https://badgen.net/badge/Raspbian/passing/green?icon=github)|
-R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)| N/A | N/A | N/A |
-Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/Unstable/yellow?icon=github) | N/A | N/A | N/A |
-Go v1.19.4     | ![Go](https://badgen.net/badge/Go/Experimental/red?icon=github) | N/A | N/A | N/A |
-OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Experimental/red?icon=github)| N/A | N/A | N/A |
-Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran/Experimental/red?icon=github) | N/A | N/A | N/A |
+The tables below highlight the supported kernel/hardware families across the different
+language bindings. By default openMTPK offers support for Linux and Darwin x86 machines,
+Apple's M1 is yet to be tested. 
 
+Language |  Linux x86 | Darwin x86 | RPi 3/4 ARMv8 |
+---------|------------|------------|---------------|
+C++20(core)  | [![linux](https://github.com/akielaries/openMTPK/actions/workflows/build_nix.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![darwin](https://github.com/akielaries/openMTPK/actions/workflows/build_osx.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![cppRPi](https://github.com/akielaries/openMTPK/actions/workflows/cpp_rpi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+Python v3.x    | [![PyNix](https://github.com/akielaries/openMTPK/actions/workflows/py_nix.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| [![PyDarwin](https://github.com/akielaries/openMTPK/actions/workflows/py_osx.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| [![RPi](https://github.com/akielaries/openMTPK/actions/workflows/py_rpi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)| N/A | N/A | N/A |
+
+openMTPK's core C++ package and Python API are also tested on the following architectures using `ubuntu-latest`, and `bullseye` for 
+ARMV6. 
+
+Architecture |  C++ | Python |
+-------------|------|--------|
+ARMV6		 | [![arm6CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm6Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ARMV7		 | [![arm7CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm6Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ARMV7		 | [![arm8CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm8Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+RISCV64		 | [![riscCPP](https://github.com/akielaries/openMTPK/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![riscPy](https://github.com/akielaries/openMTPK/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+s390x		 | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ppc64le		 | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 
 ## Modules
 

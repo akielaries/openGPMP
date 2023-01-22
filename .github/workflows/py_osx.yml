@@ -1,0 +1,26 @@
+name: PyOSX
+
+on:
+  push:
+    branches: [ main , dev ]
+  #pull_request:
+  #  branches: [ main , dev ]
+  
+jobs:
+  PyOSX:
+    name: Test openMTPK on Darwin
+    runs-on: ${{ matrix.os }} 
+    strategy:
+      matrix:
+        os: [ macos-latest ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Test openMTPK install
+        run: pip install openmtpk
+

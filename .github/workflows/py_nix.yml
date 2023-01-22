@@ -1,0 +1,29 @@
+name: PyNix
+
+on:
+  push:
+    branches: [ main ]
+  #pull_request:
+  #  branches: [ main , dev ]
+  
+jobs:
+  publish:
+    uses: ./.github/workflows/pypi.yml
+  PyNix:
+    name: Test openMTPK on Linux
+    needs: publish
+    runs-on: ${{ matrix.os }} 
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Test openMTPK install
+        run: pip install openmtpk
+
