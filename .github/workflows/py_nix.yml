@@ -7,11 +7,8 @@ on:
   #  branches: [ main , dev ]
   
 jobs:
-  publish:
-    uses: ./.github/workflows/pypi.yml
   PyNix:
     name: Test openMTPK on Linux
-    needs: publish
     runs-on: ${{ matrix.os }} 
     strategy:
       matrix:
