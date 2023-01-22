@@ -74,12 +74,11 @@ class PrimaryMLP {
      */
     long double _MAE;
 
-    void weights_rank();
-
     void set_signal_in(long double* input);
     void get_signal_out(long double* output);
 
     void weights_save();
+    void weights_rand();
     void weights_restore();
     /*adjust weights */
     void weights_adjust();
