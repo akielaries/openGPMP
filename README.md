@@ -33,17 +33,15 @@ different target languages. The focus on APIs early on was to start the process 
 manageable size allowing for modularity with new developments and injecting into the language binding 
 simultaneously.
 
-Language |  Status |
----------|---------|
-C++20/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
-R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
-Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/Unstable/yellow?icon=github) |
-Go v1.19.4     | ![Go](https://badgen.net/badge/Go%20API/Experimental/red?icon=github) | 
-OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Experimental/red?icon=github)| 
-Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Experimental/red?icon=github) | 
-
-## Tested Builds
+Language |  Status | Darwin | Linux | RPi |
+---------|---------|--------|-------|--------------|
+C++20(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | ![osx](https://badgen.net/badge/OSX/failing/red?icon=github)|![linux](https://badgen.net/badge/Debian/passing/green?icon=github)|![rpi](https://badgen.net/badge/Raspbian/passing/green?icon=github)|
+Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| ![osx](https://badgen.net/badge/OSX/passing/green?icon=github)|![linux](https://badgen.net/badge/Debian/passing/green?icon=github)|![rpi](https://badgen.net/badge/Raspbian/passing/green?icon=github)|
+R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)| N/A | N/A | N/A |
+Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/Unstable/yellow?icon=github) | N/A | N/A | N/A |
+Go v1.19.4     | ![Go](https://badgen.net/badge/Go/Experimental/red?icon=github) | N/A | N/A | N/A |
+OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Experimental/red?icon=github)| N/A | N/A | N/A |
+Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran/Experimental/red?icon=github) | N/A | N/A | N/A |
 
 
 ## Modules
