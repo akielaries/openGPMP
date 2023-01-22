@@ -11,7 +11,7 @@ jobs:
     uses: ./.github/workflows/pypi.yml
 
   PyNix:
-    needs: [Publish to PYPI]
+    needs: [Wheels]
     # The host should always be Linux
     runs-on: ubuntu-latest
     name: Test openMTPK Python on ARMv6
