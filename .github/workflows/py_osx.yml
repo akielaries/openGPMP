@@ -7,8 +7,12 @@ on:
   #  branches: [ main , dev ]
   
 jobs:
+  publish:
+    uses: ./.github/workflows/pypi.yml
+
   PyOSX:
     name: Test openMTPK on Darwin
+    needs: publish
     runs-on: ${{ matrix.os }} 
     strategy:
       matrix:
