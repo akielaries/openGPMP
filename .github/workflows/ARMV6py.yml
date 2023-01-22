@@ -7,7 +7,11 @@ on:
   #  branches: [ main , dev ]
   
 jobs:
+  publish:
+    uses: ./.github/workflows/pypi.yml
+
   PyNix:
+    needs: [Publish to PYPI]
     # The host should always be Linux
     runs-on: ubuntu-latest
     name: Test openMTPK Python on ARMv6
