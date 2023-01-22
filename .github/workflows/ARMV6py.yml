@@ -1,17 +1,16 @@
 name: PyARM6
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Wheels"]
     branches: [ main , dev ]
+    types: 
+      - completed
   #pull_request:
   #  branches: [ main , dev ]
   
 jobs:
-  publish:
-    uses: ./.github/workflows/pypi.yml
-
   PyNix:
-    needs: [Wheels]
     # The host should always be Linux
     runs-on: ubuntu-latest
     name: Test openMTPK Python on ARMv6
@@ -40,7 +39,7 @@ jobs:
           python-version: "3.x"
 
       - name: Test openMTPK install on bullseye ARMv6
-        run: | 
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
 

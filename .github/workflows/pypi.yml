@@ -1,9 +1,10 @@
 name: Wheels
 
 on:
-  [workflow_call]
   push:
-    branches: [ main, dev ]
+    branches: [ main , dev ]
+  #pull_request:
+  #  branches: [ main , dev ]
   
 jobs:
   compile_wheels:
