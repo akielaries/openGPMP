@@ -29,6 +29,12 @@ jobs:
             uname -a
             echo ::set-output name=uname::$(uname -a)
 
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
