@@ -39,7 +39,7 @@ jobs:
       - name: Test openMTPK install on bullseye ARMv6
         run: |
           #cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-          sudo make
+          cd build && sudo make
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
       
       - name: Get the output
