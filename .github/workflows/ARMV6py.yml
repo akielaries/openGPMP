@@ -2,7 +2,7 @@ name: PyARM6
 
 on:
   workflow_run:
-    workflows: ["Wheels"]
+    workflows: ["CoreARM6"]
     branches: [ main , dev ]
     types: 
       - completed
@@ -39,7 +39,7 @@ jobs:
           python-version: "3.x"
 
       - name: Test openMTPK install on bullseye ARMv6
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        if: ${{ success(github.workflow.workflow_runs.CoreARM6) }}
         run: |
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
