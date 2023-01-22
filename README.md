@@ -38,23 +38,23 @@ The tables below highlight the supported kernel/hardware families across the dif
 language bindings. By default openMTPK offers support for Linux and Darwin x86 machines,
 Apple's M1 is yet to be tested. 
 
-Language |  Linux x86 | Darwin x86 | RPi 3/4 ARMv8 |
----------|------------|------------|---------------|
+Language |  Linux | Darwin | RPi 3/4 |
+---------|--------|--------|---------|
 C++20(core)  | [![linux](https://github.com/akielaries/openMTPK/actions/workflows/build_nix.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![darwin](https://github.com/akielaries/openMTPK/actions/workflows/build_osx.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![cppRPi](https://github.com/akielaries/openMTPK/actions/workflows/cpp_rpi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 Python v3.x    | [![PyNix](https://github.com/akielaries/openMTPK/actions/workflows/py_nix.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| [![PyDarwin](https://github.com/akielaries/openMTPK/actions/workflows/py_osx.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| [![RPi](https://github.com/akielaries/openMTPK/actions/workflows/py_rpi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)| N/A | N/A | N/A |
 
 openMTPK's core C++ package and Python API are also tested on the following architectures using `ubuntu-latest`, and `bullseye` for 
-ARMV6. 
+ARMv6. 
 
 Architecture |  C++ | Python |
 -------------|------|--------|
-ARMV6		 | [![arm6CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm6Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-ARMV7		 | [![arm7CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm6Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-ARMV7		 | [![arm8CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm8Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ARMv6		 | [![arm6CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm6Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ARMv7		 | [![arm7CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm6Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ARMv8		 | [![arm8CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![arm8Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 RISCV64		 | [![riscCPP](https://github.com/akielaries/openMTPK/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![riscPy](https://github.com/akielaries/openMTPK/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-s390x		 | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-ppc64le		 | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+S390X		 | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+PPC64LE		 | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 
 ## Modules
 
