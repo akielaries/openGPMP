@@ -2,18 +2,14 @@ name: PyRISCV64
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main , dev ]
   #pull_request:
   #  branches: [ main , dev ]
   
 jobs:
-  publish:
-    uses: ./.github/workflows/pypi.yml
-
   PyNix:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    needs: publish
     name: Test openMTPK Python on RISCV64
     steps:
       - uses: actions/checkout@v3
