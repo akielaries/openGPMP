@@ -2,7 +2,7 @@ var searchData=
 [
   ['weights_268',['weights',['../classmtpk_1_1NaiveNet.html#ac7d504285bccce80bcd1407e23620404',1,'mtpk::NaiveNet']]],
   ['weights_5fadjust_269',['weights_adjust',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3fb446ddfd3e01c0b2f61db8e8cf66f7',1,'mtpk::ml::PrimaryMLP']]],
-  ['weights_5frank_270',['weights_rank',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a890a0708da13185a7898d1d874e96b08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frand_270',['weights_rand',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a17ae77fa444dba716f6e14d83d2f3e52',1,'mtpk::ml::PrimaryMLP']]],
   ['weights_5frestore_271',['weights_restore',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ac86d80e12567b45439eae866932b6c08',1,'mtpk::ml::PrimaryMLP']]],
   ['weights_5fsave_272',['weights_save',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1de057913c17181e734e39e8aea845c1',1,'mtpk::ml::PrimaryMLP']]],
   ['welcome_20to_20openmtpk_27s_20documentation_2e_273',['Welcome to openMTPK&apos;s documentation.',['../index.html',1,'']]],
