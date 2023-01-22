@@ -19,27 +19,32 @@ comfortable in C and C++. If interested see
 [here](https://github.com/akielaries/openMTPK/blob/main/CONTRIBUTING.md)!
 
 The goal is to make a reusable mathematics library allowing users to call 
-within their own projects. Some of the implementations seen in the package were first prototypes in 
-Wolfram Mathetmatica, then translated to C++ for the package.
+within their own projects. A few of the implementations seen in the package were first prototypes in 
+Wolfram Mathetmatica, then translated to C then C++ for the package.
 Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
-on using these tools in your own project. 
+on how to use some of openMTPK's functionalities. 
 
-## API Bindings
+## APIs
 
 As development progresses language bindings will be polished. More languages will be explored in the future.
 The primary goal of creating bindings for other languages is to provide some level of abstraction from the
 source C++ code. However, it also serves to integrate this package into pre-existing projects in perhaps 
-different target languages. 
+different target languages. The focus on APIs early on was to start the process while the codebase was of 
+manageable size allowing for modularity with new developments and injecting into the language binding 
+simultaneously.
 
-| Language          | Status                                                                                                                                       | Linux              | Darwin             |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------ |
-| C++20/g++12(core) | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | :heavy_check_mark: | :x:                |
-| Python v3.x       | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)        | :heavy_check_mark: | :heavy_check_mark: |
-| R v4.2.2          | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)                                                                                 | :white_check_mark: | :white_check_mark: |
-| Julia v1.8.3      | ![Julia](https://badgen.net/badge/Julia%20API/Unstable/yellow?icon=github)                                                                   | :white_check_mark: | :white_check_mark: |
-| Go v1.19.4        | ![Go](https://badgen.net/badge/Go%20API/Unstable/yellow?icon=github)                                                                         | :white_check_mark: | :white_check_mark: |
-| OCaml v4.13.1     | ![OCaml](https://badgen.net/badge/OCaml/Experimental/red?icon=github)                                                                        | :white_check_mark: | :x:                |
-| Fortran 2018      | ![Fortran](https://badgen.net/badge/Fortran%20API/Experimental/red?icon=github)                                                              | :white_check_mark: | :x:                |
+Language |  Status |
+---------|---------|
+C++20/g++12(core)  | [![cppbuild](https://github.com/akielaries/openMTPK/actions/workflows/build.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+Python v3.x    | [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)|
+R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)|
+Julia v1.8.3   | ![Julia](https://badgen.net/badge/Julia%20API/Unstable/yellow?icon=github) |
+Go v1.19.4     | ![Go](https://badgen.net/badge/Go%20API/Experimental/red?icon=github) | 
+OCaml v4.13.1  | ![OCaml](https://badgen.net/badge/OCaml/Experimental/red?icon=github)| 
+Fortran 2018   | ![Fortran](https://badgen.net/badge/Fortran%20API/Experimental/red?icon=github) | 
+
+## Tested Builds
+
 
 ## Modules
 
