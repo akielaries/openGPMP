@@ -8,6 +8,7 @@
 ![clones](https://raw.githubusercontent.com/akielaries/openMTPK/traffic/traffic-openMTPK/clones.svg)
 [![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
 [![Py](https://github.com/akielaries/openMTPK/actions/workflows/pypi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)
+
 # Overview
 
 **openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
@@ -43,8 +44,7 @@ C++20(core)  | [![linux](https://github.com/akielaries/openMTPK/actions/workflow
 Python v3.x    | [![PyNix](https://github.com/akielaries/openMTPK/actions/workflows/py_nix.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| [![PyDarwin](https://github.com/akielaries/openMTPK/actions/workflows/py_osx.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)| [![RPi](https://github.com/akielaries/openMTPK/actions/workflows/py_rpi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 R v4.2.2       | ![R](https://badgen.net/badge/R/Unstable/yellow?icon=github)| N/A | N/A | N/A |
 
-
-openMTPK's core C++ package and Python are also tested on the following architectures using `ubuntu-latest` and `bullseye` for 
+openMTPK's core C++ package and Python API are also tested on the following architectures using `ubuntu-latest`, and `bullseye` for 
 ARMV6. 
 
 Architecture |  C++ | Python |
