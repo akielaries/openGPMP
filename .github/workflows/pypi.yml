@@ -55,7 +55,7 @@ jobs:
         run: |
           pip install versioneer
           #pipx run build --sdist
-          python3 setup.py sdist 
+          python setup.py sdist 
 
       - uses: actions/upload-artifact@v3
         with:
