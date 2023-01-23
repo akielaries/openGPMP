@@ -20,6 +20,7 @@ jobs:
         MAJOR_STRING_TOKEN: MAJOR
         MINOR_STRING_TOKEN: MINOR
         PATCH_STRING_TOKEN: PATCH
+          #DEFAULT_BUMP: none
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
@@ -97,4 +98,7 @@ jobs:
     needs: publish
     uses: ./.github/workflows/py_rpi.yml
 
+  ARMV6py:
+    needs: publish
+    uses: ./.github/workflows/ARMV6py.yml
 
