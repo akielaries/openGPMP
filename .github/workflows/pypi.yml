@@ -93,3 +93,8 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
 
+  RasPy:
+    needs: publish
+    uses: ./.github/workflows/py_rpi.yml
+
+
