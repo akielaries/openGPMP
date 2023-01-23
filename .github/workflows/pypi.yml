@@ -12,15 +12,17 @@ jobs:
       with:
         fetch-depth: '0'
     - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.55.0
+      if: github.ref == 'refs/heads/dev'
+      uses: anothrNick/github-tag-action@1.58.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
-          #DEFAULT_BRANCH: main
+        VERBOSE: true
+        #DEFAULT_BRANCH: main
         RELEASE_BRANCHES: main,dev
-          #MAJOR_STRING_TOKEN: MAJOR
-          # MINOR_STRING_TOKEN: MINOR
-          #PATCH_STRING_TOKEN: PATCH
+        #MAJOR_STRING_TOKEN: MAJOR
+        # MINOR_STRING_TOKEN: MINOR
+        #PATCH_STRING_TOKEN: PATCH
         DEFAULT_BUMP: none
         BRANCH_HISTORY: compare
 
