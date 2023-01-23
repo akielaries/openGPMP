@@ -8,7 +8,6 @@ VERSION=${VERSION:-'0.0.0'}
 MAJOR="${VERSION%%.*}"; VERSION="${VERSION#*.}"
 MINOR="${VERSION%%.*}"; VERSION="${VERSION#*.}"
 PATCH="${VERSION%%.*}"; VERSION="${VERSION#*.}"
-
 #Increase version
 PATCH=$((PATCH+1))
 
