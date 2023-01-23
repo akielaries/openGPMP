@@ -51,7 +51,8 @@ jobs:
       - name: Build sdist
         run: |
           pip install versioneer
-          pipx run build --sdist
+          #pipx run build --sdist
+          python3 setup.py sdist bdist_wheel
 
       - uses: actions/upload-artifact@v3
         with:
