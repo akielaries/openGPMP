@@ -22,7 +22,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         DEFAULT_BRANCH: main
-        DEFAULT_BUMP: none
+        DEFAULT_BUMP: patch
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
