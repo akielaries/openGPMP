@@ -1,4 +1,4 @@
-name: PyARM6
+name: ARM6Py
 
 on:
   push:
@@ -40,7 +40,7 @@ jobs:
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
-          cd sample/python 
+          cd samples/python 
           for f in *.py; do python3 "$f"; done 
 
       - name: Get the output
