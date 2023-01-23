@@ -2,7 +2,15 @@ include pyproject.toml
 include *.md
 include LICENSE
 global-exclude __pycache__
+
+graft openmtpk
+
+include *.py
+
+include openmtpk/_version.py
+
+include versioneer.py
 recursive-include modules *.cpp
 recursive-include include *.hpp
-
+recursive-include openmtpk *.py
 

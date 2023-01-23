@@ -1,16 +1,13 @@
-name: PyARM8
+name: ARM8Py
 
 on:
-  push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
+  workflow_call:
   
 jobs:
-  PyNix:
+  PyARMV8:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: Test openMTPK Python on ARMv8
+    name: PyPI openMTPK ARMv6 
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -39,6 +36,9 @@ jobs:
         run: | 
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+          # confirm samples run
+          cd samples/python 
+          for f in *.py; do python3 "$f"; done 
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step

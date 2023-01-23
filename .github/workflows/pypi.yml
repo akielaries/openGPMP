@@ -4,12 +4,31 @@ on:
   push:
     branches: [ main ]
 
-  #pull_request:
-  #  branches: [ main , dev ]
-  
 jobs:
+  versioning:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+    - name: Bump version and push tag
+      if: github.ref == 'refs/heads/dev'
+      uses: anothrNick/github-tag-action@1.58.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
+        VERBOSE: true
+        DEFAULT_BRANCH: main
+        RELEASE_BRANCHES: main,dev
+        MAJOR_STRING_TOKEN: MAJOR
+        MINOR_STRING_TOKEN: MINOR
+        PATCH_STRING_TOKEN: PATCH
+        DEFAULT_BUMP: none
+        BRANCH_HISTORY: last
+
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
+    needs: [ build_plat ]
     runs-on: ${{ matrix.os }} 
     strategy:
       matrix:
@@ -17,10 +36,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # required for versioneer to find tags
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
+      - name: install versioneer
+        run: |
+          pip install versioneer
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.11.4
@@ -33,12 +58,23 @@ jobs:
 
   build_plat:
     name: Build source distribution
+    needs: [ versioning ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # required for versioneer to find tags
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
 
       - name: Build sdist
-        run: pipx run build --sdist
+        run: |
+          pip install versioneer
+          pipx run build --sdist
+          #python setup.py sdist 
 
       - uses: actions/upload-artifact@v3
         with:
@@ -60,4 +96,32 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
+
+  RasPy:
+    needs: publish
+    uses: ./.github/workflows/py_rpi.yml
+
+  ARMV6py:
+    needs: publish
+    uses: ./.github/workflows/ARMV6py.yml
+
+  ARMV7py:
+    needs: publish
+    uses: ./.github/workflows/ARMV7py.yml
+
+  ARMV8py:
+    needs: publish
+    uses: ./.github/workflows/ARMV8py.yml
+
+  RISCVpy:
+    needs: publish
+    uses: ./.github/workflows/RISCVpy.yml
+
+  S390Xpy:
+    needs: publish
+    uses: ./.github/workflows/S390Xpy.yml
+
+  PPC64LEpy:
+    needs: publish
+    uses: ./.github/workflows/PPC64LEpy.yml
 
