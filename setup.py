@@ -17,6 +17,9 @@ import platform
 import urllib.request
 import json
 
+import versioneer
+
+# <--- DEPRECATE THIS, USING VERSIONEER --->
 # get recent version, bump the version
 with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as url:
     data = json.load(url)
@@ -36,7 +39,7 @@ arithmetic = Extension(
     'openmtpk.arithmetic._arithmetic',
     include_dirs=[os.path.join(this_dir, 'include/arithmetic')],
     sources=[
-        'Python/openmtpk/arithmetic/arithmetic.i',
+        'openmtpk/arithmetic/arithmetic.i',
         'modules/arithmetic/arith.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-Wall', '-c++'],
@@ -47,7 +50,7 @@ calculus = Extension(
     'openmtpk.calculus._calculus',
     include_dirs=[os.path.join(this_dir, 'include/calculus')],
     sources=[
-        'Python/openmtpk/calculus/calculus.i',
+        'openmtpk/calculus/calculus.i',
         'modules/calculus/deriv.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
@@ -58,7 +61,7 @@ ml = Extension(
     'openmtpk.ml._ml',
     include_dirs=[os.path.join(this_dir, 'include/ml')],
     sources=[
-        'Python/openmtpk/ml/ml.i',
+        'openmtpk/ml/ml.i',
         'modules/ml/linreg.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
@@ -69,7 +72,7 @@ linalg = Extension(
     'openmtpk.linalg._linalg',
     include_dirs=[os.path.join(this_dir, 'include/linalg')],
     sources=[
-        'Python/openmtpk/linalg/linalg.i',
+        'openmtpk/linalg/linalg.i',
         'modules/linalg/lao.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
@@ -80,7 +83,7 @@ nt = Extension(
     'openmtpk.nt._nt',
     include_dirs=[os.path.join(this_dir, 'include/nt')],
     sources=[
-        'Python/openmtpk/nt/nt.i',
+        'openmtpk/nt/nt.i',
         'modules/arithmetic/arith.cpp',
         'modules/nt/primes.cpp',
         'modules/nt/rc4.cpp',
@@ -110,7 +113,8 @@ setuptools.setup(
     name='openmtpk',
     distclass=BinaryDistribution,
     # get version from PyPI package, use bump to increment
-    version=new_version,
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     author='Akiel Aries',
     author_email='akiel@akiel.org',
     description='openMTPK Python API',
@@ -124,7 +128,7 @@ setuptools.setup(
         'https://github.com/akielaries/openMTPK/issues',
         'Source Code': 'https://github.com/akielaries/openMTPK/',
     },
-    package_dir={'': 'Python'},
+    package_dir={'': '.'},
     # packages=setuptools.find_packages(where='Python'),
     #package_data={'openmtpk': ['linalg/*', 'nt/*']},
     # packages=setuptools.find_packages(),

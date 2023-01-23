@@ -5,5 +5,5 @@ clean:
 	cd ml && rm -rf ml_wrap.* ml.py 
 	cd nt && rm -rf nt_wrap.* nt.py 
 	rm -rf */*.so
-
+	rm -rf openmtpk.egg-info
 

@@ -12,3 +12,7 @@ details and documentation:
 __all__: list[str]
 __path__: list[str]
 
+
+from . import _version
+__version__ = _version.get_versions()['version']
+del get_versions

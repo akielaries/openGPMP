@@ -6,9 +6,9 @@
 %include <stdint.i>
 
 %{
-    #include "../../../include/ml/linreg.hpp"
+    #include "../../include/ml/linreg.hpp"
     using namespace mtpk;
 %}
 
-%include "../../../include/ml/linreg.hpp"
+%include "../../include/ml/linreg.hpp"
 
