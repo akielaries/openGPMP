@@ -26,6 +26,7 @@ jobs:
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
+    needs: [ build_plat ]
     runs-on: ${{ matrix.os }} 
     strategy:
       matrix:
