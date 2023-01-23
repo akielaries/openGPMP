@@ -7,8 +7,12 @@ on:
     branches: [ main, dev ]
 
 jobs:
+  publish:
+    uses: ./.github/workflows/pypi.yml
+
   build:
     runs-on: ubuntu-latest
+    needs: publish
     steps:
       - 
         name: initalize github repo
