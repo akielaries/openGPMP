@@ -1,14 +1,11 @@
 name: CoreARM6
 
 on:
-  #push:
-  #  branches: [ main , dev ]
-  workflow_call:
-  #pull_request:
-  #  branches: [ main , dev ]
+  push:
+    branches: [ main , dev ]
   
 jobs:
-  PyNix:
+  CppARMV6:
     # The host should always be Linux
     runs-on: ubuntu-latest
     name: Test openMTPK on ARMv6

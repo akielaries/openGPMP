@@ -7,7 +7,7 @@ on:
   #  branches: [ main , dev ]
   
 jobs:
-  PyNix:
+  PyARMV6:
     # The host should always be Linux
     runs-on: ubuntu-latest
     name: Test openMTPK Python on ARMv6
@@ -39,6 +39,9 @@ jobs:
         run: | 
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+          # confirm samples run
+          cd sample/python 
+          for f in *.py; do python3 "$f"; done 
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
