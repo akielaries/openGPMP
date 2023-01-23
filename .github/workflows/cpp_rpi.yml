@@ -26,6 +26,7 @@ jobs:
           commands: |
             uname -a
             echo ::set-output name=uname::$(uname -a) 
+            sudo apt-get install cmake
             cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
             cd build && sudo make
             echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
