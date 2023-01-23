@@ -10,6 +10,20 @@ on:
   #  branches: [ main , dev ]
   
 jobs:
+  versioning:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.55.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
+        DEFAULT_BRANCH: main
+        DEFAULT_BUMP: none
+
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }} 
@@ -41,6 +55,7 @@ jobs:
 
   build_plat:
     name: Build source distribution
+    needs: [ versioning ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
