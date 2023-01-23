@@ -1,4 +1,4 @@
-name: PyS390X
+name: S390XPy
 
 on:
   push:
@@ -39,6 +39,9 @@ jobs:
         run: | 
           pip install openmtpk
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+          # confirm samples run
+          cd samples/python 
+          for f in *.py; do python3 "$f"; done 
 
       - name: Get the output
         # Echo the `uname` output parameter from the `runcmd` step
