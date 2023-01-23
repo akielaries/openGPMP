@@ -105,3 +105,23 @@ jobs:
     needs: publish
     uses: ./.github/workflows/ARMV6py.yml
 
+  ARMV7py:
+    needs: publish
+    uses: ./.github/workflows/ARMV7py.yml
+
+  ARMV8py:
+    needs: publish
+    uses: ./.github/workflows/ARMV8py.yml
+
+  RISCVpy:
+    needs: publish
+    uses: ./.github/workflows/RISCVpy.yml
+
+  S390Xpy:
+    needs: publish
+    uses: ./.github/workflows/S390Xpypy.yml
+
+  PPC64LEpy:
+    needs: publish
+    uses: ./.github/workflows/PPC64LEpy.yml
+

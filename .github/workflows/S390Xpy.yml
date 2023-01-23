@@ -1,11 +1,8 @@
 name: S390XPy
 
 on:
-  push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
-  
+    workflow_call:
+
 jobs:
   PyS390X:
     # The host should always be Linux

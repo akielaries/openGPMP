@@ -1,11 +1,8 @@
 name: RISCV64Py
 
 on:
-  push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
-  
+  workflow_call:
+
 jobs:
   PyRISCV:
     # The host should always be Linux

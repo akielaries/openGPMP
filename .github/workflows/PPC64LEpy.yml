@@ -1,11 +1,8 @@
 name: PPC64LEPy
 
 on:
-  push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
-  
+    workflow_call:
+
 jobs:
   PyPPC64LE:
     # The host should always be Linux
