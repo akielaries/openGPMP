@@ -6,4 +6,5 @@ clean:
 	cd nt && rm -rf nt_wrap.* nt.py 
 	rm -rf */*.so
 	rm -rf openmtpk.egg-info
+	rm -rf __pycache__
 
