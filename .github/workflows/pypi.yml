@@ -24,6 +24,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
+      - name: install versioneer
+        run: |
+          pip install versioneer
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.11.4
