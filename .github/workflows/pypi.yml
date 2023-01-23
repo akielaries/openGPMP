@@ -18,11 +18,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
-        DEFAULT_BRANCH: main
+          #DEFAULT_BRANCH: main
         MAJOR_STRING_TOKEN: MAJOR
         MINOR_STRING_TOKEN: MINOR
         PATCH_STRING_TOKEN: PATCH
-        #DEFAULT_BUMP: patch
+        DEFAULT_BUMP: PATCH
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
