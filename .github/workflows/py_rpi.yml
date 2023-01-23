@@ -26,12 +26,12 @@ jobs:
         id: build_image
         with:
           base_image: raspios_lite_arm64:latest
+          commands: |
+            uname -a
+            echo ::set-output name=uname::$(uname -a)
+            pip install openmtpk
       - 
         name: Get platform info
         run: |
           uname -a
           echo ::set-output name=uname::$(uname -a)
-      -
-        name: Test openMTPK Python 
-        run: |
-          pip install openMTPK
