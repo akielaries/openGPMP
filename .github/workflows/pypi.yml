@@ -5,6 +5,10 @@ on:
     branches: [ main, dev ]
   pull_request:
     branches: [ main ]
+  create:
+    types: [ tag ]
+    branches: [ main, dev ]
+
 
 jobs:
   versioning:
@@ -28,11 +32,6 @@ jobs:
         PATCH_STRING_TOKEN: PATCH
         DEFAULT_BUMP: none
         BRANCH_HISTORY: last
-      id: versioning
-    - name: Set output variable
-      if: steps.versioning.outputs.new_version == true
-      run: echo "::set-output name=new_version::true"
-
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
@@ -67,7 +66,6 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ versioning ]
-    if: steps.versioning.outputs.new_version == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
