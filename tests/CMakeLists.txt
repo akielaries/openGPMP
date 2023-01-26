@@ -6,13 +6,13 @@ include(FetchContent)
 find_package(GTest REQUIRED)
 
 # check if installation is present
-if(NOT GTEST_FOUND)
+#if(NOT GTEST_FOUND)
     FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
     )
     FetchContent_MakeAvailable(googletest)
-endif()
+    #endif()
 
 #FetchContent_MakeAvailable(googletest)
 
