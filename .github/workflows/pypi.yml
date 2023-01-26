@@ -135,3 +135,11 @@ jobs:
     needs: publish
     uses: ./.github/workflows/PPC64LEpy.yml
 
+  PyNix:
+    needs: publish
+    uses: ./.github/workflows/py_nix.yml
+  
+  PyOSX:
+    needs: publish
+    uses: ./.github/workflows/py_osx.yml
+
