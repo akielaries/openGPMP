@@ -63,6 +63,7 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ versioning ]
+    if: steps.versioning.outputs.new_version == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
