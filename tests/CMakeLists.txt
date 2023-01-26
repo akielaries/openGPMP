@@ -3,7 +3,7 @@
 
 include(FetchContent)
 
-find_package(GTest REQUIRED)
+#find_package(GTest REQUIRED)
 
 # check if installation is present
 #if(NOT GTEST_FOUND)
