@@ -28,6 +28,10 @@ jobs:
         PATCH_STRING_TOKEN: PATCH
         DEFAULT_BUMP: none
         BRANCH_HISTORY: last
+      id: versioning
+    - name: Set output variable
+      if: steps.versioning.outputs.new_version == true
+      run: echo "::set-output name=new_version::true"
 
 
   compile_wheels:
