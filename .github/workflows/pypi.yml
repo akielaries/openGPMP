@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  latest_v:
+  latest_version:
     runs-on: ubuntu-latest
     steps:
     - uses: oprypin/find-latest-tag@v1
@@ -18,7 +18,7 @@ jobs:
         repository: akielaries/openMTPK
       id: mtpk_version
 
-  bump_v:
+  bump_version:
     needs: [ latest_v ]
     runs-on: ubuntu-latest
     steps:
@@ -80,10 +80,18 @@ jobs:
         with:
           path: ./wheelhouse/*.whl
 
+  check_versions:
+    needs: [ bump_version, latest_version ]
+    steps:
+      - name: check versions
+        run: | 
+          echo needs.bump_version.outputs.new_tag &&
+          echo ${{ needs.latest_version.mtpk_version.outputs.tag }}
+
   build_plat:
     name: Build source distribution
-    needs: [ bump_v, latest_v ]
-    if: needs.bump_v.outputs.new_tag != ${{ needs.latest_v.mtpk_version.outputs.tag }}
+    needs: [ bump_version, latest_version ]
+    if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }}
       #needs.latest_v.outputs.tag
       #&& github.event_name == 'create' && github.event.action == 'tag' 
     runs-on: ubuntu-latest
