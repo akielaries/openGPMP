@@ -42,6 +42,36 @@ jobs:
         PATCH_STRING_TOKEN: PATCH
         DEFAULT_BUMP: none
         BRANCH_HISTORY: last
+      id: new_version
+    
+    - run: echo ${{ steps.new_version.outputs.new_tag }}
+
+  build_plat:
+    name: Build source distribution
+    needs: [ bump_version, latest_version ]
+    if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }}
+      #needs.latest_v.outputs.tag
+      #&& github.event_name == 'create' && github.event.action == 'tag' 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # required for versioneer to find tags
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Build sdist
+        run: |
+          pip install versioneer
+          pipx run build --sdist
+          #python setup.py sdist 
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: dist/*.tar.gz
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
@@ -81,42 +111,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           path: ./wheelhouse/*.whl
-
-  check_versions:
-    needs: [ bump_version, latest_version ]
-    runs-on: ubuntu-latest
-    steps:
-      - name: check versions
-        run: | 
-          echo ${{ needs.bump_version.outputs.new_tag }}
-          echo ${{ needs.latest_version.mtpk_version.outputs.tag }}
-
-  build_plat:
-    name: Build source distribution
-    needs: [ bump_version, latest_version ]
-    if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }}
-      #needs.latest_v.outputs.tag
-      #&& github.event_name == 'create' && github.event.action == 'tag' 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # required for versioneer to find tags
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
-
-      - name: Build sdist
-        run: |
-          pip install versioneer
-          pipx run build --sdist
-          #python setup.py sdist 
-
-      - uses: actions/upload-artifact@v3
-        with:
-          path: dist/*.tar.gz
 
   publish:
     name: Publish to PYPI
