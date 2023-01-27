@@ -2,13 +2,11 @@
  * of text.
  */
 #include <iostream>
+#include <openMTPK/rc5.hpp>
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <openMTPK/rc5.hpp>
-
 
 int main() {
     return EXIT_SUCCESS;
 }
-

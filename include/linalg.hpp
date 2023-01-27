@@ -39,7 +39,6 @@
 #ifndef LINALG_HPP
 #define LINALG_HPP
 
-
 /**
  * @brief \b Matrix \b Operations
  * @details Encompasses Matrix and Scalar operations
@@ -57,4 +56,3 @@
 /*****************************************************************************/
 
 #endif
-

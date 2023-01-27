@@ -1,14 +1,13 @@
 /*
  * This file shows the implementation of some basic stream cipher algorithms
  */
-#include <cstdlib>
-#include <cmath>
-#include <sstream>
-#include <string>
-#include <iostream>
-#include <stdio.h>
 #include "../../include/nt/cipher.hpp"
-
+#include <cmath>
+#include <cstdlib>
+#include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include <string>
 
 std::string mtpk::Cipher::caesar(std::string plaintext, int64_t key) {
     std::string hashtext = "";
@@ -18,54 +17,51 @@ std::string mtpk::Cipher::caesar(std::string plaintext, int64_t key) {
         if (isupper(plaintext[i])) {
             // upper case
             hashtext += char(int64_t(plaintext[i] + key - 65) % 26 + 65);
-        }
-        else {
+        } else {
             // lower case
             hashtext += char(int64_t(plaintext[i] + key - 97) % 26 + 97);
         }
     }
 
     return hashtext;
-} 
+}
 
 std::string mtpk::Cipher::keyword_encode(std::string key) {
     std::string encoded = "";
     // This array represents the 26 letters of alphabets
     bool arr[26] = {0};
- 
+
     // This loop inserts the keyword at the start of the encoded string
     for (int64_t i = 0; uint64_t(i) < key.size(); i++) {
-        if(key[i] >= 'A' && key[i] <= 'Z') {
+        if (key[i] >= 'A' && key[i] <= 'Z') {
             /*
              * To check whether the character is inserted earlier 
              * in the encoded string or not
              */
-            if (arr[key[i]-65] == 0) {
+            if (arr[key[i] - 65] == 0) {
                 encoded += key[i];
-                arr[key[i]-65] = 1;
+                arr[key[i] - 65] = 1;
             }
-        }
-        else if (key[i] >= 'a' && key[i] <= 'z') {
+        } else if (key[i] >= 'a' && key[i] <= 'z') {
             if (arr[key[i] - 97] == 0) {
                 encoded += key[i] - 32;
                 arr[key[i] - 97] = 1;
             }
         }
     }
- 
+
     // This loop inserts the remaining characters in the encoded string.
     for (int64_t i = 0; i < 26; i++) {
-        if(arr[i] == 0) {
-            arr[i]=1;
+        if (arr[i] == 0) {
+            arr[i] = 1;
             encoded += char(i + 65);
         }
     }
     return encoded;
 }
 
-std::string mtpk::Cipher::keyword(std::string plaintext, 
-                            std::string encoded_text) {
-
+std::string mtpk::Cipher::keyword(std::string plaintext,
+                                  std::string encoded_text) {
     std::string cipher = "";
 
     /*
@@ -82,11 +78,10 @@ std::string mtpk::Cipher::keyword(std::string plaintext,
             int64_t pos = plaintext[i] - 65;
             cipher += encoded_text[pos];
         }
-        
+
         else {
             cipher += plaintext[i];
         }
     }
     return cipher;
 }
-

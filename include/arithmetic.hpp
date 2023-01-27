@@ -9,7 +9,6 @@
 #ifndef LINALG_HPP
 #define LINALG_HPP
 
-
 /**
  * @brief \b Arithmetic \b Basics
  * @details Basics of Arithmetic 
@@ -27,4 +26,3 @@
 /*****************************************************************************/
 
 #endif
-

@@ -1,20 +1,19 @@
 /* TESTING LINEAR REGRESSION
  * test driver program for our implementation of linear regression 
  */
+#include "../../include/ML_DL/linreg.hpp"
 #include <iostream>
 #include <stdio.h>
-#include "../../include/ML_DL/linreg.hpp"
-
 
 int main() {
-    const char* test_file = "data/school_scores.csv";
+    const char *test_file = "data/school_scores.csv";
     freopen(test_file, "r", stdin);
     regression reg;
- 
+
     // Number of pairs of (xi, yi) in the dataset
     // int n;
     // cin >> n;
- 
+
     int n = num_rows(test_file);
     // cin >> n;
     printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS\n");
@@ -22,11 +21,10 @@ int main() {
     printf("Number of rows in data set: %d\n", n);
     // Calling function takeInput to take input of n pairs
     reg.get_input(n);
- 
+
     // Printing the best fitting line
     reg.best_fit();
 
-    
     /* CALCULATING PREDICTIONS */
     int v1 = 1995;
     float v1_v = reg.predict(v1);
@@ -87,6 +85,4 @@ int main() {
     float v11_e = reg.error_in(v11);
     printf("Predicted value at %d   = %f\n", v11, v11_v);
     printf("Error value at %d       = %f\n\n", v11, v11_e);
-
 }
-

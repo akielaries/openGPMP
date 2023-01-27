@@ -2,11 +2,10 @@
  * Testing Linear Algebra Operations
  */
 #include "../../include/linalg.hpp"
-#include <string>
-#include <limits.h>
 #include <gtest/gtest.h>
+#include <limits.h>
+#include <string>
 
-using ::testing::InitGoogleTest;
-using ::testing::FloatLE;
 using ::testing::DoubleLE;
-
+using ::testing::FloatLE;
+using ::testing::InitGoogleTest;

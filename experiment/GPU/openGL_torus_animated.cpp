@@ -1,9 +1,9 @@
 /*
  * Testing openGL with drawing an animate torus
  */
-#include<stdio.h>
-#include<GL/glut.h>
-#include<math.h>
+#include <GL/glut.h>
+#include <math.h>
+#include <stdio.h>
 
 #define pi 3.142857
 
@@ -21,49 +21,50 @@ void reshape(GLint w, GLint h) {
     GLfloat aspect = (GLfloat)w / (GLfloat)h;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-  
+
     if (w <= h) {
         // width is smaller, go from -50 .. 50 in width
-        glOrtho(-50.0, 50.0, -50.0/aspect, 50.0/aspect, -1.0, 1.0);
-    } 
+        glOrtho(-50.0, 50.0, -50.0 / aspect, 50.0 / aspect, -1.0, 1.0);
+    }
 
     else {
         // height is smaller, go from -50 .. 50 in height
         //glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
 
-        glOrtho(-10.0*aspect, 10.0*aspect, -10.0, 10.0, -1.0, 1.0);
+        glOrtho(-10.0 * aspect, 10.0 * aspect, -10.0, 10.0, -1.0, 1.0);
     }
 }
 
-
-  
 void display() {
     // setting every pixel in frame buffer to a clear color
     glClear(GL_COLOR_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-
     glColor3f(1.0, 1.0, 1.0);
     glRotatef(current_rot, 0.0, 0.0, 1.0);
     glutWireTorus(0.5, 3, 15, 30);
 
-
     // being drawing
-    
+
     glBegin(GL_POLYGON);
-        glRotatef(current_rot, 1.0, 0.0, 1.0);
-        glColor3f(1, 0, 0); glVertex3f(0, 0, 0); glVertex3f(10, 0, 0);
-        glColor3f(0, 1, 0); glVertex3f(0, 0, 0); glVertex3f(0, 10, 0);
-        glColor3f(0, 0, 1); glVertex3f(0, 0, 0); glVertex3f(0, 0, 10);
+    glRotatef(current_rot, 1.0, 0.0, 1.0);
+    glColor3f(1, 0, 0);
+    glVertex3f(0, 0, 0);
+    glVertex3f(10, 0, 0);
+    glColor3f(0, 1, 0);
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 10, 0);
+    glColor3f(0, 0, 1);
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 0, 10);
     glEnd();
-    
+
     glRotatef(current_rot, 1.0, 0.0, 1.0);
 
     // flush the draw cmd to display image immediately
     glFlush();
     glutSwapBuffers();
-
 }
 
 /*
@@ -72,14 +73,14 @@ void display() {
 void timer(int v) {
     if (spinning) {
         current_rot += 1.0;
-        
+
         if (current_rot > 360.0) {
             current_rot -= 360.0;
         }
         glutPostRedisplay();
     }
 
-    glutTimerFunc(1000/FPS, timer, v);
+    glutTimerFunc(1000 / FPS, timer, v);
 }
 
 /*
@@ -89,8 +90,7 @@ void timer(int v) {
 void mouse(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
         spinning = true;
-    } 
-    else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
+    } else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) {
         spinning = false;
     }
 }
@@ -101,15 +101,14 @@ void init() {
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, 4.0/3.0, 1, 40);
+    gluPerspective(60.0, 4.0 / 3.0, 1, 40);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);
-
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 
@@ -125,10 +124,8 @@ int main(int argc, char** argv) {
     glutDisplayFunc(display);
     glutTimerFunc(100, timer, 0);
     glutMouseFunc(mouse);
-    
+
     init();
 
     glutMainLoop();
-
 }
-

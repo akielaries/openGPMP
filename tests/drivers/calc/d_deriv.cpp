@@ -2,13 +2,12 @@
  * Test driver showing how to use different derivative-based operations
  * in openMTPK.
  */
+#include "../../include/calculus/deriv.hpp"
+#include <cassert>
 #include <iostream>
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <cassert>
-#include "../../include/calculus/deriv.hpp"
-
 
 int main() {
     /*
@@ -45,7 +44,8 @@ int main() {
     //printf("df/dx of f(x) = %s\n", deriv_result0.c_str());
     printf("\n");
     */
-    std::cout << "<------------------------>\n" << std::endl;
+    std::cout << "<------------------------>\n"
+              << std::endl;
     /* 
      * this specific derivative function calculates the derivative of a 
      * polynomial at a given value
@@ -67,4 +67,3 @@ int main() {
     */
     return 0;
 }
-

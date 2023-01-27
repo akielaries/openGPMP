@@ -13,6 +13,4 @@
 
 // cube root
 
-
 #endif
-

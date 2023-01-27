@@ -1,9 +1,9 @@
 /*
  * Testing openGL with drawing an animate torus
  */
-#include<stdio.h>
-#include<GL/glut.h>
-#include<math.h>
+#include <GL/glut.h>
+#include <math.h>
+#include <stdio.h>
 
 #define pi 3.142857
 
@@ -12,7 +12,6 @@ static const int FPS = 20;
 
 // keep track of current orentation
 static GLfloat current_rot = 0.0;
-
 
 // In the GLUT library someone put the polar regions on the z-axis - yech!!
 // We fixed it so that they are on the y-axis.  We do this by rotating -90
@@ -47,14 +46,14 @@ void display() {
     // Draw planet: a blue sphere of radius 0.2, 2 units away from sun, with
     // a white "pole" for its axis.
     glRotatef((GLfloat)year, 0.0, 1.0, 0.0);
-    glTranslatef (2.0, 0.0, 0.0);
+    glTranslatef(2.0, 0.0, 0.0);
     glRotatef((GLfloat)day, 0.0, 1.0, 0.0);
     glColor3f(0.0, 0.0, 1.0);
     myWireSphere(0.2, 15, 15);
     glColor3f(1, 1, 1);
     glBegin(GL_LINES);
-        glVertex3f(0, -0.3, 0);
-        glVertex3f(0, 0.3, 0);
+    glVertex3f(0, -0.3, 0);
+    glVertex3f(0, 0.3, 0);
     glEnd();
 
     glPopMatrix();
@@ -68,17 +67,17 @@ void display() {
 // increments the value of u (to "move" the camera), ticks off another
 // portion of a day and portion of a year, then reorients the camera and
 // refreshes the display.
-static GLfloat u = 0.0;                 // curve parameter for comet pos
-static GLfloat du = 0.1;                // amt to increment u each frame
+static GLfloat u = 0.0;  // curve parameter for comet pos
+static GLfloat du = 0.1; // amt to increment u each frame
 
 void timer(int v) {
     u += du;
     day = (day + 1) % 360;
     year = (year + 2) % 360;
     glLoadIdentity();
-    gluLookAt(20*cos(u/8.0)+12,5*sin(u/8.0)+1,10*cos(u/8.0)+2, 0,0,0, 0,1,0);
+    gluLookAt(20 * cos(u / 8.0) + 12, 5 * sin(u / 8.0) + 1, 10 * cos(u / 8.0) + 2, 0, 0, 0, 0, 1, 0);
     glutPostRedisplay();
-    glutTimerFunc(1000/60, timer, v);
+    glutTimerFunc(1000 / 60, timer, v);
 }
 
 // As usual we reset the projection transformation whenever the window is
@@ -94,14 +93,14 @@ void reshape(GLint w, GLint h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, (GLfloat)w/(GLfloat)h, 1.0, 40.0);
+    gluPerspective(60.0, (GLfloat)w / (GLfloat)h, 1.0, 40.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
 // The usual main() for a GLUT application.
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     glutInit(&argc, argv);
-    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(800, 600);
     glutCreateWindow("Comet, Planet Simulation");
     glutDisplayFunc(display);
@@ -110,5 +109,3 @@ int main(int argc, char** argv) {
     glEnable(GL_DEPTH_TEST);
     glutMainLoop();
 }
-
-

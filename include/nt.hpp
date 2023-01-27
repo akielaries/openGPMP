@@ -14,7 +14,6 @@
 #ifndef NT_HPP
 #define NT_HPP
 
-
 /**
  * @brief \b Primes 
  * @details includes : 
@@ -24,7 +23,6 @@
  */
 #define PRIMES
 #include "number_theory/primes.hpp"
-
 
 /**
  * @brief \b Cryptographic \b Algorithms 
@@ -37,7 +35,4 @@
 #include "number_theory/cipher.hpp"
 #include "number_theory/rc4.hpp"
 
-
-
 #endif
-

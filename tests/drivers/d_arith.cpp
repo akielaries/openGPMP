@@ -1,17 +1,17 @@
 /* 
  * TESTING BASIC ARITHMETIC OPERATIONS
  */
-#include <iostream>
-#include <time.h>
-#include <stdio.h>
-#include <vector>
-#include <cassert>
 #include "../include/arithmetic/arith.hpp"
 #include "../include/arithmetic/arithbase.hpp"
+#include <cassert>
+#include <iostream>
+#include <stdio.h>
+#include <time.h>
+#include <vector>
 
-
-int main(){
-    std::cout << "TESTING ARITHMETIC OPERATIONS\n" << std::endl;
+int main() {
+    std::cout << "TESTING ARITHMETIC OPERATIONS\n"
+              << std::endl;
     /*
      * This functionality was really only implemented for practice 
      * for dealing with complex algorithms and equations later. There
@@ -50,7 +50,7 @@ int main(){
     float r0 = ar.add(a, b, c);
     int r1 = ar.add(d, e, f, g);
     float r2 = ar.add(d, e, f, g);
-    float r99 = ar.add(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
+    float r99 = ar.add(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
 
     printf("%d + %d + %d = %f\n", a, b, c, r0);
     printf("%f + %f + %f + %ld = %d\n", d, e, f, g, r1);
@@ -61,8 +61,8 @@ int main(){
      * subtraction  
      */
     int r3 = ar.sub(a, b, c);
-    int r4 = ar.sub(d, e, f ,g);
-    float r5 = ar.sub(d ,e, f, g);
+    int r4 = ar.sub(d, e, f, g);
+    float r5 = ar.sub(d, e, f, g);
 
     printf("%d - %d - %d = %d\n", a, b, c, r3);
     printf("%f - %f - %f - %ld = %d\n", d, e, f, g, r4);
@@ -72,9 +72,9 @@ int main(){
      * multiplication 
      */
     int r6 = ar.mult(a, b, c);
-    int r7 = ar.mult(d, e, f ,g);
-    double r8 = ar.mult(d ,e, f, g);
-    float r98 = ar.mult(a,b,c,d,e,f,g,a,b,c,d,e,f,g,y,z);
+    int r7 = ar.mult(d, e, f, g);
+    double r8 = ar.mult(d, e, f, g);
+    float r98 = ar.mult(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
 
     printf("%d * %d * %d = %d\n", a, b, c, r6);
     printf("%f * %f * %f * %ld = %d\n", d, e, f, g, r7);
@@ -96,15 +96,14 @@ int main(){
     int r10 = 10;
     int r11 = 3;
     int r12 = ba.greatest_power(r10, r11);
-    printf("The greatest power of %d that divides %d! = %d\n", 
-            r10, r11, r12);
+    printf("The greatest power of %d that divides %d! = %d\n",
+           r10, r11, r12);
 
     int r13 = 7;
     int r14 = 3;
     int r15 = ba.greatest_power(r13, r14);
-    printf("The greatest power of %d that divides %d! = %d\n", 
-            r13, r14, r15);
-
+    printf("The greatest power of %d that divides %d! = %d\n",
+           r13, r14, r15);
 
     int r16 = 2;
     int r17 = 4;
@@ -118,4 +117,3 @@ int main(){
 
     return 0;
 }
-

@@ -1,20 +1,18 @@
-#include <stdio.h>       /* standard I/O routines                 */
-#include <pthread.h>     /* pthread functions and data structures */
-#include <time.h>
 #include <iostream>
 #include <omp.h>
+#include <pthread.h> /* pthread functions and data structures */
+#include <stdio.h>   /* standard I/O routines                 */
+#include <time.h>
 
 int main() {
-
     int i = 0;
 
     clock_t start, end;
     double total;
     start = clock();
 
-
     //#pragma omp parallel
-    while(i < 900900900) {
+    while (i < 900900900) {
         i++;
     }
     std::cout << "i = " << i << std::endl;
@@ -24,7 +22,4 @@ int main() {
     std::cout << "TIME: " << total << std::endl;
 
     return 0;
-
 }
-
-

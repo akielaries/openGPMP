@@ -7,7 +7,8 @@
 #include <iostream>
 
 int main() {
-    std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;
+    std::cout << "BASIC NUMBER THEORY OPERATIONS\n"
+              << std::endl;
     // declare primality class object
     Primality p;
 
@@ -17,15 +18,15 @@ int main() {
     bool is_it = p.is_prime(a);
 
     std::cout << a << " is prime? : ";
-    is_it ? std::cout << "true\n" : 
-        std::cout << "false\n" << std::endl;
+    is_it ? std::cout << "true\n" : std::cout << "false\n"
+                                              << std::endl;
 
     int b = 2;
     bool is_it2 = p.is_prime(b);
 
     std::cout << b << " is prime? : ";
-    is_it2? std::cout << "true\n" : 
-            std::cout << "false\n" << std::endl;
+    is_it2 ? std::cout << "true\n" : std::cout << "false\n"
+                                               << std::endl;
     std::cout << "\n";
 
     std::cout << "<--------- MILLER-RABIN METHOD --------->\n";
@@ -43,7 +44,7 @@ int main() {
     p.miller_rabin(iters, 30, 3000);
 
     std::cout << "\n";
-    
+
     std::cout << "<--------- CARMICHAEL NUMBERS --------->\n";
     int cm_test = 500;
     bool carm_num = p.carmichael_num(cm_test);
@@ -53,18 +54,15 @@ int main() {
 
     int cm_test2 = 1105;
     bool carm_num2 = p.carmichael_num(cm_test2);
-    
+
     std::cout << cm_test << " is a carmichael number : ";
-    carm_num? std::cout << "true\n" :
-            std::cout << "false\n";
+    carm_num ? std::cout << "true\n" : std::cout << "false\n";
 
     std::cout << cm_test1 << " is a carmichael number : ";
-    carm_num1? std::cout << "true\n" :
-            std::cout << "false\n";
+    carm_num1 ? std::cout << "true\n" : std::cout << "false\n";
 
     std::cout << cm_test2 << " is a carmichael number : ";
-    carm_num2? std::cout << "true\n" :
-            std::cout << "false\n";
+    carm_num2 ? std::cout << "true\n" : std::cout << "false\n";
 
     std::cout << "\n";
     /*
@@ -97,19 +95,16 @@ int main() {
     /*
      * Jacobian
      */
-    
 
     /*
      * Solovay-Strassen Primality Test
      */
     int ss_0 = 15;
     if (p.solovoy_strassen(ss_0, 50))
-        printf("%d is prime\n",ss_0);
+        printf("%d is prime\n", ss_0);
     else
-        printf("%d is composite\n",ss_0);
-
+        printf("%d is composite\n", ss_0);
 
     std::cout << "\n";
     return 0;
 }
-

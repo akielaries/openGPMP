@@ -5,8 +5,8 @@
 
 #ifndef KOHONEN_NETWORK_HPP
 #define KOHONEN_NETWORK_HPP
-#include <vector>
 #include <stdio.h>
+#include <vector>
 
 namespace mtpk {
 
@@ -18,10 +18,8 @@ namespace mtpk {
 class KohonenNet {
     int64_t choice(weights, sample);
     int64_t update(weights, sample, J, alpha);
-
 };
 
-} // namespace
+} // namespace mtpk
 
 #endif
-

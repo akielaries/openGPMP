@@ -7,11 +7,10 @@
 
 #ifndef ARITH_OPS_HPP
 #define ARITH_OPS_HPP
-#include <vector>
+#include <algorithm>
 #include <iostream>
 #include <stdio.h>
-#include <algorithm>
-
+#include <vector>
 
 namespace mtpk {
 
@@ -19,9 +18,8 @@ namespace mtpk {
  * @brief Arithmetic Basics Class based on Arithmetic operations
  */
 class Basics {
-
-    public:
-        /**
+  public:
+    /**
          * @brief Find greatest power of 2 itegers
          * 
          * @param[in] n : integer 1
@@ -29,9 +27,9 @@ class Basics {
          * 
          * @return result : (int)
          */
-        int64_t greatest_power(int64_t n, int64_t p);
+    int64_t greatest_power(int64_t n, int64_t p);
 
-        /**
+    /**
          * @brief Find Greatest Common Divisor of 2 integers
          * 
          * @param[in] x : integer 1
@@ -39,10 +37,9 @@ class Basics {
          * 
          * @return result : (int)
          */
-        int64_t op_gcd(int64_t x, int64_t y);
+    int64_t op_gcd(int64_t x, int64_t y);
 };
 
-} // namespace
+} // namespace mtpk
 
 #endif
-

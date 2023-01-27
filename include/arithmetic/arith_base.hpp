@@ -7,11 +7,10 @@
 
 #ifndef ARITH_BASE_HPP
 #define ARITH_BASE_HPP
-#include <vector>
+#include <algorithm>
 #include <iostream>
 #include <stdio.h>
-#include <algorithm>
-
+#include <vector>
 
 /**
  * @namespace mtpk
@@ -30,26 +29,25 @@ namespace mtpk {
  * params.
  */
 class Arith {
-
-    public:
-        /**
+  public:
+    /**
          * @brief Addition method
          * 
          * @tparam 'n' addends 
          * 
          * @return sum
          */
-        template<typename T>
-        inline T add(T t) {
-            return t;
-        }
+    template <typename T>
+    inline T add(T t) {
+        return t;
+    }
 
-        template<typename T, typename... Ts>
-        inline auto add(T t, Ts... ts) {
-            return t + add(ts...);
-        }
+    template <typename T, typename... Ts>
+    inline auto add(T t, Ts... ts) {
+        return t + add(ts...);
+    }
 
-        /**
+    /**
          * @brief Subtraction method
          * 
          * @tparam minuend
@@ -57,32 +55,32 @@ class Arith {
          * 
          * @return difference
          */
-        template<typename X>
-        inline X sub(X x) {
-            return x;
-        }
-        template<typename X, typename... Xy>
-        inline auto sub(X x, Xy... xy) {
-            return x - sub(xy...);
-        }
+    template <typename X>
+    inline X sub(X x) {
+        return x;
+    }
+    template <typename X, typename... Xy>
+    inline auto sub(X x, Xy... xy) {
+        return x - sub(xy...);
+    }
 
-        /**
+    /**
          * @brief Multiplication method
          * 
          * @tparam 'n' factors
          * 
          * @return product
          */
-        template<typename W>
-        inline W mult(W w) {
-            return w;
-        }
-        template<typename W, typename... Wv>
-        inline auto mult(W w, Wv... wv) {
-            return w * mult(wv...);
-        }
+    template <typename W>
+    inline W mult(W w) {
+        return w;
+    }
+    template <typename W, typename... Wv>
+    inline auto mult(W w, Wv... wv) {
+        return w * mult(wv...);
+    }
 
-        /**
+    /**
          * @brief Exponentiation method
          * 
          * @tparam base
@@ -90,18 +88,16 @@ class Arith {
          * 
          * @return product
          */
-        template<typename Z>
-        inline Z exp(Z z) {
-            return z;
-        }
-        template<typename Z, typename... Zy>
-        inline auto exp(Z z, Zy... zy) {
-            return z *= exp(zy...);
-        }
-
+    template <typename Z>
+    inline Z exp(Z z) {
+        return z;
+    }
+    template <typename Z, typename... Zy>
+    inline auto exp(Z z, Zy... zy) {
+        return z *= exp(zy...);
+    }
 };
 
-} // namespace
+} // namespace mtpk
 
 #endif
-

@@ -5,7 +5,6 @@
 #include "k-foldCV.h"
 using namespace std;
 
-
 TEST_CASE("KF_CV-testSmallSample10Fold") {
     vector<string> small_sample = {
         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
@@ -25,11 +24,11 @@ TEST_CASE("KF_CV-testSmallSample5Fold") {
 
 TEST_CASE("KF_CV-testLargeSample10Fold") {
     vector<int64_t> large_sample;
-    for (int64_t i = 0; i < 1000; i++){
+    for (int64_t i = 0; i < 1000; i++) {
         large_sample.emplace_back(i);
     }
     KF_CV<int64_t> kF_CV = KF_CV<int64_t>(large_sample, 10, 1);
-    for (int64_t i = 0; i < 10; i++){
+    for (int64_t i = 0; i < 10; i++) {
         REQUIRE(100 == kF_CV.get_test_fold(i).size());
         REQUIRE(900 == kF_CV.get_train_fold(i).size());
     }
@@ -37,15 +36,12 @@ TEST_CASE("KF_CV-testLargeSample10Fold") {
 
 TEST_CASE("KFCV-testLargeSample5Fold") {
     vector<int64_t> large_sample;
-    for (int64_t i = 0; i < 1000; i++){
+    for (int64_t i = 0; i < 1000; i++) {
         large_sample.emplace_back(i);
     }
     KF_CV<int64_t> kF_CV = KF_CV<int64_t>(large_sample, 5, 1);
-    for (int64_t i = 0; i < 5; i++){
+    for (int64_t i = 0; i < 5; i++) {
         REQUIRE(200 == kF_CV.get_test_fold(i).size());
         REQUIRE(800 == kF_CV.get_train_fold(i).size());
     }
 }
-
-
-

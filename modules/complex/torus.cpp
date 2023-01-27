@@ -1,12 +1,12 @@
 /*
  * Drawing a simple 3 dimensional torus
  */
-#include<stdio.h>
-#include<GL/glut.h>
-#include<math.h>
+#include <GL/glut.h>
+#include <math.h>
+#include <stdio.h>
 
 #define pi 3.142857
-  
+
 void display() {
     // setting every pixel in frame buffer to a clear color
     glClear(GL_COLOR_BUFFER_BIT);
@@ -16,14 +16,19 @@ void display() {
 
     // being drawing
     glBegin(GL_POLYGON);
-        glColor3f(1, 0, 0); glVertex3f(0, 0, 0); glVertex3f(10, 0, 0);
-        glColor3f(0, 1, 0); glVertex3f(0, 0, 0); glVertex3f(0, 10, 0);
-        glColor3f(0, 0, 1); glVertex3f(0, 0, 0); glVertex3f(0, 0, 10);
+    glColor3f(1, 0, 0);
+    glVertex3f(0, 0, 0);
+    glVertex3f(10, 0, 0);
+    glColor3f(0, 1, 0);
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 10, 0);
+    glColor3f(0, 0, 1);
+    glVertex3f(0, 0, 0);
+    glVertex3f(0, 0, 10);
     glEnd();
 
     // flush the draw cmd to display image immediately
     glFlush();
-
 }
 
 void init() {
@@ -32,15 +37,14 @@ void init() {
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60.0, 4.0/3.0, 1, 40);
+    gluPerspective(60.0, 4.0 / 3.0, 1, 40);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);
-
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 
@@ -54,6 +58,4 @@ int main(int argc, char** argv) {
     glutDisplayFunc(display);
     init();
     glutMainLoop();
-
 }
-

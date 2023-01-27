@@ -1,16 +1,13 @@
 /*
  *
  */
+#include "../../include/complex/torus.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <vector>
 #include <time.h>
-#include "../../include/complex/torus.hpp"
-
+#include <vector>
 
 int main() {
-
-    return 0;    
+    return 0;
 }
-

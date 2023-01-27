@@ -5,12 +5,11 @@
  *
  */
 
-#ifndef TENSORS_HPP 
+#ifndef TENSORS_HPP
 #define TENSORS_HPP
 
-#include <vector>
 #include <cmath>
-
+#include <vector>
 
 namespace mtpk {
 
@@ -22,11 +21,9 @@ class Tensors {
     std::vector<int> x;
     std::vector<int> y;
 
-
-    public:
+  public:
 };
 
-} // namespace
+} // namespace mtpk
 
 #endif
-

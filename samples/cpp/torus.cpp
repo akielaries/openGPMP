@@ -2,15 +2,12 @@
  *
  */
 #include <iostream>
+#include <openMTPK/torus.hpp>
 #include <stdio.h>
 #include <string>
-#include <vector>
 #include <time.h>
-#include <openMTPK/torus.hpp>
-
+#include <vector>
 
 int main() {
-
-    return 0;    
+    return 0;
 }
-
