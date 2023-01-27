@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jacobian_5fnumber_407',['jacobian_number',['../classmtpk_1_1Primality.html#a092942fd6152ea5b2d23567ab85ad9f5',1,'mtpk::Primality']]]
+  ['jacobian_5fnumber_450',['jacobian_number',['../classmtpk_1_1Primality.html#a092942fd6152ea5b2d23567ab85ad9f5',1,'mtpk::Primality']]]
 ];

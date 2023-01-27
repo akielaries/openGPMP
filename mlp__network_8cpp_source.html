@@ -75,10 +75,10 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Implementation of a Multi-Layered Perceptron Neural Network</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../include/ml/mlp_net.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacemtpk_1_1ml.html">mtpk::ml</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
@@ -86,7 +86,7 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Initialize randomly generated values for network&#39;s method</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a">mtpk::ml::PrimaryMLP::rand_init</a>() {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    srand((uint64_t) time(NULL));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    srand((uint64_t)time(NULL));</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/* verify the random is an integer */</span></div>
@@ -95,118 +95,113 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/* verify generated random is a real number */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">   25</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">mtpk::ml::PrimaryMLP::rand_real</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> low, </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">   25</a></span>&#160;<span class="keywordtype">long</span> <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">mtpk::ml::PrimaryMLP::rand_real</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span> low,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                            <span class="keywordtype">long</span> <span class="keywordtype">double</span> hi) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">long</span> <span class="keywordtype">double</span>) rand() / RAND_MAX) * (hi - low) + low;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">long</span> <span class="keywordtype">double</span>)rand() / RAND_MAX) * (hi - low) + low;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/* PRIMARY MLP CONSTRUCTOR */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">   31</a></span>&#160;<a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">mtpk::ml::PrimaryMLP::PrimaryMLP</a>(int64_t nl, int64_t npl[]) : </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    num_layers(0), </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    layer_ptr(0),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    _Eta(0.25),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    _Alpha(0.9),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    _Gain(1.0),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    _MSE(0.0),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    _MAE(0.0),</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    _AvgTestError(0.0) { </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    int64_t _LAYER, _NEURON;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// create network layers</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4">num_layers</a> = nl;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a> = <span class="keyword">new</span> <a class="code" href="structmtpk_1_1ml_1_1layer.html">layer</a>[nl];</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// intialize the data of the created network layers</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span>(_LAYER = 0; _LAYER &lt; nl; _LAYER++) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// intialize values to neuron struct information</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218">num_neurons</a> = npl[_LAYER];</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a> = <span class="keyword">new</span> <a class="code" href="structmtpk_1_1ml_1_1neuron.html">neuron</a>[npl[_LAYER]];</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// intialize date of the neurons of the created network layers</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span>(_NEURON = 0; _NEURON &lt; npl[_LAYER]; _NEURON++) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// initialize exit value</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#a26a8ebdfbda481634337c94ece3eaa55">sortir</a> = 1.0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// save the error</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ae457c01e087efc6758397020f36764d3">err</a> = 0.0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="comment">// check if there is at least 1 layer</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span>(_LAYER &gt; 0) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="comment">/* initialize weight, last weight, and saved weight</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">                 * values to _LAYER - 1</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5">wt</a> = </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24">wt_last</a> =</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a">wt_saved</a> =</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">// otherwise</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">/*</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">                 * initialize weight, last weight, and saved weight </span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">                 * to NULL</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5">wt</a> = NULL;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24">wt_last</a> = NULL;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a">wt_saved</a> = NULL;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/* PRIMARY MLP DECONSTRUCTOR */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e">   89</a></span>&#160;<a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e">mtpk::ml::PrimaryMLP::~PrimaryMLP</a>() {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    int64_t _LAYER, _NEURON;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// TODO : thread the loops dealing with rudimentary computations</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span>(_LAYER = 0; _LAYER &lt; num_layers; _LAYER++) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr) {   </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">for</span>(_NEURON = 0; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                _NEURON &lt; layer_ptr[_LAYER].num_neurons; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                _NEURON++) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }   </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }   </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">delete</span>[] layer_ptr;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a0951d92936443debb2fa0d41020bed9e"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e">mtpk::ml::PrimaryMLP::~PrimaryMLP</a></div><div class="ttdeci">~PrimaryMLP()</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00089">mlp_network.cpp:89</a></div></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">   31</a></span>&#160;<a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">mtpk::ml::PrimaryMLP::PrimaryMLP</a>(int64_t nl, int64_t npl[])</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    : num_layers(0),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      layer_ptr(0),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      _Eta(0.25),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      _Alpha(0.9),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      _Gain(1.0),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      _MSE(0.0),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      _MAE(0.0),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      _AvgTestError(0.0) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    int64_t _LAYER, _NEURON;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// create network layers</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4">num_layers</a> = nl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a> = <span class="keyword">new</span> <a class="code" href="structmtpk_1_1ml_1_1layer.html">layer</a>[nl];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// intialize the data of the created network layers</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (_LAYER = 0; _LAYER &lt; nl; _LAYER++) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// intialize values to neuron struct information</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218">num_neurons</a> = npl[_LAYER];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a> = <span class="keyword">new</span> <a class="code" href="structmtpk_1_1ml_1_1neuron.html">neuron</a>[npl[_LAYER]];</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// intialize date of the neurons of the created network layers</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (_NEURON = 0; _NEURON &lt; npl[_LAYER]; _NEURON++) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// initialize exit value</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#a26a8ebdfbda481634337c94ece3eaa55">sortir</a> = 1.0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">// save the error</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ae457c01e087efc6758397020f36764d3">err</a> = 0.0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// check if there is at least 1 layer</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (_LAYER &gt; 0) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="comment">/* initialize weight, last weight, and saved weight</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">                 * values to _LAYER - 1</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">                 */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5">wt</a> =</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24">wt_last</a> =</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a">wt_saved</a> =</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">// otherwise</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="comment">/*</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">                 * initialize weight, last weight, and saved weight </span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">                 * to NULL</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">                 */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5">wt</a> = NULL;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24">wt_last</a> = NULL;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">layer_ptr</a>[_LAYER].<a class="code" href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">neuron_ptr</a>[_NEURON].<a class="code" href="structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a">wt_saved</a> = NULL;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/* PRIMARY MLP DECONSTRUCTOR */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e">   88</a></span>&#160;<a class="code" href="classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e">mtpk::ml::PrimaryMLP::~PrimaryMLP</a>() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    int64_t _LAYER, _NEURON;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// TODO : thread the loops dealing with rudimentary computations</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (_LAYER = 0; _LAYER &lt; num_layers; _LAYER++) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">for</span> (_NEURON = 0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                 _NEURON &lt; layer_ptr[_LAYER].num_neurons;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                 _NEURON++) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">if</span> (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">delete</span>[] layer_ptr[_LAYER].neuron_ptr;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">delete</span>[] layer_ptr;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a0951d92936443debb2fa0d41020bed9e"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e">mtpk::ml::PrimaryMLP::~PrimaryMLP</a></div><div class="ttdeci">~PrimaryMLP()</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00088">mlp_network.cpp:88</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a18eb4946937035f12809fcc9b672a727"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727">mtpk::ml::PrimaryMLP::rand_real</a></div><div class="ttdeci">long double rand_real(long double low, long double hi)</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00025">mlp_network.cpp:25</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a1944148b92b8b2c0d9cccac3b6f91071"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a1944148b92b8b2c0d9cccac3b6f91071">mtpk::ml::PrimaryMLP::rand_int</a></div><div class="ttdeci">int64_t rand_int(int64_t low, int64_t hi)</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00020">mlp_network.cpp:20</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a27753bc0c2fa1fb57f272c35b2f3f9f4"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4">mtpk::ml::PrimaryMLP::num_layers</a></div><div class="ttdeci">int64_t num_layers</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00064">mlp_net.hpp:64</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a27753bc0c2fa1fb57f272c35b2f3f9f4"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4">mtpk::ml::PrimaryMLP::num_layers</a></div><div class="ttdeci">int64_t num_layers</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00062">mlp_net.hpp:62</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a66629db6d9a859905bda220e982a0a7a"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a66629db6d9a859905bda220e982a0a7a">mtpk::ml::PrimaryMLP::rand_init</a></div><div class="ttdeci">void rand_init()</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00015">mlp_network.cpp:15</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_a74005f6700a488e456b95f06e3a416d5"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5">mtpk::ml::PrimaryMLP::PrimaryMLP</a></div><div class="ttdeci">PrimaryMLP(int64_t nl, int64_t npl[])</div><div class="ttdef"><b>Definition:</b> <a href="mlp__network_8cpp_source.html#l00031">mlp_network.cpp:31</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_ab44d549917a926ca38f278440071322a"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">mtpk::ml::PrimaryMLP::layer_ptr</a></div><div class="ttdeci">layer * layer_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00065">mlp_net.hpp:65</a></div></div>
-<div class="ttc" id="anamespacemtpk_1_1ml_html"><div class="ttname"><a href="namespacemtpk_1_1ml.html">mtpk::ml</a></div><div class="ttdoc">openMTPK Machine Learning namespace</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00024">mlp_net.hpp:24</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html">mtpk::ml::layer</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00046">mlp_net.hpp:46</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html_a6b3400f94d50b26bb620a27e672c6ecf"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">mtpk::ml::layer::neuron_ptr</a></div><div class="ttdeci">neuron * neuron_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00048">mlp_net.hpp:48</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html_ae123a255612d91473e4a5287264f7218"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218">mtpk::ml::layer::num_neurons</a></div><div class="ttdeci">int64_t num_neurons</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00047">mlp_net.hpp:47</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html">mtpk::ml::neuron</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00033">mlp_net.hpp:33</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_a26a8ebdfbda481634337c94ece3eaa55"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#a26a8ebdfbda481634337c94ece3eaa55">mtpk::ml::neuron::sortir</a></div><div class="ttdeci">long double sortir</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00035">mlp_net.hpp:35</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_a6cee05b2d2a490755d8860ea1af04ec5"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5">mtpk::ml::neuron::wt</a></div><div class="ttdeci">long double * wt</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00039">mlp_net.hpp:39</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_ab7016b420f793b86e44a8e2996599c24"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24">mtpk::ml::neuron::wt_last</a></div><div class="ttdeci">long double * wt_last</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00041">mlp_net.hpp:41</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_ae296b2f6f486c8e6cbc16a4a03f4080a"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a">mtpk::ml::neuron::wt_saved</a></div><div class="ttdeci">long double * wt_saved</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00043">mlp_net.hpp:43</a></div></div>
-<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_ae457c01e087efc6758397020f36764d3"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#ae457c01e087efc6758397020f36764d3">mtpk::ml::neuron::err</a></div><div class="ttdeci">long double err</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00037">mlp_net.hpp:37</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1PrimaryMLP_html_ab44d549917a926ca38f278440071322a"><div class="ttname"><a href="classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a">mtpk::ml::PrimaryMLP::layer_ptr</a></div><div class="ttdeci">layer * layer_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00063">mlp_net.hpp:63</a></div></div>
+<div class="ttc" id="anamespacemtpk_1_1ml_html"><div class="ttname"><a href="namespacemtpk_1_1ml.html">mtpk::ml</a></div><div class="ttdoc">openMTPK Machine Learning namespace</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00023">mlp_net.hpp:23</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html">mtpk::ml::layer</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00045">mlp_net.hpp:45</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html_a6b3400f94d50b26bb620a27e672c6ecf"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf">mtpk::ml::layer::neuron_ptr</a></div><div class="ttdeci">neuron * neuron_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00047">mlp_net.hpp:47</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1layer_html_ae123a255612d91473e4a5287264f7218"><div class="ttname"><a href="structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218">mtpk::ml::layer::num_neurons</a></div><div class="ttdeci">int64_t num_neurons</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00046">mlp_net.hpp:46</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html">mtpk::ml::neuron</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00032">mlp_net.hpp:32</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_a26a8ebdfbda481634337c94ece3eaa55"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#a26a8ebdfbda481634337c94ece3eaa55">mtpk::ml::neuron::sortir</a></div><div class="ttdeci">long double sortir</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00034">mlp_net.hpp:34</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_a6cee05b2d2a490755d8860ea1af04ec5"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5">mtpk::ml::neuron::wt</a></div><div class="ttdeci">long double * wt</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00038">mlp_net.hpp:38</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_ab7016b420f793b86e44a8e2996599c24"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24">mtpk::ml::neuron::wt_last</a></div><div class="ttdeci">long double * wt_last</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00040">mlp_net.hpp:40</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_ae296b2f6f486c8e6cbc16a4a03f4080a"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a">mtpk::ml::neuron::wt_saved</a></div><div class="ttdeci">long double * wt_saved</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00042">mlp_net.hpp:42</a></div></div>
+<div class="ttc" id="astructmtpk_1_1ml_1_1neuron_html_ae457c01e087efc6758397020f36764d3"><div class="ttname"><a href="structmtpk_1_1ml_1_1neuron.html#ae457c01e087efc6758397020f36764d3">mtpk::ml::neuron::err</a></div><div class="ttdeci">long double err</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00036">mlp_net.hpp:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

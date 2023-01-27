@@ -98,7 +98,7 @@ struct mtpk::mtx&lt; T &gt;</h3>
 
 <p><a class="el" href="classmtpk_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00377">377</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00370">370</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a844bc20fffd518adf98003889a6a1df8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a844bc20fffd518adf98003889a6a1df8">&#9670;&nbsp;</a></span>ones()</h2>
@@ -136,12 +136,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00388">388</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                                    {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        MTX.fill_index(T(1));</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00381">381</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                                    {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        MTX.fill_index(T(1));</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
 <div class="ttc" id="anaive__net_8hpp_html_aca89ce710ee8842221a0df25940c6a36"><div class="ttname"><a href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a></div><div class="ttdeci">Eigen::MatrixXf Matrix</div><div class="ttdef"><b>Definition:</b> <a href="naive__net_8hpp_source.html#l00011">naive_net.hpp:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#a12edb8fb7d2727e7d63fd7959993ce1b">mtpk::Matrix&lt; Type &gt;::fill_index()</a>.</p>
@@ -184,21 +184,21 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00410">410</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                                    {</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        std::random_device rd{};</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        std::mt19937 gen{rd()};</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        std::uniform_real_distribution&lt;T&gt; d{0, 1};</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;          <span class="keywordflow">for</span> (int64_t c = 0; c &lt; cols; ++c) {</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            MTX(r, c) = d(gen);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            }</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        }</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00403">403</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                                                    {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        std::random_device rd{};</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        std::mt19937 gen{rd()};</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        std::uniform_real_distribution&lt;T&gt; d{0, 1};</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="keywordflow">for</span> (int64_t c = 0; c &lt; cols; ++c) {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                MTX(r, c) = d(gen);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -238,23 +238,23 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00394">394</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                                     {</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        std::random_device rd{};</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        std::mt19937 gen{rd()};</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        T n(MTX.num_elements);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        T stdev{1 / sqrt(n)};</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        std::normal_distribution&lt;T&gt; d{0, stdev};</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">for</span> (uint64_t c = 0; c &lt; cols; ++c) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            MTX(r, c) = d(gen);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00387">387</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                                     {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        std::random_device rd{};</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        std::mt19937 gen{rd()};</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        T n(MTX.num_elements);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        T stdev{1 / sqrt(n)};</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        std::normal_distribution&lt;T&gt; d{0, stdev};</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keywordflow">for</span> (uint64_t c = 0; c &lt; cols; ++c) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                MTX(r, c) = d(gen);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe">mtpk::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
@@ -298,13 +298,13 @@ template&lt;typename T &gt; </div>
 
 <p><a class="el" href="classmtpk_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> zeros method. </p>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00381">381</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                                     {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="comment">// fill by index</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        MTX.fill_index(T(0));</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00374">374</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                                                     {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;T&gt;</a> MTX{rows, cols};</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="comment">// fill by index</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        MTX.fill_index(T(0));</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#a12edb8fb7d2727e7d63fd7959993ce1b">mtpk::Matrix&lt; Type &gt;::fill_index()</a>.</p>
 
