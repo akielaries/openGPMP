@@ -18,10 +18,14 @@ namespace mtpk {
  * @brief Operations related to Vectors and Scalars
  */
 class Tensors {
-    std::vector<int> x;
-    std::vector<int> y;
-
   public:
+    std::vector<std::vector<double>> tensor_vec_mult(std::vector<std::vector<std::vector<double>>> A,
+                                                     std::vector<double> b);
+
+    void printTensor(std::vector<std::vector<std::vector<double>>> A);
+    std::vector<std::vector<std::vector<double>>>
+        vector_wise_tensor_product(std::vector<std::vector<std::vector<double>>> A,
+                                   std::vector<std::vector<double>> B);
 };
 
 } // namespace mtpk

@@ -13,7 +13,7 @@ from openmtpk import nt
 
                                                   mod_0 = p.mod_pow(3, 2, 2)
                                                               mod_1 = p.mod_pow(
-                                                                  5, 2, 7)
+                                                                           5, 2, 7)
                                                                           print(
                                                                               mod_0)
                                                                               print(
@@ -23,9 +23,9 @@ from openmtpk import nt
                                                                                       4, 4, 200)
 
                                                                                       ss_0 = p.solovoy_strassen(
-                                                                                          15, 50)
+          15, 50)
                                                                                                  ss_1 = p.solovoy_strassen(
-                                                                                                     1049, 50)
+                                                                                                            1049, 50)
                                                                                                             print(
                                                                                                                 ss_0)
                                                                                                                 print(

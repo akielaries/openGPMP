@@ -12,7 +12,7 @@ from openmtpk import nt
 
                                               text = "Password" shift = "Computer" encoded_text = c.keyword_encode(shift)
                                                                                                       hashtext = c.keyword(
-                                                                                                          text, encoded_text)
+                                                                                                                     text, encoded_text)
                                                                                                                      print(
                                                                                                                          hashtext)
 
