@@ -10,7 +10,16 @@ on:
     branches: [ main ]
 
 jobs:
-  versioning:
+  latest_v:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: oprypin/find-latest-tag@v1
+      with:
+        repository: akielaries/openMTPK
+      id: mtpk_version
+
+  bump_v:
+    needs: [ latest_v ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -73,8 +82,9 @@ jobs:
 
   build_plat:
     name: Build source distribution
-    needs: [ versioning ]
-    if: needs.versioning.outputs.new_version != needs.versioning.outputs.new_version 
+    needs: [ bump_v, latest_v ]
+    if: needs.bump_v.outputs.new_tag != ${{ steps.mtpk_version.outputs.tag }}
+      #needs.latest_v.outputs.tag
       #&& github.event_name == 'create' && github.event.action == 'tag' 
     runs-on: ubuntu-latest
     steps:
