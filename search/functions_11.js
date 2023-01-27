@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['t_471',['T',['../classmtpk_1_1Matrix.html#adb65bb106d4e745d45959326c09ec48f',1,'mtpk::Matrix']]],
-  ['test_472',['test',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3a517bba28ff82bf027ad1186fd44c86',1,'mtpk::ml::PrimaryMLP::test()'],['../classRC5.html#a7d8cfbb3d9376caec420f4d5fa22be4d',1,'RC5::test()'],['../rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9',1,'test(uint32_t S[26], uint32_t messg[4]):&#160;rc5.cpp']]],
-  ['test_5fcase_473',['TEST_CASE',['../k-foldCV_8cpp.html#a30992701a37e72ffb3f1892840172303',1,'TEST_CASE(&quot;KFCV-testLargeSample5Fold&quot;):&#160;k-foldCV.cpp'],['../k-foldCV_8cpp.html#a11a773177a8c1a7d6ed364feb34f55b9',1,'TEST_CASE(&quot;KF_CV-testLargeSample10Fold&quot;):&#160;k-foldCV.cpp'],['../k-foldCV_8cpp.html#a512be6fe9ffcaf26f34b10cef455b461',1,'TEST_CASE(&quot;KF_CV-testSmallSample5Fold&quot;):&#160;k-foldCV.cpp'],['../k-foldCV_8cpp.html#a0082dfdaa822ecb188be28ffccbf75ba',1,'TEST_CASE(&quot;KF_CV-testSmallSample10Fold&quot;):&#160;k-foldCV.cpp']]],
-  ['test_5fprimarymlp_474',['test_PrimaryMLP',['../classmtpk_1_1ml_1_1Utils.html#afde22c768efbffdbc8c276c33e07ed80',1,'mtpk::ml::Utils']]],
-  ['timer_475',['timer',['../torus__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3',1,'torus_animated.cpp']]],
-  ['trad_5fswap_476',['trad_swap',['../classRC5.html#a141c61c2a2bb74853be1e2db177e015e',1,'RC5::trad_swap()'],['../classmtpk_1_1RC4.html#a7f78df47fd055968e84ae9814d3012f2',1,'mtpk::RC4::trad_swap()']]],
-  ['train_477',['train',['../classmtpk_1_1NaiveNet.html#aafffd50093040c64ca5f01801e43d5ae',1,'mtpk::NaiveNet::train()'],['../classmtpk_1_1ml_1_1PrimaryMLP.html#a5138ae6bbde5771cce6a8b93fe8f129f',1,'mtpk::ml::PrimaryMLP::train()']]],
-  ['train_5fprimarymlp_478',['train_PrimaryMLP',['../classmtpk_1_1ml_1_1Utils.html#ab1c95bbe86b469e8fa7067ae48169e56',1,'mtpk::ml::Utils']]],
-  ['train_5fsecondarymlp_479',['train_SecondaryMLP',['../classmtpk_1_1ml_1_1Utils.html#af6e0b40e2a9129b2d12779552eeda255',1,'mtpk::ml::Utils']]],
-  ['transformcharacteristics_480',['transformCharacteristics',['../classCompany.html#adb867bb69be78855c273a1dc498c5c08',1,'Company']]],
-  ['transpose_481',['transpose',['../classmtpk_1_1Matrix.html#a06e809ee9b3b763969c112b449c797ff',1,'mtpk::Matrix']]]
+  ['scalar_5fadd_454',['scalar_add',['../classmtpk_1_1Matrix.html#a51c19c6e0a1ddc3c895c2b1f3cf83097',1,'mtpk::Matrix']]],
+  ['scalar_5fmult_455',['scalar_mult',['../classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10',1,'mtpk::Matrix']]],
+  ['secondarymlp_456',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe',1,'mtpk::ml::SecondaryMLP']]],
+  ['set_5fsignal_5fin_457',['set_signal_in',['../classmtpk_1_1ml_1_1PrimaryMLP.html#aec9264b61e9df5bd737fd9c17d3eac35',1,'mtpk::ml::PrimaryMLP']]],
+  ['shift_5fleft_458',['shift_left',['../classRC5.html#aaff32327548c82f78c779fd0420c3782',1,'RC5::shift_left()'],['../rc5_8cpp.html#a16858db3d092c804e199a1dea1f2c7e8',1,'shift_left(uint32_t v, uint32_t n):&#160;rc5.cpp']]],
+  ['shift_5fright_459',['shift_right',['../rc5_8cpp.html#a31cd9bd46e1fab3782647b3619683f8b',1,'shift_right():&#160;rc5.cpp'],['../classRC5.html#a3f33a715574965175a89af9f6cf9a04e',1,'RC5::shift_right()']]],
+  ['show_5fdata_460',['show_data',['../classmtpk_1_1Regression.html#ab3674e16f03ed1c0c44a230d5485897d',1,'mtpk::Regression']]],
+  ['sieve_5fof_5feratosthenes_461',['sieve_of_eratosthenes',['../classmtpk_1_1Primality.html#a242f6c2c9f2957c884169bec1b1f3824',1,'mtpk::Primality']]],
+  ['sigmoid_5factiv_462',['sigmoid_activ',['../classmtpk_1_1ml_1_1SecondaryMLP.html#aeafb9b868fc47dc0612942889214732d',1,'mtpk::ml::SecondaryMLP']]],
+  ['sigmoid_5fderiv_463',['sigmoid_deriv',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93',1,'mtpk::ml::SecondaryMLP']]],
+  ['simulate_464',['simulate',['../classmtpk_1_1ml_1_1PrimaryMLP.html#adec06a716cc4753f908d7a5ee29a2076',1,'mtpk::ml::PrimaryMLP']]],
+  ['solovoy_5fstrassen_465',['solovoy_strassen',['../classmtpk_1_1Primality.html#a29bf92a65aa8061c3a616cc3e8bf5c3a',1,'mtpk::Primality']]],
+  ['split_466',['split',['../classCSVReader.html#aa3f91c1fd40076a96ca0be593b9b59bc',1,'CSVReader']]],
+  ['sqr_5ferr_467',['sqr_err',['../classmtpk_1_1Matrix.html#aa62b01721821d8c55e3f23a210d8e817',1,'mtpk::Matrix']]],
+  ['store_5fhash_468',['store_hash',['../classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0',1,'mtpk::RC4']]],
+  ['sub_469',['sub',['../classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6',1,'mtpk::Arith::sub(X x)'],['../classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c',1,'mtpk::Arith::sub(X x, Xy... xy)'],['../classmtpk_1_1Matrix.html#ac1c5e89b18de38e09deb85e19deb074f',1,'mtpk::Matrix::sub(Matrix &amp;target)']]],
+  ['sum_470',['sum',['../classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186',1,'mtpk::Matrix::sum()'],['../classmtpk_1_1Matrix.html#a91afb24f516534ae4c0510a8e6855a47',1,'mtpk::Matrix::sum(size_t dimension)']]]
 ];

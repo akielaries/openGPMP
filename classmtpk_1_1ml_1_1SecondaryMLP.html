@@ -297,7 +297,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keyword">auto</span> prior_errs = wt.mult(err);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="keyword">auto</span> outputs_d = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i+1].apply_function(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93">sigmoid_deriv</a>);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keyword">auto</span> gradients = err.mult_elem(outputs_d);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keyword">auto</span> gradients = err.hadamard(outputs_d);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                gradients = gradients.scalar_mult(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>);</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keyword">auto</span> trans_a = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i].T();</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keyword">auto</span> gradients_wt = gradients.mult(trans_a);</div>

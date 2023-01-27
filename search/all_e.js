@@ -1,10 +1,19 @@
 var searchData=
 [
-  ['ones_168',['ones',['../structmtpk_1_1mtx.html#a844bc20fffd518adf98003889a6a1df8',1,'mtpk::mtx']]],
-  ['op_5fgcd_169',['op_gcd',['../classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e',1,'mtpk::Basics']]],
-  ['operator_28_29_170',['operator()',['../classmtpk_1_1Matrix.html#ae2b6c5e45c1bb272e708e07a1124d26b',1,'mtpk::Matrix']]],
-  ['operator_2b_171',['operator+',['../classmtpk_1_1Matrix.html#a5f69f6466f892bd9e6f4680fc00387ee',1,'mtpk::Matrix']]],
-  ['operator_2d_172',['operator-',['../classmtpk_1_1Matrix.html#ae018657d5dee4e30284560326ca6eb78',1,'mtpk::Matrix::operator-()'],['../classmtpk_1_1Matrix.html#a9ef5c73d07b88d53517799bc6c2dc9d1',1,'mtpk::Matrix::operator-(Matrix &amp;target)']]],
-  ['operator_3d_3d_173',['operator==',['../classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c',1,'mtpk::Matrix']]],
-  ['output_5ferr_174',['output_err',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a397daab2ad5b66cec3315ad2c994b3b2',1,'mtpk::ml::PrimaryMLP']]]
+  ['n_152',['N',['../classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c',1,'mtpk::KF_CV']]],
+  ['naive_5fnet_2ehpp_153',['naive_net.hpp',['../naive__net_8hpp.html',1,'']]],
+  ['naive_5fnetwork_154',['naive_network',['../classmtpk_1_1NaiveNet.html#a09441eff0299ee826fe0a9fd878f27b4',1,'mtpk::NaiveNet']]],
+  ['naive_5fnetwork_2ecpp_155',['naive_network.cpp',['../naive__network_8cpp.html',1,'']]],
+  ['naivenet_156',['NaiveNet',['../classmtpk_1_1NaiveNet.html',1,'mtpk']]],
+  ['nearest_5fneighbor_2ehpp_157',['nearest_neighbor.hpp',['../nearest__neighbor_8hpp.html',1,'']]],
+  ['nearest_5fneighbors_2ehpp_158',['nearest_neighbors.hpp',['../nearest__neighbors_8hpp.html',1,'']]],
+  ['nearestneighbor_159',['NearestNeighbor',['../classmtpk_1_1NearestNeighbor.html',1,'mtpk']]],
+  ['neuron_160',['neuron',['../structmtpk_1_1ml_1_1neuron.html',1,'mtpk::ml']]],
+  ['neuron_5flayers_161',['neuron_layers',['../classmtpk_1_1NaiveNet.html#a6120d822d57b0c0d28994e4317e18915',1,'mtpk::NaiveNet']]],
+  ['neuron_5fptr_162',['neuron_ptr',['../structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf',1,'mtpk::ml::layer']]],
+  ['nt_2ehpp_163',['nt.hpp',['../nt_8hpp.html',1,'']]],
+  ['num_5felements_164',['num_elements',['../classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23',1,'mtpk::Matrix']]],
+  ['num_5flayers_165',['num_layers',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4',1,'mtpk::ml::PrimaryMLP']]],
+  ['num_5fneurons_166',['num_neurons',['../structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218',1,'mtpk::ml::layer']]],
+  ['num_5frows_167',['num_rows',['../classmtpk_1_1Regression.html#a2d4fa7e697a0f1fd541ae6acbcd512e8',1,'mtpk::Regression']]]
 ];
