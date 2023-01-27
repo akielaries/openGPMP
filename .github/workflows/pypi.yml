@@ -74,7 +74,8 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ versioning ]
-    if: needs.versioning.outputs.new_version == true && github.event_name == 'create' && github.event.action == 'tag' 
+    if: needs.versioning.outputs.new_version != needs.versioning.outputs.new_version 
+      #&& github.event_name == 'create' && github.event.action == 'tag' 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
