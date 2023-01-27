@@ -13,8 +13,9 @@ var searchData=
   ['primes_2ehpp_203',['primes.hpp',['../primes_8hpp.html',1,'']]],
   ['print_5fmtx_204',['print_mtx',['../classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6',1,'mtpk::Matrix']]],
   ['print_5fshape_205',['print_shape',['../classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56',1,'mtpk::Matrix']]],
-  ['prob_5fby_5fsumm_206',['prob_by_summ',['../namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5',1,'mtpk']]],
-  ['prop_5fbackwards_207',['prop_backwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7',1,'mtpk::ml::SecondaryMLP']]],
-  ['prop_5fforwards_208',['prop_forwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e',1,'mtpk::ml::SecondaryMLP']]],
-  ['prop_5fsignal_209',['prop_signal',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ae925fb9444753b64a109a668e77c8c0c',1,'mtpk::ml::PrimaryMLP']]]
+  ['printtensor_206',['printTensor',['../classmtpk_1_1Tensors.html#aa1c15ba1c41df60fd70e31e4407c8b79',1,'mtpk::Tensors']]],
+  ['prob_5fby_5fsumm_207',['prob_by_summ',['../namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5',1,'mtpk']]],
+  ['prop_5fbackwards_208',['prop_backwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7',1,'mtpk::ml::SecondaryMLP']]],
+  ['prop_5fforwards_209',['prop_forwards',['../classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e',1,'mtpk::ml::SecondaryMLP']]],
+  ['prop_5fsignal_210',['prop_signal',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ae925fb9444753b64a109a668e77c8c0c',1,'mtpk::ml::PrimaryMLP']]]
 ];

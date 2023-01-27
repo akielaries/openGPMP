@@ -68,7 +68,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classmtpk_1_1Tensors-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mtpk::Tensors Class Reference</div>  </div>
@@ -77,62 +77,90 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="tensors_8hpp_source.html">tensors.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a1870acfccda0ea474b5bbf7201b9197c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Tensors.html#a1870acfccda0ea474b5bbf7201b9197c">x</a></td></tr>
-<tr class="separator:a1870acfccda0ea474b5bbf7201b9197c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158d9da13ff55bc2904b3c91be1a5b85"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Tensors.html#a158d9da13ff55bc2904b3c91be1a5b85">y</a></td></tr>
-<tr class="separator:a158d9da13ff55bc2904b3c91be1a5b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a1d797466d08e65ac89311bd467c09ef6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Tensors.html#a1d797466d08e65ac89311bd467c09ef6">tensor_vec_mult</a> (std::vector&lt; std::vector&lt; std::vector&lt; double &gt;&gt;&gt; A, std::vector&lt; double &gt; b)</td></tr>
+<tr class="separator:a1d797466d08e65ac89311bd467c09ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c15ba1c41df60fd70e31e4407c8b79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Tensors.html#aa1c15ba1c41df60fd70e31e4407c8b79">printTensor</a> (std::vector&lt; std::vector&lt; std::vector&lt; double &gt;&gt;&gt; A)</td></tr>
+<tr class="separator:aa1c15ba1c41df60fd70e31e4407c8b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8e5bd812cc47ffa1a2c2a972e1fa45"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::vector&lt; double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45">vector_wise_tensor_product</a> (std::vector&lt; std::vector&lt; std::vector&lt; double &gt;&gt;&gt; A, std::vector&lt; std::vector&lt; double &gt;&gt; B)</td></tr>
+<tr class="separator:a6d8e5bd812cc47ffa1a2c2a972e1fa45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="tensors_8hpp_source.html#l00020">20</a> of file <a class="el" href="tensors_8hpp_source.html">tensors.hpp</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1870acfccda0ea474b5bbf7201b9197c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1870acfccda0ea474b5bbf7201b9197c">&#9670;&nbsp;</a></span>x</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1c15ba1c41df60fd70e31e4407c8b79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c15ba1c41df60fd70e31e4407c8b79">&#9670;&nbsp;</a></span>printTensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;int&gt; mtpk::Tensors::x</td>
+          <td class="memname">void mtpk::Tensors::printTensor </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::vector&lt; double &gt;&gt;&gt;&#160;</td>
+          <td class="paramname"><em>A</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensors_8hpp_source.html#l00021">21</a> of file <a class="el" href="tensors_8hpp_source.html">tensors.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a158d9da13ff55bc2904b3c91be1a5b85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a158d9da13ff55bc2904b3c91be1a5b85">&#9670;&nbsp;</a></span>y</h2>
+<a id="a1d797466d08e65ac89311bd467c09ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d797466d08e65ac89311bd467c09ef6">&#9670;&nbsp;</a></span>tensor_vec_mult()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;int&gt; mtpk::Tensors::y</td>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; mtpk::Tensors::tensor_vec_mult </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::vector&lt; double &gt;&gt;&gt;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tensors_8hpp_source.html#l00022">22</a> of file <a class="el" href="tensors_8hpp_source.html">tensors.hpp</a>.</p>
+</div>
+</div>
+<a id="a6d8e5bd812cc47ffa1a2c2a972e1fa45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d8e5bd812cc47ffa1a2c2a972e1fa45">&#9670;&nbsp;</a></span>vector_wise_tensor_product()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;std::vector&lt;double&gt; &gt; &gt; mtpk::Tensors::vector_wise_tensor_product </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::vector&lt; double &gt;&gt;&gt;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
+          <td class="paramname"><em>B</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
