@@ -82,6 +82,7 @@ jobs:
 
   check_versions:
     needs: [ bump_version, latest_version ]
+    runs-on: ubuntu-latest
     steps:
       - name: check versions
         run: | 
