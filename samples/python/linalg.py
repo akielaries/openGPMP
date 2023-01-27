@@ -62,5 +62,5 @@ mtx_neg.scalar_mult(3).print_mtx()
 print('** Multiply each element of mtx_pos, mtx_neg respectively\
  by itself **')
 
-mtx_pos.mult_elem(mtx_pos).print_mtx()
-mtx_neg.mult_elem(mtx_pos).print_mtx()
+mtx_pos.hadamard(mtx_pos).print_mtx()
+mtx_neg.hadamard(mtx_pos).print_mtx()

@@ -61,7 +61,7 @@ int main() {
 
     // multiply each element of matrix_pos by itself
     std::cout << "Multiply each element of the matrix by itself" << "\n";
-    (matrix_pos.mult_elem(matrix_pos)).print_mtx();
+    (matrix_pos.hadamard(matrix_pos)).print_mtx();
 
 
     // declare a matrix of zeros with 3 x 5 dimensions

@@ -46,12 +46,14 @@ jobs:
     
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
+  test_build:
+    #needs: 
+    uses: ./.github/workflows/test_build.yml
+
   build_plat:
     name: Build source distribution
-    needs: [ bump_version, latest_version ]
-    if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }}
-      #needs.latest_v.outputs.tag
-      #&& github.event_name == 'create' && github.event.action == 'tag' 
+    needs: [ test_build , bump_version , latest_version ]
+    if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} && 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -67,7 +69,6 @@ jobs:
         run: |
           pip install versioneer
           pipx run build --sdist
-          #python setup.py sdist 
 
       - uses: actions/upload-artifact@v3
         with:

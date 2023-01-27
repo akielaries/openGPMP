@@ -98,9 +98,9 @@ class Matrix {
         }
 
         /*
-         * Multiply by the element
+         * Multiply by the element; see Hadamard Product
          */
-        Matrix mult_elem(Matrix &target) {
+        Matrix hadamard(Matrix &target) {
             assert(dim == target.dim);
             Matrix res((*this));
 
@@ -119,7 +119,7 @@ class Matrix {
         Matrix sqr_err() {
             Matrix res((*this));
 
-            res = mult_elem(res);
+            res = hadamard(res);
             return res;
         }
 

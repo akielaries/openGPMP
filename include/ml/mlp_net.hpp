@@ -233,7 +233,7 @@ class SecondaryMLP {
                 auto prior_errs = wt.mult(err);
 
                 auto outputs_d = activations[i+1].apply_function(sigmoid_deriv);
-                auto gradients = err.mult_elem(outputs_d);
+                auto gradients = err.hadamard(outputs_d);
                 gradients = gradients.scalar_mult(lr);
                 auto trans_a = activations[i].T();
                 auto gradients_wt = gradients.mult(trans_a);

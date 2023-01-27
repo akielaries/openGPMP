@@ -23,7 +23,7 @@ FEATURES :
     METHODS :
         mult
         scalar_mult
-        mult_elem
+        hadamard (multiply element-wise)
         sqr_err
         add
         scalar_add
