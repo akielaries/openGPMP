@@ -83,7 +83,7 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ bump_v, latest_v ]
-    if: needs.bump_v.outputs.new_tag != ${{ steps.mtpk_version.outputs.tag }}
+    if: needs.bump_v.outputs.new_tag != ${{ needs.latest_v.mtpk_version.outputs.tag }}
       #needs.latest_v.outputs.tag
       #&& github.event_name == 'create' && github.event.action == 'tag' 
     runs-on: ubuntu-latest
