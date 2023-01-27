@@ -13,7 +13,10 @@
 
 **openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
 focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
-as well as a range of language API's for integration with pre-existing projects.
+as well as a range of language API's for integration with pre-existing projects. The highlight is a feature
+of pre-built machine learning methods as well as the capability to utilize different methods/functions to
+create your own. The Machine Learning module aims to be a blend of what something like Tensorflow or Scikit-learn
+would offer.
 openMTPK is originally inspired from undergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
 The project welcomes contributors and is in need of mathematics focused/interested programmers
 comfortable in C and C++. If interested see 
