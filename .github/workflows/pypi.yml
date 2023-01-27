@@ -86,7 +86,7 @@ jobs:
     steps:
       - name: check versions
         run: | 
-          echo needs.bump_version.outputs.new_tag &&
+          echo ${{ needs.bump_version.outputs.new_tag }}
           echo ${{ needs.latest_version.mtpk_version.outputs.tag }}
 
   build_plat:
