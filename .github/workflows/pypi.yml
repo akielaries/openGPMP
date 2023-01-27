@@ -19,7 +19,7 @@ jobs:
       id: mtpk_version
 
   bump_version:
-    needs: [ latest_v ]
+    needs: [ latest_version ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
