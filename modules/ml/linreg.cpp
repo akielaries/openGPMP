@@ -12,7 +12,7 @@
  * Constructor to provide the default values to all the terms in the
  * object of class regression
  */
-mtpk::Regression::Regression() {
+mtpk::LinearRegression::LinearRegression() {
     coeff        = 0;
     constant     = 0;
     sum_y        = 0;
@@ -24,7 +24,7 @@ mtpk::Regression::Regression() {
 
 // Function that calculate the coefficient/slope of the best fitting
 // line
-void mtpk::Regression::calculate_coeffecient() {
+void mtpk::LinearRegression::calculate_coeffecient() {
     long double N           = x.size();
     long double numerator   = (N * sum_xy - sum_x * sum_y);
     long double denominator = (N * sum_x_square - sum_x * sum_x);
@@ -35,7 +35,7 @@ void mtpk::Regression::calculate_coeffecient() {
  * Member function that will calculate the constant term of the best
  * fitting line
  */
-void mtpk::Regression::calculate_constant() {
+void mtpk::LinearRegression::calculate_constant() {
     long double N           = x.size();
     long double numerator   = (sum_y * sum_x_square - sum_x * sum_xy);
     long double denominator = (N * sum_x_square - sum_x * sum_x);
@@ -43,26 +43,26 @@ void mtpk::Regression::calculate_constant() {
 }
 
 // Function that return the number of entries (xi, yi) in the data set
-int64_t mtpk::Regression::data_size() {
+int64_t mtpk::LinearRegression::data_size() {
     return x.size();
 }
 
 // Function that return the coefficient/slope of the best fitting line
-long double mtpk::Regression::return_coeffecient() {
+long double mtpk::LinearRegression::return_coeffecient() {
     if (coeff == 0)
         calculate_coeffecient();
     return coeff;
 }
 
 // Function that return the constant term of the best fitting line
-long double mtpk::Regression::return_constant() {
+long double mtpk::LinearRegression::return_constant() {
     if (constant == 0)
         calculate_constant();
     return constant;
 }
 
 // Function that print the best fitting line
-void mtpk::Regression::best_fit() {
+void mtpk::LinearRegression::best_fit() {
     if (coeff == 0 && constant == 0) {
         calculate_coeffecient();
         calculate_constant();
@@ -72,7 +72,7 @@ void mtpk::Regression::best_fit() {
 }
 
 // Function to take input from the dataset
-void mtpk::Regression::get_input(int64_t n) {
+void mtpk::LinearRegression::get_input(int64_t n) {
     for (int64_t i = 0; i < n; i++) {
         /*
          * In a csv file all the values of xi and yi are separated by
@@ -93,7 +93,7 @@ void mtpk::Regression::get_input(int64_t n) {
 }
 
 // Function to show the data set
-void mtpk::Regression::show_data() {
+void mtpk::LinearRegression::show_data() {
     for (int64_t i = 0; i < 62; i++) {
         printf("_");
     }
@@ -111,12 +111,12 @@ void mtpk::Regression::show_data() {
 }
 
 // Function to predict the value corresponding to some input
-long double mtpk::Regression::predict(long double x) {
+long double mtpk::LinearRegression::predict(long double x) {
     return coeff * x + constant;
 }
 
 // Function that returns overall sum of square of errors
-long double mtpk::Regression::error_square() {
+long double mtpk::LinearRegression::error_square() {
     long double ans = 0;
     for (int64_t i = 0; uint64_t(i) < x.size(); i++) {
         ans += ((predict(x[i]) - y[i]) * (predict(x[i]) - y[i]));
@@ -127,7 +127,7 @@ long double mtpk::Regression::error_square() {
  * Functions that return the error i.e the difference between the
  * actual value and value predicted by our model
  */
-long double mtpk::Regression::error_in(long double num) {
+long double mtpk::LinearRegression::error_in(long double num) {
     for (int64_t i = 0; uint64_t(i) < x.size(); i++) {
         if (num == x[i]) {
             return (y[i] - predict(x[i]));
@@ -136,7 +136,7 @@ long double mtpk::Regression::error_in(long double num) {
     return 0;
 }
 
-int64_t mtpk::Regression::num_rows(const char *input) {
+int64_t mtpk::LinearRegression::num_rows(const char *input) {
     int64_t num = 0;
     std::string row;
 

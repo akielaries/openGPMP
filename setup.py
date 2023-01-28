@@ -9,27 +9,12 @@ from setuptools import setup, dist
 from setuptools.extension import Extension
 from setuptools.command.install import install
 from setuptools.command.build_ext import build_ext
-
 import os
 import subprocess
 import platform
-
 import urllib.request
 import json
-
 import versioneer
-
-# <-- - DEPRECATE THIS, USING VERSIONEER --->
-# get recent version, bump the version
-with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as url:
-    data = json.load(url)
-    latest_version = (data['info']['version'])
-    bump_version = latest_version
-    bump_version = bump_version.split('.')
-    bump_version[2] = str(int(bump_version[2]) + 1)
-    concat_version = '.'.join(bump_version)
-    new_version = concat_version
-
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -127,9 +112,6 @@ setuptools.setup(
         'Source Code': 'https://github.com/akielaries/openMTPK/',
     },
     package_dir={'': '.'},
-    #packages = setuptools.find_packages(where = 'Python'),
-    #package_data = {'openmtpk' : ['linalg/*', 'nt/*'] },
-    #packages = setuptools.find_packages(),
     packages=['openmtpk',
               'openmtpk.arithmetic',
               'openmtpk.calculus',
@@ -137,7 +119,6 @@ setuptools.setup(
               'openmtpk.ml',
               'openmtpk.nt',
               ],
-    #packages = setuptools.find_packages(),
     ext_modules=modules,
     include_package_data=True,
     classifiers=[
@@ -181,9 +162,3 @@ setuptools.setup(
         # 'test' : ['coverage'],
     },
 )
-
-#os.system('rm -rf build/')
-#os.system('cd Python && rm -rf openmtpk.egg-info && cd openmtpk && make clean')
-
-# if __name__ == '__main__':
-# build_pkg()

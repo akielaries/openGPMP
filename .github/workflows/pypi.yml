@@ -68,7 +68,9 @@ jobs:
       - name: Build sdist
         run: |
           pip install versioneer
+          pip install autopep8
           pipx run build --sdist
+          autopep8 --recursive --in-place --aggressive --aggressive .
 
       - uses: actions/upload-artifact@v3
         with:

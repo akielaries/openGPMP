@@ -17,7 +17,7 @@ FEATURES :
 """
 
 from openmtpk.ml.ml import (
-    Regression,
+    LinearRegression,
 )
 
 __all__: list[str]
