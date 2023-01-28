@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classmtpk_1_1Stats.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Stats.html">Stats</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// These functions are for univariate lin reg module- not for</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// users.</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classmtpk_1_1Stats.html#a246dd44a2a1459cfb12d5a40406c2125">   11</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1Stats.html#a246dd44a2a1459cfb12d5a40406c2125">b0Estimation</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;x,</div>
@@ -119,11 +119,12 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classmtpk_1_1Stats.html#ad2e616ed55781231e67c72a8d37834a3">   46</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1Stats.html#ad2e616ed55781231e67c72a8d37834a3">logMean</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> x, <span class="keyword">const</span> <span class="keywordtype">double</span> y);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// hypothesis test</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classmtpk_1_1Stats.html#a56c5fdbf9b1503e8f58561700912a8e7">   49</a></span>&#160;    std::tuple&lt;bool, double&gt; <a class="code" href="classmtpk_1_1Stats.html#a56c5fdbf9b1503e8f58561700912a8e7">chiSquareTest</a>(std::vector&lt;double&gt; observed, std::vector&lt;double&gt; expected);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <span class="comment">// namespace mtpk</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classmtpk_1_1Stats.html#a56c5fdbf9b1503e8f58561700912a8e7">   49</a></span>&#160;    std::tuple&lt;bool, double&gt; <a class="code" href="classmtpk_1_1Stats.html#a56c5fdbf9b1503e8f58561700912a8e7">chiSquareTest</a>(std::vector&lt;double&gt; observed,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                           std::vector&lt;double&gt; expected);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmtpk_1_1Stats_html"><div class="ttname"><a href="classmtpk_1_1Stats.html">mtpk::Stats</a></div><div class="ttdef"><b>Definition:</b> <a href="statistics_8hpp_source.html#l00007">statistics.hpp:7</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Stats_html_a07bac610d7625dcd3b9afd36f4596fc4"><div class="ttname"><a href="classmtpk_1_1Stats.html#a07bac610d7625dcd3b9afd36f4596fc4">mtpk::Stats::powerMean</a></div><div class="ttdeci">double powerMean(const std::vector&lt; double &gt; &amp;x, const double p)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Stats_html_a0ba94b6be048f2fd6926e642737b3e40"><div class="ttname"><a href="classmtpk_1_1Stats.html#a0ba94b6be048f2fd6926e642737b3e40">mtpk::Stats::median</a></div><div class="ttdeci">double median(std::vector&lt; double &gt; x)</div></div>

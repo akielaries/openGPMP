@@ -86,11 +86,11 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacemtpk.html#a085f33bc2f6ca9e783087360d000cece">   20</a></span>&#160;} <a class="code" href="namespacemtpk.html#a085f33bc2f6ca9e783087360d000cece">summary</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesClf.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1BayesClf.html">BayesClf</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesClf.html#a09191f8089a13847a75a12a9c405206f">   27</a></span>&#160;    std::vector&lt;class_summary&gt; <a class="code" href="classmtpk_1_1BayesClf.html#a09191f8089a13847a75a12a9c405206f">Summary</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesClf.html#aad3d61caf85963f8aa6a2a9998b73953">   28</a></span>&#160;    std::vector&lt;long double&gt; <a class="code" href="classmtpk_1_1BayesClf.html#aad3d61caf85963f8aa6a2a9998b73953">unique_label</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesClf.html#accbb7ba73ace9c92ffb8a5e1fe6def80">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesClf.html#accbb7ba73ace9c92ffb8a5e1fe6def80">fit</a>(std::vector&lt;std::vector&lt;long double&gt;&gt; dataset);</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4">   32</a></span>&#160;    int64_t <a class="code" href="classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4">predict</a>(<span class="keyword">const</span> std::vector&lt;long double&gt; &amp;test_data);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
@@ -101,14 +101,14 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                         <span class="keyword">const</span> class_summary &amp;<a class="code" href="structmtpk_1_1summary.html">summary</a>);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1BayesBernoulli.html">BayesBernoulli</a> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#a8fbbf24630ad0d2ef23ea2dd8c244e74">   50</a></span>&#160;    <a class="code" href="classmtpk_1_1BayesBernoulli.html#a8fbbf24630ad0d2ef23ea2dd8c244e74">BayesBernoulli</a>(std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1BayesBernoulli.html#a768d935e1be20198b0cc1b0879f8a02e">inputSet</a>,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                   std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1BayesBernoulli.html#a2035c8b0f362b2afaa5c517dfcd57ece">outputSet</a>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#afbc979aab1699b5b8b05691fd3508f38">   52</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1BayesBernoulli.html#afbc979aab1699b5b8b05691fd3508f38">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#a1c6c1043256585a67447cb9a5efd815c">   53</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1BayesBernoulli.html#a1c6c1043256585a67447cb9a5efd815c">modelTest</a>(std::vector&lt;double&gt; x);</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#af5f4d7cac02edd7b39749dd2c0c45990">   54</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1BayesBernoulli.html#af5f4d7cac02edd7b39749dd2c0c45990">score</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#a4995df4ab11dd11542d38a9fa4598ec9">   57</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesBernoulli.html#a4995df4ab11dd11542d38a9fa4598ec9">computeVocab</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#a60791bcdabb28aaa143eed9eb0524581">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesBernoulli.html#a60791bcdabb28aaa143eed9eb0524581">computeTheta</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesBernoulli.html#ad764ae643ef5cbb95df0176e9b724350">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesBernoulli.html#ad764ae643ef5cbb95df0176e9b724350">Evaluate</a>();</div>
@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesGauss.html">   81</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1BayesGauss.html">BayesGauss</a> {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesGauss.html#abb00fe87abda7aa89e401d5849e46c64">   83</a></span>&#160;    <a class="code" href="classmtpk_1_1BayesGauss.html#abb00fe87abda7aa89e401d5849e46c64">BayesGauss</a>(std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1BayesGauss.html#acdaedcaf391874ee6f3b3874fa1db4ea">inputSet</a>,</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;               std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1BayesGauss.html#a89cbfd46b6664d83571b51f642a14405">outputSet</a>, <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1BayesGauss.html#a383186c4aa390058da44c47952dbb434">class_num</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -137,7 +137,7 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesGauss.html#a1e711202cc99b6d2a80304ccd3bece9e">   88</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1BayesGauss.html#a1e711202cc99b6d2a80304ccd3bece9e">modelTest</a>(std::vector&lt;double&gt; x);</div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesGauss.html#adb01f32388d30d04d53a3c52264ae4c9">   89</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1BayesGauss.html#adb01f32388d30d04d53a3c52264ae4c9">score</a>();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesGauss.html#ae602511f0bdd2843c8aa82cbcaad0923">   92</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesGauss.html#ae602511f0bdd2843c8aa82cbcaad0923">Evaluate</a>();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesGauss.html#a383186c4aa390058da44c47952dbb434">   94</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1BayesGauss.html#a383186c4aa390058da44c47952dbb434">class_num</a>;</div>
@@ -153,7 +153,7 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesMutliNom.html">  112</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1BayesMutliNom.html">BayesMutliNom</a> {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesMutliNom.html#a53d51a2a4f993f08e20f6b3013f1a6b3">  114</a></span>&#160;    <a class="code" href="classmtpk_1_1BayesMutliNom.html#a53d51a2a4f993f08e20f6b3013f1a6b3">BayesMutliNom</a>(std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1BayesMutliNom.html#a2249e1ab8edb273626119c950bbffa13">inputSet</a>,</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                  std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1BayesMutliNom.html#a41adb660d334c053f8abe5b95544662d">outputSet</a>, <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1BayesMutliNom.html#a7b634b2cbbf7e379284fc3a31b4f914b">class_num</a>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
@@ -162,7 +162,7 @@ $(function() {
 <div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesMutliNom.html#adbd54c3958f8392565aaab8bad9d374d">  119</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1BayesMutliNom.html#adbd54c3958f8392565aaab8bad9d374d">modelTest</a>(std::vector&lt;double&gt; x);</div>
 <div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesMutliNom.html#a4974e44cd2be4821e8bd209cd387835f">  120</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1BayesMutliNom.html#a4974e44cd2be4821e8bd209cd387835f">score</a>();</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesMutliNom.html#a0c6d1b8f005c7da8e72fbdaf60b66720">  123</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesMutliNom.html#a0c6d1b8f005c7da8e72fbdaf60b66720">computeTheta</a>();</div>
 <div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classmtpk_1_1BayesMutliNom.html#a9ae9c2478194b5da4770d32b65955b01">  124</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1BayesMutliNom.html#a9ae9c2478194b5da4770d32b65955b01">Evaluate</a>();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>

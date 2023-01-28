@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *   - success(boolean)</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classCompany.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCompany.html">Company</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classCompany.html#a14cf06ae9062513049fd61ba32e7ad50">   20</a></span>&#160;    <a class="code" href="classCompany.html#a14cf06ae9062513049fd61ba32e7ad50">Company</a>(int64_t turnover, <span class="keywordtype">string</span> characteristics, <span class="keywordtype">bool</span> success)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        : turnover(turnover), success(success), distance(-1) {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        this-&gt;characteristics = transformCharacteristics(characteristics);</div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCompany.html#a41ba0338049f56dbd4a4b645834267d0">   28</a></span>&#160;    int64_t <a class="code" href="classCompany.html#a41ba0338049f56dbd4a4b645834267d0">characteristics</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classCompany.html#a9e3e963105856de6488014086bac5198">   29</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classCompany.html#a9e3e963105856de6488014086bac5198">success</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * Function that transforms characteristics (Very</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * Strong,Strong,Average,Weak) as strings to number. It is geting</span></div>
@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * A class that represent the reader of files with csv extensions.</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classCSVReader.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCSVReader.html">CSVReader</a> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741">   54</a></span>&#160;    <a class="code" href="classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741">CSVReader</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;fileName, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;delimeter = <span class="stringliteral">&quot;,&quot;</span>)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        : fileName(fileName), delimeter(delimeter) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> data;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">   76</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">fileName</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">   77</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">delimeter</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>

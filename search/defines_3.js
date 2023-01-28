@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['endocer_5fnet_5fhpp_862',['ENDOCER_NET_HPP',['../encoder_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'ENDOCER_NET_HPP():&#160;encoder.hpp'],['../encoder__var_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'ENDOCER_NET_HPP():&#160;encoder_var.hpp']]]
+  ['matrix_862',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp'],['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp']]],
+  ['maxcount_863',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]]
 ];

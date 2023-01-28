@@ -38,7 +38,7 @@ var searchData=
   ['stats_357',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
   ['stolarskymean_358',['stolarskyMean',['../classmtpk_1_1Stats.html#acf2438fb3b311aab3570eaa95b7bb14b',1,'mtpk::Stats']]],
   ['store_5fhash_359',['store_hash',['../classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0',1,'mtpk::RC4']]],
-  ['sub_360',['sub',['../classmtpk_1_1Arith.html#a3e973dd60b9505ad4055cb3a67fa6f1c',1,'mtpk::Arith::sub()'],['../classmtpk_1_1Matrix.html#ac1c5e89b18de38e09deb85e19deb074f',1,'mtpk::Matrix::sub()'],['../classmtpk_1_1Arith.html#a1672e18f29fe03712fe9cd0242ae77e6',1,'mtpk::Arith::sub()']]],
+  ['sub_360',['sub',['../classmtpk_1_1Matrix.html#ac1c5e89b18de38e09deb85e19deb074f',1,'mtpk::Matrix']]],
   ['success_361',['success',['../classCompany.html#a9e3e963105856de6488014086bac5198',1,'Company']]],
   ['sum_362',['sum',['../classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186',1,'mtpk::Matrix::sum()'],['../classmtpk_1_1Matrix.html#a91afb24f516534ae4c0510a8e6855a47',1,'mtpk::Matrix::sum(size_t dimension)']]],
   ['sum_5fx_363',['sum_x',['../classmtpk_1_1Regression.html#a3b0c427ae26f3d53b588315d543253d7',1,'mtpk::Regression']]],

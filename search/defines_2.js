@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['classification_860',['CLASSIFICATION',['../ml_8hpp.html#a669750181416ae68a4b4684e5006f733',1,'ml.hpp']]],
-  ['cryptography_861',['CRYPTOGRAPHY',['../nt_8hpp.html#a7e35c8ec7ddf6c921ac513fdea803509',1,'nt.hpp']]]
+  ['endocer_5fnet_5fhpp_861',['ENDOCER_NET_HPP',['../encoder_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'ENDOCER_NET_HPP():&#160;encoder.hpp'],['../encoder__var_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'ENDOCER_NET_HPP():&#160;encoder_var.hpp']]]
 ];

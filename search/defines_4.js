@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matrix_863',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp'],['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp']]],
-  ['maxcount_864',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]]
+  ['neural_5fnetworks_864',['NEURAL_NETWORKS',['../ml_8hpp.html#a07607da4adfe00593b227c7e8885f17e',1,'ml.hpp']]]
 ];
