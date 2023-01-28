@@ -3,7 +3,7 @@ var searchData=
   ['pi_271',['pi',['../torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
   ['pollard_5frho_272',['pollard_rho',['../classmtpk_1_1Primality.html#a6da2179ebf40c84b2f30429a0e1fa45c',1,'mtpk::Primality']]],
   ['powermean_273',['powerMean',['../classmtpk_1_1Stats.html#a07bac610d7625dcd3b9afd36f4596fc4',1,'mtpk::Stats']]],
-  ['predict_274',['predict',['../classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4',1,'mtpk::BayesClf::predict()'],['../classmtpk_1_1Regression.html#a23c69bb92a889bf4f7d8409cc3f33715',1,'mtpk::Regression::predict()']]],
+  ['predict_274',['predict',['../classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4',1,'mtpk::BayesClf::predict()'],['../classmtpk_1_1LinearRegression.html#aa0189753efc6f1fb1128b069bb95f125',1,'mtpk::LinearRegression::predict()']]],
   ['prga_275',['PRGA',['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
   ['prim_276',['prim',['../primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8',1,'primes.cpp']]],
   ['primality_277',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],

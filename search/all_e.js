@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['n_235',['n',['../classmtpk_1_1SVC.html#a2c6751e02e3a2b6a2a1837753e4031ec',1,'mtpk::SVC']]],
   ['n_236',['N',['../classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c',1,'mtpk::KF_CV']]],
-  ['n_237',['n',['../classmtpk_1_1AutoEncoder.html#a896d6f20f88a31f75faf0a71facba5c2',1,'mtpk::AutoEncoder::n()'],['../classmtpk_1_1Logreg.html#a614fb6ee0f935117f0260f3b45b2b78f',1,'mtpk::Logreg::n()']]],
+  ['n_237',['n',['../classmtpk_1_1AutoEncoder.html#a896d6f20f88a31f75faf0a71facba5c2',1,'mtpk::AutoEncoder::n()'],['../classmtpk_1_1Logreg.html#a614fb6ee0f935117f0260f3b45b2b78f',1,'mtpk::Logreg::n()'],['../classmtpk_1_1SVC.html#a2c6751e02e3a2b6a2a1837753e4031ec',1,'mtpk::SVC::n()']]],
   ['n_5fhidden_238',['n_hidden',['../classmtpk_1_1AutoEncoder.html#accd4c17c7fea9ca2a2ebe5f7703d488b',1,'mtpk::AutoEncoder']]],
   ['naive_5fnet_2ehpp_239',['naive_net.hpp',['../naive__net_8hpp.html',1,'']]],
   ['naive_5fnetwork_240',['naive_network',['../classmtpk_1_1NaiveNet.html#a09441eff0299ee826fe0a9fd878f27b4',1,'mtpk::NaiveNet']]],
@@ -22,7 +21,7 @@ var searchData=
   ['num_5felements_254',['num_elements',['../classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23',1,'mtpk::Matrix']]],
   ['num_5flayers_255',['num_layers',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4',1,'mtpk::ml::PrimaryMLP']]],
   ['num_5fneurons_256',['num_neurons',['../structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218',1,'mtpk::ml::layer']]],
-  ['num_5frows_257',['num_rows',['../classmtpk_1_1Regression.html#a2d4fa7e697a0f1fd541ae6acbcd512e8',1,'mtpk::Regression']]],
+  ['num_5frows_257',['num_rows',['../classmtpk_1_1LinearRegression.html#a38eb6032898768a36e7a01cf25f15c78',1,'mtpk::LinearRegression']]],
   ['numdiff_258',['numDiff',['../classmtpk_1_1NumericalAnalysis.html#a296a3b00dfbeef25ae4ad061c81cdd38',1,'mtpk::NumericalAnalysis::numDiff(double(*function)(double), double x)'],['../classmtpk_1_1NumericalAnalysis.html#aab5155d3201721f7fbfd245df9fad74d',1,'mtpk::NumericalAnalysis::numDiff(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis)']]],
   ['numdiff_5f2_259',['numDiff_2',['../classmtpk_1_1NumericalAnalysis.html#a529adeabc932429109d2d3cee9fb1e63',1,'mtpk::NumericalAnalysis::numDiff_2(double(*function)(double), double x)'],['../classmtpk_1_1NumericalAnalysis.html#a0520b579ee383ee4e9b1b6f3cdcd2909',1,'mtpk::NumericalAnalysis::numDiff_2(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis1, int axis2)']]],
   ['numdiff_5f3_260',['numDiff_3',['../classmtpk_1_1NumericalAnalysis.html#ab465cbd2b7144d7965eba7069dd96cdb',1,'mtpk::NumericalAnalysis::numDiff_3(double(*function)(double), double x)'],['../classmtpk_1_1NumericalAnalysis.html#aef1ba2469ec38a0a97cc9d49721f301b',1,'mtpk::NumericalAnalysis::numDiff_3(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis1, int axis2, int axis3)']]],

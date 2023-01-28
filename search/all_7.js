@@ -4,7 +4,7 @@ var searchData=
   ['gelu_138',['GELU',['../classmtpk_1_1Activate.html#a7ee0968bc12876169587e89c9a4c753f',1,'mtpk::Activate::GELU(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a8adc160fc49072d2b45f89f5aaf227b4',1,'mtpk::Activate::GELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a77777246d7e8fc04953ee00e2dd1122a',1,'mtpk::Activate::GELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
   ['gen_5fsumm_139',['gen_summ',['../namespacemtpk.html#a83e6e91b8dd3079e0925ce379fc9aaa1',1,'mtpk']]],
   ['geometricmean_140',['geometricMean',['../classmtpk_1_1Stats.html#a248e7d89ed388561dd0c2608fe18ca7b',1,'mtpk::Stats']]],
-  ['get_5finput_141',['get_input',['../classmtpk_1_1Regression.html#a39c17daae8d8ecf9b12e9fab735895f9',1,'mtpk::Regression']]],
+  ['get_5finput_141',['get_input',['../classmtpk_1_1LinearRegression.html#a6c09efb426a69e10c51130b84c966c4d',1,'mtpk::LinearRegression']]],
   ['get_5fsignal_5fout_142',['get_signal_out',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a7a4204a82c88265466525d8fe5c01d66',1,'mtpk::ml::PrimaryMLP']]],
   ['get_5ftest_5ffold_143',['get_test_fold',['../classmtpk_1_1CV.html#a0e344ff7b3eb8f28e397e090a2ea4513',1,'mtpk::CV::get_test_fold()'],['../classmtpk_1_1KF__CV.html#aeeda3a84c961197d4c6cea5b6417859c',1,'mtpk::KF_CV::get_test_fold()']]],
   ['get_5ftrain_5ffold_144',['get_train_fold',['../classmtpk_1_1CV.html#a282030ff159e0b62bedf1b4d882a84db',1,'mtpk::CV::get_train_fold()'],['../classmtpk_1_1KF__CV.html#a97602abda33d9dcf6db07ff30817af55',1,'mtpk::KF_CV::get_train_fold()']]],

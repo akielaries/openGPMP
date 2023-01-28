@@ -13,7 +13,7 @@ var searchData=
   ['bayesgauss_43',['BayesGauss',['../classmtpk_1_1BayesGauss.html#abb00fe87abda7aa89e401d5849e46c64',1,'mtpk::BayesGauss::BayesGauss()'],['../classmtpk_1_1BayesGauss.html',1,'mtpk::BayesGauss']]],
   ['bayesmutlinom_44',['BayesMutliNom',['../classmtpk_1_1BayesMutliNom.html#a53d51a2a4f993f08e20f6b3013f1a6b3',1,'mtpk::BayesMutliNom::BayesMutliNom()'],['../classmtpk_1_1BayesMutliNom.html',1,'mtpk::BayesMutliNom']]],
   ['bayesnet_45',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]],
-  ['best_5ffit_46',['best_fit',['../classmtpk_1_1Regression.html#ad4906faaedcc78a6bdfddef423459a86',1,'mtpk::Regression']]],
+  ['best_5ffit_46',['best_fit',['../classmtpk_1_1LinearRegression.html#ae201c10b80a5e3c7095d84f0a72b644a',1,'mtpk::LinearRegression']]],
   ['bias_47',['bias',['../classmtpk_1_1Logreg.html#ab70b98a2f1db88ef4eae255bf803d705',1,'mtpk::Logreg::bias()'],['../classmtpk_1_1SVC.html#a8685bed2214a3838fb50fb4e6cb4e391',1,'mtpk::SVC::bias()']]],
   ['bias1_48',['bias1',['../classmtpk_1_1AutoEncoder.html#ae1e507c0deee9ac805cd93c6abf7c34f',1,'mtpk::AutoEncoder']]],
   ['bias2_49',['bias2',['../classmtpk_1_1AutoEncoder.html#a30749c2cf05a10684f8f2b1e58a6e29a',1,'mtpk::AutoEncoder']]],

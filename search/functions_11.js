@@ -7,13 +7,12 @@ var searchData=
   ['rand_5freal_692',['rand_real',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a18eb4946937035f12809fcc9b672a727',1,'mtpk::ml::PrimaryMLP']]],
   ['randn_693',['randn',['../structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be',1,'mtpk::mtx']]],
   ['range_694',['range',['../classmtpk_1_1Stats.html#ade72573aa2ffac09ecfd175ef9c47456',1,'mtpk::Stats']]],
-  ['regression_695',['Regression',['../classmtpk_1_1Regression.html#a5b62e71165bfe376142faa9db989637d',1,'mtpk::Regression']]],
-  ['relu_696',['RELU',['../classmtpk_1_1Activate.html#ab625bfde405c688f31ca714a68f41783',1,'mtpk::Activate::RELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a82f79e89bd21f7d3af00d887025b3111',1,'mtpk::Activate::RELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#ace33a7d798692406a707719225a4ecc7',1,'mtpk::Activate::RELU(double z, bool deriv=0)']]],
-  ['reshape_697',['reshape',['../torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'torus_animated.cpp']]],
-  ['return_5fcoeffecient_698',['return_coeffecient',['../classmtpk_1_1Regression.html#a5e3e5f2e7ae67263e085ec4ff47d91e1',1,'mtpk::Regression']]],
-  ['return_5fconstant_699',['return_constant',['../classmtpk_1_1Regression.html#a68a861fa71210c708e716738be28c1b5',1,'mtpk::Regression']]],
-  ['rms_700',['RMS',['../classmtpk_1_1Stats.html#a234bb28850d9e8f75b137b0c360d1e72',1,'mtpk::Stats']]],
-  ['rotate_5fleft_701',['rotate_left',['../classRC5.html#ae1fe017f0adfcc82c0661f452067d89f',1,'RC5::rotate_left()'],['../rc5_8cpp.html#ae44a7eb005369d52e6666b6cfc5b0e19',1,'rotate_left():&#160;rc5.cpp']]],
-  ['rotate_5fright_702',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
-  ['run_703',['run',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a18a8db269edeca400bb6029f6ca236f2',1,'mtpk::ml::PrimaryMLP']]]
+  ['relu_695',['RELU',['../classmtpk_1_1Activate.html#ab625bfde405c688f31ca714a68f41783',1,'mtpk::Activate::RELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a82f79e89bd21f7d3af00d887025b3111',1,'mtpk::Activate::RELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#ace33a7d798692406a707719225a4ecc7',1,'mtpk::Activate::RELU(double z, bool deriv=0)']]],
+  ['reshape_696',['reshape',['../torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'torus_animated.cpp']]],
+  ['return_5fcoeffecient_697',['return_coeffecient',['../classmtpk_1_1LinearRegression.html#a5e763c75c8516f7b45955bd1ba62042d',1,'mtpk::LinearRegression']]],
+  ['return_5fconstant_698',['return_constant',['../classmtpk_1_1LinearRegression.html#a6a1f0afd96a5db5155dec5683e65010e',1,'mtpk::LinearRegression']]],
+  ['rms_699',['RMS',['../classmtpk_1_1Stats.html#a234bb28850d9e8f75b137b0c360d1e72',1,'mtpk::Stats']]],
+  ['rotate_5fleft_700',['rotate_left',['../classRC5.html#ae1fe017f0adfcc82c0661f452067d89f',1,'RC5::rotate_left()'],['../rc5_8cpp.html#ae44a7eb005369d52e6666b6cfc5b0e19',1,'rotate_left():&#160;rc5.cpp']]],
+  ['rotate_5fright_701',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
+  ['run_702',['run',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a18a8db269edeca400bb6029f6ca236f2',1,'mtpk::ml::PrimaryMLP']]]
 ];
