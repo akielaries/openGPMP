@@ -19,6 +19,7 @@ jobs:
         - name: install dependencies
           run: |
             pip install versioneer 
+            pip install wheel
 
         - name: Build Wheel
           run: python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
