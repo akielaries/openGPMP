@@ -76,7 +76,8 @@ $(function() {
 <div class="title">bayes_clf.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;map&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="bayes__clf_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -88,6 +89,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesClf.html">mtpk::BayesClf</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bayes Classifier Class based on assumptions of independence.  <a href="classmtpk_1_1BayesClf.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesBernoulli.html">mtpk::BayesBernoulli</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesGauss.html">mtpk::BayesGauss</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1BayesMutliNom.html">mtpk::BayesMutliNom</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -104,13 +111,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aef56db2af2a3a48e6ac109f9d0d9a2f8"><td class="memItemLeft" align="right" valign="top">summary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk.html#aef56db2af2a3a48e6ac109f9d0d9a2f8">mtpk::compute_class_summ</a> (std::vector&lt; std::vector&lt; long double &gt;&gt; dataset, long double class_label)</td></tr>
-<tr class="separator:aef56db2af2a3a48e6ac109f9d0d9a2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e6e91b8dd3079e0925ce379fc9aaa1"><td class="memItemLeft" align="right" valign="top">summary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk.html#a83e6e91b8dd3079e0925ce379fc9aaa1">mtpk::gen_summ</a> (std::vector&lt; std::vector&lt; long double &gt;&gt; dataset, long double class_label)</td></tr>
+<tr class="separator:a83e6e91b8dd3079e0925ce379fc9aaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9bc4c01d3aec9c9a6d920766b8e3e5"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk.html#a9f9bc4c01d3aec9c9a6d920766b8e3e5">mtpk::prob_by_summ</a> (const std::vector&lt; long double &gt; &amp;test_data, const class_summary &amp;summary)</td></tr>
 <tr class="separator:a9f9bc4c01d3aec9c9a6d920766b8e3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definitions for the Naive Bayes Classifier </p>
+<div class="textblock"><p>Definitions for a family of Naive Bayes Classifiers </p>
 
 <p class="definition">Definition in file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 </div></div><!-- contents -->

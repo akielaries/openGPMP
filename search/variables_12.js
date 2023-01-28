@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_612',['x',['../classmtpk_1_1Vectors.html#a457e8a55b3bc8fb04918973548153ab1',1,'mtpk::Vectors::x()'],['../classmtpk_1_1Regression.html#a2bf04911a754e4416108fd449c60c1d5',1,'mtpk::Regression::x()']]]
+  ['vocab_838',['vocab',['../classmtpk_1_1BayesBernoulli.html#ae0b498ca860d34d77e16dfea497fc105',1,'mtpk::BayesBernoulli::vocab()'],['../classmtpk_1_1BayesMutliNom.html#a384e9bf1f4d2fcaedf3c62c52e665f11',1,'mtpk::BayesMutliNom::vocab()']]]
 ];

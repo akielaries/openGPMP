@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['primality_333',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
-  ['primarymlp_334',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
+  ['outlierfinder_458',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
 ];

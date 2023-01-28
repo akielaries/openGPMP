@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['variance_295',['variance',['../classmtpk_1_1Stats.html#ac82c4261969db13d29995a14fc290ff7',1,'mtpk::Stats']]],
-  ['vector_5fwise_5ftensor_5fproduct_296',['vector_wise_tensor_product',['../classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45',1,'mtpk::Tensors']]],
-  ['vectors_297',['Vectors',['../classmtpk_1_1Vectors.html',1,'mtpk']]],
-  ['vectors_2ehpp_298',['vectors.hpp',['../vectors_8hpp.html',1,'']]]
+  ['ui_398',['UI',['../classmtpk_1_1SVC.html#a805589fab8c7b6066f75e9824c0d114c',1,'mtpk::SVC']]],
+  ['unique_5flabel_399',['unique_label',['../classmtpk_1_1BayesClf.html#aad3d61caf85963f8aa6a2a9998b73953',1,'mtpk::BayesClf']]],
+  ['unitstep_400',['unitStep',['../classmtpk_1_1Activate.html#a35efee4c3bebd934d817e828c12d1f7e',1,'mtpk::Activate::unitStep(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a7b714f645bb0496c141826d6bd276d09',1,'mtpk::Activate::unitStep(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a86b3780aa0e37a8b4ab9cbb859648d08',1,'mtpk::Activate::unitStep(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
+  ['update_401',['update',['../classmtpk_1_1KohonenNet.html#ad8daac79840005897acd45790969813b',1,'mtpk::KohonenNet']]],
+  ['update_5fweights_402',['update_weights',['../classmtpk_1_1NaiveNet.html#af8ff3d701589673dc55e26e733a07397',1,'mtpk::NaiveNet']]],
+  ['utils_403',['Utils',['../classmtpk_1_1ml_1_1Utils.html',1,'mtpk::ml']]],
+  ['utils_404',['UTILS',['../ml_8hpp.html#a5b511bfc979da8860c56686aecfce965',1,'ml.hpp']]],
+  ['utils_2ehpp_405',['utils.hpp',['../utils_8hpp.html',1,'']]]
 ];

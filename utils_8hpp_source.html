@@ -75,13 +75,35 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef UTILS_HPP</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define UTILS_HPP</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// exponentiate</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// square root</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// cube root</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// exponentiate</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// square root</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// cube root</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1OutlierFinder.html">OutlierFinder</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Cnstr</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">   25</a></span>&#160;    <a class="code" href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">OutlierFinder</a>(<span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">threshold</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">   28</a></span>&#160;        <a class="code" href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; inputSet);</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">   29</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">modelTest</a>(std::vector&lt;double&gt; inputSet);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Variables required</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">   32</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">threshold</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html">mtpk::OutlierFinder</a></div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00022">utils.hpp:22</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_a18c2087072af1615d3a9ecfbbdecd587"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">mtpk::OutlierFinder::OutlierFinder</a></div><div class="ttdeci">OutlierFinder(int threshold)</div></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_a597a7f36abc0c5e2d28b3ffc900382fb"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">mtpk::OutlierFinder::modelSetTest</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; modelSetTest(std::vector&lt; std::vector&lt; double &gt;&gt; inputSet)</div></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_abd2ae71c2aaa99870b03dbb5001688b4"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">mtpk::OutlierFinder::threshold</a></div><div class="ttdeci">int threshold</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00032">utils.hpp:32</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_af7d8185e5b4754a3acba91a7b2b439c0"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">mtpk::OutlierFinder::modelTest</a></div><div class="ttdeci">std::vector&lt; double &gt; modelTest(std::vector&lt; double &gt; inputSet)</div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

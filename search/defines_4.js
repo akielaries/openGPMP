@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pi_627',['pi',['../torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
-  ['primes_628',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]]
+  ['matrix_863',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp'],['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp']]],
+  ['maxcount_864',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]]
 ];

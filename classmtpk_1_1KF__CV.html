@@ -114,7 +114,7 @@ Additional Inherited Members</h2></td></tr>
 class mtpk::KF_CV&lt; T &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00026">26</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00024">24</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7ccb222f6e256b3d2f5031a828fb45e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ccb222f6e256b3d2f5031a828fb45e2">&#9670;&nbsp;</a></span>KF_CV()</h2>
@@ -159,18 +159,17 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00047">47</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                          {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a> = <a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    shuffle(this-&gt;<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.begin(),</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            this-&gt;instance_list.end(),</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            default_random_engine(seed));</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a> = <a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.size();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a> = <a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1CV_html_a8b9629639da0fe67718c8d5cbfd435a6"><div class="ttname"><a href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">mtpk::CV::K</a></div><div class="ttdeci">int64_t K</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00018">k-foldCV.hpp:18</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1KF__CV_html_a7c5215ae3cde606115e497efbe438bf6"><div class="ttname"><a href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">mtpk::KF_CV::instance_list</a></div><div class="ttdeci">vector&lt; T &gt; instance_list</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00029">k-foldCV.hpp:29</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1KF__CV_html_aa80836972ab4a39ca8eb112d790bb28c"><div class="ttname"><a href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">mtpk::KF_CV::N</a></div><div class="ttdeci">int64_t N</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00028">k-foldCV.hpp:28</a></div></div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00046">46</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a> = <a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    shuffle(this-&gt;<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.begin(), this-&gt;instance_list.end(),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            default_random_engine(seed));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>       = <a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.size();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a> = <a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="aclassmtpk_1_1CV_html_a8b9629639da0fe67718c8d5cbfd435a6"><div class="ttname"><a href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">mtpk::CV::K</a></div><div class="ttdeci">int64_t K</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00017">k-foldCV.hpp:17</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1KF__CV_html_a7c5215ae3cde606115e497efbe438bf6"><div class="ttname"><a href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">mtpk::KF_CV::instance_list</a></div><div class="ttdeci">vector&lt; T &gt; instance_list</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00027">k-foldCV.hpp:27</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1KF__CV_html_aa80836972ab4a39ca8eb112d790bb28c"><div class="ttname"><a href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">mtpk::KF_CV::N</a></div><div class="ttdeci">int64_t N</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00026">k-foldCV.hpp:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,14 +210,14 @@ template&lt;class T &gt; </div>
 
 <p>Implements <a class="el" href="classmtpk_1_1CV.html#a0e344ff7b3eb8f28e397e090a2ea4513">mtpk::CV&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00082">82</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                           {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    vector&lt;T&gt; test_fold;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i &lt; ((k + 1) * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i++) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        test_fold.push_back(<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.at(i));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00080">80</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                              {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    vector&lt;T&gt; test_fold;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i &lt; ((k + 1) * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i++) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        test_fold.push_back(<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.at(i));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,17 +257,17 @@ template&lt;class T &gt; </div>
 
 <p>Implements <a class="el" href="classmtpk_1_1CV.html#a282030ff159e0b62bedf1b4d882a84db">mtpk::CV&lt; T &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00064">64</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                            {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    vector&lt;T&gt; train_fold;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i++) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        train_fold.push_back(<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.at(i));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i &lt; <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>; i++) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        train_fold.push_back(<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.at(i));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00062">62</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                               {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    vector&lt;T&gt; train_fold;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i++) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        train_fold.push_back(<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.at(i));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>) / this-&gt;<a class="code" href="classmtpk_1_1CV.html#a8b9629639da0fe67718c8d5cbfd435a6">K</a>; i &lt; <a class="code" href="classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c">N</a>; i++) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        train_fold.push_back(<a class="code" href="classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6">instance_list</a>.at(i));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -295,7 +294,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00029">29</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00027">27</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +320,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00028">28</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8hpp_source.html#l00026">26</a> of file <a class="el" href="k-foldCV_8hpp_source.html">k-foldCV.hpp</a>.</p>
 
 </div>
 </div>

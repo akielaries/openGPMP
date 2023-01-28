@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// height is smaller, go from -50 .. 50 in height</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">//glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        glOrtho(-10.0 * aspect, 10.0 * aspect, -10.0, 10.0, -1.0, 1.0);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
@@ -157,8 +157,8 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * mouse events, left click generates new animations, right clock removes</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * idle-time callback</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * mouse events, left click generates new animations, right clock</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * removes idle-time callback</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="torus__animated_8cpp.html#ac76a5d78172a826cd6ee9512b89a86c0">   90</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="torus__animated_8cpp.html#ac76a5d78172a826cd6ee9512b89a86c0">mouse</a>(<span class="keywordtype">int</span> button, <span class="keywordtype">int</span> state, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (button == GLUT_LEFT_BUTTON &amp;&amp; state == GLUT_DOWN) {</div>
@@ -192,8 +192,8 @@ $(function() {
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    glutReshapeFunc(<a class="code" href="torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Tell GLUT that whenever the main window needs to be repainted that it</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// should call the function display().</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Tell GLUT that whenever the main window needs to be repainted</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// that it should call the function display().</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    glutDisplayFunc(<a class="code" href="torus__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    glutTimerFunc(100, <a class="code" href="torus__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, 0);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    glutMouseFunc(<a class="code" href="torus__animated_8cpp.html#ac76a5d78172a826cd6ee9512b89a86c0">mouse</a>);</div>
