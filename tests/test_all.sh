@@ -4,9 +4,9 @@
 # file for the whole test suite. 
 g++ --coverage arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
     calc/t_calc.cpp ../modules/calculus/deriv.cpp \
-    number_theory/t_cipher.cpp ../modules/number_theory/cipher.cpp \
-    number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
-    number_theory/t_primes.cpp ../modules/number_theory/primes.cpp \
+    nt/t_cipher.cpp ../modules/nt/cipher.cpp \
+    nt/t_rc4.cpp ../modules/nt/rc4.cpp \
+    nt/t_primes.cpp ../modules/nt/primes.cpp \
     -lgtest -lgtest_main -o openMTPK_tests -fprofile-arcs -ftest-coverage -fPIC
 
 # run compiled binary

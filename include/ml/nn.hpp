@@ -13,7 +13,7 @@ using namespace std;
 namespace mtpk {
 
 class NearestNeighbor {
-  public:
+    public:
     bool comparison(Company &lhs, Company &rhs);
 
     long double euclideanDistance(Company &lhs, Company &test);

@@ -5,7 +5,8 @@
 
 using namespace std;
 
-template <typename LHS, typename RHS> auto vsum(LHS &lhs, RHS const &rhs) {
+template <typename LHS, typename RHS>
+auto vsum(LHS &lhs, RHS const &rhs) {
     assert(lhs.size() == rhs.size());
     auto lhs_iter = lhs.begin();
     auto rhs_iter = rhs.cbegin();
@@ -17,7 +18,8 @@ template <typename LHS, typename RHS> auto vsum(LHS &lhs, RHS const &rhs) {
     return lhs_iter;
 }
 
-template <std::size_t DIM, typename T> void project(std::vector<T> &vec) {
+template <std::size_t DIM, typename T>
+void project(std::vector<T> &vec) {
     vec.resize(DIM, T(0));
 }
 

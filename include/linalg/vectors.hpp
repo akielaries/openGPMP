@@ -21,7 +21,7 @@ class Vectors {
     std::vector<int64_t> x;
     std::vector<int64_t> y;
 
-  public:
+    public:
     /*
      * vectors of the same dimension size are just scalars as they
      * only contain magnitude. vectors contain both magnitude +

@@ -12,7 +12,7 @@
 namespace mtpk {
 
 class AutoEncoder {
-  public:
+    public:
     AutoEncoder(std::vector<std::vector<double>> inputSet, int n_hidden);
 
     std::vector<std::vector<double>>
@@ -31,7 +31,7 @@ class AutoEncoder {
 
     void save(std::string fileName);
 
-  private:
+    private:
     double Cost(std::vector<std::vector<double>> y_hat,
                 std::vector<std::vector<double>> y);
 

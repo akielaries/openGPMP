@@ -20,7 +20,7 @@ namespace mtpk {
  */
 
 class OutlierFinder {
-  public:
+    public:
     // Cnstr
     OutlierFinder(int threshold);
 

@@ -12,7 +12,7 @@
 namespace mtpk {
 
 class Logreg {
-  public:
+    public:
     Logreg(std::vector<std::vector<double>> inputSet,
            std::vector<double> outputSet, std::string reg = "None",
            double lambda = 0.5, double alpha = 0.5);
@@ -32,7 +32,7 @@ class Logreg {
     double score();
     void save(std::string fileName);
 
-  private:
+    private:
     double Cost(std::vector<double> y_hat, std::vector<double> y);
 
     std::vector<double> Evaluate(std::vector<std::vector<double>> X);

@@ -1,7 +1,8 @@
 /*
  * stubbed out implementation file for arithmetic operations
  */
-#include "../../include/arithmetic/arith_ops.hpp"
+#include "../../include/arithmetic.hpp"
+#include <cstdint>
 
 int64_t mtpk::Basics::greatest_power(int64_t n, int64_t p) {
     int64_t result = 0;

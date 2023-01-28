@@ -18,7 +18,7 @@ namespace mtpk {
  * @brief Operations related to Vectors and Scalars
  */
 class Tensors {
-  public:
+    public:
     std::vector<std::vector<double>>
         tensor_vec_mult(std::vector<std::vector<std::vector<double>>> A,
                         std::vector<double> b);

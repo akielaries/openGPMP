@@ -14,7 +14,7 @@ namespace mtpk {
 
 // monoalphabetic substitution cipher class
 class Cipher {
-  public:
+    public:
     /* compute the caesar cipher of a given string with a shift key */
     std::string caesar(std::string plaintext, int64_t key);
     /* encode and prepare the given string for the cipher */

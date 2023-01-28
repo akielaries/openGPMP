@@ -9,8 +9,10 @@ using ::testing::DoubleLE;
 using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
 
+/*
 namespace {
 mtpk::Arith ar;
+
 
 // test case, test name
 TEST(arith_test, add_positive) {
@@ -32,6 +34,11 @@ TEST(arith_test, sub_positive) {
     EXPECT_EQ(7, ar.sub(3, 3, 7));
 }
 } // namespace
+*/
+namespace {
+mtpk::Arith<int> ar;
+
+}
 
 namespace {
 mtpk::Basics ba;

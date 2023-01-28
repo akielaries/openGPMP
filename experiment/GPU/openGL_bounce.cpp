@@ -22,7 +22,7 @@ class Camera {
     double dTheta; // increment in theta for swinging the camera around
     double dy;     // increment in y for moving the camera up/down
 
-  public:
+    public:
     Camera() : theta(0), y(3), dTheta(0.04), dy(0.2) {
     }
 
@@ -69,7 +69,7 @@ class Ball {
     double z;
     int direction;
 
-  public:
+    public:
     Ball(double r, GLfloat *c, double h, double x, double z)
         : radius(r), color(c), maximumHeight(h), direction(-1), y(h), x(x),
           z(z) {
@@ -106,7 +106,7 @@ class Checkerboard {
     int width;
     int depth;
 
-  public:
+    public:
     Checkerboard(int width, int depth) : width(width), depth(depth) {
     }
 

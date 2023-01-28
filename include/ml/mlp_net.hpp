@@ -91,7 +91,7 @@ class PrimaryMLP {
     void simulate(long double *input, long double *output,
                   long double *target, bool training);
 
-  public:
+    public:
     long double _Eta;
     long double _Alpha;
     long double _Gain;
@@ -115,8 +115,9 @@ class PrimaryMLP {
  * @brief Secondary Multi-Layer Perceptron Class making use of
  * the Linear Algebra module
  */
-template <typename T> class SecondaryMLP {
-  public:
+template <typename T>
+class SecondaryMLP {
+    public:
     /**
      * @details Logging function for collecting the results
      */

@@ -32,7 +32,7 @@ class Regression {
     // Contains sum of square of all (i-th y)
     long double sum_y_square;
 
-  public:
+    public:
     Regression();
     /*{
             coeff;

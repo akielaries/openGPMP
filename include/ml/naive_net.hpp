@@ -15,7 +15,7 @@ typedef Eigen::VectorXf ColVector;
 namespace mtpk {
 
 class NaiveNet {
-  public:
+    public:
     // contructor
     naive_network(std::vector<uint> topology,
                   Scalar learningRate = Scalar(0.005));
