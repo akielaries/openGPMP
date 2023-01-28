@@ -1,10 +1,11 @@
-#!/ usr / bin / python3
+#!/usr/bin/python3
 from openmtpk import nt
 
-    def
-    main()
-    : print("Using the Number Theory module in Python")
-          print("Methods of the RC4 class:\n\
+
+def main():
+    print("Using the Number Theory module in Python")
+    print(
+        "Methods of the RC4 class:\n\
         - byte_swap(a, b)\n\
         - trad_swap(a, b)\n\
         - XOR_swap(a, b)\n\
@@ -18,9 +19,11 @@ from openmtpk import nt
         - store_hash(plaintext, hashtext, swap_type)\n\
             : stores hash to a value\n\
         - compute(key, plaintext, hashtext, swap_type)\n\
-            : driver for RC4 algorithm\n")
+            : driver for RC4 algorithm\n"
+    )
 
-              r = nt.RC4()
+    r = nt.RC4()
 
-                      if __name__
-                  == '__main__' : main()
+
+if __name__ == "__main__":
+    main()

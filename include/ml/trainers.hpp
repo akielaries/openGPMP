@@ -3,8 +3,8 @@
  *
  * Training methods and initializers used for the openMTPK Machine Learning module
  */
-#ifndef ML_UTILS_HPP
-#define ML_UTILS_HPP
+#ifndef ML_TRAINERS_HPP
+#define ML_TRAINERS_HPP
 #include <fstream>
 #include <iostream>
 #include <string>
