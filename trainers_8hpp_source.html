@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/ml/utils.hpp Source File</title>
+<title>openMTPK: include/ml/trainers.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,12 +68,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">utils.hpp</div>  </div>
+<div class="title">trainers.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ml_2utils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef ML_UTILS_HPP</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define ML_UTILS_HPP</span></div>
+<a href="trainers_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef ML_TRAINERS_HPP</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define ML_TRAINERS_HPP</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -125,10 +125,10 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html">mtpk::ml::SecondaryMLP</a></div><div class="ttdoc">Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00119">mlp_net.hpp:119</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html">mtpk::ml::Utils</a></div><div class="ttdef"><b>Definition:</b> <a href="ml_2utils_8hpp_source.html#l00019">utils.hpp:19</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html_a8159d81108850538f08102d8a9c52e2d"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html#a8159d81108850538f08102d8a9c52e2d">mtpk::ml::Utils::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="ml_2utils_8hpp_source.html#l00037">utils.hpp:37</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html">mtpk::ml::Utils</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00019">trainers.hpp:19</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html_a8159d81108850538f08102d8a9c52e2d"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html#a8159d81108850538f08102d8a9c52e2d">mtpk::ml::Utils::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00037">trainers.hpp:37</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html_ab1c95bbe86b469e8fa7067ae48169e56"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html#ab1c95bbe86b469e8fa7067ae48169e56">mtpk::ml::Utils::train_PrimaryMLP</a></div><div class="ttdeci">int64_t train_PrimaryMLP(const char *fnames)</div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html_af6e0b40e2a9129b2d12779552eeda255"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html#af6e0b40e2a9129b2d12779552eeda255">mtpk::ml::Utils::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="ml_2utils_8hpp_source.html#l00057">utils.hpp:57</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html_af6e0b40e2a9129b2d12779552eeda255"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html#af6e0b40e2a9129b2d12779552eeda255">mtpk::ml::Utils::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00057">trainers.hpp:57</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1Utils_html_afde22c768efbffdbc8c276c33e07ed80"><div class="ttname"><a href="classmtpk_1_1ml_1_1Utils.html#afde22c768efbffdbc8c276c33e07ed80">mtpk::ml::Utils::test_PrimaryMLP</a></div><div class="ttdeci">int64_t test_PrimaryMLP(const char *fname)</div></div>
 <div class="ttc" id="amlp__net_8hpp_html"><div class="ttname"><a href="mlp__net_8hpp.html">mlp_net.hpp</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>

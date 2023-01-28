@@ -15,7 +15,8 @@ var searchData=
   ['train_282',['train',['../classmtpk_1_1NaiveNet.html#aafffd50093040c64ca5f01801e43d5ae',1,'mtpk::NaiveNet::train()'],['../classmtpk_1_1ml_1_1PrimaryMLP.html#a5138ae6bbde5771cce6a8b93fe8f129f',1,'mtpk::ml::PrimaryMLP::train()']]],
   ['train_5fprimarymlp_283',['train_PrimaryMLP',['../classmtpk_1_1ml_1_1Utils.html#ab1c95bbe86b469e8fa7067ae48169e56',1,'mtpk::ml::Utils']]],
   ['train_5fsecondarymlp_284',['train_SecondaryMLP',['../classmtpk_1_1ml_1_1Utils.html#af6e0b40e2a9129b2d12779552eeda255',1,'mtpk::ml::Utils']]],
-  ['transformcharacteristics_285',['transformCharacteristics',['../classCompany.html#adb867bb69be78855c273a1dc498c5c08',1,'Company']]],
-  ['transpose_286',['transpose',['../classmtpk_1_1Matrix.html#a06e809ee9b3b763969c112b449c797ff',1,'mtpk::Matrix']]],
-  ['turnover_287',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]]
+  ['trainers_2ehpp_285',['trainers.hpp',['../trainers_8hpp.html',1,'']]],
+  ['transformcharacteristics_286',['transformCharacteristics',['../classCompany.html#adb867bb69be78855c273a1dc498c5c08',1,'Company']]],
+  ['transpose_287',['transpose',['../classmtpk_1_1Matrix.html#a06e809ee9b3b763969c112b449c797ff',1,'mtpk::Matrix']]],
+  ['turnover_288',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]]
 ];
