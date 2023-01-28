@@ -9,14 +9,14 @@
 %module nt
 
 %{
-    #include "../../include/arithmetic/arithmetic.hpp"
+    #include "../../include/arithmetic.hpp"
     #include "../../include/nt/primes.hpp"
     #include "../../include/nt/rc4.hpp"
     #include "../../include/nt/cipher.hpp"
     using namespace mtpk;
 %}
 
-%include "../../include/arithmetic/arithmetic.hpp"
+%include "../../include/arithmetic.hpp"
 %include "../../include/nt/primes.hpp"
 %include "../../include/nt/rc4.hpp"
 %include "../../include/nt/cipher.hpp"
