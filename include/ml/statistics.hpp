@@ -25,8 +25,7 @@ class Stats {
                       const std::vector<double> &y);
     double correlation(const std::vector<double> &x,
                        const std::vector<double> &y);
-    double R2(const std::vector<double> &x,
-              const std::vector<double> &y);
+    double R2(const std::vector<double> &x, const std::vector<double> &y);
     double chebyshevIneq(const double k);
     double weightedMean(const std::vector<double> &x,
                         const std::vector<double> &weights);
@@ -42,10 +41,12 @@ class Stats {
     double heronianMean(const double A, const double B);
     double heinzMean(const double A, const double B, const double x);
     double neumanSandorMean(const double a, const double b);
-    double stolarskyMean(const double x, const double y,
-                         const double p);
+    double stolarskyMean(const double x, const double y, const double p);
     double identricMean(const double x, const double y);
     double logMean(const double x, const double y);
+
+    // hypothesis test
+    std::tuple<bool, double> chiSquareTest(std::vector<double> observed, std::vector<double> expected);
 };
 } // namespace mtpk
 

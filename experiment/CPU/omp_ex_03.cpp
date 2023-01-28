@@ -17,7 +17,7 @@ int main() {
     }
     std::cout << "i = " << i << std::endl;
 
-    end = clock();
+    end   = clock();
     total = (double)(end - start) / CLOCKS_PER_SEC;
     std::cout << "TIME: " << total << std::endl;
 

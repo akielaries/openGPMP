@@ -1,5 +1,6 @@
 /*
- * This file shows the implementation of some basic stream cipher algorithms
+ * This file shows the implementation of some basic stream cipher
+ * algorithms
  */
 #include "../../include/nt/cipher.hpp"
 #include <cmath>
@@ -31,11 +32,12 @@ std::string mtpk::Cipher::keyword_encode(std::string key) {
     // This array represents the 26 letters of alphabets
     bool arr[26] = {0};
 
-    // This loop inserts the keyword at the start of the encoded string
+    // This loop inserts the keyword at the start of the encoded
+    // string
     for (int64_t i = 0; uint64_t(i) < key.size(); i++) {
         if (key[i] >= 'A' && key[i] <= 'Z') {
             /*
-             * To check whether the character is inserted earlier 
+             * To check whether the character is inserted earlier
              * in the encoded string or not
              */
             if (arr[key[i] - 65] == 0) {
@@ -50,7 +52,8 @@ std::string mtpk::Cipher::keyword_encode(std::string key) {
         }
     }
 
-    // This loop inserts the remaining characters in the encoded string.
+    // This loop inserts the remaining characters in the encoded
+    // string.
     for (int64_t i = 0; i < 26; i++) {
         if (arr[i] == 0) {
             arr[i] = 1;
@@ -65,7 +68,7 @@ std::string mtpk::Cipher::keyword(std::string plaintext,
     std::string cipher = "";
 
     /*
-     * This loop ciphered the message. Spaces, special characters 
+     * This loop ciphered the message. Spaces, special characters
      * and numbers remain same.
      */
     for (int64_t i = 0; uint64_t(i) < plaintext.size(); i++) {

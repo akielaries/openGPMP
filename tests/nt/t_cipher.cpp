@@ -13,8 +13,8 @@ namespace {
 mtpk::Cipher cc;
 
 TEST(ccipher_test, caesar_0) {
-    std::string text_0 = "Plaintext";
-    int key_shift_0 = 5;
+    std::string text_0     = "Plaintext";
+    int key_shift_0        = 5;
     std::string hashtext_0 = cc.caesar(text_0, key_shift_0);
     std::string expected_0 = "Uqfnsyjcy";
 
@@ -22,8 +22,8 @@ TEST(ccipher_test, caesar_0) {
 }
 
 TEST(ccipher_test, caesar_1) {
-    std::string text_1 = "ATTACKATONCE";
-    int key_shift_1 = 4;
+    std::string text_1     = "ATTACKATONCE";
+    int key_shift_1        = 4;
     std::string hashtext_1 = cc.caesar(text_1, key_shift_1);
     std::string expected_1 = "EXXEGOEXSRGI";
 
@@ -31,8 +31,8 @@ TEST(ccipher_test, caesar_1) {
 }
 
 TEST(ccipher_test, caesar_2) {
-    std::string text_2 = "EaSyPASsWorD";
-    int key_shift_2 = 14;
+    std::string text_2     = "EaSyPASsWorD";
+    int key_shift_2        = 14;
     std::string hashtext_2 = cc.caesar(text_2, key_shift_2);
     std::string expected_2 = "SoGmDOGgKcfR";
 
@@ -40,7 +40,7 @@ TEST(ccipher_test, caesar_2) {
 }
 
 TEST(kcipher_test, keyword_0) {
-    std::string text_3 = "Password";
+    std::string text_3      = "Password";
     std::string key_shift_3 = "Computer";
 
     // encode
@@ -54,7 +54,7 @@ TEST(kcipher_test, keyword_0) {
 }
 
 TEST(kcipher_test, keyword_1) {
-    std::string text_4 = "Password";
+    std::string text_4      = "Password";
     std::string key_shift_4 = "Password";
 
     // encode
@@ -68,7 +68,7 @@ TEST(kcipher_test, keyword_1) {
 }
 
 TEST(kcipher_test, error_cipher_text) {
-    std::string text_4 = "P455W0RD";
+    std::string text_4      = "P455W0RD";
     std::string key_shift_4 = "IN1T_d";
 
     // encode
@@ -85,7 +85,7 @@ TEST(kcipher_test, error_cipher_text) {
 /*
 int main() {
     InitGoogleTest();
-    
+
     return RUN_ALL_TESTS();
 }
 */

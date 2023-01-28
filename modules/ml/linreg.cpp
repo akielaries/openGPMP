@@ -9,36 +9,37 @@
 #include <vector>
 
 /*
- * Constructor to provide the default values to all the terms in the object 
- * of class regression
+ * Constructor to provide the default values to all the terms in the
+ * object of class regression
  */
 mtpk::Regression::Regression() {
-    coeff = 0;
-    constant = 0;
-    sum_y = 0;
+    coeff        = 0;
+    constant     = 0;
+    sum_y        = 0;
     sum_y_square = 0;
     sum_x_square = 0;
-    sum_x = 0;
-    sum_xy = 0;
+    sum_x        = 0;
+    sum_xy       = 0;
 }
 
-// Function that calculate the coefficient/slope of the best fitting line
+// Function that calculate the coefficient/slope of the best fitting
+// line
 void mtpk::Regression::calculate_coeffecient() {
-    long double N = x.size();
-    long double numerator = (N * sum_xy - sum_x * sum_y);
+    long double N           = x.size();
+    long double numerator   = (N * sum_xy - sum_x * sum_y);
     long double denominator = (N * sum_x_square - sum_x * sum_x);
-    coeff = numerator / denominator;
+    coeff                   = numerator / denominator;
 }
 
-/*     
- * Member function that will calculate the constant term of the best 
+/*
+ * Member function that will calculate the constant term of the best
  * fitting line
  */
 void mtpk::Regression::calculate_constant() {
-    long double N = x.size();
-    long double numerator = (sum_y * sum_x_square - sum_x * sum_xy);
+    long double N           = x.size();
+    long double numerator   = (sum_y * sum_x_square - sum_x * sum_xy);
     long double denominator = (N * sum_x_square - sum_x * sum_x);
-    constant = numerator / denominator;
+    constant                = numerator / denominator;
 }
 
 // Function that return the number of entries (xi, yi) in the data set
@@ -66,15 +67,15 @@ void mtpk::Regression::best_fit() {
         calculate_coeffecient();
         calculate_constant();
     }
-    std::cout << "The best fitting line is y = "
-              << coeff << "x + " << constant << std::endl;
+    std::cout << "The best fitting line is y = " << coeff << "x + "
+              << constant << std::endl;
 }
 
 // Function to take input from the dataset
 void mtpk::Regression::get_input(int64_t n) {
     for (int64_t i = 0; i < n; i++) {
         /*
-         * In a csv file all the values of xi and yi are separated by 
+         * In a csv file all the values of xi and yi are separated by
          * commas
          */
         char comma;
@@ -123,8 +124,8 @@ long double mtpk::Regression::error_square() {
     return ans;
 }
 /*
- * Functions that return the error i.e the difference between the actual 
- * value and value predicted by our model
+ * Functions that return the error i.e the difference between the
+ * actual value and value predicted by our model
  */
 long double mtpk::Regression::error_in(long double num) {
     for (int64_t i = 0; uint64_t(i) < x.size(); i++) {

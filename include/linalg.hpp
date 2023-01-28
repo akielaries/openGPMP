@@ -1,8 +1,8 @@
 /**
  * @file
  *
- * @brief openMTPK LINEAR ALGEBRA MODULE 
- * 
+ * @brief openMTPK LINEAR ALGEBRA MODULE
+ *
  * @details This file serves as the core header for the Linear Algebra
  * module. This header includes the following :
  *  - Matrix
@@ -22,10 +22,10 @@
  *      * Angle
  *      * Complexity
  *  - Clustering
- *  - Linear Independence 
+ *  - Linear Independence
  *      * Orthonormal Vectors
  *      * Gram-Schmidt Algorithm
- *  
+ *
  *  - Least Squares
  *      * Data Fitting
  *      * Classification
@@ -33,8 +33,8 @@
  *      * Contrained
  *      * Nonlinear
  *
- *  @note Some topics in Linear Algebra overlap and/or heavily influence 
- *  algorithms seen in Machine Learning
+ *  @note Some topics in Linear Algebra overlap and/or heavily
+ * influence algorithms seen in Machine Learning
  */
 #ifndef LINALG_HPP
 #define LINALG_HPP

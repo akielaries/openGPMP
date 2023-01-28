@@ -34,8 +34,8 @@ int main(int argc, char **argv) {
     glutInitWindowSize(1000, 800);
     glutCreateWindow("A Shaded Triangle");
 
-    // Tell GLUT that whenever the main window needs to be repainted that it
-    // should call the function display().
+    // Tell GLUT that whenever the main window needs to be repainted
+    // that it should call the function display().
     glutDisplayFunc(display);
 
     glutMainLoop();

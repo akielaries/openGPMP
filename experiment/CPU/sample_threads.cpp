@@ -40,18 +40,18 @@ int run() {
 }
 
 int main() {
-    //clock_t t;
-    //t = clock();
+    // clock_t t;
+    // t = clock();
     double d_time = omp_get_wtime();
     run();
     d_time = omp_get_wtime() - d_time;
     printf("Time taken: %f second \n", d_time);
 
     // end time
-    //t = clock() - t;
+    // t = clock() - t;
     // return time in seconds
-    //double final_time = ((double)t) / CLOCKS_PER_SEC;
-    //printf("Decoded in: %f seconds\n", final_time);
+    // double final_time = ((double)t) / CLOCKS_PER_SEC;
+    // printf("Decoded in: %f seconds\n", final_time);
 
     return 0;
 }

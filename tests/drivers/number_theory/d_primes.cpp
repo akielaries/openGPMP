@@ -1,14 +1,13 @@
 /*
- * Driver for showing how to use the core basic and elementary functionalities
- * of the Number Theory module
+ * Driver for showing how to use the core basic and elementary
+ * functionalities of the Number Theory module
  *
  */
 #include "../../include/number_theory/primes.hpp"
 #include <iostream>
 
 int main() {
-    std::cout << "BASIC NUMBER THEORY OPERATIONS\n"
-              << std::endl;
+    std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;
     // declare primality class object
     Primality p;
 
@@ -18,15 +17,13 @@ int main() {
     bool is_it = p.is_prime(a);
 
     std::cout << a << " is prime? : ";
-    is_it ? std::cout << "true\n" : std::cout << "false\n"
-                                              << std::endl;
+    is_it ? std::cout << "true\n" : std::cout << "false\n" << std::endl;
 
-    int b = 2;
+    int b       = 2;
     bool is_it2 = p.is_prime(b);
 
     std::cout << b << " is prime? : ";
-    is_it2 ? std::cout << "true\n" : std::cout << "false\n"
-                                               << std::endl;
+    is_it2 ? std::cout << "true\n" : std::cout << "false\n" << std::endl;
     std::cout << "\n";
 
     std::cout << "<--------- MILLER-RABIN METHOD --------->\n";
@@ -36,7 +33,7 @@ int main() {
     // number of iterations
     int iters = 4;
     /*
-     * calculate the solution, the method doesn't return a value, 
+     * calculate the solution, the method doesn't return a value,
      * prints the values
      */
     p.miller_rabin(iters, min_num, max_num);
@@ -46,13 +43,13 @@ int main() {
     std::cout << "\n";
 
     std::cout << "<--------- CARMICHAEL NUMBERS --------->\n";
-    int cm_test = 500;
+    int cm_test   = 500;
     bool carm_num = p.carmichael_num(cm_test);
 
-    int cm_test1 = 561;
+    int cm_test1   = 561;
     bool carm_num1 = p.carmichael_num(cm_test1);
 
-    int cm_test2 = 1105;
+    int cm_test2   = 1105;
     bool carm_num2 = p.carmichael_num(cm_test2);
 
     std::cout << cm_test << " is a carmichael number : ";

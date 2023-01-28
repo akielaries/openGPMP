@@ -23,16 +23,17 @@ class Vectors {
 
   public:
     /*
-         * vectors of the same dimension size are just scalars as they only 
-         * contain magnitude. vectors contain both magnitude + direction
-         */
+     * vectors of the same dimension size are just scalars as they
+     * only contain magnitude. vectors contain both magnitude +
+     * direction
+     */
     // function to add two 1D vectors
     // template <typename T>
-    //float scalar_add();
+    // float scalar_add();
     // function to subtract two 1D vectors
-    //float scalar_sub();
+    // float scalar_sub();
     // function to multiply two 1D vectors
-    //float scalar_mult();
+    // float scalar_mult();
     int64_t add(int64_t a, int64_t b);
 };
 

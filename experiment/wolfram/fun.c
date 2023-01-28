@@ -11,7 +11,7 @@ static mbool initialize = 1;
 DLLEXPORT int Initialize_fun(WolframLibraryData libData) {
     if (initialize) {
         funStructCompile = libData->compileLibraryFunctions;
-        initialize = 0;
+        initialize       = 0;
     }
     return 0;
 }

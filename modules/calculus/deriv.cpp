@@ -14,20 +14,20 @@ int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
     // Get coefficient
     std::string coeffStr = "";
     int i;
-    
+
     for (i = 0; p_term[i] != 'x'; i++) {
         coeffStr.push_back(p_term[i]);
     }
     int64_t coeff = atol(coeffStr.c_str());
- 
+
     // Get Power (Skip 2 characters for x and ^)
     std::string powStr = "";
-    
+
     for (i = i + 2; i != p_term.size(); i++) {
         powStr.push_back(p_term[i]);
     }
     int64_t expo = atol(powStr.c_str());
- 
+
     // For ax^n, we return anx^(n-1)
 
     int64_t result = coeff * expo * pow(val, expo - 1);

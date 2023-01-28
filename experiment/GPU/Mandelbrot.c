@@ -44,7 +44,7 @@ void fractal(float left, float top, float xside, float yside) {
             zx = 0;
 
             // z_imaginary
-            zy = 0;
+            zy    = 0;
             count = 0;
 
             // Calculate whether c(c_real + c_imaginary) belongs
@@ -57,7 +57,8 @@ void fractal(float left, float top, float xside, float yside) {
                 // Calculate Mandelbrot function
                 // z = z*z + c where z is a complex number
 
-                // tempx = z_real*_real - z_imaginary*z_imaginary + c_real
+                // tempx = z_real*_real - z_imaginary*z_imaginary +
+                // c_real
                 tempx = zx * zx - zy * zy + cx;
 
                 // 2*z_real*z_imaginary + c_imaginary
@@ -81,8 +82,8 @@ void fractal(float left, float top, float xside, float yside) {
 void display() {
     float left, top, xside, yside;
 
-    left = -1.74;
-    top = -0.25;
+    left  = -1.74;
+    top   = -0.25;
     xside = 0.25;
     yside = 0.45;
 
@@ -108,9 +109,9 @@ int main(int argc, char **argv) {
     top = 0;
     xside = 0;
     yside = 0.2;
-	*/
-    left = -1.74;
-    top = -0.25;
+    */
+    left  = -1.74;
+    top   = -0.25;
     xside = 0.25;
     yside = 0.45;
 
@@ -120,14 +121,14 @@ int main(int argc, char **argv) {
     // graphics system by loading a
     // graphics driver from disk
     initgraph(&gd, &gm, driver);
-    //glutInit(&gd, driver);
+    // glutInit(&gd, driver);
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(1366, 768);
     glutInitWindowPosition(0, 0);
 
     // Function calling
-    //fractal(left, top, xside, yside);
+    // fractal(left, top, xside, yside);
 
     // getch();
 

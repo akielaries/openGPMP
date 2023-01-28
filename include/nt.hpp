@@ -1,9 +1,9 @@
 /**
  * @file
  *
- * @brief openMTPK NUMBER THEORY MODULE 
- * 
- * @details This file serves as the core header for the Number Theory 
+ * @brief openMTPK NUMBER THEORY MODULE
+ *
+ * @details This file serves as the core header for the Number Theory
  * module. This header includes the following :
  *  - Primes
  *  - Cryptography/Encryption
@@ -15,21 +15,21 @@
 #define NT_HPP
 
 /**
- * @brief \b Primes 
- * @details includes : 
+ * @brief \b Primes
+ * @details includes :
  * @note
- * 
- * @todo 
+ *
+ * @todo
  */
 #define PRIMES
 #include "number_theory/primes.hpp"
 
 /**
- * @brief \b Cryptographic \b Algorithms 
- * @details includes : 
+ * @brief \b Cryptographic \b Algorithms
+ * @details includes :
  * @note
- * 
- * @todo 
+ *
+ * @todo
  */
 #define CRYPTOGRAPHY
 #include "number_theory/cipher.hpp"

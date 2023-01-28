@@ -29,7 +29,7 @@ void reshape(GLint w, GLint h) {
 
     else {
         // height is smaller, go from -50 .. 50 in height
-        //glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
+        // glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
 
         glOrtho(-10.0 * aspect, 10.0 * aspect, -10.0, 10.0, -1.0, 1.0);
     }
@@ -84,8 +84,8 @@ void timer(int v) {
 }
 
 /*
- * mouse events, left click generates new animations, right clock removes
- * idle-time callback
+ * mouse events, left click generates new animations, right clock
+ * removes idle-time callback
  */
 void mouse(int button, int state, int x, int y) {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
@@ -119,8 +119,8 @@ int main(int argc, char **argv) {
 
     glutReshapeFunc(reshape);
 
-    // Tell GLUT that whenever the main window needs to be repainted that it
-    // should call the function display().
+    // Tell GLUT that whenever the main window needs to be repainted
+    // that it should call the function display().
     glutDisplayFunc(display);
     glutTimerFunc(100, timer, 0);
     glutMouseFunc(mouse);

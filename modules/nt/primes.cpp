@@ -1,6 +1,6 @@
 /*
- * Some core concepts seen in Number Theory primarily prime number based
- * equations, formulas, algorithms. 
+ * Some core concepts seen in Number Theory primarily prime number
+ * based equations, formulas, algorithms.
  */
 #include "../../include/nt/primes.hpp"
 #include "../../include/arithmetic/arith_base.hpp"
@@ -17,8 +17,7 @@
 mtpk::Basics ba;
 mtpk::Primality prim;
 
-int64_t mtpk::Primality::mod_pow(int64_t base,
-                                 int64_t exponent,
+int64_t mtpk::Primality::mod_pow(int64_t base, int64_t exponent,
                                  int64_t mod) {
     int64_t x = 1;
     int64_t y = base;
@@ -28,7 +27,7 @@ int64_t mtpk::Primality::mod_pow(int64_t base,
             x = (x * y) % mod;
         }
         exponent = exponent >> 1;
-        y = (y * y) % mod;
+        y        = (y * y) % mod;
     }
 
     return x;
@@ -50,7 +49,8 @@ bool mtpk::Primality::is_prime(int64_t n) {
  * determining if a given number is likely to be prime
  */
 bool mtpk::Primality::compute_miller_rabin(int64_t d, int64_t n) {
-    // Pick a random number in [2..n-2] Corner cases make sure that n > 4
+    // Pick a random number in [2..n-2] Corner cases make sure that n
+    // > 4
     int64_t a = 2 + rand() % (n - 4);
 
     // Compute a^d % n
@@ -80,8 +80,8 @@ bool mtpk::Primality::compute_miller_rabin(int64_t d, int64_t n) {
 
 bool mtpk::Primality::miller_rabin_prime(int64_t n, int64_t iters) {
     /*
-     * this method will return true if n is prime, iters will determine
-     * accuracy
+     * this method will return true if n is prime, iters will
+     * determine accuracy
      */
     // these are corner cases
     if (n <= 1 || n == 4)
@@ -105,17 +105,17 @@ bool mtpk::Primality::miller_rabin_prime(int64_t n, int64_t iters) {
     return true;
 }
 
-void mtpk::Primality::miller_rabin(int64_t iters,
-                                   int64_t min_val,
+void mtpk::Primality::miller_rabin(int64_t iters, int64_t min_val,
                                    int64_t max_val) {
-    std::cout << "Primes between " << min_val << " and " << max_val << std::endl;
-    //int d = iters - 1;
-    //int min_val = minimum;
-    //int max_val = maximum;
+    std::cout << "Primes between " << min_val << " and " << max_val
+              << std::endl;
+    // int d = iters - 1;
+    // int min_val = minimum;
+    // int max_val = maximum;
 
     // traverse from the min to max
     for (; min_val < max_val; min_val++) {
-        //while (min_val < max_val) {
+        // while (min_val < max_val) {
         if (miller_rabin_prime(min_val, iters)) {
             std::cout << min_val << " ";
         }
@@ -170,8 +170,9 @@ int64_t mtpk::Primality::jacobian_number(int64_t a, int64_t n) {
     return 0;
 }
 /*
- * primality test determining if a number is composite or probably prime.
- * 
+ * primality test determining if a number is composite or probably
+ * prime.
+ *
  * a^(p-1)/2 = (a/p) (mod p)
  */
 bool mtpk::Primality::solovoy_strassen(int64_t p, int64_t iters) {
@@ -183,9 +184,9 @@ bool mtpk::Primality::solovoy_strassen(int64_t p, int64_t iters) {
 
     for (int64_t i = 0; i < iters; i++) {
         // Generate a random number a
-        int64_t a = rand() % (p - 1) + 1;
+        int64_t a        = rand() % (p - 1) + 1;
         int64_t jacobian = (p + jacobian_number(a, p)) % p;
-        int64_t mod = mod_pow(a, (p - 1) / 2, p);
+        int64_t mod      = mod_pow(a, (p - 1) / 2, p);
 
         if (!jacobian || mod != jacobian)
             return false;
@@ -210,9 +211,10 @@ bool mtpk::Primality::carmichael_num(int64_t n) {
 }
 
 /*
- * since this module deals with a great deal of number theory and various 
- * logical arithmetic operations, the greek algorithm sieve of Eratosthenes
- * is able to capture all prime numbers to any given limit
+ * since this module deals with a great deal of number theory and
+ * various logical arithmetic operations, the greek algorithm sieve of
+ * Eratosthenes is able to capture all prime numbers to any given
+ * limit
  */
 void mtpk::Primality::sieve_of_eratosthenes(int64_t n) {
     // Create a boolean array "prime[0..n]" and initialize
@@ -240,10 +242,10 @@ void mtpk::Primality::sieve_of_eratosthenes(int64_t n) {
 }
 
 /*
- * algorithm for integer factorization proportial to the runtime of the 
- * square root of the size of the smallest prime factor of the composite
- * factor being factorized. Given a positive and composite integer n, 
- * find a divisor of it.
+ * algorithm for integer factorization proportial to the runtime of
+ * the square root of the size of the smallest prime factor of the
+ * composite factor being factorized. Given a positive and composite
+ * integer n, find a divisor of it.
  *
  * x_n-1 = x^2_n + a(mod n)
  *
@@ -292,7 +294,7 @@ int64_t mtpk::Primality::pollard_rho(int64_t n) {
 
         /* check gcd of |x-y| and n */
         divisor = ba.op_gcd(abs(x - y), n);
-        //divisor = std::__gcd(abs(x - y), n);
+        // divisor = std::__gcd(abs(x - y), n);
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
         if (divisor == n)
@@ -303,11 +305,12 @@ int64_t mtpk::Primality::pollard_rho(int64_t n) {
 }
 
 /*
- * Euler's Totient Function counts the positive numbers up until a given 
- * integer
+ * Euler's Totient Function counts the positive numbers up until a
+ * given integer
  *
- * Definition: For any positive integer n, Φ(n) is the number of all positive 
- * integers less than or equal to n that are relatively prime to n.
+ * Definition: For any positive integer n, Φ(n) is the number of all
+ * positive integers less than or equal to n that are relatively prime
+ * to n.
  *
  * Example: Φ(1) = 1
  *          Φ(2) = 1

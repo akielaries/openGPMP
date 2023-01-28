@@ -54,7 +54,7 @@ TEST(basics, greatest_common_divisor) {
 /*
 int main() {
     InitGoogleTest();
-    
+
     return RUN_ALL_TESTS();
 }
 */

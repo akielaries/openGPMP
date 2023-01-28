@@ -11,11 +11,10 @@
 namespace mtpk {
 
 /**
-     * Bayes Network Class representing a set of variables and 
-     * conditional dependencies
-     */
-class BayesNet {
-};
+ * Bayes Network Class representing a set of variables and
+ * conditional dependencies
+ */
+class BayesNet {};
 
 } // namespace mtpk
 

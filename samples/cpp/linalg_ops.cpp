@@ -1,7 +1,8 @@
 /*
  * Linear Algebra Sample File
  *
- * The Matrix Class is capable of creating both Vectors and Matrices alike
+ * The Matrix Class is capable of creating both Vectors and Matrices
+ * alike
  *
  * BY DEFINITION:
  * A scalar is a single number, like 3, -5, 0.368, etc,
@@ -12,13 +13,10 @@
  *    | 2 |
  *    | -4|
  *    | 3 |
- *    |___|  
+ *    |___|
  *
- * A matrix is an array of numbers (one or more rows, one or more columns).
- *      3 x 5
- *    3 7 5 8 7 
- *    0 4 1 5 5 
- *    1 2 0 7 6 
+ * A matrix is an array of numbers (one or more rows, one or more
+ * columns). 3 x 5 3 7 5 8 7 0 4 1 5 5 1 2 0 7 6
  *
  */
 #include <cassert>
@@ -33,8 +31,7 @@
 int main() {
     // declaring an object for the Vectors class is permitted
     mtpk::Vectors v;
-    std::cout << "MATRIX/VECTOR OPERATIONS EXAMPLE\n"
-              << std::endl;
+    std::cout << "MATRIX/VECTOR OPERATIONS EXAMPLE\n" << std::endl;
 
     int x = v.add(1, 3);
 
@@ -72,7 +69,8 @@ int main() {
     matrix_zero.print_shape();
     matrix_zero.print_mtx();
 
-    // another method to declare a matrix of zeros with 8 x 9 dimensions
+    // another method to declare a matrix of zeros with 8 x 9
+    // dimensions
     std::cout << "Creating 8x9 matrix of 0's"
               << "\n";
     auto matrix_zero_2 = mtpk::mtx<int>::zeros(8, 9);

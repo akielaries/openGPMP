@@ -22,8 +22,7 @@ namespace mtpk {
  * @class Matrix
  * @brief Matrix and Scalar operations
  */
-template <typename Type>
-class Matrix {
+template <typename Type> class Matrix {
     size_t cols;
     size_t rows;
 
@@ -34,28 +33,26 @@ class Matrix {
     int64_t num_elements = rows * cols;
 
     /**
-         * @brief Matrix Class constructor initializing empty vector
-         *
-         * @param[in] rows : size of rows
-         * @param[in] cols : size of columns 
-         */
-    Matrix(size_t rows, size_t cols)
-        : cols(cols), rows(rows), data({}) {
+     * @brief Matrix Class constructor initializing empty vector
+     *
+     * @param[in] rows : size of rows
+     * @param[in] cols : size of columns
+     */
+    Matrix(size_t rows, size_t cols) : cols(cols), rows(rows), data({}) {
         // initialize an empty vector for storage
         data.resize(cols * rows, Type());
         dim = std::make_tuple(rows, cols);
     }
-    Matrix()
-        : cols(0), rows(0), data({}) {
+    Matrix() : cols(0), rows(0), data({}) {
         dim = {rows, cols};
     };
 
     /**
-         * @brief Overload operator
-         *
-         * @param[in] row : size of rows
-         * @param[in] col : size of columns 
-         */
+     * @brief Overload operator
+     *
+     * @param[in] row : size of rows
+     * @param[in] col : size of columns
+     */
     Type &operator()(size_t row, size_t col) {
         assert(0 <= row && row < rows);
         assert(0 <= col && col < cols);
@@ -64,12 +61,12 @@ class Matrix {
     }
 
     /**
-         * @brief Matrix Multiplication
-         *
-         * @param[in] 
-         *
-         * @todo optimize this with threading
-         */
+     * @brief Matrix Multiplication
+     *
+     * @param[in]
+     *
+     * @todo optimize this with threading
+     */
     Matrix mult(Matrix &target) {
         assert(cols == target.rows);
         Matrix res(rows, target.cols);
@@ -85,8 +82,8 @@ class Matrix {
     }
 
     /*
-         * Multiply scalars
-         */
+     * Multiply scalars
+     */
     Matrix scalar_mult(Type scalar) {
         Matrix res((*this));
 
@@ -99,8 +96,8 @@ class Matrix {
     }
 
     /*
-         * Multiply by the element; see Hadamard Product
-         */
+     * Multiply by the element; see Hadamard Product
+     */
     Matrix hadamard(Matrix &target) {
         assert(dim == target.dim);
         Matrix res((*this));
@@ -114,9 +111,9 @@ class Matrix {
     }
 
     /*
-         * Element based squaring of matrices. Method allows for finding 
-         * the squared error
-         */
+     * Element based squaring of matrices. Method allows for finding
+     * the squared error
+     */
     Matrix sqr_err() {
         Matrix res((*this));
 
@@ -125,8 +122,8 @@ class Matrix {
     }
 
     /*
-         * Matrix Addition
-         */
+     * Matrix Addition
+     */
     Matrix add(Matrix &target) {
         assert(dim == target.dim);
         Matrix res(rows, target.cols);
@@ -143,8 +140,8 @@ class Matrix {
     }
 
     /*
-         * Addition of scalars
-         */
+     * Addition of scalars
+     */
     Matrix scalar_add(Type scalar) {
         Matrix res((*this));
 
@@ -168,8 +165,8 @@ class Matrix {
     }
 
     /*
-         * Matrix subtraction
-         */
+     * Matrix subtraction
+     */
     Matrix sub(Matrix &target) {
         Matrix target_neg = -target;
         return add(target_neg);
@@ -193,7 +190,7 @@ class Matrix {
         return res;
     }
 
-    //Matrix<ushort> operator!=(Matrix &target) {
+    // Matrix<ushort> operator!=(Matrix &target) {
     //    return (!(*this)) == target;
     //}
 
@@ -210,8 +207,8 @@ class Matrix {
     }
 
     /*
-         * Transpose the matrix
-         */
+     * Transpose the matrix
+     */
     Matrix transpose() {
         size_t new_rows{cols}, new_cols{rows};
         Matrix transposed(new_rows, new_cols);
@@ -229,8 +226,8 @@ class Matrix {
     }
 
     /*
-         * Compute sum of matrix by element
-         */
+     * Compute sum of matrix by element
+     */
     Matrix sum() {
         Matrix res{1, 1};
 
@@ -243,8 +240,8 @@ class Matrix {
     }
 
     /*
-         * Compute sum of matrix by dimension
-         */
+     * Compute sum of matrix by dimension
+     */
     Matrix sum(size_t dimension) {
         assert(0 <= dimension && dimension < 2);
         auto res = (dimension = 0) ? Matrix{1, cols} : Matrix{rows, 1};
@@ -272,20 +269,22 @@ class Matrix {
     }
 
     /*
-         * Compute mean of matrix by dimension
-         */
+     * Compute mean of matrix by dimension
+     */
     Matrix mean(size_t dimension) {
         auto m = (dimension == 0) ? Type(rows) : Type(cols);
         return sum().scalar_mult(1 / m);
     }
 
     /*
-         * Concatenate two given matrices
-         */
+     * Concatenate two given matrices
+     */
     Matrix concatenate(Matrix target, size_t dimension) {
-        (dimension == 0) ? assert(rows == target.rows) : assert(cols == target.cols);
+        (dimension == 0) ? assert(rows == target.rows)
+                         : assert(cols == target.cols);
 
-        auto res = (dimension == 0) ? Matrix{rows + target.rows, cols} : Matrix{rows, cols + target.cols};
+        auto res = (dimension == 0) ? Matrix{rows + target.rows, cols}
+                                    : Matrix{rows, cols + target.cols};
 
         // copy self
         for (size_t r = 0; r < rows; ++r) {
@@ -340,7 +339,8 @@ class Matrix {
     }
 
     void print_shape() {
-        std::cout << "Matrix Size([" << rows << ", " << cols << "])" << std::endl;
+        std::cout << "Matrix Size([" << rows << ", " << cols << "])"
+                  << std::endl;
     }
 
     void print_mtx() {

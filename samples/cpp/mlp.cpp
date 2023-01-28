@@ -1,5 +1,5 @@
 /*
- * Example on using the Multi-Layer Perceptrons networks 
+ * Example on using the Multi-Layer Perceptrons networks
  * supplied from openMTPk
  */
 #include "../../include/ml/mlp_net.hpp"
@@ -16,24 +16,19 @@ int main() {
 
     std::srand(42069);
     // initialize the SecondaryMLP model
-    int64_t inputs{1},
-        outputs{1},
-        hidden_layer_units{8},
-        hidden_layers{3};
+    int64_t inputs{1}, outputs{1}, hidden_layer_units{8}, hidden_layers{3};
 
     long double lr{.5};
     mtpk::ml::Utils util;
-    auto model = util.init_SecondaryMLP(
-        inputs = 1,
-        outputs = 1,
-        hidden_layer_units = 8,
-        hidden_layers = 3,
-        lr = .5);
+    auto model = util.init_SecondaryMLP(inputs = 1, outputs = 1,
+                                        hidden_layer_units = 8,
+                                        hidden_layers = 3, lr = .5);
 
     // declare a data file
 
-    // TODO : create util method to save/read/parse datafile, and columns
-    //std::ofstream data_file;
+    // TODO : create util method to save/read/parse datafile, and
+    // columns
+    // std::ofstream data_file;
     std::string data_file = "../../data/school_scores.csv";
 
     uint64_t max_iters{1000}, return_every{500};

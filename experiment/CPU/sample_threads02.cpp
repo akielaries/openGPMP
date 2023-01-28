@@ -7,7 +7,7 @@ int main() {
 // spawn threads
 #pragma omp parallel
     {
-        int nthreads = omp_get_num_threads();
+        int nthreads  = omp_get_num_threads();
         int thread_id = omp_get_thread_num();
 
 #pragma omp single

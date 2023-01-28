@@ -29,25 +29,19 @@ long double mtpk::ml::PrimaryMLP::rand_real(long double low,
 
 /* PRIMARY MLP CONSTRUCTOR */
 mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
-    : num_layers(0),
-      layer_ptr(0),
-      _Eta(0.25),
-      _Alpha(0.9),
-      _Gain(1.0),
-      _MSE(0.0),
-      _MAE(0.0),
-      _AvgTestError(0.0) {
+    : num_layers(0), layer_ptr(0), _Eta(0.25), _Alpha(0.9), _Gain(1.0),
+      _MSE(0.0), _MAE(0.0), _AvgTestError(0.0) {
     int64_t _LAYER, _NEURON;
 
     // create network layers
     num_layers = nl;
-    layer_ptr = new layer[nl];
+    layer_ptr  = new layer[nl];
 
     // intialize the data of the created network layers
     for (_LAYER = 0; _LAYER < nl; _LAYER++) {
         // intialize values to neuron struct information
         layer_ptr[_LAYER].num_neurons = npl[_LAYER];
-        layer_ptr[_LAYER].neuron_ptr = new neuron[npl[_LAYER]];
+        layer_ptr[_LAYER].neuron_ptr  = new neuron[npl[_LAYER]];
 
         // intialize date of the neurons of the created network layers
         for (_NEURON = 0; _NEURON < npl[_LAYER]; _NEURON++) {
@@ -73,11 +67,11 @@ mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
             // otherwise
             else {
                 /*
-                 * initialize weight, last weight, and saved weight 
+                 * initialize weight, last weight, and saved weight
                  * to NULL
                  */
-                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt = NULL;
-                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last = NULL;
+                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt       = NULL;
+                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last  = NULL;
                 layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved = NULL;
             }
         }
@@ -92,8 +86,7 @@ mtpk::ml::PrimaryMLP::~PrimaryMLP() {
 
     for (_LAYER = 0; _LAYER < num_layers; _LAYER++) {
         if (layer_ptr[_LAYER].neuron_ptr) {
-            for (_NEURON = 0;
-                 _NEURON < layer_ptr[_LAYER].num_neurons;
+            for (_NEURON = 0; _NEURON < layer_ptr[_LAYER].num_neurons;
                  _NEURON++) {
                 if (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt) {
                     delete[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt;
@@ -104,7 +97,9 @@ mtpk::ml::PrimaryMLP::~PrimaryMLP() {
                 }
 
                 if (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved) {
-                    delete[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved;
+                    delete[] layer_ptr[_LAYER]
+                        .neuron_ptr[_NEURON]
+                        .wt_saved;
                 }
             }
         }

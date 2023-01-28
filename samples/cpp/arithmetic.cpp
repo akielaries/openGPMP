@@ -1,4 +1,4 @@
-/* 
+/*
  * TESTING BASIC ARITHMETIC OPERATIONS
  */
 #include <cassert>
@@ -9,22 +9,21 @@
 #include <vector>
 
 int main() {
-    std::cout << "TESTING ARITHMETIC OPERATIONS\n"
-              << std::endl;
+    std::cout << "TESTING ARITHMETIC OPERATIONS\n" << std::endl;
     /*
-     * This functionality was really only implemented for practice 
+     * This functionality was really only implemented for practice
      * for dealing with complex algorithms and equations later. There
-     * a plethora of ways to store data and then perform basic arithmetic 
-     * operations so it is trivial to reinvent the wheel for these types
-     * of operations. 
-     * Ideally if you want to perform the summation or product on a list
-     * type structure of numbers you may want to implement it on your 
-     * own, this implementation is just for fun :)
-     * 
+     * a plethora of ways to store data and then perform basic
+     * arithmetic operations so it is trivial to reinvent the wheel
+     * for these types of operations. Ideally if you want to perform
+     * the summation or product on a list type structure of numbers
+     * you may want to implement it on your own, this implementation
+     * is just for fun :)
+     *
      * steps to perform arithmetic operations:
      * 1. declare arith object (see RM_arith.hpp)
-     * 2. declare some variables initializing to values 
-     * 3. using the declared arith object call the operations, 
+     * 2. declare some variables initializing to values
+     * 3. using the declared arith object call the operations,
      * rm_add, rm_sub, rm_mult
      * 4. print out the values if you want or manipulate them further
      */
@@ -33,22 +32,22 @@ int main() {
     mtpk::Arith ar;
 
     // declare some variables
-    int a = 10;
-    int b = 8;
-    int c = 3;
+    int a    = 10;
+    int b    = 8;
+    int c    = 3;
     double d = 1.25;
-    float e = 1.85;
-    float f = 2.75;
-    long g = 1.35;
-    float y = 9743298223.945;
-    float z = 34895542235.8854;
+    float e  = 1.85;
+    float f  = 2.75;
+    long g   = 1.35;
+    float y  = 9743298223.945;
+    float z  = 34895542235.8854;
 
-    /* 
-     * starting with addition operations with different data types. 
+    /*
+     * starting with addition operations with different data types.
      */
-    float r0 = ar.add(a, b, c);
-    int r1 = ar.add(d, e, f, g);
-    float r2 = ar.add(d, e, f, g);
+    float r0  = ar.add(a, b, c);
+    int r1    = ar.add(d, e, f, g);
+    float r2  = ar.add(d, e, f, g);
     float r99 = ar.add(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
 
     printf("%d + %d + %d = %f\n", a, b, c, r0);
@@ -57,10 +56,10 @@ int main() {
     printf("Big result #1 = %f\n\n", r99);
 
     /*
-     * subtraction  
+     * subtraction
      */
-    int r3 = ar.sub(a, b, c);
-    int r4 = ar.sub(d, e, f, g);
+    int r3   = ar.sub(a, b, c);
+    int r4   = ar.sub(d, e, f, g);
     float r5 = ar.sub(d, e, f, g);
 
     printf("%d - %d - %d = %d\n", a, b, c, r3);
@@ -68,10 +67,10 @@ int main() {
     printf("%f - %f - %f - %ld = %f\n\n", d, e, f, g, r5);
 
     /*
-     * multiplication 
+     * multiplication
      */
-    int r6 = ar.mult(a, b, c);
-    int r7 = ar.mult(d, e, f, g);
+    int r6    = ar.mult(a, b, c);
+    int r7    = ar.mult(d, e, f, g);
     double r8 = ar.mult(d, e, f, g);
     float r98 = ar.mult(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
 
@@ -95,14 +94,14 @@ int main() {
     int r10 = 10;
     int r11 = 3;
     int r12 = ba.greatest_power(r10, r11);
-    printf("The greatest power of %d that divides %d! = %d\n",
-           r10, r11, r12);
+    printf("The greatest power of %d that divides %d! = %d\n", r10, r11,
+           r12);
 
     int r13 = 7;
     int r14 = 3;
     int r15 = ba.greatest_power(r13, r14);
-    printf("The greatest power of %d that divides %d! = %d\n",
-           r13, r14, r15);
+    printf("The greatest power of %d that divides %d! = %d\n", r13, r14,
+           r15);
 
     int r16 = 2;
     int r17 = 4;

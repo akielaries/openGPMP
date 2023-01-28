@@ -11,7 +11,7 @@
 namespace mtpk {
 
 /**
- * @brief Kohonen Neural Network Cluster Class 
+ * @brief Kohonen Neural Network Cluster Class
  *
  * Referred to as Self-Organizing Map
  */

@@ -1,5 +1,5 @@
 /*
- * definitions for derivative operations operations 
+ * definitions for derivative operations operations
  */
 
 #ifndef RC5_H
@@ -22,20 +22,14 @@ class RC5 {
     /* swaps two values using the XOR operator */
     void XOR_swap(unsigned char *a, unsigned char *b);
     /* Key Scheduling Algorithm */
-    void KSA(char *key,
-             unsigned char *S,
-             int swap_type);
+    void KSA(char *key, unsigned char *S, int swap_type);
     /* Pseudo-Random Generation Algorithm */
-    void PRGA(unsigned char *S,
-              char *plaintext,
-              unsigned char *ciphertext,
+    void PRGA(unsigned char *S, char *plaintext, unsigned char *ciphertext,
               int swap_type);
     /* functoin to display our hashed text */
     void display_hash(unsigned char *ciphertext);
     /* compute our hash using the the RC4 encryption algorithm */
-    void compute(char *key,
-                 char *plaintext,
-                 unsigned char *ciphertext,
+    void compute(char *key, char *plaintext, unsigned char *ciphertext,
                  int swap_type);
 
     uint32_t shift_left(uint32_t v, uint32_t n);

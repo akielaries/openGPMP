@@ -1,6 +1,7 @@
 /*
- * Linear regression is a statistical method for modeling relationships 
- * between a dependent variable with a given set of independent variables.
+ * Linear regression is a statistical method for modeling
+ * relationships between a dependent variable with a given set of
+ * independent variables.
  */
 
 #ifndef LINREG_H
@@ -43,16 +44,19 @@ class Regression {
             sum_xy;
         }*/
 
-    // Function that calculate the coefficient/slope of the best fitting line
+    // Function that calculate the coefficient/slope of the best
+    // fitting line
     void calculate_coeffecient();
     /*
-         * Member function that will calculate the constant term of the best 
-         * fitting line
-         */
+     * Member function that will calculate the constant term of the
+     * best fitting line
+     */
     void calculate_constant();
-    // Function that return the number of entries (xi, yi) in the data set
+    // Function that return the number of entries (xi, yi) in the data
+    // set
     int64_t data_size();
-    // Function that return the coefficient/slope of the best fitting line
+    // Function that return the coefficient/slope of the best fitting
+    // line
     long double return_coeffecient();
     // Function that return the constant term of the best fitting line
     long double return_constant();
@@ -67,9 +71,9 @@ class Regression {
     // Function that returns overall sum of square of errors
     long double error_square();
     /*
-         * Functions that return the error i.e the difference between the actual 
-         * value and value predicted by our model
-         */
+     * Functions that return the error i.e the difference between the
+     * actual value and value predicted by our model
+     */
     long double error_in(long double num);
     // function that calculates the number of rows in a file
     int64_t num_rows(const char *input);

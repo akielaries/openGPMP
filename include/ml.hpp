@@ -1,9 +1,9 @@
 /**
  * @file
  *
- * @brief openMTPK MACHINE/DEEP LEARNING MODULE 
- * 
- * @details This file serves as the core header for the Machine & Deep 
+ * @brief openMTPK MACHINE/DEEP LEARNING MODULE
+ *
+ * @details This file serves as the core header for the Machine & Deep
  * Learning module. This header includes the following :
  *  - Regression
  *      * Linear
@@ -40,14 +40,15 @@
 
 /**
  * @brief \b Regression \b Algorithms
- * @details includes : 
+ * @details includes :
  *  * Linear Regression
  *
- * @note Some cases of Regression are innately Classification algorithms
- * 
- * @todo 
+ * @note Some cases of Regression are innately Classification
+ * algorithms
+ *
+ * @todo
  *  * logreg
- *  * gausreg 
+ *  * gausreg
  *  * polyreg
  *  * lassoreg
  *  * ridgereg
@@ -63,15 +64,16 @@
 
 /**
  * @brief \b Classification \b Algorithms
- * @details includes : 
+ * @details includes :
  *  * Bayes Classifier
  *  * Nearest Neighbor
  *
- * @note These algorithms are tightly coupled with Regression algorithms
+ * @note These algorithms are tightly coupled with Regression
+ * algorithms
  *
- * @todo 
+ * @todo
  *  * Decision Tree
- *  * Random Forest 
+ *  * Random Forest
  *  * Support Vector
  */
 #define CLASSIFICATION
@@ -84,11 +86,11 @@
 
 /**
  * @brief \b Resampling \b Techniques
- * @details includes : 
+ * @details includes :
  *  * K-Fold Cross-Validation
  *
- * @todo 
- *  * Bootstrap 
+ * @todo
+ *  * Bootstrap
  *  * Permutation Test
  */
 #define RESAMPLING
@@ -99,18 +101,26 @@
 /*****************************************************************************/
 
 /**
- * @brief \b Neural \b Networks 
- * @details includes : 
+ * @brief \b Neural \b Networks
+ * @details includes :
  *  * Naive Network
  *  * Bayes Network
  *  * Kohonen Network
  *  * Multi-Layer Perceptron
  */
-// #define NEURAL_NETWORKS
+#define NEURAL_NETWORKS
 // #include "ml/naive_net.hpp"
 // #include "ml/bayes_net.hpp"
 // #include "ml/kohonen_net.hpp"
 #include "ml/mlp_net.hpp"
+/*****************************************************************************/
+/**
+ * @brief \b Statistics
+ * @details Machine Learning and Statistics are mostly one in the same
+ * includes :
+ *
+ */
+#define STATISTICS
 /*****************************************************************************/
 
 #endif

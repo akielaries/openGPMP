@@ -1,5 +1,5 @@
 /*
- * definitions for derivative operations operations 
+ * definitions for derivative operations operations
  */
 
 #ifndef CIPHER_H

@@ -1,7 +1,7 @@
 /**
  * @ file
  *
- * Definitions for methods involed in creating Tensors 
+ * Definitions for methods involed in creating Tensors
  *
  */
 
@@ -19,13 +19,15 @@ namespace mtpk {
  */
 class Tensors {
   public:
-    std::vector<std::vector<double>> tensor_vec_mult(std::vector<std::vector<std::vector<double>>> A,
-                                                     std::vector<double> b);
+    std::vector<std::vector<double>>
+        tensor_vec_mult(std::vector<std::vector<std::vector<double>>> A,
+                        std::vector<double> b);
 
     void printTensor(std::vector<std::vector<std::vector<double>>> A);
     std::vector<std::vector<std::vector<double>>>
-        vector_wise_tensor_product(std::vector<std::vector<std::vector<double>>> A,
-                                   std::vector<std::vector<double>> B);
+        vector_wise_tensor_product(
+            std::vector<std::vector<std::vector<double>>> A,
+            std::vector<std::vector<double>> B);
 };
 
 } // namespace mtpk

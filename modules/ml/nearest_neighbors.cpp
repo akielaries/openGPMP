@@ -8,13 +8,13 @@
 using namespace std;
 
 /*
-* For this particular exmaple this is a class which contains the turnover and 
-* success of a company and the characteristics of the team.
-* The file with the data will be a csv file whit 3 columns: 
-*   - turover(int)
-*   - characteristics(unsigned) 
-*   - success(boolean)
-*/
+ * For this particular exmaple this is a class which contains the
+ * turnover and success of a company and the characteristics of the
+ * team. The file with the data will be a csv file whit 3 columns:
+ *   - turover(int)
+ *   - characteristics(unsigned)
+ *   - success(boolean)
+ */
 class Company {
   public:
     Company(int64_t turnover, string characteristics, bool success)
@@ -30,10 +30,11 @@ class Company {
 
   private:
     /*
-	* Function that transforms characteristics (Very Strong,Strong,Average,Weak) 
-    * as strings to number. It is geting the ASCII code as decimal number and 
-    * retuning the total sum of all characters within the string.
-	*/
+     * Function that transforms characteristics (Very
+     * Strong,Strong,Average,Weak) as strings to number. It is geting
+     * the ASCII code as decimal number and retuning the total sum of
+     * all characters within the string.
+     */
     int64_t transformCharacteristics(string &c) {
         uint64_t sum = 0;
         for (size_t i = 0; i < c.size(); ++i) {
@@ -46,18 +47,17 @@ class Company {
 };
 
 /*
-* A class that represent the reader of files with csv extensions.
-*/
+ * A class that represent the reader of files with csv extensions.
+ */
 class CSVReader {
   public:
     CSVReader(const string &fileName, const string &delimeter = ",")
-        : fileName(fileName),
-          delimeter(delimeter) {
+        : fileName(fileName), delimeter(delimeter) {
     }
 
     /*
-	* Function to fetch the data from a CSV file
-	*/
+     * Function to fetch the data from a CSV file
+     */
     vector<vector<string>> getData() {
         ifstream file(this->fileName);
         vector<vector<string>> data;
@@ -77,8 +77,8 @@ class CSVReader {
     string delimeter;
 
     /*
-	* Function used to split each line by the delim
-	*/
+     * Function used to split each line by the delim
+     */
     vector<string> split(string target, string delim) {
         vector<string> v;
         if (!target.empty()) {
@@ -124,13 +124,13 @@ void fillDistances(vector<Company> &data, Company &test,
 
 bool KNN(vector<Company> &data, Company &test, int k,
          double (*distanceFunction)(Company &, Company &)) {
-    //filling the distances between all points and test
+    // filling the distances between all points and test
     fillDistances(data, test, distanceFunction);
 
-    //sorting so that we can get the k nearest
+    // sorting so that we can get the k nearest
     sort(data.begin(), data.end(), comparison);
 
-    int64_t countSuccesful = 0;
+    int64_t countSuccesful   = 0;
     int64_t countUnsuccesful = 0;
     for (int64_t i = 0; i < k; ++i) {
         if (data[i].success) {
@@ -140,8 +140,9 @@ bool KNN(vector<Company> &data, Company &test, int k,
         }
     }
     /*
-     * Based on the count of succesful and unsuccessful examples within 
-     * those k, we are deciding whether the test example is successful or not.
+     * Based on the count of succesful and unsuccessful examples
+     * within those k, we are deciding whether the test example is
+     * successful or not.
      */
     if (countSuccesful == countUnsuccesful) {
         test.success = data[0].success;
@@ -157,19 +158,22 @@ int main() {
     vector<vector<string>> rawData = reader.getData();
     vector<Company> data;
     for (vector<string> line : rawData) {
-        Company comp(stoi(line[0]), line[1], line[2] == "1" ? true : false);
+        Company comp(stoi(line[0]), line[1],
+                     line[2] == "1" ? true : false);
         data.push_back(comp);
     }
 
     /* Test examples
-	* 1256 Weak - should return Successful
-	* 725 Weak - should return Unsuccessful
-	* 1471 Average - should return Successful
-	* 703 Very Strong - should return Unsuccessful
-	* 1301 Strong - should return Successful
-	*/
+     * 1256 Weak - should return Successful
+     * 725 Weak - should return Unsuccessful
+     * 1471 Average - should return Successful
+     * 703 Very Strong - should return Unsuccessful
+     * 1301 Strong - should return Successful
+     */
     Company test(703, "Very Strong", true);
 
-    string answer = KNN(data, test, 12, euclideanDistance) ? "Successful" : "Unsuccessful";
+    string answer = KNN(data, test, 12, euclideanDistance)
+                        ? "Successful"
+                        : "Unsuccessful";
     cout << answer;
 }
