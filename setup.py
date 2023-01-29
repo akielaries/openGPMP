@@ -3,7 +3,7 @@ Main entrypoint for building the openMTPK Python API.
 Leverages SWIG, setuptools, and a few other dependencies.
 """
 
-#from setuptools import setup, find_packages
+# from setuptools import setup, find_packages
 import setuptools
 from setuptools import setup, dist
 from setuptools.extension import Extension
@@ -156,7 +156,7 @@ setuptools.setup(
         'Operating System :: MacOS',
     ],
     python_requires='>=3.6',
-    #install_requires = ['Pillow'],
+    # install_requires = ['Pillow'],
     extras_require={
         'dev': ['check-manifest'],
         # 'test' : ['coverage'],

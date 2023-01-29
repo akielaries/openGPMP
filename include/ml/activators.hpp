@@ -5,8 +5,8 @@
  */
 
 // TODO: IMPLEMENT and OPTIMIZE
-#ifndef ACTIVATORS_HPP
-#define ACTIVATORS_HPP
+#ifndef ML_ACTIVATORS_HPP
+#define ML_ACTIVATORS_HPP
 
 #include <vector>
 

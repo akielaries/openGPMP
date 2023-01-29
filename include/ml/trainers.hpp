@@ -17,7 +17,7 @@ namespace mtpk {
 
 namespace ml {
 
-class Utils {
+class Trainers {
     public:
     /**
      * @details PrimaryMLP training method
