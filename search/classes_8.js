@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['primality_459',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
-  ['primarymlp_460',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
+  ['optimizers_481',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
+  ['outlierfinder_482',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
 ];

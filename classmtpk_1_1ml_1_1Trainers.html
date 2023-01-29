@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: mtpk::ml::Utils Class Reference</title>
+<title>openMTPK: mtpk::ml::Trainers Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,15 +63,15 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacemtpk.html">mtpk</a></li><li class="navelem"><a class="el" href="namespacemtpk_1_1ml.html">ml</a></li><li class="navelem"><a class="el" href="classmtpk_1_1ml_1_1Utils.html">Utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacemtpk.html">mtpk</a></li><li class="navelem"><a class="el" href="namespacemtpk_1_1ml.html">ml</a></li><li class="navelem"><a class="el" href="classmtpk_1_1ml_1_1Trainers.html">Trainers</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classmtpk_1_1ml_1_1Utils-members.html">List of all members</a>  </div>
+<a href="classmtpk_1_1ml_1_1Trainers-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">mtpk::ml::Utils Class Reference</div>  </div>
+<div class="title">mtpk::ml::Trainers Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -79,21 +79,21 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab1c95bbe86b469e8fa7067ae48169e56"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Utils.html#ab1c95bbe86b469e8fa7067ae48169e56">train_PrimaryMLP</a> (const char *fnames)</td></tr>
-<tr class="separator:ab1c95bbe86b469e8fa7067ae48169e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afde22c768efbffdbc8c276c33e07ed80"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Utils.html#afde22c768efbffdbc8c276c33e07ed80">test_PrimaryMLP</a> (const char *fname)</td></tr>
-<tr class="separator:afde22c768efbffdbc8c276c33e07ed80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8159d81108850538f08102d8a9c52e2d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Utils.html#a8159d81108850538f08102d8a9c52e2d">init_SecondaryMLP</a> (size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</td></tr>
-<tr class="separator:a8159d81108850538f08102d8a9c52e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6e0b40e2a9129b2d12779552eeda255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Utils.html#af6e0b40e2a9129b2d12779552eeda255">train_SecondaryMLP</a> (auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</td></tr>
-<tr class="separator:af6e0b40e2a9129b2d12779552eeda255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d66291bfe8415596d5f7903d256b1d"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Trainers.html#ab0d66291bfe8415596d5f7903d256b1d">train_PrimaryMLP</a> (const char *fnames)</td></tr>
+<tr class="separator:ab0d66291bfe8415596d5f7903d256b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc82876f77b5a56e69d42a1f22a20cfc"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Trainers.html#adc82876f77b5a56e69d42a1f22a20cfc">test_PrimaryMLP</a> (const char *fname)</td></tr>
+<tr class="separator:adc82876f77b5a56e69d42a1f22a20cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e9a39d8f34995c08667d3634a08155"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">init_SecondaryMLP</a> (size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</td></tr>
+<tr class="separator:a07e9a39d8f34995c08667d3634a08155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40de007548f1313fc1a27af9aa8a886d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">train_SecondaryMLP</a> (auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</td></tr>
+<tr class="separator:a40de007548f1313fc1a27af9aa8a886d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00020">20</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8159d81108850538f08102d8a9c52e2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8159d81108850538f08102d8a9c52e2d">&#9670;&nbsp;</a></span>init_SecondaryMLP()</h2>
+<a id="a07e9a39d8f34995c08667d3634a08155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e9a39d8f34995c08667d3634a08155">&#9670;&nbsp;</a></span>init_SecondaryMLP()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -102,7 +102,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto mtpk::ml::Utils::init_SecondaryMLP </td>
+          <td class="memname">auto mtpk::ml::Trainers::init_SecondaryMLP </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>inputs</em>, </td>
@@ -161,14 +161,14 @@ Public Member Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="afde22c768efbffdbc8c276c33e07ed80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afde22c768efbffdbc8c276c33e07ed80">&#9670;&nbsp;</a></span>test_PrimaryMLP()</h2>
+<a id="adc82876f77b5a56e69d42a1f22a20cfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc82876f77b5a56e69d42a1f22a20cfc">&#9670;&nbsp;</a></span>test_PrimaryMLP()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t mtpk::ml::Utils::test_PrimaryMLP </td>
+          <td class="memname">int64_t mtpk::ml::Trainers::test_PrimaryMLP </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fname</em></td><td>)</td>
@@ -180,14 +180,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1c95bbe86b469e8fa7067ae48169e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1c95bbe86b469e8fa7067ae48169e56">&#9670;&nbsp;</a></span>train_PrimaryMLP()</h2>
+<a id="ab0d66291bfe8415596d5f7903d256b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d66291bfe8415596d5f7903d256b1d">&#9670;&nbsp;</a></span>train_PrimaryMLP()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t mtpk::ml::Utils::train_PrimaryMLP </td>
+          <td class="memname">int64_t mtpk::ml::Trainers::train_PrimaryMLP </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fnames</em></td><td>)</td>
@@ -199,8 +199,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af6e0b40e2a9129b2d12779552eeda255"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6e0b40e2a9129b2d12779552eeda255">&#9670;&nbsp;</a></span>train_SecondaryMLP()</h2>
+<a id="a40de007548f1313fc1a27af9aa8a886d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40de007548f1313fc1a27af9aa8a886d">&#9670;&nbsp;</a></span>train_SecondaryMLP()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +209,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void mtpk::ml::Utils::train_SecondaryMLP </td>
+          <td class="memname">void mtpk::ml::Trainers::train_SecondaryMLP </td>
           <td>(</td>
           <td class="paramtype">auto&#160;</td>
           <td class="paramname"><em>initialized_model</em>, </td>

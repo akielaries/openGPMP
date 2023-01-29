@@ -14,11 +14,12 @@ var searchData=
   ['bayesmutlinom_44',['BayesMutliNom',['../classmtpk_1_1BayesMutliNom.html#a53d51a2a4f993f08e20f6b3013f1a6b3',1,'mtpk::BayesMutliNom::BayesMutliNom()'],['../classmtpk_1_1BayesMutliNom.html',1,'mtpk::BayesMutliNom']]],
   ['bayesnet_45',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]],
   ['best_5ffit_46',['best_fit',['../classmtpk_1_1LinearRegression.html#ae201c10b80a5e3c7095d84f0a72b644a',1,'mtpk::LinearRegression']]],
-  ['bias_47',['bias',['../classmtpk_1_1Logreg.html#ab70b98a2f1db88ef4eae255bf803d705',1,'mtpk::Logreg::bias()'],['../classmtpk_1_1SVC.html#a8685bed2214a3838fb50fb4e6cb4e391',1,'mtpk::SVC::bias()']]],
-  ['bias1_48',['bias1',['../classmtpk_1_1AutoEncoder.html#ae1e507c0deee9ac805cd93c6abf7c34f',1,'mtpk::AutoEncoder']]],
-  ['bias2_49',['bias2',['../classmtpk_1_1AutoEncoder.html#a30749c2cf05a10684f8f2b1e58a6e29a',1,'mtpk::AutoEncoder']]],
-  ['bias_5fvectors_50',['bias_vectors',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254',1,'mtpk::ml::SecondaryMLP']]],
-  ['bits_51',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
-  ['byte_5flimit_52',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],
-  ['byte_5fswap_53',['byte_swap',['../classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332',1,'mtpk::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
+  ['bfgs_47',['BFGS',['../classmtpk_1_1ml_1_1Optimizers.html#a50fa296c4b421d8ca899c289742304a4',1,'mtpk::ml::Optimizers']]],
+  ['bias_48',['bias',['../classmtpk_1_1Logreg.html#ab70b98a2f1db88ef4eae255bf803d705',1,'mtpk::Logreg::bias()'],['../classmtpk_1_1SVC.html#a8685bed2214a3838fb50fb4e6cb4e391',1,'mtpk::SVC::bias()']]],
+  ['bias1_49',['bias1',['../classmtpk_1_1AutoEncoder.html#ae1e507c0deee9ac805cd93c6abf7c34f',1,'mtpk::AutoEncoder']]],
+  ['bias2_50',['bias2',['../classmtpk_1_1AutoEncoder.html#a30749c2cf05a10684f8f2b1e58a6e29a',1,'mtpk::AutoEncoder']]],
+  ['bias_5fvectors_51',['bias_vectors',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254',1,'mtpk::ml::SecondaryMLP']]],
+  ['bits_52',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
+  ['byte_5flimit_53',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],
+  ['byte_5fswap_54',['byte_swap',['../classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332',1,'mtpk::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['secondarymlp_463',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
-  ['stats_464',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
-  ['summary_465',['summary',['../structmtpk_1_1summary.html',1,'mtpk']]],
-  ['svc_466',['SVC',['../classmtpk_1_1SVC.html',1,'mtpk']]]
+  ['rc4_485',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk']]],
+  ['rc5_486',['RC5',['../classRC5.html',1,'']]],
+  ['regularizers_487',['Regularizers',['../classmtpk_1_1ml_1_1Regularizers.html',1,'mtpk::ml']]]
 ];

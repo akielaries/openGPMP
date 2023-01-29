@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['matrix_452',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk']]],
-  ['mtx_453',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]]
+  ['layer_472',['layer',['../structmtpk_1_1ml_1_1layer.html',1,'mtpk::ml']]],
+  ['linearregression_473',['LinearRegression',['../classmtpk_1_1LinearRegression.html',1,'mtpk']]],
+  ['logreg_474',['Logreg',['../classmtpk_1_1Logreg.html',1,'mtpk']]]
 ];
