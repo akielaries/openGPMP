@@ -51,9 +51,13 @@ jobs:
     #needs: 
     uses: ./.github/workflows/test_wheel.yml
     name: test_build
+    with:
+      job: test_build
   sdist_raspy:
     uses: ./.github/workflows/py_rpi.yml
     name: sdist_raspy
+    with: 
+      job: sdist_raspy
 
   build_plat:
     name: Build source distribution
@@ -146,6 +150,8 @@ jobs:
     needs: publish
     uses: ./.github/workflows/py_rpi.yml
     name: pip_raspy
+    with:
+      job: pip_raspy
 
   ARMV6py:
     needs: publish
