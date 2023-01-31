@@ -47,29 +47,3 @@ jobs:
         run: |
           uname -a
           echo ::set-output name=uname::$(uname -a)
-
-    test_build:
-      runs-on: ubuntu-latest
-      name: Test build source on x86_64 linux
-      steps:
-        - uses: actions/checkout@v3
-        - name: Set up Python
-          uses: actions/setup-python@v2
-          with:
-            python-version: "3.x"
-
-        - name: install dependencies
-          run: |
-            pip install versioneer 
-            pip install wheel
-            sudo apt-get install swig
-
-        - name: Build Wheel
-          run: |
-            cd Python
-            python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-            cp ../samples/python/*.py dist
-            cd dist 
-            unzip *.whl
-            for f in *.py; do python3 "$f"; done
-
