@@ -12,7 +12,7 @@
 
 namespace mtpk {
 class NumericalAnalysis {
-  public:
+    public:
     /* A numerical method for derivatives is used. This may be subject
     to change, as an analytical method for calculating derivatives
     will most likely be used in the future.

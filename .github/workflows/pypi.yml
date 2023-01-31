@@ -1,15 +1,19 @@
 name: Wheels
 
+
 on:
   push:
-    branches: [ main ]
+    branches: [ main , py_root_dir ]
   pull_request:
     branches: [ main ]
   create:
     types: [ tag ]
-    branches: [ main ]
+    branches: [ main , py_root_dir ]
 
 jobs:
+  test_wheels:
+    uses: ./.github/workflows/test_wheels.yml
+
   latest_version:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +25,7 @@ jobs:
     - run: echo ${{ steps.mtpk_version.outputs.tag }}
 
   bump_version:
-    needs: [ latest_version ]
+    needs: [ test_wheels , latest_version ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -29,14 +33,14 @@ jobs:
         fetch-depth: '0'
 
     - name: Bump version and push tag
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/py_root_dir'
       uses: anothrNick/github-tag-action@1.58.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         VERBOSE: true
-        DEFAULT_BRANCH: main
-        RELEASE_BRANCHES: main
+        DEFAULT_BRANCH: py_root_dir
+        RELEASE_BRANCHES: py_root_dir
         MAJOR_STRING_TOKEN: MAJOR
         MINOR_STRING_TOKEN: MINOR
         PATCH_STRING_TOKEN: PATCH
@@ -46,14 +50,10 @@ jobs:
     
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
-  test_build:
-    #needs: 
-    uses: ./.github/workflows/test_wheel.yml
-
   build_plat:
     name: Build source distribution
-    needs: [ test_build , bump_version , latest_version ]
-    if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} && 
+    needs: [ test_wheels , bump_version , latest_version ]
+    if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -68,11 +68,15 @@ jobs:
       - name: Build sdist
         run: |
           pip install versioneer
+          pip install autopep8
+          cd Python
+          #python setup.py build_ext --inplace
           pipx run build --sdist
+          autopep8 --recursive --in-place --aggressive --aggressive .
 
       - uses: actions/upload-artifact@v3
         with:
-          path: dist/*.tar.gz
+          path: Python/dist/*.tar.gz
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}

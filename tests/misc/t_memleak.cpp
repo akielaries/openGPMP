@@ -46,7 +46,7 @@ using ::testing::UnitTest;
 namespace {
 // We will track memory used by this class.
 class Water {
-  public:
+    public:
     // Normal Water declarations go here.
 
     // operator new and operator delete help us control water
@@ -65,7 +65,7 @@ class Water {
         return allocated_;
     }
 
-  private:
+    private:
     static int allocated_;
 };
 
@@ -76,7 +76,7 @@ int Water::allocated_ = 0;
 // Water objects. It does this by comparing the number of live Water
 // objects at the beginning of a test and at the end of a test.
 class LeakChecker : public EmptyTestEventListener {
-  private:
+    private:
     // Called before a test starts.
     void OnTestStart(const TestInfo & /* test_info */) override {
         initially_allocated_ = Water::allocated();

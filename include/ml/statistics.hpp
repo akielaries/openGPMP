@@ -5,7 +5,7 @@
 
 namespace mtpk {
 class Stats {
-  public:
+    public:
     // These functions are for univariate lin reg module- not for
     // users.
     double b0Estimation(const std::vector<double> &x,
@@ -46,7 +46,8 @@ class Stats {
     double logMean(const double x, const double y);
 
     // hypothesis test
-    std::tuple<bool, double> chiSquareTest(std::vector<double> observed, std::vector<double> expected);
+    std::tuple<bool, double> chiSquareTest(std::vector<double> observed,
+                                           std::vector<double> expected);
 };
 } // namespace mtpk
 

@@ -3,7 +3,8 @@
  */
 #include <cassert>
 #include <iostream>
-#include <openMTPK/arithmetic.hpp>
+//#include <openMTPK/arithmetic.hpp>
+#include "../../include/arithmetic.hpp"
 #include <stdio.h>
 #include <time.h>
 #include <vector>
@@ -28,8 +29,9 @@ int main() {
      * 4. print out the values if you want or manipulate them further
      */
 
-    // declare our arithmetic class object
-    mtpk::Arith ar;
+    // declare our arithmetic class object, template class keep in mind
+    // numeric datatypes
+    mtpk::Arith<int> ar;
 
     // declare some variables
     int a    = 10;
@@ -45,47 +47,12 @@ int main() {
     /*
      * starting with addition operations with different data types.
      */
-    float r0  = ar.add(a, b, c);
-    int r1    = ar.add(d, e, f, g);
-    float r2  = ar.add(d, e, f, g);
-    float r99 = ar.add(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
+    int arr[] = {1, 2, 3, 4, 5};
+    int n     = sizeof(arr) / sizeof(arr[0]);
 
-    printf("%d + %d + %d = %f\n", a, b, c, r0);
-    printf("%f + %f + %f + %ld = %d\n", d, e, f, g, r1);
-    printf("%f + %f + %f + %ld = %f\n\n", d, e, f, g, r2);
-    printf("Big result #1 = %f\n\n", r99);
-
-    /*
-     * subtraction
-     */
-    int r3   = ar.sub(a, b, c);
-    int r4   = ar.sub(d, e, f, g);
-    float r5 = ar.sub(d, e, f, g);
-
-    printf("%d - %d - %d = %d\n", a, b, c, r3);
-    printf("%f - %f - %f - %ld = %d\n", d, e, f, g, r4);
-    printf("%f - %f - %f - %ld = %f\n\n", d, e, f, g, r5);
-
-    /*
-     * multiplication
-     */
-    int r6    = ar.mult(a, b, c);
-    int r7    = ar.mult(d, e, f, g);
-    double r8 = ar.mult(d, e, f, g);
-    float r98 = ar.mult(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
-
-    printf("%d * %d * %d = %d\n", a, b, c, r6);
-    printf("%f * %f * %f * %ld = %d\n", d, e, f, g, r7);
-    printf("%f * %f * %f * %ld = %f\n\n", d, e, f, g, r8);
-    printf("Big result #2 = %f\n\n", r98);
-
-    // you can also directly print
-    /*
-    std::cout << ar.rm_sum(2.5, 2) <<'\n'
-            << ar.rm_sum(2, 2.5) <<'\n'
-            << ar.rm_sum(1u, 2.5, 3.f, '0') <<'\n'
-            << ar.rm_sum(4.2, 1, 1.223) <<'\n';
-    */
+    std::cout << ar.arr_add(arr, n) << '\n';
+    std::cout << ar.arr_sub(arr, n) << '\n';
+    std::cout << ar.arr_mlt(arr, n) << '\n';
 
     /*
      * arithmetic basics

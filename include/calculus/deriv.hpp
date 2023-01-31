@@ -14,7 +14,7 @@ namespace mtpk {
  * Calculus Class with methods pertaining to basic operations.
  */
 class Calculus {
-  public:
+    public:
     /**
      * @brief Find the coeffecients and exponents of a polynomial
      *

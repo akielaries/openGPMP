@@ -23,11 +23,11 @@ typedef struct summary {
  * @brief Bayes Classifier Class based on assumptions of independence
  */
 class BayesClf {
-  private:
+    private:
     std::vector<class_summary> Summary;
     std::vector<long double> unique_label;
 
-  public:
+    public:
     void fit(std::vector<std::vector<long double>> dataset);
     int64_t predict(const std::vector<long double> &test_data);
 };
@@ -46,14 +46,14 @@ long double prob_by_summ(const std::vector<long double> &test_data,
  * be used.
  */
 class BayesBernoulli {
-  public:
+    public:
     BayesBernoulli(std::vector<std::vector<double>> inputSet,
                    std::vector<double> outputSet);
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
     double modelTest(std::vector<double> x);
     double score();
 
-  private:
+    private:
     void computeVocab();
     void computeTheta();
     void Evaluate();
@@ -79,7 +79,7 @@ class BayesBernoulli {
  * predicting the output variable.
  */
 class BayesGauss {
-  public:
+    public:
     BayesGauss(std::vector<std::vector<double>> inputSet,
                std::vector<double> outputSet, int class_num);
 
@@ -88,7 +88,7 @@ class BayesGauss {
     double modelTest(std::vector<double> x);
     double score();
 
-  private:
+    private:
     void Evaluate();
 
     int class_num;
@@ -110,7 +110,7 @@ class BayesGauss {
  */
 
 class BayesMutliNom {
-  public:
+    public:
     BayesMutliNom(std::vector<std::vector<double>> inputSet,
                   std::vector<double> outputSet, int class_num);
 
@@ -119,7 +119,7 @@ class BayesMutliNom {
     double modelTest(std::vector<double> x);
     double score();
 
-  private:
+    private:
     void computeTheta();
     void Evaluate();
 

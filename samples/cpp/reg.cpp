@@ -6,10 +6,10 @@
 #include <stdio.h>
 
 int main() {
-    const char *test_file = "../../data/school_scores.csv";
+    const char *test_file = "data/school_scores.csv";
     freopen(test_file, "r", stdin);
     // declare Regression class object
-    mtpk::Regression reg;
+    mtpk::LinearRegression reg;
 
     // Number of pairs of (xi, yi) in the dataset
     // int n;

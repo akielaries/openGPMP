@@ -2,13 +2,14 @@ name: RasPy
 
 on:
   #push:
-  #  branches: [ main, dev ]
+  #  branches:
+  #    - '**'
   #pull_request:
   #  branches: [ main, dev ]
   workflow_call:
 
 jobs:
-  build:
+  pip_raspy:
     runs-on: ubuntu-latest
     steps:
       - 
@@ -22,7 +23,7 @@ jobs:
           python-version: "3.x"
 
       - 
-        name: Initialize Raspberry Pi OS ARMv8 Image
+        name: pip install openmtpk on RPI OS ARMv8 Image
         uses: pguyot/arm-runner-action@v2
         id: build_image
         with:
@@ -30,6 +31,7 @@ jobs:
           commands: |
             uname -a
             echo ::set-output name=uname::$(uname -a)
+            apt-get update
             apt-get install -y python3 python3-distutils python3-pip python3-apt python3-dev
             apt-get install -y pkg-config
             pip install --upgrade pip setuptools wheel

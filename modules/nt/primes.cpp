@@ -3,8 +3,7 @@
  * based equations, formulas, algorithms.
  */
 #include "../../include/nt/primes.hpp"
-#include "../../include/arithmetic/arith_base.hpp"
-#include "../../include/arithmetic/arith_ops.hpp"
+#include "../../include/arithmetic.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>

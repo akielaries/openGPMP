@@ -22,11 +22,12 @@ namespace mtpk {
  * @class Matrix
  * @brief Matrix and Scalar operations
  */
-template <typename Type> class Matrix {
+template <typename Type>
+class Matrix {
+    public:
     size_t cols;
     size_t rows;
 
-  public:
     std::vector<Type> data;
     std::tuple<size_t, size_t> dim;
 
@@ -415,6 +416,8 @@ struct mtx {
         return MTX;
     }
 };
+
+
 
 } // namespace mtpk
 

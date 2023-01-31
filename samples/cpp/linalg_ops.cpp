@@ -20,13 +20,40 @@
  *
  */
 #include <cassert>
+#include <fstream>
 #include <iostream>
+#include <sstream>
 #include <stdio.h>
 #include <vector>
 
 #include <openMTPK/linalg.hpp>
+/*< FOR DEBUGGING LOCAL TESTING >*/
 //#include "../../include/linalg/vectors.hpp"
 //#include "../../include/linalg/matrix.hpp"
+
+using namespace mtpk;
+
+void print_csv() {
+    std::ifstream csvFile("data/school_scores.csv");
+    std::string line;
+    std::vector<std::vector<double>> data;
+    while (std::getline(csvFile, line)) {
+        std::vector<double> row;
+        std::stringstream lineStream(line);
+        std::string cell;
+        while (std::getline(lineStream, cell, ',')) {
+            row.push_back(std::stod(cell));
+            std::cout << line;
+        }
+        data.push_back(row);
+    }
+    csvFile.close();
+    size_t rows = data.size();
+    size_t cols = data[0].size();
+    mtpk::Matrix<double> mat(rows, cols);
+
+    mat.print_mtx();
+}
 
 int main() {
     // declaring an object for the Vectors class is permitted
@@ -36,6 +63,18 @@ int main() {
     int x = v.add(1, 3);
 
     std::cout << "Sum = " << x << "\n\n";
+
+    mtpk::Matrix<int> mat(3, 4);
+    mat.print_mtx();
+
+    std::tuple<Matrix<double>, Matrix<double>> matrices =
+        std::make_tuple(Matrix<double>(5, 3), Matrix<double>(6, 4));
+
+    std::get<0>(matrices).print_mtx();
+    std::get<1>(matrices).print_mtx();
+
+    std::cout << "PRINT CSV AS MATRIX \n";
+    // print_csv();
 
     // declaring matrix with random negative decimals
     std::cout << "Creating 2x2 matrix of random negative floats\n";
@@ -49,6 +88,8 @@ int main() {
     matrix_pos.print_shape();
     matrix_pos.print_mtx();
 
+    std::cout << "Transpose the MATRIX \n";
+    (matrix_pos.transpose()).print_mtx();
     // multiply each element of matrix_pos by a number
     std::cout << "Multiply each element of the matrix by a number"
               << "\n";

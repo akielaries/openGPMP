@@ -28,6 +28,10 @@
  *      * Bayes
  *      * Kohonen (Self-Organizing Map)
  */
+
+// <! Inspired from Machine Learning research, papers,        !>
+// <! textbooks Scikit-learn, Tensorflow, ML++ and much more. !>
+
 #ifndef ML_HPP
 #define ML_HPP
 

@@ -5,14 +5,14 @@
  */
 
 // TODO: IMPLEMENT and OPTIMIZE
-#ifndef ACTIVATORS_HPP
-#define ACTIVATORS_HPP
+#ifndef ML_ACTIVATORS_HPP
+#define ML_ACTIVATORS_HPP
 
 #include <vector>
 
 namespace mtpk {
 class Activate {
-  public:
+    public:
     double linear(double z, bool deriv = 0);
 
     std::vector<double> linear(std::vector<double> z, bool deriv = 0);
@@ -239,7 +239,7 @@ class Activate {
     std::vector<double> activation(std::vector<double> z, bool deriv,
                                    double (*function)(double, bool));
 
-  private:
+    private:
 };
 
 } // namespace mtpk

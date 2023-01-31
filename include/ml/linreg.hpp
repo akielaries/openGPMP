@@ -12,7 +12,7 @@
 
 namespace mtpk {
 
-class Regression {
+class LinearRegression {
     // Dynamic array which is going to contain all (i-th x)
     std::vector<long double> x;
     // Dynamic array which is going to contain all (i-th y)
@@ -32,8 +32,8 @@ class Regression {
     // Contains sum of square of all (i-th y)
     long double sum_y_square;
 
-  public:
-    Regression();
+    public:
+    LinearRegression();
     /*{
             coeff;
             constant;

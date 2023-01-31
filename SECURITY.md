@@ -13,5 +13,3 @@ Please provide as much information as possible:
 - Who can exploit this vulnerability and what would they gain. An attack scenario.
 
 - Information about known exploits if any.
-
-A member of the Security Team will review your e-mail and contact you to collaborate on resolving the issue.
