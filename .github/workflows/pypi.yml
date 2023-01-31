@@ -145,6 +145,7 @@ jobs:
   pip_raspy:
     needs: publish
     uses: ./.github/workflows/py_rpi.yml
+    name: pip_raspy
 
   ARMV6py:
     needs: publish
