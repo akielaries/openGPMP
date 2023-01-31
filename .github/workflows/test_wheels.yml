@@ -49,7 +49,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_armv6py: 
-    name: DIST: Bullseye-latest ARMv6
+    name: DIST - Bullseye-latest ARMv6
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -93,7 +93,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_armv7py: 
-    name: DIST: Ubuntu-latest ARMv7
+    name: DIST - Ubuntu-latest ARMv7
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -136,8 +136,8 @@ jobs:
           uname -a
           echo ::set-output name=uname::$(uname -a)
 
-  sdist_armv6py: 
-    name: DIST - Ubuntu-latest ARMv6
+  sdist_armv8py: 
+    name: DIST - Ubuntu-latest ARMv8
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -145,8 +145,8 @@ jobs:
         name: Run commands
         id: runcmd
         with:
-          arch: armv6
-          distro: bullseye
+          arch: aarch64
+          distro: ubuntu_latest
   
           # Not required, but speeds up builds by storing container images in
           # a GitHub package registry.
