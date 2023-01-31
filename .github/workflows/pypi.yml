@@ -49,17 +49,9 @@ jobs:
 
   test_build:
     runs-on: ubuntu-latest
-    steps:
-      - name: tree
-        run: |
-          ls -lash
-          tree ../
-          tree
-          tree -d
-      - name: Run sdist on linux
-        uses: ./.github/workflows/test_wheel.yml
-        with:
-          job: test_build
+    uses: ./.github/workflows/test_wheel.yml
+    with:
+      job: test_build
 
   sdist_raspy:
     name: py_rpi_yml
