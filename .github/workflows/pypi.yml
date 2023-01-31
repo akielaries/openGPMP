@@ -48,7 +48,6 @@ jobs:
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
   test_build:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/test_wheel.yml
     with:
       job: test_build
