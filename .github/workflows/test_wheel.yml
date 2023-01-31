@@ -2,7 +2,7 @@ name: Test Wheel Build
 
 on:
   push:
-    branches: [ main , dev ]
+    branches: [ main , dev , py_root_dir ]
   workflow_call:
 
 jobs:
@@ -23,5 +23,7 @@ jobs:
             sudo apt-get install swig
 
         - name: Build Wheel
-          run: python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
+          run: |
+            python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
+            cd dist unzip *.whl
 
