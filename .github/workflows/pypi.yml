@@ -109,6 +109,8 @@ jobs:
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.11.4
+        run: |
+          cd Python
         env:
           CIBW_ENVIRONMENT: "CC='g++' CXX='g++' CFLAGS='-std=c++2a' CXXFLAGS='-std=c++2a'"
           CIBW_ARCHS_MACOS: x86_64 arm64
