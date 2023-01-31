@@ -48,13 +48,8 @@ jobs:
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
   test_build:
-    name: test_wheel_yml
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: '0'
-
       - name: tree
         run: |
           ls -lash
