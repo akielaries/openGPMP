@@ -26,9 +26,9 @@ def get_keywords():
     # setup.py/versioneer.py will grep for the variable names, so they must
     # each be defined on a line of their own. _version.py will just call
     # get_keywords().
-    git_refnames = " (py_root_dir)"
-    git_full = "5d9609051f15fde056ae098803be12abcdbe0f83"
-    git_date = "2023-01-30 21:20:28 -0700"
+    git_refnames = "$Format:%d$"
+    git_full = "$Format:%H$"
+    git_date = "$Format:%ci$"
     keywords = {"refnames": git_refnames, "full": git_full, "date": git_date}
     return keywords
 
@@ -353,8 +353,7 @@ def git_pieces_from_vcs(tag_prefix, root, verbose, runner=run_command):
         pieces["distance"] = len(out.split())  # total number of commits
 
     # commit date: see ISO-8601 comment in git_versions_from_keywords()
-    date = runner(GITS, ["show", "-s", "--format=%ci",
-                  "HEAD"], cwd=root)[0].strip()
+    date = runner(GITS, ["show", "-s", "--format=%ci", "HEAD"], cwd=root)[0].strip()
     # Use only the last line.  Previous lines may contain GPG signature
     # information.
     date = date.splitlines()[-1]
@@ -444,12 +443,10 @@ def render_pep440_pre(pieces):
     if pieces["closest-tag"]:
         if pieces["distance"]:
             # update the post release segment
-            tag_version, post_version = pep440_split_post(
-                pieces["closest-tag"])
+            tag_version, post_version = pep440_split_post(pieces["closest-tag"])
             rendered = tag_version
             if post_version is not None:
-                rendered += ".post%d.dev%d" % (post_version + 1,
-                                               pieces["distance"])
+                rendered += ".post%d.dev%d" % (post_version + 1, pieces["distance"])
             else:
                 rendered += ".post0.dev%d" % (pieces["distance"])
         else:

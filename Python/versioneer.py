@@ -1348,8 +1348,7 @@ def git_pieces_from_vcs(tag_prefix, root, verbose, runner=run_command):
         pieces["distance"] = len(out.split())  # total number of commits
 
     # commit date: see ISO-8601 comment in git_versions_from_keywords()
-    date = runner(GITS, ["show", "-s", "--format=%ci",
-                  "HEAD"], cwd=root)[0].strip()
+    date = runner(GITS, ["show", "-s", "--format=%ci", "HEAD"], cwd=root)[0].strip()
     # Use only the last line.  Previous lines may contain GPG signature
     # information.
     date = date.splitlines()[-1]
@@ -1547,12 +1546,10 @@ def render_pep440_pre(pieces):
     if pieces["closest-tag"]:
         if pieces["distance"]:
             # update the post release segment
-            tag_version, post_version = pep440_split_post(
-                pieces["closest-tag"])
+            tag_version, post_version = pep440_split_post(pieces["closest-tag"])
             rendered = tag_version
             if post_version is not None:
-                rendered += ".post%d.dev%d" % (post_version + 1,
-                                               pieces["distance"])
+                rendered += ".post%d.dev%d" % (post_version + 1, pieces["distance"])
             else:
                 rendered += ".post0.dev%d" % (pieces["distance"])
         else:
@@ -1822,8 +1819,7 @@ def get_cmdclass(cmdclass=None):
         # parent is protected against the child's "import versioneer". By
         # removing ourselves from sys.modules here, before the child build
         # happens, we protect the child from the parent's versioneer too.
-        # Also see
-        # https://github.com/python-versioneer/python-versioneer/issues/52
+        # Also see https://github.com/python-versioneer/python-versioneer/issues/52
 
     cmds = {} if cmdclass is None else cmdclass.copy()
 
@@ -1918,10 +1914,9 @@ def get_cmdclass(cmdclass=None):
             target_versionfile = os.path.join(self.build_lib,
                                               cfg.versionfile_build)
             if not os.path.exists(target_versionfile):
-                print(
-                    f"Warning: {target_versionfile} does not exist, skipping "
-                    "version update. This can happen if you are running build_ext "
-                    "without first running build_py.")
+                print(f"Warning: {target_versionfile} does not exist, skipping "
+                      "version update. This can happen if you are running build_ext "
+                      "without first running build_py.")
                 return
             print("UPDATING %s" % target_versionfile)
             write_to_version_file(target_versionfile, versions)
