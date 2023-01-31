@@ -51,8 +51,8 @@ jobs:
     name: test_wheel_yml
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      #- name: Checkout code
+      #  uses: actions/checkout@v3
       - name: Run sdist on linux
         uses: ./.github/workflows/test_wheel.yml
         with:
