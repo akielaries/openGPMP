@@ -52,7 +52,7 @@ jobs:
 
   build_plat:
     name: Build source distribution
-    needs: [ test_wheels , sdist_raspy , bump_version , latest_version ]
+    needs: [ test_wheels , bump_version , latest_version ]
     if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
