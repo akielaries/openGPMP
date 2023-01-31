@@ -25,6 +25,8 @@ jobs:
         - name: Build Wheel
           run: |
             python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
+            cp samples/python/linalg.py dist
             cd dist 
             unzip *.whl
+            python3 linalg.py
 
