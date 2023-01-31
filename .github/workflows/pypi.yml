@@ -11,6 +11,9 @@ on:
     branches: [ main , py_root_dir ]
 
 jobs:
+  test_wheels:
+    uses: ./.github/workflows/test_wheels.yml
+
   latest_version:
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +25,7 @@ jobs:
     - run: echo ${{ steps.mtpk_version.outputs.tag }}
 
   bump_version:
-    needs: [ latest_version ]
+    needs: [ test_wheels , latest_version ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -46,9 +49,6 @@ jobs:
       id: new_version
     
     - run: echo ${{ steps.new_version.outputs.new_tag }}
-
-  test_wheels:
-    uses: ./.github/workflows/test_wheels.yml
 
   build_plat:
     name: Build source distribution
