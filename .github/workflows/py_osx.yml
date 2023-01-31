@@ -8,10 +8,7 @@ on:
 jobs:
   PyOSX:
     name: Test openMTPK on Darwin
-    runs-on: ${{ matrix.os }} 
-    strategy:
-      matrix:
-        os: [ macos-latest ]
+    runs-on: [ macos-latest ] 
 
     steps:
       - uses: actions/checkout@v2
