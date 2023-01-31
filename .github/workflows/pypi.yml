@@ -3,12 +3,12 @@ name: Wheels
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main , py_root_dir ]
   pull_request:
     branches: [ main ]
   create:
     types: [ tag ]
-    branches: [ main ]
+    branches: [ main , py_root_dir ]
 
 jobs:
   latest_version:
@@ -30,14 +30,14 @@ jobs:
         fetch-depth: '0'
 
     - name: Bump version and push tag
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/py_root_dir'
       uses: anothrNick/github-tag-action@1.58.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         VERBOSE: true
-        DEFAULT_BRANCH: main
-        RELEASE_BRANCHES: main
+        DEFAULT_BRANCH: py_root_dir
+        RELEASE_BRANCHES: py_root_dir
         MAJOR_STRING_TOKEN: MAJOR
         MINOR_STRING_TOKEN: MINOR
         PATCH_STRING_TOKEN: PATCH
@@ -55,7 +55,7 @@ jobs:
 
   build_plat:
     name: Build source distribution
-    needs: [ test_build , bump_version , latest_version ]
+    needs: [ test_build , sdist_raspy , bump_version , latest_version ]
     if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
@@ -140,7 +140,7 @@ jobs:
   # the build installation is supported by x86 based OSX 
   # versions and LINUX distros by the CIBUILDWHEEL utilities.
   # test pip install openmtpk on the following platforms
-  RasPy:
+  pip_raspy:
     needs: publish
     uses: ./.github/workflows/py_rpi.yml
 
