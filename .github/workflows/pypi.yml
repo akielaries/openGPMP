@@ -53,6 +53,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: tree
+        run: |
+          tree
+          tree -d
       - name: Run sdist on linux
         uses: ./.github/workflows/test_wheel.yml
         with:
