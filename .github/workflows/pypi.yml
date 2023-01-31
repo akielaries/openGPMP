@@ -3,12 +3,12 @@ name: Wheels
 
 on:
   push:
-    branches: [ main , dev ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
   create:
     types: [ tag ]
-    branches: [ main , dev ]
+    branches: [ main ]
 
 jobs:
   latest_version:
@@ -30,14 +30,14 @@ jobs:
         fetch-depth: '0'
 
     - name: Bump version and push tag
-      if: github.ref == 'refs/heads/main'|| github.ref == 'refs/heads/dev'
+      if: github.ref == 'refs/heads/main'
       uses: anothrNick/github-tag-action@1.58.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         VERBOSE: true
-        DEFAULT_BRANCH: dev
-        RELEASE_BRANCHES: dev
+        DEFAULT_BRANCH: main
+        RELEASE_BRANCHES: main
         MAJOR_STRING_TOKEN: MAJOR
         MINOR_STRING_TOKEN: MINOR
         PATCH_STRING_TOKEN: PATCH
@@ -70,7 +70,7 @@ jobs:
         run: |
           pip install versioneer
           pip install autopep8
-          python setup.py build_ext --inplace
+          #python setup.py build_ext --inplace
           pipx run build --sdist
           autopep8 --recursive --in-place --aggressive --aggressive .
 
