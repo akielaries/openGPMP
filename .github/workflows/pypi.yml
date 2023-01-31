@@ -50,7 +50,8 @@ jobs:
   test_build:
     #needs: 
     uses: ./.github/workflows/test_wheel.yml
-    uses: ./.github/workflows/
+  sdist_raspy:
+    uses: ./.github/workflows/py_rpi.yml
 
   build_plat:
     name: Build source distribution
