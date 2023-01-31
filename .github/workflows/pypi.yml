@@ -49,8 +49,7 @@ jobs:
 
   test_build:
     uses: ./.github/workflows/test_wheel.yml
-    with:
-      job: test_build
+    ref: test_build
 
   sdist_raspy:
     name: py_rpi_yml
