@@ -48,20 +48,30 @@ jobs:
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
   test_build:
-    #needs: 
-    uses: ./.github/workflows/test_wheel.yml
-    name: test_build
-    with:
-      job: test_build
+    name: test_wheel_yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run sdist on linux
+        uses: ./.github/workflows/test_wheel.yml
+        with:
+          job: test_build
+
   sdist_raspy:
-    uses: ./.github/workflows/py_rpi.yml
-    name: sdist_raspy
-    with: 
-      job: sdist_raspy
+    name: py_rpi_yml
+    runs-on: ubuntu-lates
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run sdist on RPI
+        uses: ./.github/workflows/py_rpi.yml
+        with:
+          job: sdist_raspy
 
   build_plat:
     name: Build source distribution
-    needs: [ test_build , sdist_raspy , bump_version , latest_version ]
+    needs: [ test_build , bump_version , latest_version ]
     if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
@@ -146,12 +156,18 @@ jobs:
   # the build installation is supported by x86 based OSX 
   # versions and LINUX distros by the CIBUILDWHEEL utilities.
   # test pip install openmtpk on the following platforms
-  pip_raspy:
+  RasPy:
+    name: RPI pip install
+    runs-on: ubuntu-latest
     needs: publish
-    uses: ./.github/workflows/py_rpi.yml
-    name: pip_raspy
-    with:
-      job: pip_raspy
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run pip_raspy
+        uses: ./.github/workflows/py_rpi.yml
+        with:
+          job:
+            pip_raspy
 
   ARMV6py:
     needs: publish
