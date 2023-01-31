@@ -2,7 +2,8 @@ name: Test Wheel Build
 
 on:
   push:
-    branches: [ main , dev , py_root_dir ]
+    branches: 
+    - '**'
   workflow_call:
 
 jobs:
@@ -24,6 +25,7 @@ jobs:
 
         - name: Build Wheel
           run: |
+            cd Python
             python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
             cp samples/python/linalg.py dist
             cd dist 

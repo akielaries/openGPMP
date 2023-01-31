@@ -70,13 +70,14 @@ jobs:
         run: |
           pip install versioneer
           pip install autopep8
+          cd Python
           #python setup.py build_ext --inplace
           pipx run build --sdist
           autopep8 --recursive --in-place --aggressive --aggressive .
 
       - uses: actions/upload-artifact@v3
         with:
-          path: dist/*.tar.gz
+          path: Python/dist/*.tar.gz
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
