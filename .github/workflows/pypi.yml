@@ -90,7 +90,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # required for versioneer to find tags
-      - run: cd Python
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -118,7 +117,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          path: ./wheelhouse/*.whl
+          path: ./Python/wheelhouse/*.whl
 
   publish:
     name: Publish to PYPI
