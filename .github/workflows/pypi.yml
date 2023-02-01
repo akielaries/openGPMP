@@ -15,6 +15,7 @@ jobs:
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
+    needs: [ test_wheels ]
     runs-on: ubuntu-latest
     steps:
     - uses: oprypin/find-latest-tag@v1
@@ -25,7 +26,7 @@ jobs:
     - run: echo ${{ steps.mtpk_version.outputs.tag }}
 
   bump_version:
-    needs: [ test_wheels , latest_version ]
+    needs: [ latest_version ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
