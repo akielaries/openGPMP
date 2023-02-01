@@ -14,7 +14,5 @@ __all__: list[str]
 __path__: list[str]
 
 
-__version__ = _version.get_versions()['version']
-
 from . import _version
 __version__ = _version.get_versions()['version']

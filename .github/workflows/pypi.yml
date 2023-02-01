@@ -52,8 +52,8 @@ jobs:
 
   build_plat:
     name: Build source distribution
-    needs: [ test_wheels , bump_version ]
-    if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
+    needs: [ bump_version ]
+    if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
