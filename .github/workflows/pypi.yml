@@ -3,12 +3,12 @@ name: Wheels
 
 on:
   push:
-    branches: [ main , py_root_dir ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
   create:
     types: [ tag ]
-    branches: [ main , py_root_dir ]
+    branches: [ main ]
 
 jobs:
   test_wheels:
@@ -33,14 +33,14 @@ jobs:
         fetch-depth: '0'
 
     - name: Bump version and push tag
-      if: github.ref == 'refs/heads/py_root_dir'
+      if: github.ref == 'refs/heads/main'
       uses: anothrNick/github-tag-action@1.58.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         VERBOSE: true
-        DEFAULT_BRANCH: py_root_dir
-        RELEASE_BRANCHES: py_root_dir
+        DEFAULT_BRANCH: main
+        RELEASE_BRANCHES: main
         MAJOR_STRING_TOKEN: MAJOR
         MINOR_STRING_TOKEN: MINOR
         PATCH_STRING_TOKEN: PATCH
@@ -52,7 +52,7 @@ jobs:
 
   build_plat:
     name: Build source distribution
-    needs: [ test_wheels , bump_version , latest_version ]
+    needs: [ test_wheels , bump_version ]
     if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
