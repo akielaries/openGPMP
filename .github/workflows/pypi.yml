@@ -1,6 +1,5 @@
 name: Wheels
 
-
 on:
   push:
     branches: [ main ]
@@ -11,11 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test_wheels:
-    uses: ./.github/workflows/test_wheels.yml
-
   latest_version:
-    needs: [ test_wheels ]
     runs-on: ubuntu-latest
     steps:
     - uses: oprypin/find-latest-tag@v1
@@ -51,9 +46,12 @@ jobs:
     
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
+  test_wheels:
+    uses: ./.github/workflows/test_wheels.yml
+
   build_plat:
     name: Build source distribution
-    needs: [ bump_version ]
+    needs: [ latest_version , bump_version , test_wheels ]
     if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }} 
     runs-on: ubuntu-latest
     steps:
@@ -71,7 +69,7 @@ jobs:
           pip install versioneer
           pip install autopep8
           cd Python
-          #python setup.py build_ext --inplace
+          python setup.py build_ext --inplace
           pipx run build --sdist
           autopep8 --recursive --in-place --aggressive --aggressive .
 
@@ -108,11 +106,7 @@ jobs:
           pip install cibuildwheel
           pip install versioneer
 
-      - name: Build wheels for Linux
-        if: runner.os == 'Linux'
-        run: python3 -m cibuildwheel Python --output-dir Python/wheelhouse --archs all
-      - name: Build wheels for OSX
-        if: runner.os == 'macOS'
+      - name: Build wheels
         run: python3 -m cibuildwheel Python --output-dir Python/wheelhouse --archs all
 
         #uses: pypa/cibuildwheel@v2.11.4
