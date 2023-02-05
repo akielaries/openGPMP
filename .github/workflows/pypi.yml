@@ -9,7 +9,6 @@ on:
     types: [ tag ]
     branches: [ main ]
 
-
 jobs:
   latest_version:
     runs-on: ubuntu-latest
@@ -53,7 +52,7 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ test_wheels , latest_version , bump_version ]
-    if: needs.test_wheels.result == 'success' && needs.bump_version.outputs.new_tag != needs.latest_version.mtpk_version.outputs.tag
+    if: needs.bump_version.outputs.new_tag != needs.latest_version.mtpk_version.outputs.tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
