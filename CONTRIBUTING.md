@@ -12,7 +12,7 @@ These are the current fixes, ideas, and implementations involved with openMTPK. 
 
 2. Perfecting the **Linux** and **OSX** installations with `CMake`. 
    
-   * **Windows** is not currently on my agenda, installation and support for Windows systems is handed off to contributors. 
+   * **Windows** is not currently on my agenda. Installation and support for Windows systems is handed off to those who need it or if I have a plethora of spare time. 
    
    * `CMake` installation currently only works with **Linux**, issues arise on **OSX** when it comes to the steps regarding GoogleTest.
 
@@ -26,25 +26,21 @@ These are the current fixes, ideas, and implementations involved with openMTPK. 
      
      * As of now partial working steps for doing this with **SWIG** is present in each of the respective languages folders. 
 
-4* Formalize openMTPK for real world applications.
-   
-   * Threading, accelration, optimization. This could include creating a 1-stop-shop implementation using some sort of cross-platform library/framework/technique that enable CPU and/or GPU exploitation just like popular libraries that are capable of handling extremely large data sets (PyTorch, TensorFlow, etc.)
+4. Formalize openMTPK for real world applications.
+- * Threading, acceleration, optimization, etc. This could include creating a 1-stop-shop implementation using some sort of cross-platform library/framework/technique that enable CPU and/or GPU exploitation just like popular libraries that are capable of handling extremely large data sets (PyTorch, TensorFlow, etc.).
+  * pthreads, openCL, openMP? A custom take at this could prove difficult to implement and maintain. 
 
-5* Updates to Documentation published with Doxygen to https://akielaries.github.io/openMTPK/. 
+- 5. Updates to Documentation published with Doxygen to https://akielaries.github.io/openMTPK/. This is needed for both the C++ and Python uses while the former contains a decent amount already.
 
 ## 
 
 # Bug fixes
 
-* If you have a bug fix please submit a pull request with details highlighting what you are fixing, how you replicated it, and how you tested your fix. 
-
-
+* If you have a bug fix please submit a pull request with details highlighting what you are fixing, how you replicated it, and how you tested your fix. For fixes that include confidential information please feel free to send me an email [akiel@akiel.org](mailto:akiel@akiel.org)
 
 # Code Style
 
-openMTPK attempts to follow the neat [Google C++ Style Guide]([Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html). 
-
-
+openMTPK attempts to follow the neat [Google C++ Style Guide]([Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) for naming while a custom clang-format file is used for tidying formatting. 
 
 
 

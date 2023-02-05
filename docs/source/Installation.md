@@ -5,6 +5,19 @@ The current installation does not allow for the building of the packages languag
 bindings, limiting use to the core c++ lib. See below on how to build the bindings 
 from source if interested.
 
+# Python
+The Python API installation is easy through the pipeline in place for creating and
+publishing the binding to PyPI. 
+## Requirements
+* Python 3.x
+* pip
+
+```
+$ pip install openmtpk
+```
+
+
+# Source
 ## Requirements
 * Linux/OSX
 * CMake
