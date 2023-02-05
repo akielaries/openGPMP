@@ -191,6 +191,7 @@ clean-tests:
 	rm -f ${TCALCBIN}
 
 clean-misc:
+	rm -rf build/ dist/ openmtpk.egg-info/ 
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
 
