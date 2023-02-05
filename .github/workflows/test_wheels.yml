@@ -37,7 +37,7 @@ jobs:
             apt-get install -y swig
             pip install --upgrade pip setuptools wheel
             python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-            cp ../samples/python/*.py dist
+            cp samples/python/*.py dist
             cd dist
             unzip *.whl
             for f in *.py; do python3 "$f"; done
@@ -81,7 +81,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
           pip install --upgrade pip setuptools wheel
           python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-          cp ../samples/python/*.py dist
+          cp samples/python/*.py dist
           cd dist
           unzip *.whl
           for f in *.py; do python3 "$f"; done
@@ -124,7 +124,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
           pip install --upgrade pip setuptools wheel
           python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-          cp ../samples/python/*.py dist
+          cp samples/python/*.py dist
           cd dist
           unzip *.whl
           for f in *.py; do python3 "$f"; done
@@ -167,7 +167,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
           pip install --upgrade pip setuptools wheel
           python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-          cp ../samples/python/*.py dist
+          cp samples/python/*.py dist
           cd dist
           unzip *.whl
           for f in *.py; do python3 "$f"; done
@@ -210,7 +210,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
           pip install --upgrade pip setuptools wheel
           python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-          cp ../samples/python/*.py dist
+          cp samples/python/*.py dist
           cd dist
           unzip *.whl
           for f in *.py; do python3 "$f"; done
@@ -253,7 +253,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
           pip install --upgrade pip setuptools wheel
           python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-          cp ../samples/python/*.py dist
+          cp samples/python/*.py dist
           cd dist
           unzip *.whl
           for f in *.py; do python3 "$f"; done
@@ -296,7 +296,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
           pip install --upgrade pip setuptools wheel
           python3 setup.py build_ext --inplace sdist bdist_wheel --plat-name=manylinux1_x86_64
-          cp ../samples/python/*.py dist
+          cp samples/python/*.py dist
           cd dist
           unzip *.whl
           for f in *.py; do python3 "$f"; done
