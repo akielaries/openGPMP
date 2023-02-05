@@ -1,21 +1,20 @@
 /*
  *  function implementation of all functions assisting tree operations
  */
-#include <stdlib.h>
-#include <stdio.h>
-#include "constants.h"
 #include "tree_ops_helpers.h"
+#include "constants.h"
 #include "tree_ops.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /*
 Name: getBalanceFactor
 Process: calculates the height difference of a given node's subtrees
 Function input/parameters: localPtr
 Function output/parameters: none
-Function output/returned: height difference between the localPtr's subtrees (int)
-Device input/file: none
-Device output/monitor: none
-Dependencies: findSubTreeHeight
+Function output/returned: height difference between the localPtr's subtrees
+(int) Device input/file: none Device output/monitor: none Dependencies:
+findSubTreeHeight
 */
 int get_balance_factor(PasswordType *localPtr) {
     // initialize variables
@@ -26,14 +25,14 @@ int get_balance_factor(PasswordType *localPtr) {
     // find sub tree height for left and right
     // calculate balance factor (the difference)
     // return balance factor
-    return find_subtree_height(localPtr->leftChildPtr) 
-        - find_subtree_height(localPtr->rightChildPtr);
+    return find_subtree_height(localPtr->leftChildPtr) -
+           find_subtree_height(localPtr->rightChildPtr);
 }
 
 /*
 Name: rebalanceTree
-Process: Checks if tree needs to be rebalanced at the node passed in. If it does,
-         the appropriate rotation steps are taken to rebalance the tree.
+Process: Checks if tree needs to be rebalanced at the node passed in. If it
+does, the appropriate rotation steps are taken to rebalance the tree.
 Function input/parameters: pointer to node to rebalance (localPtr)
 Function output/parameters: none
 Function output/returned: updated localPtr
@@ -47,19 +46,20 @@ PasswordType *rebalance_tree(PasswordType *localPtr) {
     int leftChildHeightDifference;
 
     // determine if a rebalance is necessary
-        // function: getBalanceFactor
+    // function: getBalanceFactor
     currentNodeHeightDifference = get_balance_factor(localPtr);
 
     // check for a left side imbalance  (cNHD is > 1)
     if (currentNodeHeightDifference > 1) {
         // get balance factor of current node's (localPtr) left child
-        leftChildHeightDifference = get_balance_factor(localPtr->leftChildPtr);
+        leftChildHeightDifference =
+            get_balance_factor(localPtr->leftChildPtr);
 
         // check for a left left case (balance factor >=0)
-        if (get_balance_factor(localPtr->
-                    leftChildPtr->leftChildPtr) >= 0) {
+        if (get_balance_factor(localPtr->leftChildPtr->leftChildPtr) >=
+            0) {
             // rotate to resolve the tree (rightRotation)
-                // function: rightRotation
+            // function: rightRotation
             right_rotation(localPtr->leftChildPtr->leftChildPtr);
         }
 
@@ -74,10 +74,10 @@ PasswordType *rebalance_tree(PasswordType *localPtr) {
     else if (currentNodeHeightDifference < -1) {
         // get balance factor for currentNode's right child
         get_balance_factor(localPtr->rightChildPtr);
-        
+
         // check for right right case (balance factor is <=0)
-        if (get_balance_factor(localPtr->
-                    rightChildPtr->rightChildPtr) <= 0) {
+        if (get_balance_factor(localPtr->rightChildPtr->rightChildPtr) <=
+            0) {
             //  rotate to rebalance
             right_rotation(localPtr->rightChildPtr->rightChildPtr);
         }
@@ -95,7 +95,7 @@ int get_max(int valOne, int valTwo) {
     // initialize variables
     int largerVal = valOne;
     // check to see if valTwo is larger than one
-    if(valTwo > valOne) {
+    if (valTwo > valOne) {
         // reassign largerVal for return
         largerVal = valTwo;
     }
@@ -107,7 +107,7 @@ int find_subtree_height(PasswordType *localPtr) {
     // initialize variables
     int leftHeight, rightHeight;
     // check for localPtr not null
-    if(localPtr != NULL) {
+    if (localPtr != NULL) {
         // find height of left subtree
         leftHeight = find_subtree_height(localPtr->leftChildPtr);
         // find height of right subtree
@@ -120,12 +120,10 @@ int find_subtree_height(PasswordType *localPtr) {
 }
 /*
 Name: findLargestLeafNode
-Process: searches the tree for the largest leaf node, returns a pointer to node.
-Function input/parameters: wkgPtr, which is the current node in the tree
-Function output/parameters: none
-Function output/returned: pointer to largest leaf node
-Device input/file: none
-Device output/monitor: none
+Process: searches the tree for the largest leaf node, returns a pointer to
+node. Function input/parameters: wkgPtr, which is the current node in the
+tree Function output/parameters: none Function output/returned: pointer to
+largest leaf node Device input/file: none Device output/monitor: none
 Dependencies: findLargestLeafNode
 */
 PasswordType *find_largest_leaf_node(PasswordType *wkgPtr) {
@@ -134,7 +132,8 @@ PasswordType *find_largest_leaf_node(PasswordType *wkgPtr) {
     PasswordType *largestLeaf = NULL;
 
     // check to see if current node is a leaf
-    if (currentNode->leftChildPtr == NULL && currentNode->rightChildPtr == NULL) {
+    if (currentNode->leftChildPtr == NULL &&
+        currentNode->rightChildPtr == NULL) {
         // assign ptr for return
         largestLeaf = currentNode;
     }
@@ -157,8 +156,8 @@ PasswordType *find_largest_leaf_node(PasswordType *wkgPtr) {
 
 /*
 Name: findSmallestLeafNode
-Process: searches the tree for the smallest leaf node, returns a pointer to node.
-Function input/parameters: working pointer, current node in the tree
+Process: searches the tree for the smallest leaf node, returns a pointer to
+node. Function input/parameters: working pointer, current node in the tree
 Function output/parameters: none
 Function output/returned: pointer to smallest leaf node
 Device input/file: none
@@ -167,12 +166,12 @@ Dependencies: findSmallestLeafNode
 */
 PasswordType *find_smallest_leaf_node(PasswordType *wkgPtr) {
     // initialize variables
-    PasswordType *currentNode = wkgPtr;
+    PasswordType *currentNode  = wkgPtr;
     PasswordType *smallestLeaf = NULL;
 
     // check if current node is leaf
-    if (currentNode->leftChildPtr == NULL 
-            && currentNode->rightChildPtr == NULL) {
+    if (currentNode->leftChildPtr == NULL &&
+        currentNode->rightChildPtr == NULL) {
         smallestLeaf = currentNode;
     }
 
@@ -181,11 +180,9 @@ PasswordType *find_smallest_leaf_node(PasswordType *wkgPtr) {
         // check to see if there is a left child (reversing above)
         if (currentNode->leftChildPtr != NULL) {
             return find_smallest_leaf_node(currentNode->leftChildPtr);
-        }
-        else {
+        } else {
             return find_smallest_leaf_node(currentNode->rightChildPtr);
         }
     }
     return smallestLeaf;
 }
-

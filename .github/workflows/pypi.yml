@@ -25,6 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  
 
     - name: Bump version and push tag
       if: github.ref == 'refs/heads/main'
@@ -62,21 +64,16 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install Dependencies
+      - name: Build sdist
         run: |
           pip install versioneer
           pip install autopep8
-
-      - name: Build sdist
-        working-directory: Python
-        run: |
           python setup.py build_ext --inplace
           pipx run build --sdist
           autopep8 --recursive --in-place --aggressive --aggressive .
-
       - uses: actions/upload-artifact@v3
         with:
-          path: Python/dist/*.tar.gz
+          path: dist/*.tar.gz
 
   compile_wheels:
     name: Build Wheels on ${{ matrix.os }}
@@ -102,23 +99,19 @@ jobs:
         with:
           platforms: all
 
-      - name: Install Versioneer + cibuildwheel
+      - name: Install Versioneer
         run: |
-          pip install cibuildwheel
           pip install versioneer
-
       - name: Build wheels
-        run: python3 -m cibuildwheel Python --output-dir Python/wheelhouse --archs all
-
-        #uses: pypa/cibuildwheel@v2.11.4
-        #env:
-        #  CIBW_ENVIRONMENT: "CC='g++' CXX='g++' CFLAGS='-std=c++2a' CXXFLAGS='-std=c++2a'"
-        #  CIBW_ARCHS_MACOS: x86_64 arm64
-        #  CIBW_ARCHS_LINUX: auto aarch64 ppc64le s390x
+        uses: pypa/cibuildwheel@v2.11.4
+        env:
+          CIBW_ENVIRONMENT: "CC='g++' CXX='g++' CFLAGS='-std=c++2a' CXXFLAGS='-std=c++2a'"
+          CIBW_ARCHS_MACOS: x86_64 arm64
+          CIBW_ARCHS_LINUX: auto aarch64 ppc64le s390x
 
       - uses: actions/upload-artifact@v3
         with:
-          path: ./Python/wheelhouse/*.whl
+          path: ./wheelhouse/*.whl
 
   publish:
     name: Publish to PYPI

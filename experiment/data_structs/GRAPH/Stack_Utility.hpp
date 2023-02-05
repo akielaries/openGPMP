@@ -7,15 +7,14 @@
 #include <stdlib.h>
 
 // Data structure
-typedef struct StackTypeStruct
-   {
+typedef struct StackTypeStruct {
     int value;
     struct StackTypeStruct *nextPtr;
-   } StackNodeType;
-   
+} StackNodeType;
+
 // Constants
 //  none
-   
+
 // function declarations
 /*
 Name: clearStack
@@ -73,11 +72,11 @@ StackNodeType *pop(StackNodeType *stackTopPtr);
 
 /*
 Name: push
-Process: Adds a node to the stack. 
+Process: Adds a node to the stack.
          The top of the stack is at the front of the list,
          and the bottom of the stack is the last node in the list:
 
-         4 -> 27 -> 8 -> 6 -| 
+         4 -> 27 -> 8 -> 6 -|
          top of stack: 4
          bottom of stack: 6
 
@@ -92,6 +91,5 @@ StackNodeType *push(StackNodeType *stackTopPtr, int inData);
 
 // provided
 StackNodeType *createStack(int totalNodes);
-
 
 #endif

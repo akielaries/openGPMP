@@ -13,4 +13,3 @@ PasswordType *find_largest_leaf_node(PasswordType *wkgPtr);
 PasswordType *find_smallest_leaf_node(PasswordType *wkgPtr);
 
 #endif
-

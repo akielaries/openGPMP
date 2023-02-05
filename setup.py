@@ -3,28 +3,44 @@ Main entrypoint for building the openMTPK Python API.
 Leverages SWIG, setuptools, and a few other dependencies.
 """
 
-# from setuptools import setup, find_packages
+#from setuptools import setup, find_packages
 import setuptools
 from setuptools import setup, dist
 from setuptools.extension import Extension
 from setuptools.command.install import install
 from setuptools.command.build_ext import build_ext
+
 import os
 import subprocess
 import platform
+
 import urllib.request
 import json
+
 import versioneer
 
+# <--- DEPRECATE THIS, USING VERSIONEER --->
+# get recent version, bump the version
+with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as url:
+    data = json.load(url)
+    latest_version = (data['info']['version'])
+    bump_version = latest_version
+    bump_version = bump_version.split('.')
+    bump_version[2] = str(int(bump_version[2]) + 1)
+    concat_version = '.'.join(bump_version)
+    new_version = concat_version
+
+
 this_dir = os.path.dirname(os.path.abspath(__file__))
+
 
 # arithmetic module related information
 arithmetic = Extension(
     'openmtpk.arithmetic._arithmetic',
-    include_dirs=[os.path.join(this_dir, '../include/arithmetic')],
+    include_dirs=[os.path.join(this_dir, 'include/arithmetic')],
     sources=[
         'openmtpk/arithmetic/arithmetic.i',
-        '../modules/arithmetic/arith.cpp'],
+        'modules/arithmetic/arith.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-Wall', '-c++'],
 )
@@ -32,10 +48,10 @@ arithmetic = Extension(
 # calculus module related information
 calculus = Extension(
     'openmtpk.calculus._calculus',
-    include_dirs=[os.path.join(this_dir, '../include/calculus')],
+    include_dirs=[os.path.join(this_dir, 'include/calculus')],
     sources=[
         'openmtpk/calculus/calculus.i',
-        '../modules/calculus/deriv.cpp'],
+        'modules/calculus/deriv.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
 )
@@ -43,10 +59,10 @@ calculus = Extension(
 # machine learning module related information
 ml = Extension(
     'openmtpk.ml._ml',
-    include_dirs=[os.path.join(this_dir, '../include/ml')],
+    include_dirs=[os.path.join(this_dir, 'include/ml')],
     sources=[
         'openmtpk/ml/ml.i',
-        '../modules/ml/linreg.cpp'],
+        'modules/ml/linreg.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
 )
@@ -54,10 +70,10 @@ ml = Extension(
 # linear algebra module related information
 linalg = Extension(
     'openmtpk.linalg._linalg',
-    include_dirs=[os.path.join(this_dir, '../include/linalg')],
+    include_dirs=[os.path.join(this_dir, 'include/linalg')],
     sources=[
         'openmtpk/linalg/linalg.i',
-        '../modules/linalg/lao.cpp'],
+        'modules/linalg/lao.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
 )
@@ -65,18 +81,18 @@ linalg = Extension(
 # number_theory module related information
 nt = Extension(
     'openmtpk.nt._nt',
-    include_dirs=[os.path.join(this_dir, '../include/nt')],
+    include_dirs=[os.path.join(this_dir, 'include/nt')],
     sources=[
         'openmtpk/nt/nt.i',
-        '../modules/arithmetic/arith.cpp',
-        '../modules/nt/primes.cpp',
-        '../modules/nt/rc4.cpp',
-        '../modules/nt/cipher.cpp'],
+        'modules/arithmetic/arith.cpp',
+        'modules/nt/primes.cpp',
+        'modules/nt/rc4.cpp',
+        'modules/nt/cipher.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
 )
 
-# BINARY DISTRIBUTION(with a Python wrapper)
+# BINARY DISTRIBUTION (with a Python wrapper)
 
 
 class BinaryDistribution(dist.Distribution):
@@ -88,8 +104,9 @@ class BinaryDistribution(dist.Distribution):
 modules = [arithmetic, calculus, ml, linalg, nt]
 
 # use the project readme as the description
-with open('../README.md', 'r', encoding='utf-8') as fh:
+with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
+
 
 # def build_pkg():
 setuptools.setup(
@@ -112,6 +129,9 @@ setuptools.setup(
         'Source Code': 'https://github.com/akielaries/openMTPK/',
     },
     package_dir={'': '.'},
+    # packages=setuptools.find_packages(where='Python'),
+    #package_data={'openmtpk': ['linalg/*', 'nt/*']},
+    # packages=setuptools.find_packages(),
     packages=['openmtpk',
               'openmtpk.arithmetic',
               'openmtpk.calculus',
@@ -119,10 +139,11 @@ setuptools.setup(
               'openmtpk.ml',
               'openmtpk.nt',
               ],
+    # packages=setuptools.find_packages(),
     ext_modules=modules,
     include_package_data=True,
     classifiers=[
-        # see https: //pypi.org/classifiers/
+        # see https://pypi.org/classifiers/
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',
@@ -156,9 +177,15 @@ setuptools.setup(
         'Operating System :: MacOS',
     ],
     python_requires='>=3.6',
-    # install_requires = ['Pillow'],
+    # install_requires=['Pillow'],
     extras_require={
         'dev': ['check-manifest'],
-        # 'test' : ['coverage'],
+        # 'test': ['coverage'],
     },
 )
+
+#os.system('rm -rf build/')
+#os.system('cd Python && rm -rf openmtpk.egg-info && cd openmtpk && make clean')
+
+# if __name__ == '__main__':
+#    build_pkg()

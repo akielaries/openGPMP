@@ -417,8 +417,6 @@ struct mtx {
     }
 };
 
-
-
 } // namespace mtpk
 
 #endif

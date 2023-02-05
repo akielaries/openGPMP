@@ -4,11 +4,11 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-//static const int MAX_CAPACITY = 150001;
-//const int MAX_NODES = 150000;
+// static const int MAX_CAPACITY = 150001;
+// const int MAX_NODES = 150000;
 
 // data structure, BST node
-typedef struct PasswordTypeStruct {   
+typedef struct PasswordTypeStruct {
     int rank;
     unsigned long long int password;
     struct PasswordTypeStruct *leftChildPtr;
@@ -16,4 +16,3 @@ typedef struct PasswordTypeStruct {
 } PasswordType;
 
 #endif
-

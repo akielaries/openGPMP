@@ -7,9 +7,9 @@
 %include "std_string.i"
 
 %{
-    #include "../../../include/arithmetic.hpp"
+    #include "../../include/arithmetic/arith_ops.hpp"
     using namespace mtpk;
 %}
 
-%include "../../../include/arithmetic.hpp"
+%include "../../include/arithmetic/arith_ops.hpp"
 
