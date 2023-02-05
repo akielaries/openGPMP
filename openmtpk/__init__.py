@@ -9,9 +9,9 @@ details and documentation:
 
 """
 
-from . import _version
 __all__: list[str]
 __path__: list[str]
 
 
+from . import _version
 __version__ = _version.get_versions()['version']
