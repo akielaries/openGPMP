@@ -51,7 +51,7 @@ jobs:
 
   build_plat:
     name: Build source distribution
-    needs: [ test_wheels , latest_version , bump_version ]
+    needs: [ latest_version , bump_version ]
     if: needs.bump_version.outputs.new_tag != needs.latest_version.mtpk_version.outputs.tag
     runs-on: ubuntu-latest
     steps:
