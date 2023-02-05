@@ -56,7 +56,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # required for versioneer to find tags
-          path: Python
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -67,8 +66,8 @@ jobs:
         run: |
           pip install versioneer
           pip install autopep8
-          #cd Python
-          #python setup.py build_ext --inplace
+          cd Python
+          python setup.py build_ext --inplace
           pipx run build --sdist
           autopep8 --recursive --in-place --aggressive --aggressive .
 
