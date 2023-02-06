@@ -11,7 +11,11 @@ on:
     branches: [ main ]
 
 jobs:
+  test_wheels:
+    uses: ./.github/workflows/test_wheels.yml
+
   latest_version:
+    needs: [ test_wheels ]
     runs-on: ubuntu-latest
     steps:
     - uses: oprypin/find-latest-tag@v1
@@ -47,13 +51,10 @@ jobs:
     
     - run: echo ${{ steps.new_version.outputs.new_tag }}
 
-  test_wheels:
-    uses: ./.github/workflows/test_wheels.yml
-
   build_plat:
     name: Build source distribution
-    needs: [ test_wheels , bump_version , latest_version ]
-    if: success() && needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }}
+    needs: [ bump_version , latest_version ]
+    if: needs.bump_version.outputs.new_tag != ${{ needs.latest_version.mtpk_version.outputs.tag }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
