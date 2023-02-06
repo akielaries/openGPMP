@@ -1,4 +1,5 @@
-# TESTING BUILDING SOURCE DISTRO ON PLATFORMS BEFORE PUBLISH PROCESS
+# TESTING BUILDING SOURCE DISTRO ON PLATFORMS BEFORE 
+# PyPI PUBLISH PROCESS IS INVOKED
 name: Test Wheel Build
 
 on:
@@ -50,6 +51,7 @@ jobs:
 
   sdist_armv6py: 
     name: DIST - Bullseye-latest ARMv6
+    needs: [ sdist_raspy ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
