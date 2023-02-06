@@ -43,7 +43,7 @@ jobs:
 
 
   test_wheels:
-    needs: [ cpp_changes , core_build ]
+    needs: [ cpp_changes ]
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
@@ -86,7 +86,7 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ bump_version , latest_version ]
-    if: needs.bump_version.outputs.new_tag != needs.latest_version.mtpk_version.outputs.tag
+    if: {{ needs.bump_version.outputs.new_tag != needs.latest_version.mtpk_version.outputs.tag }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
