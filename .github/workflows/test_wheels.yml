@@ -92,6 +92,7 @@ jobs:
 
   sdist_armv7py: 
     name: DIST - Ubuntu-latest ARMv7
+    needs: [ sdist_armv6py ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -135,6 +136,7 @@ jobs:
 
   sdist_armv8py: 
     name: DIST - Ubuntu-latest ARMv8
+    needs: [ sdist_armv7py ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
