@@ -7,7 +7,29 @@ on:
     branches: [ main, dev ]
 
 jobs:
+  test_changes:
+    runs-on: 'ubuntu-20.04'
+    # Declare outputs for next jobs
+    outputs:
+      tests_changed: ${{ steps.check_file_changed.outputs.tests_changed }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh # the example this is adopted from makes use of PowerShell
+      id: check_file_changed
+      run: |
+        # diff HEAD W/ previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+        # check if specific folder with file extentions has changes
+        $SourceDiff = $diff | Where-Object { $_ -match '^tests/' }
+        $HasDiff = $SourceDiff.Length -gt 0
+        Write-Host "::set-output name=tests_changed::$HasDiff"
+
   build-and-test:
+    needs: [ test_changes ]
+    if: needs.test_changes.outputs.tests_changed == 'True'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
