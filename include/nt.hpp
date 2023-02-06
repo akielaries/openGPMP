@@ -14,6 +14,7 @@
 #ifndef NT_HPP
 #define NT_HPP
 
+
 /**
  * @brief \b Primes
  * @details includes :

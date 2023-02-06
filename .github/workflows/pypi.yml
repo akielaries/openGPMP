@@ -144,7 +144,7 @@ jobs:
           CIBW_ARCHS_MACOS: universal2 x86_64 arm64
           CIBW_ARCHS_LINUX: auto aarch64 ppc64le s390x
           CIBW_BEFORE_BUILD: "git clean -xdf && git reset --hard HEAD"
-
+          CIBW_TEST_COMMAND: "git status"
 
       - uses: actions/upload-artifact@v3
         with:
