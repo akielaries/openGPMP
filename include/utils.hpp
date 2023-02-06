@@ -17,7 +17,7 @@ using namespace mtpk;
 namespace mtpk {
 
 /**
- * @class
+ * @class Data
  */
 class Data {
     public:
