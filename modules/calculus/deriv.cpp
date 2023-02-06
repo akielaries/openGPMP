@@ -39,7 +39,6 @@ int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
 
 
 int64_t mtpk::Calculus::derivative_term(std::string p_term, int64_t val) {
-    printf("DEBUGGING DERIVTERM\n\n");
     // Get coefficient
     std::string coeffStr = "";
     int64_t i;
