@@ -1,3 +1,8 @@
+# THIS FILE CONTAINS THE PIP PACKAGING PROCESS FOR PUBLISHING
+# TO PyPI AND BUILDING FOR A PLETHORA OF PLATFORMS. THIS FILE
+# SERVERS AS A CORE (MAIN) ENTRY POINT FOR THE openMTPK WORK-
+# FLOW 
+
 name: Wheels
 
 
@@ -11,7 +16,34 @@ on:
     branches: [ main ]
 
 jobs:
+  cpp_changes:
+    runs-on: 'ubuntu-20.04'
+    # Declare outputs for next jobs
+    outputs:
+      src_changed: ${{ steps.check_file_changed.outputs.src_changed }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh # the example this is adopted from makes use of PowerShell
+      id: check_file_changed
+      run: |
+        # diff HEAD W/ previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+        # check if specific folder with file extentions has changes
+        $SourceDiff = $diff | Where-Object { $_ -match '^modules/' -or $_ -match '^include/' }
+        $HasDiff = $SourceDiff.Length -gt 0
+        Write-Host "::set-output name=src_changed::$HasDiff"
+
+  core_build:
+    needs: [ cpp_changes ]
+    if: needs.cpp_changes.outputs.src_changed == 'True'
+    uses: ./.github/workflows/build_nix.yml
+
+
   test_wheels:
+    needs: [ cpp_changes , core_build ]
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
