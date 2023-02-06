@@ -12,11 +12,12 @@ env:
 
 jobs:
   CppARMV6:
-    uses: ./.github/workflows/ARMVcpp.yml
+    uses: ./.github/workflows/ARMV6cpp.yml
 
 
   build-and-test:
     runs-on: ${{ matrix.os }}
+    neeeds: [ CppARMV6 ]
     strategy:
       matrix:
         os: [ ubuntu-latest ]
