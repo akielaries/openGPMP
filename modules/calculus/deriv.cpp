@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string>
 
+
 /*
 int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
     // Get coefficient
