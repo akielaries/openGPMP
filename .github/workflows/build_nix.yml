@@ -14,10 +14,27 @@ jobs:
   CppARMV6:
     uses: ./.github/workflows/ARMV6cpp.yml
 
+  CppARMv7:
+    uses: ./.github/workflows/ARMV7cpp.yml
+
+  CppARMv8:
+    uses: ./.github/workflows/ARMV8cpp.yml
+
+  CppRPI:
+    uses: ./.github/workflows/cpp_rpi.yml
+
+  CppPPC64LE:
+    uses: ./.github/workflows/PPC64LEcpp.yml
+
+  CppRISCV:
+    uses: ./.github/workflows/RISCVcpp.yml
+
+  CppS390X:
+    uses: ./.github/workflows/S390Xcpp.yml
 
   build-and-test:
     runs-on: ${{ matrix.os }}
-    needs: [ CppARMV6 ]
+    needs: [CppARMV6,CppARMV7,CppARMV8,CppRPI,CppPPC64LE,CppRISCV,CppS390X]
     strategy:
       matrix:
         os: [ ubuntu-latest ]
