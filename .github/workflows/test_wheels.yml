@@ -21,7 +21,7 @@ jobs:
           python-version: "3.x"
       
       -
-        name: Test sdist on RPI OS ARMv8 Image
+        name: DIST - RPIOS ARMv8
         uses: pguyot/arm-runner-action@v2
         id: build_image
         with:
@@ -47,8 +47,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_armv6py: 
-    name: DIST - Bullseye-latest ARMv6
-    needs: [ sdist_raspy ]
+    name: DIST - Bullseye ARMv6
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -91,8 +90,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_armv7py: 
-    name: DIST - Ubuntu-latest ARMv7
-    needs: [ sdist_armv6py ]
+    name: DIST - Ubuntu ARMv7
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -135,8 +133,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_armv8py: 
-    name: DIST - Ubuntu-latest ARMv8
-    needs: [ sdist_armv7py ]
+    name: DIST - Ubuntu ARMv8
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -179,7 +176,8 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_riscv64py: 
-    name: DIST - Ubuntu-latest RISCV64
+    name: DIST - Ubuntu RISCV64
+    needs: [sdist_raspy,sdist_armv6py,sdist_armv7py,sdist_armv8py]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -222,7 +220,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_s390xpy: 
-    name: DIST - Ubuntu-latest S390X
+    name: DIST - Ubuntu S390X
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -265,7 +263,7 @@ jobs:
           echo ::set-output name=uname::$(uname -a)
 
   sdist_ppc64lepy: 
-    name: DIST - Ubuntu-latest PPC64LE
+    name: DIST - Ubuntu PPC64LE
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
