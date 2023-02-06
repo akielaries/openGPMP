@@ -119,28 +119,28 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>result : derived function (string) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00093">93</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                             {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    int64_t ans = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::istringstream is(poly);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::string p_term;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">while</span> (is &gt;&gt; p_term) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;poly = &quot; &lt;&lt; poly &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;p_term = &quot; &lt;&lt; p_term &lt;&lt; std:: endl;</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">// If the token is equal to &#39;+&#39; then continue with the string</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (p_term == <span class="stringliteral">&quot;+&quot;</span>)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">// Otherwise find the derivative of that particular term</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            ans = ans;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> poly;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00092">92</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                             {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    int64_t ans = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::istringstream is(poly);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string p_term;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">while</span> (is &gt;&gt; p_term) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;poly = &quot; &lt;&lt; poly &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;p_term = &quot; &lt;&lt; p_term &lt;&lt; std:: endl;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// If the token is equal to &#39;+&#39; then continue with the string</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (p_term == <span class="stringliteral">&quot;+&quot;</span>)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// Otherwise find the derivative of that particular term</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            ans = ans;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> poly;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -180,27 +180,27 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>result : result of the solved x </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00072">72</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                           {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    int64_t ans = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::istringstream is(poly);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::string p_term;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">while</span> (is &gt;&gt; p_term) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// If the token is equal to &#39;+&#39; then continue with the string</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (p_term == <span class="stringliteral">&quot;+&quot;</span>)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Otherwise find the derivative of that particular term</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ans = (ans + <a class="code" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">derivative_term</a>(p_term, val));</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    printf(<span class="stringliteral">&quot;\nDEBUGGING DERIV AT\n\n&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    printf(<span class="stringliteral">&quot;ans = %ld\n&quot;</span>, ans);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> ans;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00071">71</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                           {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    int64_t ans = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::istringstream is(poly);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::string p_term;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">while</span> (is &gt;&gt; p_term) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// If the token is equal to &#39;+&#39; then continue with the string</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (p_term == <span class="stringliteral">&quot;+&quot;</span>)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Otherwise find the derivative of that particular term</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            ans = (ans + <a class="code" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">derivative_term</a>(p_term, val));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    printf(<span class="stringliteral">&quot;\nDEBUGGING DERIV AT\n\n&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    printf(<span class="stringliteral">&quot;ans = %ld\n&quot;</span>, ans);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="ttc" id="aclassmtpk_1_1Calculus_html_a284a811f1cea8a9e33a0e348612a6050"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">mtpk::Calculus::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00041">deriv.cpp:41</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -243,35 +243,34 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="deriv_8cpp_source.html#l00041">41</a> of file <a class="el" href="deriv_8cpp_source.html">deriv.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    printf(<span class="stringliteral">&quot;DEBUGGING DERIVTERM\n\n&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Get coefficient</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::string coeffStr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    int64_t i;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (i = 0; p_term[i] != <span class="charliteral">&#39;x&#39;</span>; i++) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        coeffStr.push_back(p_term[i]);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    int64_t coeff = atol(coeffStr.c_str());</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Get Power (Skip 2 characters for x and ^)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::string powStr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> (i = i + 2; i != p_term.size(); i++) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        powStr.push_back(p_term[i]);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        printf(<span class="stringliteral">&quot;powStr = %s \n&quot;</span>, powStr.c_str());</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    int64_t expo = atol(powStr.c_str());</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// For ax^n, we return anx^(n-1)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    printf(<span class="stringliteral">&quot;powStr = %s \n&quot;</span>, powStr.c_str());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    printf(<span class="stringliteral">&quot;p_term = %s \n&quot;</span>, p_term.c_str());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    printf(<span class="stringliteral">&quot;coeff = %ld \n&quot;</span>, coeff);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    printf(<span class="stringliteral">&quot;Exponent = %ld \n&quot;</span>, expo);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    int64_t result = coeff * expo * pow(val, expo - 1);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> coeff * expo * pow(val, expo - 1);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Get coefficient</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string coeffStr = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    int64_t i;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (i = 0; p_term[i] != <span class="charliteral">&#39;x&#39;</span>; i++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        coeffStr.push_back(p_term[i]);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    int64_t coeff = atol(coeffStr.c_str());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Get Power (Skip 2 characters for x and ^)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::string powStr = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (i = i + 2; i != p_term.size(); i++) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        powStr.push_back(p_term[i]);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        printf(<span class="stringliteral">&quot;powStr = %s \n&quot;</span>, powStr.c_str());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    int64_t expo = atol(powStr.c_str());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// For ax^n, we return anx^(n-1)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    printf(<span class="stringliteral">&quot;powStr = %s \n&quot;</span>, powStr.c_str());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    printf(<span class="stringliteral">&quot;p_term = %s \n&quot;</span>, p_term.c_str());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    printf(<span class="stringliteral">&quot;coeff = %ld \n&quot;</span>, coeff);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    printf(<span class="stringliteral">&quot;Exponent = %ld \n&quot;</span>, expo);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    int64_t result = coeff * expo * pow(val, expo - 1);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> coeff * expo * pow(val, expo - 1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
