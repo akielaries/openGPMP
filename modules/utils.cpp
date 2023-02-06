@@ -1,5 +1,5 @@
 /*
- * Utilities File
+ * Utilities File of implementations for openMTPK
  */
 #include "../include/utils.hpp"
 #include "../include/linalg/matrix.hpp"
