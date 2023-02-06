@@ -1,7 +1,6 @@
 # THIS FILE CONTAINS THE PIP PACKAGING PROCESS FOR PUBLISHING
 # TO PyPI AND BUILDING FOR A PLETHORA OF PLATFORMS. THIS FILE
-# SERVERS AS A CORE (MAIN) ENTRY POINT FOR THE openMTPK WORK-
-# FLOW 
+# SERVERS AS THE MAIN ENTRY POINT FOR THE openMTPK WORKFLOW 
 
 name: Wheels
 
@@ -16,6 +15,9 @@ on:
     branches: [ main ]
 
 jobs:
+  documentation:
+    uses: ./.github/workflows/doxygen.yml
+
   cpp_changes:
     runs-on: 'ubuntu-20.04'
     # Declare outputs for next jobs
@@ -40,7 +42,6 @@ jobs:
     needs: [ cpp_changes ]
     if: needs.cpp_changes.outputs.src_changed == 'True'
     uses: ./.github/workflows/build_nix.yml
-
 
   python:
     needs: [ cpp ]

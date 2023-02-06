@@ -30,11 +30,8 @@ jobs:
     uses: ./.github/workflows/S390Xcpp.yml
 
   build-and-test:
-    runs-on: ${{ matrix.os }}
+    runs-on: [ ubuntu-latest ]
     needs: [CppARMV6,CppARMV7,CppARMV8,CppRPI,CppPPC64LE,CppRISCV,CppS390X]
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
     defaults:
       run:
         shell: bash -l {0}
