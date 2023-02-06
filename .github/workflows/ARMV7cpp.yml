@@ -2,10 +2,10 @@ name: ARM7Core
 
 on:
   push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
-  
+    branches: 
+    - '**'
+  workflow_call:
+ 
 jobs:
   CppARMV7:
     # The host should always be Linux

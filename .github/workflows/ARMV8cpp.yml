@@ -2,9 +2,10 @@ name: ARM8Core
 
 on:
   push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
+    branches: 
+    - '**'
+  workflow_call:
+
   
 jobs:
   CppARMV8:

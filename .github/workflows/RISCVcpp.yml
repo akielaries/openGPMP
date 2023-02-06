@@ -2,9 +2,9 @@ name: RISCV64Core
 
 on:
   push:
-    branches: [ main , dev ]
-  #pull_request:
-  #  branches: [ main , dev ]
+    branches: 
+    - '**'
+  workflow_call:
   
 jobs:
   CppRISCV:
