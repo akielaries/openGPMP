@@ -2,7 +2,9 @@ name: RasCore
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: 
+    - '**'
+  workflow_call:
 
 jobs:
   build:
