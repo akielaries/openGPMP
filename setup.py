@@ -3,36 +3,20 @@ Main entrypoint for building the openMTPK Python API.
 Leverages SWIG, setuptools, and a few other dependencies.
 """
 
-#from setuptools import setup, find_packages
+# from setuptools import setup, find_packages
 import setuptools
 from setuptools import setup, dist
 from setuptools.extension import Extension
 from setuptools.command.install import install
 from setuptools.command.build_ext import build_ext
-
 import os
 import subprocess
 import platform
-
 import urllib.request
 import json
-
 import versioneer
 
-# <--- DEPRECATE THIS, USING VERSIONEER --->
-# get recent version, bump the version
-with urllib.request.urlopen(f"https://pypi.python.org/pypi/openmtpk/json") as url:
-    data = json.load(url)
-    latest_version = (data['info']['version'])
-    bump_version = latest_version
-    bump_version = bump_version.split('.')
-    bump_version[2] = str(int(bump_version[2]) + 1)
-    concat_version = '.'.join(bump_version)
-    new_version = concat_version
-
-
 this_dir = os.path.dirname(os.path.abspath(__file__))
-
 
 # arithmetic module related information
 arithmetic = Extension(
@@ -92,7 +76,7 @@ nt = Extension(
     swig_opts=['-c++'],
 )
 
-# BINARY DISTRIBUTION (with a Python wrapper)
+# BINARY DISTRIBUTION(with a Python wrapper)
 
 
 class BinaryDistribution(dist.Distribution):
@@ -106,7 +90,6 @@ modules = [arithmetic, calculus, ml, linalg, nt]
 # use the project readme as the description
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
-
 
 # def build_pkg():
 setuptools.setup(
@@ -129,9 +112,6 @@ setuptools.setup(
         'Source Code': 'https://github.com/akielaries/openMTPK/',
     },
     package_dir={'': '.'},
-    # packages=setuptools.find_packages(where='Python'),
-    #package_data={'openmtpk': ['linalg/*', 'nt/*']},
-    # packages=setuptools.find_packages(),
     packages=['openmtpk',
               'openmtpk.arithmetic',
               'openmtpk.calculus',
@@ -139,11 +119,10 @@ setuptools.setup(
               'openmtpk.ml',
               'openmtpk.nt',
               ],
-    # packages=setuptools.find_packages(),
     ext_modules=modules,
     include_package_data=True,
     classifiers=[
-        # see https://pypi.org/classifiers/
+        # see https: //pypi.org/classifiers/
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
         'Intended Audience :: Developers',
@@ -177,15 +156,9 @@ setuptools.setup(
         'Operating System :: MacOS',
     ],
     python_requires='>=3.6',
-    # install_requires=['Pillow'],
+    # install_requires = ['Pillow'],
     extras_require={
         'dev': ['check-manifest'],
-        # 'test': ['coverage'],
+        # 'test' : ['coverage'],
     },
 )
-
-#os.system('rm -rf build/')
-#os.system('cd Python && rm -rf openmtpk.egg-info && cd openmtpk && make clean')
-
-# if __name__ == '__main__':
-#    build_pkg()
