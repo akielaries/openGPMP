@@ -2,7 +2,10 @@ name: ARM6Core
 
 on:
   push:
-    branches: [ main , dev ]
+    branches: 
+    - '**'
+  workflow_call:
+
   
 jobs:
   CppARMV6:

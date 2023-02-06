@@ -2,15 +2,19 @@ name: CoreNix
 
 on:
   push:
-    branches: [ main, dev ]
-  pull_request:
-    branches: [ main, dev ]
+    branches: 
+    - '**'
+  workflow_call:
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
+  CppARMV6:
+    uses: ./.github/workflows/ARMVcpp.yml
+
+
   build-and-test:
     runs-on: ${{ matrix.os }}
     strategy:
