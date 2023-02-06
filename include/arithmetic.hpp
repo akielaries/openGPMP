@@ -66,6 +66,7 @@ class Arith {
 /**
  * @brief \b Arithmetic \b Operations
  * @details Encompasses Arithmetic related operations
+ * @class Basics
  */
 class Basics {
     public:
