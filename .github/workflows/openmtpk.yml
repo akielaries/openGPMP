@@ -2,13 +2,15 @@
 # TO PyPI AND BUILDING FOR A PLETHORA OF PLATFORMS. THIS FILE
 # SERVERS AS THE MAIN ENTRY POINT FOR THE openMTPK WORKFLOW 
 
-name: openMTPK
+name: MTPK
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - '**'
   pull_request:
-    branches: [ main ]
+    branches:
+      - '**'
   create:
     types: [ tag ]
     branches: [ main ]
@@ -17,7 +19,7 @@ jobs:
   documentation:
     uses: ./.github/workflows/doxygen.yml
 
-  cpp_changes:
+  src_changes:
     runs-on: 'ubuntu-20.04'
     # Declare outputs for next jobs
     outputs:
@@ -37,9 +39,40 @@ jobs:
         $HasDiff = $SourceDiff.Length -gt 0
         Write-Host "::set-output name=src_changed::$HasDiff"
 
+  test_changes:
+    name: Check Changes to tests/ dir 
+    runs-on: 'ubuntu-20.04'
+    # Declare outputs for next jobs
+    outputs:
+      tests_changed: ${{ steps.check_file_changed.outputs.tests_changed }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh # the example this is adopted from makes use of PowerShell
+      id: check_file_changed
+      run: |
+        # diff HEAD W/ previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+        # check if specific folder with file extentions has changes
+        $SourceDiff = $diff | Where-Object { $_ -match '^tests/' }
+        $HasDiff = $SourceDiff.Length -gt 0
+        Write-Host "::set-output name=tests_changed::$HasDiff"
+
+  tests_codecov:
+    needs: [ test_changes ]
+    if: needs.test_changes.outputs.tests_changed == 'True'
+    uses: ./.github/workflows/codecov.yml
+
+  tests_codacy:
+    needs: [ test_changes , tests_codecov ]
+    if: needs.test_changes.outputs.tests_changed == 'True'
+    uses: ./.github/workflows/codacy.yml
+
   cpp:
-    needs: [ cpp_changes ]
-    if: needs.cpp_changes.outputs.src_changed == 'True'
+    needs: [ src_changes ]
+    if: needs.src_changes.outputs.src_changed == 'True'
     uses: ./.github/workflows/build_nix.yml
 
   python:
