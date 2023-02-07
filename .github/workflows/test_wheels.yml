@@ -177,7 +177,6 @@ jobs:
 
   sdist_riscv64py: 
     name: DIST - Ubuntu RISCV64
-    needs: [sdist_raspy,sdist_armv6py,sdist_armv7py,sdist_armv8py]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
