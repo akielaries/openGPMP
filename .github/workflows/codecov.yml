@@ -5,10 +5,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
+    runs-on: [ ubuntu-latest ]
     defaults:
       run:
         shell: bash -l {0}
