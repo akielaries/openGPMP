@@ -205,39 +205,7 @@ jobs:
   # the build installation is supported by x86 based OSX 
   # versions and LINUX distros by the CIBUILDWHEEL utilities.
   # test pip install openmtpk on the following platforms
-  RasPy:
+  pip_test:
     needs: publish
-    uses: ./.github/workflows/py_rpi.yml
-
-  ARMV6py:
-    needs: publish
-    uses: ./.github/workflows/ARMV6py.yml
-
-  ARMV7py:
-    needs: publish
-    uses: ./.github/workflows/ARMV7py.yml
-
-  ARMV8py:
-    needs: publish
-    uses: ./.github/workflows/ARMV8py.yml
-
-  RISCVpy:
-    needs: publish
-    uses: ./.github/workflows/RISCVpy.yml
-
-  S390Xpy:
-    needs: publish
-    uses: ./.github/workflows/S390Xpy.yml
-
-  PPC64LEpy:
-    needs: publish
-    uses: ./.github/workflows/PPC64LEpy.yml
-
-  PyNix:
-    needs: publish
-    uses: ./.github/workflows/py_nix.yml
-  
-  PyOSX:
-    needs: publish
-    uses: ./.github/workflows/py_osx.yml
+    uses: ./.github/workflows/test_pip.yml
 
