@@ -33,7 +33,8 @@
  ************************************************************************/
 
 /*
- * Utilities File of implementations for openMTPK
+ * Utilities implementations for different helper methods/functions
+ * needed for openMTPK
  */
 #include "../include/utils.hpp"
 #include "../include/linalg/matrix.hpp"
