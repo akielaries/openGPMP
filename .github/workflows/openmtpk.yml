@@ -96,8 +96,8 @@ jobs:
     uses: ./.github/workflows/build_nix.yml
 
   python:
-    needs: [ cpp , py_changes ]
-    if: needs.py_changes.outputs.py_changed == 'True'
+    needs: [ cpp ]
+    #if: needs.py_changes.outputs.py_changed == 'True'
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
