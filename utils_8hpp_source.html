@@ -71,106 +71,139 @@ $(function() {
 <div class="title">utils.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="utils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef UTILS_HPP</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define UTILS_HPP</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8hpp.html">linalg/matrix.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacemtpk.html">mtpk</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Data.html">Data</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;, std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classmtpk_1_1Data.html#abeeccfb400d015aa4bbac0d7deb17016">load</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;               std::vector&lt;std::vector&lt;double&gt;&gt;&gt;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a0db8a764b63fa600fd40ce0f9f298f0c">   34</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a0db8a764b63fa600fd40ce0f9f298f0c">load</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;, std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a928b5b5607b5ab5c4692c86079da58b3">   37</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a928b5b5607b5ab5c4692c86079da58b3">load</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a193195bf7a533a1feb375af4eb5b73fd">   39</a></span>&#160;    std::tuple&lt;std::vector&lt;double&gt;, std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1Data.html#a193195bf7a533a1feb375af4eb5b73fd">load</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#a64357fdff95ad58a3fae8ba957fb8a79">setData</a>(<span class="keywordtype">int</span> k, std::string fileName,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                 std::vector&lt;std::vector&lt;double&gt;&gt; &amp;inputSet,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                 std::vector&lt;double&gt; &amp;outputSet);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#a3778305c364bd5d16183bf6f77b08c9e">printData</a>(std::vector&lt;std::string&gt; inputName,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                   std::vector&lt;std::vector&lt;double&gt;&gt; inputSet);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#a3778305c364bd5d16183bf6f77b08c9e">printData</a>(std::vector&lt;std::string&gt; inputName,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                   std::string outputName,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                   std::vector&lt;std::vector&lt;double&gt;&gt; inputSet,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                   std::vector&lt;double&gt; outputSet);</div>
+<a href="utils_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                  </span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project               </span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                       |  \/  |__   __|  __ \| |/ /</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | &#39; / </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * / _ \| &#39;_ \ / _ \ &#39;_ \| |\/| |  | |  |  ___/|  &lt;  </span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \ </span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\  </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *      | |                                          </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *      |_|                                         </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Copyright (C) Akiel Aries, &lt;akiel@akiel.org&gt;, et al.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with </span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * and/or sell copies of the Software, and permit persons to whom </span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * the Software is furnished to do so, under the terms of the </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * LICENSE file. As this is an Open Source effort, all implementations</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * must be of the same methodology.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * This software is distributed on an AS IS basis, WITHOUT </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> ************************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef UTILS_HPP</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define UTILS_HPP</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="matrix_8hpp.html">linalg/matrix.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacemtpk.html">mtpk</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#acf66087369d3b66a88c2f9824364b602">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#acf66087369d3b66a88c2f9824364b602">set_input_names</a>(std::string file_name,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                         std::vector&lt;std::string&gt; &amp;input_names);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a0377f3f35308042f7326f9cb0d53ff8c">   57</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a0377f3f35308042f7326f9cb0d53ff8c">feature_scaling</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a0848852c2a3a68c96dc92d18b20a9427">   60</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a0848852c2a3a68c96dc92d18b20a9427">one_rep</a>(std::vector&lt;double&gt; temp_output_set, <span class="keywordtype">int</span> n_class);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::vector&lt;double&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#afaa3c7249d2ea6b7eda3189c3905f2f5">   63</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#afaa3c7249d2ea6b7eda3189c3905f2f5">one_rep_reverse</a>(std::vector&lt;std::vector&lt;double&gt;&gt; temp_output_set);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a4652eab3b2b81a7e9ed02c6490c1a755">   65</a></span>&#160;    std::vector&lt;char&gt; <a class="code" href="classmtpk_1_1Data.html#a4652eab3b2b81a7e9ed02c6490c1a755">split</a>(std::string text);</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a584808c259609fb613c6de3b38faaf89">   66</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#a584808c259609fb613c6de3b38faaf89">splitSentences</a>(std::string data);</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#ad900416a7eb7a59a26ac2f536c8da579">   67</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#ad900416a7eb7a59a26ac2f536c8da579">removeSpaces</a>(std::vector&lt;std::string&gt; data);</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a197ac09deaa56f21a747ceda0ce9234e">   68</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#a197ac09deaa56f21a747ceda0ce9234e">removeNullByte</a>(std::vector&lt;std::string&gt; data);</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a488ef174b72c8889d52ade88374c1c14">   69</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#a488ef174b72c8889d52ade88374c1c14">segment</a>(std::string text);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// exponentiate</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// square root</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// cube root</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html">   82</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1OutlierFinder.html">OutlierFinder</a> {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Cnstr</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">   85</a></span>&#160;    <a class="code" href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">OutlierFinder</a>(<span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">threshold</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Data.html">Data</a> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;, std::vector&lt;double&gt;&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classmtpk_1_1Data.html#abeeccfb400d015aa4bbac0d7deb17016">load</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;               std::vector&lt;std::vector&lt;double&gt;&gt;&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a0db8a764b63fa600fd40ce0f9f298f0c">   68</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a0db8a764b63fa600fd40ce0f9f298f0c">load</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;, std::vector&lt;double&gt;&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a928b5b5607b5ab5c4692c86079da58b3">   71</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a928b5b5607b5ab5c4692c86079da58b3">load</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a193195bf7a533a1feb375af4eb5b73fd">   73</a></span>&#160;    std::tuple&lt;std::vector&lt;double&gt;, std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1Data.html#a193195bf7a533a1feb375af4eb5b73fd">load</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#a64357fdff95ad58a3fae8ba957fb8a79">setData</a>(<span class="keywordtype">int</span> k, std::string fileName,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                 std::vector&lt;std::vector&lt;double&gt;&gt; &amp;inputSet,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                 std::vector&lt;double&gt; &amp;outputSet);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#a3778305c364bd5d16183bf6f77b08c9e">printData</a>(std::vector&lt;std::string&gt; inputName,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                   std::vector&lt;std::vector&lt;double&gt;&gt; inputSet);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#a3778305c364bd5d16183bf6f77b08c9e">printData</a>(std::vector&lt;std::string&gt; inputName,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                   std::string outputName,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                   std::vector&lt;std::vector&lt;double&gt;&gt; inputSet,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                   std::vector&lt;double&gt; outputSet);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">   88</a></span>&#160;        <a class="code" href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; inputSet);</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">   89</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">modelTest</a>(std::vector&lt;double&gt; inputSet);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Variables required</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">   92</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">threshold</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace mtpk</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassmtpk_1_1Data_html"><div class="ttname"><a href="classmtpk_1_1Data.html">mtpk::Data</a></div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00022">utils.hpp:22</a></div></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#acf66087369d3b66a88c2f9824364b602">   87</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Data.html#acf66087369d3b66a88c2f9824364b602">set_input_names</a>(std::string file_name,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                         std::vector&lt;std::string&gt; &amp;input_names);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a0377f3f35308042f7326f9cb0d53ff8c">   91</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a0377f3f35308042f7326f9cb0d53ff8c">feature_scaling</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a0848852c2a3a68c96dc92d18b20a9427">   94</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#a0848852c2a3a68c96dc92d18b20a9427">one_rep</a>(std::vector&lt;double&gt; temp_output_set, <span class="keywordtype">int</span> n_class);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::vector&lt;double&gt;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#afaa3c7249d2ea6b7eda3189c3905f2f5">   97</a></span>&#160;        <a class="code" href="classmtpk_1_1Data.html#afaa3c7249d2ea6b7eda3189c3905f2f5">one_rep_reverse</a>(std::vector&lt;std::vector&lt;double&gt;&gt; temp_output_set);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a4652eab3b2b81a7e9ed02c6490c1a755">   99</a></span>&#160;    std::vector&lt;char&gt; <a class="code" href="classmtpk_1_1Data.html#a4652eab3b2b81a7e9ed02c6490c1a755">split</a>(std::string text);</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a584808c259609fb613c6de3b38faaf89">  100</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#a584808c259609fb613c6de3b38faaf89">splitSentences</a>(std::string data);</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#ad900416a7eb7a59a26ac2f536c8da579">  101</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#ad900416a7eb7a59a26ac2f536c8da579">removeSpaces</a>(std::vector&lt;std::string&gt; data);</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a197ac09deaa56f21a747ceda0ce9234e">  102</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#a197ac09deaa56f21a747ceda0ce9234e">removeNullByte</a>(std::vector&lt;std::string&gt; data);</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classmtpk_1_1Data.html#a488ef174b72c8889d52ade88374c1c14">  103</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classmtpk_1_1Data.html#a488ef174b72c8889d52ade88374c1c14">segment</a>(std::string text);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// exponentiate</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// square root</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// cube root</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html">  116</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1OutlierFinder.html">OutlierFinder</a> {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Cnstr</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">  119</a></span>&#160;    <a class="code" href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">OutlierFinder</a>(<span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">threshold</a>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">  122</a></span>&#160;        <a class="code" href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; inputSet);</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">  123</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">modelTest</a>(std::vector&lt;double&gt; inputSet);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// Variables required</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">  126</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">threshold</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmtpk_1_1Data_html"><div class="ttname"><a href="classmtpk_1_1Data.html">mtpk::Data</a></div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00056">utils.hpp:56</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a0377f3f35308042f7326f9cb0d53ff8c"><div class="ttname"><a href="classmtpk_1_1Data.html#a0377f3f35308042f7326f9cb0d53ff8c">mtpk::Data::feature_scaling</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; feature_scaling(std::vector&lt; std::vector&lt; double &gt;&gt; X)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a0848852c2a3a68c96dc92d18b20a9427"><div class="ttname"><a href="classmtpk_1_1Data.html#a0848852c2a3a68c96dc92d18b20a9427">mtpk::Data::one_rep</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; one_rep(std::vector&lt; double &gt; temp_output_set, int n_class)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a0db8a764b63fa600fd40ce0f9f298f0c"><div class="ttname"><a href="classmtpk_1_1Data.html#a0db8a764b63fa600fd40ce0f9f298f0c">mtpk::Data::load</a></div><div class="ttdeci">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; std::vector&lt; double &gt; &gt; &gt; load()</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a193195bf7a533a1feb375af4eb5b73fd"><div class="ttname"><a href="classmtpk_1_1Data.html#a193195bf7a533a1feb375af4eb5b73fd">mtpk::Data::load</a></div><div class="ttdeci">std::tuple&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt; load()</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a197ac09deaa56f21a747ceda0ce9234e"><div class="ttname"><a href="classmtpk_1_1Data.html#a197ac09deaa56f21a747ceda0ce9234e">mtpk::Data::removeNullByte</a></div><div class="ttdeci">std::vector&lt; std::string &gt; removeNullByte(std::vector&lt; std::string &gt; data)</div></div>
-<div class="ttc" id="aclassmtpk_1_1Data_html_a3778305c364bd5d16183bf6f77b08c9e"><div class="ttname"><a href="classmtpk_1_1Data.html#a3778305c364bd5d16183bf6f77b08c9e">mtpk::Data::printData</a></div><div class="ttdeci">void printData(std::vector&lt; std::string &gt; inputName, std::vector&lt; std::vector&lt; double &gt;&gt; inputSet)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00067">utils.cpp:67</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Data_html_a3778305c364bd5d16183bf6f77b08c9e"><div class="ttname"><a href="classmtpk_1_1Data.html#a3778305c364bd5d16183bf6f77b08c9e">mtpk::Data::printData</a></div><div class="ttdeci">void printData(std::vector&lt; std::string &gt; inputName, std::vector&lt; std::vector&lt; double &gt;&gt; inputSet)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00101">utils.cpp:101</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a4652eab3b2b81a7e9ed02c6490c1a755"><div class="ttname"><a href="classmtpk_1_1Data.html#a4652eab3b2b81a7e9ed02c6490c1a755">mtpk::Data::split</a></div><div class="ttdeci">std::vector&lt; char &gt; split(std::string text)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a488ef174b72c8889d52ade88374c1c14"><div class="ttname"><a href="classmtpk_1_1Data.html#a488ef174b72c8889d52ade88374c1c14">mtpk::Data::segment</a></div><div class="ttdeci">std::vector&lt; std::string &gt; segment(std::string text)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a584808c259609fb613c6de3b38faaf89"><div class="ttname"><a href="classmtpk_1_1Data.html#a584808c259609fb613c6de3b38faaf89">mtpk::Data::splitSentences</a></div><div class="ttdeci">std::vector&lt; std::string &gt; splitSentences(std::string data)</div></div>
-<div class="ttc" id="aclassmtpk_1_1Data_html_a64357fdff95ad58a3fae8ba957fb8a79"><div class="ttname"><a href="classmtpk_1_1Data.html#a64357fdff95ad58a3fae8ba957fb8a79">mtpk::Data::setData</a></div><div class="ttdeci">void setData(int k, std::string fileName, std::vector&lt; std::vector&lt; double &gt;&gt; &amp;inputSet, std::vector&lt; double &gt; &amp;outputSet)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00034">utils.cpp:34</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Data_html_a64357fdff95ad58a3fae8ba957fb8a79"><div class="ttname"><a href="classmtpk_1_1Data.html#a64357fdff95ad58a3fae8ba957fb8a79">mtpk::Data::setData</a></div><div class="ttdeci">void setData(int k, std::string fileName, std::vector&lt; std::vector&lt; double &gt;&gt; &amp;inputSet, std::vector&lt; double &gt; &amp;outputSet)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00068">utils.cpp:68</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_a928b5b5607b5ab5c4692c86079da58b3"><div class="ttname"><a href="classmtpk_1_1Data.html#a928b5b5607b5ab5c4692c86079da58b3">mtpk::Data::load</a></div><div class="ttdeci">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; double &gt; &gt; load()</div></div>
-<div class="ttc" id="aclassmtpk_1_1Data_html_abeeccfb400d015aa4bbac0d7deb17016"><div class="ttname"><a href="classmtpk_1_1Data.html#abeeccfb400d015aa4bbac0d7deb17016">mtpk::Data::load</a></div><div class="ttdeci">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; double &gt; &gt; load()</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00021">utils.cpp:21</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Data_html_abeeccfb400d015aa4bbac0d7deb17016"><div class="ttname"><a href="classmtpk_1_1Data.html#abeeccfb400d015aa4bbac0d7deb17016">mtpk::Data::load</a></div><div class="ttdeci">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; double &gt; &gt; load()</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00055">utils.cpp:55</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_acf66087369d3b66a88c2f9824364b602"><div class="ttname"><a href="classmtpk_1_1Data.html#acf66087369d3b66a88c2f9824364b602">mtpk::Data::set_input_names</a></div><div class="ttdeci">void set_input_names(std::string file_name, std::vector&lt; std::string &gt; &amp;input_names)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_ad900416a7eb7a59a26ac2f536c8da579"><div class="ttname"><a href="classmtpk_1_1Data.html#ad900416a7eb7a59a26ac2f536c8da579">mtpk::Data::removeSpaces</a></div><div class="ttdeci">std::vector&lt; std::string &gt; removeSpaces(std::vector&lt; std::string &gt; data)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Data_html_afaa3c7249d2ea6b7eda3189c3905f2f5"><div class="ttname"><a href="classmtpk_1_1Data.html#afaa3c7249d2ea6b7eda3189c3905f2f5">mtpk::Data::one_rep_reverse</a></div><div class="ttdeci">std::vector&lt; double &gt; one_rep_reverse(std::vector&lt; std::vector&lt; double &gt;&gt; temp_output_set)</div></div>
-<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html">mtpk::OutlierFinder</a></div><div class="ttdoc">Finds outliers in models.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00082">utils.hpp:82</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html">mtpk::OutlierFinder</a></div><div class="ttdoc">Finds outliers in models.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00116">utils.hpp:116</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_a18c2087072af1615d3a9ecfbbdecd587"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587">mtpk::OutlierFinder::OutlierFinder</a></div><div class="ttdeci">OutlierFinder(int threshold)</div></div>
 <div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_a597a7f36abc0c5e2d28b3ffc900382fb"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#a597a7f36abc0c5e2d28b3ffc900382fb">mtpk::OutlierFinder::modelSetTest</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; modelSetTest(std::vector&lt; std::vector&lt; double &gt;&gt; inputSet)</div></div>
-<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_abd2ae71c2aaa99870b03dbb5001688b4"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">mtpk::OutlierFinder::threshold</a></div><div class="ttdeci">int threshold</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00092">utils.hpp:92</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_abd2ae71c2aaa99870b03dbb5001688b4"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#abd2ae71c2aaa99870b03dbb5001688b4">mtpk::OutlierFinder::threshold</a></div><div class="ttdeci">int threshold</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00126">utils.hpp:126</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1OutlierFinder_html_af7d8185e5b4754a3acba91a7b2b439c0"><div class="ttname"><a href="classmtpk_1_1OutlierFinder.html#af7d8185e5b4754a3acba91a7b2b439c0">mtpk::OutlierFinder::modelTest</a></div><div class="ttdeci">std::vector&lt; double &gt; modelTest(std::vector&lt; double &gt; inputSet)</div></div>
 <div class="ttc" id="amatrix_8hpp_html"><div class="ttname"><a href="matrix_8hpp.html">matrix.hpp</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
