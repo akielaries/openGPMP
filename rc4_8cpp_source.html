@@ -88,15 +88,15 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332">mtpk::RC4::byte_swap</a>(uint8_t *a, uint8_t *b) {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint8_t swapped = *a;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    swapped         = *a;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    *a              = *b;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    *b              = swapped;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    swapped = *a;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    *a = *b;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    *b = swapped;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classmtpk_1_1RC4.html#a7f78df47fd055968e84ae9814d3012f2">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1RC4.html#a7f78df47fd055968e84ae9814d3012f2">mtpk::RC4::trad_swap</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *a, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *b) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> swapped = *a;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    *a          = *b;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    *b          = swapped;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    *a = *b;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    *b = swapped;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classmtpk_1_1RC4.html#a241338bfc1131ece12f8964fb14a407c">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1RC4.html#a241338bfc1131ece12f8964fb14a407c">mtpk::RC4::XOR_swap</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *a, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *b) {</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da">mtpk::RC4::KSA</a>(<span class="keywordtype">char</span> *key, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *S, <span class="keywordtype">int</span> swap_type) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    uint32_t len = strlen(key);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> j        = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a>; i++) {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        S[i] = i;</div>
