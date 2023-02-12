@@ -8,7 +8,7 @@
 
 // Data structure
 typedef struct StackTypeStruct {
-    int value;
+    int                     value;
     struct StackTypeStruct *nextPtr;
 } StackNodeType;
 

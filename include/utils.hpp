@@ -40,17 +40,17 @@ class Data {
 
     void setData(int k, std::string fileName,
                  std::vector<std::vector<double>> &inputSet,
-                 std::vector<double> &outputSet);
+                 std::vector<double> &             outputSet);
 
-    void printData(std::vector<std::string> inputName,
+    void printData(std::vector<std::string>         inputName,
                    std::vector<std::vector<double>> inputSet);
 
-    void printData(std::vector<std::string> inputName,
-                   std::string outputName,
+    void printData(std::vector<std::string>         inputName,
+                   std::string                      outputName,
                    std::vector<std::vector<double>> inputSet,
-                   std::vector<double> outputSet);
+                   std::vector<double>              outputSet);
 
-    void set_input_names(std::string file_name,
+    void set_input_names(std::string               file_name,
                          std::vector<std::string> &input_names);
 
     std::vector<std::vector<double>>
@@ -62,7 +62,7 @@ class Data {
     std::vector<double>
         one_rep_reverse(std::vector<std::vector<double>> temp_output_set);
 
-    std::vector<char> split(std::string text);
+    std::vector<char>        split(std::string text);
     std::vector<std::string> splitSentences(std::string data);
     std::vector<std::string> removeSpaces(std::vector<std::string> data);
     std::vector<std::string> removeNullByte(std::vector<std::string> data);
@@ -85,7 +85,7 @@ class OutlierFinder {
     OutlierFinder(int threshold);
 
     std::vector<std::vector<double>>
-        modelSetTest(std::vector<std::vector<double>> inputSet);
+                        modelSetTest(std::vector<std::vector<double>> inputSet);
     std::vector<double> modelTest(std::vector<double> inputSet);
 
     // Variables required

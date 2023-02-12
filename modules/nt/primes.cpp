@@ -13,7 +13,7 @@
 #include <string>
 
 // declare Basics and Primality class objects
-mtpk::Basics ba;
+mtpk::Basics    ba;
 mtpk::Primality prim;
 
 int64_t mtpk::Primality::mod_pow(int64_t base, int64_t exponent,

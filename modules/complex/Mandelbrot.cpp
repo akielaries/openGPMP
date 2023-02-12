@@ -9,8 +9,8 @@
 // Function to draw mandelbrot set
 void fractal(float left, float top, float xside, float yside) {
     float xscale, yscale, zx, zy, cx, tempx, cy;
-    int x, y, i, j;
-    int maxx, maxy, count;
+    int   x, y, i, j;
+    int   maxx, maxy, count;
 
     // getting maximum value of x-axis of screen
     maxx = getmaxx();

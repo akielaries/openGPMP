@@ -13,7 +13,6 @@
 
 using namespace mtpk;
 
-
 // TODO: helper function to compute dimensions of the CSV file and
 // pass into other functions
 // std::string Data::read_csv(file_name, ??)
@@ -23,7 +22,7 @@ std::tuple<std::vector<std::vector<double>>, std::vector<double>>
     const int SIZE = 1; // k = 30
 
     std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
+    std::vector<double>              outputSet;
 
     setData(SIZE, "../../data/school_scores.csv",
             //"../../data/BreastCancer.csv",
@@ -34,7 +33,7 @@ std::tuple<std::vector<std::vector<double>>, std::vector<double>>
 
 void Data::setData(int k, std::string fileName,
                    std::vector<std::vector<double>> &inputSet,
-                   std::vector<double> &outputSet) {
+                   std::vector<double> &             outputSet) {
     // LinAlg alg;
     std::string inputTemp;
     std::string outputTemp;
@@ -65,7 +64,7 @@ void Data::setData(int k, std::string fileName,
 
     dataFile.close();
 }
-void Data::printData(std::vector<std::string> inputName,
+void Data::printData(std::vector<std::string>         inputName,
                      std::vector<std::vector<double>> inputSet) {
     // LinAlg alg;
     // inputSet = alg.transpose(inputSet);
@@ -77,10 +76,10 @@ void Data::printData(std::vector<std::string> inputName,
     }
 }
 
-void Data::printData(std::vector<std::string> inputName,
-                     std::string outputName,
+void Data::printData(std::vector<std::string>         inputName,
+                     std::string                      outputName,
                      std::vector<std::vector<double>> inputSet,
-                     std::vector<double> outputSet) {
+                     std::vector<double>              outputSet) {
     // LinAlg alg;
     // inputSet = alg.transpose(inputSet);
     for (int i = 0; i < inputSet.size(); i++) {

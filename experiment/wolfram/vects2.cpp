@@ -25,13 +25,13 @@ void project(std::vector<T> &vec) {
 
 int main() {
     std::vector<double> lhs = {1.0, 2.2, 1};
-    std::vector<int> rhs    = {1, 3, 2};
+    std::vector<int>    rhs = {1, 3, 2};
 
     auto sum = vsum(lhs, rhs);
 
     cout << typeid(sum).name() << endl;
 
-    constexpr int k_physical_dim = 3;
+    constexpr int       k_physical_dim = 3;
     std::vector<double> data_vec{3.4, 5.6};
     project<k_physical_dim>(data_vec);
 

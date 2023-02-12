@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <string>
 
-
 /*
 int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
     // Get coefficient
@@ -37,11 +36,10 @@ int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
 }
 */
 
-
 int64_t mtpk::Calculus::derivative_term(std::string p_term, int64_t val) {
     // Get coefficient
     std::string coeffStr = "";
-    int64_t i;
+    int64_t     i;
 
     for (i = 0; p_term[i] != 'x'; i++) {
         coeffStr.push_back(p_term[i]);

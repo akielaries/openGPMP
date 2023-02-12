@@ -36,10 +36,10 @@ class RC5 {
     uint32_t shift_right(uint32_t v, uint32_t n);
     uint32_t rotate_left(uint32_t v, uint32_t n);
     uint32_t rotate_right(uint32_t v, uint32_t n);
-    void encrypt(uint32_t S[26], uint32_t inout[4]);
-    void decrypt(uint32_t S[26], uint32_t inout[4]);
-    void expand(uint32_t L[4], uint32_t S[26]);
-    int test(uint32_t S[26], uint32_t messg[4]);
+    void     encrypt(uint32_t S[26], uint32_t inout[4]);
+    void     decrypt(uint32_t S[26], uint32_t inout[4]);
+    void     expand(uint32_t L[4], uint32_t S[26]);
+    int      test(uint32_t S[26], uint32_t messg[4]);
 };
 
 #endif

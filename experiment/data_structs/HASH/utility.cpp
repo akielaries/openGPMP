@@ -9,10 +9,10 @@ void data_stats(FILE *file_name, int *counted_row_size,
                 int *counted_rows) {
     printf("START: %s\n", __func__);
     // initializing variables
-    int char_counter = 0;
-    int row_count    = 0;
+    int  char_counter = 0;
+    int  row_count    = 0;
     char temp_char;
-    int max_char_counter = 0;
+    int  max_char_counter = 0;
 
     while (temp_char != EOF) {
         temp_char = fgetc(file_name);
@@ -55,9 +55,9 @@ char data_file[3][20] = {"case_1_data.txt\0", "case_2_data.txt\0",
 int case_4() {
     float A = 0, B = 0;
     float i, j;
-    int k;
+    int   k;
     float z[1760];
-    char b[1760];
+    char  b[1760];
     printf("\x1b[2J");
     for (;;) {
         memset(b, 32, 1760);
@@ -75,9 +75,9 @@ int case_4() {
                 float m = cos(B);
                 float n = sin(B);
                 float t = c * h * g - f * e;
-                int x   = 40 + 30 * D * (l * h * m - t * n);
-                int y   = 12 + 15 * D * (l * h * n + t * m);
-                int o   = x + 80 * y;
+                int   x = 40 + 30 * D * (l * h * m - t * n);
+                int   y = 12 + 15 * D * (l * h * n + t * m);
+                int   o = x + 80 * y;
                 int N = 8 * ((f * e - c * d * g) * m - c * d * e - f * g -
                              l * d * n);
                 if (22 > y && y > 0 && x > 0 && 80 > x && D > z[o]) {

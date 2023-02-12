@@ -60,7 +60,7 @@ class PrimaryMLP {
 
     /*return the number of layers in the network */
     int64_t num_layers;
-    layer *layer_ptr;
+    layer * layer_ptr;
 
     /**
      * @brief Mean Squared Error
@@ -147,7 +147,7 @@ class SecondaryMLP {
         return (x * (1 - x));
     }
 
-    std::vector<size_t> layer_units;
+    std::vector<size_t>    layer_units;
     std::vector<Matrix<T>> bias_vectors;
     std::vector<Matrix<T>> wt_mtx;
     std::vector<Matrix<T>> activations;
@@ -160,7 +160,7 @@ class SecondaryMLP {
      * set to random Gaussian Noise related values
      */
     explicit SecondaryMLP(std::vector<size_t> layer_units,
-                          long double lr = .001)
+                          long double         lr = .001)
         : layer_units(layer_units), wt_mtx(), bias_vectors(), lr(lr) {
         // traverse the elements
         for (size_t i = 0; i < layer_units.size() - 1; ++i) {

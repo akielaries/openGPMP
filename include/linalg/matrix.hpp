@@ -28,7 +28,7 @@ class Matrix {
     size_t cols;
     size_t rows;
 
-    std::vector<Type> data;
+    std::vector<Type>          data;
     std::tuple<size_t, size_t> dim;
 
     int64_t num_elements = rows * cols;
@@ -388,10 +388,10 @@ struct mtx {
     static Matrix<T> randn(size_t rows, size_t cols) {
         Matrix<T> MTX{rows, cols};
 
-        std::random_device rd{};
-        std::mt19937 gen{rd()};
-        T n(MTX.num_elements);
-        T stdev{1 / sqrt(n)};
+        std::random_device          rd{};
+        std::mt19937                gen{rd()};
+        T                           n(MTX.num_elements);
+        T                           stdev{1 / sqrt(n)};
         std::normal_distribution<T> d{0, stdev};
 
         for (size_t r = 0; r < rows; ++r) {
@@ -404,8 +404,8 @@ struct mtx {
     static Matrix<T> rand(size_t rows, size_t cols) {
         Matrix<T> MTX{rows, cols};
 
-        std::random_device rd{};
-        std::mt19937 gen{rd()};
+        std::random_device                rd{};
+        std::mt19937                      gen{rd()};
         std::uniform_real_distribution<T> d{0, 1};
 
         for (size_t r = 0; r < rows; ++r) {

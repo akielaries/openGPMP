@@ -16,7 +16,7 @@ namespace mtpk {
  */
 typedef struct summary {
     std::vector<std::vector<long double>> mean_stdev;
-    long double class_prob;
+    long double                           class_prob;
 } summary;
 
 /**
@@ -25,17 +25,17 @@ typedef struct summary {
 class BayesClf {
     private:
     std::vector<class_summary> Summary;
-    std::vector<long double> unique_label;
+    std::vector<long double>   unique_label;
 
     public:
-    void fit(std::vector<std::vector<long double>> dataset);
+    void    fit(std::vector<std::vector<long double>> dataset);
     int64_t predict(const std::vector<long double> &test_data);
 };
 summary gen_summ(std::vector<std::vector<long double>> dataset,
-                 long double class_label);
+                 long double                           class_label);
 
 long double prob_by_summ(const std::vector<long double> &test_data,
-                         const class_summary &summary);
+                         const class_summary &           summary);
 
 /**
  * @class BayesBernoulli
@@ -48,10 +48,10 @@ long double prob_by_summ(const std::vector<long double> &test_data,
 class BayesBernoulli {
     public:
     BayesBernoulli(std::vector<std::vector<double>> inputSet,
-                   std::vector<double> outputSet);
+                   std::vector<double>              outputSet);
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
-    double modelTest(std::vector<double> x);
-    double score();
+    double              modelTest(std::vector<double> x);
+    double              score();
 
     private:
     void computeVocab();
@@ -63,13 +63,13 @@ class BayesBernoulli {
     double prior_0 = 0;
 
     std::vector<std::map<double, int>> theta;
-    std::vector<double> vocab;
-    int class_num;
+    std::vector<double>                vocab;
+    int                                class_num;
 
     // Datasets
     std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-    std::vector<double> y_hat;
+    std::vector<double>              outputSet;
+    std::vector<double>              y_hat;
 };
 
 /**
@@ -98,7 +98,7 @@ class BayesGauss {
     std::vector<double> sigma;
 
     std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
+    std::vector<double>              outputSet;
 
     std::vector<double> y_hat;
 };
@@ -127,13 +127,13 @@ class BayesMutliNom {
     std::vector<double> priors;
 
     std::vector<std::map<double, int>> theta;
-    std::vector<double> vocab;
-    int class_num;
+    std::vector<double>                vocab;
+    int                                class_num;
 
     // Datasets
     std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-    std::vector<double> y_hat;
+    std::vector<double>              outputSet;
+    std::vector<double>              y_hat;
 };
 
 } // namespace mtpk

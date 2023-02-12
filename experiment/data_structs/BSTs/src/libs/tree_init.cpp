@@ -11,10 +11,10 @@
 
 PasswordType *import_data(int size) {
     // initialize variables
-    PasswordType *rootPtr = NULL, *insertNodePtr = NULL;
-    FILE *inputFilePtr;
-    int index, rank;
-    char comma;
+    PasswordType *         rootPtr = NULL, *insertNodePtr = NULL;
+    FILE *                 inputFilePtr;
+    int                    index, rank;
+    char                   comma;
     unsigned long long int password;
 
     // open input file
@@ -49,7 +49,7 @@ int) Function output/parameters: none Function output/returned: pointer to
 created node Device input/file: none Device output/monitor: none
 Dependencies: malloc, sizeof
 */
-PasswordType *init_node_from_data(int rankInput,
+PasswordType *init_node_from_data(int                    rankInput,
                                   unsigned long long int passInput) {
     // initialize variables
     PasswordType *newNodePtr = NULL;

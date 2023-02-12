@@ -14,7 +14,6 @@
 #ifndef NT_HPP
 #define NT_HPP
 
-
 /**
  * @brief \b Primes
  * @details includes :
@@ -37,4 +36,3 @@
 #include "number_theory/rc4.hpp"
 
 #endif
-

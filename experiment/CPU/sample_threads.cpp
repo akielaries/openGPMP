@@ -25,10 +25,10 @@ int run() {
     clock_t t;
     t = clock();
 
-    int thr_id;         /* thread ID for the newly created thread */
+    int       thr_id;   /* thread ID for the newly created thread */
     pthread_t p_thread; /* thread's structure                     */
-    int a = 1;          /* thread 1 identifying number            */
-    int b = 2;          /* thread 2 identifying number            */
+    int       a = 1;    /* thread 1 identifying number            */
+    int       b = 2;    /* thread 2 identifying number            */
 
     /* create a new thread that will execute 'do_loop()' */
     thr_id = pthread_create(&p_thread, NULL, do_loop, (void *)&a);

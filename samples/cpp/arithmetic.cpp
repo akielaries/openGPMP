@@ -34,15 +34,15 @@ int main() {
     mtpk::Arith<int> ar;
 
     // declare some variables
-    int a    = 10;
-    int b    = 8;
-    int c    = 3;
+    int    a = 10;
+    int    b = 8;
+    int    c = 3;
     double d = 1.25;
-    float e  = 1.85;
-    float f  = 2.75;
-    long g   = 1.35;
-    float y  = 9743298223.945;
-    float z  = 34895542235.8854;
+    float  e = 1.85;
+    float  f = 2.75;
+    long   g = 1.35;
+    float  y = 9743298223.945;
+    float  z = 34895542235.8854;
 
     /*
      * starting with addition operations with different data types.
@@ -58,9 +58,9 @@ int main() {
      * arithmetic basics
      */
     mtpk::Basics ba;
-    int r10 = 10;
-    int r11 = 3;
-    int r12 = ba.greatest_power(r10, r11);
+    int          r10 = 10;
+    int          r11 = 3;
+    int          r12 = ba.greatest_power(r10, r11);
     printf("The greatest power of %d that divides %d! = %d\n", r10, r11,
            r12);
 

@@ -21,5 +21,5 @@ void out_of_memory(void);
 // void is_key_present();
 void test_function(int adjusted_row_size);
 char data_file[3][20];
-int case_4();
+int  case_4();
 #endif

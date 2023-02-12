@@ -12,8 +12,8 @@ void fractal(float left, float top, float xside, float yside) {
     glBegin(GL_POINTS);
 
     float xscale, yscale, zx, zy, cx, tempx, cy;
-    int x, y, i, j;
-    int maxx, maxy, count;
+    int   x, y, i, j;
+    int   maxx, maxy, count;
 
     // getting maximum value of x-axis of screen
     maxx = getmaxx();

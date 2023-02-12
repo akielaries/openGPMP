@@ -9,7 +9,7 @@
 
 // Data structure
 typedef struct GraphType {
-    int totalVertices;
+    int   totalVertices;
     int **vertexAdjacencyLists;
     bool *visitedArray;
 

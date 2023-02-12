@@ -78,7 +78,7 @@ void mtpk::LinearRegression::get_input(int64_t n) {
          * In a csv file all the values of xi and yi are separated by
          * commas
          */
-        char comma;
+        char        comma;
         long double xi;
         long double yi;
         std::cin >> xi >> comma >> yi;
@@ -137,7 +137,7 @@ long double mtpk::LinearRegression::error_in(long double num) {
 }
 
 int64_t mtpk::LinearRegression::num_rows(const char *input) {
-    int64_t num = 0;
+    int64_t     num = 0;
     std::string row;
 
     // create input file stream

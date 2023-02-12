@@ -25,7 +25,7 @@ class CV {
 template <class T>
 class KF_CV : public CV<T> {
     private:
-    int64_t N;
+    int64_t   N;
     vector<T> instance_list;
 
     public:

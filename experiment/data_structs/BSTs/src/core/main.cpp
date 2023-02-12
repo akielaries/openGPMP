@@ -15,10 +15,10 @@ const int MAX_NODES = 150000;
 // main driver
 int main() {
     // initialize variables
-    int size;
+    int           size;
     PasswordType *rootPtr = NULL;
-    PasswordType tempNode;
-    FILE *outputFilePtr;
+    PasswordType  tempNode;
+    FILE *        outputFilePtr;
 
     // prompt for size
     printf("Enter the number of values to be sorted: ");

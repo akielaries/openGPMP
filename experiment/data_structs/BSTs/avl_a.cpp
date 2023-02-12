@@ -7,15 +7,15 @@ const int MAX_NODES = 150000;
 
 // data structure
 typedef struct PasswordTypeStruct {
-    int rank;
-    unsigned long long int password;
+    int                        rank;
+    unsigned long long int     password;
     struct PasswordTypeStruct *leftChildPtr;
     struct PasswordTypeStruct *rightChildPtr;
 } PasswordType;
 
 // function declarations
 // new functions
-int getBalanceFactor(PasswordType *localPtr);
+int           getBalanceFactor(PasswordType *localPtr);
 PasswordType *rebalanceTree(PasswordType *localPtr);
 PasswordType *removeItem(PasswordType *rootPtr, PasswordType *toRemovePtr);
 PasswordType *removeItemHelper(PasswordType *wkgPtr,
@@ -27,23 +27,23 @@ void setNodeDataFromNode(PasswordType *destNode, PasswordType *srcNode);
 
 // provided function
 PasswordType *clearTree(PasswordType *wkgPtr);
-void displayTreeInOrder(PasswordType *wkgPtr, FILE *outputFile);
-int findSubTreeHeight(PasswordType *localPtr);
-int getMax(int valOne, int valTwo);
+void          displayTreeInOrder(PasswordType *wkgPtr, FILE *outputFile);
+int           findSubTreeHeight(PasswordType *localPtr);
+int           getMax(int valOne, int valTwo);
 PasswordType *leftRotation(PasswordType *localPtr);
 PasswordType *rightRotation(PasswordType *localPtr);
 PasswordType *importData(int size);
 PasswordType *insert(PasswordType *wkgPtr, PasswordType *inNodePtr);
-PasswordType *initializeNodeFromData(int rankInput,
+PasswordType *initializeNodeFromData(int                    rankInput,
                                      unsigned long long int passInput);
 
 // main driver
 int main() {
     // initialize variables
-    int size;
+    int           size;
     PasswordType *rootPtr = NULL;
-    PasswordType tempNode;
-    FILE *outputFilePtr;
+    PasswordType  tempNode;
+    FILE *        outputFilePtr;
 
     // prompt for size
     printf("Enter the number of values to be sorted: ");
@@ -612,10 +612,10 @@ PasswordType *rightRotation(PasswordType *localPtr) {
 // provided
 PasswordType *importData(int size) {
     // initialize variables
-    PasswordType *rootPtr = NULL, *insertNodePtr = NULL;
-    FILE *inputFilePtr;
-    int index, rank;
-    char comma;
+    PasswordType *         rootPtr = NULL, *insertNodePtr = NULL;
+    FILE *                 inputFilePtr;
+    int                    index, rank;
+    char                   comma;
     unsigned long long int password;
 
     // open input file
@@ -664,7 +664,7 @@ void displayTreeInOrder(PasswordType *wkgPtr, FILE *outputFile) {
     // void, no return
 }
 
-PasswordType *initializeNodeFromData(int rankInput,
+PasswordType *initializeNodeFromData(int                    rankInput,
                                      unsigned long long int passInput) {
     // initialize variables
     PasswordType *newNodePtr = NULL;

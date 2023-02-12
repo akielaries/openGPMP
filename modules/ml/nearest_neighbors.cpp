@@ -23,10 +23,10 @@ class Company {
     }
 
     // distance from test point
-    double distance;
+    double  distance;
     int64_t turnover;
     int64_t characteristics;
-    bool success;
+    bool    success;
 
     private:
     /*
@@ -59,9 +59,9 @@ class CSVReader {
      * Function to fetch the data from a CSV file
      */
     vector<vector<string>> getData() {
-        ifstream file(this->fileName);
+        ifstream               file(this->fileName);
         vector<vector<string>> data;
-        string line = "";
+        string                 line = "";
 
         while (getline(file, line)) {
             vector<string> tmp;
@@ -153,10 +153,10 @@ bool KNN(vector<Company> &data, Company &test, int k,
 }
 
 int main() {
-    const string path = "../data/zip.test.gz";
-    CSVReader reader(path);
+    const string           path = "../data/zip.test.gz";
+    CSVReader              reader(path);
     vector<vector<string>> rawData = reader.getData();
-    vector<Company> data;
+    vector<Company>        data;
     for (vector<string> line : rawData) {
         Company comp(stoi(line[0]), line[1],
                      line[2] == "1" ? true : false);

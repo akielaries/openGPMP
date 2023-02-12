@@ -50,7 +50,7 @@ class NumericalAnalysis {
 
     double invQuadraticInterpolation(double (*function)(double),
                                      std::vector<double> x_0,
-                                     double epoch_num);
+                                     double              epoch_num);
 
     double eulerianMethod(double (*derivative)(double),
                           std::vector<double> q_0, double p,

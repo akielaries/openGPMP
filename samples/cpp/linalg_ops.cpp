@@ -34,13 +34,13 @@
 using namespace mtpk;
 
 void print_csv() {
-    std::ifstream csvFile("data/school_scores.csv");
-    std::string line;
+    std::ifstream                    csvFile("data/school_scores.csv");
+    std::string                      line;
     std::vector<std::vector<double>> data;
     while (std::getline(csvFile, line)) {
         std::vector<double> row;
-        std::stringstream lineStream(line);
-        std::string cell;
+        std::stringstream   lineStream(line);
+        std::string         cell;
         while (std::getline(lineStream, cell, ',')) {
             row.push_back(std::stod(cell));
             std::cout << line;
@@ -48,8 +48,8 @@ void print_csv() {
         data.push_back(row);
     }
     csvFile.close();
-    size_t rows = data.size();
-    size_t cols = data[0].size();
+    size_t               rows = data.size();
+    size_t               cols = data[0].size();
     mtpk::Matrix<double> mat(rows, cols);
 
     mat.print_mtx();

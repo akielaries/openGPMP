@@ -7,10 +7,10 @@
 #include <string>
 #include <vector>
 
-typedef long double Scalar;
-typedef Eigen::MatrixXf Matrix;
+typedef long double        Scalar;
+typedef Eigen::MatrixXf    Matrix;
 typedef Eigen::RowVectorXf RowVector;
-typedef Eigen::VectorXf ColVector;
+typedef Eigen::VectorXf    ColVector;
 
 namespace mtpk {
 
@@ -18,7 +18,7 @@ class NaiveNet {
     public:
     // contructor
     naive_network(std::vector<uint> topology,
-                  Scalar learningRate = Scalar(0.005));
+                  Scalar            learningRate = Scalar(0.005));
 
     /* perform forward propagation */
     void forward_prop(RowVector &input);
