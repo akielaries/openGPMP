@@ -35,7 +35,6 @@ namespace mtpk {
 template <typename T>
 class Arith {
     public:
-
     T arr_add(T arr[], int64_t n) {
         T sum = 0;
 
