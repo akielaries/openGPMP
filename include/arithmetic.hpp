@@ -11,7 +11,6 @@
 #define ARITHMETIC_HPP
 #include <cstdint>
 
-
 /**
  * @namespace mtpk
  *
