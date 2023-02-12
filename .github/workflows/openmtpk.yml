@@ -96,8 +96,8 @@ jobs:
     uses: ./.github/workflows/build_nix.yml
 
   python:
-    needs: [ cpp ]
-    #if: needs.py_changes.outputs.py_changed == 'True'
+    needs: [ cpp , py_changes ]
+    if: needs.py_changes.outputs.py_changed == 'True'
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
@@ -140,8 +140,7 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ bump_version , latest_version ]
-    #if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.mtpk_version.outputs.tag }}
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.mtpk_version.outputs.tag }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
