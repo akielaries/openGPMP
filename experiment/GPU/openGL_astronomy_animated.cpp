@@ -69,12 +69,12 @@ void display() {
 // idle function.  It increments the value of u (to "move" the
 // camera), ticks off another portion of a day and portion of a year,
 // then reorients the camera and refreshes the display.
-static GLfloat u  = 0.0; // curve parameter for comet pos
+static GLfloat u = 0.0;  // curve parameter for comet pos
 static GLfloat du = 0.1; // amt to increment u each frame
 
 void timer(int v) {
     u += du;
-    day  = (day + 1) % 360;
+    day = (day + 1) % 360;
     year = (year + 2) % 360;
     glLoadIdentity();
     gluLookAt(20 * cos(u / 8.0) + 12, 5 * sin(u / 8.0) + 1,

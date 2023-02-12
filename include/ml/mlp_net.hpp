@@ -1,3 +1,38 @@
+/*************************************************************************
+ *                                  
+ *  Project               
+ *                        __  __ _______ _____  _  __
+ *                       |  \/  |__   __|  __ \| |/ /
+ *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' / 
+ * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <  
+ *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \ 
+ * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *      | |                                          
+ *      |_|                                         
+ *
+ *
+ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
+ *
+ * This software is licensed as described in the file LICENSE, which
+ * you should have received as part of this distribution. The terms
+ * among other details are referenced in the official documentation
+ * seen here : https://akielaries.github.io/openMTPK/ along with 
+ * important files seen in this project.
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute 
+ * and/or sell copies of the Software, and permit persons to whom 
+ * the Software is furnished to do so, under the terms of the 
+ * LICENSE file. As this is an Open Source effort, all implementations
+ * must be of the same methodology.
+ *
+ *
+ *
+ * This software is distributed on an "AS IS" basis, WITHOUT 
+ * WARRANTY OF ANY KIND, either express or implied.
+ *
+ ************************************************************************/
+
+
 /**
  * @file
  *
@@ -6,14 +41,13 @@
  */
 #ifndef MLP_NETWORK_HPP
 #define MLP_NETWORK_HPP
+#include "../linalg.hpp"
 #include <cassert>
 #include <fstream>
 #include <random>
 #include <stdio.h>
 #include <utility>
 #include <vector>
-
-#include "../linalg.hpp"
 
 namespace mtpk {
 
@@ -57,16 +91,13 @@ class PrimaryMLP {
     int64_t rand_int(int64_t low, int64_t hi);
     /*check random is a real number */
     long double rand_real(long double low, long double hi);
-
     /*return the number of layers in the network */
     int64_t num_layers;
     layer *layer_ptr;
-
     /**
      * @brief Mean Squared Error
      */
     long double _MSE;
-
     /**
      * @brief Mean Absolute Error
      */
@@ -124,7 +155,7 @@ class SecondaryMLP {
     void log(auto &file, const auto &x, const auto &y, const auto &y_hat) {
         // mean squared error
         auto mse = (y.data[0] - y_hat.data[0]);
-        mse      = mse * mse;
+        mse = mse * mse;
         file << mse << " " << x.data[0] << " " << y.data[0] << " "
              << y_hat.data[0] << " \n";
     }
@@ -194,11 +225,11 @@ class SecondaryMLP {
 
         // traverse layer units
         for (uint64_t i = 0; i < layer_units.size() - 1; ++i) {
-            Matrix y           = wt_mtx[i].mult(prev);
-            y                  = y + bias_vectors[i];
-            y                  = y.apply_function(sigmoid_activ);
+            Matrix y = wt_mtx[i].mult(prev);
+            y = y + bias_vectors[i];
+            y = y.apply_function(sigmoid_activ);
             activations[i + 1] = y;
-            prev               = y;
+            prev = y;
         }
         return prev;
     }
@@ -213,28 +244,27 @@ class SecondaryMLP {
     void prop_backwards(Matrix<T> target) {
         assert(get<0>(target.shape) == layer_units.back());
         // calculate the error, target - ouput
-        auto y     = target;
+        auto y = target;
         auto y_hat = activations.back();
-        auto err   = target - y_hat;
+        auto err = target - y_hat;
         // back propagate the error calculated from output to input
         // and step the weights
         for (int64_t i = wt_mtx.size() - 1; i >= 0; --i) {
             // calculate errors for previous layer
-            auto wt         = wt_mtx[i].T();
+            auto wt = wt_mtx[i].T();
             auto prior_errs = wt.mult(err);
-
             auto outputs_d =
                 activations[i + 1].apply_function(sigmoid_deriv);
-            auto gradients    = err.hadamard(outputs_d);
-            gradients         = gradients.scalar_mult(lr);
-            auto trans_a      = activations[i].T();
+            auto gradients = err.hadamard(outputs_d);
+            gradients = gradients.scalar_mult(lr);
+            auto trans_a = activations[i].T();
             auto gradients_wt = gradients.mult(trans_a);
 
             // adjust the networks weights based on propagation
             // technique
             bias_vectors[i] = bias_vectors[i].add(gradients);
-            wt_mtx[i]       = wt_mtx[i].add(gradients_wt);
-            err             = prior_errs;
+            wt_mtx[i] = wt_mtx[i].add(gradients_wt);
+            err = prior_errs;
         }
     }
 };

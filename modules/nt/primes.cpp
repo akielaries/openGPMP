@@ -26,7 +26,7 @@ int64_t mtpk::Primality::mod_pow(int64_t base, int64_t exponent,
             x = (x * y) % mod;
         }
         exponent = exponent >> 1;
-        y        = (y * y) % mod;
+        y = (y * y) % mod;
     }
 
     return x;
@@ -183,9 +183,9 @@ bool mtpk::Primality::solovoy_strassen(int64_t p, int64_t iters) {
 
     for (int64_t i = 0; i < iters; i++) {
         // Generate a random number a
-        int64_t a        = rand() % (p - 1) + 1;
+        int64_t a = rand() % (p - 1) + 1;
         int64_t jacobian = (p + jacobian_number(a, p)) % p;
-        int64_t mod      = mod_pow(a, (p - 1) / 2, p);
+        int64_t mod = mod_pow(a, (p - 1) / 2, p);
 
         if (!jacobian || mod != jacobian)
             return false;

@@ -31,7 +31,7 @@ StackNodeType *createStackNode(int inData) {
     newStackNodePtr = (StackNodeType *)malloc(sizeof(StackNodeType));
 
     // put data into node
-    newStackNodePtr->value   = inData;
+    newStackNodePtr->value = inData;
     newStackNodePtr->nextPtr = NULL;
 
     return newStackNodePtr;

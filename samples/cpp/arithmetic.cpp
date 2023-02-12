@@ -34,21 +34,21 @@ int main() {
     mtpk::Arith<int> ar;
 
     // declare some variables
-    int a    = 10;
-    int b    = 8;
-    int c    = 3;
+    int a = 10;
+    int b = 8;
+    int c = 3;
     double d = 1.25;
-    float e  = 1.85;
-    float f  = 2.75;
-    long g   = 1.35;
-    float y  = 9743298223.945;
-    float z  = 34895542235.8854;
+    float e = 1.85;
+    float f = 2.75;
+    long g = 1.35;
+    float y = 9743298223.945;
+    float z = 34895542235.8854;
 
     /*
      * starting with addition operations with different data types.
      */
     int arr[] = {1, 2, 3, 4, 5};
-    int n     = sizeof(arr) / sizeof(arr[0]);
+    int n = sizeof(arr) / sizeof(arr[0]);
 
     std::cout << ar.arr_add(arr, n) << '\n';
     std::cout << ar.arr_sub(arr, n) << '\n';

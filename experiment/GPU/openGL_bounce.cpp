@@ -9,9 +9,9 @@
 #define pi 3.142857
 
 // Colors
-GLfloat WHITE[]   = {1, 1, 1};
-GLfloat RED[]     = {1, 0, 0};
-GLfloat GREEN[]   = {0, 1, 0};
+GLfloat WHITE[] = {1, 1, 1};
+GLfloat RED[] = {1, 0, 0};
+GLfloat GREEN[] = {0, 1, 0};
 GLfloat MAGENTA[] = {1, 0, 1};
 
 // A camera.  It moves horizontally in a circle centered at the origin
@@ -79,12 +79,12 @@ class Ball {
         y += direction * 0.05;
 
         if (y > maximumHeight) {
-            y         = maximumHeight;
+            y = maximumHeight;
             direction = -1;
         }
 
         else if (y < radius) {
-            y         = radius;
+            y = radius;
             direction = 1;
         }
 

@@ -401,7 +401,7 @@ Dependencies: none
 */
 void setNodeDataFromNode(PasswordType *destNode, PasswordType *srcNode) {
     // memcpy(srcNode, destNode, sizeof(destNode));
-    srcNode  = destNode;
+    srcNode = destNode;
     destNode = srcNode;
 
     // void, no return
@@ -575,7 +575,7 @@ int getMax(int valOne, int valTwo) {
 
 PasswordType *leftRotation(PasswordType *localPtr) {
     // initialize variables
-    PasswordType *tempPtr      = NULL;
+    PasswordType *tempPtr = NULL;
     PasswordType *newParentPtr = localPtr->rightChildPtr;
 
     // assign temp ptr to newParentPtr's right child
@@ -593,7 +593,7 @@ PasswordType *leftRotation(PasswordType *localPtr) {
 
 PasswordType *rightRotation(PasswordType *localPtr) {
     // initialize variables
-    PasswordType *tempPtr      = NULL;
+    PasswordType *tempPtr = NULL;
     PasswordType *newParentPtr = localPtr->leftChildPtr;
 
     // assign temp ptr to newParentPtr's left child
@@ -673,11 +673,11 @@ PasswordType *initializeNodeFromData(int rankInput,
     newNodePtr = (PasswordType *)malloc(sizeof(PasswordType));
 
     // put data into node
-    newNodePtr->rank     = rankInput;
+    newNodePtr->rank = rankInput;
     newNodePtr->password = passInput;
 
     // initialize child pointer to null
-    newNodePtr->leftChildPtr  = NULL;
+    newNodePtr->leftChildPtr = NULL;
     newNodePtr->rightChildPtr = NULL;
 
     // return pointer to created node

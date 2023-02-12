@@ -19,7 +19,7 @@ class CV {
 
     public:
     virtual vector<T> get_train_fold(int64_t k) = 0;
-    virtual vector<T> get_test_fold(int64_t k)  = 0;
+    virtual vector<T> get_test_fold(int64_t k) = 0;
 };
 
 template <class T>
@@ -49,7 +49,7 @@ KF_CV<T>::KF_CV(const vector<T> &instance_list, int64_t K, uint64_t seed) {
     this->instance_list = instance_list;
     shuffle(this->instance_list.begin(), this->instance_list.end(),
             default_random_engine(seed));
-    N       = instance_list.size();
+    N = instance_list.size();
     this->K = K;
 }
 

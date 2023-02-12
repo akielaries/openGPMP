@@ -27,16 +27,16 @@ int main() {
      * and will be displayed when using a traditional swap method
      */
     // expected hash = BBF316E8D940AF0AD3
-    char *key0  = (char *)"Key";
+    char *key0 = (char *)"Key";
     char *text0 = (char *)"Plaintext";
     // expected hash = 1021BF0420
-    char *key1  = (char *)"Wiki";
+    char *key1 = (char *)"Wiki";
     char *text1 = (char *)"pedia";
     // expected hash = 45A01F645FC35B383552544B9BF5
-    char *key2  = (char *)"Secret";
+    char *key2 = (char *)"Secret";
     char *text2 = (char *)"Attack at dawn";
 
-    char *key3  = (char *)"1";
+    char *key3 = (char *)"1";
     char *text3 = (char *)"username";
 
     /*
@@ -76,7 +76,7 @@ int main() {
 
     // free whats no longer in use
     free(hashtext_0);
-    a             = clock() - a;
+    a = clock() - a;
     double a_time = ((double)a) / CLOCKS_PER_SEC;
     printf("a_time = %f sec(s)\n\n", a_time);
     /*<------------------------------------------------------------------>*/
@@ -94,7 +94,7 @@ int main() {
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text1 << std::endl;
 
     free(hashtext_1);
-    b             = clock() - b;
+    b = clock() - b;
     double b_time = ((double)b) / CLOCKS_PER_SEC;
     printf("b_time = %f sec(s)\n\n", b_time);
     /*<------------------------------------------------------------------>*/
@@ -111,7 +111,7 @@ int main() {
     std::cout << "COMPUTED HASH (BSWAP) = " << display_text2 << std::endl;
 
     free(hashtext_2);
-    c             = clock() - c;
+    c = clock() - c;
     double c_time = ((double)c) / CLOCKS_PER_SEC;
     printf("c_time = %f sec(s)\n\n", c_time);
 
@@ -129,7 +129,7 @@ int main() {
     std::cout << "COMPUTED HASH (XSWAP) = " << display_text3 << std::endl;
 
     free(hashtext_3);
-    d             = clock() - d;
+    d = clock() - d;
     double d_time = ((double)d) / CLOCKS_PER_SEC;
     printf("d_time = %f sec(s)\n\n", d_time);
 

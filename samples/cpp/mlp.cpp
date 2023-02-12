@@ -3,7 +3,7 @@
  * supplied from openMTPk
  */
 #include "../../include/ml/mlp_net.hpp"
-#include "../../include/ml/utils.hpp"
+#include "../../include/ml/trainers.hpp"
 #include <deque>
 #include <fstream>
 #include <iostream>
@@ -19,7 +19,7 @@ int main() {
     int64_t inputs{1}, outputs{1}, hidden_layer_units{8}, hidden_layers{3};
 
     long double lr{.5};
-    mtpk::ml::Utils util;
+    mtpk::ml::Trainers util;
     auto model = util.init_SecondaryMLP(inputs = 1, outputs = 1,
                                         hidden_layer_units = 8,
                                         hidden_layers = 3, lr = .5);

@@ -25,7 +25,7 @@ void project(std::vector<T> &vec) {
 
 int main() {
     std::vector<double> lhs = {1.0, 2.2, 1};
-    std::vector<int> rhs    = {1, 3, 2};
+    std::vector<int> rhs = {1, 3, 2};
 
     auto sum = vsum(lhs, rhs);
 

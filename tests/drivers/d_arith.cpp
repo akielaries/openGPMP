@@ -33,22 +33,22 @@ int main() {
     Arith ar;
 
     // declare some variables
-    int a    = 10;
-    int b    = 8;
-    int c    = 3;
+    int a = 10;
+    int b = 8;
+    int c = 3;
     double d = 1.25;
-    float e  = 1.85;
-    float f  = 2.75;
-    long g   = 1.35;
-    float y  = 9743298223.945;
-    float z  = 34895542235.8854;
+    float e = 1.85;
+    float f = 2.75;
+    long g = 1.35;
+    float y = 9743298223.945;
+    float z = 34895542235.8854;
 
     /*
      * starting with addition operations with different data types.
      */
-    float r0  = ar.add(a, b, c);
-    int r1    = ar.add(d, e, f, g);
-    float r2  = ar.add(d, e, f, g);
+    float r0 = ar.add(a, b, c);
+    int r1 = ar.add(d, e, f, g);
+    float r2 = ar.add(d, e, f, g);
     float r99 = ar.add(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
 
     printf("%d + %d + %d = %f\n", a, b, c, r0);
@@ -59,8 +59,8 @@ int main() {
     /*
      * subtraction
      */
-    int r3   = ar.sub(a, b, c);
-    int r4   = ar.sub(d, e, f, g);
+    int r3 = ar.sub(a, b, c);
+    int r4 = ar.sub(d, e, f, g);
     float r5 = ar.sub(d, e, f, g);
 
     printf("%d - %d - %d = %d\n", a, b, c, r3);
@@ -70,8 +70,8 @@ int main() {
     /*
      * multiplication
      */
-    int r6    = ar.mult(a, b, c);
-    int r7    = ar.mult(d, e, f, g);
+    int r6 = ar.mult(a, b, c);
+    int r7 = ar.mult(d, e, f, g);
     double r8 = ar.mult(d, e, f, g);
     float r98 = ar.mult(a, b, c, d, e, f, g, a, b, c, d, e, f, g, y, z);
 

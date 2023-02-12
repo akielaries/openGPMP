@@ -13,22 +13,22 @@
  * object of class regression
  */
 mtpk::LinearRegression::LinearRegression() {
-    coeff        = 0;
-    constant     = 0;
-    sum_y        = 0;
+    coeff = 0;
+    constant = 0;
+    sum_y = 0;
     sum_y_square = 0;
     sum_x_square = 0;
-    sum_x        = 0;
-    sum_xy       = 0;
+    sum_x = 0;
+    sum_xy = 0;
 }
 
 // Function that calculate the coefficient/slope of the best fitting
 // line
 void mtpk::LinearRegression::calculate_coeffecient() {
-    long double N           = x.size();
-    long double numerator   = (N * sum_xy - sum_x * sum_y);
+    long double N = x.size();
+    long double numerator = (N * sum_xy - sum_x * sum_y);
     long double denominator = (N * sum_x_square - sum_x * sum_x);
-    coeff                   = numerator / denominator;
+    coeff = numerator / denominator;
 }
 
 /*
@@ -36,10 +36,10 @@ void mtpk::LinearRegression::calculate_coeffecient() {
  * fitting line
  */
 void mtpk::LinearRegression::calculate_constant() {
-    long double N           = x.size();
-    long double numerator   = (sum_y * sum_x_square - sum_x * sum_xy);
+    long double N = x.size();
+    long double numerator = (sum_y * sum_x_square - sum_x * sum_xy);
     long double denominator = (N * sum_x_square - sum_x * sum_x);
-    constant                = numerator / denominator;
+    constant = numerator / denominator;
 }
 
 // Function that return the number of entries (xi, yi) in the data set

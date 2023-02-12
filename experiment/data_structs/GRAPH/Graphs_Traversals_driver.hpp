@@ -3,7 +3,7 @@
 #include "Stack_Utility.h"
 
 const int NEIGHBOR_CAPACITY = 10;
-const int NO_NEIGHBOR       = -999999;
+const int NO_NEIGHBOR = -999999;
 
 /*
 Name: breadthFirstTraversal

@@ -26,13 +26,13 @@ int main() {
      * and will be displayed when using a traditional swap method
      */
     // expected hash = BBF316E8D940AF0AD3
-    char *key0  = (char *)"Key";
+    char *key0 = (char *)"Key";
     char *text0 = (char *)"Plaintext";
     // expected hash = 1021BF0420
-    char *key1  = (char *)"Wiki";
+    char *key1 = (char *)"Wiki";
     char *text1 = (char *)"pedia";
     // expected hash = 45A01F645FC35B383552544B9BF5
-    char *key2  = (char *)"Secret";
+    char *key2 = (char *)"Secret";
     char *text2 = (char *)"Attack at dawn";
 
     /*

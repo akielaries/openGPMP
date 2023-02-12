@@ -166,7 +166,7 @@ Dependencies: findSmallestLeafNode
 */
 PasswordType *find_smallest_leaf_node(PasswordType *wkgPtr) {
     // initialize variables
-    PasswordType *currentNode  = wkgPtr;
+    PasswordType *currentNode = wkgPtr;
     PasswordType *smallestLeaf = NULL;
 
     // check if current node is leaf

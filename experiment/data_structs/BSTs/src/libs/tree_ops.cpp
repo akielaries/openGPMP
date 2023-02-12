@@ -215,7 +215,7 @@ input/file: NONE Device output/file: NONE Dependencies: NONE
 */
 PasswordType *left_rotation(PasswordType *localPtr) {
     // initialize variables
-    PasswordType *tempPtr      = NULL;
+    PasswordType *tempPtr = NULL;
     PasswordType *newParentPtr = localPtr->rightChildPtr;
 
     // assign temp ptr to newParentPtr's right child
@@ -240,7 +240,7 @@ input/file: NONE Device output/file: NONE Dependencies: NONE
 */
 PasswordType *right_rotation(PasswordType *localPtr) {
     // initialize variables
-    PasswordType *tempPtr      = NULL;
+    PasswordType *tempPtr = NULL;
     PasswordType *newParentPtr = localPtr->leftChildPtr;
 
     // assign temp ptr to newParentPtr's left child

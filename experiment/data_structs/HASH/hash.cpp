@@ -112,7 +112,7 @@ void *hash_table_get(hash_table *table, const char *key) {
     // initialize variables
     int hash, index;
 
-    hash  = key_to_hash(key);
+    hash = key_to_hash(key);
     index = (int)(hash & (int)(table->capacity - 1));
 
     // Advance in table till sure key is not in the table
@@ -138,7 +138,7 @@ void *hash_table_get(hash_table *table, const char *key) {
 static const char *hash_table_set_entry(hash_table_entry *entries,
                                         int capacity, const char *key,
                                         void *value, int *length) {
-    int hash  = key_to_hash(key);
+    int hash = key_to_hash(key);
     int index = (int)(hash & (int)(capacity - 1));
 
     // Loop till we find an empty entry.
@@ -172,7 +172,7 @@ static const char *hash_table_set_entry(hash_table_entry *entries,
         }
         (*length)++;
     }
-    entries[index].key   = (char *)key;
+    entries[index].key = (char *)key;
     entries[index].value = value;
 
     return key;
@@ -228,7 +228,7 @@ static bool hash_table_expand(hash_table *table) {
 
     // Free old entries array and update this table's details.
     free(table->entries);
-    table->entries  = new_entries;
+    table->entries = new_entries;
     table->capacity = new_capacity;
     return true;
 }

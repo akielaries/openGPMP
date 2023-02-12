@@ -17,17 +17,17 @@ namespace {
 mtpk::RC4 rc;
 
 // BBF316E8D940AF0AD3
-char *key_0  = (char *)"Key";
+char *key_0 = (char *)"Key";
 char *text_0 = (char *)"Plaintext";
 // 1021BF0420
-char *key_1  = (char *)"Wiki";
+char *key_1 = (char *)"Wiki";
 char *text_1 = (char *)"pedia";
 // 45A01F645FC35B383552544B9BF5
-char *key_2  = (char *)"Secret";
+char *key_2 = (char *)"Secret";
 char *text_2 = (char *)"Attack at dawn";
 
 TEST(rc4_test, hash_XOR) {
-    int x_swap          = 0;
+    int x_swap = 0;
     std::string ptext_0 = "|xbb||xf3||x16||xe8||xd9||x40||xaf||x0a||xd3|";
     // allocate memory for the ciphertext pointer
     unsigned char *hashtext_0 =
@@ -56,7 +56,7 @@ TEST(rc4_test, hash_XOR) {
 }
 
 TEST(rc4_test, hash_TRAD) {
-    int t_swap          = 1;
+    int t_swap = 1;
     std::string ptext_1 = "BBF316E8D940AF0AD3";
     unsigned char *hashtext_10 =
         (unsigned char *)malloc(sizeof(int) * strlen(text_0));
@@ -83,7 +83,7 @@ TEST(rc4_test, hash_TRAD) {
 }
 
 TEST(rc4_test, hash_BYTE) {
-    int b_swap          = 2;
+    int b_swap = 2;
     std::string ptext_2 = "BBF316E8D940AF0AD3";
     unsigned char *hashtext_20 =
         (unsigned char *)malloc(sizeof(int) * strlen(text_0));
@@ -110,7 +110,7 @@ TEST(rc4_test, hash_BYTE) {
 }
 
 TEST(rc4_test, SWAP_error_4) {
-    int swap_FALSE                  = 4;
+    int swap_FALSE = 4;
     std::string expected_error_text = "[-] Invalid swap_type";
 
     /*BEGIN RC4 ITERATIONS*/
@@ -126,7 +126,7 @@ TEST(rc4_test, SWAP_error_4) {
 }
 
 TEST(rc4_test, SWAP_error_127) {
-    int swap_FALSE_127                  = 127;
+    int swap_FALSE_127 = 127;
     std::string expected_error_text_127 = "[-] Invalid swap_type";
 
     /*BEGIN RC4 ITERATIONS*/
@@ -144,11 +144,11 @@ TEST(rc4_test, SWAP_error_127) {
 }
 
 TEST(rc4_test, NULL_ciphertext) {
-    int swap_NULL                       = 0;
+    int swap_NULL = 0;
     std::string expected_error_text_127 = "[-] Error Allocating Memory";
 
     /*BEGIN RC4 ITERATIONS*/
-    std::string ptext_NULL       = "1021BF0420";
+    std::string ptext_NULL = "1021BF0420";
     unsigned char *hashtext_NULL = nullptr;
     //(unsigned char *)malloc(sizeof(int) *
     //    strlen(swap_NULL));

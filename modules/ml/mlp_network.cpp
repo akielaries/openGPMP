@@ -1,3 +1,37 @@
+/************************************************************************* 
+ *                                  
+ *  Project               
+ *                        __  __ _______ _____  _  __
+ *                       |  \/  |__   __|  __ \| |/ /
+ *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' / 
+ * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <  
+ *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \ 
+ * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\  
+ *      | |                                          
+ *      |_|                                         
+ *
+ *
+ * Copyright (C) Akiel Aries, <akiel@akiel.org>.
+ *
+ * This software is licensed as described in the file LICENSE, which
+ * you should have received as part of this distribution. The terms
+ * among other details are referenced in the official documentation
+ * seen here : https://akielaries.github.io/openMTPK/ along with 
+ * important files seen in this project.
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute 
+ * and/or sell copies of the Software, and permit persons to whom 
+ * the Software is furnished to do so, under the terms of the 
+ * LICENSE file. As this is an Open Source effort, all implementations
+ * must be of the same methodology.
+ * 
+ * This software emphasize *'Do No Harm'* in all applications.
+ *
+ * This software is distributed on an "AS IS" basis, WITHOUT 
+ * WARRANTY OF ANY KIND, either express or implied.
+ *
+ ************************************************************************/
+
 /*
  * Implementation of a Multi-Layered Perceptron Neural Network
  */
@@ -13,7 +47,8 @@ using namespace mtpk::ml;
  * Initialize randomly generated values for network's method
  */
 void mtpk::ml::PrimaryMLP::rand_init() {
-    srand((uint64_t)time(NULL));
+    srand(4711);
+    // srand((uint64_t)time(NULL));
 }
 
 /* verify the random is an integer */
@@ -29,19 +64,19 @@ long double mtpk::ml::PrimaryMLP::rand_real(long double low,
 
 /* PRIMARY MLP CONSTRUCTOR */
 mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
-    : num_layers(0), layer_ptr(0), _Eta(0.25), _Alpha(0.9), _Gain(1.0),
-      _MSE(0.0), _MAE(0.0), _AvgTestError(0.0) {
+    : num_layers(0), layer_ptr(0), _MSE(0.0), _MAE(0.0), _Eta(0.25),
+      _Alpha(0.9), _Gain(1.0), _AvgTestError(0.0) {
     int64_t _LAYER, _NEURON;
 
     // create network layers
     num_layers = nl;
-    layer_ptr  = new layer[nl];
+    layer_ptr = new layer[nl];
 
     // intialize the data of the created network layers
     for (_LAYER = 0; _LAYER < nl; _LAYER++) {
         // intialize values to neuron struct information
         layer_ptr[_LAYER].num_neurons = npl[_LAYER];
-        layer_ptr[_LAYER].neuron_ptr  = new neuron[npl[_LAYER]];
+        layer_ptr[_LAYER].neuron_ptr = new neuron[npl[_LAYER]];
 
         // intialize date of the neurons of the created network layers
         for (_NEURON = 0; _NEURON < npl[_LAYER]; _NEURON++) {
@@ -70,8 +105,8 @@ mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
                  * initialize weight, last weight, and saved weight
                  * to NULL
                  */
-                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt       = NULL;
-                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last  = NULL;
+                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt = NULL;
+                layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_last = NULL;
                 layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved = NULL;
             }
         }

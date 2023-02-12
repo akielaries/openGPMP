@@ -15,15 +15,15 @@
 
 void mtpk::RC4::byte_swap(uint8_t *a, uint8_t *b) {
     uint8_t swapped = *a;
-    swapped         = *a;
-    *a              = *b;
-    *b              = swapped;
+    swapped = *a;
+    *a = *b;
+    *b = swapped;
 }
 
 void mtpk::RC4::trad_swap(unsigned char *a, unsigned char *b) {
     int swapped = *a;
-    *a          = *b;
-    *b          = swapped;
+    *a = *b;
+    *b = swapped;
 }
 
 void mtpk::RC4::XOR_swap(unsigned char *a, unsigned char *b) {
@@ -34,7 +34,7 @@ void mtpk::RC4::XOR_swap(unsigned char *a, unsigned char *b) {
 
 void mtpk::RC4::KSA(char *key, unsigned char *S, int swap_type) {
     uint32_t len = strlen(key);
-    int j        = 0;
+    int j = 0;
 
     for (int i = 0; i < BYTE_LIMIT; i++) {
         S[i] = i;

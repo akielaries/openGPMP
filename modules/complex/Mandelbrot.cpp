@@ -41,7 +41,7 @@ void fractal(float left, float top, float xside, float yside) {
             zx = 0;
 
             // z_imaginary
-            zy    = 0;
+            zy = 0;
             count = 0;
 
             // Calculate whether c(c_real + c_imaginary) belongs
@@ -94,8 +94,8 @@ int main() {
     xside = 0;
     yside = 0.2;
     */
-    left  = -1.74;
-    top   = -0.25;
+    left = -1.74;
+    top = -0.25;
     xside = 0.25;
     yside = 0.45;
 

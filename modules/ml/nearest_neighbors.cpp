@@ -130,7 +130,7 @@ bool KNN(vector<Company> &data, Company &test, int k,
     // sorting so that we can get the k nearest
     sort(data.begin(), data.end(), comparison);
 
-    int64_t countSuccesful   = 0;
+    int64_t countSuccesful = 0;
     int64_t countUnsuccesful = 0;
     for (int64_t i = 0; i < k; ++i) {
         if (data[i].success) {

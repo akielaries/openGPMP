@@ -56,10 +56,10 @@ PasswordType *init_node_from_data(int rankInput,
     // create new node
     newNodePtr = (PasswordType *)malloc(sizeof(PasswordType));
     // put data into node
-    newNodePtr->rank     = rankInput;
+    newNodePtr->rank = rankInput;
     newNodePtr->password = passInput;
     // initialize child pointer to null
-    newNodePtr->leftChildPtr  = NULL;
+    newNodePtr->leftChildPtr = NULL;
     newNodePtr->rightChildPtr = NULL;
     // return pointer to created node
     return newNodePtr;
@@ -77,7 +77,7 @@ Dependencies: none
 void set_node_data_from_node(PasswordType *destNode,
                              PasswordType *srcNode) {
     // memcpy(srcNode, destNode, sizeof(destNode));
-    destNode->rank     = srcNode->rank;
+    destNode->rank = srcNode->rank;
     destNode->password = srcNode->password;
     // void, no return
 }
