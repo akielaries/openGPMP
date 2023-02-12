@@ -97,7 +97,7 @@ jobs:
 
   python:
     needs: [ cpp , py_changes ]
-     if: needs.py_changes.outputs.py_changed == 'True'
+    if: needs.py_changes.outputs.py_changed == 'True'
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
