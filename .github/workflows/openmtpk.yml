@@ -39,6 +39,26 @@ jobs:
         $HasDiff = $SourceDiff.Length -gt 0
         Write-Host "::set-output name=src_changed::$HasDiff"
 
+  py_changes:
+    runs-on: 'ubuntu-20.04'
+    # Declare outputs for next jobs
+    outputs:
+      py_changed: ${{ steps.check_file_changed.outputs.py_changed }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh # the example this is adopted from makes use of PowerShell
+      id: check_file_changed
+      run: |
+        # diff HEAD W/ previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+        # check if specific folder with file extentions has changes
+        $SourceDiff = $diff | Where-Object { $_ -match '^openmtpk/' }
+        $HasDiff = $SourceDiff.Length -gt 0
+        Write-Host "::set-output name=py_changed::$HasDiff"
+
   test_changes:
     name: Check Changes to tests/ dir 
     runs-on: 'ubuntu-20.04'
@@ -76,7 +96,8 @@ jobs:
     uses: ./.github/workflows/build_nix.yml
 
   python:
-    needs: [ cpp ]
+    needs: [ cpp , py_changes ]
+     if: needs.py_changes.outputs.py_changed == 'True'
     uses: ./.github/workflows/test_wheels.yml
 
   latest_version:
@@ -119,7 +140,8 @@ jobs:
   build_plat:
     name: Build source distribution
     needs: [ bump_version , latest_version ]
-    if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.mtpk_version.outputs.tag }}
+    #if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.mtpk_version.outputs.tag }}
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
