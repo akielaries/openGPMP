@@ -119,6 +119,7 @@ jobs:
 
   build_plat:
     name: Build source distribution
+    needs: [ bump_version , latest_version ]
     if: contains(github.event.head_commit.message, '#PATCH:') || contains(github.event.head_commit.message, '#MINOR:') || contains(github.event.head_commit.message, '#MAJOR:')
     #if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.mtpk_version.outputs.tag }}
     runs-on: ubuntu-latest
