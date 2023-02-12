@@ -18,9 +18,9 @@ int main() {
     // initialize the SecondaryMLP model
     int64_t inputs{1}, outputs{1}, hidden_layer_units{8}, hidden_layers{3};
 
-    long double     lr{.5};
+    long double lr{.5};
     mtpk::ml::Utils util;
-    auto            model = util.init_SecondaryMLP(inputs = 1, outputs = 1,
+    auto model = util.init_SecondaryMLP(inputs = 1, outputs = 1,
                                         hidden_layer_units = 8,
                                         hidden_layers = 3, lr = .5);
 

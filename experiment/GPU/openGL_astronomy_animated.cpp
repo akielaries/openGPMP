@@ -7,8 +7,8 @@
 
 #define pi 3.142857
 
-static bool      spinning = true;
-static const int FPS      = 20;
+static bool spinning = true;
+static const int FPS = 20;
 
 // keep track of current orentation
 static GLfloat current_rot = 0.0;

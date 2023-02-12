@@ -10,7 +10,7 @@ PasswordType *insert_AVL_data(PasswordType *wkgPtr,
 PasswordType *search(PasswordType *wkgPtr, PasswordType *toRemovePtr);
 PasswordType *remove_item(PasswordType *rootPtr,
                           PasswordType *toRemovePtr);
-void          display_in_order(PasswordType *wkgPtr, FILE *outputFile);
+void display_in_order(PasswordType *wkgPtr, FILE *outputFile);
 PasswordType *left_rotation(PasswordType *localPtr);
 PasswordType *right_rotation(PasswordType *localPtr);
 

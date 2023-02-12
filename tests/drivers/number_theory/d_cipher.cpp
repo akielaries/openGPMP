@@ -22,14 +22,14 @@ int main() {
      */
     std::cout << "CAESAR CIPHER EXAMPLE\n\n";
 
-    std::string text0       = "Plaintext";
-    int         shift_key_0 = 5;
-    std::string hashtext_0  = cc.C_cipher(text0, shift_key_0);
+    std::string text0      = "Plaintext";
+    int shift_key_0        = 5;
+    std::string hashtext_0 = cc.C_cipher(text0, shift_key_0);
     std::cout << "Hashtext0 = " << hashtext_0 << std::endl;
 
-    std::string text1       = "ATTACKATONCE";
-    int         shift_key_1 = 4;
-    std::string hashtext_1  = cc.C_cipher(text1, shift_key_1);
+    std::string text1      = "ATTACKATONCE";
+    int shift_key_1        = 4;
+    std::string hashtext_1 = cc.C_cipher(text1, shift_key_1);
     std::cout << "Hashtext1 = " << hashtext_1 << std::endl;
 
     /* TESTING MONOALPHABETIC SUBSTITUION KEYWORD CIPHER */

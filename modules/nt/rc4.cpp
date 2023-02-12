@@ -34,7 +34,7 @@ void mtpk::RC4::XOR_swap(unsigned char *a, unsigned char *b) {
 
 void mtpk::RC4::KSA(char *key, unsigned char *S, int swap_type) {
     uint32_t len = strlen(key);
-    int      j   = 0;
+    int j        = 0;
 
     for (int i = 0; i < BYTE_LIMIT; i++) {
         S[i] = i;
@@ -84,7 +84,7 @@ std::string mtpk::RC4::store_hash(char *plaintext, unsigned char *hashtext,
     int len = strlen((char *)plaintext);
     // for snprintf declare a buffer
     char buffer[len + 1];
-    int  size = sizeof(buffer);
+    int size = sizeof(buffer);
 
     // initialize empty string
     std::string stored_text = "";
@@ -106,7 +106,7 @@ std::string mtpk::RC4::store_hash(char *plaintext, unsigned char *hashtext,
 
 unsigned char *mtpk::RC4::compute(char *key, char *plaintext,
                                   unsigned char *ciphertext,
-                                  int            swap_type) {
+                                  int swap_type) {
     if (ciphertext == NULL) {
         throw std::runtime_error("[-] Error Allocating Memory");
     }

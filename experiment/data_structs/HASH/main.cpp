@@ -3,9 +3,9 @@
 
 int main() {
     printf("\n\nSTART: %s\n", __func__);
-    int   process_data, max_row_size, index, row_size, total_rows;
+    int process_data, max_row_size, index, row_size, total_rows;
     FILE *input_stream, *output_stream;
-    char  current_case;
+    char current_case;
     max_row_size = 1;
     // Calculating max_rows_size
     for (int current_data_file = 0; current_data_file < 3;
@@ -21,10 +21,10 @@ int main() {
         }
     }
 
-    char  current_key[max_row_size];
+    char current_key[max_row_size];
     void *hash_back;
     void *current_hash;
-    int   current_table_length;
+    int current_table_length;
     printf("row_size: %d\n", max_row_size);
 
     printf("\n%s: Which case you want to run?", __func__);

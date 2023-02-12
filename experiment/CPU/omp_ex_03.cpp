@@ -8,7 +8,7 @@ int main() {
     int i = 0;
 
     clock_t start, end;
-    double  total;
+    double total;
     start = clock();
 
     //#pragma omp parallel

@@ -51,8 +51,8 @@ int main() {
      * a polynomial at a given value
      */
     std::cout << "First derivative at a given value.\n";
-    int     val0          = 2;
-    int     val1          = 3;
+    int val0              = 2;
+    int val1              = 3;
     int64_t deriv_result2 = calc.deriv_at(st0, val0);
     std::cout << "df'/dx = " << deriv_result2 << std::endl;
 

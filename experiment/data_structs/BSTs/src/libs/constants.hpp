@@ -9,8 +9,8 @@
 
 // data structure, BST node
 typedef struct PasswordTypeStruct {
-    int                        rank;
-    unsigned long long int     password;
+    int rank;
+    unsigned long long int password;
     struct PasswordTypeStruct *leftChildPtr;
     struct PasswordTypeStruct *rightChildPtr;
 } PasswordType;

@@ -13,28 +13,28 @@ namespace {
 mtpk::Cipher cc;
 
 TEST(ccipher_test, caesar_0) {
-    std::string text_0      = "Plaintext";
-    int         key_shift_0 = 5;
-    std::string hashtext_0  = cc.caesar(text_0, key_shift_0);
-    std::string expected_0  = "Uqfnsyjcy";
+    std::string text_0     = "Plaintext";
+    int key_shift_0        = 5;
+    std::string hashtext_0 = cc.caesar(text_0, key_shift_0);
+    std::string expected_0 = "Uqfnsyjcy";
 
     EXPECT_EQ(expected_0, hashtext_0);
 }
 
 TEST(ccipher_test, caesar_1) {
-    std::string text_1      = "ATTACKATONCE";
-    int         key_shift_1 = 4;
-    std::string hashtext_1  = cc.caesar(text_1, key_shift_1);
-    std::string expected_1  = "EXXEGOEXSRGI";
+    std::string text_1     = "ATTACKATONCE";
+    int key_shift_1        = 4;
+    std::string hashtext_1 = cc.caesar(text_1, key_shift_1);
+    std::string expected_1 = "EXXEGOEXSRGI";
 
     EXPECT_EQ(expected_1, hashtext_1);
 }
 
 TEST(ccipher_test, caesar_2) {
-    std::string text_2      = "EaSyPASsWorD";
-    int         key_shift_2 = 14;
-    std::string hashtext_2  = cc.caesar(text_2, key_shift_2);
-    std::string expected_2  = "SoGmDOGgKcfR";
+    std::string text_2     = "EaSyPASsWorD";
+    int key_shift_2        = 14;
+    std::string hashtext_2 = cc.caesar(text_2, key_shift_2);
+    std::string expected_2 = "SoGmDOGgKcfR";
 
     EXPECT_EQ(expected_2, hashtext_2);
 }

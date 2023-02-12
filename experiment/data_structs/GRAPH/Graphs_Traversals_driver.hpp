@@ -18,15 +18,15 @@ output/monitor: none Dependencies: initializeQueue, enqueue, dequeue, free
 */
 void breadthFirstTraversal(GraphType *vertexStruct, int outputArray[]) {
     // initialize variables
-    bool       visited;
-    int        outputIndex, totalVertices, vertexIndex, totalNeighbors;
-    int        currentNeighbor, neighborIndex, neighbor;
+    bool visited;
+    int outputIndex, totalVertices, vertexIndex, totalNeighbors;
+    int currentNeighbor, neighborIndex, neighbor;
     QueueType *queueStruct;
-    GraphType  vertexManager;
+    GraphType vertexManager;
 
-    GraphType  visitedArray;
+    GraphType visitedArray;
     QueueType *queueIndex;
-    QueueType  queue;
+    QueueType queue;
     // create queue
     // function: initializeQueue
     initializeQueue(queueStruct, vertexStruct->totalVertices);
@@ -78,7 +78,7 @@ void breadthFirstTraversal(GraphType *vertexStruct, int outputArray[]) {
         // initialize variables
         bool vertexNotFound;
 
-        StackNodeType  stackTopPtr;
+        StackNodeType stackTopPtr;
         StackNodeType *stackTypeStruct;
         // visiting the first vertext add to output array
         StackTypeStruct->visitedArray[0] = true;
@@ -114,8 +114,8 @@ void breadthFirstTraversal(GraphType *vertexStruct, int outputArray[]) {
 
     GraphType buildAdjacencyLists() {
         // initialize variables
-        int       totalVertices, vertexIndex, totalNeighbors;
-        int       neighborIndex, neighbor;
+        int totalVertices, vertexIndex, totalNeighbors;
+        int neighborIndex, neighbor;
         GraphType vertexManager;
 
         // prompt for total number of vertices
@@ -238,7 +238,7 @@ void breadthFirstTraversal(GraphType *vertexStruct, int outputArray[]) {
     void initializeVisitedArray(GraphType * vertexStruct) {
         // initialize variables
         bool *visitedArray;
-        int   index;
+        int index;
 
         // allocate memory for visited array
         visitedArray =

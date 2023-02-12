@@ -6,7 +6,7 @@
 #include <iostream>
 
 int main() {
-    cl_int  CL_err       = CL_SUCCESS;
+    cl_int CL_err        = CL_SUCCESS;
     cl_uint numPlatforms = 0;
 
     CL_err = clGetPlatformIDs(0, NULL, &numPlatforms);

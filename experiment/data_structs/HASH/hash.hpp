@@ -6,14 +6,14 @@ typedef struct hash_table hash_table;
 // Hash table entry (slot may be filled or empty).
 typedef struct {
     const char *key; // key is NULL if this slot is empty
-    void *      value;
+    void *value;
 } hash_table_entry;
 
 // Hash table structure
 struct hash_table {
-    hash_table_entry *entries;  // hash slots
-    int               capacity; // size of _entries array
-    int               length;   // number of items in hash table
+    hash_table_entry *entries; // hash slots
+    int capacity;              // size of _entries array
+    int length;                // number of items in hash table
 };
 
 // TO DO in C file

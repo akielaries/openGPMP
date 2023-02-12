@@ -8,7 +8,7 @@ using namespace std;
 TEST_CASE("KF_CV-testSmallSample10Fold") {
     vector<string> small_sample = {"1", "2", "3", "4", "5",
                                    "6", "7", "8", "9", "10"};
-    KF_CV<string>  kF_CV        = KF_CV<string>(smallSample, 10, 1);
+    KF_CV<string> kF_CV         = KF_CV<string>(smallSample, 10, 1);
     vector<string> test_sample  = kF_CV.get_test_fold(0);
     REQUIRE(test_sample[0] == "2");
 }
@@ -16,7 +16,7 @@ TEST_CASE("KF_CV-testSmallSample10Fold") {
 TEST_CASE("KF_CV-testSmallSample5Fold") {
     vector<string> small_sample = {"1", "2", "3", "4", "5",
                                    "6", "7", "8", "9", "10"};
-    KF_CV<string>  kF_CV        = KF_CV<string>(small_sample, 5, 1);
+    KF_CV<string> kF_CV         = KF_CV<string>(small_sample, 5, 1);
     vector<string> test_sample  = kF_CV.get_test_fold(0);
     REQUIRE(test_sample[0] == "2");
     REQUIRE(test_sample[1] == "7");

@@ -18,7 +18,7 @@ class Logreg {
            double lambda = 0.5, double alpha = 0.5);
 
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
-    double              modelTest(std::vector<double> x);
+    double modelTest(std::vector<double> x);
 
     void gradientDescent(double learning_rate, int max_epoch, bool UI = 1);
 
@@ -30,7 +30,7 @@ class Logreg {
               bool UI = 1);
 
     double score();
-    void   save(std::string fileName);
+    void save(std::string fileName);
 
     private:
     double Cost(std::vector<double> y_hat, std::vector<double> y);
@@ -42,18 +42,18 @@ class Logreg {
     void forwardPass();
 
     std::vector<std::vector<double>> inputSet;
-    std::vector<double>              outputSet;
-    std::vector<double>              y_hat;
-    std::vector<double>              weights;
-    double                           bias;
+    std::vector<double> outputSet;
+    std::vector<double> y_hat;
+    std::vector<double> weights;
+    double bias;
 
-    int    n;
-    int    k;
+    int n;
+    int k;
     double learning_rate;
     // Regularization Params
     std::string reg;
-    double      lambda; /* Regularization Parameter */
-    double      alpha;  /* This is the controlling param for Elastic Net*/
+    double lambda; /* Regularization Parameter */
+    double alpha;  /* This is the controlling param for Elastic Net*/
 };
 
 } // namespace mtpk

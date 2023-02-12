@@ -61,13 +61,13 @@ class Camera {
 // coordinates are fixed.  It uses a lame bouncing algorithm, simply
 // moving up or down by 0.05 units at each frame.
 class Ball {
-    double   radius;
+    double radius;
     GLfloat *color;
-    double   maximumHeight;
-    double   x;
-    double   y;
-    double   z;
-    int      direction;
+    double maximumHeight;
+    double x;
+    double y;
+    double z;
+    int direction;
 
     public:
     Ball(double r, GLfloat *c, double h, double x, double z)
@@ -147,7 +147,7 @@ class Checkerboard {
 
 // Global variables: a camera, a checkerboard and some balls.
 Checkerboard checkerboard(8, 8);
-Camera       camera;
+Camera camera;
 Ball balls[] = {Ball(1, GREEN, 7, 6, 1), Ball(1.5, MAGENTA, 6, 3, 4),
                 Ball(0.4, WHITE, 5, 1, 7)};
 
