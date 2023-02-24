@@ -25,7 +25,7 @@ jobs:
     outputs:
       src_changed: ${{ steps.check_file_changed.outputs.src_changed }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
@@ -46,7 +46,7 @@ jobs:
     outputs:
       tests_changed: ${{ steps.check_file_changed.outputs.tests_changed }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         # Checkout as many commits as needed for the diff
         fetch-depth: 2
@@ -153,7 +153,7 @@ jobs:
         os: [ ubuntu-latest, macos-latest ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # required for versioneer to find tags
 
