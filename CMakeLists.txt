@@ -25,7 +25,6 @@
 # * LICENSE file. As this is an Open Source effort, all implementations
 # * must be of the same methodology.
 # * 
-# * This software emphasize *'Do No Harm'* in all applications.
 # *
 # * This software is distributed on an "AS IS" basis, WITHOUT 
 # * WARRANTY OF ANY KIND, either express or implied.
