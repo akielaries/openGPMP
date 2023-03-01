@@ -12,33 +12,16 @@
 # Overview
 **openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
 focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
-as well as a range of language API's for integration with pre-existing projects. The highlight is a feature
-of pre-built machine learning methods as well as the capability to utilize different methods/functions to
-create your own. The Machine Learning module aims to be a blend of what something like Tensorflow or Scikit-learn
-would offer.
-openMTPK is originally inspired from undergraduate coursework and work done on [vpaSTRM](https://github.com/akielaries/vpaSTRM). 
-The project welcomes contributors and is in need of mathematics focused/interested programmers
-comfortable in C and C++. If interested see 
-[here](https://github.com/akielaries/openMTPK/blob/main/CONTRIBUTING.md)!
-
-The goal is to make a reusable mathematics library allowing users to call 
-within their own projects. A few of the implementations seen in the package were first prototypes in 
-Wolfram Mathetmatica, then translated to C then C++ for the package.
+as well as a range of language API's. openMTPK aims to provide options for pre-built functions, models, etc.
+along with modularity for user freedom.
 Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
 on how to use some of openMTPK's functionalities. 
 
-## APIs
-
-As development progresses language bindings will be polished. More languages will be explored in the future.
-The primary goal of creating bindings for other languages is to provide some level of abstraction from the
-source C++ code. However, it also serves to integrate this package into pre-existing projects in perhaps 
-different target languages. The focus on APIs early on was to start the process while the codebase was of 
-manageable size allowing for modularity with new developments and injecting into the language binding 
-simultaneously.
-
-The tables below highlight the supported kernel/hardware families across the different
-language bindings. By default openMTPK offers support for Linux and Darwin x86 machines,
-Apple's M1 is yet to be tested. 
+## Installation
+openMTPK can be installed from source to use the C++ API or using `pip install openmtpk` for 
+the Python interface. By default openMTPK offers support for Linux based distros on a variety 
+of different hardware architectures as well as Darwin x86 machines. Testing on Apple specific 
+hardware is in progress. 
 
 | Linux  | Darwin | RPi 3/4 |
 |--------|--------|---------|
@@ -46,7 +29,6 @@ Apple's M1 is yet to be tested.
 
 openMTPK's core C++ package and Python API are also tested on the following architectures using `ubuntu-latest`, and `bullseye` for 
 ARMv6. 
-
 | Architecture | Source |
 |--------------|--------|
 | ARMv6        | [![arm6CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | 
@@ -56,42 +38,7 @@ ARMv6.
 | S390X        | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     |
 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
 
-## Modules
-
-During early stages, modules will be developed in breadth while focusing on depth
-in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress.
-
-1. Arithmetic
-2. Calculus
-   - Differential
-3. Linear Algebra
-   - Vector Operations
-   - Matrix Operations
-4. Machine/Deep Learning
-   - Regression
-   - Cross-Validation
-   - K-Nearest Neighbors
-   - Neural Networks
-   - Classifiers
-5. Number Theory
-   - Primes
-   - Cryptography
-6. Topology/Complex
-   - Dynamical Systems
-   - Topology
-   - Spline
-
-For more details view the project [documentation](https://akielaries.github.io/openMTPK/).
-
-# Installation
-
-Requirements are loose and mostly tied to what openMTPK was tested and used on.
-The current installation does not allow for the building of the packages language
-bindings, limiting use to the core c++ lib. See below on how to build the bindings 
-from source if interested.
-
-## Requirements
-
+## Build from source
 * Linux/OSX
 * CMake >=v3.24 (build from source for latest version)
 * C++20
@@ -129,12 +76,8 @@ $ g++ cipher.cpp -lopenMTPK -o cipher
 $ g++ arith.cpp -lopenMTPK -o arith
 # script to test all modules and their drivers
 # using the projects root makefile
-$ make arith
-$ make num-theory
-...
+$ cd scripts && ./all.sh
 ```
-
-## Uninstall
 
 To uninstall files related to openMTPK, simply run the following:
 
@@ -144,55 +87,33 @@ $ cd build
 $ sudo make uninstall
 ```
 
-## Python
+## Modules
 
-For the Python API of openMTPK simply install with pip.
+During early stages, modules will be developed in breadth while focusing on depth
+in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress.
 
-```
-$ pip install openmtpk
-```
+1. Arithmetic
+2. Calculus
+   - Differential
+3. Linear Algebra
+   - Vector Operations
+   - Matrix Operations
+4. Machine/Deep Learning
+   - Regression
+   - Cross-Validation
+   - K-Nearest Neighbors
+   - Neural Networks
+   - Classifiers
+5. Number Theory
+   - Primes
+   - Cryptography
+6. Topology/Complex
+   - Dynamical Systems
+   - Topology
+   - Spline
 
-Run an example in the `samples/python` to verify installation.
+For more details view the project [documentation](https://akielaries.github.io/openMTPK/).
 
-```
-$ python3 arithmetic.py
-```
-
-### Bindings (BETA)
-
-> **Note** These instructions are specific for the OCaml, R, and Fortran. 
-
-The binding process leverages the use of Swig, specifically the fork authored by *sethrj*
-that makes use of the Fortran binding process. See [here](https://github.com/swig-fortran/swig).
-Each API comes with a custom Makefile for compiling a wrapper for the respective language, but
-does not take care of storing files in necessary filepaths needed by the compiler/interpreter. 
-
-### Install Swig
-
-```
-# clone the fork of Swig
-$ git clone git@github.com:swig-fortran/swig.git
-$ cd swig/
-# run autotools
-$ ./autogen.sh
-# install
-$ make
-$ make check
-$ make install
-```
-
-### Install Bindings
-
-Bindings are currently being tested for OCaml, R, and Fortran. Simply
-enter any of the languages lib directories and run the following
-
-```
-$ cd <API_NAME>/lib
-$ make run-swig
-```
-
-If you wish to use the generated bindings globally, move the necessary files to the path 
-needed by the compiler/interpreter.
 
 # Examples
 
