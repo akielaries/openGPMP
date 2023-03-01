@@ -1,5 +1,10 @@
 # Contributing
-openMTPK welcomes any and all contributors! There are **many** ways to contribute to openMTPK. New implementations, updates to source code, documentations, language API, and much more. 
+openMTPK welcomes any and all contributors! There are **many** ways to contribute to openMTPK. New implementations, updates to source code, documentations, language API, and much more. To submit a change simply fork the repository and beging the 
+pull request process. Squash commits, clean up misc. files, etc. and submit a pull request to the openMTPK repository. Be sure
+to include a hash `#` prefixing your commit messages. For example `#EDITS:` or `#UPDATES:` are used to signaling commits that
+feature minor edits/updates. The prefixes, `#PATCH`, `#MINOR`, `#MAJOR`, are reserved for automated versioning/tagging of
+commits based on messages. This process still features a manual intervention by design meaning the maintainer of this project 
+will be in charge of publishing versions.
 
 # Needed Help
 These are the current fixes, ideas, and implementations involved with openMTPK. Contributors are welcome to open a pull request, the maintainer ([me](github.com/akielaries)), will take care of assuring passing tests and checks as far as github workflows.
