@@ -29,7 +29,7 @@ RasPi OS | ARMv6/v7 | [![cppRPi](https://github.com/akielaries/openMTPK/actions/
 | ubuntu 22.10 | RISCV64      | [![riscCPP](https://github.com/akielaries/openMTPK/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | [![riscPy](https://github.com/akielaries/openMTPK/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      |
 | ubuntu 22.10 | S390X        | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     |
 | ubuntu 22.10 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-> **Note** Testing on Apple specific hardware is in progress. 
+> **Note** Testing on Apple specific hardware (M1, M2) is in progress. 
 
 ## Python
 To install the Python interface, use the pip package manager and run the following, `pip install
