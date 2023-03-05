@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/ml/kohonen_net.hpp Source File</title>
+<title>openMTPK: include/struct/datatable.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,15 +63,15 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_36e427adfd2ff85bd929df9f95861d57.html">ml</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_06cab3a81b35ca7bdfaa2da1fffea9da.html">struct</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">kohonen_net.hpp</div>  </div>
+<div class="title">datatable.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="kohonen__net_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<a href="datatable_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
@@ -105,24 +105,37 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> ************************************************************************/</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef KOHONEN_NETWORK_HPP</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define KOHONEN_NETWORK_HPP</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classmtpk_1_1KohonenNet.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1KohonenNet.html">KohonenNet</a> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1KohonenNet.html#a5480cbccd30d19a8dd6303eb4e36a685">   53</a></span>&#160;    int64_t <a class="code" href="classmtpk_1_1KohonenNet.html#a5480cbccd30d19a8dd6303eb4e36a685">choice</a>(weights, sample);</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classmtpk_1_1KohonenNet.html#ad8daac79840005897acd45790969813b">   54</a></span>&#160;    int64_t <a class="code" href="classmtpk_1_1KohonenNet.html#ad8daac79840005897acd45790969813b">update</a>(weights, sample, J, alpha);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * The datatable class similar to the Pandas Dataframe, R data.table, etc</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * with a bit more limitations.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef DATATABLE_HPP</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define DATATABLE_HPP</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1Datatable.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Datatable.html">Datatable</a> {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classmtpk_1_1Datatable.html#a939dc90e94dff2e0ccd7b4e73a60c017">   55</a></span>&#160;        std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; <a class="code" href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">Datatable::csv_read</a>(std::string filename, std::vector&lt;std::string&gt; selected_columns);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmtpk_1_1Datatable.html#acdd2378088e4871159622c53c41cc059">   56</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Datatable.html#acdd2378088e4871159622c53c41cc059">display</a>(<span class="keyword">const</span> std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; &amp;data);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassmtpk_1_1KohonenNet_html"><div class="ttname"><a href="classmtpk_1_1KohonenNet.html">mtpk::KohonenNet</a></div><div class="ttdoc">Kohonen Neural Network Cluster Class.</div><div class="ttdef"><b>Definition:</b> <a href="kohonen__net_8hpp_source.html#l00052">kohonen_net.hpp:52</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1KohonenNet_html_a5480cbccd30d19a8dd6303eb4e36a685"><div class="ttname"><a href="classmtpk_1_1KohonenNet.html#a5480cbccd30d19a8dd6303eb4e36a685">mtpk::KohonenNet::choice</a></div><div class="ttdeci">int64_t choice(weights, sample)</div></div>
-<div class="ttc" id="aclassmtpk_1_1KohonenNet_html_ad8daac79840005897acd45790969813b"><div class="ttname"><a href="classmtpk_1_1KohonenNet.html#ad8daac79840005897acd45790969813b">mtpk::KohonenNet::update</a></div><div class="ttdeci">int64_t update(weights, sample, J, alpha)</div></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DATATABLE_HPP</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="ttc" id="aclassmtpk_1_1Datatable_html"><div class="ttname"><a href="classmtpk_1_1Datatable.html">mtpk::Datatable</a></div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00053">datatable.hpp:53</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Datatable_html_acdd2378088e4871159622c53c41cc059"><div class="ttname"><a href="classmtpk_1_1Datatable.html#acdd2378088e4871159622c53c41cc059">mtpk::Datatable::display</a></div><div class="ttdeci">void display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data)</div></div>
+<div class="ttc" id="adatatable_8cpp_html_afbf31541e3e243faeccd233e753ab275"><div class="ttname"><a href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a></div><div class="ttdeci">std::vector&lt; std::map&lt; std::string, std::string &gt; &gt; csv_read(std::string filename, std::vector&lt; std::string &gt; selected_columns={})</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8cpp_source.html#l00049">datatable.cpp:49</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
