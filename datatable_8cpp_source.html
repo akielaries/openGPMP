@@ -230,19 +230,17 @@ $(function() {
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
 <div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="datatable_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  158</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="datatable_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">//mtpk::Datatable dt;</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// specify columns as the second param</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame =</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a>(<span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>, {<span class="stringliteral">&quot;DC&quot;</span>, <span class="stringliteral">&quot;RH&quot;</span>, <span class="stringliteral">&quot;X&quot;</span>, <span class="stringliteral">&quot;Y&quot;</span>});</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a>(<span class="stringliteral">&quot;../../data/school_scores.csv&quot;</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// Print dataframe</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29">display</a>(frame);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29">display</a>(frame2);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame =</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a>(<span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>, {<span class="stringliteral">&quot;DC&quot;</span>, <span class="stringliteral">&quot;DMC&quot;</span>});</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a>(<span class="stringliteral">&quot;../../data/school_scores.csv&quot;</span>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Print dataframe</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29">display</a>(frame);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29">display</a>(frame2);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 <div class="ttc" id="adatatable_8cpp_html_a20c67ce4deb087788450f3a7da9afc29"><div class="ttname"><a href="datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29">display</a></div><div class="ttdeci">void display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data)</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8cpp_source.html#l00087">datatable.cpp:87</a></div></div>
 <div class="ttc" id="adatatable_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="datatable_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8cpp_source.html#l00158">datatable.cpp:158</a></div></div>
 <div class="ttc" id="adatatable_8cpp_html_afbf31541e3e243faeccd233e753ab275"><div class="ttname"><a href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a></div><div class="ttdeci">std::vector&lt; std::map&lt; std::string, std::string &gt; &gt; csv_read(std::string filename, std::vector&lt; std::string &gt; selected_columns={})</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8cpp_source.html#l00049">datatable.cpp:49</a></div></div>
