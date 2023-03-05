@@ -8,5 +8,8 @@ var searchData=
   ['forward_5fprop_139',['forward_prop',['../classmtpk_1_1NaiveNet.html#ad1a4fb5db1bb20d26ae1dc15ccbd7dc0',1,'mtpk::NaiveNet']]],
   ['forwardpass_140',['forwardPass',['../classmtpk_1_1AutoEncoder.html#a3cae2e66f0f9a49e8b3af85e66ef7a02',1,'mtpk::AutoEncoder::forwardPass()'],['../classmtpk_1_1AutoEncoder.html#a3cae2e66f0f9a49e8b3af85e66ef7a02',1,'mtpk::AutoEncoder::forwardPass()'],['../classmtpk_1_1Logreg.html#a8fa5f57836318998c0da7f3df80e3582',1,'mtpk::Logreg::forwardPass()'],['../classmtpk_1_1SVC.html#aae79c0f05210dc8a7b70825fffe7338b',1,'mtpk::SVC::forwardPass()']]],
   ['fps_141',['FPS',['../torus__animated_8cpp.html#ac5090a6568797128b0a5545228bb8b75',1,'torus_animated.cpp']]],
-  ['fractal_142',['fractal',['../Mandelbrot_8cpp.html#a2cd501dd888cff55029d5490fb5e1c0f',1,'Mandelbrot.cpp']]]
+  ['fractal_142',['fractal',['../Mandelbrot_8cpp.html#a2cd501dd888cff55029d5490fb5e1c0f',1,'Mandelbrot.cpp']]],
+  ['frame_2ecpp_143',['frame.cpp',['../frame_8cpp.html',1,'']]],
+  ['frame_5fv2_2ecpp_144',['frame_v2.cpp',['../frame__v2_8cpp.html',1,'']]],
+  ['frame_5fv3_2ecpp_145',['frame_v3.cpp',['../frame__v3_8cpp.html',1,'']]]
 ];

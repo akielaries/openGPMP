@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['lao_2ecpp_517',['lao.cpp',['../lao_8cpp.html',1,'']]],
-  ['linalg_2ehpp_518',['linalg.hpp',['../linalg_8hpp.html',1,'']]],
-  ['linreg_2ecpp_519',['linreg.cpp',['../linreg_8cpp.html',1,'']]],
-  ['linreg_2ehpp_520',['linreg.hpp',['../linreg_8hpp.html',1,'']]],
-  ['logreg_2ehpp_521',['logreg.hpp',['../logreg_8hpp.html',1,'']]]
+  ['k_2dfoldcv_2ecpp_520',['k-foldCV.cpp',['../k-foldCV_8cpp.html',1,'']]],
+  ['k_2dfoldcv_2ehpp_521',['k-foldCV.hpp',['../k-foldCV_8hpp.html',1,'']]],
+  ['knn_2ehpp_522',['knn.hpp',['../knn_8hpp.html',1,'']]],
+  ['kohonen_5fnet_2ehpp_523',['kohonen_net.hpp',['../kohonen__net_8hpp.html',1,'']]]
 ];
