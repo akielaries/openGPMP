@@ -33,13 +33,30 @@
  ************************************************************************/
 
 /*
- * Testing Linear Regression
+ * The datatable class similar to the Pandas Dataframe, R data.table, etc
+ * with a bit more limitations.
  */
-#include "../../include/ml/linreg.hpp"
-#include <gtest/gtest.h>
-#include <limits.h>
-#include <string>
+#ifndef DATATABLE_HPP
+#define DATATABLE_HPP
 
-using ::testing::DoubleLE;
-using ::testing::FloatLE;
-using ::testing::InitGoogleTest;
+#include <algorithm>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <sstream>
+#include <string>
+#include <vector>
+
+namespace mtpk {
+
+class Datatable {
+    public:
+        std::vector<std::map<std::string, std::string>> Datatable::csv_read(std::string filename, std::vector<std::string> selected_columns);
+        void display(const std::vector<std::map<std::string, std::string>> &data);
+    };
+
+} // namespace mtpk
+
+#endif // DATATABLE_HPP
+
