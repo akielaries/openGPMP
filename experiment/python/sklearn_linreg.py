@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 
 data = pd.read_csv('../../data/school_scores.csv', index_col=False)
-# print(data)
+print(data)
 
 X_train, X_test, y_train, y_test = train_test_split(data.drop('GPA',
                                                               axis=1),
