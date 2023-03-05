@@ -1,3 +1,38 @@
+/*************************************************************************
+ *
+ *  Project
+ *                        __  __ _______ _____  _  __
+ *                       |  \/  |__   __|  __ \| |/ /
+ *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
+ * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
+ *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
+ * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *      | |
+ *      |_|
+ *
+ *
+ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
+ *
+ * This software is licensed as described in the file LICENSE, which
+ * you should have received as part of this distribution. The terms
+ * among other details are referenced in the official documentation
+ * seen here : https://akielaries.github.io/openMTPK/ along with
+ * important files seen in this project.
+ *
+ * You may opt to use, copy, modify, merge, publish, distribute
+ * and/or sell copies of the Software, and permit persons to whom
+ * the Software is furnished to do so, under the terms of the
+ * LICENSE file. As this is an Open Source effort, all implementations
+ * must be of the same methodology.
+ *
+ *
+ *
+ * This software is distributed on an AS IS basis, WITHOUT
+ * WARRANTY OF ANY KIND, either express or implied.
+ *
+ ************************************************************************/
+
+//#include "../../include/struct/datatable.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
@@ -7,15 +42,11 @@
 #include <string>
 #include <vector>
 
-#include <fstream>
-#include <iostream>
-#include <map>
-#include <sstream>
-#include <string>
-#include <vector>
+
+
 
 std::vector<std::map<std::string, std::string>>
-    read_csv(std::string filename,
+    csv_read(std::string filename,
              std::vector<std::string> selected_columns = {}) {
     std::ifstream file(filename);
     std::vector<std::map<std::string, std::string>> data;
@@ -53,7 +84,7 @@ std::vector<std::map<std::string, std::string>>
     return data;
 }
 
-void print_dataframe(
+void display(
     const std::vector<std::map<std::string, std::string>> &data) {
     if (data.empty()) {
         std::cout << "Empty dataframe" << std::endl;
@@ -124,16 +155,18 @@ void print_dataframe(
               << " x " << column_names.size() << " columns"
               << "]\n\n";
 }
-
 int main() {
+    //mtpk::Datatable dt;
+    
+    // specify columns as the second param
     std::vector<std::map<std::string, std::string>> frame =
-        read_csv("../../data/forestfires.csv");
+        csv_read("../../data/forestfires.csv", {"DC", "RH", "X", "Y"});
 
     std::vector<std::map<std::string, std::string>> frame2 =
-        read_csv("../../data/school_scores.csv");
+        csv_read("../../data/school_scores.csv");
     // Print dataframe
-    print_dataframe(frame);
-    print_dataframe(frame2);
+    display(frame);
+    display(frame2);
 
     return 0;
 }

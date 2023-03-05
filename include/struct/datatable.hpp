@@ -32,38 +32,31 @@
  *
  ************************************************************************/
 
-/**
- * @ file
- *
- * Definitions for methods involed in creating Tensors
- *
+/*
+ * The datatable class similar to the Pandas Dataframe, R data.table, etc
+ * with a bit more limitations.
  */
+#ifndef DATATABLE_HPP
+#define DATATABLE_HPP
 
-#ifndef TENSORS_HPP
-#define TENSORS_HPP
-
-#include <cmath>
+#include <algorithm>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <map>
+#include <sstream>
+#include <string>
 #include <vector>
 
 namespace mtpk {
 
-/**
- * @class Vectors
- * @brief Operations related to Vectors and Scalars
- */
-class Tensors {
+class Datatable {
     public:
-    std::vector<std::vector<double>>
-        tensor_vec_mult(std::vector<std::vector<std::vector<double>>> A,
-                        std::vector<double> b);
-
-    void printTensor(std::vector<std::vector<std::vector<double>>> A);
-    std::vector<std::vector<std::vector<double>>>
-        vector_wise_tensor_product(
-            std::vector<std::vector<std::vector<double>>> A,
-            std::vector<std::vector<double>> B);
-};
+        std::vector<std::map<std::string, std::string>> Datatable::csv_read(std::string filename, std::vector<std::string> selected_columns);
+        void display(const std::vector<std::map<std::string, std::string>> &data);
+    };
 
 } // namespace mtpk
 
-#endif
+#endif // DATATABLE_HPP
+
