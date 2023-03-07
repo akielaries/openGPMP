@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_909',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]]
+  ['colvector_924',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]]
 ];

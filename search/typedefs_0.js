@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['colvector_908',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]]
+  ['axes_923',['Axes',['../classMyClass.html#a5fcc885010cf105449828bfc50c451d1',1,'MyClass']]]
 ];
