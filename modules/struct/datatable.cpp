@@ -42,9 +42,6 @@
 #include <string>
 #include <vector>
 
-
-
-
 std::vector<std::map<std::string, std::string>>
     csv_read(std::string filename,
              std::vector<std::string> selected_columns = {}) {
@@ -84,8 +81,7 @@ std::vector<std::map<std::string, std::string>>
     return data;
 }
 
-void display(
-    const std::vector<std::map<std::string, std::string>> &data) {
+void display(const std::vector<std::map<std::string, std::string>> &data) {
     if (data.empty()) {
         std::cout << "Empty dataframe" << std::endl;
         return;
@@ -155,10 +151,11 @@ void display(
               << " x " << column_names.size() << " columns"
               << "]\n\n";
 }
+
 int main() {
-    //mtpk::Datatable dt;
+    // mtpk::Datatable dt;
     std::vector<std::map<std::string, std::string>> frame =
-        csv_read("../../data/forestfires.csv", {"DC", "DMC"});
+        csv_read("../../data/forestfires.csv");
 
     std::vector<std::map<std::string, std::string>> frame2 =
         csv_read("../../data/school_scores.csv");

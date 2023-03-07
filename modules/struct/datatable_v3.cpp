@@ -32,7 +32,7 @@
  *
  ************************************************************************/
 
-//#include "../../include/struct/datatable.hpp"
+#include "../../include/struct/datatable.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
@@ -43,57 +43,55 @@
 #include <unordered_map>
 #include <vector>
 
-std::vector<std::unordered_map<std::string, std::string>>
-    csv_read(std::string filename,
-             std::vector<std::string> selected_columns = {}) {
+DataTable::DataTable(std::string filename,
+                     std::vector<std::string> selected_columns) {
     std::ifstream file(filename);
-    std::vector<std::unordered_map<std::string, std::string>> data;
+    if (!file) {
+        std::cerr << "Error opening file " << filename << std::endl;
+        return;
+    }
 
-    if (file) {
-        // Read header line
-        std::string line;
-        std::getline(file, line);
-        std::istringstream header(line);
-        std::vector<std::string> column_names;
-        size_t index = 0;
-        std::string name;
-        while (std::getline(header, name, ',')) {
-            // If no columns are selected or the column is selected, add it
-            // to the column names
-            if (selected_columns.empty() ||
-                std::find(selected_columns.begin(), selected_columns.end(),
-                          name) != selected_columns.end()) {
-                column_names.push_back(name);
-                index++;
-            }
-        }
-
-        // Create column_indices map based on column_names
-        std::unordered_map<std::string, size_t> column_indices;
-        for (size_t i = 0; i < column_names.size(); i++) {
-            column_indices[column_names[i]] = i;
-        }
-
-        // Read data lines
-        while (std::getline(file, line)) {
-            std::istringstream record(line);
-            std::unordered_map<std::string, std::string> row;
-            for (const auto &name : column_names) {
-                std::string value;
-                std::getline(record, value, ',');
-                row[name] = value;
-            }
-            data.push_back(row);
+    // Read header line
+    std::string line;
+    std::getline(file, line);
+    std::istringstream header(line);
+    std::vector<std::string> column_names;
+    size_t index = 0;
+    std::string name;
+    while (std::getline(header, name, ',')) {
+        // If no columns are selected or the column is selected, add it
+        // to the column names
+        if (selected_columns.empty() ||
+            std::find(selected_columns.begin(), selected_columns.end(),
+                      name) != selected_columns.end()) {
+            column_names.push_back(name);
+            index++;
         }
     }
 
-    return data;
+    // Create column_indices map based on column_names
+    std::unordered_map<std::string, size_t> column_indices;
+    for (size_t i = 0; i < column_names.size(); i++) {
+        column_indices[column_names[i]] = i;
+    }
+
+    // Read data lines
+    while (std::getline(file, line)) {
+        std::istringstream record(line);
+        std::unordered_map<std::string, std::string> row;
+        for (const auto &name : column_names) {
+            std::string value;
+            std::getline(record, value, ',');
+            row[name] = value;
+        }
+        data_.push_back(row);
+    }
 }
 
-void display(
-    const std::vector<std::unordered_map<std::string, std::string>>
-        &data) {
-    if (data.empty()) {
+// void DataTable::display(const
+// std::vector<std::unordered_map<std::string, std::string>> &data) {
+void DataTable::display() const {
+    if (data_.empty()) {
         std::cout << "Empty dataframe" << std::endl;
         return;
     }
@@ -101,7 +99,7 @@ void display(
     // Get the list of column names
     std::vector<std::string> column_names;
     std::unordered_map<std::string, size_t> column_widths;
-    for (const auto &row : data) {
+    for (const auto &row : data_) {
         for (const auto &pair : row) {
             if (std::find(column_names.begin(), column_names.end(),
                           pair.first) == column_names.end()) {
@@ -122,7 +120,7 @@ void display(
     }
     std::cout << std::endl;
 
-    int num_rows = data.size();
+    int num_rows = data_.size();
     int start_row = 0;
     int end_row = num_rows - 1;
     if (num_rows > 10) {
@@ -130,9 +128,9 @@ void display(
         for (int i = start_row; i <= end_row; i++) {
             std::cout << std::setw(4) << i;
             for (const auto &name : column_names) {
-                if (data[i].count(name)) {
+                if (data_[i].count(name)) {
                     std::cout << std::setw(column_widths[name])
-                              << data[i].at(name);
+                              << data_[i].at(name);
                 } else {
                     std::cout << std::setw(column_widths[name]) << "";
                 }
@@ -148,9 +146,9 @@ void display(
     for (int i = start_row; i <= end_row; i++) {
         std::cout << std::setw(4) << i;
         for (const auto &name : column_names) {
-            if (data[i].count(name)) {
+            if (data_[i].count(name)) {
                 std::cout << std::setw(column_widths[name])
-                          << data[i].at(name);
+                          << data_[i].at(name);
             } else {
                 std::cout << std::setw(column_widths[name]) << "";
             }
@@ -163,6 +161,7 @@ void display(
               << "]\n\n";
 }
 
+/*
 int main() {
     // mtpk::Datatable dt;
     std::vector<std::string> selected_columns = {"X", "Y", "DC", "area"};
@@ -175,6 +174,25 @@ int main() {
     // Print dataframe
     display(frame);
     display(frame2);
+
+    return 0;
+}
+*/
+int main() {
+    std::string filename = "../../data/forestfires.csv";
+    std::string filename_2 = "../../data/school_scores.csv";
+    std::vector<std::string> selected_columns = {"X", "Y", "DC", "area"};
+
+    DataTable dt(filename);
+    dt.display();
+
+    DataTable dt_2(filename_2);
+    dt_2.display();
+
+    // std::vector<std::unordered_map<std::string, std::string>> frame =
+    //    csv_read("../../data/forestfires.csv");
+    // Print dataframe
+    // display(frame, selected_columns);
 
     return 0;
 }
