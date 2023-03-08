@@ -7,7 +7,7 @@ commits based on messages. This process still features a manual intervention by 
 will be in charge of publishing versions.
 
 # Needed Help
-These are the current fixes, ideas, and implementations involved with openMTPK. Contributors are welcome to open a pull request, the maintainer ([me](github.com/akielaries)), will take care of assuring passing tests and checks as far as github workflows.
+These are the current fixes, ideas, and implementations involved with openMTPK. Contributors are welcome to open a pull request, the maintainer ([me](https://github.com/akielaries)), will take care of assuring passing tests and checks as far as github workflows.
 
 0. At a glance openMTPK aims to feature fully functional Calculus, Linear Algebra, Number Theory, Machine Learning (and more) modules
 for modular and pre-built use.
