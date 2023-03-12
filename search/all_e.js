@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['n_256',['n',['../classmtpk_1_1SVC.html#a2c6751e02e3a2b6a2a1837753e4031ec',1,'mtpk::SVC']]],
   ['n_257',['N',['../classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c',1,'mtpk::KF_CV']]],
-  ['n_258',['n',['../classmtpk_1_1AutoEncoder.html#a896d6f20f88a31f75faf0a71facba5c2',1,'mtpk::AutoEncoder::n()'],['../classmtpk_1_1Logreg.html#a614fb6ee0f935117f0260f3b45b2b78f',1,'mtpk::Logreg::n()']]],
+  ['n_258',['n',['../classmtpk_1_1AutoEncoder.html#a896d6f20f88a31f75faf0a71facba5c2',1,'mtpk::AutoEncoder::n()'],['../classmtpk_1_1Logreg.html#a614fb6ee0f935117f0260f3b45b2b78f',1,'mtpk::Logreg::n()'],['../classmtpk_1_1SVC.html#a2c6751e02e3a2b6a2a1837753e4031ec',1,'mtpk::SVC::n()']]],
   ['n_5fhidden_259',['n_hidden',['../classmtpk_1_1AutoEncoder.html#accd4c17c7fea9ca2a2ebe5f7703d488b',1,'mtpk::AutoEncoder']]],
   ['naive_5fnet_2ehpp_260',['naive_net.hpp',['../naive__net_8hpp.html',1,'']]],
   ['naive_5fnetwork_261',['naive_network',['../classmtpk_1_1NaiveNet.html#a09441eff0299ee826fe0a9fd878f27b4',1,'mtpk::NaiveNet']]],
