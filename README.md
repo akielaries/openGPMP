@@ -188,3 +188,4 @@ encoded_text = c.keyword_encode(shift);
 hashtext = c.keyword(text, encoded_text);
 print(hashtext)
 ```
+
