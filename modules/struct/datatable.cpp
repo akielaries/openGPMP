@@ -62,6 +62,7 @@ std::vector<std::map<std::string, std::string>>
                 std::find(selected_columns.begin(), selected_columns.end(),
                           name) != selected_columns.end()) {
                 column_names.push_back(name);
+                //std::cout<<name<<std::endl;
             }
         }
 
@@ -73,6 +74,7 @@ std::vector<std::map<std::string, std::string>>
                 std::string value;
                 std::getline(record, value, ',');
                 row[column_name] = value;
+                //std::cout<<row[column_name]<<std::endl;
             }
             data.push_back(row);
         }
@@ -157,11 +159,11 @@ int main() {
     std::vector<std::map<std::string, std::string>> frame =
         csv_read("../../data/forestfires.csv");
 
-    std::vector<std::map<std::string, std::string>> frame2 =
-        csv_read("../../data/school_scores.csv");
+    //std::vector<std::map<std::string, std::string>> frame2 =
+    //    csv_read("../../data/school_scores.csv");
     // Print dataframe
     display(frame);
-    display(frame2);
+    //display(frame2);
 
     return 0;
 }
