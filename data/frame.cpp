@@ -13,9 +13,5 @@ int main() {
 
     test.read("forestfires.csv", io_format::csv2);
 
-
-
-
     return 0;
 }
-
