@@ -139,7 +139,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                std::find(selected_columns.begin(), selected_columns.end(),</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                          name) != selected_columns.end()) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                column_names.push_back(name);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">//std::cout&lt;&lt;name&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">// std::cout&lt;&lt;name&lt;&lt;std::endl;</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                std::string value;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                std::getline(record, value, <span class="charliteral">&#39;,&#39;</span>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                row[column_name] = value;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">//std::cout&lt;&lt;row[column_name]&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">// std::cout&lt;&lt;row[column_name]&lt;&lt;std::endl;</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            data.push_back(row);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
@@ -183,7 +183,7 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="datatable_8cpp_source.html#l00086">86</a> of file <a class="el" href="datatable_8cpp_source.html">datatable.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                  {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (data.empty()) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Empty dataframe&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Empty DataTable&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
@@ -277,11 +277,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame =</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="datatable_8cpp.html#afbf31541e3e243faeccd233e753ab275">csv_read</a>(<span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">//std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">//    csv_read(&quot;../../data/school_scores.csv&quot;);</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// Print dataframe</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29">display</a>(frame);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">//display(frame2);</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// display(frame2);</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
