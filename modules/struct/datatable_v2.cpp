@@ -44,117 +44,117 @@
 
 class DataTable {
     public:
+    std::vector<std::map<std::string, std::string>>
+        csv_read(std::string filename,
+                 std::vector<std::string> selected_columns = {}) {
+        std::ifstream file(filename);
+        std::vector<std::map<std::string, std::string>> data;
 
-std::vector<std::map<std::string, std::string>> csv_read(std::string filename,
-                                                         std::vector<std::string> selected_columns = {}) {
-    std::ifstream file(filename);
-    std::vector<std::map<std::string, std::string>> data;
-
-    if (file) {
-        // Read header line
-        std::string line;
-        std::getline(file, line);
-        std::istringstream header(line);
-        std::vector<std::string> column_names;
-        std::string name;
-        while (std::getline(header, name, ',')) {
-            // If no columns are selected or the column is selected,
-            // add it to the column names
-            if (selected_columns.empty() ||
-                std::find(selected_columns.begin(),
-                          selected_columns.end(),
-                          name) != selected_columns.end()) {
-                column_names.push_back(name);
-            }
-        }
-
-        // Read data lines
-        std::string record_str;
-        while (std::getline(file, record_str)) {
-            std::istringstream record(record_str);
-            std::vector<std::pair<std::string, std::string>> row_pairs;
-            std::string value;
-            int i = 0;
-            while (std::getline(record, value, ',')) {
-                if (i < column_names.size()) {
-                    row_pairs.push_back(std::make_pair(column_names[i], value));
+        if (file) {
+            // Read header line
+            std::string line;
+            std::getline(file, line);
+            std::istringstream header(line);
+            std::vector<std::string> column_names;
+            std::string name;
+            while (std::getline(header, name, ',')) {
+                // If no columns are selected or the column is selected,
+                // add it to the column names
+                if (selected_columns.empty() ||
+                    std::find(selected_columns.begin(),
+                              selected_columns.end(),
+                              name) != selected_columns.end()) {
+                    column_names.push_back(name);
                 }
-                i++;
             }
-            std::map<std::string, std::string> row(row_pairs.begin(), row_pairs.end());
-            data.push_back(row);
+
+            // Read data lines
+            std::string record_str;
+            while (std::getline(file, record_str)) {
+                std::istringstream record(record_str);
+                std::vector<std::pair<std::string, std::string>> row_pairs;
+                std::string value;
+                int i = 0;
+                while (std::getline(record, value, ',')) {
+                    if (i < column_names.size()) {
+                        row_pairs.push_back(
+                            std::make_pair(column_names[i], value));
+                    }
+                    i++;
+                }
+                std::map<std::string, std::string> row(row_pairs.begin(),
+                                                       row_pairs.end());
+                data.push_back(row);
+            }
         }
+
+        return data;
     }
 
-    return data;
-}
+    void display(
+        const std::vector<std::map<std::string, std::string>> &data) {
+        if (data.empty()) {
+            std::cout << "Empty DataTable" << std::endl;
+            return;
+        }
 
-    void display(const std::vector<std::map<std::string, std::string>> &data) {
-    if (data.empty()) {
-        std::cout << "Empty DataTable" << std::endl;
-        return;
-    }
+        // Get the list of column names in the order they appear in the CSV
+        std::vector<std::string> column_names;
+        std::map<std::string, size_t> column_widths;
+        const auto &first_row = data[0];
+        for (const auto &pair : first_row) {
+            column_names.push_back(pair.first);
+            column_widths[pair.first] = pair.first.size() + 2;
+        }
 
-    // Get the list of column names in the order they appear in the CSV
-    std::vector<std::string> column_names;
-    std::map<std::string, size_t> column_widths;
-    const auto& first_row = data[0];
-    for (const auto& pair : first_row) {
-        column_names.push_back(pair.first);
-        column_widths[pair.first] = pair.first.size() + 2;
-    }
+        // Print the data
+        std::cout << std::left;
+        std::cout << std::setw(4) << "";
+        for (const auto &name : column_names) {
+            std::cout << std::setw(column_widths[name]) << name;
+        }
+        std::cout << std::endl;
 
-    // Print the data
-    std::cout << std::left;
-    std::cout << std::setw(4) << "";
-    for (const auto &name : column_names) {
-        std::cout << std::setw(column_widths[name]) << name;
-    }
-    std::cout << std::endl;
+        int num_rows = data.size();
+        int start_row = 0;
+        int end_row = num_rows - 1;
+        if (num_rows > 10) {
+            end_row = 4;
+            for (int i = start_row; i <= end_row; i++) {
+                std::cout << std::setw(4) << i;
+                for (const auto &name : column_names) {
+                    if (data[i].count(name)) {
+                        std::cout << std::setw(column_widths[name])
+                                  << data[i].at(name);
+                    } else {
+                        std::cout << std::setw(column_widths[name]) << "";
+                    }
+                }
+                std::cout << std::endl;
+            }
+            std::cout << "... " << num_rows - 10 << " rows omitted ..."
+                      << std::endl;
+            start_row = num_rows - 5;
+            end_row = num_rows - 1;
+        }
 
-    int num_rows = data.size();
-    int start_row = 0;
-    int end_row = num_rows - 1;
-    if (num_rows > 10) {
-        end_row = 4;
         for (int i = start_row; i <= end_row; i++) {
             std::cout << std::setw(4) << i;
             for (const auto &name : column_names) {
                 if (data[i].count(name)) {
                     std::cout << std::setw(column_widths[name])
                               << data[i].at(name);
-                }
-                else {
+                } else {
                     std::cout << std::setw(column_widths[name]) << "";
                 }
             }
             std::cout << std::endl;
         }
-        std::cout << "... " << num_rows - 10 << " rows omitted ..."
-                  << std::endl;
-        start_row = num_rows - 5;
-        end_row = num_rows - 1;
+
+        std::cout << "[" << num_rows << " rows"
+                  << " x " << column_names.size() << " columns"
+                  << "]\n\n";
     }
-
-    for (int i = start_row; i <= end_row; i++) {
-        std::cout << std::setw(4) << i;
-        for (const auto &name : column_names) {
-            if (data[i].count(name)) {
-                std::cout << std::setw(column_widths[name])
-                          << data[i].at(name);
-            } else {
-                std::cout << std::setw(column_widths[name]) << "";
-            }
-        }
-        std::cout << std::endl;
-    }
-
-    std::cout << "[" << num_rows << " rows"
-              << " x " << column_names.size() << " columns"
-              << "]\n\n";
-}
-
-
 };
 
 int main() {
@@ -162,9 +162,8 @@ int main() {
     std::vector<std::string> selected_columns = {"DC", "X", "Y", "area"};
     std::string filename = "../../data/forestfires.csv";
 
-
     std::vector<std::map<std::string, std::string>> frame =
-        dt.csv_read(filename,selected_columns);
+        dt.csv_read(filename);
 
     // std::vector<std::map<std::string, std::string>> frame2 =
     //    csv_read("../../data/school_scores.csv");
