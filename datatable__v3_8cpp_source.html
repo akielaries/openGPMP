@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: DataTable Class Reference</title>
+<title>openMTPK: modules/struct/datatable_v3.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,63 +61,63 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_2acd22a085a536a202d645d74c18fa49.html">struct</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="classDataTable-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DataTable Class Reference</div>  </div>
+<div class="title">datatable_v3.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>&gt;</code></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ac470981c626a982d3f1e3ac44c6a3f1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">DataTable</a> (std::string filename, std::vector&lt; std::string &gt; selected_columns={})</td></tr>
-<tr class="separator:ac470981c626a982d3f1e3ac44c6a3f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b58ef70c3fe47a80f2b3db3ac085437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display</a> () const</td></tr>
-<tr class="separator:a0b58ef70c3fe47a80f2b3db3ac085437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a79f813308507241111a0bf87bbda7df9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unordered_map&lt; std::string, std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">data_</a></td></tr>
-<tr class="separator:a79f813308507241111a0bf87bbda7df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00052">52</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac470981c626a982d3f1e3ac44c6a3f1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac470981c626a982d3f1e3ac44c6a3f1a">&#9670;&nbsp;</a></span>DataTable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DataTable::DataTable </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
-          <td class="paramname"><em>selected_columns</em> = <code>{}</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="datatable__v3_8cpp_source.html#l00046">46</a> of file <a class="el" href="datatable__v3_8cpp_source.html">datatable_v3.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                            {</div>
+<a href="datatable__v3_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                       |  \/  |__   __|  __ \| |/ /</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | &#39; /</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * / _ \| &#39;_ \ / _ \ &#39;_ \| |\/| |  | |  |  ___/|  &lt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *      | |</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *      |_|</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Copyright (C) Akiel Aries, &lt;akiel@akiel.org&gt;, et al.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * and/or sell copies of the Software, and permit persons to whom</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * the Software is furnished to do so, under the terms of the</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * LICENSE file. As this is an Open Source effort, all implementations</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * must be of the same methodology.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * This software is distributed on an AS IS basis, WITHOUT</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> ************************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;../../include/struct/datatable.hpp&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">   46</a></span>&#160;<a class="code" href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">DataTable::DataTable</a>(std::string filename,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                     std::vector&lt;std::string&gt; selected_columns) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::ifstream file(filename);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (!file) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error opening file &quot;</span> &lt;&lt; filename &lt;&lt; std::endl;</div>
@@ -160,30 +160,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">data_</a>.push_back(row);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="ttc" id="aclassDataTable_html_a79f813308507241111a0bf87bbda7df9"><div class="ttname"><a href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">DataTable::data_</a></div><div class="ttdeci">std::vector&lt; std::unordered_map&lt; std::string, std::string &gt; &gt; data_</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00059">datatable.hpp:59</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">data_</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0b58ef70c3fe47a80f2b3db3ac085437"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b58ef70c3fe47a80f2b3db3ac085437">&#9670;&nbsp;</a></span>display()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DataTable::display </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="datatable__v3_8cpp_source.html#l00093">93</a> of file <a class="el" href="datatable__v3_8cpp_source.html">datatable_v3.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                              {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// void DataTable::display(const</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// std::vector&lt;std::unordered_map&lt;std::string, std::string&gt;&gt; &amp;data) {</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">DataTable::display</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">data_</a>.empty()) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Empty dataframe&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -253,45 +233,48 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; x &quot;</span> &lt;&lt; column_names.size() &lt;&lt; <span class="stringliteral">&quot; columns&quot;</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;]\n\n&quot;</span>;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">data_</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="datatable__v3_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a79f813308507241111a0bf87bbda7df9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79f813308507241111a0bf87bbda7df9">&#9670;&nbsp;</a></span>data_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::unordered_map&lt;std::string, std::string&gt; &gt; DataTable::data_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00059">59</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">DataTable()</a>, and <a class="el" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display()</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/struct/<a class="el" href="datatable_8hpp_source.html">datatable.hpp</a></li>
-<li>modules/struct/<a class="el" href="datatable__v3_8cpp_source.html">datatable_v3.cpp</a></li>
-</ul>
-</div><!-- contents -->
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">int main() {</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">    // mtpk::Datatable dt;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">    std::vector&lt;std::string&gt; selected_columns = {&quot;X&quot;, &quot;Y&quot;, &quot;DC&quot;, &quot;area&quot;};</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">    std::vector&lt;std::unordered_map&lt;std::string, std::string&gt;&gt; frame =</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">        csv_read(&quot;../../data/forestfires.csv&quot;);</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">    std::vector&lt;std::unordered_map&lt;std::string, std::string&gt;&gt; frame2 =</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">        csv_read(&quot;../../data/school_scores.csv&quot;);</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">    // Print dataframe</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">    display(frame);</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">    display(frame2);</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">    return 0;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="datatable__v3_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  181</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="datatable__v3_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::string filename = <span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    std::string filename_2 = <span class="stringliteral">&quot;../../data/school_scores.csv&quot;</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::vector&lt;std::string&gt; selected_columns = {<span class="stringliteral">&quot;X&quot;</span>, <span class="stringliteral">&quot;Y&quot;</span>, <span class="stringliteral">&quot;DC&quot;</span>, <span class="stringliteral">&quot;area&quot;</span>};</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="classDataTable.html">DataTable</a> dt(filename);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    dt.<a class="code" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display</a>();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="classDataTable.html">DataTable</a> dt_2(filename_2);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    dt_2.<a class="code" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display</a>();</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// std::vector&lt;std::unordered_map&lt;std::string, std::string&gt;&gt; frame =</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">//    csv_read(&quot;../../data/forestfires.csv&quot;);</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// Print dataframe</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// display(frame, selected_columns);</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="ttc" id="aclassDataTable_html"><div class="ttname"><a href="classDataTable.html">DataTable</a></div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00052">datatable.hpp:52</a></div></div>
+<div class="ttc" id="aclassDataTable_html_a0b58ef70c3fe47a80f2b3db3ac085437"><div class="ttname"><a href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">DataTable::display</a></div><div class="ttdeci">void display() const</div><div class="ttdef"><b>Definition:</b> <a href="datatable__v3_8cpp_source.html#l00093">datatable_v3.cpp:93</a></div></div>
+<div class="ttc" id="aclassDataTable_html_a79f813308507241111a0bf87bbda7df9"><div class="ttname"><a href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">DataTable::data_</a></div><div class="ttdeci">std::vector&lt; std::unordered_map&lt; std::string, std::string &gt; &gt; data_</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00059">datatable.hpp:59</a></div></div>
+<div class="ttc" id="aclassDataTable_html_ac470981c626a982d3f1e3ac44c6a3f1a"><div class="ttname"><a href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">DataTable::DataTable</a></div><div class="ttdeci">DataTable(std::string filename, std::vector&lt; std::string &gt; selected_columns={})</div><div class="ttdef"><b>Definition:</b> <a href="datatable__v3_8cpp_source.html#l00046">datatable_v3.cpp:46</a></div></div>
+<div class="ttc" id="adatatable__v3_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="datatable__v3_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="datatable__v3_8cpp_source.html#l00181">datatable_v3.cpp:181</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
