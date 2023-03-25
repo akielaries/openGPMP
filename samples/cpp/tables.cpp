@@ -1,6 +1,6 @@
 #include "../../include/struct/datatable.hpp"
-#include <string>
 #include <map>
+#include <string>
 #include <vector>
 
 int main() {

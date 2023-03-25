@@ -55,6 +55,7 @@ std::vector<std::unordered_map<std::string, std::string>>
         std::getline(file, line);
         std::istringstream header(line);
         std::vector<std::string> column_names;
+        size_t index = 0;
         std::string name;
         while (std::getline(header, name, ',')) {
             // If no columns are selected or the column is selected, add it
@@ -63,17 +64,24 @@ std::vector<std::unordered_map<std::string, std::string>>
                 std::find(selected_columns.begin(), selected_columns.end(),
                           name) != selected_columns.end()) {
                 column_names.push_back(name);
+                index++;
             }
+        }
+
+        // Create column_indices map based on column_names
+        std::unordered_map<std::string, size_t> column_indices;
+        for (size_t i = 0; i < column_names.size(); i++) {
+            column_indices[column_names[i]] = i;
         }
 
         // Read data lines
         while (std::getline(file, line)) {
             std::istringstream record(line);
             std::unordered_map<std::string, std::string> row;
-            for (const auto &column_name : column_names) {
+            for (const auto &name : column_names) {
                 std::string value;
                 std::getline(record, value, ',');
-                row[column_name] = value;
+                row[name] = value;
             }
             data.push_back(row);
         }
@@ -82,8 +90,9 @@ std::vector<std::unordered_map<std::string, std::string>>
     return data;
 }
 
-
-void display(const std::vector<std::unordered_map<std::string, std::string>> &data) {
+void display(
+    const std::vector<std::unordered_map<std::string, std::string>>
+        &data) {
     if (data.empty()) {
         std::cout << "Empty dataframe" << std::endl;
         return;
@@ -154,13 +163,12 @@ void display(const std::vector<std::unordered_map<std::string, std::string>> &da
               << "]\n\n";
 }
 
-
-
 int main() {
-    //mtpk::Datatable dt;
-    std::vector<std::string> selected_columns = {"RH", "X", "Y", "DC"};
+    // mtpk::Datatable dt;
+    std::vector<std::string> selected_columns = {"X", "Y", "DC", "area"};
+
     std::vector<std::unordered_map<std::string, std::string>> frame =
-        csv_read("../../data/forestfires.csv", selected_columns);
+        csv_read("../../data/forestfires.csv");
 
     std::vector<std::unordered_map<std::string, std::string>> frame2 =
         csv_read("../../data/school_scores.csv");

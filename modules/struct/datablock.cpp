@@ -36,3 +36,9 @@
  * Remix of numpy array. This will act as the numeric only version of
  * the openMTPK datatable struct.
  */
+
+class DataBlock {
+    DataBlock() {
+        return 0;
+    }
+};

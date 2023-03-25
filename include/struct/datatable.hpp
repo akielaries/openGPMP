@@ -46,17 +46,17 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
-namespace mtpk {
-
-class Datatable {
+class DataTable {
     public:
-        std::vector<std::map<std::string, std::string>> Datatable::csv_read(std::string filename, std::vector<std::string> selected_columns);
-        void display(const std::vector<std::map<std::string, std::string>> &data);
-    };
+    DataTable(std::string filename,
+              std::vector<std::string> selected_columns = {});
+    void display() const;
 
-} // namespace mtpk
+    private:
+    std::vector<std::unordered_map<std::string, std::string>> data_;
+};
 
 #endif // DATATABLE_HPP
-
