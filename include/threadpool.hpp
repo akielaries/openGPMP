@@ -14,7 +14,7 @@ namespace mtpk {
 
 class ThreadPool {
     public:
-    ThreadPool(size_t numThreads = 4) {
+    ThreadPool(size_t numThreads = std::thread::hardware_concurrency()) {
         for (size_t i = 0; i < numThreads; ++i) {
             workers.emplace_back([this] {
                 while (true) {
