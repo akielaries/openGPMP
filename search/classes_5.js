@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['layer_490',['layer',['../structmtpk_1_1ml_1_1layer.html',1,'mtpk::ml']]],
-  ['linearregression_491',['LinearRegression',['../classmtpk_1_1LinearRegression.html',1,'mtpk']]],
-  ['logreg_492',['Logreg',['../classmtpk_1_1Logreg.html',1,'mtpk']]]
+  ['kf_5fcv_496',['KF_CV',['../classmtpk_1_1KF__CV.html',1,'mtpk']]],
+  ['knn_497',['kNN',['../classmtpk_1_1kNN.html',1,'mtpk']]],
+  ['kohonennet_498',['KohonenNet',['../classmtpk_1_1KohonenNet.html',1,'mtpk']]]
 ];

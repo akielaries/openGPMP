@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['matrix_493',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk']]],
-  ['mtx_494',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]],
-  ['myclass_495',['MyClass',['../classMyClass.html',1,'']]]
+  ['layer_499',['layer',['../structmtpk_1_1ml_1_1layer.html',1,'mtpk::ml']]],
+  ['linearregression_500',['LinearRegression',['../classmtpk_1_1LinearRegression.html',1,'mtpk']]],
+  ['logarithms_501',['Logarithms',['../classmtpk_1_1Logarithms.html',1,'mtpk']]],
+  ['logreg_502',['Logreg',['../classmtpk_1_1Logreg.html',1,'mtpk']]]
 ];
