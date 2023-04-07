@@ -50,8 +50,54 @@
 // primes object for this Logarithms file
 mtpk::Primality log_primes;
 
+// OSX uses srand() opposed to rand()
+#ifdef __APPLE__
+#define USE_SRAND
+#endif
+
+// declare Basics and Primality class objects
+
+int64_t pollard_rho_log(int g, int y, int p) {
+    int64_t x = rand() % (p - 1) + 1;
+
+#ifdef USE_SRAND
+    srand(time(NULL));
+    x = rand() % (p - 1) + 1;
+#endif
+
+    int64_t y1 = y;
+    int64_t y2 = y;
+    int64_t d = 1;
+    std::unordered_map<int64_t, int64_t> values;
+
+    // Compute the iterated values of the sequence x_n = g^x_n-1 mod p
+    // until a collision is found
+    while (d == 1) {
+        x = (x * x + 1) % p;
+        y1 = (y1 * g) % p;
+        y2 = (y2 * g) % p;
+        y2 = (y2 * g) % p;
+        d = std::__gcd(abs(y2 - y1), p);
+        values[x] = y1;
+    }
+
+    // Compute the discrete logarithm using the collision point
+    if (d == p) {
+        return -1;
+    } else {
+        int64_t x0 = abs(y2 - y1) / d;
+        int64_t y0 = values[x0];
+        int64_t k = 1;
+        while (y0 != y) {
+            y0 = (y0 * g) % p;
+            k++;
+        }
+        return k * x0 % (p - 1);
+    }
+}
+
 // Function to calculate k for given a, b, m
-int64_t mtpk::Logarithms::pollard_rho_log(int64_t a, int64_t b, int64_t m) {
+int64_t mtpk::Logarithms::BSGS(int64_t a, int64_t b, int64_t m) {
     int64_t n = (int64_t)sqrt(m) + 1;
 
     std::unordered_map<int64_t, int64_t> value;
@@ -78,9 +124,19 @@ int64_t mtpk::Logarithms::pollard_rho_log(int64_t a, int64_t b, int64_t m) {
 }
 
 int main() {
+    mtpk::Logarithms logs;
+    int64_t g = 3;
+    int64_t y = 7;
+    int64_t p = 11;
+    int64_t x = pollard_rho_log(g, y, p);
+    std::cout << "The discrete logarithm of " << y
+              << " with respect to the base " << g
+              << " in the group of order " << p << " is " << x
+              << std::endl;
+
     int64_t a = 2, b = 3, m = 5;
-    std::cout << pollard_rho_log(a, b, m) << std::endl;
+    std::cout << logs.BSGS(a, b, m) << std::endl;
 
     a = 3, b = 7, m = 11;
-    std::cout << pollard_rho_log(a, b, m);
+    std::cout << logs.BSGS(a, b, m) << std::endl;
 }
