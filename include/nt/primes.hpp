@@ -62,14 +62,13 @@ class Primality {
     /**
      * @brief Algorithm determining liklihood a number is prime
      *
-     * @param[in] d : target number (int64_t)
-     * @param[in] n : target - 1 (int64_t)
+     * @param[in] n : target number (int64_t)
      *
      * @pre miller_rabin_prime()
      *
      * @return true/false (bool)
      */
-    bool compute_miller_rabin(int64_t d, int64_t n);
+    bool compute_miller_rabin(int64_t n);
 
     /**
      * @brief Modified primes algorithm

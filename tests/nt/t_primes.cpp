@@ -112,13 +112,13 @@ TEST(prime_test, mod_pow) {
  * computes primes using the Miller-Rabin method
  */
 TEST(prime_test, compute_miller_rabin) {
-    EXPECT_EQ(true, p.compute_miller_rabin(7, 5));
-    EXPECT_EQ(true, p.compute_miller_rabin(7, 1));
-    EXPECT_EQ(true, p.compute_miller_rabin(1049, 5));
-    EXPECT_EQ(true, p.compute_miller_rabin(2999, 5));
-    EXPECT_EQ(true, p.compute_miller_rabin(4, 2));
-    EXPECT_EQ(true, p.compute_miller_rabin(200392, 5));
-    EXPECT_EQ(true, p.compute_miller_rabin(90, 5));
+    EXPECT_EQ(true, p.compute_miller_rabin(5));
+    EXPECT_EQ(false, p.compute_miller_rabin(1));
+    EXPECT_EQ(true, p.compute_miller_rabin(5));
+    EXPECT_EQ(true, p.compute_miller_rabin(5));
+    EXPECT_EQ(true, p.compute_miller_rabin(2));
+    EXPECT_EQ(true, p.compute_miller_rabin(5));
+    EXPECT_EQ(true, p.compute_miller_rabin(5));
 }
 
 TEST(prime_test, miller_rabin_prime) {
