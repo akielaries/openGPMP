@@ -1,7 +1,7 @@
 var searchData=
 [
   ['pollard_5frho_753',['pollard_rho',['../classmtpk_1_1Primality.html#a6da2179ebf40c84b2f30429a0e1fa45c',1,'mtpk::Primality::pollard_rho()'],['../classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb',1,'mtpk::Factorization::pollard_rho()']]],
-  ['pollard_5frho_5flog_754',['pollard_rho_log',['../classmtpk_1_1Logarithms.html#a752af6f60335222812f416f4dc5ac322',1,'mtpk::Logarithms']]],
+  ['pollard_5frho_5flog_754',['pollard_rho_log',['../classmtpk_1_1Logarithms.html#a752af6f60335222812f416f4dc5ac322',1,'mtpk::Logarithms::pollard_rho_log()'],['../logarithms_8cpp.html#aa58d351700a00ed36dea1ef6265baf1c',1,'pollard_rho_log():&#160;logarithms.cpp']]],
   ['powermean_755',['powerMean',['../classmtpk_1_1Stats.html#a07bac610d7625dcd3b9afd36f4596fc4',1,'mtpk::Stats']]],
   ['predict_756',['predict',['../classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4',1,'mtpk::BayesClf::predict()'],['../classmtpk_1_1LinearRegression.html#aa0189753efc6f1fb1128b069bb95f125',1,'mtpk::LinearRegression::predict()']]],
   ['prga_757',['PRGA',['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
