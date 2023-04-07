@@ -49,6 +49,9 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <random>
+#include <chrono>
+
 
 // declare Basics and Primality class objects
 mtpk::Basics __FACT_BASICS__;
@@ -77,7 +80,7 @@ mtpk::Primality __FACT_PRIMES__;
  */
 int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     /* initialize random seed */
-    srand(time(nullptr));
+    std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
 
     /* no prime divisor for 1 */
     if (n == 1) {
@@ -90,13 +93,15 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     }
 
     /* we will pick from the range [2, N) */
-    int64_t x = (rand() % (n - 2)) + 2;
+    std::uniform_int_distribution<int64_t> unif_dist(2, n - 1);
+    int64_t x = unif_dist(rng);
     int64_t y = x;
 
     /* the constant in f(x).
      * Algorithm can be re-run with a different c
      * if it throws failure for a composite. */
-    int64_t c = (rand() % (n - 1)) + 1;
+    std::uniform_int_distribution<int64_t> c_dist(1, n - 1);
+    int64_t c = c_dist(rng);
 
     /* Initialize candidate divisor (or result) */
     int64_t divisor = 1;
@@ -134,7 +139,7 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
 }
 
 int main() {
-    mtpk::ThreadPool pool(4);
+    mtpk::ThreadPool pool(1);
     mtpk::Factorization factors;
     std::vector<std::future<int64_t>> results;
 
