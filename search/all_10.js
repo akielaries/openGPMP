@@ -1,11 +1,11 @@
 var searchData=
 [
   ['pi_307',['pi',['../torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
-  ['pollard_5frho_308',['pollard_rho',['../classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb',1,'mtpk::Factorization::pollard_rho()'],['../classmtpk_1_1Primality.html#a6da2179ebf40c84b2f30429a0e1fa45c',1,'mtpk::Primality::pollard_rho()']]],
+  ['pollard_5frho_308',['pollard_rho',['../classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb',1,'mtpk::Factorization']]],
   ['pollard_5frho_5flog_309',['pollard_rho_log',['../classmtpk_1_1Logarithms.html#a752af6f60335222812f416f4dc5ac322',1,'mtpk::Logarithms']]],
   ['powermean_310',['powerMean',['../classmtpk_1_1Stats.html#a07bac610d7625dcd3b9afd36f4596fc4',1,'mtpk::Stats']]],
   ['predict_311',['predict',['../classmtpk_1_1BayesClf.html#a9bfe361a18f9c20653d09efc9580f7d4',1,'mtpk::BayesClf::predict()'],['../classmtpk_1_1LinearRegression.html#aa0189753efc6f1fb1128b069bb95f125',1,'mtpk::LinearRegression::predict()']]],
-  ['prga_312',['PRGA',['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()'],['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()']]],
+  ['prga_312',['PRGA',['../classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14',1,'mtpk::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
   ['prim_313',['prim',['../primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8',1,'primes.cpp']]],
   ['primality_314',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
   ['primarymlp_315',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml::PrimaryMLP'],['../classmtpk_1_1ml_1_1PrimaryMLP.html#a74005f6700a488e456b95f06e3a416d5',1,'mtpk::ml::PrimaryMLP::PrimaryMLP()']]],
