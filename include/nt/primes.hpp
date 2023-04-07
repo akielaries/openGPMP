@@ -112,9 +112,6 @@ class Primality {
     /* finds the prime numbers up to a limit */
     void sieve_of_eratosthenes(int64_t n);
 
-    /* integer factorization */
-    int64_t pollard_rho(int64_t n);
-
     /* Eulers Totient Function */
     int64_t ETF(uint64_t n);
 };
