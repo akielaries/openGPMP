@@ -47,10 +47,8 @@
 namespace mtpk {
 class Factorization {
     public:
-
     /* integer factorization */
     int64_t pollard_rho(int64_t n);
-
 };
 
 } // namespace mtpk

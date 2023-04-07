@@ -38,6 +38,7 @@
  */
 #include "../../include/nt/factorization.hpp"
 #include "../../include/arithmetic.hpp"
+#include "../../include/nt/primes.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
@@ -47,8 +48,14 @@
 #include <string>
 
 // declare Basics and Primality class objects
-mtpk::Basics ba;
-mtpk::Factorization fact;
+mtpk::Basics __FACT_BASICS__;
+mtpk::Factorization __FACTOR__;
+mtpk::Primality __FACT_PRIMES__;
+
+// OSX uses srand() opposed to rand()
+#ifdef __APPLE__
+#define USE_SRAND
+#endif
 
 /*
  * algorithm for integer factorization proportial to the runtime of
@@ -67,15 +74,17 @@ mtpk::Factorization fact;
  */
 int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     /* initialize random seed */
-    srand(time(NULL));
+    rand();
 
     /* no prime divisor for 1 */
-    if (n == 1)
+    if (n == 1) {
         return n;
+    }
 
     /* even number means one of the divisors is 2 */
-    if (n % 2 == 0)
+    if (n % 2 == 0) {
         return 2;
+    }
 
     /* we will pick from the range [2, N) */
     int64_t x = (rand() % (n - 2)) + 2;
@@ -95,19 +104,21 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
         /* Tortoise Move: x(i+1) = f(x(i)) */
         // take power
         // calculate modulus
-        x = (mod_pow(x, 2, n) + c + n) % n;
+        x = (__FACT_PRIMES__.mod_pow(x, 2, n) + c + n) % n;
 
         /* Hare Move: y(i+1) = f(f(y(i))) */
-        y = (mod_pow(y, 2, n) + c + n) % n;
-        y = (mod_pow(y, 2, n) + c + n) % n;
+        y = (__FACT_PRIMES__.mod_pow(y, 2, n) + c + n) % n;
+        y = (__FACT_PRIMES__.mod_pow(y, 2, n) + c + n) % n;
 
         /* check gcd of |x-y| and n */
-        divisor = ba.op_gcd(abs(x - y), n);
+        divisor = __FACT_BASICS__.op_gcd(abs(x - y), n);
+
         // divisor = std::__gcd(abs(x - y), n);
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
-        if (divisor == n)
+        if (divisor == n) {
             return pollard_rho(n);
+        }
     }
 
     return divisor;

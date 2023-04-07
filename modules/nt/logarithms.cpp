@@ -48,16 +48,14 @@
 #include <unordered_map>
 
 // primes object for this Logarithms file
-mtpk::Primality log_primes;
+mtpk::Primality __LOG_PRIMES__;
 
 // OSX uses srand() opposed to rand()
 #ifdef __APPLE__
 #define USE_SRAND
 #endif
 
-// declare Basics and Primality class objects
-
-int64_t pollard_rho_log(int g, int y, int p) {
+int64_t mtpk::Logarithms::pollard_rho_log(int g, int y, int p) {
     int64_t x = rand() % (p - 1) + 1;
 
 #ifdef USE_SRAND
@@ -96,7 +94,7 @@ int64_t pollard_rho_log(int g, int y, int p) {
     }
 }
 
-// Function to calculate k for given a, b, m
+/* Baby-Step Giant-Step */
 int64_t mtpk::Logarithms::BSGS(int64_t a, int64_t b, int64_t m) {
     int64_t n = (int64_t)sqrt(m) + 1;
 
@@ -104,12 +102,12 @@ int64_t mtpk::Logarithms::BSGS(int64_t a, int64_t b, int64_t m) {
 
     // store all values of a^(n*i) of LHS
     for (int64_t i = n; i >= 1; --i) {
-        value[log_primes.mod_pow(a, i * n, m)] = i;
+        value[__LOG_PRIMES__.mod_pow(a, i * n, m)] = i;
     }
 
     for (int64_t j = 0; j < n; ++j) {
         // calculate (a ^ j) * b and check
-        int64_t cur = (log_primes.mod_pow(a, j, m) * b) % m;
+        int64_t cur = (__LOG_PRIMES__.mod_pow(a, j, m) * b) % m;
 
         // If collision occurs i.e., LHS = RHS
         if (value[cur]) {
@@ -121,22 +119,4 @@ int64_t mtpk::Logarithms::BSGS(int64_t a, int64_t b, int64_t m) {
         }
     }
     return -1;
-}
-
-int main() {
-    mtpk::Logarithms logs;
-    int64_t g = 3;
-    int64_t y = 7;
-    int64_t p = 11;
-    int64_t x = pollard_rho_log(g, y, p);
-    std::cout << "The discrete logarithm of " << y
-              << " with respect to the base " << g
-              << " in the group of order " << p << " is " << x
-              << std::endl;
-
-    int64_t a = 2, b = 3, m = 5;
-    std::cout << logs.BSGS(a, b, m) << std::endl;
-
-    a = 3, b = 7, m = 11;
-    std::cout << logs.BSGS(a, b, m) << std::endl;
 }

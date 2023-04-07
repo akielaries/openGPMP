@@ -70,6 +70,8 @@ set(SOURCE_FILES
     modules/nt/cipher.cpp
     modules/nt/rc4.cpp
     modules/nt/primes.cpp
+    modules/nt/factorization.cpp
+    modules/nt/logarithms.cpp
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})

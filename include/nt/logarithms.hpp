@@ -47,7 +47,6 @@
 namespace mtpk {
 class Logarithms {
     public:
-
     /* integer factorization */
     int64_t pollard_rho_log(int a, int b, int m);
 
@@ -55,8 +54,7 @@ class Logarithms {
     int64_t BSGS(int64_t a, int64_t b, int64_t m);
 
     /*  */
-    //int64_t 
-
+    // int64_t
 };
 
 } // namespace mtpk
