@@ -80,8 +80,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a857dfb889cadc2b09e4121c80ee0ba64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ThreadPool.html#a857dfb889cadc2b09e4121c80ee0ba64">ThreadPool</a> (size_t numThreads=4)</td></tr>
-<tr class="separator:a857dfb889cadc2b09e4121c80ee0ba64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41a7e647cb4557cd447c32961f7827c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ThreadPool.html#a41a7e647cb4557cd447c32961f7827c9">ThreadPool</a> (size_t numThreads=std::thread::hardware_concurrency())</td></tr>
+<tr class="separator:a41a7e647cb4557cd447c32961f7827c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde622356c8c327e7daf8a629960c8a7"><td class="memTemplParams" colspan="2">template&lt;class F , class... Args&gt; </td></tr>
 <tr class="memitem:afde622356c8c327e7daf8a629960c8a7"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue</a> (F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</td></tr>
 <tr class="separator:afde622356c8c327e7daf8a629960c8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,8 +105,8 @@ Private Attributes</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00015">15</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a857dfb889cadc2b09e4121c80ee0ba64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a857dfb889cadc2b09e4121c80ee0ba64">&#9670;&nbsp;</a></span>ThreadPool()</h2>
+<a id="a41a7e647cb4557cd447c32961f7827c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41a7e647cb4557cd447c32961f7827c9">&#9670;&nbsp;</a></span>ThreadPool()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +118,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">mtpk::ThreadPool::ThreadPool </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>numThreads</em> = <code>4</code></td><td>)</td>
+          <td class="paramname"><em>numThreads</em> = <code>std::thread::hardware_concurrency()</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -130,7 +130,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00017">17</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                      {</div>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                                    {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; numThreads; ++i) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classmtpk_1_1ThreadPool.html#a1c36f448fd4181ba013ffdf5f941251c">workers</a>.emplace_back([<span class="keyword">this</span>] {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
@@ -291,7 +291,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00081">81</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, <a class="el" href="classmtpk_1_1ThreadPool.html#a857dfb889cadc2b09e4121c80ee0ba64">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, <a class="el" href="classmtpk_1_1ThreadPool.html#a41a7e647cb4557cd447c32961f7827c9">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00080">80</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, <a class="el" href="classmtpk_1_1ThreadPool.html#a857dfb889cadc2b09e4121c80ee0ba64">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, <a class="el" href="classmtpk_1_1ThreadPool.html#a41a7e647cb4557cd447c32961f7827c9">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -343,7 +343,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00083">83</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, <a class="el" href="classmtpk_1_1ThreadPool.html#a857dfb889cadc2b09e4121c80ee0ba64">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, <a class="el" href="classmtpk_1_1ThreadPool.html#a41a7e647cb4557cd447c32961f7827c9">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -369,7 +369,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00078">78</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a857dfb889cadc2b09e4121c80ee0ba64">ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a41a7e647cb4557cd447c32961f7827c9">ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -395,7 +395,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00077">77</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#a857dfb889cadc2b09e4121c80ee0ba64">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classmtpk_1_1ThreadPool.html#a41a7e647cb4557cd447c32961f7827c9">ThreadPool()</a>, and <a class="el" href="classmtpk_1_1ThreadPool.html#a46d1a7f7ef2f6e6fb0c2acec17952ca8">~ThreadPool()</a>.</p>
 
 </div>
 </div>
