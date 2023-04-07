@@ -39,13 +39,16 @@
 #include "../../include/nt/factorization.hpp"
 #include "../../include/arithmetic.hpp"
 #include "../../include/nt/primes.hpp"
+#include "../../include/threadpool.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
+#include <future>
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <vector>
 
 // declare Basics and Primality class objects
 mtpk::Basics __FACT_BASICS__;
@@ -74,7 +77,7 @@ mtpk::Primality __FACT_PRIMES__;
  */
 int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     /* initialize random seed */
-    rand();
+    srand(time(nullptr));
 
     /* no prime divisor for 1 */
     if (n == 1) {
@@ -102,18 +105,24 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
        If n is prime, return n */
     while (divisor == 1) {
         /* Tortoise Move: x(i+1) = f(x(i)) */
-        // take power
-        // calculate modulus
-        x = (__FACT_PRIMES__.mod_pow(x, 2, n) + c + n) % n;
+        x = __FACT_PRIMES__.mod_pow(x, 2, n) + c;
+        if (x >= n) {
+            x -= n;
+        }
 
         /* Hare Move: y(i+1) = f(f(y(i))) */
-        y = (__FACT_PRIMES__.mod_pow(y, 2, n) + c + n) % n;
-        y = (__FACT_PRIMES__.mod_pow(y, 2, n) + c + n) % n;
+        y = __FACT_PRIMES__.mod_pow(y, 2, n) + c;
+        if (y >= n) {
+            y -= n;
+        }
+        y = __FACT_PRIMES__.mod_pow(y, 2, n) + c;
+        if (y >= n) {
+            y -= n;
+        }
 
         /* check gcd of |x-y| and n */
         divisor = __FACT_BASICS__.op_gcd(abs(x - y), n);
 
-        // divisor = std::__gcd(abs(x - y), n);
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
         if (divisor == n) {
@@ -122,4 +131,27 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     }
 
     return divisor;
+}
+
+int main() {
+    mtpk::ThreadPool pool(4);
+    mtpk::Factorization factors;
+    std::vector<std::future<int64_t>> results;
+
+    // specify the numbers to factorize
+    std::vector<int64_t> nums_to_factorize = {
+        9223372036854775803, 9223372036854775807, 9223372036854775303,
+        4567890123456789LL,  5678901234567890LL,  6789012345678901LL,
+        7890123456789012LL,  8901234567890123LL};
+
+    for (const auto &num : nums_to_factorize) {
+        results.emplace_back(pool.enqueue(
+            &mtpk::Factorization::pollard_rho, &factors, num));
+    }
+
+    for (auto &res : results) {
+        std::cout << res.get() << std::endl;
+    }
+
+    return 0;
 }

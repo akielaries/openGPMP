@@ -40,8 +40,15 @@
 
 #ifndef FACTORIZATION_HPP
 #define FACTORIZATION_HPP
+#include "../threadpool.hpp"
+#include <condition_variable>
 #include <cstdint>
+#include <functional>
+#include <future>
+#include <mutex>
+#include <queue>
 #include <stdio.h>
+#include <thread>
 #include <vector>
 
 namespace mtpk {

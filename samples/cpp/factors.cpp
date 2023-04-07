@@ -10,7 +10,7 @@ int main() {
     mtpk::Factorization factorization;
 
     // find prime factor of 123456789
-    int64_t n = 123456789;
+    int64_t n = 9223372036854775803;
     int64_t factor = factorization.pollard_rho(n);
 
     // print the result
