@@ -20,7 +20,7 @@ var searchData=
   ['classification_78',['CLASSIFICATION',['../ml_8hpp.html#a669750181416ae68a4b4684e5006f733',1,'ml.hpp']]],
   ['cloglog_79',['cloglog',['../classmtpk_1_1Activate.html#a870edc07d30c23186ca625e7d0874aff',1,'mtpk::Activate::cloglog(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a3d9ff1fd46d35794ad1dae2865c2fb83',1,'mtpk::Activate::cloglog(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a2d18fa753148053ab88685cb8912a756',1,'mtpk::Activate::cloglog(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
   ['coeff_80',['coeff',['../classmtpk_1_1LinearRegression.html#a4411218c4d29a62a3b311d518222ede3',1,'mtpk::LinearRegression']]],
-  ['coeff_5ft_81',['coeff_t',['../test_8cpp.html#af3f179f0c6ce4d72236b5b061ed649d0',1,'test.cpp']]],
+  ['coeff_5ft_81',['coeff_t',['../test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d',1,'test.cpp']]],
   ['cols_82',['cols',['../classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875',1,'mtpk::Matrix']]],
   ['columns_83',['columns',['../classMyClass.html#aefa669ec600b523dc0166dae199a9e4e',1,'MyClass']]],
   ['colvector_84',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]],
