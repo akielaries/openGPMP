@@ -49,7 +49,7 @@ int main() {
     //    }
 
     std::vector<std::future<int64_t>> results;
-    mtpk::ThreadPool pool(4);
+    mtpk::ThreadPool pool(2);
     mtpk::Factorization factors;
     for (const auto &num : nums_to_factorize) {
         results.emplace_back(pool.enqueue(
