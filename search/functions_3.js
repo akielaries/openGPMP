@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['data_5fsize_664',['data_size',['../classmtpk_1_1LinearRegression.html#a0b29487d1e95ec6d52162ed2073bb7d5',1,'mtpk::LinearRegression']]],
-  ['datablock_665',['DataBlock',['../classDataBlock.html#ad2e77f59440bc57152e6260026e24632',1,'DataBlock']]],
-  ['datatable_666',['DataTable',['../classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a',1,'DataTable']]],
-  ['decrypt_667',['decrypt',['../classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad',1,'RC5::decrypt()'],['../rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e',1,'decrypt():&#160;rc5.cpp']]],
-  ['deriv_668',['deriv',['../classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee',1,'mtpk::Calculus']]],
-  ['deriv_5fat_669',['deriv_at',['../classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2',1,'mtpk::Calculus']]],
-  ['derivative_5fterm_670',['derivative_term',['../classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050',1,'mtpk::Calculus']]],
-  ['determineclass_671',['determineClass',['../classmtpk_1_1kNN.html#a798a02fdb343ae1758f58d5c4718e977',1,'mtpk::kNN']]],
-  ['diag_672',['diag',['../classmtpk_1_1Matrix.html#ab98cb19425fc23cfd2b2c6fa158cbe45',1,'mtpk::Matrix']]],
-  ['display_673',['display',['../classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437',1,'DataTable::display() const'],['../classDataTable.html#a5ead0be36438afb5de8adcf8c83d85e9',1,'DataTable::display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data)'],['../torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus_animated.cpp'],['../datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29',1,'display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data):&#160;datatable.cpp']]],
-  ['display_5fhash_674',['display_hash',['../classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0',1,'RC5']]]
+  ['data_5fsize_690',['data_size',['../classmtpk_1_1LinearRegression.html#a0b29487d1e95ec6d52162ed2073bb7d5',1,'mtpk::LinearRegression']]],
+  ['datablock_691',['DataBlock',['../classDataBlock.html#ad2e77f59440bc57152e6260026e24632',1,'DataBlock']]],
+  ['datatable_692',['DataTable',['../classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a',1,'DataTable']]],
+  ['decrypt_693',['decrypt',['../classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad',1,'RC5::decrypt()'],['../rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e',1,'decrypt():&#160;rc5.cpp']]],
+  ['deriv_694',['deriv',['../classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee',1,'mtpk::Calculus']]],
+  ['deriv_5fat_695',['deriv_at',['../classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2',1,'mtpk::Calculus']]],
+  ['derivative_5fterm_696',['derivative_term',['../classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050',1,'mtpk::Calculus']]],
+  ['determineclass_697',['determineClass',['../classmtpk_1_1kNN.html#a798a02fdb343ae1758f58d5c4718e977',1,'mtpk::kNN']]],
+  ['diag_698',['diag',['../classmtpk_1_1Matrix.html#ab98cb19425fc23cfd2b2c6fa158cbe45',1,'mtpk::Matrix']]],
+  ['display_699',['display',['../classDataTable.html#a5ead0be36438afb5de8adcf8c83d85e9',1,'DataTable::display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data)'],['../classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437',1,'DataTable::display() const'],['../torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus_animated.cpp'],['../datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29',1,'display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data):&#160;datatable.cpp']]],
+  ['display_5fhash_700',['display_hash',['../classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0',1,'RC5']]],
+  ['done_701',['done',['../classFunction__pool.html#ac4548e92adb2cfbb93c9fe03e5b881f9',1,'Function_pool']]]
 ];

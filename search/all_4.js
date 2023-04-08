@@ -11,7 +11,7 @@ var searchData=
   ['datatable_2ehpp_118',['datatable.hpp',['../datatable_8hpp.html',1,'']]],
   ['datatable_5fv2_2ecpp_119',['datatable_v2.cpp',['../datatable__v2_8cpp.html',1,'']]],
   ['datatable_5fv4_2ecpp_120',['datatable_v4.cpp',['../datatable__v4_8cpp.html',1,'']]],
-  ['decrypt_121',['decrypt',['../classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad',1,'RC5::decrypt()'],['../rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e',1,'decrypt():&#160;rc5.cpp']]],
+  ['decrypt_121',['decrypt',['../rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e',1,'decrypt():&#160;rc5.cpp'],['../classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad',1,'RC5::decrypt()']]],
   ['delimeter_122',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
   ['deltas_123',['deltas',['../classmtpk_1_1NaiveNet.html#ac2ebde3cb2a6130c99a4895407262856',1,'mtpk::NaiveNet']]],
   ['deriv_124',['deriv',['../classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee',1,'mtpk::Calculus']]],
@@ -22,7 +22,8 @@ var searchData=
   ['determineclass_129',['determineClass',['../classmtpk_1_1kNN.html#a798a02fdb343ae1758f58d5c4718e977',1,'mtpk::kNN']]],
   ['diag_130',['diag',['../classmtpk_1_1Matrix.html#ab98cb19425fc23cfd2b2c6fa158cbe45',1,'mtpk::Matrix']]],
   ['dim_131',['dim',['../classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e',1,'mtpk::Matrix']]],
-  ['display_132',['display',['../classDataTable.html#a5ead0be36438afb5de8adcf8c83d85e9',1,'DataTable::display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data)'],['../classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437',1,'DataTable::display() const'],['../torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus_animated.cpp'],['../datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29',1,'display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data):&#160;datatable.cpp']]],
+  ['display_132',['display',['../datatable_8cpp.html#a20c67ce4deb087788450f3a7da9afc29',1,'display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data):&#160;datatable.cpp'],['../torus__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus_animated.cpp'],['../torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus.cpp'],['../classDataTable.html#a5ead0be36438afb5de8adcf8c83d85e9',1,'DataTable::display(const std::vector&lt; std::map&lt; std::string, std::string &gt;&gt; &amp;data)'],['../classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437',1,'DataTable::display() const']]],
   ['display_5fhash_133',['display_hash',['../classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0',1,'RC5']]],
-  ['distance_134',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]]
+  ['distance_134',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
+  ['done_135',['done',['../classFunction__pool.html#ac4548e92adb2cfbb93c9fe03e5b881f9',1,'Function_pool']]]
 ];

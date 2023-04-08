@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['tensors_538',['Tensors',['../classmtpk_1_1Tensors.html',1,'mtpk']]],
-  ['threadpool_539',['ThreadPool',['../classmtpk_1_1ThreadPool.html',1,'mtpk']]],
-  ['trainers_540',['Trainers',['../classmtpk_1_1ml_1_1Trainers.html',1,'mtpk::ml']]]
+  ['secondarymlp_555',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
+  ['stats_556',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
+  ['summary_557',['summary',['../structmtpk_1_1summary.html',1,'mtpk']]],
+  ['svc_558',['SVC',['../classmtpk_1_1SVC.html',1,'mtpk']]]
 ];
