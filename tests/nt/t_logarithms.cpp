@@ -33,13 +33,19 @@
  ************************************************************************/
 
 /*
- * Testing Linear Algebra Operations
+ * Driver for showing how to use the core basic and elementary
+ * functionalities of the Number Theory module
+ *
  */
-#include "../../include/linalg.hpp"
+#include "../../include/nt/logarithms.hpp"
 #include <gtest/gtest.h>
-#include <limits.h>
-#include <string>
+#include <iostream>
 
-using ::testing::DoubleLE;
-using ::testing::FloatLE;
-using ::testing::InitGoogleTest;
+namespace {
+// declare primality class object
+mtpk::Primality p;
+
+TEST(prime_test, is_prime) {
+    std::cout << "HELLO" << std::endl;
+}
+} // namespace

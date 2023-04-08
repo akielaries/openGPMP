@@ -1,3 +1,6 @@
+#ifndef THREADPOOL_HPP
+#define THREADPOOL_HPP
+
 #include <condition_variable>
 #include <functional>
 #include <future>
@@ -64,3 +67,4 @@ class ThreadPool {
     std::condition_variable condition;
     bool stop;
 };
+#endif

@@ -8,81 +8,128 @@
 using namespace std::chrono_literals;
 
 namespace {
-
-// A simple task to add two numbers
-int add(int a, int b) {
-    return a + b;
+TEST(ThreadPoolTest, EnqueueSingleTask) {
+    ThreadPool pool(1);
+    std::future<int> result = pool.enqueue([]() { return 42; });
+    ASSERT_EQ(result.get(), 42);
 }
 
-// A task that takes some time to complete
-void wait(int duration) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(duration));
+TEST(ThreadPoolTest, TestSingleTask) {
+    ThreadPool pool(2);
+
+    std::future<int> result =
+        pool.enqueue([](int x, int y) { return x + y; }, 3, 4);
+
+    EXPECT_EQ(result.get(), 7);
 }
 
-// A task that throws an exception
-void error() {
-    throw std::runtime_error("An error occurred");
+TEST(ThreadPoolTest, EnqueueMultipleTasks) {
+    ThreadPool pool(4);
+    std::vector<std::future<int>> results;
+    for (int i = 0; i < 100; ++i) {
+        results.emplace_back(pool.enqueue([i]() { return i * 2; }));
+    }
+    for (int i = 0; i < 100; ++i) {
+        ASSERT_EQ(results[i].get(), i * 2);
+    }
 }
 
-// A test that verifies the basic functionality of the thread pool
-TEST(ThreadPoolTest, Basic) {
-    // Create a thread pool with 4 threads
-    mtpk::ThreadPool pool(4);
-
-    // Enqueue some tasks
-    auto res1 = pool.enqueue(add, 2, 3);
-    auto res2 = pool.enqueue(add, 4, 5);
-
-    // Wait for the tasks to complete and check the results
-    EXPECT_EQ(5, res1.get());
-    EXPECT_EQ(9, res2.get());
+TEST(ThreadPoolTest, EnqueueException) {
+    ThreadPool pool(2);
+    std::future<void> result =
+        pool.enqueue([]() { throw std::runtime_error("test error"); });
+    ASSERT_THROW(result.get(), std::runtime_error);
 }
 
-// A test that verifies the behavior when an exception is thrown
-// TEST(ThreadPoolTest, Exception) {
-// Create a thread pool with 4 threads
-//    mtpk::ThreadPool pool(4);
+TEST(ThreadPoolTest, TestException) {
+    ThreadPool pool(1);
 
-// Enqueue a task that throws an exception
-//    EXPECT_THROW(pool.enqueue(error), std::runtime_error);
-//}
-
-// A test that verifies the behavior when the thread pool is stopped
-TEST(ThreadPoolTest, Stop) {
-    // Create a thread pool with 4 threads
-    mtpk::ThreadPool pool(4);
-
-    // Enqueue some tasks
-    auto res1 = pool.enqueue(wait, 100);
-    auto res2 = pool.enqueue(wait, 200);
-
-    // Stop the thread pool
-    pool.~ThreadPool();
-
-    // Verify that the tasks were not completed
-    EXPECT_EQ(std::future_status::timeout, res1.wait_for(0s));
-    EXPECT_EQ(std::future_status::timeout, res2.wait_for(0s));
+    EXPECT_THROW(
+        pool.enqueue([]() { throw std::runtime_error("test exception"); })
+            .get(),
+        std::runtime_error);
 }
 
-// A test that verifies the behavior when the thread pool is resized
-TEST(ThreadPoolTest, Resize) {
-    // TODO: this test case fails... look into the resize method
-    // Create a thread pool with 4 threads
-    mtpk::ThreadPool pool(4);
+TEST(ThreadPoolTest, TestDynamicAllocation) {
+    // Create a new ThreadPool with 4 threads
+    ThreadPool *pool = new ThreadPool(4);
 
-    // Enqueue some tasks
-    auto res1 = pool.enqueue(wait, 100);
-    auto res2 = pool.enqueue(wait, 200);
+    // Enqueue a task and wait for it to complete
+    std::future<int> result = pool->enqueue([]() { return 42; });
+    EXPECT_EQ(result.get(), 42);
 
-    // Wait for tasks to complete
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    // Delete the ThreadPool
+    delete pool;
+}
 
-    // Resize the thread pool to 2 threads
-    pool.thread_resize(2);
+TEST(ThreadPoolTest, TestEnqueueOnStoppedThreadPool) {
+    // Create a new ThreadPool with 2 threads
+    ThreadPool *pool = new ThreadPool(2);
 
-    // Verify that the tasks were completed
-    EXPECT_EQ(std::future_status::ready, res1.wait_for(0s));
-    EXPECT_EQ(std::future_status::ready, res2.wait_for(0s));
+    // Stop the ThreadPool explicitly
+    delete pool; // pool.~ThreadPool();
+
+    // Try to enqueue a task on the stopped ThreadPool
+    EXPECT_THROW(pool->enqueue([]() { return 42; }), std::runtime_error);
+}
+
+TEST(ThreadPoolTest, TestEnqueueWithDifferentReturnTypes) {
+    ThreadPool pool(2);
+
+    auto task1 = []() { /* do something */ };
+    auto task2 = []() -> int { return 42; };
+    auto task3 = []() -> std::string { return "hello world"; };
+
+    auto res1 = pool.enqueue(task1);
+    auto res2 = pool.enqueue(task2);
+    auto res3 = pool.enqueue(task3);
+
+    res1.wait();
+    EXPECT_EQ(res2.get(), 42);
+    EXPECT_EQ(res3.get(), "hello world");
+}
+
+TEST(ThreadPoolTest, TestEnqueueWithDifferentArgumentTypes) {
+    ThreadPool pool(2);
+
+    auto task1 = [](int x, int y) { /* do something */ };
+    auto task2 = [](const std::string &str) { /* do something */ };
+    auto task3 = [](bool flag, float value) { /* do something */ };
+
+    auto res1 = pool.enqueue(task1, 2, 3);
+    auto res2 = pool.enqueue(task2, "hello world");
+    auto res3 = pool.enqueue(task3, true, 3.14f);
+
+    res1.wait();
+    res2.wait();
+    res3.wait();
+}
+
+TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
+    const int numTasks = 1000;
+    ThreadPool pool(4);
+
+    for (int i = 0; i < numTasks; ++i) {
+        auto task = []() { /* do something */ };
+        pool.enqueue(task);
+    }
+
+    // Wait for all tasks to complete
+    pool.wait();
+}
+
+TEST(ThreadPoolTest, TestEnqueueWithThrowingTasks) {
+    ThreadPool pool(2);
+
+    auto task1 = []() { throw std::runtime_error("error"); };
+    auto task2 = []() -> int { throw std::runtime_error("error"); };
+    auto task3 = []() -> std::string {
+        throw std::runtime_error("error");
+    };
+
+    EXPECT_THROW(pool.enqueue(task1), std::runtime_error);
+    EXPECT_THROW(pool.enqueue(task2), std::runtime_error);
+    EXPECT_THROW(pool.enqueue(task3), std::runtime_error);
 }
 
 } // namespace

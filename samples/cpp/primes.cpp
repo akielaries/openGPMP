@@ -3,8 +3,12 @@
  * functionalities of the Number Theory module
  *
  */
+#include <chrono>
+#include <cmath>
 #include <iostream>
 #include <openMTPK/nt/primes.hpp>
+#include <openMTPK/threadpool.hpp>
+#include <vector>
 
 int main() {
     std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;
@@ -103,5 +107,75 @@ int main() {
         printf("%d is composite\n", ss_0);
 
     std::cout << "\n";
+
+    std::cout << "<--------- USING THREADPOOL --------->\n";
+
+    // vector if 64 bit integers
+    std::vector<int64_t> nums = {
+        9223372036854775803,   9223372036854775807,
+        9223372036854775303,   4567890123456789LL,
+        5678901234567890LL,    6789012345678901LL,
+        7890123456789012LL,    8901234567890123LL,
+        9999999967LL,          12345678901234567LL,
+        987654321987654321LL,  2147483647LL,
+        9223372036854775783LL, 1311768467463790320LL,
+        7237005577332262210LL, 3037000499LL,
+        2305843009213693951LL, 2305843009213693967LL,
+        2305843009213693971LL, 2305843009213693973LL,
+        2305843009213693977LL, 2305843009213693989LL};
+
+    std::chrono::steady_clock::time_point start_time =
+        std::chrono::steady_clock::now();
+
+    std::cout << "vector size " << size(nums) << std::endl;
+    // declares a threadpool with 4 threads
+    ThreadPool *pool = new ThreadPool(4);
+
+    std::vector<std::future<bool>> miller_results;
+    mtpk::Primality prim;
+    for (auto n : nums) {
+        miller_results.emplace_back(pool->enqueue(
+            [&prim, n]() { return prim.miller_rabin_prime(n, 100); }));
+    }
+
+    // Print the results
+    std::cout << "Results:\n";
+    std::cout << "Miller-Rabin" << std::endl;
+    for (size_t i = 0; i < miller_results.size(); i++) {
+        bool is_prime = miller_results[i].get();
+        std::cout << nums[i] << " is "
+                  << (is_prime ? "prime" : "composite") << "\n";
+    }
+
+    // delete the threadpool object, freeing its resources
+    delete pool;
+    // create a new threadpool object with 4 threads
+    ThreadPool *new_pool = new ThreadPool(4);
+
+    std::vector<std::future<bool>> AKS_results;
+
+    for (auto n : nums) {
+        AKS_results.emplace_back(
+            new_pool->enqueue([&prim, n]() { return prim.AKS(n); }));
+    }
+
+    std::cout << "\nAKS" << std::endl;
+    for (size_t i = 0; i < AKS_results.size(); i++) {
+        bool is_prime = AKS_results[i].get();
+        std::cout << nums[i] << " is "
+                  << (is_prime ? "prime" : "composite") << "\n";
+    }
+
+    delete new_pool;
+
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
+
+    std::cout << "Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time)
+                     .count()
+              << " ms" << std::endl;
+
     return 0;
 }

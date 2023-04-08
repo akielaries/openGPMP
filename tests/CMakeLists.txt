@@ -24,16 +24,22 @@ set(TEST_SOURCES
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/primes.cpp
-
+    ../modules/nt/factorization.cpp
+    ../modules/nt/logarithms.cpp
 )
 
 # test files
 set(TEST_FILES
     arith/t_arith.cpp
     calc/t_calc.cpp
+    linalg/t_matrix.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp
+    nt/t_factorization.cpp
+    nt/t_logarithms.cpp
+    t_threadpool.cpp
+
 )
 
 # create executable

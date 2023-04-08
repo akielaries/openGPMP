@@ -97,6 +97,12 @@ class Primality {
      */
     void miller_rabin(int64_t iters, int64_t min_val, int64_t max_val);
 
+    /* Agrawal–Kayal–Saxena primality deterministic algorithm */
+    bool AKS(int64_t n);
+
+    /* Lucas Primality Test */
+    int64_t lucas(int64_t n);
+
     /* algorithms finding a prime number */
     int64_t jacobian_number(int64_t a, int64_t n);
 

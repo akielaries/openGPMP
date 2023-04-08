@@ -43,6 +43,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <random>
 #include <stdio.h>
 #include <string>
 
@@ -85,6 +86,12 @@ bool mtpk::Primality::compute_miller_rabin(int64_t d, int64_t n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
     int64_t a = 2 + rand() % (n - 4);
+    /*
+    std::random_device rd;
+    std::mt19937_64 gen(rd());
+    std::uniform_int_distribution<int64_t> dis(2, n - 4);
+    int64_t a = dis(gen);
+    */
 
     // Compute a^d % n
     int64_t x = mod_pow(a, d, n);
@@ -154,6 +161,51 @@ void mtpk::Primality::miller_rabin(int64_t iters, int64_t min_val,
         }
     }
     std::cout << "\n";
+}
+
+bool mtpk::Primality::AKS(int64_t n) {
+    // Check if n is a perfect power
+    for (int64_t b = 2; b <= std::sqrt(n); b++) {
+        int64_t a = std::round(std::pow(n, 1.0 / b));
+        if (std::pow(a, b) == n) {
+            return false;
+        }
+    }
+
+    // Find the smallest r such that ord_r(n) > log2(n)^2
+    int64_t r = 2;
+    while (r < n) {
+        bool is_coprime = true;
+        for (int64_t i = 2; i <= std::sqrt(r); i++) {
+            if (r % i == 0 && n % i == 0) {
+                is_coprime = false;
+                break;
+            }
+        }
+        if (is_coprime) {
+            int64_t t = 1;
+            for (int64_t i = 0; i < std::floor(2 * std::log2(n)); i++) {
+                t = (t * r) % n;
+            }
+            if (t == 1) {
+                r++;
+                continue;
+            }
+            bool is_prime = true;
+            for (int64_t i = 0; i < std::floor(std::log2(n)); i++) {
+                t = (t * t) % n;
+                if (t == 1) {
+                    is_prime = false;
+                    break;
+                }
+            }
+            if (is_prime) {
+                return true;
+            }
+        }
+        r++;
+    }
+    return false;
 }
 
 /*
