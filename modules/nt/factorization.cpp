@@ -40,18 +40,19 @@
 #include "../../include/arithmetic.hpp"
 #include "../../include/nt/primes.hpp"
 #include "../../include/threadpool.hpp"
+
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <future>
 #include <iostream>
+#include <numeric>
+#include <random>
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <random>
-#include <chrono>
-
 
 // declare Basics and Primality class objects
 mtpk::Basics __FACT_BASICS__;
@@ -64,23 +65,24 @@ mtpk::Primality __FACT_PRIMES__;
 #endif
 
 /*
- * algorithm for integer factorization proportial to the runtime of
- * the square root of the size of the smallest prime factor of the
- * composite factor being factorized. Given a positive and composite
- * integer n, find a divisor of it.
- *
- * x_n-1 = x^2_n + a(mod n)
- *
- * n = 1111, set x_0 = 2 & f(x) = x^2 + 1
- *
- * x_1 = 5
- * x_2 = 26         gcd(26 - 5, 1111) = 1
- * x_3 = 677
- * x_4 = 598        gcd(698 - 26, 1111) = 11
- */
+std::vector<std::future<int64_t>> mtpk::Factorization::pollard_rho_thread(
+    const std::vector<int64_t> &nums_to_factorize) {
+    mtpk::ThreadPool pool(2);
+    mtpk::Factorization factors;
+    std::vector<std::future<int64_t>> results;
+
+    for (const auto &num : nums_to_factorize) {
+        results.emplace_back(pool.enqueue(
+            &mtpk::Factorization::pollard_rho, &factors, num));
+    }
+
+    return results;
+}*/
+
 int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     /* initialize random seed */
-    std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+    std::mt19937_64 rng(
+        std::chrono::steady_clock::now().time_since_epoch().count());
 
     /* no prime divisor for 1 */
     if (n == 1) {
@@ -126,7 +128,7 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
         }
 
         /* check gcd of |x-y| and n */
-        divisor = __FACT_BASICS__.op_gcd(abs(x - y), n);
+        divisor = std::gcd(abs(x - y), n);
 
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
@@ -136,27 +138,4 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     }
 
     return divisor;
-}
-
-int main() {
-    mtpk::ThreadPool pool(1);
-    mtpk::Factorization factors;
-    std::vector<std::future<int64_t>> results;
-
-    // specify the numbers to factorize
-    std::vector<int64_t> nums_to_factorize = {
-        9223372036854775803, 9223372036854775807, 9223372036854775303,
-        4567890123456789LL,  5678901234567890LL,  6789012345678901LL,
-        7890123456789012LL,  8901234567890123LL};
-
-    for (const auto &num : nums_to_factorize) {
-        results.emplace_back(pool.enqueue(
-            &mtpk::Factorization::pollard_rho, &factors, num));
-    }
-
-    for (auto &res : results) {
-        std::cout << res.get() << std::endl;
-    }
-
-    return 0;
 }

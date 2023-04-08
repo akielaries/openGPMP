@@ -54,8 +54,38 @@
 namespace mtpk {
 class Factorization {
     public:
+    // std::vector<int64_t> pollard_rho(const std::vector<int64_t>&
+    // nums_to_factorize);
     /* integer factorization */
+
+    /*
+     * algorithm for integer factorization proportial to the runtime of
+     * the square root of the size of the smallest prime factor of the
+     * composite factor being factorized. Given a positive and composite
+     * integer n, find a divisor of it.
+     *
+     * x_n-1 = x^2_n + a(mod n)
+     *
+     * n = 1111, set x_0 = 2 & f(x) = x^2 + 1
+     *
+     * x_1 = 5
+     * x_2 = 26         gcd(26 - 5, 1111) = 1
+     * x_3 = 677
+     * x_4 = 598        gcd(698 - 26, 1111) = 11
+     * @brief This function implements the Pollard Rho algorithm for
+     * integer factorization.
+     * @param n The integer to be factorized.
+     * @return int64_t One of the prime factors of n.
+     */
     int64_t pollard_rho(int64_t n);
+
+    /*  */
+    std::vector<std::future<int64_t>>
+        pollard_rho_thread(const std::vector<int64_t> &nums_to_factorize);
+    /* Lenstra elliptic-curve factorization */
+    // int64_t LECF(int64_t n);
+
+    /*  */
 };
 
 } // namespace mtpk

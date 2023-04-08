@@ -7,6 +7,7 @@ g++ --coverage arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
     nt/t_cipher.cpp ../modules/nt/cipher.cpp \
     nt/t_rc4.cpp ../modules/nt/rc4.cpp \
     nt/t_primes.cpp ../modules/nt/primes.cpp \
+    t_threadpool.cpp \
     -lgtest -lgtest_main -o openMTPK_tests -fprofile-arcs -ftest-coverage -fPIC
 
 # run compiled binary
