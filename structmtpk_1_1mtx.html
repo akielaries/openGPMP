@@ -244,8 +244,8 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        std::random_device rd{};</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        std::mt19937 gen{rd()};</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        T n(MTX.num_elements);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        T stdev{1 / sqrt(n)};</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        T <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>(MTX.num_elements);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        T stdev{1 / sqrt(<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>)};</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        std::normal_distribution&lt;T&gt; d{0, stdev};</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; rows; ++r) {</div>
@@ -255,7 +255,10 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        }</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    }</div>
+<div class="ttc" id="anamespacepy_html_afe6292def0c1adc1a024d49afa7223b9"><div class="ttname"><a href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py.n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="py_8py_source.html#l00038">py.py:38</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py::n</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe">mtpk::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>

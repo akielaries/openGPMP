@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['n_282',['n',['../namespacepy.html#afe6292def0c1adc1a024d49afa7223b9',1,'py']]],
   ['n_283',['N',['../classmtpk_1_1KF__CV.html#aa80836972ab4a39ca8eb112d790bb28c',1,'mtpk::KF_CV']]],
   ['n_284',['n',['../classmtpk_1_1AutoEncoder.html#a896d6f20f88a31f75faf0a71facba5c2',1,'mtpk::AutoEncoder::n()'],['../classmtpk_1_1Logreg.html#a614fb6ee0f935117f0260f3b45b2b78f',1,'mtpk::Logreg::n()'],['../classmtpk_1_1SVC.html#a2c6751e02e3a2b6a2a1837753e4031ec',1,'mtpk::SVC::n()']]],
   ['n_5fhidden_285',['n_hidden',['../classmtpk_1_1AutoEncoder.html#accd4c17c7fea9ca2a2ebe5f7703d488b',1,'mtpk::AutoEncoder']]],

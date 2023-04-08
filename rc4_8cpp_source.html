@@ -166,7 +166,7 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> n = 0, len = strlen(plaintext); n &lt; len; n++) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> = 0, len = strlen(plaintext); <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> &lt; len; <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>++) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        i = (i + 1) &amp; <a class="code" href="rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3">BITS</a>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        j = (j + S[i]) &amp; <a class="code" href="rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3">BITS</a>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        uint32_t rnd = S[(S[i] + S[j]) &amp; <a class="code" href="rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3">BITS</a>];</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ciphertext[n] = rnd ^ plaintext[n];</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ciphertext[<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>] = rnd ^ plaintext[<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>];</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
@@ -238,6 +238,7 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1RC4_html_a7f78df47fd055968e84ae9814d3012f2"><div class="ttname"><a href="classmtpk_1_1RC4.html#a7f78df47fd055968e84ae9814d3012f2">mtpk::RC4::trad_swap</a></div><div class="ttdeci">void trad_swap(unsigned char *a, unsigned char *b)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00057">rc4.cpp:57</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1RC4_html_a83b075a0d58d785e743f38a83e43c6f0"><div class="ttname"><a href="classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0">mtpk::RC4::store_hash</a></div><div class="ttdeci">std::string store_hash(char *plaintext, unsigned char *hashtext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00115">rc4.cpp:115</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1RC4_html_a9456b14881187b9034092a51bd995332"><div class="ttname"><a href="classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332">mtpk::RC4::byte_swap</a></div><div class="ttdeci">void byte_swap(uint8_t *a, uint8_t *b)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00050">rc4.cpp:50</a></div></div>
+<div class="ttc" id="anamespacepy_html_afe6292def0c1adc1a024d49afa7223b9"><div class="ttname"><a href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py.n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="py_8py_source.html#l00038">py.py:38</a></div></div>
 <div class="ttc" id="arc4_8hpp_html_a9d2a7c69bd3fabc41e1ee87df2f283b3"><div class="ttname"><a href="rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3">BITS</a></div><div class="ttdeci">#define BITS</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8hpp_source.html#l00063">rc4.hpp:63</a></div></div>
 <div class="ttc" id="arc4_8hpp_html_aea95cbd2fc2a755e5fd8230fda5bac47"><div class="ttname"><a href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a></div><div class="ttdeci">#define BYTE_LIMIT</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8hpp_source.html#l00064">rc4.hpp:64</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

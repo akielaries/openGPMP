@@ -163,14 +163,17 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00008">8</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">double</span> a, b, temp = 0;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">for</span> (; n &gt; 0; --n) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        std::tie(a, b) = func(n);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">for</span> (; <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> &gt; 0; --<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        std::tie(a, b) = func(<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        temp = b / (a + temp);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::tie(a, b) = func(0);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> a + temp;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="ttc" id="anamespacepy_html_afe6292def0c1adc1a024d49afa7223b9"><div class="ttname"><a href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py.n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="py_8py_source.html#l00038">py.py:38</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py::n</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
@@ -226,10 +229,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00022">22</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                      {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a>(n &gt; 0 ? n : 2, n &gt; 1 ? n - 1 : 1);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a>(<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> &gt; 0 ? <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> : 2, <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> &gt; 1 ? <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> - 1 : 1);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="ttc" id="atest_8cpp_html_a023452f1b1335fa6771ae6a4ebe0df3d"><div class="ttname"><a href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a></div><div class="ttdeci">std::tuple&lt; double, double &gt; coeff_t</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00005">test.cpp:5</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py::n</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
@@ -252,9 +257,11 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00026">26</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                  {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a>(n &gt; 0 ? 6 : 3, (2 * n - 1) * (2 * n - 1));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a>(<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> &gt; 0 ? 6 : 3, (2 * <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> - 1) * (2 * <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> - 1));</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py::n</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
@@ -277,9 +284,11 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="test_8cpp_source.html#l00018">18</a> of file <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                     {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a>(n &gt; 0 ? 2 : 1, 1);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d">coeff_t</a>(<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> &gt; 0 ? 2 : 1, 1);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py::n</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>

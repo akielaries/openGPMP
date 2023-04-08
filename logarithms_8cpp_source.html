@@ -169,22 +169,22 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/* Baby-Step Giant-Step */</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#ad9617755709327ca91e0eca224840ed7">   98</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Logarithms.html#ad9617755709327ca91e0eca224840ed7">mtpk::Logarithms::BSGS</a>(int64_t a, int64_t b, int64_t m) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    int64_t n = (int64_t)sqrt(m) + 1;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    int64_t <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> = (int64_t)sqrt(m) + 1;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::unordered_map&lt;int64_t, int64_t&gt; value;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// store all values of a^(n*i) of LHS</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> (int64_t i = n; i &gt;= 1; --i) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        value[<a class="code" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(a, i * n, m)] = i;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> (int64_t i = <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>; i &gt;= 1; --i) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        value[<a class="code" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(a, i * <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>, m)] = i;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span> (int64_t j = 0; j &lt; n; ++j) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span> (int64_t j = 0; j &lt; <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>; ++j) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="comment">// calculate (a ^ j) * b and check</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        int64_t cur = (<a class="code" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(a, j, m) * b) % m;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">// If collision occurs i.e., LHS = RHS</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (value[cur]) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            int64_t ans = value[cur] * n - j;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            int64_t ans = value[cur] * <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> - j;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">// Check whether ans lies below m or not</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (ans &lt; m) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">return</span> ans;</div>
@@ -196,8 +196,9 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1Logarithms_html_a752af6f60335222812f416f4dc5ac322"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#a752af6f60335222812f416f4dc5ac322">mtpk::Logarithms::pollard_rho_log</a></div><div class="ttdeci">int64_t pollard_rho_log(int a, int b, int m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00058">logarithms.cpp:58</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Logarithms_html_ad9617755709327ca91e0eca224840ed7"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ad9617755709327ca91e0eca224840ed7">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">int64_t BSGS(int64_t a, int64_t b, int64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00098">logarithms.cpp:98</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Primality_html"><div class="ttname"><a href="classmtpk_1_1Primality.html">mtpk::Primality</a></div><div class="ttdef"><b>Definition:</b> <a href="primes_8hpp_source.html#l00051">primes.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_ac752473e96535f44baac2d32c1632bd8"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mtpk::Primality::mod_pow</a></div><div class="ttdeci">int64_t mod_pow(int64_t base, int64_t exponent, int64_t mod)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00053">primes.cpp:53</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Primality_html_ac752473e96535f44baac2d32c1632bd8"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mtpk::Primality::mod_pow</a></div><div class="ttdeci">int64_t mod_pow(int64_t base, int64_t exponent, int64_t mod)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00054">primes.cpp:54</a></div></div>
 <div class="ttc" id="alogarithms_8cpp_html_ac0dea57f48a9c9d646e527032822eaee"><div class="ttname"><a href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a></div><div class="ttdeci">mtpk::Primality __LOG_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00051">logarithms.cpp:51</a></div></div>
+<div class="ttc" id="anamespacepy_html_afe6292def0c1adc1a024d49afa7223b9"><div class="ttname"><a href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py.n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="py_8py_source.html#l00038">py.py:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

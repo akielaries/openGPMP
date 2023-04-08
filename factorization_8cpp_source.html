@@ -152,30 +152,30 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    return results;</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">}*/</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">   82</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">mtpk::Factorization::pollard_rho</a>(int64_t n) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">   82</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">mtpk::Factorization::pollard_rho</a>(int64_t <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/* initialize random seed */</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::mt19937_64 rng(</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::chrono::steady_clock::now().time_since_epoch().count());</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">/* no prime divisor for 1 */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (n == 1) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> == 1) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">/* even number means one of the divisors is 2 */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (n % 2 == 0) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> % 2 == 0) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> 2;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">/* we will pick from the range [2, N) */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::uniform_int_distribution&lt;int64_t&gt; unif_dist(2, n - 1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::uniform_int_distribution&lt;int64_t&gt; unif_dist(2, <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> - 1);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    int64_t x = unif_dist(rng);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    int64_t y = x;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/* the constant in f(x).</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">     * Algorithm can be re-run with a different c</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">     * if it throws failure for a composite. */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::uniform_int_distribution&lt;int64_t&gt; c_dist(1, n - 1);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::uniform_int_distribution&lt;int64_t&gt; c_dist(1, <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a> - 1);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    int64_t c = c_dist(rng);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">/* Initialize candidate divisor (or result) */</span></div>
@@ -185,28 +185,28 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">       If n is prime, return n */</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">while</span> (divisor == 1) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">/* Tortoise Move: x(i+1) = f(x(i)) */</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        x = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(x, 2, n) + c;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (x &gt;= n) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            x -= n;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        x = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(x, 2, <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) + c;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (x &gt;= <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            x -= <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">/* Hare Move: y(i+1) = f(f(y(i))) */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        y = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(y, 2, n) + c;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (y &gt;= n) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            y -= n;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        y = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(y, 2, <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) + c;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (y &gt;= <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            y -= <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        y = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(y, 2, n) + c;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (y &gt;= n) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            y -= n;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        y = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mod_pow</a>(y, 2, <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) + c;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (y &gt;= <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            y -= <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">/* check gcd of |x-y| and n */</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        divisor = std::gcd(abs(x - y), n);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        divisor = std::gcd(abs(x - y), <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">/* retry if the algorithm fails to find prime factor</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">         * with chosen x and c */</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (divisor == n) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">pollard_rho</a>(n);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (divisor == <a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">pollard_rho</a>(<a class="code" href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">n</a>);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
@@ -216,10 +216,11 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1Factorization_html"><div class="ttname"><a href="classmtpk_1_1Factorization.html">mtpk::Factorization</a></div><div class="ttdef"><b>Definition:</b> <a href="factorization_8hpp_source.html#l00055">factorization.hpp:55</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Factorization_html_a10d5628de0defa360588a3adab40f0bb"><div class="ttname"><a href="classmtpk_1_1Factorization.html#a10d5628de0defa360588a3adab40f0bb">mtpk::Factorization::pollard_rho</a></div><div class="ttdeci">int64_t pollard_rho(int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00082">factorization.cpp:82</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Primality_html"><div class="ttname"><a href="classmtpk_1_1Primality.html">mtpk::Primality</a></div><div class="ttdef"><b>Definition:</b> <a href="primes_8hpp_source.html#l00051">primes.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_ac752473e96535f44baac2d32c1632bd8"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mtpk::Primality::mod_pow</a></div><div class="ttdeci">int64_t mod_pow(int64_t base, int64_t exponent, int64_t mod)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00053">primes.cpp:53</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Primality_html_ac752473e96535f44baac2d32c1632bd8"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac752473e96535f44baac2d32c1632bd8">mtpk::Primality::mod_pow</a></div><div class="ttdeci">int64_t mod_pow(int64_t base, int64_t exponent, int64_t mod)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00054">primes.cpp:54</a></div></div>
 <div class="ttc" id="afactorization_8cpp_html_a45872043df6439710271af8a0a90b826"><div class="ttname"><a href="factorization_8cpp.html#a45872043df6439710271af8a0a90b826">__FACTOR__</a></div><div class="ttdeci">mtpk::Factorization __FACTOR__</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00059">factorization.cpp:59</a></div></div>
 <div class="ttc" id="afactorization_8cpp_html_ac90b1994873aa6019d94bf45d62bc0d5"><div class="ttname"><a href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a></div><div class="ttdeci">mtpk::Primality __FACT_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00060">factorization.cpp:60</a></div></div>
 <div class="ttc" id="afactorization_8cpp_html_ad970c8bba7af7a85019e4d3eb88fa6fa"><div class="ttname"><a href="factorization_8cpp.html#ad970c8bba7af7a85019e4d3eb88fa6fa">__FACT_BASICS__</a></div><div class="ttdeci">mtpk::Basics __FACT_BASICS__</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00058">factorization.cpp:58</a></div></div>
+<div class="ttc" id="anamespacepy_html_afe6292def0c1adc1a024d49afa7223b9"><div class="ttname"><a href="namespacepy.html#afe6292def0c1adc1a024d49afa7223b9">py.n</a></div><div class="ttdeci">int n</div><div class="ttdef"><b>Definition:</b> <a href="py_8py_source.html#l00038">py.py:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

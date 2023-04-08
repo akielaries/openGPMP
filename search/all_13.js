@@ -43,7 +43,7 @@ var searchData=
   ['stats_424',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
   ['stochastic_5fdescent_425',['stochastic_descent',['../classmtpk_1_1ml_1_1Optimizers.html#a504082a8f6fd9915210621bb5e925953',1,'mtpk::ml::Optimizers']]],
   ['stolarskymean_426',['stolarskyMean',['../classmtpk_1_1Stats.html#acf2438fb3b311aab3570eaa95b7bb14b',1,'mtpk::Stats']]],
-  ['stop_427',['stop',['../classThreadPool.html#a04e2cc4b3c979b4e054071436988d23d',1,'ThreadPool::stop()'],['../classmtpk_1_1ThreadPool.html#aecbc9b10eeeefb65529bc103a67b2b86',1,'mtpk::ThreadPool::stop()']]],
+  ['stop_427',['stop',['../classThreadPool.html#a04e2cc4b3c979b4e054071436988d23d',1,'ThreadPool']]],
   ['store_5fhash_428',['store_hash',['../classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0',1,'mtpk::RC4']]],
   ['sub_429',['sub',['../classmtpk_1_1Matrix.html#ac1c5e89b18de38e09deb85e19deb074f',1,'mtpk::Matrix']]],
   ['success_430',['success',['../classCompany.html#a9e3e963105856de6488014086bac5198',1,'Company']]],
