@@ -148,8 +148,8 @@ $(function() {
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint64_t <a class="code" href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">pollard_rho</a>(uint64_t n);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/*  */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::vector&lt;std::future&lt;uint64_t&gt;&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classmtpk_1_1Factorization.html#a06b609f4bf05a6baff7d94f26caef621">   85</a></span>&#160;    <a class="code" href="classmtpk_1_1Factorization.html#a06b609f4bf05a6baff7d94f26caef621">pollard_rho_thread</a>(<span class="keyword">const</span> std::vector&lt;uint64_t&gt; &amp;nums_to_factorize);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//std::vector&lt;std::future&lt;uint64_t&gt;&gt;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">//pollard_rho_thread(const std::vector&lt;uint64_t&gt; &amp;nums_to_factorize);</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">/* Lenstra elliptic-curve factorization */</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// uint64_t LECF(uint64_t n);</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
@@ -160,7 +160,6 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmtpk_1_1Factorization_html"><div class="ttname"><a href="classmtpk_1_1Factorization.html">mtpk::Factorization</a></div><div class="ttdef"><b>Definition:</b> <a href="factorization_8hpp_source.html#l00056">factorization.hpp:56</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Factorization_html_a06b609f4bf05a6baff7d94f26caef621"><div class="ttname"><a href="classmtpk_1_1Factorization.html#a06b609f4bf05a6baff7d94f26caef621">mtpk::Factorization::pollard_rho_thread</a></div><div class="ttdeci">std::vector&lt; std::future&lt; uint64_t &gt; &gt; pollard_rho_thread(const std::vector&lt; uint64_t &gt; &amp;nums_to_factorize)</div></div>
 <div class="ttc" id="aclassmtpk_1_1Factorization_html_a3ff5e6f6789d9f05892f64066eab23c2"><div class="ttname"><a href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">mtpk::Factorization::pollard_rho</a></div><div class="ttdeci">uint64_t pollard_rho(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00082">factorization.cpp:82</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
