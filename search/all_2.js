@@ -20,7 +20,7 @@ var searchData=
   ['bias2_56',['bias2',['../classmtpk_1_1AutoEncoder.html#a30749c2cf05a10684f8f2b1e58a6e29a',1,'mtpk::AutoEncoder']]],
   ['bias_5fvectors_57',['bias_vectors',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254',1,'mtpk::ml::SecondaryMLP']]],
   ['bits_58',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
-  ['bsgs_59',['BSGS',['../classmtpk_1_1Logarithms.html#ad9617755709327ca91e0eca224840ed7',1,'mtpk::Logarithms']]],
+  ['bsgs_59',['BSGS',['../classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128',1,'mtpk::Logarithms']]],
   ['byte_5flimit_60',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]],
   ['byte_5fswap_61',['byte_swap',['../classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332',1,'mtpk::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()']]]
 ];

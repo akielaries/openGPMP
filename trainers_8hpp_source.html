@@ -125,8 +125,8 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1Trainers.html#adc82876f77b5a56e69d42a1f22a20cfc">   64</a></span>&#160;    int64_t <a class="code" href="classmtpk_1_1ml_1_1Trainers.html#adc82876f77b5a56e69d42a1f22a20cfc">test_PrimaryMLP</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fname);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">   72</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">init_SecondaryMLP</a>(<span class="keywordtype">size_t</span> inputs, <span class="keywordtype">size_t</span> outputs,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           <span class="keywordtype">size_t</span> hidden_layer_units, int64_t hidden_layers,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                           <span class="keywordtype">float</span> lr) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           <span class="keywordtype">size_t</span> hidden_layer_units,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                           int64_t hidden_layers, <span class="keywordtype">float</span> lr) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::vector&lt;size_t&gt; layer_units;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        layer_units.push_back(inputs);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
@@ -139,19 +139,21 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> model_SecondaryMLP;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">   90</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">train_SecondaryMLP</a>(<span class="keyword">auto</span> initialized_model, <span class="keyword">const</span> std::string data_file,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                            uint64_t iterations, uint64_t print_increment) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        std::fstream input(data_file.c_str());</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// namespace ml</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">   90</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">train_SecondaryMLP</a>(<span class="keyword">auto</span> initialized_model,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                            <span class="keyword">const</span> std::string data_file,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                            uint64_t iterations,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                            uint64_t print_increment) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::fstream input(data_file.c_str());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace ml</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html">mtpk::ml::SecondaryMLP</a></div><div class="ttdoc">Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00146">mlp_net.hpp:146</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html">mtpk::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html_a07e9a39d8f34995c08667d3634a08155"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">mtpk::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00072">trainers.hpp:72</a></div></div>

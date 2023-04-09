@@ -115,21 +115,21 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Logarithms.html">Logarithms</a> {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/* integer factorization */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Logarithms.html#a752af6f60335222812f416f4dc5ac322">pollard_rho_log</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> m);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">pollard_rho_log</a>(uint64_t a, uint64_t b, uint64_t m);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/* Baby-Step Giant-Step */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Logarithms.html#ad9617755709327ca91e0eca224840ed7">BSGS</a>(int64_t a, int64_t b, int64_t m);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">BSGS</a>(uint64_t a, uint64_t b, uint64_t m);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">/*  */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// int64_t</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// uint64_t</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace mtpk</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassmtpk_1_1Logarithms_html"><div class="ttname"><a href="classmtpk_1_1Logarithms.html">mtpk::Logarithms</a></div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8hpp_source.html#l00048">logarithms.hpp:48</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Logarithms_html_a752af6f60335222812f416f4dc5ac322"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#a752af6f60335222812f416f4dc5ac322">mtpk::Logarithms::pollard_rho_log</a></div><div class="ttdeci">int64_t pollard_rho_log(int a, int b, int m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00058">logarithms.cpp:58</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Logarithms_html_ad9617755709327ca91e0eca224840ed7"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ad9617755709327ca91e0eca224840ed7">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">int64_t BSGS(int64_t a, int64_t b, int64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00098">logarithms.cpp:98</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Logarithms_html_a57f2e7771487491fe611f2ba0e41bcce"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a></div><div class="ttdeci">uint64_t pollard_rho_log(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00059">logarithms.cpp:59</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Logarithms_html_ab28c97e5d0880ee42d3af2c0358a1128"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00100">logarithms.cpp:100</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
