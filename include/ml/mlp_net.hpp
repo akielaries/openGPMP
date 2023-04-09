@@ -116,8 +116,8 @@ class PrimaryMLP {
     /* returns the computed error from backwards propogation */
     void back_prop_err();
     /* simulate the Multi-Layer Perceptron Neual Network */
-    void simulate(long double *input, long double *output, long double *target,
-                  bool training);
+    void simulate(long double *input, long double *output,
+                  long double *target, bool training);
 
   public:
     long double _Eta;
@@ -170,7 +170,9 @@ template <typename T> class SecondaryMLP {
      *
      * @param[in] x : (float)
      */
-    inline long double sigmoid_deriv(long double x) { return (x * (1 - x)); }
+    inline long double sigmoid_deriv(long double x) {
+        return (x * (1 - x));
+    }
 
     std::vector<size_t> layer_units;
     std::vector<Matrix<T>> bias_vectors;
@@ -247,7 +249,8 @@ template <typename T> class SecondaryMLP {
             // calculate errors for previous layer
             auto wt = wt_mtx[i].T();
             auto prior_errs = wt.mult(err);
-            auto outputs_d = activations[i + 1].apply_function(sigmoid_deriv);
+            auto outputs_d =
+                activations[i + 1].apply_function(sigmoid_deriv);
             auto gradients = err.hadamard(outputs_d);
             gradients = gradients.scalar_mult(lr);
             auto trans_a = activations[i].T();

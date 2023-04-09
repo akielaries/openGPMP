@@ -19,7 +19,9 @@ class Vector {
     Vector operator-(Vector v); // Subtraction
     int operator^(Vector v);    // Dot Product
     Vector operator*(Vector v); // Cross Product
-    float magnitude() { return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2)); }
+    float magnitude() {
+        return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+    }
     friend ostream &operator<<(ostream &out, const Vector &v);
     // To output the Vector
 };

@@ -24,8 +24,8 @@ int main() {
     c_end = clock();
     c_cpu_time_used = ((double)(c_end - c_start)) / CLOCKS_PER_SEC;
 
-    printf("C benchmark: Performed %d operations in %f seconds.\n", NUM_OPS,
-           c_cpu_time_used);
+    printf("C benchmark: Performed %d operations in %f seconds.\n",
+           NUM_OPS, c_cpu_time_used);
 
     // C++ benchmark
     cpp_start = std::chrono::high_resolution_clock::now();
@@ -39,12 +39,13 @@ int main() {
 
     cpp_end = std::chrono::high_resolution_clock::now();
     cpp_cpu_time_used =
-        std::chrono::duration_cast<std::chrono::duration<double>>(cpp_end -
-                                                                  cpp_start)
+        std::chrono::duration_cast<std::chrono::duration<double>>(
+            cpp_end - cpp_start)
             .count();
 
-    std::cout << "C++ benchmark: Performed " << NUM_OPS << " operations in "
-              << cpp_cpu_time_used << " seconds." << std::endl;
+    std::cout << "C++ benchmark: Performed " << NUM_OPS
+              << " operations in " << cpp_cpu_time_used << " seconds."
+              << std::endl;
 
     return 0;
 }

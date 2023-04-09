@@ -15,14 +15,21 @@ double calc(func_t func, int n) {
     return a + temp;
 }
 
-coeff_t sqrt2(int n) { return coeff_t(n > 0 ? 2 : 1, 1); }
+coeff_t sqrt2(int n) {
+    return coeff_t(n > 0 ? 2 : 1, 1);
+}
 
-coeff_t napier(int n) { return coeff_t(n > 0 ? n : 2, n > 1 ? n - 1 : 1); }
+coeff_t napier(int n) {
+    return coeff_t(n > 0 ? n : 2, n > 1 ? n - 1 : 1);
+}
 
-coeff_t pi(int n) { return coeff_t(n > 0 ? 6 : 3, (2 * n - 1) * (2 * n - 1)); }
+coeff_t pi(int n) {
+    return coeff_t(n > 0 ? 6 : 3, (2 * n - 1) * (2 * n - 1));
+}
 
 int main() {
-    std::streamsize old_prec = std::cout.precision(15); // set output digits
+    std::streamsize old_prec =
+        std::cout.precision(15); // set output digits
     std::cout << calc(sqrt2, 20) << '\n'
               << calc(napier, 15) << '\n'
               << calc(pi, 10000) << '\n'

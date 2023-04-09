@@ -37,8 +37,8 @@
  * functionalities of the Number Theory module
  *
  */
-#include "../../include/nt/primes.hpp"
 #include "../../include/nt/factorization.hpp"
+#include "../../include/nt/primes.hpp"
 #include <gtest/gtest.h>
 #include <iostream>
 
@@ -47,5 +47,7 @@ namespace {
 mtpk::Primality __TEST_PRIMES__;
 mtpk::Factorization __TEST_FACTORS__;
 
-TEST(prime_test, is_prime) { std::cout << "HELLO" << std::endl; }
+TEST(factorizations, factorization) {
+    std::cout << "HELLO" << std::endl;
+}
 } // namespace

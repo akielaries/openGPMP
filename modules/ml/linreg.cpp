@@ -77,7 +77,9 @@ void mtpk::LinearRegression::calculate_constant() {
 }
 
 // Function that return the number of entries (xi, yi) in the data set
-int64_t mtpk::LinearRegression::data_size() { return x.size(); }
+int64_t mtpk::LinearRegression::data_size() {
+    return x.size();
+}
 
 // Function that return the coefficient/slope of the best fitting line
 long double mtpk::LinearRegression::return_coeffecient() {
@@ -99,8 +101,8 @@ void mtpk::LinearRegression::best_fit() {
         calculate_coeffecient();
         calculate_constant();
     }
-    std::cout << "The best fitting line is y = " << coeff << "x + " << constant
-              << std::endl;
+    std::cout << "The best fitting line is y = " << coeff << "x + "
+              << constant << std::endl;
 }
 
 // Function to take input from the dataset

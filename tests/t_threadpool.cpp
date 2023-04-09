@@ -111,22 +111,9 @@ TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
 
     for (int i = 0; i < numTasks; ++i) {
         auto task = []() { /* do something */ };
-        pool.enqueue(task);
+        auto task2 = pool.enqueue(task);
+        task2.wait();
     }
-
-    // Wait for all tasks to complete
 }
-/*
-TEST(ThreadPoolTest, TestEnqueueWithThrowingTasks) {
-    ThreadPool pool(2);
-
-    auto task1 = []() { throw std::runtime_error("error"); };
-    auto task2 = []() -> int { throw std::runtime_error("error"); };
-    auto task3 = []() -> std::string { throw std::runtime_error("error"); };
-
-    EXPECT_THROW(pool.enqueue(task1), std::runtime_error);
-    EXPECT_THROW(pool.enqueue(task2), std::runtime_error);
-    EXPECT_THROW(pool.enqueue(task3), std::runtime_error);
-}*/
 
 } // namespace

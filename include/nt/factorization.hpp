@@ -40,6 +40,7 @@
 
 #ifndef FACTORIZATION_HPP
 #define FACTORIZATION_HPP
+
 #include "../threadpool.hpp"
 #include <condition_variable>
 #include <cstdint>
@@ -54,7 +55,7 @@
 namespace mtpk {
 class Factorization {
   public:
-    // std::vector<int64_t> pollard_rho(const std::vector<int64_t>&
+    // std::vector<uint64_t> pollard_rho(const std::vector<uint64_t>&
     // nums_to_factorize);
     /* integer factorization */
 
@@ -75,15 +76,15 @@ class Factorization {
      * @brief This function implements the Pollard Rho algorithm for
      * integer factorization.
      * @param n The integer to be factorized.
-     * @return int64_t One of the prime factors of n.
+     * @return uint64_t One of the prime factors of n.
      */
-    int64_t pollard_rho(int64_t n);
+    uint64_t pollard_rho(uint64_t n);
 
     /*  */
-    std::vector<std::future<int64_t>>
-    pollard_rho_thread(const std::vector<int64_t> &nums_to_factorize);
+    std::vector<std::future<uint64_t>>
+    pollard_rho_thread(const std::vector<uint64_t> &nums_to_factorize);
     /* Lenstra elliptic-curve factorization */
-    // int64_t LECF(int64_t n);
+    // uint64_t LECF(uint64_t n);
 
     /*  */
 };

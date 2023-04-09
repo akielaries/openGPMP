@@ -11,14 +11,16 @@
 
 class ThreadPool {
   public:
-    ThreadPool() : ThreadPool(std::thread::hardware_concurrency()) {}
+    ThreadPool() : ThreadPool(std::thread::hardware_concurrency()) {
+    }
     explicit ThreadPool(int numThreads) : stop(false) {
         for (int i = 0; i < numThreads; ++i) {
             workers.emplace_back([this] {
                 for (;;) {
                     std::function<void()> task;
                     {
-                        std::unique_lock<std::mutex> lock(this->queue_mutex);
+                        std::unique_lock<std::mutex> lock(
+                            this->queue_mutex);
                         this->condition.wait(lock, [this] {
                             return this->stop || !this->tasks.empty();
                         });

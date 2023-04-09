@@ -48,13 +48,13 @@ namespace mtpk {
 class Logarithms {
   public:
     /* integer factorization */
-    int64_t pollard_rho_log(int a, int b, int m);
+    uint64_t pollard_rho_log(uint64_t a, uint64_t b, uint64_t m);
 
     /* Baby-Step Giant-Step */
-    int64_t BSGS(int64_t a, int64_t b, int64_t m);
+    uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m);
 
     /*  */
-    // int64_t
+    // uint64_t
 };
 
 } // namespace mtpk

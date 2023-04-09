@@ -55,7 +55,8 @@ int64_t mtpk::ml::PrimaryMLP::rand_int(int64_t hi, int64_t low) {
 }
 
 /* verify generated random is a real number */
-long double mtpk::ml::PrimaryMLP::rand_real(long double low, long double hi) {
+long double mtpk::ml::PrimaryMLP::rand_real(long double low,
+                                            long double hi) {
     return ((long double)rand() / RAND_MAX) * (hi - low) + low;
 }
 
@@ -129,7 +130,9 @@ mtpk::ml::PrimaryMLP::~PrimaryMLP() {
                 }
 
                 if (layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved) {
-                    delete[] layer_ptr[_LAYER].neuron_ptr[_NEURON].wt_saved;
+                    delete[] layer_ptr[_LAYER]
+                        .neuron_ptr[_NEURON]
+                        .wt_saved;
                 }
             }
         }

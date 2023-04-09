@@ -77,7 +77,9 @@ template <typename Type> class Matrix {
         data.resize(cols * rows, Type());
         dim = std::make_tuple(rows, cols);
     }
-    Matrix() : cols(0), rows(0), data({}) { dim = {rows, cols}; };
+    Matrix() : cols(0), rows(0), data({}) {
+        dim = {rows, cols};
+    };
 
     /**
      * @brief Overload operator
@@ -167,7 +169,9 @@ template <typename Type> class Matrix {
         }
         return res;
     }
-    Matrix operator+(Matrix &target) { return add(target); }
+    Matrix operator+(Matrix &target) {
+        return add(target);
+    }
 
     /*
      * Addition of scalars
@@ -201,7 +205,9 @@ template <typename Type> class Matrix {
         Matrix target_neg = -target;
         return add(target_neg);
     }
-    Matrix operator-(Matrix &target) { return sub(target); }
+    Matrix operator-(Matrix &target) {
+        return sub(target);
+    }
 
     Matrix<unsigned short> operator==(Matrix &target) {
         assert(dim == target.dim);
@@ -249,7 +255,9 @@ template <typename Type> class Matrix {
         return transposed;
     }
 
-    Matrix T() { return (*this).transpose(); }
+    Matrix T() {
+        return (*this).transpose();
+    }
 
     /*
      * Compute sum of matrix by element

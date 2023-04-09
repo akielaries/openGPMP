@@ -46,5 +46,7 @@ namespace {
 // declare primality class object
 mtpk::Primality __TEST_PRIMES__;
 
-TEST(prime_test, is_prime) { std::cout << "HELLO" << std::endl; }
+TEST(logarithms, pollard_rho) {
+    std::cout << "HELLO" << std::endl;
+}
 } // namespace

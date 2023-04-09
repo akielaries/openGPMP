@@ -38,5 +38,7 @@
  */
 
 class DataBlock {
-    DataBlock() { return 0; }
+    DataBlock() {
+        return 0;
+    }
 };

@@ -39,7 +39,6 @@ set(TEST_FILES
     nt/t_factorization.cpp
     nt/t_logarithms.cpp
     t_threadpool.cpp
-
 )
 
 # create executable

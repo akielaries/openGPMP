@@ -65,11 +65,11 @@ mtpk::Primality __FACT_PRIMES__;
 #endif
 
 /*
-std::vector<std::future<int64_t>> mtpk::Factorization::pollard_rho_thread(
-    const std::vector<int64_t> &nums_to_factorize) {
+std::vector<std::future<uint64_t>> mtpk::Factorization::pollard_rho_thread(
+    const std::vector<uint64_t> &nums_to_factorize) {
     mtpk::ThreadPool pool(2);
     mtpk::Factorization factors;
-    std::vector<std::future<int64_t>> results;
+    std::vector<std::future<uint64_t>> results;
 
     for (const auto &num : nums_to_factorize) {
         results.emplace_back(pool.enqueue(
@@ -79,7 +79,7 @@ std::vector<std::future<int64_t>> mtpk::Factorization::pollard_rho_thread(
     return results;
 }*/
 
-int64_t mtpk::Factorization::pollard_rho(int64_t n) {
+uint64_t mtpk::Factorization::pollard_rho(uint64_t n) {
     /* initialize random seed */
     std::mt19937_64 rng(
         std::chrono::steady_clock::now().time_since_epoch().count());
@@ -95,18 +95,18 @@ int64_t mtpk::Factorization::pollard_rho(int64_t n) {
     }
 
     /* we will pick from the range [2, N) */
-    std::uniform_int_distribution<int64_t> unif_dist(2, n - 1);
-    int64_t x = unif_dist(rng);
-    int64_t y = x;
+    std::uniform_int_distribution<uint64_t> unif_dist(2, n - 1);
+    uint64_t x = unif_dist(rng);
+    uint64_t y = x;
 
     /* the constant in f(x).
      * Algorithm can be re-run with a different c
      * if it throws failure for a composite. */
-    std::uniform_int_distribution<int64_t> c_dist(1, n - 1);
-    int64_t c = c_dist(rng);
+    std::uniform_int_distribution<uint64_t> c_dist(1, n - 1);
+    uint64_t c = c_dist(rng);
 
     /* Initialize candidate divisor (or result) */
-    int64_t divisor = 1;
+    uint64_t divisor = 1;
 
     /* until the prime factor isn't obtained.
        If n is prime, return n */
