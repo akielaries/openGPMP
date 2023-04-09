@@ -33,7 +33,7 @@ void testing_miller() {
               << std::endl;
 
     for (uint64_t n : nums) {
-        if (prims.miller_rabin_prime(n, 120000))
+        if (prims.miller_rabin_prime(n, 1200000))
             std::cout << n << " is prime" << std::endl;
         else
             std::cout << n << " is composite" << std::endl;
@@ -48,6 +48,7 @@ void testing_miller() {
                      .count()
               << " ms" << std::endl;
 }
+
 void testing_miller_thread() {
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
@@ -73,7 +74,7 @@ void testing_miller_thread() {
     mtpk::PrimalityTest prim;
     for (auto n : nums) {
         miller_results.emplace_back(pool->enqueue(
-            [&prim, n]() { return prim.miller_rabin_prime(n, 120000); }));
+            [&prim, n]() { return prim.miller_rabin_prime(n, 1200000); }));
     }
 
     // Print the results
