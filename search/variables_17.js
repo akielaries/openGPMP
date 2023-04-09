@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['z_1030',['z',['../classmtpk_1_1SVC.html#ad47dfe38c8e7351c652caa4b317bd482',1,'mtpk::SVC']]],
-  ['z2_1031',['z2',['../classmtpk_1_1AutoEncoder.html#a92d6fdbde68999fe3faae4859ef00f2d',1,'mtpk::AutoEncoder']]]
+  ['z_1031',['z',['../classmtpk_1_1SVC.html#ad47dfe38c8e7351c652caa4b317bd482',1,'mtpk::SVC']]],
+  ['z2_1032',['z2',['../classmtpk_1_1AutoEncoder.html#a92d6fdbde68999fe3faae4859ef00f2d',1,'mtpk::AutoEncoder']]]
 ];
