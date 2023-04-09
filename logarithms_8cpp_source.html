@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/logarithms.hpp&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;../../include/arithmetic.hpp&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/primes.hpp&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/prime_test.hpp&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
@@ -122,7 +122,7 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// primes object for this Logarithms file</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">   52</a></span>&#160;<a class="code" href="classmtpk_1_1Primality.html">mtpk::Primality</a> <a class="code" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">   52</a></span>&#160;<a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// OSX uses srand() opposed to rand()</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef __APPLE__</span></div>
@@ -177,12 +177,12 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// store all values of a^(n*i) of LHS</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = n; i &gt;= 1; --i) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        value[<a class="code" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mod_pow</a>(a, i * n, m)] = i;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        value[<a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, i * n, m)] = i;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span> (uint64_t j = 0; j &lt; n; ++j) {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">// calculate (a ^ j) * b and check</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        uint64_t cur = (<a class="code" href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mod_pow</a>(a, j, m) * b) % m;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        uint64_t cur = (<a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, j, m) * b) % m;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// If collision occurs i.e., LHS = RHS</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (value[cur]) {</div>
@@ -197,9 +197,9 @@ $(function() {
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="ttc" id="aclassmtpk_1_1Logarithms_html_a57f2e7771487491fe611f2ba0e41bcce"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a></div><div class="ttdeci">uint64_t pollard_rho_log(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00059">logarithms.cpp:59</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Logarithms_html_ab28c97e5d0880ee42d3af2c0358a1128"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00100">logarithms.cpp:100</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html"><div class="ttname"><a href="classmtpk_1_1Primality.html">mtpk::Primality</a></div><div class="ttdef"><b>Definition:</b> <a href="primes_8hpp_source.html#l00051">primes.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_ac14406436d1c66f67bbad17ad983fd2a"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mtpk::Primality::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00068">primes.cpp:68</a></div></div>
-<div class="ttc" id="alogarithms_8cpp_html_ac0dea57f48a9c9d646e527032822eaee"><div class="ttname"><a href="logarithms_8cpp.html#ac0dea57f48a9c9d646e527032822eaee">__LOG_PRIMES__</a></div><div class="ttdeci">mtpk::Primality __LOG_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00052">logarithms.cpp:52</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a></div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8hpp_source.html#l00051">prime_test.hpp:51</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a6fed0cc0fb9ae1f51b1eb6338486fbb9"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00068">prime_test.cpp:68</a></div></div>
+<div class="ttc" id="alogarithms_8cpp_html_a6575e29a564fdb9ed50cc966408043a3"><div class="ttname"><a href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a></div><div class="ttdeci">mtpk::PrimalityTest __LOG_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00052">logarithms.cpp:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -138,17 +138,17 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">       If n is prime, return n */</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">while</span> (divisor == 1) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">/* Tortoise Move: x(i+1) = f(x(i)) */</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        x = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mod_pow</a>(x, 2, n) + c;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        x = <a class="code" href="factorization_8cpp.html#abe138010c8c76a71f901e2f9920108fa">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(x, 2, n) + c;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (x &gt;= n) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            x -= n;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">/* Hare Move: y(i+1) = f(f(y(i))) */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        y = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mod_pow</a>(y, 2, n) + c;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        y = <a class="code" href="factorization_8cpp.html#abe138010c8c76a71f901e2f9920108fa">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(y, 2, n) + c;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (y &gt;= n) {</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            y -= n;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        y = <a class="code" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mod_pow</a>(y, 2, n) + c;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        y = <a class="code" href="factorization_8cpp.html#abe138010c8c76a71f901e2f9920108fa">__FACT_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(y, 2, n) + c;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (y &gt;= n) {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            y -= n;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
@@ -166,10 +166,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">return</span> divisor;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
 <div class="ttc" id="aclassmtpk_1_1Factorization_html_a3ff5e6f6789d9f05892f64066eab23c2"><div class="ttname"><a href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">mtpk::Factorization::pollard_rho</a></div><div class="ttdeci">uint64_t pollard_rho(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00082">factorization.cpp:82</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_ac14406436d1c66f67bbad17ad983fd2a"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mtpk::Primality::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00068">primes.cpp:68</a></div></div>
-<div class="ttc" id="afactorization_8cpp_html_ac90b1994873aa6019d94bf45d62bc0d5"><div class="ttname"><a href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a></div><div class="ttdeci">mtpk::Primality __FACT_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00060">factorization.cpp:60</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a6fed0cc0fb9ae1f51b1eb6338486fbb9"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00068">prime_test.cpp:68</a></div></div>
+<div class="ttc" id="afactorization_8cpp_html_abe138010c8c76a71f901e2f9920108fa"><div class="ttname"><a href="factorization_8cpp.html#abe138010c8c76a71f901e2f9920108fa">__FACT_PRIMES__</a></div><div class="ttdeci">mtpk::PrimalityTest __FACT_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00060">factorization.cpp:60</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="factorization_8cpp.html#ac90b1994873aa6019d94bf45d62bc0d5">__FACT_PRIMES__</a>, and <a class="el" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mtpk::Primality::mod_pow()</a>.</p>
+<p class="reference">References <a class="el" href="factorization_8cpp.html#abe138010c8c76a71f901e2f9920108fa">__FACT_PRIMES__</a>, and <a class="el" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow()</a>.</p>
 
 </div>
 </div>

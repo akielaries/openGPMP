@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['primality_541',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
-  ['primarymlp_542',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
+  ['naivenet_552',['NaiveNet',['../classmtpk_1_1NaiveNet.html',1,'mtpk']]],
+  ['nearestneighbor_553',['NearestNeighbor',['../classmtpk_1_1NearestNeighbor.html',1,'mtpk']]],
+  ['neuron_554',['neuron',['../structmtpk_1_1ml_1_1neuron.html',1,'mtpk::ml']]],
+  ['numericalanalysis_555',['NumericalAnalysis',['../classmtpk_1_1NumericalAnalysis.html',1,'mtpk']]]
 ];

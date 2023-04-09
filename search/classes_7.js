@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['matrix_532',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk']]],
-  ['mtx_533',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]],
-  ['myclass_534',['MyClass',['../classMyClass.html',1,'']]]
+  ['kf_5fcv_542',['KF_CV',['../classmtpk_1_1KF__CV.html',1,'mtpk']]],
+  ['knn_543',['kNN',['../classmtpk_1_1kNN.html',1,'mtpk']]],
+  ['kohonennet_544',['KohonenNet',['../classmtpk_1_1KohonenNet.html',1,'mtpk']]]
 ];

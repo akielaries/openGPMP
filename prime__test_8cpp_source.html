@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/nt/primes.cpp Source File</title>
+<title>openMTPK: modules/nt/prime_test.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,10 +68,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">primes.cpp</div>  </div>
+<div class="title">prime_test.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="primes_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<a href="prime__test_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Some core concepts seen in Number Theory primarily prime number</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * based equations, formulas, algorithms.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/primes.hpp&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/prime_test.hpp&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;../../include/arithmetic.hpp&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
@@ -121,11 +121,11 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// declare Basics and Primality class objects</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">   51</a></span>&#160;<a class="code" href="classmtpk_1_1Basics.html">mtpk::Basics</a> <a class="code" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8">   52</a></span>&#160;<a class="code" href="classmtpk_1_1Primality.html">mtpk::Primality</a> <a class="code" href="primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8">prim</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="prime__test_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">   51</a></span>&#160;<a class="code" href="classmtpk_1_1Basics.html">mtpk::Basics</a> <a class="code" href="prime__test_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">   52</a></span>&#160;<a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Calculates (a * b) mod m</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#adb97d9964f63ec35af865acc83a2a158">   55</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Primality.html#adb97d9964f63ec35af865acc83a2a158">mtpk::Primality::mod_mul</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#affe152026afe8be056d56f77138da6f1">   55</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1PrimalityTest.html#affe152026afe8be056d56f77138da6f1">mtpk::PrimalityTest::mod_mul</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    uint64_t res = 0;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (b &amp; 1) {</div>
@@ -138,7 +138,7 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// Calculates (a ^ b) mod m</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">   68</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mtpk::Primality::mod_pow</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">   68</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint64_t res = 1;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    a %= m;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
@@ -152,7 +152,7 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">uint64_t mtpk::Primality::mod_pow(uint64_t base, uint64_t exponent,</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">uint64_t mtpk::PrimalityTest::mod_pow(uint64_t base, uint64_t exponent,</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">                                 uint64_t mod) {</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">    uint64_t x = 1;</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    uint64_t y = base;</span></div>
@@ -168,7 +168,7 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">    return x;</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">}*/</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a2f9d2ef31fd5103272d936e1bddeee85">   98</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#a2f9d2ef31fd5103272d936e1bddeee85">mtpk::Primality::is_prime</a>(uint64_t n) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">   98</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">mtpk::PrimalityTest::is_prime</a>(uint64_t n) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 1)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
@@ -183,7 +183,7 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> * determining if a given number is likely to be prime</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a330a006deb9656166564dd7e571d9e30">  113</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#a330a006deb9656166564dd7e571d9e30">mtpk::Primality::compute_miller_rabin</a>(uint64_t d, uint64_t n) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#a79b0e1235cde17a893c0d9dd59ab694b">  113</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#a79b0e1235cde17a893c0d9dd59ab694b">mtpk::PrimalityTest::compute_miller_rabin</a>(uint64_t d, uint64_t n) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Pick a random number in [2..n-2] Corner cases make sure that n</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// &gt; 4</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    uint64_t a = 2 + rand() % (n - 4);</div>
@@ -220,8 +220,8 @@ $(function() {
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a2e472dcda105ddc85eab8abea2b5948a">  150</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#a2e472dcda105ddc85eab8abea2b5948a">mtpk::Primality::witness</a>(uint64_t n, uint64_t d, uint64_t a,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                              uint64_t s) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#acdf45aec6e905ea12470b6e9c48393b2">  150</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#acdf45aec6e905ea12470b6e9c48393b2">mtpk::PrimalityTest::witness</a>(uint64_t n, uint64_t d, uint64_t a,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                  uint64_t s) {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    uint64_t x = mod_pow(a, d, n);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (x == 1 || x == n - 1) {</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -235,7 +235,7 @@ $(function() {
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a643923bdd1d6191ee85e3cf3a310a6b7">  165</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#a643923bdd1d6191ee85e3cf3a310a6b7">mtpk::Primality::miller_rabin_prime</a>(</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">  165</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">mtpk::PrimalityTest::miller_rabin_prime</a>(</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    uint64_t n, uint64_t iters = 10 <span class="comment">/* default */</span>) {</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (n &lt; 2) {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -253,15 +253,15 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; iters; i++) {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        uint64_t a = rand() % (n - 3) + 2;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="modules_2nt_2lucas_8cpp.html#a555c60b4479ce23bcb9e69c5fa473b97">witness</a>(n, d, a, s)) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (witness(n, d, a, s)) {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a6618fd82e24ae4276f81a9f692073ed0">  190</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Primality.html#a6618fd82e24ae4276f81a9f692073ed0">mtpk::Primality::miller_rabin</a>(uint64_t iters, uint64_t min_val,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                   uint64_t max_val) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">  190</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">mtpk::PrimalityTest::miller_rabin</a>(uint64_t iters, uint64_t min_val,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                                       uint64_t max_val) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Primes between &quot;</span> &lt;&lt; min_val &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; max_val</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;              &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// int d = iters - 1;</span></div>
@@ -278,7 +278,7 @@ $(function() {
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#afd1807c903b6767c4cb543b696000d41">  208</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#afd1807c903b6767c4cb543b696000d41">mtpk::Primality::AKS</a>(uint64_t n) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#a1eede0d168ec8b80be1f7c47d458936a">  208</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#a1eede0d168ec8b80be1f7c47d458936a">mtpk::PrimalityTest::AKS</a>(uint64_t n) {</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// Check if n is a perfect power</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">for</span> (uint64_t b = 2; b &lt;= std::sqrt(n); b++) {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        uint64_t a = std::round(std::pow(n, 1.0 / b));</div>
@@ -326,7 +326,7 @@ $(function() {
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> * another algorithm capable of finding primes</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#ad22a4e07fc1e5ceba3c8766deadbb994">  256</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Primality.html#ad22a4e07fc1e5ceba3c8766deadbb994">mtpk::Primality::jacobian_number</a>(uint64_t a, uint64_t n) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#ac5e576d9cd64e907682a4c91ffecc061">  256</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1PrimalityTest.html#ac5e576d9cd64e907682a4c91ffecc061">mtpk::PrimalityTest::jacobian_number</a>(uint64_t a, uint64_t n) {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (!a)</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">return</span> 0; <span class="comment">// (0/n) = 0</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
@@ -375,7 +375,7 @@ $(function() {
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="comment"> * a^(p-1)/2 = (a/p) (mod p)</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a5c74761e5b854fcdf8187377f1faf0fc">  305</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#a5c74761e5b854fcdf8187377f1faf0fc">mtpk::Primality::solovoy_strassen</a>(uint64_t p, uint64_t iters) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#a24debb997099c26dc0482647d775dfd5">  305</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#a24debb997099c26dc0482647d775dfd5">mtpk::PrimalityTest::solovoy_strassen</a>(uint64_t p, uint64_t iters) {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">if</span> (p &lt; 2)</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
@@ -399,10 +399,10 @@ $(function() {
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment"> * are composite integers satisfying the congruence forumla below</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment"> * b^n - 1 = b (mod n)</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a88f516ba33d306a7279990ab1da52bb9">  329</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1Primality.html#a88f516ba33d306a7279990ab1da52bb9">mtpk::Primality::carmichael_num</a>(uint64_t n) {</div>
+<div class="line"><a name="l00329"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">  329</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">mtpk::PrimalityTest::carmichael_num</a>(uint64_t n) {</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">for</span> (uint64_t b = 2; b &lt; n; b++) {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">// If &quot;b&quot; is relatively prime to n</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">op_gcd</a>(b, n) == 1)</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="prime__test_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">op_gcd</a>(b, n) == 1)</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="comment">// And pow(b, n-1)%n is not 1, return false.</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordflow">if</span> (mod_pow(b, n - 1, n) != 1)</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -416,77 +416,76 @@ $(function() {
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment"> * Eratosthenes is able to capture all prime numbers to any given</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="comment"> * limit</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#a1b723d79e9369438332abb53d0019cf7">  346</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1Primality.html#a1b723d79e9369438332abb53d0019cf7">mtpk::Primality::sieve_of_eratosthenes</a>(uint64_t n) {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// Create a boolean array &quot;prime[0..n]&quot; and initialize</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="comment">// all entries it as true. A value in prime[i] will</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// finally be false if i is Not a prime, else true.</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordtype">bool</span> prime[n + 1];</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    memset(prime, <span class="keyword">true</span>, <span class="keyword">sizeof</span>(prime));</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">for</span> (uint64_t p = 2; p * p &lt;= n; p++) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">// If prime[p] is not changed, then it is a prime</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">if</span> (prime[p] == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="comment">// Update all multiples of p greater than or</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="comment">// equal to the square of it numbers which are</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="comment">// multiple of p and are less than p^2 are</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="comment">// already been marked.</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">for</span> (uint64_t i = p * p; i &lt;= n; i += p)</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                prime[i] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// Print all prime numbers</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">for</span> (uint64_t p = 2; p &lt;= n; p++) {</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">if</span> (prime[p]) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            std::cout &lt;&lt; p &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment"> * Euler&#39;s Totient Function counts the positive numbers up until a</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"> * given integer</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment"> * Definition: For any positive integer n, Φ(n) is the number of all</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"> * positive integers less than or equal to n that are relatively prime</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"> * to n.</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"> * Example: Φ(1) = 1</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"> *          Φ(2) = 1</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment"> *          Φ(3) = 2</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment"> *          Φ(4) = 2</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment"> *          Φ(5) = 4</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno"><a class="line" href="classmtpk_1_1Primality.html#aea5a7e13a718c7b4d61d9cf1ce2ddd45">  387</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Primality.html#aea5a7e13a718c7b4d61d9cf1ce2ddd45">mtpk::Primality::ETF</a>(uint64_t n) {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    uint64_t result = 1;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">for</span> (uint64_t index = 2; uint64_t(index) &lt; n; index++) {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">op_gcd</a>(index, n) == 1) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            result++;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        }</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">void mtpk::PrimalityTest::sieve_of_eratosthenes(uint64_t n) {</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">    // Create a boolean array &quot;prime[0..n]&quot; and initialize</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">    // all entries it as true. A value in prime[i] will</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment">    // finally be false if i is Not a prime, else true.</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">    bool prime[n + 1];</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment">    memset(prime, true, sizeof(prime));</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">    for (uint64_t p = 2; p * p &lt;= n; p++) {</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">        // If prime[p] is not changed, then it is a prime</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">        if (prime[p] == true) {</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment">            // Update all multiples of p greater than or</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">            // equal to the square of it numbers which are</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="comment">            // multiple of p and are less than p^2 are</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="comment">            // already been marked.</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">            for (uint64_t i = p * p; i &lt;= n; i += p)</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">                prime[i] = false;</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">    // Print all prime numbers</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment">    for (uint64_t p = 2; p &lt;= n; p++) {</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">        if (prime[p]) {</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment">            std::cout &lt;&lt; p &lt;&lt; &quot; &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="comment">}*/</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"> * Euler&#39;s Totient Function counts the positive numbers up until a</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"> * given integer</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"> * Definition: For any positive integer n, Φ(n) is the number of all</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"> * positive integers less than or equal to n that are relatively prime</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> * to n.</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"> * Example: Φ(1) = 1</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;<span class="comment"> *          Φ(2) = 1</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;<span class="comment"> *          Φ(3) = 2</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="comment"> *          Φ(4) = 2</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="comment"> *          Φ(5) = 4</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="classmtpk_1_1PrimalityTest.html#acb9f4414921095678a0fcf84098ef012">  388</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1PrimalityTest.html#acb9f4414921095678a0fcf84098ef012">mtpk::PrimalityTest::ETF</a>(uint64_t n) {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    uint64_t result = 1;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">for</span> (uint64_t index = 2; uint64_t(index) &lt; n; index++) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="prime__test_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a>.<a class="code" href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">op_gcd</a>(index, n) == 1) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            result++;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;}</div>
 <div class="ttc" id="aclassmtpk_1_1Basics_html"><div class="ttname"><a href="classmtpk_1_1Basics.html">mtpk::Basics</a></div><div class="ttdoc">Arithmetic Operations</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00104">arithmetic.hpp:104</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Basics_html_a12cc5cd615b0c1a39851c440cfc55a3e"><div class="ttname"><a href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int64_t op_gcd(int64_t x, int64_t y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00052">arith.cpp:52</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html"><div class="ttname"><a href="classmtpk_1_1Primality.html">mtpk::Primality</a></div><div class="ttdef"><b>Definition:</b> <a href="primes_8hpp_source.html#l00051">primes.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a1b723d79e9369438332abb53d0019cf7"><div class="ttname"><a href="classmtpk_1_1Primality.html#a1b723d79e9369438332abb53d0019cf7">mtpk::Primality::sieve_of_eratosthenes</a></div><div class="ttdeci">void sieve_of_eratosthenes(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00346">primes.cpp:346</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a2e472dcda105ddc85eab8abea2b5948a"><div class="ttname"><a href="classmtpk_1_1Primality.html#a2e472dcda105ddc85eab8abea2b5948a">mtpk::Primality::witness</a></div><div class="ttdeci">bool witness(uint64_t n, uint64_t d, uint64_t a, uint64_t s)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00150">primes.cpp:150</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a2f9d2ef31fd5103272d936e1bddeee85"><div class="ttname"><a href="classmtpk_1_1Primality.html#a2f9d2ef31fd5103272d936e1bddeee85">mtpk::Primality::is_prime</a></div><div class="ttdeci">bool is_prime(uint64_t n)</div><div class="ttdoc">Determine if an integer is prime.</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00098">primes.cpp:98</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a330a006deb9656166564dd7e571d9e30"><div class="ttname"><a href="classmtpk_1_1Primality.html#a330a006deb9656166564dd7e571d9e30">mtpk::Primality::compute_miller_rabin</a></div><div class="ttdeci">bool compute_miller_rabin(uint64_t d, uint64_t n)</div><div class="ttdoc">Algorithm determining liklihood a number is prime.</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00113">primes.cpp:113</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a5c74761e5b854fcdf8187377f1faf0fc"><div class="ttname"><a href="classmtpk_1_1Primality.html#a5c74761e5b854fcdf8187377f1faf0fc">mtpk::Primality::solovoy_strassen</a></div><div class="ttdeci">bool solovoy_strassen(uint64_t p, uint64_t iters)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00305">primes.cpp:305</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a643923bdd1d6191ee85e3cf3a310a6b7"><div class="ttname"><a href="classmtpk_1_1Primality.html#a643923bdd1d6191ee85e3cf3a310a6b7">mtpk::Primality::miller_rabin_prime</a></div><div class="ttdeci">bool miller_rabin_prime(uint64_t n, uint64_t iters)</div><div class="ttdoc">Modified primes algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00165">primes.cpp:165</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a6618fd82e24ae4276f81a9f692073ed0"><div class="ttname"><a href="classmtpk_1_1Primality.html#a6618fd82e24ae4276f81a9f692073ed0">mtpk::Primality::miller_rabin</a></div><div class="ttdeci">void miller_rabin(uint64_t iters, uint64_t min_val, uint64_t max_val)</div><div class="ttdoc">Miller-Rabin driver, prints values that satisfy conditions.</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00190">primes.cpp:190</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_a88f516ba33d306a7279990ab1da52bb9"><div class="ttname"><a href="classmtpk_1_1Primality.html#a88f516ba33d306a7279990ab1da52bb9">mtpk::Primality::carmichael_num</a></div><div class="ttdeci">bool carmichael_num(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00329">primes.cpp:329</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_ac14406436d1c66f67bbad17ad983fd2a"><div class="ttname"><a href="classmtpk_1_1Primality.html#ac14406436d1c66f67bbad17ad983fd2a">mtpk::Primality::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00068">primes.cpp:68</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_ad22a4e07fc1e5ceba3c8766deadbb994"><div class="ttname"><a href="classmtpk_1_1Primality.html#ad22a4e07fc1e5ceba3c8766deadbb994">mtpk::Primality::jacobian_number</a></div><div class="ttdeci">uint64_t jacobian_number(uint64_t a, uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00256">primes.cpp:256</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_adb97d9964f63ec35af865acc83a2a158"><div class="ttname"><a href="classmtpk_1_1Primality.html#adb97d9964f63ec35af865acc83a2a158">mtpk::Primality::mod_mul</a></div><div class="ttdeci">uint64_t mod_mul(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00055">primes.cpp:55</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_aea5a7e13a718c7b4d61d9cf1ce2ddd45"><div class="ttname"><a href="classmtpk_1_1Primality.html#aea5a7e13a718c7b4d61d9cf1ce2ddd45">mtpk::Primality::ETF</a></div><div class="ttdeci">uint64_t ETF(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00387">primes.cpp:387</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Primality_html_afd1807c903b6767c4cb543b696000d41"><div class="ttname"><a href="classmtpk_1_1Primality.html#afd1807c903b6767c4cb543b696000d41">mtpk::Primality::AKS</a></div><div class="ttdeci">bool AKS(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00208">primes.cpp:208</a></div></div>
-<div class="ttc" id="amodules_2nt_2lucas_8cpp_html_a555c60b4479ce23bcb9e69c5fa473b97"><div class="ttname"><a href="modules_2nt_2lucas_8cpp.html#a555c60b4479ce23bcb9e69c5fa473b97">witness</a></div><div class="ttdeci">bool witness(uint64_t n, uint64_t d, uint64_t a, uint64_t s)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2lucas_8cpp_source.html#l00035">lucas.cpp:35</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_aa984413d595262e996d3f8b4fb7f82b6"><div class="ttname"><a href="primes_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a></div><div class="ttdeci">mtpk::Basics ba</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00051">primes.cpp:51</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_aec0f0225003fbb04e53cf55d4cf87ed8"><div class="ttname"><a href="primes_8cpp.html#aec0f0225003fbb04e53cf55d4cf87ed8">prim</a></div><div class="ttdeci">mtpk::Primality prim</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00052">primes.cpp:52</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a></div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8hpp_source.html#l00051">prime_test.hpp:51</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a0923c2f17fd016ef13468cb59013581e"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">mtpk::PrimalityTest::miller_rabin</a></div><div class="ttdeci">void miller_rabin(uint64_t iters, uint64_t min_val, uint64_t max_val)</div><div class="ttdoc">Miller-Rabin driver, prints values that satisfy conditions.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00190">prime_test.cpp:190</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a1eede0d168ec8b80be1f7c47d458936a"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a1eede0d168ec8b80be1f7c47d458936a">mtpk::PrimalityTest::AKS</a></div><div class="ttdeci">bool AKS(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00208">prime_test.cpp:208</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a24debb997099c26dc0482647d775dfd5"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a24debb997099c26dc0482647d775dfd5">mtpk::PrimalityTest::solovoy_strassen</a></div><div class="ttdeci">bool solovoy_strassen(uint64_t p, uint64_t iters)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00305">prime_test.cpp:305</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a3075a71884ea6c4d7dee3a60ccba0ef1"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">mtpk::PrimalityTest::carmichael_num</a></div><div class="ttdeci">bool carmichael_num(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00329">prime_test.cpp:329</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a6fed0cc0fb9ae1f51b1eb6338486fbb9"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00068">prime_test.cpp:68</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a79b0e1235cde17a893c0d9dd59ab694b"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a79b0e1235cde17a893c0d9dd59ab694b">mtpk::PrimalityTest::compute_miller_rabin</a></div><div class="ttdeci">bool compute_miller_rabin(uint64_t d, uint64_t n)</div><div class="ttdoc">Algorithm determining liklihood a number is prime.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00113">prime_test.cpp:113</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_ac5e576d9cd64e907682a4c91ffecc061"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#ac5e576d9cd64e907682a4c91ffecc061">mtpk::PrimalityTest::jacobian_number</a></div><div class="ttdeci">uint64_t jacobian_number(uint64_t a, uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00256">prime_test.cpp:256</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_acb9f4414921095678a0fcf84098ef012"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#acb9f4414921095678a0fcf84098ef012">mtpk::PrimalityTest::ETF</a></div><div class="ttdeci">uint64_t ETF(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00388">prime_test.cpp:388</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_acdf45aec6e905ea12470b6e9c48393b2"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#acdf45aec6e905ea12470b6e9c48393b2">mtpk::PrimalityTest::witness</a></div><div class="ttdeci">bool witness(uint64_t n, uint64_t d, uint64_t a, uint64_t s)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00150">prime_test.cpp:150</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_aea296e7913cb51cc89c3b79fcf737194"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">mtpk::PrimalityTest::miller_rabin_prime</a></div><div class="ttdeci">bool miller_rabin_prime(uint64_t n, uint64_t iters)</div><div class="ttdoc">Modified primes algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00165">prime_test.cpp:165</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_afbdde3f21b4bc18dc88e891a2caeb8b5"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">mtpk::PrimalityTest::is_prime</a></div><div class="ttdeci">bool is_prime(uint64_t n)</div><div class="ttdoc">Determine if an integer is prime.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00098">prime_test.cpp:98</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_affe152026afe8be056d56f77138da6f1"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#affe152026afe8be056d56f77138da6f1">mtpk::PrimalityTest::mod_mul</a></div><div class="ttdeci">uint64_t mod_mul(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00055">prime_test.cpp:55</a></div></div>
+<div class="ttc" id="aprime__test_8cpp_html_aa984413d595262e996d3f8b4fb7f82b6"><div class="ttname"><a href="prime__test_8cpp.html#aa984413d595262e996d3f8b4fb7f82b6">ba</a></div><div class="ttdeci">mtpk::Basics ba</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00051">prime_test.cpp:51</a></div></div>
+<div class="ttc" id="aprime__test_8cpp_html_ae705b16e0f91ad04a0d1892bd85d3b5b"><div class="ttname"><a href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a></div><div class="ttdeci">mtpk::PrimalityTest prim</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00052">prime_test.cpp:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

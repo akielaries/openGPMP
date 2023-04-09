@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['naivenet_535',['NaiveNet',['../classmtpk_1_1NaiveNet.html',1,'mtpk']]],
-  ['nearestneighbor_536',['NearestNeighbor',['../classmtpk_1_1NearestNeighbor.html',1,'mtpk']]],
-  ['neuron_537',['neuron',['../structmtpk_1_1ml_1_1neuron.html',1,'mtpk::ml']]],
-  ['numericalanalysis_538',['NumericalAnalysis',['../classmtpk_1_1NumericalAnalysis.html',1,'mtpk']]]
+  ['layer_545',['layer',['../structmtpk_1_1ml_1_1layer.html',1,'mtpk::ml']]],
+  ['linearregression_546',['LinearRegression',['../classmtpk_1_1LinearRegression.html',1,'mtpk']]],
+  ['logarithms_547',['Logarithms',['../classmtpk_1_1Logarithms.html',1,'mtpk']]],
+  ['logreg_548',['Logreg',['../classmtpk_1_1Logreg.html',1,'mtpk']]]
 ];

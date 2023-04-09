@@ -8,7 +8,7 @@ var searchData=
   ['activators_2ehpp_15',['activators.hpp',['../activators_8hpp.html',1,'']]],
   ['add_16',['add',['../classmtpk_1_1Matrix.html#a695fff8b43b7aea5bcfaaed827cff600',1,'mtpk::Matrix::add()'],['../classmtpk_1_1Vectors.html#a4fb9434e406936d8be052c99f18f727f',1,'mtpk::Vectors::add()']]],
   ['adjsoftmax_17',['adjSoftmax',['../classmtpk_1_1Activate.html#a7646fbfcd738972fbe03f02d21b03537',1,'mtpk::Activate::adjSoftmax(std::vector&lt; std::vector&lt; double &gt;&gt; z)'],['../classmtpk_1_1Activate.html#af35f1e3a7143f8a7741e64f73a03c2c2',1,'mtpk::Activate::adjSoftmax(std::vector&lt; double &gt; z)']]],
-  ['aks_18',['AKS',['../classmtpk_1_1Primality.html#afd1807c903b6767c4cb543b696000d41',1,'mtpk::Primality']]],
+  ['aks_18',['AKS',['../classmtpk_1_1PrimalityTest.html#a1eede0d168ec8b80be1f7c47d458936a',1,'mtpk::PrimalityTest']]],
   ['all_19',['all',['../classmtpk_1_1Matrix.html#ae379c776e20abfaa0edb975a3d6e25a5',1,'mtpk::Matrix']]],
   ['alpha_20',['alpha',['../classmtpk_1_1Logreg.html#ad1c9fd3eff4a2179c25ebde451fb8aa8',1,'mtpk::Logreg']]],
   ['analysis_2ehpp_21',['analysis.hpp',['../analysis_8hpp.html',1,'']]],

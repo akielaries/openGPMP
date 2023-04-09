@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_1009',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]]
+  ['matrix_1038',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]]
 ];

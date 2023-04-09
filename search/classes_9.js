@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['optimizers_539',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
-  ['outlierfinder_540',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
+  ['matrix_549',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk']]],
+  ['mtx_550',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]],
+  ['myclass_551',['MyClass',['../classMyClass.html',1,'']]]
 ];

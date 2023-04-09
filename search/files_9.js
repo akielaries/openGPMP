@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['main_2ecpp_591',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mandelbrot_2ecpp_592',['Mandelbrot.cpp',['../Mandelbrot_8cpp.html',1,'']]],
-  ['matrix_2ehpp_593',['matrix.hpp',['../matrix_8hpp.html',1,'']]],
-  ['ml_2ehpp_594',['ml.hpp',['../ml_8hpp.html',1,'']]],
-  ['mlp_5fnet_2ehpp_595',['mlp_net.hpp',['../mlp__net_8hpp.html',1,'']]],
-  ['mlp_5fnetwork_2ecpp_596',['mlp_network.cpp',['../mlp__network_8cpp.html',1,'']]],
-  ['modules_2emd_597',['Modules.md',['../Modules_8md.html',1,'']]]
+  ['lao_2ecpp_604',['lao.cpp',['../lao_8cpp.html',1,'']]],
+  ['linalg_2ehpp_605',['linalg.hpp',['../linalg_8hpp.html',1,'']]],
+  ['linreg_2ecpp_606',['linreg.cpp',['../linreg_8cpp.html',1,'']]],
+  ['linreg_2ehpp_607',['linreg.hpp',['../linreg_8hpp.html',1,'']]],
+  ['logarithms_2ecpp_608',['logarithms.cpp',['../logarithms_8cpp.html',1,'']]],
+  ['logarithms_2ehpp_609',['logarithms.hpp',['../logarithms_8hpp.html',1,'']]],
+  ['logreg_2ehpp_610',['logreg.hpp',['../logreg_8hpp.html',1,'']]]
 ];
