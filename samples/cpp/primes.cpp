@@ -112,17 +112,14 @@ int main() {
 
     // vector if 64 bit integers
     std::vector<int64_t> nums = {
-        9223372036854775803,   9223372036854775807,
-        9223372036854775303,   4567890123456789LL,
-        5678901234567890LL,    6789012345678901LL,
-        7890123456789012LL,    8901234567890123LL,
-        9999999967LL,          12345678901234567LL,
-        987654321987654321LL,  2147483647LL,
-        9223372036854775783LL, 1311768467463790320LL,
-        7237005577332262210LL, 3037000499LL,
-        2305843009213693951LL, 2305843009213693967LL,
-        2305843009213693971LL, 2305843009213693973LL,
-        2305843009213693977LL, 2305843009213693989LL};
+        9223372036854775803,   9223372036854775807,   9223372036854775303,
+        4567890123456789LL,    5678901234567890LL,    6789012345678901LL,
+        7890123456789012LL,    8901234567890123LL,    9999999967LL,
+        12345678901234567LL,   987654321987654321LL,  2147483647LL,
+        9223372036854775783LL, 1311768467463790320LL, 7237005577332262210LL,
+        3037000499LL,          2305843009213693951LL, 2305843009213693967LL,
+        2305843009213693971LL, 2305843009213693973LL, 2305843009213693977LL,
+        2305843009213693989LL};
 
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
@@ -143,8 +140,8 @@ int main() {
     std::cout << "Miller-Rabin" << std::endl;
     for (size_t i = 0; i < miller_results.size(); i++) {
         bool is_prime = miller_results[i].get();
-        std::cout << nums[i] << " is "
-                  << (is_prime ? "prime" : "composite") << "\n";
+        std::cout << nums[i] << " is " << (is_prime ? "prime" : "composite")
+                  << "\n";
     }
 
     // delete the threadpool object, freeing its resources
@@ -162,8 +159,8 @@ int main() {
     std::cout << "\nAKS" << std::endl;
     for (size_t i = 0; i < AKS_results.size(); i++) {
         bool is_prime = AKS_results[i].get();
-        std::cout << nums[i] << " is "
-                  << (is_prime ? "prime" : "composite") << "\n";
+        std::cout << nums[i] << " is " << (is_prime ? "prime" : "composite")
+                  << "\n";
     }
 
     delete new_pool;

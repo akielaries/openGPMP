@@ -43,6 +43,7 @@
 using ::testing::DoubleLE;
 using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
+using namespace mtpk;
 
 namespace {
 

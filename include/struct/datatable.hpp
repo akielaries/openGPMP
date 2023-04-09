@@ -50,12 +50,12 @@
 #include <vector>
 
 class DataTable {
-    public:
+  public:
     DataTable(std::string filename,
               std::vector<std::string> selected_columns = {});
     void display() const;
 
-    private:
+  private:
     std::vector<std::unordered_map<std::string, std::string>> data_;
 };
 

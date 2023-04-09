@@ -8,6 +8,4 @@
 #include <time.h>
 #include <vector>
 
-int main() {
-    return 0;
-}
+int main() { return 0; }

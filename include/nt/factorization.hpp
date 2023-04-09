@@ -53,7 +53,7 @@
 
 namespace mtpk {
 class Factorization {
-    public:
+  public:
     // std::vector<int64_t> pollard_rho(const std::vector<int64_t>&
     // nums_to_factorize);
     /* integer factorization */
@@ -81,7 +81,7 @@ class Factorization {
 
     /*  */
     std::vector<std::future<int64_t>>
-        pollard_rho_thread(const std::vector<int64_t> &nums_to_factorize);
+    pollard_rho_thread(const std::vector<int64_t> &nums_to_factorize);
     /* Lenstra elliptic-curve factorization */
     // int64_t LECF(int64_t n);
 

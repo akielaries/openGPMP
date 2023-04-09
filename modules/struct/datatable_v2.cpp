@@ -43,10 +43,10 @@
 #include <vector>
 
 class DataTable {
-    public:
+  public:
     std::vector<std::map<std::string, std::string>>
-        csv_read(std::string filename,
-                 std::vector<std::string> selected_columns = {}) {
+    csv_read(std::string filename,
+             std::vector<std::string> selected_columns = {}) {
         std::ifstream file(filename);
         std::vector<std::map<std::string, std::string>> data;
 
@@ -61,8 +61,7 @@ class DataTable {
                 // If no columns are selected or the column is selected,
                 // add it to the column names
                 if (selected_columns.empty() ||
-                    std::find(selected_columns.begin(),
-                              selected_columns.end(),
+                    std::find(selected_columns.begin(), selected_columns.end(),
                               name) != selected_columns.end()) {
                     column_names.push_back(name);
                 }
@@ -91,8 +90,7 @@ class DataTable {
         return data;
     }
 
-    void display(
-        const std::vector<std::map<std::string, std::string>> &data) {
+    void display(const std::vector<std::map<std::string, std::string>> &data) {
         if (data.empty()) {
             std::cout << "Empty DataTable" << std::endl;
             return;

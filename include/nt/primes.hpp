@@ -49,7 +49,7 @@ namespace mtpk {
  * Primality Class dealing with prime number manipulations
  */
 class Primality {
-    public:
+  public:
     /**
      * @brief Determine if an integer is prime
      *

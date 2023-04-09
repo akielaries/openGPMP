@@ -3,7 +3,7 @@
 #include <vector>
 
 class MyClass {
-    public:
+  public:
     using Axes = std::vector<int>; // assuming `Axes` is a type alias for a
                                    // vector of integers
     MyClass(std::optional<Data> data = std::nullopt,
@@ -16,7 +16,7 @@ class MyClass {
         this->copy = copy;
     }
 
-    private:
+  private:
     std::optional<Data> data;
     std::optional<Axes> index;
     std::optional<Axes> columns;

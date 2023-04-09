@@ -66,9 +66,8 @@ namespace mtpk {
  * @brief Arithmetic Template Class. Each method is variadic taking
  * 'n' params.
  */
-template <typename T>
-class Arith {
-    public:
+template <typename T> class Arith {
+  public:
     T arr_add(T arr[], int64_t n) {
         T sum = 0;
 
@@ -103,7 +102,7 @@ class Arith {
  * @class Basics
  */
 class Basics {
-    public:
+  public:
     /**
      * @brief Find greatest power of 2 itegers
      *

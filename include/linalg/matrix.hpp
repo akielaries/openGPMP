@@ -56,9 +56,8 @@ namespace mtpk {
  * @class Matrix
  * @brief Matrix and Scalar operations
  */
-template <typename Type>
-class Matrix {
-    public:
+template <typename Type> class Matrix {
+  public:
     size_t cols;
     size_t rows;
 
@@ -78,9 +77,7 @@ class Matrix {
         data.resize(cols * rows, Type());
         dim = std::make_tuple(rows, cols);
     }
-    Matrix() : cols(0), rows(0), data({}) {
-        dim = {rows, cols};
-    };
+    Matrix() : cols(0), rows(0), data({}) { dim = {rows, cols}; };
 
     /**
      * @brief Overload operator
@@ -170,9 +167,7 @@ class Matrix {
         }
         return res;
     }
-    Matrix operator+(Matrix &target) {
-        return add(target);
-    }
+    Matrix operator+(Matrix &target) { return add(target); }
 
     /*
      * Addition of scalars
@@ -206,9 +201,7 @@ class Matrix {
         Matrix target_neg = -target;
         return add(target_neg);
     }
-    Matrix operator-(Matrix &target) {
-        return sub(target);
-    }
+    Matrix operator-(Matrix &target) { return sub(target); }
 
     Matrix<unsigned short> operator==(Matrix &target) {
         assert(dim == target.dim);
@@ -256,9 +249,7 @@ class Matrix {
         return transposed;
     }
 
-    Matrix T() {
-        return (*this).transpose();
-    }
+    Matrix T() { return (*this).transpose(); }
 
     /*
      * Compute sum of matrix by element

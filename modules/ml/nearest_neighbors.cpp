@@ -50,7 +50,7 @@ using namespace std;
  *   - success(boolean)
  */
 class Company {
-    public:
+  public:
     Company(int64_t turnover, string characteristics, bool success)
         : turnover(turnover), success(success), distance(-1) {
         this->characteristics = transformCharacteristics(characteristics);
@@ -62,7 +62,7 @@ class Company {
     int64_t characteristics;
     bool success;
 
-    private:
+  private:
     /*
      * Function that transforms characteristics (Very
      * Strong,Strong,Average,Weak) as strings to number. It is geting
@@ -84,10 +84,9 @@ class Company {
  * A class that represent the reader of files with csv extensions.
  */
 class CSVReader {
-    public:
+  public:
     CSVReader(const string &fileName, const string &delimeter = ",")
-        : fileName(fileName), delimeter(delimeter) {
-    }
+        : fileName(fileName), delimeter(delimeter) {}
 
     /*
      * Function to fetch the data from a CSV file
@@ -106,7 +105,7 @@ class CSVReader {
         return data;
     }
 
-    private:
+  private:
     string fileName;
     string delimeter;
 
@@ -192,8 +191,7 @@ int main() {
     vector<vector<string>> rawData = reader.getData();
     vector<Company> data;
     for (vector<string> line : rawData) {
-        Company comp(stoi(line[0]), line[1],
-                     line[2] == "1" ? true : false);
+        Company comp(stoi(line[0]), line[1], line[2] == "1" ? true : false);
         data.push_back(comp);
     }
 
@@ -206,8 +204,7 @@ int main() {
      */
     Company test(703, "Very Strong", true);
 
-    string answer = KNN(data, test, 12, euclideanDistance)
-                        ? "Successful"
-                        : "Unsuccessful";
+    string answer =
+        KNN(data, test, 12, euclideanDistance) ? "Successful" : "Unsuccessful";
     cout << answer;
 }

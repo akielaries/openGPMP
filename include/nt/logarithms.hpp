@@ -46,7 +46,7 @@
 
 namespace mtpk {
 class Logarithms {
-    public:
+  public:
     /* integer factorization */
     int64_t pollard_rho_log(int a, int b, int m);
 

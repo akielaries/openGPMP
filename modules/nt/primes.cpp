@@ -51,8 +51,7 @@
 mtpk::Basics ba;
 mtpk::Primality prim;
 
-int64_t mtpk::Primality::mod_pow(int64_t base, int64_t exponent,
-                                 int64_t mod) {
+int64_t mtpk::Primality::mod_pow(int64_t base, int64_t exponent, int64_t mod) {
     int64_t x = 1;
     int64_t y = base;
 

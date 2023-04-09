@@ -38,14 +38,13 @@
  *
  */
 #include "../../include/nt/logarithms.hpp"
+#include "../../include/nt/primes.hpp"
 #include <gtest/gtest.h>
 #include <iostream>
 
 namespace {
 // declare primality class object
-mtpk::Primality p;
+mtpk::Primality __TEST_PRIMES__;
 
-TEST(prime_test, is_prime) {
-    std::cout << "HELLO" << std::endl;
-}
+TEST(prime_test, is_prime) { std::cout << "HELLO" << std::endl; }
 } // namespace

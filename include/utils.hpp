@@ -54,21 +54,19 @@ namespace mtpk {
  * @class Data
  */
 class Data {
-    public:
+  public:
     /**
      * std::vector<std::vector<double>> is a 2D vector which is a
      * Matrix. We could define it with Matrix class
      */
 
-    std::tuple<std::vector<std::vector<double>>, std::vector<double>>
-        load();
+    std::tuple<std::vector<std::vector<double>>, std::vector<double>> load();
 
     std::tuple<std::vector<std::vector<double>>,
                std::vector<std::vector<double>>>
-        load();
+    load();
 
-    std::tuple<std::vector<std::vector<double>>, std::vector<double>>
-        load();
+    std::tuple<std::vector<std::vector<double>>, std::vector<double>> load();
 
     std::tuple<std::vector<double>, std::vector<double>> load();
 
@@ -79,8 +77,7 @@ class Data {
     void printData(std::vector<std::string> inputName,
                    std::vector<std::vector<double>> inputSet);
 
-    void printData(std::vector<std::string> inputName,
-                   std::string outputName,
+    void printData(std::vector<std::string> inputName, std::string outputName,
                    std::vector<std::vector<double>> inputSet,
                    std::vector<double> outputSet);
 
@@ -88,13 +85,13 @@ class Data {
                          std::vector<std::string> &input_names);
 
     std::vector<std::vector<double>>
-        feature_scaling(std::vector<std::vector<double>> X);
+    feature_scaling(std::vector<std::vector<double>> X);
 
     std::vector<std::vector<double>>
-        one_rep(std::vector<double> temp_output_set, int n_class);
+    one_rep(std::vector<double> temp_output_set, int n_class);
 
     std::vector<double>
-        one_rep_reverse(std::vector<std::vector<double>> temp_output_set);
+    one_rep_reverse(std::vector<std::vector<double>> temp_output_set);
 
     std::vector<char> split(std::string text);
     std::vector<std::string> splitSentences(std::string data);
@@ -114,12 +111,12 @@ class Data {
  * @brief Finds outliers in models
  */
 class OutlierFinder {
-    public:
+  public:
     // Cnstr
     OutlierFinder(int threshold);
 
     std::vector<std::vector<double>>
-        modelSetTest(std::vector<std::vector<double>> inputSet);
+    modelSetTest(std::vector<std::vector<double>> inputSet);
     std::vector<double> modelTest(std::vector<double> inputSet);
 
     // Variables required

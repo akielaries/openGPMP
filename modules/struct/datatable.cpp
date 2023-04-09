@@ -43,8 +43,7 @@
 #include <vector>
 
 std::vector<std::map<std::string, std::string>>
-    csv_read(std::string filename,
-             std::vector<std::string> selected_columns = {}) {
+csv_read(std::string filename, std::vector<std::string> selected_columns = {}) {
     std::ifstream file(filename);
     std::vector<std::map<std::string, std::string>> data;
 
@@ -140,8 +139,7 @@ void display(const std::vector<std::map<std::string, std::string>> &data) {
         std::cout << std::setw(4) << i;
         for (const auto &name : column_names) {
             if (data[i].count(name)) {
-                std::cout << std::setw(column_widths[name])
-                          << data[i].at(name);
+                std::cout << std::setw(column_widths[name]) << data[i].at(name);
             } else {
                 std::cout << std::setw(column_widths[name]) << "";
             }

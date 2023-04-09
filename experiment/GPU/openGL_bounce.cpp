@@ -22,33 +22,20 @@ class Camera {
     double dTheta; // increment in theta for swinging the camera around
     double dy;     // increment in y for moving the camera up/down
 
-    public:
-    Camera() : theta(0), y(3), dTheta(0.04), dy(0.2) {
-    }
+  public:
+    Camera() : theta(0), y(3), dTheta(0.04), dy(0.2) {}
 
-    double getX() {
-        return 10 * cos(theta);
-    }
+    double getX() { return 10 * cos(theta); }
 
-    double getY() {
-        return y;
-    }
+    double getY() { return y; }
 
-    double getZ() {
-        return 10 * sin(theta);
-    }
+    double getZ() { return 10 * sin(theta); }
 
-    void moveRight() {
-        theta += dTheta;
-    }
+    void moveRight() { theta += dTheta; }
 
-    void moveLeft() {
-        theta -= dTheta;
-    }
+    void moveLeft() { theta -= dTheta; }
 
-    void moveUp() {
-        y += dy;
-    }
+    void moveUp() { y += dy; }
 
     void moveDown() {
         if (y > dy)
@@ -69,11 +56,10 @@ class Ball {
     double z;
     int direction;
 
-    public:
+  public:
     Ball(double r, GLfloat *c, double h, double x, double z)
         : radius(r), color(c), maximumHeight(h), direction(-1), y(h), x(x),
-          z(z) {
-    }
+          z(z) {}
 
     void update() {
         y += direction * 0.05;
@@ -106,16 +92,11 @@ class Checkerboard {
     int width;
     int depth;
 
-    public:
-    Checkerboard(int width, int depth) : width(width), depth(depth) {
-    }
+  public:
+    Checkerboard(int width, int depth) : width(width), depth(depth) {}
 
-    double centerx() {
-        return width / 2;
-    }
-    double centerz() {
-        return depth / 2;
-    }
+    double centerx() { return width / 2; }
+    double centerz() { return depth / 2; }
 
     void create() {
         displayListId = glGenLists(1);
@@ -140,9 +121,7 @@ class Checkerboard {
         glEndList();
     }
 
-    void draw() {
-        glCallList(displayListId);
-    }
+    void draw() { glCallList(displayListId); }
 };
 
 // Global variables: a camera, a checkerboard and some balls.
@@ -170,8 +149,8 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     gluLookAt(camera.getX(), camera.getY(), camera.getZ(),
-              checkerboard.centerx(), 0.0, checkerboard.centerz(), 0.0,
-              1.0, 0.0);
+              checkerboard.centerx(), 0.0, checkerboard.centerz(), 0.0, 1.0,
+              0.0);
     checkerboard.draw();
     for (int i = 0; i < sizeof balls / sizeof(Ball); i++) {
         balls[i].update();
