@@ -6,7 +6,8 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
-#include <openMTPK/nt/primes.hpp>
+#include <openMTPK/nt/prime_gen.hpp>
+#include <openMTPK/nt/prime_test.hpp>
 #include <openMTPK/threadpool.hpp>
 #include <vector>
 
@@ -14,7 +15,7 @@ void testing_miller() {
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
-    mtpk::Primality prims;
+    mtpk::PrimalityTest prims;
     std::vector<int64_t> nums = {
         9223372036854775803,   9223372036854775807,
         9223372036854775303,   4567890123456789LL,
@@ -32,7 +33,7 @@ void testing_miller() {
               << std::endl;
 
     for (uint64_t n : nums) {
-        if (prims.miller_rabin_prime(n, 10000))
+        if (prims.miller_rabin_prime(n, 120000))
             std::cout << n << " is prime" << std::endl;
         else
             std::cout << n << " is composite" << std::endl;
@@ -69,10 +70,10 @@ void testing_miller_thread() {
     ThreadPool *pool = new ThreadPool(4);
 
     std::vector<std::future<bool>> miller_results;
-    mtpk::Primality prim;
+    mtpk::PrimalityTest prim;
     for (auto n : nums) {
         miller_results.emplace_back(pool->enqueue(
-            [&prim, n]() { return prim.miller_rabin_prime(n, 10000); }));
+            [&prim, n]() { return prim.miller_rabin_prime(n, 120000); }));
     }
 
     // Print the results
@@ -98,7 +99,7 @@ void testing_miller_thread() {
 int main() {
     std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;
     // declare primality class object
-    mtpk::Primality p;
+    mtpk::PrimalityTest p;
 
     std::cout << "<--------- IS IT PRIME? --------->\n";
     int a = 9;

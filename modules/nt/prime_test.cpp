@@ -36,7 +36,7 @@
  * Some core concepts seen in Number Theory primarily prime number
  * based equations, formulas, algorithms.
  */
-#include "../../include/nt/primes.hpp"
+#include "../../include/nt/prime_test.hpp"
 #include "../../include/arithmetic.hpp"
 #include <algorithm>
 #include <cmath>
@@ -49,10 +49,10 @@
 
 // declare Basics and Primality class objects
 mtpk::Basics ba;
-mtpk::Primality prim;
+mtpk::PrimalityTest prim;
 
 // Calculates (a * b) mod m
-uint64_t mtpk::Primality::mod_mul(uint64_t a, uint64_t b, uint64_t m) {
+uint64_t mtpk::PrimalityTest::mod_mul(uint64_t a, uint64_t b, uint64_t m) {
     uint64_t res = 0;
     while (b > 0) {
         if (b & 1) {
@@ -65,7 +65,7 @@ uint64_t mtpk::Primality::mod_mul(uint64_t a, uint64_t b, uint64_t m) {
 }
 
 // Calculates (a ^ b) mod m
-uint64_t mtpk::Primality::mod_pow(uint64_t a, uint64_t b, uint64_t m) {
+uint64_t mtpk::PrimalityTest::mod_pow(uint64_t a, uint64_t b, uint64_t m) {
     uint64_t res = 1;
     a %= m;
     while (b > 0) {
@@ -79,7 +79,7 @@ uint64_t mtpk::Primality::mod_pow(uint64_t a, uint64_t b, uint64_t m) {
 }
 
 /*
-uint64_t mtpk::Primality::mod_pow(uint64_t base, uint64_t exponent,
+uint64_t mtpk::PrimalityTest::mod_pow(uint64_t base, uint64_t exponent,
                                  uint64_t mod) {
     uint64_t x = 1;
     uint64_t y = base;
@@ -95,7 +95,7 @@ uint64_t mtpk::Primality::mod_pow(uint64_t base, uint64_t exponent,
     return x;
 }*/
 
-bool mtpk::Primality::is_prime(uint64_t n) {
+bool mtpk::PrimalityTest::is_prime(uint64_t n) {
     if (n <= 1)
         return false;
 
@@ -110,7 +110,7 @@ bool mtpk::Primality::is_prime(uint64_t n) {
 /*
  * determining if a given number is likely to be prime
  */
-bool mtpk::Primality::compute_miller_rabin(uint64_t d, uint64_t n) {
+bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
     uint64_t a = 2 + rand() % (n - 4);
@@ -147,8 +147,8 @@ bool mtpk::Primality::compute_miller_rabin(uint64_t d, uint64_t n) {
     return false;
 }
 
-bool mtpk::Primality::witness(uint64_t n, uint64_t d, uint64_t a,
-                              uint64_t s) {
+bool mtpk::PrimalityTest::witness(uint64_t n, uint64_t d, uint64_t a,
+                                  uint64_t s) {
     uint64_t x = mod_pow(a, d, n);
     if (x == 1 || x == n - 1) {
         return false;
@@ -162,7 +162,7 @@ bool mtpk::Primality::witness(uint64_t n, uint64_t d, uint64_t a,
     return true;
 }
 
-bool mtpk::Primality::miller_rabin_prime(
+bool mtpk::PrimalityTest::miller_rabin_prime(
     uint64_t n, uint64_t iters = 10 /* default */) {
     if (n < 2) {
         return false;
@@ -187,8 +187,8 @@ bool mtpk::Primality::miller_rabin_prime(
     return true;
 }
 
-void mtpk::Primality::miller_rabin(uint64_t iters, uint64_t min_val,
-                                   uint64_t max_val) {
+void mtpk::PrimalityTest::miller_rabin(uint64_t iters, uint64_t min_val,
+                                       uint64_t max_val) {
     std::cout << "Primes between " << min_val << " and " << max_val
               << std::endl;
     // int d = iters - 1;
@@ -205,7 +205,7 @@ void mtpk::Primality::miller_rabin(uint64_t iters, uint64_t min_val,
     std::cout << "\n";
 }
 
-bool mtpk::Primality::AKS(uint64_t n) {
+bool mtpk::PrimalityTest::AKS(uint64_t n) {
     // Check if n is a perfect power
     for (uint64_t b = 2; b <= std::sqrt(n); b++) {
         uint64_t a = std::round(std::pow(n, 1.0 / b));
@@ -253,7 +253,7 @@ bool mtpk::Primality::AKS(uint64_t n) {
 /*
  * another algorithm capable of finding primes
  */
-uint64_t mtpk::Primality::jacobian_number(uint64_t a, uint64_t n) {
+uint64_t mtpk::PrimalityTest::jacobian_number(uint64_t a, uint64_t n) {
     if (!a)
         return 0; // (0/n) = 0
 
@@ -302,7 +302,7 @@ uint64_t mtpk::Primality::jacobian_number(uint64_t a, uint64_t n) {
  *
  * a^(p-1)/2 = (a/p) (mod p)
  */
-bool mtpk::Primality::solovoy_strassen(uint64_t p, uint64_t iters) {
+bool mtpk::PrimalityTest::solovoy_strassen(uint64_t p, uint64_t iters) {
     if (p < 2)
         return false;
 
@@ -326,7 +326,7 @@ bool mtpk::Primality::solovoy_strassen(uint64_t p, uint64_t iters) {
  * are composite integers satisfying the congruence forumla below
  * b^n - 1 = b (mod n)
  */
-bool mtpk::Primality::carmichael_num(uint64_t n) {
+bool mtpk::PrimalityTest::carmichael_num(uint64_t n) {
     for (uint64_t b = 2; b < n; b++) {
         // If "b" is relatively prime to n
         if (ba.op_gcd(b, n) == 1)
@@ -343,7 +343,8 @@ bool mtpk::Primality::carmichael_num(uint64_t n) {
  * Eratosthenes is able to capture all prime numbers to any given
  * limit
  */
-void mtpk::Primality::sieve_of_eratosthenes(uint64_t n) {
+/*
+void mtpk::PrimalityTest::sieve_of_eratosthenes(uint64_t n) {
     // Create a boolean array "prime[0..n]" and initialize
     // all entries it as true. A value in prime[i] will
     // finally be false if i is Not a prime, else true.
@@ -368,7 +369,7 @@ void mtpk::Primality::sieve_of_eratosthenes(uint64_t n) {
             std::cout << p << " " << std::endl;
         }
     }
-}
+}*/
 
 /*
  * Euler's Totient Function counts the positive numbers up until a
@@ -384,7 +385,7 @@ void mtpk::Primality::sieve_of_eratosthenes(uint64_t n) {
  *          Φ(4) = 2
  *          Φ(5) = 4
  */
-uint64_t mtpk::Primality::ETF(uint64_t n) {
+uint64_t mtpk::PrimalityTest::ETF(uint64_t n) {
     uint64_t result = 1;
 
     for (uint64_t index = 2; uint64_t(index) < n; index++) {

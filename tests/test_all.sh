@@ -7,7 +7,7 @@ g++ -std=c++2a -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -
     calc/t_calc.cpp ../modules/calculus/deriv.cpp \
     nt/t_cipher.cpp ../modules/nt/cipher.cpp \
     nt/t_rc4.cpp ../modules/nt/rc4.cpp \
-    nt/t_primes.cpp ../modules/nt/primes.cpp \
+    nt/t_primes.cpp ../modules/nt/prime_test.cpp  ../modules/nt/prime_gen.cpp \
     nt/t_factorization.cpp ../modules/nt/factorization.cpp \
     nt/t_logarithms.cpp ../modules/nt/logarithms.cpp \
     t_threadpool.cpp \

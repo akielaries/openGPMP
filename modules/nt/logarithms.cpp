@@ -38,7 +38,7 @@
  */
 #include "../../include/nt/logarithms.hpp"
 #include "../../include/arithmetic.hpp"
-#include "../../include/nt/primes.hpp"
+#include "../../include/nt/prime_test.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
@@ -49,7 +49,7 @@
 #include <unordered_map>
 
 // primes object for this Logarithms file
-mtpk::Primality __LOG_PRIMES__;
+mtpk::PrimalityTest __LOG_PRIMES__;
 
 // OSX uses srand() opposed to rand()
 #ifdef __APPLE__

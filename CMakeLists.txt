@@ -69,7 +69,8 @@ set(SOURCE_FILES
     modules/ml/mlp_network.cpp
     modules/nt/cipher.cpp
     modules/nt/rc4.cpp
-    modules/nt/primes.cpp
+    modules/nt/prime_test.cpp
+    modules/nt/prime_gen.cpp
     modules/nt/factorization.cpp
     modules/nt/logarithms.cpp
 )

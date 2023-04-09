@@ -73,8 +73,8 @@ lin-alg:
 
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
-PRIMES		= $(SRCDIR)/nt/primes.cpp
-PRIMESDRV	= $(PROJDIR)/samples/cpp/primes.cpp
+PRIMES		= $(SRCDIR)/nt/prime_test.cpp
+PRIMESDRV	= $(PROJDIR)/samples/cpp/prime_test.cpp
 PRIMESBIN	= primes
 
 CIPH		= $(SRCDIR)/nt/cipher.cpp

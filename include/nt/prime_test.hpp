@@ -37,8 +37,8 @@
  *
  * Definitions for operations related to prime numbers
  */
-#ifndef PRIMES_HPP
-#define PRIMES_HPP
+#ifndef PRIMES_TEST_HPP
+#define PRIMES_TEST_HPP
 
 #include <cstdint>
 #include <stdio.h>
@@ -48,7 +48,7 @@ namespace mtpk {
 /**
  * Primality Class dealing with prime number manipulations
  */
-class Primality {
+class PrimalityTest {
   public:
     /**
      * @brief Determine if an integer is prime
@@ -121,7 +121,7 @@ class Primality {
     bool carmichael_num(uint64_t n);
 
     /* finds the prime numbers up to a limit */
-    void sieve_of_eratosthenes(uint64_t n);
+    // void sieve_of_eratosthenes(uint64_t n);
 
     /* Eulers Totient Function */
     uint64_t ETF(uint64_t n);

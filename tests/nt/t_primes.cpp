@@ -37,13 +37,14 @@
  * functionalities of the Number Theory module
  *
  */
-#include "../../include/nt/primes.hpp"
+#include "../../include/nt/prime_gen.hpp"
+#include "../../include/nt/prime_test.hpp"
 #include <gtest/gtest.h>
 #include <iostream>
 
 namespace {
 // declare primality class object
-mtpk::Primality __PRIMES_CLASS__;
+mtpk::PrimalityTest __PRIMES_CLASS__;
 
 TEST(prime_test, is_prime) {
     uint64_t is_prime_0 = 2;

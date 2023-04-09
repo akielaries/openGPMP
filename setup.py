@@ -69,7 +69,8 @@ nt = Extension(
     sources=[
         'openmtpk/nt/nt.i',
         'modules/arithmetic/arith.cpp',
-        'modules/nt/primes.cpp',
+        'modules/nt/prime_test.cpp',
+        'modules/nt/prime_gen.cpp',
         'modules/nt/logarithms.cpp',
         'modules/nt/factorization.cpp',
         'modules/nt/rc4.cpp',

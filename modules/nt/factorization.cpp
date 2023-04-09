@@ -38,7 +38,7 @@
  */
 #include "../../include/nt/factorization.hpp"
 #include "../../include/arithmetic.hpp"
-#include "../../include/nt/primes.hpp"
+#include "../../include/nt/prime_test.hpp"
 #include "../../include/threadpool.hpp"
 
 #include <algorithm>
@@ -57,7 +57,7 @@
 // declare Basics and Primality class objects
 mtpk::Basics __FACT_BASICS__;
 mtpk::Factorization __FACTOR__;
-mtpk::Primality __FACT_PRIMES__;
+mtpk::PrimalityTest __FACT_PRIMES__;
 
 // OSX uses srand() opposed to rand()
 #ifdef __APPLE__
