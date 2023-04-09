@@ -111,23 +111,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable__v2_8cpp_source.html#l00160">160</a> of file <a class="el" href="datatable__v2_8cpp_source.html">datatable_v2.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;           {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="classDataTable.html">DataTable</a> dt;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::vector&lt;std::string&gt; selected_columns = {<span class="stringliteral">&quot;DC&quot;</span>, <span class="stringliteral">&quot;X&quot;</span>, <span class="stringliteral">&quot;Y&quot;</span>, <span class="stringliteral">&quot;area&quot;</span>};</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::string filename = <span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame =</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        dt.<a class="code" href="classDataTable.html#a48958499d33696a73c3a76a08a7c2afe">csv_read</a>(filename);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">//    csv_read(&quot;../../data/school_scores.csv&quot;);</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// Print dataframe</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    dt.<a class="code" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display</a>(frame);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// display(frame2);</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="datatable__v2_8cpp_source.html#l00158">158</a> of file <a class="el" href="datatable__v2_8cpp_source.html">datatable_v2.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;           {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classDataTable.html">DataTable</a> dt;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::vector&lt;std::string&gt; selected_columns = {<span class="stringliteral">&quot;DC&quot;</span>, <span class="stringliteral">&quot;X&quot;</span>, <span class="stringliteral">&quot;Y&quot;</span>, <span class="stringliteral">&quot;area&quot;</span>};</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    std::string filename = <span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame =</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        dt.<a class="code" href="classDataTable.html#a48958499d33696a73c3a76a08a7c2afe">csv_read</a>(filename);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">//    csv_read(&quot;../../data/school_scores.csv&quot;);</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// Print dataframe</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    dt.<a class="code" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display</a>(frame);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// display(frame2);</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 <div class="ttc" id="aclassDataTable_html"><div class="ttname"><a href="classDataTable.html">DataTable</a></div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00052">datatable.hpp:52</a></div></div>
 <div class="ttc" id="aclassDataTable_html_a0b58ef70c3fe47a80f2b3db3ac085437"><div class="ttname"><a href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">DataTable::display</a></div><div class="ttdeci">void display() const</div></div>
 <div class="ttc" id="aclassDataTable_html_a48958499d33696a73c3a76a08a7c2afe"><div class="ttname"><a href="classDataTable.html#a48958499d33696a73c3a76a08a7c2afe">DataTable::csv_read</a></div><div class="ttdeci">std::vector&lt; std::map&lt; std::string, std::string &gt; &gt; csv_read(std::string filename, std::vector&lt; std::string &gt; selected_columns={})</div><div class="ttdef"><b>Definition:</b> <a href="datatable__v2_8cpp_source.html#l00048">datatable_v2.cpp:48</a></div></div>
