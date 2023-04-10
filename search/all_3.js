@@ -33,7 +33,7 @@ var searchData=
   ['computetheta_94',['computeTheta',['../classmtpk_1_1BayesBernoulli.html#a60791bcdabb28aaa143eed9eb0524581',1,'mtpk::BayesBernoulli::computeTheta()'],['../classmtpk_1_1BayesMutliNom.html#a0c6d1b8f005c7da8e72fbdaf60b66720',1,'mtpk::BayesMutliNom::computeTheta()']]],
   ['computevocab_95',['computeVocab',['../classmtpk_1_1BayesBernoulli.html#a4995df4ab11dd11542d38a9fa4598ec9',1,'mtpk::BayesBernoulli']]],
   ['concatenate_96',['concatenate',['../classmtpk_1_1Matrix.html#a39ba97dc5227bc596725bdd45ccd7925',1,'mtpk::Matrix']]],
-  ['condition_97',['condition',['../classThreadPool.html#a6dd0c005d9bc726e976def8d6ac2d2a7',1,'ThreadPool']]],
+  ['condition_97',['condition',['../classmtpk_1_1ThreadPool.html#a3c72fbe1a627fd8abb44abae1d0b776d',1,'mtpk::ThreadPool']]],
   ['constant_98',['constant',['../classmtpk_1_1LinearRegression.html#ac2880aa8177a866b00b5959ef47a6565',1,'mtpk::LinearRegression']]],
   ['constantapproximation_99',['constantApproximation',['../classmtpk_1_1NumericalAnalysis.html#a101e591b0a1c6c67535a074435630ba9',1,'mtpk::NumericalAnalysis::constantApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c)'],['../classmtpk_1_1NumericalAnalysis.html#a19099583e1899cac1f8a821acee3a379',1,'mtpk::NumericalAnalysis::constantApproximation(double(*function)(double), double c)']]],
   ['contraharmonicmean_100',['contraHarmonicMean',['../classmtpk_1_1Stats.html#abc74a2375f7e6f29be212004d8dea08b',1,'mtpk::Stats']]],
