@@ -3,14 +3,16 @@
 
 #define NUM_OPS 100000000
 
-template <typename T> void arithmetic_loop(T &result) {
+template <typename T>
+void arithmetic_loop(T &result) {
     result = result + 1;
     result = result * 2;
     result = result / 2;
     result = result - 1;
 }
 
-template <typename T> void benchmark() {
+template <typename T>
+void benchmark() {
     int i;
     T result;
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;

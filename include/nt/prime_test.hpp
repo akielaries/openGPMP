@@ -103,7 +103,7 @@ class PrimalityTest {
     bool AKS(uint64_t n);
 
     /* Lucas Primality Test */
-    //uint64_t lucas(uint64_t n);
+    // uint64_t lucas(uint64_t n);
 
     /* algorithms finding a prime number */
     uint64_t jacobian_number(uint64_t a, uint64_t n);

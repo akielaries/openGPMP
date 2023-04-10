@@ -8,10 +8,12 @@
 #include <iostream>
 #include <openMTPK/nt/prime_gen.hpp>
 #include <openMTPK/nt/prime_test.hpp>
-#include <openMTPK/threadpool.hpp>
+//#include <openMTPK/core/threadpool.hpp>
+#include "../../include/core/threadpool.hpp"
 #include <vector>
 
 void testing_miller() {
+    /* SEQUENTIAL MILLER-RABIN TEST */
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
@@ -33,7 +35,7 @@ void testing_miller() {
               << std::endl;
 
     for (uint64_t n : nums) {
-        if (prims.miller_rabin_prime(n, 1200000))
+        if (prims.miller_rabin_prime(n, 120000))
             std::cout << n << " is prime" << std::endl;
         else
             std::cout << n << " is composite" << std::endl;
@@ -50,6 +52,7 @@ void testing_miller() {
 }
 
 void testing_miller_thread() {
+    /* MILLER-RABIN TEST USING THREADPOOL WITH MANUAL ENQUEUE */
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
@@ -68,18 +71,72 @@ void testing_miller_thread() {
         2305843009213693977LL, 2305843009213693989LL};
 
     // declares a threadpool with 4 threads
-    ThreadPool *pool = new ThreadPool(4);
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(8);
 
     std::vector<std::future<bool>> miller_results;
     mtpk::PrimalityTest prim;
     for (auto n : nums) {
         miller_results.emplace_back(pool->enqueue(
-            [&prim, n]() { return prim.miller_rabin_prime(n, 1200000); }));
+            [&prim, n]() { return prim.miller_rabin_prime(n, 120000); }));
     }
 
     // Print the results
-    std::cout << "Results:\n";
+    std::cout << "\nResults:\n";
     std::cout << "Miller-Rabin with ThreadPool" << std::endl;
+    for (size_t i = 0; i < miller_results.size(); i++) {
+        bool is_prime = miller_results[i].get();
+        std::cout << nums[i] << " is "
+                  << (is_prime ? "prime" : "composite") << "\n";
+    }
+    delete pool;
+
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
+
+    std::cout << "Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time)
+                     .count()
+              << " ms" << std::endl;
+}
+
+void testing_new_miller() {
+    /* MILLER-RABIN USING THREADPOOL DISPATCH UTILITY FUNCTION */
+    std::chrono::steady_clock::time_point start_time =
+        std::chrono::steady_clock::now();
+
+    std::vector<int64_t> nums = {
+        9223372036854775803,   9223372036854775807,
+        9223372036854775303,   4567890123456789LL,
+        5678901234567890LL,    6789012345678901LL,
+        7890123456789012LL,    8901234567890123LL,
+        9999999967LL,          12345678901234567LL,
+        987654321987654321LL,  2147483647LL,
+        9223372036854775783LL, 1311768467463790320LL,
+        7237005577332262210LL, 3037000499LL,
+        2305843009213693951LL, 2305843009213693967LL,
+        2305843009213693971LL, 2305843009213693973LL,
+        2305843009213693977LL, 2305843009213693989LL};
+
+    std::vector<std::future<bool>> miller_results;
+
+    mtpk::PrimalityTest prim;
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(8);
+
+    for (auto n : nums) {
+        // enqueue the function call to the thread pool using the
+        // ThreadDispatch.dispatch() function
+        miller_results.emplace_back(mtpk::ThreadDispatch().dispatch(
+            *pool, &mtpk::PrimalityTest::miller_rabin_prime, &prim, n,
+            120000));
+    }
+
+    // Print the results
+    std::cout << "\nResults:\n";
+    std::cout
+        << "Miller-Rabin with ThreadPool using ThreadDispatch.dispatch()"
+        << std::endl;
+
     for (size_t i = 0; i < miller_results.size(); i++) {
         bool is_prime = miller_results[i].get();
         std::cout << nums[i] << " is "
@@ -199,6 +256,9 @@ int main() {
     std::cout << "<--------- USING THREADPOOL --------->\n";
 
     testing_miller_thread();
+    testing_new_miller();
+    testing_miller_thread();
+
     // vector if 64 bit integers
 
     return 0;

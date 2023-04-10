@@ -38,6 +38,8 @@
  */
 #include "../../include/nt/prime_test.hpp"
 #include "../../include/arithmetic.hpp"
+#include "../../include/threadpool.hpp"
+
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
@@ -96,14 +98,16 @@ uint64_t mtpk::PrimalityTest::mod_pow(uint64_t base, uint64_t exponent,
 }*/
 
 bool mtpk::PrimalityTest::is_prime(uint64_t n) {
-    if (n <= 1)
+    if (n <= 1) {
         return false;
+    }
 
     // Check from 2 to n-1
-    for (uint64_t iter = 2; iter < n; iter++)
-        if (n % iter == 0)
+    for (uint64_t iter = 2; iter < n; iter++) {
+        if (n % iter == 0) {
             return false;
-
+        }
+    }
     return true;
 }
 
@@ -137,10 +141,12 @@ bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
         x = (x * x) % n;
         d *= 2;
 
-        if (x == 1)
+        if (x == 1) {
             return false;
-        if (x == n - 1)
+        }
+        if (x == n - 1) {
             return true;
+        }
     }
 
     // Return composite

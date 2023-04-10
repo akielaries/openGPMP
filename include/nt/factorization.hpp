@@ -81,8 +81,8 @@ class Factorization {
     uint64_t pollard_rho(uint64_t n);
 
     /*  */
-    //std::vector<std::future<uint64_t>>
-    //pollard_rho_thread(const std::vector<uint64_t> &nums_to_factorize);
+    // std::vector<std::future<uint64_t>>
+    // pollard_rho_thread(const std::vector<uint64_t> &nums_to_factorize);
     /* Lenstra elliptic-curve factorization */
     // uint64_t LECF(uint64_t n);
 
