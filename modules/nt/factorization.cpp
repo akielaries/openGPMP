@@ -39,7 +39,7 @@
 #include "../../include/nt/factorization.hpp"
 #include "../../include/arithmetic.hpp"
 #include "../../include/nt/prime_test.hpp"
-#include "../../include/threadpool.hpp"
+#include "../../include/core/threadpool.hpp"
 
 #include <algorithm>
 #include <chrono>
