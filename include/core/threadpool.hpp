@@ -73,6 +73,7 @@ class ThreadPool {
         std::future<return_type> res = task->get_future();
         {
             std::unique_lock<std::mutex> lock(queue_mutex);
+
             if (stop) {
                 throw std::runtime_error("enqueue on stopped ThreadPool");
             }
@@ -101,8 +102,25 @@ class ThreadPool {
     bool stop;
 };
 
+/**
+ * @brief A class that provides a function to dispatch a function call to a
+ * thread pool and return a future object for obtaining the result.
+ */
 class ThreadDispatch {
   public:
+    /**
+     * @brief Dispatches a function call to a ThreadPool and returns a
+     * future object for obtaining the result.
+     * @tparam Function The type of the function to be dispatched.
+     * @tparam Args The types of the arguments to be passed to the
+     * function.
+     * @param pool The ThreadPool object to which the function call is
+     * dispatched.
+     * @param func The function to be dispatched.
+     * @param args The arguments to be passed to the function.
+     * @return A future object for obtaining the result of the dispatched
+     * function call.
+     */
     template <typename Function, typename... Args>
     auto dispatch(ThreadPool &pool, Function &&func, Args &&... args)
         -> std::future<typename std::result_of<Function(Args...)>::type> {
