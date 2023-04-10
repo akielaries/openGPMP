@@ -41,7 +41,7 @@
 #ifndef FACTORIZATION_HPP
 #define FACTORIZATION_HPP
 
-#include "../threadpool.hpp"
+#include "../core/threadpool.hpp"
 #include <condition_variable>
 #include <cstdint>
 #include <functional>
