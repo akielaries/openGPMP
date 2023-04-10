@@ -9,13 +9,13 @@ using namespace std::chrono_literals;
 
 namespace {
 TEST(ThreadPoolTest, EnqueueSingleTask) {
-    ThreadPool pool(1);
+    mtpk::ThreadPool pool(1);
     std::future<int> result = pool.enqueue([]() { return 42; });
     ASSERT_EQ(result.get(), 42);
 }
 
 TEST(ThreadPoolTest, TestSingleTask) {
-    ThreadPool pool(2);
+    mtpk::ThreadPool pool(2);
 
     std::future<int> result =
         pool.enqueue([](int x, int y) { return x + y; }, 3, 4);
@@ -24,7 +24,7 @@ TEST(ThreadPoolTest, TestSingleTask) {
 }
 
 TEST(ThreadPoolTest, EnqueueMultipleTasks) {
-    ThreadPool pool(4);
+    mtpk::ThreadPool pool(4);
     std::vector<std::future<int>> results;
     for (int i = 0; i < 100; ++i) {
         results.emplace_back(pool.enqueue([i]() { return i * 2; }));
@@ -35,14 +35,14 @@ TEST(ThreadPoolTest, EnqueueMultipleTasks) {
 }
 
 TEST(ThreadPoolTest, EnqueueException) {
-    ThreadPool pool(2);
+    mtpk::ThreadPool pool(2);
     std::future<void> result =
         pool.enqueue([]() { throw std::runtime_error("test error"); });
     ASSERT_THROW(result.get(), std::runtime_error);
 }
 
 TEST(ThreadPoolTest, TestException) {
-    ThreadPool pool(1);
+    mtpk::ThreadPool pool(1);
 
     EXPECT_THROW(
         pool.enqueue([]() { throw std::runtime_error("test exception"); })
@@ -74,7 +74,7 @@ TEST(ThreadPoolTest, TestEnqueueOnStoppedThreadPool) {
 }
 
 TEST(ThreadPoolTest, TestEnqueueWithDifferentReturnTypes) {
-    ThreadPool pool(2);
+    mtpk::ThreadPool pool(2);
 
     auto task1 = []() { /* do something */ };
     auto task2 = []() -> int { return 42; };
@@ -90,7 +90,7 @@ TEST(ThreadPoolTest, TestEnqueueWithDifferentReturnTypes) {
 }
 
 TEST(ThreadPoolTest, TestEnqueueWithDifferentArgumentTypes) {
-    ThreadPool pool(2);
+    mtpk::ThreadPool pool(2);
 
     auto task1 = [](int x, int y) { /* do something */ };
     auto task2 = [](const std::string &str) { /* do something */ };
@@ -107,7 +107,7 @@ TEST(ThreadPoolTest, TestEnqueueWithDifferentArgumentTypes) {
 
 TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
     const int numTasks = 1000;
-    ThreadPool pool(4);
+    mtpk::ThreadPool pool(4);
 
     for (int i = 0; i < numTasks; ++i) {
         auto task = []() { /* do something */ };
