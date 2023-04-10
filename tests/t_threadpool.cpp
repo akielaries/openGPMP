@@ -52,7 +52,7 @@ TEST(ThreadPoolTest, TestException) {
 
 TEST(ThreadPoolTest, TestDynamicAllocation) {
     // Create a new ThreadPool with 4 threads
-    ThreadPool *pool = new ThreadPool(4);
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(4);
 
     // Enqueue a task and wait for it to complete
     std::future<int> result = pool->enqueue([]() { return 42; });
@@ -64,7 +64,7 @@ TEST(ThreadPoolTest, TestDynamicAllocation) {
 
 TEST(ThreadPoolTest, TestEnqueueOnStoppedThreadPool) {
     // Create a new ThreadPool with 2 threads
-    ThreadPool *pool = new ThreadPool(2);
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(2);
 
     // Stop the ThreadPool explicitly
     delete pool; // pool.~ThreadPool();
@@ -114,6 +114,39 @@ TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
         auto task2 = pool.enqueue(task);
         task2.wait();
     }
+}
+
+TEST(ThreadDispatchTest, DispatchFunction) {
+    mtpk::ThreadPool pool(2);
+    mtpk::ThreadDispatch dispatch;
+
+    // fefine a lambda function to be dispatched to the thread pool
+    auto task = []() -> int { return 42; };
+
+    // dispatch the task to the thread pool using
+    // ThreadDispatch::dispatch()
+    auto future_result = dispatch.dispatch(pool, task);
+
+    // wait for the task to complete and get the result
+    auto result = future_result.get();
+
+    // check if the result is correct
+    EXPECT_EQ(result, 42);
+}
+
+TEST(ThreadDispatchTest, DispatchFunctionWithArgs) {
+    mtpk::ThreadPool pool(2);
+    mtpk::ThreadDispatch dispatch;
+
+    // define a lambda function to be dispatched to the thread pool, which
+    // takes an integer argument and returns its square
+    auto task = [](int x) -> int { return x * x; };
+
+    auto future_result = dispatch.dispatch(pool, task, 5);
+
+    auto result = future_result.get();
+
+    EXPECT_EQ(result, 25);
 }
 
 } // namespace
