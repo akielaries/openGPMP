@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['optimizers_590',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
-  ['outlierfinder_591',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
+  ['naivenet_622',['NaiveNet',['../classmtpk_1_1NaiveNet.html',1,'mtpk']]],
+  ['nearestneighbor_623',['NearestNeighbor',['../classmtpk_1_1NearestNeighbor.html',1,'mtpk']]],
+  ['neuron_624',['neuron',['../structmtpk_1_1ml_1_1neuron.html',1,'mtpk::ml']]],
+  ['notthismethod_625',['NotThisMethod',['../classopenmtpk_1_1__version_1_1NotThisMethod.html',1,'openmtpk::_version']]],
+  ['numericalanalysis_626',['NumericalAnalysis',['../classmtpk_1_1NumericalAnalysis.html',1,'mtpk']]]
 ];

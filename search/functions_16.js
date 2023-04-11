@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['weightedlehmermean_992',['weightedLehmerMean',['../classmtpk_1_1Stats.html#a1f5151c5b30862656145050cc0a2864e',1,'mtpk::Stats']]],
-  ['weightedmean_993',['weightedMean',['../classmtpk_1_1Stats.html#a2549d6474049221cbfc0609ba1805c9f',1,'mtpk::Stats']]],
-  ['weights_5fadjust_994',['weights_adjust',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3fb446ddfd3e01c0b2f61db8e8cf66f7',1,'mtpk::ml::PrimaryMLP']]],
-  ['weights_5frand_995',['weights_rand',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a17ae77fa444dba716f6e14d83d2f3e52',1,'mtpk::ml::PrimaryMLP']]],
-  ['weights_5frestore_996',['weights_restore',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ac86d80e12567b45439eae866932b6c08',1,'mtpk::ml::PrimaryMLP']]],
-  ['weights_5fsave_997',['weights_save',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1de057913c17181e734e39e8aea845c1',1,'mtpk::ml::PrimaryMLP']]],
-  ['witness_998',['witness',['../classmtpk_1_1PrimalityTest.html#acdf45aec6e905ea12470b6e9c48393b2',1,'mtpk::PrimalityTest']]]
+  ['value_1054',['value',['../classopenmtpk_1_1arithmetic_1_1arithmetic_1_1SwigPyIterator.html#a98408d0dabf278952468baf65d72ccd3',1,'openmtpk.arithmetic.arithmetic.SwigPyIterator.value()'],['../classopenmtpk_1_1calculus_1_1calculus_1_1SwigPyIterator.html#a9546dfde0df619e719e6d28a84ac108e',1,'openmtpk.calculus.calculus.SwigPyIterator.value()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1SwigPyIterator.html#a8bc431e437648a1039536f1f60fbb649',1,'openmtpk.linalg.linalg.SwigPyIterator.value()'],['../classopenmtpk_1_1ml_1_1ml_1_1SwigPyIterator.html#ac32e505b84d864527dfe0b976862365c',1,'openmtpk.ml.ml.SwigPyIterator.value()'],['../classopenmtpk_1_1nt_1_1nt_1_1SwigPyIterator.html#a25380135854c7b9d03e831c9c5b51701',1,'openmtpk.nt.nt.SwigPyIterator.value()']]],
+  ['variance_1055',['variance',['../classmtpk_1_1Stats.html#ac82c4261969db13d29995a14fc290ff7',1,'mtpk::Stats']]],
+  ['vector_5fwise_5ftensor_5fproduct_1056',['vector_wise_tensor_product',['../classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45',1,'mtpk::Tensors']]],
+  ['versions_5ffrom_5fparentdir_1057',['versions_from_parentdir',['../namespaceopenmtpk_1_1__version.html#a873b771b306309ca3f2df6abf1730a38',1,'openmtpk::_version']]],
+  ['vocklington_1058',['vocklington',['../classmtpk_1_1Squares.html#a69457c463d06a43b6bfc257e7a75bc70',1,'mtpk::Squares']]]
 ];

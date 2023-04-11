@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['naivenet_585',['NaiveNet',['../classmtpk_1_1NaiveNet.html',1,'mtpk']]],
-  ['nearestneighbor_586',['NearestNeighbor',['../classmtpk_1_1NearestNeighbor.html',1,'mtpk']]],
-  ['neuron_587',['neuron',['../structmtpk_1_1ml_1_1neuron.html',1,'mtpk::ml']]],
-  ['notthismethod_588',['NotThisMethod',['../classopenmtpk_1_1__version_1_1NotThisMethod.html',1,'openmtpk::_version']]],
-  ['numericalanalysis_589',['NumericalAnalysis',['../classmtpk_1_1NumericalAnalysis.html',1,'mtpk']]]
+  ['matrix_618',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk::Matrix&lt; Type &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html',1,'openmtpk.linalg.linalg.Matrix']]],
+  ['matrixi_619',['MatrixI',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html',1,'openmtpk::linalg::linalg']]],
+  ['mtx_620',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk::mtx&lt; T &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html',1,'openmtpk.linalg.linalg.mtx']]],
+  ['myclass_621',['MyClass',['../classMyClass.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gcds_574',['GCDS',['../classmtpk_1_1GCDS.html',1,'mtpk']]]
+  ['factorization_609',['Factorization',['../classmtpk_1_1Factorization.html',1,'mtpk::Factorization'],['../classopenmtpk_1_1nt_1_1nt_1_1Factorization.html',1,'openmtpk.nt.nt.Factorization']]]
 ];
