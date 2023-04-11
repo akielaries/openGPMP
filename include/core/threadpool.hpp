@@ -162,7 +162,8 @@ class ThreadPool {
             // add a task using emplace to the queue as a lambda that calls the
             // packaged task
             tasks.emplace([task]() { (*task)(); });
-        }
+        } // once this is hit, unique_lock is out of scope & mutex is
+          // automatically unlocked
         // notify one waiting thread of one new task added to the queue
         condition.notify_one();
         // the return is the future object
