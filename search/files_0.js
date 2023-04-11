@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['activators_2ehpp_579',['activators.hpp',['../activators_8hpp.html',1,'']]],
-  ['analysis_2ehpp_580',['analysis.hpp',['../analysis_8hpp.html',1,'']]],
-  ['apis_2emd_581',['APIs.md',['../APIs_8md.html',1,'']]],
-  ['arith_2ecpp_582',['arith.cpp',['../arith_8cpp.html',1,'']]],
-  ['arithmetic_2ehpp_583',['arithmetic.hpp',['../arithmetic_8hpp.html',1,'']]]
+  ['_5f_5finit_5f_5f_2epy_619',['__init__.py',['../____init_____8py.html',1,'(Global Namespace)'],['../arithmetic_2____init_____8py.html',1,'(Global Namespace)'],['../calculus_2____init_____8py.html',1,'(Global Namespace)'],['../linalg_2____init_____8py.html',1,'(Global Namespace)'],['../ml_2____init_____8py.html',1,'(Global Namespace)'],['../nt_2____init_____8py.html',1,'(Global Namespace)'],['../struct_2____init_____8py.html',1,'(Global Namespace)']]],
+  ['_5fversion_2epy_620',['_version.py',['../__version_8py.html',1,'']]]
 ];

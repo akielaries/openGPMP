@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['factorization_2ecpp_600',['factorization.cpp',['../factorization_8cpp.html',1,'']]],
-  ['factorization_2ehpp_601',['factorization.hpp',['../factorization_8hpp.html',1,'']]]
+  ['encoder_2ehpp_637',['encoder.hpp',['../encoder_8hpp.html',1,'']]],
+  ['encoder_5fvar_2ehpp_638',['encoder_var.hpp',['../encoder__var_8hpp.html',1,'']]],
+  ['euclidean_5fdiv_2ehpp_639',['euclidean_div.hpp',['../euclidean__div_8hpp.html',1,'']]],
+  ['examples_2emd_640',['Examples.md',['../Examples_8md.html',1,'']]]
 ];

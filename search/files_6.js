@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gcds_2ehpp_602',['gcds.hpp',['../gcds_8hpp.html',1,'']]]
+  ['factorization_2ecpp_641',['factorization.cpp',['../factorization_8cpp.html',1,'']]],
+  ['factorization_2ehpp_642',['factorization.hpp',['../factorization_8hpp.html',1,'']]]
 ];

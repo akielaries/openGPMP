@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['naive_5fnet_2ehpp_622',['naive_net.hpp',['../naive__net_8hpp.html',1,'']]],
-  ['naive_5fnetwork_2ecpp_623',['naive_network.cpp',['../naive__network_8cpp.html',1,'']]],
-  ['nearest_5fneighbors_2ecpp_624',['nearest_neighbors.cpp',['../nearest__neighbors_8cpp.html',1,'']]],
-  ['nn_2ehpp_625',['nn.hpp',['../nn_8hpp.html',1,'']]],
-  ['nt_2ehpp_626',['nt.hpp',['../nt_8hpp.html',1,'']]]
+  ['mandelbrot_2ecpp_657',['Mandelbrot.cpp',['../Mandelbrot_8cpp.html',1,'']]],
+  ['matrix_2ehpp_658',['matrix.hpp',['../matrix_8hpp.html',1,'']]],
+  ['ml_2ehpp_659',['ml.hpp',['../ml_8hpp.html',1,'']]],
+  ['mlp_5fnet_2ehpp_660',['mlp_net.hpp',['../mlp__net_8hpp.html',1,'']]],
+  ['mlp_5fnetwork_2ecpp_661',['mlp_network.cpp',['../mlp__network_8cpp.html',1,'']]],
+  ['modules_2emd_662',['Modules.md',['../Modules_8md.html',1,'']]]
 ];
