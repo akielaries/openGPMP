@@ -48,7 +48,7 @@
 /**
  * @namespace mtpk
  *
- * @brief The core openMTPK namespace
+ * @brief The source C++ openMTPK namespace
  *
  * @details This namespace wraps all classes and methods used within
  * the library
