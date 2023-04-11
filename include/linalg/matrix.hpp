@@ -130,7 +130,8 @@ template <typename Type> class Matrix {
     }
 
     /*
-     * Multiply by the element; see Hadamard Product
+     * square matrix whose entries are either +1 or −1 and whose rows are
+     * mutually orthogonal
      */
     Matrix hadamard(Matrix &target) {
         assert(dim == target.dim);

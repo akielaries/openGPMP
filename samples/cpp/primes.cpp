@@ -6,31 +6,18 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
+#include <openMTPK/core/threadpool.hpp>
 #include <openMTPK/nt/prime_gen.hpp>
 #include <openMTPK/nt/prime_test.hpp>
-//#include <openMTPK/core/threadpool.hpp>
-#include "../../include/core/threadpool.hpp"
+//#include "../../include/core/threadpool.hpp"
 #include <vector>
 
-void testing_miller() {
+void testing_miller(std::vector<int64_t> nums) {
     /* SEQUENTIAL MILLER-RABIN TEST */
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
     mtpk::PrimalityTest prims;
-    std::vector<int64_t> nums = {
-        9223372036854775803,   9223372036854775807,
-        9223372036854775303,   4567890123456789LL,
-        5678901234567890LL,    6789012345678901LL,
-        7890123456789012LL,    8901234567890123LL,
-        9999999967LL,          12345678901234567LL,
-        987654321987654321LL,  2147483647LL,
-        9223372036854775783LL, 1311768467463790320LL,
-        7237005577332262210LL, 3037000499LL,
-        2305843009213693951LL, 2305843009213693967LL,
-        2305843009213693971LL, 2305843009213693973LL,
-        2305843009213693977LL, 2305843009213693989LL};
-
     std::cout << "Miller-Rabin sequentially without ThreadPool"
               << std::endl;
 
@@ -51,27 +38,13 @@ void testing_miller() {
               << " ms" << std::endl;
 }
 
-void testing_miller_thread() {
+void testing_miller_thread(std::vector<int64_t> nums) {
     /* MILLER-RABIN TEST USING THREADPOOL WITH MANUAL ENQUEUE */
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
-    // vector if 64 bit integers
-    std::vector<int64_t> nums = {
-        9223372036854775803,   9223372036854775807,
-        9223372036854775303,   4567890123456789LL,
-        5678901234567890LL,    6789012345678901LL,
-        7890123456789012LL,    8901234567890123LL,
-        9999999967LL,          12345678901234567LL,
-        987654321987654321LL,  2147483647LL,
-        9223372036854775783LL, 1311768467463790320LL,
-        7237005577332262210LL, 3037000499LL,
-        2305843009213693951LL, 2305843009213693967LL,
-        2305843009213693971LL, 2305843009213693973LL,
-        2305843009213693977LL, 2305843009213693989LL};
-
     // declares a threadpool with 4 threads
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(8);
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(4);
 
     std::vector<std::future<bool>> miller_results;
     mtpk::PrimalityTest prim;
@@ -100,28 +73,15 @@ void testing_miller_thread() {
               << " ms" << std::endl;
 }
 
-void testing_new_miller() {
+void testing_new_miller(std::vector<int64_t> nums) {
     /* MILLER-RABIN USING THREADPOOL DISPATCH UTILITY FUNCTION */
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
-    std::vector<int64_t> nums = {
-        9223372036854775803,   9223372036854775807,
-        9223372036854775303,   4567890123456789LL,
-        5678901234567890LL,    6789012345678901LL,
-        7890123456789012LL,    8901234567890123LL,
-        9999999967LL,          12345678901234567LL,
-        987654321987654321LL,  2147483647LL,
-        9223372036854775783LL, 1311768467463790320LL,
-        7237005577332262210LL, 3037000499LL,
-        2305843009213693951LL, 2305843009213693967LL,
-        2305843009213693971LL, 2305843009213693973LL,
-        2305843009213693977LL, 2305843009213693989LL};
-
     std::vector<std::future<bool>> miller_results;
 
     mtpk::PrimalityTest prim;
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(8);
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(4);
 
     for (auto n : nums) {
         // enqueue the function call to the thread pool using the
@@ -252,12 +212,26 @@ int main() {
 
     std::cout << "\n";
 
-    testing_miller();
+    // example vector of 64 bit integers
+    std::vector<int64_t> nums = {
+        9223372036854775803,   9223372036854775807,
+        9223372036854775303,   4567890123456789LL,
+        5678901234567890LL,    6789012345678901LL,
+        7890123456789012LL,    8901234567890123LL,
+        9999999967LL,          12345678901234567LL,
+        987654321987654321LL,  2147483647LL,
+        9223372036854775783LL, 1311768467463790320LL,
+        7237005577332262210LL, 3037000499LL,
+        2305843009213693951LL, 2305843009213693967LL,
+        2305843009213693971LL, 2305843009213693973LL,
+        2305843009213693977LL, 2305843009213693989LL};
+
+    testing_miller(nums);
     std::cout << "<--------- USING THREADPOOL --------->\n";
 
-    testing_miller_thread();
-    testing_new_miller();
-    testing_miller_thread();
+    testing_miller_thread(nums);
+    testing_new_miller(nums);
+    testing_miller_thread(nums);
 
     // vector if 64 bit integers
 

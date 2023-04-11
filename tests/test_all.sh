@@ -10,7 +10,7 @@ g++ -std=c++2a -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -
     nt/t_primes.cpp ../modules/nt/prime_test.cpp  ../modules/nt/prime_gen.cpp \
     nt/t_factorization.cpp ../modules/nt/factorization.cpp \
     nt/t_logarithms.cpp ../modules/nt/logarithms.cpp \
-    t_threadpool.cpp \
+    core/t_threadpool.cpp \
     -lgtest -lgtest_main -o openMTPK_tests -fprofile-arcs -ftest-coverage -fPIC
 
 # run compiled binary

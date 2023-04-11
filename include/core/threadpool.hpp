@@ -12,6 +12,18 @@
 namespace mtpk {
 
 class ThreadPool {
+  private:
+    // VECTOR of threads to execute tasks
+    std::vector<std::thread> workers;
+    // QUEUE of tasks to be executed
+    std::queue<std::function<void()>> tasks;
+    // MUTEX synchronizing access to the QUEUE of tasks
+    std::mutex queue_mutex;
+    // CONDITIONAL to notify waiting threads when queue gets populated
+    std::condition_variable condition;
+    // BOOL indicating if ThreadPool should stop execution
+    bool stop;
+
   public:
     /**
      * @brief Default constructor that creates a ThreadPool with the number
@@ -65,15 +77,24 @@ class ThreadPool {
     template <class F, class... Args>
     auto enqueue(F &&f, Args &&... args)
         -> std::future<typename std::result_of<F(Args...)>::type> {
+        
+        // this is the return type of the passed in function 
         using return_type = typename std::result_of<F(Args...)>::type;
-
+        // * SHARED POINTER to PACKAGED TASK used to store the passed in i
+        //      function + its arguments
+        // * std::bind used to create function object binded to the 
+        //      function `f` + its args to the packaged tasks
+        // * std::forward used for forwarding an argument to another 
+        //      function
         auto task = std::make_shared<std::packaged_task<return_type()>>(
             std::bind(std::forward<F>(f), std::forward<Args>(args)...));
 
+        // the FUTURE obj retrieves the return value of the function passed in
         std::future<return_type> res = task->get_future();
         {
+            // aquire lock on queue_mutex for synchronization
             std::unique_lock<std::mutex> lock(queue_mutex);
-
+            // 
             if (stop) {
                 throw std::runtime_error("enqueue on stopped ThreadPool");
             }
@@ -93,13 +114,6 @@ class ThreadPool {
         for (std::thread &worker : workers)
             worker.join();
     }
-
-  private:
-    std::vector<std::thread> workers;
-    std::queue<std::function<void()>> tasks;
-    std::mutex queue_mutex;
-    std::condition_variable condition;
-    bool stop;
 };
 
 /**

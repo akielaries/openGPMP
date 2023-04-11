@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 from openmtpk import nt
 
 
