@@ -49,7 +49,7 @@
 namespace mtpk {
 
 /**
- * @brief openMTPK Machine Learning namespace
+ * @brief Namespace for openMTPK Machine Learning
  */
 namespace ml {
 
