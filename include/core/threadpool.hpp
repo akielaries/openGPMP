@@ -34,28 +34,51 @@ class ThreadPool {
 
     /**
      * @brief Constructs a ThreadPool with a given number of worker
-     * threads.
+     * threads to dispatch functions.
      * @param numThreads The number of worker threads to be created.
      * @details Constructs a ThreadPool object with the specified number of
      * worker threads.
      */
     explicit ThreadPool(int numThreads) : stop(false) {
+
+        // traverse through the number of threads specified
         for (int i = 0; i < numThreads; ++i) {
+            // add a new thread to the vector storing workers using lambda function
             workers.emplace_back([this] {
                 for (;;) {
-                    std::function<void()> task;
+                    // worker thread creates task object that holds next task to
+                    // be executed
+                    std::function<void()> task_obj;
+
+                    // this "symbolizes" the critical section of the TheadPool
+                    // class
                     {
-                        std::unique_lock<std::mutex> lock(
-                            this->queue_mutex);
+                        // worker thread locks queue_mutex
+                        std::unique_lock<std::mutex> lock(this->queue_mutex);
+                        // wait on conditional_variable (ThreadPool stop OR
+                        // queued task), wait() locks/unlocks based on condition
+                        // result
                         this->condition.wait(lock, [this] {
                             return this->stop || !this->tasks.empty();
                         });
-                        if (this->stop && this->tasks.empty())
+                        // based on stop OR awaiting tasks, return from the
+                        // thread
+                        if (this->stop && this->tasks.empty()) {
                             return;
-                        task = std::move(this->tasks.front());
+                        }
+
+                        // if above isnt met, move first task in TASKS queue to
+                        // the task object to transfer ownership
+                        task_obj = std::move(this->tasks.front());
+
+                        // pop the handed off task to make room for a new one.
+                        // only ONE thread should remove a task from the queue
+                        // at a time
                         this->tasks.pop();
                     }
-                    task();
+
+                    // EXECUTE THE HANDED OFF TASK
+                    task_obj();
                 }
             });
         }
@@ -77,14 +100,14 @@ class ThreadPool {
     template <class F, class... Args>
     auto enqueue(F &&f, Args &&... args)
         -> std::future<typename std::result_of<F(Args...)>::type> {
-        
-        // this is the return type of the passed in function 
+
+        // this is the return type of the passed in function
         using return_type = typename std::result_of<F(Args...)>::type;
         // * SHARED POINTER to PACKAGED TASK used to store the passed in i
         //      function + its arguments
-        // * std::bind used to create function object binded to the 
+        // * std::bind used to create function object binded to the
         //      function `f` + its args to the packaged tasks
-        // * std::forward used for forwarding an argument to another 
+        // * std::forward used for forwarding an argument to another
         //      function
         auto task = std::make_shared<std::packaged_task<return_type()>>(
             std::bind(std::forward<F>(f), std::forward<Args>(args)...));
@@ -94,25 +117,32 @@ class ThreadPool {
         {
             // aquire lock on queue_mutex for synchronization
             std::unique_lock<std::mutex> lock(queue_mutex);
-            // 
+            // check if threadpool stop is initiated
             if (stop) {
                 throw std::runtime_error("enqueue on stopped ThreadPool");
             }
+            // add a task using emplace to the queue as a lambda that calls the
+            // packaged task
             tasks.emplace([task]() { (*task)(); });
         }
+        // notify one waiting thread of one new task added to the queue
         condition.notify_one();
-
+        // the return is the future object
         return res;
     }
 
     ~ThreadPool() {
         {
+            // lock queue_mutex & set stop to true
             std::unique_lock<std::mutex> lock(queue_mutex);
             stop = true;
         }
+        // unblock all threads
         condition.notify_all();
-        for (std::thread &worker : workers)
+        // treaverse threads and join
+        for (std::thread &worker : workers) {
             worker.join();
+        }
     }
 };
 

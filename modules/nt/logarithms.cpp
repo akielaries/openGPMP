@@ -56,8 +56,7 @@ mtpk::PrimalityTest __LOG_PRIMES__;
 #define USE_SRAND
 #endif
 
-uint64_t mtpk::Logarithms::pollard_rho_log(uint64_t g, uint64_t y,
-                                           uint64_t p) {
+uint64_t mtpk::Logarithms::pollard_rho_log(uint64_t g, uint64_t y, uint64_t p) {
     uint64_t x = rand() % (p - 1) + 1;
 
 #ifdef USE_SRAND

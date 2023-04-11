@@ -170,8 +170,8 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     gluLookAt(camera.getX(), camera.getY(), camera.getZ(),
-              checkerboard.centerx(), 0.0, checkerboard.centerz(), 0.0,
-              1.0, 0.0);
+              checkerboard.centerx(), 0.0, checkerboard.centerz(), 0.0, 1.0,
+              0.0);
     checkerboard.draw();
     for (int i = 0; i < sizeof balls / sizeof(Ball); i++) {
         balls[i].update();

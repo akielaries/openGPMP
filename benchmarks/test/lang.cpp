@@ -24,13 +24,11 @@ template <typename T> void benchmark() {
 
     end = std::chrono::high_resolution_clock::now();
     cpu_time_used =
-        std::chrono::duration_cast<std::chrono::duration<double>>(end -
-                                                                  start)
+        std::chrono::duration_cast<std::chrono::duration<double>>(end - start)
             .count();
 
-    std::cout << "C++ benchmark: Performed " << NUM_OPS
-              << " operations in " << cpu_time_used << " seconds."
-              << std::endl;
+    std::cout << "C++ benchmark: Performed " << NUM_OPS << " operations in "
+              << cpu_time_used << " seconds." << std::endl;
 }
 
 int main() {

@@ -52,8 +52,7 @@ using namespace mtpk;
 // pass into other functions
 // std::string Data::read_csv(file_name, ??)
 
-std::tuple<std::vector<std::vector<double>>, std::vector<double>>
-Data::load() {
+std::tuple<std::vector<std::vector<double>>, std::vector<double>> Data::load() {
     const int SIZE = 1; // k = 30
 
     std::vector<std::vector<double>> inputSet;
@@ -111,8 +110,7 @@ void Data::printData(std::vector<std::string> inputName,
     }
 }
 
-void Data::printData(std::vector<std::string> inputName,
-                     std::string outputName,
+void Data::printData(std::vector<std::string> inputName, std::string outputName,
                      std::vector<std::vector<double>> inputSet,
                      std::vector<double> outputSet) {
     // LinAlg alg;

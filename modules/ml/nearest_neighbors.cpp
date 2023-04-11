@@ -192,8 +192,7 @@ int main() {
     vector<vector<string>> rawData = reader.getData();
     vector<Company> data;
     for (vector<string> line : rawData) {
-        Company comp(stoi(line[0]), line[1],
-                     line[2] == "1" ? true : false);
+        Company comp(stoi(line[0]), line[1], line[2] == "1" ? true : false);
         data.push_back(comp);
     }
 
@@ -206,8 +205,7 @@ int main() {
      */
     Company test(703, "Very Strong", true);
 
-    string answer = KNN(data, test, 12, euclideanDistance)
-                        ? "Successful"
-                        : "Unsuccessful";
+    string answer =
+        KNN(data, test, 12, euclideanDistance) ? "Successful" : "Unsuccessful";
     cout << answer;
 }

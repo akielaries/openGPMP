@@ -86,8 +86,8 @@ class RC4 {
     std::string store_hash(char *plaintext, unsigned char *hashtext,
                            int swap_type);
     /* compute our hash using the the RC4 encryption algorithm */
-    unsigned char *compute(char *key, char *plaintext,
-                           unsigned char *hashtext, int swap_type);
+    unsigned char *compute(char *key, char *plaintext, unsigned char *hashtext,
+                           int swap_type);
 };
 
 } // namespace mtpk

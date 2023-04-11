@@ -60,15 +60,13 @@ class Data {
      * Matrix. We could define it with Matrix class
      */
 
-    std::tuple<std::vector<std::vector<double>>, std::vector<double>>
-    load();
+    std::tuple<std::vector<std::vector<double>>, std::vector<double>> load();
 
     std::tuple<std::vector<std::vector<double>>,
                std::vector<std::vector<double>>>
     load();
 
-    std::tuple<std::vector<std::vector<double>>, std::vector<double>>
-    load();
+    std::tuple<std::vector<std::vector<double>>, std::vector<double>> load();
 
     std::tuple<std::vector<double>, std::vector<double>> load();
 
@@ -79,8 +77,7 @@ class Data {
     void printData(std::vector<std::string> inputName,
                    std::vector<std::vector<double>> inputSet);
 
-    void printData(std::vector<std::string> inputName,
-                   std::string outputName,
+    void printData(std::vector<std::string> inputName, std::string outputName,
                    std::vector<std::vector<double>> inputSet,
                    std::vector<double> outputSet);
 

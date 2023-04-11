@@ -28,8 +28,7 @@ coeff_t pi(int n) {
 }
 
 int main() {
-    std::streamsize old_prec =
-        std::cout.precision(15); // set output digits
+    std::streamsize old_prec = std::cout.precision(15); // set output digits
     std::cout << calc(sqrt2, 20) << '\n'
               << calc(napier, 15) << '\n'
               << calc(pi, 10000) << '\n'

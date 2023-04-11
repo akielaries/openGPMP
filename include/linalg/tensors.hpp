@@ -59,9 +59,8 @@ class Tensors {
 
     void printTensor(std::vector<std::vector<std::vector<double>>> A);
     std::vector<std::vector<std::vector<double>>>
-    vector_wise_tensor_product(
-        std::vector<std::vector<std::vector<double>>> A,
-        std::vector<std::vector<double>> B);
+    vector_wise_tensor_product(std::vector<std::vector<std::vector<double>>> A,
+                               std::vector<std::vector<double>> B);
 };
 
 } // namespace mtpk
