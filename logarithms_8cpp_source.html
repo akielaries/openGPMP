@@ -129,74 +129,73 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define USE_SRAND</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">   59</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a>(uint64_t g, uint64_t y,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                           uint64_t p) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint64_t x = rand() % (p - 1) + 1;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#ifdef USE_SRAND</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    srand(time(NULL));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    x = rand() % (p - 1) + 1;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint64_t y1 = y;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint64_t y2 = y;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    uint64_t d = 1;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::unordered_map&lt;uint64_t, uint64_t&gt; values;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Compute the iterated values of the sequence x_n = g^x_n-1 mod p</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// until a collision is found</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">while</span> (d == 1) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        x = (x * x + 1) % p;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        y1 = (y1 * g) % p;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">   59</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a>(uint64_t g, uint64_t y, uint64_t p) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint64_t x = rand() % (p - 1) + 1;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#ifdef USE_SRAND</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    srand(time(NULL));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    x = rand() % (p - 1) + 1;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    uint64_t y1 = y;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint64_t y2 = y;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint64_t d = 1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::unordered_map&lt;uint64_t, uint64_t&gt; values;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Compute the iterated values of the sequence x_n = g^x_n-1 mod p</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// until a collision is found</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">while</span> (d == 1) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        x = (x * x + 1) % p;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        y1 = (y1 * g) % p;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        y2 = (y2 * g) % p;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        y2 = (y2 * g) % p;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        y2 = (y2 * g) % p;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        d = std::gcd(abs(y2 - y1), p);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        values[x] = y1;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Compute the discrete logarithm using the collision point</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (d == p) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        uint64_t x0 = abs(y2 - y1) / d;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        uint64_t y0 = values[x0];</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        uint64_t k = 1;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">while</span> (y0 != y) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            y0 = (y0 * g) % p;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            k++;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> k * x0 % (p - 1);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/* Baby-Step Giant-Step */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">  100</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint64_t n = (uint64_t)sqrt(m) + 1;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::unordered_map&lt;uint64_t, uint64_t&gt; value;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// store all values of a^(n*i) of LHS</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = n; i &gt;= 1; --i) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        value[<a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, i * n, m)] = i;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span> (uint64_t j = 0; j &lt; n; ++j) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">// calculate (a ^ j) * b and check</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        uint64_t cur = (<a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, j, m) * b) % m;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// If collision occurs i.e., LHS = RHS</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (value[cur]) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            uint64_t ans = value[cur] * n - j;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">// Check whether ans lies below m or not</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">if</span> (ans &lt; m) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">return</span> ans;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        d = std::gcd(abs(y2 - y1), p);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        values[x] = y1;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Compute the discrete logarithm using the collision point</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (d == p) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        uint64_t x0 = abs(y2 - y1) / d;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        uint64_t y0 = values[x0];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        uint64_t k = 1;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">while</span> (y0 != y) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            y0 = (y0 * g) % p;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            k++;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> k * x0 % (p - 1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/* Baby-Step Giant-Step */</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">   99</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    uint64_t n = (uint64_t)sqrt(m) + 1;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::unordered_map&lt;uint64_t, uint64_t&gt; value;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// store all values of a^(n*i) of LHS</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = n; i &gt;= 1; --i) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        value[<a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, i * n, m)] = i;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span> (uint64_t j = 0; j &lt; n; ++j) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// calculate (a ^ j) * b and check</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        uint64_t cur = (<a class="code" href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, j, m) * b) % m;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// If collision occurs i.e., LHS = RHS</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (value[cur]) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            uint64_t ans = value[cur] * n - j;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">// Check whether ans lies below m or not</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (ans &lt; m) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="ttc" id="aclassmtpk_1_1Logarithms_html_a57f2e7771487491fe611f2ba0e41bcce"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a></div><div class="ttdeci">uint64_t pollard_rho_log(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00059">logarithms.cpp:59</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Logarithms_html_ab28c97e5d0880ee42d3af2c0358a1128"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00100">logarithms.cpp:100</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Logarithms_html_ab28c97e5d0880ee42d3af2c0358a1128"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00099">logarithms.cpp:99</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a></div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8hpp_source.html#l00051">prime_test.hpp:51</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a6fed0cc0fb9ae1f51b1eb6338486fbb9"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00070">prime_test.cpp:70</a></div></div>
 <div class="ttc" id="alogarithms_8cpp_html_a6575e29a564fdb9ed50cc966408043a3"><div class="ttname"><a href="logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a></div><div class="ttdeci">mtpk::PrimalityTest __LOG_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="logarithms_8cpp_source.html#l00052">logarithms.cpp:52</a></div></div>
