@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['optimizers_627',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
-  ['outlierfinder_628',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
+  ['primalitygen_584',['PrimalityGen',['../classmtpk_1_1PrimalityGen.html',1,'mtpk::PrimalityGen'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityGen.html',1,'openmtpk.nt.nt.PrimalityGen']]],
+  ['primalitytest_585',['PrimalityTest',['../classmtpk_1_1PrimalityTest.html',1,'mtpk::PrimalityTest'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html',1,'openmtpk.nt.nt.PrimalityTest']]],
+  ['primarymlp_586',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
 ];

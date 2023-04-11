@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['rc4_632',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk::RC4'],['../classopenmtpk_1_1nt_1_1nt_1_1RC4.html',1,'openmtpk.nt.nt.RC4']]],
-  ['rc5_633',['RC5',['../classRC5.html',1,'']]],
-  ['regularizers_634',['Regularizers',['../classmtpk_1_1ml_1_1Regularizers.html',1,'mtpk::ml']]]
+  ['secondarymlp_590',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
+  ['squares_591',['Squares',['../classmtpk_1_1Squares.html',1,'mtpk']]],
+  ['stats_592',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
+  ['summary_593',['summary',['../structmtpk_1_1summary.html',1,'mtpk']]],
+  ['svc_594',['SVC',['../classmtpk_1_1SVC.html',1,'mtpk']]]
 ];
