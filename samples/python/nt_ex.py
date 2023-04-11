@@ -3,7 +3,7 @@ from openmtpk import nt
 
 
 def main():
-    p = nt.Primality()
+    p = nt.PrimalityTest()
 
     prime_0 = p.is_prime(2999)
     prime_1 = p.carmichael_num(561)
