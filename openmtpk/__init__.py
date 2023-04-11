@@ -1,4 +1,10 @@
 """
+@brief Python API for openMTPK. See the following links for
+details and documentation:
+    SOURCE CODE : https://github.com/akielaries/openMTPK/
+    DOCS        : https://akielaries.github.io/openMTPK/
+    PyPI        : https://pypi.org/project/openmtpk/
+
 /*************************************************************************
  *
  *  Project
@@ -32,15 +38,6 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-openMTPK
-========
-@brief Python API for openMTPK. See the following links for
-details and documentation:
-    SOURCE CODE : https://github.com/akielaries/openMTPK/
-    DOCS        : https://akielaries.github.io/openMTPK/
-    PyPI        : https://pypi.org/project/openmtpk/
-
 """
 
 __all__: list[str]
