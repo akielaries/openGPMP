@@ -62,7 +62,6 @@ typedef std::pair<std::vector<long double>,
                   std::vector<std::vector<long double>>>
     DataTableDouble;
 
-
 class DataTable {
   public:
     /**
@@ -76,6 +75,8 @@ class DataTable {
     DataTableStr csv_read(std::string filename,
                           std::vector<std::string> columns = {});
 
+    // TODO: TOML and JSON readers?
+
     // converts a type DataTableStr to DataTableInt
     /**
      * @brief Converts a DataTableStr to a DataTableInt
@@ -83,7 +84,7 @@ class DataTable {
      * @return The converted DataTableInt
      * @note This function assumes that the input DataTableStr contains only
      * elements that can be converted to a 64-bit integer using std::stoi().
-     * @TODO allow for specific columns to be converted 
+     * @TODO allow for specific columns to be converted
      * @TODO make use of ThreadPool
      */
     DataTableInt str_to_int(DataTableStr src);
