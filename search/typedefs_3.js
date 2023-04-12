@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_1090',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]]
+  ['rowvector_1071',['RowVector',['../naive__net_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_net.hpp']]]
 ];
