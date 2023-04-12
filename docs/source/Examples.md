@@ -1,5 +1,5 @@
 # Examples
-See the `[openMTPK/samples](https://github.com/akielaries/openMTPK/tree/main/samples)` folder
+See the [openMTPK/samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
 for many more examples on how to use openMTPK.
 
 Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
