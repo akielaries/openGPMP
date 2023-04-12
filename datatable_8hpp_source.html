@@ -116,27 +116,23 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classDataTable.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDataTable.html">DataTable</a> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classmtpk_1_1DataTable.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1DataTable.html">DataTable</a> {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">   54</a></span>&#160;    <a class="code" href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">DataTable</a>(std::string filename,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;              std::vector&lt;std::string&gt; selected_columns = {});</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">   56</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">display</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::pair&lt;std::vector&lt;std::string&gt;, std::vector&lt;std::vector&lt;std::string&gt;&gt;&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classmtpk_1_1DataTable.html#ae0e9815784687f5e2148b38a93ca0bab">readCSV</a>(std::string filename, std::vector&lt;std::string&gt; columns = {});</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">   59</a></span>&#160;    std::vector&lt;std::unordered_map&lt;std::string, std::string&gt;&gt; <a class="code" href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">data_</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DATATABLE_HPP</span></div>
-<div class="ttc" id="aclassDataTable_html"><div class="ttname"><a href="classDataTable.html">DataTable</a></div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00052">datatable.hpp:52</a></div></div>
-<div class="ttc" id="aclassDataTable_html_a0b58ef70c3fe47a80f2b3db3ac085437"><div class="ttname"><a href="classDataTable.html#a0b58ef70c3fe47a80f2b3db3ac085437">DataTable::display</a></div><div class="ttdeci">void display() const</div></div>
-<div class="ttc" id="aclassDataTable_html_a79f813308507241111a0bf87bbda7df9"><div class="ttname"><a href="classDataTable.html#a79f813308507241111a0bf87bbda7df9">DataTable::data_</a></div><div class="ttdeci">std::vector&lt; std::unordered_map&lt; std::string, std::string &gt; &gt; data_</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00059">datatable.hpp:59</a></div></div>
-<div class="ttc" id="aclassDataTable_html_ac470981c626a982d3f1e3ac44c6a3f1a"><div class="ttname"><a href="classDataTable.html#ac470981c626a982d3f1e3ac44c6a3f1a">DataTable::DataTable</a></div><div class="ttdeci">DataTable(std::string filename, std::vector&lt; std::string &gt; selected_columns={})</div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// DATATABLE_HPP</span></div>
+<div class="ttc" id="aclassmtpk_1_1DataTable_html"><div class="ttname"><a href="classmtpk_1_1DataTable.html">mtpk::DataTable</a></div><div class="ttdef"><b>Definition:</b> <a href="datatable_8hpp_source.html#l00052">datatable.hpp:52</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1DataTable_html_ae0e9815784687f5e2148b38a93ca0bab"><div class="ttname"><a href="classmtpk_1_1DataTable.html#ae0e9815784687f5e2148b38a93ca0bab">mtpk::DataTable::readCSV</a></div><div class="ttdeci">std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt; readCSV(std::string filename, std::vector&lt; std::string &gt; columns={})</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8cpp_source.html#l00011">datatable.cpp:11</a></div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

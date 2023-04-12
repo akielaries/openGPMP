@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/datatable.cpp Source File</title>
+<title>openMTPK: mtpk::DataTable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,26 +63,57 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_6d4da112a1331882b0b6514a341190a0.html">core</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacemtpk.html">mtpk</a></li><li class="navelem"><a class="el" href="classmtpk_1_1DataTable.html">DataTable</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classmtpk_1_1DataTable-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">datatable.cpp</div>  </div>
+<div class="title">mtpk::DataTable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="datatable_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../../include/core/datatable.hpp&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;std::pair&lt;std::vector&lt;std::string&gt;, std::vector&lt;std::vector&lt;std::string&gt;&gt;&gt;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classmtpk_1_1DataTable.html#ae0e9815784687f5e2148b38a93ca0bab">   11</a></span>&#160;<a class="code" href="classmtpk_1_1DataTable.html#ae0e9815784687f5e2148b38a93ca0bab">mtpk::DataTable::readCSV</a>(std::string filename,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                         std::vector&lt;std::string&gt; columns) {</div>
+
+<p><code>#include &lt;<a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae0e9815784687f5e2148b38a93ca0bab"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtpk_1_1DataTable.html#ae0e9815784687f5e2148b38a93ca0bab">readCSV</a> (std::string filename, std::vector&lt; std::string &gt; columns={})</td></tr>
+<tr class="separator:ae0e9815784687f5e2148b38a93ca0bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00052">52</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae0e9815784687f5e2148b38a93ca0bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e9815784687f5e2148b38a93ca0bab">&#9670;&nbsp;</a></span>readCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt; mtpk::DataTable::readCSV </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>columns</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="datatable_8cpp_source.html#l00011">11</a> of file <a class="el" href="datatable_8cpp_source.html">datatable.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                       {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::ifstream file(filename);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
@@ -143,8 +174,16 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    file.close();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> make_pair(columns, data);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1DataTable_html_ae0e9815784687f5e2148b38a93ca0bab"><div class="ttname"><a href="classmtpk_1_1DataTable.html#ae0e9815784687f5e2148b38a93ca0bab">mtpk::DataTable::readCSV</a></div><div class="ttdeci">std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt; readCSV(std::string filename, std::vector&lt; std::string &gt; columns={})</div><div class="ttdef"><b>Definition:</b> <a href="datatable_8cpp_source.html#l00011">datatable.cpp:11</a></div></div>
-</div><!-- fragment --></div><!-- contents -->
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="dt__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/core/<a class="el" href="datatable_8hpp_source.html">datatable.hpp</a></li>
+<li>modules/core/<a class="el" href="datatable_8cpp_source.html">datatable.cpp</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scalar_1072',['Scalar',['../naive__net_8hpp.html#a83ae106b82c2af1be29a327aa7a6bc9b',1,'naive_net.hpp']]],
-  ['summary_1073',['summary',['../namespacemtpk.html#a085f33bc2f6ca9e783087360d000cece',1,'mtpk']]]
+  ['scalar_1071',['Scalar',['../naive__net_8hpp.html#a83ae106b82c2af1be29a327aa7a6bc9b',1,'naive_net.hpp']]],
+  ['summary_1072',['summary',['../namespacemtpk.html#a085f33bc2f6ca9e783087360d000cece',1,'mtpk']]]
 ];
