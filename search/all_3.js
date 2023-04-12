@@ -28,7 +28,7 @@ var searchData=
   ['colvector_99',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]],
   ['company_100',['Company',['../classCompany.html',1,'Company'],['../classCompany.html#a14cf06ae9062513049fd61ba32e7ad50',1,'Company::Company()']]],
   ['comparison_101',['comparison',['../classmtpk_1_1NearestNeighbor.html#a064dee2c9dea483a712060777fee172c',1,'mtpk::NearestNeighbor::comparison()'],['../nearest__neighbors_8cpp.html#ae07612d249d520ffdc46849324a31fb9',1,'comparison():&#160;nearest_neighbors.cpp']]],
-  ['compute_102',['compute',['../classRC5.html#a83718fea487a833eb2ea84a536d178f0',1,'RC5::compute()'],['../classopenmtpk_1_1nt_1_1nt_1_1RC4.html#a105637db865289411e587d88e2e07731',1,'openmtpk.nt.nt.RC4.compute()'],['../classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664',1,'mtpk::RC4::compute()']]],
+  ['compute_102',['compute',['../classopenmtpk_1_1nt_1_1nt_1_1RC4.html#a105637db865289411e587d88e2e07731',1,'openmtpk.nt.nt.RC4.compute()'],['../classRC5.html#a83718fea487a833eb2ea84a536d178f0',1,'RC5::compute()'],['../classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664',1,'mtpk::RC4::compute()']]],
   ['compute_5fmiller_5frabin_103',['compute_miller_rabin',['../classmtpk_1_1PrimalityTest.html#a79b0e1235cde17a893c0d9dd59ab694b',1,'mtpk::PrimalityTest::compute_miller_rabin()'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html#a64aff0eb80e5059c714fdd35be580edf',1,'openmtpk.nt.nt.PrimalityTest.compute_miller_rabin()']]],
   ['computetheta_104',['computeTheta',['../classmtpk_1_1BayesBernoulli.html#a60791bcdabb28aaa143eed9eb0524581',1,'mtpk::BayesBernoulli::computeTheta()'],['../classmtpk_1_1BayesMutliNom.html#a0c6d1b8f005c7da8e72fbdaf60b66720',1,'mtpk::BayesMutliNom::computeTheta()']]],
   ['computevocab_105',['computeVocab',['../classmtpk_1_1BayesBernoulli.html#a4995df4ab11dd11542d38a9fa4598ec9',1,'mtpk::BayesBernoulli']]],
@@ -45,8 +45,9 @@ var searchData=
   ['covariance_116',['covariance',['../classmtpk_1_1Stats.html#a7da89ca8af761f1924048a7ac5bb799d',1,'mtpk::Stats']]],
   ['cryptography_117',['CRYPTOGRAPHY',['../nt_8hpp.html#a7e35c8ec7ddf6c921ac513fdea803509',1,'nt.hpp']]],
   ['csch_118',['csch',['../classmtpk_1_1Activate.html#a577611b140312dc2159ea41316faa55a',1,'mtpk::Activate::csch(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#af3d0f16cde59b086af772496cb503755',1,'mtpk::Activate::csch(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a94ba811bff4e517f99551762d3bf4f4a',1,'mtpk::Activate::csch(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['csvreader_119',['CSVReader',['../classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741',1,'CSVReader::CSVReader()'],['../classCSVReader.html',1,'CSVReader']]],
-  ['cubicapproximation_120',['cubicApproximation',['../classmtpk_1_1NumericalAnalysis.html#a829321ed09170ba50e70f1db7bba3b69',1,'mtpk::NumericalAnalysis::cubicApproximation(double(*function)(double), double c, double x)'],['../classmtpk_1_1NumericalAnalysis.html#ad273d48cc7429a2ef27934a316b00a6b',1,'mtpk::NumericalAnalysis::cubicApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)']]],
-  ['current_5frot_121',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]],
-  ['cv_122',['CV',['../classmtpk_1_1CV.html',1,'mtpk']]]
+  ['csv_5fread_119',['csv_read',['../classmtpk_1_1DataTable.html#ad4df090346522184aca09f6c801b9cf0',1,'mtpk::DataTable']]],
+  ['csvreader_120',['CSVReader',['../classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741',1,'CSVReader::CSVReader()'],['../classCSVReader.html',1,'CSVReader']]],
+  ['cubicapproximation_121',['cubicApproximation',['../classmtpk_1_1NumericalAnalysis.html#a829321ed09170ba50e70f1db7bba3b69',1,'mtpk::NumericalAnalysis::cubicApproximation(double(*function)(double), double c, double x)'],['../classmtpk_1_1NumericalAnalysis.html#ad273d48cc7429a2ef27934a316b00a6b',1,'mtpk::NumericalAnalysis::cubicApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)']]],
+  ['current_5frot_122',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]],
+  ['cv_123',['CV',['../classmtpk_1_1CV.html',1,'mtpk']]]
 ];
