@@ -43,20 +43,17 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
-#include <map>
 #include <sstream>
 #include <string>
-#include <unordered_map>
 #include <vector>
+
+namespace mtpk {
 
 class DataTable {
   public:
-    DataTable(std::string filename,
-              std::vector<std::string> selected_columns = {});
-    void display() const;
-
-  private:
-    std::vector<std::unordered_map<std::string, std::string>> data_;
+    std::pair<std::vector<std::string>, std::vector<std::vector<std::string>>>
+    readCSV(std::string filename, std::vector<std::string> columns = {});
 };
 
+} // namespace mtpk
 #endif // DATATABLE_HPP

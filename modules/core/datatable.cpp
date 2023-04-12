@@ -1,29 +1,31 @@
+#include "../../include/core/datatable.hpp"
 #include <algorithm>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 
-using namespace std;
+std::pair<std::vector<std::string>, std::vector<std::vector<std::string>>>
+mtpk::DataTable::readCSV(std::string filename,
+                         std::vector<std::string> columns) {
 
-pair<vector<string>, vector<vector<string>>>
-readCSV(string filename, vector<string> columns = {}) {
-    ifstream file(filename);
+    std::ifstream file(filename);
 
     if (!file.is_open()) {
-        cerr << "Unable to open file: " << filename << endl;
+        std::cerr << "Unable to open file: " << filename << std::endl;
         exit(EXIT_FAILURE);
     }
 
-    vector<vector<string>> data;
-    string line;
+    std::vector<std::vector<std::string>> data;
+    std::string line;
 
     // Get the header line and parse the column names
     getline(file, line);
-    stringstream header(line);
-    vector<string> headerColumns;
-    string columnName;
+    std::stringstream header(line);
+    std::vector<std::string> headerColumns;
+    std::string columnName;
 
     while (getline(header, columnName, ',')) {
         headerColumns.push_back(columnName);
@@ -38,16 +40,16 @@ readCSV(string filename, vector<string> columns = {}) {
     for (const auto &column : columns) {
         if (find(headerColumns.begin(), headerColumns.end(), column) ==
             headerColumns.end()) {
-            cerr << "Column not found: " << column << endl;
+            std::cerr << "Column not found: " << column << std::endl;
             exit(EXIT_FAILURE);
         }
     }
 
     // Read in the data rows
     while (getline(file, line)) {
-        vector<string> row;
-        stringstream rowStream(line);
-        string value;
+        std::vector<std::string> row;
+        std::stringstream rowStream(line);
+        std::string value;
         int columnIndex = 0;
 
         while (getline(rowStream, value, ',')) {
@@ -67,37 +69,4 @@ readCSV(string filename, vector<string> columns = {}) {
 
     file.close();
     return make_pair(columns, data);
-}
-
-int main() {
-    /*
-     * for now specific columns must be in the order they appear in the file
-     * being read in
-     */
-    pair<vector<string>, vector<vector<string>>> result =
-        readCSV("../../data/forestfires.csv", {"month", "day", "temp", "wind"});
-    // Print the column headers
-    for (const auto &header : result.first) {
-        cout << header << "\t";
-    }
-    cout << endl;
-
-    // Print the data rows
-    for (const auto &row : result.second) {
-        for (const auto &value : row) {
-            cout << value << "\t";
-        }
-        cout << endl;
-    }
-    int num_columns = result.first.size();
-    int num_rows = result.second.size();
-
-    // Print the dimensions
-    // cout << "[" << numColumns << " x " << numRows << "]" << endl;
-
-    cout << "[" << num_rows << " rows"
-         << " x " << num_columns << " columns"
-         << "]\n\n";
-
-    return 0;
 }
