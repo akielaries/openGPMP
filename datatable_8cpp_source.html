@@ -147,16 +147,16 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="namespacemtpk.html#a07a1ee36e02865a60adae5a5fe8fff1e">mtpk::DataTableInt</a> dest;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;v : src.first) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (std::regex_match(</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                v, std::regex(<span class="stringliteral">&quot;\\d+&quot;</span>))) { <span class="comment">// check if v contains only digits</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// check if v contains only digits</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (std::regex_match(v, std::regex(<span class="stringliteral">&quot;\\d+&quot;</span>))) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            dest.first.push_back(std::stoi(v));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;vv : src.second) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::vector&lt;int64_t&gt; new_vec;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;v : vv) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (std::regex_match(</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    v, std::regex(<span class="stringliteral">&quot;\\d+&quot;</span>))) { <span class="comment">// check if v contains only digits</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// check if v contains only digits</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (std::regex_match(v, std::regex(<span class="stringliteral">&quot;\\d+&quot;</span>))) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                new_vec.push_back(std::stoi(v));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
