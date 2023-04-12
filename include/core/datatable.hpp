@@ -136,8 +136,7 @@ class DataTable {
                 }
                 std::cout << std::endl;
             }
-        } 
-        else {
+        } else {
             for (const auto &row : data.second) {
                 for (const auto &value : row) {
                     std::cout << value << "\t";

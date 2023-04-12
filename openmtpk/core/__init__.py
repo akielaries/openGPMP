@@ -33,7 +33,7 @@
  *
  ************************************************************************/
 
-openMTPK Machine Data Structure Module
+openMTPK Core Module containing many utility related functions
 ================================
 """
 
