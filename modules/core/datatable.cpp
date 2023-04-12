@@ -74,16 +74,16 @@ mtpk::DataTableInt mtpk::DataTable::str_to_int(mtpk::DataTableStr src) {
     mtpk::DataTableInt dest;
 
     for (const auto &v : src.first) {
-        if (std::regex_match(
-                v, std::regex("\\d+"))) { // check if v contains only digits
+        // check if v contains only digits
+        if (std::regex_match(v, std::regex("\\d+"))) {
             dest.first.push_back(std::stoi(v));
         }
     }
     for (const auto &vv : src.second) {
         std::vector<int64_t> new_vec;
         for (const auto &v : vv) {
-            if (std::regex_match(
-                    v, std::regex("\\d+"))) { // check if v contains only digits
+            // check if v contains only digits
+            if (std::regex_match(v, std::regex("\\d+"))) {
                 new_vec.push_back(std::stoi(v));
             }
         }
