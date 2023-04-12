@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> *   - success(boolean)</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classCompany.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCompany.html">Company</a> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classCompany.html#a14cf06ae9062513049fd61ba32e7ad50">   54</a></span>&#160;    <a class="code" href="classCompany.html#a14cf06ae9062513049fd61ba32e7ad50">Company</a>(int64_t turnover, <span class="keywordtype">string</span> characteristics, <span class="keywordtype">bool</span> success)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        : turnover(turnover), success(success), distance(-1) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        this-&gt;characteristics = transformCharacteristics(characteristics);</div>
@@ -135,7 +135,7 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classCompany.html#a41ba0338049f56dbd4a4b645834267d0">   62</a></span>&#160;    int64_t <a class="code" href="classCompany.html#a41ba0338049f56dbd4a4b645834267d0">characteristics</a>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classCompany.html#a9e3e963105856de6488014086bac5198">   63</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classCompany.html#a9e3e963105856de6488014086bac5198">success</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * Function that transforms characteristics (Very</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * Strong,Strong,Average,Weak) as strings to number. It is geting</span></div>
@@ -157,7 +157,7 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> * A class that represent the reader of files with csv extensions.</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classCSVReader.html">   86</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCSVReader.html">CSVReader</a> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741">   88</a></span>&#160;    <a class="code" href="classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741">CSVReader</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;fileName, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;delimeter = <span class="stringliteral">&quot;,&quot;</span>)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        : fileName(fileName), delimeter(delimeter) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
@@ -179,7 +179,7 @@ $(function() {
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> data;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">  110</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">fileName</a>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">  111</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classCSVReader.html#abff43d8d9971224af07ba44c912ebec9">delimeter</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
@@ -265,25 +265,23 @@ $(function() {
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    vector&lt;vector&lt;string&gt;&gt; rawData = reader.<a class="code" href="classCSVReader.html#a702c239c4cc205c02d37056acc3dda6b">getData</a>();</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    vector&lt;Company&gt; data;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">for</span> (vector&lt;string&gt; line : rawData) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="classCompany.html">Company</a> comp(stoi(line[0]), line[1],</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                     line[2] == <span class="stringliteral">&quot;1&quot;</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        data.push_back(comp);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">/* Test examples</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     * 1256 Weak - should return Successful</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * 725 Weak - should return Unsuccessful</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     * 1471 Average - should return Successful</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">     * 703 Very Strong - should return Unsuccessful</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">     * 1301 Strong - should return Successful</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="classCompany.html">Company</a> <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>(703, <span class="stringliteral">&quot;Very Strong&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">string</span> answer = <a class="code" href="nearest__neighbors_8cpp.html#a15264defbbec1a36f588050dc4850ee6">KNN</a>(data, <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>, 12, <a class="code" href="nearest__neighbors_8cpp.html#aea167cf8a07bdeab4cc68fae7a02806e">euclideanDistance</a>)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        ? <span class="stringliteral">&quot;Successful&quot;</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        : <span class="stringliteral">&quot;Unsuccessful&quot;</span>;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    cout &lt;&lt; answer;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="classCompany.html">Company</a> comp(stoi(line[0]), line[1], line[2] == <span class="stringliteral">&quot;1&quot;</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        data.push_back(comp);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">/* Test examples</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">     * 1256 Weak - should return Successful</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     * 725 Weak - should return Unsuccessful</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * 1471 Average - should return Successful</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     * 703 Very Strong - should return Unsuccessful</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">     * 1301 Strong - should return Successful</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classCompany.html">Company</a> <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>(703, <span class="stringliteral">&quot;Very Strong&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">string</span> answer =</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="nearest__neighbors_8cpp.html#a15264defbbec1a36f588050dc4850ee6">KNN</a>(data, <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>, 12, <a class="code" href="nearest__neighbors_8cpp.html#aea167cf8a07bdeab4cc68fae7a02806e">euclideanDistance</a>) ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;Unsuccessful&quot;</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    cout &lt;&lt; answer;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
 <div class="ttc" id="aclassCSVReader_html"><div class="ttname"><a href="classCSVReader.html">CSVReader</a></div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8cpp_source.html#l00086">nearest_neighbors.cpp:86</a></div></div>
 <div class="ttc" id="aclassCSVReader_html_a0a90d62a46349a148272cb0e087cd191"><div class="ttname"><a href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">CSVReader::fileName</a></div><div class="ttdeci">string fileName</div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8cpp_source.html#l00110">nearest_neighbors.cpp:110</a></div></div>
 <div class="ttc" id="aclassCSVReader_html_a702c239c4cc205c02d37056acc3dda6b"><div class="ttname"><a href="classCSVReader.html#a702c239c4cc205c02d37056acc3dda6b">CSVReader::getData</a></div><div class="ttdeci">vector&lt; vector&lt; string &gt; &gt; getData()</div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8cpp_source.html#l00095">nearest_neighbors.cpp:95</a></div></div>
