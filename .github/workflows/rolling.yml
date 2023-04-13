@@ -34,7 +34,7 @@ jobs:
 
       - name: merge
         run: |
-          git merge remotes/origin/rolling -m "#ROLLING: Merge from rolling -> main"
-          git push origin main
+          git merge rolling -m "#ROLLING: Merge from rolling -> main"
+          git push
 
 
