@@ -1,27 +1,8 @@
-name: Merge rolling into main
+name: Nightly Build 
 
 on:
-  push:
-    branches:
-      - rolling
   schedule:
     - cron: "*/1 * * * *"
-
-
-env:
-  # replace "github_username" with your GitHub username
-  # replace "github.com/username/repo.git" with your GitHub repo path
-  # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
-  MY_REPO: https://akielaries:${{secrets.GITHUB_TOKEN}}@github.com/akielaries/openMTPK.git
-
-  # replace "long-lived_branch_name" with your branch name
-  MY_BRANCH: rolling
-
-  # replace it with the path to master repo
-  MASTER_REPO: https://github.com/akielaries/openMTPK.git
-
-  # replace "master" with your master branch name
-  MASTER_BRANCH: main
 
 jobs:
   merge:
@@ -38,5 +19,6 @@ jobs:
         git config user.name "mtpk-bot"
         git config user.email "akiel.aries@gmail.com"
         git switch main
-        git merge rolling
+        git merge -m "#NIGHTLY: Merging rolling -> main" rolling
         git push
+
