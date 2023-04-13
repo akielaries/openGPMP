@@ -30,8 +30,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.MTPK_BOT_USER }}
-
-      - name: Switch
         run: |
           git merge rolling
 
