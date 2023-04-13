@@ -97,9 +97,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto mtpk::ml::Trainers::init_SecondaryMLP </td>
@@ -137,16 +134,11 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>These methods acts as a helper to the <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html" title="Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.">SecondaryMLP</a> class Model. the create_SecondaryMLP method will return an initialized model given the dimensions of the inputs and outputs as well as specs related to the hidden layers of the network </p>
 
 <p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00072">72</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                            {</div>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                     {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::vector&lt;size_t&gt; layer_units;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        layer_units.push_back(inputs);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
@@ -204,9 +196,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void mtpk::ml::Trainers::train_SecondaryMLP </td>
@@ -238,20 +227,15 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p><a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html" title="Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.">SecondaryMLP</a> training method </p>
 
 <p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00090">90</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                      {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::fstream input(data_file.c_str());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        std::fstream input(data_file.c_str());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
