@@ -18,10 +18,10 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        token: ${{ secrets.MTPK_BOT_USER }}
+        token: ${{ secrets.MTPK_BOT_ACCT }}
 
 
-    - name: Nightly Merge
+    - name: Merge rolling -> main
       uses: robotology/gh-action-nightly-merge@v1.4.0
       with:
         stable_branch: 'rolling'
@@ -32,5 +32,5 @@ jobs:
         allow_ff: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BOT_TOKEN: ${{ secrets.MTPK_BOT_USER }}
+        BOT_TOKEN: ${{ secrets.MTPK_BOT_ACCT }}
 
