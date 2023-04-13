@@ -37,13 +37,5 @@ jobs:
       run: |
         git config user.name "mtpk-bot"
         git config user.email "akiel.aries@gmail.com"
-        git fetch origin rolling
-        git checkout rolling
-        git pull
-        git fetch origin main
-        git checkout main
-        git pull
-        git merge-base --is-ancestor rolling main
-        git merge --ff --no-edit rolling -m "#ROLLING: merging rolling -> main from mtpk-bot"
-        git push origin main
-
+        git switch main
+        git merge rolling
