@@ -101,8 +101,8 @@ void mtpk::LinearRegression::best_fit() {
         calculate_coeffecient();
         calculate_constant();
     }
-    std::cout << "The best fitting line is y = " << coeff << "x + "
-              << constant << std::endl;
+    std::cout << "The best fitting line is y = " << coeff << "x + " << constant
+              << std::endl;
 }
 
 // Function to take input from the dataset

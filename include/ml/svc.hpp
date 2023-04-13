@@ -44,7 +44,7 @@
 namespace mtpk {
 
 class SVC {
-    public:
+  public:
     SVC(std::vector<std::vector<double>> inputSet,
         std::vector<double> outputSet, double C);
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
@@ -56,7 +56,7 @@ class SVC {
     double score();
     void save(std::string fileName);
 
-    private:
+  private:
     double Cost(std::vector<double> y_hat, std::vector<double> y,
                 std::vector<double> weights, double C);
 
