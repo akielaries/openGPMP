@@ -328,23 +328,25 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    vector&lt;vector&lt;string&gt;&gt; rawData = reader.getData();</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    vector&lt;Company&gt; data;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">for</span> (vector&lt;string&gt; line : rawData) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="classCompany.html">Company</a> comp(stoi(line[0]), line[1], line[2] == <span class="stringliteral">&quot;1&quot;</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        data.push_back(comp);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">/* Test examples</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">     * 1256 Weak - should return Successful</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     * 725 Weak - should return Unsuccessful</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * 1471 Average - should return Successful</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     * 703 Very Strong - should return Unsuccessful</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">     * 1301 Strong - should return Successful</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classCompany.html">Company</a> <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>(703, <span class="stringliteral">&quot;Very Strong&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">string</span> answer =</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="nearest__neighbors_8cpp.html#a15264defbbec1a36f588050dc4850ee6">KNN</a>(data, <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>, 12, <a class="code" href="nearest__neighbors_8cpp.html#aea167cf8a07bdeab4cc68fae7a02806e">euclideanDistance</a>) ? <span class="stringliteral">&quot;Successful&quot;</span> : <span class="stringliteral">&quot;Unsuccessful&quot;</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    cout &lt;&lt; answer;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="classCompany.html">Company</a> comp(stoi(line[0]), line[1],</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                     line[2] == <span class="stringliteral">&quot;1&quot;</span> ? <span class="keyword">true</span> : <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        data.push_back(comp);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">/* Test examples</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     * 1256 Weak - should return Successful</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">     * 725 Weak - should return Unsuccessful</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">     * 1471 Average - should return Successful</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">     * 703 Very Strong - should return Unsuccessful</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">     * 1301 Strong - should return Successful</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="classCompany.html">Company</a> <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>(703, <span class="stringliteral">&quot;Very Strong&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">string</span> answer = <a class="code" href="nearest__neighbors_8cpp.html#a15264defbbec1a36f588050dc4850ee6">KNN</a>(data, <a class="code" href="rc5_8cpp.html#a1c546bc4bc9f956cd794b3389e2451d9">test</a>, 12, <a class="code" href="nearest__neighbors_8cpp.html#aea167cf8a07bdeab4cc68fae7a02806e">euclideanDistance</a>)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        ? <span class="stringliteral">&quot;Successful&quot;</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        : <span class="stringliteral">&quot;Unsuccessful&quot;</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    cout &lt;&lt; answer;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 <div class="ttc" id="aclassCSVReader_html"><div class="ttname"><a href="classCSVReader.html">CSVReader</a></div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8cpp_source.html#l00086">nearest_neighbors.cpp:86</a></div></div>
 <div class="ttc" id="aclassCompany_html"><div class="ttname"><a href="classCompany.html">Company</a></div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8cpp_source.html#l00052">nearest_neighbors.cpp:52</a></div></div>
 <div class="ttc" id="anearest__neighbors_8cpp_html_a15264defbbec1a36f588050dc4850ee6"><div class="ttname"><a href="nearest__neighbors_8cpp.html#a15264defbbec1a36f588050dc4850ee6">KNN</a></div><div class="ttdeci">bool KNN(vector&lt; Company &gt; &amp;data, Company &amp;test, int k, double(*distanceFunction)(Company &amp;, Company &amp;))</div><div class="ttdef"><b>Definition:</b> <a href="nearest__neighbors_8cpp_source.html#l00159">nearest_neighbors.cpp:159</a></div></div>
