@@ -30,12 +30,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.MTPK_BOT_USER }}
-          ref: rolling
+          ref: main
 
       - name: merge
         run: |
-          git fetch origin main
-          git merge origin/rolling -m "#ROLLING: Merge from rolling -> main"
+          git merge remotes/origin/rolling -m "#ROLLING: Merge from rolling -> main"
           git push origin main
 
 
