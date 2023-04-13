@@ -17,11 +17,6 @@ along with modularity for user freedom.
 Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
 on how to use some of openMTPK's functionalities. 
 
-# New Feature Highlights
-* **v0.9.7** : 
-   * General Purpose ThreadPool class. Can be utilized by end users and is implemented within
-   openMTPK.
-
 # Installation
 openMTPK C++ & Python is tested on the following:
 | OS    | Architecture | Status |
@@ -178,6 +173,7 @@ int main() {
     return 0;
 }
 ```
+
 
 A Python example showing the same functionalities.
 

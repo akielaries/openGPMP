@@ -1,0 +1,26 @@
+name: Nightly Build 
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.MTPK_BOT_ACCT }}
+
+    - name: Merge with main
+      run: |
+        git config user.name "mtpk-bot"
+        git config user.email "akiel.aries@gmail.com"
+        git switch main
+        git merge --squash origin/rolling
+        git commit -m "#NIGHTLY: Merge rolling -> main"
+        git push
+
