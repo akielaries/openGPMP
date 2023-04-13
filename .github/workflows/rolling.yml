@@ -1,10 +1,11 @@
-name: Merge any release branch to uat
+name: Merge rolling into main
 
 on:
   schedule:
     - cron: "*/2 * * * *"
-  branches:
-    - 'rolling'
+  push:
+    branches:
+      - rolling
 
 jobs:
   merge-branch:
