@@ -104,7 +104,13 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
    - Neural Networks
    - Classifiers
 5. Number Theory
-   - Primes
+   - Primality Tests
+   - Primality Generation
+   - Integer Factorization
+   - Euclidean Division
+   - Logarithms
+   - Greatest Common Divisors
+   - Squares
    - Cryptography
 6. Topology/Complex
    - Dynamical Systems
