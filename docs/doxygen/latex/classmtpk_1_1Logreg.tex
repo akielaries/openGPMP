@@ -1,0 +1,272 @@
+\hypertarget{classmtpk_1_1Logreg}{}\doxysection{mtpk\+::Logreg Class Reference}
+\label{classmtpk_1_1Logreg}\index{mtpk::Logreg@{mtpk::Logreg}}
+
+
+{\ttfamily \#include $<$logreg.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1Logreg_a82aec78bbec9c487983773acab6556dc}{Logreg}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_afc735f98c7e8714a21e71b9ce8975dde}{input\+Set}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_a936bd2368da26a3a71e0f350086966f3}{output\+Set}}, std\+::string \mbox{\hyperlink{classmtpk_1_1Logreg_a9678ae7040f338f85f992e2444f7240e}{reg}}=\char`\"{}None\char`\"{}, double \mbox{\hyperlink{classmtpk_1_1Logreg_a98506ceebcaae1873dbff325309ee1e0}{lambda}}=0.\+5, double \mbox{\hyperlink{classmtpk_1_1Logreg_ad1c9fd3eff4a2179c25ebde451fb8aa8}{alpha}}=0.\+5)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_a6204cf303435e52ac44c1c7959bfb11c}{model\+Set\+Test}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ X)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_a8aa7e943b63d6aa40cfd3793826488af}{model\+Test}} (std\+::vector$<$ double $>$ x)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Logreg_a4c1c224a1e902171969b7ecf2482a524}{gradient\+Descent}} (double \mbox{\hyperlink{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}{learning\+\_\+rate}}, int max\+\_\+epoch, bool UI=1)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Logreg_a3db1d9d37ba3d30d6da0f6d86b75d1b8}{MLE}} (double \mbox{\hyperlink{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}{learning\+\_\+rate}}, int max\+\_\+epoch, bool UI=1)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Logreg_aa5c99c68102206a442dbdc65c795fabf}{SGD}} (double \mbox{\hyperlink{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}{learning\+\_\+rate}}, int max\+\_\+epoch, bool UI=1)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Logreg_a430cc091c3041bfe298ba44afa73b1c9}{MBGD}} (double \mbox{\hyperlink{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}{learning\+\_\+rate}}, int max\+\_\+epoch, int mini\+\_\+batch\+\_\+size, bool UI=1)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_ae9724689294068bf3b19dcd4063541ad}{score}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Logreg_aca3d663649a5fd2ae0cc527b7d7e9bd6}{save}} (std\+::string file\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_a6dfd89bb48e4bea9e1962b02988b8863}{Cost}} (std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_ae4464865dcd49636a6a1b5a407ae41dc}{y\+\_\+hat}}, std\+::vector$<$ double $>$ y)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_aa5dd3f35b0a04006d4e32c26f679c24b}{Evaluate}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ X)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_ae63e41caad9104bcea36d96ccbd2fb71}{Evaluate}} (std\+::vector$<$ double $>$ x)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Logreg_a8fa5f57836318998c0da7f3df80e3582}{forward\+Pass}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_afc735f98c7e8714a21e71b9ce8975dde}{input\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_a936bd2368da26a3a71e0f350086966f3}{output\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_ae4464865dcd49636a6a1b5a407ae41dc}{y\+\_\+hat}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Logreg_a7d5038314117f776c4624b6a45a42b28}{weights}}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_ab70b98a2f1db88ef4eae255bf803d705}{bias}}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1Logreg_a614fb6ee0f935117f0260f3b45b2b78f}{n}}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1Logreg_a0fefa926b9fa2e247583cc6de7c8c093}{k}}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}{learning\+\_\+rate}}
+\item 
+std\+::string \mbox{\hyperlink{classmtpk_1_1Logreg_a9678ae7040f338f85f992e2444f7240e}{reg}}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_a98506ceebcaae1873dbff325309ee1e0}{lambda}}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Logreg_ad1c9fd3eff4a2179c25ebde451fb8aa8}{alpha}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a82aec78bbec9c487983773acab6556dc}\label{classmtpk_1_1Logreg_a82aec78bbec9c487983773acab6556dc}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!Logreg@{Logreg}}
+\index{Logreg@{Logreg}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{Logreg()}{Logreg()}}
+{\footnotesize\ttfamily mtpk\+::\+Logreg\+::\+Logreg (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{input\+Set,  }\item[{std\+::vector$<$ double $>$}]{output\+Set,  }\item[{std\+::string}]{reg = {\ttfamily \char`\"{}None\char`\"{}},  }\item[{double}]{lambda = {\ttfamily 0.5},  }\item[{double}]{alpha = {\ttfamily 0.5} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a6dfd89bb48e4bea9e1962b02988b8863}\label{classmtpk_1_1Logreg_a6dfd89bb48e4bea9e1962b02988b8863}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!Cost@{Cost}}
+\index{Cost@{Cost}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{Cost()}{Cost()}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::\+Cost (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{y\+\_\+hat,  }\item[{std\+::vector$<$ double $>$}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_ae63e41caad9104bcea36d96ccbd2fb71}\label{classmtpk_1_1Logreg_ae63e41caad9104bcea36d96ccbd2fb71}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::\+Evaluate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_aa5dd3f35b0a04006d4e32c26f679c24b}\label{classmtpk_1_1Logreg_aa5dd3f35b0a04006d4e32c26f679c24b}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Logreg\+::\+Evaluate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a8fa5f57836318998c0da7f3df80e3582}\label{classmtpk_1_1Logreg_a8fa5f57836318998c0da7f3df80e3582}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!forwardPass@{forwardPass}}
+\index{forwardPass@{forwardPass}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{forwardPass()}{forwardPass()}}
+{\footnotesize\ttfamily void mtpk\+::\+Logreg\+::forward\+Pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a4c1c224a1e902171969b7ecf2482a524}\label{classmtpk_1_1Logreg_a4c1c224a1e902171969b7ecf2482a524}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!gradientDescent@{gradientDescent}}
+\index{gradientDescent@{gradientDescent}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{gradientDescent()}{gradientDescent()}}
+{\footnotesize\ttfamily void mtpk\+::\+Logreg\+::gradient\+Descent (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a430cc091c3041bfe298ba44afa73b1c9}\label{classmtpk_1_1Logreg_a430cc091c3041bfe298ba44afa73b1c9}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!MBGD@{MBGD}}
+\index{MBGD@{MBGD}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{MBGD()}{MBGD()}}
+{\footnotesize\ttfamily void mtpk\+::\+Logreg\+::\+MBGD (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{int}]{mini\+\_\+batch\+\_\+size,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a3db1d9d37ba3d30d6da0f6d86b75d1b8}\label{classmtpk_1_1Logreg_a3db1d9d37ba3d30d6da0f6d86b75d1b8}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!MLE@{MLE}}
+\index{MLE@{MLE}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{MLE()}{MLE()}}
+{\footnotesize\ttfamily void mtpk\+::\+Logreg\+::\+MLE (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a6204cf303435e52ac44c1c7959bfb11c}\label{classmtpk_1_1Logreg_a6204cf303435e52ac44c1c7959bfb11c}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!modelSetTest@{modelSetTest}}
+\index{modelSetTest@{modelSetTest}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{modelSetTest()}{modelSetTest()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Logreg\+::model\+Set\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a8aa7e943b63d6aa40cfd3793826488af}\label{classmtpk_1_1Logreg_a8aa7e943b63d6aa40cfd3793826488af}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!modelTest@{modelTest}}
+\index{modelTest@{modelTest}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{modelTest()}{modelTest()}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::model\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_aca3d663649a5fd2ae0cc527b7d7e9bd6}\label{classmtpk_1_1Logreg_aca3d663649a5fd2ae0cc527b7d7e9bd6}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!save@{save}}
+\index{save@{save}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void mtpk\+::\+Logreg\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_ae9724689294068bf3b19dcd4063541ad}\label{classmtpk_1_1Logreg_ae9724689294068bf3b19dcd4063541ad}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!score@{score}}
+\index{score@{score}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_aa5c99c68102206a442dbdc65c795fabf}\label{classmtpk_1_1Logreg_aa5c99c68102206a442dbdc65c795fabf}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!SGD@{SGD}}
+\index{SGD@{SGD}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{SGD()}{SGD()}}
+{\footnotesize\ttfamily void mtpk\+::\+Logreg\+::\+SGD (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Logreg_ad1c9fd3eff4a2179c25ebde451fb8aa8}\label{classmtpk_1_1Logreg_ad1c9fd3eff4a2179c25ebde451fb8aa8}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!alpha@{alpha}}
+\index{alpha@{alpha}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::alpha\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_ab70b98a2f1db88ef4eae255bf803d705}\label{classmtpk_1_1Logreg_ab70b98a2f1db88ef4eae255bf803d705}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!bias@{bias}}
+\index{bias@{bias}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{bias}{bias}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::bias\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_afc735f98c7e8714a21e71b9ce8975dde}\label{classmtpk_1_1Logreg_afc735f98c7e8714a21e71b9ce8975dde}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!inputSet@{inputSet}}
+\index{inputSet@{inputSet}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{inputSet}{inputSet}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ mtpk\+::\+Logreg\+::input\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a0fefa926b9fa2e247583cc6de7c8c093}\label{classmtpk_1_1Logreg_a0fefa926b9fa2e247583cc6de7c8c093}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!k@{k}}
+\index{k@{k}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily int mtpk\+::\+Logreg\+::k\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00085}{85}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a98506ceebcaae1873dbff325309ee1e0}\label{classmtpk_1_1Logreg_a98506ceebcaae1873dbff325309ee1e0}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!lambda@{lambda}}
+\index{lambda@{lambda}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{lambda}{lambda}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::lambda\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}\label{classmtpk_1_1Logreg_abef7a8875759a941238d4d8dd65c2ad3}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily double mtpk\+::\+Logreg\+::learning\+\_\+rate\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00086}{86}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a614fb6ee0f935117f0260f3b45b2b78f}\label{classmtpk_1_1Logreg_a614fb6ee0f935117f0260f3b45b2b78f}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!n@{n}}
+\index{n@{n}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int mtpk\+::\+Logreg\+::n\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a936bd2368da26a3a71e0f350086966f3}\label{classmtpk_1_1Logreg_a936bd2368da26a3a71e0f350086966f3}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!outputSet@{outputSet}}
+\index{outputSet@{outputSet}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{outputSet}{outputSet}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Logreg\+::output\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00079}{79}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a9678ae7040f338f85f992e2444f7240e}\label{classmtpk_1_1Logreg_a9678ae7040f338f85f992e2444f7240e}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!reg@{reg}}
+\index{reg@{reg}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{reg}{reg}}
+{\footnotesize\ttfamily std\+::string mtpk\+::\+Logreg\+::reg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_a7d5038314117f776c4624b6a45a42b28}\label{classmtpk_1_1Logreg_a7d5038314117f776c4624b6a45a42b28}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!weights@{weights}}
+\index{weights@{weights}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Logreg\+::weights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00081}{81}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Logreg_ae4464865dcd49636a6a1b5a407ae41dc}\label{classmtpk_1_1Logreg_ae4464865dcd49636a6a1b5a407ae41dc}} 
+\index{mtpk::Logreg@{mtpk::Logreg}!y\_hat@{y\_hat}}
+\index{y\_hat@{y\_hat}!mtpk::Logreg@{mtpk::Logreg}}
+\doxysubsubsection{\texorpdfstring{y\_hat}{y\_hat}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Logreg\+::y\+\_\+hat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{logreg_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{logreg_8hpp_source}{logreg.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{logreg_8hpp}{logreg.\+hpp}}\end{DoxyCompactItemize}

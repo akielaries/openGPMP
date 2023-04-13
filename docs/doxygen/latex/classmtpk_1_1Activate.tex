@@ -1,0 +1,776 @@
+\hypertarget{classmtpk_1_1Activate}{}\doxysection{mtpk\+::Activate Class Reference}
+\label{classmtpk_1_1Activate}\index{mtpk::Activate@{mtpk::Activate}}
+
+
+{\ttfamily \#include $<$activators.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ae25bac32802e538a055e1630c66c9852}{linear}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_aefe6e6c022f33abd106c38a6e0983078}{linear}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_adb74be4d294fc275b4cdb99445508606}{linear}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a628796d8a5ef83cca427cb3f29813271}{sigmoid}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_af64aacffd9caab96ac99712895216312}{sigmoid}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a044b6cc3308fd854c0ff3a497c5abc5c}{sigmoid}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ac39d7b071c6ea2b0782c9d530ebe5229}{softmax}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a2c2d3fad0a17b4f1e0fd59e372c47938}{softmax}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ab58e764bf8249ddbc93cd4e4be57f2a1}{adj\+Softmax}} (std\+::vector$<$ double $>$ z)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a980bb5c00026685306f96f15646ce1fa}{adj\+Softmax}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a756a8cb0d543ae89c5eec20e489417bb}{softmax\+Deriv}} (std\+::vector$<$ double $>$ z)
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a36f0b5ff0f5e8b158c9ad345761976fb}{softmax\+Deriv}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a8dc1452488984f9c62f17bf583bf4a7b}{softplus}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_aa696752cd54269191bab01e8eccbebe6}{softplus}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a732ece0cfb6ffd3cbc27e7efb96a0686}{softplus}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a69ecd27a24ec83d40f14dd43c79cf3d1}{softsign}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_aaafe26fab82251bb3ee71b1edb596030}{softsign}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a07a896f4713fe58399f3fd3b63b3b247}{softsign}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ab8233b35e4f84ccbc3b1274db2e608d9}{gaussian\+CDF}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ae756e150b18234e6fc3c8445d19cc770}{gaussian\+CDF}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a64eb4fae00d386d0c86e46d24546f96d}{gaussian\+CDF}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a870edc07d30c23186ca625e7d0874aff}{cloglog}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ac0796ae1cf15e6c10ce8861cdd69b9fe}{cloglog}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a615fc0c90dc34874c5e1211ceea7400e}{cloglog}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a4537ae0d8d3e20e6bfcd7f875a854772}{logit}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a9779894f4dc789bf5753dcbe9a0f6d90}{logit}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ace8cd1c8a3b55fcf8e2c49eee3010392}{logit}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a35efee4c3bebd934d817e828c12d1f7e}{unit\+Step}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_addeb402690921a3d203425f61f9cfdea}{unit\+Step}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a106d929e16f9a96aba7bc3bb42faf600}{unit\+Step}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_af9ea3b6c0779415cf551e56a28d5593c}{swish}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_abc8387b70ecec6c071017c7632c281d9}{swish}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a49f98351430f9f96d4f30efe160940d0}{swish}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ab9b82a2929ba6ac77e3217883310dfba}{mish}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a3ac6366279282a5a718cf413a7be6b1a}{mish}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ab2bb6786cf82bb23edf0708d2f1045ea}{mish}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a6bd4a7b2f637868d51dc8ba3e1bdcb2f}{sinc}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a82127c265d74962114c4f36ae73dcdd8}{sinc}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a2bb61897d040c36f39bcd84aee58a1d2}{sinc}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ace33a7d798692406a707719225a4ecc7}{RELU}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ab73d863fd92f85924d0eb0e101747645}{RELU}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ad878f3a37fffcc358b2653812d824d52}{RELU}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ad77907c0bf544b5146c1cd2bcc137676}{leaky\+Re\+LU}} (double z, double c, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ace1d927d52e7507302be355334ea26ab}{leaky\+Re\+LU}} (std\+::vector$<$ double $>$ z, double c, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a08a0c9118310e9b2f9699f1c3749e95f}{leaky\+Re\+LU}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, double c, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a07dd7d8e4a0c99fbb36562afb73507fc}{ELU}} (double z, double c, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ab3e236f6493db244b776443063d26284}{ELU}} (std\+::vector$<$ double $>$ z, double c, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a1bbffbdfdd95b612ec43ae84c0b79522}{ELU}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, double c, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a7c622b948a85b33ca7a0a41710dc60a3}{SELU}} (double z, double lambda, double c, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a582880335a8ecbe60c685796d64eb375}{SELU}} (std\+::vector$<$ double $>$ z, double lambda, double c, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a888ca2987a398271c7deaccd4d7745e7}{SELU}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$, double lambda, double c, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a7ee0968bc12876169587e89c9a4c753f}{GELU}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ac45002923587f8976b155ff09ca4a2c2}{GELU}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a957bb0d2d5b0b63e8cfd68a6499f2373}{GELU}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_aa02ffeda13f668d479e3dca65f71c0bc}{sign}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a5f33f22d4839a4720decd6197ad5d25a}{sign}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_acbaba08323be88351229521ece979355}{sign}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a9b861b0e88b78395f2acb47cef965979}{sinh}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a8ec970bacd6de43ec34c929a65b707be}{sinh}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a49a2a099440c43f6706e834bdde86638}{sinh}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a34bcd90520ed176db130c1f6cb1ed9ba}{cosh}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a74af62d95c4ac414254d336c50c7077c}{cosh}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ab47f03f2891a822c117df41dc9dbc3d0}{cosh}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ae4245b361d1aa90a2b4ffd8e72c54a0b}{tanh}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_aa36e52818c78aa897eaec76569fd8e5d}{tanh}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a0c1a2a59df0bccb5bf63185084791060}{tanh}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a577611b140312dc2159ea41316faa55a}{csch}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ac645d43fd1f06a699bae1892bff42211}{csch}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a0c11edf02b04ffc9795cc2d2e94d4252}{csch}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a0254a643bd47dee885471150cf96f29b}{sech}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ade4fd15568d019576e95de17f23a54ac}{sech}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a0a2cbaa796f22f38b3e881672ee6ca45}{sech}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_af4fe49b16e06168de787ff2c1a37fa72}{coth}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a371d31c5ce6fa7a52a57ea5590cc15a6}{coth}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a0da3b402c208f6276ce475d9e53ad144}{coth}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_aaffbcf4278afa58ff1f5d1f9e4e7314e}{arsinh}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a8edc40582015093084ceac39a99bda44}{arsinh}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a0de9aa8e5957e954aa840568da09a1c9}{arsinh}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a29f654671116b12c4740a2b7570586f9}{arcosh}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a4ebdcaa1a3d887125d4f2a18884c994c}{arcosh}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a1d77c64a0262f165a29061bee72722b0}{arcosh}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a56cc8660053bf2dc31e01a6b35ec986e}{artanh}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a4e448b956e1c946ea4a0b0072242a35e}{artanh}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a64c77e9b26391858f0c3b28c06219e60}{artanh}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_ad3dac175ef9185f6bae14ddf91d62d2c}{arcsch}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a1debcbb04a523bf71e39f5e713841727}{arcsch}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a5bd4265c412869a5417fbe0a266d48be}{arcsch}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a08ab1935955041d8da9ff35e088e5dd9}{arsech}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a1691dff94d518da2600c9c4232a8c3d5}{arsech}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_ae3ad6dcc74adff36fc8ffbf1ddd68d70}{arsech}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1Activate_a58ad4d539ff343c6ebe7979eb8877e7a}{arcoth}} (double z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a74fbe2fd3fe35e0f5a6571eb3d60c160}{arcoth}} (std\+::vector$<$ double $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1Activate_abddd1117e8d34f9e43cf1910b3fe20af}{arcoth}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ z, bool deriv=0)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1Activate_a8a3c94d49b6a1cd63b3272fb23f83152}{activation}} (std\+::vector$<$ double $>$ z, bool deriv, double($\ast$function)(double, bool))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{activators_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{activators_8hpp_source}{activators.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Activate_a8a3c94d49b6a1cd63b3272fb23f83152}\label{classmtpk_1_1Activate_a8a3c94d49b6a1cd63b3272fb23f83152}} 
+\index{mtpk::Activate@{mtpk::Activate}!activation@{activation}}
+\index{activation@{activation}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{activation()}{activation()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::activation (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv,  }\item[{double($\ast$)(double, bool)}]{function }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab58e764bf8249ddbc93cd4e4be57f2a1}\label{classmtpk_1_1Activate_ab58e764bf8249ddbc93cd4e4be57f2a1}} 
+\index{mtpk::Activate@{mtpk::Activate}!adjSoftmax@{adjSoftmax}}
+\index{adjSoftmax@{adjSoftmax}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{adjSoftmax()}{adjSoftmax()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::adj\+Softmax (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a980bb5c00026685306f96f15646ce1fa}\label{classmtpk_1_1Activate_a980bb5c00026685306f96f15646ce1fa}} 
+\index{mtpk::Activate@{mtpk::Activate}!adjSoftmax@{adjSoftmax}}
+\index{adjSoftmax@{adjSoftmax}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{adjSoftmax()}{adjSoftmax()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::adj\+Softmax (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a29f654671116b12c4740a2b7570586f9}\label{classmtpk_1_1Activate_a29f654671116b12c4740a2b7570586f9}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcosh@{arcosh}}
+\index{arcosh@{arcosh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcosh()}{arcosh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::arcosh (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a4ebdcaa1a3d887125d4f2a18884c994c}\label{classmtpk_1_1Activate_a4ebdcaa1a3d887125d4f2a18884c994c}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcosh@{arcosh}}
+\index{arcosh@{arcosh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcosh()}{arcosh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::arcosh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a1d77c64a0262f165a29061bee72722b0}\label{classmtpk_1_1Activate_a1d77c64a0262f165a29061bee72722b0}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcosh@{arcosh}}
+\index{arcosh@{arcosh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcosh()}{arcosh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::arcosh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a58ad4d539ff343c6ebe7979eb8877e7a}\label{classmtpk_1_1Activate_a58ad4d539ff343c6ebe7979eb8877e7a}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcoth@{arcoth}}
+\index{arcoth@{arcoth}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcoth()}{arcoth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::arcoth (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a74fbe2fd3fe35e0f5a6571eb3d60c160}\label{classmtpk_1_1Activate_a74fbe2fd3fe35e0f5a6571eb3d60c160}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcoth@{arcoth}}
+\index{arcoth@{arcoth}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcoth()}{arcoth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::arcoth (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_abddd1117e8d34f9e43cf1910b3fe20af}\label{classmtpk_1_1Activate_abddd1117e8d34f9e43cf1910b3fe20af}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcoth@{arcoth}}
+\index{arcoth@{arcoth}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcoth()}{arcoth()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::arcoth (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ad3dac175ef9185f6bae14ddf91d62d2c}\label{classmtpk_1_1Activate_ad3dac175ef9185f6bae14ddf91d62d2c}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcsch@{arcsch}}
+\index{arcsch@{arcsch}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcsch()}{arcsch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::arcsch (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a1debcbb04a523bf71e39f5e713841727}\label{classmtpk_1_1Activate_a1debcbb04a523bf71e39f5e713841727}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcsch@{arcsch}}
+\index{arcsch@{arcsch}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcsch()}{arcsch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::arcsch (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a5bd4265c412869a5417fbe0a266d48be}\label{classmtpk_1_1Activate_a5bd4265c412869a5417fbe0a266d48be}} 
+\index{mtpk::Activate@{mtpk::Activate}!arcsch@{arcsch}}
+\index{arcsch@{arcsch}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arcsch()}{arcsch()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::arcsch (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a08ab1935955041d8da9ff35e088e5dd9}\label{classmtpk_1_1Activate_a08ab1935955041d8da9ff35e088e5dd9}} 
+\index{mtpk::Activate@{mtpk::Activate}!arsech@{arsech}}
+\index{arsech@{arsech}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arsech()}{arsech()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::arsech (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a1691dff94d518da2600c9c4232a8c3d5}\label{classmtpk_1_1Activate_a1691dff94d518da2600c9c4232a8c3d5}} 
+\index{mtpk::Activate@{mtpk::Activate}!arsech@{arsech}}
+\index{arsech@{arsech}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arsech()}{arsech()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::arsech (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ae3ad6dcc74adff36fc8ffbf1ddd68d70}\label{classmtpk_1_1Activate_ae3ad6dcc74adff36fc8ffbf1ddd68d70}} 
+\index{mtpk::Activate@{mtpk::Activate}!arsech@{arsech}}
+\index{arsech@{arsech}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arsech()}{arsech()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::arsech (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_aaffbcf4278afa58ff1f5d1f9e4e7314e}\label{classmtpk_1_1Activate_aaffbcf4278afa58ff1f5d1f9e4e7314e}} 
+\index{mtpk::Activate@{mtpk::Activate}!arsinh@{arsinh}}
+\index{arsinh@{arsinh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arsinh()}{arsinh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::arsinh (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a8edc40582015093084ceac39a99bda44}\label{classmtpk_1_1Activate_a8edc40582015093084ceac39a99bda44}} 
+\index{mtpk::Activate@{mtpk::Activate}!arsinh@{arsinh}}
+\index{arsinh@{arsinh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arsinh()}{arsinh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::arsinh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a0de9aa8e5957e954aa840568da09a1c9}\label{classmtpk_1_1Activate_a0de9aa8e5957e954aa840568da09a1c9}} 
+\index{mtpk::Activate@{mtpk::Activate}!arsinh@{arsinh}}
+\index{arsinh@{arsinh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{arsinh()}{arsinh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::arsinh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a56cc8660053bf2dc31e01a6b35ec986e}\label{classmtpk_1_1Activate_a56cc8660053bf2dc31e01a6b35ec986e}} 
+\index{mtpk::Activate@{mtpk::Activate}!artanh@{artanh}}
+\index{artanh@{artanh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{artanh()}{artanh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::artanh (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a4e448b956e1c946ea4a0b0072242a35e}\label{classmtpk_1_1Activate_a4e448b956e1c946ea4a0b0072242a35e}} 
+\index{mtpk::Activate@{mtpk::Activate}!artanh@{artanh}}
+\index{artanh@{artanh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{artanh()}{artanh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::artanh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a64c77e9b26391858f0c3b28c06219e60}\label{classmtpk_1_1Activate_a64c77e9b26391858f0c3b28c06219e60}} 
+\index{mtpk::Activate@{mtpk::Activate}!artanh@{artanh}}
+\index{artanh@{artanh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{artanh()}{artanh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::artanh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a870edc07d30c23186ca625e7d0874aff}\label{classmtpk_1_1Activate_a870edc07d30c23186ca625e7d0874aff}} 
+\index{mtpk::Activate@{mtpk::Activate}!cloglog@{cloglog}}
+\index{cloglog@{cloglog}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{cloglog()}{cloglog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::cloglog (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ac0796ae1cf15e6c10ce8861cdd69b9fe}\label{classmtpk_1_1Activate_ac0796ae1cf15e6c10ce8861cdd69b9fe}} 
+\index{mtpk::Activate@{mtpk::Activate}!cloglog@{cloglog}}
+\index{cloglog@{cloglog}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{cloglog()}{cloglog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::cloglog (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a615fc0c90dc34874c5e1211ceea7400e}\label{classmtpk_1_1Activate_a615fc0c90dc34874c5e1211ceea7400e}} 
+\index{mtpk::Activate@{mtpk::Activate}!cloglog@{cloglog}}
+\index{cloglog@{cloglog}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{cloglog()}{cloglog()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::cloglog (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a34bcd90520ed176db130c1f6cb1ed9ba}\label{classmtpk_1_1Activate_a34bcd90520ed176db130c1f6cb1ed9ba}} 
+\index{mtpk::Activate@{mtpk::Activate}!cosh@{cosh}}
+\index{cosh@{cosh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{cosh()}{cosh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::cosh (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a74af62d95c4ac414254d336c50c7077c}\label{classmtpk_1_1Activate_a74af62d95c4ac414254d336c50c7077c}} 
+\index{mtpk::Activate@{mtpk::Activate}!cosh@{cosh}}
+\index{cosh@{cosh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{cosh()}{cosh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::cosh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab47f03f2891a822c117df41dc9dbc3d0}\label{classmtpk_1_1Activate_ab47f03f2891a822c117df41dc9dbc3d0}} 
+\index{mtpk::Activate@{mtpk::Activate}!cosh@{cosh}}
+\index{cosh@{cosh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{cosh()}{cosh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::cosh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_af4fe49b16e06168de787ff2c1a37fa72}\label{classmtpk_1_1Activate_af4fe49b16e06168de787ff2c1a37fa72}} 
+\index{mtpk::Activate@{mtpk::Activate}!coth@{coth}}
+\index{coth@{coth}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{coth()}{coth()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::coth (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a371d31c5ce6fa7a52a57ea5590cc15a6}\label{classmtpk_1_1Activate_a371d31c5ce6fa7a52a57ea5590cc15a6}} 
+\index{mtpk::Activate@{mtpk::Activate}!coth@{coth}}
+\index{coth@{coth}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{coth()}{coth()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::coth (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a0da3b402c208f6276ce475d9e53ad144}\label{classmtpk_1_1Activate_a0da3b402c208f6276ce475d9e53ad144}} 
+\index{mtpk::Activate@{mtpk::Activate}!coth@{coth}}
+\index{coth@{coth}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{coth()}{coth()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::coth (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a577611b140312dc2159ea41316faa55a}\label{classmtpk_1_1Activate_a577611b140312dc2159ea41316faa55a}} 
+\index{mtpk::Activate@{mtpk::Activate}!csch@{csch}}
+\index{csch@{csch}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{csch()}{csch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::csch (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ac645d43fd1f06a699bae1892bff42211}\label{classmtpk_1_1Activate_ac645d43fd1f06a699bae1892bff42211}} 
+\index{mtpk::Activate@{mtpk::Activate}!csch@{csch}}
+\index{csch@{csch}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{csch()}{csch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::csch (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a0c11edf02b04ffc9795cc2d2e94d4252}\label{classmtpk_1_1Activate_a0c11edf02b04ffc9795cc2d2e94d4252}} 
+\index{mtpk::Activate@{mtpk::Activate}!csch@{csch}}
+\index{csch@{csch}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{csch()}{csch()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::csch (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a07dd7d8e4a0c99fbb36562afb73507fc}\label{classmtpk_1_1Activate_a07dd7d8e4a0c99fbb36562afb73507fc}} 
+\index{mtpk::Activate@{mtpk::Activate}!ELU@{ELU}}
+\index{ELU@{ELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{ELU()}{ELU()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::\+ELU (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab3e236f6493db244b776443063d26284}\label{classmtpk_1_1Activate_ab3e236f6493db244b776443063d26284}} 
+\index{mtpk::Activate@{mtpk::Activate}!ELU@{ELU}}
+\index{ELU@{ELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{ELU()}{ELU()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::\+ELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a1bbffbdfdd95b612ec43ae84c0b79522}\label{classmtpk_1_1Activate_a1bbffbdfdd95b612ec43ae84c0b79522}} 
+\index{mtpk::Activate@{mtpk::Activate}!ELU@{ELU}}
+\index{ELU@{ELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{ELU()}{ELU()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::\+ELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab8233b35e4f84ccbc3b1274db2e608d9}\label{classmtpk_1_1Activate_ab8233b35e4f84ccbc3b1274db2e608d9}} 
+\index{mtpk::Activate@{mtpk::Activate}!gaussianCDF@{gaussianCDF}}
+\index{gaussianCDF@{gaussianCDF}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{gaussianCDF()}{gaussianCDF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::gaussian\+CDF (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ae756e150b18234e6fc3c8445d19cc770}\label{classmtpk_1_1Activate_ae756e150b18234e6fc3c8445d19cc770}} 
+\index{mtpk::Activate@{mtpk::Activate}!gaussianCDF@{gaussianCDF}}
+\index{gaussianCDF@{gaussianCDF}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{gaussianCDF()}{gaussianCDF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::gaussian\+CDF (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a64eb4fae00d386d0c86e46d24546f96d}\label{classmtpk_1_1Activate_a64eb4fae00d386d0c86e46d24546f96d}} 
+\index{mtpk::Activate@{mtpk::Activate}!gaussianCDF@{gaussianCDF}}
+\index{gaussianCDF@{gaussianCDF}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{gaussianCDF()}{gaussianCDF()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::gaussian\+CDF (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a7ee0968bc12876169587e89c9a4c753f}\label{classmtpk_1_1Activate_a7ee0968bc12876169587e89c9a4c753f}} 
+\index{mtpk::Activate@{mtpk::Activate}!GELU@{GELU}}
+\index{GELU@{GELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{GELU()}{GELU()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::\+GELU (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ac45002923587f8976b155ff09ca4a2c2}\label{classmtpk_1_1Activate_ac45002923587f8976b155ff09ca4a2c2}} 
+\index{mtpk::Activate@{mtpk::Activate}!GELU@{GELU}}
+\index{GELU@{GELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{GELU()}{GELU()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::\+GELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a957bb0d2d5b0b63e8cfd68a6499f2373}\label{classmtpk_1_1Activate_a957bb0d2d5b0b63e8cfd68a6499f2373}} 
+\index{mtpk::Activate@{mtpk::Activate}!GELU@{GELU}}
+\index{GELU@{GELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{GELU()}{GELU()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::\+GELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ad77907c0bf544b5146c1cd2bcc137676}\label{classmtpk_1_1Activate_ad77907c0bf544b5146c1cd2bcc137676}} 
+\index{mtpk::Activate@{mtpk::Activate}!leakyReLU@{leakyReLU}}
+\index{leakyReLU@{leakyReLU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{leakyReLU()}{leakyReLU()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::leaky\+Re\+LU (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ace1d927d52e7507302be355334ea26ab}\label{classmtpk_1_1Activate_ace1d927d52e7507302be355334ea26ab}} 
+\index{mtpk::Activate@{mtpk::Activate}!leakyReLU@{leakyReLU}}
+\index{leakyReLU@{leakyReLU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{leakyReLU()}{leakyReLU()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::leaky\+Re\+LU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a08a0c9118310e9b2f9699f1c3749e95f}\label{classmtpk_1_1Activate_a08a0c9118310e9b2f9699f1c3749e95f}} 
+\index{mtpk::Activate@{mtpk::Activate}!leakyReLU@{leakyReLU}}
+\index{leakyReLU@{leakyReLU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{leakyReLU()}{leakyReLU()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::leaky\+Re\+LU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ae25bac32802e538a055e1630c66c9852}\label{classmtpk_1_1Activate_ae25bac32802e538a055e1630c66c9852}} 
+\index{mtpk::Activate@{mtpk::Activate}!linear@{linear}}
+\index{linear@{linear}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{linear()}{linear()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::linear (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_aefe6e6c022f33abd106c38a6e0983078}\label{classmtpk_1_1Activate_aefe6e6c022f33abd106c38a6e0983078}} 
+\index{mtpk::Activate@{mtpk::Activate}!linear@{linear}}
+\index{linear@{linear}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{linear()}{linear()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::linear (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_adb74be4d294fc275b4cdb99445508606}\label{classmtpk_1_1Activate_adb74be4d294fc275b4cdb99445508606}} 
+\index{mtpk::Activate@{mtpk::Activate}!linear@{linear}}
+\index{linear@{linear}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{linear()}{linear()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::linear (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a4537ae0d8d3e20e6bfcd7f875a854772}\label{classmtpk_1_1Activate_a4537ae0d8d3e20e6bfcd7f875a854772}} 
+\index{mtpk::Activate@{mtpk::Activate}!logit@{logit}}
+\index{logit@{logit}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{logit()}{logit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::logit (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a9779894f4dc789bf5753dcbe9a0f6d90}\label{classmtpk_1_1Activate_a9779894f4dc789bf5753dcbe9a0f6d90}} 
+\index{mtpk::Activate@{mtpk::Activate}!logit@{logit}}
+\index{logit@{logit}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{logit()}{logit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::logit (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ace8cd1c8a3b55fcf8e2c49eee3010392}\label{classmtpk_1_1Activate_ace8cd1c8a3b55fcf8e2c49eee3010392}} 
+\index{mtpk::Activate@{mtpk::Activate}!logit@{logit}}
+\index{logit@{logit}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{logit()}{logit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::logit (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab9b82a2929ba6ac77e3217883310dfba}\label{classmtpk_1_1Activate_ab9b82a2929ba6ac77e3217883310dfba}} 
+\index{mtpk::Activate@{mtpk::Activate}!mish@{mish}}
+\index{mish@{mish}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{mish()}{mish()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::mish (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a3ac6366279282a5a718cf413a7be6b1a}\label{classmtpk_1_1Activate_a3ac6366279282a5a718cf413a7be6b1a}} 
+\index{mtpk::Activate@{mtpk::Activate}!mish@{mish}}
+\index{mish@{mish}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{mish()}{mish()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::mish (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab2bb6786cf82bb23edf0708d2f1045ea}\label{classmtpk_1_1Activate_ab2bb6786cf82bb23edf0708d2f1045ea}} 
+\index{mtpk::Activate@{mtpk::Activate}!mish@{mish}}
+\index{mish@{mish}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{mish()}{mish()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::mish (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ace33a7d798692406a707719225a4ecc7}\label{classmtpk_1_1Activate_ace33a7d798692406a707719225a4ecc7}} 
+\index{mtpk::Activate@{mtpk::Activate}!RELU@{RELU}}
+\index{RELU@{RELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{RELU()}{RELU()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::\+RELU (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ab73d863fd92f85924d0eb0e101747645}\label{classmtpk_1_1Activate_ab73d863fd92f85924d0eb0e101747645}} 
+\index{mtpk::Activate@{mtpk::Activate}!RELU@{RELU}}
+\index{RELU@{RELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{RELU()}{RELU()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::\+RELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ad878f3a37fffcc358b2653812d824d52}\label{classmtpk_1_1Activate_ad878f3a37fffcc358b2653812d824d52}} 
+\index{mtpk::Activate@{mtpk::Activate}!RELU@{RELU}}
+\index{RELU@{RELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{RELU()}{RELU()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::\+RELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a0254a643bd47dee885471150cf96f29b}\label{classmtpk_1_1Activate_a0254a643bd47dee885471150cf96f29b}} 
+\index{mtpk::Activate@{mtpk::Activate}!sech@{sech}}
+\index{sech@{sech}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sech()}{sech()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::sech (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ade4fd15568d019576e95de17f23a54ac}\label{classmtpk_1_1Activate_ade4fd15568d019576e95de17f23a54ac}} 
+\index{mtpk::Activate@{mtpk::Activate}!sech@{sech}}
+\index{sech@{sech}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sech()}{sech()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::sech (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a0a2cbaa796f22f38b3e881672ee6ca45}\label{classmtpk_1_1Activate_a0a2cbaa796f22f38b3e881672ee6ca45}} 
+\index{mtpk::Activate@{mtpk::Activate}!sech@{sech}}
+\index{sech@{sech}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sech()}{sech()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::sech (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a7c622b948a85b33ca7a0a41710dc60a3}\label{classmtpk_1_1Activate_a7c622b948a85b33ca7a0a41710dc60a3}} 
+\index{mtpk::Activate@{mtpk::Activate}!SELU@{SELU}}
+\index{SELU@{SELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{SELU()}{SELU()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::\+SELU (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{double}]{lambda,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a582880335a8ecbe60c685796d64eb375}\label{classmtpk_1_1Activate_a582880335a8ecbe60c685796d64eb375}} 
+\index{mtpk::Activate@{mtpk::Activate}!SELU@{SELU}}
+\index{SELU@{SELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{SELU()}{SELU()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::\+SELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{double}]{lambda,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a888ca2987a398271c7deaccd4d7745e7}\label{classmtpk_1_1Activate_a888ca2987a398271c7deaccd4d7745e7}} 
+\index{mtpk::Activate@{mtpk::Activate}!SELU@{SELU}}
+\index{SELU@{SELU}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{SELU()}{SELU()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::\+SELU (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{,  }\item[{double}]{lambda,  }\item[{double}]{c,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a628796d8a5ef83cca427cb3f29813271}\label{classmtpk_1_1Activate_a628796d8a5ef83cca427cb3f29813271}} 
+\index{mtpk::Activate@{mtpk::Activate}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::sigmoid (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_af64aacffd9caab96ac99712895216312}\label{classmtpk_1_1Activate_af64aacffd9caab96ac99712895216312}} 
+\index{mtpk::Activate@{mtpk::Activate}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::sigmoid (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a044b6cc3308fd854c0ff3a497c5abc5c}\label{classmtpk_1_1Activate_a044b6cc3308fd854c0ff3a497c5abc5c}} 
+\index{mtpk::Activate@{mtpk::Activate}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::sigmoid (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_aa02ffeda13f668d479e3dca65f71c0bc}\label{classmtpk_1_1Activate_aa02ffeda13f668d479e3dca65f71c0bc}} 
+\index{mtpk::Activate@{mtpk::Activate}!sign@{sign}}
+\index{sign@{sign}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::sign (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a5f33f22d4839a4720decd6197ad5d25a}\label{classmtpk_1_1Activate_a5f33f22d4839a4720decd6197ad5d25a}} 
+\index{mtpk::Activate@{mtpk::Activate}!sign@{sign}}
+\index{sign@{sign}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::sign (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_acbaba08323be88351229521ece979355}\label{classmtpk_1_1Activate_acbaba08323be88351229521ece979355}} 
+\index{mtpk::Activate@{mtpk::Activate}!sign@{sign}}
+\index{sign@{sign}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::sign (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a6bd4a7b2f637868d51dc8ba3e1bdcb2f}\label{classmtpk_1_1Activate_a6bd4a7b2f637868d51dc8ba3e1bdcb2f}} 
+\index{mtpk::Activate@{mtpk::Activate}!sinc@{sinc}}
+\index{sinc@{sinc}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sinc()}{sinc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::sinc (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a82127c265d74962114c4f36ae73dcdd8}\label{classmtpk_1_1Activate_a82127c265d74962114c4f36ae73dcdd8}} 
+\index{mtpk::Activate@{mtpk::Activate}!sinc@{sinc}}
+\index{sinc@{sinc}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sinc()}{sinc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::sinc (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a2bb61897d040c36f39bcd84aee58a1d2}\label{classmtpk_1_1Activate_a2bb61897d040c36f39bcd84aee58a1d2}} 
+\index{mtpk::Activate@{mtpk::Activate}!sinc@{sinc}}
+\index{sinc@{sinc}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sinc()}{sinc()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::sinc (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a9b861b0e88b78395f2acb47cef965979}\label{classmtpk_1_1Activate_a9b861b0e88b78395f2acb47cef965979}} 
+\index{mtpk::Activate@{mtpk::Activate}!sinh@{sinh}}
+\index{sinh@{sinh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sinh()}{sinh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::sinh (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a8ec970bacd6de43ec34c929a65b707be}\label{classmtpk_1_1Activate_a8ec970bacd6de43ec34c929a65b707be}} 
+\index{mtpk::Activate@{mtpk::Activate}!sinh@{sinh}}
+\index{sinh@{sinh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sinh()}{sinh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::sinh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a49a2a099440c43f6706e834bdde86638}\label{classmtpk_1_1Activate_a49a2a099440c43f6706e834bdde86638}} 
+\index{mtpk::Activate@{mtpk::Activate}!sinh@{sinh}}
+\index{sinh@{sinh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{sinh()}{sinh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::sinh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ac39d7b071c6ea2b0782c9d530ebe5229}\label{classmtpk_1_1Activate_ac39d7b071c6ea2b0782c9d530ebe5229}} 
+\index{mtpk::Activate@{mtpk::Activate}!softmax@{softmax}}
+\index{softmax@{softmax}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softmax()}{softmax()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::softmax (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a2c2d3fad0a17b4f1e0fd59e372c47938}\label{classmtpk_1_1Activate_a2c2d3fad0a17b4f1e0fd59e372c47938}} 
+\index{mtpk::Activate@{mtpk::Activate}!softmax@{softmax}}
+\index{softmax@{softmax}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softmax()}{softmax()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::softmax (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a756a8cb0d543ae89c5eec20e489417bb}\label{classmtpk_1_1Activate_a756a8cb0d543ae89c5eec20e489417bb}} 
+\index{mtpk::Activate@{mtpk::Activate}!softmaxDeriv@{softmaxDeriv}}
+\index{softmaxDeriv@{softmaxDeriv}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softmaxDeriv()}{softmaxDeriv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::softmax\+Deriv (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a36f0b5ff0f5e8b158c9ad345761976fb}\label{classmtpk_1_1Activate_a36f0b5ff0f5e8b158c9ad345761976fb}} 
+\index{mtpk::Activate@{mtpk::Activate}!softmaxDeriv@{softmaxDeriv}}
+\index{softmaxDeriv@{softmaxDeriv}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softmaxDeriv()}{softmaxDeriv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ mtpk\+::\+Activate\+::softmax\+Deriv (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a8dc1452488984f9c62f17bf583bf4a7b}\label{classmtpk_1_1Activate_a8dc1452488984f9c62f17bf583bf4a7b}} 
+\index{mtpk::Activate@{mtpk::Activate}!softplus@{softplus}}
+\index{softplus@{softplus}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softplus()}{softplus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::softplus (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_aa696752cd54269191bab01e8eccbebe6}\label{classmtpk_1_1Activate_aa696752cd54269191bab01e8eccbebe6}} 
+\index{mtpk::Activate@{mtpk::Activate}!softplus@{softplus}}
+\index{softplus@{softplus}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softplus()}{softplus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::softplus (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a732ece0cfb6ffd3cbc27e7efb96a0686}\label{classmtpk_1_1Activate_a732ece0cfb6ffd3cbc27e7efb96a0686}} 
+\index{mtpk::Activate@{mtpk::Activate}!softplus@{softplus}}
+\index{softplus@{softplus}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softplus()}{softplus()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::softplus (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a69ecd27a24ec83d40f14dd43c79cf3d1}\label{classmtpk_1_1Activate_a69ecd27a24ec83d40f14dd43c79cf3d1}} 
+\index{mtpk::Activate@{mtpk::Activate}!softsign@{softsign}}
+\index{softsign@{softsign}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softsign()}{softsign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::softsign (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_aaafe26fab82251bb3ee71b1edb596030}\label{classmtpk_1_1Activate_aaafe26fab82251bb3ee71b1edb596030}} 
+\index{mtpk::Activate@{mtpk::Activate}!softsign@{softsign}}
+\index{softsign@{softsign}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softsign()}{softsign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::softsign (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a07a896f4713fe58399f3fd3b63b3b247}\label{classmtpk_1_1Activate_a07a896f4713fe58399f3fd3b63b3b247}} 
+\index{mtpk::Activate@{mtpk::Activate}!softsign@{softsign}}
+\index{softsign@{softsign}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{softsign()}{softsign()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::softsign (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_af9ea3b6c0779415cf551e56a28d5593c}\label{classmtpk_1_1Activate_af9ea3b6c0779415cf551e56a28d5593c}} 
+\index{mtpk::Activate@{mtpk::Activate}!swish@{swish}}
+\index{swish@{swish}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{swish()}{swish()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::swish (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_abc8387b70ecec6c071017c7632c281d9}\label{classmtpk_1_1Activate_abc8387b70ecec6c071017c7632c281d9}} 
+\index{mtpk::Activate@{mtpk::Activate}!swish@{swish}}
+\index{swish@{swish}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{swish()}{swish()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::swish (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a49f98351430f9f96d4f30efe160940d0}\label{classmtpk_1_1Activate_a49f98351430f9f96d4f30efe160940d0}} 
+\index{mtpk::Activate@{mtpk::Activate}!swish@{swish}}
+\index{swish@{swish}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{swish()}{swish()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::swish (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_ae4245b361d1aa90a2b4ffd8e72c54a0b}\label{classmtpk_1_1Activate_ae4245b361d1aa90a2b4ffd8e72c54a0b}} 
+\index{mtpk::Activate@{mtpk::Activate}!tanh@{tanh}}
+\index{tanh@{tanh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{tanh()}{tanh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::tanh (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_aa36e52818c78aa897eaec76569fd8e5d}\label{classmtpk_1_1Activate_aa36e52818c78aa897eaec76569fd8e5d}} 
+\index{mtpk::Activate@{mtpk::Activate}!tanh@{tanh}}
+\index{tanh@{tanh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{tanh()}{tanh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::tanh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a0c1a2a59df0bccb5bf63185084791060}\label{classmtpk_1_1Activate_a0c1a2a59df0bccb5bf63185084791060}} 
+\index{mtpk::Activate@{mtpk::Activate}!tanh@{tanh}}
+\index{tanh@{tanh}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{tanh()}{tanh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::tanh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a35efee4c3bebd934d817e828c12d1f7e}\label{classmtpk_1_1Activate_a35efee4c3bebd934d817e828c12d1f7e}} 
+\index{mtpk::Activate@{mtpk::Activate}!unitStep@{unitStep}}
+\index{unitStep@{unitStep}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{unitStep()}{unitStep()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily double mtpk\+::\+Activate\+::unit\+Step (\begin{DoxyParamCaption}\item[{double}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_addeb402690921a3d203425f61f9cfdea}\label{classmtpk_1_1Activate_addeb402690921a3d203425f61f9cfdea}} 
+\index{mtpk::Activate@{mtpk::Activate}!unitStep@{unitStep}}
+\index{unitStep@{unitStep}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{unitStep()}{unitStep()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Activate\+::unit\+Step (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1Activate_a106d929e16f9a96aba7bc3bb42faf600}\label{classmtpk_1_1Activate_a106d929e16f9a96aba7bc3bb42faf600}} 
+\index{mtpk::Activate@{mtpk::Activate}!unitStep@{unitStep}}
+\index{unitStep@{unitStep}!mtpk::Activate@{mtpk::Activate}}
+\doxysubsubsection{\texorpdfstring{unitStep()}{unitStep()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ double $>$ $>$ mtpk\+::\+Activate\+::unit\+Step (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{z,  }\item[{bool}]{deriv = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{activators_8hpp}{activators.\+hpp}}\end{DoxyCompactItemize}

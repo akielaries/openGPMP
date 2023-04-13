@@ -1,0 +1,439 @@
+\hypertarget{classmtpk_1_1ml_1_1PrimaryMLP}{}\doxysection{mtpk\+::ml\+::Primary\+MLP Class Reference}
+\label{classmtpk_1_1ml_1_1PrimaryMLP}\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+
+
+Primary Multi-\/\+Layer Perceptron Class.  
+
+
+
+
+{\ttfamily \#include $<$mlp\+\_\+net.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}{Primary\+MLP}} (int64\+\_\+t nl, int64\+\_\+t npl\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a0951d92936443debb2fa0d41020bed9e}{$\sim$\+Primary\+MLP}} ()
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a5138ae6bbde5771cce6a8b93fe8f129f}{train}} (const char $\ast$fnames)
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a3a517bba28ff82bf027ad1186fd44c86}{test}} (const char $\ast$fname)
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a0b25f12548f72c65cdc3ba39505f92f5}{evaluate}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a18a8db269edeca400bb6029f6ca236f2}{run}} (const char $\ast$fname, const int64\+\_\+t \&max\+\_\+iters)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ad7c0548ac51d3e333661304165151555}{\+\_\+\+Eta}}
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a78e47ac21f6739103153aea565a80f97}{\+\_\+\+Alpha}}
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a744c05e037e58f58639e65be6e4c8508}{\+\_\+\+Gain}}
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_adb6d9c540459dd85be13a1f4287a4664}{\+\_\+\+Avg\+Test\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a66629db6d9a859905bda220e982a0a7a}{rand\+\_\+init}} ()
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a1944148b92b8b2c0d9cccac3b6f91071}{rand\+\_\+int}} (int64\+\_\+t low, int64\+\_\+t hi)
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a18eb4946937035f12809fcc9b672a727}{rand\+\_\+real}} (long double low, long double hi)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_aec9264b61e9df5bd737fd9c17d3eac35}{set\+\_\+signal\+\_\+in}} (long double $\ast$input)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a7a4204a82c88265466525d8fe5c01d66}{get\+\_\+signal\+\_\+out}} (long double $\ast$output)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a1de057913c17181e734e39e8aea845c1}{weights\+\_\+save}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a17ae77fa444dba716f6e14d83d2f3e52}{weights\+\_\+rand}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ac86d80e12567b45439eae866932b6c08}{weights\+\_\+restore}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a3fb446ddfd3e01c0b2f61db8e8cf66f7}{weights\+\_\+adjust}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ae925fb9444753b64a109a668e77c8c0c}{prop\+\_\+signal}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a397daab2ad5b66cec3315ad2c994b3b2}{output\+\_\+err}} (long double $\ast$target)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a1a02f22009bb07dbd283708bdb6c098f}{back\+\_\+prop\+\_\+err}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_adec06a716cc4753f908d7a5ee29a2076}{simulate}} (long double $\ast$input, long double $\ast$output, long double $\ast$target, bool training)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}{num\+\_\+layers}}
+\item 
+\mbox{\hyperlink{structmtpk_1_1ml_1_1layer}{layer}} $\ast$ \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\+\_\+ptr}}
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a8274fe22d48823731a86f20c9912bc53}{\+\_\+\+MSE}}
+\begin{DoxyCompactList}\small\item\em Mean Squared Error. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74cb688e0c0bde87911dd8728c3c67ee}{\+\_\+\+MAE}}
+\begin{DoxyCompactList}\small\item\em Mean Absolute Error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Primary Multi-\/\+Layer Perceptron Class. 
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}\label{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!PrimaryMLP@{PrimaryMLP}}
+\index{PrimaryMLP@{PrimaryMLP}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{PrimaryMLP()}{PrimaryMLP()}}
+{\footnotesize\ttfamily mtpk\+::ml\+::\+Primary\+MLP\+::\+Primary\+MLP (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{nl,  }\item[{int64\+\_\+t}]{npl\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__network_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{mlp__network_8cpp_source}{mlp\+\_\+network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065     : \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}{num\_layers}}(0), \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}(0), \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a8274fe22d48823731a86f20c9912bc53}{\_MSE}}(0.0), \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74cb688e0c0bde87911dd8728c3c67ee}{\_MAE}}(0.0), \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ad7c0548ac51d3e333661304165151555}{\_Eta}}(0.25),}
+\DoxyCodeLine{00066       \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a78e47ac21f6739103153aea565a80f97}{\_Alpha}}(0.9), \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a744c05e037e58f58639e65be6e4c8508}{\_Gain}}(1.0), \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_adb6d9c540459dd85be13a1f4287a4664}{\_AvgTestError}}(0.0) \{}
+\DoxyCodeLine{00067     int64\_t \_LAYER, \_NEURON;}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069     \textcolor{comment}{// create network layers}}
+\DoxyCodeLine{00070     \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}{num\_layers}} = nl;}
+\DoxyCodeLine{00071     \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}} = \textcolor{keyword}{new} \mbox{\hyperlink{structmtpk_1_1ml_1_1layer}{layer}}[nl];}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{// intialize the data of the created network layers}}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{for} (\_LAYER = 0; \_LAYER < nl; \_LAYER++) \{}
+\DoxyCodeLine{00075         \textcolor{comment}{// intialize values to neuron struct information}}
+\DoxyCodeLine{00076         \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_ae123a255612d91473e4a5287264f7218}{num\_neurons}} = npl[\_LAYER];}
+\DoxyCodeLine{00077         \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}} = \textcolor{keyword}{new} \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron}{neuron}}[npl[\_LAYER]];}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         \textcolor{comment}{// intialize date of the neurons of the created network layers}}
+\DoxyCodeLine{00080         \textcolor{keywordflow}{for} (\_NEURON = 0; \_NEURON < npl[\_LAYER]; \_NEURON++) \{}
+\DoxyCodeLine{00081             \textcolor{comment}{// initialize exit value}}
+\DoxyCodeLine{00082             \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a26a8ebdfbda481634337c94ece3eaa55}{sortir}} = 1.0;}
+\DoxyCodeLine{00083             \textcolor{comment}{// save the error}}
+\DoxyCodeLine{00084             \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae457c01e087efc6758397020f36764d3}{err}} = 0.0;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086             \textcolor{comment}{// check if there is at least 1 layer}}
+\DoxyCodeLine{00087             \textcolor{keywordflow}{if} (\_LAYER > 0) \{}
+\DoxyCodeLine{00088                 \textcolor{comment}{/* initialize weight, last weight, and saved weight}}
+\DoxyCodeLine{00089 \textcolor{comment}{                 * values to \_LAYER -\/ 1}}
+\DoxyCodeLine{00090 \textcolor{comment}{                 */}}
+\DoxyCodeLine{00091                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a6cee05b2d2a490755d8860ea1af04ec5}{wt}} =}
+\DoxyCodeLine{00092                     \textcolor{keyword}{new} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}[npl[\_LAYER -\/ 1]];}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ab7016b420f793b86e44a8e2996599c24}{wt\_last}} =}
+\DoxyCodeLine{00095                     \textcolor{keyword}{new} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}[npl[\_LAYER -\/ 1]];}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae296b2f6f486c8e6cbc16a4a03f4080a}{wt\_saved}} =}
+\DoxyCodeLine{00098                     \textcolor{keyword}{new} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}[npl[\_LAYER -\/ 1]];}
+\DoxyCodeLine{00099             \}}
+\DoxyCodeLine{00100             \textcolor{comment}{// otherwise}}
+\DoxyCodeLine{00101             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00102                 \textcolor{comment}{/*}}
+\DoxyCodeLine{00103 \textcolor{comment}{                 * initialize weight, last weight, and saved weight}}
+\DoxyCodeLine{00104 \textcolor{comment}{                 * to NULL}}
+\DoxyCodeLine{00105 \textcolor{comment}{                 */}}
+\DoxyCodeLine{00106                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a6cee05b2d2a490755d8860ea1af04ec5}{wt}} = NULL;}
+\DoxyCodeLine{00107                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ab7016b420f793b86e44a8e2996599c24}{wt\_last}} = NULL;}
+\DoxyCodeLine{00108                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae296b2f6f486c8e6cbc16a4a03f4080a}{wt\_saved}} = NULL;}
+\DoxyCodeLine{00109             \}}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111     \}}
+\DoxyCodeLine{00112 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae457c01e087efc6758397020f36764d3}{mtpk\+::ml\+::neuron\+::err}}, \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\+\_\+ptr}}, \mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{mtpk\+::ml\+::layer\+::neuron\+\_\+ptr}}, \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}{num\+\_\+layers}}, \mbox{\hyperlink{structmtpk_1_1ml_1_1layer_ae123a255612d91473e4a5287264f7218}{mtpk\+::ml\+::layer\+::num\+\_\+neurons}}, \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a26a8ebdfbda481634337c94ece3eaa55}{mtpk\+::ml\+::neuron\+::sortir}}, \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a6cee05b2d2a490755d8860ea1af04ec5}{mtpk\+::ml\+::neuron\+::wt}}, \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ab7016b420f793b86e44a8e2996599c24}{mtpk\+::ml\+::neuron\+::wt\+\_\+last}}, and \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae296b2f6f486c8e6cbc16a4a03f4080a}{mtpk\+::ml\+::neuron\+::wt\+\_\+saved}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a0951d92936443debb2fa0d41020bed9e}\label{classmtpk_1_1ml_1_1PrimaryMLP_a0951d92936443debb2fa0d41020bed9e}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!````~PrimaryMLP@{$\sim$PrimaryMLP}}
+\index{````~PrimaryMLP@{$\sim$PrimaryMLP}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{$\sim$PrimaryMLP()}{~PrimaryMLP()}}
+{\footnotesize\ttfamily mtpk\+::ml\+::\+Primary\+MLP\+::$\sim$\+Primary\+MLP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__network_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{mlp__network_8cpp_source}{mlp\+\_\+network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115                               \{}
+\DoxyCodeLine{00116     int64\_t \_LAYER, \_NEURON;}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118     \textcolor{comment}{// TODO : thread the loops dealing with rudimentary computations}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{keywordflow}{for} (\_LAYER = 0; \_LAYER < \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}{num\_layers}}; \_LAYER++) \{}
+\DoxyCodeLine{00121         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].neuron\_ptr) \{}
+\DoxyCodeLine{00122             \textcolor{keywordflow}{for} (\_NEURON = 0; \_NEURON < \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_ae123a255612d91473e4a5287264f7218}{num\_neurons}};}
+\DoxyCodeLine{00123                  \_NEURON++) \{}
+\DoxyCodeLine{00124                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].neuron\_ptr[\_NEURON].wt) \{}
+\DoxyCodeLine{00125                     \textcolor{keyword}{delete}[] \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a6cee05b2d2a490755d8860ea1af04ec5}{wt}};}
+\DoxyCodeLine{00126                 \}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].neuron\_ptr[\_NEURON].wt\_last) \{}
+\DoxyCodeLine{00129                     \textcolor{keyword}{delete}[] \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ab7016b420f793b86e44a8e2996599c24}{wt\_last}};}
+\DoxyCodeLine{00130                 \}}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].neuron\_ptr[\_NEURON].wt\_saved) \{}
+\DoxyCodeLine{00133                     \textcolor{keyword}{delete}[] \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER]}
+\DoxyCodeLine{00134                         .\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON]}
+\DoxyCodeLine{00135                         .\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae296b2f6f486c8e6cbc16a4a03f4080a}{wt\_saved}};}
+\DoxyCodeLine{00136                 \}}
+\DoxyCodeLine{00137             \}}
+\DoxyCodeLine{00138         \}}
+\DoxyCodeLine{00139         \textcolor{keyword}{delete}[] \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}};}
+\DoxyCodeLine{00140     \}}
+\DoxyCodeLine{00141     \textcolor{keyword}{delete}[] \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}};}
+\DoxyCodeLine{00142 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a1a02f22009bb07dbd283708bdb6c098f}\label{classmtpk_1_1ml_1_1PrimaryMLP_a1a02f22009bb07dbd283708bdb6c098f}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!back\_prop\_err@{back\_prop\_err}}
+\index{back\_prop\_err@{back\_prop\_err}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{back\_prop\_err()}{back\_prop\_err()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::back\+\_\+prop\+\_\+err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a0b25f12548f72c65cdc3ba39505f92f5}\label{classmtpk_1_1ml_1_1PrimaryMLP_a0b25f12548f72c65cdc3ba39505f92f5}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Primary\+MLP\+::evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a7a4204a82c88265466525d8fe5c01d66}\label{classmtpk_1_1ml_1_1PrimaryMLP_a7a4204a82c88265466525d8fe5c01d66}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!get\_signal\_out@{get\_signal\_out}}
+\index{get\_signal\_out@{get\_signal\_out}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{get\_signal\_out()}{get\_signal\_out()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::get\+\_\+signal\+\_\+out (\begin{DoxyParamCaption}\item[{long double $\ast$}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a397daab2ad5b66cec3315ad2c994b3b2}\label{classmtpk_1_1ml_1_1PrimaryMLP_a397daab2ad5b66cec3315ad2c994b3b2}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!output\_err@{output\_err}}
+\index{output\_err@{output\_err}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{output\_err()}{output\_err()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::output\+\_\+err (\begin{DoxyParamCaption}\item[{long double $\ast$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_ae925fb9444753b64a109a668e77c8c0c}\label{classmtpk_1_1ml_1_1PrimaryMLP_ae925fb9444753b64a109a668e77c8c0c}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!prop\_signal@{prop\_signal}}
+\index{prop\_signal@{prop\_signal}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{prop\_signal()}{prop\_signal()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::prop\+\_\+signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a66629db6d9a859905bda220e982a0a7a}\label{classmtpk_1_1ml_1_1PrimaryMLP_a66629db6d9a859905bda220e982a0a7a}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!rand\_init@{rand\_init}}
+\index{rand\_init@{rand\_init}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{rand\_init()}{rand\_init()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::rand\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__network_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{mlp__network_8cpp_source}{mlp\+\_\+network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047                                  \{}
+\DoxyCodeLine{00048     srand(4711);}
+\DoxyCodeLine{00049     \textcolor{comment}{// srand((uint64\_t)time(NULL));}}
+\DoxyCodeLine{00050 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a1944148b92b8b2c0d9cccac3b6f91071}\label{classmtpk_1_1ml_1_1PrimaryMLP_a1944148b92b8b2c0d9cccac3b6f91071}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!rand\_int@{rand\_int}}
+\index{rand\_int@{rand\_int}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{rand\_int()}{rand\_int()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Primary\+MLP\+::rand\+\_\+int (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{low,  }\item[{int64\+\_\+t}]{hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__network_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{mlp__network_8cpp_source}{mlp\+\_\+network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053                                                           \{}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{return} rand() \% (hi -\/ low + 1) + low;}
+\DoxyCodeLine{00055 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a18eb4946937035f12809fcc9b672a727}\label{classmtpk_1_1ml_1_1PrimaryMLP_a18eb4946937035f12809fcc9b672a727}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!rand\_real@{rand\_real}}
+\index{rand\_real@{rand\_real}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{rand\_real()}{rand\_real()}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::rand\+\_\+real (\begin{DoxyParamCaption}\item[{long double}]{low,  }\item[{long double}]{hi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__network_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{mlp__network_8cpp_source}{mlp\+\_\+network.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059                                                             \{}
+\DoxyCodeLine{00060     \textcolor{keywordflow}{return} ((\textcolor{keywordtype}{long} \textcolor{keywordtype}{double})rand() / RAND\_MAX) * (hi -\/ low) + low;}
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a18a8db269edeca400bb6029f6ca236f2}\label{classmtpk_1_1ml_1_1PrimaryMLP_a18a8db269edeca400bb6029f6ca236f2}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!run@{run}}
+\index{run@{run}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::run (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{const int64\+\_\+t \&}]{max\+\_\+iters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_aec9264b61e9df5bd737fd9c17d3eac35}\label{classmtpk_1_1ml_1_1PrimaryMLP_aec9264b61e9df5bd737fd9c17d3eac35}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!set\_signal\_in@{set\_signal\_in}}
+\index{set\_signal\_in@{set\_signal\_in}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{set\_signal\_in()}{set\_signal\_in()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::set\+\_\+signal\+\_\+in (\begin{DoxyParamCaption}\item[{long double $\ast$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_adec06a716cc4753f908d7a5ee29a2076}\label{classmtpk_1_1ml_1_1PrimaryMLP_adec06a716cc4753f908d7a5ee29a2076}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!simulate@{simulate}}
+\index{simulate@{simulate}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{simulate()}{simulate()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::simulate (\begin{DoxyParamCaption}\item[{long double $\ast$}]{input,  }\item[{long double $\ast$}]{output,  }\item[{long double $\ast$}]{target,  }\item[{bool}]{training }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a3a517bba28ff82bf027ad1186fd44c86}\label{classmtpk_1_1ml_1_1PrimaryMLP_a3a517bba28ff82bf027ad1186fd44c86}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!test@{test}}
+\index{test@{test}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Primary\+MLP\+::test (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a5138ae6bbde5771cce6a8b93fe8f129f}\label{classmtpk_1_1ml_1_1PrimaryMLP_a5138ae6bbde5771cce6a8b93fe8f129f}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!train@{train}}
+\index{train@{train}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Primary\+MLP\+::train (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fnames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a3fb446ddfd3e01c0b2f61db8e8cf66f7}\label{classmtpk_1_1ml_1_1PrimaryMLP_a3fb446ddfd3e01c0b2f61db8e8cf66f7}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!weights\_adjust@{weights\_adjust}}
+\index{weights\_adjust@{weights\_adjust}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{weights\_adjust()}{weights\_adjust()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::weights\+\_\+adjust (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a17ae77fa444dba716f6e14d83d2f3e52}\label{classmtpk_1_1ml_1_1PrimaryMLP_a17ae77fa444dba716f6e14d83d2f3e52}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!weights\_rand@{weights\_rand}}
+\index{weights\_rand@{weights\_rand}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{weights\_rand()}{weights\_rand()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::weights\+\_\+rand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_ac86d80e12567b45439eae866932b6c08}\label{classmtpk_1_1ml_1_1PrimaryMLP_ac86d80e12567b45439eae866932b6c08}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!weights\_restore@{weights\_restore}}
+\index{weights\_restore@{weights\_restore}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{weights\_restore()}{weights\_restore()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::weights\+\_\+restore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a1de057913c17181e734e39e8aea845c1}\label{classmtpk_1_1ml_1_1PrimaryMLP_a1de057913c17181e734e39e8aea845c1}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!weights\_save@{weights\_save}}
+\index{weights\_save@{weights\_save}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{weights\_save()}{weights\_save()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Primary\+MLP\+::weights\+\_\+save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a78e47ac21f6739103153aea565a80f97}\label{classmtpk_1_1ml_1_1PrimaryMLP_a78e47ac21f6739103153aea565a80f97}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!\_Alpha@{\_Alpha}}
+\index{\_Alpha@{\_Alpha}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{\_Alpha}{\_Alpha}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::\+\_\+\+Alpha}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00124}{124}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_adb6d9c540459dd85be13a1f4287a4664}\label{classmtpk_1_1ml_1_1PrimaryMLP_adb6d9c540459dd85be13a1f4287a4664}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!\_AvgTestError@{\_AvgTestError}}
+\index{\_AvgTestError@{\_AvgTestError}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{\_AvgTestError}{\_AvgTestError}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::\+\_\+\+Avg\+Test\+Error}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00126}{126}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_ad7c0548ac51d3e333661304165151555}\label{classmtpk_1_1ml_1_1PrimaryMLP_ad7c0548ac51d3e333661304165151555}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!\_Eta@{\_Eta}}
+\index{\_Eta@{\_Eta}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{\_Eta}{\_Eta}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::\+\_\+\+Eta}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00123}{123}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a744c05e037e58f58639e65be6e4c8508}\label{classmtpk_1_1ml_1_1PrimaryMLP_a744c05e037e58f58639e65be6e4c8508}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!\_Gain@{\_Gain}}
+\index{\_Gain@{\_Gain}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{\_Gain}{\_Gain}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::\+\_\+\+Gain}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00125}{125}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a74cb688e0c0bde87911dd8728c3c67ee}\label{classmtpk_1_1ml_1_1PrimaryMLP_a74cb688e0c0bde87911dd8728c3c67ee}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!\_MAE@{\_MAE}}
+\index{\_MAE@{\_MAE}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{\_MAE}{\_MAE}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::\+\_\+\+MAE\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mean Absolute Error. 
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00101}{101}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a8274fe22d48823731a86f20c9912bc53}\label{classmtpk_1_1ml_1_1PrimaryMLP_a8274fe22d48823731a86f20c9912bc53}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!\_MSE@{\_MSE}}
+\index{\_MSE@{\_MSE}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{\_MSE}{\_MSE}}
+{\footnotesize\ttfamily long double mtpk\+::ml\+::\+Primary\+MLP\+::\+\_\+\+MSE\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mean Squared Error. 
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}\label{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!layer\_ptr@{layer\_ptr}}
+\index{layer\_ptr@{layer\_ptr}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{layer\_ptr}{layer\_ptr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmtpk_1_1ml_1_1layer}{layer}}$\ast$ mtpk\+::ml\+::\+Primary\+MLP\+::layer\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}{Primary\+MLP()}}.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}\label{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}} 
+\index{mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}!num\_layers@{num\_layers}}
+\index{num\_layers@{num\_layers}!mtpk::ml::PrimaryMLP@{mtpk::ml::PrimaryMLP}}
+\doxysubsubsection{\texorpdfstring{num\_layers}{num\_layers}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Primary\+MLP\+::num\+\_\+layers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlp__net_8hpp_source_l00092}{92}} of file \mbox{\hyperlink{mlp__net_8hpp_source}{mlp\+\_\+net.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}{Primary\+MLP()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{mlp__net_8hpp}{mlp\+\_\+net.\+hpp}}\item 
+modules/ml/\mbox{\hyperlink{mlp__network_8cpp}{mlp\+\_\+network.\+cpp}}\end{DoxyCompactItemize}

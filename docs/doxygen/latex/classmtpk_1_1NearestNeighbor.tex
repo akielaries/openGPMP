@@ -1,0 +1,64 @@
+\hypertarget{classmtpk_1_1NearestNeighbor}{}\doxysection{mtpk\+::Nearest\+Neighbor Class Reference}
+\label{classmtpk_1_1NearestNeighbor}\index{mtpk::NearestNeighbor@{mtpk::NearestNeighbor}}
+
+
+{\ttfamily \#include $<$nn.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classmtpk_1_1NearestNeighbor_a064dee2c9dea483a712060777fee172c}{comparison}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&rhs)
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1NearestNeighbor_ae9f33c856d549afad30b260b2e82ecd7}{euclidean\+Distance}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}})
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1NearestNeighbor_aa2bb48fa5da1081e79507b1963ff0b61}{manhattan\+Distance}} (\mbox{\hyperlink{classCompany}{Company}} \&lhs, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}})
+\item 
+void \mbox{\hyperlink{classmtpk_1_1NearestNeighbor_abb551856d13a19d5362430081b2c3921}{fill\+Distances}} (vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&data, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, long double($\ast$distance\+Function)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&))
+\item 
+bool \mbox{\hyperlink{classmtpk_1_1NearestNeighbor_a18230a118570277a74c8d7b50d18f426}{KNN}} (vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&data, \mbox{\hyperlink{classCompany}{Company}} \&\mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, int64\+\_\+t k, long double($\ast$distance\+Function)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{nn_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{nn_8hpp_source}{nn.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1NearestNeighbor_a064dee2c9dea483a712060777fee172c}\label{classmtpk_1_1NearestNeighbor_a064dee2c9dea483a712060777fee172c}} 
+\index{mtpk::NearestNeighbor@{mtpk::NearestNeighbor}!comparison@{comparison}}
+\index{comparison@{comparison}!mtpk::NearestNeighbor@{mtpk::NearestNeighbor}}
+\doxysubsubsection{\texorpdfstring{comparison()}{comparison()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Nearest\+Neighbor\+::comparison (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{lhs,  }\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NearestNeighbor_ae9f33c856d549afad30b260b2e82ecd7}\label{classmtpk_1_1NearestNeighbor_ae9f33c856d549afad30b260b2e82ecd7}} 
+\index{mtpk::NearestNeighbor@{mtpk::NearestNeighbor}!euclideanDistance@{euclideanDistance}}
+\index{euclideanDistance@{euclideanDistance}!mtpk::NearestNeighbor@{mtpk::NearestNeighbor}}
+\doxysubsubsection{\texorpdfstring{euclideanDistance()}{euclideanDistance()}}
+{\footnotesize\ttfamily long double mtpk\+::\+Nearest\+Neighbor\+::euclidean\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{lhs,  }\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{test }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NearestNeighbor_abb551856d13a19d5362430081b2c3921}\label{classmtpk_1_1NearestNeighbor_abb551856d13a19d5362430081b2c3921}} 
+\index{mtpk::NearestNeighbor@{mtpk::NearestNeighbor}!fillDistances@{fillDistances}}
+\index{fillDistances@{fillDistances}!mtpk::NearestNeighbor@{mtpk::NearestNeighbor}}
+\doxysubsubsection{\texorpdfstring{fillDistances()}{fillDistances()}}
+{\footnotesize\ttfamily void mtpk\+::\+Nearest\+Neighbor\+::fill\+Distances (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&}]{data,  }\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{test,  }\item[{long double($\ast$)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&)}]{distance\+Function }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NearestNeighbor_a18230a118570277a74c8d7b50d18f426}\label{classmtpk_1_1NearestNeighbor_a18230a118570277a74c8d7b50d18f426}} 
+\index{mtpk::NearestNeighbor@{mtpk::NearestNeighbor}!KNN@{KNN}}
+\index{KNN@{KNN}!mtpk::NearestNeighbor@{mtpk::NearestNeighbor}}
+\doxysubsubsection{\texorpdfstring{KNN()}{KNN()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Nearest\+Neighbor\+::\+KNN (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classCompany}{Company}} $>$ \&}]{data,  }\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{test,  }\item[{int64\+\_\+t}]{k,  }\item[{long double($\ast$)(\mbox{\hyperlink{classCompany}{Company}} \&, \mbox{\hyperlink{classCompany}{Company}} \&)}]{distance\+Function }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NearestNeighbor_aa2bb48fa5da1081e79507b1963ff0b61}\label{classmtpk_1_1NearestNeighbor_aa2bb48fa5da1081e79507b1963ff0b61}} 
+\index{mtpk::NearestNeighbor@{mtpk::NearestNeighbor}!manhattanDistance@{manhattanDistance}}
+\index{manhattanDistance@{manhattanDistance}!mtpk::NearestNeighbor@{mtpk::NearestNeighbor}}
+\doxysubsubsection{\texorpdfstring{manhattanDistance()}{manhattanDistance()}}
+{\footnotesize\ttfamily long double mtpk\+::\+Nearest\+Neighbor\+::manhattan\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{lhs,  }\item[{\mbox{\hyperlink{classCompany}{Company}} \&}]{test }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{nn_8hpp}{nn.\+hpp}}\end{DoxyCompactItemize}

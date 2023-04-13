@@ -1,0 +1,106 @@
+\hypertarget{encoder__var_8hpp_source}{}\doxysection{encoder\+\_\+var.\+hpp}
+\label{encoder__var_8hpp_source}\index{include/ml/encoder\_var.hpp@{include/ml/encoder\_var.hpp}}
+\mbox{\hyperlink{encoder__var_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#ifndef ENCODER\_NET\_HPP}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00040}\mbox{\hyperlink{encoder__var_8hpp_ad29b1c7dac93d2d9dfac0b7c42cb2f8e}{00040}} \textcolor{preprocessor}{\#define ENDOCER\_NET\_HPP}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00046}00046 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00048}00048 \textcolor{keyword}{class }AutoEncoder \{}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00049}00049     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00050}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a13043ef1da9b6a10991a1da2b36f8ec7}{00050}}     \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a13043ef1da9b6a10991a1da2b36f8ec7}{AutoEncoder}}(std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a21406eb17df1f505200bd40a30d57b98}{inputSet}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_accd4c17c7fea9ca2a2ebe5f7703d488b}{n\_hidden}});}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00052}00052     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00053}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a5f9a39abe065115be32570b7c6934e47}{00053}}         \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a5f9a39abe065115be32570b7c6934e47}{modelSetTest}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00055}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_ad0b5c50faeb195906ba2acd3d79a131a}{00055}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_ad0b5c50faeb195906ba2acd3d79a131a}{modelTest}}(std::vector<double> x);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00057}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a2aaa1a1c508e5d2dff249217505a1b3d}{00057}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a2aaa1a1c508e5d2dff249217505a1b3d}{gradientDescent}}(\textcolor{keywordtype}{double} learning\_rate, \textcolor{keywordtype}{int} max\_epoch, \textcolor{keywordtype}{bool} UI = 1);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00059}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a1aef97470c934b58a8df4125eba2d5a9}{00059}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a1aef97470c934b58a8df4125eba2d5a9}{SGD}}(\textcolor{keywordtype}{double} learning\_rate, \textcolor{keywordtype}{int} max\_epoch, \textcolor{keywordtype}{bool} UI = 1);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00061}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_aadbffe26d1d2382c547762c4a495b49b}{00061}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_aadbffe26d1d2382c547762c4a495b49b}{MBGD}}(\textcolor{keywordtype}{double} learning\_rate, \textcolor{keywordtype}{int} max\_epoch, \textcolor{keywordtype}{int} mini\_batch\_size,}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00062}00062               \textcolor{keywordtype}{bool} UI = 1);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00064}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a2f4e93a007ec037ebd72ec8c0d306048}{00064}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a2f4e93a007ec037ebd72ec8c0d306048}{score}}();}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00066}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a991f0610b8817feb08c90c7b9ea076c9}{00066}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a991f0610b8817feb08c90c7b9ea076c9}{save}}(std::string fileName);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00068}00068     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00069}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a393cc3a76747d9f197792c784290c763}{00069}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a393cc3a76747d9f197792c784290c763}{Cost}}(std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a38c75f3ef0643347a1ddec416de05898}{y\_hat}},}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00070}00070                 std::vector<std::vector<double>> y);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00072}00072     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00073}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a028b25b5fd22b022a1255961dfdf1026}{00073}}         \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a028b25b5fd22b022a1255961dfdf1026}{Evaluate}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00075}00075     std::tuple<std::vector<std::vector<double>>,}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00076}00076                std::vector<std::vector<double>>>}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00077}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a39acb8466af1a46007581cf523cb2f10}{00077}}         \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a39acb8466af1a46007581cf523cb2f10}{propagate}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00079}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a31309a791d9a66153973a64a015822a7}{00079}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a31309a791d9a66153973a64a015822a7}{Evaluate}}(std::vector<double> x);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00081}00081     std::tuple<std::vector<double>, std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00082}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a168705644c26cbb5beb1d42d875eed85}{00082}}         \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a168705644c26cbb5beb1d42d875eed85}{propagate}}(std::vector<double> x);}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00084}\mbox{\hyperlink{classmtpk_1_1AutoEncoder_a3cae2e66f0f9a49e8b3af85e66ef7a02}{00084}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a3cae2e66f0f9a49e8b3af85e66ef7a02}{forwardPass}}();}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00086}00086     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a21406eb17df1f505200bd40a30d57b98}{inputSet}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00087}00087     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a38c75f3ef0643347a1ddec416de05898}{y\_hat}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00089}00089     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a5f38678e040710181fc4d227539f14b2}{weights1}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00090}00090     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a9ff278e18e03156fa3a71b67a11f9b15}{weights2}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00092}00092     std::vector<double> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_ae1e507c0deee9ac805cd93c6abf7c34f}{bias1}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00093}00093     std::vector<double> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a30749c2cf05a10684f8f2b1e58a6e29a}{bias2}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00095}00095     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a92d6fdbde68999fe3faae4859ef00f2d}{z2}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00096}00096     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1AutoEncoder_af1b7c9d04aad1f9ecba6666295e1ff51}{a2}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00098}00098     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a896d6f20f88a31f75faf0a71facba5c2}{n}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00099}00099     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_a58f84f15e353d918f080f818fb12e364}{k}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00100}00100     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1AutoEncoder_accd4c17c7fea9ca2a2ebe5f7703d488b}{n\_hidden}};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00101}00101 \};}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00102}00102 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{encoder__var_8hpp_source_l00104}00104 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

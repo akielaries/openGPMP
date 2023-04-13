@@ -1,0 +1,58 @@
+\hypertarget{deriv_8hpp_source}{}\doxysection{deriv.\+hpp}
+\label{deriv_8hpp_source}\index{include/calculus/deriv.hpp@{include/calculus/deriv.hpp}}
+\mbox{\hyperlink{deriv_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#ifndef DERIV\_HPP}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#define DERIV\_HPP}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00045}00045 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00050}\mbox{\hyperlink{classmtpk_1_1Calculus}{00050}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Calculus}{Calculus}} \{}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00051}00051     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00061}00061     int64\_t \mbox{\hyperlink{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}{derivative\_term}}(std::string p\_term, int64\_t val);}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00071}00071     int64\_t \mbox{\hyperlink{classmtpk_1_1Calculus_a4c1c4fdc45fccf75cd81ca5a63cff7e2}{deriv\_at}}(std::string \&poly, int64\_t val);}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00081}00081     std::string \mbox{\hyperlink{classmtpk_1_1Calculus_a47c9d1bc11315662c6f9e1183f5ec7ee}{deriv}}(std::string \&poly);}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00082}00082 \};}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00084}00084 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{deriv_8hpp_source_l00086}00086 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,195 @@
+\hypertarget{datatable_8cpp}{}\doxysection{modules/struct/datatable.cpp File Reference}
+\label{datatable_8cpp}\index{modules/struct/datatable.cpp@{modules/struct/datatable.cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::map$<$ std\+::string, std\+::string $>$ $>$ \mbox{\hyperlink{datatable_8cpp_ac0fc5e25cbe370a4efde4baab8aa9ee5}{csv\+\_\+read}} (std\+::string filename, std\+::vector$<$ std\+::string $>$ selected\+\_\+columns=\{\})
+\item 
+void \mbox{\hyperlink{datatable_8cpp_a57667ffe4c3bf42fa8ebbcfb6022dea0}{display}} (const std\+::vector$<$ std\+::map$<$ std\+::string, std\+::string $>$ $>$ \&data)
+\item 
+int \mbox{\hyperlink{datatable_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{datatable_8cpp_ac0fc5e25cbe370a4efde4baab8aa9ee5}\label{datatable_8cpp_ac0fc5e25cbe370a4efde4baab8aa9ee5}} 
+\index{datatable.cpp@{datatable.cpp}!csv\_read@{csv\_read}}
+\index{csv\_read@{csv\_read}!datatable.cpp@{datatable.cpp}}
+\doxysubsubsection{\texorpdfstring{csv\_read()}{csv\_read()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::map$<$ std\+::string, std\+::string $>$ $>$ csv\+\_\+read (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::vector$<$ std\+::string $>$}]{selected\+\_\+columns = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{datatable_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{datatable_8cpp_source}{datatable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047                                                      \{\}) \{}
+\DoxyCodeLine{00048     std::ifstream file(filename);}
+\DoxyCodeLine{00049     std::vector<std::map<std::string, std::string>> data;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \textcolor{keywordflow}{if} (file) \{}
+\DoxyCodeLine{00052         \textcolor{comment}{// Read header line}}
+\DoxyCodeLine{00053         std::string line;}
+\DoxyCodeLine{00054         std::getline(file, line);}
+\DoxyCodeLine{00055         std::istringstream header(line);}
+\DoxyCodeLine{00056         std::vector<std::string> column\_names;}
+\DoxyCodeLine{00057         std::string name;}
+\DoxyCodeLine{00058         \textcolor{keywordflow}{while} (std::getline(header, name, \textcolor{charliteral}{','})) \{}
+\DoxyCodeLine{00059             \textcolor{comment}{// If no columns are selected or the column is selected, add it}}
+\DoxyCodeLine{00060             \textcolor{comment}{// to the column names}}
+\DoxyCodeLine{00061             \textcolor{keywordflow}{if} (selected\_columns.empty() ||}
+\DoxyCodeLine{00062                 std::find(selected\_columns.begin(), selected\_columns.end(),}
+\DoxyCodeLine{00063                           name) != selected\_columns.end()) \{}
+\DoxyCodeLine{00064                 column\_names.push\_back(name);}
+\DoxyCodeLine{00065             \}}
+\DoxyCodeLine{00066         \}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068         \textcolor{comment}{// Read data lines}}
+\DoxyCodeLine{00069         \textcolor{keywordflow}{while} (std::getline(file, line)) \{}
+\DoxyCodeLine{00070             std::istringstream record(line);}
+\DoxyCodeLine{00071             std::map<std::string, std::string> row;}
+\DoxyCodeLine{00072             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&column\_name : column\_names) \{}
+\DoxyCodeLine{00073                 std::string value;}
+\DoxyCodeLine{00074                 std::getline(record, value, \textcolor{charliteral}{','});}
+\DoxyCodeLine{00075                 row[column\_name] = value;}
+\DoxyCodeLine{00076             \}}
+\DoxyCodeLine{00077             data.push\_back(row);}
+\DoxyCodeLine{00078         \}}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{00082 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{datatable_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}.
+
+\mbox{\Hypertarget{datatable_8cpp_a57667ffe4c3bf42fa8ebbcfb6022dea0}\label{datatable_8cpp_a57667ffe4c3bf42fa8ebbcfb6022dea0}} 
+\index{datatable.cpp@{datatable.cpp}!display@{display}}
+\index{display@{display}!datatable.cpp@{datatable.cpp}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::map$<$ std\+::string, std\+::string $>$ $>$ \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{datatable_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{datatable_8cpp_source}{datatable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084                                                                   \{}
+\DoxyCodeLine{00085     \textcolor{keywordflow}{if} (data.empty()) \{}
+\DoxyCodeLine{00086         std::cout << \textcolor{stringliteral}{"{}Empty dataframe"{}} << std::endl;}
+\DoxyCodeLine{00087         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00088     \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090     \textcolor{comment}{// Get the list of column names}}
+\DoxyCodeLine{00091     std::vector<std::string> column\_names;}
+\DoxyCodeLine{00092     std::map<std::string, size\_t> column\_widths;}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&row : data) \{}
+\DoxyCodeLine{00094         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&pair : row) \{}
+\DoxyCodeLine{00095             \textcolor{keywordflow}{if} (std::find(column\_names.begin(), column\_names.end(),}
+\DoxyCodeLine{00096                           pair.first) == column\_names.end()) \{}
+\DoxyCodeLine{00097                 column\_names.push\_back(pair.first);}
+\DoxyCodeLine{00098                 column\_widths[pair.first] = pair.first.size() + 2;}
+\DoxyCodeLine{00099             \}}
+\DoxyCodeLine{00100             \textcolor{keywordflow}{if} (pair.second.size() + 2 > column\_widths[pair.first]) \{}
+\DoxyCodeLine{00101                 column\_widths[pair.first] = pair.second.size() + 2;}
+\DoxyCodeLine{00102             \}}
+\DoxyCodeLine{00103         \}}
+\DoxyCodeLine{00104     \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{comment}{// Print the data}}
+\DoxyCodeLine{00107     std::cout << std::left;}
+\DoxyCodeLine{00108     std::cout << std::setw(4) << \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00109     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&name : column\_names) \{}
+\DoxyCodeLine{00110         std::cout << std::setw(column\_widths[name]) << name;}
+\DoxyCodeLine{00111     \}}
+\DoxyCodeLine{00112     std::cout << std::endl;}
+\DoxyCodeLine{00113 }
+\DoxyCodeLine{00114     \textcolor{keywordtype}{int} num\_rows = data.size();}
+\DoxyCodeLine{00115     \textcolor{keywordtype}{int} start\_row = 0;}
+\DoxyCodeLine{00116     \textcolor{keywordtype}{int} end\_row = num\_rows -\/ 1;}
+\DoxyCodeLine{00117     \textcolor{keywordflow}{if} (num\_rows > 10) \{}
+\DoxyCodeLine{00118         end\_row = 4;}
+\DoxyCodeLine{00119         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = start\_row; i <= end\_row; i++) \{}
+\DoxyCodeLine{00120             std::cout << std::setw(4) << i;}
+\DoxyCodeLine{00121             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&name : column\_names) \{}
+\DoxyCodeLine{00122                 \textcolor{keywordflow}{if} (data[i].count(name)) \{}
+\DoxyCodeLine{00123                     std::cout << std::setw(column\_widths[name])}
+\DoxyCodeLine{00124                               << data[i].at(name);}
+\DoxyCodeLine{00125                 \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00126                     std::cout << std::setw(column\_widths[name]) << \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00127                 \}}
+\DoxyCodeLine{00128             \}}
+\DoxyCodeLine{00129             std::cout << std::endl;}
+\DoxyCodeLine{00130         \}}
+\DoxyCodeLine{00131         std::cout << \textcolor{stringliteral}{"{}... "{}} << num\_rows -\/ 10 << \textcolor{stringliteral}{"{} rows omitted ..."{}}}
+\DoxyCodeLine{00132                   << std::endl;}
+\DoxyCodeLine{00133         start\_row = num\_rows -\/ 5;}
+\DoxyCodeLine{00134         end\_row = num\_rows -\/ 1;}
+\DoxyCodeLine{00135     \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = start\_row; i <= end\_row; i++) \{}
+\DoxyCodeLine{00138         std::cout << std::setw(4) << i;}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&name : column\_names) \{}
+\DoxyCodeLine{00140             \textcolor{keywordflow}{if} (data[i].count(name)) \{}
+\DoxyCodeLine{00141                 std::cout << std::setw(column\_widths[name])}
+\DoxyCodeLine{00142                           << data[i].at(name);}
+\DoxyCodeLine{00143             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00144                 std::cout << std::setw(column\_widths[name]) << \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00145             \}}
+\DoxyCodeLine{00146         \}}
+\DoxyCodeLine{00147         std::cout << std::endl;}
+\DoxyCodeLine{00148     \}}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     std::cout << \textcolor{stringliteral}{"{}["{}} << num\_rows << \textcolor{stringliteral}{"{} rows"{}}}
+\DoxyCodeLine{00151               << \textcolor{stringliteral}{"{} x "{}} << column\_names.size() << \textcolor{stringliteral}{"{} columns"{}}}
+\DoxyCodeLine{00152               << \textcolor{stringliteral}{"{}]\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00153 \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{datatable_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}.
+
+\mbox{\Hypertarget{datatable_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{datatable_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{datatable.cpp@{datatable.cpp}!main@{main}}
+\index{main@{main}!datatable.cpp@{datatable.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{datatable_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{datatable_8cpp_source}{datatable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155            \{}
+\DoxyCodeLine{00156     \textcolor{comment}{// mtpk::Datatable dt;}}
+\DoxyCodeLine{00157     std::vector<std::map<std::string, std::string>> frame =}
+\DoxyCodeLine{00158         \mbox{\hyperlink{datatable_8cpp_ac0fc5e25cbe370a4efde4baab8aa9ee5}{csv\_read}}(\textcolor{stringliteral}{"{}../../data/forestfires.csv"{}});}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160     std::vector<std::map<std::string, std::string>> frame2 =}
+\DoxyCodeLine{00161         \mbox{\hyperlink{datatable_8cpp_ac0fc5e25cbe370a4efde4baab8aa9ee5}{csv\_read}}(\textcolor{stringliteral}{"{}../../data/school\_scores.csv"{}});}
+\DoxyCodeLine{00162     \textcolor{comment}{// Print dataframe}}
+\DoxyCodeLine{00163     \mbox{\hyperlink{datatable_8cpp_a57667ffe4c3bf42fa8ebbcfb6022dea0}{display}}(frame);}
+\DoxyCodeLine{00164     \mbox{\hyperlink{datatable_8cpp_a57667ffe4c3bf42fa8ebbcfb6022dea0}{display}}(frame2);}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00167 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{datatable_8cpp_ac0fc5e25cbe370a4efde4baab8aa9ee5}{csv\+\_\+read()}}, and \mbox{\hyperlink{datatable_8cpp_a57667ffe4c3bf42fa8ebbcfb6022dea0}{display()}}.
+

@@ -1,0 +1,150 @@
+\hypertarget{bayes__clf_8hpp_source}{}\doxysection{bayes\+\_\+clf.\+hpp}
+\label{bayes__clf_8hpp_source}\index{include/ml/bayes\_clf.hpp@{include/ml/bayes\_clf.hpp}}
+\mbox{\hyperlink{bayes__clf_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#ifndef BAYES\_CLF\_HPP}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#define BAYES\_CLF\_HPP}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00046}00046 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00051}\mbox{\hyperlink{structmtpk_1_1summary}{00051}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmtpk_1_1summary}{summary}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00052}\mbox{\hyperlink{structmtpk_1_1summary_ad028493d5182eca8a6f559b8eee6ca2d}{00052}}     std::vector<std::vector<long double>> \mbox{\hyperlink{structmtpk_1_1summary_ad028493d5182eca8a6f559b8eee6ca2d}{mean\_stdev}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00053}\mbox{\hyperlink{structmtpk_1_1summary_ab48f21085196941c2b72409cd2b0ad73}{00053}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{structmtpk_1_1summary_ab48f21085196941c2b72409cd2b0ad73}{class\_prob}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00054}\mbox{\hyperlink{namespacemtpk_a085f33bc2f6ca9e783087360d000cece}{00054}} \} \mbox{\hyperlink{namespacemtpk_a085f33bc2f6ca9e783087360d000cece}{summary}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00059}\mbox{\hyperlink{classmtpk_1_1BayesClf}{00059}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1BayesClf}{BayesClf}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00060}00060     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00061}\mbox{\hyperlink{classmtpk_1_1BayesClf_a09191f8089a13847a75a12a9c405206f}{00061}}     std::vector<class\_summary> \mbox{\hyperlink{classmtpk_1_1BayesClf_a09191f8089a13847a75a12a9c405206f}{Summary}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00062}\mbox{\hyperlink{classmtpk_1_1BayesClf_aad3d61caf85963f8aa6a2a9998b73953}{00062}}     std::vector<long double> \mbox{\hyperlink{classmtpk_1_1BayesClf_aad3d61caf85963f8aa6a2a9998b73953}{unique\_label}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00064}00064     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00065}\mbox{\hyperlink{classmtpk_1_1BayesClf_aeb3bba9300d73598762018d515fb45c7}{00065}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesClf_aeb3bba9300d73598762018d515fb45c7}{fit}}(std::vector<std::vector<long double>> dataset);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00066}\mbox{\hyperlink{classmtpk_1_1BayesClf_a9bfe361a18f9c20653d09efc9580f7d4}{00066}}     int64\_t \mbox{\hyperlink{classmtpk_1_1BayesClf_a9bfe361a18f9c20653d09efc9580f7d4}{predict}}(\textcolor{keyword}{const} std::vector<long double> \&test\_data);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00067}00067 \};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00068}\mbox{\hyperlink{namespacemtpk_a7f1cea127eaa63e62eae38e8eea54dbd}{00068}} \mbox{\hyperlink{structmtpk_1_1summary}{summary}} \mbox{\hyperlink{namespacemtpk_a7f1cea127eaa63e62eae38e8eea54dbd}{gen\_summ}}(std::vector<std::vector<long double>> dataset,}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00069}00069                  \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} class\_label);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00071}\mbox{\hyperlink{namespacemtpk_a9f9bc4c01d3aec9c9a6d920766b8e3e5}{00071}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{namespacemtpk_a9f9bc4c01d3aec9c9a6d920766b8e3e5}{prob\_by\_summ}}(\textcolor{keyword}{const} std::vector<long double> \&test\_data,}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00072}00072                          \textcolor{keyword}{const} class\_summary \&\mbox{\hyperlink{structmtpk_1_1summary}{summary}});}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00082}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli}{00082}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1BayesBernoulli}{BayesBernoulli}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00083}00083     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00084}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a826ab1535cf05bf8bd7beea45ff04914}{00084}}     \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a826ab1535cf05bf8bd7beea45ff04914}{BayesBernoulli}}(std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}{inputSet}},}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00085}00085                    std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}{outputSet}});}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00086}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_aede16c8ddc056cee816605fba65e8c18}{00086}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_aede16c8ddc056cee816605fba65e8c18}{modelSetTest}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00087}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a1c6c1043256585a67447cb9a5efd815c}{00087}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a1c6c1043256585a67447cb9a5efd815c}{modelTest}}(std::vector<double> x);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00088}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_af5f4d7cac02edd7b39749dd2c0c45990}{00088}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_af5f4d7cac02edd7b39749dd2c0c45990}{score}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00090}00090     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00091}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a4995df4ab11dd11542d38a9fa4598ec9}{00091}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a4995df4ab11dd11542d38a9fa4598ec9}{computeVocab}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00092}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a60791bcdabb28aaa143eed9eb0524581}{00092}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a60791bcdabb28aaa143eed9eb0524581}{computeTheta}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00093}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ad764ae643ef5cbb95df0176e9b724350}{00093}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ad764ae643ef5cbb95df0176e9b724350}{Evaluate}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00095}00095     \textcolor{comment}{// Model Params}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00096}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a3998be519560ab5aef0b30b4ebe95e21}{00096}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a3998be519560ab5aef0b30b4ebe95e21}{prior\_1}} = 0;}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00097}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ac998bf768070514ccab4d5fb740d19dc}{00097}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ac998bf768070514ccab4d5fb740d19dc}{prior\_0}} = 0;}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00099}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a812c68e53a3e9ca0121751b12259c9ea}{00099}}     std::vector<std::map<double, int>> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a812c68e53a3e9ca0121751b12259c9ea}{theta}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00100}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ae0b498ca860d34d77e16dfea497fc105}{00100}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ae0b498ca860d34d77e16dfea497fc105}{vocab}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00101}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a15cd1cde5e7d6c2e0eababc502ddbd70}{00101}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a15cd1cde5e7d6c2e0eababc502ddbd70}{class\_num}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00103}00103     \textcolor{comment}{// Datasets}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00104}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}{00104}}     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}{inputSet}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00105}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}{00105}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}{outputSet}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00106}\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_aeeab8387f6ebe8ae7940b6578777b411}{00106}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_aeeab8387f6ebe8ae7940b6578777b411}{y\_hat}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00107}00107 \};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00115}\mbox{\hyperlink{classmtpk_1_1BayesGauss}{00115}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1BayesGauss}{BayesGauss}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00116}00116     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00117}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a077c3f863775695b307921c28032dc37}{00117}}     \mbox{\hyperlink{classmtpk_1_1BayesGauss_a077c3f863775695b307921c28032dc37}{BayesGauss}}(std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}{inputSet}},}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00118}00118                std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}{outputSet}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}{class\_num}});}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00120}\mbox{\hyperlink{classmtpk_1_1BayesGauss_aed1111aef73f870285ba3857b39cb464}{00120}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_aed1111aef73f870285ba3857b39cb464}{modelSetTest}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00122}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a1e711202cc99b6d2a80304ccd3bece9e}{00122}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesGauss_a1e711202cc99b6d2a80304ccd3bece9e}{modelTest}}(std::vector<double> x);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00123}\mbox{\hyperlink{classmtpk_1_1BayesGauss_adb01f32388d30d04d53a3c52264ae4c9}{00123}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesGauss_adb01f32388d30d04d53a3c52264ae4c9}{score}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00125}00125     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00126}\mbox{\hyperlink{classmtpk_1_1BayesGauss_ae602511f0bdd2843c8aa82cbcaad0923}{00126}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesGauss_ae602511f0bdd2843c8aa82cbcaad0923}{Evaluate}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00128}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}{00128}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}{class\_num}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00130}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a77ac4a17e7d87afcb9d7935c019ce5b8}{00130}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_a77ac4a17e7d87afcb9d7935c019ce5b8}{priors}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00131}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a47be058f5d35162fe01614b5772c1117}{00131}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_a47be058f5d35162fe01614b5772c1117}{mu}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00132}\mbox{\hyperlink{classmtpk_1_1BayesGauss_afe6f19f2a97471192b9d28c8daa09fa3}{00132}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_afe6f19f2a97471192b9d28c8daa09fa3}{sigma}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00134}\mbox{\hyperlink{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}{00134}}     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}{inputSet}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00135}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}{00135}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}{outputSet}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00137}\mbox{\hyperlink{classmtpk_1_1BayesGauss_a802983b575494abe9212796e72448046}{00137}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesGauss_a802983b575494abe9212796e72448046}{y\_hat}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00138}00138 \};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00146}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom}{00146}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1BayesMutliNom}{BayesMutliNom}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00147}00147     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00148}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_ac54d1e2fbe0b198b35af7c8a75aeff43}{00148}}     \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_ac54d1e2fbe0b198b35af7c8a75aeff43}{BayesMutliNom}}(std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a2249e1ab8edb273626119c950bbffa13}{inputSet}},}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00149}00149                   std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a41adb660d334c053f8abe5b95544662d}{outputSet}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a7b634b2cbbf7e379284fc3a31b4f914b}{class\_num}});}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00151}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a570969febc80fcabb8634e9e914b47dc}{00151}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a570969febc80fcabb8634e9e914b47dc}{modelSetTest}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00153}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_adbd54c3958f8392565aaab8bad9d374d}{00153}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_adbd54c3958f8392565aaab8bad9d374d}{modelTest}}(std::vector<double> x);}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00154}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a4974e44cd2be4821e8bd209cd387835f}{00154}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a4974e44cd2be4821e8bd209cd387835f}{score}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00156}00156     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00157}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a0c6d1b8f005c7da8e72fbdaf60b66720}{00157}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a0c6d1b8f005c7da8e72fbdaf60b66720}{computeTheta}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00158}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a9ae9c2478194b5da4770d32b65955b01}{00158}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a9ae9c2478194b5da4770d32b65955b01}{Evaluate}}();}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00160}00160     \textcolor{comment}{// Model Params}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00161}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a1aa76d8e49acea7eaeced088f1f23a60}{00161}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a1aa76d8e49acea7eaeced088f1f23a60}{priors}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00163}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_aa631dc1b14a63fdc5c7f2c8a8f04d980}{00163}}     std::vector<std::map<double, int>> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_aa631dc1b14a63fdc5c7f2c8a8f04d980}{theta}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00164}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a384e9bf1f4d2fcaedf3c62c52e665f11}{00164}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a384e9bf1f4d2fcaedf3c62c52e665f11}{vocab}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00165}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a7b634b2cbbf7e379284fc3a31b4f914b}{00165}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a7b634b2cbbf7e379284fc3a31b4f914b}{class\_num}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00167}00167     \textcolor{comment}{// Datasets}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00168}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a2249e1ab8edb273626119c950bbffa13}{00168}}     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a2249e1ab8edb273626119c950bbffa13}{inputSet}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00169}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a41adb660d334c053f8abe5b95544662d}{00169}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_a41adb660d334c053f8abe5b95544662d}{outputSet}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00170}\mbox{\hyperlink{classmtpk_1_1BayesMutliNom_aa5c412edb2a9b22ae4da42aa0ce156c8}{00170}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1BayesMutliNom_aa5c412edb2a9b22ae4da42aa0ce156c8}{y\_hat}};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00171}00171 \};}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00173}00173 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{bayes__clf_8hpp_source_l00175}00175 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

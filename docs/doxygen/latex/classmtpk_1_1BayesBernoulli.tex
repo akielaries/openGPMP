@@ -1,0 +1,188 @@
+\hypertarget{classmtpk_1_1BayesBernoulli}{}\doxysection{mtpk\+::Bayes\+Bernoulli Class Reference}
+\label{classmtpk_1_1BayesBernoulli}\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+
+
+{\ttfamily \#include $<$bayes\+\_\+clf.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a826ab1535cf05bf8bd7beea45ff04914}{Bayes\+Bernoulli}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}{input\+Set}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}{output\+Set}})
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_aede16c8ddc056cee816605fba65e8c18}{model\+Set\+Test}} (std\+::vector$<$ std\+::vector$<$ double $>$ $>$ X)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a1c6c1043256585a67447cb9a5efd815c}{model\+Test}} (std\+::vector$<$ double $>$ x)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_af5f4d7cac02edd7b39749dd2c0c45990}{score}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a4995df4ab11dd11542d38a9fa4598ec9}{compute\+Vocab}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a60791bcdabb28aaa143eed9eb0524581}{compute\+Theta}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ad764ae643ef5cbb95df0176e9b724350}{Evaluate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a3998be519560ab5aef0b30b4ebe95e21}{prior\+\_\+1}} = 0
+\item 
+double \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ac998bf768070514ccab4d5fb740d19dc}{prior\+\_\+0}} = 0
+\item 
+std\+::vector$<$ std\+::map$<$ double, int $>$ $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a812c68e53a3e9ca0121751b12259c9ea}{theta}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_ae0b498ca860d34d77e16dfea497fc105}{vocab}}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a15cd1cde5e7d6c2e0eababc502ddbd70}{class\+\_\+num}}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}{input\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}{output\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesBernoulli_aeeab8387f6ebe8ae7940b6578777b411}{y\+\_\+hat}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bernoulli Naive Bayes is a part of the Naive Bayes family. It is based on the Bernoulli Distribution and accepts only binary values, i.\+e., 0 or 1. If the features of the dataset are binary, then we can assume that Bernoulli Naive Bayes is the algorithm to be used. 
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a826ab1535cf05bf8bd7beea45ff04914}\label{classmtpk_1_1BayesBernoulli_a826ab1535cf05bf8bd7beea45ff04914}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!BayesBernoulli@{BayesBernoulli}}
+\index{BayesBernoulli@{BayesBernoulli}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{BayesBernoulli()}{BayesBernoulli()}}
+{\footnotesize\ttfamily mtpk\+::\+Bayes\+Bernoulli\+::\+Bayes\+Bernoulli (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{input\+Set,  }\item[{std\+::vector$<$ double $>$}]{output\+Set }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a60791bcdabb28aaa143eed9eb0524581}\label{classmtpk_1_1BayesBernoulli_a60791bcdabb28aaa143eed9eb0524581}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!computeTheta@{computeTheta}}
+\index{computeTheta@{computeTheta}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{computeTheta()}{computeTheta()}}
+{\footnotesize\ttfamily void mtpk\+::\+Bayes\+Bernoulli\+::compute\+Theta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a4995df4ab11dd11542d38a9fa4598ec9}\label{classmtpk_1_1BayesBernoulli_a4995df4ab11dd11542d38a9fa4598ec9}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!computeVocab@{computeVocab}}
+\index{computeVocab@{computeVocab}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{computeVocab()}{computeVocab()}}
+{\footnotesize\ttfamily void mtpk\+::\+Bayes\+Bernoulli\+::compute\+Vocab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_ad764ae643ef5cbb95df0176e9b724350}\label{classmtpk_1_1BayesBernoulli_ad764ae643ef5cbb95df0176e9b724350}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily void mtpk\+::\+Bayes\+Bernoulli\+::\+Evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_aede16c8ddc056cee816605fba65e8c18}\label{classmtpk_1_1BayesBernoulli_aede16c8ddc056cee816605fba65e8c18}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!modelSetTest@{modelSetTest}}
+\index{modelSetTest@{modelSetTest}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{modelSetTest()}{modelSetTest()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ mtpk\+::\+Bayes\+Bernoulli\+::model\+Set\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$ $>$}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a1c6c1043256585a67447cb9a5efd815c}\label{classmtpk_1_1BayesBernoulli_a1c6c1043256585a67447cb9a5efd815c}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!modelTest@{modelTest}}
+\index{modelTest@{modelTest}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{modelTest()}{modelTest()}}
+{\footnotesize\ttfamily double mtpk\+::\+Bayes\+Bernoulli\+::model\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_af5f4d7cac02edd7b39749dd2c0c45990}\label{classmtpk_1_1BayesBernoulli_af5f4d7cac02edd7b39749dd2c0c45990}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!score@{score}}
+\index{score@{score}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily double mtpk\+::\+Bayes\+Bernoulli\+::score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a15cd1cde5e7d6c2e0eababc502ddbd70}\label{classmtpk_1_1BayesBernoulli_a15cd1cde5e7d6c2e0eababc502ddbd70}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!class\_num@{class\_num}}
+\index{class\_num@{class\_num}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{class\_num}{class\_num}}
+{\footnotesize\ttfamily int mtpk\+::\+Bayes\+Bernoulli\+::class\+\_\+num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00101}{101}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}\label{classmtpk_1_1BayesBernoulli_a768d935e1be20198b0cc1b0879f8a02e}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!inputSet@{inputSet}}
+\index{inputSet@{inputSet}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{inputSet}{inputSet}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ mtpk\+::\+Bayes\+Bernoulli\+::input\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00104}{104}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}\label{classmtpk_1_1BayesBernoulli_a2035c8b0f362b2afaa5c517dfcd57ece}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!outputSet@{outputSet}}
+\index{outputSet@{outputSet}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{outputSet}{outputSet}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Bernoulli\+::output\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_ac998bf768070514ccab4d5fb740d19dc}\label{classmtpk_1_1BayesBernoulli_ac998bf768070514ccab4d5fb740d19dc}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!prior\_0@{prior\_0}}
+\index{prior\_0@{prior\_0}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{prior\_0}{prior\_0}}
+{\footnotesize\ttfamily double mtpk\+::\+Bayes\+Bernoulli\+::prior\+\_\+0 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00097}{97}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a3998be519560ab5aef0b30b4ebe95e21}\label{classmtpk_1_1BayesBernoulli_a3998be519560ab5aef0b30b4ebe95e21}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!prior\_1@{prior\_1}}
+\index{prior\_1@{prior\_1}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{prior\_1}{prior\_1}}
+{\footnotesize\ttfamily double mtpk\+::\+Bayes\+Bernoulli\+::prior\+\_\+1 = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00096}{96}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_a812c68e53a3e9ca0121751b12259c9ea}\label{classmtpk_1_1BayesBernoulli_a812c68e53a3e9ca0121751b12259c9ea}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!theta@{theta}}
+\index{theta@{theta}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{theta}{theta}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::map$<$double, int$>$ $>$ mtpk\+::\+Bayes\+Bernoulli\+::theta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_ae0b498ca860d34d77e16dfea497fc105}\label{classmtpk_1_1BayesBernoulli_ae0b498ca860d34d77e16dfea497fc105}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!vocab@{vocab}}
+\index{vocab@{vocab}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{vocab}{vocab}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Bernoulli\+::vocab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00100}{100}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesBernoulli_aeeab8387f6ebe8ae7940b6578777b411}\label{classmtpk_1_1BayesBernoulli_aeeab8387f6ebe8ae7940b6578777b411}} 
+\index{mtpk::BayesBernoulli@{mtpk::BayesBernoulli}!y\_hat@{y\_hat}}
+\index{y\_hat@{y\_hat}!mtpk::BayesBernoulli@{mtpk::BayesBernoulli}}
+\doxysubsubsection{\texorpdfstring{y\_hat}{y\_hat}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Bernoulli\+::y\+\_\+hat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{bayes__clf_8hpp_source_l00106}{106}} of file \mbox{\hyperlink{bayes__clf_8hpp_source}{bayes\+\_\+clf.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{bayes__clf_8hpp}{bayes\+\_\+clf.\+hpp}}\end{DoxyCompactItemize}

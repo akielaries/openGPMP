@@ -1,0 +1,69 @@
+\hypertarget{optimizers_8hpp_source}{}\doxysection{optimizers.\+hpp}
+\label{optimizers_8hpp_source}\index{include/ml/optimizers.hpp@{include/ml/optimizers.hpp}}
+\mbox{\hyperlink{optimizers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#ifndef ML\_OPTIMIZERS\_HPP}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#define ML\_OPTIMIZERS\_HPP}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mlp__net_8hpp}{mlp\_net.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00050}00050 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00052}00052 \textcolor{keyword}{namespace }ml \{}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00058}\mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers}{00058}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers}{Optimizers}} \{}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00059}00059     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00063}\mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_aa726658aac0ab1962d431360e8d346c7}{00063}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_aa726658aac0ab1962d431360e8d346c7}{gradient\_descent}}();}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00068}\mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_a504082a8f6fd9915210621bb5e925953}{00068}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_a504082a8f6fd9915210621bb5e925953}{stochastic\_descent}}();}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00073}\mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_ac7bb0d2b435f8bb6737b4ee435a1f5e2}{00073}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_ac7bb0d2b435f8bb6737b4ee435a1f5e2}{coordinate\_descent}}();}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00078}\mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_a50fa296c4b421d8ca899c289742304a4}{00078}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1ml_1_1Optimizers_a50fa296c4b421d8ca899c289742304a4}{BFGS}}();}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00079}00079 \};}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00081}00081 \} \textcolor{comment}{// namespace ml}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00083}00083 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{optimizers_8hpp_source_l00085}00085 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

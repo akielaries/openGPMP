@@ -1,0 +1,156 @@
+\hypertarget{structmtpk_1_1mtx}{}\doxysection{mtpk\+::mtx\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structmtpk_1_1mtx}\index{mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}}
+
+
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} struct.  
+
+
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx_a6c503a84df1a564b61ebd466cfd00c27}{zeros}} (size\+\_\+t rows, size\+\_\+t cols)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} zeros method. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx_a19ddc2f0bbdc03703e2e3f07ddae481a}{ones}} (size\+\_\+t rows, size\+\_\+t cols)
+\item 
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx_a9ca88dd340261076b921a9cff7b2590d}{randn}} (size\+\_\+t rows, size\+\_\+t cols)
+\item 
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx_a1b94737c40bf4150b3417497cb3ff956}{rand}} (size\+\_\+t rows, size\+\_\+t cols)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct mtpk\+::mtx$<$ T $>$}
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} struct. 
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00405}{405}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmtpk_1_1mtx_a19ddc2f0bbdc03703e2e3f07ddae481a}\label{structmtpk_1_1mtx_a19ddc2f0bbdc03703e2e3f07ddae481a}} 
+\index{mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}!ones@{ones}}
+\index{ones@{ones}!mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ones()}{ones()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx}{mtpk\+::mtx}}$<$ T $>$\+::ones (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00416}{416}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00416                                                     \{}
+\DoxyCodeLine{00417         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix<T>}} MTX\{rows, cols\};}
+\DoxyCodeLine{00418         MTX.fill\_index(T(1));}
+\DoxyCodeLine{00419         \textcolor{keywordflow}{return} MTX;}
+\DoxyCodeLine{00420     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classmtpk_1_1Matrix_a12edb8fb7d2727e7d63fd7959993ce1b}{mtpk\+::\+Matrix$<$ Type $>$\+::fill\+\_\+index()}}.
+
+\mbox{\Hypertarget{structmtpk_1_1mtx_a1b94737c40bf4150b3417497cb3ff956}\label{structmtpk_1_1mtx_a1b94737c40bf4150b3417497cb3ff956}} 
+\index{mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}!rand@{rand}}
+\index{rand@{rand}!mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{rand()}{rand()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx}{mtpk\+::mtx}}$<$ T $>$\+::rand (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00438}{438}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00438                                                     \{}
+\DoxyCodeLine{00439         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix<T>}} MTX\{rows, cols\};}
+\DoxyCodeLine{00440 }
+\DoxyCodeLine{00441         std::random\_device rd\{\};}
+\DoxyCodeLine{00442         std::mt19937 gen\{rd()\};}
+\DoxyCodeLine{00443         std::uniform\_real\_distribution<T> d\{0, 1\};}
+\DoxyCodeLine{00444 }
+\DoxyCodeLine{00445         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < rows; ++r) \{}
+\DoxyCodeLine{00446             \textcolor{keywordflow}{for} (int64\_t c = 0; c < cols; ++c) \{}
+\DoxyCodeLine{00447                 MTX(r, c) = d(gen);}
+\DoxyCodeLine{00448             \}}
+\DoxyCodeLine{00449         \}}
+\DoxyCodeLine{00450         \textcolor{keywordflow}{return} MTX;}
+\DoxyCodeLine{00451     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structmtpk_1_1mtx_a9ca88dd340261076b921a9cff7b2590d}\label{structmtpk_1_1mtx_a9ca88dd340261076b921a9cff7b2590d}} 
+\index{mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}!randn@{randn}}
+\index{randn@{randn}!mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{randn()}{randn()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx}{mtpk\+::mtx}}$<$ T $>$\+::randn (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00422}{422}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00422                                                      \{}
+\DoxyCodeLine{00423         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix<T>}} MTX\{rows, cols\};}
+\DoxyCodeLine{00424 }
+\DoxyCodeLine{00425         std::random\_device rd\{\};}
+\DoxyCodeLine{00426         std::mt19937 gen\{rd()\};}
+\DoxyCodeLine{00427         T n(MTX.num\_elements);}
+\DoxyCodeLine{00428         T stdev\{1 / sqrt(n)\};}
+\DoxyCodeLine{00429         std::normal\_distribution<T> d\{0, stdev\};}
+\DoxyCodeLine{00430 }
+\DoxyCodeLine{00431         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < rows; ++r) \{}
+\DoxyCodeLine{00432             \textcolor{keywordflow}{for} (uint64\_t c = 0; c < cols; ++c) \{}
+\DoxyCodeLine{00433                 MTX(r, c) = d(gen);}
+\DoxyCodeLine{00434             \}}
+\DoxyCodeLine{00435         \}}
+\DoxyCodeLine{00436         \textcolor{keywordflow}{return} MTX;}
+\DoxyCodeLine{00437     \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a76476eb4c3858df01198d4b8df41dbbe}{mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::\+Secondary\+MLP()}}.
+
+\mbox{\Hypertarget{structmtpk_1_1mtx_a6c503a84df1a564b61ebd466cfd00c27}\label{structmtpk_1_1mtx_a6c503a84df1a564b61ebd466cfd00c27}} 
+\index{mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}!zeros@{zeros}}
+\index{zeros@{zeros}!mtpk::mtx$<$ T $>$@{mtpk::mtx$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{structmtpk_1_1mtx}{mtpk\+::mtx}}$<$ T $>$\+::zeros (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} zeros method. 
+
+
+
+Definition at line \mbox{\hyperlink{matrix_8hpp_source_l00409}{409}} of file \mbox{\hyperlink{matrix_8hpp_source}{matrix.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00409                                                      \{}
+\DoxyCodeLine{00410         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix<T>}} MTX\{rows, cols\};}
+\DoxyCodeLine{00411         \textcolor{comment}{// fill by index}}
+\DoxyCodeLine{00412         MTX.fill\_index(T(0));}
+\DoxyCodeLine{00413         \textcolor{keywordflow}{return} MTX;}
+\DoxyCodeLine{00414     \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classmtpk_1_1Matrix_a12edb8fb7d2727e7d63fd7959993ce1b}{mtpk\+::\+Matrix$<$ Type $>$\+::fill\+\_\+index()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/linalg/\mbox{\hyperlink{matrix_8hpp}{matrix.\+hpp}}\end{DoxyCompactItemize}

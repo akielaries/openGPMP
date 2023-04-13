@@ -1,0 +1,526 @@
+\hypertarget{classmtpk_1_1Primality}{}\doxysection{mtpk\+::Primality Class Reference}
+\label{classmtpk_1_1Primality}\index{mtpk::Primality@{mtpk::Primality}}
+
+
+{\ttfamily \#include $<$primes.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classmtpk_1_1Primality_a5c1b6327f4e402aff7c53afd5a026f01}{is\+\_\+prime}} (int64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Determine if an integer is prime. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmtpk_1_1Primality_a2029b588baa9422a8417f0744437006d}{compute\+\_\+miller\+\_\+rabin}} (int64\+\_\+t d, int64\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Algorithm determining liklihood a number is prime. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmtpk_1_1Primality_ab1ca68ee9884d4f7e156334130c2c434}{miller\+\_\+rabin\+\_\+prime}} (int64\+\_\+t n, int64\+\_\+t iters)
+\begin{DoxyCompactList}\small\item\em Modified primes algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmtpk_1_1Primality_a80e778a98a010f0ee157c4be1d8315d3}{miller\+\_\+rabin}} (int64\+\_\+t iters, int64\+\_\+t min\+\_\+val, int64\+\_\+t max\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Miller-\/\+Rabin driver, prints values that satisfy conditions. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Primality_a092942fd6152ea5b2d23567ab85ad9f5}{jacobian\+\_\+number}} (int64\+\_\+t a, int64\+\_\+t n)
+\item 
+bool \mbox{\hyperlink{classmtpk_1_1Primality_a29bf92a65aa8061c3a616cc3e8bf5c3a}{solovoy\+\_\+strassen}} (int64\+\_\+t p, int64\+\_\+t iters)
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\+\_\+pow}} (int64\+\_\+t base, int64\+\_\+t exponent, int64\+\_\+t mod)
+\item 
+bool \mbox{\hyperlink{classmtpk_1_1Primality_afb102599959e6bf6882b4e6dac52220f}{carmichael\+\_\+num}} (int64\+\_\+t n)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Primality_a242f6c2c9f2957c884169bec1b1f3824}{sieve\+\_\+of\+\_\+eratosthenes}} (int64\+\_\+t n)
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Primality_a6da2179ebf40c84b2f30429a0e1fa45c}{pollard\+\_\+rho}} (int64\+\_\+t n)
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Primality_a8dbb0834d183be7d8a855ea346a2b120}{ETF}} (uint64\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classmtpk_1_1Primality}{Primality}} Class dealing with prime number manipulations 
+
+Definition at line \mbox{\hyperlink{primes_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{primes_8hpp_source}{primes.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Primality_afb102599959e6bf6882b4e6dac52220f}\label{classmtpk_1_1Primality_afb102599959e6bf6882b4e6dac52220f}} 
+\index{mtpk::Primality@{mtpk::Primality}!carmichael\_num@{carmichael\_num}}
+\index{carmichael\_num@{carmichael\_num}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{carmichael\_num()}{carmichael\_num()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Primality\+::carmichael\+\_\+num (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00235                                             \{}
+\DoxyCodeLine{00236     \textcolor{keywordflow}{for} (int64\_t b = 2; b < n; b++) \{}
+\DoxyCodeLine{00237         \textcolor{comment}{// If "{}b"{} is relatively prime to n}}
+\DoxyCodeLine{00238         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(b, n) == 1)}
+\DoxyCodeLine{00239             \textcolor{comment}{// And pow(b, n-\/1)\%n is not 1, return false.}}
+\DoxyCodeLine{00240             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\_pow}}(b, n -\/ 1, n) != 1)}
+\DoxyCodeLine{00241                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00242     \}}
+\DoxyCodeLine{00243     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00244 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, and \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Primality_a2029b588baa9422a8417f0744437006d}\label{classmtpk_1_1Primality_a2029b588baa9422a8417f0744437006d}} 
+\index{mtpk::Primality@{mtpk::Primality}!compute\_miller\_rabin@{compute\_miller\_rabin}}
+\index{compute\_miller\_rabin@{compute\_miller\_rabin}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{compute\_miller\_rabin()}{compute\_miller\_rabin()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Primality\+::compute\+\_\+miller\+\_\+rabin (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{d,  }\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Algorithm determining liklihood a number is prime. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em d} & \+: target number (int64\+\_\+t) \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & \+: target -\/ 1 (int64\+\_\+t)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classmtpk_1_1Primality_ab1ca68ee9884d4f7e156334130c2c434}{miller\+\_\+rabin\+\_\+prime()}}
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+true/false (bool) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084                                                              \{}
+\DoxyCodeLine{00085     \textcolor{comment}{// Pick a random number in [2..n-\/2] Corner cases make sure that n}}
+\DoxyCodeLine{00086     \textcolor{comment}{// > 4}}
+\DoxyCodeLine{00087     int64\_t a = 2 + rand() \% (n -\/ 4);}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{comment}{// Compute a\string^d \% n}}
+\DoxyCodeLine{00090     int64\_t x = \mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\_pow}}(a, d, n);}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{keywordflow}{if} (x == 1 || x == n -\/ 1)}
+\DoxyCodeLine{00093         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095     \textcolor{comment}{// Keep squaring x while one of the following doesn't}}
+\DoxyCodeLine{00096     \textcolor{comment}{// happen}}
+\DoxyCodeLine{00097     \textcolor{comment}{// (I)   d does not reach n-\/1}}
+\DoxyCodeLine{00098     \textcolor{comment}{// (II)  (x\string^2) \% n is not 1}}
+\DoxyCodeLine{00099     \textcolor{comment}{// (III) (x\string^2) \% n is not n-\/1}}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{while} (d != n -\/ 1) \{}
+\DoxyCodeLine{00101         x = (x * x) \% n;}
+\DoxyCodeLine{00102         d *= 2;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104         \textcolor{keywordflow}{if} (x == 1)}
+\DoxyCodeLine{00105             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00106         \textcolor{keywordflow}{if} (x == n -\/ 1)}
+\DoxyCodeLine{00107             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00108     \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \textcolor{comment}{// Return composite}}
+\DoxyCodeLine{00111     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00112 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_a8dbb0834d183be7d8a855ea346a2b120}\label{classmtpk_1_1Primality_a8dbb0834d183be7d8a855ea346a2b120}} 
+\index{mtpk::Primality@{mtpk::Primality}!ETF@{ETF}}
+\index{ETF@{ETF}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{ETF()}{ETF()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::\+Primality\+::\+ETF (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00354}{354}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00354                                      \{}
+\DoxyCodeLine{00355     uint64\_t result = 1;}
+\DoxyCodeLine{00356 }
+\DoxyCodeLine{00357     \textcolor{keywordflow}{for} (int64\_t index = 2; uint64\_t(index) < n; index++) \{}
+\DoxyCodeLine{00358         \textcolor{keywordflow}{if} (\mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(index, n) == 1) \{}
+\DoxyCodeLine{00359             result++;}
+\DoxyCodeLine{00360         \}}
+\DoxyCodeLine{00361     \}}
+\DoxyCodeLine{00362 }
+\DoxyCodeLine{00363     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00364 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, and \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Primality_a5c1b6327f4e402aff7c53afd5a026f01}\label{classmtpk_1_1Primality_a5c1b6327f4e402aff7c53afd5a026f01}} 
+\index{mtpk::Primality@{mtpk::Primality}!is\_prime@{is\_prime}}
+\index{is\_prime@{is\_prime}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{is\_prime()}{is\_prime()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Primality\+::is\+\_\+prime (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Determine if an integer is prime. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & \+: any number (int64\+\_\+t)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: true/false (bool) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069                                       \{}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{if} (n <= 1)}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073     \textcolor{comment}{// Check from 2 to n-\/1}}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{for} (int64\_t iter = 2; iter < n; iter++)}
+\DoxyCodeLine{00075         \textcolor{keywordflow}{if} (n \% iter == 0)}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00079 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_a092942fd6152ea5b2d23567ab85ad9f5}\label{classmtpk_1_1Primality_a092942fd6152ea5b2d23567ab85ad9f5}} 
+\index{mtpk::Primality@{mtpk::Primality}!jacobian\_number@{jacobian\_number}}
+\index{jacobian\_number@{jacobian\_number}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{jacobian\_number()}{jacobian\_number()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::\+Primality\+::jacobian\+\_\+number (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{a,  }\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162                                                            \{}
+\DoxyCodeLine{00163     \textcolor{keywordflow}{if} (!a)}
+\DoxyCodeLine{00164         \textcolor{keywordflow}{return} 0; \textcolor{comment}{// (0/n) = 0}}
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     int64\_t ans = 1;}
+\DoxyCodeLine{00167 }
+\DoxyCodeLine{00168     \textcolor{keywordflow}{if} (a < 0) \{}
+\DoxyCodeLine{00169         a = -\/a; \textcolor{comment}{// (a/n) = (-\/a/n)*(-\/1/n)}}
+\DoxyCodeLine{00170         \textcolor{keywordflow}{if} (n \% 4 == 3)}
+\DoxyCodeLine{00171             ans = -\/ans; \textcolor{comment}{// (-\/1/n) = -\/1 if n = 3 (mod 4)}}
+\DoxyCodeLine{00172     \}}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174     \textcolor{keywordflow}{if} (a == 1)}
+\DoxyCodeLine{00175         \textcolor{keywordflow}{return} ans; \textcolor{comment}{// (1/n) = 1}}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177     \textcolor{keywordflow}{while} (a) \{}
+\DoxyCodeLine{00178         \textcolor{keywordflow}{if} (a < 0) \{}
+\DoxyCodeLine{00179             a = -\/a; \textcolor{comment}{// (a/n) = (-\/a/n)*(-\/1/n)}}
+\DoxyCodeLine{00180             \textcolor{keywordflow}{if} (n \% 4 == 3)}
+\DoxyCodeLine{00181                 ans = -\/ans; \textcolor{comment}{// (-\/1/n) = -\/1 if n = 3 (mod 4)}}
+\DoxyCodeLine{00182         \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184         \textcolor{keywordflow}{while} (a \% 2 == 0) \{}
+\DoxyCodeLine{00185             a = a / 2;}
+\DoxyCodeLine{00186             \textcolor{keywordflow}{if} (n \% 8 == 3 || n \% 8 == 5)}
+\DoxyCodeLine{00187                 ans = -\/ans;}
+\DoxyCodeLine{00188         \}}
+\DoxyCodeLine{00189         std::swap(a, n);}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191         \textcolor{keywordflow}{if} (a \% 4 == 3 \&\& n \% 4 == 3)}
+\DoxyCodeLine{00192             ans = -\/ans;}
+\DoxyCodeLine{00193 }
+\DoxyCodeLine{00194         a = a \% n;}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196         \textcolor{keywordflow}{if} (a > n / 2)}
+\DoxyCodeLine{00197             a = a -\/ n;}
+\DoxyCodeLine{00198     \}}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200     \textcolor{keywordflow}{if} (n == 1)}
+\DoxyCodeLine{00201         \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00204 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_a80e778a98a010f0ee157c4be1d8315d3}\label{classmtpk_1_1Primality_a80e778a98a010f0ee157c4be1d8315d3}} 
+\index{mtpk::Primality@{mtpk::Primality}!miller\_rabin@{miller\_rabin}}
+\index{miller\_rabin@{miller\_rabin}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{miller\_rabin()}{miller\_rabin()}}
+{\footnotesize\ttfamily void mtpk\+::\+Primality\+::miller\+\_\+rabin (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{iters,  }\item[{int64\+\_\+t}]{min\+\_\+val,  }\item[{int64\+\_\+t}]{max\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Miller-\/\+Rabin driver, prints values that satisfy conditions. 
+
+\begin{DoxyNote}{Note}
+Finds the primes in a given range
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em iters} & \+: iterations determine accuracy (int64\+\_\+t) \\
+\hline
+\mbox{\texttt{ in}}  & {\em min\+\_\+val} & \+: bottom end of range (int64\+\_\+t) \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+val} & \+: top end of range (int64\+\_\+t) \\
+\hline
+\mbox{\texttt{ out}}  & {\em result} & \+: values within range that satisfy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142                                                     \{}
+\DoxyCodeLine{00143     std::cout << \textcolor{stringliteral}{"{}Primes between "{}} << min\_val << \textcolor{stringliteral}{"{} and "{}} << max\_val}
+\DoxyCodeLine{00144               << std::endl;}
+\DoxyCodeLine{00145     \textcolor{comment}{// int d = iters -\/ 1;}}
+\DoxyCodeLine{00146     \textcolor{comment}{// int min\_val = minimum;}}
+\DoxyCodeLine{00147     \textcolor{comment}{// int max\_val = maximum;}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149     \textcolor{comment}{// traverse from the min to max}}
+\DoxyCodeLine{00150     \textcolor{keywordflow}{for} (; min\_val < max\_val; min\_val++) \{}
+\DoxyCodeLine{00151         \textcolor{comment}{// while (min\_val < max\_val) \{}}
+\DoxyCodeLine{00152         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1Primality_ab1ca68ee9884d4f7e156334130c2c434}{miller\_rabin\_prime}}(min\_val, iters)) \{}
+\DoxyCodeLine{00153             std::cout << min\_val << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00154         \}}
+\DoxyCodeLine{00155     \}}
+\DoxyCodeLine{00156     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00157 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_ab1ca68ee9884d4f7e156334130c2c434}\label{classmtpk_1_1Primality_ab1ca68ee9884d4f7e156334130c2c434}} 
+\index{mtpk::Primality@{mtpk::Primality}!miller\_rabin\_prime@{miller\_rabin\_prime}}
+\index{miller\_rabin\_prime@{miller\_rabin\_prime}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{miller\_rabin\_prime()}{miller\_rabin\_prime()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Primality\+::miller\+\_\+rabin\+\_\+prime (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{n,  }\item[{int64\+\_\+t}]{iters }\end{DoxyParamCaption})}
+
+
+
+Modified primes algorithm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & \+: target number (int64\+\_\+t) \\
+\hline
+\mbox{\texttt{ in}}  & {\em iters} & \+: iterations determine accuracy (int64\+\_\+t)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{classmtpk_1_1Primality_a80e778a98a010f0ee157c4be1d8315d3}{miller\+\_\+rabin()}}
+\end{DoxyPrecond}
+return true/false (bool) 
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114                                                                \{}
+\DoxyCodeLine{00115     \textcolor{comment}{/*}}
+\DoxyCodeLine{00116 \textcolor{comment}{     * this method will return true if n is prime, iters will}}
+\DoxyCodeLine{00117 \textcolor{comment}{     * determine accuracy}}
+\DoxyCodeLine{00118 \textcolor{comment}{     */}}
+\DoxyCodeLine{00119     \textcolor{comment}{// these are corner cases}}
+\DoxyCodeLine{00120     \textcolor{keywordflow}{if} (n <= 1 || n == 4)}
+\DoxyCodeLine{00121         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{if} (n <= 3)}
+\DoxyCodeLine{00123         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125     \textcolor{comment}{// odd will represent an odd number}}
+\DoxyCodeLine{00126     int64\_t odd = n -\/ 1;}
+\DoxyCodeLine{00127     \textcolor{keywordflow}{while} (odd \% 2 == 0) \{}
+\DoxyCodeLine{00128         odd /= 2;}
+\DoxyCodeLine{00129     \}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     \textcolor{comment}{// iterate given the iters paramater}}
+\DoxyCodeLine{00132     \textcolor{keywordflow}{for} (int64\_t i = 0; i < iters; i++) \{}
+\DoxyCodeLine{00133         \textcolor{comment}{// compute using the Miller-\/Rabin method}}
+\DoxyCodeLine{00134         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classmtpk_1_1Primality_a2029b588baa9422a8417f0744437006d}{compute\_miller\_rabin}}(odd, n)) \{}
+\DoxyCodeLine{00135             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137     \}}
+\DoxyCodeLine{00138     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00139 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}\label{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}} 
+\index{mtpk::Primality@{mtpk::Primality}!mod\_pow@{mod\_pow}}
+\index{mod\_pow@{mod\_pow}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{mod\_pow()}{mod\_pow()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::\+Primality\+::mod\+\_\+pow (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{base,  }\item[{int64\+\_\+t}]{exponent,  }\item[{int64\+\_\+t}]{mod }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054                                               \{}
+\DoxyCodeLine{00055     int64\_t x = 1;}
+\DoxyCodeLine{00056     int64\_t y = base;}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{keywordflow}{while} (exponent > 0) \{}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{if} (exponent \& 1) \{}
+\DoxyCodeLine{00060             x = (x * y) \% mod;}
+\DoxyCodeLine{00061         \}}
+\DoxyCodeLine{00062         exponent = exponent >> 1;}
+\DoxyCodeLine{00063         y = (y * y) \% mod;}
+\DoxyCodeLine{00064     \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{00067 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_a6da2179ebf40c84b2f30429a0e1fa45c}\label{classmtpk_1_1Primality_a6da2179ebf40c84b2f30429a0e1fa45c}} 
+\index{mtpk::Primality@{mtpk::Primality}!pollard\_rho@{pollard\_rho}}
+\index{pollard\_rho@{pollard\_rho}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{pollard\_rho()}{pollard\_rho()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::\+Primality\+::pollard\+\_\+rho (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00292}{292}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00292                                             \{}
+\DoxyCodeLine{00293     \textcolor{comment}{/* initialize random seed */}}
+\DoxyCodeLine{00294     srand(time(NULL));}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296     \textcolor{comment}{/* no prime divisor for 1 */}}
+\DoxyCodeLine{00297     \textcolor{keywordflow}{if} (n == 1)}
+\DoxyCodeLine{00298         \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{00299 }
+\DoxyCodeLine{00300     \textcolor{comment}{/* even number means one of the divisors is 2 */}}
+\DoxyCodeLine{00301     \textcolor{keywordflow}{if} (n \% 2 == 0)}
+\DoxyCodeLine{00302         \textcolor{keywordflow}{return} 2;}
+\DoxyCodeLine{00303 }
+\DoxyCodeLine{00304     \textcolor{comment}{/* we will pick from the range [2, N) */}}
+\DoxyCodeLine{00305     int64\_t x = (rand() \% (n -\/ 2)) + 2;}
+\DoxyCodeLine{00306     int64\_t y = x;}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308     \textcolor{comment}{/* the constant in f(x).}}
+\DoxyCodeLine{00309 \textcolor{comment}{     * Algorithm can be re-\/run with a different c}}
+\DoxyCodeLine{00310 \textcolor{comment}{     * if it throws failure for a composite. */}}
+\DoxyCodeLine{00311     int64\_t c = (rand() \% (n -\/ 1)) + 1;}
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{00313     \textcolor{comment}{/* Initialize candidate divisor (or result) */}}
+\DoxyCodeLine{00314     int64\_t divisor = 1;}
+\DoxyCodeLine{00315 }
+\DoxyCodeLine{00316     \textcolor{comment}{/* until the prime factor isn't obtained.}}
+\DoxyCodeLine{00317 \textcolor{comment}{       If n is prime, return n */}}
+\DoxyCodeLine{00318     \textcolor{keywordflow}{while} (divisor == 1) \{}
+\DoxyCodeLine{00319         \textcolor{comment}{/* Tortoise Move: x(i+1) = f(x(i)) */}}
+\DoxyCodeLine{00320         \textcolor{comment}{// take power}}
+\DoxyCodeLine{00321         \textcolor{comment}{// calculate modulus}}
+\DoxyCodeLine{00322         x = (\mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\_pow}}(x, 2, n) + c + n) \% n;}
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{00324         \textcolor{comment}{/* Hare Move: y(i+1) = f(f(y(i))) */}}
+\DoxyCodeLine{00325         y = (\mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\_pow}}(y, 2, n) + c + n) \% n;}
+\DoxyCodeLine{00326         y = (\mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\_pow}}(y, 2, n) + c + n) \% n;}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328         \textcolor{comment}{/* check gcd of |x-\/y| and n */}}
+\DoxyCodeLine{00329         divisor = \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}.\mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(abs(x -\/ y), n);}
+\DoxyCodeLine{00330         \textcolor{comment}{// divisor = std::\_\_gcd(abs(x -\/ y), n);}}
+\DoxyCodeLine{00331         \textcolor{comment}{/* retry if the algorithm fails to find prime factor}}
+\DoxyCodeLine{00332 \textcolor{comment}{         * with chosen x and c */}}
+\DoxyCodeLine{00333         \textcolor{keywordflow}{if} (divisor == n)}
+\DoxyCodeLine{00334             \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Primality_a6da2179ebf40c84b2f30429a0e1fa45c}{pollard\_rho}}(n);}
+\DoxyCodeLine{00335     \}}
+\DoxyCodeLine{00336 }
+\DoxyCodeLine{00337     \textcolor{keywordflow}{return} divisor;}
+\DoxyCodeLine{00338 \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{primes_8cpp_aa984413d595262e996d3f8b4fb7f82b6}{ba}}, and \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{mtpk\+::\+Basics\+::op\+\_\+gcd()}}.
+
+\mbox{\Hypertarget{classmtpk_1_1Primality_a242f6c2c9f2957c884169bec1b1f3824}\label{classmtpk_1_1Primality_a242f6c2c9f2957c884169bec1b1f3824}} 
+\index{mtpk::Primality@{mtpk::Primality}!sieve\_of\_eratosthenes@{sieve\_of\_eratosthenes}}
+\index{sieve\_of\_eratosthenes@{sieve\_of\_eratosthenes}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{sieve\_of\_eratosthenes()}{sieve\_of\_eratosthenes()}}
+{\footnotesize\ttfamily void mtpk\+::\+Primality\+::sieve\+\_\+of\+\_\+eratosthenes (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252                                                    \{}
+\DoxyCodeLine{00253     \textcolor{comment}{// Create a boolean array "{}prime[0..n]"{} and initialize}}
+\DoxyCodeLine{00254     \textcolor{comment}{// all entries it as true. A value in prime[i] will}}
+\DoxyCodeLine{00255     \textcolor{comment}{// finally be false if i is Not a prime, else true.}}
+\DoxyCodeLine{00256     \textcolor{keywordtype}{bool} prime[n + 1];}
+\DoxyCodeLine{00257     memset(prime, \textcolor{keyword}{true}, \textcolor{keyword}{sizeof}(prime));}
+\DoxyCodeLine{00258 }
+\DoxyCodeLine{00259     \textcolor{keywordflow}{for} (int64\_t p = 2; p * p <= n; p++) \{}
+\DoxyCodeLine{00260         \textcolor{comment}{// If prime[p] is not changed, then it is a prime}}
+\DoxyCodeLine{00261         \textcolor{keywordflow}{if} (prime[p] == \textcolor{keyword}{true}) \{}
+\DoxyCodeLine{00262             \textcolor{comment}{// Update all multiples of p greater than or}}
+\DoxyCodeLine{00263             \textcolor{comment}{// equal to the square of it numbers which are}}
+\DoxyCodeLine{00264             \textcolor{comment}{// multiple of p and are less than p\string^2 are}}
+\DoxyCodeLine{00265             \textcolor{comment}{// already been marked.}}
+\DoxyCodeLine{00266             \textcolor{keywordflow}{for} (int64\_t i = p * p; i <= n; i += p)}
+\DoxyCodeLine{00267                 prime[i] = \textcolor{keyword}{false};}
+\DoxyCodeLine{00268         \}}
+\DoxyCodeLine{00269     \}}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271     \textcolor{comment}{// Print all prime numbers}}
+\DoxyCodeLine{00272     \textcolor{keywordflow}{for} (int64\_t p = 2; p <= n; p++)}
+\DoxyCodeLine{00273         \textcolor{keywordflow}{if} (prime[p])}
+\DoxyCodeLine{00274             std::cout << p << \textcolor{stringliteral}{"{} "{}} << std::endl;}
+\DoxyCodeLine{00275 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Primality_a29bf92a65aa8061c3a616cc3e8bf5c3a}\label{classmtpk_1_1Primality_a29bf92a65aa8061c3a616cc3e8bf5c3a}} 
+\index{mtpk::Primality@{mtpk::Primality}!solovoy\_strassen@{solovoy\_strassen}}
+\index{solovoy\_strassen@{solovoy\_strassen}!mtpk::Primality@{mtpk::Primality}}
+\doxysubsubsection{\texorpdfstring{solovoy\_strassen()}{solovoy\_strassen()}}
+{\footnotesize\ttfamily bool mtpk\+::\+Primality\+::solovoy\+\_\+strassen (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{p,  }\item[{int64\+\_\+t}]{iters }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{primes_8cpp_source_l00211}{211}} of file \mbox{\hyperlink{primes_8cpp_source}{primes.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00211                                                              \{}
+\DoxyCodeLine{00212     \textcolor{keywordflow}{if} (p < 2)}
+\DoxyCodeLine{00213         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215     \textcolor{keywordflow}{if} (p != 2 \&\& p \% 2 == 0)}
+\DoxyCodeLine{00216         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218     \textcolor{keywordflow}{for} (int64\_t i = 0; i < iters; i++) \{}
+\DoxyCodeLine{00219         \textcolor{comment}{// Generate a random number a}}
+\DoxyCodeLine{00220         int64\_t a = rand() \% (p -\/ 1) + 1;}
+\DoxyCodeLine{00221         int64\_t jacobian = (p + \mbox{\hyperlink{classmtpk_1_1Primality_a092942fd6152ea5b2d23567ab85ad9f5}{jacobian\_number}}(a, p)) \% p;}
+\DoxyCodeLine{00222         int64\_t mod = \mbox{\hyperlink{classmtpk_1_1Primality_ac752473e96535f44baac2d32c1632bd8}{mod\_pow}}(a, (p -\/ 1) / 2, p);}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224         \textcolor{keywordflow}{if} (!jacobian || mod != jacobian)}
+\DoxyCodeLine{00225             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00226     \}}
+\DoxyCodeLine{00227     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00228 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/nt/\mbox{\hyperlink{primes_8hpp}{primes.\+hpp}}\item 
+modules/nt/\mbox{\hyperlink{primes_8cpp}{primes.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\hypertarget{cipher_8hpp_source}{}\doxysection{cipher.\+hpp}
+\label{cipher_8hpp_source}\index{include/nt/cipher.hpp@{include/nt/cipher.hpp}}
+\mbox{\hyperlink{cipher_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00035}00035 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00036}00036 \textcolor{comment}{ * definitions for derivative operations operations}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00037}00037 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#ifndef CIPHER\_H}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#define CIPHER\_H}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00047}00047 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00049}00049 \textcolor{comment}{// monoalphabetic substitution cipher class}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00050}\mbox{\hyperlink{classmtpk_1_1Cipher}{00050}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Cipher}{Cipher}} \{}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00051}00051     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00052}00052     \textcolor{comment}{/* compute the caesar cipher of a given string with a shift key */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00053}00053     std::string \mbox{\hyperlink{classmtpk_1_1Cipher_af74d0a735ad756c673f06332ca4319b0}{caesar}}(std::string plaintext, int64\_t key);}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00054}00054     \textcolor{comment}{/* encode and prepare the given string for the cipher */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00055}00055     std::string \mbox{\hyperlink{classmtpk_1_1Cipher_a5dd0f3471582c795443cf56d22516d0e}{keyword\_encode}}(std::string key);}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00056}00056     \textcolor{comment}{/* compute the keyword cipher of a given string */}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00057}00057     std::string \mbox{\hyperlink{classmtpk_1_1Cipher_ad608312d0dc9fc44153c5c222d3b9690}{keyword}}(std::string plaintext, std::string encoded\_text);}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00058}00058 \};}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00060}00060 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{cipher_8hpp_source_l00062}00062 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
