@@ -1,0 +1,250 @@
+\hypertarget{classmtpk_1_1RC4}{}\doxysection{mtpk\+::RC4 Class Reference}
+\label{classmtpk_1_1RC4}\index{mtpk::RC4@{mtpk::RC4}}
+
+
+{\ttfamily \#include $<$rc4.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmtpk_1_1RC4_a9456b14881187b9034092a51bd995332}{byte\+\_\+swap}} (uint8\+\_\+t $\ast$a, uint8\+\_\+t $\ast$b)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1RC4_a7f78df47fd055968e84ae9814d3012f2}{trad\+\_\+swap}} (unsigned char $\ast$a, unsigned char $\ast$b)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1RC4_a241338bfc1131ece12f8964fb14a407c}{XOR\+\_\+swap}} (unsigned char $\ast$a, unsigned char $\ast$b)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1RC4_a12dea4619de094080a422045ba1f35da}{KSA}} (char $\ast$key, unsigned char $\ast$S, int swap\+\_\+type)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1RC4_a775f4b5019d7756d1c9c6a7e379e6a14}{PRGA}} (unsigned char $\ast$S, char $\ast$plaintext, unsigned char $\ast$ciphertext, int swap\+\_\+type)
+\item 
+std\+::string \mbox{\hyperlink{classmtpk_1_1RC4_a83b075a0d58d785e743f38a83e43c6f0}{store\+\_\+hash}} (char $\ast$plaintext, unsigned char $\ast$hashtext, int swap\+\_\+type)
+\item 
+unsigned char $\ast$ \mbox{\hyperlink{classmtpk_1_1RC4_a5c07022bfab349fb887e8067e76c9664}{compute}} (char $\ast$key, char $\ast$plaintext, unsigned char $\ast$hashtext, int swap\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 72 of file rc4.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1RC4_a9456b14881187b9034092a51bd995332}\label{classmtpk_1_1RC4_a9456b14881187b9034092a51bd995332}} 
+\index{mtpk::RC4@{mtpk::RC4}!byte\_swap@{byte\_swap}}
+\index{byte\_swap@{byte\_swap}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{byte\_swap()}{byte\_swap()}}
+{\footnotesize\ttfamily void mtpk\+::\+RC4\+::byte\+\_\+swap (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{a,  }\item[{uint8\+\_\+t $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                               \{}
+\DoxyCodeLine{51     uint8\_t swapped = *a;}
+\DoxyCodeLine{52     swapped = *a;}
+\DoxyCodeLine{53     *a = *b;}
+\DoxyCodeLine{54     *b = swapped;}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1RC4_a5c07022bfab349fb887e8067e76c9664}\label{classmtpk_1_1RC4_a5c07022bfab349fb887e8067e76c9664}} 
+\index{mtpk::RC4@{mtpk::RC4}!compute@{compute}}
+\index{compute@{compute}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily unsigned char $\ast$ mtpk\+::\+RC4\+::compute (\begin{DoxyParamCaption}\item[{char $\ast$}]{key,  }\item[{char $\ast$}]{plaintext,  }\item[{unsigned char $\ast$}]{hashtext,  }\item[{int}]{swap\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 141 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143                                                  \{}
+\DoxyCodeLine{144     \textcolor{keywordflow}{if} (ciphertext == NULL) \{}
+\DoxyCodeLine{145         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}[-\/] Error Allocating Memory"{}});}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// check for swap types 1-\/3}}
+\DoxyCodeLine{149     \textcolor{keywordflow}{if} (0 <= swap\_type \&\& swap\_type <= 2) \{}
+\DoxyCodeLine{150         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} S[\mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\_LIMIT}}];}
+\DoxyCodeLine{151         \mbox{\hyperlink{classmtpk_1_1RC4_a12dea4619de094080a422045ba1f35da}{KSA}}(key, S, swap\_type);}
+\DoxyCodeLine{152         \mbox{\hyperlink{classmtpk_1_1RC4_a775f4b5019d7756d1c9c6a7e379e6a14}{PRGA}}(S, plaintext, ciphertext, swap\_type);}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type > 2) \{}
+\DoxyCodeLine{156         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}[-\/] Invalid swap\_type"{}});}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keywordflow}{return} ciphertext;}
+\DoxyCodeLine{160 \}}
+
+\end{DoxyCode}
+
+
+References BYTE\+\_\+\+LIMIT.
+
+\mbox{\Hypertarget{classmtpk_1_1RC4_a12dea4619de094080a422045ba1f35da}\label{classmtpk_1_1RC4_a12dea4619de094080a422045ba1f35da}} 
+\index{mtpk::RC4@{mtpk::RC4}!KSA@{KSA}}
+\index{KSA@{KSA}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{KSA()}{KSA()}}
+{\footnotesize\ttfamily void mtpk\+::\+RC4\+::\+KSA (\begin{DoxyParamCaption}\item[{char $\ast$}]{key,  }\item[{unsigned char $\ast$}]{S,  }\item[{int}]{swap\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69                                                             \{}
+\DoxyCodeLine{70     uint32\_t len = strlen(key);}
+\DoxyCodeLine{71     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\_LIMIT}}; i++) \{}
+\DoxyCodeLine{74         S[i] = i;}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{rc4_8hpp_aea95cbd2fc2a755e5fd8230fda5bac47}{BYTE\_LIMIT}}; i++) \{}
+\DoxyCodeLine{78         j = (j + S[i] + key[i \% len]) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         \textcolor{comment}{// choose swap algorithm based off swap\_type}}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
+\DoxyCodeLine{82             \mbox{\hyperlink{classmtpk_1_1RC4_a241338bfc1131ece12f8964fb14a407c}{XOR\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{83         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 1) \{}
+\DoxyCodeLine{84             \mbox{\hyperlink{classmtpk_1_1RC4_a7f78df47fd055968e84ae9814d3012f2}{trad\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{85         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 2) \{}
+\DoxyCodeLine{86             \mbox{\hyperlink{classmtpk_1_1RC4_a9456b14881187b9034092a51bd995332}{byte\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+
+
+References BITS, and BYTE\+\_\+\+LIMIT.
+
+\mbox{\Hypertarget{classmtpk_1_1RC4_a775f4b5019d7756d1c9c6a7e379e6a14}\label{classmtpk_1_1RC4_a775f4b5019d7756d1c9c6a7e379e6a14}} 
+\index{mtpk::RC4@{mtpk::RC4}!PRGA@{PRGA}}
+\index{PRGA@{PRGA}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{PRGA()}{PRGA()}}
+{\footnotesize\ttfamily void mtpk\+::\+RC4\+::\+PRGA (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{S,  }\item[{char $\ast$}]{plaintext,  }\item[{unsigned char $\ast$}]{ciphertext,  }\item[{int}]{swap\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                                                                \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} n = 0, len = strlen(plaintext); n < len; n++) \{}
+\DoxyCodeLine{97         i = (i + 1) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}};}
+\DoxyCodeLine{98         j = (j + S[i]) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100         \textcolor{comment}{// choose swap algorithm based off swap\_type}}
+\DoxyCodeLine{101         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
+\DoxyCodeLine{102             \mbox{\hyperlink{classmtpk_1_1RC4_a241338bfc1131ece12f8964fb14a407c}{XOR\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{103         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 1) \{}
+\DoxyCodeLine{104             \mbox{\hyperlink{classmtpk_1_1RC4_a7f78df47fd055968e84ae9814d3012f2}{trad\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{105         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (swap\_type == 2) \{}
+\DoxyCodeLine{106             \mbox{\hyperlink{classmtpk_1_1RC4_a9456b14881187b9034092a51bd995332}{byte\_swap}}(\&S[i], \&S[j]);}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         uint32\_t rnd = S[(S[i] + S[j]) \& \mbox{\hyperlink{rc4_8hpp_a9d2a7c69bd3fabc41e1ee87df2f283b3}{BITS}}];}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         ciphertext[n] = rnd \string^ plaintext[n];}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113 \}}
+
+\end{DoxyCode}
+
+
+References BITS.
+
+\mbox{\Hypertarget{classmtpk_1_1RC4_a83b075a0d58d785e743f38a83e43c6f0}\label{classmtpk_1_1RC4_a83b075a0d58d785e743f38a83e43c6f0}} 
+\index{mtpk::RC4@{mtpk::RC4}!store\_hash@{store\_hash}}
+\index{store\_hash@{store\_hash}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{store\_hash()}{store\_hash()}}
+{\footnotesize\ttfamily std\+::string mtpk\+::\+RC4\+::store\+\_\+hash (\begin{DoxyParamCaption}\item[{char $\ast$}]{plaintext,  }\item[{unsigned char $\ast$}]{hashtext,  }\item[{int}]{swap\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 115 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116                                                  \{}
+\DoxyCodeLine{117     \textcolor{comment}{// length of our plaintext}}
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} len = strlen((\textcolor{keywordtype}{char} *)plaintext);}
+\DoxyCodeLine{119     \textcolor{comment}{// for snprintf declare a buffer}}
+\DoxyCodeLine{120     \textcolor{keywordtype}{char} buffer[len + 1];}
+\DoxyCodeLine{121     \textcolor{keywordtype}{int} size = \textcolor{keyword}{sizeof}(buffer);}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{// initialize empty string}}
+\DoxyCodeLine{124     std::string stored\_text = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{comment}{// traverse the hashtext appending each block to a string}}
+\DoxyCodeLine{127     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} index = 0, len = strlen(plaintext); index < len; index++) \{}
+\DoxyCodeLine{128         \textcolor{keywordflow}{if} (swap\_type == 0) \{}
+\DoxyCodeLine{129             snprintf(buffer, size, \textcolor{stringliteral}{"{}|x\%02hhx|"{}}, hashtext[index]);}
+\DoxyCodeLine{130         \}}
+\DoxyCodeLine{131         \textcolor{comment}{// to format our hash to a string for future manipulation}}
+\DoxyCodeLine{132         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{133             snprintf(buffer, size, \textcolor{stringliteral}{"{}\%02hhX"{}}, hashtext[index]);}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135         \textcolor{comment}{// append the declared string}}
+\DoxyCodeLine{136         stored\_text += std::string(buffer);}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138     \textcolor{keywordflow}{return} stored\_text;}
+\DoxyCodeLine{139 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1RC4_a7f78df47fd055968e84ae9814d3012f2}\label{classmtpk_1_1RC4_a7f78df47fd055968e84ae9814d3012f2}} 
+\index{mtpk::RC4@{mtpk::RC4}!trad\_swap@{trad\_swap}}
+\index{trad\_swap@{trad\_swap}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{trad\_swap()}{trad\_swap()}}
+{\footnotesize\ttfamily void mtpk\+::\+RC4\+::trad\+\_\+swap (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{a,  }\item[{unsigned char $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                           \{}
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} swapped = *a;}
+\DoxyCodeLine{59     *a = *b;}
+\DoxyCodeLine{60     *b = swapped;}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1RC4_a241338bfc1131ece12f8964fb14a407c}\label{classmtpk_1_1RC4_a241338bfc1131ece12f8964fb14a407c}} 
+\index{mtpk::RC4@{mtpk::RC4}!XOR\_swap@{XOR\_swap}}
+\index{XOR\_swap@{XOR\_swap}!mtpk::RC4@{mtpk::RC4}}
+\doxysubsubsection{\texorpdfstring{XOR\_swap()}{XOR\_swap()}}
+{\footnotesize\ttfamily void mtpk\+::\+RC4\+::\+XOR\+\_\+swap (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{a,  }\item[{unsigned char $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file rc4.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                          \{}
+\DoxyCodeLine{64     *a \string^= *b;}
+\DoxyCodeLine{65     *b \string^= *a;}
+\DoxyCodeLine{66     *a \string^= *b;}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/nt/\mbox{\hyperlink{rc4_8hpp}{rc4.\+hpp}}\item 
+modules/nt/\mbox{\hyperlink{rc4_8cpp}{rc4.\+cpp}}\end{DoxyCompactItemize}

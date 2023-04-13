@@ -1,0 +1,264 @@
+\hypertarget{classmtpk_1_1SVC}{}\doxysection{mtpk\+::SVC Class Reference}
+\label{classmtpk_1_1SVC}\index{mtpk::SVC@{mtpk::SVC}}
+
+
+{\ttfamily \#include $<$svc.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1SVC_ae0042b2bd12f045cbc4a1a43d439beb7}{SVC}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \mbox{\hyperlink{classmtpk_1_1SVC_a6801168c145e54769e6cd0a53aab000f}{input\+Set}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_a79532275802d95a3fd34f731e69cf5e6}{output\+Set}}, double \mbox{\hyperlink{classmtpk_1_1SVC_a07de656fde3c0262b0291b30962421f9}{C}})
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_ad82918f420bd02873c74f9dbd3ae9b23}{model\+Set\+Test}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ X)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_ab100704d0402218c769cacb79ad852d5}{model\+Test}} (std\+::vector$<$ double $>$ x)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1SVC_a137b3056e705f48bbfbd0a3ca7692b1f}{gradient\+Descent}} (double learning\+\_\+rate, int max\+\_\+epoch, bool \mbox{\hyperlink{classmtpk_1_1SVC_a805589fab8c7b6066f75e9824c0d114c}{UI}}=1)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1SVC_a84ed6704b68f27afca5efba7fbeea49d}{SGD}} (double learning\+\_\+rate, int max\+\_\+epoch, bool \mbox{\hyperlink{classmtpk_1_1SVC_a805589fab8c7b6066f75e9824c0d114c}{UI}}=1)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1SVC_aa42f8d21350882fce4d021199d902e04}{MBGD}} (double learning\+\_\+rate, int max\+\_\+epoch, int mini\+\_\+batch\+\_\+size, bool \mbox{\hyperlink{classmtpk_1_1SVC_a805589fab8c7b6066f75e9824c0d114c}{UI}}=1)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_ae7d132e06d8cff3e1b00990463854ead}{score}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1SVC_a380f1645d89c40f1097d211ed8d8b0e1}{save}} (std\+::string file\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_a19a589c44bf2bb6e5d529f32c6d9babd}{Cost}} (std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_ab90b43395182b55e9ab19bb5c84c143d}{y\+\_\+hat}}, std\+::vector$<$ double $>$ y, std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_aff98a6193180e23d90ba555e406f90c1}{weights}}, double \mbox{\hyperlink{classmtpk_1_1SVC_a07de656fde3c0262b0291b30962421f9}{C}})
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_a87c848c4e3f15e9f2695a45657e6e8b2}{Evaluate}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ X)
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_aca060abdfe3bcfaacee9d02061635cb0}{propagate}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ X)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_a951f458db17ea04b3bcc1f8f336168e8}{Evaluate}} (std\+::vector$<$ double $>$ x)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_a5ae967fd4ff4194c5f191ab7b0b7a0ce}{propagate}} (std\+::vector$<$ double $>$ x)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1SVC_aae79c0f05210dc8a7b70825fffe7338b}{forward\+Pass}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1SVC_a805589fab8c7b6066f75e9824c0d114c}{UI}} (int epoch, double cost\+\_\+prev)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1SVC_a6801168c145e54769e6cd0a53aab000f}{input\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_a79532275802d95a3fd34f731e69cf5e6}{output\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_ad47dfe38c8e7351c652caa4b317bd482}{z}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_ab90b43395182b55e9ab19bb5c84c143d}{y\+\_\+hat}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1SVC_aff98a6193180e23d90ba555e406f90c1}{weights}}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_a8685bed2214a3838fb50fb4e6cb4e391}{bias}}
+\item 
+double \mbox{\hyperlink{classmtpk_1_1SVC_a07de656fde3c0262b0291b30962421f9}{C}}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1SVC_a2c6751e02e3a2b6a2a1837753e4031ec}{n}}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1SVC_a3f80331ebcdbdafc8b9584cf804fd880}{k}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 46 of file svc.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1SVC_ae0042b2bd12f045cbc4a1a43d439beb7}\label{classmtpk_1_1SVC_ae0042b2bd12f045cbc4a1a43d439beb7}} 
+\index{mtpk::SVC@{mtpk::SVC}!SVC@{SVC}}
+\index{SVC@{SVC}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{SVC()}{SVC()}}
+{\footnotesize\ttfamily mtpk\+::\+SVC\+::\+SVC (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{input\+Set,  }\item[{std\+::vector$<$ double $>$}]{output\+Set,  }\item[{double}]{C }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1SVC_a19a589c44bf2bb6e5d529f32c6d9babd}\label{classmtpk_1_1SVC_a19a589c44bf2bb6e5d529f32c6d9babd}} 
+\index{mtpk::SVC@{mtpk::SVC}!Cost@{Cost}}
+\index{Cost@{Cost}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{Cost()}{Cost()}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::\+Cost (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{y\+\_\+hat,  }\item[{std\+::vector$<$ double $>$}]{y,  }\item[{std\+::vector$<$ double $>$}]{weights,  }\item[{double}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a951f458db17ea04b3bcc1f8f336168e8}\label{classmtpk_1_1SVC_a951f458db17ea04b3bcc1f8f336168e8}} 
+\index{mtpk::SVC@{mtpk::SVC}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::\+Evaluate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a87c848c4e3f15e9f2695a45657e6e8b2}\label{classmtpk_1_1SVC_a87c848c4e3f15e9f2695a45657e6e8b2}} 
+\index{mtpk::SVC@{mtpk::SVC}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::\+Evaluate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_aae79c0f05210dc8a7b70825fffe7338b}\label{classmtpk_1_1SVC_aae79c0f05210dc8a7b70825fffe7338b}} 
+\index{mtpk::SVC@{mtpk::SVC}!forwardPass@{forwardPass}}
+\index{forwardPass@{forwardPass}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{forwardPass()}{forwardPass()}}
+{\footnotesize\ttfamily void mtpk\+::\+SVC\+::forward\+Pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a137b3056e705f48bbfbd0a3ca7692b1f}\label{classmtpk_1_1SVC_a137b3056e705f48bbfbd0a3ca7692b1f}} 
+\index{mtpk::SVC@{mtpk::SVC}!gradientDescent@{gradientDescent}}
+\index{gradientDescent@{gradientDescent}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{gradientDescent()}{gradientDescent()}}
+{\footnotesize\ttfamily void mtpk\+::\+SVC\+::gradient\+Descent (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_aa42f8d21350882fce4d021199d902e04}\label{classmtpk_1_1SVC_aa42f8d21350882fce4d021199d902e04}} 
+\index{mtpk::SVC@{mtpk::SVC}!MBGD@{MBGD}}
+\index{MBGD@{MBGD}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{MBGD()}{MBGD()}}
+{\footnotesize\ttfamily void mtpk\+::\+SVC\+::\+MBGD (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{int}]{mini\+\_\+batch\+\_\+size,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_ad82918f420bd02873c74f9dbd3ae9b23}\label{classmtpk_1_1SVC_ad82918f420bd02873c74f9dbd3ae9b23}} 
+\index{mtpk::SVC@{mtpk::SVC}!modelSetTest@{modelSetTest}}
+\index{modelSetTest@{modelSetTest}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{modelSetTest()}{modelSetTest()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::model\+Set\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_ab100704d0402218c769cacb79ad852d5}\label{classmtpk_1_1SVC_ab100704d0402218c769cacb79ad852d5}} 
+\index{mtpk::SVC@{mtpk::SVC}!modelTest@{modelTest}}
+\index{modelTest@{modelTest}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{modelTest()}{modelTest()}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::model\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a5ae967fd4ff4194c5f191ab7b0b7a0ce}\label{classmtpk_1_1SVC_a5ae967fd4ff4194c5f191ab7b0b7a0ce}} 
+\index{mtpk::SVC@{mtpk::SVC}!propagate@{propagate}}
+\index{propagate@{propagate}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{propagate()}{propagate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::propagate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_aca060abdfe3bcfaacee9d02061635cb0}\label{classmtpk_1_1SVC_aca060abdfe3bcfaacee9d02061635cb0}} 
+\index{mtpk::SVC@{mtpk::SVC}!propagate@{propagate}}
+\index{propagate@{propagate}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{propagate()}{propagate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::propagate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a380f1645d89c40f1097d211ed8d8b0e1}\label{classmtpk_1_1SVC_a380f1645d89c40f1097d211ed8d8b0e1}} 
+\index{mtpk::SVC@{mtpk::SVC}!save@{save}}
+\index{save@{save}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void mtpk\+::\+SVC\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_ae7d132e06d8cff3e1b00990463854ead}\label{classmtpk_1_1SVC_ae7d132e06d8cff3e1b00990463854ead}} 
+\index{mtpk::SVC@{mtpk::SVC}!score@{score}}
+\index{score@{score}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a84ed6704b68f27afca5efba7fbeea49d}\label{classmtpk_1_1SVC_a84ed6704b68f27afca5efba7fbeea49d}} 
+\index{mtpk::SVC@{mtpk::SVC}!SGD@{SGD}}
+\index{SGD@{SGD}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{SGD()}{SGD()}}
+{\footnotesize\ttfamily void mtpk\+::\+SVC\+::\+SGD (\begin{DoxyParamCaption}\item[{double}]{learning\+\_\+rate,  }\item[{int}]{max\+\_\+epoch,  }\item[{bool}]{UI = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a805589fab8c7b6066f75e9824c0d114c}\label{classmtpk_1_1SVC_a805589fab8c7b6066f75e9824c0d114c}} 
+\index{mtpk::SVC@{mtpk::SVC}!UI@{UI}}
+\index{UI@{UI}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{UI()}{UI()}}
+{\footnotesize\ttfamily void mtpk\+::\+SVC\+::\+UI (\begin{DoxyParamCaption}\item[{int}]{epoch,  }\item[{double}]{cost\+\_\+prev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1SVC_a8685bed2214a3838fb50fb4e6cb4e391}\label{classmtpk_1_1SVC_a8685bed2214a3838fb50fb4e6cb4e391}} 
+\index{mtpk::SVC@{mtpk::SVC}!bias@{bias}}
+\index{bias@{bias}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{bias}{bias}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::bias\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 74 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a07de656fde3c0262b0291b30962421f9}\label{classmtpk_1_1SVC_a07de656fde3c0262b0291b30962421f9}} 
+\index{mtpk::SVC@{mtpk::SVC}!C@{C}}
+\index{C@{C}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{C}{C}}
+{\footnotesize\ttfamily double mtpk\+::\+SVC\+::C\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 76 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a6801168c145e54769e6cd0a53aab000f}\label{classmtpk_1_1SVC_a6801168c145e54769e6cd0a53aab000f}} 
+\index{mtpk::SVC@{mtpk::SVC}!inputSet@{inputSet}}
+\index{inputSet@{inputSet}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{inputSet}{inputSet}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ mtpk\+::\+SVC\+::input\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 69 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a3f80331ebcdbdafc8b9584cf804fd880}\label{classmtpk_1_1SVC_a3f80331ebcdbdafc8b9584cf804fd880}} 
+\index{mtpk::SVC@{mtpk::SVC}!k@{k}}
+\index{k@{k}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily int mtpk\+::\+SVC\+::k\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 78 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a2c6751e02e3a2b6a2a1837753e4031ec}\label{classmtpk_1_1SVC_a2c6751e02e3a2b6a2a1837753e4031ec}} 
+\index{mtpk::SVC@{mtpk::SVC}!n@{n}}
+\index{n@{n}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int mtpk\+::\+SVC\+::n\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 77 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_a79532275802d95a3fd34f731e69cf5e6}\label{classmtpk_1_1SVC_a79532275802d95a3fd34f731e69cf5e6}} 
+\index{mtpk::SVC@{mtpk::SVC}!outputSet@{outputSet}}
+\index{outputSet@{outputSet}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{outputSet}{outputSet}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::output\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 70 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_aff98a6193180e23d90ba555e406f90c1}\label{classmtpk_1_1SVC_aff98a6193180e23d90ba555e406f90c1}} 
+\index{mtpk::SVC@{mtpk::SVC}!weights@{weights}}
+\index{weights@{weights}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::weights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 73 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_ab90b43395182b55e9ab19bb5c84c143d}\label{classmtpk_1_1SVC_ab90b43395182b55e9ab19bb5c84c143d}} 
+\index{mtpk::SVC@{mtpk::SVC}!y\_hat@{y\_hat}}
+\index{y\_hat@{y\_hat}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{y\_hat}{y\_hat}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::y\+\_\+hat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 72 of file svc.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1SVC_ad47dfe38c8e7351c652caa4b317bd482}\label{classmtpk_1_1SVC_ad47dfe38c8e7351c652caa4b317bd482}} 
+\index{mtpk::SVC@{mtpk::SVC}!z@{z}}
+\index{z@{z}!mtpk::SVC@{mtpk::SVC}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+SVC\+::z\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 71 of file svc.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{svc_8hpp}{svc.\+hpp}}\end{DoxyCompactItemize}

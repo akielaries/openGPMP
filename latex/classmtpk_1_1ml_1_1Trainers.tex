@@ -1,0 +1,89 @@
+\hypertarget{classmtpk_1_1ml_1_1Trainers}{}\doxysection{mtpk\+::ml\+::Trainers Class Reference}
+\label{classmtpk_1_1ml_1_1Trainers}\index{mtpk::ml::Trainers@{mtpk::ml::Trainers}}
+
+
+{\ttfamily \#include $<$trainers.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1Trainers_ab0d66291bfe8415596d5f7903d256b1d}{train\+\_\+\+Primary\+MLP}} (const char $\ast$fnames)
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1ml_1_1Trainers_adc82876f77b5a56e69d42a1f22a20cfc}{test\+\_\+\+Primary\+MLP}} (const char $\ast$fname)
+\item 
+auto \mbox{\hyperlink{classmtpk_1_1ml_1_1Trainers_a07e9a39d8f34995c08667d3634a08155}{init\+\_\+\+Secondary\+MLP}} (size\+\_\+t inputs, size\+\_\+t outputs, size\+\_\+t hidden\+\_\+layer\+\_\+units, int64\+\_\+t hidden\+\_\+layers, float lr)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1Trainers_a40de007548f1313fc1a27af9aa8a886d}{train\+\_\+\+Secondary\+MLP}} (auto initialized\+\_\+model, const std\+::string data\+\_\+file, uint64\+\_\+t iterations, uint64\+\_\+t print\+\_\+increment)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 54 of file trainers.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1Trainers_a07e9a39d8f34995c08667d3634a08155}\label{classmtpk_1_1ml_1_1Trainers_a07e9a39d8f34995c08667d3634a08155}} 
+\index{mtpk::ml::Trainers@{mtpk::ml::Trainers}!init\_SecondaryMLP@{init\_SecondaryMLP}}
+\index{init\_SecondaryMLP@{init\_SecondaryMLP}!mtpk::ml::Trainers@{mtpk::ml::Trainers}}
+\doxysubsubsection{\texorpdfstring{init\_SecondaryMLP()}{init\_SecondaryMLP()}}
+{\footnotesize\ttfamily auto mtpk\+::ml\+::\+Trainers\+::init\+\_\+\+Secondary\+MLP (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{inputs,  }\item[{size\+\_\+t}]{outputs,  }\item[{size\+\_\+t}]{hidden\+\_\+layer\+\_\+units,  }\item[{int64\+\_\+t}]{hidden\+\_\+layers,  }\item[{float}]{lr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+These methods acts as a helper to the \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{Secondary\+MLP}} class Model. the create\+\_\+\+Secondary\+MLP method will return an initialized model given the dimensions of the inputs and outputs as well as specs related to the hidden layers of the network 
+
+Definition at line 72 of file trainers.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                                                             \{}
+\DoxyCodeLine{75         std::vector<size\_t> layer\_units;}
+\DoxyCodeLine{76         layer\_units.push\_back(inputs);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{keywordflow}{for} (int64\_t i = 0; i < hidden\_layers; ++i) \{}
+\DoxyCodeLine{79             layer\_units.push\_back(hidden\_layer\_units);}
+\DoxyCodeLine{80         \}}
+\DoxyCodeLine{81         layer\_units.push\_back(outputs);}
+\DoxyCodeLine{82         SecondaryMLP<long double> model\_SecondaryMLP(layer\_units, 0.01);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} model\_SecondaryMLP;}
+\DoxyCodeLine{85     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1Trainers_adc82876f77b5a56e69d42a1f22a20cfc}\label{classmtpk_1_1ml_1_1Trainers_adc82876f77b5a56e69d42a1f22a20cfc}} 
+\index{mtpk::ml::Trainers@{mtpk::ml::Trainers}!test\_PrimaryMLP@{test\_PrimaryMLP}}
+\index{test\_PrimaryMLP@{test\_PrimaryMLP}!mtpk::ml::Trainers@{mtpk::ml::Trainers}}
+\doxysubsubsection{\texorpdfstring{test\_PrimaryMLP()}{test\_PrimaryMLP()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Trainers\+::test\+\_\+\+Primary\+MLP (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP}{Primary\+MLP}} testing method \mbox{\Hypertarget{classmtpk_1_1ml_1_1Trainers_ab0d66291bfe8415596d5f7903d256b1d}\label{classmtpk_1_1ml_1_1Trainers_ab0d66291bfe8415596d5f7903d256b1d}} 
+\index{mtpk::ml::Trainers@{mtpk::ml::Trainers}!train\_PrimaryMLP@{train\_PrimaryMLP}}
+\index{train\_PrimaryMLP@{train\_PrimaryMLP}!mtpk::ml::Trainers@{mtpk::ml::Trainers}}
+\doxysubsubsection{\texorpdfstring{train\_PrimaryMLP()}{train\_PrimaryMLP()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::ml\+::\+Trainers\+::train\+\_\+\+Primary\+MLP (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fnames }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP}{Primary\+MLP}} training method \mbox{\Hypertarget{classmtpk_1_1ml_1_1Trainers_a40de007548f1313fc1a27af9aa8a886d}\label{classmtpk_1_1ml_1_1Trainers_a40de007548f1313fc1a27af9aa8a886d}} 
+\index{mtpk::ml::Trainers@{mtpk::ml::Trainers}!train\_SecondaryMLP@{train\_SecondaryMLP}}
+\index{train\_SecondaryMLP@{train\_SecondaryMLP}!mtpk::ml::Trainers@{mtpk::ml::Trainers}}
+\doxysubsubsection{\texorpdfstring{train\_SecondaryMLP()}{train\_SecondaryMLP()}}
+{\footnotesize\ttfamily void mtpk\+::ml\+::\+Trainers\+::train\+\_\+\+Secondary\+MLP (\begin{DoxyParamCaption}\item[{auto}]{initialized\+\_\+model,  }\item[{const std\+::string}]{data\+\_\+file,  }\item[{uint64\+\_\+t}]{iterations,  }\item[{uint64\+\_\+t}]{print\+\_\+increment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{Secondary\+MLP}} training method 
+
+Definition at line 90 of file trainers.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                                                       \{}
+\DoxyCodeLine{94         std::fstream input(data\_file.c\_str());}
+\DoxyCodeLine{95         std::cout << \textcolor{stringliteral}{"{}FILE: "{}} << data\_file << \textcolor{stringliteral}{"{} ITERS: "{}} << iterations}
+\DoxyCodeLine{96                   << \textcolor{stringliteral}{"{} INCREMENT: "{}} << print\_increment;}
+\DoxyCodeLine{97     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{trainers_8hpp}{trainers.\+hpp}}\end{DoxyCompactItemize}

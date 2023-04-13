@@ -1,0 +1,120 @@
+\hypertarget{classmtpk_1_1kNN}{}\doxysection{mtpk\+::k\+NN Class Reference}
+\label{classmtpk_1_1kNN}\index{mtpk::kNN@{mtpk::kNN}}
+
+
+{\ttfamily \#include $<$knn.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1kNN_a0d932836253c4f5ddd3e1f781a470dc5}{k\+NN}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \mbox{\hyperlink{classmtpk_1_1kNN_ad748c411b008beac418d4581c585eb3d}{input\+Set}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1kNN_a6f871c45ca6b2e8a21ee61457472a9f9}{output\+Set}}, int \mbox{\hyperlink{classmtpk_1_1kNN_a6e20bd314755860cdc80103dfaeea495}{k}})
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1kNN_a8207e130198abdc55c08683f9f892e23}{model\+Set\+Test}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ X)
+\item 
+int \mbox{\hyperlink{classmtpk_1_1kNN_a82e9653b96f8ffea2a0f52a68996b803}{model\+Test}} (std\+::vector$<$ double $>$ x)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1kNN_acdb5d115c32e7f6631f22878da7b4ee7}{score}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1kNN_a5e0ee450a7cf4acc294bedd001db68f6}{nearest\+Neighbors}} (std\+::vector$<$ double $>$ x)
+\item 
+int \mbox{\hyperlink{classmtpk_1_1kNN_a798a02fdb343ae1758f58d5c4718e977}{determine\+Class}} (std\+::vector$<$ double $>$ knn)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1kNN_ad748c411b008beac418d4581c585eb3d}{input\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1kNN_a6f871c45ca6b2e8a21ee61457472a9f9}{output\+Set}}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1kNN_a6e20bd314755860cdc80103dfaeea495}{k}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 47 of file knn.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1kNN_a0d932836253c4f5ddd3e1f781a470dc5}\label{classmtpk_1_1kNN_a0d932836253c4f5ddd3e1f781a470dc5}} 
+\index{mtpk::kNN@{mtpk::kNN}!kNN@{kNN}}
+\index{kNN@{kNN}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{kNN()}{kNN()}}
+{\footnotesize\ttfamily mtpk\+::k\+NN\+::k\+NN (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{input\+Set,  }\item[{std\+::vector$<$ double $>$}]{output\+Set,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1kNN_a798a02fdb343ae1758f58d5c4718e977}\label{classmtpk_1_1kNN_a798a02fdb343ae1758f58d5c4718e977}} 
+\index{mtpk::kNN@{mtpk::kNN}!determineClass@{determineClass}}
+\index{determineClass@{determineClass}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{determineClass()}{determineClass()}}
+{\footnotesize\ttfamily int mtpk\+::k\+NN\+::determine\+Class (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{knn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1kNN_a8207e130198abdc55c08683f9f892e23}\label{classmtpk_1_1kNN_a8207e130198abdc55c08683f9f892e23}} 
+\index{mtpk::kNN@{mtpk::kNN}!modelSetTest@{modelSetTest}}
+\index{modelSetTest@{modelSetTest}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{modelSetTest()}{modelSetTest()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::k\+NN\+::model\+Set\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1kNN_a82e9653b96f8ffea2a0f52a68996b803}\label{classmtpk_1_1kNN_a82e9653b96f8ffea2a0f52a68996b803}} 
+\index{mtpk::kNN@{mtpk::kNN}!modelTest@{modelTest}}
+\index{modelTest@{modelTest}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{modelTest()}{modelTest()}}
+{\footnotesize\ttfamily int mtpk\+::k\+NN\+::model\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1kNN_a5e0ee450a7cf4acc294bedd001db68f6}\label{classmtpk_1_1kNN_a5e0ee450a7cf4acc294bedd001db68f6}} 
+\index{mtpk::kNN@{mtpk::kNN}!nearestNeighbors@{nearestNeighbors}}
+\index{nearestNeighbors@{nearestNeighbors}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{nearestNeighbors()}{nearestNeighbors()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::k\+NN\+::nearest\+Neighbors (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1kNN_acdb5d115c32e7f6631f22878da7b4ee7}\label{classmtpk_1_1kNN_acdb5d115c32e7f6631f22878da7b4ee7}} 
+\index{mtpk::kNN@{mtpk::kNN}!score@{score}}
+\index{score@{score}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily double mtpk\+::k\+NN\+::score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1kNN_ad748c411b008beac418d4581c585eb3d}\label{classmtpk_1_1kNN_ad748c411b008beac418d4581c585eb3d}} 
+\index{mtpk::kNN@{mtpk::kNN}!inputSet@{inputSet}}
+\index{inputSet@{inputSet}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{inputSet}{inputSet}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ mtpk\+::k\+NN\+::input\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 62 of file knn.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1kNN_a6e20bd314755860cdc80103dfaeea495}\label{classmtpk_1_1kNN_a6e20bd314755860cdc80103dfaeea495}} 
+\index{mtpk::kNN@{mtpk::kNN}!k@{k}}
+\index{k@{k}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily int mtpk\+::k\+NN\+::k\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 64 of file knn.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1kNN_a6f871c45ca6b2e8a21ee61457472a9f9}\label{classmtpk_1_1kNN_a6f871c45ca6b2e8a21ee61457472a9f9}} 
+\index{mtpk::kNN@{mtpk::kNN}!outputSet@{outputSet}}
+\index{outputSet@{outputSet}!mtpk::kNN@{mtpk::kNN}}
+\doxysubsubsection{\texorpdfstring{outputSet}{outputSet}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::k\+NN\+::output\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 63 of file knn.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{knn_8hpp}{knn.\+hpp}}\end{DoxyCompactItemize}

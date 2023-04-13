@@ -1,0 +1,56 @@
+\hypertarget{datatable__v3_8cpp}{}\doxysection{modules/struct/datatable\+\_\+v3.cpp File Reference}
+\label{datatable__v3_8cpp}\index{modules/struct/datatable\_v3.cpp@{modules/struct/datatable\_v3.cpp}}
+{\ttfamily \#include \char`\"{}../../include/struct/datatable.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{datatable__v3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{datatable__v3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{datatable__v3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{datatable\_v3.cpp@{datatable\_v3.cpp}!main@{main}}
+\index{main@{main}!datatable\_v3.cpp@{datatable\_v3.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 181 of file datatable\+\_\+v3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181            \{}
+\DoxyCodeLine{182     std::string filename = \textcolor{stringliteral}{"{}../../data/forestfires.csv"{}};}
+\DoxyCodeLine{183     std::string filename\_2 = \textcolor{stringliteral}{"{}../../data/school\_scores.csv"{}};}
+\DoxyCodeLine{184     std::vector<std::string> selected\_columns = \{\textcolor{stringliteral}{"{}X"{}}, \textcolor{stringliteral}{"{}Y"{}}, \textcolor{stringliteral}{"{}DC"{}}, \textcolor{stringliteral}{"{}area"{}}\};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \mbox{\hyperlink{classDataTable}{DataTable}} dt(filename);}
+\DoxyCodeLine{187     dt.display();}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     \mbox{\hyperlink{classDataTable}{DataTable}} dt\_2(filename\_2);}
+\DoxyCodeLine{190     dt\_2.display();}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{comment}{// std::vector<std::unordered\_map<std::string, std::string>> frame =}}
+\DoxyCodeLine{193     \textcolor{comment}{//    csv\_read("{}../../data/forestfires.csv"{});}}
+\DoxyCodeLine{194     \textcolor{comment}{// Print dataframe}}
+\DoxyCodeLine{195     \textcolor{comment}{// display(frame, selected\_columns);}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{198 \}}
+
+\end{DoxyCode}
+
+
+References Data\+Table\+::display().
+

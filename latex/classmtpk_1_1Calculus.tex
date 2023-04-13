@@ -1,0 +1,183 @@
+\hypertarget{classmtpk_1_1Calculus}{}\doxysection{mtpk\+::Calculus Class Reference}
+\label{classmtpk_1_1Calculus}\index{mtpk::Calculus@{mtpk::Calculus}}
+
+
+{\ttfamily \#include $<$deriv.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}{derivative\+\_\+term}} (std\+::string p\+\_\+term, int64\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Find the coeffecients and exponents of a polynomial. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Calculus_a4c1c4fdc45fccf75cd81ca5a63cff7e2}{deriv\+\_\+at}} (std\+::string \&poly, int64\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Find the derivative of a function with x = val. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classmtpk_1_1Calculus_a47c9d1bc11315662c6f9e1183f5ec7ee}{deriv}} (std\+::string \&poly)
+\begin{DoxyCompactList}\small\item\em Calculate the derivative of a function, not solving for x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classmtpk_1_1Calculus}{Calculus}} Class with methods pertaining to basic operations. 
+
+Definition at line 50 of file deriv.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Calculus_a47c9d1bc11315662c6f9e1183f5ec7ee}\label{classmtpk_1_1Calculus_a47c9d1bc11315662c6f9e1183f5ec7ee}} 
+\index{mtpk::Calculus@{mtpk::Calculus}!deriv@{deriv}}
+\index{deriv@{deriv}!mtpk::Calculus@{mtpk::Calculus}}
+\doxysubsubsection{\texorpdfstring{deriv()}{deriv()}}
+{\footnotesize\ttfamily std\+::string mtpk\+::\+Calculus\+::deriv (\begin{DoxyParamCaption}\item[{std\+::string \&}]{poly }\end{DoxyParamCaption})}
+
+
+
+Calculate the derivative of a function, not solving for x. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em poly} & \+: polynomial (string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result \+: derived function (string) 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file deriv.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124                                              \{}
+\DoxyCodeLine{125     int64\_t ans = 0;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{// We use istringstream to get input in tokens}}
+\DoxyCodeLine{128     std::istringstream is(poly);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     std::string p\_term;}
+\DoxyCodeLine{131     \textcolor{keywordflow}{while} (is >> p\_term) \{}
+\DoxyCodeLine{132         \textcolor{comment}{// std::cout << "{}poly = "{} << poly << std::endl;}}
+\DoxyCodeLine{133         \textcolor{comment}{// std::cout << "{}p\_term = "{} << p\_term << std:: endl;}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
+\DoxyCodeLine{136         \textcolor{keywordflow}{if} (p\_term == \textcolor{stringliteral}{"{}+"{}})}
+\DoxyCodeLine{137             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
+\DoxyCodeLine{140         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{141             ans = ans;}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143     \textcolor{keywordflow}{return} poly;}
+\DoxyCodeLine{144 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Calculus_a4c1c4fdc45fccf75cd81ca5a63cff7e2}\label{classmtpk_1_1Calculus_a4c1c4fdc45fccf75cd81ca5a63cff7e2}} 
+\index{mtpk::Calculus@{mtpk::Calculus}!deriv\_at@{deriv\_at}}
+\index{deriv\_at@{deriv\_at}!mtpk::Calculus@{mtpk::Calculus}}
+\doxysubsubsection{\texorpdfstring{deriv\_at()}{deriv\_at()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::\+Calculus\+::deriv\+\_\+at (\begin{DoxyParamCaption}\item[{std\+::string \&}]{poly,  }\item[{int64\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Find the derivative of a function with x = val. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em poly} & \+: polynomial (string) \\
+\hline
+\mbox{\texttt{ in}}  & {\em val} & \+: value to solve for (int)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result \+: result of the solved x 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file deriv.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103                                                            \{}
+\DoxyCodeLine{104     int64\_t ans = 0;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{// We use istringstream to get input in tokens}}
+\DoxyCodeLine{107     std::istringstream is(poly);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     std::string p\_term;}
+\DoxyCodeLine{110     \textcolor{keywordflow}{while} (is >> p\_term) \{}
+\DoxyCodeLine{111         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
+\DoxyCodeLine{112         \textcolor{keywordflow}{if} (p\_term == \textcolor{stringliteral}{"{}+"{}})}
+\DoxyCodeLine{113             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
+\DoxyCodeLine{116         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{117             ans = (ans + \mbox{\hyperlink{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}{derivative\_term}}(p\_term, val));}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119     printf(\textcolor{stringliteral}{"{}\(\backslash\)nDEBUGGING DERIV AT\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{120     printf(\textcolor{stringliteral}{"{}ans = \%ld\(\backslash\)n"{}}, ans);}
+\DoxyCodeLine{121     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}\label{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}} 
+\index{mtpk::Calculus@{mtpk::Calculus}!derivative\_term@{derivative\_term}}
+\index{derivative\_term@{derivative\_term}!mtpk::Calculus@{mtpk::Calculus}}
+\doxysubsubsection{\texorpdfstring{derivative\_term()}{derivative\_term()}}
+{\footnotesize\ttfamily int64\+\_\+t mtpk\+::\+Calculus\+::derivative\+\_\+term (\begin{DoxyParamCaption}\item[{std\+::string}]{p\+\_\+term,  }\item[{int64\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Find the coeffecients and exponents of a polynomial. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+term} & \+: Coeffecients of the polynomial (string) \\
+\hline
+\mbox{\texttt{ in}}  & {\em val} & \+: \textquotesingle{}x\textquotesingle{} term to find from given polynomial (long long int)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result \+: formatted coeffecients + exponents 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file deriv.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73                                                                    \{}
+\DoxyCodeLine{74     \textcolor{comment}{// Get coefficient}}
+\DoxyCodeLine{75     std::string coeffStr = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{76     int64\_t i;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordflow}{for} (i = 0; p\_term[i] != \textcolor{charliteral}{'x'}; i++) \{}
+\DoxyCodeLine{79         coeffStr.push\_back(p\_term[i]);}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81     int64\_t coeff = atol(coeffStr.c\_str());}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// Get Power (Skip 2 characters for x and \string^)}}
+\DoxyCodeLine{84     std::string powStr = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keywordflow}{for} (i = i + 2; i != p\_term.size(); i++) \{}
+\DoxyCodeLine{87         powStr.push\_back(p\_term[i]);}
+\DoxyCodeLine{88         printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     int64\_t expo = atol(powStr.c\_str());}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// For ax\string^n, we return anx\string^(n-\/1)}}
+\DoxyCodeLine{93     printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
+\DoxyCodeLine{94     printf(\textcolor{stringliteral}{"{}p\_term = \%s \(\backslash\)n"{}}, p\_term.c\_str());}
+\DoxyCodeLine{95     printf(\textcolor{stringliteral}{"{}coeff = \%ld \(\backslash\)n"{}}, coeff);}
+\DoxyCodeLine{96     printf(\textcolor{stringliteral}{"{}Exponent = \%ld \(\backslash\)n"{}}, expo);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     int64\_t result = coeff * expo * pow(val, expo -\/ 1);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keywordflow}{return} coeff * expo * pow(val, expo -\/ 1);}
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/calculus/\mbox{\hyperlink{deriv_8hpp}{deriv.\+hpp}}\item 
+modules/calculus/\mbox{\hyperlink{deriv_8cpp}{deriv.\+cpp}}\end{DoxyCompactItemize}

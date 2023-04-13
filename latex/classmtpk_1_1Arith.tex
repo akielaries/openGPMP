@@ -1,0 +1,111 @@
+\hypertarget{classmtpk_1_1Arith}{}\doxysection{mtpk\+::Arith$<$ T $>$ Class Template Reference}
+\label{classmtpk_1_1Arith}\index{mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}}
+
+
+{\bfseries{Arithmetic}} {\bfseries{\mbox{\hyperlink{classmtpk_1_1Basics}{Basics}}}}  
+
+
+
+
+{\ttfamily \#include $<$arithmetic.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classmtpk_1_1Arith_a70e6cf997a4479047e129b355d903d21}{arr\+\_\+add}} (T arr\mbox{[}$\,$\mbox{]}, int64\+\_\+t n)
+\item 
+T \mbox{\hyperlink{classmtpk_1_1Arith_a6dfd044e3afcf86a1bb4895c6dfc1d41}{arr\+\_\+sub}} (T arr\mbox{[}$\,$\mbox{]}, int64\+\_\+t n)
+\item 
+T \mbox{\hyperlink{classmtpk_1_1Arith_ab0f54cca9c0fe1652be9f9a91b86d1a1}{arr\+\_\+mlt}} (T arr\mbox{[}$\,$\mbox{]}, int64\+\_\+t n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class mtpk\+::\+Arith$<$ T $>$}
+
+{\bfseries{Arithmetic}} {\bfseries{\mbox{\hyperlink{classmtpk_1_1Basics}{Basics}}}} 
+
+\mbox{\hyperlink{classmtpk_1_1Basics}{Basics}} of Arithmetic
+
+Arithmetic Template Class. Each method is variadic taking \textquotesingle{}n\textquotesingle{} params. 
+
+Definition at line 70 of file arithmetic.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Arith_a70e6cf997a4479047e129b355d903d21}\label{classmtpk_1_1Arith_a70e6cf997a4479047e129b355d903d21}} 
+\index{mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}!arr\_add@{arr\_add}}
+\index{arr\_add@{arr\_add}!mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{arr\_add()}{arr\_add()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classmtpk_1_1Arith}{mtpk\+::\+Arith}}$<$ T $>$\+::arr\+\_\+add (\begin{DoxyParamCaption}\item[{T}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 72 of file arithmetic.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                                   \{}
+\DoxyCodeLine{73         T sum = 0;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \textcolor{keywordflow}{for} (int64\_t i = 0; i < n; i++) \{}
+\DoxyCodeLine{76             sum += arr[i];}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{79     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Arith_ab0f54cca9c0fe1652be9f9a91b86d1a1}\label{classmtpk_1_1Arith_ab0f54cca9c0fe1652be9f9a91b86d1a1}} 
+\index{mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}!arr\_mlt@{arr\_mlt}}
+\index{arr\_mlt@{arr\_mlt}!mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{arr\_mlt()}{arr\_mlt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classmtpk_1_1Arith}{mtpk\+::\+Arith}}$<$ T $>$\+::arr\+\_\+mlt (\begin{DoxyParamCaption}\item[{T}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 90 of file arithmetic.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                                   \{}
+\DoxyCodeLine{91         T prod = arr[0];}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{keywordflow}{for} (int64\_t i = 0; i < n; i++) \{}
+\DoxyCodeLine{94             prod *= arr[i];}
+\DoxyCodeLine{95         \}}
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} prod;}
+\DoxyCodeLine{97     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Arith_a6dfd044e3afcf86a1bb4895c6dfc1d41}\label{classmtpk_1_1Arith_a6dfd044e3afcf86a1bb4895c6dfc1d41}} 
+\index{mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}!arr\_sub@{arr\_sub}}
+\index{arr\_sub@{arr\_sub}!mtpk::Arith$<$ T $>$@{mtpk::Arith$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{arr\_sub()}{arr\_sub()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classmtpk_1_1Arith}{mtpk\+::\+Arith}}$<$ T $>$\+::arr\+\_\+sub (\begin{DoxyParamCaption}\item[{T}]{arr\mbox{[}$\,$\mbox{]},  }\item[{int64\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 81 of file arithmetic.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                   \{}
+\DoxyCodeLine{82         T diff = arr[0];}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keywordflow}{for} (int64\_t i = 1; i < n; i++) \{}
+\DoxyCodeLine{85             diff -\/= arr[i];}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} diff;}
+\DoxyCodeLine{88     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{arithmetic_8hpp}{arithmetic.\+hpp}}\end{DoxyCompactItemize}

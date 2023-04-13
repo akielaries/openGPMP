@@ -1,0 +1,138 @@
+\hypertarget{classmtpk_1_1NaiveNet}{}\doxysection{mtpk\+::Naive\+Net Class Reference}
+\label{classmtpk_1_1NaiveNet}\index{mtpk::NaiveNet@{mtpk::NaiveNet}}
+
+
+{\ttfamily \#include $<$naive\+\_\+net.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1NaiveNet_a09441eff0299ee826fe0a9fd878f27b4}{naive\+\_\+network}} (std\+::vector$<$ uint $>$ topology, \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}} learning\+Rate=\mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}}(0.\+005))
+\item 
+void \mbox{\hyperlink{classmtpk_1_1NaiveNet_ad1a4fb5db1bb20d26ae1dc15ccbd7dc0}{forward\+\_\+prop}} (\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&input)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1NaiveNet_a17e3858224c9c6873cb396c2c855d253}{backward\+\_\+prop}} (\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&output)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1NaiveNet_aee1f88544b22a04ff741ea3e94a2d352}{errors}} (\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&output)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1NaiveNet_af8ff3d701589673dc55e26e733a07397}{update\+\_\+weights}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1NaiveNet_aafffd50093040c64ca5f01801e43d5ae}{train}} (std\+::vector$<$ \mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ \mbox{\hyperlink{classmtpk_1_1NaiveNet_a46a0a9936b709529cad8dfe4d90816f9}{neuron\+\_\+layers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ \mbox{\hyperlink{classmtpk_1_1NaiveNet_a4e6278e34713c92864b1955bd12c9a7d}{cache\+\_\+layers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$ \mbox{\hyperlink{classmtpk_1_1NaiveNet_ac2ebde3cb2a6130c99a4895407262856}{deltas}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} $\ast$ $>$ \mbox{\hyperlink{classmtpk_1_1NaiveNet_a60cc701ee3cb17805110fdd3e12ce7ce}{weights}}
+\item 
+\mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}} \mbox{\hyperlink{classmtpk_1_1NaiveNet_a79f9b50c7791cb5e2b4a96763f5655ed}{learning\+\_\+rate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 51 of file naive\+\_\+net.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_a17e3858224c9c6873cb396c2c855d253}\label{classmtpk_1_1NaiveNet_a17e3858224c9c6873cb396c2c855d253}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!backward\_prop@{backward\_prop}}
+\index{backward\_prop@{backward\_prop}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{backward\_prop()}{backward\_prop()}}
+{\footnotesize\ttfamily void mtpk\+::\+Naive\+Net\+::backward\+\_\+prop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&}]{output }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_aee1f88544b22a04ff741ea3e94a2d352}\label{classmtpk_1_1NaiveNet_aee1f88544b22a04ff741ea3e94a2d352}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!errors@{errors}}
+\index{errors@{errors}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{errors()}{errors()}}
+{\footnotesize\ttfamily void mtpk\+::\+Naive\+Net\+::errors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&}]{output }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_ad1a4fb5db1bb20d26ae1dc15ccbd7dc0}\label{classmtpk_1_1NaiveNet_ad1a4fb5db1bb20d26ae1dc15ccbd7dc0}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!forward\_prop@{forward\_prop}}
+\index{forward\_prop@{forward\_prop}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{forward\_prop()}{forward\_prop()}}
+{\footnotesize\ttfamily void mtpk\+::\+Naive\+Net\+::forward\+\_\+prop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} \&}]{input }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_a09441eff0299ee826fe0a9fd878f27b4}\label{classmtpk_1_1NaiveNet_a09441eff0299ee826fe0a9fd878f27b4}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!naive\_network@{naive\_network}}
+\index{naive\_network@{naive\_network}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{naive\_network()}{naive\_network()}}
+{\footnotesize\ttfamily mtpk\+::\+Naive\+Net\+::naive\+\_\+network (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint $>$}]{topology,  }\item[{\mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}}}]{learning\+Rate = {\ttfamily \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}}(0.005)} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_aafffd50093040c64ca5f01801e43d5ae}\label{classmtpk_1_1NaiveNet_aafffd50093040c64ca5f01801e43d5ae}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!train@{train}}
+\index{train@{train}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily void mtpk\+::\+Naive\+Net\+::train (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$ $>$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_af8ff3d701589673dc55e26e733a07397}\label{classmtpk_1_1NaiveNet_af8ff3d701589673dc55e26e733a07397}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!update\_weights@{update\_weights}}
+\index{update\_weights@{update\_weights}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{update\_weights()}{update\_weights()}}
+{\footnotesize\ttfamily void mtpk\+::\+Naive\+Net\+::update\+\_\+weights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_a4e6278e34713c92864b1955bd12c9a7d}\label{classmtpk_1_1NaiveNet_a4e6278e34713c92864b1955bd12c9a7d}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!cache\_layers@{cache\_layers}}
+\index{cache\_layers@{cache\_layers}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{cache\_layers}{cache\_layers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$$>$ mtpk\+::\+Naive\+Net\+::cache\+\_\+layers}
+
+
+
+Definition at line 73 of file naive\+\_\+net.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_ac2ebde3cb2a6130c99a4895407262856}\label{classmtpk_1_1NaiveNet_ac2ebde3cb2a6130c99a4895407262856}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!deltas@{deltas}}
+\index{deltas@{deltas}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{deltas}{deltas}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$$>$ mtpk\+::\+Naive\+Net\+::deltas}
+
+
+
+Definition at line 75 of file naive\+\_\+net.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_a79f9b50c7791cb5e2b4a96763f5655ed}\label{classmtpk_1_1NaiveNet_a79f9b50c7791cb5e2b4a96763f5655ed}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}} mtpk\+::\+Naive\+Net\+::learning\+\_\+rate}
+
+
+
+Definition at line 79 of file naive\+\_\+net.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_a46a0a9936b709529cad8dfe4d90816f9}\label{classmtpk_1_1NaiveNet_a46a0a9936b709529cad8dfe4d90816f9}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!neuron\_layers@{neuron\_layers}}
+\index{neuron\_layers@{neuron\_layers}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{neuron\_layers}{neuron\_layers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{Row\+Vector}} $\ast$$>$ mtpk\+::\+Naive\+Net\+::neuron\+\_\+layers}
+
+
+
+Definition at line 71 of file naive\+\_\+net.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1NaiveNet_a60cc701ee3cb17805110fdd3e12ce7ce}\label{classmtpk_1_1NaiveNet_a60cc701ee3cb17805110fdd3e12ce7ce}} 
+\index{mtpk::NaiveNet@{mtpk::NaiveNet}!weights@{weights}}
+\index{weights@{weights}!mtpk::NaiveNet@{mtpk::NaiveNet}}
+\doxysubsubsection{\texorpdfstring{weights}{weights}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} $\ast$$>$ mtpk\+::\+Naive\+Net\+::weights}
+
+
+
+Definition at line 77 of file naive\+\_\+net.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{naive__net_8hpp}{naive\+\_\+net.\+hpp}}\end{DoxyCompactItemize}

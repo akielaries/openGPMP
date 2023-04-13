@@ -1,0 +1,340 @@
+\hypertarget{classmtpk_1_1ml_1_1SecondaryMLP}{}\doxysection{mtpk\+::ml\+::Secondary\+MLP$<$ T $>$ Class Template Reference}
+\label{classmtpk_1_1ml_1_1SecondaryMLP}\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+
+
+Secondary Multi-\/\+Layer Perceptron Class making use of the Linear Algebra module.  
+
+
+
+
+{\ttfamily \#include $<$mlp\+\_\+net.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ad63d2ad6e58fb2136ca4ad2338a1ee69}{log}} (auto \&file, const auto \&x, const auto \&y, const auto \&y\+\_\+hat)
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_aeafb9b868fc47dc0612942889214732d}{sigmoid\+\_\+activ}} (long double x)
+\begin{DoxyCompactList}\small\item\em Sigmoid activation function. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ad09addf22c814beeb60724a801c3ba93}{sigmoid\+\_\+deriv}} (long double x)
+\begin{DoxyCompactList}\small\item\em Sigmoid Derivative for backwards propogation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a76476eb4c3858df01198d4b8df41dbbe}{Secondary\+MLP}} (std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\+\_\+units}}, long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}{lr}}=.\+001)
+\item 
+auto \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_aeb8d4e0c9756d560e071afa8c073bf4e}{prop\+\_\+forwards}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ x)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a619f293f66f4c93eb252bbb5a69c18c7}{prop\+\_\+backwards}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ target)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\+\_\+units}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}{bias\+\_\+vectors}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\+\_\+mtx}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$ $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}
+\item 
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}{lr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$}
+
+Secondary Multi-\/\+Layer Perceptron Class making use of the Linear Algebra module. 
+
+Definition at line 147 of file mlp\+\_\+net.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_a76476eb4c3858df01198d4b8df41dbbe}\label{classmtpk_1_1ml_1_1SecondaryMLP_a76476eb4c3858df01198d4b8df41dbbe}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!SecondaryMLP@{SecondaryMLP}}
+\index{SecondaryMLP@{SecondaryMLP}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SecondaryMLP()}{SecondaryMLP()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{Secondary\+MLP}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ size\+\_\+t $>$}]{layer\+\_\+units,  }\item[{long double}]{lr = {\ttfamily .001} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Secondary Multi-\/\+Layer Perceptron Constructor Initialize a set of weights + biases for each layer set to random Gaussian Noise related values 
+
+Definition at line 190 of file mlp\+\_\+net.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{192         : \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}(\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}), \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}(), \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}{bias\_vectors}}(), \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}{lr}}(\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}{lr}}) \{}
+\DoxyCodeLine{193         \textcolor{comment}{// traverse the elements}}
+\DoxyCodeLine{194         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}.size() -\/ 1; ++i) \{}
+\DoxyCodeLine{195             \textcolor{comment}{// size of inputs}}
+\DoxyCodeLine{196             \textcolor{keywordtype}{size\_t} inputs\{\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}[i]\};}
+\DoxyCodeLine{197             \textcolor{comment}{// size of outputs}}
+\DoxyCodeLine{198             \textcolor{keywordtype}{size\_t} outputs\{\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}[i + 1]\};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200             \textcolor{comment}{// set to random Guassian Noise related values}}
+\DoxyCodeLine{201             \textcolor{comment}{// weights}}
+\DoxyCodeLine{202             \textcolor{keyword}{auto} gauss\_wt = \mbox{\hyperlink{structmtpk_1_1mtx_a97b03f5f01387e000198f1db437681be}{mtpk::mtx<T>::randn}}(outputs, inputs);}
+\DoxyCodeLine{203             \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}.push\_back(gauss\_wt);}
+\DoxyCodeLine{204             \textcolor{comment}{// biases}}
+\DoxyCodeLine{205             \textcolor{keyword}{auto} bias\_wt = \mbox{\hyperlink{structmtpk_1_1mtx_a97b03f5f01387e000198f1db437681be}{mtpk::mtx<T>::randn}}(outputs, 1);}
+\DoxyCodeLine{206             \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}{bias\_vectors}}.push\_back(bias\_wt);}
+\DoxyCodeLine{207             \textcolor{comment}{// activation function}}
+\DoxyCodeLine{208             \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}.resize(\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}.size());}
+\DoxyCodeLine{209         \}}
+\DoxyCodeLine{210     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::activations, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::bias\+\_\+vectors, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::layer\+\_\+units, mtpk\+::mtx$<$ T $>$\+::randn(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::wt\+\_\+mtx.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_ad63d2ad6e58fb2136ca4ad2338a1ee69}\label{classmtpk_1_1ml_1_1SecondaryMLP_ad63d2ad6e58fb2136ca4ad2338a1ee69}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!log@{log}}
+\index{log@{log}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::log (\begin{DoxyParamCaption}\item[{auto \&}]{file,  }\item[{const auto \&}]{x,  }\item[{const auto \&}]{y,  }\item[{const auto \&}]{y\+\_\+hat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Logging function for collecting the results 
+
+Definition at line 152 of file mlp\+\_\+net.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152                                                                           \{}
+\DoxyCodeLine{153         \textcolor{comment}{// mean squared error}}
+\DoxyCodeLine{154         \textcolor{keyword}{auto} mse = (y.data[0] -\/ y\_hat.data[0]);}
+\DoxyCodeLine{155         mse = mse * mse;}
+\DoxyCodeLine{156         file << mse << \textcolor{stringliteral}{"{} "{}} << x.data[0] << \textcolor{stringliteral}{"{} "{}} << y.data[0] << \textcolor{stringliteral}{"{} "{}}}
+\DoxyCodeLine{157              << y\_hat.data[0] << \textcolor{stringliteral}{"{} \(\backslash\)n"{}};}
+\DoxyCodeLine{158     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_a619f293f66f4c93eb252bbb5a69c18c7}\label{classmtpk_1_1ml_1_1SecondaryMLP_a619f293f66f4c93eb252bbb5a69c18c7}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!prop\_backwards@{prop\_backwards}}
+\index{prop\_backwards@{prop\_backwards}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{prop\_backwards()}{prop\_backwards()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::prop\+\_\+backwards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Backwards Propagation is utilized to optimize the net\textquotesingle{}s weights. Enabling learning how to correctly map arbitrary inputs to outputs. The goal being to update each weight of the network allowing them to increase the chance of the actual output being closer to the target output. This method takes the target output as an input parameter 
+
+Definition at line 241 of file mlp\+\_\+net.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{241                                           \{}
+\DoxyCodeLine{242         assert(get<0>(target.shape) == \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}.back());}
+\DoxyCodeLine{243         \textcolor{comment}{// calculate the error, target -\/ ouput}}
+\DoxyCodeLine{244         \textcolor{keyword}{auto} y = target;}
+\DoxyCodeLine{245         \textcolor{keyword}{auto} y\_hat = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}.back();}
+\DoxyCodeLine{246         \textcolor{keyword}{auto} err = target -\/ y\_hat;}
+\DoxyCodeLine{247         \textcolor{comment}{// back propagate the error calculated from output to input}}
+\DoxyCodeLine{248         \textcolor{comment}{// and step the weights}}
+\DoxyCodeLine{249         \textcolor{keywordflow}{for} (int64\_t i = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}.size() -\/ 1; i >= 0; -\/-\/i) \{}
+\DoxyCodeLine{250             \textcolor{comment}{// calculate errors for previous layer}}
+\DoxyCodeLine{251             \textcolor{keyword}{auto} wt = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}[i].T();}
+\DoxyCodeLine{252             \textcolor{keyword}{auto} prior\_errs = wt.mult(err);}
+\DoxyCodeLine{253             \textcolor{keyword}{auto} outputs\_d =}
+\DoxyCodeLine{254                 \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}[i + 1].apply\_function(\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ad09addf22c814beeb60724a801c3ba93}{sigmoid\_deriv}});}
+\DoxyCodeLine{255             \textcolor{keyword}{auto} gradients = err.hadamard(outputs\_d);}
+\DoxyCodeLine{256             gradients = gradients.scalar\_mult(\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}{lr}});}
+\DoxyCodeLine{257             \textcolor{keyword}{auto} trans\_a = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}[i].T();}
+\DoxyCodeLine{258             \textcolor{keyword}{auto} gradients\_wt = gradients.mult(trans\_a);}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260             \textcolor{comment}{// adjust the networks weights based on propagation}}
+\DoxyCodeLine{261             \textcolor{comment}{// technique}}
+\DoxyCodeLine{262             \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}{bias\_vectors}}[i] = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}{bias\_vectors}}[i].add(gradients);}
+\DoxyCodeLine{263             \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}[i] = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}[i].add(gradients\_wt);}
+\DoxyCodeLine{264             err = prior\_errs;}
+\DoxyCodeLine{265         \}}
+\DoxyCodeLine{266     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::activations, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::bias\+\_\+vectors, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::layer\+\_\+units, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::lr, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::sigmoid\+\_\+deriv(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::wt\+\_\+mtx.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_aeb8d4e0c9756d560e071afa8c073bf4e}\label{classmtpk_1_1ml_1_1SecondaryMLP_aeb8d4e0c9756d560e071afa8c073bf4e}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!prop\_forwards@{prop\_forwards}}
+\index{prop\_forwards@{prop\_forwards}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{prop\_forwards()}{prop\_forwards()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+auto \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::prop\+\_\+forwards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ T $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Forward passes compute the activations at a specific layer. This method saves the results to the activations \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} passing it forwards to use as an input paramater on the next layer 
+
+Definition at line 217 of file mlp\+\_\+net.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{217                                     \{}
+\DoxyCodeLine{218         assert(get<0>(x.shape) == \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}[0] \&\& get<1>(x.shape));}
+\DoxyCodeLine{219         \textcolor{comment}{// input = to previously declared acitvations method}}
+\DoxyCodeLine{220         \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}[0] = x;}
+\DoxyCodeLine{221         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} prev(x);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{comment}{// traverse layer units}}
+\DoxyCodeLine{224         \textcolor{keywordflow}{for} (uint64\_t i = 0; i < \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}{layer\_units}}.size() -\/ 1; ++i) \{}
+\DoxyCodeLine{225             \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} y = \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}{wt\_mtx}}[i].mult(prev);}
+\DoxyCodeLine{226             y = y + \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}{bias\_vectors}}[i];}
+\DoxyCodeLine{227             y = y.apply\_function(\mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_aeafb9b868fc47dc0612942889214732d}{sigmoid\_activ}});}
+\DoxyCodeLine{228             \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}{activations}}[i + 1] = y;}
+\DoxyCodeLine{229             prev = y;}
+\DoxyCodeLine{230         \}}
+\DoxyCodeLine{231         \textcolor{keywordflow}{return} prev;}
+\DoxyCodeLine{232     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::activations, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::bias\+\_\+vectors, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::layer\+\_\+units, mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::sigmoid\+\_\+activ(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::wt\+\_\+mtx.
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_aeafb9b868fc47dc0612942889214732d}\label{classmtpk_1_1ml_1_1SecondaryMLP_aeafb9b868fc47dc0612942889214732d}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!sigmoid\_activ@{sigmoid\_activ}}
+\index{sigmoid\_activ@{sigmoid\_activ}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sigmoid\_activ()}{sigmoid\_activ()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::sigmoid\+\_\+activ (\begin{DoxyParamCaption}\item[{long double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sigmoid activation function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & \+: (float) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 165 of file mlp\+\_\+net.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                                                     \{}
+\DoxyCodeLine{166         \textcolor{keywordflow}{return} 1.0f / (1 + exp(-\/x));}
+\DoxyCodeLine{167     \}}
+
+\end{DoxyCode}
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+forwards().
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_ad09addf22c814beeb60724a801c3ba93}\label{classmtpk_1_1ml_1_1SecondaryMLP_ad09addf22c814beeb60724a801c3ba93}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!sigmoid\_deriv@{sigmoid\_deriv}}
+\index{sigmoid\_deriv@{sigmoid\_deriv}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sigmoid\_deriv()}{sigmoid\_deriv()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::sigmoid\+\_\+deriv (\begin{DoxyParamCaption}\item[{long double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sigmoid Derivative for backwards propogation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & \+: (float) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file mlp\+\_\+net.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{174                                                     \{}
+\DoxyCodeLine{175         \textcolor{keywordflow}{return} (x * (1 -\/ x));}
+\DoxyCodeLine{176     \}}
+
+\end{DoxyCode}
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+backwards().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}\label{classmtpk_1_1ml_1_1SecondaryMLP_a31e51e8a50484fe3c2ae9c6c046f04b5}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!activations@{activations}}
+\index{activations@{activations}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{activations}{activations}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$T$>$ $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::activations}
+
+
+
+Definition at line 181 of file mlp\+\_\+net.\+hpp.
+
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+backwards(), mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+forwards(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::\+Secondary\+MLP().
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}\label{classmtpk_1_1ml_1_1SecondaryMLP_ae9f0cc6602b4e2aed997aecd7b34b254}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!bias\_vectors@{bias\_vectors}}
+\index{bias\_vectors@{bias\_vectors}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{bias\_vectors}{bias\_vectors}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$T$>$ $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::bias\+\_\+vectors}
+
+
+
+Definition at line 179 of file mlp\+\_\+net.\+hpp.
+
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+backwards(), mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+forwards(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::\+Secondary\+MLP().
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}\label{classmtpk_1_1ml_1_1SecondaryMLP_adcfe96d79227b0139b424bba5e8bd910}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!layer\_units@{layer\_units}}
+\index{layer\_units@{layer\_units}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{layer\_units}{layer\_units}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$size\+\_\+t$>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::layer\+\_\+units}
+
+
+
+Definition at line 178 of file mlp\+\_\+net.\+hpp.
+
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+backwards(), mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+forwards(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::\+Secondary\+MLP().
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}\label{classmtpk_1_1ml_1_1SecondaryMLP_a50f60db18b3b28cfd61e2a981da66640}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!lr@{lr}}
+\index{lr@{lr}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{lr}{lr}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+long double \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::lr}
+
+
+
+Definition at line 183 of file mlp\+\_\+net.\+hpp.
+
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+backwards().
+
+\mbox{\Hypertarget{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}\label{classmtpk_1_1ml_1_1SecondaryMLP_a7b8a07eaf26f528995f42190539c7855}} 
+\index{mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}!wt\_mtx@{wt\_mtx}}
+\index{wt\_mtx@{wt\_mtx}!mtpk::ml::SecondaryMLP$<$ T $>$@{mtpk::ml::SecondaryMLP$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{wt\_mtx}{wt\_mtx}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$T$>$ $>$ \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{mtpk\+::ml\+::\+Secondary\+MLP}}$<$ T $>$\+::wt\+\_\+mtx}
+
+
+
+Definition at line 180 of file mlp\+\_\+net.\+hpp.
+
+
+
+Referenced by mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+backwards(), mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::prop\+\_\+forwards(), and mtpk\+::ml\+::\+Secondary\+MLP$<$ T $>$\+::\+Secondary\+MLP().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{mlp__net_8hpp}{mlp\+\_\+net.\+hpp}}\end{DoxyCompactItemize}

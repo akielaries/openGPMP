@@ -1,0 +1,160 @@
+\hypertarget{classmtpk_1_1BayesGauss}{}\doxysection{mtpk\+::Bayes\+Gauss Class Reference}
+\label{classmtpk_1_1BayesGauss}\index{mtpk::BayesGauss@{mtpk::BayesGauss}}
+
+
+{\ttfamily \#include $<$bayes\+\_\+clf.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1BayesGauss_abb00fe87abda7aa89e401d5849e46c64}{Bayes\+Gauss}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}{input\+Set}}, std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}{output\+Set}}, int \mbox{\hyperlink{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}{class\+\_\+num}})
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_a752f3408ac32b45747562c7397240ea4}{model\+Set\+Test}} (std\+::vector$<$ std\+::vector$<$ double $>$$>$ X)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1BayesGauss_a1e711202cc99b6d2a80304ccd3bece9e}{model\+Test}} (std\+::vector$<$ double $>$ x)
+\item 
+double \mbox{\hyperlink{classmtpk_1_1BayesGauss_adb01f32388d30d04d53a3c52264ae4c9}{score}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmtpk_1_1BayesGauss_ae602511f0bdd2843c8aa82cbcaad0923}{Evaluate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}{class\+\_\+num}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_a77ac4a17e7d87afcb9d7935c019ce5b8}{priors}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_a47be058f5d35162fe01614b5772c1117}{mu}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_afe6f19f2a97471192b9d28c8daa09fa3}{sigma}}
+\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}{input\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}{output\+Set}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classmtpk_1_1BayesGauss_a802983b575494abe9212796e72448046}{y\+\_\+hat}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classification technique that assumes that each parameter (also called features or predictors) has an independent capacity of predicting the output variable. 
+
+Definition at line 115 of file bayes\+\_\+clf.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_abb00fe87abda7aa89e401d5849e46c64}\label{classmtpk_1_1BayesGauss_abb00fe87abda7aa89e401d5849e46c64}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!BayesGauss@{BayesGauss}}
+\index{BayesGauss@{BayesGauss}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{BayesGauss()}{BayesGauss()}}
+{\footnotesize\ttfamily mtpk\+::\+Bayes\+Gauss\+::\+Bayes\+Gauss (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{input\+Set,  }\item[{std\+::vector$<$ double $>$}]{output\+Set,  }\item[{int}]{class\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_ae602511f0bdd2843c8aa82cbcaad0923}\label{classmtpk_1_1BayesGauss_ae602511f0bdd2843c8aa82cbcaad0923}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily void mtpk\+::\+Bayes\+Gauss\+::\+Evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a752f3408ac32b45747562c7397240ea4}\label{classmtpk_1_1BayesGauss_a752f3408ac32b45747562c7397240ea4}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!modelSetTest@{modelSetTest}}
+\index{modelSetTest@{modelSetTest}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{modelSetTest()}{modelSetTest()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Gauss\+::model\+Set\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ double $>$$>$}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a1e711202cc99b6d2a80304ccd3bece9e}\label{classmtpk_1_1BayesGauss_a1e711202cc99b6d2a80304ccd3bece9e}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!modelTest@{modelTest}}
+\index{modelTest@{modelTest}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{modelTest()}{modelTest()}}
+{\footnotesize\ttfamily double mtpk\+::\+Bayes\+Gauss\+::model\+Test (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_adb01f32388d30d04d53a3c52264ae4c9}\label{classmtpk_1_1BayesGauss_adb01f32388d30d04d53a3c52264ae4c9}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!score@{score}}
+\index{score@{score}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{score()}{score()}}
+{\footnotesize\ttfamily double mtpk\+::\+Bayes\+Gauss\+::score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}\label{classmtpk_1_1BayesGauss_a383186c4aa390058da44c47952dbb434}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!class\_num@{class\_num}}
+\index{class\_num@{class\_num}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{class\_num}{class\_num}}
+{\footnotesize\ttfamily int mtpk\+::\+Bayes\+Gauss\+::class\+\_\+num\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 128 of file bayes\+\_\+clf.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}\label{classmtpk_1_1BayesGauss_acdaedcaf391874ee6f3b3874fa1db4ea}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!inputSet@{inputSet}}
+\index{inputSet@{inputSet}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{inputSet}{inputSet}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$double$>$ $>$ mtpk\+::\+Bayes\+Gauss\+::input\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 134 of file bayes\+\_\+clf.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a47be058f5d35162fe01614b5772c1117}\label{classmtpk_1_1BayesGauss_a47be058f5d35162fe01614b5772c1117}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!mu@{mu}}
+\index{mu@{mu}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Gauss\+::mu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 131 of file bayes\+\_\+clf.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}\label{classmtpk_1_1BayesGauss_a89cbfd46b6664d83571b51f642a14405}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!outputSet@{outputSet}}
+\index{outputSet@{outputSet}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{outputSet}{outputSet}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Gauss\+::output\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 135 of file bayes\+\_\+clf.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a77ac4a17e7d87afcb9d7935c019ce5b8}\label{classmtpk_1_1BayesGauss_a77ac4a17e7d87afcb9d7935c019ce5b8}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!priors@{priors}}
+\index{priors@{priors}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{priors}{priors}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Gauss\+::priors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 130 of file bayes\+\_\+clf.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_afe6f19f2a97471192b9d28c8daa09fa3}\label{classmtpk_1_1BayesGauss_afe6f19f2a97471192b9d28c8daa09fa3}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!sigma@{sigma}}
+\index{sigma@{sigma}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{sigma}{sigma}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Gauss\+::sigma\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 132 of file bayes\+\_\+clf.\+hpp.
+
+\mbox{\Hypertarget{classmtpk_1_1BayesGauss_a802983b575494abe9212796e72448046}\label{classmtpk_1_1BayesGauss_a802983b575494abe9212796e72448046}} 
+\index{mtpk::BayesGauss@{mtpk::BayesGauss}!y\_hat@{y\_hat}}
+\index{y\_hat@{y\_hat}!mtpk::BayesGauss@{mtpk::BayesGauss}}
+\doxysubsubsection{\texorpdfstring{y\_hat}{y\_hat}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ mtpk\+::\+Bayes\+Gauss\+::y\+\_\+hat\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 137 of file bayes\+\_\+clf.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ml/\mbox{\hyperlink{bayes__clf_8hpp}{bayes\+\_\+clf.\+hpp}}\end{DoxyCompactItemize}

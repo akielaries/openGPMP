@@ -1,0 +1,991 @@
+\hypertarget{classmtpk_1_1Matrix}{}\doxysection{mtpk\+::Matrix$<$ Type $>$ Class Template Reference}
+\label{classmtpk_1_1Matrix}\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+
+
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} and Scalar operations.  
+
+
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix_a1a5232aa2253825dbc627a3862b42a67}{Matrix}} (size\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, size\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} Class constructor initializing empty vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix_ab6d80d1b09b2c482bdcb6e544243dae9}{Matrix}} ()
+\item 
+Type \& \mbox{\hyperlink{classmtpk_1_1Matrix_ae2b6c5e45c1bb272e708e07a1124d26b}{operator()}} (size\+\_\+t row, size\+\_\+t col)
+\begin{DoxyCompactList}\small\item\em Overload operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_aaf09c65a0c5214525caf887405a522fc}{mult}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} Multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a0403df5cbd8a0d67377c89adb2d53f10}{scalar\+\_\+mult}} (Type scalar)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a826b8daf54b5032da5aaaa3085687dce}{hadamard}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_aa62b01721821d8c55e3f23a210d8e817}{sqr\+\_\+err}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a695fff8b43b7aea5bcfaaed827cff600}{add}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a5f69f6466f892bd9e6f4680fc00387ee}{operator+}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a51c19c6e0a1ddc3c895c2b1f3cf83097}{scalar\+\_\+add}} (Type scalar)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_ae018657d5dee4e30284560326ca6eb78}{operator-\/}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_ac1c5e89b18de38e09deb85e19deb074f}{sub}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a9ef5c73d07b88d53517799bc6c2dc9d1}{operator-\/}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ unsigned short $>$ \mbox{\hyperlink{classmtpk_1_1Matrix_a280dec3aeb414085dba50e695a7cf33c}{operator==}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \&target)
+\item 
+bool \mbox{\hyperlink{classmtpk_1_1Matrix_ae379c776e20abfaa0edb975a3d6e25a5}{all}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a06e809ee9b3b763969c112b449c797ff}{transpose}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_adb65bb106d4e745d45959326c09ec48f}{T}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_abfaf7062d31707ddfdc09e2c980f7186}{sum}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a91afb24f516534ae4c0510a8e6855a47}{sum}} (size\+\_\+t dimension)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a9c9ea7276ea9bd095f69fc1a2d88e86a}{mean}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a18c41f261850f1b5a076aaa616c8fad1}{mean}} (size\+\_\+t dimension)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_a39ba97dc5227bc596725bdd45ccd7925}{concatenate}} (\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} target, size\+\_\+t dimension)
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_ab98cb19425fc23cfd2b2c6fa158cbe45}{diag}} ()
+\item 
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix_ac50233d491e4f5a443c2747f6081e028}{apply\+\_\+func}} (const std\+::function$<$ Type(const Type \&)$>$ \&function)
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Matrix_ad511f7eafd0530619e45c72da9480b56}{print\+\_\+shape}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Matrix_aebd09100745a823d9f0df5e58a2e65f6}{print\+\_\+mtx}} ()
+\item 
+void \mbox{\hyperlink{classmtpk_1_1Matrix_a12edb8fb7d2727e7d63fd7959993ce1b}{fill\+\_\+index}} (Type val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}
+\item 
+std\+::vector$<$ Type $>$ \mbox{\hyperlink{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}{data}}
+\item 
+std\+::tuple$<$ size\+\_\+t, size\+\_\+t $>$ \mbox{\hyperlink{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}{dim}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix_a35c5074961211248dfbe6bb8bb0f5b23}{num\+\_\+elements}} = \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} $\ast$ \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Type$>$\newline
+class mtpk\+::\+Matrix$<$ Type $>$}
+
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} and Scalar operations. 
+
+Definition at line 60 of file matrix.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a1a5232aa2253825dbc627a3862b42a67}\label{classmtpk_1_1Matrix_a1a5232aa2253825dbc627a3862b42a67}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{rows,  }\item[{size\+\_\+t}]{cols }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} Class constructor initializing empty vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rows} & \+: size of rows \\
+\hline
+\mbox{\texttt{ in}}  & {\em cols} & \+: size of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76                                      : \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}(\mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}), \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}), \mbox{\hyperlink{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}{data}}(\{\}) \{}
+\DoxyCodeLine{77         \textcolor{comment}{// initialize an empty vector for storage}}
+\DoxyCodeLine{78         \mbox{\hyperlink{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}{data}}.resize(\mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} * \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, Type());}
+\DoxyCodeLine{79         \mbox{\hyperlink{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}{dim}} = std::make\_tuple(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}});}
+\DoxyCodeLine{80     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ab6d80d1b09b2c482bdcb6e544243dae9}\label{classmtpk_1_1Matrix_ab6d80d1b09b2c482bdcb6e544243dae9}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 81 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81              : \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}(0), \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}(0), \mbox{\hyperlink{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}{data}}(\{\}) \{}
+\DoxyCodeLine{82         \mbox{\hyperlink{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}{dim}} = \{\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}\};}
+\DoxyCodeLine{83     \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a695fff8b43b7aea5bcfaaed827cff600}\label{classmtpk_1_1Matrix_a695fff8b43b7aea5bcfaaed827cff600}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!add@{add}}
+\index{add@{add}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 162 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162                                \{}
+\DoxyCodeLine{163         assert(\mbox{\hyperlink{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}{dim}} == target.dim);}
+\DoxyCodeLine{164         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, target.cols);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < res.rows; ++r) \{}
+\DoxyCodeLine{167             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < res.cols; ++c) \{}
+\DoxyCodeLine{168                 res(r, c) = (*this)(r, c) + target(r, c);}
+\DoxyCodeLine{169             \}}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{172     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, mtpk\+::\+Matrix$<$ Type $>$\+::dim, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::operator+(), and mtpk\+::\+Matrix$<$ Type $>$\+::sub().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ae379c776e20abfaa0edb975a3d6e25a5}\label{classmtpk_1_1Matrix_ae379c776e20abfaa0edb975a3d6e25a5}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!all@{all}}
+\index{all@{all}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{all()}{all()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+bool \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 232 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{232                \{}
+\DoxyCodeLine{233         int64\_t counter\{0\};}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235         \textcolor{keywordflow}{for} (int64\_t r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{236             \textcolor{keywordflow}{for} (int64\_t c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{237                 \textcolor{keywordflow}{if} ((*\textcolor{keyword}{this})(r, c))}
+\DoxyCodeLine{238                     counter++;}
+\DoxyCodeLine{239             \}}
+\DoxyCodeLine{240         \}}
+\DoxyCodeLine{241         \textcolor{keywordflow}{return} (counter == \mbox{\hyperlink{classmtpk_1_1Matrix_a35c5074961211248dfbe6bb8bb0f5b23}{num\_elements}});}
+\DoxyCodeLine{242     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, mtpk\+::\+Matrix$<$ Type $>$\+::num\+\_\+elements, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ac50233d491e4f5a443c2747f6081e028}\label{classmtpk_1_1Matrix_ac50233d491e4f5a443c2747f6081e028}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!apply\_func@{apply\_func}}
+\index{apply\_func@{apply\_func}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{apply\_func()}{apply\_func()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::apply\+\_\+func (\begin{DoxyParamCaption}\item[{const std\+::function$<$ Type(const Type \&)$>$ \&}]{function }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 365 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{365                                                                        \{}
+\DoxyCodeLine{366         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res((*\textcolor{keyword}{this}));}
+\DoxyCodeLine{367 }
+\DoxyCodeLine{368         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{369             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{370                 res(r, c) = \textcolor{keyword}{function}((*this)(r, c));}
+\DoxyCodeLine{371             \}}
+\DoxyCodeLine{372         \}}
+\DoxyCodeLine{373         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{374     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a39ba97dc5227bc596725bdd45ccd7925}\label{classmtpk_1_1Matrix_a39ba97dc5227bc596725bdd45ccd7925}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!concatenate@{concatenate}}
+\index{concatenate@{concatenate}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{concatenate()}{concatenate()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::concatenate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$}]{target,  }\item[{size\+\_\+t}]{dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 317 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{317                                                         \{}
+\DoxyCodeLine{318         (dimension == 0) ? assert(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} == target.rows)}
+\DoxyCodeLine{319                          : assert(\mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} == target.cols);}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321         \textcolor{keyword}{auto} res = (dimension == 0) ? \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}}\{\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} + target.rows, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}\}}
+\DoxyCodeLine{322                                     : \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}}\{\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} + target.cols\};}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324         \textcolor{comment}{// copy self}}
+\DoxyCodeLine{325         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{326             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{327                 res(r, c) = (*this)(r, c);}
+\DoxyCodeLine{328             \}}
+\DoxyCodeLine{329         \}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331         \textcolor{comment}{// copy target}}
+\DoxyCodeLine{332         \textcolor{keywordflow}{if} (dimension == 0) \{}
+\DoxyCodeLine{333             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < target.rows; ++r) \{}
+\DoxyCodeLine{334                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{335                     res(r + \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, c) = target(r, c);}
+\DoxyCodeLine{336                 \}}
+\DoxyCodeLine{337             \}}
+\DoxyCodeLine{338         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{339             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{340                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < target.cols; ++c) \{}
+\DoxyCodeLine{341                     res(r, c + \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}) = target(r, c);}
+\DoxyCodeLine{342                 \}}
+\DoxyCodeLine{343             \}}
+\DoxyCodeLine{344         \}}
+\DoxyCodeLine{345         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{346     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ab98cb19425fc23cfd2b2c6fa158cbe45}\label{classmtpk_1_1Matrix_ab98cb19425fc23cfd2b2c6fa158cbe45}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!diag@{diag}}
+\index{diag@{diag}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{diag()}{diag()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::diag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 348 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{348                   \{}
+\DoxyCodeLine{349         assert((\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} == 1 || \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} == 1) || (\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} == \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}));}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} == 1 || \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} == 1) \{}
+\DoxyCodeLine{352             \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res\{std::max(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}), std::max(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}})\};}
+\DoxyCodeLine{353             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++i)}
+\DoxyCodeLine{354                 res(i, i) = (*this)(i, 0);}
+\DoxyCodeLine{355             \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{356         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{357             assert(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} == \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}});}
+\DoxyCodeLine{358             \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res\{\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, 1\};}
+\DoxyCodeLine{359             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++i)}
+\DoxyCodeLine{360                 res(i, 0) = (*this)(i, i);}
+\DoxyCodeLine{361             \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{362         \}}
+\DoxyCodeLine{363     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a12edb8fb7d2727e7d63fd7959993ce1b}\label{classmtpk_1_1Matrix_a12edb8fb7d2727e7d63fd7959993ce1b}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!fill\_index@{fill\_index}}
+\index{fill\_index@{fill\_index}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{fill\_index()}{fill\_index()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::fill\+\_\+index (\begin{DoxyParamCaption}\item[{Type}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 391 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{391                               \{}
+\DoxyCodeLine{392         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{393             \textcolor{keywordflow}{for} (int64\_t c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{394                 (*this)(r, c) = val;}
+\DoxyCodeLine{395             \}}
+\DoxyCodeLine{396         \}}
+\DoxyCodeLine{397     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+
+
+Referenced by mtpk\+::mtx$<$ T $>$\+::ones(), and mtpk\+::mtx$<$ T $>$\+::zeros().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a826b8daf54b5032da5aaaa3085687dce}\label{classmtpk_1_1Matrix_a826b8daf54b5032da5aaaa3085687dce}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!hadamard@{hadamard}}
+\index{hadamard@{hadamard}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{hadamard()}{hadamard()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::hadamard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 136 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136                                     \{}
+\DoxyCodeLine{137         assert(\mbox{\hyperlink{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}{dim}} == target.dim);}
+\DoxyCodeLine{138         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res((*\textcolor{keyword}{this}));}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < res.rows; ++r) \{}
+\DoxyCodeLine{141             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < res.cols; ++c) \{}
+\DoxyCodeLine{142                 res(r, c) = target(r, c) * (*this)(r, c);}
+\DoxyCodeLine{143             \}}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{146     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, mtpk\+::\+Matrix$<$ Type $>$\+::dim, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::sqr\+\_\+err().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a9c9ea7276ea9bd095f69fc1a2d88e86a}\label{classmtpk_1_1Matrix_a9c9ea7276ea9bd095f69fc1a2d88e86a}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!mean@{mean}}
+\index{mean@{mean}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::mean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 301 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{301                   \{}
+\DoxyCodeLine{302         \textcolor{keyword}{auto} m = Type(\mbox{\hyperlink{classmtpk_1_1Matrix_a35c5074961211248dfbe6bb8bb0f5b23}{num\_elements}});}
+\DoxyCodeLine{303         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Matrix_abfaf7062d31707ddfdc09e2c980f7186}{sum}}().\mbox{\hyperlink{classmtpk_1_1Matrix_a0403df5cbd8a0d67377c89adb2d53f10}{scalar\_mult}}(1 / m);}
+\DoxyCodeLine{304     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::num\+\_\+elements, mtpk\+::\+Matrix$<$ Type $>$\+::scalar\+\_\+mult(), and mtpk\+::\+Matrix$<$ Type $>$\+::sum().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a18c41f261850f1b5a076aaa616c8fad1}\label{classmtpk_1_1Matrix_a18c41f261850f1b5a076aaa616c8fad1}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!mean@{mean}}
+\index{mean@{mean}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::mean (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 309 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{309                                   \{}
+\DoxyCodeLine{310         \textcolor{keyword}{auto} m = (dimension == 0) ? Type(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}) : Type(\mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}});}
+\DoxyCodeLine{311         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Matrix_abfaf7062d31707ddfdc09e2c980f7186}{sum}}().\mbox{\hyperlink{classmtpk_1_1Matrix_a0403df5cbd8a0d67377c89adb2d53f10}{scalar\_mult}}(1 / m);}
+\DoxyCodeLine{312     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, mtpk\+::\+Matrix$<$ Type $>$\+::rows, mtpk\+::\+Matrix$<$ Type $>$\+::scalar\+\_\+mult(), and mtpk\+::\+Matrix$<$ Type $>$\+::sum().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_aaf09c65a0c5214525caf887405a522fc}\label{classmtpk_1_1Matrix_aaf09c65a0c5214525caf887405a522fc}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!mult@{mult}}
+\index{mult@{mult}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{mult()}{mult()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} Multiplication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105                                 \{}
+\DoxyCodeLine{106         assert(\mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} == target.rows);}
+\DoxyCodeLine{107         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, target.cols);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; res.rows; ++r) \{}
+\DoxyCodeLine{110             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; res.cols; ++c) \{}
+\DoxyCodeLine{111                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} n = 0; n < target.rows; ++n) \{}
+\DoxyCodeLine{112                     res(r, c) += (*this)(r, n) * target(n, c);}
+\DoxyCodeLine{113                 \}}
+\DoxyCodeLine{114             \}}
+\DoxyCodeLine{115         \}}
+\DoxyCodeLine{116         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{117     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ae2b6c5e45c1bb272e708e07a1124d26b}\label{classmtpk_1_1Matrix_ae2b6c5e45c1bb272e708e07a1124d26b}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+Type\& \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::operator() (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{row,  }\item[{size\+\_\+t}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overload operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em row} & \+: size of rows \\
+\hline
+\mbox{\texttt{ in}}  & {\em col} & \+: size of columns \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 91 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{91                                              \{}
+\DoxyCodeLine{92         assert(0 <= row \&\& row < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}});}
+\DoxyCodeLine{93         assert(0 <= col \&\& col < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}});}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}{data}}[row * \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} + col];}
+\DoxyCodeLine{96     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, mtpk\+::\+Matrix$<$ Type $>$\+::data, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a5f69f6466f892bd9e6f4680fc00387ee}\label{classmtpk_1_1Matrix_a5f69f6466f892bd9e6f4680fc00387ee}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 173 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{173                                      \{}
+\DoxyCodeLine{174         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Matrix_a695fff8b43b7aea5bcfaaed827cff600}{add}}(target);}
+\DoxyCodeLine{175     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::add().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ae018657d5dee4e30284560326ca6eb78}\label{classmtpk_1_1Matrix_ae018657d5dee4e30284560326ca6eb78}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 191 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{191                        \{}
+\DoxyCodeLine{192         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}});}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{195             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{196                 res(r, c) = -\/(*this)(r, c);}
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198         \}}
+\DoxyCodeLine{199         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{200     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a9ef5c73d07b88d53517799bc6c2dc9d1}\label{classmtpk_1_1Matrix_a9ef5c73d07b88d53517799bc6c2dc9d1}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 209 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{209                                      \{}
+\DoxyCodeLine{210         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Matrix_ac1c5e89b18de38e09deb85e19deb074f}{sub}}(target);}
+\DoxyCodeLine{211     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::sub().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a280dec3aeb414085dba50e695a7cf33c}\label{classmtpk_1_1Matrix_a280dec3aeb414085dba50e695a7cf33c}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$unsigned short$>$ \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 213 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{213                                                       \{}
+\DoxyCodeLine{214         assert(\mbox{\hyperlink{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}{dim}} == target.dim);}
+\DoxyCodeLine{215         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix<unsigned short>}} res(\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}});}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         \textcolor{keywordflow}{for} (int64\_t r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{218             \textcolor{keywordflow}{for} (int64\_t c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{219                 \textcolor{keywordflow}{if} ((*\textcolor{keyword}{this})(r, c) -\/ target(r, c) == 0.)}
+\DoxyCodeLine{220                     res(r, c) = 1;}
+\DoxyCodeLine{221                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{222                     res(r, c) = 0;}
+\DoxyCodeLine{223             \}}
+\DoxyCodeLine{224         \}}
+\DoxyCodeLine{225         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{226     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, mtpk\+::\+Matrix$<$ Type $>$\+::dim, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_aebd09100745a823d9f0df5e58a2e65f6}\label{classmtpk_1_1Matrix_aebd09100745a823d9f0df5e58a2e65f6}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!print\_mtx@{print\_mtx}}
+\index{print\_mtx@{print\_mtx}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{print\_mtx()}{print\_mtx()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::print\+\_\+mtx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 381 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{381                      \{}
+\DoxyCodeLine{382         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{383             \textcolor{keywordflow}{for} (int64\_t c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{384                 std::cout << (*this)(r, c) << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{385             \}}
+\DoxyCodeLine{386             std::cout << std::endl;}
+\DoxyCodeLine{387         \}}
+\DoxyCodeLine{388         std::cout << std::endl;}
+\DoxyCodeLine{389     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ad511f7eafd0530619e45c72da9480b56}\label{classmtpk_1_1Matrix_ad511f7eafd0530619e45c72da9480b56}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!print\_shape@{print\_shape}}
+\index{print\_shape@{print\_shape}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{print\_shape()}{print\_shape()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+void \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::print\+\_\+shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 376 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{376                        \{}
+\DoxyCodeLine{377         std::cout << \textcolor{stringliteral}{"{}Matrix Size(["{}} << \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} << \textcolor{stringliteral}{"{}, "{}} << \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}} << \textcolor{stringliteral}{"{}])"{}}}
+\DoxyCodeLine{378                   << std::endl;}
+\DoxyCodeLine{379     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a51c19c6e0a1ddc3c895c2b1f3cf83097}\label{classmtpk_1_1Matrix_a51c19c6e0a1ddc3c895c2b1f3cf83097}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!scalar\_add@{scalar\_add}}
+\index{scalar\_add@{scalar\_add}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{scalar\_add()}{scalar\_add()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::scalar\+\_\+add (\begin{DoxyParamCaption}\item[{Type}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 180 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{180                                    \{}
+\DoxyCodeLine{181         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res((*\textcolor{keyword}{this}));}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{184             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{185                 res(r, c) = (*this)(r, c) + scalar;}
+\DoxyCodeLine{186             \}}
+\DoxyCodeLine{187         \}}
+\DoxyCodeLine{188         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{189     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a0403df5cbd8a0d67377c89adb2d53f10}\label{classmtpk_1_1Matrix_a0403df5cbd8a0d67377c89adb2d53f10}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!scalar\_mult@{scalar\_mult}}
+\index{scalar\_mult@{scalar\_mult}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{scalar\_mult()}{scalar\_mult()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::scalar\+\_\+mult (\begin{DoxyParamCaption}\item[{Type}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 122 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                                     \{}
+\DoxyCodeLine{123         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res((*\textcolor{keyword}{this}));}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < res.rows; ++r) \{}
+\DoxyCodeLine{126             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < res.cols; ++c) \{}
+\DoxyCodeLine{127                 res(r, c) = scalar * (*this)(r, c);}
+\DoxyCodeLine{128             \}}
+\DoxyCodeLine{129         \}}
+\DoxyCodeLine{130         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{131     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::mean().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_aa62b01721821d8c55e3f23a210d8e817}\label{classmtpk_1_1Matrix_aa62b01721821d8c55e3f23a210d8e817}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!sqr\_err@{sqr\_err}}
+\index{sqr\_err@{sqr\_err}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{sqr\_err()}{sqr\_err()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::sqr\+\_\+err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 152 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152                      \{}
+\DoxyCodeLine{153         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res((*\textcolor{keyword}{this}));}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         res = \mbox{\hyperlink{classmtpk_1_1Matrix_a826b8daf54b5032da5aaaa3085687dce}{hadamard}}(res);}
+\DoxyCodeLine{156         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{157     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::hadamard().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ac1c5e89b18de38e09deb85e19deb074f}\label{classmtpk_1_1Matrix_ac1c5e89b18de38e09deb85e19deb074f}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!sub@{sub}}
+\index{sub@{sub}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}}$<$ Type $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 205 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{205                                \{}
+\DoxyCodeLine{206         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} target\_neg = -\/target;}
+\DoxyCodeLine{207         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Matrix_a695fff8b43b7aea5bcfaaed827cff600}{add}}(target\_neg);}
+\DoxyCodeLine{208     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::add().
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::operator-\/().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_abfaf7062d31707ddfdc09e2c980f7186}\label{classmtpk_1_1Matrix_abfaf7062d31707ddfdc09e2c980f7186}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!sum@{sum}}
+\index{sum@{sum}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::sum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 266 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{266                  \{}
+\DoxyCodeLine{267         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} res\{1, 1\};}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{270             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{271                 res(0, 0) += (*this)(r, c);}
+\DoxyCodeLine{272             \}}
+\DoxyCodeLine{273         \}}
+\DoxyCodeLine{274         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{275     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::mean().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a91afb24f516534ae4c0510a8e6855a47}\label{classmtpk_1_1Matrix_a91afb24f516534ae4c0510a8e6855a47}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!sum@{sum}}
+\index{sum@{sum}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::sum (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 280 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{280                                  \{}
+\DoxyCodeLine{281         assert(0 <= dimension \&\& dimension < 2);}
+\DoxyCodeLine{282         \textcolor{keyword}{auto} res = (dimension = 0) ? \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}}\{1, \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}\} : \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}}\{\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}, 1\};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284         \textcolor{keywordflow}{if} (dimension == 0) \{}
+\DoxyCodeLine{285             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{286                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{287                     res(0, c) += (*this)(r, c);}
+\DoxyCodeLine{288                 \}}
+\DoxyCodeLine{289             \}}
+\DoxyCodeLine{290         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{291             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}; ++r) \{}
+\DoxyCodeLine{292                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}; ++c) \{}
+\DoxyCodeLine{293                     res(r, 0) += (*this)(r, c);}
+\DoxyCodeLine{294                 \}}
+\DoxyCodeLine{295             \}}
+\DoxyCodeLine{296         \}}
+\DoxyCodeLine{297         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{298     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_adb65bb106d4e745d45959326c09ec48f}\label{classmtpk_1_1Matrix_adb65bb106d4e745d45959326c09ec48f}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!T@{T}}
+\index{T@{T}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{T()}{T()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 259 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{259                \{}
+\DoxyCodeLine{260         \textcolor{keywordflow}{return} (*this).transpose();}
+\DoxyCodeLine{261     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::transpose().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a06e809ee9b3b763969c112b449c797ff}\label{classmtpk_1_1Matrix_a06e809ee9b3b763969c112b449c797ff}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{classmtpk_1_1Matrix}{Matrix}} \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 247 of file matrix.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                        \{}
+\DoxyCodeLine{248         \textcolor{keywordtype}{size\_t} new\_rows\{\mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}\}, new\_cols\{\mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}}\};}
+\DoxyCodeLine{249         \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}} transposed(new\_rows, new\_cols);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} r = 0; r < new\_rows; ++r) \{}
+\DoxyCodeLine{252             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} c = 0; c < new\_cols; ++c) \{}
+\DoxyCodeLine{253                 transposed(r, c) = (*this)(c, r);}
+\DoxyCodeLine{254             \}}
+\DoxyCodeLine{255         \}}
+\DoxyCodeLine{256         \textcolor{keywordflow}{return} transposed;}
+\DoxyCodeLine{257     \}}
+
+\end{DoxyCode}
+
+
+References mtpk\+::\+Matrix$<$ Type $>$\+::cols, and mtpk\+::\+Matrix$<$ Type $>$\+::rows.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::\+T().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}\label{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!cols@{cols}}
+\index{cols@{cols}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{cols}{cols}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+size\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::cols}
+
+
+
+Definition at line 62 of file matrix.\+hpp.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::add(), mtpk\+::\+Matrix$<$ Type $>$\+::all(), mtpk\+::\+Matrix$<$ Type $>$\+::apply\+\_\+func(), mtpk\+::\+Matrix$<$ Type $>$\+::concatenate(), mtpk\+::\+Matrix$<$ Type $>$\+::diag(), mtpk\+::\+Matrix$<$ Type $>$\+::fill\+\_\+index(), mtpk\+::\+Matrix$<$ Type $>$\+::hadamard(), mtpk\+::\+Matrix$<$ Type $>$\+::mean(), mtpk\+::\+Matrix$<$ Type $>$\+::mult(), mtpk\+::\+Matrix$<$ Type $>$\+::operator()(), mtpk\+::\+Matrix$<$ Type $>$\+::operator-\/(), mtpk\+::\+Matrix$<$ Type $>$\+::operator==(), mtpk\+::\+Matrix$<$ Type $>$\+::print\+\_\+mtx(), mtpk\+::\+Matrix$<$ Type $>$\+::print\+\_\+shape(), mtpk\+::\+Matrix$<$ Type $>$\+::scalar\+\_\+add(), mtpk\+::\+Matrix$<$ Type $>$\+::scalar\+\_\+mult(), mtpk\+::\+Matrix$<$ Type $>$\+::sum(), and mtpk\+::\+Matrix$<$ Type $>$\+::transpose().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}\label{classmtpk_1_1Matrix_a970d6c32c7d7f99bf671f1ed40d8c466}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!data@{data}}
+\index{data@{data}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+std\+::vector$<$Type$>$ \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::data}
+
+
+
+Definition at line 65 of file matrix.\+hpp.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::operator()().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}\label{classmtpk_1_1Matrix_a4e7c2bad947c17d14cb4b442fc5a3d2e}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!dim@{dim}}
+\index{dim@{dim}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+std\+::tuple$<$size\+\_\+t, size\+\_\+t$>$ \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::dim}
+
+
+
+Definition at line 66 of file matrix.\+hpp.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::add(), mtpk\+::\+Matrix$<$ Type $>$\+::hadamard(), and mtpk\+::\+Matrix$<$ Type $>$\+::operator==().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a35c5074961211248dfbe6bb8bb0f5b23}\label{classmtpk_1_1Matrix_a35c5074961211248dfbe6bb8bb0f5b23}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!num\_elements@{num\_elements}}
+\index{num\_elements@{num\_elements}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{num\_elements}{num\_elements}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::num\+\_\+elements = \mbox{\hyperlink{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}{rows}} $\ast$ \mbox{\hyperlink{classmtpk_1_1Matrix_ae3be5dd5bf62c808af6e0a7f24b08875}{cols}}}
+
+
+
+Definition at line 68 of file matrix.\+hpp.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::all(), and mtpk\+::\+Matrix$<$ Type $>$\+::mean().
+
+\mbox{\Hypertarget{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}\label{classmtpk_1_1Matrix_a5641a89156e8578f7b315bc21bcc230b}} 
+\index{mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}!rows@{rows}}
+\index{rows@{rows}!mtpk::Matrix$<$ Type $>$@{mtpk::Matrix$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+size\+\_\+t \mbox{\hyperlink{classmtpk_1_1Matrix}{mtpk\+::\+Matrix}}$<$ Type $>$\+::rows}
+
+
+
+Definition at line 63 of file matrix.\+hpp.
+
+
+
+Referenced by mtpk\+::\+Matrix$<$ Type $>$\+::add(), mtpk\+::\+Matrix$<$ Type $>$\+::all(), mtpk\+::\+Matrix$<$ Type $>$\+::apply\+\_\+func(), mtpk\+::\+Matrix$<$ Type $>$\+::concatenate(), mtpk\+::\+Matrix$<$ Type $>$\+::diag(), mtpk\+::\+Matrix$<$ Type $>$\+::fill\+\_\+index(), mtpk\+::\+Matrix$<$ Type $>$\+::hadamard(), mtpk\+::\+Matrix$<$ Type $>$\+::mean(), mtpk\+::\+Matrix$<$ Type $>$\+::mult(), mtpk\+::\+Matrix$<$ Type $>$\+::operator()(), mtpk\+::\+Matrix$<$ Type $>$\+::operator-\/(), mtpk\+::\+Matrix$<$ Type $>$\+::operator==(), mtpk\+::\+Matrix$<$ Type $>$\+::print\+\_\+mtx(), mtpk\+::\+Matrix$<$ Type $>$\+::print\+\_\+shape(), mtpk\+::\+Matrix$<$ Type $>$\+::scalar\+\_\+add(), mtpk\+::\+Matrix$<$ Type $>$\+::scalar\+\_\+mult(), mtpk\+::\+Matrix$<$ Type $>$\+::sum(), and mtpk\+::\+Matrix$<$ Type $>$\+::transpose().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/linalg/\mbox{\hyperlink{matrix_8hpp}{matrix.\+hpp}}\end{DoxyCompactItemize}
