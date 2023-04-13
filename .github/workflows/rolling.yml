@@ -7,30 +7,38 @@ on:
     branches:
       - rolling
 
+env:
+  # replace "github_username" with your GitHub username
+  # replace "github.com/username/repo.git" with your GitHub repo path
+  # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
+  MY_REPO: https://akielaries:${{secrets.GITHUB_TOKEN}}@github.com/akielaries/openMTPK.git
+
+  # replace "long-lived_branch_name" with your branch name
+  MY_BRANCH: main
+
+  # replace it with the path to master repo
+  MASTER_REPO: https://github.com/akielaries/openMTPK.git
+
+  # replace "master" with your master branch name
+  MASTER_BRANCH: rolling
 
 jobs:
-  nightly-merge:
-
+  merge:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
+    - name: checkout
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        token: ${{ secrets.MTPK_BOT_ACCT }}
-
+        token: ${{ secrets.MTPK_BOT_USER }}
 
     - name: Merge rolling -> main
-      uses: robotology/gh-action-nightly-merge@v1.4.0
-      with:
-        stable_branch: 'rolling'
-        development_branch: 'main'
-        push_token: 'BOT_TOKEN' 
-        user_name: mtpk-bot
-        user_email: akiel.aries@gmail.com
-        allow_ff: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BOT_TOKEN: ${{ secrets.MTPK_BOT_ACCT }}
+      run: |
+        git config --global user.email "akiel.aries@gmail.com"
+        git config --global user.name "mtpk-bot"
+        git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
+        cd tmp
+        git config pull.rebase false
+        git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
+        git push
 
