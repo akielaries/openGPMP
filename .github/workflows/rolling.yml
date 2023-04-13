@@ -20,7 +20,7 @@ jobs:
         run: |
           git config user.name mtpk-bot
           git config user.email akiel.aries@gmail.com
-          git merge --no-ff origin/rolling -m "Merge rolling branch into main by mtpk-bot"
+          git merge --no-ff origin rolling -m "Merge rolling branch into main by mtpk-bot"
       - name: Push changes to main branch
         uses: ad-m/github-push-action@master
         with:
