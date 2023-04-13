@@ -39,22 +39,22 @@ int \mbox{\hyperlink{nearest__neighbors_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{
 
 
 
-Definition at line 138 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{138                                             \{}
-\DoxyCodeLine{139     \textcolor{keywordflow}{return} lhs.\mbox{\hyperlink{classCompany_aa35fa24964b0a5686b3c61126f46b38a}{distance}} < rhs.\mbox{\hyperlink{classCompany_aa35fa24964b0a5686b3c61126f46b38a}{distance}};}
-\DoxyCodeLine{140 \}}
+\DoxyCodeLine{00138                                             \{}
+\DoxyCodeLine{00139     \textcolor{keywordflow}{return} lhs.\mbox{\hyperlink{classCompany_aa35fa24964b0a5686b3c61126f46b38a}{distance}} < rhs.\mbox{\hyperlink{classCompany_aa35fa24964b0a5686b3c61126f46b38a}{distance}};}
+\DoxyCodeLine{00140 \}}
 
 \end{DoxyCode}
 
 
-References Company\+::distance.
+References \mbox{\hyperlink{classCompany_aa35fa24964b0a5686b3c61126f46b38a}{Company\+::distance}}.
 
 
 
-Referenced by KNN().
+Referenced by \mbox{\hyperlink{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}{KNN()}}.
 
 \mbox{\Hypertarget{nearest__neighbors_8cpp_aea167cf8a07bdeab4cc68fae7a02806e}\label{nearest__neighbors_8cpp_aea167cf8a07bdeab4cc68fae7a02806e}} 
 \index{nearest\_neighbors.cpp@{nearest\_neighbors.cpp}!euclideanDistance@{euclideanDistance}}
@@ -64,23 +64,23 @@ Referenced by KNN().
 
 
 
-Definition at line 142 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{142                                                            \{}
-\DoxyCodeLine{143     \textcolor{keywordflow}{return} sqrt(pow((lhs.\mbox{\hyperlink{classCompany_a66da188152d90e0788a0e1666589ce31}{turnover}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover), 2) +}
-\DoxyCodeLine{144                 pow((lhs.\mbox{\hyperlink{classCompany_a41ba0338049f56dbd4a4b645834267d0}{characteristics}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics), 2));}
-\DoxyCodeLine{145 \}}
+\DoxyCodeLine{00142                                                            \{}
+\DoxyCodeLine{00143     \textcolor{keywordflow}{return} sqrt(pow((lhs.\mbox{\hyperlink{classCompany_a66da188152d90e0788a0e1666589ce31}{turnover}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover), 2) +}
+\DoxyCodeLine{00144                 pow((lhs.\mbox{\hyperlink{classCompany_a41ba0338049f56dbd4a4b645834267d0}{characteristics}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics), 2));}
+\DoxyCodeLine{00145 \}}
 
 \end{DoxyCode}
 
 
-References Company\+::characteristics, test(), and Company\+::turnover.
+References \mbox{\hyperlink{classCompany_a41ba0338049f56dbd4a4b645834267d0}{Company\+::characteristics}}, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}, and \mbox{\hyperlink{classCompany_a66da188152d90e0788a0e1666589ce31}{Company\+::turnover}}.
 
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{nearest__neighbors_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}.
 
 \mbox{\Hypertarget{nearest__neighbors_8cpp_a91599ec4f74a72f07af0d53665025e52}\label{nearest__neighbors_8cpp_a91599ec4f74a72f07af0d53665025e52}} 
 \index{nearest\_neighbors.cpp@{nearest\_neighbors.cpp}!fillDistances@{fillDistances}}
@@ -90,24 +90,24 @@ Referenced by main().
 
 
 
-Definition at line 152 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00152}{152}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{153                                                                      \{}
-\DoxyCodeLine{154     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < data.size(); ++i) \{}
-\DoxyCodeLine{155         data[i].distance = distanceFunction(data[i], \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}});}
-\DoxyCodeLine{156     \}}
-\DoxyCodeLine{157 \}}
+\DoxyCodeLine{00153                                                                      \{}
+\DoxyCodeLine{00154     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < data.size(); ++i) \{}
+\DoxyCodeLine{00155         data[i].distance = distanceFunction(data[i], \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}});}
+\DoxyCodeLine{00156     \}}
+\DoxyCodeLine{00157 \}}
 
 \end{DoxyCode}
 
 
-References test().
+References \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
 
 
 
-Referenced by KNN().
+Referenced by \mbox{\hyperlink{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}{KNN()}}.
 
 \mbox{\Hypertarget{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}\label{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}} 
 \index{nearest\_neighbors.cpp@{nearest\_neighbors.cpp}!KNN@{KNN}}
@@ -117,47 +117,47 @@ Referenced by KNN().
 
 
 
-Definition at line 159 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{160                                                            \{}
-\DoxyCodeLine{161     \textcolor{comment}{// filling the distances between all points and test}}
-\DoxyCodeLine{162     \mbox{\hyperlink{nearest__neighbors_8cpp_a91599ec4f74a72f07af0d53665025e52}{fillDistances}}(data, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, distanceFunction);}
-\DoxyCodeLine{163 }
-\DoxyCodeLine{164     \textcolor{comment}{// sorting so that we can get the k nearest}}
-\DoxyCodeLine{165     sort(data.begin(), data.end(), \mbox{\hyperlink{nearest__neighbors_8cpp_ae07612d249d520ffdc46849324a31fb9}{comparison}});}
-\DoxyCodeLine{166 }
-\DoxyCodeLine{167     int64\_t countSuccesful = 0;}
-\DoxyCodeLine{168     int64\_t countUnsuccesful = 0;}
-\DoxyCodeLine{169     \textcolor{keywordflow}{for} (int64\_t i = 0; i < k; ++i) \{}
-\DoxyCodeLine{170         \textcolor{keywordflow}{if} (data[i].success) \{}
-\DoxyCodeLine{171             ++countSuccesful;}
-\DoxyCodeLine{172         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{173             ++countUnsuccesful;}
-\DoxyCodeLine{174         \}}
-\DoxyCodeLine{175     \}}
-\DoxyCodeLine{176     \textcolor{comment}{/*}}
-\DoxyCodeLine{177 \textcolor{comment}{     * Based on the count of succesful and unsuccessful examples}}
-\DoxyCodeLine{178 \textcolor{comment}{     * within those k, we are deciding whether the test example is}}
-\DoxyCodeLine{179 \textcolor{comment}{     * successful or not.}}
-\DoxyCodeLine{180 \textcolor{comment}{     */}}
-\DoxyCodeLine{181     \textcolor{keywordflow}{if} (countSuccesful == countUnsuccesful) \{}
-\DoxyCodeLine{182         \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = data[0].success;}
-\DoxyCodeLine{183     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{184         \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = countSuccesful > countUnsuccesful ? true : \textcolor{keyword}{false};}
-\DoxyCodeLine{185     \}}
-\DoxyCodeLine{186     \textcolor{keywordflow}{return} \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success;}
-\DoxyCodeLine{187 \}}
+\DoxyCodeLine{00160                                                            \{}
+\DoxyCodeLine{00161     \textcolor{comment}{// filling the distances between all points and test}}
+\DoxyCodeLine{00162     \mbox{\hyperlink{nearest__neighbors_8cpp_a91599ec4f74a72f07af0d53665025e52}{fillDistances}}(data, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, distanceFunction);}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     \textcolor{comment}{// sorting so that we can get the k nearest}}
+\DoxyCodeLine{00165     sort(data.begin(), data.end(), \mbox{\hyperlink{nearest__neighbors_8cpp_ae07612d249d520ffdc46849324a31fb9}{comparison}});}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167     int64\_t countSuccesful = 0;}
+\DoxyCodeLine{00168     int64\_t countUnsuccesful = 0;}
+\DoxyCodeLine{00169     \textcolor{keywordflow}{for} (int64\_t i = 0; i < k; ++i) \{}
+\DoxyCodeLine{00170         \textcolor{keywordflow}{if} (data[i].success) \{}
+\DoxyCodeLine{00171             ++countSuccesful;}
+\DoxyCodeLine{00172         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00173             ++countUnsuccesful;}
+\DoxyCodeLine{00174         \}}
+\DoxyCodeLine{00175     \}}
+\DoxyCodeLine{00176     \textcolor{comment}{/*}}
+\DoxyCodeLine{00177 \textcolor{comment}{     * Based on the count of succesful and unsuccessful examples}}
+\DoxyCodeLine{00178 \textcolor{comment}{     * within those k, we are deciding whether the test example is}}
+\DoxyCodeLine{00179 \textcolor{comment}{     * successful or not.}}
+\DoxyCodeLine{00180 \textcolor{comment}{     */}}
+\DoxyCodeLine{00181     \textcolor{keywordflow}{if} (countSuccesful == countUnsuccesful) \{}
+\DoxyCodeLine{00182         \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = data[0].success;}
+\DoxyCodeLine{00183     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00184         \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success = countSuccesful > countUnsuccesful ? true : \textcolor{keyword}{false};}
+\DoxyCodeLine{00185     \}}
+\DoxyCodeLine{00186     \textcolor{keywordflow}{return} \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.success;}
+\DoxyCodeLine{00187 \}}
 
 \end{DoxyCode}
 
 
-References comparison(), fill\+Distances(), and test().
+References \mbox{\hyperlink{nearest__neighbors_8cpp_ae07612d249d520ffdc46849324a31fb9}{comparison()}}, \mbox{\hyperlink{nearest__neighbors_8cpp_a91599ec4f74a72f07af0d53665025e52}{fill\+Distances()}}, and \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
 
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{nearest__neighbors_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}.
 
 \mbox{\Hypertarget{nearest__neighbors_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{nearest__neighbors_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
 \index{nearest\_neighbors.cpp@{nearest\_neighbors.cpp}!main@{main}}
@@ -167,40 +167,40 @@ Referenced by main().
 
 
 
-Definition at line 189 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{189            \{}
-\DoxyCodeLine{190     \textcolor{keyword}{const} \textcolor{keywordtype}{string} path = \textcolor{stringliteral}{"{}../data/zip.test.gz"{}};}
-\DoxyCodeLine{191     \mbox{\hyperlink{classCSVReader}{CSVReader}} reader(path);}
-\DoxyCodeLine{192     vector<vector<string>> rawData = reader.getData();}
-\DoxyCodeLine{193     vector<Company> data;}
-\DoxyCodeLine{194     \textcolor{keywordflow}{for} (vector<string> line : rawData) \{}
-\DoxyCodeLine{195         \mbox{\hyperlink{classCompany}{Company}} comp(stoi(line[0]), line[1],}
-\DoxyCodeLine{196                      line[2] == \textcolor{stringliteral}{"{}1"{}} ? \textcolor{keyword}{true} : \textcolor{keyword}{false});}
-\DoxyCodeLine{197         data.push\_back(comp);}
-\DoxyCodeLine{198     \}}
-\DoxyCodeLine{199 }
-\DoxyCodeLine{200     \textcolor{comment}{/* Test examples}}
-\DoxyCodeLine{201 \textcolor{comment}{     * 1256 Weak -\/ should return Successful}}
-\DoxyCodeLine{202 \textcolor{comment}{     * 725 Weak -\/ should return Unsuccessful}}
-\DoxyCodeLine{203 \textcolor{comment}{     * 1471 Average -\/ should return Successful}}
-\DoxyCodeLine{204 \textcolor{comment}{     * 703 Very Strong -\/ should return Unsuccessful}}
-\DoxyCodeLine{205 \textcolor{comment}{     * 1301 Strong -\/ should return Successful}}
-\DoxyCodeLine{206 \textcolor{comment}{     */}}
-\DoxyCodeLine{207     \mbox{\hyperlink{classCompany}{Company}} \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}(703, \textcolor{stringliteral}{"{}Very Strong"{}}, \textcolor{keyword}{true});}
-\DoxyCodeLine{208 }
-\DoxyCodeLine{209     \textcolor{keywordtype}{string} answer = \mbox{\hyperlink{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}{KNN}}(data, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, 12, \mbox{\hyperlink{nearest__neighbors_8cpp_aea167cf8a07bdeab4cc68fae7a02806e}{euclideanDistance}})}
-\DoxyCodeLine{210                         ? \textcolor{stringliteral}{"{}Successful"{}}}
-\DoxyCodeLine{211                         : \textcolor{stringliteral}{"{}Unsuccessful"{}};}
-\DoxyCodeLine{212     cout << answer;}
-\DoxyCodeLine{213 \}}
+\DoxyCodeLine{00189            \{}
+\DoxyCodeLine{00190     \textcolor{keyword}{const} \textcolor{keywordtype}{string} path = \textcolor{stringliteral}{"{}../data/zip.test.gz"{}};}
+\DoxyCodeLine{00191     \mbox{\hyperlink{classCSVReader}{CSVReader}} reader(path);}
+\DoxyCodeLine{00192     vector<vector<string>> rawData = reader.getData();}
+\DoxyCodeLine{00193     vector<Company> data;}
+\DoxyCodeLine{00194     \textcolor{keywordflow}{for} (vector<string> line : rawData) \{}
+\DoxyCodeLine{00195         \mbox{\hyperlink{classCompany}{Company}} comp(stoi(line[0]), line[1],}
+\DoxyCodeLine{00196                      line[2] == \textcolor{stringliteral}{"{}1"{}} ? \textcolor{keyword}{true} : \textcolor{keyword}{false});}
+\DoxyCodeLine{00197         data.push\_back(comp);}
+\DoxyCodeLine{00198     \}}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00200     \textcolor{comment}{/* Test examples}}
+\DoxyCodeLine{00201 \textcolor{comment}{     * 1256 Weak -\/ should return Successful}}
+\DoxyCodeLine{00202 \textcolor{comment}{     * 725 Weak -\/ should return Unsuccessful}}
+\DoxyCodeLine{00203 \textcolor{comment}{     * 1471 Average -\/ should return Successful}}
+\DoxyCodeLine{00204 \textcolor{comment}{     * 703 Very Strong -\/ should return Unsuccessful}}
+\DoxyCodeLine{00205 \textcolor{comment}{     * 1301 Strong -\/ should return Successful}}
+\DoxyCodeLine{00206 \textcolor{comment}{     */}}
+\DoxyCodeLine{00207     \mbox{\hyperlink{classCompany}{Company}} \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}(703, \textcolor{stringliteral}{"{}Very Strong"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209     \textcolor{keywordtype}{string} answer = \mbox{\hyperlink{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}{KNN}}(data, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}, 12, \mbox{\hyperlink{nearest__neighbors_8cpp_aea167cf8a07bdeab4cc68fae7a02806e}{euclideanDistance}})}
+\DoxyCodeLine{00210                         ? \textcolor{stringliteral}{"{}Successful"{}}}
+\DoxyCodeLine{00211                         : \textcolor{stringliteral}{"{}Unsuccessful"{}};}
+\DoxyCodeLine{00212     cout << answer;}
+\DoxyCodeLine{00213 \}}
 
 \end{DoxyCode}
 
 
-References euclidean\+Distance(), CSVReader\+::get\+Data(), KNN(), and test().
+References \mbox{\hyperlink{nearest__neighbors_8cpp_aea167cf8a07bdeab4cc68fae7a02806e}{euclidean\+Distance()}}, \mbox{\hyperlink{classCSVReader_af2163896e28024634611f9d5fd281622}{CSVReader\+::get\+Data()}}, \mbox{\hyperlink{nearest__neighbors_8cpp_a15264defbbec1a36f588050dc4850ee6}{KNN()}}, and \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}.
 
 \mbox{\Hypertarget{nearest__neighbors_8cpp_a3feb38be1a54a6de5afa02d99ac808f1}\label{nearest__neighbors_8cpp_a3feb38be1a54a6de5afa02d99ac808f1}} 
 \index{nearest\_neighbors.cpp@{nearest\_neighbors.cpp}!manhattanDistance@{manhattanDistance}}
@@ -210,17 +210,17 @@ References euclidean\+Distance(), CSVReader\+::get\+Data(), KNN(), and test().
 
 
 
-Definition at line 147 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{147                                                            \{}
-\DoxyCodeLine{148     \textcolor{keywordflow}{return} (abs(lhs.\mbox{\hyperlink{classCompany_a66da188152d90e0788a0e1666589ce31}{turnover}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover) +}
-\DoxyCodeLine{149             abs(lhs.\mbox{\hyperlink{classCompany_a41ba0338049f56dbd4a4b645834267d0}{characteristics}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics));}
-\DoxyCodeLine{150 \}}
+\DoxyCodeLine{00147                                                            \{}
+\DoxyCodeLine{00148     \textcolor{keywordflow}{return} (abs(lhs.\mbox{\hyperlink{classCompany_a66da188152d90e0788a0e1666589ce31}{turnover}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.turnover) +}
+\DoxyCodeLine{00149             abs(lhs.\mbox{\hyperlink{classCompany_a41ba0338049f56dbd4a4b645834267d0}{characteristics}} -\/ \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test}}.characteristics));}
+\DoxyCodeLine{00150 \}}
 
 \end{DoxyCode}
 
 
-References Company\+::characteristics, test(), and Company\+::turnover.
+References \mbox{\hyperlink{classCompany_a41ba0338049f56dbd4a4b645834267d0}{Company\+::characteristics}}, \mbox{\hyperlink{rc5_8cpp_a1c546bc4bc9f956cd794b3389e2451d9}{test()}}, and \mbox{\hyperlink{classCompany_a66da188152d90e0788a0e1666589ce31}{Company\+::turnover}}.
 

@@ -38,27 +38,27 @@ A Python example showing the same functionalities.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\#!/usr/bin/python3}
-\DoxyCodeLine{from openmtpk import nt}
+\DoxyCodeLine{\textcolor{comment}{\#!/usr/bin/python3}}
+\DoxyCodeLine{\textcolor{keyword}{from} openmtpk \textcolor{keyword}{import} nt}
 \DoxyCodeLine{}
 \DoxyCodeLine{}
-\DoxyCodeLine{def main():}
+\DoxyCodeLine{\textcolor{keyword}{def }\mbox{\hyperlink{Mandelbrot_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}():}
 \DoxyCodeLine{    c = nt.Cipher()}
-\DoxyCodeLine{    ciph = c.caesar("{}Plaintext"{}, 5)}
+\DoxyCodeLine{    ciph = c.caesar(\textcolor{stringliteral}{"{}Plaintext"{}}, 5)}
 \DoxyCodeLine{    print(ciph)}
 \DoxyCodeLine{}
-\DoxyCodeLine{    ciph\_1 = c.caesar("{}ATTACKATONCE"{}, 4)}
+\DoxyCodeLine{    ciph\_1 = c.caesar(\textcolor{stringliteral}{"{}ATTACKATONCE"{}}, 4)}
 \DoxyCodeLine{    print(ciph\_1)}
 \DoxyCodeLine{}
-\DoxyCodeLine{    text = "{}Password"{}}
-\DoxyCodeLine{    shift = "{}Computer"{}}
+\DoxyCodeLine{    text = \textcolor{stringliteral}{"{}Password"{}}}
+\DoxyCodeLine{    shift = \textcolor{stringliteral}{"{}Computer"{}}}
 \DoxyCodeLine{    encoded\_text = c.keyword\_encode(shift)}
 \DoxyCodeLine{    hashtext = c.keyword(text, encoded\_text)}
 \DoxyCodeLine{    print(hashtext)}
 \DoxyCodeLine{}
 \DoxyCodeLine{}
-\DoxyCodeLine{if \_\_name\_\_ == "{}\_\_main\_\_"{}:}
-\DoxyCodeLine{    main()}
+\DoxyCodeLine{\textcolor{keywordflow}{if} \_\_name\_\_ == \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{    \mbox{\hyperlink{Mandelbrot_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
 
 \end{DoxyCode}
  

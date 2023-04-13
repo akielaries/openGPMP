@@ -23,7 +23,7 @@ int64\+\_\+t \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55
 
 Encompasses Arithmetic related operations 
 
-Definition at line 105 of file arithmetic.\+hpp.
+Definition at line \mbox{\hyperlink{arithmetic_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{arithmetic_8hpp_source}{arithmetic.\+hpp}}.
 
 
 
@@ -50,20 +50,20 @@ result \+: (int)
 \end{DoxyReturn}
 
 
-Definition at line 41 of file arith.\+cpp.
+Definition at line \mbox{\hyperlink{arith_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{arith_8cpp_source}{arith.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{41                                                        \{}
-\DoxyCodeLine{42     int64\_t result = 0;}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{comment}{// Calculate x = n/p + n/(p\string^2) + n/(p\string^3) + ....}}
-\DoxyCodeLine{45     \textcolor{keywordflow}{while} (n) \{}
-\DoxyCodeLine{46         n /= p;}
-\DoxyCodeLine{47         result += n;}
-\DoxyCodeLine{48     \}}
-\DoxyCodeLine{49     \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{50 \}}
+\DoxyCodeLine{00041                                                        \{}
+\DoxyCodeLine{00042     int64\_t result = 0;}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{comment}{// Calculate x = n/p + n/(p\string^2) + n/(p\string^3) + ....}}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{while} (n) \{}
+\DoxyCodeLine{00046         n /= p;}
+\DoxyCodeLine{00047         result += n;}
+\DoxyCodeLine{00048     \}}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00050 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}\label{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}} 
@@ -88,25 +88,25 @@ result \+: (int)
 \end{DoxyReturn}
 
 
-Definition at line 52 of file arith.\+cpp.
+Definition at line \mbox{\hyperlink{arith_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{arith_8cpp_source}{arith.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{52                                                \{}
-\DoxyCodeLine{53     \textcolor{keywordflow}{if} (x < y)}
-\DoxyCodeLine{54         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(y, x);}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x \% y == 0)}
-\DoxyCodeLine{57         \textcolor{keywordflow}{return} y;}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{60         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(y, x \% y);}
-\DoxyCodeLine{61 \}}
+\DoxyCodeLine{00052                                                \{}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{if} (x < y)}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(y, x);}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (x \% y == 0)}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{return} y;}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00060         \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(y, x \% y);}
+\DoxyCodeLine{00061 \}}
 
 \end{DoxyCode}
 
 
-Referenced by mtpk\+::\+Primality\+::carmichael\+\_\+num(), mtpk\+::\+Primality\+::\+ETF(), and mtpk\+::\+Primality\+::pollard\+\_\+rho().
+Referenced by \mbox{\hyperlink{classmtpk_1_1Primality_afb102599959e6bf6882b4e6dac52220f}{mtpk\+::\+Primality\+::carmichael\+\_\+num()}}, \mbox{\hyperlink{classmtpk_1_1Primality_a8dbb0834d183be7d8a855ea346a2b120}{mtpk\+::\+Primality\+::\+ETF()}}, and \mbox{\hyperlink{classmtpk_1_1Primality_a6da2179ebf40c84b2f30429a0e1fa45c}{mtpk\+::\+Primality\+::pollard\+\_\+rho()}}.
 
 
 

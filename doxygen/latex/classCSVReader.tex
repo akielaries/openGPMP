@@ -5,12 +5,12 @@
 \item 
 \mbox{\hyperlink{classCSVReader_af22e7e980aa6c46c0017d0e1991e3741}{CSVReader}} (const string \&\mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{file\+Name}}, const string \&\mbox{\hyperlink{classCSVReader_abff43d8d9971224af07ba44c912ebec9}{delimeter}}=\char`\"{},\char`\"{})
 \item 
-vector$<$ vector$<$ string $>$ $>$ \mbox{\hyperlink{classCSVReader_a702c239c4cc205c02d37056acc3dda6b}{get\+Data}} ()
+vector$<$ vector$<$ string $>$ $>$ \mbox{\hyperlink{classCSVReader_af2163896e28024634611f9d5fd281622}{get\+Data}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ string $>$ \mbox{\hyperlink{classCSVReader_aa3f91c1fd40076a96ca0be593b9b59bc}{split}} (string target, string delim)
+vector$<$ string $>$ \mbox{\hyperlink{classCSVReader_a4a28ea5ad3943a0778215874cbf1da66}{split}} (string target, string delim)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -24,7 +24,7 @@ string \mbox{\hyperlink{classCSVReader_abff43d8d9971224af07ba44c912ebec9}{delime
 \doxysubsection{Detailed Description}
 
 
-Definition at line 86 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 
@@ -37,81 +37,89 @@ Definition at line 86 of file nearest\+\_\+neighbors.\+cpp.
 
 
 
-Definition at line 88 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{89         : \mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{fileName}}(\mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{fileName}}), \mbox{\hyperlink{classCSVReader_abff43d8d9971224af07ba44c912ebec9}{delimeter}}(\mbox{\hyperlink{classCSVReader_abff43d8d9971224af07ba44c912ebec9}{delimeter}}) \{}
-\DoxyCodeLine{90     \}}
+\DoxyCodeLine{00089         : \mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{fileName}}(\mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{fileName}}), \mbox{\hyperlink{classCSVReader_abff43d8d9971224af07ba44c912ebec9}{delimeter}}(\mbox{\hyperlink{classCSVReader_abff43d8d9971224af07ba44c912ebec9}{delimeter}}) \{}
+\DoxyCodeLine{00090     \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classCSVReader_a702c239c4cc205c02d37056acc3dda6b}\label{classCSVReader_a702c239c4cc205c02d37056acc3dda6b}} 
+\mbox{\Hypertarget{classCSVReader_af2163896e28024634611f9d5fd281622}\label{classCSVReader_af2163896e28024634611f9d5fd281622}} 
 \index{CSVReader@{CSVReader}!getData@{getData}}
 \index{getData@{getData}!CSVReader@{CSVReader}}
 \doxysubsubsection{\texorpdfstring{getData()}{getData()}}
-{\footnotesize\ttfamily vector$<$vector$<$string$>$ $>$ CSVReader\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily vector$<$ vector$<$ string $>$ $>$ CSVReader\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 95 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{95                                      \{}
-\DoxyCodeLine{96         ifstream file(this-\/>\mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{fileName}});}
-\DoxyCodeLine{97         vector<vector<string>> data;}
-\DoxyCodeLine{98         \textcolor{keywordtype}{string} line = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100         \textcolor{keywordflow}{while} (getline(file, line)) \{}
-\DoxyCodeLine{101             vector<string> tmp;}
-\DoxyCodeLine{102             tmp = this-\/>\mbox{\hyperlink{classCSVReader_aa3f91c1fd40076a96ca0be593b9b59bc}{split}}(line, \textcolor{stringliteral}{"{},"{}});}
-\DoxyCodeLine{103             data.push\_back(tmp);}
-\DoxyCodeLine{104         \}}
-\DoxyCodeLine{105         file.close();}
-\DoxyCodeLine{106         \textcolor{keywordflow}{return} data;}
-\DoxyCodeLine{107     \}}
+\DoxyCodeLine{00095                                      \{}
+\DoxyCodeLine{00096         ifstream file(this-\/>\mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{fileName}});}
+\DoxyCodeLine{00097         vector<vector<string>> data;}
+\DoxyCodeLine{00098         \textcolor{keywordtype}{string} line = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100         \textcolor{keywordflow}{while} (getline(file, line)) \{}
+\DoxyCodeLine{00101             vector<string> tmp;}
+\DoxyCodeLine{00102             tmp = this-\/>\mbox{\hyperlink{classCSVReader_a4a28ea5ad3943a0778215874cbf1da66}{split}}(line, \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00103             data.push\_back(tmp);}
+\DoxyCodeLine{00104         \}}
+\DoxyCodeLine{00105         file.close();}
+\DoxyCodeLine{00106         \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{00107     \}}
 
 \end{DoxyCode}
 
 
-Referenced by main().
+References \mbox{\hyperlink{classCSVReader_a0a90d62a46349a148272cb0e087cd191}{file\+Name}}, and \mbox{\hyperlink{classCSVReader_a4a28ea5ad3943a0778215874cbf1da66}{split()}}.
 
-\mbox{\Hypertarget{classCSVReader_aa3f91c1fd40076a96ca0be593b9b59bc}\label{classCSVReader_aa3f91c1fd40076a96ca0be593b9b59bc}} 
+
+
+Referenced by \mbox{\hyperlink{nearest__neighbors_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}.
+
+\mbox{\Hypertarget{classCSVReader_a4a28ea5ad3943a0778215874cbf1da66}\label{classCSVReader_a4a28ea5ad3943a0778215874cbf1da66}} 
 \index{CSVReader@{CSVReader}!split@{split}}
 \index{split@{split}!CSVReader@{CSVReader}}
 \doxysubsubsection{\texorpdfstring{split()}{split()}}
-{\footnotesize\ttfamily vector$<$string$>$ CSVReader\+::split (\begin{DoxyParamCaption}\item[{string}]{target,  }\item[{string}]{delim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily vector$<$ string $>$ CSVReader\+::split (\begin{DoxyParamCaption}\item[{string}]{target,  }\item[{string}]{delim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Definition at line 116 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{116                                                       \{}
-\DoxyCodeLine{117         vector<string> v;}
-\DoxyCodeLine{118         \textcolor{keywordflow}{if} (!target.empty()) \{}
-\DoxyCodeLine{119             \textcolor{keywordtype}{size\_t} start = 0;}
-\DoxyCodeLine{120             \textcolor{keywordflow}{do} \{}
-\DoxyCodeLine{121                 \textcolor{keywordtype}{size\_t} x = target.find(delim, start);}
-\DoxyCodeLine{122                 \textcolor{comment}{// a check whether the target is found}}
-\DoxyCodeLine{123                 \textcolor{keywordflow}{if} (x == -\/1) \{}
-\DoxyCodeLine{124                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{125                 \}}
-\DoxyCodeLine{126                 \textcolor{keywordtype}{string} tmp = target.substr(start, x -\/ start);}
-\DoxyCodeLine{127                 v.push\_back(tmp);}
-\DoxyCodeLine{128                 start += delim.size() + tmp.size();}
-\DoxyCodeLine{129             \} \textcolor{keywordflow}{while} (\textcolor{keyword}{true});}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131             v.push\_back(target.substr(start));}
-\DoxyCodeLine{132         \}}
-\DoxyCodeLine{133         \textcolor{keywordflow}{return} v;}
-\DoxyCodeLine{134     \}}
+\DoxyCodeLine{00116                                                       \{}
+\DoxyCodeLine{00117         vector<string> v;}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{if} (!target.empty()) \{}
+\DoxyCodeLine{00119             \textcolor{keywordtype}{size\_t} start = 0;}
+\DoxyCodeLine{00120             \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{00121                 \textcolor{keywordtype}{size\_t} x = target.find(delim, start);}
+\DoxyCodeLine{00122                 \textcolor{comment}{// a check whether the target is found}}
+\DoxyCodeLine{00123                 \textcolor{keywordflow}{if} (x == -\/1) \{}
+\DoxyCodeLine{00124                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125                 \}}
+\DoxyCodeLine{00126                 \textcolor{keywordtype}{string} tmp = target.substr(start, x -\/ start);}
+\DoxyCodeLine{00127                 v.push\_back(tmp);}
+\DoxyCodeLine{00128                 start += delim.size() + tmp.size();}
+\DoxyCodeLine{00129             \} \textcolor{keywordflow}{while} (\textcolor{keyword}{true});}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131             v.push\_back(target.substr(start));}
+\DoxyCodeLine{00132         \}}
+\DoxyCodeLine{00133         \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00134     \}}
 
 \end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classCSVReader_af2163896e28024634611f9d5fd281622}{get\+Data()}}.
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -123,7 +131,7 @@ Definition at line 116 of file nearest\+\_\+neighbors.\+cpp.
 
 
 
-Definition at line 111 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
 
 \mbox{\Hypertarget{classCSVReader_a0a90d62a46349a148272cb0e087cd191}\label{classCSVReader_a0a90d62a46349a148272cb0e087cd191}} 
 \index{CSVReader@{CSVReader}!fileName@{fileName}}
@@ -133,7 +141,11 @@ Definition at line 111 of file nearest\+\_\+neighbors.\+cpp.
 
 
 
-Definition at line 110 of file nearest\+\_\+neighbors.\+cpp.
+Definition at line \mbox{\hyperlink{nearest__neighbors_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{nearest__neighbors_8cpp_source}{nearest\+\_\+neighbors.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{classCSVReader_af2163896e28024634611f9d5fd281622}{get\+Data()}}.
 
 
 

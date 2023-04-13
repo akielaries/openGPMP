@@ -1,0 +1,281 @@
+\hypertarget{activators_8hpp_source}{}\doxysection{activators.\+hpp}
+\label{activators_8hpp_source}\index{include/ml/activators.hpp@{include/ml/activators.hpp}}
+\mbox{\hyperlink{activators_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00041}00041 \textcolor{comment}{// TODO: IMPLEMENT and OPTIMIZE}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#ifndef ML\_ACTIVATORS\_HPP}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#define ML\_ACTIVATORS\_HPP}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00047}00047 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00048}\mbox{\hyperlink{classmtpk_1_1Activate}{00048}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Activate}{Activate}} \{}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00049}00049     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00050}\mbox{\hyperlink{classmtpk_1_1Activate_ae25bac32802e538a055e1630c66c9852}{00050}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ae25bac32802e538a055e1630c66c9852}{linear}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00052}\mbox{\hyperlink{classmtpk_1_1Activate_aefe6e6c022f33abd106c38a6e0983078}{00052}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_aefe6e6c022f33abd106c38a6e0983078}{linear}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00054}00054     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00055}\mbox{\hyperlink{classmtpk_1_1Activate_adb74be4d294fc275b4cdb99445508606}{00055}}         \mbox{\hyperlink{classmtpk_1_1Activate_adb74be4d294fc275b4cdb99445508606}{linear}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00057}\mbox{\hyperlink{classmtpk_1_1Activate_a628796d8a5ef83cca427cb3f29813271}{00057}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a628796d8a5ef83cca427cb3f29813271}{sigmoid}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00059}\mbox{\hyperlink{classmtpk_1_1Activate_af64aacffd9caab96ac99712895216312}{00059}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_af64aacffd9caab96ac99712895216312}{sigmoid}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00061}00061     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00062}\mbox{\hyperlink{classmtpk_1_1Activate_a044b6cc3308fd854c0ff3a497c5abc5c}{00062}}         \mbox{\hyperlink{classmtpk_1_1Activate_a044b6cc3308fd854c0ff3a497c5abc5c}{sigmoid}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00064}\mbox{\hyperlink{classmtpk_1_1Activate_ac39d7b071c6ea2b0782c9d530ebe5229}{00064}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ac39d7b071c6ea2b0782c9d530ebe5229}{softmax}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00066}00066     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00067}\mbox{\hyperlink{classmtpk_1_1Activate_a2c2d3fad0a17b4f1e0fd59e372c47938}{00067}}         \mbox{\hyperlink{classmtpk_1_1Activate_a2c2d3fad0a17b4f1e0fd59e372c47938}{softmax}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00069}\mbox{\hyperlink{classmtpk_1_1Activate_ab58e764bf8249ddbc93cd4e4be57f2a1}{00069}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ab58e764bf8249ddbc93cd4e4be57f2a1}{adjSoftmax}}(std::vector<double> z);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00071}00071     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00072}\mbox{\hyperlink{classmtpk_1_1Activate_a980bb5c00026685306f96f15646ce1fa}{00072}}         \mbox{\hyperlink{classmtpk_1_1Activate_a980bb5c00026685306f96f15646ce1fa}{adjSoftmax}}(std::vector<std::vector<double>> z);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00074}\mbox{\hyperlink{classmtpk_1_1Activate_a756a8cb0d543ae89c5eec20e489417bb}{00074}}     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1Activate_a756a8cb0d543ae89c5eec20e489417bb}{softmaxDeriv}}(std::vector<double> z);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00076}00076     std::vector<std::vector<std::vector<double>>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00077}\mbox{\hyperlink{classmtpk_1_1Activate_a36f0b5ff0f5e8b158c9ad345761976fb}{00077}}         \mbox{\hyperlink{classmtpk_1_1Activate_a36f0b5ff0f5e8b158c9ad345761976fb}{softmaxDeriv}}(std::vector<std::vector<double>> z);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00079}\mbox{\hyperlink{classmtpk_1_1Activate_a8dc1452488984f9c62f17bf583bf4a7b}{00079}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a8dc1452488984f9c62f17bf583bf4a7b}{softplus}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00081}\mbox{\hyperlink{classmtpk_1_1Activate_aa696752cd54269191bab01e8eccbebe6}{00081}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_aa696752cd54269191bab01e8eccbebe6}{softplus}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00083}00083     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00084}\mbox{\hyperlink{classmtpk_1_1Activate_a732ece0cfb6ffd3cbc27e7efb96a0686}{00084}}         \mbox{\hyperlink{classmtpk_1_1Activate_a732ece0cfb6ffd3cbc27e7efb96a0686}{softplus}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00086}\mbox{\hyperlink{classmtpk_1_1Activate_a69ecd27a24ec83d40f14dd43c79cf3d1}{00086}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a69ecd27a24ec83d40f14dd43c79cf3d1}{softsign}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00088}\mbox{\hyperlink{classmtpk_1_1Activate_aaafe26fab82251bb3ee71b1edb596030}{00088}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_aaafe26fab82251bb3ee71b1edb596030}{softsign}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00090}00090     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00091}\mbox{\hyperlink{classmtpk_1_1Activate_a07a896f4713fe58399f3fd3b63b3b247}{00091}}         \mbox{\hyperlink{classmtpk_1_1Activate_a07a896f4713fe58399f3fd3b63b3b247}{softsign}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00093}\mbox{\hyperlink{classmtpk_1_1Activate_ab8233b35e4f84ccbc3b1274db2e608d9}{00093}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ab8233b35e4f84ccbc3b1274db2e608d9}{gaussianCDF}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00095}\mbox{\hyperlink{classmtpk_1_1Activate_ae756e150b18234e6fc3c8445d19cc770}{00095}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ae756e150b18234e6fc3c8445d19cc770}{gaussianCDF}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00097}00097     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00098}\mbox{\hyperlink{classmtpk_1_1Activate_a64eb4fae00d386d0c86e46d24546f96d}{00098}}         \mbox{\hyperlink{classmtpk_1_1Activate_a64eb4fae00d386d0c86e46d24546f96d}{gaussianCDF}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00100}\mbox{\hyperlink{classmtpk_1_1Activate_a870edc07d30c23186ca625e7d0874aff}{00100}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a870edc07d30c23186ca625e7d0874aff}{cloglog}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00102}\mbox{\hyperlink{classmtpk_1_1Activate_ac0796ae1cf15e6c10ce8861cdd69b9fe}{00102}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ac0796ae1cf15e6c10ce8861cdd69b9fe}{cloglog}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00104}00104     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00105}\mbox{\hyperlink{classmtpk_1_1Activate_a615fc0c90dc34874c5e1211ceea7400e}{00105}}         \mbox{\hyperlink{classmtpk_1_1Activate_a615fc0c90dc34874c5e1211ceea7400e}{cloglog}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00107}\mbox{\hyperlink{classmtpk_1_1Activate_a4537ae0d8d3e20e6bfcd7f875a854772}{00107}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a4537ae0d8d3e20e6bfcd7f875a854772}{logit}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00109}\mbox{\hyperlink{classmtpk_1_1Activate_a9779894f4dc789bf5753dcbe9a0f6d90}{00109}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a9779894f4dc789bf5753dcbe9a0f6d90}{logit}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00111}00111     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00112}\mbox{\hyperlink{classmtpk_1_1Activate_ace8cd1c8a3b55fcf8e2c49eee3010392}{00112}}         \mbox{\hyperlink{classmtpk_1_1Activate_ace8cd1c8a3b55fcf8e2c49eee3010392}{logit}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00114}\mbox{\hyperlink{classmtpk_1_1Activate_a35efee4c3bebd934d817e828c12d1f7e}{00114}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a35efee4c3bebd934d817e828c12d1f7e}{unitStep}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00116}\mbox{\hyperlink{classmtpk_1_1Activate_addeb402690921a3d203425f61f9cfdea}{00116}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_addeb402690921a3d203425f61f9cfdea}{unitStep}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00118}00118     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00119}\mbox{\hyperlink{classmtpk_1_1Activate_a106d929e16f9a96aba7bc3bb42faf600}{00119}}         \mbox{\hyperlink{classmtpk_1_1Activate_a106d929e16f9a96aba7bc3bb42faf600}{unitStep}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00121}\mbox{\hyperlink{classmtpk_1_1Activate_af9ea3b6c0779415cf551e56a28d5593c}{00121}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_af9ea3b6c0779415cf551e56a28d5593c}{swish}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00123}\mbox{\hyperlink{classmtpk_1_1Activate_abc8387b70ecec6c071017c7632c281d9}{00123}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_abc8387b70ecec6c071017c7632c281d9}{swish}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00125}00125     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00126}\mbox{\hyperlink{classmtpk_1_1Activate_a49f98351430f9f96d4f30efe160940d0}{00126}}         \mbox{\hyperlink{classmtpk_1_1Activate_a49f98351430f9f96d4f30efe160940d0}{swish}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00128}\mbox{\hyperlink{classmtpk_1_1Activate_ab9b82a2929ba6ac77e3217883310dfba}{00128}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ab9b82a2929ba6ac77e3217883310dfba}{mish}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00130}\mbox{\hyperlink{classmtpk_1_1Activate_a3ac6366279282a5a718cf413a7be6b1a}{00130}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a3ac6366279282a5a718cf413a7be6b1a}{mish}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00132}00132     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00133}\mbox{\hyperlink{classmtpk_1_1Activate_ab2bb6786cf82bb23edf0708d2f1045ea}{00133}}         \mbox{\hyperlink{classmtpk_1_1Activate_ab2bb6786cf82bb23edf0708d2f1045ea}{mish}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00135}\mbox{\hyperlink{classmtpk_1_1Activate_a6bd4a7b2f637868d51dc8ba3e1bdcb2f}{00135}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a6bd4a7b2f637868d51dc8ba3e1bdcb2f}{sinc}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00137}\mbox{\hyperlink{classmtpk_1_1Activate_a82127c265d74962114c4f36ae73dcdd8}{00137}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a82127c265d74962114c4f36ae73dcdd8}{sinc}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00139}00139     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00140}\mbox{\hyperlink{classmtpk_1_1Activate_a2bb61897d040c36f39bcd84aee58a1d2}{00140}}         \mbox{\hyperlink{classmtpk_1_1Activate_a2bb61897d040c36f39bcd84aee58a1d2}{sinc}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00142}\mbox{\hyperlink{classmtpk_1_1Activate_ace33a7d798692406a707719225a4ecc7}{00142}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ace33a7d798692406a707719225a4ecc7}{RELU}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00144}\mbox{\hyperlink{classmtpk_1_1Activate_ab73d863fd92f85924d0eb0e101747645}{00144}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ab73d863fd92f85924d0eb0e101747645}{RELU}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00146}00146     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00147}\mbox{\hyperlink{classmtpk_1_1Activate_ad878f3a37fffcc358b2653812d824d52}{00147}}         \mbox{\hyperlink{classmtpk_1_1Activate_ad878f3a37fffcc358b2653812d824d52}{RELU}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00149}\mbox{\hyperlink{classmtpk_1_1Activate_ad77907c0bf544b5146c1cd2bcc137676}{00149}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ad77907c0bf544b5146c1cd2bcc137676}{leakyReLU}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} c, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00151}\mbox{\hyperlink{classmtpk_1_1Activate_ace1d927d52e7507302be355334ea26ab}{00151}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ace1d927d52e7507302be355334ea26ab}{leakyReLU}}(std::vector<double> z, \textcolor{keywordtype}{double} c,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00152}00152                                   \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00154}00154     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00155}\mbox{\hyperlink{classmtpk_1_1Activate_a08a0c9118310e9b2f9699f1c3749e95f}{00155}}         \mbox{\hyperlink{classmtpk_1_1Activate_a08a0c9118310e9b2f9699f1c3749e95f}{leakyReLU}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{double} c,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00156}00156                   \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00158}\mbox{\hyperlink{classmtpk_1_1Activate_a07dd7d8e4a0c99fbb36562afb73507fc}{00158}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a07dd7d8e4a0c99fbb36562afb73507fc}{ELU}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} c, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00160}\mbox{\hyperlink{classmtpk_1_1Activate_ab3e236f6493db244b776443063d26284}{00160}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ab3e236f6493db244b776443063d26284}{ELU}}(std::vector<double> z, \textcolor{keywordtype}{double} c,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00161}00161                             \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00163}00163     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00164}\mbox{\hyperlink{classmtpk_1_1Activate_a1bbffbdfdd95b612ec43ae84c0b79522}{00164}}         \mbox{\hyperlink{classmtpk_1_1Activate_a1bbffbdfdd95b612ec43ae84c0b79522}{ELU}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{double} c, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00166}\mbox{\hyperlink{classmtpk_1_1Activate_a7c622b948a85b33ca7a0a41710dc60a3}{00166}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a7c622b948a85b33ca7a0a41710dc60a3}{SELU}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} lambda, \textcolor{keywordtype}{double} c, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00168}\mbox{\hyperlink{classmtpk_1_1Activate_a582880335a8ecbe60c685796d64eb375}{00168}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a582880335a8ecbe60c685796d64eb375}{SELU}}(std::vector<double> z, \textcolor{keywordtype}{double} lambda,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00169}00169                              \textcolor{keywordtype}{double} c, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00170}00170 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00171}\mbox{\hyperlink{classmtpk_1_1Activate_a888ca2987a398271c7deaccd4d7745e7}{00171}}     std::vector<std::vector<double>> \mbox{\hyperlink{classmtpk_1_1Activate_a888ca2987a398271c7deaccd4d7745e7}{SELU}}(std::vector<std::vector<double>>,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00172}00172                                           \textcolor{keywordtype}{double} lambda, \textcolor{keywordtype}{double} c,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00173}00173                                           \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00175}\mbox{\hyperlink{classmtpk_1_1Activate_a7ee0968bc12876169587e89c9a4c753f}{00175}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a7ee0968bc12876169587e89c9a4c753f}{GELU}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00177}\mbox{\hyperlink{classmtpk_1_1Activate_ac45002923587f8976b155ff09ca4a2c2}{00177}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ac45002923587f8976b155ff09ca4a2c2}{GELU}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00179}00179     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00180}\mbox{\hyperlink{classmtpk_1_1Activate_a957bb0d2d5b0b63e8cfd68a6499f2373}{00180}}         \mbox{\hyperlink{classmtpk_1_1Activate_a957bb0d2d5b0b63e8cfd68a6499f2373}{GELU}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00182}\mbox{\hyperlink{classmtpk_1_1Activate_aa02ffeda13f668d479e3dca65f71c0bc}{00182}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_aa02ffeda13f668d479e3dca65f71c0bc}{sign}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00184}\mbox{\hyperlink{classmtpk_1_1Activate_a5f33f22d4839a4720decd6197ad5d25a}{00184}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a5f33f22d4839a4720decd6197ad5d25a}{sign}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00186}00186     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00187}\mbox{\hyperlink{classmtpk_1_1Activate_acbaba08323be88351229521ece979355}{00187}}         \mbox{\hyperlink{classmtpk_1_1Activate_acbaba08323be88351229521ece979355}{sign}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00189}\mbox{\hyperlink{classmtpk_1_1Activate_a9b861b0e88b78395f2acb47cef965979}{00189}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a9b861b0e88b78395f2acb47cef965979}{sinh}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00191}\mbox{\hyperlink{classmtpk_1_1Activate_a8ec970bacd6de43ec34c929a65b707be}{00191}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a8ec970bacd6de43ec34c929a65b707be}{sinh}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00192}00192 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00193}00193     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00194}\mbox{\hyperlink{classmtpk_1_1Activate_a49a2a099440c43f6706e834bdde86638}{00194}}         \mbox{\hyperlink{classmtpk_1_1Activate_a49a2a099440c43f6706e834bdde86638}{sinh}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00196}\mbox{\hyperlink{classmtpk_1_1Activate_a34bcd90520ed176db130c1f6cb1ed9ba}{00196}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a34bcd90520ed176db130c1f6cb1ed9ba}{cosh}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00198}\mbox{\hyperlink{classmtpk_1_1Activate_a74af62d95c4ac414254d336c50c7077c}{00198}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a74af62d95c4ac414254d336c50c7077c}{cosh}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00200}00200     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00201}\mbox{\hyperlink{classmtpk_1_1Activate_ab47f03f2891a822c117df41dc9dbc3d0}{00201}}         \mbox{\hyperlink{classmtpk_1_1Activate_ab47f03f2891a822c117df41dc9dbc3d0}{cosh}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00203}\mbox{\hyperlink{classmtpk_1_1Activate_ae4245b361d1aa90a2b4ffd8e72c54a0b}{00203}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ae4245b361d1aa90a2b4ffd8e72c54a0b}{tanh}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00205}\mbox{\hyperlink{classmtpk_1_1Activate_aa36e52818c78aa897eaec76569fd8e5d}{00205}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_aa36e52818c78aa897eaec76569fd8e5d}{tanh}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00207}00207     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00208}\mbox{\hyperlink{classmtpk_1_1Activate_a0c1a2a59df0bccb5bf63185084791060}{00208}}         \mbox{\hyperlink{classmtpk_1_1Activate_a0c1a2a59df0bccb5bf63185084791060}{tanh}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00210}\mbox{\hyperlink{classmtpk_1_1Activate_a577611b140312dc2159ea41316faa55a}{00210}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a577611b140312dc2159ea41316faa55a}{csch}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00212}\mbox{\hyperlink{classmtpk_1_1Activate_ac645d43fd1f06a699bae1892bff42211}{00212}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ac645d43fd1f06a699bae1892bff42211}{csch}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00214}00214     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00215}\mbox{\hyperlink{classmtpk_1_1Activate_a0c11edf02b04ffc9795cc2d2e94d4252}{00215}}         \mbox{\hyperlink{classmtpk_1_1Activate_a0c11edf02b04ffc9795cc2d2e94d4252}{csch}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00216}00216 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00217}\mbox{\hyperlink{classmtpk_1_1Activate_a0254a643bd47dee885471150cf96f29b}{00217}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a0254a643bd47dee885471150cf96f29b}{sech}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00219}\mbox{\hyperlink{classmtpk_1_1Activate_ade4fd15568d019576e95de17f23a54ac}{00219}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_ade4fd15568d019576e95de17f23a54ac}{sech}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00221}00221     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00222}\mbox{\hyperlink{classmtpk_1_1Activate_a0a2cbaa796f22f38b3e881672ee6ca45}{00222}}         \mbox{\hyperlink{classmtpk_1_1Activate_a0a2cbaa796f22f38b3e881672ee6ca45}{sech}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00224}\mbox{\hyperlink{classmtpk_1_1Activate_af4fe49b16e06168de787ff2c1a37fa72}{00224}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_af4fe49b16e06168de787ff2c1a37fa72}{coth}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00226}\mbox{\hyperlink{classmtpk_1_1Activate_a371d31c5ce6fa7a52a57ea5590cc15a6}{00226}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a371d31c5ce6fa7a52a57ea5590cc15a6}{coth}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00228}00228     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00229}\mbox{\hyperlink{classmtpk_1_1Activate_a0da3b402c208f6276ce475d9e53ad144}{00229}}         \mbox{\hyperlink{classmtpk_1_1Activate_a0da3b402c208f6276ce475d9e53ad144}{coth}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00231}\mbox{\hyperlink{classmtpk_1_1Activate_aaffbcf4278afa58ff1f5d1f9e4e7314e}{00231}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_aaffbcf4278afa58ff1f5d1f9e4e7314e}{arsinh}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00233}\mbox{\hyperlink{classmtpk_1_1Activate_a8edc40582015093084ceac39a99bda44}{00233}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a8edc40582015093084ceac39a99bda44}{arsinh}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00235}00235     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00236}\mbox{\hyperlink{classmtpk_1_1Activate_a0de9aa8e5957e954aa840568da09a1c9}{00236}}         \mbox{\hyperlink{classmtpk_1_1Activate_a0de9aa8e5957e954aa840568da09a1c9}{arsinh}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00238}\mbox{\hyperlink{classmtpk_1_1Activate_a29f654671116b12c4740a2b7570586f9}{00238}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a29f654671116b12c4740a2b7570586f9}{arcosh}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00240}\mbox{\hyperlink{classmtpk_1_1Activate_a4ebdcaa1a3d887125d4f2a18884c994c}{00240}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a4ebdcaa1a3d887125d4f2a18884c994c}{arcosh}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00241}00241 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00242}00242     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00243}\mbox{\hyperlink{classmtpk_1_1Activate_a1d77c64a0262f165a29061bee72722b0}{00243}}         \mbox{\hyperlink{classmtpk_1_1Activate_a1d77c64a0262f165a29061bee72722b0}{arcosh}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00244}00244 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00245}\mbox{\hyperlink{classmtpk_1_1Activate_a56cc8660053bf2dc31e01a6b35ec986e}{00245}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a56cc8660053bf2dc31e01a6b35ec986e}{artanh}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00247}\mbox{\hyperlink{classmtpk_1_1Activate_a4e448b956e1c946ea4a0b0072242a35e}{00247}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a4e448b956e1c946ea4a0b0072242a35e}{artanh}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00249}00249     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00250}\mbox{\hyperlink{classmtpk_1_1Activate_a64c77e9b26391858f0c3b28c06219e60}{00250}}         \mbox{\hyperlink{classmtpk_1_1Activate_a64c77e9b26391858f0c3b28c06219e60}{artanh}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00252}\mbox{\hyperlink{classmtpk_1_1Activate_ad3dac175ef9185f6bae14ddf91d62d2c}{00252}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_ad3dac175ef9185f6bae14ddf91d62d2c}{arcsch}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00254}\mbox{\hyperlink{classmtpk_1_1Activate_a1debcbb04a523bf71e39f5e713841727}{00254}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a1debcbb04a523bf71e39f5e713841727}{arcsch}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00255}00255 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00256}00256     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00257}\mbox{\hyperlink{classmtpk_1_1Activate_a5bd4265c412869a5417fbe0a266d48be}{00257}}         \mbox{\hyperlink{classmtpk_1_1Activate_a5bd4265c412869a5417fbe0a266d48be}{arcsch}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00258}00258 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00259}\mbox{\hyperlink{classmtpk_1_1Activate_a08ab1935955041d8da9ff35e088e5dd9}{00259}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a08ab1935955041d8da9ff35e088e5dd9}{arsech}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00261}\mbox{\hyperlink{classmtpk_1_1Activate_a1691dff94d518da2600c9c4232a8c3d5}{00261}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a1691dff94d518da2600c9c4232a8c3d5}{arsech}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00263}00263     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00264}\mbox{\hyperlink{classmtpk_1_1Activate_ae3ad6dcc74adff36fc8ffbf1ddd68d70}{00264}}         \mbox{\hyperlink{classmtpk_1_1Activate_ae3ad6dcc74adff36fc8ffbf1ddd68d70}{arsech}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00265}00265 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00266}\mbox{\hyperlink{classmtpk_1_1Activate_a58ad4d539ff343c6ebe7979eb8877e7a}{00266}}     \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1Activate_a58ad4d539ff343c6ebe7979eb8877e7a}{arcoth}}(\textcolor{keywordtype}{double} z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00267}00267 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00268}\mbox{\hyperlink{classmtpk_1_1Activate_a74fbe2fd3fe35e0f5a6571eb3d60c160}{00268}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a74fbe2fd3fe35e0f5a6571eb3d60c160}{arcoth}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00269}00269 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00270}00270     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00271}\mbox{\hyperlink{classmtpk_1_1Activate_abddd1117e8d34f9e43cf1910b3fe20af}{00271}}         \mbox{\hyperlink{classmtpk_1_1Activate_abddd1117e8d34f9e43cf1910b3fe20af}{arcoth}}(std::vector<std::vector<double>> z, \textcolor{keywordtype}{bool} deriv = 0);}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00273}\mbox{\hyperlink{classmtpk_1_1Activate_a8a3c94d49b6a1cd63b3272fb23f83152}{00273}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1Activate_a8a3c94d49b6a1cd63b3272fb23f83152}{activation}}(std::vector<double> z, \textcolor{keywordtype}{bool} deriv,}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00274}00274                                    \textcolor{keywordtype}{double} (*function)(\textcolor{keywordtype}{double}, \textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00276}00276     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00277}00277 \};}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00278}00278 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00279}00279 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00280}00280 }
+\DoxyCodeLine{\Hypertarget{activators_8hpp_source_l00281}00281 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

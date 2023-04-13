@@ -20,7 +20,7 @@ void \mbox{\hyperlink{classmtpk_1_1ml_1_1Trainers_a40de007548f1313fc1a27af9aa8a8
 \doxysubsection{Detailed Description}
 
 
-Definition at line 54 of file trainers.\+hpp.
+Definition at line \mbox{\hyperlink{trainers_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{trainers_8hpp_source}{trainers.\+hpp}}.
 
 
 
@@ -33,22 +33,22 @@ Definition at line 54 of file trainers.\+hpp.
 
 These methods acts as a helper to the \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{Secondary\+MLP}} class Model. the create\+\_\+\+Secondary\+MLP method will return an initialized model given the dimensions of the inputs and outputs as well as specs related to the hidden layers of the network 
 
-Definition at line 72 of file trainers.\+hpp.
+Definition at line \mbox{\hyperlink{trainers_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{trainers_8hpp_source}{trainers.\+hpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{74                                                             \{}
-\DoxyCodeLine{75         std::vector<size\_t> layer\_units;}
-\DoxyCodeLine{76         layer\_units.push\_back(inputs);}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78         \textcolor{keywordflow}{for} (int64\_t i = 0; i < hidden\_layers; ++i) \{}
-\DoxyCodeLine{79             layer\_units.push\_back(hidden\_layer\_units);}
-\DoxyCodeLine{80         \}}
-\DoxyCodeLine{81         layer\_units.push\_back(outputs);}
-\DoxyCodeLine{82         SecondaryMLP<long double> model\_SecondaryMLP(layer\_units, 0.01);}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84         \textcolor{keywordflow}{return} model\_SecondaryMLP;}
-\DoxyCodeLine{85     \}}
+\DoxyCodeLine{00074                                                             \{}
+\DoxyCodeLine{00075         std::vector<size\_t> layer\_units;}
+\DoxyCodeLine{00076         layer\_units.push\_back(inputs);}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078         \textcolor{keywordflow}{for} (int64\_t i = 0; i < hidden\_layers; ++i) \{}
+\DoxyCodeLine{00079             layer\_units.push\_back(hidden\_layer\_units);}
+\DoxyCodeLine{00080         \}}
+\DoxyCodeLine{00081         layer\_units.push\_back(outputs);}
+\DoxyCodeLine{00082         SecondaryMLP<long double> model\_SecondaryMLP(layer\_units, 0.01);}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084         \textcolor{keywordflow}{return} model\_SecondaryMLP;}
+\DoxyCodeLine{00085     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1ml_1_1Trainers_adc82876f77b5a56e69d42a1f22a20cfc}\label{classmtpk_1_1ml_1_1Trainers_adc82876f77b5a56e69d42a1f22a20cfc}} 
@@ -71,15 +71,15 @@ Definition at line 72 of file trainers.\+hpp.
 
 \mbox{\hyperlink{classmtpk_1_1ml_1_1SecondaryMLP}{Secondary\+MLP}} training method 
 
-Definition at line 90 of file trainers.\+hpp.
+Definition at line \mbox{\hyperlink{trainers_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{trainers_8hpp_source}{trainers.\+hpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{93                                                       \{}
-\DoxyCodeLine{94         std::fstream input(data\_file.c\_str());}
-\DoxyCodeLine{95         std::cout << \textcolor{stringliteral}{"{}FILE: "{}} << data\_file << \textcolor{stringliteral}{"{} ITERS: "{}} << iterations}
-\DoxyCodeLine{96                   << \textcolor{stringliteral}{"{} INCREMENT: "{}} << print\_increment;}
-\DoxyCodeLine{97     \}}
+\DoxyCodeLine{00093                                                       \{}
+\DoxyCodeLine{00094         std::fstream input(data\_file.c\_str());}
+\DoxyCodeLine{00095         std::cout << \textcolor{stringliteral}{"{}FILE: "{}} << data\_file << \textcolor{stringliteral}{"{} ITERS: "{}} << iterations}
+\DoxyCodeLine{00096                   << \textcolor{stringliteral}{"{} INCREMENT: "{}} << print\_increment;}
+\DoxyCodeLine{00097     \}}
 
 \end{DoxyCode}
 

@@ -1,0 +1,90 @@
+\hypertarget{naive__net_8hpp_source}{}\doxysection{naive\+\_\+net.\+hpp}
+\label{naive__net_8hpp_source}\index{include/ml/naive\_net.hpp@{include/ml/naive\_net.hpp}}
+\mbox{\hyperlink{naive__net_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#ifndef NAIVE\_NET\_HPP}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#define NAIVE\_NET\_HPP}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#include <eigen3/Eigen/Eigen>}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00044}\mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{00044}} \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00045}\mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{00045}} \textcolor{keyword}{typedef} Eigen::MatrixXf \mbox{\hyperlink{naive__net_8hpp_aca89ce710ee8842221a0df25940c6a36}{Matrix}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00046}\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{00046}} \textcolor{keyword}{typedef} Eigen::RowVectorXf \mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00047}\mbox{\hyperlink{naive__net_8hpp_a9f8f99187c9577dde49b0c3491137d2f}{00047}} \textcolor{keyword}{typedef} Eigen::VectorXf \mbox{\hyperlink{naive__net_8hpp_a9f8f99187c9577dde49b0c3491137d2f}{ColVector}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00049}00049 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00051}\mbox{\hyperlink{classmtpk_1_1NaiveNet}{00051}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1NaiveNet}{NaiveNet}} \{}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00052}00052     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00053}00053     \textcolor{comment}{// contructor}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00054}\mbox{\hyperlink{classmtpk_1_1NaiveNet_a09441eff0299ee826fe0a9fd878f27b4}{00054}}     \mbox{\hyperlink{classmtpk_1_1NaiveNet_a09441eff0299ee826fe0a9fd878f27b4}{naive\_network}}(std::vector<uint> topology,}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00055}00055                   \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}} learningRate = \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}}(0.005));}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00057}00057     \textcolor{comment}{/* perform forward propagation */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00058}\mbox{\hyperlink{classmtpk_1_1NaiveNet_ad1a4fb5db1bb20d26ae1dc15ccbd7dc0}{00058}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1NaiveNet_ad1a4fb5db1bb20d26ae1dc15ccbd7dc0}{forward\_prop}}(\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}} \&input);}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00059}00059     \textcolor{comment}{/* perform backward propagation*/}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00060}\mbox{\hyperlink{classmtpk_1_1NaiveNet_a17e3858224c9c6873cb396c2c855d253}{00060}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1NaiveNet_a17e3858224c9c6873cb396c2c855d253}{backward\_prop}}(\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}} \&output);}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00061}00061     \textcolor{comment}{/* calculate neuron errors */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00062}\mbox{\hyperlink{classmtpk_1_1NaiveNet_aee1f88544b22a04ff741ea3e94a2d352}{00062}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1NaiveNet_aee1f88544b22a04ff741ea3e94a2d352}{errors}}(\mbox{\hyperlink{naive__net_8hpp_af44c90ca17675b918916853b82cc2887}{RowVector}} \&output);}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00063}00063     \textcolor{comment}{/* update weights of neuron connections */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00064}\mbox{\hyperlink{classmtpk_1_1NaiveNet_af8ff3d701589673dc55e26e733a07397}{00064}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1NaiveNet_af8ff3d701589673dc55e26e733a07397}{update\_weights}}();}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00065}00065     \textcolor{comment}{/* train neural network given vector of data points */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00066}\mbox{\hyperlink{classmtpk_1_1NaiveNet_aafffd50093040c64ca5f01801e43d5ae}{00066}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1NaiveNet_aafffd50093040c64ca5f01801e43d5ae}{train}}(std::vector<RowVector *> data);}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00068}00068     \textcolor{comment}{/* Naive Network storage objects */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00070}00070     \textcolor{comment}{/* store layers of the network*/}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00071}\mbox{\hyperlink{classmtpk_1_1NaiveNet_a46a0a9936b709529cad8dfe4d90816f9}{00071}}     std::vector<RowVector *> \mbox{\hyperlink{classmtpk_1_1NaiveNet_a46a0a9936b709529cad8dfe4d90816f9}{neuron\_layers}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00072}00072     \textcolor{comment}{/* stored un-\/evaluated values of the layers */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00073}\mbox{\hyperlink{classmtpk_1_1NaiveNet_a4e6278e34713c92864b1955bd12c9a7d}{00073}}     std::vector<RowVector *> \mbox{\hyperlink{classmtpk_1_1NaiveNet_a4e6278e34713c92864b1955bd12c9a7d}{cache\_layers}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00074}00074     \textcolor{comment}{/* stores error contribution of each neuron */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00075}\mbox{\hyperlink{classmtpk_1_1NaiveNet_ac2ebde3cb2a6130c99a4895407262856}{00075}}     std::vector<RowVector *> \mbox{\hyperlink{classmtpk_1_1NaiveNet_ac2ebde3cb2a6130c99a4895407262856}{deltas}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00076}00076     \textcolor{comment}{/* the connection weight */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00077}\mbox{\hyperlink{classmtpk_1_1NaiveNet_a60cc701ee3cb17805110fdd3e12ce7ce}{00077}}     std::vector<Matrix *> \mbox{\hyperlink{classmtpk_1_1NaiveNet_a60cc701ee3cb17805110fdd3e12ce7ce}{weights}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00078}00078     \textcolor{comment}{/* learning rate  */}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00079}\mbox{\hyperlink{classmtpk_1_1NaiveNet_a79f9b50c7791cb5e2b4a96763f5655ed}{00079}}     \mbox{\hyperlink{naive__net_8hpp_a83ae106b82c2af1be29a327aa7a6bc9b}{Scalar}} \mbox{\hyperlink{classmtpk_1_1NaiveNet_a79f9b50c7791cb5e2b4a96763f5655ed}{learning\_rate}};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00080}00080 \};}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00082}00082 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{naive__net_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

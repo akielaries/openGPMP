@@ -1,0 +1,52 @@
+\hypertarget{bayes__net_8hpp_source}{}\doxysection{bayes\+\_\+net.\+hpp}
+\label{bayes__net_8hpp_source}\index{include/ml/bayes\_net.hpp@{include/ml/bayes\_net.hpp}}
+\mbox{\hyperlink{bayes__net_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#ifndef BAYES\_NETWORK\_HPP}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#define BAYES\_NETWORK\_HPP}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00045}00045 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00051}\mbox{\hyperlink{classmtpk_1_1BayesNet}{00051}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1BayesNet}{BayesNet}} \{\};}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00053}00053 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{bayes__net_8hpp_source_l00055}00055 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

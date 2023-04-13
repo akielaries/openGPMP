@@ -1,0 +1,56 @@
+\hypertarget{lao_8cpp_source}{}\doxysection{lao.\+cpp}
+\label{lao_8cpp_source}\index{modules/linalg/lao.cpp@{modules/linalg/lao.cpp}}
+\mbox{\hyperlink{lao_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00035}00035 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00036}00036 \textcolor{comment}{ * taking a look at different mathematical operations seen in Linear}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00037}00037 \textcolor{comment}{ * Algebra in C++}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00038}00038 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00039}00039 \textcolor{preprocessor}{\#include "{}../../include/linalg/matrix.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00040}00040 \textcolor{preprocessor}{\#include "{}../../include/linalg/vectors.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00041}00041 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00042}00042 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00043}00043 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00044}00044 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00045}00045 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00047}\mbox{\hyperlink{classmtpk_1_1Vectors_a4fb9434e406936d8be052c99f18f727f}{00047}} int64\_t \mbox{\hyperlink{classmtpk_1_1Vectors_a4fb9434e406936d8be052c99f18f727f}{mtpk::Vectors::add}}(int64\_t a, int64\_t b) \{}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00048}00048     int64\_t c = a + b;}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00049}00049     \textcolor{keywordflow}{return} c;}
+\DoxyCodeLine{\Hypertarget{lao_8cpp_source_l00050}00050 \}}
+
+\end{DoxyCode}

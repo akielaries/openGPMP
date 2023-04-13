@@ -23,21 +23,21 @@
 
 
 
-Definition at line 59 of file k-\/fold\+CV.\+cpp.
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{59                                          \{}
-\DoxyCodeLine{60     vector<int64\_t> large\_sample;}
-\DoxyCodeLine{61     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 1000; i++) \{}
-\DoxyCodeLine{62         large\_sample.emplace\_back(i);}
-\DoxyCodeLine{63     \}}
-\DoxyCodeLine{64     KF\_CV<int64\_t> kF\_CV = KF\_CV<int64\_t>(large\_sample, 10, 1);}
-\DoxyCodeLine{65     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 10; i++) \{}
-\DoxyCodeLine{66         REQUIRE(100 == kF\_CV.get\_test\_fold(i).size());}
-\DoxyCodeLine{67         REQUIRE(900 == kF\_CV.get\_train\_fold(i).size());}
-\DoxyCodeLine{68     \}}
-\DoxyCodeLine{69 \}}
+\DoxyCodeLine{00059                                          \{}
+\DoxyCodeLine{00060     vector<int64\_t> large\_sample;}
+\DoxyCodeLine{00061     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 1000; i++) \{}
+\DoxyCodeLine{00062         large\_sample.emplace\_back(i);}
+\DoxyCodeLine{00063     \}}
+\DoxyCodeLine{00064     KF\_CV<int64\_t> kF\_CV = KF\_CV<int64\_t>(large\_sample, 10, 1);}
+\DoxyCodeLine{00065     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 10; i++) \{}
+\DoxyCodeLine{00066         REQUIRE(100 == kF\_CV.get\_test\_fold(i).size());}
+\DoxyCodeLine{00067         REQUIRE(900 == kF\_CV.get\_train\_fold(i).size());}
+\DoxyCodeLine{00068     \}}
+\DoxyCodeLine{00069 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{k-foldCV_8cpp_a0082dfdaa822ecb188be28ffccbf75ba}\label{k-foldCV_8cpp_a0082dfdaa822ecb188be28ffccbf75ba}} 
@@ -48,17 +48,17 @@ Definition at line 59 of file k-\/fold\+CV.\+cpp.
 
 
 
-Definition at line 42 of file k-\/fold\+CV.\+cpp.
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{42                                          \{}
-\DoxyCodeLine{43     vector<string> small\_sample = \{\textcolor{stringliteral}{"{}1"{}}, \textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}3"{}}, \textcolor{stringliteral}{"{}4"{}}, \textcolor{stringliteral}{"{}5"{}},}
-\DoxyCodeLine{44                                    \textcolor{stringliteral}{"{}6"{}}, \textcolor{stringliteral}{"{}7"{}}, \textcolor{stringliteral}{"{}8"{}}, \textcolor{stringliteral}{"{}9"{}}, \textcolor{stringliteral}{"{}10"{}}\};}
-\DoxyCodeLine{45     KF\_CV<string> kF\_CV = KF\_CV<string>(smallSample, 10, 1);}
-\DoxyCodeLine{46     vector<string> test\_sample = kF\_CV.get\_test\_fold(0);}
-\DoxyCodeLine{47     REQUIRE(test\_sample[0] == \textcolor{stringliteral}{"{}2"{}});}
-\DoxyCodeLine{48 \}}
+\DoxyCodeLine{00042                                          \{}
+\DoxyCodeLine{00043     vector<string> small\_sample = \{\textcolor{stringliteral}{"{}1"{}}, \textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}3"{}}, \textcolor{stringliteral}{"{}4"{}}, \textcolor{stringliteral}{"{}5"{}},}
+\DoxyCodeLine{00044                                    \textcolor{stringliteral}{"{}6"{}}, \textcolor{stringliteral}{"{}7"{}}, \textcolor{stringliteral}{"{}8"{}}, \textcolor{stringliteral}{"{}9"{}}, \textcolor{stringliteral}{"{}10"{}}\};}
+\DoxyCodeLine{00045     KF\_CV<string> kF\_CV = KF\_CV<string>(smallSample, 10, 1);}
+\DoxyCodeLine{00046     vector<string> test\_sample = kF\_CV.get\_test\_fold(0);}
+\DoxyCodeLine{00047     REQUIRE(test\_sample[0] == \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00048 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{k-foldCV_8cpp_a512be6fe9ffcaf26f34b10cef455b461}\label{k-foldCV_8cpp_a512be6fe9ffcaf26f34b10cef455b461}} 
@@ -69,18 +69,18 @@ Definition at line 42 of file k-\/fold\+CV.\+cpp.
 
 
 
-Definition at line 50 of file k-\/fold\+CV.\+cpp.
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{50                                         \{}
-\DoxyCodeLine{51     vector<string> small\_sample = \{\textcolor{stringliteral}{"{}1"{}}, \textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}3"{}}, \textcolor{stringliteral}{"{}4"{}}, \textcolor{stringliteral}{"{}5"{}},}
-\DoxyCodeLine{52                                    \textcolor{stringliteral}{"{}6"{}}, \textcolor{stringliteral}{"{}7"{}}, \textcolor{stringliteral}{"{}8"{}}, \textcolor{stringliteral}{"{}9"{}}, \textcolor{stringliteral}{"{}10"{}}\};}
-\DoxyCodeLine{53     KF\_CV<string> kF\_CV = KF\_CV<string>(small\_sample, 5, 1);}
-\DoxyCodeLine{54     vector<string> test\_sample = kF\_CV.get\_test\_fold(0);}
-\DoxyCodeLine{55     REQUIRE(test\_sample[0] == \textcolor{stringliteral}{"{}2"{}});}
-\DoxyCodeLine{56     REQUIRE(test\_sample[1] == \textcolor{stringliteral}{"{}7"{}});}
-\DoxyCodeLine{57 \}}
+\DoxyCodeLine{00050                                         \{}
+\DoxyCodeLine{00051     vector<string> small\_sample = \{\textcolor{stringliteral}{"{}1"{}}, \textcolor{stringliteral}{"{}2"{}}, \textcolor{stringliteral}{"{}3"{}}, \textcolor{stringliteral}{"{}4"{}}, \textcolor{stringliteral}{"{}5"{}},}
+\DoxyCodeLine{00052                                    \textcolor{stringliteral}{"{}6"{}}, \textcolor{stringliteral}{"{}7"{}}, \textcolor{stringliteral}{"{}8"{}}, \textcolor{stringliteral}{"{}9"{}}, \textcolor{stringliteral}{"{}10"{}}\};}
+\DoxyCodeLine{00053     KF\_CV<string> kF\_CV = KF\_CV<string>(small\_sample, 5, 1);}
+\DoxyCodeLine{00054     vector<string> test\_sample = kF\_CV.get\_test\_fold(0);}
+\DoxyCodeLine{00055     REQUIRE(test\_sample[0] == \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00056     REQUIRE(test\_sample[1] == \textcolor{stringliteral}{"{}7"{}});}
+\DoxyCodeLine{00057 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{k-foldCV_8cpp_a30992701a37e72ffb3f1892840172303}\label{k-foldCV_8cpp_a30992701a37e72ffb3f1892840172303}} 
@@ -91,20 +91,20 @@ Definition at line 50 of file k-\/fold\+CV.\+cpp.
 
 
 
-Definition at line 71 of file k-\/fold\+CV.\+cpp.
+Definition at line \mbox{\hyperlink{k-foldCV_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{k-foldCV_8cpp_source}{k-\/fold\+CV.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{71                                        \{}
-\DoxyCodeLine{72     vector<int64\_t> large\_sample;}
-\DoxyCodeLine{73     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 1000; i++) \{}
-\DoxyCodeLine{74         large\_sample.emplace\_back(i);}
-\DoxyCodeLine{75     \}}
-\DoxyCodeLine{76     KF\_CV<int64\_t> kF\_CV = KF\_CV<int64\_t>(large\_sample, 5, 1);}
-\DoxyCodeLine{77     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 5; i++) \{}
-\DoxyCodeLine{78         REQUIRE(200 == kF\_CV.get\_test\_fold(i).size());}
-\DoxyCodeLine{79         REQUIRE(800 == kF\_CV.get\_train\_fold(i).size());}
-\DoxyCodeLine{80     \}}
-\DoxyCodeLine{81 \}}
+\DoxyCodeLine{00071                                        \{}
+\DoxyCodeLine{00072     vector<int64\_t> large\_sample;}
+\DoxyCodeLine{00073     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 1000; i++) \{}
+\DoxyCodeLine{00074         large\_sample.emplace\_back(i);}
+\DoxyCodeLine{00075     \}}
+\DoxyCodeLine{00076     KF\_CV<int64\_t> kF\_CV = KF\_CV<int64\_t>(large\_sample, 5, 1);}
+\DoxyCodeLine{00077     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 5; i++) \{}
+\DoxyCodeLine{00078         REQUIRE(200 == kF\_CV.get\_test\_fold(i).size());}
+\DoxyCodeLine{00079         REQUIRE(800 == kF\_CV.get\_train\_fold(i).size());}
+\DoxyCodeLine{00080     \}}
+\DoxyCodeLine{00081 \}}
 
 \end{DoxyCode}

@@ -1,0 +1,137 @@
+\hypertarget{utils_8cpp_source}{}\doxysection{utils.\+cpp}
+\label{utils_8cpp_source}\index{modules/utils.cpp@{modules/utils.cpp}}
+\mbox{\hyperlink{utils_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00035}00035 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00036}00036 \textcolor{comment}{ * Utilities implementations for different helper methods/functions}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00037}00037 \textcolor{comment}{ * needed for openMTPK}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00038}00038 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00039}00039 \textcolor{preprocessor}{\#include "{}../include/utils.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00040}00040 \textcolor{preprocessor}{\#include "{}../include/linalg/matrix.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00041}00041 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00042}00042 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00043}00043 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00045}00045 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00046}00046 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00047}00047 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00049}00049 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}};}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00051}00051 \textcolor{comment}{// TODO: helper function to compute dimensions of the CSV file and}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00052}00052 \textcolor{comment}{// pass into other functions}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00053}00053 \textcolor{comment}{// std::string Data::read\_csv(file\_name, ??)}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00055}00055 std::tuple<std::vector<std::vector<double>>, std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00056}\mbox{\hyperlink{classmtpk_1_1Data_abeeccfb400d015aa4bbac0d7deb17016}{00056}}     Data::load() \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00057}00057     \textcolor{keyword}{const} \textcolor{keywordtype}{int} SIZE = 1; \textcolor{comment}{// k = 30}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00059}00059     std::vector<std::vector<double>> inputSet;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00060}00060     std::vector<double> outputSet;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00062}00062     \mbox{\hyperlink{classmtpk_1_1Data_ac724378f90f14940b78b01ada1d061ab}{setData}}(SIZE, \textcolor{stringliteral}{"{}../../data/school\_scores.csv"{}},}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00063}00063             \textcolor{comment}{//"{}../../data/BreastCancer.csv"{},}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00064}00064             inputSet, outputSet);}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00066}00066     \textcolor{keywordflow}{return} \{inputSet, outputSet\};}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00067}00067 \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00069}\mbox{\hyperlink{classmtpk_1_1Data_ac724378f90f14940b78b01ada1d061ab}{00069}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_ac724378f90f14940b78b01ada1d061ab}{Data::setData}}(\textcolor{keywordtype}{int} k, std::string fileName,}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00070}00070                    std::vector<std::vector<double>> \&inputSet,}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00071}00071                    std::vector<double> \&outputSet) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00072}00072     \textcolor{comment}{// LinAlg alg;}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00073}00073     std::string inputTemp;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00074}00074     std::string outputTemp;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00076}00076     inputSet.resize(k);}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00078}00078     std::ifstream dataFile(fileName);}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00079}00079     \textcolor{keywordflow}{if} (!dataFile.is\_open()) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00080}00080         std::cout << fileName << \textcolor{stringliteral}{"{} failed to open."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00083}00083     std::string line;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00084}00084     \textcolor{keywordflow}{while} (std::getline(dataFile, line)) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00085}00085         std::stringstream ss(line);}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00087}00087         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < k; i++) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00088}00088             std::getline(ss, inputTemp, \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00089}00089             inputSet[i].push\_back(std::stod(inputTemp));}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00090}00090             \textcolor{comment}{// inputSet(i, inputSet.cols) = std::stod(inputTemp);}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00091}00091         \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00093}00093         std::getline(ss, outputTemp, \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00094}00094         outputSet.push\_back(std::stod(outputTemp));}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00095}00095         \textcolor{comment}{// outputSet(0, outputSet.cols) = std::stod(outputTemp);}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00096}00096     \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00097}00097     \textcolor{comment}{// Matrix obj}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00098}00098     \textcolor{comment}{// inputSet = inputSet.T();}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00100}00100     dataFile.close();}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00102}\mbox{\hyperlink{classmtpk_1_1Data_ad279954dd89b4f5635ef2381faf0bbce}{00102}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_ad279954dd89b4f5635ef2381faf0bbce}{Data::printData}}(std::vector<std::string> inputName,}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00103}00103                      std::vector<std::vector<double>> inputSet) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00104}00104     \textcolor{comment}{// LinAlg alg;}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00105}00105     \textcolor{comment}{// inputSet = alg.transpose(inputSet);}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00106}00106     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < inputSet.size(); i++) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00107}00107         std::cout << inputName[i] << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00108}00108         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < inputSet[i].size(); j++) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00109}00109             std::cout << inputSet[i][j] << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00110}00110         \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00114}\mbox{\hyperlink{classmtpk_1_1Data_a30297aab3a4a5cc3a9565d116f527348}{00114}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_ad279954dd89b4f5635ef2381faf0bbce}{Data::printData}}(std::vector<std::string> inputName,}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00115}00115                      std::string outputName,}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00116}00116                      std::vector<std::vector<double>> inputSet,}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00117}00117                      std::vector<double> outputSet) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00118}00118     \textcolor{comment}{// LinAlg alg;}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00119}00119     \textcolor{comment}{// inputSet = alg.transpose(inputSet);}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00120}00120     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < inputSet.size(); i++) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00121}00121         std::cout << inputName[i] << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00122}00122         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < inputSet[i].size(); j++) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00123}00123             std::cout << inputSet[i][j] << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00124}00124         \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00127}00127     std::cout << outputName << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00128}00128     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < outputSet.size(); i++) \{}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00129}00129         std::cout << outputSet[i] << std::endl;}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00130}00130     \}}
+\DoxyCodeLine{\Hypertarget{utils_8cpp_source_l00131}00131 \}}
+
+\end{DoxyCode}

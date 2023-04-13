@@ -59,7 +59,7 @@ long double \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b1
 \doxysubsection{Detailed Description}
 
 
-Definition at line 49 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
@@ -72,24 +72,24 @@ Definition at line 49 of file linreg.\+hpp.
 
 
 
-Definition at line 49 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{49                                        \{}
-\DoxyCodeLine{50     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} = 0;}
-\DoxyCodeLine{51     \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} = 0;}
-\DoxyCodeLine{52     \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}} = 0;}
-\DoxyCodeLine{53     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{sum\_y\_square}} = 0;}
-\DoxyCodeLine{54     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} = 0;}
-\DoxyCodeLine{55     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} = 0;}
-\DoxyCodeLine{56     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}} = 0;}
-\DoxyCodeLine{57 \}}
+\DoxyCodeLine{00049                                        \{}
+\DoxyCodeLine{00050     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} = 0;}
+\DoxyCodeLine{00051     \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} = 0;}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}} = 0;}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{sum\_y\_square}} = 0;}
+\DoxyCodeLine{00054     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} = 0;}
+\DoxyCodeLine{00055     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} = 0;}
+\DoxyCodeLine{00056     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}} = 0;}
+\DoxyCodeLine{00057 \}}
 
 \end{DoxyCode}
 
 
-References coeff, constant, sum\+\_\+x, sum\+\_\+x\+\_\+square, sum\+\_\+xy, sum\+\_\+y, and sum\+\_\+y\+\_\+square.
+References \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\+\_\+x}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\+\_\+x\+\_\+square}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\+\_\+xy}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\+\_\+y}}, and \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{sum\+\_\+y\+\_\+square}}.
 
 
 
@@ -102,18 +102,18 @@ References coeff, constant, sum\+\_\+x, sum\+\_\+x\+\_\+square, sum\+\_\+xy, sum
 
 
 
-Definition at line 99 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{99                                     \{}
-\DoxyCodeLine{100     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} == 0 \&\& \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} == 0) \{}
-\DoxyCodeLine{101         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}{calculate\_coeffecient}}();}
-\DoxyCodeLine{102         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}{calculate\_constant}}();}
-\DoxyCodeLine{103     \}}
-\DoxyCodeLine{104     std::cout << \textcolor{stringliteral}{"{}The best fitting line is y = "{}} << \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} << \textcolor{stringliteral}{"{}x + "{}}}
-\DoxyCodeLine{105               << \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} << std::endl;}
-\DoxyCodeLine{106 \}}
+\DoxyCodeLine{00099                                     \{}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} == 0 \&\& \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} == 0) \{}
+\DoxyCodeLine{00101         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}{calculate\_coeffecient}}();}
+\DoxyCodeLine{00102         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}{calculate\_constant}}();}
+\DoxyCodeLine{00103     \}}
+\DoxyCodeLine{00104     std::cout << \textcolor{stringliteral}{"{}The best fitting line is y = "{}} << \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} << \textcolor{stringliteral}{"{}x + "{}}}
+\DoxyCodeLine{00105               << \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} << std::endl;}
+\DoxyCodeLine{00106 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}\label{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}} 
@@ -124,16 +124,16 @@ Definition at line 99 of file linreg.\+cpp.
 
 
 
-Definition at line 61 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{61                                                  \{}
-\DoxyCodeLine{62     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} N = \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size();}
-\DoxyCodeLine{63     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} numerator = (N * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}});}
-\DoxyCodeLine{64     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} denominator = (N * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}});}
-\DoxyCodeLine{65     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} = numerator / denominator;}
-\DoxyCodeLine{66 \}}
+\DoxyCodeLine{00061                                                  \{}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} N = \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size();}
+\DoxyCodeLine{00063     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} numerator = (N * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}});}
+\DoxyCodeLine{00064     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} denominator = (N * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}});}
+\DoxyCodeLine{00065     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} = numerator / denominator;}
+\DoxyCodeLine{00066 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}\label{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}} 
@@ -144,16 +144,16 @@ Definition at line 61 of file linreg.\+cpp.
 
 
 
-Definition at line 72 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{72                                               \{}
-\DoxyCodeLine{73     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} N = \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size();}
-\DoxyCodeLine{74     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} numerator = (\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}});}
-\DoxyCodeLine{75     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} denominator = (N * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}});}
-\DoxyCodeLine{76     \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} = numerator / denominator;}
-\DoxyCodeLine{77 \}}
+\DoxyCodeLine{00072                                               \{}
+\DoxyCodeLine{00073     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} N = \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size();}
+\DoxyCodeLine{00074     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} numerator = (\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}});}
+\DoxyCodeLine{00075     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} denominator = (N * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}});}
+\DoxyCodeLine{00076     \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} = numerator / denominator;}
+\DoxyCodeLine{00077 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a0b29487d1e95ec6d52162ed2073bb7d5}\label{classmtpk_1_1LinearRegression_a0b29487d1e95ec6d52162ed2073bb7d5}} 
@@ -164,13 +164,13 @@ Definition at line 72 of file linreg.\+cpp.
 
 
 
-Definition at line 80 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{80                                         \{}
-\DoxyCodeLine{81     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size();}
-\DoxyCodeLine{82 \}}
+\DoxyCodeLine{00080                                         \{}
+\DoxyCodeLine{00081     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size();}
+\DoxyCodeLine{00082 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a25dce9b76c3a8086a021deae9cdc5082}\label{classmtpk_1_1LinearRegression_a25dce9b76c3a8086a021deae9cdc5082}} 
@@ -181,18 +181,18 @@ Definition at line 80 of file linreg.\+cpp.
 
 
 
-Definition at line 164 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{164                                                           \{}
-\DoxyCodeLine{165     \textcolor{keywordflow}{for} (int64\_t i = 0; uint64\_t(i) < \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size(); i++) \{}
-\DoxyCodeLine{166         \textcolor{keywordflow}{if} (num == \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]) \{}
-\DoxyCodeLine{167             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i] -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]));}
-\DoxyCodeLine{168         \}}
-\DoxyCodeLine{169     \}}
-\DoxyCodeLine{170     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{171 \}}
+\DoxyCodeLine{00164                                                           \{}
+\DoxyCodeLine{00165     \textcolor{keywordflow}{for} (int64\_t i = 0; uint64\_t(i) < \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size(); i++) \{}
+\DoxyCodeLine{00166         \textcolor{keywordflow}{if} (num == \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]) \{}
+\DoxyCodeLine{00167             \textcolor{keywordflow}{return} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i] -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]));}
+\DoxyCodeLine{00168         \}}
+\DoxyCodeLine{00169     \}}
+\DoxyCodeLine{00170     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00171 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_aa732b915b76a68449b812d6b69988a9f}\label{classmtpk_1_1LinearRegression_aa732b915b76a68449b812d6b69988a9f}} 
@@ -203,17 +203,17 @@ Definition at line 164 of file linreg.\+cpp.
 
 
 
-Definition at line 153 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{153                                                \{}
-\DoxyCodeLine{154     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} ans = 0;}
-\DoxyCodeLine{155     \textcolor{keywordflow}{for} (int64\_t i = 0; uint64\_t(i) < \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size(); i++) \{}
-\DoxyCodeLine{156         ans += ((\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]) -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i]) * (\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]) -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i]));}
-\DoxyCodeLine{157     \}}
-\DoxyCodeLine{158     \textcolor{keywordflow}{return} ans;}
-\DoxyCodeLine{159 \}}
+\DoxyCodeLine{00153                                                \{}
+\DoxyCodeLine{00154     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} ans = 0;}
+\DoxyCodeLine{00155     \textcolor{keywordflow}{for} (int64\_t i = 0; uint64\_t(i) < \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size(); i++) \{}
+\DoxyCodeLine{00156         ans += ((\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]) -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i]) * (\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i]) -\/ \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i]));}
+\DoxyCodeLine{00157     \}}
+\DoxyCodeLine{00158     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00159 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a6c09efb426a69e10c51130b84c966c4d}\label{classmtpk_1_1LinearRegression_a6c09efb426a69e10c51130b84c966c4d}} 
@@ -224,29 +224,29 @@ Definition at line 153 of file linreg.\+cpp.
 
 
 
-Definition at line 109 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{109                                               \{}
-\DoxyCodeLine{110     \textcolor{keywordflow}{for} (int64\_t i = 0; i < n; i++) \{}
-\DoxyCodeLine{111         \textcolor{comment}{/*}}
-\DoxyCodeLine{112 \textcolor{comment}{         * In a csv file all the values of xi and yi are separated by}}
-\DoxyCodeLine{113 \textcolor{comment}{         * commas}}
-\DoxyCodeLine{114 \textcolor{comment}{         */}}
-\DoxyCodeLine{115         \textcolor{keywordtype}{char} comma;}
-\DoxyCodeLine{116         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} xi;}
-\DoxyCodeLine{117         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} yi;}
-\DoxyCodeLine{118         std::cin >> xi >> comma >> yi;}
-\DoxyCodeLine{119         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}} += xi * yi;}
-\DoxyCodeLine{120         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} += xi;}
-\DoxyCodeLine{121         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}} += yi;}
-\DoxyCodeLine{122         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} += xi * xi;}
-\DoxyCodeLine{123         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{sum\_y\_square}} += yi * yi;}
-\DoxyCodeLine{124         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.push\_back(xi);}
-\DoxyCodeLine{125         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}.push\_back(yi);}
-\DoxyCodeLine{126     \}}
-\DoxyCodeLine{127 \}}
+\DoxyCodeLine{00109                                               \{}
+\DoxyCodeLine{00110     \textcolor{keywordflow}{for} (int64\_t i = 0; i < n; i++) \{}
+\DoxyCodeLine{00111         \textcolor{comment}{/*}}
+\DoxyCodeLine{00112 \textcolor{comment}{         * In a csv file all the values of xi and yi are separated by}}
+\DoxyCodeLine{00113 \textcolor{comment}{         * commas}}
+\DoxyCodeLine{00114 \textcolor{comment}{         */}}
+\DoxyCodeLine{00115         \textcolor{keywordtype}{char} comma;}
+\DoxyCodeLine{00116         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} xi;}
+\DoxyCodeLine{00117         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} yi;}
+\DoxyCodeLine{00118         std::cin >> xi >> comma >> yi;}
+\DoxyCodeLine{00119         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}} += xi * yi;}
+\DoxyCodeLine{00120         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}} += xi;}
+\DoxyCodeLine{00121         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}} += yi;}
+\DoxyCodeLine{00122         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}} += xi * xi;}
+\DoxyCodeLine{00123         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{sum\_y\_square}} += yi * yi;}
+\DoxyCodeLine{00124         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.push\_back(xi);}
+\DoxyCodeLine{00125         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}.push\_back(yi);}
+\DoxyCodeLine{00126     \}}
+\DoxyCodeLine{00127 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a38eb6032898768a36e7a01cf25f15c78}\label{classmtpk_1_1LinearRegression_a38eb6032898768a36e7a01cf25f15c78}} 
@@ -257,23 +257,23 @@ Definition at line 109 of file linreg.\+cpp.
 
 
 
-Definition at line 173 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{173                                                         \{}
-\DoxyCodeLine{174     int64\_t num = 0;}
-\DoxyCodeLine{175     std::string row;}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177     \textcolor{comment}{// create input file stream}}
-\DoxyCodeLine{178     std::ifstream file(input);}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180     \textcolor{keywordflow}{while} (getline(file, row)) \{}
-\DoxyCodeLine{181         num++;}
-\DoxyCodeLine{182     \}}
-\DoxyCodeLine{183 }
-\DoxyCodeLine{184     \textcolor{keywordflow}{return} num;}
-\DoxyCodeLine{185 \}}
+\DoxyCodeLine{00173                                                         \{}
+\DoxyCodeLine{00174     int64\_t num = 0;}
+\DoxyCodeLine{00175     std::string row;}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177     \textcolor{comment}{// create input file stream}}
+\DoxyCodeLine{00178     std::ifstream file(input);}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180     \textcolor{keywordflow}{while} (getline(file, row)) \{}
+\DoxyCodeLine{00181         num++;}
+\DoxyCodeLine{00182     \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184     \textcolor{keywordflow}{return} num;}
+\DoxyCodeLine{00185 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}\label{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}} 
@@ -284,13 +284,13 @@ Definition at line 173 of file linreg.\+cpp.
 
 
 
-Definition at line 148 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{148                                                        \{}
-\DoxyCodeLine{149     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}} + \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}};}
-\DoxyCodeLine{150 \}}
+\DoxyCodeLine{00148                                                        \{}
+\DoxyCodeLine{00149     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} * \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}} + \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}};}
+\DoxyCodeLine{00150 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a5e763c75c8516f7b45955bd1ba62042d}\label{classmtpk_1_1LinearRegression_a5e763c75c8516f7b45955bd1ba62042d}} 
@@ -301,15 +301,15 @@ Definition at line 148 of file linreg.\+cpp.
 
 
 
-Definition at line 85 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{85                                                      \{}
-\DoxyCodeLine{86     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} == 0)}
-\DoxyCodeLine{87         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}{calculate\_coeffecient}}();}
-\DoxyCodeLine{88     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}};}
-\DoxyCodeLine{89 \}}
+\DoxyCodeLine{00085                                                      \{}
+\DoxyCodeLine{00086     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}} == 0)}
+\DoxyCodeLine{00087         \mbox{\hyperlink{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}{calculate\_coeffecient}}();}
+\DoxyCodeLine{00088     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}};}
+\DoxyCodeLine{00089 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a6a1f0afd96a5db5155dec5683e65010e}\label{classmtpk_1_1LinearRegression_a6a1f0afd96a5db5155dec5683e65010e}} 
@@ -320,15 +320,15 @@ Definition at line 85 of file linreg.\+cpp.
 
 
 
-Definition at line 92 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{92                                                   \{}
-\DoxyCodeLine{93     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} == 0)}
-\DoxyCodeLine{94         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}{calculate\_constant}}();}
-\DoxyCodeLine{95     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}};}
-\DoxyCodeLine{96 \}}
+\DoxyCodeLine{00092                                                   \{}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}} == 0)}
+\DoxyCodeLine{00094         \mbox{\hyperlink{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}{calculate\_constant}}();}
+\DoxyCodeLine{00095     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}};}
+\DoxyCodeLine{00096 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a0a679f0a2880c2a48870a153902b6f23}\label{classmtpk_1_1LinearRegression_a0a679f0a2880c2a48870a153902b6f23}} 
@@ -339,26 +339,26 @@ Definition at line 92 of file linreg.\+cpp.
 
 
 
-Definition at line 130 of file linreg.\+cpp.
+Definition at line \mbox{\hyperlink{linreg_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{linreg_8cpp_source}{linreg.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{130                                      \{}
-\DoxyCodeLine{131     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 62; i++) \{}
-\DoxyCodeLine{132         printf(\textcolor{stringliteral}{"{}\_"{}});}
-\DoxyCodeLine{133     \}}
-\DoxyCodeLine{134     printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{135     printf(\textcolor{stringliteral}{"{}|\%15s\%5s \%15s\%5s\%20s\(\backslash\)n"{}}, \textcolor{stringliteral}{"{}X"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}Y"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}|"{}});}
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137     \textcolor{keywordflow}{for} (int64\_t i = 0; uint64\_t(i) < \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size(); i++) \{}
-\DoxyCodeLine{138         printf(\textcolor{stringliteral}{"{}|\%20Lf \%20Lf\%20s\(\backslash\)n"{}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i], \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i], \textcolor{stringliteral}{"{}|"{}});}
-\DoxyCodeLine{139     \}}
-\DoxyCodeLine{140 }
-\DoxyCodeLine{141     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 62; i++) \{}
-\DoxyCodeLine{142         printf(\textcolor{stringliteral}{"{}\_"{}});}
-\DoxyCodeLine{143     \}}
-\DoxyCodeLine{144     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{145 \}}
+\DoxyCodeLine{00130                                      \{}
+\DoxyCodeLine{00131     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 62; i++) \{}
+\DoxyCodeLine{00132         printf(\textcolor{stringliteral}{"{}\_"{}});}
+\DoxyCodeLine{00133     \}}
+\DoxyCodeLine{00134     printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00135     printf(\textcolor{stringliteral}{"{}|\%15s\%5s \%15s\%5s\%20s\(\backslash\)n"{}}, \textcolor{stringliteral}{"{}X"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}Y"{}}, \textcolor{stringliteral}{"{}"{}}, \textcolor{stringliteral}{"{}|"{}});}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137     \textcolor{keywordflow}{for} (int64\_t i = 0; uint64\_t(i) < \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}.size(); i++) \{}
+\DoxyCodeLine{00138         printf(\textcolor{stringliteral}{"{}|\%20Lf \%20Lf\%20s\(\backslash\)n"{}}, \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}}[i], \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}}[i], \textcolor{stringliteral}{"{}|"{}});}
+\DoxyCodeLine{00139     \}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141     \textcolor{keywordflow}{for} (int64\_t i = 0; i < 62; i++) \{}
+\DoxyCodeLine{00142         printf(\textcolor{stringliteral}{"{}\_"{}});}
+\DoxyCodeLine{00143     \}}
+\DoxyCodeLine{00144     printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00145 \}}
 
 \end{DoxyCode}
 
@@ -372,11 +372,11 @@ Definition at line 130 of file linreg.\+cpp.
 
 
 
-Definition at line 55 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}\label{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!constant@{constant}}
@@ -386,11 +386,11 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 57 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}\label{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!sum\_x@{sum\_x}}
@@ -400,11 +400,11 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 61 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}\label{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!sum\_x\_square@{sum\_x\_square}}
@@ -414,11 +414,11 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 65 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}\label{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!sum\_xy@{sum\_xy}}
@@ -428,11 +428,11 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 59 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}\label{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!sum\_y@{sum\_y}}
@@ -442,11 +442,11 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 63 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}\label{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!sum\_y\_square@{sum\_y\_square}}
@@ -456,11 +456,11 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 67 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 
-Referenced by Linear\+Regression().
+Referenced by \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{Linear\+Regression()}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}\label{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!x@{x}}
@@ -470,7 +470,7 @@ Referenced by Linear\+Regression().
 
 
 
-Definition at line 51 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 \mbox{\Hypertarget{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}\label{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}} 
 \index{mtpk::LinearRegression@{mtpk::LinearRegression}!y@{y}}
@@ -480,7 +480,7 @@ Definition at line 51 of file linreg.\+hpp.
 
 
 
-Definition at line 53 of file linreg.\+hpp.
+Definition at line \mbox{\hyperlink{linreg_8hpp_source_l00053}{53}} of file \mbox{\hyperlink{linreg_8hpp_source}{linreg.\+hpp}}.
 
 
 

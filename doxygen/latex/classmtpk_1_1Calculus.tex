@@ -18,7 +18,7 @@ std\+::string \mbox{\hyperlink{classmtpk_1_1Calculus_a47c9d1bc11315662c6f9e1183f
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classmtpk_1_1Calculus}{Calculus}} Class with methods pertaining to basic operations. 
 
-Definition at line 50 of file deriv.\+hpp.
+Definition at line \mbox{\hyperlink{deriv_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{deriv_8hpp_source}{deriv.\+hpp}}.
 
 
 
@@ -43,31 +43,31 @@ result \+: derived function (string)
 \end{DoxyReturn}
 
 
-Definition at line 124 of file deriv.\+cpp.
+Definition at line \mbox{\hyperlink{deriv_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{deriv_8cpp_source}{deriv.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{124                                              \{}
-\DoxyCodeLine{125     int64\_t ans = 0;}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{127     \textcolor{comment}{// We use istringstream to get input in tokens}}
-\DoxyCodeLine{128     std::istringstream is(poly);}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130     std::string p\_term;}
-\DoxyCodeLine{131     \textcolor{keywordflow}{while} (is >> p\_term) \{}
-\DoxyCodeLine{132         \textcolor{comment}{// std::cout << "{}poly = "{} << poly << std::endl;}}
-\DoxyCodeLine{133         \textcolor{comment}{// std::cout << "{}p\_term = "{} << p\_term << std:: endl;}}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{135         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
-\DoxyCodeLine{136         \textcolor{keywordflow}{if} (p\_term == \textcolor{stringliteral}{"{}+"{}})}
-\DoxyCodeLine{137             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{139         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
-\DoxyCodeLine{140         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{141             ans = ans;}
-\DoxyCodeLine{142     \}}
-\DoxyCodeLine{143     \textcolor{keywordflow}{return} poly;}
-\DoxyCodeLine{144 \}}
+\DoxyCodeLine{00124                                              \{}
+\DoxyCodeLine{00125     int64\_t ans = 0;}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \textcolor{comment}{// We use istringstream to get input in tokens}}
+\DoxyCodeLine{00128     std::istringstream is(poly);}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130     std::string p\_term;}
+\DoxyCodeLine{00131     \textcolor{keywordflow}{while} (is >> p\_term) \{}
+\DoxyCodeLine{00132         \textcolor{comment}{// std::cout << "{}poly = "{} << poly << std::endl;}}
+\DoxyCodeLine{00133         \textcolor{comment}{// std::cout << "{}p\_term = "{} << p\_term << std:: endl;}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
+\DoxyCodeLine{00136         \textcolor{keywordflow}{if} (p\_term == \textcolor{stringliteral}{"{}+"{}})}
+\DoxyCodeLine{00137             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
+\DoxyCodeLine{00140         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00141             ans = ans;}
+\DoxyCodeLine{00142     \}}
+\DoxyCodeLine{00143     \textcolor{keywordflow}{return} poly;}
+\DoxyCodeLine{00144 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1Calculus_a4c1c4fdc45fccf75cd81ca5a63cff7e2}\label{classmtpk_1_1Calculus_a4c1c4fdc45fccf75cd81ca5a63cff7e2}} 
@@ -92,30 +92,30 @@ result \+: result of the solved x
 \end{DoxyReturn}
 
 
-Definition at line 103 of file deriv.\+cpp.
+Definition at line \mbox{\hyperlink{deriv_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{deriv_8cpp_source}{deriv.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{103                                                            \{}
-\DoxyCodeLine{104     int64\_t ans = 0;}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106     \textcolor{comment}{// We use istringstream to get input in tokens}}
-\DoxyCodeLine{107     std::istringstream is(poly);}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109     std::string p\_term;}
-\DoxyCodeLine{110     \textcolor{keywordflow}{while} (is >> p\_term) \{}
-\DoxyCodeLine{111         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
-\DoxyCodeLine{112         \textcolor{keywordflow}{if} (p\_term == \textcolor{stringliteral}{"{}+"{}})}
-\DoxyCodeLine{113             \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
-\DoxyCodeLine{116         \textcolor{keywordflow}{else}}
-\DoxyCodeLine{117             ans = (ans + \mbox{\hyperlink{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}{derivative\_term}}(p\_term, val));}
-\DoxyCodeLine{118     \}}
-\DoxyCodeLine{119     printf(\textcolor{stringliteral}{"{}\(\backslash\)nDEBUGGING DERIV AT\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{120     printf(\textcolor{stringliteral}{"{}ans = \%ld\(\backslash\)n"{}}, ans);}
-\DoxyCodeLine{121     \textcolor{keywordflow}{return} ans;}
-\DoxyCodeLine{122 \}}
+\DoxyCodeLine{00103                                                            \{}
+\DoxyCodeLine{00104     int64\_t ans = 0;}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106     \textcolor{comment}{// We use istringstream to get input in tokens}}
+\DoxyCodeLine{00107     std::istringstream is(poly);}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109     std::string p\_term;}
+\DoxyCodeLine{00110     \textcolor{keywordflow}{while} (is >> p\_term) \{}
+\DoxyCodeLine{00111         \textcolor{comment}{// If the token is equal to '+' then continue with the string}}
+\DoxyCodeLine{00112         \textcolor{keywordflow}{if} (p\_term == \textcolor{stringliteral}{"{}+"{}})}
+\DoxyCodeLine{00113             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115         \textcolor{comment}{// Otherwise find the derivative of that particular term}}
+\DoxyCodeLine{00116         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00117             ans = (ans + \mbox{\hyperlink{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}{derivative\_term}}(p\_term, val));}
+\DoxyCodeLine{00118     \}}
+\DoxyCodeLine{00119     printf(\textcolor{stringliteral}{"{}\(\backslash\)nDEBUGGING DERIV AT\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00120     printf(\textcolor{stringliteral}{"{}ans = \%ld\(\backslash\)n"{}}, ans);}
+\DoxyCodeLine{00121     \textcolor{keywordflow}{return} ans;}
+\DoxyCodeLine{00122 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}\label{classmtpk_1_1Calculus_a284a811f1cea8a9e33a0e348612a6050}} 
@@ -140,39 +140,39 @@ result \+: formatted coeffecients + exponents
 \end{DoxyReturn}
 
 
-Definition at line 73 of file deriv.\+cpp.
+Definition at line \mbox{\hyperlink{deriv_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{deriv_8cpp_source}{deriv.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{73                                                                    \{}
-\DoxyCodeLine{74     \textcolor{comment}{// Get coefficient}}
-\DoxyCodeLine{75     std::string coeffStr = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{76     int64\_t i;}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78     \textcolor{keywordflow}{for} (i = 0; p\_term[i] != \textcolor{charliteral}{'x'}; i++) \{}
-\DoxyCodeLine{79         coeffStr.push\_back(p\_term[i]);}
-\DoxyCodeLine{80     \}}
-\DoxyCodeLine{81     int64\_t coeff = atol(coeffStr.c\_str());}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83     \textcolor{comment}{// Get Power (Skip 2 characters for x and \string^)}}
-\DoxyCodeLine{84     std::string powStr = \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86     \textcolor{keywordflow}{for} (i = i + 2; i != p\_term.size(); i++) \{}
-\DoxyCodeLine{87         powStr.push\_back(p\_term[i]);}
-\DoxyCodeLine{88         printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
-\DoxyCodeLine{89     \}}
-\DoxyCodeLine{90     int64\_t expo = atol(powStr.c\_str());}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     \textcolor{comment}{// For ax\string^n, we return anx\string^(n-\/1)}}
-\DoxyCodeLine{93     printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
-\DoxyCodeLine{94     printf(\textcolor{stringliteral}{"{}p\_term = \%s \(\backslash\)n"{}}, p\_term.c\_str());}
-\DoxyCodeLine{95     printf(\textcolor{stringliteral}{"{}coeff = \%ld \(\backslash\)n"{}}, coeff);}
-\DoxyCodeLine{96     printf(\textcolor{stringliteral}{"{}Exponent = \%ld \(\backslash\)n"{}}, expo);}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{98     int64\_t result = coeff * expo * pow(val, expo -\/ 1);}
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100     \textcolor{keywordflow}{return} coeff * expo * pow(val, expo -\/ 1);}
-\DoxyCodeLine{101 \}}
+\DoxyCodeLine{00073                                                                    \{}
+\DoxyCodeLine{00074     \textcolor{comment}{// Get coefficient}}
+\DoxyCodeLine{00075     std::string coeffStr = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00076     int64\_t i;}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keywordflow}{for} (i = 0; p\_term[i] != \textcolor{charliteral}{'x'}; i++) \{}
+\DoxyCodeLine{00079         coeffStr.push\_back(p\_term[i]);}
+\DoxyCodeLine{00080     \}}
+\DoxyCodeLine{00081     int64\_t coeff = atol(coeffStr.c\_str());}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     \textcolor{comment}{// Get Power (Skip 2 characters for x and \string^)}}
+\DoxyCodeLine{00084     std::string powStr = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{keywordflow}{for} (i = i + 2; i != p\_term.size(); i++) \{}
+\DoxyCodeLine{00087         powStr.push\_back(p\_term[i]);}
+\DoxyCodeLine{00088         printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
+\DoxyCodeLine{00089     \}}
+\DoxyCodeLine{00090     int64\_t expo = atol(powStr.c\_str());}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{comment}{// For ax\string^n, we return anx\string^(n-\/1)}}
+\DoxyCodeLine{00093     printf(\textcolor{stringliteral}{"{}powStr = \%s \(\backslash\)n"{}}, powStr.c\_str());}
+\DoxyCodeLine{00094     printf(\textcolor{stringliteral}{"{}p\_term = \%s \(\backslash\)n"{}}, p\_term.c\_str());}
+\DoxyCodeLine{00095     printf(\textcolor{stringliteral}{"{}coeff = \%ld \(\backslash\)n"{}}, coeff);}
+\DoxyCodeLine{00096     printf(\textcolor{stringliteral}{"{}Exponent = \%ld \(\backslash\)n"{}}, expo);}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     int64\_t result = coeff * expo * pow(val, expo -\/ 1);}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100     \textcolor{keywordflow}{return} coeff * expo * pow(val, expo -\/ 1);}
+\DoxyCodeLine{00101 \}}
 
 \end{DoxyCode}
 

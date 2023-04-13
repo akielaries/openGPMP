@@ -1,0 +1,148 @@
+\hypertarget{mlp__network_8cpp_source}{}\doxysection{mlp\+\_\+network.\+cpp}
+\label{mlp__network_8cpp_source}\index{modules/ml/mlp\_network.cpp@{modules/ml/mlp\_network.cpp}}
+\mbox{\hyperlink{mlp__network_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00028}00028 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00029}00029 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00030}00030 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00031}00031 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00033}00033 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00034}00034 \textcolor{comment}{ * Implementation of a Multi-\/Layered Perceptron Neural Network}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00035}00035 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00036}00036 \textcolor{preprocessor}{\#include "{}../../include/ml/mlp\_net.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00037}00037 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00038}00038 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00039}00039 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00040}00040 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00042}00042 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemtpk_1_1ml}{mtpk::ml}};}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00044}00044 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00045}00045 \textcolor{comment}{ * Initialize randomly generated values for network's method}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00046}00046 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00047}\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a66629db6d9a859905bda220e982a0a7a}{00047}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a66629db6d9a859905bda220e982a0a7a}{mtpk::ml::PrimaryMLP::rand\_init}}() \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00048}00048     srand(4711);}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00049}00049     \textcolor{comment}{// srand((uint64\_t)time(NULL));}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00052}00052 \textcolor{comment}{/* verify the random is an integer */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00053}\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a1944148b92b8b2c0d9cccac3b6f91071}{00053}} int64\_t \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a1944148b92b8b2c0d9cccac3b6f91071}{mtpk::ml::PrimaryMLP::rand\_int}}(int64\_t hi, int64\_t low) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} rand() \% (hi -\/ low + 1) + low;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00057}00057 \textcolor{comment}{/* verify generated random is a real number */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00058}\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a18eb4946937035f12809fcc9b672a727}{00058}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a18eb4946937035f12809fcc9b672a727}{mtpk::ml::PrimaryMLP::rand\_real}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} low,}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00059}00059                                             \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} hi) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00060}00060     \textcolor{keywordflow}{return} ((\textcolor{keywordtype}{long} \textcolor{keywordtype}{double})rand() / RAND\_MAX) * (hi -\/ low) + low;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00061}00061 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00063}00063 \textcolor{comment}{/* PRIMARY MLP CONSTRUCTOR */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00064}\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}{00064}} \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a74005f6700a488e456b95f06e3a416d5}{mtpk::ml::PrimaryMLP::PrimaryMLP}}(int64\_t nl, int64\_t npl[])}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00065}00065     : num\_layers(0), layer\_ptr(0), \_MSE(0.0), \_MAE(0.0), \_Eta(0.25),}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00066}00066       \_Alpha(0.9), \_Gain(1.0), \_AvgTestError(0.0) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00067}00067     int64\_t \_LAYER, \_NEURON;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00069}00069     \textcolor{comment}{// create network layers}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00070}00070     \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a27753bc0c2fa1fb57f272c35b2f3f9f4}{num\_layers}} = nl;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00071}00071     \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}} = \textcolor{keyword}{new} \mbox{\hyperlink{structmtpk_1_1ml_1_1layer}{layer}}[nl];}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00073}00073     \textcolor{comment}{// intialize the data of the created network layers}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00074}00074     \textcolor{keywordflow}{for} (\_LAYER = 0; \_LAYER < nl; \_LAYER++) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00075}00075         \textcolor{comment}{// intialize values to neuron struct information}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00076}00076         \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_ae123a255612d91473e4a5287264f7218}{num\_neurons}} = npl[\_LAYER];}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00077}00077         \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}} = \textcolor{keyword}{new} \mbox{\hyperlink{structmtpk_1_1ml_1_1neuron}{neuron}}[npl[\_LAYER]];}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00079}00079         \textcolor{comment}{// intialize date of the neurons of the created network layers}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00080}00080         \textcolor{keywordflow}{for} (\_NEURON = 0; \_NEURON < npl[\_LAYER]; \_NEURON++) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00081}00081             \textcolor{comment}{// initialize exit value}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00082}00082             \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a26a8ebdfbda481634337c94ece3eaa55}{sortir}} = 1.0;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00083}00083             \textcolor{comment}{// save the error}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00084}00084             \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae457c01e087efc6758397020f36764d3}{err}} = 0.0;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00086}00086             \textcolor{comment}{// check if there is at least 1 layer}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00087}00087             \textcolor{keywordflow}{if} (\_LAYER > 0) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00088}00088                 \textcolor{comment}{/* initialize weight, last weight, and saved weight}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00089}00089 \textcolor{comment}{                 * values to \_LAYER -\/ 1}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00090}00090 \textcolor{comment}{                 */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00091}00091                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a6cee05b2d2a490755d8860ea1af04ec5}{wt}} =}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00092}00092                     \textcolor{keyword}{new} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}[npl[\_LAYER -\/ 1]];}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00094}00094                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ab7016b420f793b86e44a8e2996599c24}{wt\_last}} =}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00095}00095                     \textcolor{keyword}{new} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}[npl[\_LAYER -\/ 1]];}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00097}00097                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae296b2f6f486c8e6cbc16a4a03f4080a}{wt\_saved}} =}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00098}00098                     \textcolor{keyword}{new} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}[npl[\_LAYER -\/ 1]];}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00099}00099             \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00100}00100             \textcolor{comment}{// otherwise}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00101}00101             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00102}00102                 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00103}00103 \textcolor{comment}{                 * initialize weight, last weight, and saved weight}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00104}00104 \textcolor{comment}{                 * to NULL}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00105}00105 \textcolor{comment}{                 */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00106}00106                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_a6cee05b2d2a490755d8860ea1af04ec5}{wt}} = NULL;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00107}00107                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ab7016b420f793b86e44a8e2996599c24}{wt\_last}} = NULL;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00108}00108                 \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_ab44d549917a926ca38f278440071322a}{layer\_ptr}}[\_LAYER].\mbox{\hyperlink{structmtpk_1_1ml_1_1layer_a6b3400f94d50b26bb620a27e672c6ecf}{neuron\_ptr}}[\_NEURON].\mbox{\hyperlink{structmtpk_1_1ml_1_1neuron_ae296b2f6f486c8e6cbc16a4a03f4080a}{wt\_saved}} = NULL;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00109}00109             \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00110}00110         \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00114}00114 \textcolor{comment}{/* PRIMARY MLP DECONSTRUCTOR */}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00115}\mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a0951d92936443debb2fa0d41020bed9e}{00115}} \mbox{\hyperlink{classmtpk_1_1ml_1_1PrimaryMLP_a0951d92936443debb2fa0d41020bed9e}{mtpk::ml::PrimaryMLP::\string~PrimaryMLP}}() \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00116}00116     int64\_t \_LAYER, \_NEURON;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00118}00118     \textcolor{comment}{// TODO : thread the loops dealing with rudimentary computations}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00120}00120     \textcolor{keywordflow}{for} (\_LAYER = 0; \_LAYER < num\_layers; \_LAYER++) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00121}00121         \textcolor{keywordflow}{if} (layer\_ptr[\_LAYER].neuron\_ptr) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00122}00122             \textcolor{keywordflow}{for} (\_NEURON = 0; \_NEURON < layer\_ptr[\_LAYER].num\_neurons;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00123}00123                  \_NEURON++) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00124}00124                 \textcolor{keywordflow}{if} (layer\_ptr[\_LAYER].neuron\_ptr[\_NEURON].wt) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00125}00125                     \textcolor{keyword}{delete}[] layer\_ptr[\_LAYER].neuron\_ptr[\_NEURON].wt;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00126}00126                 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00128}00128                 \textcolor{keywordflow}{if} (layer\_ptr[\_LAYER].neuron\_ptr[\_NEURON].wt\_last) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00129}00129                     \textcolor{keyword}{delete}[] layer\_ptr[\_LAYER].neuron\_ptr[\_NEURON].wt\_last;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00130}00130                 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00132}00132                 \textcolor{keywordflow}{if} (layer\_ptr[\_LAYER].neuron\_ptr[\_NEURON].wt\_saved) \{}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00133}00133                     \textcolor{keyword}{delete}[] layer\_ptr[\_LAYER]}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00134}00134                         .neuron\_ptr[\_NEURON]}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00135}00135                         .wt\_saved;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00136}00136                 \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00137}00137             \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00138}00138         \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00139}00139         \textcolor{keyword}{delete}[] layer\_ptr[\_LAYER].neuron\_ptr;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00140}00140     \}}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00141}00141     \textcolor{keyword}{delete}[] layer\_ptr;}
+\DoxyCodeLine{\Hypertarget{mlp__network_8cpp_source_l00142}00142 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,124 @@
+\hypertarget{linreg_8hpp_source}{}\doxysection{linreg.\+hpp}
+\label{linreg_8hpp_source}\index{include/ml/linreg.hpp@{include/ml/linreg.hpp}}
+\mbox{\hyperlink{linreg_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00035}00035 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00036}00036 \textcolor{comment}{ * Linear regression is a statistical method for modeling}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00037}00037 \textcolor{comment}{ * relationships between a dependent variable with a given set of}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00038}00038 \textcolor{comment}{ * independent variables.}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00039}00039 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#ifndef LINREG\_H}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#define LINREG\_H}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00047}00047 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00049}\mbox{\hyperlink{classmtpk_1_1LinearRegression}{00049}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1LinearRegression}{LinearRegression}} \{}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00050}00050     \textcolor{comment}{// Dynamic array which is going to contain all (i-\/th x)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00051}\mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{00051}}     std::vector<long double> \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00052}00052     \textcolor{comment}{// Dynamic array which is going to contain all (i-\/th y)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00053}\mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{00053}}     std::vector<long double> \mbox{\hyperlink{classmtpk_1_1LinearRegression_aba2ac61bce60114443b15732d15fbf02}{y}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00054}00054     \textcolor{comment}{// Store the coefficient/slope in the best fitting line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00055}\mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{00055}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a4411218c4d29a62a3b311d518222ede3}{coeff}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00056}00056     \textcolor{comment}{// Store the constant term in the best fitting line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00057}\mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{00057}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_ac2880aa8177a866b00b5959ef47a6565}{constant}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00058}00058     \textcolor{comment}{// Contains sum of product of all (i-\/th x) and (i-\/th y)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00059}\mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{00059}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0f298e31854ca84dad01eacb78f10c84}{sum\_xy}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00060}00060     \textcolor{comment}{// Contains sum of all (i-\/th x)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00061}\mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{00061}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a621bbd6f181724d1c339e44fe3d681d5}{sum\_x}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00062}00062     \textcolor{comment}{// Contains sum of all (i-\/th y)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00063}\mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{00063}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa47f7d4f15e9bee8ef22259a1deaa3fc}{sum\_y}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00064}00064     \textcolor{comment}{// Contains sum of square of all (i-\/th x)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00065}\mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{00065}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a9a764630ada1ddc0f680fd32e1395fdd}{sum\_x\_square}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00066}00066     \textcolor{comment}{// Contains sum of square of all (i-\/th y)}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00067}\mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{00067}}     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b595f076587ed1656b14b2bd17f482a}{sum\_y\_square}};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00069}00069     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00070}00070     \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5268f319d1f196731beb03f94858f22f}{LinearRegression}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00071}00071     \textcolor{comment}{/*\{}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00072}00072 \textcolor{comment}{            coeff;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00073}00073 \textcolor{comment}{            constant;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00074}00074 \textcolor{comment}{            sum\_y;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00075}00075 \textcolor{comment}{            sum\_y\_square;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00076}00076 \textcolor{comment}{            sum\_x\_square;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00077}00077 \textcolor{comment}{            sum\_x;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00078}00078 \textcolor{comment}{            sum\_xy;}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00079}00079 \textcolor{comment}{        \}*/}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00081}00081     \textcolor{comment}{// Function that calculate the coefficient/slope of the best}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00082}00082     \textcolor{comment}{// fitting line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00083}00083     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a8adf938260d5747a5cc687f9569a364c}{calculate\_coeffecient}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00084}00084     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00085}00085 \textcolor{comment}{     * Member function that will calculate the constant term of the}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00086}00086 \textcolor{comment}{     * best fitting line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00087}00087 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00088}00088     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1LinearRegression_aff5428e75e8735c21138afb05653aaa2}{calculate\_constant}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00089}00089     \textcolor{comment}{// Function that return the number of entries (xi, yi) in the data}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00090}00090     \textcolor{comment}{// set}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00091}00091     int64\_t \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0b29487d1e95ec6d52162ed2073bb7d5}{data\_size}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00092}00092     \textcolor{comment}{// Function that return the coefficient/slope of the best fitting}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00093}00093     \textcolor{comment}{// line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00094}00094     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a5e763c75c8516f7b45955bd1ba62042d}{return\_coeffecient}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00095}00095     \textcolor{comment}{// Function that return the constant term of the best fitting line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00096}00096     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a6a1f0afd96a5db5155dec5683e65010e}{return\_constant}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00097}00097     \textcolor{comment}{// Function that print the best fitting line}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00098}00098     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1LinearRegression_ae201c10b80a5e3c7095d84f0a72b644a}{best\_fit}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00099}00099     \textcolor{comment}{// Function to take input from the dataset}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00100}00100     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a6c09efb426a69e10c51130b84c966c4d}{get\_input}}(int64\_t n);}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00101}00101     \textcolor{comment}{// Function to show the data set}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00102}00102     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a0a679f0a2880c2a48870a153902b6f23}{show\_data}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00103}00103     \textcolor{comment}{// Function to predict the value corresponding to some input}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00104}00104     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa0189753efc6f1fb1128b069bb95f125}{predict}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a2a208413da61c487fb7138930c556700}{x}});}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00105}00105     \textcolor{comment}{// Function that returns overall sum of square of errors}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00106}00106     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_aa732b915b76a68449b812d6b69988a9f}{error\_square}}();}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00107}00107     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00108}00108 \textcolor{comment}{     * Functions that return the error i.e the difference between the}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00109}00109 \textcolor{comment}{     * actual value and value predicted by our model}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00110}00110 \textcolor{comment}{     */}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00111}00111     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classmtpk_1_1LinearRegression_a25dce9b76c3a8086a021deae9cdc5082}{error\_in}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} num);}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00112}00112     \textcolor{comment}{// function that calculates the number of rows in a file}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00113}00113     int64\_t \mbox{\hyperlink{classmtpk_1_1LinearRegression_a38eb6032898768a36e7a01cf25f15c78}{num\_rows}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *input);}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00114}00114 \};}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00116}00116 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{linreg_8hpp_source_l00118}00118 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

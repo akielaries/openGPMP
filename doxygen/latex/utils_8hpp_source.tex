@@ -1,0 +1,119 @@
+\hypertarget{utils_8hpp_source}{}\doxysection{utils.\+hpp}
+\label{utils_8hpp_source}\index{include/utils.hpp@{include/utils.hpp}}
+\mbox{\hyperlink{utils_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#ifndef UTILS\_HPP}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#define UTILS\_HPP}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix_8hpp}{linalg/matrix.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00049}00049 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00051}00051 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00056}\mbox{\hyperlink{classmtpk_1_1Data}{00056}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Data}{Data}} \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00057}00057     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00063}00063     std::tuple<std::vector<std::vector<double>>, std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00064}00064         \mbox{\hyperlink{classmtpk_1_1Data_abeeccfb400d015aa4bbac0d7deb17016}{load}}();}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00066}00066     std::tuple<std::vector<std::vector<double>>,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00067}00067                std::vector<std::vector<double>>>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00068}\mbox{\hyperlink{classmtpk_1_1Data_a898a41381a2231d0b5da83f4ed985592}{00068}}         \mbox{\hyperlink{classmtpk_1_1Data_a898a41381a2231d0b5da83f4ed985592}{load}}();}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00070}00070     std::tuple<std::vector<std::vector<double>>, std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00071}\mbox{\hyperlink{classmtpk_1_1Data_afc188c06cbc9841b71baa011eac69c9f}{00071}}         \mbox{\hyperlink{classmtpk_1_1Data_afc188c06cbc9841b71baa011eac69c9f}{load}}();}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00073}\mbox{\hyperlink{classmtpk_1_1Data_a01c0c4861872b9ab43ba6ab00e10bd6a}{00073}}     std::tuple<std::vector<double>, std::vector<double>> \mbox{\hyperlink{classmtpk_1_1Data_a01c0c4861872b9ab43ba6ab00e10bd6a}{load}}();}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00075}00075     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_ac724378f90f14940b78b01ada1d061ab}{setData}}(\textcolor{keywordtype}{int} k, std::string fileName,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00076}00076                  std::vector<std::vector<double>> \&inputSet,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00077}00077                  std::vector<double> \&outputSet);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00079}00079     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_ad279954dd89b4f5635ef2381faf0bbce}{printData}}(std::vector<std::string> inputName,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00080}00080                    std::vector<std::vector<double>> inputSet);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00082}00082     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_ad279954dd89b4f5635ef2381faf0bbce}{printData}}(std::vector<std::string> inputName,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00083}00083                    std::string outputName,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00084}00084                    std::vector<std::vector<double>> inputSet,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00085}00085                    std::vector<double> outputSet);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00087}\mbox{\hyperlink{classmtpk_1_1Data_acf66087369d3b66a88c2f9824364b602}{00087}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmtpk_1_1Data_acf66087369d3b66a88c2f9824364b602}{set\_input\_names}}(std::string file\_name,}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00088}00088                          std::vector<std::string> \&input\_names);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00090}00090     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00091}\mbox{\hyperlink{classmtpk_1_1Data_afee70ff7d233aa38e562513c434c3a78}{00091}}         \mbox{\hyperlink{classmtpk_1_1Data_afee70ff7d233aa38e562513c434c3a78}{feature\_scaling}}(std::vector<std::vector<double>> X);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00093}00093     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00094}\mbox{\hyperlink{classmtpk_1_1Data_a94137f163792f87baf934440d7e66989}{00094}}         \mbox{\hyperlink{classmtpk_1_1Data_a94137f163792f87baf934440d7e66989}{one\_rep}}(std::vector<double> temp\_output\_set, \textcolor{keywordtype}{int} n\_class);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00096}00096     std::vector<double>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00097}\mbox{\hyperlink{classmtpk_1_1Data_a348a5bafb85c5b5232eb1a9955e333e7}{00097}}         \mbox{\hyperlink{classmtpk_1_1Data_a348a5bafb85c5b5232eb1a9955e333e7}{one\_rep\_reverse}}(std::vector<std::vector<double>> temp\_output\_set);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00099}\mbox{\hyperlink{classmtpk_1_1Data_a3ac68239a887387c3f8167b8e86dd5e7}{00099}}     std::vector<char> \mbox{\hyperlink{classmtpk_1_1Data_a3ac68239a887387c3f8167b8e86dd5e7}{split}}(std::string text);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00100}\mbox{\hyperlink{classmtpk_1_1Data_ac2ade8e58f091da70aab7ee8f57b5ad9}{00100}}     std::vector<std::string> \mbox{\hyperlink{classmtpk_1_1Data_ac2ade8e58f091da70aab7ee8f57b5ad9}{splitSentences}}(std::string data);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00101}\mbox{\hyperlink{classmtpk_1_1Data_a2daeae4fa44fe1286eb5ea5f3e0af329}{00101}}     std::vector<std::string> \mbox{\hyperlink{classmtpk_1_1Data_a2daeae4fa44fe1286eb5ea5f3e0af329}{removeSpaces}}(std::vector<std::string> data);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00102}\mbox{\hyperlink{classmtpk_1_1Data_a72a4ad8441f4d9592f27813bd2ee1eac}{00102}}     std::vector<std::string> \mbox{\hyperlink{classmtpk_1_1Data_a72a4ad8441f4d9592f27813bd2ee1eac}{removeNullByte}}(std::vector<std::string> data);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00103}\mbox{\hyperlink{classmtpk_1_1Data_aed2fb7c372a50f8cc63ee9bc1d877270}{00103}}     std::vector<std::string> \mbox{\hyperlink{classmtpk_1_1Data_aed2fb7c372a50f8cc63ee9bc1d877270}{segment}}(std::string text);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00104}00104 \};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00106}00106 \textcolor{comment}{// exponentiate}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00108}00108 \textcolor{comment}{// square root}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00110}00110 \textcolor{comment}{// cube root}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00116}\mbox{\hyperlink{classmtpk_1_1OutlierFinder}{00116}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1OutlierFinder}{OutlierFinder}} \{}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00117}00117     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00118}00118     \textcolor{comment}{// Cnstr}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00119}\mbox{\hyperlink{classmtpk_1_1OutlierFinder_a18c2087072af1615d3a9ecfbbdecd587}{00119}}     \mbox{\hyperlink{classmtpk_1_1OutlierFinder_a18c2087072af1615d3a9ecfbbdecd587}{OutlierFinder}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1OutlierFinder_abd2ae71c2aaa99870b03dbb5001688b4}{threshold}});}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00121}00121     std::vector<std::vector<double>>}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00122}\mbox{\hyperlink{classmtpk_1_1OutlierFinder_a57cc6f0212bf7cc539c57d8e8f18275b}{00122}}         \mbox{\hyperlink{classmtpk_1_1OutlierFinder_a57cc6f0212bf7cc539c57d8e8f18275b}{modelSetTest}}(std::vector<std::vector<double>> inputSet);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00123}\mbox{\hyperlink{classmtpk_1_1OutlierFinder_aa2cf0c4de2d4d76d4de65f887285a1de}{00123}}     std::vector<double> \mbox{\hyperlink{classmtpk_1_1OutlierFinder_aa2cf0c4de2d4d76d4de65f887285a1de}{modelTest}}(std::vector<double> inputSet);}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00125}00125     \textcolor{comment}{// Variables required}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00126}\mbox{\hyperlink{classmtpk_1_1OutlierFinder_abd2ae71c2aaa99870b03dbb5001688b4}{00126}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmtpk_1_1OutlierFinder_abd2ae71c2aaa99870b03dbb5001688b4}{threshold}};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00127}00127 \};}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00129}00129 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{utils_8hpp_source_l00131}00131 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

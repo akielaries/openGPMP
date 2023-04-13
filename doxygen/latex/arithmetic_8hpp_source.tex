@@ -1,0 +1,122 @@
+\hypertarget{arithmetic_8hpp_source}{}\doxysection{arithmetic.\+hpp}
+\label{arithmetic_8hpp_source}\index{include/arithmetic.hpp@{include/arithmetic.hpp}}
+\mbox{\hyperlink{arithmetic_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00001}00001 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00002}00002 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00003}00003 \textcolor{comment}{ *  Project}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00004}00004 \textcolor{comment}{ *                        \_\_  \_\_ \_\_\_\_\_\_\_ \_\_\_\_\_  \_  \_\_}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00005}00005 \textcolor{comment}{ *                       |  \(\backslash\)/  |\_\_   \_\_|  \_\_ \(\backslash\)| |/ /}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00006}00006 \textcolor{comment}{ *  \_\_\_  \_ \_\_   \_\_\_ \_ \_\_ | \(\backslash\)  / |  | |  | |\_\_) | ' /}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00007}00007 \textcolor{comment}{ * / \_ \(\backslash\)| '\_ \(\backslash\) / \_ \(\backslash\) '\_ \(\backslash\)| |\(\backslash\)/| |  | |  |  \_\_\_/|  <}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00008}00008 \textcolor{comment}{ *| (\_) | |\_) |  \_\_/ | | | |  | |  | |  | |    | . \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00009}00009 \textcolor{comment}{ * \(\backslash\)\_\_\_/| .\_\_/ \(\backslash\)\_\_\_|\_| |\_|\_|  |\_|  |\_|  |\_|    |\_|\(\backslash\)\_\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00010}00010 \textcolor{comment}{ *      | |}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00011}00011 \textcolor{comment}{ *      |\_|}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00013}00013 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00014}00014 \textcolor{comment}{ * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00016}00016 \textcolor{comment}{ * This software is licensed as described in the file LICENSE, which}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00017}00017 \textcolor{comment}{ * you should have received as part of this distribution. The terms}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00018}00018 \textcolor{comment}{ * among other details are referenced in the official documentation}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00019}00019 \textcolor{comment}{ * seen here : https://akielaries.github.io/openMTPK/ along with}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00020}00020 \textcolor{comment}{ * important files seen in this project.}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00021}00021 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00022}00022 \textcolor{comment}{ * You may opt to use, copy, modify, merge, publish, distribute}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00023}00023 \textcolor{comment}{ * and/or sell copies of the Software, and permit persons to whom}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00024}00024 \textcolor{comment}{ * the Software is furnished to do so, under the terms of the}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00025}00025 \textcolor{comment}{ * LICENSE file. As this is an Open Source effort, all implementations}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00026}00026 \textcolor{comment}{ * must be of the same methodology.}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00027}00027 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00028}00028 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00029}00029 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00030}00030 \textcolor{comment}{ * This software is distributed on an AS IS basis, WITHOUT}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00031}00031 \textcolor{comment}{ * WARRANTY OF ANY KIND, either express or implied.}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00032}00032 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00033}00033 \textcolor{comment}{ ************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#ifndef ARITHMETIC\_HPP}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#define ARITHMETIC\_HPP}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00056}00056 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacemtpk}{mtpk}} \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00069}00069 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00070}\mbox{\hyperlink{classmtpk_1_1Arith}{00070}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Arith}{Arith}} \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00071}00071     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00072}\mbox{\hyperlink{classmtpk_1_1Arith_a70e6cf997a4479047e129b355d903d21}{00072}}     T \mbox{\hyperlink{classmtpk_1_1Arith_a70e6cf997a4479047e129b355d903d21}{arr\_add}}(T arr[], int64\_t n) \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00073}00073         T sum = 0;}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00075}00075         \textcolor{keywordflow}{for} (int64\_t i = 0; i < n; i++) \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00076}00076             sum += arr[i];}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00077}00077         \}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00078}00078         \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00079}00079     \}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00081}\mbox{\hyperlink{classmtpk_1_1Arith_a6dfd044e3afcf86a1bb4895c6dfc1d41}{00081}}     T \mbox{\hyperlink{classmtpk_1_1Arith_a6dfd044e3afcf86a1bb4895c6dfc1d41}{arr\_sub}}(T arr[], int64\_t n) \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00082}00082         T diff = arr[0];}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00084}00084         \textcolor{keywordflow}{for} (int64\_t i = 1; i < n; i++) \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00085}00085             diff -\/= arr[i];}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00086}00086         \}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00087}00087         \textcolor{keywordflow}{return} diff;}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00090}\mbox{\hyperlink{classmtpk_1_1Arith_ab0f54cca9c0fe1652be9f9a91b86d1a1}{00090}}     T \mbox{\hyperlink{classmtpk_1_1Arith_ab0f54cca9c0fe1652be9f9a91b86d1a1}{arr\_mlt}}(T arr[], int64\_t n) \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00091}00091         T prod = arr[0];}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00093}00093         \textcolor{keywordflow}{for} (int64\_t i = 0; i < n; i++) \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00094}00094             prod *= arr[i];}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00095}00095         \}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00096}00096         \textcolor{keywordflow}{return} prod;}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00098}00098 \};}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00105}\mbox{\hyperlink{classmtpk_1_1Basics}{00105}} \textcolor{keyword}{class }\mbox{\hyperlink{classmtpk_1_1Basics}{Basics}} \{}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00106}00106     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00115}00115     int64\_t \mbox{\hyperlink{classmtpk_1_1Basics_ab3cbc7901b3921638d357ee19acc6cd7}{greatest\_power}}(int64\_t n, int64\_t p);}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00125}00125     int64\_t \mbox{\hyperlink{classmtpk_1_1Basics_a12cc5cd615b0c1a39851c440cfc55a3e}{op\_gcd}}(int64\_t x, int64\_t y);}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00126}00126 \};}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00128}00128 \} \textcolor{comment}{// namespace mtpk}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00130}00130 \textcolor{comment}{//  public:}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00138}00138 \textcolor{comment}{}\textcolor{comment}{//    template <typename T> inline T add(T t) \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00139}00139 \textcolor{comment}{//        return t;}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00140}00140 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00142}00142 \textcolor{comment}{//    template <typename T, typename... Ts> inline auto add(T t, Ts... ts)}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00143}00143 \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00144}00144 \textcolor{comment}{//        return t + add(ts...);}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00145}00145 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00155}00155 \textcolor{comment}{//    template <typename X> inline X sub(X x) \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00156}00156 \textcolor{comment}{//        return x;}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00157}00157 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00158}00158 \textcolor{comment}{//    template <typename X, typename... Xy> inline auto sub(X x, Xy... xy)}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00159}00159 \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00160}00160 \textcolor{comment}{//        return x -\/ sub(xy...);}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00161}00161 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00170}00170 \textcolor{comment}{//    template <typename W> inline W mult(W w) \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00171}00171 \textcolor{comment}{//        return w;}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00172}00172 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00173}00173 \textcolor{comment}{//    template <typename W, typename... Wv> inline auto mult(W w, Wv... wv)}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00174}00174 \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00175}00175 \textcolor{comment}{//        return w * mult(wv...);}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00176}00176 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00186}00186 \textcolor{comment}{//    template <typename Z> inline Z exp(Z z) \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00187}00187 \textcolor{comment}{//        return z;}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00188}00188 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00189}00189 \textcolor{comment}{//    template <typename Z, typename... Zy> inline auto exp(Z z, Zy... zy)}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00190}00190 \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00191}00191 \textcolor{comment}{//        return z *= exp(zy...);}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00192}00192 \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00193}00193 \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{arithmetic_8hpp_source_l00195}00195 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

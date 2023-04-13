@@ -43,7 +43,7 @@ static GLfloat \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b15
 
 
 
-Definition at line 42 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 
@@ -56,50 +56,50 @@ Definition at line 42 of file torus\+\_\+animated.\+cpp.
 
 
 
-Definition at line 72 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{72                \{}
-\DoxyCodeLine{73     \textcolor{comment}{// setting every pixel in frame buffer to a clear color}}
-\DoxyCodeLine{74     glClear(GL\_COLOR\_BUFFER\_BIT);}
-\DoxyCodeLine{75     glMatrixMode(GL\_MODELVIEW);}
-\DoxyCodeLine{76     glLoadIdentity();}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78     glColor3f(1.0, 1.0, 1.0);}
-\DoxyCodeLine{79     glRotatef(\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}}, 0.0, 0.0, 1.0);}
-\DoxyCodeLine{80     glutWireTorus(0.5, 3, 15, 30);}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{82     \textcolor{comment}{// being drawing}}
-\DoxyCodeLine{83 }
-\DoxyCodeLine{84     glBegin(GL\_POLYGON);}
-\DoxyCodeLine{85     glRotatef(\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}}, 1.0, 0.0, 1.0);}
-\DoxyCodeLine{86     glColor3f(1, 0, 0);}
-\DoxyCodeLine{87     glVertex3f(0, 0, 0);}
-\DoxyCodeLine{88     glVertex3f(10, 0, 0);}
-\DoxyCodeLine{89     glColor3f(0, 1, 0);}
-\DoxyCodeLine{90     glVertex3f(0, 0, 0);}
-\DoxyCodeLine{91     glVertex3f(0, 10, 0);}
-\DoxyCodeLine{92     glColor3f(0, 0, 1);}
-\DoxyCodeLine{93     glVertex3f(0, 0, 0);}
-\DoxyCodeLine{94     glVertex3f(0, 0, 10);}
-\DoxyCodeLine{95     glEnd();}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{97     glRotatef(\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}}, 1.0, 0.0, 1.0);}
-\DoxyCodeLine{98 }
-\DoxyCodeLine{99     \textcolor{comment}{// flush the draw cmd to display image immediately}}
-\DoxyCodeLine{100     glFlush();}
-\DoxyCodeLine{101     glutSwapBuffers();}
-\DoxyCodeLine{102 \}}
+\DoxyCodeLine{00072                \{}
+\DoxyCodeLine{00073     \textcolor{comment}{// setting every pixel in frame buffer to a clear color}}
+\DoxyCodeLine{00074     glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{00075     glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{00076     glLoadIdentity();}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     glColor3f(1.0, 1.0, 1.0);}
+\DoxyCodeLine{00079     glRotatef(\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}}, 0.0, 0.0, 1.0);}
+\DoxyCodeLine{00080     glutWireTorus(0.5, 3, 15, 30);}
+\DoxyCodeLine{00081 }
+\DoxyCodeLine{00082     \textcolor{comment}{// being drawing}}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     glBegin(GL\_POLYGON);}
+\DoxyCodeLine{00085     glRotatef(\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}}, 1.0, 0.0, 1.0);}
+\DoxyCodeLine{00086     glColor3f(1, 0, 0);}
+\DoxyCodeLine{00087     glVertex3f(0, 0, 0);}
+\DoxyCodeLine{00088     glVertex3f(10, 0, 0);}
+\DoxyCodeLine{00089     glColor3f(0, 1, 0);}
+\DoxyCodeLine{00090     glVertex3f(0, 0, 0);}
+\DoxyCodeLine{00091     glVertex3f(0, 10, 0);}
+\DoxyCodeLine{00092     glColor3f(0, 0, 1);}
+\DoxyCodeLine{00093     glVertex3f(0, 0, 0);}
+\DoxyCodeLine{00094     glVertex3f(0, 0, 10);}
+\DoxyCodeLine{00095     glEnd();}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     glRotatef(\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}}, 1.0, 0.0, 1.0);}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099     \textcolor{comment}{// flush the draw cmd to display image immediately}}
+\DoxyCodeLine{00100     glFlush();}
+\DoxyCodeLine{00101     glutSwapBuffers();}
+\DoxyCodeLine{00102 \}}
 
 \end{DoxyCode}
 
 
-References current\+\_\+rot.
+References \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\+\_\+rot}}.
 
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}\label{torus__animated_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!init@{init}}
@@ -109,27 +109,27 @@ Referenced by main().
 
 
 
-Definition at line 132 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{132             \{}
-\DoxyCodeLine{133     glClearColor(0.0, 0.0, 0.0, 1.0);}
-\DoxyCodeLine{134     glColor3f(1.0, 1.0, 1.0);}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136     glMatrixMode(GL\_PROJECTION);}
-\DoxyCodeLine{137     glLoadIdentity();}
-\DoxyCodeLine{138     gluPerspective(60.0, 4.0 / 3.0, 1, 40);}
-\DoxyCodeLine{139 }
-\DoxyCodeLine{140     glMatrixMode(GL\_MODELVIEW);}
-\DoxyCodeLine{141     glLoadIdentity();}
-\DoxyCodeLine{142     gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);}
-\DoxyCodeLine{143 \}}
+\DoxyCodeLine{00132             \{}
+\DoxyCodeLine{00133     glClearColor(0.0, 0.0, 0.0, 1.0);}
+\DoxyCodeLine{00134     glColor3f(1.0, 1.0, 1.0);}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136     glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{00137     glLoadIdentity();}
+\DoxyCodeLine{00138     gluPerspective(60.0, 4.0 / 3.0, 1, 40);}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00140     glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{00141     glLoadIdentity();}
+\DoxyCodeLine{00142     gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);}
+\DoxyCodeLine{00143 \}}
 
 \end{DoxyCode}
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!main@{main}}
@@ -139,36 +139,36 @@ Referenced by main().
 
 
 
-Definition at line 145 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{145                                 \{}
-\DoxyCodeLine{146     glutInit(\&argc, argv);}
-\DoxyCodeLine{147     glutInitDisplayMode(GLUT\_SINGLE | GLUT\_RGB);}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149     \textcolor{comment}{// Position window at (80,80)-\/(480,380) and give it a title.}}
-\DoxyCodeLine{150     glutInitWindowPosition(80, 80);}
-\DoxyCodeLine{151     glutInitWindowSize(1000, 800);}
-\DoxyCodeLine{152     glutCreateWindow(\textcolor{stringliteral}{"{}A Torus on a Plane"{}});}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{154     glutReshapeFunc(\mbox{\hyperlink{torus__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}{reshape}});}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156     \textcolor{comment}{// Tell GLUT that whenever the main window needs to be repainted}}
-\DoxyCodeLine{157     \textcolor{comment}{// that it should call the function display().}}
-\DoxyCodeLine{158     glutDisplayFunc(\mbox{\hyperlink{torus__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}});}
-\DoxyCodeLine{159     glutTimerFunc(100, \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}, 0);}
-\DoxyCodeLine{160     glutMouseFunc(\mbox{\hyperlink{torus__animated_8cpp_ac76a5d78172a826cd6ee9512b89a86c0}{mouse}});}
-\DoxyCodeLine{161 }
-\DoxyCodeLine{162     \mbox{\hyperlink{torus__animated_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init}}();}
-\DoxyCodeLine{163 }
-\DoxyCodeLine{164     glutMainLoop();}
-\DoxyCodeLine{165 \}}
+\DoxyCodeLine{00145                                 \{}
+\DoxyCodeLine{00146     glutInit(\&argc, argv);}
+\DoxyCodeLine{00147     glutInitDisplayMode(GLUT\_SINGLE | GLUT\_RGB);}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149     \textcolor{comment}{// Position window at (80,80)-\/(480,380) and give it a title.}}
+\DoxyCodeLine{00150     glutInitWindowPosition(80, 80);}
+\DoxyCodeLine{00151     glutInitWindowSize(1000, 800);}
+\DoxyCodeLine{00152     glutCreateWindow(\textcolor{stringliteral}{"{}A Torus on a Plane"{}});}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154     glutReshapeFunc(\mbox{\hyperlink{torus__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}{reshape}});}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156     \textcolor{comment}{// Tell GLUT that whenever the main window needs to be repainted}}
+\DoxyCodeLine{00157     \textcolor{comment}{// that it should call the function display().}}
+\DoxyCodeLine{00158     glutDisplayFunc(\mbox{\hyperlink{torus__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display}});}
+\DoxyCodeLine{00159     glutTimerFunc(100, \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}, 0);}
+\DoxyCodeLine{00160     glutMouseFunc(\mbox{\hyperlink{torus__animated_8cpp_ac76a5d78172a826cd6ee9512b89a86c0}{mouse}});}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162     \mbox{\hyperlink{torus__animated_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init}}();}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164     glutMainLoop();}
+\DoxyCodeLine{00165 \}}
 
 \end{DoxyCode}
 
 
-References display(), init(), mouse(), reshape(), and timer().
+References \mbox{\hyperlink{torus__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display()}}, \mbox{\hyperlink{torus__animated_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init()}}, \mbox{\hyperlink{torus__animated_8cpp_ac76a5d78172a826cd6ee9512b89a86c0}{mouse()}}, \mbox{\hyperlink{torus__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}{reshape()}}, and \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_ac76a5d78172a826cd6ee9512b89a86c0}\label{torus__animated_8cpp_ac76a5d78172a826cd6ee9512b89a86c0}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!mouse@{mouse}}
@@ -178,26 +178,26 @@ References display(), init(), mouse(), reshape(), and timer().
 
 
 
-Definition at line 124 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{124                                                 \{}
-\DoxyCodeLine{125     \textcolor{keywordflow}{if} (button == GLUT\_LEFT\_BUTTON \&\& state == GLUT\_DOWN) \{}
-\DoxyCodeLine{126         \mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{127     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (button == GLUT\_RIGHT\_BUTTON \&\& state == GLUT\_DOWN) \{}
-\DoxyCodeLine{128         \mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{129     \}}
-\DoxyCodeLine{130 \}}
+\DoxyCodeLine{00124                                                 \{}
+\DoxyCodeLine{00125     \textcolor{keywordflow}{if} (button == GLUT\_LEFT\_BUTTON \&\& state == GLUT\_DOWN) \{}
+\DoxyCodeLine{00126         \mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00127     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (button == GLUT\_RIGHT\_BUTTON \&\& state == GLUT\_DOWN) \{}
+\DoxyCodeLine{00128         \mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00129     \}}
+\DoxyCodeLine{00130 \}}
 
 \end{DoxyCode}
 
 
-References spinning.
+References \mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}}.
 
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}\label{torus__animated_8cpp_a25e760e42e42389ea3a9b5bb35596b67}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!reshape@{reshape}}
@@ -207,33 +207,33 @@ Referenced by main().
 
 
 
-Definition at line 53 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{53                                \{}
-\DoxyCodeLine{54     glViewport(0, 0, w, h);}
-\DoxyCodeLine{55     GLfloat aspect = (GLfloat)w / (GLfloat)h;}
-\DoxyCodeLine{56     glMatrixMode(GL\_PROJECTION);}
-\DoxyCodeLine{57     glLoadIdentity();}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59     \textcolor{keywordflow}{if} (w <= h) \{}
-\DoxyCodeLine{60         \textcolor{comment}{// width is smaller, go from -\/50 .. 50 in width}}
-\DoxyCodeLine{61         glOrtho(-\/50.0, 50.0, -\/50.0 / aspect, 50.0 / aspect, -\/1.0, 1.0);}
-\DoxyCodeLine{62     \}}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{65         \textcolor{comment}{// height is smaller, go from -\/50 .. 50 in height}}
-\DoxyCodeLine{66         \textcolor{comment}{// glOrtho(-\/50.0*aspect, 50.0*aspect, -\/50.0, 50.0, -\/1.0, 1.0);}}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68         glOrtho(-\/10.0 * aspect, 10.0 * aspect, -\/10.0, 10.0, -\/1.0, 1.0);}
-\DoxyCodeLine{69     \}}
-\DoxyCodeLine{70 \}}
+\DoxyCodeLine{00053                                \{}
+\DoxyCodeLine{00054     glViewport(0, 0, w, h);}
+\DoxyCodeLine{00055     GLfloat aspect = (GLfloat)w / (GLfloat)h;}
+\DoxyCodeLine{00056     glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{00057     glLoadIdentity();}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if} (w <= h) \{}
+\DoxyCodeLine{00060         \textcolor{comment}{// width is smaller, go from -\/50 .. 50 in width}}
+\DoxyCodeLine{00061         glOrtho(-\/50.0, 50.0, -\/50.0 / aspect, 50.0 / aspect, -\/1.0, 1.0);}
+\DoxyCodeLine{00062     \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00065         \textcolor{comment}{// height is smaller, go from -\/50 .. 50 in height}}
+\DoxyCodeLine{00066         \textcolor{comment}{// glOrtho(-\/50.0*aspect, 50.0*aspect, -\/50.0, 50.0, -\/1.0, 1.0);}}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068         glOrtho(-\/10.0 * aspect, 10.0 * aspect, -\/10.0, 10.0, -\/1.0, 1.0);}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070 \}}
 
 \end{DoxyCode}
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}\label{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!timer@{timer}}
@@ -243,31 +243,31 @@ Referenced by main().
 
 
 
-Definition at line 107 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{107                   \{}
-\DoxyCodeLine{108     \textcolor{keywordflow}{if} (\mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}}) \{}
-\DoxyCodeLine{109         \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} += 1.0;}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111         \textcolor{keywordflow}{if} (\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} > 360.0) \{}
-\DoxyCodeLine{112             \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} -\/= 360.0;}
-\DoxyCodeLine{113         \}}
-\DoxyCodeLine{114         glutPostRedisplay();}
-\DoxyCodeLine{115     \}}
-\DoxyCodeLine{116 }
-\DoxyCodeLine{117     glutTimerFunc(1000 / \mbox{\hyperlink{torus__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}{FPS}}, \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}, v);}
-\DoxyCodeLine{118 \}}
+\DoxyCodeLine{00107                   \{}
+\DoxyCodeLine{00108     \textcolor{keywordflow}{if} (\mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}}) \{}
+\DoxyCodeLine{00109         \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} += 1.0;}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111         \textcolor{keywordflow}{if} (\mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} > 360.0) \{}
+\DoxyCodeLine{00112             \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\_rot}} -\/= 360.0;}
+\DoxyCodeLine{00113         \}}
+\DoxyCodeLine{00114         glutPostRedisplay();}
+\DoxyCodeLine{00115     \}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     glutTimerFunc(1000 / \mbox{\hyperlink{torus__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}{FPS}}, \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer}}, v);}
+\DoxyCodeLine{00118 \}}
 
 \end{DoxyCode}
 
 
-References current\+\_\+rot, FPS, and spinning.
+References \mbox{\hyperlink{torus__animated_8cpp_a38d573ac847aff2170e5585b156fa4e2}{current\+\_\+rot}}, \mbox{\hyperlink{torus__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}{FPS}}, \mbox{\hyperlink{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}{spinning}}, and \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer()}}.
 
 
 
-Referenced by main().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main()}}, and \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer()}}.
 
 
 
@@ -280,11 +280,11 @@ Referenced by main().
 
 
 
-Definition at line 48 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 
-Referenced by display(), and timer().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a1e5b20fed15743656bb6d2e6a6ea6269}{display()}}, and \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}\label{torus__animated_8cpp_ac5090a6568797128b0a5545228bb8b75}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!FPS@{FPS}}
@@ -294,11 +294,11 @@ Referenced by display(), and timer().
 
 
 
-Definition at line 45 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 
-Referenced by timer().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer()}}.
 
 \mbox{\Hypertarget{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}\label{torus__animated_8cpp_acd3bb90a36adc8d910a078425a19fdd8}} 
 \index{torus\_animated.cpp@{torus\_animated.cpp}!spinning@{spinning}}
@@ -308,9 +308,9 @@ Referenced by timer().
 
 
 
-Definition at line 44 of file torus\+\_\+animated.\+cpp.
+Definition at line \mbox{\hyperlink{torus__animated_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{torus__animated_8cpp_source}{torus\+\_\+animated.\+cpp}}.
 
 
 
-Referenced by mouse(), and timer().
+Referenced by \mbox{\hyperlink{torus__animated_8cpp_ac76a5d78172a826cd6ee9512b89a86c0}{mouse()}}, and \mbox{\hyperlink{torus__animated_8cpp_a61a498df564c00cba535b55fcf8e9cc3}{timer()}}.
 
