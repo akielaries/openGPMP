@@ -31,3 +31,7 @@ jobs:
         with:
           token: ${{ secrets.MTPK_BOT_USER }}
 
+      - name: Switch
+        run: |
+          git switch rolling
+
