@@ -3,13 +3,6 @@ name: Merge rolling into main
 on:
   schedule:
     - cron: "*/2 * * * *"
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'The name of the branch to merge'
-        required: true
-        default: 'rolling'
-
 
 jobs:
   nightly-merge:
