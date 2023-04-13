@@ -16,10 +16,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: main
-    - name: Checkout rolling branch
-      uses: actions/checkout@v2
-      with:
-        ref: rolling
         fetch-depth: 0
     - name: Merge rolling into main branch
       run: |
