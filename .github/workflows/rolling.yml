@@ -7,17 +7,34 @@ on:
     branches:
       - rolling
 
-jobs:
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
+env:
+  # replace "github_username" with your GitHub username
+  # replace "github.com/username/repo.git" with your GitHub repo path
+  # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
+  MY_REPO: https://akielaries:${{secrets.GITHUB_TOKEN}}@github.com/akielaries/openMTPK.git
 
-      - name: Merge rolling -> main
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          target_branch: main
-          message: '#ROLLING: Nightly Merge'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+  # replace "long-lived_branch_name" with your branch name
+  MY_BRANCH: rolling
+
+  # replace it with the path to master repo
+  MASTER_REPO: https://github.com/akielaries/openMTPK.git
+
+  # replace "master" with your master branch name
+  MASTER_BRANCH: main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Merge rolling -> main
+      run: |
+        git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
+        cd tmp
+        git config user.name "Automerge Bot"
+        git config user.email "bot@example.com"
+        git config pull.rebase false
+        git pull ${{env.MASTER_REPO}} ${{env.MASTER_BRANCH}}
+        git push
+
 
