@@ -46,21 +46,23 @@ using namespace std;
 
 namespace mtpk {
 
-template <class T> class CV {
-  protected:
+template <class T>
+class CV {
+    protected:
     int64_t K;
 
-  public:
+    public:
     virtual vector<T> get_train_fold(int64_t k) = 0;
     virtual vector<T> get_test_fold(int64_t k) = 0;
 };
 
-template <class T> class KF_CV : public CV<T> {
-  private:
+template <class T>
+class KF_CV : public CV<T> {
+    private:
     int64_t N;
     vector<T> instance_list;
 
-  public:
+    public:
     KF_CV(const vector<T> &instance_list, int64_t K, uint64_t seed);
     vector<T> get_train_fold(int64_t k);
     vector<T> get_test_fold(int64_t k);
@@ -93,7 +95,8 @@ KF_CV<T>::KF_CV(const vector<T> &instance_list, int64_t K, uint64_t seed) {
  * cross-validation
  * @return Produced training sample
  */
-template <class T> vector<T> KF_CV<T>::get_train_fold(int64_t k) {
+template <class T>
+vector<T> KF_CV<T>::get_train_fold(int64_t k) {
     vector<T> train_fold;
     for (int64_t i = 0; i < (k * N) / this->K; i++) {
         train_fold.push_back(instance_list.at(i));
@@ -111,7 +114,8 @@ template <class T> vector<T> KF_CV<T>::get_train_fold(int64_t k) {
  * cross-validation
  * @return Produced testing sample
  */
-template <class T> vector<T> KF_CV<T>::get_test_fold(int64_t k) {
+template <class T>
+vector<T> KF_CV<T>::get_test_fold(int64_t k) {
     vector<T> test_fold;
     for (int64_t i = (k * N) / this->K; i < ((k + 1) * N) / this->K; i++) {
         test_fold.push_back(instance_list.at(i));

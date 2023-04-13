@@ -1,7 +1,4 @@
 # Examples
-See the [openMTPK/samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
-for many more examples on how to use openMTPK.
-
 Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
 Keyword cipher:
 ```cpp
@@ -10,12 +7,11 @@ Keyword cipher:
  */
 #include <iostream>
 #include <string>
-// include the openMTPK Number Theory header
-#include <openMTPK/nt.hpp>
+#include <openMTPK/number_theory.hpp>
 
 
 int main() {
-    // declare CIPHER class obj (this lies within the mtpk namespace)
+    // declare CIPHER class obj
     mtpk::Cipher cc;
     
     /* CAESAR CIPHER */
@@ -40,26 +36,21 @@ int main() {
 A Python example showing the same functionalities.
 
 ```python
-#!/usr/bin/python3
-from openmtpk import nt
+#!/usr/bin/python3.10
+from openMTPK import Cipher
 
+c = Cipher()
+cipertext_0 = c.C_cipher('Plaintext', 5)
+print(ciphertext_0)
 
-def main():
-    c = nt.Cipher()
-    ciph = c.caesar("Plaintext", 5)
-    print(ciph)
+ciphertext_1 = c.C_cipher('ATTACKATONCE', 4)
+print(ciphertext_1)
 
-    ciph_1 = c.caesar("ATTACKATONCE", 4)
-    print(ciph_1)
+text = "Password"
+shift = "Computer"
 
-    text = "Password"
-    shift = "Computer"
-    encoded_text = c.keyword_encode(shift)
-    hashtext = c.keyword(text, encoded_text)
-    print(hashtext)
-
-
-if __name__ == "__main__":
-    main()
+encoded_text = c.KC_encode(shift);
+hashtext = c.KC_cipher(text, encoded_text);
+print(hashtext)
 ```
 

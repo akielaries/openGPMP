@@ -39,7 +39,7 @@
 
 namespace mtpk {
 class Stats {
-  public:
+    public:
     // These functions are for univariate lin reg module- not for
     // users.
     double b0Estimation(const std::vector<double> &x,
