@@ -56,7 +56,7 @@ namespace ml {
  * @details Class featuring several optimization algorithms
  */
 class Optimizers {
-    public:
+  public:
     /**
      * @brief Gradient Descent algorithm
      */

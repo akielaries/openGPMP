@@ -66,7 +66,7 @@ class LinearRegression {
     // Contains sum of square of all (i-th y)
     long double sum_y_square;
 
-    public:
+  public:
     LinearRegression();
     /*{
             coeff;
