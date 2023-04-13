@@ -36,8 +36,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: ${{ steps.traffic.outputs.traffic_branch }}
           publish_dir: ${{ steps.traffic.outputs.traffic_path }}
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          #user_name: 'github-actions[bot]'
+          #user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: 'mtpk-bot'
+          user_email: 'akiel.aries@gmail.com'
           full_commit_message: ${{ github.event.head_commit.message }}
 
       - name: Show Traffic Data
