@@ -97,7 +97,7 @@ class mtpk::Arith&lt; T &gt;</h3>
 <p><a class="el" href="classmtpk_1_1Basics.html" title="Arithmetic Operations">Basics</a> of Arithmetic</p>
 <p>Arithmetic Template Class. Each method is variadic taking 'n' params. </p>
 
-<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00070">70</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00069">69</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a70e6cf997a4479047e129b355d903d21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70e6cf997a4479047e129b355d903d21">&#9670;&nbsp;</a></span>arr_add()</h2>
@@ -106,9 +106,6 @@ class mtpk::Arith&lt; T &gt;</h3>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">T <a class="el" href="classmtpk_1_1Arith.html">mtpk::Arith</a>&lt; T &gt;::arr_add </td>
@@ -128,22 +125,17 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00072">72</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                  {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        T sum = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            sum += arr[i];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00071">71</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                  {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        T sum = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            sum += arr[i];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -154,9 +146,6 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">T <a class="el" href="classmtpk_1_1Arith.html">mtpk::Arith</a>&lt; T &gt;::arr_mlt </td>
@@ -176,22 +165,17 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00090">90</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                  {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        T prod = arr[0];</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            prod *= arr[i];</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> prod;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00089">89</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                  {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        T prod = arr[0];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            prod *= arr[i];</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> prod;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -202,9 +186,6 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">T <a class="el" href="classmtpk_1_1Arith.html">mtpk::Arith</a>&lt; T &gt;::arr_sub </td>
@@ -224,22 +205,17 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00081">81</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                  {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        T diff = arr[0];</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 1; i &lt; n; i++) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            diff -= arr[i];</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> diff;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="arithmetic_8hpp_source.html#l00080">80</a> of file <a class="el" href="arithmetic_8hpp_source.html">arithmetic.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                  {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        T diff = arr[0];</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 1; i &lt; n; i++) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            diff -= arr[i];</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> diff;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
