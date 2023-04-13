@@ -15,12 +15,12 @@ jobs:
     - name: Checkout main branch
       uses: actions/checkout@v2
       with:
-        ref: main
         fetch-depth: 0
+
     - name: Merge rolling into main branch
       run: |
         git config user.name "mtpk-bot"
         git config user.email "mtpk-bot@example.com"
-        git merge --no-ff --no-edit rolling
+        git merge --no-ff --no-edit origin/rolling
         git push -f origin main
 
