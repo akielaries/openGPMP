@@ -36,7 +36,6 @@ To install the Python interface, use the pip package manager and run the followi
 openmtpk`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip 
 installation.
 
-
 ## Build from source
 * Linux/OSX
 * CMake >=v3.24 (build from source for latest version)
