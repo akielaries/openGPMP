@@ -3,24 +3,38 @@ name: Merge rolling into main
 on:
   schedule:
     - cron: "*/2 * * * *"
-  push:
-    branches:
-      - rolling
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'The name of the branch to merge'
+        required: true
+        default: 'rolling'
 
 
 jobs:
-  merge:
+  nightly-merge:
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout rolling branch
-      uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        token: ${{ secrets.MTPK_BOT_ACCT }}
 
-    - name: Merge rolling into main branch
-      run: |
-        git config --global user.name "mtpk-bot"
-        git config --global user.email "akiel.aries@gmail.com"
-        git merge --no-ff --no-edit rolling
-        git push -f main
+
+    - name: Merge rolling -> main
+      uses: robotology/gh-action-nightly-merge@v1.4.0
+      with:
+        stable_branch: 'rolling'
+        development_branch: 'main'
+        push_token: 'BOT_TOKEN' 
+        user_name: mtpk-bot
+        user_email: akiel.aries@gmail.com
+        allow_ff: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BOT_TOKEN: ${{ secrets.MTPK_BOT_ACCT }}
+
 
