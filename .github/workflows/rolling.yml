@@ -7,22 +7,42 @@ on:
   schedule:
     - cron: "*/1 * * * *"
 
+env:
+  # replace "github_username" with your GitHub username
+  # replace "github.com/username/repo.git" with your GitHub repo path
+  # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
+  MY_REPO: https://akielaries:${{secrets.GITHUB_TOKEN}}@github.com/akielaries/openMTPK.git
+
+  # replace "long-lived_branch_name" with your branch name
+  MY_BRANCH: rolling
+
+  # replace it with the path to master repo
+  MASTER_REPO: https://github.com/akielaries/openMTPK.git
+
+  # replace "master" with your master branch name
+  MASTER_BRANCH: main
 
 jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v2
-        with:
-          ref: main
-      - name: Merge rolling branch
-        run: |
-          git config user.name mtpk-bot
-          git config user.email akiel.aries@gmail.com
-          git merge --no-ff ref/heads/rolling -m "Merge rolling branch into main by mtpk-bot"
-      - name: Push changes to main branch
-        uses: ad-m/github-push-action@master
-        with:
-          branch: main
+    - name: Checkout branch
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.MTPK_BOT_ACCT }}
+
+    - name: Merge with main
+      run: |
+        git config user.name "mtpk-bot"
+        git config user.email "akiel.aries@gmail.com"
+        git fetch origin rolling
+        git checkout rolling
+        git pull
+        git fetch origin main
+        git checkout main
+        git pull
+        git merge-base --is-ancestor rolling main
+        git merge --ff --no-edit rolling -m "#ROLLING: merging rolling -> main from mtpk-bot"
+        git push origin main
 
