@@ -20,6 +20,7 @@ jobs:
         git config user.name "mtpk-bot"
         git config user.email "akiel.aries@gmail.com"
         git switch main
-        git merge -m "#NIGHTLY: Merging rolling -> main" origin/rolling
+        git merge --squash origin/rolling
+        git commit -m "#NIGHTLY: Merging rolling -> main"
         git push
 
