@@ -35,7 +35,7 @@ jobs:
       - name: merge
         run: |
           git fetch origin main
-          git merge origin/rolling -m "#ROLLING: Merge from rolling -> main"
+          git merge origin rolling -m "#ROLLING: Merge from rolling -> main"
           git push origin main
 
 
