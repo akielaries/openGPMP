@@ -20,11 +20,12 @@ jobs:
     - name: Nightly Merge
       uses: robotology/gh-action-nightly-merge@v1.4.0
       with:
-        stable_branch: 'rolling'
-        development_branch: 'main'
+        stable_branch: 'main'
+        development_branch: 'rolling'
         push_token: 'BOT_TOKEN' 
         user_name: 'mtpk-bot'
         user_email: 'akiel.aries@gmail.com'
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BOT_TOKEN: ${{ secrets.MTPK_BOT_USER }}
 
