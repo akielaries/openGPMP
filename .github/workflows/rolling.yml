@@ -3,6 +3,11 @@ name: Merge rolling into main
 on:
   schedule:
     - cron: "*/2 * * * *"
+  push:
+    branches:
+      - rolling
+
+
 jobs:
   merge:
     runs-on: ubuntu-latest
