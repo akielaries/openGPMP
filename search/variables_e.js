@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['reg_896',['reg',['../classmtpk_1_1Logreg.html#a9678ae7040f338f85f992e2444f7240e',1,'mtpk::Logreg']]],
-  ['rows_897',['rows',['../classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b',1,'mtpk::Matrix']]]
+  ['queue_5fmutex_1038',['queue_mutex',['../classmtpk_1_1ThreadPool.html#aad56b1642544f98639932522b8e06e53',1,'mtpk::ThreadPool']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['secondarymlp_505',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
-  ['stats_506',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
-  ['summary_507',['summary',['../structmtpk_1_1summary.html',1,'mtpk']]],
-  ['svc_508',['SVC',['../classmtpk_1_1SVC.html',1,'mtpk']]]
+  ['optimizers_575',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
+  ['outlierfinder_576',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
 ];
