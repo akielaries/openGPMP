@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['hadamard_791',['hadamard',['../classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce',1,'mtpk::Matrix::hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#af9a488f17821dd401fa7c43454be3561',1,'openmtpk.linalg.linalg.Matrix.hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a7ef148fda934d3f635bc5880418aefa4',1,'openmtpk.linalg.linalg.MatrixI.hadamard()']]],
-  ['halleymethod_792',['halleyMethod',['../classmtpk_1_1NumericalAnalysis.html#a0c5db24c24730c41efa60742a984fe96',1,'mtpk::NumericalAnalysis']]],
-  ['harmonicmean_793',['harmonicMean',['../classmtpk_1_1Stats.html#a38d10fc32528c2b91a267d5571c605e5',1,'mtpk::Stats']]],
-  ['heinzmean_794',['heinzMean',['../classmtpk_1_1Stats.html#a0c214a869d09d110451c4d02b8809c59',1,'mtpk::Stats']]],
-  ['heronianmean_795',['heronianMean',['../classmtpk_1_1Stats.html#a981bc6c811376c0eb8f32d7c45649966',1,'mtpk::Stats']]],
-  ['hessian_796',['hessian',['../classmtpk_1_1NumericalAnalysis.html#ab0b88ad31db54adfa5fb5322bc9c8390',1,'mtpk::NumericalAnalysis']]]
+  ['identricmean_676',['identricMean',['../classmtpk_1_1Stats.html#a78146b69a7da2e4fbad6d714bd9035d8',1,'mtpk::Stats']]],
+  ['init_677',['init',['../torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus.cpp'],['../torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus_animated.cpp']]],
+  ['init_5fsecondarymlp_678',['init_SecondaryMLP',['../classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155',1,'mtpk::ml::Trainers']]],
+  ['invquadraticinterpolation_679',['invQuadraticInterpolation',['../classmtpk_1_1NumericalAnalysis.html#a66242d92bf0131838842efd267a72f0d',1,'mtpk::NumericalAnalysis']]],
+  ['is_5fprime_680',['is_prime',['../classmtpk_1_1Primality.html#a5c1b6327f4e402aff7c53afd5a026f01',1,'mtpk::Primality']]]
 ];
