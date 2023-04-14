@@ -49,6 +49,7 @@
 
 namespace mtpk {
 
+namespace core {
 // alias for the pair type of strings
 typedef std::pair<std::vector<std::string>,
                   std::vector<std::vector<std::string>>>
@@ -151,6 +152,7 @@ class DataTable {
     }
 };
 
+} // namespace core
 } // namespace mtpk
 
 #endif // DATATABLE_HPP

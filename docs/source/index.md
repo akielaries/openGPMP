@@ -20,7 +20,7 @@ Contents
 --------
 1. [Introduction](Introduction.md)
 2. [Modules](Modules.md)
-    * Core/Utilities
+    * [Core/Utilities](namespacemtpk_1_1core.html)
     * Arithmetic
     * Calculus
     * Linear Algebra

@@ -8,8 +8,9 @@
 #include <string>
 #include <vector>
 
-mtpk::DataTableStr mtpk::DataTable::csv_read(std::string filename,
-                                             std::vector<std::string> columns) {
+mtpk::core::DataTableStr
+mtpk::core::DataTable::csv_read(std::string filename,
+                                std::vector<std::string> columns) {
     std::ifstream file(filename);
 
     if (!file.is_open()) {
@@ -70,8 +71,9 @@ mtpk::DataTableStr mtpk::DataTable::csv_read(std::string filename,
     return make_pair(columns, data);
 }
 
-mtpk::DataTableInt mtpk::DataTable::str_to_int(mtpk::DataTableStr src) {
-    mtpk::DataTableInt dest;
+mtpk::core::DataTableInt
+mtpk::core::DataTable::str_to_int(mtpk::core::DataTableStr src) {
+    mtpk::core::DataTableInt dest;
 
     for (const auto &v : src.first) {
         // check if v contains only digits
@@ -92,8 +94,9 @@ mtpk::DataTableInt mtpk::DataTable::str_to_int(mtpk::DataTableStr src) {
     return dest;
 }
 
-mtpk::DataTableDouble mtpk::DataTable::str_to_double(mtpk::DataTableStr src) {
-    mtpk::DataTableDouble dest;
+mtpk::core::DataTableDouble
+mtpk::core::DataTable::str_to_double(mtpk::core::DataTableStr src) {
+    mtpk::core::DataTableDouble dest;
 
     for (const auto &v : src.first) {
         if (std::regex_match(v, std::regex("[-+]?\\d*\\.?\\d+"))) {

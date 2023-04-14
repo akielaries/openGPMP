@@ -17,12 +17,12 @@ int main() {
      */
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
-    mtpk::DataTable dt;
+    mtpk::core::DataTable dt;
 
     // std::pair<std::vector<std::string>,
     // std::vector<std::vector<std::string>>>
-    mtpk::DataTableStr result = dt.csv_read("../../data/forestfires.csv",
-                                            {"month", "day", "temp", "wind"});
+    mtpk::core::DataTableStr result = dt.csv_read(
+        "../../data/forestfires.csv", {"month", "day", "temp", "wind"});
     // print result
     dt.display(result);
 
