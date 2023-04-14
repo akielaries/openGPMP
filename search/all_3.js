@@ -45,7 +45,7 @@ var searchData=
   ['covariance_108',['covariance',['../classmtpk_1_1Stats.html#a7da89ca8af761f1924048a7ac5bb799d',1,'mtpk::Stats']]],
   ['cryptography_109',['CRYPTOGRAPHY',['../nt_8hpp.html#a7e35c8ec7ddf6c921ac513fdea803509',1,'nt.hpp']]],
   ['csch_110',['csch',['../classmtpk_1_1Activate.html#a577611b140312dc2159ea41316faa55a',1,'mtpk::Activate::csch(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#af3d0f16cde59b086af772496cb503755',1,'mtpk::Activate::csch(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a94ba811bff4e517f99551762d3bf4f4a',1,'mtpk::Activate::csch(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['csv_5fread_111',['csv_read',['../classmtpk_1_1DataTable.html#ad4df090346522184aca09f6c801b9cf0',1,'mtpk::DataTable']]],
+  ['csv_5fread_111',['csv_read',['../classmtpk_1_1core_1_1DataTable.html#ad1d9a0a74a37d125c2ea7d4f0544de8f',1,'mtpk::core::DataTable']]],
   ['csvreader_112',['CSVReader',['../classCSVReader.html#af22e7e980aa6c46c0017d0e1991e3741',1,'CSVReader::CSVReader()'],['../classCSVReader.html',1,'CSVReader']]],
   ['cubicapproximation_113',['cubicApproximation',['../classmtpk_1_1NumericalAnalysis.html#a829321ed09170ba50e70f1db7bba3b69',1,'mtpk::NumericalAnalysis::cubicApproximation(double(*function)(double), double c, double x)'],['../classmtpk_1_1NumericalAnalysis.html#ad273d48cc7429a2ef27934a316b00a6b',1,'mtpk::NumericalAnalysis::cubicApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)']]],
   ['current_5frot_114',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]],
