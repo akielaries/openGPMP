@@ -20,7 +20,6 @@ jobs:
     uses: ./.github/workflows/doxygen.yml
 
   src_changes:
-    name: Check changes to src
     runs-on: 'ubuntu-20.04'
     # Declare outputs for next jobs
     outputs:
@@ -41,7 +40,7 @@ jobs:
         Write-Host "::set-output name=src_changed::$HasDiff"
 
   test_changes:
-    name: Check Changes to tests
+    name: Check Changes to tests/ dir 
     runs-on: 'ubuntu-20.04'
     # Declare outputs for next jobs
     outputs:
