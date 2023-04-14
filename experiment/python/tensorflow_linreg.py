@@ -11,3 +11,6 @@ X_train, X_test, y_train, y_test = train_test_split(data.drop('GPA',
                                                               axis=1),
                                                     data['GPA'],
                                                     test_size=0.2)
+
+print(X_train)
+
