@@ -1,7 +1,9 @@
-/*
- * Driver for showing how to use the core basic and elementary
- * functionalities of the Number Theory module
+/**
+ * Driver for showing how to use the core functionalities of the Number Theory
+ * module by itself as well as with the openMTPK ThreadPool. This features
+ * functions related to primes specifically generation and testing.
  *
+ * @example primes.cpp
  */
 #include <chrono>
 #include <cmath>
@@ -9,7 +11,6 @@
 #include <openMTPK/core/threadpool.hpp>
 #include <openMTPK/nt/prime_gen.hpp>
 #include <openMTPK/nt/prime_test.hpp>
-//#include "../../include/core/threadpool.hpp"
 #include <vector>
 
 void testing_miller(std::vector<int64_t> nums) {

@@ -1,6 +1,9 @@
-/*
+/**
  * Example on using the Multi-Layer Perceptrons networks
  * supplied from openMTPk
+ * @todo: TODO
+ *
+ * @example mlp.cpp
  */
 #include "../../include/ml/mlp_net.hpp"
 #include "../../include/ml/trainers.hpp"

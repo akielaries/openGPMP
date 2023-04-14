@@ -1,5 +1,11 @@
-/* TESTING LINEAR REGRESSION
- * test driver program for our implementation of linear regression
+/**
+ * Simple test driver showing how to use simple linear regression on a 2-column
+ * dataset. The current linear regression method is not capable of multiple
+ * linear regression, to generate use of this implementation data sets must
+ * either be two column in nature or users must disect data for a proper
+ * key,value response
+ *
+ * @example reg.cpp
  */
 #include <iostream>
 #include <openMTPK/ml/linreg.hpp>

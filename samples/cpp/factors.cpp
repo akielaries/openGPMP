@@ -1,13 +1,16 @@
-/*
- * Driver for showing how to use the core basic and elementary
- * functionalities of the Number Theory module
+/**
+ * Driver for showing how to use the core functionalities of the Number Theory
+ * module by itself as well as with the openMTPK ThreadPool. This features
+ * functions related to integer factorization.
  *
+ * @example factors.cpp
  */
+#include <chrono>
+#include <cmath>
 #include <iostream>
-//#include <openMTPK/nt/factorization.hpp>
-//#include <openMTPK/threadpool.hpp>
-#include "../../include/nt/factorization.hpp"
-#include "../../include/threadpool.hpp"
+#include <openMTPK/core/threadpool.hpp>
+#include <openMTPK/nt/factorization.hpp>
+#include <vector>
 
 int main() {
     mtpk::Factorization factorization;
@@ -28,7 +31,7 @@ int main() {
     //    9223372036854775803, 9223372036854775807, 9223372036854775303,
     //    4567890123456789LL,  5678901234567890LL,  6789012345678901LL,
     //    7890123456789012LL,  8901234567890123LL};
-    std::vector<int64_t> nums_to_factorize = {
+    std::vector<uint64_t> nums_to_factorize = {
         9223372036854775803,   9223372036854775807,   9223372036854775303,
         4567890123456789LL,    5678901234567890LL,    6789012345678901LL,
         7890123456789012LL,    8901234567890123LL,    9999999967LL,
@@ -45,17 +48,19 @@ int main() {
     //        std::cout << res.get() << std::endl;
     //    }
 
-    std::vector<std::future<int64_t>> results;
-    mtpk::ThreadPool pool(2);
+    std::vector<std::future<uint64_t>> results;
+    mtpk::ThreadPool *pool = new mtpk::ThreadPool(2);
     mtpk::Factorization factors;
     for (const auto &num : nums_to_factorize) {
-        results.emplace_back(
-            pool.enqueue(&mtpk::Factorization::pollard_rho, &factors, num));
+        results.emplace_back(mtpk::ThreadDispatch().dispatch(
+            *pool, &mtpk::Factorization::pollard_rho, &factors, num));
     }
 
     for (auto &res : results) {
         std::cout << res.get() << std::endl;
     }
+
+    delete pool;
 
     return 0;
 }

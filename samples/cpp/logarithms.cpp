@@ -1,7 +1,9 @@
-/*
- * Driver for showing how to use the core basic and elementary
- * functionalities of the Number Theory module
+/**
+ * Driver for showing how to use the core functionalities of the Number Theory
+ * module by itself. This features tools related to distrete logarithmic
+ * functions.
  *
+ * @example logarithms.cpp
  */
 #include <iostream>
 #include <openMTPK/nt/logarithms.hpp>

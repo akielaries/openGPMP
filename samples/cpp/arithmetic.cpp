@@ -1,10 +1,11 @@
-/*
- * TESTING BASIC ARITHMETIC OPERATIONS
+/**
+ * A simple driver program showing how to use the simplest module in openMTPK
+ *
+ * @example arithmetic.cpp
  */
 #include <cassert>
 #include <iostream>
-//#include <openMTPK/arithmetic.hpp>
-#include "../../include/arithmetic.hpp"
+#include <openMTPK/arithmetic.hpp>
 #include <stdio.h>
 #include <time.h>
 #include <vector>

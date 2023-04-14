@@ -18,8 +18,20 @@ seen [here](https://pypi.org/project/openmtpk/).
 
 Contents
 --------
-1. [Installation](Installation.md)
-2. [Annotations](annotated.html)
-3. [Usage](Examples.md)
-4. [Modules](Modules.md)
+1. [Introduction](Introduction.md)
+2. [Modules](Modules.md)
+    * Core/Utilities
+    * Arithmetic
+    * Calculus
+    * Linear Algebra
+    * Machine/Deep Learning
+    * Number Theory
+    * Topology/Complex
+    * Much more
+3. [Installation](Installation.md)
+4. [Source Code Docs](annotated.html)
+5. [openMTPK Tutorials](Tutorials.md)
+6. [openMTPK Python Tutorials](Tutorials_Python.md)
+7. [Usage](Examples.md)
+
 

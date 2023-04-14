@@ -1,6 +1,8 @@
-/* TESTING DERIVATIVE OPERATIONS
+/**
  * Test driver showing how to use different derivative-based
  * operations in openMTPK.
+ *
+ * @example deriv.cpp
  */
 #include <cassert>
 #include <iostream>

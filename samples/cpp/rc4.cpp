@@ -1,5 +1,8 @@
-/* Testing the openMTPK stream cipher encryption algorithm on fields
- * of text using a XOR and tradition swap method.
+/**
+ * Example driver showing how to use the Rivest Cipher 4 (RC4) encryption
+ * algorithms including the different swap techniques (that do not differ much)
+ *
+ * @example rc4.cpp
  */
 #include <iostream>
 #include <openMTPK/nt/rc4.hpp>
@@ -7,7 +10,6 @@
 #include <string>
 #include <time.h>
 #include <vector>
-//#include "../../include/nt/rc4.hpp"
 
 int main() {
     /*

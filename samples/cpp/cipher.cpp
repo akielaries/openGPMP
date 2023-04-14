@@ -1,5 +1,8 @@
-/* testing basic encryption algorithms with stream ciphers
- * specifically caesar cipher
+/**
+ * Example driver using the mtpk::Cipher class that contains a caesar cipher,
+ * and keyword cipher
+ *
+ * @example cipher.cpp
  */
 #include <iostream>
 #include <openMTPK/nt/cipher.hpp>

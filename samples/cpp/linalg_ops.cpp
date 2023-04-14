@@ -1,4 +1,4 @@
-/*
+/**
  * Linear Algebra Sample File
  *
  * The Matrix Class is capable of creating both Vectors and Matrices
@@ -18,6 +18,7 @@
  * A matrix is an array of numbers (one or more rows, one or more
  * columns). 3 x 5 3 7 5 8 7 0 4 1 5 5 1 2 0 7 6
  *
+ * @example linalg_ops.cpp
  */
 #include <cassert>
 #include <fstream>
@@ -28,8 +29,6 @@
 
 #include <openMTPK/linalg.hpp>
 /*< FOR DEBUGGING LOCAL TESTING >*/
-//#include "../../include/linalg/vectors.hpp"
-//#include "../../include/linalg/matrix.hpp"
 
 using namespace mtpk;
 
