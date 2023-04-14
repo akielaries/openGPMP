@@ -70,7 +70,7 @@ namespace mtpk {
  * @brief Rivest-Cipher 4 Encryption Algorithm Class
  */
 class RC4 {
-  public:
+    public:
     /* swaps two values using uint8_t type */
     void byte_swap(uint8_t *a, uint8_t *b);
     /* swaps two values in a traditional way using chars */
@@ -86,8 +86,8 @@ class RC4 {
     std::string store_hash(char *plaintext, unsigned char *hashtext,
                            int swap_type);
     /* compute our hash using the the RC4 encryption algorithm */
-    unsigned char *compute(char *key, char *plaintext, unsigned char *hashtext,
-                           int swap_type);
+    unsigned char *compute(char *key, char *plaintext,
+                           unsigned char *hashtext, int swap_type);
 };
 
 } // namespace mtpk

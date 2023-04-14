@@ -11,15 +11,16 @@ int main() {
     // declare Regression class object
     mtpk::LinearRegression reg;
 
-    // mtpk::DataTable dt;
-    // dt.csv_read(test_file, drop_col_names=true);
-    //
+    // Number of pairs of (xi, yi) in the dataset
+    // int n;
+    // cin >> n;
 
-    // int n = reg.num_rows(test_file);
+    int n = reg.num_rows(test_file);
+    // cin >> n;
     printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN "
            "MATHEMATICS\n");
 
-    // printf("Number of rows in data set: %d\n", n);
+    printf("Number of rows in data set: %d\n", n);
     // Calling function takeInput to take input of n pairs
     reg.get_input(n);
 

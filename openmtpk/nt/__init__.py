@@ -74,10 +74,7 @@ FEATURES :
 """
 
 from openmtpk.nt.nt import (
-    PrimalityTest,
-    PrimalityGen,
-    Factorization,
-    Logarithms,
+    Primality,
     RC4,
     Cipher,
 )

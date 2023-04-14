@@ -47,7 +47,7 @@ using namespace std;
 namespace mtpk {
 
 class NearestNeighbor {
-  public:
+    public:
     bool comparison(Company &lhs, Company &rhs);
 
     long double euclideanDistance(Company &lhs, Company &test);
@@ -55,7 +55,8 @@ class NearestNeighbor {
     long double manhattanDistance(Company &lhs, Company &test);
 
     void fillDistances(vector<Company> &data, Company &test,
-                       long double (*distanceFunction)(Company &, Company &));
+                       long double (*distanceFunction)(Company &,
+                                                       Company &));
 
     bool KNN(vector<Company> &data, Company &test, int64_t k,
              long double (*distanceFunction)(Company &, Company &));

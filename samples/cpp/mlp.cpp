@@ -20,9 +20,9 @@ int main() {
 
     long double lr{.5};
     mtpk::ml::Trainers util;
-    auto model =
-        util.init_SecondaryMLP(inputs = 1, outputs = 1, hidden_layer_units = 8,
-                               hidden_layers = 3, lr = .5);
+    auto model = util.init_SecondaryMLP(inputs = 1, outputs = 1,
+                                        hidden_layer_units = 8,
+                                        hidden_layers = 3, lr = .5);
 
     // declare a data file
 

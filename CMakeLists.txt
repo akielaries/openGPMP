@@ -35,7 +35,7 @@ cmake_minimum_required(VERSION 3.18)
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_FLAGS "-Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -Wall")
 
-project(openMTPK VERSION 1.0 LANGUAGES CXX)
+project(openMTPK VERSION 0.5 LANGUAGES CXX)
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -69,10 +69,7 @@ set(SOURCE_FILES
     modules/ml/mlp_network.cpp
     modules/nt/cipher.cpp
     modules/nt/rc4.cpp
-    modules/nt/prime_test.cpp
-    modules/nt/prime_gen.cpp
-    modules/nt/factorization.cpp
-    modules/nt/logarithms.cpp
+    modules/nt/primes.cpp
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})

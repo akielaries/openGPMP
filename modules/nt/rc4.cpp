@@ -139,7 +139,8 @@ std::string mtpk::RC4::store_hash(char *plaintext, unsigned char *hashtext,
 }
 
 unsigned char *mtpk::RC4::compute(char *key, char *plaintext,
-                                  unsigned char *ciphertext, int swap_type) {
+                                  unsigned char *ciphertext,
+                                  int swap_type) {
     if (ciphertext == NULL) {
         throw std::runtime_error("[-] Error Allocating Memory");
     }
