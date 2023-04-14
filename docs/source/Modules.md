@@ -3,7 +3,6 @@ Modules
 1. Arithmetic
 2. Calculus
    - Differential
-   - Integral
 3. Linear Algebra
    - Vector Operations
    - Matrix Operations
@@ -12,13 +11,15 @@ Modules
    - Cross-Validation
    - K-Nearest Neighbors
    - Neural Networks
-     - Naive
-     - Multi-layer Perceptron
-     - Bayes
-     - Kohonen (Self-Organizing Map)
-   - Bayes Classifier
+   - Classifiers
 5. Number Theory
-   - Primes
+   - Primality Tests
+   - Primality Generation
+   - Integer Factorization
+   - Euclidean Division
+   - Logarithms
+   - Greatest Common Divisors
+   - Squares
    - Cryptography
 6. Topology/Complex
    - Dynamical Systems

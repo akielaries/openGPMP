@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/akielaries/openMTPK/139970427fb9092a12ccc87e736186b32316d46f/docs/openMTPK.svg)
+![](https://raw.githubusercontent.com/akielaries/openMTPK/rolling/docs/openMTPK_logo_med.png)
 --------------------------------------------------------------------------------
 
 ![Version](https://img.shields.io/github/v/release/akielaries/openMTPK?color=%23BF40BF)
