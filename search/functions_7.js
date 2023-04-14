@@ -1,17 +1,9 @@
 var searchData=
 [
-  ['gaussiancdf_777',['gaussianCDF',['../classmtpk_1_1Activate.html#ac081ca0dbe2d0e3179f5af20babed539',1,'mtpk::Activate::gaussianCDF(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a543f5e35388b144f1f8e5cfb8cffc3ba',1,'mtpk::Activate::gaussianCDF(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#ab8233b35e4f84ccbc3b1274db2e608d9',1,'mtpk::Activate::gaussianCDF(double z, bool deriv=0)']]],
-  ['gelu_778',['GELU',['../classmtpk_1_1Activate.html#a7ee0968bc12876169587e89c9a4c753f',1,'mtpk::Activate::GELU(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a8adc160fc49072d2b45f89f5aaf227b4',1,'mtpk::Activate::GELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a77777246d7e8fc04953ee00e2dd1122a',1,'mtpk::Activate::GELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['gen_5fsumm_779',['gen_summ',['../namespacemtpk.html#a83e6e91b8dd3079e0925ce379fc9aaa1',1,'mtpk']]],
-  ['geometricmean_780',['geometricMean',['../classmtpk_1_1Stats.html#a248e7d89ed388561dd0c2608fe18ca7b',1,'mtpk::Stats']]],
-  ['get_5finput_781',['get_input',['../classopenmtpk_1_1ml_1_1ml_1_1LinearRegression.html#aea0cc9b0d17344fa5a733f172a12f318',1,'openmtpk.ml.ml.LinearRegression.get_input()'],['../classmtpk_1_1LinearRegression.html#a6c09efb426a69e10c51130b84c966c4d',1,'mtpk::LinearRegression::get_input()']]],
-  ['get_5fsignal_5fout_782',['get_signal_out',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a7a4204a82c88265466525d8fe5c01d66',1,'mtpk::ml::PrimaryMLP']]],
-  ['get_5ftest_5ffold_783',['get_test_fold',['../classmtpk_1_1CV.html#a0e344ff7b3eb8f28e397e090a2ea4513',1,'mtpk::CV::get_test_fold()'],['../classmtpk_1_1KF__CV.html#aeeda3a84c961197d4c6cea5b6417859c',1,'mtpk::KF_CV::get_test_fold()']]],
-  ['get_5ftrain_5ffold_784',['get_train_fold',['../classmtpk_1_1CV.html#a282030ff159e0b62bedf1b4d882a84db',1,'mtpk::CV::get_train_fold()'],['../classmtpk_1_1KF__CV.html#a97602abda33d9dcf6db07ff30817af55',1,'mtpk::KF_CV::get_train_fold()']]],
-  ['getdata_785',['getData',['../classCSVReader.html#a702c239c4cc205c02d37056acc3dda6b',1,'CSVReader']]],
-  ['goldschmidt_786',['goldschmidt',['../classmtpk_1_1EuclideanDivision.html#af71c1f62edbe3447c3bb9babaedf405d',1,'mtpk::EuclideanDivision']]],
-  ['gradient_5fdescent_787',['gradient_descent',['../classmtpk_1_1ml_1_1Optimizers.html#aa726658aac0ab1962d431360e8d346c7',1,'mtpk::ml::Optimizers']]],
-  ['gradientdescent_788',['gradientDescent',['../classmtpk_1_1AutoEncoder.html#a2aaa1a1c508e5d2dff249217505a1b3d',1,'mtpk::AutoEncoder::gradientDescent(double learning_rate, int max_epoch, bool UI=1)'],['../classmtpk_1_1AutoEncoder.html#a2aaa1a1c508e5d2dff249217505a1b3d',1,'mtpk::AutoEncoder::gradientDescent(double learning_rate, int max_epoch, bool UI=1)'],['../classmtpk_1_1Logreg.html#a4c1c224a1e902171969b7ecf2482a524',1,'mtpk::Logreg::gradientDescent()'],['../classmtpk_1_1SVC.html#a137b3056e705f48bbfbd0a3ca7692b1f',1,'mtpk::SVC::gradientDescent()']]],
-  ['greatest_5fpower_789',['greatest_power',['../classmtpk_1_1Basics.html#ab3cbc7901b3921638d357ee19acc6cd7',1,'mtpk::Basics::greatest_power()'],['../classopenmtpk_1_1arithmetic_1_1arithmetic_1_1Basics.html#a4b73b43649911b7d79722c480829af36',1,'openmtpk.arithmetic.arithmetic.Basics.greatest_power()'],['../classopenmtpk_1_1nt_1_1nt_1_1Basics.html#a5aaf611bd3bb4e90bdfba960c8d7a6c6',1,'openmtpk.nt.nt.Basics.greatest_power()']]],
-  ['growthmethod_790',['growthMethod',['../classmtpk_1_1NumericalAnalysis.html#adac8d5f569b5c1c6a1b35ef2bc05b14c',1,'mtpk::NumericalAnalysis']]]
+  ['hadamard_747',['hadamard',['../classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce',1,'mtpk::Matrix']]],
+  ['halleymethod_748',['halleyMethod',['../classmtpk_1_1NumericalAnalysis.html#a0c5db24c24730c41efa60742a984fe96',1,'mtpk::NumericalAnalysis']]],
+  ['harmonicmean_749',['harmonicMean',['../classmtpk_1_1Stats.html#a38d10fc32528c2b91a267d5571c605e5',1,'mtpk::Stats']]],
+  ['heinzmean_750',['heinzMean',['../classmtpk_1_1Stats.html#a0c214a869d09d110451c4d02b8809c59',1,'mtpk::Stats']]],
+  ['heronianmean_751',['heronianMean',['../classmtpk_1_1Stats.html#a981bc6c811376c0eb8f32d7c45649966',1,'mtpk::Stats']]],
+  ['hessian_752',['hessian',['../classmtpk_1_1NumericalAnalysis.html#ab0b88ad31db54adfa5fb5322bc9c8390',1,'mtpk::NumericalAnalysis']]]
 ];

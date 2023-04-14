@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['variance_959',['variance',['../classmtpk_1_1Stats.html#ac82c4261969db13d29995a14fc290ff7',1,'mtpk::Stats']]],
-  ['vector_5fwise_5ftensor_5fproduct_960',['vector_wise_tensor_product',['../classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45',1,'mtpk::Tensors']]],
-  ['vocklington_961',['vocklington',['../classmtpk_1_1Squares.html#a69457c463d06a43b6bfc257e7a75bc70',1,'mtpk::Squares']]]
+  ['weightedlehmermean_919',['weightedLehmerMean',['../classmtpk_1_1Stats.html#a1f5151c5b30862656145050cc0a2864e',1,'mtpk::Stats']]],
+  ['weightedmean_920',['weightedMean',['../classmtpk_1_1Stats.html#a2549d6474049221cbfc0609ba1805c9f',1,'mtpk::Stats']]],
+  ['weights_5fadjust_921',['weights_adjust',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3fb446ddfd3e01c0b2f61db8e8cf66f7',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frand_922',['weights_rand',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a17ae77fa444dba716f6e14d83d2f3e52',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frestore_923',['weights_restore',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ac86d80e12567b45439eae866932b6c08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5fsave_924',['weights_save',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1de057913c17181e734e39e8aea845c1',1,'mtpk::ml::PrimaryMLP']]],
+  ['witness_925',['witness',['../classmtpk_1_1PrimalityTest.html#acdf45aec6e905ea12470b6e9c48393b2',1,'mtpk::PrimalityTest']]]
 ];
