@@ -4,11 +4,11 @@
 using namespace std;
 
 class Vector {
-    private:
+  private:
     int x, y, z;
     // Components of the Vector
 
-    public:
+  public:
     Vector(int x, int y, int z) {
         // Constructor
         this->x = x;

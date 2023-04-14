@@ -73,8 +73,8 @@ lin-alg:
 
 
 # FILES FOR NUMBER THEORY OPERATIONS AND ENCRYPTION 
-PRIMES		= $(SRCDIR)/nt/primes.cpp
-PRIMESDRV	= $(PROJDIR)/samples/cpp/primes.cpp
+PRIMES		= $(SRCDIR)/nt/prime_test.cpp
+PRIMESDRV	= $(PROJDIR)/samples/cpp/prime_test.cpp
 PRIMESBIN	= primes
 
 CIPH		= $(SRCDIR)/nt/cipher.cpp
@@ -191,6 +191,7 @@ clean-tests:
 	rm -f ${TCALCBIN}
 
 clean-misc:
+	cd openmtpk && rm -rf */*.cpp
 	rm -rf build/ dist/ openmtpk.egg-info/ 
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__

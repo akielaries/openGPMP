@@ -1,3 +1,9 @@
+"""!@brief Python API for openMTPK. 
+@details See the following links for details and documentation:
+    SOURCE CODE : https://github.com/akielaries/openMTPK/
+    DOCS        : https://akielaries.github.io/openMTPK/
+    PyPI        : https://pypi.org/project/openmtpk/
+"""
 """
 /*************************************************************************
  *
@@ -32,15 +38,6 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-openMTPK
-========
-Python API for C++ based Mathematics Package. See the following links for
-details and documentation:
-    SOURCE CODE : https://github.com/akielaries/openMTPK/
-    DOCS        : https://akielaries.github.io/openMTPK/
-    PyPI        : https://pypi.org/project/openmtpk/
-
 """
 
 __all__: list[str]

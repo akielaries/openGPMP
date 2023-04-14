@@ -48,7 +48,7 @@
 #define BYTE_LIMIT 256
 
 class RC5 {
-    public:
+  public:
     /* swaps two values using uint8_t type */
     void byte_swap(uint8_t *a, uint8_t *b);
     /* swaps two values in a traditional way using chars */

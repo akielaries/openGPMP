@@ -56,7 +56,8 @@
  * @todo
  */
 #define PRIMES
-#include "number_theory/primes.hpp"
+#include "nt/prime_gen.hpp"
+#include "nt/prime_test.hpp"
 
 /**
  * @brief \b Cryptographic \b Algorithms
@@ -66,7 +67,7 @@
  * @todo
  */
 #define CRYPTOGRAPHY
-#include "number_theory/cipher.hpp"
-#include "number_theory/rc4.hpp"
+#include "nt/cipher.hpp"
+#include "nt/rc4.hpp"
 
 #endif
