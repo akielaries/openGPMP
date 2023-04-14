@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['data_0',['data',['../classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466',1,'mtpk::Matrix']]],
+  ['data_1',['Data',['../classmtpk_1_1Data.html',1,'mtpk']]],
+  ['data_5fsize_2',['data_size',['../classmtpk_1_1LinearRegression.html#a0b29487d1e95ec6d52162ed2073bb7d5',1,'mtpk::LinearRegression']]],
+  ['datatable_3',['DataTable',['../classmtpk_1_1DataTable.html',1,'mtpk']]],
+  ['datatable_2ecpp_4',['datatable.cpp',['../datatable_8cpp.html',1,'']]],
+  ['datatable_2ehpp_5',['datatable.hpp',['../datatable_8hpp.html',1,'']]],
+  ['datatabledouble_6',['DataTableDouble',['../namespacemtpk.html#afc4e72528c63d7a7cf8f85599ea2ede0',1,'mtpk']]],
+  ['datatableint_7',['DataTableInt',['../namespacemtpk.html#a07a1ee36e02865a60adae5a5fe8fff1e',1,'mtpk']]],
+  ['datatablestr_8',['DataTableStr',['../namespacemtpk.html#a9b115dee30a56ad053767b46f7bf016b',1,'mtpk']]],
+  ['decrypt_9',['decrypt',['../modules_2nt_2rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e',1,'decrypt():&#160;rc5.cpp'],['../classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad',1,'RC5::decrypt()']]],
+  ['delimeter_10',['delimeter',['../classCSVReader.html#abff43d8d9971224af07ba44c912ebec9',1,'CSVReader']]],
+  ['deltas_11',['deltas',['../classmtpk_1_1NaiveNet.html#ac2ebde3cb2a6130c99a4895407262856',1,'mtpk::NaiveNet']]],
+  ['deriv_12',['deriv',['../classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee',1,'mtpk::Calculus']]],
+  ['deriv_2ecpp_13',['deriv.cpp',['../modules_2calculus_2deriv_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2deriv_8cpp.html',1,'(Global Namespace)']]],
+  ['deriv_2ehpp_14',['deriv.hpp',['../deriv_8hpp.html',1,'']]],
+  ['deriv_5fat_15',['deriv_at',['../classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2',1,'mtpk::Calculus']]],
+  ['derivative_5fterm_16',['derivative_term',['../classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050',1,'mtpk::Calculus']]],
+  ['determineclass_17',['determineClass',['../classmtpk_1_1kNN.html#a798a02fdb343ae1758f58d5c4718e977',1,'mtpk::kNN']]],
+  ['diag_18',['diag',['../classmtpk_1_1Matrix.html#ab98cb19425fc23cfd2b2c6fa158cbe45',1,'mtpk::Matrix']]],
+  ['dim_19',['dim',['../classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e',1,'mtpk::Matrix']]],
+  ['dispatch_20',['dispatch',['../classmtpk_1_1ThreadDispatch.html#aecf576d128bd91e28cab0ce15f451566',1,'mtpk::ThreadDispatch']]],
+  ['display_21',['display',['../classmtpk_1_1DataTable.html#a75c879efac061f30884774d2771879df',1,'mtpk::DataTable::display()'],['../modules_2complex_2torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269',1,'display():&#160;torus_animated.cpp']]],
+  ['display_5fhash_22',['display_hash',['../classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0',1,'RC5']]],
+  ['distance_23',['distance',['../classCompany.html#aa35fa24964b0a5686b3c61126f46b38a',1,'Company']]],
+  ['dt_5ftest_2ecpp_24',['dt_test.cpp',['../dt__test_8cpp.html',1,'']]]
+];
