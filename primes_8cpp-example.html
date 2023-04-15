@@ -116,12 +116,12 @@ $(function() {
 <div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// declares a threadpool with 4 threads</span></div>
-<div class="line">    <a name="_a4"></a><a class="code" href="classmtpk_1_1ThreadPool.html">mtpk::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1ThreadPool.html">mtpk::ThreadPool</a>(4);</div>
+<div class="line">    <a name="_a4"></a><a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> mtpk::ThreadPool(4);</div>
 <div class="line"> </div>
 <div class="line">    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
 <div class="line">    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a name="a5"></a><a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
-<div class="line">        miller_results.emplace_back(pool-&gt;<a name="a6"></a><a class="code" href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">enqueue</a>(</div>
+<div class="line">        miller_results.emplace_back(pool-&gt;<a name="a6"></a><a class="code" href="classmtpk_1_1core_1_1ThreadPool.html#a74055a560f9b8a2937ccbd652eb8b8a8">enqueue</a>(</div>
 <div class="line">            [&amp;<a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>, n]() { return prim.miller_rabin_prime(n, 120000); }));</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -153,12 +153,12 @@ $(function() {
 <div class="line">    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
 <div class="line"> </div>
 <div class="line">    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
-<div class="line">    <a class="code" href="classmtpk_1_1ThreadPool.html">mtpk::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1ThreadPool.html">mtpk::ThreadPool</a>(4);</div>
+<div class="line">    <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> mtpk::ThreadPool(4);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
 <div class="line">        <span class="comment">// enqueue the function call to the thread pool using the</span></div>
 <div class="line">        <span class="comment">// ThreadDispatch.dispatch() function</span></div>
-<div class="line">        miller_results.emplace_back(<a name="_a8"></a><a class="code" href="classmtpk_1_1ThreadDispatch.html">mtpk::ThreadDispatch</a>().dispatch(</div>
+<div class="line">        miller_results.emplace_back(<a name="_a8"></a><a class="code" href="classmtpk_1_1core_1_1ThreadDispatch.html">mtpk::core::ThreadDispatch</a>().dispatch(</div>
 <div class="line">            *pool, &amp;<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">mtpk::PrimalityTest::miller_rabin_prime</a>, &amp;<a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>, n, 120000));</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -311,9 +311,9 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a6fed0cc0fb9ae1f51b1eb6338486fbb9"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00070">prime_test.cpp:70</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_aea296e7913cb51cc89c3b79fcf737194"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">mtpk::PrimalityTest::miller_rabin_prime</a></div><div class="ttdeci">bool miller_rabin_prime(uint64_t n, uint64_t iters)</div><div class="ttdoc">Modified primes algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00171">prime_test.cpp:171</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_afbdde3f21b4bc18dc88e891a2caeb8b5"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">mtpk::PrimalityTest::is_prime</a></div><div class="ttdeci">bool is_prime(uint64_t n)</div><div class="ttdoc">Determine if an integer is prime.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00100">prime_test.cpp:100</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ThreadDispatch_html"><div class="ttname"><a href="classmtpk_1_1ThreadDispatch.html">mtpk::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00192">threadpool.hpp:192</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ThreadPool_html"><div class="ttname"><a href="classmtpk_1_1ThreadPool.html">mtpk::ThreadPool</a></div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00051">threadpool.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ThreadPool_html_afde622356c8c327e7daf8a629960c8a7"><div class="ttname"><a href="classmtpk_1_1ThreadPool.html#afde622356c8c327e7daf8a629960c8a7">mtpk::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdoc">Enqueues a task to the thread pool.</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00139">threadpool.hpp:139</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadDispatch.html">mtpk::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00194">threadpool.hpp:194</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1core_1_1ThreadPool_html"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a></div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00053">threadpool.hpp:53</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1core_1_1ThreadPool_html_a74055a560f9b8a2937ccbd652eb8b8a8"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadPool.html#a74055a560f9b8a2937ccbd652eb8b8a8">mtpk::core::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdoc">Enqueues a task to the thread pool.</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00141">threadpool.hpp:141</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_ae705b16e0f91ad04a0d1892bd85d3b5b"><div class="ttname"><a href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a></div><div class="ttdeci">mtpk::PrimalityTest prim</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00054">prime_test.cpp:54</a></div></div>
 <div class="ttc" id="aprimes_8cpp_html_a14003875a6c31e1f9d1bf4b153878e3e"><div class="ttname"><a href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a></div><div class="ttdeci">void testing_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00016">primes.cpp:16</a></div></div>
 <div class="ttc" id="aprimes_8cpp_html_a286bd143d8ec3bf5f09b6dc36803c093"><div class="ttname"><a href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a></div><div class="ttdeci">void testing_new_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00076">primes.cpp:76</a></div></div>

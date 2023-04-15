@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['welcome_20to_20openmtpk_27s_20documentation_2e_1128',['Welcome to openMTPK&apos;s documentation.',['../index.html',1,'']]]
+  ['v0_2e9_2e5_1131',['v0.9.5',['../md_changelog.html',1,'']]]
 ];
