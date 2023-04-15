@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['rc4_494',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk']]],
-  ['rc5_495',['RC5',['../classRC5.html',1,'']]],
-  ['regularizers_496',['Regularizers',['../classmtpk_1_1ml_1_1Regularizers.html',1,'mtpk::ml']]]
+  ['naivenet_587',['NaiveNet',['../classmtpk_1_1NaiveNet.html',1,'mtpk']]],
+  ['nearestneighbor_588',['NearestNeighbor',['../classmtpk_1_1NearestNeighbor.html',1,'mtpk']]],
+  ['neuron_589',['neuron',['../structmtpk_1_1ml_1_1neuron.html',1,'mtpk::ml']]],
+  ['numericalanalysis_590',['NumericalAnalysis',['../classmtpk_1_1NumericalAnalysis.html',1,'mtpk']]]
 ];

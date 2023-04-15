@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['kf_5fcv_478',['KF_CV',['../classmtpk_1_1KF__CV.html',1,'mtpk']]],
-  ['knn_479',['kNN',['../classmtpk_1_1kNN.html',1,'mtpk']]],
-  ['kohonennet_480',['KohonenNet',['../classmtpk_1_1KohonenNet.html',1,'mtpk']]]
+  ['euclideandivision_575',['EuclideanDivision',['../classmtpk_1_1EuclideanDivision.html',1,'mtpk']]]
 ];

@@ -123,11 +123,11 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1AutoEncoder.html">AutoEncoder</a> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#afc9412525b50b76dec493f92294a6c48">   50</a></span>&#160;    <a class="code" href="classmtpk_1_1AutoEncoder.html#afc9412525b50b76dec493f92294a6c48">AutoEncoder</a>(std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1AutoEncoder.html#a21406eb17df1f505200bd40a30d57b98">inputSet</a>, <span class="keywordtype">int</span> <a class="code" href="classmtpk_1_1AutoEncoder.html#accd4c17c7fea9ca2a2ebe5f7703d488b">n_hidden</a>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#ae6c803b9d5aa56e60c9fcb153c8335ec">   53</a></span>&#160;        <a class="code" href="classmtpk_1_1AutoEncoder.html#ae6c803b9d5aa56e60c9fcb153c8335ec">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#ae6c803b9d5aa56e60c9fcb153c8335ec">   53</a></span>&#160;    <a class="code" href="classmtpk_1_1AutoEncoder.html#ae6c803b9d5aa56e60c9fcb153c8335ec">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#adb8ca89ad732ad7dc6a1e8eca683de82">   55</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1AutoEncoder.html#adb8ca89ad732ad7dc6a1e8eca683de82">modelTest</a>(std::vector&lt;double&gt; x);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
@@ -142,21 +142,21 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a991f0610b8817feb08c90c7b9ea076c9">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1AutoEncoder.html#a991f0610b8817feb08c90c7b9ea076c9">save</a>(std::string fileName);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a53e64af85b60e9d7f7477d60e5c3208e">   69</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1AutoEncoder.html#a53e64af85b60e9d7f7477d60e5c3208e">Cost</a>(std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1AutoEncoder.html#a38c75f3ef0643347a1ddec416de05898">y_hat</a>,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                std::vector&lt;std::vector&lt;double&gt;&gt; y);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a7568782e69e5241a1b865d283fe4eeca">   73</a></span>&#160;        <a class="code" href="classmtpk_1_1AutoEncoder.html#a7568782e69e5241a1b865d283fe4eeca">Evaluate</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a7568782e69e5241a1b865d283fe4eeca">   73</a></span>&#160;    <a class="code" href="classmtpk_1_1AutoEncoder.html#a7568782e69e5241a1b865d283fe4eeca">Evaluate</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::tuple&lt;std::vector&lt;std::vector&lt;double&gt;&gt;,</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;               std::vector&lt;std::vector&lt;double&gt;&gt;&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a8cdba09acef8c1f02df180b1588ba414">   77</a></span>&#160;        <a class="code" href="classmtpk_1_1AutoEncoder.html#a8cdba09acef8c1f02df180b1588ba414">propagate</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a8cdba09acef8c1f02df180b1588ba414">   77</a></span>&#160;    <a class="code" href="classmtpk_1_1AutoEncoder.html#a8cdba09acef8c1f02df180b1588ba414">propagate</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a3b4220e6932af1c9255059712307e1f9">   79</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1AutoEncoder.html#a3b4220e6932af1c9255059712307e1f9">Evaluate</a>(std::vector&lt;double&gt; x);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::tuple&lt;std::vector&lt;double&gt;, std::vector&lt;double&gt;&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#afa1da65cbebb21ca8848a59cc08192b3">   82</a></span>&#160;        <a class="code" href="classmtpk_1_1AutoEncoder.html#afa1da65cbebb21ca8848a59cc08192b3">propagate</a>(std::vector&lt;double&gt; x);</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#afa1da65cbebb21ca8848a59cc08192b3">   82</a></span>&#160;    <a class="code" href="classmtpk_1_1AutoEncoder.html#afa1da65cbebb21ca8848a59cc08192b3">propagate</a>(std::vector&lt;double&gt; x);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classmtpk_1_1AutoEncoder.html#a3cae2e66f0f9a49e8b3af85e66ef7a02">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1AutoEncoder.html#a3cae2e66f0f9a49e8b3af85e66ef7a02">forwardPass</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -205,7 +205,7 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1AutoEncoder_html_af1b7c9d04aad1f9ecba6666295e1ff51"><div class="ttname"><a href="classmtpk_1_1AutoEncoder.html#af1b7c9d04aad1f9ecba6666295e1ff51">mtpk::AutoEncoder::a2</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; a2</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00096">encoder.hpp:96</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1AutoEncoder_html_afa1da65cbebb21ca8848a59cc08192b3"><div class="ttname"><a href="classmtpk_1_1AutoEncoder.html#afa1da65cbebb21ca8848a59cc08192b3">mtpk::AutoEncoder::propagate</a></div><div class="ttdeci">std::tuple&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt; propagate(std::vector&lt; double &gt; x)</div></div>
 <div class="ttc" id="aclassmtpk_1_1AutoEncoder_html_afc9412525b50b76dec493f92294a6c48"><div class="ttname"><a href="classmtpk_1_1AutoEncoder.html#afc9412525b50b76dec493f92294a6c48">mtpk::AutoEncoder::AutoEncoder</a></div><div class="ttdeci">AutoEncoder(std::vector&lt; std::vector&lt; double &gt;&gt; inputSet, int n_hidden)</div></div>
-<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

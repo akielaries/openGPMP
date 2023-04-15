@@ -121,7 +121,7 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classmtpk_1_1SVC.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1SVC.html">SVC</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classmtpk_1_1SVC.html#ae0042b2bd12f045cbc4a1a43d439beb7">   48</a></span>&#160;    <a class="code" href="classmtpk_1_1SVC.html#ae0042b2bd12f045cbc4a1a43d439beb7">SVC</a>(std::vector&lt;std::vector&lt;double&gt;&gt; <a class="code" href="classmtpk_1_1SVC.html#a6801168c145e54769e6cd0a53aab000f">inputSet</a>,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1SVC.html#a79532275802d95a3fd34f731e69cf5e6">outputSet</a>, <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1SVC.html#a07de656fde3c0262b0291b30962421f9">C</a>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmtpk_1_1SVC.html#ad82918f420bd02873c74f9dbd3ae9b23">   50</a></span>&#160;    std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1SVC.html#ad82918f420bd02873c74f9dbd3ae9b23">modelSetTest</a>(std::vector&lt;std::vector&lt;double&gt;&gt; X);</div>
@@ -133,7 +133,7 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmtpk_1_1SVC.html#ae7d132e06d8cff3e1b00990463854ead">   56</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1SVC.html#ae7d132e06d8cff3e1b00990463854ead">score</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classmtpk_1_1SVC.html#a380f1645d89c40f1097d211ed8d8b0e1">   57</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1SVC.html#a380f1645d89c40f1097d211ed8d8b0e1">save</a>(std::string fileName);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classmtpk_1_1SVC.html#a19a589c44bf2bb6e5d529f32c6d9babd">   60</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1SVC.html#a19a589c44bf2bb6e5d529f32c6d9babd">Cost</a>(std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1SVC.html#ab90b43395182b55e9ab19bb5c84c143d">y_hat</a>, std::vector&lt;double&gt; y,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                std::vector&lt;double&gt; <a class="code" href="classmtpk_1_1SVC.html#aff98a6193180e23d90ba555e406f90c1">weights</a>, <span class="keywordtype">double</span> <a class="code" href="classmtpk_1_1SVC.html#a07de656fde3c0262b0291b30962421f9">C</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
@@ -185,7 +185,7 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1SVC_html_ae0042b2bd12f045cbc4a1a43d439beb7"><div class="ttname"><a href="classmtpk_1_1SVC.html#ae0042b2bd12f045cbc4a1a43d439beb7">mtpk::SVC::SVC</a></div><div class="ttdeci">SVC(std::vector&lt; std::vector&lt; double &gt;&gt; inputSet, std::vector&lt; double &gt; outputSet, double C)</div></div>
 <div class="ttc" id="aclassmtpk_1_1SVC_html_ae7d132e06d8cff3e1b00990463854ead"><div class="ttname"><a href="classmtpk_1_1SVC.html#ae7d132e06d8cff3e1b00990463854ead">mtpk::SVC::score</a></div><div class="ttdeci">double score()</div></div>
 <div class="ttc" id="aclassmtpk_1_1SVC_html_aff98a6193180e23d90ba555e406f90c1"><div class="ttname"><a href="classmtpk_1_1SVC.html#aff98a6193180e23d90ba555e406f90c1">mtpk::SVC::weights</a></div><div class="ttdeci">std::vector&lt; double &gt; weights</div><div class="ttdef"><b>Definition:</b> <a href="svc_8hpp_source.html#l00073">svc.hpp:73</a></div></div>
-<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The core openMTPK namespace.</div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
