@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['rc4_596',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk']]],
-  ['rc5_597',['RC5',['../classRC5.html',1,'']]],
-  ['regularizers_598',['Regularizers',['../classmtpk_1_1ml_1_1Regularizers.html',1,'mtpk::ml']]]
+  ['vectors_511',['Vectors',['../classmtpk_1_1Vectors.html',1,'mtpk']]]
 ];

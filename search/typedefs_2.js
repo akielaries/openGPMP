@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['func_5ft_1103',['func_t',['../test_8cpp.html#a6bbbea5ccb1ad0cd907e045aba0f2c73',1,'test.cpp']]]
+  ['matrix_927',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]]
 ];
