@@ -65,6 +65,7 @@ set(SOURCE_FILES
     modules/arithmetic/arith.cpp
     modules/calculus/deriv.cpp
     modules/linalg/lao.cpp
+    modules/core/datatable.cpp
     modules/ml/linreg.cpp
     modules/ml/mlp_network.cpp
     modules/nt/cipher.cpp
