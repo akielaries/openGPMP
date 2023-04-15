@@ -44,7 +44,7 @@ void testing_miller_thread(std::vector<int64_t> nums) {
         std::chrono::steady_clock::now();
 
     // declares a threadpool with 4 threads
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(4);
+    mtpk::core::ThreadPool *pool = new mtpk::ThreadPool(4);
 
     std::vector<std::future<bool>> miller_results;
     mtpk::PrimalityTest prim;
@@ -81,12 +81,12 @@ void testing_new_miller(std::vector<int64_t> nums) {
     std::vector<std::future<bool>> miller_results;
 
     mtpk::PrimalityTest prim;
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(4);
+    mtpk::core::ThreadPool *pool = new mtpk::ThreadPool(4);
 
     for (auto n : nums) {
         // enqueue the function call to the thread pool using the
         // ThreadDispatch.dispatch() function
-        miller_results.emplace_back(mtpk::ThreadDispatch().dispatch(
+        miller_results.emplace_back(mtpk::core::ThreadDispatch().dispatch(
             *pool, &mtpk::PrimalityTest::miller_rabin_prime, &prim, n, 120000));
     }
 

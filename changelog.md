@@ -1,3 +1,25 @@
+# v0.9.5
+## What's Changed 
+* Documentation layout + additions
+* `mtpk::core::ThreadPool()` class capable of spawning a specific number of threads or
+the default `std::thread::hardware_concurrency()`.
+    * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html)
+> **Note** This class is not yet used innately within openMTPK and is provided as a user utility for now.
+* `mtpk::core::ThreadDispatch()` class that dispatches functions to the threadpool. 
+    * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadDispatch.html)
+* `mtpk::core::DataTable()` class capable of reading in CSV files storing them as a pair of 
+vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely,
+or specific columns), formatted displaying, and two conversion methods for the `string->int` & `string->double`.
+    * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html)
+* Created [`rolling`](https://github.com/akielaries/openMTPK/tree/rolling) branch that will update its commits 
+from the [mtpk-bot](https://github.com/mtpk-bot) user on a nightly basis, using the `#NIGHTLY:` commit message 
+prefix.
+* Updates to unit tests and additions for the new classes introduced.
+* Updates to namespaces
+* Patches introduced for [`#27 OSX Build reaches dead state`](https://github.com/akielaries/openMTPK/issues/27)
+* TODO
+
+
 # v0.9.4
 ## What's Changed
 * Division between code for internal functionality vs. what is available to the user.

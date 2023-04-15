@@ -16,22 +16,24 @@ seen [here](https://pypi.org/project/openmtpk/).
 > **Note**
 > This project is under active development.
 
+* View changelog [here](changelog.md).
+
 Contents
 --------
 1. [Introduction](Introduction.md)
-2. [Modules](Modules.md)
+2. [Installation](Installation.md)
+3. [Source Code Docs](annotated.html)
+4. [openMTPK Tutorials](Tutorials.md)
+5. [openMTPK Python Tutorials](Tutorials_Python.md)
+6. [Usage](Examples.md)
+7. [Modules](Modules.md). Large modules will contain their own uniqued nested namespace.
     * [Core/Utilities](namespacemtpk_1_1core.html)
-    * Arithmetic
-    * Calculus
-    * Linear Algebra
-    * Machine/Deep Learning
-    * Number Theory
+    * [Arithmetic](arithmetic_8hpp.html)
+    * Differential, Integral, Multivariate and Vector Calculus
+    * [Linear Algebra](linalg_8hpp.html)
+    * [Machine/Deep Learning](namespacemtpk_1_1ml.html)
+    * [Number Theory](namespacemtpk_1_1nt.html)
     * Topology/Complex
     * Much more
-3. [Installation](Installation.md)
-4. [Source Code Docs](annotated.html)
-5. [openMTPK Tutorials](Tutorials.md)
-6. [openMTPK Python Tutorials](Tutorials_Python.md)
-7. [Usage](Examples.md)
 
 

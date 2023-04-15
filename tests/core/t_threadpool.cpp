@@ -9,13 +9,13 @@ using namespace std::chrono_literals;
 
 namespace {
 TEST(ThreadPoolTest, EnqueueSingleTask) {
-    mtpk::ThreadPool pool(1);
+    mtpk::core::ThreadPool pool(1);
     std::future<int> result = pool.enqueue([]() { return 42; });
     ASSERT_EQ(result.get(), 42);
 }
 
 TEST(ThreadPoolTest, TestSingleTask) {
-    mtpk::ThreadPool pool(2);
+    mtpk::core::ThreadPool pool(2);
 
     std::future<int> result =
         pool.enqueue([](int x, int y) { return x + y; }, 3, 4);
@@ -24,7 +24,7 @@ TEST(ThreadPoolTest, TestSingleTask) {
 }
 
 TEST(ThreadPoolTest, EnqueueMultipleTasks) {
-    mtpk::ThreadPool pool(4);
+    mtpk::core::ThreadPool pool(4);
     std::vector<std::future<int>> results;
     for (int i = 0; i < 100; ++i) {
         results.emplace_back(pool.enqueue([i]() { return i * 2; }));
@@ -35,14 +35,14 @@ TEST(ThreadPoolTest, EnqueueMultipleTasks) {
 }
 
 TEST(ThreadPoolTest, EnqueueException) {
-    mtpk::ThreadPool pool(2);
+    mtpk::core::ThreadPool pool(2);
     std::future<void> result =
         pool.enqueue([]() { throw std::runtime_error("test error"); });
     ASSERT_THROW(result.get(), std::runtime_error);
 }
 
 TEST(ThreadPoolTest, TestException) {
-    mtpk::ThreadPool pool(1);
+    mtpk::core::ThreadPool pool(1);
 
     EXPECT_THROW(
         pool.enqueue([]() { throw std::runtime_error("test exception"); })
@@ -52,7 +52,7 @@ TEST(ThreadPoolTest, TestException) {
 
 TEST(ThreadPoolTest, TestDynamicAllocation) {
     // Create a new ThreadPool with 4 threads
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(4);
+    mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(4);
 
     // Enqueue a task and wait for it to complete
     std::future<int> result = pool->enqueue([]() { return 42; });
@@ -64,7 +64,7 @@ TEST(ThreadPoolTest, TestDynamicAllocation) {
 
 TEST(ThreadPoolTest, TestEnqueueOnStoppedThreadPool) {
     // Create a new ThreadPool with 2 threads
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(2);
+    mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(2);
 
     // Stop the ThreadPool explicitly
     delete pool; // pool.~ThreadPool();
@@ -74,7 +74,7 @@ TEST(ThreadPoolTest, TestEnqueueOnStoppedThreadPool) {
 }
 
 TEST(ThreadPoolTest, TestEnqueueWithDifferentReturnTypes) {
-    mtpk::ThreadPool pool(2);
+    mtpk::core::ThreadPool pool(2);
 
     auto task1 = []() { /* do something */ };
     auto task2 = []() -> int { return 42; };
@@ -90,7 +90,7 @@ TEST(ThreadPoolTest, TestEnqueueWithDifferentReturnTypes) {
 }
 
 TEST(ThreadPoolTest, TestEnqueueWithDifferentArgumentTypes) {
-    mtpk::ThreadPool pool(2);
+    mtpk::core::ThreadPool pool(2);
 
     auto task1 = [](int x, int y) { /* do something */ };
     auto task2 = [](const std::string &str) { /* do something */ };
@@ -107,7 +107,7 @@ TEST(ThreadPoolTest, TestEnqueueWithDifferentArgumentTypes) {
 
 TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
     const int numTasks = 1000;
-    mtpk::ThreadPool pool(4);
+    mtpk::core::ThreadPool pool(4);
 
     for (int i = 0; i < numTasks; ++i) {
         auto task = []() { /* do something */ };
@@ -117,8 +117,8 @@ TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
 }
 
 TEST(ThreadDispatchTest, DispatchFunction) {
-    mtpk::ThreadPool pool(2);
-    mtpk::ThreadDispatch dispatch;
+    mtpk::core::ThreadPool pool(2);
+    mtpk::core::ThreadDispatch dispatch;
 
     // fefine a lambda function to be dispatched to the thread pool
     auto task = []() -> int { return 42; };
@@ -135,8 +135,8 @@ TEST(ThreadDispatchTest, DispatchFunction) {
 }
 
 TEST(ThreadDispatchTest, DispatchFunctionWithArgs) {
-    mtpk::ThreadPool pool(2);
-    mtpk::ThreadDispatch dispatch;
+    mtpk::core::ThreadPool pool(2);
+    mtpk::core::ThreadDispatch dispatch;
 
     // define a lambda function to be dispatched to the thread pool, which
     // takes an integer argument and returns its square

@@ -49,10 +49,10 @@ int main() {
     //    }
 
     std::vector<std::future<uint64_t>> results;
-    mtpk::ThreadPool *pool = new mtpk::ThreadPool(2);
+    mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(2);
     mtpk::Factorization factors;
     for (const auto &num : nums_to_factorize) {
-        results.emplace_back(mtpk::ThreadDispatch().dispatch(
+        results.emplace_back(mtpk::core::ThreadDispatch().dispatch(
             *pool, &mtpk::Factorization::pollard_rho, &factors, num));
     }
 

@@ -48,6 +48,8 @@
 
 namespace mtpk {
 
+namespace core {
+
 class ThreadPool {
   private:
     // VECTOR of threads to execute tasks
@@ -216,6 +218,8 @@ class ThreadDispatch {
         return result;
     }
 };
+
+} // namespace core
 
 } // namespace mtpk
 
