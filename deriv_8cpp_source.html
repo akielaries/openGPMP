@@ -79,16 +79,16 @@ $(function() {
 <div class="title">deriv.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="samples_2cpp_2deriv_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="deriv_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//#include &lt;openMTPK/calculus/deriv.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../include/calculus/deriv.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../include/calculus/differential.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="samples_2cpp_2deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   15</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   15</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">     * When calling the rm_deriv() and rm_deriv_at() functions, the</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">     * polynomial must be passed in as a string with the following</span></div>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;DERIVATIVE EXAMPLE\n\n&quot;</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// declare calculus class obj</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classmtpk_1_1Calculus.html">mtpk::Calculus</a> <a class="code" href="test_8cpp.html#ace0436f45b86437139aff3edf77bdb64">calc</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classmtpk_1_1Differential.html">mtpk::Differential</a> <a class="code" href="test_8cpp.html#ace0436f45b86437139aff3edf77bdb64">calc</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// we can declare our equation as a string for ease of use</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string st0 = <span class="stringliteral">&quot;4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4&quot;</span>;</div>
@@ -145,8 +145,8 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">    */</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html"><div class="ttname"><a href="classmtpk_1_1Calculus.html">mtpk::Calculus</a></div><div class="ttdef"><b>Definition:</b> <a href="deriv_8hpp_source.html#l00050">deriv.hpp:50</a></div></div>
-<div class="ttc" id="asamples_2cpp_2deriv_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="samples_2cpp_2deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2deriv_8cpp_source.html#l00015">deriv.cpp:15</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html"><div class="ttname"><a href="classmtpk_1_1Differential.html">mtpk::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00050">differential.hpp:50</a></div></div>
+<div class="ttc" id="aderiv_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00015">deriv.cpp:15</a></div></div>
 <div class="ttc" id="atest_8cpp_html_ace0436f45b86437139aff3edf77bdb64"><div class="ttname"><a href="test_8cpp.html#ace0436f45b86437139aff3edf77bdb64">calc</a></div><div class="ttdeci">double calc(func_t func, int n)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00008">test.cpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

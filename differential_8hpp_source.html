@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/calculus/deriv.hpp Source File</title>
+<title>openMTPK: include/calculus/differential.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,10 +76,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">deriv.hpp</div>  </div>
+<div class="title">differential.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="deriv_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<a href="differential_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
@@ -119,22 +119,33 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmtpk_1_1Calculus.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Calculus.html">Calculus</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmtpk_1_1Differential.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Differential.html">Differential</a> {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">derivative_term</a>(std::string p_term, int64_t val);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">derivative_term</a>(std::string p_term, int64_t val);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">deriv_at</a>(std::string &amp;poly, int64_t val);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::string <a class="code" href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">deriv</a>(std::string &amp;poly);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Finds the first derivative of a function</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// format is in numeric notation likely to be defined in a function</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// of some kind</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// deriv_one()</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Finds the second derivative of a function</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// deriv_two()</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Finds the third derivative of a function</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// deriv_thr()</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">deriv_at</a>(std::string &amp;poly, int64_t val);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <span class="comment">// namespace mtpk</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html"><div class="ttname"><a href="classmtpk_1_1Calculus.html">mtpk::Calculus</a></div><div class="ttdef"><b>Definition:</b> <a href="deriv_8hpp_source.html#l00050">deriv.hpp:50</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a284a811f1cea8a9e33a0e348612a6050"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">mtpk::Calculus::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2calculus_2deriv_8cpp_source.html#l00073">deriv.cpp:73</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a47c9d1bc11315662c6f9e1183f5ec7ee"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">mtpk::Calculus::deriv</a></div><div class="ttdeci">std::string deriv(std::string &amp;poly)</div><div class="ttdoc">Calculate the derivative of a function, not solving for x.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2calculus_2deriv_8cpp_source.html#l00124">deriv.cpp:124</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a4c1c4fdc45fccf75cd81ca5a63cff7e2"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">mtpk::Calculus::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2calculus_2deriv_8cpp_source.html#l00103">deriv.cpp:103</a></div></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classmtpk_1_1Differential.html#a7554b73b618233e65b0d30a7b33f403d">   92</a></span>&#160;    std::string <a class="code" href="classmtpk_1_1Differential.html#a7554b73b618233e65b0d30a7b33f403d">deriv_str</a>(std::string &amp;poly);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html"><div class="ttname"><a href="classmtpk_1_1Differential.html">mtpk::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00050">differential.hpp:50</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a117639cf3361298eaef4741189813dbb"><div class="ttname"><a href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">mtpk::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00103">differential.cpp:103</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a21a5ca26e14b15a77c93782195d1f8b3"><div class="ttname"><a href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">mtpk::Differential::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00073">differential.cpp:73</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a7554b73b618233e65b0d30a7b33f403d"><div class="ttname"><a href="classmtpk_1_1Differential.html#a7554b73b618233e65b0d30a7b33f403d">mtpk::Differential::deriv_str</a></div><div class="ttdeci">std::string deriv_str(std::string &amp;poly)</div><div class="ttdoc">Calculate the derivative of a function, not solving for x.</div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

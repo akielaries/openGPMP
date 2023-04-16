@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/calculus/deriv.cpp Source File</title>
+<title>openMTPK: modules/calculus/differential.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,10 +76,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">deriv.cpp</div>  </div>
+<div class="title">differential.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="modules_2calculus_2deriv_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<a href="differential_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
@@ -116,7 +116,7 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Implementing various derivative related functions in C++</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;../../include/calculus/deriv.hpp&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;../../include/calculus/differential.hpp&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -151,7 +151,7 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">}</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">   73</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">mtpk::Calculus::derivative_term</a>(std::string p_term, int64_t val) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">   73</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">mtpk::Differential::derivative_term</a>(std::string p_term, int64_t val) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Get coefficient</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::string coeffStr = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    int64_t i;</div>
@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> coeff * expo * pow(val, expo - 1);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">  103</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">mtpk::Calculus::deriv_at</a>(std::string &amp;poly, int64_t val) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">  103</a></span>&#160;int64_t <a class="code" href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">mtpk::Differential::deriv_at</a>(std::string &amp;poly, int64_t val) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    int64_t ans = 0;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
@@ -202,7 +202,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> ans;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">  124</a></span>&#160;std::string <a class="code" href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">mtpk::Calculus::deriv</a>(std::string &amp;poly) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;std::string mtpk::Differential::deriv(std::string &amp;poly) {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    int64_t ans = 0;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// We use istringstream to get input in tokens</span></div>
@@ -223,9 +223,8 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> poly;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a284a811f1cea8a9e33a0e348612a6050"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a284a811f1cea8a9e33a0e348612a6050">mtpk::Calculus::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2calculus_2deriv_8cpp_source.html#l00073">deriv.cpp:73</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a47c9d1bc11315662c6f9e1183f5ec7ee"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a47c9d1bc11315662c6f9e1183f5ec7ee">mtpk::Calculus::deriv</a></div><div class="ttdeci">std::string deriv(std::string &amp;poly)</div><div class="ttdoc">Calculate the derivative of a function, not solving for x.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2calculus_2deriv_8cpp_source.html#l00124">deriv.cpp:124</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Calculus_html_a4c1c4fdc45fccf75cd81ca5a63cff7e2"><div class="ttname"><a href="classmtpk_1_1Calculus.html#a4c1c4fdc45fccf75cd81ca5a63cff7e2">mtpk::Calculus::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2calculus_2deriv_8cpp_source.html#l00103">deriv.cpp:103</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a117639cf3361298eaef4741189813dbb"><div class="ttname"><a href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">mtpk::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00103">differential.cpp:103</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a21a5ca26e14b15a77c93782195d1f8b3"><div class="ttname"><a href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">mtpk::Differential::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00073">differential.cpp:73</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
