@@ -43,6 +43,9 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
+#ifdef __APPLE__
+#include <stdlib.h>
+#endif
 #include <cstring>
 #include <iostream>
 #include <random>
@@ -118,11 +121,11 @@ bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
 
+    uint64_t a;
 #ifdef __APPLE__
-    std::srand(time(nullptr));
-    uint64_t a = 2 + std::rand() % (n - 4);
+    a = 2 + arc4random_uniform(n - 4);
 #else
-    uint64_t a = 2 + std::rand() % (n - 4);
+    a = 2 + rand() % (n - 4);
 #endif
     //    uint64_t a = 2 + rand() % (n - 4);
     /*
