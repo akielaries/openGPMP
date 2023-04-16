@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['regression_1172',['REGRESSION',['../ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43',1,'ml.hpp']]],
-  ['resampling_1173',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]]
+  ['matrix_1174',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp'],['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp']]],
+  ['maxcount_1175',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]],
+  ['modular_1176',['MODULAR',['../nt_8hpp.html#a9e0a086a8dd7e94a3cedca5bfb57ad0d',1,'nt.hpp']]]
 ];

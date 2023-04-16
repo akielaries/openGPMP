@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ui_1025',['UI',['../classmtpk_1_1SVC.html#a805589fab8c7b6066f75e9824c0d114c',1,'mtpk::SVC']]],
-  ['unitstep_1026',['unitStep',['../classmtpk_1_1Activate.html#a35efee4c3bebd934d817e828c12d1f7e',1,'mtpk::Activate::unitStep(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a7b714f645bb0496c141826d6bd276d09',1,'mtpk::Activate::unitStep(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a86b3780aa0e37a8b4ab9cbb859648d08',1,'mtpk::Activate::unitStep(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['update_1027',['update',['../classmtpk_1_1KohonenNet.html#ad8daac79840005897acd45790969813b',1,'mtpk::KohonenNet']]],
-  ['update_5fweights_1028',['update_weights',['../classmtpk_1_1NaiveNet.html#af8ff3d701589673dc55e26e733a07397',1,'mtpk::NaiveNet']]]
+  ['ui_1028',['UI',['../classmtpk_1_1ml_1_1SVC.html#a6192a3c5a5770809fe93c5449de67a49',1,'mtpk::ml::SVC']]],
+  ['unitstep_1029',['unitStep',['../classmtpk_1_1ml_1_1Activate.html#a66e9325d646274972a9a9376073344df',1,'mtpk::ml::Activate::unitStep(double z, bool deriv=0)'],['../classmtpk_1_1ml_1_1Activate.html#a909c07712e85bad938710a9879a7607f',1,'mtpk::ml::Activate::unitStep(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1ml_1_1Activate.html#ae4a853395622353fb0fc7ebecddbcf82',1,'mtpk::ml::Activate::unitStep(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
+  ['update_1030',['update',['../classmtpk_1_1ml_1_1KohonenNet.html#a4e1011dc14301274a863e2bae16c7037',1,'mtpk::ml::KohonenNet']]],
+  ['update_5fweights_1031',['update_weights',['../classmtpk_1_1NaiveNet.html#af8ff3d701589673dc55e26e733a07397',1,'mtpk::NaiveNet']]]
 ];

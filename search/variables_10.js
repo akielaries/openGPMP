@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['sigma_1116',['sigma',['../classmtpk_1_1BayesGauss.html#afe6f19f2a97471192b9d28c8daa09fa3',1,'mtpk::BayesGauss']]],
-  ['sortir_1117',['sortir',['../structmtpk_1_1ml_1_1neuron.html#a26a8ebdfbda481634337c94ece3eaa55',1,'mtpk::ml::neuron']]],
-  ['spinning_1118',['spinning',['../torus__animated_8cpp.html#acd3bb90a36adc8d910a078425a19fdd8',1,'torus_animated.cpp']]],
-  ['stop_1119',['stop',['../classmtpk_1_1core_1_1ThreadPool.html#a800bdca2583e4514bbc0d7c83c645c4d',1,'mtpk::core::ThreadPool']]],
-  ['success_1120',['success',['../classCompany.html#a9e3e963105856de6488014086bac5198',1,'Company']]],
-  ['sum_5fx_1121',['sum_x',['../classmtpk_1_1LinearRegression.html#a621bbd6f181724d1c339e44fe3d681d5',1,'mtpk::LinearRegression']]],
-  ['sum_5fx_5fsquare_1122',['sum_x_square',['../classmtpk_1_1LinearRegression.html#a9a764630ada1ddc0f680fd32e1395fdd',1,'mtpk::LinearRegression']]],
-  ['sum_5fxy_1123',['sum_xy',['../classmtpk_1_1LinearRegression.html#a0f298e31854ca84dad01eacb78f10c84',1,'mtpk::LinearRegression']]],
-  ['sum_5fy_1124',['sum_y',['../classmtpk_1_1LinearRegression.html#aa47f7d4f15e9bee8ef22259a1deaa3fc',1,'mtpk::LinearRegression']]],
-  ['sum_5fy_5fsquare_1125',['sum_y_square',['../classmtpk_1_1LinearRegression.html#a0b595f076587ed1656b14b2bd17f482a',1,'mtpk::LinearRegression']]],
-  ['summary_1126',['Summary',['../classmtpk_1_1BayesClf.html#a09191f8089a13847a75a12a9c405206f',1,'mtpk::BayesClf']]]
+  ['sigma_1119',['sigma',['../classmtpk_1_1ml_1_1BayesGauss.html#a75e0016cfea897af56ed6da76c7ff6ec',1,'mtpk::ml::BayesGauss']]],
+  ['sortir_1120',['sortir',['../structmtpk_1_1ml_1_1neuron.html#a26a8ebdfbda481634337c94ece3eaa55',1,'mtpk::ml::neuron']]],
+  ['spinning_1121',['spinning',['../torus__animated_8cpp.html#acd3bb90a36adc8d910a078425a19fdd8',1,'torus_animated.cpp']]],
+  ['stop_1122',['stop',['../classmtpk_1_1core_1_1ThreadPool.html#a800bdca2583e4514bbc0d7c83c645c4d',1,'mtpk::core::ThreadPool']]],
+  ['success_1123',['success',['../classCompany.html#a9e3e963105856de6488014086bac5198',1,'Company']]],
+  ['sum_5fx_1124',['sum_x',['../classmtpk_1_1ml_1_1LinearRegression.html#adf12ffcbe475c31f09edd9375b61ec03',1,'mtpk::ml::LinearRegression']]],
+  ['sum_5fx_5fsquare_1125',['sum_x_square',['../classmtpk_1_1ml_1_1LinearRegression.html#aa3ce8a4af5143b4b0203d694137aa1c9',1,'mtpk::ml::LinearRegression']]],
+  ['sum_5fxy_1126',['sum_xy',['../classmtpk_1_1ml_1_1LinearRegression.html#a320853a2ea1cf51bcb2d0f1e1916c417',1,'mtpk::ml::LinearRegression']]],
+  ['sum_5fy_1127',['sum_y',['../classmtpk_1_1ml_1_1LinearRegression.html#aa8e491d7f5d7fca10b5d67ee969f76a9',1,'mtpk::ml::LinearRegression']]],
+  ['sum_5fy_5fsquare_1128',['sum_y_square',['../classmtpk_1_1ml_1_1LinearRegression.html#ad1e97677cecfa68362457293ac43c6c5',1,'mtpk::ml::LinearRegression']]],
+  ['summary_1129',['Summary',['../classmtpk_1_1ml_1_1BayesClf.html#a712db3e82063ebb7a1d66cdf3548e44e',1,'mtpk::ml::BayesClf']]]
 ];

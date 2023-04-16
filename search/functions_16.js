@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['variance_1029',['variance',['../classmtpk_1_1Stats.html#ac82c4261969db13d29995a14fc290ff7',1,'mtpk::Stats']]],
-  ['vector_5fwise_5ftensor_5fproduct_1030',['vector_wise_tensor_product',['../classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45',1,'mtpk::Tensors']]],
-  ['vocklington_1031',['vocklington',['../classmtpk_1_1Squares.html#a69457c463d06a43b6bfc257e7a75bc70',1,'mtpk::Squares']]]
+  ['variance_1032',['variance',['../classmtpk_1_1ml_1_1Stats.html#a7ee9c04405674d4ba8eb3b6279f381e3',1,'mtpk::ml::Stats']]],
+  ['vector_5fwise_5ftensor_5fproduct_1033',['vector_wise_tensor_product',['../classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45',1,'mtpk::Tensors']]],
+  ['vocklington_1034',['vocklington',['../classmtpk_1_1Squares.html#a69457c463d06a43b6bfc257e7a75bc70',1,'mtpk::Squares']]]
 ];
