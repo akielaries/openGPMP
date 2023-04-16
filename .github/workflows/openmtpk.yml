@@ -79,7 +79,7 @@ jobs:
   cpp_osx:
     needs: [ src_changes ]
     if: needs.src_changes.outputs.src_changed == 'True'
-    uses: ./.github/workflows/buils_osx.yml
+    uses: ./.github/workflows/build_osx.yml
 
   python:
     needs: [ cpp ]
