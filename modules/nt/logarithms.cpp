@@ -76,7 +76,7 @@ uint64_t mtpk::Logarithms::pollard_rho_log(uint64_t g, uint64_t y, uint64_t p) {
         y1 = (y1 * g) % p;
         y2 = (y2 * g) % p;
         y2 = (y2 * g) % p;
-        d = std::gcd(abs(y2 - y1), p);
+        d = std::gcd(std::llabs(y2 - y1), p);
         values[x] = y1;
     }
 
@@ -84,7 +84,7 @@ uint64_t mtpk::Logarithms::pollard_rho_log(uint64_t g, uint64_t y, uint64_t p) {
     if (d == p) {
         return -1;
     } else {
-        uint64_t x0 = abs(y2 - y1) / d;
+        uint64_t x0 = std::llabs(y2 - y1) / d;
         uint64_t y0 = values[x0];
         uint64_t k = 1;
         while (y0 != y) {

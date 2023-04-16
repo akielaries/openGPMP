@@ -43,7 +43,7 @@
 
 #include <algorithm>
 #include <chrono>
-#include <cmath>
+//#include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <future>
@@ -128,7 +128,7 @@ uint64_t mtpk::Factorization::pollard_rho(uint64_t n) {
         }
 
         /* check gcd of |x-y| and n */
-        divisor = std::gcd(abs(x - y), n);
+        divisor = std::gcd(std::llabs(x - y), n);
 
         /* retry if the algorithm fails to find prime factor
          * with chosen x and c */
