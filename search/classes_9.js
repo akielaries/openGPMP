@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['matrix_585',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk']]],
-  ['mtx_586',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]]
+  ['primality_500',['Primality',['../classmtpk_1_1Primality.html',1,'mtpk']]],
+  ['primarymlp_501',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
 ];
