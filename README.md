@@ -10,9 +10,9 @@
 [![Py](https://github.com/akielaries/openMTPK/actions/workflows/openmtpk.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)
 
 # Overview
-**openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
+**openMTPK** is an open-source, multi-threaded, mathematics package written in C++ with a primary
 focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
-as well as a range of language API's. openMTPK aims to provide options for pre-built functions, models, etc.
+as well as a range of language API's with zero dependencies. openMTPK aims to provide options for pre-built functions, models, etc.
 along with modularity for user freedom.
 Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
 on how to use some of openMTPK's functionalities. 
