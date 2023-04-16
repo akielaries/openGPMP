@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: v0.9.5</title>
+<title>openMTPK: v0.10.0</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">v0.9.5 </div>  </div>
+<div class="title">v0.10.0 </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md18"></a>
@@ -80,20 +80,22 @@ What's Changed</h1>
 <ul>
 <li>Documentation layout + additions</li>
 <li><code><a class="el" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool()</a></code> class capable of spawning a specific number of threads or the default <code>std::thread::hardware_concurrency()</code>.<ul>
-<li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html">here</a> <blockquote class="doxtable">
-<p><b>Note</b> This class is not yet used innately within openMTPK and is provided as a user utility for now. </p>
-</blockquote>
-* <code><a class="el" href="classmtpk_1_1core_1_1ThreadDispatch.html" title="A class that provides a function to dispatch a function call to a thread pool and return a future obj...">mtpk::core::ThreadDispatch()</a></code> class that dispatches functions to the threadpool.</li>
+<li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html">here</a> &gt; <b>Note</b> This class is not yet used innately within openMTPK and is provided as a user utility for now.</li>
+</ul>
+</li>
+<li><code><a class="el" href="classmtpk_1_1core_1_1ThreadDispatch.html" title="A class that provides a function to dispatch a function call to a thread pool and return a future obj...">mtpk::core::ThreadDispatch()</a></code> class that dispatches functions to the threadpool.<ul>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadDispatch.html">here</a></li>
 </ul>
 </li>
 <li><code><a class="el" href="classmtpk_1_1core_1_1DataTable.html">mtpk::core::DataTable()</a></code> class capable of reading in CSV files storing them as a pair of vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely, or specific columns), formatted displaying, and two conversion methods for the <code>string-&gt;int</code> &amp; <code>string-&gt;double</code>.<ul>
+<li>Solves open enhancement <a href="https://github.com/akielaries/openMTPK/issues/29"><code>#29 DataFrame/DataTable related functionality</code></a></li>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html">here</a></li>
 </ul>
 </li>
 <li>Created <a href="https://github.com/akielaries/openMTPK/tree/rolling"><code>rolling</code></a> branch that will update its commits from the <a href="https://github.com/mtpk-bot">mtpk-bot</a> user on a nightly basis, using the <code>#NIGHTLY:</code> commit message prefix.</li>
+<li>Introduced updates to calculus module in numerical differentation methods. First, second, and third order derivatives methods of a given polynomial in a function at a given value. For example f(x) = x^2ln(x) = <code>x*x*log(x)</code>.</li>
 <li>Updates to unit tests and additions for the new classes introduced.</li>
-<li>Updates to namespaces</li>
+<li>Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous tools lies under the <code><a class="el" href="namespacemtpk_1_1core.html">mtpk::core</a></code> namespace.</li>
 <li>Patches introduced for <a href="https://github.com/akielaries/openMTPK/issues/27"><code>#27 OSX Build reaches dead state</code></a></li>
 <li>TODO</li>
 </ul>
@@ -278,7 +280,7 @@ v0.2</h1>
 <h1><a class="anchor" id="autotoc_md39"></a>
 v0.1</h1>
 <h3><a class="anchor" id="autotoc_md40"></a>
-Initial "release" of &lt;em&gt;openMTPK&lt;/em&gt;</h3>
+Initial introduction beta release of openMTPK</h3>
 <p>Open-source (intended) mathematics package written in C++ with a working Python API allowing for the use of algorithms and equations seen in many mathematical topics. See the <a href="https://github.com/akielaries/openMTPK/blob/main/README.md">README</a> for more details</p>
 <h4><a class="anchor" id="autotoc_md41"></a>
 Modules</h4>

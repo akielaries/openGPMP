@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['v0_2e9_2e5_550',['v0.9.5',['../md_changelog.html',1,'']]],
+  ['v0_2e10_2e0_550',['v0.10.0',['../md_changelog.html',1,'']]],
   ['variance_551',['variance',['../classmtpk_1_1Stats.html#ac82c4261969db13d29995a14fc290ff7',1,'mtpk::Stats']]],
   ['vector_5fwise_5ftensor_5fproduct_552',['vector_wise_tensor_product',['../classmtpk_1_1Tensors.html#a6d8e5bd812cc47ffa1a2c2a972e1fa45',1,'mtpk::Tensors']]],
   ['vectors_553',['Vectors',['../classmtpk_1_1Vectors.html',1,'mtpk::Vectors'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Vectors.html',1,'openmtpk.linalg.linalg.Vectors']]],
