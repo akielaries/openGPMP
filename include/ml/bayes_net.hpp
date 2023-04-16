@@ -44,11 +44,15 @@
 
 namespace mtpk {
 
+namespace ml {
+
 /**
  * Bayes Network Class representing a set of variables and
  * conditional dependencies
  */
 class BayesNet {};
+
+} // namespace ml
 
 } // namespace mtpk
 

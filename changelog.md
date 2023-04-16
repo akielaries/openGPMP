@@ -1,3 +1,5 @@
+# Changelog
+
 # v0.10.0
 ## What's Changed 
 * Documentation layout + additions

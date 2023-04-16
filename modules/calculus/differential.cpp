@@ -121,7 +121,7 @@ int64_t mtpk::Differential::deriv_at(std::string &poly, int64_t val) {
     return ans;
 }
 
-std::string mtpk::Differential::deriv(std::string &poly) {
+std::string mtpk::Differential::deriv_str(std::string &poly) {
     int64_t ans = 0;
 
     // We use istringstream to get input in tokens

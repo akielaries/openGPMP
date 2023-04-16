@@ -45,6 +45,9 @@
 #include <vector>
 
 namespace mtpk {
+
+namespace ml {
+
 class Activate {
   public:
     double linear(double z, bool deriv = 0);
@@ -273,6 +276,8 @@ class Activate {
 
   private:
 };
+
+} // namespace ml
 
 } // namespace mtpk
 

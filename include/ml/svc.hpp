@@ -43,6 +43,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class SVC {
   public:
     SVC(std::vector<std::vector<double>> inputSet,
@@ -80,6 +82,9 @@ class SVC {
     // UI Portion
     void UI(int epoch, double cost_prev);
 };
+
+} // namespace ml
+
 } // namespace mtpk
 
 #endif

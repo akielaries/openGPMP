@@ -44,6 +44,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class kNN {
   public:
     kNN(std::vector<std::vector<double>> inputSet,
@@ -63,6 +65,8 @@ class kNN {
     std::vector<double> outputSet;
     int k;
 };
+
+} // namespace ml
 
 } // namespace mtpk
 

@@ -15,7 +15,7 @@ int main() {
     const char *test_file = "data/school_scores.csv";
     freopen(test_file, "r", stdin);
     // declare Regression class object
-    mtpk::LinearRegression reg;
+    mtpk::ml::LinearRegression reg;
 
     // mtpk::DataTable dt;
     // dt.csv_read(test_file, drop_col_names=true);

@@ -32,7 +32,7 @@ Contents
     * Differential, Integral, Multivariate and Vector Calculus
     * [Linear Algebra](linalg_8hpp.html)
     * [Machine/Deep Learning](namespacemtpk_1_1ml.html)
-    * [Number Theory](namespacemtpk_1_1nt.html)
+    * [Number Theory](nt_8hpp.html)
     * Topology/Complex
     * Much more
 

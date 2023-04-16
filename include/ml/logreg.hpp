@@ -45,6 +45,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class Logreg {
   public:
     Logreg(std::vector<std::vector<double>> inputSet,
@@ -89,6 +91,8 @@ class Logreg {
     double lambda; /* Regularization Parameter */
     double alpha;  /* This is the controlling param for Elastic Net*/
 };
+
+} // namespace ml
 
 } // namespace mtpk
 #endif

@@ -45,6 +45,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class AutoEncoder {
   public:
     AutoEncoder(std::vector<std::vector<double>> inputSet, int n_hidden);
@@ -99,6 +101,9 @@ class AutoEncoder {
     int k;
     int n_hidden;
 };
+
+} // namespace ml
+
 } // namespace mtpk
 
 #endif

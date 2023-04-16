@@ -46,6 +46,8 @@ using namespace std;
 
 namespace mtpk {
 
+namespace ml {
+
 class NearestNeighbor {
   public:
     bool comparison(Company &lhs, Company &rhs);
@@ -60,6 +62,8 @@ class NearestNeighbor {
     bool KNN(vector<Company> &data, Company &test, int64_t k,
              long double (*distanceFunction)(Company &, Company &));
 };
+
+} // namespace ml
 
 } // namespace mtpk
 

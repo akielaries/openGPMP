@@ -45,6 +45,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 /**
  * @brief Summary data structure responsible for returning results
  */
@@ -169,6 +171,8 @@ class BayesMutliNom {
     std::vector<double> outputSet;
     std::vector<double> y_hat;
 };
+
+} // namespace ml
 
 } // namespace mtpk
 

@@ -46,6 +46,8 @@ using namespace std;
 
 namespace mtpk {
 
+namespace ml { 
+
 template <class T> class CV {
   protected:
     int64_t K;
@@ -118,6 +120,8 @@ template <class T> vector<T> KF_CV<T>::get_test_fold(int64_t k) {
     }
     return test_fold;
 }
+
+} // namespace ml
 
 } // namespace mtpk
 

@@ -44,6 +44,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 /**
  * @brief Kohonen Neural Network Cluster Class
  *
@@ -53,6 +55,8 @@ class KohonenNet {
     int64_t choice(weights, sample);
     int64_t update(weights, sample, J, alpha);
 };
+
+} // namespace ml
 
 } // namespace mtpk
 
