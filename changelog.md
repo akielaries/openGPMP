@@ -1,21 +1,26 @@
-# v0.9.5
+# v0.10.0
 ## What's Changed 
 * Documentation layout + additions
 * `mtpk::core::ThreadPool()` class capable of spawning a specific number of threads or
 the default `std::thread::hardware_concurrency()`.
     * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html)
-> **Note** This class is not yet used innately within openMTPK and is provided as a user utility for now.
+    > **Note** This class is not yet used innately within openMTPK and is provided as a user utility for now.
+
 * `mtpk::core::ThreadDispatch()` class that dispatches functions to the threadpool. 
     * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadDispatch.html)
 * `mtpk::core::DataTable()` class capable of reading in CSV files storing them as a pair of 
 vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely,
 or specific columns), formatted displaying, and two conversion methods for the `string->int` & `string->double`.
+    * Solves open enhancement [`#29 DataFrame/DataTable related functionality`](https://github.com/akielaries/openMTPK/issues/29)
     * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html)
 * Created [`rolling`](https://github.com/akielaries/openMTPK/tree/rolling) branch that will update its commits 
 from the [mtpk-bot](https://github.com/mtpk-bot) user on a nightly basis, using the `#NIGHTLY:` commit message 
 prefix.
+* Introduced updates to calculus module in numerical differentation methods. First, second, and third order derivatives methods 
+of a given polynomial in a function at a given value. For example f(x) = x^2ln(x) = `x*x*log(x)`.
 * Updates to unit tests and additions for the new classes introduced.
-* Updates to namespaces
+* Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous
+tools lies under the `mtpk::core` namespace. 
 * Patches introduced for [`#27 OSX Build reaches dead state`](https://github.com/akielaries/openMTPK/issues/27)
 * TODO
 
@@ -154,7 +159,7 @@ https://openmtpk-docs.readthedocs.io/en/latest/index.html
 
 
 # v0.1
-### Initial "release" of _openMTPK_ 
+### Initial introduction beta release of openMTPK 
 Open-source (intended) mathematics package written in C++ with a working Python API allowing for the use of algorithms and equations seen in many mathematical topics.
 See the [README](https://github.com/akielaries/openMTPK/blob/main/README.md) for more details
 

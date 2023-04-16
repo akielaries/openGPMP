@@ -61,13 +61,11 @@ class Differential {
     int64_t derivative_term(std::string p_term, int64_t val);
 
     // Finds the first derivative of a function
-    // format is in numeric notation likely to be defined in a function
-    // of some kind
     // deriv_one()
 
     // Finds the second derivative of a function
     // deriv_two()
-
+    
     // Finds the third derivative of a function
     // deriv_thr()
 
@@ -90,6 +88,8 @@ class Differential {
      * @returns result : derived function (string)
      */
     std::string deriv_str(std::string &poly);
+
+
 };
 
 } // namespace mtpk
