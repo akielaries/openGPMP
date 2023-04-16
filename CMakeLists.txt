@@ -63,7 +63,7 @@ add_subdirectory(tests)
 ############################################################
 set(SOURCE_FILES 
     modules/arithmetic/arith.cpp
-    modules/calculus/deriv.cpp
+    modules/calculus/differential.cpp
     modules/linalg/lao.cpp
     modules/ml/linreg.cpp
     modules/ml/mlp_network.cpp

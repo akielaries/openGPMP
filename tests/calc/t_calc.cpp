@@ -35,7 +35,7 @@
 /*
  * Testing Calculus Operations
  */
-#include "../../include/calculus/deriv.hpp"
+#include "../../include/calculus/differential.hpp"
 #include <gtest/gtest.h>
 #include <limits.h>
 #include <string>
@@ -45,7 +45,7 @@ using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
 
 namespace {
-mtpk::Calculus calc;
+mtpk::Differential calc;
 
 // Test Derivative Operations
 TEST(deriv_test, deriv_at_val) {
@@ -56,10 +56,4 @@ TEST(deriv_test, deriv_at_val) {
 }
 
 } // namespace
-/*
-int main() {
-    InitGoogleTest();
-
-    return RUN_ALL_TESTS();
-}
-*/
+  //

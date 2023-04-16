@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 //#include <openMTPK/calculus/deriv.hpp>
-#include "../../include/calculus/deriv.hpp"
+#include "../../include/calculus/differential.hpp"
 
 int main() {
     /*
@@ -27,7 +27,7 @@ int main() {
     std::cout << "DERIVATIVE EXAMPLE\n\n";
 
     // declare calculus class obj
-    mtpk::Calculus calc;
+    mtpk::Differential calc;
 
     // we can declare our equation as a string for ease of use
     std::string st0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";

@@ -4,7 +4,7 @@
 # file for the whole test suite. 
 g++ -std=c++2a -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -Wall --coverage \
     arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
-    calc/t_calc.cpp ../modules/calculus/deriv.cpp \
+    calc/t_calc.cpp ../modules/calculus/differential.cpp \
     nt/t_cipher.cpp ../modules/nt/cipher.cpp \
     nt/t_rc4.cpp ../modules/nt/rc4.cpp \
     nt/t_primes.cpp ../modules/nt/prime_test.cpp  ../modules/nt/prime_gen.cpp \

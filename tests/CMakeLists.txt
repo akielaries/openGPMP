@@ -20,7 +20,7 @@ include(FetchContent)
 # source files that will be tested 
 set(TEST_SOURCES
     ../modules/arithmetic/arith.cpp
-    ../modules/calculus/deriv.cpp
+    ../modules/calculus/differential.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp

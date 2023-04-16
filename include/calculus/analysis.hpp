@@ -38,8 +38,8 @@
  * @brief Numerical Analysis Methods. A blend of Calculus and
  * Linear Algebra
  */
-#ifndef NumericalAnalysis_hpp
-#define NumericalAnalysis_hpp
+#ifndef ANALYSIS_HPP
+#define ANALYSIS_HPP
 
 #include <string>
 #include <vector>
