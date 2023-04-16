@@ -117,7 +117,14 @@ bool mtpk::PrimalityTest::is_prime(uint64_t n) {
 bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
-    uint64_t a = 2 + rand() % (n - 4);
+
+#ifdef __APPLE__
+    std::srand(time(nullptr));
+    uint64_t a = 2 + std::rand() % (n - 4);
+#else
+    uint64_t a = 2 + std::rand() % (n - 4);
+#endif
+    //    uint64_t a = 2 + rand() % (n - 4);
     /*
     std::random_device rd;
     std::mt19937_64 gen(rd());
