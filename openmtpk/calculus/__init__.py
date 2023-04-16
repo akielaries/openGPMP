@@ -44,7 +44,7 @@ The Calculus Module... TODO
 """
 
 from openmtpk.calculus.calculus import (
-    Calculus,
+    Differential,
 )
 
 __all__: list[str]

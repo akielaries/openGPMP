@@ -8,9 +8,9 @@
 %include "std_string.i"
 
 %{
-    #include "../../include/calculus/deriv.hpp"
+    #include "../../include/calculus/differential.hpp"
     using namespace mtpk;
 %}
 
-%include "../../include/calculus/deriv.hpp"
+%include "../../include/calculus/differential.hpp"
 
