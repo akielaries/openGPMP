@@ -35,7 +35,7 @@ calculus = Extension(
     include_dirs=[os.path.join(this_dir, 'include/calculus')],
     sources=[
         'openmtpk/calculus/calculus.i',
-        'modules/calculus/deriv.cpp'],
+        'modules/calculus/differential.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
 )

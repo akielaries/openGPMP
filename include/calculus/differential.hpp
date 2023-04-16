@@ -65,7 +65,7 @@ class Differential {
 
     // Finds the second derivative of a function
     // deriv_two()
-    
+
     // Finds the third derivative of a function
     // deriv_thr()
 
@@ -88,8 +88,6 @@ class Differential {
      * @returns result : derived function (string)
      */
     std::string deriv_str(std::string &poly);
-
-
 };
 
 } // namespace mtpk

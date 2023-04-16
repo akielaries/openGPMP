@@ -46,7 +46,7 @@ using namespace std;
 
 namespace mtpk {
 
-namespace ml { 
+namespace ml {
 
 template <class T> class CV {
   protected:

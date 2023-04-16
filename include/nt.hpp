@@ -55,7 +55,7 @@
  *
  * @todo TODO: above headers create some documentation that references
  * the actual definition/implementation of the methods within. In doxygen
- * this happens by default when referencing things by their exact name. 
+ * this happens by default when referencing things by their exact name.
  */
 #define PRIMES
 #include "nt/prime_gen.hpp"
