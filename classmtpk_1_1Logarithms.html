@@ -222,7 +222,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        y1 = (y1 * g) % p;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        y2 = (y2 * g) % p;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        y2 = (y2 * g) % p;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        d = std::gcd(abs(y2 - y1), p);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        d = std::gcd(std::llabs(y2 - y1), p);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        values[x] = y1;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
@@ -230,7 +230,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (d == p) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        uint64_t x0 = abs(y2 - y1) / d;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        uint64_t x0 = std::llabs(y2 - y1) / d;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        uint64_t y0 = values[x0];</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        uint64_t k = 1;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">while</span> (y0 != y) {</div>

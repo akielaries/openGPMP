@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">/* check gcd of |x-y| and n */</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        divisor = std::gcd(abs(x - y), n);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        divisor = std::gcd(std::llabs(x - y), n);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">/* retry if the algorithm fails to find prime factor</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">         * with chosen x and c */</span></div>
