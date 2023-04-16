@@ -76,6 +76,11 @@ jobs:
     if: needs.src_changes.outputs.src_changed == 'True'
     uses: ./.github/workflows/build_nix.yml
 
+  cpp_osx:
+    needs: [ src_changes ]
+    if: needs.src_changes.outputs.src_changed == 'True'
+    uses: ./.github/workflows/buils_osx.yml
+
   python:
     needs: [ cpp ]
     uses: ./.github/workflows/test_wheels.yml
