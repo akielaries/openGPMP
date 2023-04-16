@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vectors_619',['Vectors',['../classmtpk_1_1Vectors.html',1,'mtpk']]]
+  ['vectors_633',['Vectors',['../classmtpk_1_1Vectors.html',1,'mtpk::Vectors'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Vectors.html',1,'openmtpk.linalg.linalg.Vectors']]]
 ];
