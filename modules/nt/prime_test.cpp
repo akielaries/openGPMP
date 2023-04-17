@@ -43,9 +43,11 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
+
 #ifdef __APPLE__
 #include <stdlib.h>
 #endif
+
 #include <cstring>
 #include <iostream>
 #include <random>
@@ -125,6 +127,7 @@ bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
 #ifdef __APPLE__
     a = 2 + arc4random_uniform(n - 4);
 #else
+    // TODO: update the pseudorandom generator used for this
     a = 2 + rand() % (n - 4);
 #endif
     //    uint64_t a = 2 + rand() % (n - 4);
