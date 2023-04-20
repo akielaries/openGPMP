@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['calculus_603',['Calculus',['../classopenmtpk_1_1calculus_1_1calculus_1_1Calculus.html',1,'openmtpk::calculus::calculus']]],
-  ['cipher_604',['Cipher',['../classmtpk_1_1Cipher.html',1,'mtpk::Cipher'],['../classopenmtpk_1_1nt_1_1nt_1_1Cipher.html',1,'openmtpk.nt.nt.Cipher']]],
-  ['company_605',['Company',['../classCompany.html',1,'']]],
-  ['csvreader_606',['CSVReader',['../classCSVReader.html',1,'']]],
-  ['cv_607',['CV',['../classmtpk_1_1ml_1_1CV.html',1,'mtpk::ml']]]
+  ['basics_643',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk::Basics'],['../classopenmtpk_1_1arithmetic_1_1arithmetic_1_1Basics.html',1,'openmtpk.arithmetic.arithmetic.Basics'],['../classopenmtpk_1_1nt_1_1nt_1_1Basics.html',1,'openmtpk.nt.nt.Basics']]],
+  ['bayesbernoulli_644',['BayesBernoulli',['../classmtpk_1_1ml_1_1BayesBernoulli.html',1,'mtpk::ml']]],
+  ['bayesclf_645',['BayesClf',['../classmtpk_1_1ml_1_1BayesClf.html',1,'mtpk::ml']]],
+  ['bayesgauss_646',['BayesGauss',['../classmtpk_1_1ml_1_1BayesGauss.html',1,'mtpk::ml']]],
+  ['bayesmutlinom_647',['BayesMutliNom',['../classmtpk_1_1ml_1_1BayesMutliNom.html',1,'mtpk::ml']]],
+  ['bayesnet_648',['BayesNet',['../classmtpk_1_1ml_1_1BayesNet.html',1,'mtpk::ml']]]
 ];

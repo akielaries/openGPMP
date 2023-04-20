@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['factorization_612',['Factorization',['../classmtpk_1_1Factorization.html',1,'mtpk::Factorization'],['../classopenmtpk_1_1nt_1_1nt_1_1Factorization.html',1,'openmtpk.nt.nt.Factorization']]]
+  ['euclideandivision_657',['EuclideanDivision',['../classmtpk_1_1EuclideanDivision.html',1,'mtpk']]]
 ];

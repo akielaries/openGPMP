@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['datatabledouble_1168',['DataTableDouble',['../namespacemtpk_1_1core.html#a6dcac708681c722f8e5cb463efae666c',1,'mtpk::core']]],
-  ['datatableint_1169',['DataTableInt',['../namespacemtpk_1_1core.html#a641529c34920d1c5b8105f6fd0738f63',1,'mtpk::core']]],
-  ['datatablestr_1170',['DataTableStr',['../namespacemtpk_1_1core.html#a64f4dd6362a2cd3fa895359db6379272',1,'mtpk::core']]]
+  ['coeff_5ft_1244',['coeff_t',['../test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d',1,'test.cpp']]],
+  ['colvector_1245',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]]
 ];
