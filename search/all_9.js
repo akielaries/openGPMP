@@ -1,15 +1,14 @@
 var searchData=
 [
-  ['identricmean_220',['identricMean',['../classmtpk_1_1ml_1_1Stats.html#a4460f6efbc7c0e121fce2d422763359b',1,'mtpk::ml::Stats']]],
-  ['index_2emd_221',['index.md',['../index_8md.html',1,'']]],
-  ['init_222',['init',['../torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus_animated.cpp'],['../modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus.cpp']]],
-  ['init_5fsecondarymlp_223',['init_SecondaryMLP',['../classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155',1,'mtpk::ml::Trainers']]],
-  ['inputset_224',['inputSet',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a310088390f92615e1f279c1dd7667ff3',1,'mtpk::ml::BayesBernoulli::inputSet()'],['../classmtpk_1_1ml_1_1BayesGauss.html#a332628a9ca6dfd0ce72f5412f2e7307a',1,'mtpk::ml::BayesGauss::inputSet()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#a560c2025c7850196010df571e7df491a',1,'mtpk::ml::BayesMutliNom::inputSet()'],['../classmtpk_1_1ml_1_1AutoEncoder.html#a644ddfb6f8f8449e5fa786a2ad2d78f8',1,'mtpk::ml::AutoEncoder::inputSet()'],['../classmtpk_1_1ml_1_1kNN.html#a176f640b6758930b5eaeb27db99371dc',1,'mtpk::ml::kNN::inputSet()'],['../classmtpk_1_1ml_1_1Logreg.html#afd203dce255b4dc145310a466db017f3',1,'mtpk::ml::Logreg::inputSet()'],['../classmtpk_1_1ml_1_1SVC.html#a4b7f7da72197d0d61581f681815917ea',1,'mtpk::ml::SVC::inputSet()']]],
-  ['installation_225',['Installation',['../md_docs_source_Installation.html',1,'']]],
-  ['installation_2emd_226',['Installation.md',['../Installation_8md.html',1,'']]],
-  ['instance_5flist_227',['instance_list',['../classmtpk_1_1ml_1_1KF__CV.html#aa29163509a7173a917f60e4759454640',1,'mtpk::ml::KF_CV']]],
-  ['introduction_20to_20openmtpk_228',['Introduction to openMTPK',['../md_docs_source_Introduction.html',1,'']]],
-  ['introduction_2emd_229',['Introduction.md',['../Introduction_8md.html',1,'']]],
-  ['invquadraticinterpolation_230',['invQuadraticInterpolation',['../classmtpk_1_1NumericalAnalysis.html#a66242d92bf0131838842efd267a72f0d',1,'mtpk::NumericalAnalysis']]],
-  ['is_5fprime_231',['is_prime',['../classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5',1,'mtpk::PrimalityTest::is_prime()'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html#a1e13b72f61a5fc9e290ffcd127f3758e',1,'openmtpk.nt.nt.PrimalityTest.is_prime()']]]
+  ['identricmean_174',['identricMean',['../classmtpk_1_1Stats.html#a78146b69a7da2e4fbad6d714bd9035d8',1,'mtpk::Stats']]],
+  ['index_175',['index',['../classMyClass.html#a06f0106c6eb76055d37acad41e5c6776',1,'MyClass']]],
+  ['index_2emd_176',['index.md',['../index_8md.html',1,'']]],
+  ['init_177',['init',['../torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus_animated.cpp'],['../torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus.cpp']]],
+  ['init_5fsecondarymlp_178',['init_SecondaryMLP',['../classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155',1,'mtpk::ml::Trainers']]],
+  ['inputset_179',['inputSet',['../classmtpk_1_1BayesBernoulli.html#a768d935e1be20198b0cc1b0879f8a02e',1,'mtpk::BayesBernoulli::inputSet()'],['../classmtpk_1_1BayesGauss.html#acdaedcaf391874ee6f3b3874fa1db4ea',1,'mtpk::BayesGauss::inputSet()'],['../classmtpk_1_1BayesMutliNom.html#a2249e1ab8edb273626119c950bbffa13',1,'mtpk::BayesMutliNom::inputSet()'],['../classmtpk_1_1AutoEncoder.html#a21406eb17df1f505200bd40a30d57b98',1,'mtpk::AutoEncoder::inputSet()'],['../classmtpk_1_1kNN.html#ad748c411b008beac418d4581c585eb3d',1,'mtpk::kNN::inputSet()'],['../classmtpk_1_1Logreg.html#afc735f98c7e8714a21e71b9ce8975dde',1,'mtpk::Logreg::inputSet()'],['../classmtpk_1_1SVC.html#a6801168c145e54769e6cd0a53aab000f',1,'mtpk::SVC::inputSet()']]],
+  ['installation_180',['Installation',['../md_docs_source_Installation.html',1,'']]],
+  ['installation_2emd_181',['Installation.md',['../Installation_8md.html',1,'']]],
+  ['instance_5flist_182',['instance_list',['../classmtpk_1_1KF__CV.html#a7c5215ae3cde606115e497efbe438bf6',1,'mtpk::KF_CV']]],
+  ['invquadraticinterpolation_183',['invQuadraticInterpolation',['../classmtpk_1_1NumericalAnalysis.html#a66242d92bf0131838842efd267a72f0d',1,'mtpk::NumericalAnalysis']]],
+  ['is_5fprime_184',['is_prime',['../classmtpk_1_1Primality.html#a5c1b6327f4e402aff7c53afd5a026f01',1,'mtpk::Primality']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['primalitygen_622',['PrimalityGen',['../classmtpk_1_1PrimalityGen.html',1,'mtpk::PrimalityGen'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityGen.html',1,'openmtpk.nt.nt.PrimalityGen']]],
-  ['primalitytest_623',['PrimalityTest',['../classmtpk_1_1PrimalityTest.html',1,'mtpk::PrimalityTest'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html',1,'openmtpk.nt.nt.PrimalityTest']]],
-  ['primarymlp_624',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
+  ['tensors_509',['Tensors',['../classmtpk_1_1Tensors.html',1,'mtpk']]],
+  ['trainers_510',['Trainers',['../classmtpk_1_1ml_1_1Trainers.html',1,'mtpk::ml']]]
 ];

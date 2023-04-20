@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['endocer_5fnet_5fhpp_1170',['ENDOCER_NET_HPP',['../encoder_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'encoder.hpp']]],
-  ['euclidean_1171',['EUCLIDEAN',['../nt_8hpp.html#a2c765a446c7d8294f7ec1c126ef0a89f',1,'nt.hpp']]]
+  ['matrix_936',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp'],['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'MATRIX():&#160;linalg.hpp']]],
+  ['maxcount_937',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]]
 ];
