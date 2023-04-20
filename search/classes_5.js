@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['layer_488',['layer',['../structmtpk_1_1ml_1_1layer.html',1,'mtpk::ml']]],
-  ['linearregression_489',['LinearRegression',['../classmtpk_1_1LinearRegression.html',1,'mtpk']]],
-  ['logreg_490',['Logreg',['../classmtpk_1_1Logreg.html',1,'mtpk']]]
+  ['factorization_612',['Factorization',['../classmtpk_1_1Factorization.html',1,'mtpk::Factorization'],['../classopenmtpk_1_1nt_1_1nt_1_1Factorization.html',1,'openmtpk.nt.nt.Factorization']]]
 ];

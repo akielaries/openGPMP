@@ -167,8 +167,10 @@ Public Attributes</h2></td></tr>
 class mtpk::Matrix&lt; Type &gt;</h3>
 
 <p><a class="el" href="classmtpk_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> and Scalar operations. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="linalg_ops_8cpp-example.html#_a1">linalg_ops.cpp</a>.</dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00060">60</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00059">59</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1a5232aa2253825dbc627a3862b42a67"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a5232aa2253825dbc627a3862b42a67">&#9670;&nbsp;</a></span>Matrix() <span class="overload">[1/2]</span></h2>
@@ -215,16 +217,16 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00076">76</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                     : <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>(<a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>), <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>(<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>), <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>({}) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// initialize an empty vector for storage</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>.resize(<a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a> * <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, Type());</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e">dim</a> = std::make_tuple(<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="ttc" id="aclassmtpk_1_1Matrix_html_a4e7c2bad947c17d14cb4b442fc5a3d2e"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e">mtpk::Matrix::dim</a></div><div class="ttdeci">std::tuple&lt; size_t, size_t &gt; dim</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00066">matrix.hpp:66</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Matrix_html_a5641a89156e8578f7b315bc21bcc230b"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix::rows</a></div><div class="ttdeci">size_t rows</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00063">matrix.hpp:63</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Matrix_html_a970d6c32c7d7f99bf671f1ed40d8c466"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">mtpk::Matrix::data</a></div><div class="ttdeci">std::vector&lt; Type &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00065">matrix.hpp:65</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Matrix_html_ae3be5dd5bf62c808af6e0a7f24b08875"><div class="ttname"><a href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix::cols</a></div><div class="ttdeci">size_t cols</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00062">matrix.hpp:62</a></div></div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00075">75</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                     : <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>(<a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>), <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>(<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>), <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>({}) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// initialize an empty vector for storage</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>.resize(<a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a> * <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, Type());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e">dim</a> = std::make_tuple(<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_a4e7c2bad947c17d14cb4b442fc5a3d2e"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e">mtpk::Matrix::dim</a></div><div class="ttdeci">std::tuple&lt; size_t, size_t &gt; dim</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00065">matrix.hpp:65</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_a5641a89156e8578f7b315bc21bcc230b"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix::rows</a></div><div class="ttdeci">size_t rows</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00062">matrix.hpp:62</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_a970d6c32c7d7f99bf671f1ed40d8c466"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">mtpk::Matrix::data</a></div><div class="ttdeci">std::vector&lt; Type &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00064">matrix.hpp:64</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_ae3be5dd5bf62c808af6e0a7f24b08875"><div class="ttname"><a href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix::cols</a></div><div class="ttdeci">size_t cols</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00061">matrix.hpp:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -253,10 +255,10 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00081">81</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;             : <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>(0), <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>(0), <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>({}) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e">dim</a> = {<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00080">80</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;             : <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>(0), <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>(0), <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>({}) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classmtpk_1_1Matrix.html#a4e7c2bad947c17d14cb4b442fc5a3d2e">dim</a> = {<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -344,7 +346,7 @@ template&lt;typename Type &gt; </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">return</span> (counter == <a class="code" href="classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23">num_elements</a>);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
-<div class="ttc" id="aclassmtpk_1_1Matrix_html_a35c5074961211248dfbe6bb8bb0f5b23"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23">mtpk::Matrix::num_elements</a></div><div class="ttdeci">int64_t num_elements</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00068">matrix.hpp:68</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_a35c5074961211248dfbe6bb8bb0f5b23"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23">mtpk::Matrix::num_elements</a></div><div class="ttdeci">int64_t num_elements</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00067">matrix.hpp:67</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix&lt; Type &gt;::cols</a>, <a class="el" href="classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23">mtpk::Matrix&lt; Type &gt;::num_elements</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix&lt; Type &gt;::rows</a>.</p>
 
@@ -627,7 +629,7 @@ template&lt;typename Type &gt; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keyword">auto</span> m = Type(<a class="code" href="classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23">num_elements</a>);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186">sum</a>().<a class="code" href="classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10">scalar_mult</a>(1 / m);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
-<div class="ttc" id="aclassmtpk_1_1Matrix_html_a0403df5cbd8a0d67377c89adb2d53f10"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10">mtpk::Matrix::scalar_mult</a></div><div class="ttdeci">Matrix scalar_mult(Type scalar)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00122">matrix.hpp:122</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_a0403df5cbd8a0d67377c89adb2d53f10"><div class="ttname"><a href="classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10">mtpk::Matrix::scalar_mult</a></div><div class="ttdeci">Matrix scalar_mult(Type scalar)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00121">matrix.hpp:121</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1Matrix_html_abfaf7062d31707ddfdc09e2c980f7186"><div class="ttname"><a href="classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186">mtpk::Matrix::sum</a></div><div class="ttdeci">Matrix sum()</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00266">matrix.hpp:266</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23">mtpk::Matrix&lt; Type &gt;::num_elements</a>, <a class="el" href="classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10">mtpk::Matrix&lt; Type &gt;::scalar_mult()</a>, and <a class="el" href="classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186">mtpk::Matrix&lt; Type &gt;::sum()</a>.</p>
@@ -704,20 +706,20 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00105">105</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        assert(<a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a> == target.rows);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res(<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, target.cols);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; res.rows; ++r) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> c = 0; res.cols; ++c) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> n = 0; n &lt; target.rows; ++n) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    res(r, c) += (*this)(r, n) * target(n, c);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00104">104</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        assert(<a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a> == target.rows);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res(<a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>, target.cols);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; res.rows; ++r) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> c = 0; res.cols; ++c) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> n = 0; n &lt; target.rows; ++n) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    res(r, c) += (*this)(r, n) * target(n, c);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix&lt; Type &gt;::cols</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix&lt; Type &gt;::rows</a>.</p>
 
@@ -768,13 +770,13 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00091">91</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                             {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        assert(0 &lt;= row &amp;&amp; row &lt; <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        assert(0 &lt;= col &amp;&amp; col &lt; <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>[row * <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a> + col];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00090">90</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                             {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        assert(0 &lt;= row &amp;&amp; row &lt; <a class="code" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">rows</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        assert(0 &lt;= col &amp;&amp; col &lt; <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">data</a>[row * <a class="code" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">cols</a> + col];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix&lt; Type &gt;::cols</a>, <a class="el" href="classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466">mtpk::Matrix&lt; Type &gt;::data</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix&lt; Type &gt;::rows</a>.</p>
 
@@ -963,6 +965,8 @@ template&lt;typename Type &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="linalg_ops_8cpp-example.html#a2">linalg_ops.cpp</a>.</dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00381">381</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                     {</div>
@@ -976,6 +980,8 @@ template&lt;typename Type &gt; </div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix&lt; Type &gt;::cols</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix&lt; Type &gt;::rows</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="linalg__ops_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>, and <a class="el" href="linalg__ops_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv()</a>.</p>
 
 </div>
 </div>
@@ -1082,17 +1088,17 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00122">122</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; res.rows; ++r) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> c = 0; c &lt; res.cols; ++c) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                res(r, c) = scalar * (*this)(r, c);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00121">121</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; res.rows; ++r) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> c = 0; c &lt; res.cols; ++c) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                res(r, c) = scalar * (*this)(r, c);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875">mtpk::Matrix&lt; Type &gt;::cols</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a5641a89156e8578f7b315bc21bcc230b">mtpk::Matrix&lt; Type &gt;::rows</a>.</p>
 
@@ -1363,7 +1369,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00062">62</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00061">61</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1Matrix.html#a695fff8b43b7aea5bcfaaed827cff600">mtpk::Matrix&lt; Type &gt;::add()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ae379c776e20abfaa0edb975a3d6e25a5">mtpk::Matrix&lt; Type &gt;::all()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ac50233d491e4f5a443c2747f6081e028">mtpk::Matrix&lt; Type &gt;::apply_func()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a39ba97dc5227bc596725bdd45ccd7925">mtpk::Matrix&lt; Type &gt;::concatenate()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ab98cb19425fc23cfd2b2c6fa158cbe45">mtpk::Matrix&lt; Type &gt;::diag()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a12edb8fb7d2727e7d63fd7959993ce1b">mtpk::Matrix&lt; Type &gt;::fill_index()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce">mtpk::Matrix&lt; Type &gt;::hadamard()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a18c41f261850f1b5a076aaa616c8fad1">mtpk::Matrix&lt; Type &gt;::mean()</a>, <a class="el" href="classmtpk_1_1Matrix.html#aaf09c65a0c5214525caf887405a522fc">mtpk::Matrix&lt; Type &gt;::mult()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ae2b6c5e45c1bb272e708e07a1124d26b">mtpk::Matrix&lt; Type &gt;::operator()()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ae018657d5dee4e30284560326ca6eb78">mtpk::Matrix&lt; Type &gt;::operator-()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c">mtpk::Matrix&lt; Type &gt;::operator==()</a>, <a class="el" href="classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6">mtpk::Matrix&lt; Type &gt;::print_mtx()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56">mtpk::Matrix&lt; Type &gt;::print_shape()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a51c19c6e0a1ddc3c895c2b1f3cf83097">mtpk::Matrix&lt; Type &gt;::scalar_add()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10">mtpk::Matrix&lt; Type &gt;::scalar_mult()</a>, <a class="el" href="classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186">mtpk::Matrix&lt; Type &gt;::sum()</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a06e809ee9b3b763969c112b449c797ff">mtpk::Matrix&lt; Type &gt;::transpose()</a>.</p>
 
@@ -1383,7 +1389,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00065">65</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00064">64</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1Matrix.html#ae2b6c5e45c1bb272e708e07a1124d26b">mtpk::Matrix&lt; Type &gt;::operator()()</a>.</p>
 
@@ -1403,7 +1409,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00066">66</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00065">65</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1Matrix.html#a695fff8b43b7aea5bcfaaed827cff600">mtpk::Matrix&lt; Type &gt;::add()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce">mtpk::Matrix&lt; Type &gt;::hadamard()</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c">mtpk::Matrix&lt; Type &gt;::operator==()</a>.</p>
 
@@ -1423,7 +1429,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00068">68</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00067">67</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1Matrix.html#ae379c776e20abfaa0edb975a3d6e25a5">mtpk::Matrix&lt; Type &gt;::all()</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a9c9ea7276ea9bd095f69fc1a2d88e86a">mtpk::Matrix&lt; Type &gt;::mean()</a>.</p>
 
@@ -1443,7 +1449,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00063">63</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="matrix_8hpp_source.html#l00062">62</a> of file <a class="el" href="matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1Matrix.html#a695fff8b43b7aea5bcfaaed827cff600">mtpk::Matrix&lt; Type &gt;::add()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ae379c776e20abfaa0edb975a3d6e25a5">mtpk::Matrix&lt; Type &gt;::all()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ac50233d491e4f5a443c2747f6081e028">mtpk::Matrix&lt; Type &gt;::apply_func()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a39ba97dc5227bc596725bdd45ccd7925">mtpk::Matrix&lt; Type &gt;::concatenate()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ab98cb19425fc23cfd2b2c6fa158cbe45">mtpk::Matrix&lt; Type &gt;::diag()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a12edb8fb7d2727e7d63fd7959993ce1b">mtpk::Matrix&lt; Type &gt;::fill_index()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce">mtpk::Matrix&lt; Type &gt;::hadamard()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a18c41f261850f1b5a076aaa616c8fad1">mtpk::Matrix&lt; Type &gt;::mean()</a>, <a class="el" href="classmtpk_1_1Matrix.html#aaf09c65a0c5214525caf887405a522fc">mtpk::Matrix&lt; Type &gt;::mult()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ae2b6c5e45c1bb272e708e07a1124d26b">mtpk::Matrix&lt; Type &gt;::operator()()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ae018657d5dee4e30284560326ca6eb78">mtpk::Matrix&lt; Type &gt;::operator-()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c">mtpk::Matrix&lt; Type &gt;::operator==()</a>, <a class="el" href="classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6">mtpk::Matrix&lt; Type &gt;::print_mtx()</a>, <a class="el" href="classmtpk_1_1Matrix.html#ad511f7eafd0530619e45c72da9480b56">mtpk::Matrix&lt; Type &gt;::print_shape()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a51c19c6e0a1ddc3c895c2b1f3cf83097">mtpk::Matrix&lt; Type &gt;::scalar_add()</a>, <a class="el" href="classmtpk_1_1Matrix.html#a0403df5cbd8a0d67377c89adb2d53f10">mtpk::Matrix&lt; Type &gt;::scalar_mult()</a>, <a class="el" href="classmtpk_1_1Matrix.html#abfaf7062d31707ddfdc09e2c980f7186">mtpk::Matrix&lt; Type &gt;::sum()</a>, and <a class="el" href="classmtpk_1_1Matrix.html#a06e809ee9b3b763969c112b449c797ff">mtpk::Matrix&lt; Type &gt;::transpose()</a>.</p>
 

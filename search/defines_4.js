@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neural_5fnetworks_938',['NEURAL_NETWORKS',['../ml_8hpp.html#a07607da4adfe00593b227c7e8885f17e',1,'ml.hpp']]]
+  ['factorization_1189',['FACTORIZATION',['../nt_8hpp.html#a25fc994a92402407a2c2bad86c444976',1,'nt.hpp']]]
 ];
