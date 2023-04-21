@@ -11,9 +11,11 @@
 
 # Overview
 **openMTPK** is an open-source, multi-threaded, mathematics package written in C++ with a primary
-focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
-as well as a range of language API's with zero dependencies. openMTPK aims to provide options for pre-built functions, models, etc.
-along with modularity for user freedom.
+focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts 
+with zero mandatory dependencies. openMTPK aims to provide options for pre-built functions, models, etc.
+along with modularity for user freedom. Additional acceleration modules are featured for optional use and installation featuring
+OpenCL GPU acceleration functions written in C and wrapped for C++ as well as SIMD methods using Intel intrinsic functions. 
+
 Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
 on how to use some of openMTPK's functionalities. 
 
