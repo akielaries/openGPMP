@@ -6,8 +6,8 @@ var searchData=
   ['linalg_423',['linalg',['../namespaceopenmtpk_1_1linalg.html',1,'openmtpk.linalg'],['../namespaceopenmtpk_1_1linalg_1_1linalg.html',1,'openmtpk.linalg.linalg']]],
   ['ml_424',['ml',['../namespaceopenmtpk_1_1ml.html',1,'openmtpk.ml'],['../namespaceopenmtpk_1_1ml_1_1ml.html',1,'openmtpk.ml.ml']]],
   ['nt_425',['nt',['../namespaceopenmtpk_1_1nt.html',1,'openmtpk.nt'],['../namespaceopenmtpk_1_1nt_1_1nt.html',1,'openmtpk.nt.nt']]],
-  ['one_5frep_426',['one_rep',['../classmtpk_1_1Data.html#a0848852c2a3a68c96dc92d18b20a9427',1,'mtpk::Data']]],
-  ['one_5frep_5freverse_427',['one_rep_reverse',['../classmtpk_1_1Data.html#afaa3c7249d2ea6b7eda3189c3905f2f5',1,'mtpk::Data']]],
+  ['one_5frep_426',['one_rep',['../classmtpk_1_1core_1_1Data.html#a07667e3c41c27baf266ae0f39e717d87',1,'mtpk::core::Data']]],
+  ['one_5frep_5freverse_427',['one_rep_reverse',['../classmtpk_1_1core_1_1Data.html#a31adc1e082869397b87043ff90cf59d3',1,'mtpk::core::Data']]],
   ['ones_428',['ones',['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html#a8a1f9f7c6ec9ec6e790addc0903d2ae2',1,'openmtpk.linalg.linalg.mtx.ones()'],['../structmtpk_1_1mtx.html#a844bc20fffd518adf98003889a6a1df8',1,'mtpk::mtx::ones()']]],
   ['op_5fgcd_429',['op_gcd',['../classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e',1,'mtpk::Basics::op_gcd()'],['../classopenmtpk_1_1arithmetic_1_1arithmetic_1_1Basics.html#a1886e93af5a5cae84ff993cc21e0765d',1,'openmtpk.arithmetic.arithmetic.Basics.op_gcd()'],['../classopenmtpk_1_1nt_1_1nt_1_1Basics.html#a65018da7cceaee6efa3ba891937e357f',1,'openmtpk.nt.nt.Basics.op_gcd()']]],
   ['openmtpk_430',['openmtpk',['../namespaceopenmtpk.html',1,'']]],
@@ -20,7 +20,7 @@ var searchData=
   ['operator_3d_3d_437',['operator==',['../classmtpk_1_1Matrix.html#a280dec3aeb414085dba50e695a7cf33c',1,'mtpk::Matrix']]],
   ['optimizers_438',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
   ['optimizers_2ehpp_439',['optimizers.hpp',['../optimizers_8hpp.html',1,'']]],
-  ['outlierfinder_440',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk::OutlierFinder'],['../classmtpk_1_1OutlierFinder.html#a18c2087072af1615d3a9ecfbbdecd587',1,'mtpk::OutlierFinder::OutlierFinder()']]],
+  ['outlierfinder_440',['OutlierFinder',['../classmtpk_1_1core_1_1OutlierFinder.html',1,'mtpk::core::OutlierFinder'],['../classmtpk_1_1core_1_1OutlierFinder.html#acb085cb8a5939d26c563afc4e6b26415',1,'mtpk::core::OutlierFinder::OutlierFinder()']]],
   ['output_5ferr_441',['output_err',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a397daab2ad5b66cec3315ad2c994b3b2',1,'mtpk::ml::PrimaryMLP']]],
   ['outputset_442',['outputSet',['../classmtpk_1_1ml_1_1BayesGauss.html#a930a0789d2d0411a3bc27905d368934c',1,'mtpk::ml::BayesGauss::outputSet()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#ab3717c8f9446b1d6baf59c8f52e6e208',1,'mtpk::ml::BayesMutliNom::outputSet()'],['../classmtpk_1_1ml_1_1kNN.html#a080f7f67db74e055e55a321f3959f418',1,'mtpk::ml::kNN::outputSet()'],['../classmtpk_1_1ml_1_1Logreg.html#ab1f266228c786933e934833400724a97',1,'mtpk::ml::Logreg::outputSet()'],['../classmtpk_1_1ml_1_1SVC.html#a9e63114e3fa5f2f3b2e47407e9c55ca4',1,'mtpk::ml::SVC::outputSet()'],['../classmtpk_1_1ml_1_1BayesBernoulli.html#a2b1b447de0ee1af961574738641b7236',1,'mtpk::ml::BayesBernoulli::outputSet()']]]
 ];

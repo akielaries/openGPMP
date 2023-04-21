@@ -5,7 +5,7 @@ var searchData=
   ['factorization_2ecpp_224',['factorization.cpp',['../factorization_8cpp.html',1,'']]],
   ['factorization_2ehpp_225',['factorization.hpp',['../factorization_8hpp.html',1,'']]],
   ['factors_2ecpp_226',['factors.cpp',['../factors_8cpp.html',1,'']]],
-  ['feature_5fscaling_227',['feature_scaling',['../classmtpk_1_1Data.html#a0377f3f35308042f7326f9cb0d53ff8c',1,'mtpk::Data']]],
+  ['feature_5fscaling_227',['feature_scaling',['../classmtpk_1_1core_1_1Data.html#a0e2d2f68f70c0ddb31d98c529c68d28b',1,'mtpk::core::Data']]],
   ['filename_228',['fileName',['../classCSVReader.html#a0a90d62a46349a148272cb0e087cd191',1,'CSVReader']]],
   ['fill_5findex_229',['fill_index',['../classmtpk_1_1Matrix.html#a12edb8fb7d2727e7d63fd7959993ce1b',1,'mtpk::Matrix::fill_index()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#a63378ec4766621b1e610035506a67db0',1,'openmtpk.linalg.linalg.Matrix.fill_index()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#ad725556bb2f93bc94826dee94ae4975e',1,'openmtpk.linalg.linalg.MatrixI.fill_index()']]],
   ['filldistances_230',['fillDistances',['../classmtpk_1_1ml_1_1NearestNeighbor.html#a293c91b45ddddef3b5c972c0d1c5427e',1,'mtpk::ml::NearestNeighbor::fillDistances()'],['../nearest__neighbors_8cpp.html#a91599ec4f74a72f07af0d53665025e52',1,'fillDistances():&#160;nearest_neighbors.cpp']]],

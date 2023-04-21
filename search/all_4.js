@@ -1,7 +1,7 @@
 var searchData=
 [
   ['data_161',['data',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#aa24835b5480cd17a3fb8f9e6fa2b608d',1,'openmtpk.linalg.linalg.MatrixI.data()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#a052c698d74c7f14a4ac4036bb98ed5cb',1,'openmtpk.linalg.linalg.Matrix.data()'],['../classmtpk_1_1Matrix.html#a970d6c32c7d7f99bf671f1ed40d8c466',1,'mtpk::Matrix::data()']]],
-  ['data_162',['Data',['../classmtpk_1_1Data.html',1,'mtpk']]],
+  ['data_162',['Data',['../classmtpk_1_1core_1_1Data.html',1,'mtpk::core']]],
   ['data_5fsize_163',['data_size',['../classopenmtpk_1_1ml_1_1ml_1_1LinearRegression.html#a774926fdf2a9565e3465f6a7b5ef1906',1,'openmtpk.ml.ml.LinearRegression.data_size()'],['../classmtpk_1_1ml_1_1LinearRegression.html#a88db0ed4ada816d00872b105ae2112f9',1,'mtpk::ml::LinearRegression::data_size()']]],
   ['datatable_164',['DataTable',['../classmtpk_1_1core_1_1DataTable.html',1,'mtpk::core']]],
   ['datatable_2ecpp_165',['datatable.cpp',['../datatable_8cpp.html',1,'']]],
