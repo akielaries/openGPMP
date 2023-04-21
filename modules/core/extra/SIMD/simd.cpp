@@ -67,28 +67,8 @@ void multiply_matrices_std(float A[N][N], float B[N][N], float C[N][N]) {
                 C[i][j] += A[i][k] * B[k][j];
             }
         }
-    }   
-
-    auto end = std::chrono::high_resolution_clock::now();
-
-    std::chrono::duration<double, std::nano> elapsed = end - start;
-    std::cout << "Elapsed time: " << elapsed.count() << " ns\n";
-}
-
-
-void multiply_matrices_std(float A[N][N], float B[N][N], float C[N][N]) {
-    auto start = std::chrono::high_resolution_clock::now();
-
-    using V = Vector<T>;
-    for (size_t i = 0; i < N; ++i) {
-        for (size_t j = 0; j < N; j += V::size()) {
-            V c_ij = A[i][0] * V(&B[0][j], Aligned);
-            for (size_t k = 1; k < N; ++k) {
-                c_ij += A[i][k] * V(&B[k][j], Aligned);
-            }
-            c_ij.store(&C[i][j], Aligned);
-        }
     }
+
     auto end = std::chrono::high_resolution_clock::now();
 
     std::chrono::duration<double, std::nano> elapsed = end - start;
