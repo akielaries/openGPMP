@@ -46,9 +46,47 @@
 #include <tuple>
 #include <vector>
 
-using namespace mtpk;
-
 namespace mtpk {
+
+namespace core {
+
+class TypeCast {
+    /** std::string -> c string
+     *
+     */
+
+    /* std::array -> c array on stack
+     *      int arr[4];
+     */
+
+    /* std::vector -> c array on heap ?
+     *      int *arr = new int[5];
+     */
+
+    /** std::tuple -> c array
+     *
+     */
+
+    /** std::pair -> struct
+     *
+     */
+
+    /** std::map -> c array (key, val)
+     *
+     */
+
+    /** std::unordered_map -> c array (key, val)
+     *
+     */
+
+    /** std::shared_ptr -> c ptr
+     *
+     */
+
+    /** std::unique_ptr -> c ptr
+     *
+     */
+};
 
 /**
  * @class Data
@@ -122,6 +160,8 @@ class OutlierFinder {
     // Variables required
     int threshold;
 };
+
+} // namespace core
 
 } // namespace mtpk
 
