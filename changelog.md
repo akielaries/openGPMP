@@ -37,6 +37,7 @@ of a given polynomial in a function at a given value. For example f(x) = x^2ln(x
 * Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous
 tools lies under the `mtpk::core` namespace. 
 * Patches introduced for [`#27 OSX Build reaches dead state`](https://github.com/akielaries/openMTPK/issues/27)
+    * This introduced additional testing and CICD work related to openMTPK on OSX.
 * TODO
 
 
