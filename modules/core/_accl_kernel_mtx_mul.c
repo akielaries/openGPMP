@@ -1,3 +1,6 @@
+/**
+ * OpenCL C GPU kernel
+ */
 __kernel void matrixMul(__global float *C, __global float *A, __global float *B,
                         int wA, int wB) {
 

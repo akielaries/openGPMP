@@ -1,7 +1,7 @@
 #include <iostream>
 
 extern "C" {
-void accl_mtx_exec();
+int accl_mtx_exec();
 }
 
 int main() {

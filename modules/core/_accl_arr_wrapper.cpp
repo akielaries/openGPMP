@@ -1,7 +1,7 @@
 #include <iostream>
 
 extern "C" {
-void accl_arr_exec();
+int accl_arr_exec();
 }
 
 int main() {

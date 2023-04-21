@@ -1,6 +1,6 @@
-WRAP		= accl_mtx_wrapper.cpp
-SRC			= accl_mtx.c
-SRC_OBJ		= accl_mtx.o
+WRAP		= _accl_mtx_add_wrapper.cpp 
+SRC			= _accl_mtx_add.c
+SRC_OBJ		= _accl_mtx_add.o
 
 CC			= gcc
 CXX			= g++
@@ -18,9 +18,9 @@ compile_src_mtx:
 compile_wrap_mtx:
 	${CXX} ${CXXFLAGS} ${WRAP} ${SRC_OBJ} ${CLFLAGS} -o ${BIN}
 
-WRAP_ARR 	= accl_arr_wrapper.cpp
-SRC_ARR		= accl_arr.c
-SRC_ARR_OBJ	= accl_arr.o
+WRAP_ARR 	= _accl_arr_wrapper.cpp
+SRC_ARR		= _accl_arr_add.c
+SRC_ARR_OBJ	= _accl_arr_add.o
 
 compile_src_arr:
 	${CC} ${CFLAGS} ${SRC_ARR} -o ${SRC_ARR_OBJ} ${CLFLAGS}

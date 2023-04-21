@@ -28,7 +28,7 @@ int main() {
     cl_ulong val[1];
 
     FILE *fp;
-    char fileName[] = "./accl_kernel_sum.c";
+    char fileName[] = "./_accl_kernel_sum.c";
     char *source_str;
     size_t source_size;
 

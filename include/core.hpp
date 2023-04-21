@@ -4,7 +4,7 @@
 
 /*
  * ifndef if certain hardware accel tools are included in CMake install
- * process 
+ * process
  *
  *
  * threadpool
@@ -16,4 +16,3 @@
  *
  * SIMD
  */
-

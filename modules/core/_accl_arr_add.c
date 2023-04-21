@@ -28,7 +28,7 @@ const char *kernelSource = "__kernel void addArrays(__global float *a, "
                            "    int gid = get_global_id(0);\n"
                            "    c[gid] = a[gid] + b[gid];\n"
                            "}\n";
-int main() {
+int accl_arr_exec() {
     cl_int err;
 
     // Create OpenCL platform
