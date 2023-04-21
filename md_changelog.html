@@ -76,11 +76,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md18"></a>
-v0.10.0</h1>
+v1.0.0-rc.1</h1>
 <h2><a class="anchor" id="autotoc_md19"></a>
 What's Changed</h2>
 <ul>
 <li>Documentation layout + additions</li>
+<li><code>mtpk::accl</code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openMTPK with the use of <code>cmake</code>.<ul>
+<li><code>mtpk::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openMTPK modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code>mtpk::accl</code> namespace.</li>
+<li><code>mtpk::accl::SIMD()</code> class features accelerated functions seen in the core mathematical openMTPK modules ideal for wide register computations using Intel specific intrinsic functions. <br  />
+</li>
+</ul>
+</li>
 <li><code><a class="el" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool()</a></code> class capable of spawning a specific number of threads or the default <code>std::thread::hardware_concurrency()</code>.<ul>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html">here</a> &gt; <b>Note</b> This class is not yet used innately within openMTPK and is provided as a user utility for now.</li>
 </ul>
@@ -94,6 +100,7 @@ What's Changed</h2>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html">here</a></li>
 </ul>
 </li>
+<li><code><a class="el" href="classmtpk_1_1core_1_1TypeCast.html">mtpk::core::TypeCast()</a></code> class featuring several methods to convert C++ <code>std::</code> specific data types to C-compatible data types. This class is utilized for the C++ wrapping of the C-based acceleration methods.</li>
 <li>Created <a href="https://github.com/akielaries/openMTPK/tree/rolling"><code>rolling</code></a> branch that will update its commits from the <a href="https://github.com/mtpk-bot">mtpk-bot</a> user on a nightly basis, using the <code>#NIGHTLY:</code> commit message prefix.</li>
 <li>Introduced updates to calculus module in numerical differentation methods. First, second, and third order derivatives methods of a given polynomial in a function at a given value. For example f(x) = x^2ln(x) = <code>x*x*log(x)</code>.</li>
 <li>Updates to unit tests and additions for the new classes introduced.</li>
