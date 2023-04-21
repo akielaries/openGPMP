@@ -1,8 +1,18 @@
 # Changelog
 
-# v0.10.0
+# v1.0.0-rc.1
 ## What's Changed 
 * Documentation layout + additions
+* `mtpk::accl` namespace introduced hardware acceleration methods using GPUs with the help of 
+OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The
+acceleration unit is an optional install with openMTPK with the use of `cmake`.
+    * `mtpk::accl::GPU()` class features methods of GPU acceleration using OpenCL. This class will house
+    methods seen in the mathematical openMTPK modules that are ideal for GPU computation. The GPU functions
+    themselves will be written in `C` with wrapper methods for use in `C++` using `extern "C" {/* function definitions */}`
+    making them available under the `mtpk::accl` namespace.
+    * `mtpk::accl::SIMD()` class features accelerated functions seen in the core mathematical openMTPK
+    modules ideal for wide register computations using Intel specific intrinsic functions.  
+
 * `mtpk::core::ThreadPool()` class capable of spawning a specific number of threads or
 the default `std::thread::hardware_concurrency()`.
     * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html)
@@ -15,6 +25,9 @@ vector strings. For now, the DataTable class features very limited functionality
 or specific columns), formatted displaying, and two conversion methods for the `string->int` & `string->double`.
     * Solves open enhancement [`#29 DataFrame/DataTable related functionality`](https://github.com/akielaries/openMTPK/issues/29)
     * view docs [here](https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html)
+* `mtpk::core::TypeCast()` class featuring several methods to convert C++ `std::` specific data types
+to C-compatible data types. This class is utilized for the C++ wrapping of the C-based acceleration methods.
+
 * Created [`rolling`](https://github.com/akielaries/openMTPK/tree/rolling) branch that will update its commits 
 from the [mtpk-bot](https://github.com/mtpk-bot) user on a nightly basis, using the `#NIGHTLY:` commit message 
 prefix.
