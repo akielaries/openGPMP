@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/accl_sum.c Source File</title>
+<title>openMTPK: modules/core/_accl_sum.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,15 +76,15 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">accl_sum.c</div>  </div>
+<div class="title">_accl_sum.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="accl__sum_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<a href="__accl__sum_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="accl__sum_8c.html#a16605039b395344c0b68b435e197b8bd">    5</a></span>&#160;<span class="preprocessor">#define CL_USE_DEPRECATED_OPENCL_1_2_APIS</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="accl__sum_8c.html#a5990dea19d4ccb046a3d81b311457add">    6</a></span>&#160;<span class="preprocessor">#define CL_TARGET_OPENCL_VERSION 300</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#a16605039b395344c0b68b435e197b8bd">    5</a></span>&#160;<span class="preprocessor">#define CL_USE_DEPRECATED_OPENCL_1_2_APIS</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#a5990dea19d4ccb046a3d81b311457add">    6</a></span>&#160;<span class="preprocessor">#define CL_TARGET_OPENCL_VERSION 300</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifdef __APPLE__</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;OpenCL/opencl.h&gt;</span></div>
@@ -92,9 +92,9 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;CL/cl.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">   14</a></span>&#160;<span class="preprocessor">#define MAX_SOURCE_SIZE (0x100000)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">   14</a></span>&#160;<span class="preprocessor">#define MAX_SOURCE_SIZE (0x100000)</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   16</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   16</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="__accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    cl_device_id device_id = NULL;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    cl_context context = NULL;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cl_command_queue command_queue = NULL;</div>
@@ -118,8 +118,8 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;Failed to load kernel\n&quot;</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        exit(1);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    source_str = (<span class="keywordtype">char</span> *)malloc(<a class="code" href="accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    source_size = fread(source_str, 1, <a class="code" href="accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, fp);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    source_str = (<span class="keywordtype">char</span> *)malloc(<a class="code" href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    source_size = fread(source_str, 1, <a class="code" href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, fp);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    fclose(fp);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ret = clGetPlatformIDs(1, &amp;platform_id, &amp;ret_num_platforms);</div>
@@ -162,8 +162,8 @@ $(function() {
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
-<div class="ttc" id="aaccl__sum_8c_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="accl__sum_8c_source.html#l00014">accl_sum.c:14</a></div></div>
-<div class="ttc" id="aaccl__sum_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="accl__sum_8c_source.html#l00016">accl_sum.c:16</a></div></div>
+<div class="ttc" id="a__accl__sum_8c_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__accl__sum_8c_source.html#l00014">_accl_sum.c:14</a></div></div>
+<div class="ttc" id="a__accl__sum_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="__accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="__accl__sum_8c_source.html#l00016">_accl_sum.c:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

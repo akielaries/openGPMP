@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/accl_kernel.c File Reference</title>
+<title>openMTPK: modules/core/_accl_kernel_mtx_add.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,71 +75,20 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">accl_kernel.c File Reference</div>  </div>
+<div class="title">_accl_kernel_mtx_add.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="accl__kernel_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:af1361538530ca5175206909457013a77"><td class="memItemLeft" align="right" valign="top">__kernel void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accl__kernel_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a> (__global const int *a, __global const int *b, __global int *res, const int len)</td></tr>
-<tr class="separator:af1361538530ca5175206909457013a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="af1361538530ca5175206909457013a77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1361538530ca5175206909457013a77">&#9670;&nbsp;</a></span>add_vec_gpu()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__kernel void add_vec_gpu </td>
-          <td>(</td>
-          <td class="paramtype">__global const int *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">__global const int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">__global int *&#160;</td>
-          <td class="paramname"><em>res</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>add vectors using GPU </p>
-
-<p class="definition">Definition at line <a class="el" href="accl__kernel_8c_source.html#l00004">4</a> of file <a class="el" href="accl__kernel_8c_source.html">accl_kernel.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                                            {</div>
+<a href="__accl__kernel__mtx__add_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__accl__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__accl__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a>(__global <span class="keyword">const</span> <span class="keywordtype">int</span> *a, __global <span class="keyword">const</span> <span class="keywordtype">int</span> *b,</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                          __global <span class="keywordtype">int</span> *res, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        res[idx] = a[idx] + b[idx];</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<div class="ttc" id="a__accl__kernel__mtx__add_8c_html_af1361538530ca5175206909457013a77"><div class="ttname"><a href="__accl__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a></div><div class="ttdeci">__kernel void add_vec_gpu(__global const int *a, __global const int *b, __global int *res, const int len)</div><div class="ttdef"><b>Definition:</b> <a href="__accl__kernel__mtx__add_8c_source.html#l00004">_accl_kernel_mtx_add.c:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

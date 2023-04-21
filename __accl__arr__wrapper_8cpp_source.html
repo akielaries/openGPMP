@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/accl_kernel_arr.c File Reference</title>
+<title>openMTPK: modules/core/_accl_arr_wrapper.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,68 +75,24 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">accl_kernel_arr.c File Reference</div>  </div>
+<div class="title">_accl_arr_wrapper.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="accl__kernel__arr_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aa80201af01ebbdf232a352d053ff4569"><td class="memItemLeft" align="right" valign="top">__kernel void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="accl__kernel__arr_8c.html#aa80201af01ebbdf232a352d053ff4569">addArrays</a> (__global float *a, __global float *b, __global float *c, int n)</td></tr>
-<tr class="separator:aa80201af01ebbdf232a352d053ff4569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aa80201af01ebbdf232a352d053ff4569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa80201af01ebbdf232a352d053ff4569">&#9670;&nbsp;</a></span>addArrays()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__kernel void addArrays </td>
-          <td>(</td>
-          <td class="paramtype">__global float *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">__global float *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">__global float *&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="accl__kernel__arr_8c_source.html#l00001">1</a> of file <a class="el" href="accl__kernel__arr_8c_source.html">accl_kernel_arr.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                               {</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordtype">int</span> gid = get_global_id(0);</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    c[gid] = a[gid] + b[gid];</div>
+<a href="__accl__arr__wrapper_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__accl__arr__wrapper_8cpp.html#a3c958774b8ea9db2f850023524534df4">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__accl__arr__wrapper_8cpp.html#a3c958774b8ea9db2f850023524534df4">accl_arr_exec</a>();</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="__accl__arr__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    7</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="__accl__arr__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="__accl__arr__wrapper_8cpp.html#a3c958774b8ea9db2f850023524534df4">accl_arr_exec</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="ttc" id="a__accl__arr__wrapper_8cpp_html_a3c958774b8ea9db2f850023524534df4"><div class="ttname"><a href="__accl__arr__wrapper_8cpp.html#a3c958774b8ea9db2f850023524534df4">accl_arr_exec</a></div><div class="ttdeci">void accl_arr_exec()</div></div>
+<div class="ttc" id="a__accl__arr__wrapper_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="__accl__arr__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="__accl__arr__wrapper_8cpp_source.html#l00007">_accl_arr_wrapper.cpp:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

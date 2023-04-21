@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/accl_kernel_arr.c Source File</title>
+<title>openMTPK: modules/core/_accl_kernel_arr_add.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,15 +76,15 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">accl_kernel_arr.c</div>  </div>
+<div class="title">_accl_kernel_arr_add.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="accl__kernel__arr_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="accl__kernel__arr_8c.html#aa80201af01ebbdf232a352d053ff4569">    1</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="accl__kernel__arr_8c.html#aa80201af01ebbdf232a352d053ff4569">addArrays</a>(__global <span class="keywordtype">float</span> *a, __global <span class="keywordtype">float</span> *b, __global <span class="keywordtype">float</span> *c,</div>
+<a href="__accl__kernel__arr__add_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="__accl__kernel__arr__add_8c.html#aa80201af01ebbdf232a352d053ff4569">    1</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__accl__kernel__arr__add_8c.html#aa80201af01ebbdf232a352d053ff4569">addArrays</a>(__global <span class="keywordtype">float</span> *a, __global <span class="keywordtype">float</span> *b, __global <span class="keywordtype">float</span> *c,</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        <span class="keywordtype">int</span> n) {</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordtype">int</span> gid = get_global_id(0);</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    c[gid] = a[gid] + b[gid];</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;}</div>
-<div class="ttc" id="aaccl__kernel__arr_8c_html_aa80201af01ebbdf232a352d053ff4569"><div class="ttname"><a href="accl__kernel__arr_8c.html#aa80201af01ebbdf232a352d053ff4569">addArrays</a></div><div class="ttdeci">__kernel void addArrays(__global float *a, __global float *b, __global float *c, int n)</div><div class="ttdef"><b>Definition:</b> <a href="accl__kernel__arr_8c_source.html#l00001">accl_kernel_arr.c:1</a></div></div>
+<div class="ttc" id="a__accl__kernel__arr__add_8c_html_aa80201af01ebbdf232a352d053ff4569"><div class="ttname"><a href="__accl__kernel__arr__add_8c.html#aa80201af01ebbdf232a352d053ff4569">addArrays</a></div><div class="ttdeci">__kernel void addArrays(__global float *a, __global float *b, __global float *c, int n)</div><div class="ttdef"><b>Definition:</b> <a href="__accl__kernel__arr__add_8c_source.html#l00001">_accl_kernel_arr_add.c:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
