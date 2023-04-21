@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: tables.cpp</title>
+<title>openMTPK: modules/core/accl_kernel.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -55,7 +55,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,34 +69,26 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_6d4da112a1331882b0b6514a341190a0.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">tables.cpp</div>  </div>
+<div class="title">accl_kernel.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Test driver showing how to use openMTPK's DataTable core utility class.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>: TODO</dd></dl>
-<div class="fragment"><div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &quot;../../include/struct/datatable.hpp&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="tables_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line">    mtpk::Datatable dt;</div>
-<div class="line">    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame =</div>
-<div class="line">        dt.csv_read(<span class="stringliteral">&quot;../../data/forestfires.csv&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">    std::vector&lt;std::map&lt;std::string, std::string&gt;&gt; frame2 =</div>
-<div class="line">        dt.csv_read(<span class="stringliteral">&quot;../../data/school_scores.csv&quot;</span>);</div>
-<div class="line">    <span class="comment">// Print dataframe</span></div>
-<div class="line">    dt.display(frame);</div>
-<div class="line">    dt.display(frame2);</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
-<div class="ttc" id="atables_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="tables_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="tables_8cpp_source.html#l00014">tables.cpp:14</a></div></div>
-</div><!-- fragment --> </div><!-- contents -->
+<a href="accl__kernel_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="accl__kernel_8c.html#af1361538530ca5175206909457013a77">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="accl__kernel_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a>(__global <span class="keyword">const</span> <span class="keywordtype">int</span> *a, __global <span class="keyword">const</span> <span class="keywordtype">int</span> *b,</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                          __global <span class="keywordtype">int</span> *res, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        res[idx] = a[idx] + b[idx];</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="ttc" id="aaccl__kernel_8c_html_af1361538530ca5175206909457013a77"><div class="ttname"><a href="accl__kernel_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a></div><div class="ttdeci">__kernel void add_vec_gpu(__global const int *a, __global const int *b, __global int *res, const int len)</div><div class="ttdef"><b>Definition:</b> <a href="accl__kernel_8c_source.html#l00004">accl_kernel.c:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['regression_1285',['REGRESSION',['../ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43',1,'ml.hpp']]],
-  ['resampling_1286',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]]
+  ['pi_1337',['pi',['../modules_2complex_2torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
+  ['primes_1338',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]],
+  ['print_5fline_1339',['PRINT_LINE',['../accl__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'accl_mtx.c']]]
 ];
