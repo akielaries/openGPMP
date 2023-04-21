@@ -6,7 +6,7 @@ var searchData=
   ['calculate_5fconstant_904',['calculate_constant',['../classmtpk_1_1ml_1_1LinearRegression.html#a0d15f877aed1e3c82910f9f8d6e0de39',1,'mtpk::ml::LinearRegression::calculate_constant()'],['../classopenmtpk_1_1ml_1_1ml_1_1LinearRegression.html#a99faa426540d8d453f77ffdd55a084ee',1,'openmtpk.ml.ml.LinearRegression.calculate_constant()']]],
   ['carmichael_5fnum_905',['carmichael_num',['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html#a9ab40795cd91df10fbbb1a50f9b45310',1,'openmtpk.nt.nt.PrimalityTest.carmichael_num()'],['../classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1',1,'mtpk::PrimalityTest::carmichael_num()']]],
   ['chebyshevineq_906',['chebyshevIneq',['../classmtpk_1_1ml_1_1Stats.html#ab5f2f8b2b81d7b89ba62724b74843bc0',1,'mtpk::ml::Stats']]],
-  ['check_5ferror_907',['check_error',['../__accl__cl__err_8h.html#ab17a897758b516d24bef60cbce8e9154',1,'_accl_cl_err.h']]],
+  ['check_5ferror_907',['check_error',['../__cl__err_8h.html#ab17a897758b516d24bef60cbce8e9154',1,'_cl_err.h']]],
   ['check_5fresult_908',['check_result',['../__accl__mtx__add_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae',1,'_accl_mtx_add.c']]],
   ['chisquaretest_909',['chiSquareTest',['../classmtpk_1_1ml_1_1Stats.html#a8ec2c8a2fbd01315ab5eb402b859c375',1,'mtpk::ml::Stats']]],
   ['choice_910',['choice',['../classmtpk_1_1ml_1_1KohonenNet.html#a24659e940634cfce96788341c9c27f3a',1,'mtpk::ml::KohonenNet']]],

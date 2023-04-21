@@ -106,8 +106,8 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a888373aabcd201cf434f8064393dc4df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__accl__arr__add_8c.html#a888373aabcd201cf434f8064393dc4df">add_array</a> (float *a, float *b, float *c)</td></tr>
 <tr class="separator:a888373aabcd201cf434f8064393dc4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__accl__arr__add_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6af97d445a81cfc0bd168903173b2ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__accl__arr__add_8c.html#ad6af97d445a81cfc0bd168903173b2ed">accl_arr_exec</a> ()</td></tr>
+<tr class="separator:ad6af97d445a81cfc0bd168903173b2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -164,60 +164,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a888373aabcd201cf434f8064393dc4df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a888373aabcd201cf434f8064393dc4df">&#9670;&nbsp;</a></span>add_array()</h2>
+<a id="ad6af97d445a81cfc0bd168903173b2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6af97d445a81cfc0bd168903173b2ed">&#9670;&nbsp;</a></span>accl_arr_exec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void add_array </td>
-          <td>(</td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="__accl__arr__add_8c_source.html#l00020">20</a> of file <a class="el" href="__accl__arr__add_8c_source.html">_accl_arr_add.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                             {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a>; i++) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        c[i] = a[i] + b[i];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="a__accl__arr__add_8c_html_a7ec751f49d6391028a94f1419374c2fa"><div class="ttname"><a href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a></div><div class="ttdeci">#define ARRAY_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__accl__arr__add_8c_source.html#l00018">_accl_arr_add.c:18</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="__accl__arr__add_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
-
-</div>
-</div>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
+          <td class="memname">int accl_arr_exec </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -226,7 +180,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="__accl__arr__add_8c_source.html#l00031">31</a> of file <a class="el" href="__accl__arr__add_8c_source.html">_accl_arr_add.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;           {</div>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    cl_int err;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Create OpenCL platform</span></div>
@@ -409,9 +363,57 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
 <div class="ttc" id="a__accl__arr__add_8c_html_a3c5dbc58d0371369ba54f2cfa109f621"><div class="ttname"><a href="__accl__arr__add_8c.html#a3c5dbc58d0371369ba54f2cfa109f621">kernelSource</a></div><div class="ttdeci">const char * kernelSource</div><div class="ttdef"><b>Definition:</b> <a href="__accl__arr__add_8c_source.html#l00026">_accl_arr_add.c:26</a></div></div>
+<div class="ttc" id="a__accl__arr__add_8c_html_a7ec751f49d6391028a94f1419374c2fa"><div class="ttname"><a href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a></div><div class="ttdeci">#define ARRAY_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__accl__arr__add_8c_source.html#l00018">_accl_arr_add.c:18</a></div></div>
 <div class="ttc" id="a__accl__arr__add_8c_html_a888373aabcd201cf434f8064393dc4df"><div class="ttname"><a href="__accl__arr__add_8c.html#a888373aabcd201cf434f8064393dc4df">add_array</a></div><div class="ttdeci">void add_array(float *a, float *b, float *c)</div><div class="ttdef"><b>Definition:</b> <a href="__accl__arr__add_8c_source.html#l00020">_accl_arr_add.c:20</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="__accl__arr__add_8c.html#a888373aabcd201cf434f8064393dc4df">add_array()</a>, <a class="el" href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a>, and <a class="el" href="__accl__arr__add_8c.html#a3c5dbc58d0371369ba54f2cfa109f621">kernelSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="__accl__arr__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+
+</div>
+</div>
+<a id="a888373aabcd201cf434f8064393dc4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a888373aabcd201cf434f8064393dc4df">&#9670;&nbsp;</a></span>add_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void add_array </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="__accl__arr__add_8c_source.html#l00020">20</a> of file <a class="el" href="__accl__arr__add_8c_source.html">_accl_arr_add.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                             {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a>; i++) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        c[i] = a[i] + b[i];</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="__accl__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa">ARRAY_SIZE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="__accl__arr__add_8c.html#ad6af97d445a81cfc0bd168903173b2ed">accl_arr_exec()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +437,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="__accl__arr__add_8c_source.html#l00026">26</a> of file <a class="el" href="__accl__arr__add_8c_source.html">_accl_arr_add.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="__accl__arr__add_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="__accl__arr__add_8c.html#ad6af97d445a81cfc0bd168903173b2ed">accl_arr_exec()</a>.</p>
 
 </div>
 </div>
