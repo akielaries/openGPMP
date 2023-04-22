@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/_accl_sum.c Source File</title>
+<title>openMTPK: modules/core/_gpu_sum.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,26 +75,101 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">_accl_sum.c</div>  </div>
+<div class="title">_gpu_sum.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="__accl__sum_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#a16605039b395344c0b68b435e197b8bd">    5</a></span>&#160;<span class="preprocessor">#define CL_USE_DEPRECATED_OPENCL_1_2_APIS</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#a5990dea19d4ccb046a3d81b311457add">    6</a></span>&#160;<span class="preprocessor">#define CL_TARGET_OPENCL_VERSION 300</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifdef __APPLE__</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;OpenCL/opencl.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;CL/cl.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">   14</a></span>&#160;<span class="preprocessor">#define MAX_SOURCE_SIZE (0x100000)</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="__accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   16</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="__accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;CL/cl.h&gt;</code><br />
+</div>
+<p><a href="__gpu__sum_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a16605039b395344c0b68b435e197b8bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__sum_8c.html#a16605039b395344c0b68b435e197b8bd">CL_USE_DEPRECATED_OPENCL_1_2_APIS</a></td></tr>
+<tr class="separator:a16605039b395344c0b68b435e197b8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5990dea19d4ccb046a3d81b311457add"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__sum_8c.html#a5990dea19d4ccb046a3d81b311457add">CL_TARGET_OPENCL_VERSION</a>&#160;&#160;&#160;300</td></tr>
+<tr class="separator:a5990dea19d4ccb046a3d81b311457add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f672842beaeeeb118a74c1b198b94e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>&#160;&#160;&#160;(0x100000)</td></tr>
+<tr class="separator:a1f672842beaeeeb118a74c1b198b94e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a5990dea19d4ccb046a3d81b311457add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5990dea19d4ccb046a3d81b311457add">&#9670;&nbsp;</a></span>CL_TARGET_OPENCL_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CL_TARGET_OPENCL_VERSION&#160;&#160;&#160;300</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="__gpu__sum_8c_source.html#l00006">6</a> of file <a class="el" href="__gpu__sum_8c_source.html">_gpu_sum.c</a>.</p>
+
+</div>
+</div>
+<a id="a16605039b395344c0b68b435e197b8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16605039b395344c0b68b435e197b8bd">&#9670;&nbsp;</a></span>CL_USE_DEPRECATED_OPENCL_1_2_APIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CL_USE_DEPRECATED_OPENCL_1_2_APIS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="__gpu__sum_8c_source.html#l00005">5</a> of file <a class="el" href="__gpu__sum_8c_source.html">_gpu_sum.c</a>.</p>
+
+</div>
+</div>
+<a id="a1f672842beaeeeb118a74c1b198b94e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f672842beaeeeb118a74c1b198b94e3">&#9670;&nbsp;</a></span>MAX_SOURCE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SOURCE_SIZE&#160;&#160;&#160;(0x100000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="__gpu__sum_8c_source.html#l00014">14</a> of file <a class="el" href="__gpu__sum_8c_source.html">_gpu_sum.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="__gpu__sum_8c_source.html#l00016">16</a> of file <a class="el" href="__gpu__sum_8c_source.html">_gpu_sum.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;           {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    cl_device_id device_id = NULL;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    cl_context context = NULL;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cl_command_queue command_queue = NULL;</div>
@@ -118,8 +193,8 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;Failed to load kernel\n&quot;</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        exit(1);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    source_str = (<span class="keywordtype">char</span> *)malloc(<a class="code" href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    source_size = fread(source_str, 1, <a class="code" href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, fp);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    source_str = (<span class="keywordtype">char</span> *)malloc(<a class="code" href="__gpu__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    source_size = fread(source_str, 1, <a class="code" href="__gpu__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, fp);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    fclose(fp);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ret = clGetPlatformIDs(1, &amp;platform_id, &amp;ret_num_platforms);</div>
@@ -162,9 +237,13 @@ $(function() {
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
-<div class="ttc" id="a__accl__sum_8c_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="__accl__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__accl__sum_8c_source.html#l00014">_accl_sum.c:14</a></div></div>
-<div class="ttc" id="a__accl__sum_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="__accl__sum_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="__accl__sum_8c_source.html#l00016">_accl_sum.c:16</a></div></div>
-</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a__gpu__sum_8c_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="__gpu__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__sum_8c_source.html#l00014">_gpu_sum.c:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="__gpu__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
