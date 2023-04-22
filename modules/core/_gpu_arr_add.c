@@ -17,19 +17,34 @@
 
 #define ARRAY_SIZE 4096
 
+#define MEM_SIZE (128)
+#define MAX_SOURCE_SIZE (0x100000)
+
 void add_array(float *a, float *b, float *c) {
     for (int i = 0; i < ARRAY_SIZE; i++) {
         c[i] = a[i] + b[i];
     }
 }
 
-const char *kernelSource = "__kernel void addArrays(__global float *a, "
-                           "__global float *b, __global float *c, int n) {\n"
-                           "    int gid = get_global_id(0);\n"
-                           "    c[gid] = a[gid] + b[gid];\n"
-                           "}\n";
 int accl_arr_exec() {
     cl_int err;
+
+    /* Load the source code containing the kernel */
+    char string[MEM_SIZE];
+    FILE *fp;
+    char fileName[] = "./_gpu_kernel_arr_add.c";
+    char *source_str;
+    size_t source_size;
+
+    fp = fopen(fileName, "r");
+    if (!fp) {
+
+        fprintf(stderr, "Failed to load kernel.\n");
+        exit(1);
+    }
+    source_str = (char *)malloc(MAX_SOURCE_SIZE);
+    source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);
+    fclose(fp);
 
     // Create OpenCL platform
     cl_platform_id platform;
@@ -62,8 +77,10 @@ int accl_arr_exec() {
     }
 
     // Create OpenCL program from kernel source
-    cl_program program = clCreateProgramWithSource(
-        context, 1, (const char **)&kernelSource, NULL, &err);
+    cl_program program =
+        clCreateProgramWithSource(context, 1, (const char **)&source_str,
+                                  (const size_t *)&source_size, &err);
+
     if (err != CL_SUCCESS) {
         printf("Error creating program: %d\n", err);
         return EXIT_FAILURE;
@@ -77,7 +94,7 @@ int accl_arr_exec() {
     }
 
     // Create OpenCL kernel
-    cl_kernel kernel = clCreateKernel(program, "addArrays", &err);
+    cl_kernel kernel = clCreateKernel(program, "add_arr_gpu", &err);
     if (err != CL_SUCCESS) {
         printf("Error creating kernel: %d\n", err);
         return EXIT_FAILURE;

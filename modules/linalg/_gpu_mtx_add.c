@@ -116,7 +116,7 @@ void accl_mtx_exec() {
     /* Load the source code containing the kernel */
     char string[MEM_SIZE];
     FILE *fp;
-    char fileName[] = "./_accl_kernel_mtx_add.c";
+    char fileName[] = "./_gpu_kernel_mtx_add.c";
     char *source_str;
     size_t source_size;
 
