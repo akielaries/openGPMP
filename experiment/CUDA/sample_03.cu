@@ -1,4 +1,4 @@
-#include 
+#include <stdio.h> 
 
 __global__
 void saxpy(int n, float a, float *x, float *y)
