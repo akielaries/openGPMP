@@ -81,6 +81,10 @@ jobs:
     if: needs.src_changes.outputs.src_changed == 'True'
     uses: ./.github/workflows/build_osx.yml
 
+
+  CUDA:
+	uses: ./.github/workflow/CUDA.yml
+
   python:
     needs: [ cpp ]
     uses: ./.github/workflows/test_wheels.yml
