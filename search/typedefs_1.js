@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['work_5ft_108',['work_t',['../c__threadpool_8c.html#a37e18d3a92eb320a238a7a05de35dc39',1,'c_threadpool.c']]]
+  ['coeff_5ft_1316',['coeff_t',['../test_8cpp.html#a023452f1b1335fa6771ae6a4ebe0df3d',1,'test.cpp']]],
+  ['colvector_1317',['ColVector',['../naive__net_8hpp.html#a9f8f99187c9577dde49b0c3491137d2f',1,'naive_net.hpp']]]
 ];

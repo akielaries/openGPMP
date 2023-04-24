@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="c__threadpool_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;c_threadpool.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="c__threadpool_8h.html">c_threadpool.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a30a445a718c55d416b60e1eb0340b704">   34</a></span>&#160;} <a class="code" href="c__threadpool_8c.html#a30a445a718c55d416b60e1eb0340b704">_threadpool</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/* This function is the work function of the thread */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">   37</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work</a>(threadpool p) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">   37</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work</a>(<a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> p) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="struct__threadpool__st.html">_threadpool</a> *pool = (<a class="code" href="struct__threadpool__st.html">_threadpool</a> *)p;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="structwork__st.html">work_t</a> *cur; <span class="comment">// The q element</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> k;</div>
@@ -156,12 +156,12 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">   83</a></span>&#160;threadpool <a class="code" href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">create_threadpool</a>(<span class="keywordtype">int</span> num_threads_in_pool) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">   83</a></span>&#160;<a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> <a class="code" href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">create_threadpool</a>(<span class="keywordtype">int</span> num_threads_in_pool) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="struct__threadpool__st.html">_threadpool</a> *pool;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// sanity check the argument</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> ((num_threads_in_pool &lt;= 0) || (num_threads_in_pool &gt; MAXT_IN_POOL))</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> ((num_threads_in_pool &lt;= 0) || (num_threads_in_pool &gt; <a class="code" href="c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4">MAXT_IN_POOL</a>))</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    pool = (<a class="code" href="struct__threadpool__st.html">_threadpool</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code" href="struct__threadpool__st.html">_threadpool</a>));</div>
@@ -207,10 +207,10 @@ $(function() {
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> (threadpool)pool;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a>)pool;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">  137</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(threadpool from_me, dispatch_fn dispatch_to_here, <span class="keywordtype">void</span> *arg) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">  137</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(<a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> from_me, <a class="code" href="c__threadpool_8h.html#abcfdc19b1972ae7e54ea4fad8ee03600">dispatch_fn</a> dispatch_to_here, <span class="keywordtype">void</span> *arg) {</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="struct__threadpool__st.html">_threadpool</a> *pool = (<a class="code" href="struct__threadpool__st.html">_threadpool</a> *)from_me;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="structwork__st.html">work_t</a> *cur;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">int</span> k;</div>
@@ -246,7 +246,7 @@ $(function() {
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    pthread_mutex_unlock(&amp;(pool-&gt;<a class="code" href="struct__threadpool__st.html#a723b1032187684457d5418323e3fee64">qlock</a>)); <span class="comment">// unlock the queue.</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">  173</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a>(threadpool destroyme) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">  173</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a>(<a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> destroyme) {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="struct__threadpool__st.html">_threadpool</a> *pool = (<a class="code" href="struct__threadpool__st.html">_threadpool</a> *)destroyme;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> *nothing;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
@@ -281,6 +281,10 @@ $(function() {
 <div class="ttc" id="ac__threadpool_8c_html_a37e18d3a92eb320a238a7a05de35dc39"><div class="ttname"><a href="c__threadpool_8c.html#a37e18d3a92eb320a238a7a05de35dc39">work_t</a></div><div class="ttdeci">struct work_st work_t</div></div>
 <div class="ttc" id="ac__threadpool_8c_html_a40f3db62ccfd7fdffb7624bb565ba425"><div class="ttname"><a href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a></div><div class="ttdeci">void dispatch(threadpool from_me, dispatch_fn dispatch_to_here, void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00137">c_threadpool.c:137</a></div></div>
 <div class="ttc" id="ac__threadpool_8c_html_a6081ee3e41a92fcb5e97ce3523bcc2f2"><div class="ttname"><a href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a></div><div class="ttdeci">void destroy_threadpool(threadpool destroyme)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00173">c_threadpool.c:173</a></div></div>
+<div class="ttc" id="ac__threadpool_8h_html"><div class="ttname"><a href="c__threadpool_8h.html">c_threadpool.h</a></div></div>
+<div class="ttc" id="ac__threadpool_8h_html_a40e41fb68417a6977a22f20007818e53"><div class="ttname"><a href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a></div><div class="ttdeci">void * threadpool</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8h_source.html#l00017">c_threadpool.h:17</a></div></div>
+<div class="ttc" id="ac__threadpool_8h_html_a6cfa2c91d90cf6aff4941a70a2c7a5c4"><div class="ttname"><a href="c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4">MAXT_IN_POOL</a></div><div class="ttdeci">#define MAXT_IN_POOL</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8h_source.html#l00009">c_threadpool.h:9</a></div></div>
+<div class="ttc" id="ac__threadpool_8h_html_abcfdc19b1972ae7e54ea4fad8ee03600"><div class="ttname"><a href="c__threadpool_8h.html#abcfdc19b1972ae7e54ea4fad8ee03600">dispatch_fn</a></div><div class="ttdeci">void(* dispatch_fn)(void *)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8h_source.html#l00025">c_threadpool.h:25</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html"><div class="ttname"><a href="struct__threadpool__st.html">_threadpool_st</a></div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00022">c_threadpool.c:22</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html_a056bc09374af3da1a337991fc1d86678"><div class="ttname"><a href="struct__threadpool__st.html#a056bc09374af3da1a337991fc1d86678">_threadpool_st::threads</a></div><div class="ttdeci">pthread_t * threads</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00026">c_threadpool.c:26</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html_a48ef6313275156d61d2b660fed0d3f88"><div class="ttname"><a href="struct__threadpool__st.html#a48ef6313275156d61d2b660fed0d3f88">_threadpool_st::num_threads</a></div><div class="ttdeci">int num_threads</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00024">c_threadpool.c:24</a></div></div>
