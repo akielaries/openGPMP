@@ -44,11 +44,11 @@ namespace accl {
 
 /**
  * @class CLmtx
- * @brief OpenCL GPU Matrix operations class
+ * @brief OpenCL GPU Matrix operations wrapper class 
  */
 class CLmtx {
   public:
-    //
+    void mtx_mul();
 };
 
 } // namespace accl
