@@ -47,7 +47,7 @@ namespace accl {
 
 /**
  * @class SIDMmtxIntel
- * @brief Intel based intrinsic functions
+ * @brief Intel intrinsic layer for matrix related operations
  */
 class SIMDmtxIntel {
   public:
