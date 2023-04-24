@@ -38,34 +38,9 @@
  * @brief openMTPK LINEAR ALGEBRA MODULE
  *
  * @details This file serves as the core header for the Linear Algebra
- * module. This header includes the following :
- *  - Matrix
- *  - Vectors
- *  - Scalars
- *  - Linear Functions & Equations
- *      * Taylor Approximation
- *      * Naive Regression
- *      * Systems
- *  - Linear Dynamical Systems
- *      * Population Dynamics
- *      * Epidemic Dynamics
- *      * Motion
- *      * Supply Chain Dynamics
- *  - Norm & Distance
- *      * STD Dev
- *      * Angle
- *      * Complexity
- *  - Clustering
- *  - Linear Independence
- *      * Orthonormal Vectors
- *      * Gram-Schmidt Algorithm
- *
- *  - Least Squares
- *      * Data Fitting
- *      * Classification
- *      * Multi-Objective
- *      * Contrained
- *      * Nonlinear
+ * module. This header includes Vector/Matrix related operations. Also
+ * with additional support for GPU utilization through CUDA (Nvidia
+ * hardward support) and OpenCL (OSX & Linux system support):
  *
  *  @note Some topics in Linear Algebra overlap and/or heavily
  * influence algorithms seen in Machine Learning
@@ -81,12 +56,49 @@
 #include "linalg/matrix.hpp"
 /*****************************************************************************/
 
-/**
- * @brief \b Vector \b Operations
- * @details Encompasses Vector and Scalar operations
- */
-#define MATRIX
-#include "linalg/vectors.hpp"
 /*****************************************************************************/
+/**
+ * @brief \b CUDA \b Matrix \b Operations
+ * @details CUDA GPU accelerated Matrix functions
+ */
+#define CUDA_MATRIX
+#if defined(__linux__)
+    #ifdef __NVCC__
+        #include "linalg/_cuda_mtx.cuh"
+    #endif
+#endif
+
+
+/**
+ * @brief \b OpenCL \b Matrix \b Operations  
+ * @details OpenCL GPU accelerated Matrix functions         
+ */
+#if defined(__linux__) || defined(__APPLE__)
+    #ifndef __NVCC__
+        #include "linalg/_gpu_mtx.h"
+        #include "linalg/_gpu_kernel_mtx.h"
+        #include "linalg/_gpu_mtx_wrapper.hpp"
+    #endif
+#endif
+
+/**
+ * @brief \b Intel \b CPU \b Matrix \b SIMD \b Operations
+ * @details Intel based intrinsic functions
+ */
+#define INTEL_SIMD
+#if defined(__x86_64__) || defined(i386) || defined(__i386__) || defined(__i386) || defined(__amd64__) || defined(__amd64)
+    #include "linalg/_simd_intel_mtx.hpp"
+#endif
+
+/**
+ * @brief \b ARM \b CPU \b Matrix \b SIMD \b Operations
+ * @details ARM based intrinsic functions
+ */
+#define ARM_SIMD
+#if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) || defined(__ARM_ARCH) || defined(__aarch64__) || 
+    #include "linalg/_simd_arm_mtx.hpp"
+#endif
+
 
 #endif
+
