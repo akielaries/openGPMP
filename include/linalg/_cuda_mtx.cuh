@@ -46,7 +46,7 @@ namespace mtpk {
 namespace accl {
 
 /**
- * @class CUDA
+ * @class CUDAmtx
  * @brief Features CUDA GPU acceleration methods related to matrix operations
  */
 class CUDAmtx {
