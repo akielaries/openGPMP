@@ -49,7 +49,7 @@ namespace accl {
  * @class SIDMmtxIntel
  * @brief Intel based intrinsic functions
  */
-class SIMDIntel {
+class SIMDmtxIntel {
   public:
     void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
 };
