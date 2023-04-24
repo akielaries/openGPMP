@@ -128,28 +128,27 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#if defined(__linux__) || defined(__APPLE__)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">    #ifndef __NVCC__</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#if defined(__linux__) || defined(__APPLE__)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">    #ifndef __NVCC__</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="__gpu__kernel__mtx_8h.html">linalg/_gpu_kernel_mtx.h</a>&quot;</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="__gpu__mtx_8h.html">linalg/_gpu_mtx.h</a>&quot;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="__gpu__kernel__mtx_8h.html">linalg/_gpu_kernel_mtx.h</a>&quot;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="__gpu__mtx__wrapper_8hpp.html">linalg/_gpu_mtx_wrapper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#a13ae13b7ef0e65a46d90ab7057e2ffb1">   88</a></span>&#160;<span class="preprocessor">#define INTEL_SIMD</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#if defined(__x86_64__) || defined(i386) || defined(__i386__) || defined(__i386) || defined(__amd64__) || defined(__amd64)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">        #include &quot;<a class="code" href="__gpu__mtx__wrapper_8hpp.html">linalg/_gpu_mtx_wrapper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#a13ae13b7ef0e65a46d90ab7057e2ffb1">   87</a></span>&#160;<span class="preprocessor">#define INTEL_SIMD</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    defined(__i386) || defined(__amd64__) || defined(__amd64)</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="__simd__intel__mtx_8hpp.html">linalg/_simd_intel_mtx.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79">   97</a></span>&#160;<span class="preprocessor">#define ARM_SIMD</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) || defined(__ARM_ARCH) || defined(__aarch64__) || </span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="__simd__arm__mtx_8hpp.html">linalg/_simd_arm_mtx.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                      \</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">    defined(__ARM_ARCH) || defined(__aarch64__)</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">    #include &quot;<a class="code" href="__simd__arm__mtx_8hpp.html">linalg/_simd_arm_mtx.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="ttc" id="a__gpu__kernel__mtx_8h_html"><div class="ttname"><a href="__gpu__kernel__mtx_8h.html">_gpu_kernel_mtx.h</a></div></div>
 <div class="ttc" id="a__gpu__mtx_8h_html"><div class="ttname"><a href="__gpu__mtx_8h.html">_gpu_mtx.h</a></div></div>
 <div class="ttc" id="a__gpu__mtx__wrapper_8hpp_html"><div class="ttname"><a href="__gpu__mtx__wrapper_8hpp.html">_gpu_mtx_wrapper.hpp</a></div></div>
