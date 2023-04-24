@@ -43,7 +43,7 @@ var searchData=
   ['mouse_386',['mouse',['../torus__animated_8cpp.html#ac76a5d78172a826cd6ee9512b89a86c0',1,'torus_animated.cpp']]],
   ['mtpk_387',['mtpk',['../namespacemtpk.html',1,'']]],
   ['mtx_388',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk::mtx&lt; T &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html',1,'openmtpk.linalg.linalg.mtx']]],
-  ['mtx_5fmul_389',['mtx_mul',['../classmtpk_1_1accl_1_1SIMDIntel.html#acac62cfd9eee11e8c4fb914ecdcaa514',1,'mtpk::accl::SIMDIntel::mtx_mul()'],['../classmtpk_1_1accl_1_1SIDMmtxARM.html#a35fff18d58231d1bdf9cec7fd0edf024',1,'mtpk::accl::SIDMmtxARM::mtx_mul()']]],
+  ['mtx_5fmul_389',['mtx_mul',['../classmtpk_1_1accl_1_1SIMDmtxIntel.html#a705c1dd8d2daab1c3a38baf377e16419',1,'mtpk::accl::SIMDmtxIntel::mtx_mul()'],['../classmtpk_1_1accl_1_1SIDMmtxARM.html#a35fff18d58231d1bdf9cec7fd0edf024',1,'mtpk::accl::SIDMmtxARM::mtx_mul()']]],
   ['mtx_5fneg_390',['mtx_neg',['../namespacepython_1_1linalg.html#ac78734a635d502405ccfe13cf5ac6b52',1,'python::linalg']]],
   ['mtx_5fo_391',['mtx_o',['../namespacepython_1_1linalg.html#a0343bd4d51e02f97e21ae10be5c3c50e',1,'python::linalg']]],
   ['mtx_5fpos_392',['mtx_pos',['../namespacepython_1_1linalg.html#a8efb00aa7aefef926dc00d6ad1c5ca75',1,'python::linalg']]],
