@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['err_1236',['err',['../structmtpk_1_1ml_1_1neuron.html#ae457c01e087efc6758397020f36764d3',1,'mtpk::ml::neuron']]],
-  ['errno_1237',['errno',['../c__threadtest_8c.html#ad65a8842cc674e3ddf69355898c0ecbf',1,'c_threadtest.c']]]
+  ['routine_104',['routine',['../structwork__st.html#aac5b5c8b8b8b7b441cfebc86e9ec7adc',1,'work_st']]]
 ];

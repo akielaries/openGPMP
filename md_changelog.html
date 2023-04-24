@@ -75,45 +75,45 @@ $(function() {
 <div class="title">Changelog </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md18"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
 v1.0.0-rc.1</h1>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md2"></a>
 What's Changed</h2>
 <ul>
 <li>Documentation layout + additions</li>
-<li><code><a class="el" href="namespacemtpk_1_1accl.html">mtpk::accl</a></code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openMTPK with the use of <code>cmake</code>.<ul>
-<li><code>mtpk::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openMTPK modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code><a class="el" href="namespacemtpk_1_1accl.html">mtpk::accl</a></code> namespace.</li>
+<li><code>mtpk::accl</code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openMTPK with the use of <code>cmake</code>.<ul>
+<li><code>mtpk::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openMTPK modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code>mtpk::accl</code> namespace.</li>
 <li><code>mtpk::accl::SIMD()</code> class features accelerated functions seen in the core mathematical openMTPK modules ideal for wide register computations using Intel specific intrinsic functions. <br  />
 </li>
 </ul>
 </li>
-<li><code><a class="el" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool()</a></code> class capable of spawning a specific number of threads or the default <code>std::thread::hardware_concurrency()</code>.<ul>
+<li><code>mtpk::core::ThreadPool()</code> class capable of spawning a specific number of threads or the default <code>std::thread::hardware_concurrency()</code>.<ul>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html">here</a> &gt; <b>Note</b> This class is not yet used innately within openMTPK and is provided as a user utility for now.</li>
 </ul>
 </li>
-<li><code><a class="el" href="classmtpk_1_1core_1_1ThreadDispatch.html" title="A class that provides a function to dispatch a function call to a thread pool and return a future obj...">mtpk::core::ThreadDispatch()</a></code> class that dispatches functions to the threadpool.<ul>
+<li><code>mtpk::core::ThreadDispatch()</code> class that dispatches functions to the threadpool.<ul>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadDispatch.html">here</a></li>
 </ul>
 </li>
-<li><code><a class="el" href="classmtpk_1_1core_1_1DataTable.html">mtpk::core::DataTable()</a></code> class capable of reading in CSV files storing them as a pair of vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely, or specific columns), formatted displaying, and two conversion methods for the <code>string-&gt;int</code> &amp; <code>string-&gt;double</code>.<ul>
+<li><code>mtpk::core::DataTable()</code> class capable of reading in CSV files storing them as a pair of vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely, or specific columns), formatted displaying, and two conversion methods for the <code>string-&gt;int</code> &amp; <code>string-&gt;double</code>.<ul>
 <li>Solves open enhancement <a href="https://github.com/akielaries/openMTPK/issues/29"><code>#29 DataFrame/DataTable related functionality</code></a></li>
 <li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html">here</a></li>
 </ul>
 </li>
-<li><code><a class="el" href="classmtpk_1_1core_1_1TypeCast.html">mtpk::core::TypeCast()</a></code> class featuring several methods to convert C++ <code>std::</code> specific data types to C-compatible data types. This class is utilized for the C++ wrapping of the C-based acceleration methods.</li>
+<li><code>mtpk::core::TypeCast()</code> class featuring several methods to convert C++ <code>std::</code> specific data types to C-compatible data types. This class is utilized for the C++ wrapping of the C-based acceleration methods.</li>
 <li>Created <a href="https://github.com/akielaries/openMTPK/tree/rolling"><code>rolling</code></a> branch that will update its commits from the <a href="https://github.com/mtpk-bot">mtpk-bot</a> user on a nightly basis, using the <code>#NIGHTLY:</code> commit message prefix.</li>
 <li>Introduced updates to calculus module in numerical differentation methods. First, second, and third order derivatives methods of a given polynomial in a function at a given value. For example f(x) = x^2ln(x) = <code>x*x*log(x)</code>.</li>
 <li>Updates to unit tests and additions for the new classes introduced.</li>
-<li>Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous tools lies under the <code><a class="el" href="namespacemtpk_1_1core.html">mtpk::core</a></code> namespace.</li>
+<li>Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous tools lies under the <code>mtpk::core</code> namespace.</li>
 <li>Patches introduced for <a href="https://github.com/akielaries/openMTPK/issues/27"><code>#27 OSX Build reaches dead state</code></a><ul>
 <li>This introduced additional testing and CICD work related to openMTPK on OSX.</li>
 </ul>
 </li>
 <li>TODO</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 v0.9.4</h1>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 What's Changed</h2>
 <ul>
 <li>Division between code for internal functionality vs. what is available to the user.</li>
@@ -131,9 +131,9 @@ What's Changed</h2>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 v0.7.0</h1>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 New Changes in v0.7.0</h2>
 <ol type="1">
 <li>Updates to Primary and Secondary Multi-Layer Perceptron networks</li>
@@ -146,7 +146,7 @@ New Changes in v0.7.0</h2>
 </li>
 <li>Fortran, OCaml, Go and Julia demoted to experimental APIs, focus remains on Python and now R bindings</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md24"></a>
+<h3><a class="anchor" id="autotoc_md7"></a>
 Next :</h3>
 <hr  />
 <ol type="1">
@@ -155,9 +155,9 @@ Next :</h3>
 <li>Inject source code updates into APIs</li>
 <li>Create formal check/test process for Raspberry Pi hardware</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md25"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 v0.6.0</h1>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 New Changes in v0.6.0</h2>
 <ol type="1">
 <li>Continued changes to Linear Algebra Module + samples</li>
@@ -176,9 +176,9 @@ New Changes in v0.6.0</h2>
 </li>
 <li>Adding <code>make uninstall</code> option for the project's build process with CMake. See the install/uninstall directions <a href="https://github.com/akielaries/openMTPK#installation">here</a>.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 v0.5.3</h1>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 What's Changed</h2>
 <ol type="1">
 <li>Updates to Linear Algebra Module and samples<ul>
@@ -193,24 +193,24 @@ What's Changed</h2>
 </li>
 <li>Updated to CMake installation of source C++ code</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<h3><a class="anchor" id="autotoc_md12"></a>
 Next :</h3>
 <hr  />
 <ol type="1">
 <li>Create first of many Neural Network Models and Machine Learning techniques for the <a href="https://akielaries.github.io/openMTPK/ml_8hpp.html">ml</a> module<ul>
-<li>Update the overarching <code><a class="el" href="ml_8hpp.html" title="openMTPK MACHINE/DEEP LEARNING MODULE">ml.hpp</a></code> header to make use of implemented models and techniques &gt; <b>Note</b> So far the <a href="https://akielaries.github.io/openMTPK/linreg_8hpp.html">Linear Regression</a> technique works on select two-column data</li>
+<li>Update the overarching <code>ml.hpp</code> header to make use of implemented models and techniques &gt; <b>Note</b> So far the <a href="https://akielaries.github.io/openMTPK/linreg_8hpp.html">Linear Regression</a> technique works on select two-column data</li>
 </ul>
 </li>
 <li>Progress on CPP-&gt;R &amp; OCaml language binding process</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 v0.5.2</h1>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 What's Changed</h2>
 <blockquote class="doxtable">
 <p><b>Note</b> Do not expect much until <em><b>v1.0.0</b></em> </p>
 </blockquote>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md15"></a>
 Major Updates to Python PyPI packaging process.</h3>
 <ul>
 <li>Builds wheels for OSX and Linux platforms (Windows will not be supported)</li>
@@ -228,14 +228,14 @@ Major Updates to Python PyPI packaging process.</h3>
 </ul>
 </li>
 </ul>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md16"></a>
 C++ source is currently supported on Linux based platforms.</h3>
 <ul>
 <li>Bugs with googletest on OSX.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 v0.4.0</h1>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 What's Changed</h2>
 <ul>
 <li>Created Python pip package for Python API. Install with <code>pip install openmtpk</code><ul>
@@ -244,17 +244,17 @@ What's Changed</h2>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 v0.3.2</h1>
 <p>CMake installation make Googletest as a dependency.</p><ul>
 <li>openMTPK tests must pass in order to build and install the static library</li>
 <li>TEST -&gt; BUILD -&gt; INSTALL</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 v0.3.1</h1>
 <p>Minor Release with updates to CMake installation process.</p><ul>
 <li>Headers are now installed in nested fashion with a parent-level header representing each module. For example:<ul>
-<li>Files in a module directory such as the <code>ml/</code> directory (<a class="el" href="linreg_8hpp.html">linreg.hpp</a>, <a class="el" href="logreg_8hpp.html" title="Logistic Regression.">logreg.hpp</a>, mlp_network.hpp, etc.) will make up that modules header file(<a href="https://github.com/akielaries/openMTPK/blob/main/include/ml.hpp">ml.hpp</a>).</li>
+<li>Files in a module directory such as the <code>ml/</code> directory (linreg.hpp, logreg.hpp, mlp_network.hpp, etc.) will make up that modules header file(<a href="https://github.com/akielaries/openMTPK/blob/main/include/ml.hpp">ml.hpp</a>).</li>
 </ul>
 </li>
 <li>Will include googletest workflow into CMake installation<ul>
@@ -262,7 +262,7 @@ v0.3.1</h1>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 v0.3</h1>
 <p>Formal documentation created with Doxygen deployed to github pages, see <a href="https://akielaries.github.io/openMTPK">here</a>.</p><ul>
 <li>Documentation updates within headers</li>
@@ -276,7 +276,7 @@ v0.3</h1>
 </li>
 </ul>
 <p>As always refer to the project <a href="https://github.com/akielaries/openMTPK#installation">README</a>.</p>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 v0.2</h1>
 <p>Formal installation of source C++ API with CMake. See installation steps in the project <a href="https://github.com/akielaries/openMTPK#installation">README</a>.</p><ul>
 <li>Linux is supported.</li>
@@ -289,12 +289,12 @@ v0.2</h1>
 <li>Neural Networks, Classifiers</li>
 </ul>
 <p><a href="https://openmtpk-docs.readthedocs.io/en/latest/index.html">https://openmtpk-docs.readthedocs.io/en/latest/index.html</a></p>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 v0.1</h1>
-<h3><a class="anchor" id="autotoc_md41"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Initial introduction beta release of openMTPK</h3>
 <p>Open-source (intended) mathematics package written in C++ with a working Python API allowing for the use of algorithms and equations seen in many mathematical topics. See the <a href="https://github.com/akielaries/openMTPK/blob/main/README.md">README</a> for more details</p>
-<h4><a class="anchor" id="autotoc_md42"></a>
+<h4><a class="anchor" id="autotoc_md25"></a>
 Modules</h4>
 <table class="markdownTable">
 <tr class="markdownTableHead">

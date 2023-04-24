@@ -83,7 +83,7 @@ $(function() {
 <div class="title">c_threadpool.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="c__threadpool_8h_source.html">c_threadpool.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;c_threadpool.h&quot;</code><br />
 <code>#include &lt;pthread.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -107,13 +107,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2c589889b2d3ce275730f381f2cbfe8b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work</a> (<a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> p)</td></tr>
+<tr class="memitem:a2c589889b2d3ce275730f381f2cbfe8b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work</a> (threadpool p)</td></tr>
 <tr class="separator:a2c589889b2d3ce275730f381f2cbfe8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d8496f83f8ca627942a300b75f45e88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">create_threadpool</a> (int num_threads_in_pool)</td></tr>
+<tr class="memitem:a2d8496f83f8ca627942a300b75f45e88"><td class="memItemLeft" align="right" valign="top">threadpool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">create_threadpool</a> (int num_threads_in_pool)</td></tr>
 <tr class="separator:a2d8496f83f8ca627942a300b75f45e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40f3db62ccfd7fdffb7624bb565ba425"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a> (<a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> from_me, <a class="el" href="c__threadpool_8h.html#abcfdc19b1972ae7e54ea4fad8ee03600">dispatch_fn</a> dispatch_to_here, void *arg)</td></tr>
+<tr class="memitem:a40f3db62ccfd7fdffb7624bb565ba425"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a> (threadpool from_me, dispatch_fn dispatch_to_here, void *arg)</td></tr>
 <tr class="separator:a40f3db62ccfd7fdffb7624bb565ba425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6081ee3e41a92fcb5e97ce3523bcc2f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a> (<a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> destroyme)</td></tr>
+<tr class="memitem:a6081ee3e41a92fcb5e97ce3523bcc2f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a> (threadpool destroyme)</td></tr>
 <tr class="separator:a6081ee3e41a92fcb5e97ce3523bcc2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -155,7 +155,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> create_threadpool </td>
+          <td class="memname">threadpool create_threadpool </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>num_threads_in_pool</em></td><td>)</td>
@@ -163,7 +163,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>create_threadpool creates a fixed-sized thread pool. If the function succeeds, it returns a (non-NULL) "threadpool", else it returns NULL. </p>
 
 <p class="definition">Definition at line <a class="el" href="c__threadpool_8c_source.html#l00083">83</a> of file <a class="el" href="c__threadpool_8c_source.html">c_threadpool.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                      {</div>
@@ -171,7 +170,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// sanity check the argument</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> ((num_threads_in_pool &lt;= 0) || (num_threads_in_pool &gt; <a class="code" href="c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4">MAXT_IN_POOL</a>))</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> ((num_threads_in_pool &lt;= 0) || (num_threads_in_pool &gt; MAXT_IN_POOL))</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    pool = (<a class="code" href="struct__threadpool__st.html">_threadpool</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code" href="struct__threadpool__st.html">_threadpool</a>));</div>
@@ -217,11 +216,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a>)pool;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> (threadpool)pool;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="ttc" id="ac__threadpool_8c_html_a2c589889b2d3ce275730f381f2cbfe8b"><div class="ttname"><a href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work</a></div><div class="ttdeci">void * do_work(threadpool p)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00037">c_threadpool.c:37</a></div></div>
-<div class="ttc" id="ac__threadpool_8h_html_a40e41fb68417a6977a22f20007818e53"><div class="ttname"><a href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a></div><div class="ttdeci">void * threadpool</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8h_source.html#l00017">c_threadpool.h:17</a></div></div>
-<div class="ttc" id="ac__threadpool_8h_html_a6cfa2c91d90cf6aff4941a70a2c7a5c4"><div class="ttname"><a href="c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4">MAXT_IN_POOL</a></div><div class="ttdeci">#define MAXT_IN_POOL</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8h_source.html#l00009">c_threadpool.h:9</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html"><div class="ttname"><a href="struct__threadpool__st.html">_threadpool_st</a></div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00022">c_threadpool.c:22</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html_a056bc09374af3da1a337991fc1d86678"><div class="ttname"><a href="struct__threadpool__st.html#a056bc09374af3da1a337991fc1d86678">_threadpool_st::threads</a></div><div class="ttdeci">pthread_t * threads</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00026">c_threadpool.c:26</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html_a48ef6313275156d61d2b660fed0d3f88"><div class="ttname"><a href="struct__threadpool__st.html#a48ef6313275156d61d2b660fed0d3f88">_threadpool_st::num_threads</a></div><div class="ttdeci">int num_threads</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00024">c_threadpool.c:24</a></div></div>
@@ -234,7 +231,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astruct__threadpool__st_html_af744502ea8d3f923903e9165567e6eeb"><div class="ttname"><a href="struct__threadpool__st.html#af744502ea8d3f923903e9165567e6eeb">_threadpool_st::qhead</a></div><div class="ttdeci">work_t * qhead</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00027">c_threadpool.c:27</a></div></div>
 <div class="ttc" id="astruct__threadpool__st_html_afa2e13620c3d8ff53d3e6a636b16f03f"><div class="ttname"><a href="struct__threadpool__st.html#afa2e13620c3d8ff53d3e6a636b16f03f">_threadpool_st::q_empty</a></div><div class="ttdeci">pthread_cond_t q_empty</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00031">c_threadpool.c:31</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work()</a>, <a class="el" href="struct__threadpool__st.html#a92aa2cef70ea50ab489da62f3ccac6f2">_threadpool_st::dont_accept</a>, <a class="el" href="c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4">MAXT_IN_POOL</a>, <a class="el" href="struct__threadpool__st.html#a48ef6313275156d61d2b660fed0d3f88">_threadpool_st::num_threads</a>, <a class="el" href="struct__threadpool__st.html#afa2e13620c3d8ff53d3e6a636b16f03f">_threadpool_st::q_empty</a>, <a class="el" href="struct__threadpool__st.html#ac64a4ab97d75379f29b8fae93302e799">_threadpool_st::q_not_empty</a>, <a class="el" href="struct__threadpool__st.html#af744502ea8d3f923903e9165567e6eeb">_threadpool_st::qhead</a>, <a class="el" href="struct__threadpool__st.html#a723b1032187684457d5418323e3fee64">_threadpool_st::qlock</a>, <a class="el" href="struct__threadpool__st.html#af1141b85400cddfa0a69cd5303ba4d59">_threadpool_st::qsize</a>, <a class="el" href="struct__threadpool__st.html#a73d42c66b2951723526178fb07024a67">_threadpool_st::qtail</a>, <a class="el" href="struct__threadpool__st.html#a4ad46e479349b6e9f54ed2b3c38e4b88">_threadpool_st::shutdown</a>, and <a class="el" href="struct__threadpool__st.html#a056bc09374af3da1a337991fc1d86678">_threadpool_st::threads</a>.</p>
+<p class="reference">References <a class="el" href="c__threadpool_8c.html#a2c589889b2d3ce275730f381f2cbfe8b">do_work()</a>, <a class="el" href="struct__threadpool__st.html#a92aa2cef70ea50ab489da62f3ccac6f2">_threadpool_st::dont_accept</a>, <a class="el" href="struct__threadpool__st.html#a48ef6313275156d61d2b660fed0d3f88">_threadpool_st::num_threads</a>, <a class="el" href="struct__threadpool__st.html#afa2e13620c3d8ff53d3e6a636b16f03f">_threadpool_st::q_empty</a>, <a class="el" href="struct__threadpool__st.html#ac64a4ab97d75379f29b8fae93302e799">_threadpool_st::q_not_empty</a>, <a class="el" href="struct__threadpool__st.html#af744502ea8d3f923903e9165567e6eeb">_threadpool_st::qhead</a>, <a class="el" href="struct__threadpool__st.html#a723b1032187684457d5418323e3fee64">_threadpool_st::qlock</a>, <a class="el" href="struct__threadpool__st.html#af1141b85400cddfa0a69cd5303ba4d59">_threadpool_st::qsize</a>, <a class="el" href="struct__threadpool__st.html#a73d42c66b2951723526178fb07024a67">_threadpool_st::qtail</a>, <a class="el" href="struct__threadpool__st.html#a4ad46e479349b6e9f54ed2b3c38e4b88">_threadpool_st::shutdown</a>, and <a class="el" href="struct__threadpool__st.html#a056bc09374af3da1a337991fc1d86678">_threadpool_st::threads</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="c__threadtest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
 
@@ -249,13 +246,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void destroy_threadpool </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a>&#160;</td>
+          <td class="paramtype">threadpool&#160;</td>
           <td class="paramname"><em>destroyme</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>destroy_threadpool kills the threadpool, causing all threads in it to commit suicide, and then frees all the memory associated with the threadpool. </p>
 
 <p class="definition">Definition at line <a class="el" href="c__threadpool_8c_source.html#l00173">173</a> of file <a class="el" href="c__threadpool_8c_source.html">c_threadpool.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                              {</div>
@@ -303,13 +299,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void dispatch </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a>&#160;</td>
+          <td class="paramtype">threadpool&#160;</td>
           <td class="paramname"><em>from_me</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="c__threadpool_8h.html#abcfdc19b1972ae7e54ea4fad8ee03600">dispatch_fn</a>&#160;</td>
+          <td class="paramtype">dispatch_fn&#160;</td>
           <td class="paramname"><em>dispatch_to_here</em>, </td>
         </tr>
         <tr>
@@ -325,11 +321,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>dispatch sends a thread off to do some work. If all threads in the pool are busy, dispatch will block until a thread becomes free and is dispatched.</p>
-<p>Once a thread is dispatched, this function returns immediately.</p>
-<p>The dispatched thread calls into the function "dispatch_to_here" with argument "arg". </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="factors_8cpp-example.html#a5">factors.cpp</a>, and <a class="el" href="primes_8cpp-example.html#a9">primes.cpp</a>.</dd>
-</dl>
 
 <p class="definition">Definition at line <a class="el" href="c__threadpool_8c_source.html#l00137">137</a> of file <a class="el" href="c__threadpool_8c_source.html">c_threadpool.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                                                           {</div>
@@ -374,7 +365,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="structwork__st.html#aa7731d45e481fa777bc4601521cde90c">work_st::arg</a>, <a class="el" href="struct__threadpool__st.html#a92aa2cef70ea50ab489da62f3ccac6f2">_threadpool_st::dont_accept</a>, <a class="el" href="structwork__st.html#af15d2c1d91d69a2ab43b435ddea56e75">work_st::next</a>, <a class="el" href="struct__threadpool__st.html#ac64a4ab97d75379f29b8fae93302e799">_threadpool_st::q_not_empty</a>, <a class="el" href="struct__threadpool__st.html#af744502ea8d3f923903e9165567e6eeb">_threadpool_st::qhead</a>, <a class="el" href="struct__threadpool__st.html#a723b1032187684457d5418323e3fee64">_threadpool_st::qlock</a>, <a class="el" href="struct__threadpool__st.html#af1141b85400cddfa0a69cd5303ba4d59">_threadpool_st::qsize</a>, <a class="el" href="struct__threadpool__st.html#a73d42c66b2951723526178fb07024a67">_threadpool_st::qtail</a>, and <a class="el" href="structwork__st.html#aac5b5c8b8b8b7b441cfebc86e9ec7adc">work_st::routine</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="c__threadtest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, and <a class="el" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="c__threadtest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
 
 </div>
 </div>
@@ -387,7 +378,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void* do_work </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a>&#160;</td>
+          <td class="paramtype">threadpool&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>

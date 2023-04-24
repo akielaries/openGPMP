@@ -80,8 +80,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="c__threadtest_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="c__threadpool_8h.html">c_threadpool.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="extra_8h.html">extra.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;c_threadpool.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;extra.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="c__threadtest_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="c__threadtest_8c.html#ac42e4174d75e3e5ca5806359dc628042">   14</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="c__threadtest_8c.html#ac42e4174d75e3e5ca5806359dc628042">add_memory_access</a>(<a class="code" href="extra_8h.html#a4627a531c18ea1de91a16510522fbb22">memaddr_t</a> addr, <a class="code" href="extra_8h.html#a14d376293153f751aabde49801516625">line_type_e</a> type,</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="c__threadtest_8c.html#ac42e4174d75e3e5ca5806359dc628042">   14</a></span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="c__threadtest_8c.html#ac42e4174d75e3e5ca5806359dc628042">add_memory_access</a>(memaddr_t addr, line_type_e type,</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                             pthread_t thread);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="c__threadtest_8c.html#ad2f8f0dfa94793cca44c47fc81911238">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="c__threadtest_8c.html#ad2f8f0dfa94793cca44c47fc81911238">dispatch_to_me</a>(<span class="keywordtype">void</span> *arg) {</div>
@@ -98,9 +98,9 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;  done dispatch %d\n&quot;</span>, seconds);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="c__threadtest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">   22</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="c__threadtest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a> tp;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    threadpool tp;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="extra_8h.html#a10ca28fdadf53c3aa2bfc4a9109e0ac8">construct_locksmith</a>(122);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    construct_locksmith(122);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">      locksmith_add_memory_access(pthread_self(),2,3,4,5);</span></div>
@@ -118,7 +118,7 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(tp, <a class="code" href="c__threadtest_8c.html#ad2f8f0dfa94793cca44c47fc81911238">dispatch_to_me</a>, (<span class="keywordtype">void</span> *)i);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    fprintf(stdout, <span class="stringliteral">&quot;**main done second\n&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="extra_8h.html#af0549fad639ef251ece12e0f9f0a675a">destroy_locksmith</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    destroy_locksmith();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a>(tp);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    sleep(5);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    exit(-1);</div>
@@ -126,17 +126,10 @@ $(function() {
 <div class="ttc" id="ac__threadpool_8c_html_a2d8496f83f8ca627942a300b75f45e88"><div class="ttname"><a href="c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88">create_threadpool</a></div><div class="ttdeci">threadpool create_threadpool(int num_threads_in_pool)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00083">c_threadpool.c:83</a></div></div>
 <div class="ttc" id="ac__threadpool_8c_html_a40f3db62ccfd7fdffb7624bb565ba425"><div class="ttname"><a href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a></div><div class="ttdeci">void dispatch(threadpool from_me, dispatch_fn dispatch_to_here, void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00137">c_threadpool.c:137</a></div></div>
 <div class="ttc" id="ac__threadpool_8c_html_a6081ee3e41a92fcb5e97ce3523bcc2f2"><div class="ttname"><a href="c__threadpool_8c.html#a6081ee3e41a92fcb5e97ce3523bcc2f2">destroy_threadpool</a></div><div class="ttdeci">void destroy_threadpool(threadpool destroyme)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00173">c_threadpool.c:173</a></div></div>
-<div class="ttc" id="ac__threadpool_8h_html"><div class="ttname"><a href="c__threadpool_8h.html">c_threadpool.h</a></div></div>
-<div class="ttc" id="ac__threadpool_8h_html_a40e41fb68417a6977a22f20007818e53"><div class="ttname"><a href="c__threadpool_8h.html#a40e41fb68417a6977a22f20007818e53">threadpool</a></div><div class="ttdeci">void * threadpool</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8h_source.html#l00017">c_threadpool.h:17</a></div></div>
 <div class="ttc" id="ac__threadtest_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="c__threadtest_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadtest_8c_source.html#l00022">c_threadtest.c:22</a></div></div>
 <div class="ttc" id="ac__threadtest_8c_html_ac42e4174d75e3e5ca5806359dc628042"><div class="ttname"><a href="c__threadtest_8c.html#ac42e4174d75e3e5ca5806359dc628042">add_memory_access</a></div><div class="ttdeci">int add_memory_access(memaddr_t addr, line_type_e type, pthread_t thread)</div></div>
 <div class="ttc" id="ac__threadtest_8c_html_ad2f8f0dfa94793cca44c47fc81911238"><div class="ttname"><a href="c__threadtest_8c.html#ad2f8f0dfa94793cca44c47fc81911238">dispatch_to_me</a></div><div class="ttdeci">void dispatch_to_me(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadtest_8c_source.html#l00017">c_threadtest.c:17</a></div></div>
 <div class="ttc" id="ac__threadtest_8c_html_ad65a8842cc674e3ddf69355898c0ecbf"><div class="ttname"><a href="c__threadtest_8c.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a></div><div class="ttdeci">int errno</div></div>
-<div class="ttc" id="aextra_8h_html"><div class="ttname"><a href="extra_8h.html">extra.h</a></div></div>
-<div class="ttc" id="aextra_8h_html_a10ca28fdadf53c3aa2bfc4a9109e0ac8"><div class="ttname"><a href="extra_8h.html#a10ca28fdadf53c3aa2bfc4a9109e0ac8">construct_locksmith</a></div><div class="ttdeci">void construct_locksmith(unsigned int approx_thread_num)</div></div>
-<div class="ttc" id="aextra_8h_html_a14d376293153f751aabde49801516625"><div class="ttname"><a href="extra_8h.html#a14d376293153f751aabde49801516625">line_type_e</a></div><div class="ttdeci">line_type_e</div><div class="ttdef"><b>Definition:</b> <a href="extra_8h_source.html#l00023">extra.h:23</a></div></div>
-<div class="ttc" id="aextra_8h_html_a4627a531c18ea1de91a16510522fbb22"><div class="ttname"><a href="extra_8h.html#a4627a531c18ea1de91a16510522fbb22">memaddr_t</a></div><div class="ttdeci">unsigned int memaddr_t</div><div class="ttdef"><b>Definition:</b> <a href="extra_8h_source.html#l00030">extra.h:30</a></div></div>
-<div class="ttc" id="aextra_8h_html_af0549fad639ef251ece12e0f9f0a675a"><div class="ttname"><a href="extra_8h.html#af0549fad639ef251ece12e0f9f0a675a">destroy_locksmith</a></div><div class="ttdeci">void destroy_locksmith()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
