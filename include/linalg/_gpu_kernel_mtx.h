@@ -39,16 +39,18 @@
  */
 
 #ifndef _GPU_KERNEL_MTX_H
-#ifndef _GPU_KERNEL_MTX_H
+#define _GPU_KERNEL_MTX_H
 
 /**
  * @brief Matrix Multiplication kernel function
  */
-__kernel void matrixMul(__global float *C, __global float *A, __global float *B, int wA, int wB);
+__kernel void matrixMul(__global float *C, __global float *A, __global float *B,
+                        int wA, int wB);
 
 /**
  * @brief Matrix Addition kernel function
  */
-__kernel void add_vec_gpu(__global const int *a, __global const int *b, __global int *res, const int len);
+__kernel void add_vec_gpu(__global const int *a, __global const int *b,
+                          __global int *res, const int len);
 
 #endif

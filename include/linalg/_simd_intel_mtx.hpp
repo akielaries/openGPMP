@@ -50,18 +50,10 @@ namespace accl {
  * @brief Intel based intrinsic functions
  */
 class SIMDIntel {
-    public:
-
+  public:
     void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
-
-
-}; 
+};
 } // namespace accl
 } // namespace mtpk
 
 #endif
-
-
-
-
-

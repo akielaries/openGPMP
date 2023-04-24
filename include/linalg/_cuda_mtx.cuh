@@ -41,7 +41,7 @@
 #ifndef _CUDA_MTX_CUH
 #define _CUDA_MTX_CUH
 
-namespace mtpk { 
+namespace mtpk {
 
 namespace accl {
 
@@ -50,12 +50,10 @@ namespace accl {
  * @brief Features CUDA GPU acceleration methods related to matrix operations
  */
 class CUDAmtx {
-public:
+  public:
     __global__ void mtx_add_(int n, float *x, float *y);
-
 };
 } // namespace accl
 } // namespace mtpk
 
 #endif
-

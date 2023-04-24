@@ -47,13 +47,10 @@ namespace accl {
  * @brief OpenCL GPU Matrix operations class
  */
 class CLmtx {
-    public:
-        //
-
+  public:
+    //
 };
-
 
 } // namespace accl
 
 } // namespace mtpk
-
