@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intel_5fsimd_1354',['INTEL_SIMD',['../linalg_8hpp.html#a13ae13b7ef0e65a46d90ab7057e2ffb1',1,'linalg.hpp']]]
+  ['gcds_1358',['GCDs',['../nt_8hpp.html#a22f154606ca877e7dd67ba4f32f55443',1,'nt.hpp']]]
 ];
