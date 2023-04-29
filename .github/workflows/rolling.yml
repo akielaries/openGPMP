@@ -6,7 +6,29 @@ on:
 
 
 jobs:
+  check_changes:
+    name: Check changes to src 
+    runs-on: 'ubuntu-20.04'
+    # Declare outputs for next jobs
+    outputs:
+      src_changed: ${{ steps.check_file_changed.outputs.src_changed }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh # the example this is adopted from makes use of PowerShell
+      id: check_file_changed
+      run: |
+        # diff HEAD W/ previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+        $HasDiff = $SourceDiff.Length -gt 0
+        Write-Host "::set-output name=src_changed::$HasDiff"
+
+
   merge:
+    needs: [ check_changes ]
+    if: needs.check_changes.outputs.tests_changed == 'True'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout branch

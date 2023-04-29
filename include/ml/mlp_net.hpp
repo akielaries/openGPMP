@@ -223,7 +223,7 @@ template <typename T> class SecondaryMLP {
         for (uint64_t i = 0; i < layer_units.size() - 1; ++i) {
             Matrix y = wt_mtx[i].mult(prev);
             y = y + bias_vectors[i];
-            y = y.apply_function(sigmoid_activ);
+            y = y.apply_function(&SecondaryMLP::sigmoid_activ);
             activations[i + 1] = y;
             prev = y;
         }
@@ -249,7 +249,8 @@ template <typename T> class SecondaryMLP {
             // calculate errors for previous layer
             auto wt = wt_mtx[i].T();
             auto prior_errs = wt.mult(err);
-            auto outputs_d = activations[i + 1].apply_function(sigmoid_deriv);
+            auto outputs_d = activations[i + 1].apply_function(
+                &SecondaryMLP::sigmoid_deriv);
             auto gradients = err.hadamard(outputs_d);
             gradients = gradients.scalar_mult(lr);
             auto trans_a = activations[i].T();

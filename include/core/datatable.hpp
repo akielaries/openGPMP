@@ -39,6 +39,9 @@
 #ifndef DATATABLE_HPP
 #define DATATABLE_HPP
 
+#define MAX_ROWS 10
+#define SHOW_ROWS 5
+
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
@@ -121,17 +124,17 @@ class DataTable {
         std::cout << std::endl;
 
         int num_elements = data.second.size();
-        if (!display_all && num_elements > 10) {
-            for (int i = 0; i < 5; i++) {
+        if (!display_all && num_elements > MAX_ROWS) {
+            for (int i = 0; i < SHOW_ROWS; i++) {
                 for (const auto &value : data.second[i]) {
                     std::cout << value << "\t";
                 }
                 std::cout << std::endl;
             }
-            num_omitted_rows = num_elements - 10;
+            num_omitted_rows = num_elements - MAX_ROWS;
             std::cout << "...\n";
             std::cout << "[" << num_omitted_rows << " rows omitted]\n";
-            for (int i = num_elements - 5; i < num_elements; i++) {
+            for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
                 for (const auto &value : data.second[i]) {
                     std::cout << value << "\t";
                 }
