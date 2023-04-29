@@ -1,14 +1,11 @@
 var searchData=
 [
-  ['laplacian_680',['laplacian',['../classmtpk_1_1NumericalAnalysis.html#a6c6db782e2f228e2a2c671661a5c2f9e',1,'mtpk::NumericalAnalysis']]],
-  ['leakyrelu_681',['leakyReLU',['../classmtpk_1_1Activate.html#ad77907c0bf544b5146c1cd2bcc137676',1,'mtpk::Activate::leakyReLU(double z, double c, bool deriv=0)'],['../classmtpk_1_1Activate.html#a074c7374a402ac2d34f4cc99a4d7bcfd',1,'mtpk::Activate::leakyReLU(std::vector&lt; double &gt; z, double c, bool deriv=0)'],['../classmtpk_1_1Activate.html#a97ed947505dbb41f9aad6dbf7b9a8859',1,'mtpk::Activate::leakyReLU(std::vector&lt; std::vector&lt; double &gt;&gt; z, double c, bool deriv=0)']]],
-  ['lehmermean_682',['lehmerMean',['../classmtpk_1_1Stats.html#a55bd73ae38858609bbd99a1271a30a59',1,'mtpk::Stats']]],
-  ['linear_683',['linear',['../classmtpk_1_1Activate.html#ae25bac32802e538a055e1630c66c9852',1,'mtpk::Activate::linear(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a71750e6a36f7aba8756a0eecc5adac97',1,'mtpk::Activate::linear(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#ac7fc510e9f1b53d2ad8259cca6ec3128',1,'mtpk::Activate::linear(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['linearapproximation_684',['linearApproximation',['../classmtpk_1_1NumericalAnalysis.html#adf1635fdd6deb09fd7266d4de1f037ed',1,'mtpk::NumericalAnalysis::linearApproximation(double(*function)(double), double c, double x)'],['../classmtpk_1_1NumericalAnalysis.html#a4d496c45ca318a391161e0da098efddd',1,'mtpk::NumericalAnalysis::linearApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)']]],
-  ['linearregression_685',['LinearRegression',['../classmtpk_1_1LinearRegression.html#a5268f319d1f196731beb03f94858f22f',1,'mtpk::LinearRegression']]],
-  ['load_686',['load',['../classmtpk_1_1Data.html#abeeccfb400d015aa4bbac0d7deb17016',1,'mtpk::Data::load()'],['../classmtpk_1_1Data.html#a0db8a764b63fa600fd40ce0f9f298f0c',1,'mtpk::Data::load()'],['../classmtpk_1_1Data.html#a928b5b5607b5ab5c4692c86079da58b3',1,'mtpk::Data::load()'],['../classmtpk_1_1Data.html#a193195bf7a533a1feb375af4eb5b73fd',1,'mtpk::Data::load()']]],
-  ['log_687',['log',['../classmtpk_1_1ml_1_1SecondaryMLP.html#ad63d2ad6e58fb2136ca4ad2338a1ee69',1,'mtpk::ml::SecondaryMLP']]],
-  ['logit_688',['logit',['../classmtpk_1_1Activate.html#a4537ae0d8d3e20e6bfcd7f875a854772',1,'mtpk::Activate::logit(double z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a6bb90a63e4812a9543298d1c1ce3c46c',1,'mtpk::Activate::logit(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1Activate.html#a88c5e5572a397974d8347c54787c18e6',1,'mtpk::Activate::logit(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['logmean_689',['logMean',['../classmtpk_1_1Stats.html#ad2e616ed55781231e67c72a8d37834a3',1,'mtpk::Stats']]],
-  ['logreg_690',['Logreg',['../classmtpk_1_1Logreg.html#a689a1e869cba264780473e2a59935bc5',1,'mtpk::Logreg']]]
+  ['keyword_1016',['keyword',['../classmtpk_1_1Cipher.html#ad608312d0dc9fc44153c5c222d3b9690',1,'mtpk::Cipher::keyword()'],['../classopenmtpk_1_1nt_1_1nt_1_1Cipher.html#af5f7a421fe92fadd5610d729466360c6',1,'openmtpk.nt.nt.Cipher.keyword()']]],
+  ['keyword_5fencode_1017',['keyword_encode',['../classmtpk_1_1Cipher.html#a5dd0f3471582c795443cf56d22516d0e',1,'mtpk::Cipher::keyword_encode()'],['../classopenmtpk_1_1nt_1_1nt_1_1Cipher.html#ad2c877f4d8da7d898b899ca60d72ae49',1,'openmtpk.nt.nt.Cipher.keyword_encode()']]],
+  ['kf_5fcv_1018',['KF_CV',['../classmtpk_1_1ml_1_1KF__CV.html#a965fe21ef42a20d10ac29660b6e28b01',1,'mtpk::ml::KF_CV']]],
+  ['knn_1019',['KNN',['../classmtpk_1_1ml_1_1NearestNeighbor.html#a6a80c4130581614449757dc50427202f',1,'mtpk::ml::NearestNeighbor']]],
+  ['knn_1020',['kNN',['../classmtpk_1_1ml_1_1kNN.html#abf5e2cc0dbb385bd1bbdabaa558f0b8a',1,'mtpk::ml::kNN']]],
+  ['knn_1021',['KNN',['../nearest__neighbors_8cpp.html#a15264defbbec1a36f588050dc4850ee6',1,'nearest_neighbors.cpp']]],
+  ['ksa_1022',['KSA',['../classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da',1,'mtpk::RC4::KSA()'],['../classRC5.html#ab984d44b40653fcd0fcadb8b65f9764e',1,'RC5::KSA()'],['../classopenmtpk_1_1nt_1_1nt_1_1RC4.html#a7791bce4b070a00619677198878842b1',1,'openmtpk.nt.nt.RC4.KSA()']]],
+  ['kunerth_1023',['kunerth',['../classmtpk_1_1Squares.html#a5ccaa7344c45433c8ed9fbf334b70a1d',1,'mtpk::Squares']]]
 ];

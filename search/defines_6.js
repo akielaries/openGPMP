@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['regression_932',['REGRESSION',['../ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43',1,'ml.hpp']]],
-  ['resampling_933',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]]
+  ['factorization_1355',['FACTORIZATION',['../nt_8hpp.html#a25fc994a92402407a2c2bad86c444976',1,'nt.hpp']]]
 ];
