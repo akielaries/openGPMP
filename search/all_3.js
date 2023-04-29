@@ -2,7 +2,7 @@ var searchData=
 [
   ['c_109',['C',['../classmtpk_1_1ml_1_1SVC.html#abb9d7eb674b5c4b7900c242ed46d041b',1,'mtpk::ml::SVC']]],
   ['c_5fthreadpool_2ec_110',['c_threadpool.c',['../c__threadpool_8c.html',1,'']]],
-  ['c_5fthreadpool_2eh_111',['c_threadpool.h',['../c__threadpool_8h.html',1,'']]],
+  ['c_5fthreadpool_2eh_111',['c_threadpool.h',['../include_2core_2c__threadpool_8h.html',1,'(Global Namespace)'],['../modules_2core_2CTHR_2c__threadpool_8h.html',1,'(Global Namespace)']]],
   ['c_5fthreadtest_2ec_112',['c_threadtest.c',['../c__threadtest_8c.html',1,'']]],
   ['cache_5flayers_113',['cache_layers',['../classmtpk_1_1NaiveNet.html#a4e6278e34713c92864b1955bd12c9a7d',1,'mtpk::NaiveNet']]],
   ['caesar_114',['caesar',['../classopenmtpk_1_1nt_1_1nt_1_1Cipher.html#a8414d05229932c9079bf215f829a1423',1,'openmtpk.nt.nt.Cipher.caesar()'],['../classmtpk_1_1Cipher.html#af74d0a735ad756c673f06332ca4319b0',1,'mtpk::Cipher::caesar()']]],
@@ -58,7 +58,7 @@ var searchData=
   ['coth_164',['coth',['../classmtpk_1_1ml_1_1Activate.html#ac32acb3d5afe82c0ef4fc3d32685a9d2',1,'mtpk::ml::Activate::coth(double z, bool deriv=0)'],['../classmtpk_1_1ml_1_1Activate.html#a17dd750ff5b84f8c844bb5a893229fed',1,'mtpk::ml::Activate::coth(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1ml_1_1Activate.html#ad7037d2a93e9a7c11437919dc8acae4b',1,'mtpk::ml::Activate::coth(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
   ['covariance_165',['covariance',['../classmtpk_1_1ml_1_1Stats.html#ad14d3bf737a71736cd4a5efdd5056a71',1,'mtpk::ml::Stats']]],
   ['cpu_2ec_166',['cpu.c',['../cpu_8c.html',1,'']]],
-  ['create_5fthreadpool_167',['create_threadpool',['../c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88',1,'create_threadpool(int num_threads_in_pool):&#160;c_threadpool.c'],['../c__threadpool_8h.html#a2d8496f83f8ca627942a300b75f45e88',1,'create_threadpool(int num_threads_in_pool):&#160;c_threadpool.c']]],
+  ['create_5fthreadpool_167',['create_threadpool',['../c__threadpool_8c.html#a2d8496f83f8ca627942a300b75f45e88',1,'create_threadpool(int num_threads_in_pool):&#160;c_threadpool.c'],['../modules_2core_2CTHR_2c__threadpool_8h.html#a2d8496f83f8ca627942a300b75f45e88',1,'create_threadpool(int num_threads_in_pool):&#160;c_threadpool.c']]],
   ['cryptography_168',['CRYPTOGRAPHY',['../nt_8hpp.html#a7e35c8ec7ddf6c921ac513fdea803509',1,'nt.hpp']]],
   ['csch_169',['csch',['../classmtpk_1_1ml_1_1Activate.html#aa2bfb857659b2ad5b08dfe1f1db1dcb6',1,'mtpk::ml::Activate::csch(double z, bool deriv=0)'],['../classmtpk_1_1ml_1_1Activate.html#a9c2a1cf6a9c44fdf16eecdceeebe515c',1,'mtpk::ml::Activate::csch(std::vector&lt; double &gt; z, bool deriv=0)'],['../classmtpk_1_1ml_1_1Activate.html#af64ac4fb7f375631dd5ff170c974cb0b',1,'mtpk::ml::Activate::csch(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
   ['csv_5fread_170',['csv_read',['../classmtpk_1_1core_1_1DataTable.html#ad1d9a0a74a37d125c2ea7d4f0544de8f',1,'mtpk::core::DataTable']]],
