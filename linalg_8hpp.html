@@ -85,6 +85,7 @@ $(function() {
 <p>openMTPK LINEAR ALGEBRA MODULE  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="matrix_8hpp_source.html">linalg/matrix.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="vectors_8hpp_source.html">linalg/vectors.hpp</a>&quot;</code><br />
 </div>
 <p><a href="linalg_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,84 +94,56 @@ Macros</h2></td></tr>
 <tr class="memitem:af1d98fb728b5c7300f80dd782702d1dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd">MATRIX</a></td></tr>
 <tr class="memdesc:af1d98fb728b5c7300f80dd782702d1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Matrix</b> <b>Operations</b>  <a href="linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd">More...</a><br /></td></tr>
 <tr class="separator:af1d98fb728b5c7300f80dd782702d1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20955ce35a1219cc0e46494290097444"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linalg_8hpp.html#a20955ce35a1219cc0e46494290097444">CUDA_MATRIX</a></td></tr>
-<tr class="memdesc:a20955ce35a1219cc0e46494290097444"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>CUDA</b> <b>Matrix</b> <b>Operations</b>  <a href="linalg_8hpp.html#a20955ce35a1219cc0e46494290097444">More...</a><br /></td></tr>
-<tr class="separator:a20955ce35a1219cc0e46494290097444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13ae13b7ef0e65a46d90ab7057e2ffb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linalg_8hpp.html#a13ae13b7ef0e65a46d90ab7057e2ffb1">INTEL_SIMD</a></td></tr>
-<tr class="memdesc:a13ae13b7ef0e65a46d90ab7057e2ffb1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>OpenCL</b> <b>Matrix</b> <b>Operations</b>  <a href="linalg_8hpp.html#a13ae13b7ef0e65a46d90ab7057e2ffb1">More...</a><br /></td></tr>
-<tr class="separator:a13ae13b7ef0e65a46d90ab7057e2ffb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedc4bb967627d5531dda2be791fb0b79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79">ARM_SIMD</a></td></tr>
-<tr class="memdesc:aedc4bb967627d5531dda2be791fb0b79"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ARM</b> <b>CPU</b> <b>Matrix</b> <b>SIMD</b> <b>Operations</b>  <a href="linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79">More...</a><br /></td></tr>
-<tr class="separator:aedc4bb967627d5531dda2be791fb0b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d98fb728b5c7300f80dd782702d1dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd">MATRIX</a></td></tr>
+<tr class="memdesc:af1d98fb728b5c7300f80dd782702d1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>Matrix</b> <b>Operations</b>  <a href="linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd">More...</a><br /></td></tr>
+<tr class="separator:af1d98fb728b5c7300f80dd782702d1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>openMTPK LINEAR ALGEBRA MODULE </p>
-<p>This file serves as the core header for the Linear Algebra module. This header includes Vector/Matrix related operations. Also with additional support for GPU utilization through CUDA (Nvidia hardward support) and OpenCL (OSX &amp; Linux system support):</p>
+<p>This file serves as the core header for the Linear Algebra module. This header includes the following :</p><ul>
+<li>Matrix</li>
+<li>Vectors</li>
+<li>Scalars</li>
+<li>Linear Functions &amp; Equations<ul>
+<li>Taylor Approximation</li>
+<li>Naive Regression</li>
+<li>Systems</li>
+</ul>
+</li>
+<li>Linear Dynamical Systems<ul>
+<li>Population Dynamics</li>
+<li>Epidemic Dynamics</li>
+<li>Motion</li>
+<li>Supply Chain Dynamics</li>
+</ul>
+</li>
+<li>Norm &amp; Distance<ul>
+<li>STD Dev</li>
+<li>Angle</li>
+<li>Complexity</li>
+</ul>
+</li>
+<li>Clustering</li>
+<li>Linear Independence<ul>
+<li>Orthonormal Vectors</li>
+<li>Gram-Schmidt Algorithm</li>
+</ul>
+</li>
+<li>Least Squares<ul>
+<li>Data Fitting</li>
+<li>Classification</li>
+<li>Multi-Objective</li>
+<li>Contrained</li>
+<li>Nonlinear</li>
+</ul>
+</li>
+</ul>
 <dl class="section note"><dt>Note</dt><dd>Some topics in Linear Algebra overlap and/or heavily influence algorithms seen in Machine Learning </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aedc4bb967627d5531dda2be791fb0b79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedc4bb967627d5531dda2be791fb0b79">&#9670;&nbsp;</a></span>ARM_SIMD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ARM_SIMD</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><b>ARM</b> <b>CPU</b> <b>Matrix</b> <b>SIMD</b> <b>Operations</b> </p>
-<p>ARM based intrinsic functions </p>
-
-<p class="definition">Definition at line <a class="el" href="linalg_8hpp_source.html#l00097">97</a> of file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a20955ce35a1219cc0e46494290097444"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20955ce35a1219cc0e46494290097444">&#9670;&nbsp;</a></span>CUDA_MATRIX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CUDA_MATRIX</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><b>CUDA</b> <b>Matrix</b> <b>Operations</b> </p>
-<p>CUDA GPU accelerated Matrix functions </p>
-
-<p class="definition">Definition at line <a class="el" href="linalg_8hpp_source.html#l00064">64</a> of file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a13ae13b7ef0e65a46d90ab7057e2ffb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13ae13b7ef0e65a46d90ab7057e2ffb1">&#9670;&nbsp;</a></span>INTEL_SIMD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define INTEL_SIMD</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><b>OpenCL</b> <b>Matrix</b> <b>Operations</b> </p>
-<p>OpenCL GPU accelerated Matrix functions</p>
-<p><b>Intel</b> <b>CPU</b> <b>Matrix</b> <b>SIMD</b> <b>Operations</b> </p>
-<p>Intel based intrinsic functions </p>
-
-<p class="definition">Definition at line <a class="el" href="linalg_8hpp_source.html#l00087">87</a> of file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
-
-</div>
-</div>
 <a id="af1d98fb728b5c7300f80dd782702d1dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1d98fb728b5c7300f80dd782702d1dd">&#9670;&nbsp;</a></span>MATRIX</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d98fb728b5c7300f80dd782702d1dd">&#9670;&nbsp;</a></span>MATRIX <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,9 +155,32 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p><b>Matrix</b> <b>Operations</b> </p>
-<p>Encompasses Matrix and Scalar operations </p>
+<p><b>Vector</b> <b>Operations</b> </p>
+<p>Encompasses Matrix and Scalar operations</p>
+<p>Encompasses Vector and Scalar operations </p>
 
-<p class="definition">Definition at line <a class="el" href="linalg_8hpp_source.html#l00055">55</a> of file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="linalg_8hpp_source.html#l00088">88</a> of file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af1d98fb728b5c7300f80dd782702d1dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d98fb728b5c7300f80dd782702d1dd">&#9670;&nbsp;</a></span>MATRIX <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MATRIX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>Matrix</b> <b>Operations</b> </p>
+<p><b>Vector</b> <b>Operations</b> </p>
+<p>Encompasses Matrix and Scalar operations</p>
+<p>Encompasses Vector and Scalar operations </p>
+
+<p class="definition">Definition at line <a class="el" href="linalg_8hpp_source.html#l00088">88</a> of file <a class="el" href="linalg_8hpp_source.html">linalg.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['matrix_710',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk::Matrix&lt; Type &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html',1,'openmtpk.linalg.linalg.Matrix']]],
-  ['matrixi_711',['MatrixI',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html',1,'openmtpk::linalg::linalg']]],
-  ['mtx_712',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk::mtx&lt; T &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html',1,'openmtpk.linalg.linalg.mtx']]]
+  ['rc4_497',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk']]],
+  ['rc5_498',['RC5',['../classRC5.html',1,'']]],
+  ['regularizers_499',['Regularizers',['../classmtpk_1_1ml_1_1Regularizers.html',1,'mtpk::ml']]]
 ];

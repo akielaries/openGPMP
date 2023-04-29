@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['arm_5fsimd_1342',['ARM_SIMD',['../linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79',1,'linalg.hpp']]],
-  ['array_5fsize_1343',['ARRAY_SIZE',['../__gpu__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa',1,'_gpu_arr_add.c']]]
+  ['classification_923',['CLASSIFICATION',['../ml_8hpp.html#a669750181416ae68a4b4684e5006f733',1,'ml.hpp']]],
+  ['cryptography_924',['CRYPTOGRAPHY',['../nt_8hpp.html#a7e35c8ec7ddf6c921ac513fdea803509',1,'nt.hpp']]]
 ];
