@@ -81,7 +81,19 @@ bool mtpk::Primality::is_prime(int64_t n) {
 /*
  * determining if a given number is likely to be prime
  */
-bool mtpk::Primality::compute_miller_rabin(int64_t d, int64_t n) {
+bool mtpk::Primality::compute_miller_rabin(int64_t n) {
+    // these are corner cases
+    if (n <= 1 || n == 4)
+        return false;
+    if (n <= 3)
+        return true;
+
+    // d will represent an odd number
+    int64_t d = n - 1;
+    while (d % 2 == 0) {
+        d /= 2;
+    }
+
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
     int64_t a = 2 + rand() % (n - 4);
@@ -116,22 +128,11 @@ bool mtpk::Primality::miller_rabin_prime(int64_t n, int64_t iters) {
      * this method will return true if n is prime, iters will
      * determine accuracy
      */
-    // these are corner cases
-    if (n <= 1 || n == 4)
-        return false;
-    if (n <= 3)
-        return true;
-
-    // odd will represent an odd number
-    int64_t odd = n - 1;
-    while (odd % 2 == 0) {
-        odd /= 2;
-    }
 
     // iterate given the iters paramater
     for (int64_t i = 0; i < iters; i++) {
         // compute using the Miller-Rabin method
-        if (!compute_miller_rabin(odd, n)) {
+        if (!compute_miller_rabin(n)) {
             return false;
         }
     }
