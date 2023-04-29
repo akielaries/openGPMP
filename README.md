@@ -2,11 +2,11 @@
 --------------------------------------------------------------------------------
 
 ![Version](https://img.shields.io/github/v/release/akielaries/openMTPK?color=%23BF40BF)
+[![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openMTPK&amp;utm_campaign=Badge_Grade)
 [![license](https://img.shields.io/github/license/akielaries/openMTPK?color=23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
 [![codecov](https://codecov.io/gh/akielaries/openMTPK/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openMTPK)
 ![clones](https://raw.githubusercontent.com/akielaries/openMTPK/traffic/traffic-openMTPK/clones.svg)
-[![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
 [![Py](https://github.com/akielaries/openMTPK/actions/workflows/openmtpk.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)
 
 # Overview
