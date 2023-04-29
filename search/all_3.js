@@ -24,7 +24,7 @@ var searchData=
   ['company_76',['Company',['../classCompany.html#a14cf06ae9062513049fd61ba32e7ad50',1,'Company::Company()'],['../classCompany.html',1,'Company']]],
   ['comparison_77',['comparison',['../classmtpk_1_1NearestNeighbor.html#a064dee2c9dea483a712060777fee172c',1,'mtpk::NearestNeighbor::comparison()'],['../nearest__neighbors_8cpp.html#ae07612d249d520ffdc46849324a31fb9',1,'comparison():&#160;nearest_neighbors.cpp']]],
   ['compute_78',['compute',['../classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664',1,'mtpk::RC4::compute()'],['../classRC5.html#a83718fea487a833eb2ea84a536d178f0',1,'RC5::compute()']]],
-  ['compute_5fmiller_5frabin_79',['compute_miller_rabin',['../classmtpk_1_1Primality.html#a2029b588baa9422a8417f0744437006d',1,'mtpk::Primality']]],
+  ['compute_5fmiller_5frabin_79',['compute_miller_rabin',['../classmtpk_1_1Primality.html#a37b44cea9c3b5ce1dfb7acb08b80274f',1,'mtpk::Primality']]],
   ['computetheta_80',['computeTheta',['../classmtpk_1_1BayesMutliNom.html#a0c6d1b8f005c7da8e72fbdaf60b66720',1,'mtpk::BayesMutliNom::computeTheta()'],['../classmtpk_1_1BayesBernoulli.html#a60791bcdabb28aaa143eed9eb0524581',1,'mtpk::BayesBernoulli::computeTheta()']]],
   ['computevocab_81',['computeVocab',['../classmtpk_1_1BayesBernoulli.html#a4995df4ab11dd11542d38a9fa4598ec9',1,'mtpk::BayesBernoulli']]],
   ['concatenate_82',['concatenate',['../classmtpk_1_1Matrix.html#a39ba97dc5227bc596725bdd45ccd7925',1,'mtpk::Matrix']]],
