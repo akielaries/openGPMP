@@ -122,6 +122,15 @@ class Basics {
      * @return result : (int)
      */
     int64_t op_gcd(int64_t x, int64_t y);
+
+    // TODO floating point operations for square root, logarithms,
+    // exponentation, trigonometric functions of floating points
+
+    // complex arithmetic, arithmetic on complex numbers
+
+    // precision arithmetic
+
+    // TODO FIXME XXX BUG CHECKME TESTME PENDING DOCME
 };
 
 } // namespace mtpk

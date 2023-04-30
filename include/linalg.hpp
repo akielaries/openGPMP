@@ -63,9 +63,9 @@
  */
 #define CUDA_MATRIX
 #if defined(__linux__)
-    #ifdef __NVCC__
-        #include "linalg/_cuda_mtx.cuh"
-    #endif
+#ifdef __NVCC__
+#include "linalg/_cuda_mtx.cuh"
+#endif
 #endif
 
 /**
@@ -73,10 +73,10 @@
  * @details OpenCL GPU accelerated Matrix functions
  */
 #if defined(__linux__) || defined(__APPLE__)
-    #ifndef __NVCC__
-        #include "linalg/_gpu_mtx.h"
-        #include "linalg/_gpu_mtx_wrapper.hpp"
-    #endif
+#ifndef __NVCC__
+#include "linalg/_gpu_mtx.h"
+#include "linalg/_gpu_mtx_wrapper.hpp"
+#endif
 #endif
 
 /**
@@ -86,7 +86,7 @@
 #define INTEL_SIMD
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
-    #include "linalg/_simd_intel_mtx.hpp"
+#include "linalg/_simd_intel_mtx.hpp"
 #endif
 
 /**
@@ -96,7 +96,7 @@
 #define ARM_SIMD
 #if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                      \
     defined(__ARM_ARCH) || defined(__aarch64__)
-    #include "linalg/_simd_arm_mtx.hpp"
+#include "linalg/_simd_arm_mtx.hpp"
 #endif
 
 #endif

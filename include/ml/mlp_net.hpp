@@ -249,8 +249,8 @@ template <typename T> class SecondaryMLP {
             // calculate errors for previous layer
             auto wt = wt_mtx[i].T();
             auto prior_errs = wt.mult(err);
-            auto outputs_d = activations[i + 1].apply_function(
-                &SecondaryMLP::sigmoid_deriv);
+            auto outputs_d =
+                activations[i + 1].apply_function(&SecondaryMLP::sigmoid_deriv);
             auto gradients = err.hadamard(outputs_d);
             gradients = gradients.scalar_mult(lr);
             auto trans_a = activations[i].T();

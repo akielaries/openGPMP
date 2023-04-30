@@ -55,7 +55,7 @@ class IntelIntrinMtx {
      * @brief Multiply 2 matrix
      */
 
-    //void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
+    // void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
 };
 } // namespace accl
 } // namespace mtpk

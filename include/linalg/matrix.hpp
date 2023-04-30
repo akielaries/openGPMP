@@ -35,7 +35,8 @@
 /**
  * @ file
  *
- * Definitions for Matrix and Scalar operations
+ * Definitions for a template based implementation for Matrix and Scalar
+ * operations
  */
 
 #ifndef MATRIX_HPP

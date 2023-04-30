@@ -1,5 +1,7 @@
 set(the_description "Core Module")
 
+message("-- Including Core Module")
+
 set(SOURCE_FILES
     datatable.cpp
 )

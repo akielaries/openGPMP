@@ -1,5 +1,7 @@
 set(the_description "Calculus Module")
 
+message("-- Including Calculus Module")
+
 set(SOURCE_FILES
     differential.cpp
 

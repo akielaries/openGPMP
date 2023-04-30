@@ -15,9 +15,8 @@
 
 void testing_miller(std::vector<int64_t> nums) {
     /* SEQUENTIAL MILLER-RABIN TEST */
-    //    std::chrono::steady_clock::time_point start_time =
-    //        std::chrono::steady_clock::now();
-    auto start = std::chrono::high_resolution_clock::now();
+    std::chrono::steady_clock::time_point start_time =
+        std::chrono::steady_clock::now();
 
     mtpk::PrimalityTest prims;
     std::cout << "Miller-Rabin sequentially without ThreadPool" << std::endl;
@@ -32,23 +31,17 @@ void testing_miller(std::vector<int64_t> nums) {
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();
 
-    auto end = std::chrono::high_resolution_clock::now();
-
-    std::chrono::duration<double, std::nano> elapsed = end - start;
-    std::cout << "Elapsed time: " << elapsed.count() << " ns\n";
-
-    //    std::cout << "Time elapsed: "
-    //              << std::chrono::duration_cast<std::chrono::milliseconds>(
-    //                     end_time - start_time)
-    //                     .count()
-    //              << " ms" << std::endl;
+    std::cout << "Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time)
+                     .count()
+              << " ms" << std::endl;
 }
 
 void testing_miller_thread(std::vector<int64_t> nums) {
     /* MILLER-RABIN TEST USING THREADPOOL WITH MANUAL ENQUEUE */
-    //    std::chrono::steady_clock::time_point start_time =
-    //        std::chrono::steady_clock::now();
-    auto start = std::chrono::high_resolution_clock::now();
+    std::chrono::steady_clock::time_point start_time =
+        std::chrono::steady_clock::now();
 
     // declares a threadpool with 4 threads
     mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(4);
@@ -70,25 +63,20 @@ void testing_miller_thread(std::vector<int64_t> nums) {
     }
     delete pool;
 
-    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
 
-    std::chrono::duration<double, std::nano> elapsed = end - start;
-    std::cout << "Elapsed time: " << elapsed.count() << " ns\n";
-
-    //    std::chrono::steady_clock::time_point end_time =
-    //        std::chrono::steady_clock::now();
-
-    //    std::cout << "Time elapsed: "
-    //              << std::chrono::duration_cast<std::chrono::milliseconds>(
-    //                     end_time - start_time)
-    //                    .count()
-    //              << " ms" << std::endl;
+    std::cout << "Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time)
+                     .count()
+              << " ms" << std::endl;
 }
 
 void testing_new_miller(std::vector<int64_t> nums) {
     /* MILLER-RABIN USING THREADPOOL DISPATCH UTILITY FUNCTION */
-    //    std::chrono::steady_clock::time_point start_time =
-    //        std::chrono::steady_clock::now();
+    std::chrono::steady_clock::time_point start_time =
+        std::chrono::steady_clock::now();
     auto start = std::chrono::high_resolution_clock::now();
 
     std::vector<std::future<bool>> miller_results;
@@ -114,19 +102,15 @@ void testing_new_miller(std::vector<int64_t> nums) {
                   << "\n";
     }
     delete pool;
-    auto end = std::chrono::high_resolution_clock::now();
 
-    std::chrono::duration<double, std::nano> elapsed = end - start;
-    std::cout << "Elapsed time: " << elapsed.count() << " ns\n";
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
 
-    //    std::chrono::steady_clock::time_point end_time =
-    //        std::chrono::steady_clock::now();
-
-    //    std::cout << "Time elapsed: "
-    //              << std::chrono::duration_cast<std::chrono::milliseconds>(
-    //                     end_time - start_time)
-    //                     .count()
-    //              << " ms" << std::endl;
+    std::cout << "Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time)
+                     .count()
+              << " ms" << std::endl;
 }
 
 int main() {

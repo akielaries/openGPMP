@@ -51,9 +51,9 @@ namespace accl {
  */
 class CUDAmtx {
   public:
-  /** 
-   * @brief Multiply 2 N x M matrix
-   */
+    /**
+     * @brief Multiply 2 N x M matrix
+     */
     __global__ void mtx_add_(int n, float *x, float *y);
 };
 } // namespace accl

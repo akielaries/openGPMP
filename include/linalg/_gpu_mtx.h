@@ -43,4 +43,7 @@
  * @brief GPU kernel acceleration utility/helper functions
  */
 
+void init_vec(int *vec, int len, int set_one_flag);
+
+// TODO
 #endif
