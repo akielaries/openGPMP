@@ -120,17 +120,15 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>accl {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classmtpk_1_1accl_1_1SIMDmtxIntel.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1accl_1_1SIMDmtxIntel.html">SIMDmtxIntel</a> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classmtpk_1_1accl_1_1IntelIntrinMtx.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1accl_1_1IntelIntrinMtx.html">IntelIntrinMtx</a> {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classmtpk_1_1accl_1_1SIMDmtxIntel.html#a705c1dd8d2daab1c3a38baf377e16419">   57</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classmtpk_1_1accl_1_1SIMDmtxIntel.html#a705c1dd8d2daab1c3a38baf377e16419">mtx_mul</a>(<span class="keywordtype">float</span> A[<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>][<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>], <span class="keywordtype">float</span> B[<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>][<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>], <span class="keywordtype">float</span> C[<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>][<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>]);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace accl</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace mtpk</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a__simd__intel__mtx_8cpp_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdef"><b>Definition:</b> <a href="__simd__intel__mtx_8cpp_source.html#l00009">_simd_intel_mtx.cpp:9</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1accl_1_1SIMDmtxIntel_html"><div class="ttname"><a href="classmtpk_1_1accl_1_1SIMDmtxIntel.html">mtpk::accl::SIMDmtxIntel</a></div><div class="ttdoc">Intel intrinsic layer for matrix related operations.</div><div class="ttdef"><b>Definition:</b> <a href="__simd__intel__mtx_8hpp_source.html#l00052">_simd_intel_mtx.hpp:52</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1accl_1_1SIMDmtxIntel_html_a705c1dd8d2daab1c3a38baf377e16419"><div class="ttname"><a href="classmtpk_1_1accl_1_1SIMDmtxIntel.html#a705c1dd8d2daab1c3a38baf377e16419">mtpk::accl::SIMDmtxIntel::mtx_mul</a></div><div class="ttdeci">void mtx_mul(float A[N][N], float B[N][N], float C[N][N])</div><div class="ttdoc">Multiply 2 matrix.</div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace accl</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassmtpk_1_1accl_1_1IntelIntrinMtx_html"><div class="ttname"><a href="classmtpk_1_1accl_1_1IntelIntrinMtx.html">mtpk::accl::IntelIntrinMtx</a></div><div class="ttdef"><b>Definition:</b> <a href="__simd__intel__mtx_8hpp_source.html#l00052">_simd_intel_mtx.hpp:52</a></div></div>
 <div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

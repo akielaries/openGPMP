@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['secondarymlp_728',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
-  ['sidmmtxarm_729',['SIDMmtxARM',['../classmtpk_1_1accl_1_1SIDMmtxARM.html',1,'mtpk::accl']]],
-  ['simdmtxintel_730',['SIMDmtxIntel',['../classmtpk_1_1accl_1_1SIMDmtxIntel.html',1,'mtpk::accl']]],
-  ['squares_731',['Squares',['../classmtpk_1_1Squares.html',1,'mtpk']]],
-  ['stats_732',['Stats',['../classmtpk_1_1ml_1_1Stats.html',1,'mtpk::ml']]],
-  ['summary_733',['summary',['../structmtpk_1_1ml_1_1summary.html',1,'mtpk::ml']]],
-  ['svc_734',['SVC',['../classmtpk_1_1ml_1_1SVC.html',1,'mtpk::ml']]]
+  ['rc4_728',['RC4',['../classmtpk_1_1RC4.html',1,'mtpk::RC4'],['../classopenmtpk_1_1nt_1_1nt_1_1RC4.html',1,'openmtpk.nt.nt.RC4']]],
+  ['rc5_729',['RC5',['../classRC5.html',1,'']]],
+  ['regularizers_730',['Regularizers',['../classmtpk_1_1ml_1_1Regularizers.html',1,'mtpk::ml']]]
 ];
