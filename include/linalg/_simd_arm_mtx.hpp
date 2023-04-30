@@ -48,12 +48,12 @@ namespace accl {
  * @class SIDMmtxARM
  * @brief ARM intrinsic layer for matrix related operations
  */
-class SIDMmtxARM {
+class ARMIntrinMtx {
   public:
     /**
      * @brief Matrix Multiplication
      */
-    void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
+    //void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
 };
 } // namespace accl
 } // namespace mtpk

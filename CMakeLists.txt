@@ -55,34 +55,59 @@ include(GNUInstallDirs)
 
 enable_testing()
 
-
 add_subdirectory(tests)
 
 ############################################################
 # Create a library
 ############################################################
-set(SOURCE_FILES 
-    modules/arithmetic/arith.cpp
-    modules/calculus/differential.cpp
-    modules/linalg/lao.cpp
-    modules/core/datatable.cpp
-    modules/ml/linreg.cpp
-    modules/ml/mlp_network.cpp
-    modules/nt/cipher.cpp
-    modules/nt/rc4.cpp
-    modules/nt/prime_test.cpp
-    modules/nt/prime_gen.cpp
-    modules/nt/factorization.cpp
-    modules/nt/logarithms.cpp
+
+# Add the module directories
+add_subdirectory(modules/arithmetic)
+add_subdirectory(modules/calculus)
+add_subdirectory(modules/linalg)
+add_subdirectory(modules/core)
+add_subdirectory(modules/ml)
+add_subdirectory(modules/nt)
+
+#set(SOURCE_FILES 
+#    ${ARITHMETIC_SOURCE_FILES}
+#    ${CALCULUS_SOURCE_FILES}
+#    ${LINALG_SOURCE_FILES}
+#    ${CORE_SOURCE_FILES}
+#    ${ML_SOURCE_FILES}
+#    ${NT_SOURCE_FILES}
+#)
+add_library(${PROJECT_NAME} STATIC
+  $<TARGET_OBJECTS:arithmetic>
+  $<TARGET_OBJECTS:calculus>
+  $<TARGET_OBJECTS:linalg>
+  $<TARGET_OBJECTS:core>
+  $<TARGET_OBJECTS:ml>
+  $<TARGET_OBJECTS:nt>
 )
 
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})
+#set(SOURCE_FILES 
+    #modules/arithmetic/arith.cpp
+    #modules/calculus/differential.cpp
+    #modules/linalg/lao.cpp
+    #modules/core/datatable.cpp
+    #modules/ml/linreg.cpp
+    #modules/ml/mlp_network.cpp
+    #modules/nt/cipher.cpp
+    #modules/nt/rc4.cpp
+    #modules/nt/prime_test.cpp
+    #modules/nt/prime_gen.cpp
+    #modules/nt/factorization.cpp
+    #modules/nt/logarithms.cpp
+#)
+
 
 #target_sources(${PROJECT_NAME} PUBLIC FILE_SET HEADERS
 #    BASE_DIRS ${OPENMTPK_SOURCE_DIR}
 #    FILES ${OPENMTPK_SOURCE_DIR}/include
 #)
 
+# include directory for openMTPK
 target_include_directories(${PROJECT_NAME} PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>

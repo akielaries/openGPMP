@@ -49,12 +49,13 @@ namespace accl {
  * @class SIMDmtxIntel
  * @brief Intel intrinsic layer for matrix related operations
  */
-class SIMDmtxIntel {
+class IntelIntrinMtx {
   public:
     /**
      * @brief Multiply 2 matrix
      */
-    void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
+
+    //void mtx_mul(float A[N][N], float B[N][N], float C[N][N]);
 };
 } // namespace accl
 } // namespace mtpk

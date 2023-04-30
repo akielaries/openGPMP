@@ -74,7 +74,6 @@
  */
 #if defined(__linux__) || defined(__APPLE__)
     #ifndef __NVCC__
-        #include "linalg/_gpu_kernel_mtx.h"
         #include "linalg/_gpu_mtx.h"
         #include "linalg/_gpu_mtx_wrapper.hpp"
     #endif

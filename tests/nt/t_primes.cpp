@@ -121,6 +121,16 @@ TEST(prime_test, compute_miller_rabin) {
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(200392, 5));
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(90, 5));
 }
+/*
+TEST(prime_test, compute_miller_rabin) {
+    EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
+    EXPECT_EQ(false, __PRIMES_CLASS__.compute_miller_rabin(1));
+    EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
+    EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
+    EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(2));
+    EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
+    EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
+}*/
 
 TEST(prime_test, miller_rabin_prime) {
     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(1049, 4));
