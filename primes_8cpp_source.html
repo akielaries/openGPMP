@@ -90,240 +90,224 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a>(std::vector&lt;int64_t&gt; nums) {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">/* SEQUENTIAL MILLER-RABIN TEST */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//    std::chrono::steady_clock::time_point start_time =</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> prims;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin sequentially without ThreadPool&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (uint64_t n : nums) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (prims.<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">miller_rabin_prime</a>(n, 120000))</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            std::cout &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; is prime&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            std::cout &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; is composite&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::chrono::steady_clock::now();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::chrono::duration&lt;double, std::nano&gt; elapsed = end - start;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Elapsed time: &quot;</span> &lt;&lt; elapsed.count() &lt;&lt; <span class="stringliteral">&quot; ns\n&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//    std::cout &lt;&lt; &quot;Time elapsed: &quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//                     end_time - start_time)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//                     .count()</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(std::vector&lt;int64_t&gt; nums) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/* MILLER-RABIN TEST USING THREADPOOL WITH MANUAL ENQUEUE */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//    std::chrono::steady_clock::time_point start_time =</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// declares a threadpool with 4 threads</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a>(4);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::chrono::steady_clock::time_point start_time =</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> prims;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin sequentially without ThreadPool&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> (uint64_t n : nums) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (prims.<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">miller_rabin_prime</a>(n, 120000))</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            std::cout &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; is prime&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            std::cout &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; is composite&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Time elapsed: &quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                     end_time - start_time)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                     .count()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(std::vector&lt;int64_t&gt; nums) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/* MILLER-RABIN TEST USING THREADPOOL WITH MANUAL ENQUEUE */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::chrono::steady_clock::time_point start_time =</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// declares a threadpool with 4 threads</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a>(4);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        miller_results.emplace_back(pool-&gt;<a class="code" href="classmtpk_1_1core_1_1ThreadPool.html#a74055a560f9b8a2937ccbd652eb8b8a8">enqueue</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            [&amp;<a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>, n]() { return prim.miller_rabin_prime(n, 120000); }));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        miller_results.emplace_back(pool-&gt;<a class="code" href="classmtpk_1_1core_1_1ThreadPool.html#a74055a560f9b8a2937ccbd652eb8b8a8">enqueue</a>(</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            [&amp;<a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>, n]() { return prim.miller_rabin_prime(n, 120000); }));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Print the results</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nResults:\n&quot;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin with ThreadPool&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; miller_results.size(); i++) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">bool</span> is_prime = miller_results[i].get();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::cout &lt;&lt; nums[i] &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; (is_prime ? <span class="stringliteral">&quot;prime&quot;</span> : <span class="stringliteral">&quot;composite&quot;</span>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">delete</span> pool;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::chrono::duration&lt;double, std::nano&gt; elapsed = end - start;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Elapsed time: &quot;</span> &lt;&lt; elapsed.count() &lt;&lt; <span class="stringliteral">&quot; ns\n&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//    std::chrono::steady_clock::time_point end_time =</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//    std::cout &lt;&lt; &quot;Time elapsed: &quot;</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//                     end_time - start_time)</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//                    .count()</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">//              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a>(std::vector&lt;int64_t&gt; nums) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/* MILLER-RABIN USING THREADPOOL DISPATCH UTILITY FUNCTION */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//    std::chrono::steady_clock::time_point start_time =</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Print the results</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nResults:\n&quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin with ThreadPool&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; miller_results.size(); i++) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">bool</span> is_prime = miller_results[i].get();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::cout &lt;&lt; nums[i] &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; (is_prime ? <span class="stringliteral">&quot;prime&quot;</span> : <span class="stringliteral">&quot;composite&quot;</span>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">delete</span> pool;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Time elapsed: &quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                     end_time - start_time)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                     .count()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a>(std::vector&lt;int64_t&gt; nums) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/* MILLER-RABIN USING THREADPOOL DISPATCH UTILITY FUNCTION */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::chrono::steady_clock::time_point start_time =</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a>(4);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// enqueue the function call to the thread pool using the</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// ThreadDispatch.dispatch() function</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        miller_results.emplace_back(<a class="code" href="classmtpk_1_1core_1_1ThreadDispatch.html">mtpk::core::ThreadDispatch</a>().<a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            *pool, &amp;<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">mtpk::PrimalityTest::miller_rabin_prime</a>, &amp;<a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>, n, 120000));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a>(4);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Print the results</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nResults:\n&quot;</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin with ThreadPool using ThreadDispatch.dispatch()&quot;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;              &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// enqueue the function call to the thread pool using the</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// ThreadDispatch.dispatch() function</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        miller_results.emplace_back(<a class="code" href="classmtpk_1_1core_1_1ThreadDispatch.html">mtpk::core::ThreadDispatch</a>().<a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            *pool, &amp;<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">mtpk::PrimalityTest::miller_rabin_prime</a>, &amp;<a class="code" href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a>, n, 120000));</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; miller_results.size(); i++) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">bool</span> is_prime = miller_results[i].get();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        std::cout &lt;&lt; nums[i] &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; (is_prime ? <span class="stringliteral">&quot;prime&quot;</span> : <span class="stringliteral">&quot;composite&quot;</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">delete</span> pool;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Print the results</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nResults:\n&quot;</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin with ThreadPool using ThreadDispatch.dispatch()&quot;</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;              &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; miller_results.size(); i++) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">bool</span> is_prime = miller_results[i].get();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        std::cout &lt;&lt; nums[i] &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; (is_prime ? <span class="stringliteral">&quot;prime&quot;</span> : <span class="stringliteral">&quot;composite&quot;</span>)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">delete</span> pool;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::chrono::duration&lt;double, std::nano&gt; elapsed = end - start;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Elapsed time: &quot;</span> &lt;&lt; elapsed.count() &lt;&lt; <span class="stringliteral">&quot; ns\n&quot;</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">//    std::chrono::steady_clock::time_point end_time =</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//    std::cout &lt;&lt; &quot;Time elapsed: &quot;</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">//              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">//                     end_time - start_time)</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">//                     .count()</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">//              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Time elapsed: &quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                     end_time - start_time)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                     .count()</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  116</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;BASIC NUMBER THEORY OPERATIONS\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// declare primality class object</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> p;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- IS IT PRIME? ---------&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">int</span> a = 9;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// check if an integer is prime or not</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">bool</span> is_it = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">is_prime</a>(a);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::cout &lt;&lt; a &lt;&lt; <span class="stringliteral">&quot; is prime? : &quot;</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    is_it ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">int</span> b = 2;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">bool</span> is_it2 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">is_prime</a>(b);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  132</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;BASIC NUMBER THEORY OPERATIONS\n&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// declare primality class object</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> p;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- IS IT PRIME? ---------&gt;\n&quot;</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">int</span> a = 9;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// check if an integer is prime or not</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">bool</span> is_it = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">is_prime</a>(a);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::cout &lt;&lt; a &lt;&lt; <span class="stringliteral">&quot; is prime? : &quot;</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    is_it ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">int</span> b = 2;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">bool</span> is_it2 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#afbdde3f21b4bc18dc88e891a2caeb8b5">is_prime</a>(b);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    std::cout &lt;&lt; b &lt;&lt; <span class="stringliteral">&quot; is prime? : &quot;</span>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    is_it2 ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    std::cout &lt;&lt; b &lt;&lt; <span class="stringliteral">&quot; is prime? : &quot;</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    is_it2 ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- MILLER-RABIN METHOD ---------&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">int</span> min_num = 1;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// display the prime numbers smaller than a given value</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">int</span> max_num = 100;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// number of iterations</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">int</span> iters = 4;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">     * calculate the solution, the method doesn&#39;t return a value,</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">     * prints the values</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">miller_rabin</a>(iters, min_num, max_num);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">miller_rabin</a>(iters, 25, 50);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">miller_rabin</a>(iters, 30, 3000);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- MILLER-RABIN METHOD ---------&gt;\n&quot;</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> min_num = 1;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// display the prime numbers smaller than a given value</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">int</span> max_num = 100;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// number of iterations</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">int</span> iters = 4;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">     * calculate the solution, the method doesn&#39;t return a value,</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">     * prints the values</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">miller_rabin</a>(iters, min_num, max_num);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">miller_rabin</a>(iters, 25, 50);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">miller_rabin</a>(iters, 30, 3000);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- CARMICHAEL NUMBERS ---------&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> cm_test = 500;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">bool</span> carm_num = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">carmichael_num</a>(cm_test);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">int</span> cm_test1 = 561;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">bool</span> carm_num1 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">carmichael_num</a>(cm_test1);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">int</span> cm_test2 = 1105;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">bool</span> carm_num2 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">carmichael_num</a>(cm_test2);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::cout &lt;&lt; cm_test &lt;&lt; <span class="stringliteral">&quot; is a carmichael number : &quot;</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    carm_num ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    std::cout &lt;&lt; cm_test1 &lt;&lt; <span class="stringliteral">&quot; is a carmichael number : &quot;</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    carm_num1 ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- CARMICHAEL NUMBERS ---------&gt;\n&quot;</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">int</span> cm_test = 500;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">bool</span> carm_num = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">carmichael_num</a>(cm_test);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">int</span> cm_test1 = 561;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">bool</span> carm_num1 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">carmichael_num</a>(cm_test1);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">int</span> cm_test2 = 1105;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">bool</span> carm_num2 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a3075a71884ea6c4d7dee3a60ccba0ef1">carmichael_num</a>(cm_test2);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    std::cout &lt;&lt; cm_test &lt;&lt; <span class="stringliteral">&quot; is a carmichael number : &quot;</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    carm_num ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    std::cout &lt;&lt; cm_test1 &lt;&lt; <span class="stringliteral">&quot; is a carmichael number : &quot;</span>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    carm_num1 ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::cout &lt;&lt; cm_test2 &lt;&lt; <span class="stringliteral">&quot; is a carmichael number : &quot;</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    carm_num2 ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">     * Power Modulo function</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> pow_a = 3;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">int</span> pow_b = 2;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> pow_c = 2;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// returns (a^b) % c</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">int</span> pow_res = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(pow_a, pow_b, pow_c);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    printf(<span class="stringliteral">&quot;%d ^ %d %% %d = %d\n&quot;</span>, pow_a, pow_b, pow_c, pow_res);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">int</span> pow_d = 5;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">int</span> pow_e = 2;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">int</span> pow_f = 7;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">int</span> pow_res_1 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(pow_d, pow_e, pow_f);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    printf(<span class="stringliteral">&quot;%d ^ %d %% %d = %d\n&quot;</span>, pow_d, pow_e, pow_f, pow_res_1);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">int</span> pow_g = 8;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">int</span> pow_h = 9;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">int</span> pow_i = 3;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">int</span> pow_res_2 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(pow_g, pow_h, pow_i);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    printf(<span class="stringliteral">&quot;%d ^ %d %% %d = %d\n&quot;</span>, pow_g, pow_h, pow_i, pow_res_2);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::cout &lt;&lt; cm_test2 &lt;&lt; <span class="stringliteral">&quot; is a carmichael number : &quot;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    carm_num2 ? std::cout &lt;&lt; <span class="stringliteral">&quot;true\n&quot;</span> : std::cout &lt;&lt; <span class="stringliteral">&quot;false\n&quot;</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">     * Power Modulo function</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">int</span> pow_a = 3;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">int</span> pow_b = 2;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">int</span> pow_c = 2;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// returns (a^b) % c</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">int</span> pow_res = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(pow_a, pow_b, pow_c);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    printf(<span class="stringliteral">&quot;%d ^ %d %% %d = %d\n&quot;</span>, pow_a, pow_b, pow_c, pow_res);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">int</span> pow_d = 5;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">int</span> pow_e = 2;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> pow_f = 7;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">int</span> pow_res_1 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(pow_d, pow_e, pow_f);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    printf(<span class="stringliteral">&quot;%d ^ %d %% %d = %d\n&quot;</span>, pow_d, pow_e, pow_f, pow_res_1);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> pow_g = 8;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> pow_h = 9;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">int</span> pow_i = 3;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> pow_res_2 = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(pow_g, pow_h, pow_i);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    printf(<span class="stringliteral">&quot;%d ^ %d %% %d = %d\n&quot;</span>, pow_g, pow_h, pow_i, pow_res_2);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">bool</span> cmp = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">miller_rabin_prime</a>(5, 4);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;miller_rabin_prime: &quot;</span> &lt;&lt; cmp &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">     * Jacobian</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">     * Solovay-Strassen Primality Test</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordtype">int</span> ss_0 = 15;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span> (p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a24debb997099c26dc0482647d775dfd5">solovoy_strassen</a>(ss_0, 50))</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        printf(<span class="stringliteral">&quot;%d is prime\n&quot;</span>, ss_0);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        printf(<span class="stringliteral">&quot;%d is composite\n&quot;</span>, ss_0);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">bool</span> cmp = p.<a class="code" href="classmtpk_1_1PrimalityTest.html#aea296e7913cb51cc89c3b79fcf737194">miller_rabin_prime</a>(5, 4);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;miller_rabin_prime: &quot;</span> &lt;&lt; cmp &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">     * Jacobian</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">     * Solovay-Strassen Primality Test</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">int</span> ss_0 = 15;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">if</span> (p.<a class="code" href="classmtpk_1_1PrimalityTest.html#a24debb997099c26dc0482647d775dfd5">solovoy_strassen</a>(ss_0, 50))</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        printf(<span class="stringliteral">&quot;%d is prime\n&quot;</span>, ss_0);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        printf(<span class="stringliteral">&quot;%d is composite\n&quot;</span>, ss_0);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// example vector of 64 bit integers</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    std::vector&lt;int64_t&gt; nums = {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        9223372036854775803,   9223372036854775807,   9223372036854775303,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        4567890123456789LL,    5678901234567890LL,    6789012345678901LL,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        7890123456789012LL,    8901234567890123LL,    9999999967LL,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        12345678901234567LL,   987654321987654321LL,  2147483647LL,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        9223372036854775783LL, 1311768467463790320LL, 7237005577332262210LL,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        3037000499LL,          2305843009213693951LL, 2305843009213693967LL,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        2305843009213693971LL, 2305843009213693973LL, 2305843009213693977LL,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        2305843009213693989LL};</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a>(nums);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- USING THREADPOOL ---------&gt;\n&quot;</span>;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// example vector of 64 bit integers</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    std::vector&lt;int64_t&gt; nums = {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        9223372036854775803,   9223372036854775807,   9223372036854775303,</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        4567890123456789LL,    5678901234567890LL,    6789012345678901LL,</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        7890123456789012LL,    8901234567890123LL,    9999999967LL,</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        12345678901234567LL,   987654321987654321LL,  2147483647LL,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        9223372036854775783LL, 1311768467463790320LL, 7237005577332262210LL,</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        3037000499LL,          2305843009213693951LL, 2305843009213693967LL,</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        2305843009213693971LL, 2305843009213693973LL, 2305843009213693977LL,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        2305843009213693989LL};</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <a class="code" href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a>(nums);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;--------- USING THREADPOOL ---------&gt;\n&quot;</span>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(nums);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a>(nums);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(nums);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// vector if 64 bit integers</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(nums);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a>(nums);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(nums);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// vector if 64 bit integers</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
 <div class="ttc" id="ac__threadpool_8c_html_a40f3db62ccfd7fdffb7624bb565ba425"><div class="ttname"><a href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a></div><div class="ttdeci">void dispatch(threadpool from_me, dispatch_fn dispatch_to_here, void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00137">c_threadpool.c:137</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a></div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8hpp_source.html#l00051">prime_test.hpp:51</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a0923c2f17fd016ef13468cb59013581e"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a0923c2f17fd016ef13468cb59013581e">mtpk::PrimalityTest::miller_rabin</a></div><div class="ttdeci">void miller_rabin(uint64_t iters, uint64_t min_val, uint64_t max_val)</div><div class="ttdoc">Miller-Rabin driver, prints values that satisfy conditions.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00209">prime_test.cpp:209</a></div></div>
@@ -337,9 +321,9 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1core_1_1ThreadPool_html_a74055a560f9b8a2937ccbd652eb8b8a8"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadPool.html#a74055a560f9b8a2937ccbd652eb8b8a8">mtpk::core::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdoc">Enqueues a task to the thread pool.</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00141">threadpool.hpp:141</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_ae705b16e0f91ad04a0d1892bd85d3b5b"><div class="ttname"><a href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a></div><div class="ttdeci">mtpk::PrimalityTest prim</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00059">prime_test.cpp:59</a></div></div>
 <div class="ttc" id="aprimes_8cpp_html_a14003875a6c31e1f9d1bf4b153878e3e"><div class="ttname"><a href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a></div><div class="ttdeci">void testing_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00016">primes.cpp:16</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_a286bd143d8ec3bf5f09b6dc36803c093"><div class="ttname"><a href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a></div><div class="ttdeci">void testing_new_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00088">primes.cpp:88</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_a33daa0145dde696a317ebf44cde84295"><div class="ttname"><a href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a></div><div class="ttdeci">void testing_miller_thread(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00047">primes.cpp:47</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00132">primes.cpp:132</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_a286bd143d8ec3bf5f09b6dc36803c093"><div class="ttname"><a href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a></div><div class="ttdeci">void testing_new_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00076">primes.cpp:76</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_a33daa0145dde696a317ebf44cde84295"><div class="ttname"><a href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a></div><div class="ttdeci">void testing_miller_thread(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00041">primes.cpp:41</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00116">primes.cpp:116</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

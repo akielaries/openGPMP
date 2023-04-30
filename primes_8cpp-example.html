@@ -87,9 +87,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> <a name="a0"></a><a class="code" href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a>(std::vector&lt;int64_t&gt; nums) {</div>
 <div class="line">    <span class="comment">/* SEQUENTIAL MILLER-RABIN TEST */</span></div>
-<div class="line">    <span class="comment">//    std::chrono::steady_clock::time_point start_time =</span></div>
-<div class="line">    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
+<div class="line">    std::chrono::steady_clock::time_point start_time =</div>
+<div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line"> </div>
 <div class="line">    <a name="_a1"></a><a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> prims;</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Miller-Rabin sequentially without ThreadPool&quot;</span> &lt;&lt; std::endl;</div>
@@ -104,23 +103,17 @@ $(function() {
 <div class="line">    std::chrono::steady_clock::time_point end_time =</div>
 <div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
-<div class="line"> </div>
-<div class="line">    std::chrono::duration&lt;double, std::nano&gt; elapsed = end - start;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Elapsed time: &quot;</span> &lt;&lt; elapsed.count() &lt;&lt; <span class="stringliteral">&quot; ns\n&quot;</span>;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">//    std::cout &lt;&lt; &quot;Time elapsed: &quot;</span></div>
-<div class="line">    <span class="comment">//              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line">    <span class="comment">//                     end_time - start_time)</span></div>
-<div class="line">    <span class="comment">//                     .count()</span></div>
-<div class="line">    <span class="comment">//              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Time elapsed: &quot;</span></div>
+<div class="line">              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line">                     end_time - start_time)</div>
+<div class="line">                     .count()</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> <a name="a3"></a><a class="code" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a>(std::vector&lt;int64_t&gt; nums) {</div>
 <div class="line">    <span class="comment">/* MILLER-RABIN TEST USING THREADPOOL WITH MANUAL ENQUEUE */</span></div>
-<div class="line">    <span class="comment">//    std::chrono::steady_clock::time_point start_time =</span></div>
-<div class="line">    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
+<div class="line">    std::chrono::steady_clock::time_point start_time =</div>
+<div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// declares a threadpool with 4 threads</span></div>
 <div class="line">    <a name="_a4"></a><a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a>(4);</div>
@@ -142,25 +135,20 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    <span class="keyword">delete</span> pool;</div>
 <div class="line"> </div>
-<div class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
+<div class="line">    std::chrono::steady_clock::time_point end_time =</div>
+<div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line"> </div>
-<div class="line">    std::chrono::duration&lt;double, std::nano&gt; elapsed = end - start;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Elapsed time: &quot;</span> &lt;&lt; elapsed.count() &lt;&lt; <span class="stringliteral">&quot; ns\n&quot;</span>;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">//    std::chrono::steady_clock::time_point end_time =</span></div>
-<div class="line">    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">//    std::cout &lt;&lt; &quot;Time elapsed: &quot;</span></div>
-<div class="line">    <span class="comment">//              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line">    <span class="comment">//                     end_time - start_time)</span></div>
-<div class="line">    <span class="comment">//                    .count()</span></div>
-<div class="line">    <span class="comment">//              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Time elapsed: &quot;</span></div>
+<div class="line">              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line">                     end_time - start_time)</div>
+<div class="line">                     .count()</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> <a name="a7"></a><a class="code" href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a>(std::vector&lt;int64_t&gt; nums) {</div>
 <div class="line">    <span class="comment">/* MILLER-RABIN USING THREADPOOL DISPATCH UTILITY FUNCTION */</span></div>
-<div class="line">    <span class="comment">//    std::chrono::steady_clock::time_point start_time =</span></div>
-<div class="line">    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
+<div class="line">    std::chrono::steady_clock::time_point start_time =</div>
+<div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
 <div class="line"> </div>
 <div class="line">    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
@@ -186,19 +174,15 @@ $(function() {
 <div class="line">                  &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keyword">delete</span> pool;</div>
-<div class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
 <div class="line"> </div>
-<div class="line">    std::chrono::duration&lt;double, std::nano&gt; elapsed = end - start;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Elapsed time: &quot;</span> &lt;&lt; elapsed.count() &lt;&lt; <span class="stringliteral">&quot; ns\n&quot;</span>;</div>
+<div class="line">    std::chrono::steady_clock::time_point end_time =</div>
+<div class="line">        std::chrono::steady_clock::now();</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">//    std::chrono::steady_clock::time_point end_time =</span></div>
-<div class="line">    <span class="comment">//        std::chrono::steady_clock::now();</span></div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">//    std::cout &lt;&lt; &quot;Time elapsed: &quot;</span></div>
-<div class="line">    <span class="comment">//              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line">    <span class="comment">//                     end_time - start_time)</span></div>
-<div class="line">    <span class="comment">//                     .count()</span></div>
-<div class="line">    <span class="comment">//              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Time elapsed: &quot;</span></div>
+<div class="line">              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line">                     end_time - start_time)</div>
+<div class="line">                     .count()</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a name="a10"></a><a class="code" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
@@ -334,9 +318,9 @@ $(function() {
 <div class="ttc" id="aclassmtpk_1_1core_1_1ThreadPool_html_a74055a560f9b8a2937ccbd652eb8b8a8"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadPool.html#a74055a560f9b8a2937ccbd652eb8b8a8">mtpk::core::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdoc">Enqueues a task to the thread pool.</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00141">threadpool.hpp:141</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_ae705b16e0f91ad04a0d1892bd85d3b5b"><div class="ttname"><a href="prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b">prim</a></div><div class="ttdeci">mtpk::PrimalityTest prim</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00059">prime_test.cpp:59</a></div></div>
 <div class="ttc" id="aprimes_8cpp_html_a14003875a6c31e1f9d1bf4b153878e3e"><div class="ttname"><a href="primes_8cpp.html#a14003875a6c31e1f9d1bf4b153878e3e">testing_miller</a></div><div class="ttdeci">void testing_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00016">primes.cpp:16</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_a286bd143d8ec3bf5f09b6dc36803c093"><div class="ttname"><a href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a></div><div class="ttdeci">void testing_new_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00088">primes.cpp:88</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_a33daa0145dde696a317ebf44cde84295"><div class="ttname"><a href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a></div><div class="ttdeci">void testing_miller_thread(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00047">primes.cpp:47</a></div></div>
-<div class="ttc" id="aprimes_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00132">primes.cpp:132</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_a286bd143d8ec3bf5f09b6dc36803c093"><div class="ttname"><a href="primes_8cpp.html#a286bd143d8ec3bf5f09b6dc36803c093">testing_new_miller</a></div><div class="ttdeci">void testing_new_miller(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00076">primes.cpp:76</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_a33daa0145dde696a317ebf44cde84295"><div class="ttname"><a href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread</a></div><div class="ttdeci">void testing_miller_thread(std::vector&lt; int64_t &gt; nums)</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00041">primes.cpp:41</a></div></div>
+<div class="ttc" id="aprimes_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="primes_8cpp_source.html#l00116">primes.cpp:116</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
