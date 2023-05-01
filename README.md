@@ -48,7 +48,7 @@ installation.
 * Linux/OSX
 * CMake >=v3.24 (build from source for latest version)
 * C++20
-* g++12
+* GCC & G++ (other C & C++ compilers are being tested)
 
 ```
 # clone repo
