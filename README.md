@@ -46,9 +46,10 @@ installation.
 
 ## Build from source
 * Linux/OSX
-* CMake >=v3.24 (build from source for latest version)
+* CMake v3.18+ (build from source for latest version)
 * C++20
-* GCC & G++ (other C & C++ compilers are being tested)
+* GCC/G++12+ (other C & C++ compilers are being tested)
+* NASM v2.16+
 
 ```
 # clone repo
