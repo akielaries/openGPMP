@@ -1,6 +1,7 @@
 # Changelog
 
 # v1.0.0-rc.1
+See [new contributors](https://github.com/akielaries/openMTPK/graphs/contributors?from=2023-02-07&to=2023-05-09&type=c)
 ## What's Changed 
 * Documentation layout + additions
 * `mtpk::accl` namespace introduced hardware acceleration methods using GPUs with the help of 
