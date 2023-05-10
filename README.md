@@ -114,6 +114,7 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
 5. Number Theory
    - Primality Tests
    - Primality Generation
+   - Pseudorandom Number Generators
    - Integer Factorization
    - Euclidean Division
    - Logarithms
