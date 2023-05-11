@@ -86,12 +86,83 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:a95a838bf8797b8aeb7209ff926e0c13d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#a95a838bf8797b8aeb7209ff926e0c13d">mtx_add</a> (a, b, c)</td></tr>
-<tr class="separator:a95a838bf8797b8aeb7209ff926e0c13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b3608e1a91c313e90ccafd2c77d3b8"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">mtx_add</a> (a, b, c, nrows, ncols)</td></tr>
+<tr class="separator:a92b3608e1a91c313e90ccafd2c77d3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e66fc094b58693285e638f276f5667"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#a09e66fc094b58693285e638f276f5667">matrix_multiply</a> (matrix1, matrix2, result, nrows1, ncols1, ncols2)</td></tr>
+<tr class="separator:a09e66fc094b58693285e638f276f5667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
-<a id="a95a838bf8797b8aeb7209ff926e0c13d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95a838bf8797b8aeb7209ff926e0c13d">&#9670;&nbsp;</a></span>mtx_add()</h2>
+<a id="a09e66fc094b58693285e638f276f5667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e66fc094b58693285e638f276f5667">&#9670;&nbsp;</a></span>matrix_multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine matrix_multiply </td>
+          <td>(</td>
+          <td class="paramtype">real, dimension(nrows1, ncols1), intent(in)&#160;</td>
+          <td class="paramname"><em>matrix1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real, dimension(ncols1, ncols2), intent(in)&#160;</td>
+          <td class="paramname"><em>matrix2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real, dimension(nrows1, ncols2), intent(out)&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>nrows1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>ncols1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>ncols2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mtx_8f90_source.html#l00066">66</a> of file <a class="el" href="mtx_8f90_source.html">mtx.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: nrows1, ncols1, ncols2</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(in)</span> :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(out)</span> :: result(nrows1, ncols2)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">integer</span> :: i, j, k</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">! Perform matrix multiplication</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows1</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols2</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      result(i, j) = 0.0</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">do</span> k = 1, ncols1</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        result(i, j) = result(i, j) + matrix1(i, k) * matrix2(k, j)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordflow">      end do</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordflow">    end do</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordflow">  end do</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a92b3608e1a91c313e90ccafd2c77d3b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b3608e1a91c313e90ccafd2c77d3b8">&#9670;&nbsp;</a></span>mtx_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,7 +183,19 @@ Functions/Subroutines</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">real(kind=8), dimension(nrows, ncols), intent(out)&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(kind=8), intent(in)&#160;</td>
+          <td class="paramname"><em>nrows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(kind=8), intent(in)&#160;</td>
+          <td class="paramname"><em>ncols</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -125,20 +208,17 @@ Functions/Subroutines</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="mtx_8f90_source.html#l00043">43</a> of file <a class="el" href="mtx_8f90_source.html">mtx.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">integer(kind=8)</span> :: nrows, ncols</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">integer(kind=8)</span>, <span class="keywordtype">intent(in)</span> :: nrows, ncols</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">  real</span>(kind=8), intent(in) :: a(nrows, ncols), b(nrows, ncols)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">  real</span>(kind=8), intent(out) :: c(nrows, ncols)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">integer(kind=8)</span> :: i, j</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  nrows = <span class="keyword">size</span>(a, 1)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ncols = <span class="keyword">size</span>(a, 2)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      c(i, j) = a(i, j) + b(i, j)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordflow">    end do</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordflow">  end do</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      c(i, j) = a(i, j) + b(i, j)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordflow">    end do</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordflow">  end do</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>

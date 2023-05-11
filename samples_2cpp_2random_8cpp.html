@@ -82,8 +82,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="random_8hpp_source.html">../../include/nt/random.hpp</a>&quot;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="samples_2cpp_2random_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -111,22 +111,19 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="samples_2cpp_2random_8cpp_source.html#l00005">5</a> of file <a class="el" href="samples_2cpp_2random_8cpp_source.html">random.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;           {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// generates a random 32 bit unsigned integer using a linear </span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// generates a random 32 bit unsigned integer using a linear</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// congruential generator (LCG)</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    uint32_t res = <a class="code" href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">mtpk::core::rndm::LCG</a>();</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::cout &lt;&lt; res &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// generates a random 64 bit unsigned integer using a linear </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// generates a random 64 bit unsigned integer using a linear</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// congruential generator (LCG)</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    uint64_t res2 = <a class="code" href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::cout &lt;&lt; res2 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a0af7086889f0187b749ceceac6f8d802"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl</a></div><div class="ttdeci">uint64_t LCGl(uint64_t lower=0, uint64_t upper=__64BIT_1)</div><div class="ttdoc">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (fr...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00053">random.cpp:53</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a0af7086889f0187b749ceceac6f8d802"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl</a></div><div class="ttdeci">uint64_t LCGl(uint64_t lower=0, uint64_t upper=__64BIT_1)</div><div class="ttdoc">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (fr...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00052">random.cpp:52</a></div></div>
 <div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a7328b85c888165bbe34e83379e12c186"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">mtpk::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=__32BIT_1)</div><div class="ttdoc">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increme...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">mtpk::core::rndm::LCG()</a>, and <a class="el" href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl()</a>.</p>
