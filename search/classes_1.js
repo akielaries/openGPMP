@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['activate_701',['Activate',['../classmtpk_1_1ml_1_1Activate.html',1,'mtpk::ml']]],
-  ['arith_702',['Arith',['../classmtpk_1_1Arith.html',1,'mtpk']]],
-  ['armintrinmtx_703',['ARMIntrinMtx',['../classmtpk_1_1accl_1_1ARMIntrinMtx.html',1,'mtpk::accl']]],
-  ['autoencoder_704',['AutoEncoder',['../classmtpk_1_1ml_1_1AutoEncoder.html',1,'mtpk::ml']]]
+  ['basics_471',['Basics',['../classmtpk_1_1Basics.html',1,'mtpk']]],
+  ['bayesbernoulli_472',['BayesBernoulli',['../classmtpk_1_1BayesBernoulli.html',1,'mtpk']]],
+  ['bayesclf_473',['BayesClf',['../classmtpk_1_1BayesClf.html',1,'mtpk']]],
+  ['bayesgauss_474',['BayesGauss',['../classmtpk_1_1BayesGauss.html',1,'mtpk']]],
+  ['bayesmutlinom_475',['BayesMutliNom',['../classmtpk_1_1BayesMutliNom.html',1,'mtpk']]],
+  ['bayesnet_476',['BayesNet',['../classmtpk_1_1BayesNet.html',1,'mtpk']]]
 ];

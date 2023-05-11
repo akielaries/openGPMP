@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data_718',['Data',['../classmtpk_1_1core_1_1Data.html',1,'mtpk::core']]],
-  ['datatable_719',['DataTable',['../classmtpk_1_1core_1_1DataTable.html',1,'mtpk::core']]],
-  ['differential_720',['Differential',['../classmtpk_1_1Differential.html',1,'mtpk']]]
+  ['kf_5fcv_485',['KF_CV',['../classmtpk_1_1KF__CV.html',1,'mtpk']]],
+  ['knn_486',['kNN',['../classmtpk_1_1kNN.html',1,'mtpk']]],
+  ['kohonennet_487',['KohonenNet',['../classmtpk_1_1KohonenNet.html',1,'mtpk']]]
 ];

@@ -103,9 +103,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5c07022bfab349fb887e8067e76c9664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="rc4_8cpp-example.html#_a1">rc4.cpp</a>.</dd>
-</dl>
-
+<div class="textblock">
 <p class="definition">Definition at line <a class="el" href="rc4_8hpp_source.html#l00072">72</a> of file <a class="el" href="rc4_8hpp_source.html">rc4.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9456b14881187b9034092a51bd995332"></a>
@@ -134,7 +132,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00050">50</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00050">50</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                              {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    uint8_t swapped = *a;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    swapped = *a;</div>
@@ -181,35 +179,31 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="rc4_8cpp-example.html#a2">rc4.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00141">141</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                                                            {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (ciphertext == NULL) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;[-] Error Allocating Memory&quot;</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// check for swap types 1-3</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (0 &lt;= swap_type &amp;&amp; swap_type &lt;= 2) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> S[<a class="code" href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a>];</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da">KSA</a>(key, S, swap_type);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14">PRGA</a>(S, plaintext, ciphertext, swap_type);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (swap_type &gt; 2) {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;[-] Invalid swap_type&quot;</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> ciphertext;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a12dea4619de094080a422045ba1f35da"><div class="ttname"><a href="classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da">mtpk::RC4::KSA</a></div><div class="ttdeci">void KSA(char *key, unsigned char *S, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00069">rc4.cpp:69</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a775f4b5019d7756d1c9c6a7e379e6a14"><div class="ttname"><a href="classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14">mtpk::RC4::PRGA</a></div><div class="ttdeci">void PRGA(unsigned char *S, char *plaintext, unsigned char *ciphertext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00091">rc4.cpp:91</a></div></div>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00141">141</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                 {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (ciphertext == NULL) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;[-] Error Allocating Memory&quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// check for swap types 1-3</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (0 &lt;= swap_type &amp;&amp; swap_type &lt;= 2) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> S[<a class="code" href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a>];</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da">KSA</a>(key, S, swap_type);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14">PRGA</a>(S, plaintext, ciphertext, swap_type);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (swap_type &gt; 2) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;[-] Invalid swap_type&quot;</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> ciphertext;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="ttc" id="aclassmtpk_1_1RC4_html_a12dea4619de094080a422045ba1f35da"><div class="ttname"><a href="classmtpk_1_1RC4.html#a12dea4619de094080a422045ba1f35da">mtpk::RC4::KSA</a></div><div class="ttdeci">void KSA(char *key, unsigned char *S, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00069">rc4.cpp:69</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1RC4_html_a775f4b5019d7756d1c9c6a7e379e6a14"><div class="ttname"><a href="classmtpk_1_1RC4.html#a775f4b5019d7756d1c9c6a7e379e6a14">mtpk::RC4::PRGA</a></div><div class="ttdeci">void PRGA(unsigned char *S, char *plaintext, unsigned char *ciphertext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00091">rc4.cpp:91</a></div></div>
 <div class="ttc" id="arc4_8hpp_html_aea95cbd2fc2a755e5fd8230fda5bac47"><div class="ttname"><a href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a></div><div class="ttdeci">#define BYTE_LIMIT</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8hpp_source.html#l00064">rc4.hpp:64</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="samples_2cpp_2rc4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
 </div>
@@ -245,7 +239,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00069">69</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00069">69</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                            {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    uint32_t len = strlen(key);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
@@ -267,9 +261,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a241338bfc1131ece12f8964fb14a407c"><div class="ttname"><a href="classmtpk_1_1RC4.html#a241338bfc1131ece12f8964fb14a407c">mtpk::RC4::XOR_swap</a></div><div class="ttdeci">void XOR_swap(unsigned char *a, unsigned char *b)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00063">rc4.cpp:63</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a7f78df47fd055968e84ae9814d3012f2"><div class="ttname"><a href="classmtpk_1_1RC4.html#a7f78df47fd055968e84ae9814d3012f2">mtpk::RC4::trad_swap</a></div><div class="ttdeci">void trad_swap(unsigned char *a, unsigned char *b)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00057">rc4.cpp:57</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a9456b14881187b9034092a51bd995332"><div class="ttname"><a href="classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332">mtpk::RC4::byte_swap</a></div><div class="ttdeci">void byte_swap(uint8_t *a, uint8_t *b)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00050">rc4.cpp:50</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1RC4_html_a241338bfc1131ece12f8964fb14a407c"><div class="ttname"><a href="classmtpk_1_1RC4.html#a241338bfc1131ece12f8964fb14a407c">mtpk::RC4::XOR_swap</a></div><div class="ttdeci">void XOR_swap(unsigned char *a, unsigned char *b)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00063">rc4.cpp:63</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1RC4_html_a7f78df47fd055968e84ae9814d3012f2"><div class="ttname"><a href="classmtpk_1_1RC4.html#a7f78df47fd055968e84ae9814d3012f2">mtpk::RC4::trad_swap</a></div><div class="ttdeci">void trad_swap(unsigned char *a, unsigned char *b)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00057">rc4.cpp:57</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1RC4_html_a9456b14881187b9034092a51bd995332"><div class="ttname"><a href="classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332">mtpk::RC4::byte_swap</a></div><div class="ttdeci">void byte_swap(uint8_t *a, uint8_t *b)</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8cpp_source.html#l00050">rc4.cpp:50</a></div></div>
 <div class="ttc" id="arc4_8hpp_html_a9d2a7c69bd3fabc41e1ee87df2f283b3"><div class="ttname"><a href="rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3">BITS</a></div><div class="ttdeci">#define BITS</div><div class="ttdef"><b>Definition:</b> <a href="rc4_8hpp_source.html#l00063">rc4.hpp:63</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3">BITS</a>, and <a class="el" href="rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47">BYTE_LIMIT</a>.</p>
@@ -314,7 +308,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00091">91</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00091">91</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                               {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
@@ -373,10 +367,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="rc4_8cpp-example.html#a3">rc4.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00115">115</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00115">115</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                 {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// length of our plaintext</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">int</span> len = strlen((<span class="keywordtype">char</span> *)plaintext);</div>
@@ -402,8 +394,6 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> stored_text;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="samples_2cpp_2rc4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
-
 </div>
 </div>
 <a id="a7f78df47fd055968e84ae9814d3012f2"></a>
@@ -432,7 +422,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00057">57</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00057">57</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                          {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> swapped = *a;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    *a = *b;</div>
@@ -467,7 +457,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2rc4_8cpp_source.html#l00063">63</a> of file <a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rc4_8cpp_source.html#l00063">63</a> of file <a class="el" href="rc4_8cpp_source.html">rc4.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                         {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    *a ^= *b;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    *b ^= *a;</div>
@@ -478,7 +468,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/nt/<a class="el" href="rc4_8hpp_source.html">rc4.hpp</a></li>
-<li>modules/nt/<a class="el" href="modules_2nt_2rc4_8cpp_source.html">rc4.cpp</a></li>
+<li>modules/nt/<a class="el" href="rc4_8cpp_source.html">rc4.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

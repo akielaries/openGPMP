@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['openmtpk_20python_20api_1417',['openMTPK Python API',['../md_openmtpk_README.html',1,'']]],
-  ['openmtpk_20python_20api_20tutorial_1418',['openMTPK Python API Tutorial',['../md_docs_source_Tutorials_Python.html',1,'']]],
-  ['openmtpk_20source_20c_2b_2b_20api_20tutorial_1419',['openMTPK Source C++ API Tutorial',['../md_docs_source_Tutorials.html',1,'']]]
+  ['welcome_20to_20openmtpk_27s_20documentation_2e_951',['Welcome to openMTPK&apos;s documentation.',['../index.html',1,'']]]
 ];

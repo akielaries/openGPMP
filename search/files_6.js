@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['factorization_2ecpp_825',['factorization.cpp',['../factorization_8cpp.html',1,'']]],
-  ['factorization_2ehpp_826',['factorization.hpp',['../factorization_8hpp.html',1,'']]],
-  ['factors_2ecpp_827',['factors.cpp',['../factors_8cpp.html',1,'']]]
+  ['k_2dfoldcv_2ecpp_536',['k-foldCV.cpp',['../k-foldCV_8cpp.html',1,'']]],
+  ['k_2dfoldcv_2ehpp_537',['k-foldCV.hpp',['../k-foldCV_8hpp.html',1,'']]],
+  ['knn_2ehpp_538',['knn.hpp',['../knn_8hpp.html',1,'']]],
+  ['kohonen_5fnet_2ehpp_539',['kohonen_net.hpp',['../kohonen__net_8hpp.html',1,'']]]
 ];

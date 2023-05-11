@@ -1,13 +1,4 @@
 var searchData=
 [
-  ['lao_2ecpp_836',['lao.cpp',['../lao_8cpp.html',1,'']]],
-  ['linalg_2ehpp_837',['linalg.hpp',['../linalg_8hpp.html',1,'']]],
-  ['linalg_2epy_838',['linalg.py',['../samples_2python_2linalg_8py.html',1,'(Global Namespace)'],['../openmtpk_2linalg_2linalg_8py.html',1,'(Global Namespace)']]],
-  ['linalg_5fops_2ecpp_839',['linalg_ops.cpp',['../linalg__ops_8cpp.html',1,'']]],
-  ['linreg_2ecpp_840',['linreg.cpp',['../linreg_8cpp.html',1,'']]],
-  ['linreg_2ehpp_841',['linreg.hpp',['../linreg_8hpp.html',1,'']]],
-  ['loader_2ecpp_842',['loader.cpp',['../loader_8cpp.html',1,'']]],
-  ['logarithms_2ecpp_843',['logarithms.cpp',['../modules_2nt_2logarithms_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2logarithms_8cpp.html',1,'(Global Namespace)']]],
-  ['logarithms_2ehpp_844',['logarithms.hpp',['../logarithms_8hpp.html',1,'']]],
-  ['logreg_2ehpp_845',['logreg.hpp',['../logreg_8hpp.html',1,'']]]
+  ['optimizers_2ehpp_556',['optimizers.hpp',['../optimizers_8hpp.html',1,'']]]
 ];
