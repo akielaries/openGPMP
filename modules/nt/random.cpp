@@ -33,19 +33,18 @@
  ************************************************************************/
 #include "../../include/nt/random.hpp"
 #include <chrono>
-#include <iostream>
 #include <cstdint>
+#include <iostream>
 
 uint32_t mtpk::core::rndm::LCG(uint32_t lower, uint32_t upper) {
     uint32_t mod = __32BIT_1;
     uint32_t mult = 1664525;
     uint32_t incr = 1013904223;
     // set seed = current time
-    uint32_t seed = 
-        std::chrono::system_clock::now().time_since_epoch().count();
-    
+    uint32_t seed = std::chrono::system_clock::now().time_since_epoch().count();
+
     // Linear Congruential Generator algorithm
-    uint32_t res = (mult * seed + incr) % mod; 
+    uint32_t res = (mult * seed + incr) % mod;
 
     return res;
 }
@@ -55,13 +54,10 @@ uint64_t mtpk::core::rndm::LCGl(uint64_t lower, uint64_t upper) {
     uint64_t mult = 6364136223846793005;
     uint64_t incr = 1442695040888963407;
     // set seed = current time
-    uint64_t seed = 
-        std::chrono::system_clock::now().time_since_epoch().count();
-     
+    uint64_t seed = std::chrono::system_clock::now().time_since_epoch().count();
+
     // Linear Congruential Generator algorithm
-    uint64_t res = (mult * seed + incr) % mod; 
+    uint64_t res = (mult * seed + incr) % mod;
 
     return res;
 }
-
-

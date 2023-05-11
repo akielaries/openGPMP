@@ -41,41 +41,41 @@
 #include <cstdint>
 
 /** RNG CONSTANTS,, adopted from glibc */
-#define __16BIT     65536                   /** 2^16        */
-#define __16BIT_1   65535                   /** 2^16 - 1    */
-#define __32BIT     4294967296              /** 2^32        */
-#define __32BIT_1   4294967295              /** 2^32 - 1    */
-#define __64BIT     18446744073709600000    /** 2^64        */
-#define __64BIT_1   18446744073709551615    /** 2^64 - 1    */
+#define __16BIT 65536                  /** 2^16        */
+#define __16BIT_1 65535                /** 2^16 - 1    */
+#define __32BIT 4294967296             /** 2^32        */
+#define __32BIT_1 4294967295           /** 2^32 - 1    */
+#define __64BIT 18446744073709600000   /** 2^64        */
+#define __64BIT_1 18446744073709551615 /** 2^64 - 1    */
 
 namespace mtpk {
 
 namespace core {
 
 /**
- * @class 
+ * @class
  */
 namespace rndm {
-    /**
-     * @brief Linear Congruential Generator
-     * m = modulus      : 32-bits
-     * a = multiplier   : 1664525 (from Knuth)
-     * c = increment    : 1013904223 (from Knuth)
-     */
-    uint32_t LCG(uint32_t lower = 0, uint32_t upper = __32BIT_1);
+/**
+ * @brief Linear Congruential Generator
+ * m = modulus      : 32-bits
+ * a = multiplier   : 1664525 (from Knuth)
+ * c = increment    : 1013904223 (from Knuth)
+ */
+uint32_t LCG(uint32_t lower = 0, uint32_t upper = __32BIT_1);
 
-    /**
-     * @brief Linear Congruential Generator (64-bit)
-     * m = modulus      : 64-bits
-     * a = multiplier   : 6364136223846793005 (from Knuth)
-     * c = increment    : 1442695040888963407 (from Knuth)
-     */
-    uint64_t LCGl(uint64_t lower = 0, uint64_t upper = __64BIT_1); 
+/**
+ * @brief Linear Congruential Generator (64-bit)
+ * m = modulus      : 64-bits
+ * a = multiplier   : 6364136223846793005 (from Knuth)
+ * c = increment    : 1442695040888963407 (from Knuth)
+ */
+uint64_t LCGl(uint64_t lower = 0, uint64_t upper = __64BIT_1);
 
-}
+} // namespace rndm
 
-}
+} // namespace core
 
-}
+} // namespace mtpk
 
 #endif
