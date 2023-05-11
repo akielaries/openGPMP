@@ -119,33 +119,34 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">   39</a></span>&#160;uint32_t <a class="code" href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">mtpk::core::rndm::LCG</a>(uint32_t lower, uint32_t upper) {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint32_t mod = <a class="code" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint32_t mult = 1664525;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint32_t <a class="code" href="mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> = 1664525;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint32_t incr = 1013904223;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// set seed = current time</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    uint32_t seed = </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::chrono::system_clock::now().time_since_epoch().count();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint32_t res = (mult * seed + incr) % mod; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint32_t res = (<a class="code" href="mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> * seed + incr) % mod; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">   53</a></span>&#160;uint64_t <a class="code" href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl</a>(uint64_t lower, uint64_t upper) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint64_t mod = <a class="code" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    uint64_t mult = 6364136223846793005;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    uint64_t <a class="code" href="mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> = 6364136223846793005;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    uint64_t incr = 1442695040888963407;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// set seed = current time</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint64_t seed = </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::chrono::system_clock::now().time_since_epoch().count();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;     </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint64_t res = (mult * seed + incr) % mod; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint64_t res = (<a class="code" href="mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> * seed + incr) % mod; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="ttc" id="amtx_8cpp_html_a565eb286e8c8a10c86ee0b28eb650236"><div class="ttname"><a href="mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a></div><div class="ttdeci">void mult()</div><div class="ttdef"><b>Definition:</b> <a href="mtx_8cpp_source.html#l00023">mtx.cpp:23</a></div></div>
 <div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a0af7086889f0187b749ceceac6f8d802"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl</a></div><div class="ttdeci">uint64_t LCGl(uint64_t lower=0, uint64_t upper=__64BIT_1)</div><div class="ttdoc">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (fr...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00053">random.cpp:53</a></div></div>
 <div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a7328b85c888165bbe34e83379e12c186"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">mtpk::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=__32BIT_1)</div><div class="ttdoc">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increme...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
 <div class="ttc" id="arandom_8hpp_html_a2ef0e997da61852a686f4bfe380e0f71"><div class="ttname"><a href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a></div><div class="ttdeci">#define __32BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00047">random.hpp:47</a></div></div>

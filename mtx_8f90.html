@@ -86,45 +86,33 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:abffe6dd3a4b973ccd0cbb5a40ded7ed3"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#abffe6dd3a4b973ccd0cbb5a40ded7ed3">matrix_addition</a> (a, b, c, nrows, ncols)</td></tr>
-<tr class="separator:abffe6dd3a4b973ccd0cbb5a40ded7ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a838bf8797b8aeb7209ff926e0c13d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#a95a838bf8797b8aeb7209ff926e0c13d">mtx_add</a> (a, b, c)</td></tr>
+<tr class="separator:a95a838bf8797b8aeb7209ff926e0c13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
-<a id="abffe6dd3a4b973ccd0cbb5a40ded7ed3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abffe6dd3a4b973ccd0cbb5a40ded7ed3">&#9670;&nbsp;</a></span>matrix_addition()</h2>
+<a id="a95a838bf8797b8aeb7209ff926e0c13d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a838bf8797b8aeb7209ff926e0c13d">&#9670;&nbsp;</a></span>mtx_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">subroutine matrix_addition </td>
+          <td class="memname">subroutine mtx_add </td>
           <td>(</td>
-          <td class="paramtype">real, dimension(nrows, ncols), intent(in)&#160;</td>
+          <td class="paramtype">real(kind=8), dimension(nrows, ncols), intent(in)&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, dimension(nrows, ncols), intent(in)&#160;</td>
+          <td class="paramtype">real(kind=8), dimension(nrows, ncols), intent(in)&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">real, dimension(nrows, ncols), intent(out)&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>nrows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ncols</em>&#160;</td>
+          <td class="paramtype">real(kind=8), dimension(nrows, ncols), intent(out)&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -134,19 +122,23 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx_8f90_source.html#l00001">1</a> of file <a class="el" href="mtx_8f90_source.html">mtx.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;  <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: nrows, ncols</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(in)</span> :: a(nrows, ncols), b(nrows, ncols)</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(out)</span> :: c(nrows, ncols)</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordtype">integer</span> :: i, j</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      c(i, j) = a(i, j) + b(i, j)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordflow">    end do</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordflow">  end do</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="mtx_8f90_source.html#l00043">43</a> of file <a class="el" href="mtx_8f90_source.html">mtx.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">integer(kind=8)</span> :: nrows, ncols</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">  real</span>(kind=8), intent(in) :: a(nrows, ncols), b(nrows, ncols)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">  real</span>(kind=8), intent(out) :: c(nrows, ncols)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">integer(kind=8)</span> :: i, j</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  nrows = <span class="keyword">size</span>(a, 1)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  ncols = <span class="keyword">size</span>(a, 2)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      c(i, j) = a(i, j) + b(i, j)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordflow">    end do</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordflow">  end do</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
