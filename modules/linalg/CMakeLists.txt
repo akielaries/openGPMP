@@ -6,6 +6,8 @@ option(BUILD_GPU_OPENCL "Build Intel Linear Algebra Intrinsic Extension" OFF)
 
 set(SOURCE_FILES
     lao.cpp
+    mtx.cpp
+    mtx.f90
 )
 
 # compile OpenCL GPU accelerators into openMTPK binary written

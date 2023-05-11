@@ -305,7 +305,7 @@ OPTIMIZE_OUTPUT_JAVA   = NO
 # sources. Doxygen will then generate output that is tailored for Fortran.
 # The default value is: NO.
 
-OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_FOR_FORTRAN   = YES
 
 # Set the OPTIMIZE_OUTPUT_VHDL tag to YES if your project consists of VHDL
 # sources. Doxygen will then generate output that is tailored for VHDL.
@@ -953,7 +953,7 @@ INPUT_FILE_ENCODING    =
 
 FILE_PATTERNS          = *.c \
                          *.cc \
-			 *.cu \
+                         *.cu \
                          *.cuh \
                          *.cxx \
                          *.cpp \
@@ -1052,7 +1052,7 @@ EXCLUDE_SYMBOLS        += _swig_add_metaclass
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           = samples/cpp
+EXAMPLE_PATH           = samples/cpp samples/python
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
