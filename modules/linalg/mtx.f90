@@ -33,13 +33,13 @@
 ! ************************************************************************/
 
 
-!< FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper
+!> FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper
 !! function 
-!< @param a Addend a, an array representing a Matrix
-!< @param b Addend b, an array representing a Matrix
-!< @param c Sum c, an array representing the sum of a + b
-!< @param nrows Number of rows
-!< @param ncols Number of columns
+!! @param a Addend a, an array representing a Matrix
+!! @param b Addend b, an array representing a Matrix
+!! @param c Sum c, an array representing the sum of a + b
+!! @param nrows Number of rows
+!! @param ncols Number of columns
 subroutine mtx_add(a, b, c, nrows, ncols)
   implicit none
   !< Using 64-bit width for numeric types 
@@ -56,13 +56,13 @@ subroutine mtx_add(a, b, c, nrows, ncols)
 
 end subroutine mtx_add
 
-!< FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper
+!> FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper
 !! function making use of Fortran specific intrinsics 
-!< @param a Multiplier a, an array representing a Matrix
-!< @param b Multiplicand b, an array representing a Matrix
-!< @param c Product c, an array representing the sum of a + b
-!< @param nrows_a Number of rows
-!< @param ncols Number of columns
+!! @param a Multiplier a, an array representing a Matrix
+!! @param b Multiplicand b, an array representing a Matrix
+!! @param c Product c, an array representing the sum of a + b
+!! @param nrows_a Number of rows
+!! @param ncols Number of columns
 subroutine matrix_multiply(matrix1, matrix2, result, nrows1, ncols1, ncols2)
   implicit none
   integer, intent(in) :: nrows1, ncols1, ncols2
