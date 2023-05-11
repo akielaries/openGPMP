@@ -87,8 +87,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a92b3608e1a91c313e90ccafd2c77d3b8"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">mtx_add</a> (a, b, c, nrows, ncols)</td></tr>
+<tr class="memdesc:a92b3608e1a91c313e90ccafd2c77d3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper function.  <a href="mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">More...</a><br /></td></tr>
 <tr class="separator:a92b3608e1a91c313e90ccafd2c77d3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e66fc094b58693285e638f276f5667"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx_8f90.html#a09e66fc094b58693285e638f276f5667">matrix_multiply</a> (matrix1, matrix2, result, nrows1, ncols1, ncols2)</td></tr>
+<tr class="memdesc:a09e66fc094b58693285e638f276f5667"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper function making use of Fortran specific intrinsics.  <a href="mtx_8f90.html#a09e66fc094b58693285e638f276f5667">More...</a><br /></td></tr>
 <tr class="separator:a09e66fc094b58693285e638f276f5667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
@@ -141,6 +143,18 @@ Functions/Subroutines</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper function making use of Fortran specific intrinsics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Multiplier a, an array representing a Matrix </td></tr>
+    <tr><td class="paramname">b</td><td>Multiplicand b, an array representing a Matrix </td></tr>
+    <tr><td class="paramname">c</td><td>Product c, an array representing the sum of a + b </td></tr>
+    <tr><td class="paramname">nrows_a</td><td>Number of rows </td></tr>
+    <tr><td class="paramname">ncols</td><td>Number of columns </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="mtx_8f90_source.html#l00066">66</a> of file <a class="el" href="mtx_8f90_source.html">mtx.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">implicit none</span></div>
@@ -204,6 +218,18 @@ Functions/Subroutines</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Addend a, an array representing a Matrix </td></tr>
+    <tr><td class="paramname">b</td><td>Addend b, an array representing a Matrix </td></tr>
+    <tr><td class="paramname">c</td><td>Sum c, an array representing the sum of a + b </td></tr>
+    <tr><td class="paramname">nrows</td><td>Number of rows </td></tr>
+    <tr><td class="paramname">ncols</td><td>Number of columns </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="mtx_8f90_source.html#l00043">43</a> of file <a class="el" href="mtx_8f90_source.html">mtx.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">implicit none</span></div>
