@@ -85,15 +85,15 @@ int64_t mtpk::Differential::derivative_term(std::string p_term, int64_t val) {
 
     for (i = i + 2; i != p_term.size(); i++) {
         powStr.push_back(p_term[i]);
-        printf("powStr = %s \n", powStr.c_str());
+        //printf("powStr = %s \n", powStr.c_str());
     }
     int64_t expo = atol(powStr.c_str());
 
     // For ax^n, we return anx^(n-1)
-    printf("powStr = %s \n", powStr.c_str());
-    printf("p_term = %s \n", p_term.c_str());
-    printf("coeff = %ld \n", coeff);
-    printf("Exponent = %ld \n", expo);
+    //printf("powStr = %s \n", powStr.c_str());
+    //printf("p_term = %s \n", p_term.c_str());
+    //printf("coeff = %ld \n", coeff);
+    //printf("Exponent = %ld \n", expo);
 
     int64_t result = coeff * expo * pow(val, expo - 1);
 
@@ -116,8 +116,8 @@ int64_t mtpk::Differential::deriv_at(std::string &poly, int64_t val) {
         else
             ans = (ans + derivative_term(p_term, val));
     }
-    printf("\nDEBUGGING DERIV AT\n\n");
-    printf("ans = %ld\n", ans);
+    //printf("\nDEBUGGING DERIV AT\n\n");
+    //printf("ans = %ld\n", ans);
     return ans;
 }
 

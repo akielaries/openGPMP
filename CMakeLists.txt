@@ -71,14 +71,6 @@ add_subdirectory(modules/core)
 add_subdirectory(modules/ml)
 add_subdirectory(modules/nt)
 
-#set(SOURCE_FILES 
-#    ${ARITHMETIC_SOURCE_FILES}
-#    ${CALCULUS_SOURCE_FILES}
-#    ${LINALG_SOURCE_FILES}
-#    ${CORE_SOURCE_FILES}
-#    ${ML_SOURCE_FILES}
-#    ${NT_SOURCE_FILES}
-#)
 add_library(${PROJECT_NAME} STATIC
   $<TARGET_OBJECTS:arithmetic>
   $<TARGET_OBJECTS:calculus>
@@ -87,27 +79,6 @@ add_library(${PROJECT_NAME} STATIC
   $<TARGET_OBJECTS:ml>
   $<TARGET_OBJECTS:nt>
 )
-
-#set(SOURCE_FILES 
-    #modules/arithmetic/arith.cpp
-    #modules/calculus/differential.cpp
-    #modules/linalg/lao.cpp
-    #modules/core/datatable.cpp
-    #modules/ml/linreg.cpp
-    #modules/ml/mlp_network.cpp
-    #modules/nt/cipher.cpp
-    #modules/nt/rc4.cpp
-    #modules/nt/prime_test.cpp
-    #modules/nt/prime_gen.cpp
-    #modules/nt/factorization.cpp
-    #modules/nt/logarithms.cpp
-#)
-
-
-#target_sources(${PROJECT_NAME} PUBLIC FILE_SET HEADERS
-#    BASE_DIRS ${OPENMTPK_SOURCE_DIR}
-#    FILES ${OPENMTPK_SOURCE_DIR}/include
-#)
 
 # include directory for openMTPK
 target_include_directories(${PROJECT_NAME} PUBLIC 
@@ -136,8 +107,9 @@ install(EXPORT openMTPKConfig DESTINATION share/openMTPK/cmake)
 
 export(TARGETS ${PROJECT_NAME} FILE openMTPKConfig.cmake)
 
-# make tests passing a requirement for the library to build
-add_dependencies(${PROJECT_NAME} check)
+# run C++ and Fortran unit tests
+add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
+add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
 
 # uninstall target
 if(NOT TARGET uninstall)

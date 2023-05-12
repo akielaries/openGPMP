@@ -56,14 +56,14 @@ subroutine mtx_add(a, b, c, nrows, ncols)
 
 end subroutine mtx_add
 
-!> FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper
-!! function making use of Fortran specific intrinsics 
+!> FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. 
+!! Contains C++ wrapper function
 !! @param a Multiplier a, an array representing a Matrix
 !! @param b Multiplicand b, an array representing a Matrix
 !! @param c Product c, an array representing the sum of a + b
 !! @param nrows_a Number of rows
 !! @param ncols Number of columns
-subroutine matrix_multiply(matrix1, matrix2, result, nrows1, ncols1, ncols2)
+subroutine mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)
   implicit none
   integer, intent(in) :: nrows1, ncols1, ncols2
   real, intent(in) :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)
@@ -79,5 +79,5 @@ subroutine matrix_multiply(matrix1, matrix2, result, nrows1, ncols1, ncols2)
       end do
     end do
   end do
-end subroutine
+end subroutine mtx_mult
 
