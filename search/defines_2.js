@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['endocer_5fnet_5fhpp_935',['ENDOCER_NET_HPP',['../encoder_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'ENDOCER_NET_HPP():&#160;encoder.hpp'],['../encoder__var_8hpp.html#ad29b1c7dac93d2d9dfac0b7c42cb2f8e',1,'ENDOCER_NET_HPP():&#160;encoder_var.hpp']]]
+  ['bits_1380',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
+  ['byte_5flimit_1381',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]]
 ];

@@ -125,7 +125,7 @@ class mtpk::ml::SecondaryMLP&lt; T &gt;</h3>
 
 <p>Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module. </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00147">147</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00146">146</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a76476eb4c3858df01198d4b8df41dbbe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76476eb4c3858df01198d4b8df41dbbe">&#9670;&nbsp;</a></span>SecondaryMLP()</h2>
@@ -164,32 +164,32 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Secondary Multi-Layer Perceptron Constructor Initialize a set of weights + biases for each layer set to random Gaussian Noise related values </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00190">190</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        : <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>), <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>(), <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>(), <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// traverse the elements</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.size() - 1; ++i) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment">// size of inputs</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordtype">size_t</span> inputs{<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>[i]};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="comment">// size of outputs</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordtype">size_t</span> outputs{<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>[i + 1]};</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">// set to random Guassian Noise related values</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="comment">// weights</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keyword">auto</span> gauss_wt = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;T&gt;::randn</a>(outputs, inputs);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>.push_back(gauss_wt);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="comment">// biases</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keyword">auto</span> bias_wt = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;T&gt;::randn</a>(outputs, 1);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>.push_back(bias_wt);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment">// activation function</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>.resize(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.size());</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_a31e51e8a50484fe3c2ae9c6c046f04b5"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">mtpk::ml::SecondaryMLP::activations</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; activations</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00181">mlp_net.hpp:181</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_a50f60db18b3b28cfd61e2a981da66640"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">mtpk::ml::SecondaryMLP::lr</a></div><div class="ttdeci">long double lr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00183">mlp_net.hpp:183</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_a7b8a07eaf26f528995f42190539c7855"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">mtpk::ml::SecondaryMLP::wt_mtx</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; wt_mtx</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00180">mlp_net.hpp:180</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_adcfe96d79227b0139b424bba5e8bd910"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">mtpk::ml::SecondaryMLP::layer_units</a></div><div class="ttdeci">std::vector&lt; size_t &gt; layer_units</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00178">mlp_net.hpp:178</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_ae9f0cc6602b4e2aed997aecd7b34b254"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">mtpk::ml::SecondaryMLP::bias_vectors</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; bias_vectors</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00179">mlp_net.hpp:179</a></div></div>
-<div class="ttc" id="astructmtpk_1_1mtx_html_a97b03f5f01387e000198f1db437681be"><div class="ttname"><a href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx::randn</a></div><div class="ttdeci">static Matrix&lt; T &gt; randn(size_t rows, size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00422">matrix.hpp:422</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00189">189</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        : <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>), <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>(), <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>(), <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// traverse the elements</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.size() - 1; ++i) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">// size of inputs</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordtype">size_t</span> inputs{<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>[i]};</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// size of outputs</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordtype">size_t</span> outputs{<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>[i + 1]};</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="comment">// set to random Guassian Noise related values</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">// weights</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keyword">auto</span> gauss_wt = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;T&gt;::randn</a>(outputs, inputs);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>.push_back(gauss_wt);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">// biases</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keyword">auto</span> bias_wt = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;T&gt;::randn</a>(outputs, 1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>.push_back(bias_wt);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// activation function</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>.resize(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.size());</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_a31e51e8a50484fe3c2ae9c6c046f04b5"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">mtpk::ml::SecondaryMLP::activations</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; activations</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00180">mlp_net.hpp:180</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_a50f60db18b3b28cfd61e2a981da66640"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">mtpk::ml::SecondaryMLP::lr</a></div><div class="ttdeci">long double lr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00182">mlp_net.hpp:182</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_a7b8a07eaf26f528995f42190539c7855"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">mtpk::ml::SecondaryMLP::wt_mtx</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; wt_mtx</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00179">mlp_net.hpp:179</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_adcfe96d79227b0139b424bba5e8bd910"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">mtpk::ml::SecondaryMLP::layer_units</a></div><div class="ttdeci">std::vector&lt; size_t &gt; layer_units</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00177">mlp_net.hpp:177</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_ae9f0cc6602b4e2aed997aecd7b34b254"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">mtpk::ml::SecondaryMLP::bias_vectors</a></div><div class="ttdeci">std::vector&lt; Matrix&lt; T &gt; &gt; bias_vectors</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00178">mlp_net.hpp:178</a></div></div>
+<div class="ttc" id="astructmtpk_1_1mtx_html_a97b03f5f01387e000198f1db437681be"><div class="ttname"><a href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx::randn</a></div><div class="ttdeci">static Matrix&lt; T &gt; randn(size_t rows, size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00423">matrix.hpp:423</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">mtpk::ml::SecondaryMLP&lt; T &gt;::activations</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">mtpk::ml::SecondaryMLP&lt; T &gt;::bias_vectors</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">mtpk::ml::SecondaryMLP&lt; T &gt;::layer_units</a>, <a class="el" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt; T &gt;::randn()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">mtpk::ml::SecondaryMLP&lt; T &gt;::wt_mtx</a>.</p>
 
@@ -245,14 +245,14 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Logging function for collecting the results </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00152">152</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                                          {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// mean squared error</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">auto</span> mse = (y.data[0] - y_hat.data[0]);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        mse = mse * mse;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        file &lt;&lt; mse &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; x.data[0] &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; y.data[0] &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;             &lt;&lt; y_hat.data[0] &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00151">151</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">// mean squared error</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keyword">auto</span> mse = (y.data[0] - y_hat.data[0]);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        mse = mse * mse;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        file &lt;&lt; mse &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; x.data[0] &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; y.data[0] &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;             &lt;&lt; y_hat.data[0] &lt;&lt; <span class="stringliteral">&quot; \n&quot;</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -283,34 +283,34 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Backwards Propagation is utilized to optimize the net's weights. Enabling learning how to correctly map arbitrary inputs to outputs. The goal being to update each weight of the network allowing them to increase the chance of the actual output being closer to the target output. This method takes the target output as an input parameter </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00241">241</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                          {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        assert(get&lt;0&gt;(target.shape) == <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.back());</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// calculate the error, target - ouput</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keyword">auto</span> y = target;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keyword">auto</span> y_hat = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>.back();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keyword">auto</span> err = target - y_hat;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// back propagate the error calculated from output to input</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="comment">// and step the weights</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">for</span> (int64_t i = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>.size() - 1; i &gt;= 0; --i) {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="comment">// calculate errors for previous layer</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keyword">auto</span> wt = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i].T();</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keyword">auto</span> prior_errs = wt.mult(err);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keyword">auto</span> outputs_d =</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i + 1].apply_function(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93">sigmoid_deriv</a>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keyword">auto</span> gradients = err.hadamard(outputs_d);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            gradients = gradients.scalar_mult(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keyword">auto</span> trans_a = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i].T();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keyword">auto</span> gradients_wt = gradients.mult(trans_a);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="comment">// adjust the networks weights based on propagation</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="comment">// technique</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>[i] = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>[i].add(gradients);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i] = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i].add(gradients_wt);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            err = prior_errs;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_ad09addf22c814beeb60724a801c3ba93"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93">mtpk::ml::SecondaryMLP::sigmoid_deriv</a></div><div class="ttdeci">long double sigmoid_deriv(long double x)</div><div class="ttdoc">Sigmoid Derivative for backwards propogation.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00174">mlp_net.hpp:174</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00240">240</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                          {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        assert(get&lt;0&gt;(target.shape) == <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.back());</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="comment">// calculate the error, target - ouput</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">auto</span> y = target;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keyword">auto</span> y_hat = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>.back();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keyword">auto</span> err = target - y_hat;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// back propagate the error calculated from output to input</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// and step the weights</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">for</span> (int64_t i = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>.size() - 1; i &gt;= 0; --i) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="comment">// calculate errors for previous layer</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keyword">auto</span> wt = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i].T();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keyword">auto</span> prior_errs = wt.mult(err);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keyword">auto</span> outputs_d =</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i + 1].apply_function(&amp;<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93">SecondaryMLP::sigmoid_deriv</a>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keyword">auto</span> gradients = err.hadamard(outputs_d);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            gradients = gradients.scalar_mult(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">lr</a>);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">auto</span> trans_a = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i].T();</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keyword">auto</span> gradients_wt = gradients.mult(trans_a);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="comment">// adjust the networks weights based on propagation</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="comment">// technique</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>[i] = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>[i].add(gradients);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i] = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i].add(gradients_wt);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            err = prior_errs;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_ad09addf22c814beeb60724a801c3ba93"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93">mtpk::ml::SecondaryMLP::sigmoid_deriv</a></div><div class="ttdeci">long double sigmoid_deriv(long double x)</div><div class="ttdoc">Sigmoid Derivative for backwards propogation.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00173">mlp_net.hpp:173</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">mtpk::ml::SecondaryMLP&lt; T &gt;::activations</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">mtpk::ml::SecondaryMLP&lt; T &gt;::bias_vectors</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">mtpk::ml::SecondaryMLP&lt; T &gt;::layer_units</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640">mtpk::ml::SecondaryMLP&lt; T &gt;::lr</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ad09addf22c814beeb60724a801c3ba93">mtpk::ml::SecondaryMLP&lt; T &gt;::sigmoid_deriv()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">mtpk::ml::SecondaryMLP&lt; T &gt;::wt_mtx</a>.</p>
 
@@ -343,24 +343,24 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Forward passes compute the activations at a specific layer. This method saves the results to the activations <a class="el" href="classmtpk_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> passing it forwards to use as an input paramater on the next layer </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00217">217</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                    {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        assert(get&lt;0&gt;(x.shape) == <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>[0] &amp;&amp; get&lt;1&gt;(x.shape));</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// input = to previously declared acitvations method</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[0] = x;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> prev(x);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// traverse layer units</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.size() - 1; ++i) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> y = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i].mult(prev);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            y = y + <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>[i];</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            y = y.apply_function(<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeafb9b868fc47dc0612942889214732d">sigmoid_activ</a>);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i + 1] = y;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            prev = y;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">return</span> prev;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_aeafb9b868fc47dc0612942889214732d"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeafb9b868fc47dc0612942889214732d">mtpk::ml::SecondaryMLP::sigmoid_activ</a></div><div class="ttdeci">long double sigmoid_activ(long double x)</div><div class="ttdoc">Sigmoid activation function.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00165">mlp_net.hpp:165</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00216">216</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                    {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        assert(get&lt;0&gt;(x.shape) == <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>[0] &amp;&amp; get&lt;1&gt;(x.shape));</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="comment">// input = to previously declared acitvations method</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[0] = x;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> prev(x);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// traverse layer units</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">layer_units</a>.size() - 1; ++i) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> y = <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">wt_mtx</a>[i].mult(prev);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            y = y + <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">bias_vectors</a>[i];</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            y = y.apply_function(&amp;<a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeafb9b868fc47dc0612942889214732d">SecondaryMLP::sigmoid_activ</a>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <a class="code" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">activations</a>[i + 1] = y;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            prev = y;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">return</span> prev;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1SecondaryMLP_html_aeafb9b868fc47dc0612942889214732d"><div class="ttname"><a href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeafb9b868fc47dc0612942889214732d">mtpk::ml::SecondaryMLP::sigmoid_activ</a></div><div class="ttdeci">long double sigmoid_activ(long double x)</div><div class="ttdoc">Sigmoid activation function.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00164">mlp_net.hpp:164</a></div></div>
 <div class="ttc" id="anaive__net_8hpp_html_aca89ce710ee8842221a0df25940c6a36"><div class="ttname"><a href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a></div><div class="ttdeci">Eigen::MatrixXf Matrix</div><div class="ttdef"><b>Definition:</b> <a href="naive__net_8hpp_source.html#l00045">naive_net.hpp:45</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5">mtpk::ml::SecondaryMLP&lt; T &gt;::activations</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#ae9f0cc6602b4e2aed997aecd7b34b254">mtpk::ml::SecondaryMLP&lt; T &gt;::bias_vectors</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910">mtpk::ml::SecondaryMLP&lt; T &gt;::layer_units</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeafb9b868fc47dc0612942889214732d">mtpk::ml::SecondaryMLP&lt; T &gt;::sigmoid_activ()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855">mtpk::ml::SecondaryMLP&lt; T &gt;::wt_mtx</a>.</p>
@@ -401,10 +401,10 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00165">165</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                                    {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> 1.0f / (1 + exp(-x));</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00164">164</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                                    {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> 1.0f / (1 + exp(-x));</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>.</p>
 
@@ -444,10 +444,10 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00174">174</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                                    {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> (x * (1 - x));</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00173">173</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                    {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> (x * (1 - x));</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>.</p>
 
@@ -468,7 +468,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00181">181</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00180">180</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe">mtpk::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
@@ -488,7 +488,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00179">179</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00178">178</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe">mtpk::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
@@ -508,7 +508,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00178">178</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00177">177</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe">mtpk::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
@@ -528,7 +528,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00183">183</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00182">182</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>.</p>
 
@@ -548,7 +548,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00180">180</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00179">179</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a619f293f66f4c93eb252bbb5a69c18c7">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#aeb8d4e0c9756d560e071afa8c073bf4e">mtpk::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classmtpk_1_1ml_1_1SecondaryMLP.html#a76476eb4c3858df01198d4b8df41dbbe">mtpk::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 

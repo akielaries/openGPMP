@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['optimizers_498',['Optimizers',['../classmtpk_1_1ml_1_1Optimizers.html',1,'mtpk::ml']]],
-  ['outlierfinder_499',['OutlierFinder',['../classmtpk_1_1OutlierFinder.html',1,'mtpk']]]
+  ['intelintrinmtx_724',['IntelIntrinMtx',['../classmtpk_1_1accl_1_1IntelIntrinMtx.html',1,'mtpk::accl']]]
 ];

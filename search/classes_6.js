@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['matrix_491',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk']]],
-  ['mtx_492',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk']]],
-  ['myclass_493',['MyClass',['../classMyClass.html',1,'']]]
+  ['factorization_722',['Factorization',['../classmtpk_1_1Factorization.html',1,'mtpk::Factorization'],['../classopenmtpk_1_1nt_1_1nt_1_1Factorization.html',1,'openmtpk.nt.nt.Factorization']]]
 ];

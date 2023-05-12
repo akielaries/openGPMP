@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['secondarymlp_505',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
-  ['stats_506',['Stats',['../classmtpk_1_1Stats.html',1,'mtpk']]],
-  ['summary_507',['summary',['../structmtpk_1_1summary.html',1,'mtpk']]],
-  ['svc_508',['SVC',['../classmtpk_1_1SVC.html',1,'mtpk']]]
+  ['matrix_732',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk::Matrix&lt; Type &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html',1,'openmtpk.linalg.linalg.Matrix']]],
+  ['matrixi_733',['MatrixI',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html',1,'openmtpk::linalg::linalg']]],
+  ['mtx_734',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk::mtx&lt; T &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html',1,'openmtpk.linalg.linalg.mtx']]]
 ];
