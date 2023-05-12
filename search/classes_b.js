@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['matrix_732',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk::Matrix&lt; Type &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html',1,'openmtpk.linalg.linalg.Matrix']]],
-  ['matrixi_733',['MatrixI',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html',1,'openmtpk::linalg::linalg']]],
-  ['mtx_734',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk::mtx&lt; T &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html',1,'openmtpk.linalg.linalg.mtx']]]
+  ['matrix_733',['Matrix',['../classmtpk_1_1Matrix.html',1,'mtpk::Matrix&lt; Type &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html',1,'openmtpk.linalg.linalg.Matrix']]],
+  ['matrixi_734',['MatrixI',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html',1,'openmtpk::linalg::linalg']]],
+  ['mtx_735',['mtx',['../structmtpk_1_1mtx.html',1,'mtpk::mtx&lt; T &gt;'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html',1,'openmtpk.linalg.linalg.mtx']]]
 ];
