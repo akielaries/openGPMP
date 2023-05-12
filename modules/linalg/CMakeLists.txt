@@ -8,6 +8,7 @@ set(SOURCE_FILES
     lao.cpp
     mtx.cpp
     mtx.f90
+    linsys.f90
 )
 
 # compile OpenCL GPU accelerators into openMTPK binary written
