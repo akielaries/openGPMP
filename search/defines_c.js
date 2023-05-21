@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['regression_1411',['REGRESSION',['../ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43',1,'ml.hpp']]],
-  ['resampling_1412',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]]
+  ['regression_1413',['REGRESSION',['../ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43',1,'ml.hpp']]],
+  ['resampling_1414',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]]
 ];
