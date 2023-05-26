@@ -42,7 +42,7 @@
 !! @param ncols Number of columns
 subroutine mtx_add(a, b, c, nrows, ncols)
   implicit none
-  !< Using 64-bit width for numeric types 
+  !< Using 64-bit (8-byte) width for numeric types 
   integer(kind=8), intent(in) :: nrows, ncols
   real(kind=8), intent(in) :: a(nrows, ncols), b(nrows, ncols)
   real(kind=8), intent(out) :: c(nrows, ncols)
