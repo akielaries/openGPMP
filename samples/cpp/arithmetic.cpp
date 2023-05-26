@@ -1,10 +1,11 @@
-/*
- * TESTING BASIC ARITHMETIC OPERATIONS
+/**
+ * A simple driver program showing how to use the simplest module in openMTPK
+ *
+ * @example arithmetic.cpp
  */
 #include <cassert>
 #include <iostream>
-//#include <openMTPK/arithmetic.hpp>
-#include "../../include/arithmetic.hpp"
+#include <openMTPK/arithmetic.hpp>
 #include <stdio.h>
 #include <time.h>
 #include <vector>
@@ -61,14 +62,12 @@ int main() {
     int r10 = 10;
     int r11 = 3;
     int r12 = ba.greatest_power(r10, r11);
-    printf("The greatest power of %d that divides %d! = %d\n", r10, r11,
-           r12);
+    printf("The greatest power of %d that divides %d! = %d\n", r10, r11, r12);
 
     int r13 = 7;
     int r14 = 3;
     int r15 = ba.greatest_power(r13, r14);
-    printf("The greatest power of %d that divides %d! = %d\n", r13, r14,
-           r15);
+    printf("The greatest power of %d that divides %d! = %d\n", r13, r14, r15);
 
     int r16 = 2;
     int r17 = 4;

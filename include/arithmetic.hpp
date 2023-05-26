@@ -48,7 +48,7 @@
 /**
  * @namespace mtpk
  *
- * @brief The core openMTPK namespace
+ * @brief The source C++ openMTPK namespace
  *
  * @details This namespace wraps all classes and methods used within
  * the library
@@ -66,9 +66,8 @@ namespace mtpk {
  * @brief Arithmetic Template Class. Each method is variadic taking
  * 'n' params.
  */
-template <typename T>
-class Arith {
-    public:
+template <typename T> class Arith {
+  public:
     T arr_add(T arr[], int64_t n) {
         T sum = 0;
 
@@ -103,7 +102,7 @@ class Arith {
  * @class Basics
  */
 class Basics {
-    public:
+  public:
     /**
      * @brief Find greatest power of 2 itegers
      *
@@ -123,6 +122,15 @@ class Basics {
      * @return result : (int)
      */
     int64_t op_gcd(int64_t x, int64_t y);
+
+    // TODO floating point operations for square root, logarithms,
+    // exponentation, trigonometric functions of floating points
+
+    // complex arithmetic, arithmetic on complex numbers
+
+    // precision arithmetic
+
+    // TODO FIXME XXX BUG CHECKME TESTME PENDING DOCME
 };
 
 } // namespace mtpk

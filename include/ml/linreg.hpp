@@ -46,6 +46,8 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class LinearRegression {
     // Dynamic array which is going to contain all (i-th x)
     std::vector<long double> x;
@@ -66,7 +68,7 @@ class LinearRegression {
     // Contains sum of square of all (i-th y)
     long double sum_y_square;
 
-    public:
+  public:
     LinearRegression();
     /*{
             coeff;
@@ -112,6 +114,8 @@ class LinearRegression {
     // function that calculates the number of rows in a file
     int64_t num_rows(const char *input);
 };
+
+} // namespace ml
 
 } // namespace mtpk
 

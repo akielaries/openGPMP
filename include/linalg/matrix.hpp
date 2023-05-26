@@ -35,7 +35,8 @@
 /**
  * @ file
  *
- * Definitions for Matrix and Scalar operations
+ * Definitions for a template based implementation for Matrix and Scalar
+ * operations
  */
 
 #ifndef MATRIX_HPP
@@ -56,9 +57,8 @@ namespace mtpk {
  * @class Matrix
  * @brief Matrix and Scalar operations
  */
-template <typename Type>
-class Matrix {
-    public:
+template <typename Type> class Matrix {
+  public:
     size_t cols;
     size_t rows;
 
@@ -131,7 +131,8 @@ class Matrix {
     }
 
     /*
-     * Multiply by the element; see Hadamard Product
+     * square matrix whose entries are either +1 or −1 and whose rows are
+     * mutually orthogonal
      */
     Matrix hadamard(Matrix &target) {
         assert(dim == target.dim);

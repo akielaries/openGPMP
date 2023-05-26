@@ -1,9 +1,8 @@
-//#include <openMTPK/core/datatable.hpp>
-#include "../../include/core/datatable.hpp"
 #include <algorithm>
 #include <chrono>
 #include <fstream>
 #include <iostream>
+#include <openMTPK/core/datatable.hpp>
 #include <regex>
 #include <sstream>
 #include <string>
@@ -32,7 +31,8 @@ int main() {
      *         std::vector<std::vector<std::string>>>
      */
     // read in a file of 1 million lines
-    // mtpk::DataTableStr result_b = dt_b.csv_read("../../data/1m.csv", {"Num"});
+    // mtpk::DataTableStr result_b = dt_b.csv_read("../../data/1m.csv",
+    // {"Num"});
 
     /* of type std::pair<std::vector<int64_t>,
      *         std::vector<std::vector<int64_t>>>

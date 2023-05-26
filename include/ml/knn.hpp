@@ -44,8 +44,10 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class kNN {
-    public:
+  public:
     kNN(std::vector<std::vector<double>> inputSet,
         std::vector<double> outputSet, int k);
 
@@ -53,7 +55,7 @@ class kNN {
     int modelTest(std::vector<double> x);
     double score();
 
-    private:
+  private:
     // Private Model Functions
     std::vector<double> nearestNeighbors(std::vector<double> x);
     int determineClass(std::vector<double> knn);
@@ -63,6 +65,8 @@ class kNN {
     std::vector<double> outputSet;
     int k;
 };
+
+} // namespace ml
 
 } // namespace mtpk
 

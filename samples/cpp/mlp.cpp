@@ -1,6 +1,9 @@
-/*
+/**
  * Example on using the Multi-Layer Perceptrons networks
  * supplied from openMTPk
+ * @todo: TODO
+ *
+ * @example mlp.cpp
  */
 #include "../../include/ml/mlp_net.hpp"
 #include "../../include/ml/trainers.hpp"
@@ -20,9 +23,9 @@ int main() {
 
     long double lr{.5};
     mtpk::ml::Trainers util;
-    auto model = util.init_SecondaryMLP(inputs = 1, outputs = 1,
-                                        hidden_layer_units = 8,
-                                        hidden_layers = 3, lr = .5);
+    auto model =
+        util.init_SecondaryMLP(inputs = 1, outputs = 1, hidden_layer_units = 8,
+                               hidden_layers = 3, lr = .5);
 
     // declare a data file
 

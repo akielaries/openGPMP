@@ -38,8 +38,11 @@
 #include <vector>
 
 namespace mtpk {
+
+namespace ml {
+
 class Stats {
-    public:
+  public:
     // These functions are for univariate lin reg module- not for
     // users.
     double b0Estimation(const std::vector<double> &x,
@@ -83,6 +86,9 @@ class Stats {
     std::tuple<bool, double> chiSquareTest(std::vector<double> observed,
                                            std::vector<double> expected);
 };
+
+} // namespace ml
+
 } // namespace mtpk
 
 #endif

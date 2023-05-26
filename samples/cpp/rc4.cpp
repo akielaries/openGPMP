@@ -1,5 +1,8 @@
-/* Testing the openMTPK stream cipher encryption algorithm on fields
- * of text using a XOR and tradition swap method.
+/**
+ * Example driver showing how to use the Rivest Cipher 4 (RC4) encryption
+ * algorithms including the different swap techniques (that do not differ much)
+ *
+ * @example rc4.cpp
  */
 #include <iostream>
 #include <openMTPK/nt/rc4.hpp>
@@ -7,7 +10,6 @@
 #include <string>
 #include <time.h>
 #include <vector>
-//#include "../../include/nt/rc4.hpp"
 
 int main() {
     /*
@@ -69,8 +71,7 @@ int main() {
     clock_t a;
     a = clock();
 
-    unsigned char *computed_text =
-        rc.compute(key0, text0, hashtext_0, x_swap);
+    unsigned char *computed_text = rc.compute(key0, text0, hashtext_0, x_swap);
     std::cout << "computed_text addr: " << &computed_text << std::endl;
     /*
      * function to store the computed hash
@@ -91,8 +92,7 @@ int main() {
     clock_t b;
     b = clock();
 
-    unsigned char *computed_text1 =
-        rc.compute(key1, text1, hashtext_1, t_swap);
+    unsigned char *computed_text1 = rc.compute(key1, text1, hashtext_1, t_swap);
     std::cout << "computed_text1 addr: " << &computed_text1 << std::endl;
     std::string display_text1 = rc.store_hash(text1, hashtext_1, t_swap);
     std::cout << "COMPUTED HASH (TSWAP) = " << display_text1 << std::endl;
@@ -108,8 +108,7 @@ int main() {
 
     clock_t c;
     c = clock();
-    unsigned char *computed_text2 =
-        rc.compute(key2, text2, hashtext_2, b_swap);
+    unsigned char *computed_text2 = rc.compute(key2, text2, hashtext_2, b_swap);
     std::cout << "computed_text2 addr: " << &computed_text2 << std::endl;
     std::string display_text2 = rc.store_hash(text2, hashtext_2, b_swap);
     std::cout << "COMPUTED HASH (BSWAP) = " << display_text2 << std::endl;
@@ -126,8 +125,7 @@ int main() {
 
     clock_t d;
     d = clock();
-    unsigned char *computed_text3 =
-        rc.compute(key3, text3, hashtext_3, x_swap);
+    unsigned char *computed_text3 = rc.compute(key3, text3, hashtext_3, x_swap);
     std::cout << "computed_text2 addr: " << &computed_text3 << std::endl;
     std::string display_text3 = rc.store_hash(text2, hashtext_3, x_swap);
     std::cout << "COMPUTED HASH (XSWAP) = " << display_text3 << std::endl;

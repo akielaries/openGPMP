@@ -33,5 +33,3 @@
 %template(mtx) mtpk::mtx<double>;
 //%template(mtxI) mtpk::mtx<int>;
 
-
-

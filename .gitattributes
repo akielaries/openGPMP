@@ -8,8 +8,9 @@
 
 #OCaml/lib/*.c linguist-language=cpp
 #*.c linguist-language=cpp
+*.cuh linguist-language=cuda
+*.h linguist-language=c
 
-*.cu linguist-detectable=false
 *.m linguist-detectable=false
 *.wl linguist-detectable=false
 *.txt linguist-detectable=false
@@ -21,7 +22,6 @@
 *.go linguist-detectable=false
 *.jl linguist-detectable=false
 *.ml linguist-detectable=false
-*.f90 linguist-detectable=false
 *.R linguist-detectable=false
 
 CMakeLists.txt linguist-language=cmake
@@ -32,3 +32,11 @@ versioneer.py linguist-detectable=false
 openmtpk/_version.py linguist-detectable=false
 
 openmtpk/_version.py export-subst
+
+openmtpk/arithmetic/arithmetic.py linguist-detectable=false
+openmtpk/calculus/calculus.py linguist-detectable=false
+openmtpk/linalg/linalg.py linguist-detectable=false
+openmtpk/ml/ml.py linguist-detectable=false
+openmtpk/nt/nt.py linguist-detectable=false
+
+

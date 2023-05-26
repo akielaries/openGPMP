@@ -35,7 +35,7 @@ cmake_minimum_required(VERSION 3.18)
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_FLAGS "-Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -Wall")
 
-project(openMTPK VERSION 0.5 LANGUAGES CXX)
+project(openMTPK VERSION 1.0 LANGUAGES CXX C ASM Fortran)
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -47,6 +47,7 @@ endif()
 
 include(GNUInstallDirs)
 
+option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
 
 ############################################################
 # Run Tests
@@ -55,31 +56,31 @@ include(GNUInstallDirs)
 
 enable_testing()
 
-
 add_subdirectory(tests)
 
 ############################################################
 # Create a library
 ############################################################
-set(SOURCE_FILES 
-    modules/arithmetic/arith.cpp
-    modules/calculus/deriv.cpp
-    modules/linalg/lao.cpp
-    modules/core/datatable.cpp
-    modules/ml/linreg.cpp
-    modules/ml/mlp_network.cpp
-    modules/nt/cipher.cpp
-    modules/nt/rc4.cpp
-    modules/nt/primes.cpp
+
+# Add the module directories
+
+add_subdirectory(modules/arithmetic)
+add_subdirectory(modules/calculus)
+add_subdirectory(modules/linalg)
+add_subdirectory(modules/core)
+add_subdirectory(modules/ml)
+add_subdirectory(modules/nt)
+
+add_library(${PROJECT_NAME} STATIC
+  $<TARGET_OBJECTS:arithmetic>
+  $<TARGET_OBJECTS:calculus>
+  $<TARGET_OBJECTS:linalg>
+  $<TARGET_OBJECTS:core>
+  $<TARGET_OBJECTS:ml>
+  $<TARGET_OBJECTS:nt>
 )
 
-add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})
-
-#target_sources(${PROJECT_NAME} PUBLIC FILE_SET HEADERS
-#    BASE_DIRS ${OPENMTPK_SOURCE_DIR}
-#    FILES ${OPENMTPK_SOURCE_DIR}/include
-#)
-
+# include directory for openMTPK
 target_include_directories(${PROJECT_NAME} PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
@@ -106,8 +107,9 @@ install(EXPORT openMTPKConfig DESTINATION share/openMTPK/cmake)
 
 export(TARGETS ${PROJECT_NAME} FILE openMTPKConfig.cmake)
 
-# make tests passing a requirement for the library to build
-add_dependencies(${PROJECT_NAME} check)
+# run C++ and Fortran unit tests
+add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
+add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
 
 # uninstall target
 if(NOT TARGET uninstall)

@@ -45,12 +45,14 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class AutoEncoder {
-    public:
+  public:
     AutoEncoder(std::vector<std::vector<double>> inputSet, int n_hidden);
 
     std::vector<std::vector<double>>
-        modelSetTest(std::vector<std::vector<double>> X);
+    modelSetTest(std::vector<std::vector<double>> X);
 
     std::vector<double> modelTest(std::vector<double> x);
 
@@ -65,21 +67,21 @@ class AutoEncoder {
 
     void save(std::string fileName);
 
-    private:
+  private:
     double Cost(std::vector<std::vector<double>> y_hat,
                 std::vector<std::vector<double>> y);
 
     std::vector<std::vector<double>>
-        Evaluate(std::vector<std::vector<double>> X);
+    Evaluate(std::vector<std::vector<double>> X);
 
     std::tuple<std::vector<std::vector<double>>,
                std::vector<std::vector<double>>>
-        propagate(std::vector<std::vector<double>> X);
+    propagate(std::vector<std::vector<double>> X);
 
     std::vector<double> Evaluate(std::vector<double> x);
 
     std::tuple<std::vector<double>, std::vector<double>>
-        propagate(std::vector<double> x);
+    propagate(std::vector<double> x);
 
     void forwardPass();
 
@@ -99,6 +101,9 @@ class AutoEncoder {
     int k;
     int n_hidden;
 };
+
+} // namespace ml
+
 } // namespace mtpk
 
 #endif

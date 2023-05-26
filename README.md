@@ -2,18 +2,21 @@
 --------------------------------------------------------------------------------
 
 ![Version](https://img.shields.io/github/v/release/akielaries/openMTPK?color=%23BF40BF)
+[![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openMTPK&amp;utm_campaign=Badge_Grade)
 [![license](https://img.shields.io/github/license/akielaries/openMTPK?color=23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&utm_medium=referral&utm_content=akielaries/openMTPK&utm_campaign=Badge_Coverage)
+[![codecov](https://codecov.io/gh/akielaries/openMTPK/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openMTPK)
 ![clones](https://raw.githubusercontent.com/akielaries/openMTPK/traffic/traffic-openMTPK/clones.svg)
-[![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
 [![Py](https://github.com/akielaries/openMTPK/actions/workflows/openmtpk.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)
 
 # Overview
-**openMTPK** is an open-source (intended) mathematics package written in C++ with a primary
-focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
-as well as a range of language API's. openMTPK aims to provide options for pre-built functions, models, etc.
-along with modularity for user freedom.
+**openMTPK** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with a primary
+focus on Number Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts. openMTPK 
+aims to provide options for pre-built functions, models, etc. along with modularity for user freedom. Additional 
+acceleration methods are featured for optional use and installation featuring OpenCL GPU acceleration functions 
+written in C and wrapped for C++ and CUDA GPU acceleration. By default, SIMD intrinsics will be used for the 
+supported platforms.
+
 Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
 on how to use some of openMTPK's functionalities. 
 
@@ -30,6 +33,11 @@ RasPi OS | ARMv6/v7 | [![cppRPi](https://github.com/akielaries/openMTPK/actions/
 | ubuntu 22.10 | RISCV64      | [![riscCPP](https://github.com/akielaries/openMTPK/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | [![riscPy](https://github.com/akielaries/openMTPK/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      |
 | ubuntu 22.10 | S390X        | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     |
 | ubuntu 22.10 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
+ubuntu 22.10  | Intel CPU | [![INTELCPU](https://github.com/akielaries/openMTPK/actions/workflows/intelcpu.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
+ubuntu 22.10  | ARM CPU | [![ARMCPU](https://github.com/akielaries/openMTPK/actions/workflows/armcpu.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
+ubuntu 22.10  | Intel GPU | [![INTELGPU](https://github.com/akielaries/openMTPK/actions/workflows/intelgpu.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
+ubuntu 18.04  | Nvidia GPU (CUDA) | [![NVIDIACUDA](https://github.com/akielaries/openMTPK/actions/workflows/CUDA.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
+ubuntu 18.04  | Nvidia GPU (OpenCL) | [![NVIDIAOPENCL](https://github.com/akielaries/openMTPK/actions/workflows/nvid_opencl.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
 > **Note** Testing on Apple specific hardware (M1, M2) is in progress. 
 
 ## Python
@@ -38,10 +46,12 @@ openmtpk`. Additional hardware support is available with [SWIG](https://github.c
 installation.
 
 ## Build from source
+### Requirements
 * Linux/OSX
-* CMake >=v3.24 (build from source for latest version)
+* CMake v3.18+ (build from source for latest version)
 * C++20
-* g++12
+* GCC, G++, Gfortran v12+ (other C, C++, and Fortran compilers are being tested)
+* NASM v2.16+
 
 ```
 # clone repo
@@ -70,7 +80,7 @@ To test the installation build some of the example drivers in the projects
 
 ```
 # compile yourself
-$ cd samples
+$ cd samples/cpp
 $ g++ cipher.cpp -lopenMTPK -o cipher
 $ g++ arith.cpp -lopenMTPK -o arith
 # script to test all modules and their drivers
@@ -94,9 +104,10 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
 1. Arithmetic
 2. Calculus
    - Differential
+   - Integral
+   - Numerical Analysis
 3. Linear Algebra
-   - Vector Operations
-   - Matrix Operations
+   - Matrix & Vector Operations
 4. Machine/Deep Learning
    - Regression
    - Cross-Validation
@@ -106,12 +117,13 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
 5. Number Theory
    - Primality Tests
    - Primality Generation
+   - Pseudorandom Number Generators
    - Integer Factorization
    - Euclidean Division
    - Logarithms
    - Greatest Common Divisors
    - Squares
-   - Cryptography
+   - Cryptography/Encryption
 6. Topology/Complex
    - Dynamical Systems
    - Topology
@@ -127,13 +139,13 @@ View the simple examples on how to use some of the modules in different language
 ```
 # clone the repo and enter
 $ git clone git@github.com:akielaries/openMTPK.git 
-$ cd openMTPK
+$ cd openMTPK/scripts
 
 # to run all examples 
 $ ./all.sh
 
 # to remove the generated binaries
-$ make clean-mods
+$ cd ../ && make clean-mods
 
 # run unit tests and other checking methods
 $ make run-tests
@@ -149,7 +161,7 @@ Keyword cipher:
 #include <iostream>
 #include <string>
 // include the number theory module header
-#include <openMTPK/number_theory.hpp>
+#include <openMTPK/nt.hpp>
 
 int main() {
     // declare CIPHER class obj

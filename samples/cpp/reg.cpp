@@ -1,5 +1,11 @@
-/* TESTING LINEAR REGRESSION
- * test driver program for our implementation of linear regression
+/**
+ * Simple test driver showing how to use simple linear regression on a 2-column
+ * dataset. The current linear regression method is not capable of multiple
+ * linear regression, to generate use of this implementation data sets must
+ * either be two column in nature or users must disect data for a proper
+ * key,value response
+ *
+ * @example reg.cpp
  */
 #include <iostream>
 #include <openMTPK/ml/linreg.hpp>
@@ -9,18 +15,17 @@ int main() {
     const char *test_file = "data/school_scores.csv";
     freopen(test_file, "r", stdin);
     // declare Regression class object
-    mtpk::LinearRegression reg;
+    mtpk::ml::LinearRegression reg;
 
-    // Number of pairs of (xi, yi) in the dataset
-    // int n;
-    // cin >> n;
+    // mtpk::DataTable dt;
+    // dt.csv_read(test_file, drop_col_names=true);
+    //
 
-    int n = reg.num_rows(test_file);
-    // cin >> n;
+    // int n = reg.num_rows(test_file);
     printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN "
            "MATHEMATICS\n");
 
-    printf("Number of rows in data set: %d\n", n);
+    // printf("Number of rows in data set: %d\n", n);
     // Calling function takeInput to take input of n pairs
     reg.get_input(n);
 

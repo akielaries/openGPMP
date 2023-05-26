@@ -33,7 +33,7 @@
  ************************************************************************/
 
 /**
- * @files
+ * @file
  *
  * @brief Logistic Regression
  */
@@ -45,8 +45,10 @@
 
 namespace mtpk {
 
+namespace ml {
+
 class Logreg {
-    public:
+  public:
     Logreg(std::vector<std::vector<double>> inputSet,
            std::vector<double> outputSet, std::string reg = "None",
            double lambda = 0.5, double alpha = 0.5);
@@ -66,7 +68,7 @@ class Logreg {
     double score();
     void save(std::string fileName);
 
-    private:
+  private:
     double Cost(std::vector<double> y_hat, std::vector<double> y);
 
     std::vector<double> Evaluate(std::vector<std::vector<double>> X);
@@ -89,6 +91,8 @@ class Logreg {
     double lambda; /* Regularization Parameter */
     double alpha;  /* This is the controlling param for Elastic Net*/
 };
+
+} // namespace ml
 
 } // namespace mtpk
 #endif
