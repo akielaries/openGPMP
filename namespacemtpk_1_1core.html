@@ -78,7 +78,8 @@ $(function() {
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">mtpk::core Namespace Reference</div>  </div>
 </div><!--header-->
@@ -114,6 +115,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:a641529c34920d1c5b8105f6fd0738f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dcac708681c722f8e5cb463efae666c"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; long double &gt;, std::vector&lt; std::vector&lt; long double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1core.html#a6dcac708681c722f8e5cb463efae666c">DataTableDouble</a></td></tr>
 <tr class="separator:a6dcac708681c722f8e5cb463efae666c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7899c45c882843ad0683b0505b53c2fd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtpk_1_1core.html#a7899c45c882843ad0683b0505b53c2fd">parallel_for</a> (unsigned nb_elements, std::function&lt; void(int start, int end)&gt; functor, bool use_threads=true)</td></tr>
+<tr class="memdesc:a7899c45c882843ad0683b0505b53c2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread rudimentary for loops.  <a href="namespacemtpk_1_1core.html#a7899c45c882843ad0683b0505b53c2fd">More...</a><br /></td></tr>
+<tr class="separator:a7899c45c882843ad0683b0505b53c2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a6dcac708681c722f8e5cb463efae666c"></a>
@@ -162,6 +169,99 @@ Typedefs</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00059">59</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
 
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a7899c45c882843ad0683b0505b53c2fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7899c45c882843ad0683b0505b53c2fd">&#9670;&nbsp;</a></span>parallel_for()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mtpk::core::parallel_for </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nb_elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(int start, int end)&gt;&#160;</td>
+          <td class="paramname"><em>functor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_threads</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thread rudimentary for loops. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_elements</td><td>: size of your for loop </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">functor(start,end)</td><td>: your function processing a sub chunk of the for loop. "start" is the first index to process (included) until the index "end" (excluded) <div class="fragment"><div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = start; i &lt; end; ++i)</div>
+<div class="line">    computation(i);</div>
+</div><!-- fragment --> </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">use_threads</td><td>: enable / disable threads </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00236">236</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                           {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// -------</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">unsigned</span> nb_threads_hint = std::thread::hardware_concurrency();</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordtype">unsigned</span> nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">unsigned</span> batch_size = nb_elements / nb_threads;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">unsigned</span> batch_remainder = nb_elements % nb_threads;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    std::vector&lt; std::thread &gt; my_threads(nb_threads);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span>( use_threads )</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// Multithread execution</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 0; i &lt; nb_threads; ++i)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordtype">int</span> start = i * batch_size;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            my_threads[i] = std::thread(functor, start, start+batch_size);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// Single thread execution (for easy debugging)</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 0; i &lt; nb_threads; ++i){</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordtype">int</span> start = i * batch_size;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            functor( start, start+batch_size );</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// Deform the elements left</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">int</span> start = nb_threads * batch_size;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    functor( start, start+batch_remainder);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// Wait for the other thread to finish their task</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">if</span>( use_threads )</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        std::for_each(my_threads.begin(), my_threads.end(), std::mem_fn(&amp;std::thread::join));</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['hadamard_1041',['hadamard',['../classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce',1,'mtpk::Matrix::hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#af9a488f17821dd401fa7c43454be3561',1,'openmtpk.linalg.linalg.Matrix.hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a7ef148fda934d3f635bc5880418aefa4',1,'openmtpk.linalg.linalg.MatrixI.hadamard()']]],
-  ['halleymethod_1042',['halleyMethod',['../classmtpk_1_1NumericalAnalysis.html#a0c5db24c24730c41efa60742a984fe96',1,'mtpk::NumericalAnalysis']]],
-  ['harmonicmean_1043',['harmonicMean',['../classmtpk_1_1ml_1_1Stats.html#ac6028f5ae026ff9297a2da515cc63b65',1,'mtpk::ml::Stats']]],
-  ['heinzmean_1044',['heinzMean',['../classmtpk_1_1ml_1_1Stats.html#a6bea38f2f53caa316fa3aec5a290a6d4',1,'mtpk::ml::Stats']]],
-  ['hello_1045',['hello',['../__gpu__kernel__sum_8c.html#acdd5e0519780780f8ea13ed255afd64f',1,'_gpu_kernel_sum.c']]],
-  ['heronianmean_1046',['heronianMean',['../classmtpk_1_1ml_1_1Stats.html#a6ebbfda6dbc867a5522722c1d09c4e85',1,'mtpk::ml::Stats']]],
-  ['hessian_1047',['hessian',['../classmtpk_1_1NumericalAnalysis.html#ab0b88ad31db54adfa5fb5322bc9c8390',1,'mtpk::NumericalAnalysis']]]
+  ['hadamard_1042',['hadamard',['../classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce',1,'mtpk::Matrix::hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#af9a488f17821dd401fa7c43454be3561',1,'openmtpk.linalg.linalg.Matrix.hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a7ef148fda934d3f635bc5880418aefa4',1,'openmtpk.linalg.linalg.MatrixI.hadamard()']]],
+  ['halleymethod_1043',['halleyMethod',['../classmtpk_1_1NumericalAnalysis.html#a0c5db24c24730c41efa60742a984fe96',1,'mtpk::NumericalAnalysis']]],
+  ['harmonicmean_1044',['harmonicMean',['../classmtpk_1_1ml_1_1Stats.html#ac6028f5ae026ff9297a2da515cc63b65',1,'mtpk::ml::Stats']]],
+  ['heinzmean_1045',['heinzMean',['../classmtpk_1_1ml_1_1Stats.html#a6bea38f2f53caa316fa3aec5a290a6d4',1,'mtpk::ml::Stats']]],
+  ['hello_1046',['hello',['../__gpu__kernel__sum_8c.html#acdd5e0519780780f8ea13ed255afd64f',1,'_gpu_kernel_sum.c']]],
+  ['heronianmean_1047',['heronianMean',['../classmtpk_1_1ml_1_1Stats.html#a6ebbfda6dbc867a5522722c1d09c4e85',1,'mtpk::ml::Stats']]],
+  ['hessian_1048',['hessian',['../classmtpk_1_1NumericalAnalysis.html#ab0b88ad31db54adfa5fb5322bc9c8390',1,'mtpk::NumericalAnalysis']]]
 ];
