@@ -46,6 +46,12 @@
 #include <thread>
 #include <vector>
 
+/**
+  * @brief Marcro defs for parallelized for loops
+  */
+#define PARALLEL_FOR_BEGIN(nb_elements) parallel_for(nb_elements, [&](int start, int end){ for(int i = start; i < end; ++i)
+#define PARALLEL_FOR_END()})
+
 namespace mtpk {
 
 namespace core {
