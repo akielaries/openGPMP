@@ -38,9 +38,9 @@
  */
 
 // TODO FIXME
-#include "core.hpp"
 #include "arithmetic.hpp"
 #include "calculus.hpp"
+#include "core.hpp"
 #include "linalg.hpp"
 #include "ml.hpp"
 #include "nt.hpp"

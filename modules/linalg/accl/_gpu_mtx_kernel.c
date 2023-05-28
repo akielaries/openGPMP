@@ -33,4 +33,3 @@ __kernel void matrixMul(__global float *C, __global float *A, __global float *B,
     // thread writes one element
     C[ty * wA + tx] = value;
 }
-
