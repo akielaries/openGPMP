@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/linalg/accl/_gpu_kernel_mtx_mul.c Source File</title>
+<title>openMTPK: modules/linalg/accl/_gpu_mtx_wrapper.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,30 +76,21 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">_gpu_kernel_mtx_mul.c</div>  </div>
+<div class="title">_gpu_mtx_wrapper.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="__gpu__kernel__mtx__mul_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__gpu__kernel__mtx_8h.html#afe33847ea3766a6cff2410a65a91dbc8">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a>(__global <span class="keywordtype">float</span> *C, __global <span class="keywordtype">float</span> *A, __global <span class="keywordtype">float</span> *B,</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        <span class="keywordtype">int</span> wA, <span class="keywordtype">int</span> wB) {</div>
+<a href="__gpu__mtx__wrapper_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keywordtype">int</span> <a class="code" href="__gpu__mtx__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec</a>();</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;}</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> tx = get_global_id(0);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> ty = get_global_id(1);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// value stores the element that is</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// computed by the thread</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">float</span> value = 0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; wA; ++k) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">float</span> elementA = A[ty * wA + k];</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">float</span> elementB = B[k * wB + tx];</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        value += elementA * elementB;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Write the matrix to device memory each</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// thread writes one element</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    C[ty * wA + tx] = value;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="a__gpu__kernel__mtx__mul_8c_html_afe33847ea3766a6cff2410a65a91dbc8"><div class="ttname"><a href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a></div><div class="ttdeci">__kernel void matrixMul(__global float *C, __global float *A, __global float *B, int wA, int wB)</div><div class="ttdoc">Matrix Multiplication kernel function.</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__kernel__mtx__mul_8c_source.html#l00004">_gpu_kernel_mtx_mul.c:4</a></div></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="__gpu__mtx__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    7</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="__gpu__mtx__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="__gpu__mtx__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="ttc" id="a__gpu__mtx__wrapper_8cpp_html_abd10a9ed8f57f8d894ddff817c39677d"><div class="ttname"><a href="__gpu__mtx__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec</a></div><div class="ttdeci">int accl_mtx_exec()</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00096">_gpu_mtx.c:96</a></div></div>
+<div class="ttc" id="a__gpu__mtx__wrapper_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="__gpu__mtx__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__wrapper_8cpp_source.html#l00007">_gpu_mtx_wrapper.cpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

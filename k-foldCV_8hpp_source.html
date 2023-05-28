@@ -154,16 +154,16 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;instance_list = instance_list;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    shuffle(this-&gt;instance_list.begin(), this-&gt;instance_list.end(),</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            default_random_engine(seed));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> = instance_list.size();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> = instance_list.size();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    this-&gt;K = K;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#ad5ac3c773d528db5e8adeb67583acb54">   98</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_train_fold</a>(int64_t k) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    vector&lt;T&gt; train_fold;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * <a class="code" href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; i++) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * <a class="code" href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; <a class="code" href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; i++) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
@@ -171,7 +171,7 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#a128022dd675659d52fc9ac1142011dac">  116</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_test_fold</a>(int64_t k) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    vector&lt;T&gt; test_fold;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; ((k + 1) * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * <a class="code" href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; ((k + 1) * <a class="code" href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        test_fold.push_back(instance_list.at(i));</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">// namespace mtpk</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a__simd__intel__mtx_8cpp_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdef"><b>Definition:</b> <a href="__simd__intel__mtx_8cpp_source.html#l00009">_simd_intel_mtx.cpp:9</a></div></div>
+<div class="ttc" id="a__simd__mtx_8cpp_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdef"><b>Definition:</b> <a href="__simd__mtx_8cpp_source.html#l00009">_simd_mtx.cpp:9</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html">mtpk::ml::CV</a></div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00051">k-foldCV.hpp:51</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html_a2b34aaa7323f50b9aa18d521ef509baa"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html#a2b34aaa7323f50b9aa18d521ef509baa">mtpk::ml::CV::K</a></div><div class="ttdeci">int64_t K</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00053">k-foldCV.hpp:53</a></div></div>
 <div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html_a2d4e579734298d6cd94ff9dbfccd077e"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html#a2d4e579734298d6cd94ff9dbfccd077e">mtpk::ml::CV::get_test_fold</a></div><div class="ttdeci">virtual vector&lt; T &gt; get_test_fold(int64_t k)=0</div></div>

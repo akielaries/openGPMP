@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/linalg/accl/_gpu_mtx_add_wrapper.cpp File Reference</title>
+<title>openMTPK: modules/linalg/accl/_gpu_mtx.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,41 +75,106 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">_gpu_mtx_add_wrapper.cpp File Reference</div>  </div>
+<div class="title">_gpu_mtx.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-</div>
-<p><a href="__gpu__mtx__add__wrapper_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:abd10a9ed8f57f8d894ddff817c39677d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__mtx__add__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec</a> ()</td></tr>
-<tr class="separator:abd10a9ed8f57f8d894ddff817c39677d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__mtx__add__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="abd10a9ed8f57f8d894ddff817c39677d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd10a9ed8f57f8d894ddff817c39677d">&#9670;&nbsp;</a></span>accl_mtx_exec()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int accl_mtx_exec </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="__gpu__mtx__add_8c_source.html#l00096">96</a> of file <a class="el" href="__gpu__mtx__add_8c_source.html">_gpu_mtx_add.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                     {</div>
+<a href="__gpu__mtx_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *                       |  \/  |__   __|  __ \| |/ /</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | &#39; /</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * / _ \| &#39;_ \ / _ \ &#39;_ \| |\/| |  | |  |  ___/|  &lt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *      | |</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *      |_|</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Copyright (C) Akiel Aries, &lt;akiel@akiel.org&gt;, et al.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * and/or sell copies of the Software, and permit persons to whom</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * the Software is furnished to do so, under the terms of the</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * LICENSE file. As this is an Open Source effort, all implementations</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * must be of the same methodology.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * This software is distributed on an AS IS basis, WITHOUT</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> ************************************************************************/</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../../include/linalg/_gpu_mtx.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/* gpu */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a16605039b395344c0b68b435e197b8bd">   43</a></span>&#160;<span class="preprocessor">#define CL_USE_DEPRECATED_OPENCL_1_2_APIS</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a5990dea19d4ccb046a3d81b311457add">   44</a></span>&#160;<span class="preprocessor">#define CL_TARGET_OPENCL_VERSION 300</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef __APPLE__</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;OpenCL/opencl.h&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;CL/cl.h&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a2dcf8c45f945dd0c4301a94700f2112c">   52</a></span>&#160;<span class="preprocessor">#define MEM_SIZE (128)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a1f672842beaeeeb118a74c1b198b94e3">   53</a></span>&#160;<span class="preprocessor">#define MAX_SOURCE_SIZE (0x100000)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">   54</a></span>&#160;<span class="preprocessor">#define PRINT_LINE(title) printf(&quot;\n========== %s ==========\n&quot;</span>, title);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="__gpu__mtx_8h.html#a97064e8e7b735b6f6bfb19c9e625ae68">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(<span class="keywordtype">int</span> *vec, <span class="keywordtype">int</span> len, <span class="keywordtype">int</span> set_one_flag) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (set_one_flag)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            vec[i] = 1;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            vec[i] = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a1553e2d76dd79bc587810fb1e86bb573">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx_8c.html#a1553e2d76dd79bc587810fb1e86bb573">rand_vec</a>(<span class="keywordtype">int</span> *vec, <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    srand((<span class="keywordtype">unsigned</span>)time(0));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        vec[i] = rand() % 2;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#a6118c56604dd2aac8bb9daaaff585c02">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *a, <span class="keyword">const</span> <span class="keywordtype">int</span> *b, <span class="keywordtype">int</span> *res, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        res[i] = a[i] + b[i];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(<span class="keywordtype">int</span> *vec, <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        printf(<span class="stringliteral">&quot;%d &quot;</span>, vec[i]);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result</a>(<span class="keywordtype">int</span> *v1, <span class="keywordtype">int</span> *v2, <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> correct_num = 0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (v1[i] == v2[i]) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            correct_num += 1;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    printf(<span class="stringliteral">&quot;correct rate: %d / %d , %1.2f\n&quot;</span>, correct_num, len,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;           (<span class="keywordtype">float</span>)correct_num / len);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="__gpu__mtx_8c.html#acf139f5c4eb7a69cd061e22fd7a30304">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx_8c.html#acf139f5c4eb7a69cd061e22fd7a30304">accl_mtx_exec</a>() {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">struct </span>timeval start, finish;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">double</span> duration;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    srand((<span class="keywordtype">unsigned</span>)time(NULL));</div>
@@ -125,25 +190,25 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    c_d = (<span class="keywordtype">int</span> *)malloc(len * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">size_t</span> data_size = len * <span class="keyword">sizeof</span>(int);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>(<span class="stringliteral">&quot;INIT VALUE&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>(<span class="stringliteral">&quot;INIT VALUE&quot;</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">/* vector addition, cpu version */</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    printf(<span class="stringliteral">&quot;a: &quot;</span>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(a, len, 1);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(a, len);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(a, len, 1);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(a, len);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    printf(<span class="stringliteral">&quot;b: &quot;</span>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a1553e2d76dd79bc587810fb1e86bb573">rand_vec</a>(b, len);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(b, len);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a1553e2d76dd79bc587810fb1e86bb573">rand_vec</a>(b, len);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(b, len);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    printf(<span class="stringliteral">&quot;c: &quot;</span>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(c, len, 0);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(c, len, 0);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    startTime = clock();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a>(a, b, c, len);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a>(a, b, c, len);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    endTime = clock();</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// calculate difference to get total</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    totalTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(c, len);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(c, len);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    printf(<span class="stringliteral">&quot;CPU: %f\n&quot;</span>, totalTime);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">/* vector addition, gpu version  */</span></div>
@@ -164,7 +229,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    cl_int ret;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">/* Load the source code containing the kernel */</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">char</span> <span class="keywordtype">string</span>[<a class="code" href="__gpu__mtx__add_8c.html#a2dcf8c45f945dd0c4301a94700f2112c">MEM_SIZE</a>];</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">char</span> <span class="keywordtype">string</span>[<a class="code" href="__gpu__mtx_8c.html#a2dcf8c45f945dd0c4301a94700f2112c">MEM_SIZE</a>];</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    FILE *fp;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">char</span> fileName[] = <span class="stringliteral">&quot;./_gpu_kernel_mtx_add.c&quot;</span>;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">char</span> *source_str;</div>
@@ -176,8 +241,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        fprintf(stderr, <span class="stringliteral">&quot;Failed to load kernel.\n&quot;</span>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        exit(1);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    source_str = (<span class="keywordtype">char</span> *)malloc(<a class="code" href="__gpu__mtx__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    source_size = fread(source_str, 1, <a class="code" href="__gpu__mtx__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, fp);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    source_str = (<span class="keywordtype">char</span> *)malloc(<a class="code" href="__gpu__mtx_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    source_size = fread(source_str, 1, <a class="code" href="__gpu__mtx_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, fp);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    fclose(fp);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// Platform</span></div>
@@ -269,7 +334,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">goto</span> error;</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(c_d, len, 0);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a>(c_d, len, 0);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">/* Copy results from the memory buffer */</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    ret = clEnqueueReadBuffer(command_queue, c_buff, CL_TRUE, 0, data_size,</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                              (<span class="keywordtype">void</span> *)c_d, 0, NULL, NULL);</div>
@@ -279,15 +344,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">/* Display Result */</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>(<span class="stringliteral">&quot;CHECK RESULT cpu-verison &amp;&amp; gpu-version&quot;</span>);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>(<span class="stringliteral">&quot;CHECK RESULT cpu-verison &amp;&amp; gpu-version&quot;</span>);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    printf(<span class="stringliteral">&quot;c_d: &quot;</span>);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(c_d, len);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result</a>(c, c_d, len);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a>(c_d, len);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result</a>(c, c_d, len);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    printf(<span class="stringliteral">&quot;len-1=%d, c_d[%d]==c[%d]: %d, c_d[%d]=%d, c[%d]=%d \n&quot;</span>, len - 1,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;           len - 1, len - 1, c_d[len - 1] == c[len - 1], len - 1, c_d[len - 1],</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;           len - 1, c[len - 1]);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>(<span class="stringliteral">&quot;CHECK RESULT ELEMENT BY ELEMENT&quot;</span>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>(<span class="stringliteral">&quot;CHECK RESULT ELEMENT BY ELEMENT&quot;</span>);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    printf(<span class="stringliteral">&quot;idx  c  c_d\n&quot;</span>);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        printf(<span class="stringliteral">&quot;%2d %2d %2d \n&quot;</span>, i, c[i], c_d[i]);</div>
@@ -315,49 +380,17 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    free(b);</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    free(c);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_a1553e2d76dd79bc587810fb1e86bb573"><div class="ttname"><a href="__gpu__mtx__add_8c.html#a1553e2d76dd79bc587810fb1e86bb573">rand_vec</a></div><div class="ttdeci">void rand_vec(int *vec, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00065">_gpu_mtx_add.c:65</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="__gpu__mtx__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00053">_gpu_mtx_add.c:53</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_a2dcf8c45f945dd0c4301a94700f2112c"><div class="ttname"><a href="__gpu__mtx__add_8c.html#a2dcf8c45f945dd0c4301a94700f2112c">MEM_SIZE</a></div><div class="ttdeci">#define MEM_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00052">_gpu_mtx_add.c:52</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_a2de8fe82b7e10a1fa207d9f96aa97e83"><div class="ttname"><a href="__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a></div><div class="ttdeci">#define PRINT_LINE(title)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00054">_gpu_mtx_add.c:54</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_a6118c56604dd2aac8bb9daaaff585c02"><div class="ttname"><a href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a></div><div class="ttdeci">void add_vec_cpu(const int *a, const int *b, int *res, const int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00072">_gpu_mtx_add.c:72</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_a97064e8e7b735b6f6bfb19c9e625ae68"><div class="ttname"><a href="__gpu__mtx__add_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a></div><div class="ttdeci">void init_vec(int *vec, int len, int set_one_flag)</div><div class="ttdoc">GPU kernel acceleration utility/helper functions.</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00056">_gpu_mtx_add.c:56</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_ae4102c61b63bca9d654cd712033bf218"><div class="ttname"><a href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a></div><div class="ttdeci">void print_vec(int *vec, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00078">_gpu_mtx_add.c:78</a></div></div>
-<div class="ttc" id="a__gpu__mtx__add_8c_html_ae5a1e9cc99ef119abf4bd1b07df87dae"><div class="ttname"><a href="__gpu__mtx__add_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result</a></div><div class="ttdeci">void check_result(int *v1, int *v2, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00085">_gpu_mtx_add.c:85</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu()</a>, <a class="el" href="__gpu__mtx__add_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result()</a>, <a class="el" href="__gpu__mtx__add_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec()</a>, <a class="el" href="__gpu__mtx__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, <a class="el" href="__gpu__mtx__add_8c.html#a2dcf8c45f945dd0c4301a94700f2112c">MEM_SIZE</a>, <a class="el" href="__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a>, <a class="el" href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec()</a>, and <a class="el" href="__gpu__mtx__add_8c.html#a1553e2d76dd79bc587810fb1e86bb573">rand_vec()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="__gpu__mtx__add__wrapper_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
-
-</div>
-</div>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="__gpu__mtx__add__wrapper_8cpp_source.html#l00007">7</a> of file <a class="el" href="__gpu__mtx__add__wrapper_8cpp_source.html">_gpu_mtx_add_wrapper.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;           {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="__gpu__mtx__add__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-<div class="ttc" id="a__gpu__mtx__add__wrapper_8cpp_html_abd10a9ed8f57f8d894ddff817c39677d"><div class="ttname"><a href="__gpu__mtx__add__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec</a></div><div class="ttdeci">int accl_mtx_exec()</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00096">_gpu_mtx_add.c:96</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="__gpu__mtx__add__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d">accl_mtx_exec()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">// int main () {accl_mtx_exec(); return 0;}</span></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_a1553e2d76dd79bc587810fb1e86bb573"><div class="ttname"><a href="__gpu__mtx_8c.html#a1553e2d76dd79bc587810fb1e86bb573">rand_vec</a></div><div class="ttdeci">void rand_vec(int *vec, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00065">_gpu_mtx.c:65</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="__gpu__mtx_8c.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00053">_gpu_mtx.c:53</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_a2dcf8c45f945dd0c4301a94700f2112c"><div class="ttname"><a href="__gpu__mtx_8c.html#a2dcf8c45f945dd0c4301a94700f2112c">MEM_SIZE</a></div><div class="ttdeci">#define MEM_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00052">_gpu_mtx.c:52</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_a2de8fe82b7e10a1fa207d9f96aa97e83"><div class="ttname"><a href="__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83">PRINT_LINE</a></div><div class="ttdeci">#define PRINT_LINE(title)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00054">_gpu_mtx.c:54</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_a6118c56604dd2aac8bb9daaaff585c02"><div class="ttname"><a href="__gpu__mtx_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a></div><div class="ttdeci">void add_vec_cpu(const int *a, const int *b, int *res, const int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00072">_gpu_mtx.c:72</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_a97064e8e7b735b6f6bfb19c9e625ae68"><div class="ttname"><a href="__gpu__mtx_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68">init_vec</a></div><div class="ttdeci">void init_vec(int *vec, int len, int set_one_flag)</div><div class="ttdoc">GPU kernel acceleration utility/helper functions.</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00056">_gpu_mtx.c:56</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_acf139f5c4eb7a69cd061e22fd7a30304"><div class="ttname"><a href="__gpu__mtx_8c.html#acf139f5c4eb7a69cd061e22fd7a30304">accl_mtx_exec</a></div><div class="ttdeci">void accl_mtx_exec()</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00096">_gpu_mtx.c:96</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_ae4102c61b63bca9d654cd712033bf218"><div class="ttname"><a href="__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a></div><div class="ttdeci">void print_vec(int *vec, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00078">_gpu_mtx.c:78</a></div></div>
+<div class="ttc" id="a__gpu__mtx_8c_html_ae5a1e9cc99ef119abf4bd1b07df87dae"><div class="ttname"><a href="__gpu__mtx_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result</a></div><div class="ttdeci">void check_result(int *v1, int *v2, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8c_source.html#l00085">_gpu_mtx.c:85</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
