@@ -166,15 +166,15 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (i = i + 2; i != p_term.size(); i++) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        powStr.push_back(p_term[i]);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">//printf(&quot;powStr = %s \n&quot;, powStr.c_str());</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// printf(&quot;powStr = %s \n&quot;, powStr.c_str());</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    int64_t expo = atol(powStr.c_str());</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// For ax^n, we return anx^(n-1)</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//printf(&quot;powStr = %s \n&quot;, powStr.c_str());</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//printf(&quot;p_term = %s \n&quot;, p_term.c_str());</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//printf(&quot;coeff = %ld \n&quot;, coeff);</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//printf(&quot;Exponent = %ld \n&quot;, expo);</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// printf(&quot;powStr = %s \n&quot;, powStr.c_str());</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// printf(&quot;p_term = %s \n&quot;, p_term.c_str());</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// printf(&quot;coeff = %ld \n&quot;, coeff);</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// printf(&quot;Exponent = %ld \n&quot;, expo);</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    int64_t result = coeff * expo * pow(val, expo - 1);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
@@ -197,8 +197,8 @@ $(function() {
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            ans = (ans + derivative_term(p_term, val));</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">//printf(&quot;\nDEBUGGING DERIV AT\n\n&quot;);</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//printf(&quot;ans = %ld\n&quot;, ans);</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// printf(&quot;\nDEBUGGING DERIV AT\n\n&quot;);</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// printf(&quot;ans = %ld\n&quot;, ans);</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> ans;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>

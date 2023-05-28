@@ -445,8 +445,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">float</span> result[nrows1][ncols2];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Call the Fortran subroutine</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="f90_2mtx_8cpp.html#a6993185f00a81b1fac2ad2dde55d0b4c">mtx_mult_</a>(&amp;matrix1[0][0], &amp;matrix2[0][0], &amp;result[0][0], &amp;nrows1,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                     &amp;ncols1, &amp;ncols2);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="f90_2mtx_8cpp.html#a6993185f00a81b1fac2ad2dde55d0b4c">mtx_mult_</a>(&amp;matrix1[0][0], &amp;matrix2[0][0], &amp;result[0][0], &amp;nrows1, &amp;ncols1,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;              &amp;ncols2);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Print the result</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrows1; ++i) {</div>
