@@ -19,7 +19,7 @@ int64_t *createMatrix1D() {
     for (int64_t i = 0; i < N; i++) {
         for (int64_t j = 0; j < N; j++) {
             int64_t index = i * N + j; // Calculate the one-dimensional index
-            matrix[index] = i + j; // Assign a value to the element
+            matrix[index] = i + j;     // Assign a value to the element
         }
     }
 
@@ -43,13 +43,14 @@ int main() {
 
     // Measure the time to create a matrix using the two-dimensional array
     // approach
-    std::chrono::steady_clock::time_point start2D = std::chrono::steady_clock::now();
+    std::chrono::steady_clock::time_point start2D =
+        std::chrono::steady_clock::now();
 
-//    createMatrix2D(matrix2D);
-    
+    //    createMatrix2D(matrix2D);
+
     std::chrono::steady_clock::time_point end2D =
         std::chrono::steady_clock::now();
-    
+
     std::chrono::duration<long double> time2D = end2D - start2D;
 
     // Measure the time to create a matrix using the linear storage approach
@@ -73,7 +74,8 @@ int main() {
     int64_t element2D = accessElement2D(matrix2D, 0, 0);
     std::chrono::steady_clock::time_point endAccess2D =
         std::chrono::steady_clock::now();
-    std::chrono::duration<long double> timeAccess2D = endAccess2D - startAccess2D;
+    std::chrono::duration<long double> timeAccess2D =
+        endAccess2D - startAccess2D;
 
     // Measure the time to access a matrix element using the linear storage
     // approach
@@ -82,7 +84,8 @@ int main() {
     int64_t element1D = accessElement1D(matrix1D, 0, 0);
     std::chrono::steady_clock::time_point endAccess1D =
         std::chrono::steady_clock::now();
-    std::chrono::duration<long double> timeAccess1D = endAccess1D - startAccess1D;
+    std::chrono::duration<long double> timeAccess1D =
+        endAccess1D - startAccess1D;
     std::cout << "Time to access matrix element using the two-dimensional "
                  "array approach: "
               << timeAccess2D.count() << " seconds" << std::endl;

@@ -1,25 +1,26 @@
-#include <iostream>
-#include <vector>
-#include <thread>
 #include <immintrin.h> // For Intel intrinsics (SIMD instructions)
+#include <iostream>
+#include <thread>
+#include <vector>
 
 class Matrix {
-    
-public:
+
+  public:
     int rows;
     int cols;
     std::vector<float> data;
 
     // Constructor
-    Matrix(int rows, int cols) : rows(rows), cols(cols), data(rows * cols) {}
+    Matrix(int rows, int cols) : rows(rows), cols(cols), data(rows * cols) {
+    }
 
     // Element access
-    float& operator()(int row, int col) {
+    float &operator()(int row, int col) {
         return data[row * cols + col];
     }
 
     // Matrix addition
-    Matrix operator+(const Matrix& other) const {
+    Matrix operator+(const Matrix &other) const {
         Matrix result(rows, cols);
         for (int i = 0; i < rows * cols; i++) {
             result.data[i] = data[i] + other.data[i];
@@ -28,7 +29,7 @@ public:
     }
 
     // Matrix multiplication
-    Matrix operator*(const Matrix& other) const {
+    Matrix operator*(const Matrix &other) const {
         Matrix result(rows, other.cols);
 
         // Perform matrix multiplication in parallel using threading
@@ -43,7 +44,8 @@ public:
                         __m256 sum = _mm256_setzero_ps();
                         for (int k = 0; k < cols; k += 8) {
                             __m256 a = _mm256_load_ps(&data[i * cols + k]);
-                            __m256 b = _mm256_set1_ps(other.data[k * other.cols + j]);
+                            __m256 b =
+                                _mm256_set1_ps(other.data[k * other.cols + j]);
                             sum = _mm256_add_ps(sum, _mm256_mul_ps(a, b));
                         }
                         result(i, j) = sum[0] + sum[1] + sum[2] + sum[3] +
@@ -53,7 +55,7 @@ public:
             });
         }
 
-        for (auto& thread : threads) {
+        for (auto &thread : threads) {
             thread.join();
         }
 
@@ -113,4 +115,3 @@ int main() {
 
     return 0;
 }
-
