@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['primalitygen_752',['PrimalityGen',['../classmtpk_1_1PrimalityGen.html',1,'mtpk::PrimalityGen'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityGen.html',1,'openmtpk.nt.nt.PrimalityGen']]],
-  ['primalitytest_753',['PrimalityTest',['../classmtpk_1_1PrimalityTest.html',1,'mtpk::PrimalityTest'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html',1,'openmtpk.nt.nt.PrimalityTest']]],
-  ['primarymlp_754',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
+  ['primalitygen_756',['PrimalityGen',['../classmtpk_1_1PrimalityGen.html',1,'mtpk::PrimalityGen'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityGen.html',1,'openmtpk.nt.nt.PrimalityGen']]],
+  ['primalitytest_757',['PrimalityTest',['../classmtpk_1_1PrimalityTest.html',1,'mtpk::PrimalityTest'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html',1,'openmtpk.nt.nt.PrimalityTest']]],
+  ['primarymlp_758',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
 ];

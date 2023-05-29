@@ -130,26 +130,45 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="f90_2mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">mtx_add</a></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">   66</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="f90_2mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: nrows1, ncols1, ncols2</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(in)</span> :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(out)</span> :: result(nrows1, ncols2)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">integer</span> :: i, j, k</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">! Perform matrix multiplication</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows1</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols2</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      result(i, j) = 0.0</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">do</span> k = 1, ncols1</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        result(i, j) = result(i, j) + matrix1(i, k) * matrix2(k, j)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordflow">      end do</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordflow">    end do</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordflow">  end do</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="f90_2mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="mtx_8f90.html#a1d96f357b22bf908e9e9e7a18706342e">   59</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="mtx_8f90.html#a1d96f357b22bf908e9e9e7a18706342e">mtxx_add</a>(A, B, C, size)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">integer(kind=8)</span>, <span class="keywordtype">intent(in)</span> :: A(:,:), B(:,:)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">integer(kind=8)</span>, <span class="keywordtype">intent(out)</span> :: C(:,:)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">integer(kind=8)</span>, <span class="keywordtype">intent(in)</span> :: size</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">integer(kind=8)</span> :: i, j</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">do</span> i = 1, <span class="keyword">size</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">do</span> j = 1, <span class="keyword">size</span>, 4</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            c(i,j)   = a(i,j)   + b(i,j)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            c(i,j+1) = a(i,j+1) + b(i,j+1)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            c(i,j+2) = a(i,j+2) + b(i,j+2)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            c(i,j+3) = a(i,j+3) + b(i,j+3)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordflow">        end do</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordflow">    end do</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="mtx_8f90.html#a1d96f357b22bf908e9e9e7a18706342e">mtxx_add</a></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">   84</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="f90_2mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: nrows1, ncols1, ncols2</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(in)</span> :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">  real</span>, <span class="keywordtype">intent(out)</span> :: result(nrows1, ncols2)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">integer</span> :: i, j, k</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">! Perform matrix multiplication</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows1</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols2</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      result(i, j) = 0.0</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">do</span> k = 1, ncols1</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        result(i, j) = result(i, j) + matrix1(i, k) * matrix2(k, j)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordflow">      end do</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordflow">    end do</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordflow">  end do</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="f90_2mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="ttc" id="af90_2mtx_8f90_html_a92b3608e1a91c313e90ccafd2c77d3b8"><div class="ttname"><a href="f90_2mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">mtx_add</a></div><div class="ttdeci">subroutine mtx_add(a, b, c, nrows, ncols)</div><div class="ttdoc">FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper function.</div><div class="ttdef"><b>Definition:</b> <a href="f90_2mtx_8f90_source.html#l00043">mtx.f90:44</a></div></div>
 <div class="ttc" id="af90_2mtx_8f90_html_ab5347b6c35e3e1dc1403c734fb167fa9"><div class="ttname"><a href="f90_2mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div><div class="ttdeci">subroutine mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div><div class="ttdoc">FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function.</div><div class="ttdef"><b>Definition:</b> <a href="f90_2mtx_8f90_source.html#l00066">mtx.f90:67</a></div></div>
+<div class="ttc" id="amtx_8f90_html_a1d96f357b22bf908e9e9e7a18706342e"><div class="ttname"><a href="mtx_8f90.html#a1d96f357b22bf908e9e9e7a18706342e">mtxx_add</a></div><div class="ttdeci">subroutine mtxx_add(A, B, C, size)</div><div class="ttdef"><b>Definition:</b> <a href="mtx_8f90_source.html#l00059">mtx.f90:60</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
