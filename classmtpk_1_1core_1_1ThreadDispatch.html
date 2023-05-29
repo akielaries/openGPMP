@@ -100,7 +100,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="factors_8cpp-example.html#_a4">factors.cpp</a>, and <a class="el" href="primes_8cpp-example.html#_a8">primes.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00200">200</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00201">201</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a277a2f9ee9d359fe44db2befcfe463d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a277a2f9ee9d359fe44db2befcfe463d0">&#9670;&nbsp;</a></span>dispatch()</h2>
@@ -162,16 +162,16 @@ template&lt;typename Function , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A future object for obtaining the result of the dispatched function call. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00216">216</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// enqueue the function call to the thread pool</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keyword">auto</span> result = pool.enqueue(std::forward&lt;Function&gt;(func),</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                   std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// return the future object to get the result later</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00217">217</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="comment">// enqueue the function call to the thread pool</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keyword">auto</span> result = pool.enqueue(std::forward&lt;Function&gt;(func),</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                   std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="comment">// return the future object to get the result later</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
