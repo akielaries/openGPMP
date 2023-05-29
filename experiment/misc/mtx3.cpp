@@ -6,7 +6,7 @@
 #include <random>
 #include <vector>
 
-constexpr int matrixSize = 10000;
+constexpr int matrixSize = 12;
 constexpr int blockSize = 2;
 
 void matrixAddition_t(const std::vector<std::vector<int>> &A,
@@ -31,8 +31,10 @@ void matrixAddition_u(const std::vector<std::vector<int>> &A,
     const int size = A.size();
 
     for (int i = 0; i < size; ++i) {
-        for (int j = 0; j < size; j += 128) {  // Unroll by 4 elements
-            // Perform matrix addition
+        // must be a multiple of the overall matrix size
+        for (int j = 0; j < size; j += matrixSize / 6) {  // Unroll by 4 elements
+            // perform matrix addition
+            // TODO : make these 
             C[i][j] = A[i][j] + B[i][j];
             C[i][j + 1] = A[i][j + 1] + B[i][j + 1];
             C[i][j + 2] = A[i][j + 2] + B[i][j + 2];
@@ -207,7 +209,6 @@ int main() {
     matrixAddition_tf(A, B, I);
     std::chrono::steady_clock::time_point end_time_th =
         std::chrono::steady_clock::now();
-/*
     
         std::cout << "Matrix A:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
@@ -224,17 +225,15 @@ int main() {
             }
             std::cout << std::endl;
         }
-        */
         // Display the result
         std::cout << "Matrix C after addition:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
             for (int j = 0; j < matrixSize; ++j) {
-                std::cout << I[i][j] << " ";
+                std::cout << F[i][j] << " ";
             }
             std::cout << std::endl;
         }
-        /*
-        std::cout << "\nMatrix D after addition:" << std::endl;
+   /*     std::cout << "\nMatrix D after addition:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
             for (int j = 0; j < matrixSize; ++j) {
                 std::cout << D[i][j] << " ";

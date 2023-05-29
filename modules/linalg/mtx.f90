@@ -56,6 +56,24 @@ subroutine mtx_add(a, b, c, nrows, ncols)
 
 end subroutine mtx_add
 
+subroutine mtxx_add(A, B, C, size)
+    integer(kind=8), intent(in) :: A(:,:), B(:,:)
+    integer(kind=8), intent(out) :: C(:,:)
+    integer(kind=8), intent(in) :: size
+    integer(kind=8) :: i, j
+
+    do i = 1, size
+        do j = 1, size, 4
+            C(i,j)   = A(i,j)   + B(i,j)
+            C(i,j+1) = A(i,j+1) + B(i,j+1)
+            C(i,j+2) = A(i,j+2) + B(i,j+2)
+            C(i,j+3) = A(i,j+3) + B(i,j+3)
+        end do
+    end do
+
+end subroutine mtxx_add
+
+
 !> FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. 
 !! Contains C++ wrapper function
 !! @param a Multiplier a, an array representing a Matrix
