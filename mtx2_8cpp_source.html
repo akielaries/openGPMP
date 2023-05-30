@@ -85,13 +85,13 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">    7</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>* A, <span class="keyword">const</span> <span class="keywordtype">int</span>* B, <span class="keyword">const</span> <span class="keywordtype">int</span>* C, <span class="keyword">const</span> <span class="keywordtype">int</span>* size);</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">    7</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_</a>(<span class="keywordtype">int</span>* A, <span class="keywordtype">int</span>* B, <span class="keywordtype">int</span>* C, <span class="keywordtype">int</span>* size);</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#abc0286c0e018ab45be012ad57f50cba5">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx2_8cpp.html#abc0286c0e018ab45be012ad57f50cba5">matrixAddition</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; A,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt;&amp; B,</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                    std::vector&lt;std::vector&lt;int&gt;&gt;&amp; C) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> size = A.size();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::vector&lt;int&gt; flatA(size * size);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;int&gt; flatB(size * size);</div>
@@ -106,7 +106,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Call the Fortran subroutine</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_</a>(flatA.data(), flatB.data(), flatC.data(), &amp;size);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_</a>(flatA.data(), flatB.data(), flatC.data(), &amp;size);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Unflatten C matrix</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
@@ -134,7 +134,7 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="ttc" id="amtx2_8cpp_html_a8f5408d8d195275abe2a8bfe75a4f64a"><div class="ttname"><a href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_</a></div><div class="ttdeci">void mtxx_add_(const int *A, const int *B, const int *C, const int *size)</div></div>
+<div class="ttc" id="amtx2_8cpp_html_a7cd1eaac773abe39e84cb25c8046f348"><div class="ttname"><a href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_</a></div><div class="ttdeci">void mtxx_add_(int *A, int *B, int *C, int *size)</div></div>
 <div class="ttc" id="amtx2_8cpp_html_abc0286c0e018ab45be012ad57f50cba5"><div class="ttname"><a href="mtx2_8cpp.html#abc0286c0e018ab45be012ad57f50cba5">matrixAddition</a></div><div class="ttdeci">void matrixAddition(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</div><div class="ttdef"><b>Definition:</b> <a href="mtx2_8cpp_source.html#l00010">mtx2.cpp:10</a></div></div>
 <div class="ttc" id="amtx2_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="mtx2_8cpp_source.html#l00038">mtx2.cpp:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

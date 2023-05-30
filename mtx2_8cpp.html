@@ -88,8 +88,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8f5408d8d195275abe2a8bfe75a4f64a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_</a> (const int *A, const int *B, const int *C, const int *size)</td></tr>
-<tr class="separator:a8f5408d8d195275abe2a8bfe75a4f64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd1eaac773abe39e84cb25c8046f348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_</a> (int *A, int *B, int *C, int *size)</td></tr>
+<tr class="separator:a7cd1eaac773abe39e84cb25c8046f348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc0286c0e018ab45be012ad57f50cba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx2_8cpp.html#abc0286c0e018ab45be012ad57f50cba5">matrixAddition</a> (const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td></tr>
 <tr class="separator:abc0286c0e018ab45be012ad57f50cba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
@@ -170,7 +170,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="mtx2_8cpp_source.html#l00010">10</a> of file <a class="el" href="mtx2_8cpp_source.html">mtx2.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                  {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> size = A.size();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::vector&lt;int&gt; flatA(size * size);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;int&gt; flatB(size * size);</div>
@@ -185,7 +185,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Call the Fortran subroutine</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_</a>(flatA.data(), flatB.data(), flatC.data(), &amp;size);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_</a>(flatA.data(), flatB.data(), flatC.data(), &amp;size);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Unflatten C matrix</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
@@ -194,16 +194,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="ttc" id="amtx2_8cpp_html_a8f5408d8d195275abe2a8bfe75a4f64a"><div class="ttname"><a href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_</a></div><div class="ttdeci">void mtxx_add_(const int *A, const int *B, const int *C, const int *size)</div></div>
+<div class="ttc" id="amtx2_8cpp_html_a7cd1eaac773abe39e84cb25c8046f348"><div class="ttname"><a href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_</a></div><div class="ttdeci">void mtxx_add_(int *A, int *B, int *C, int *size)</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a">mtxx_add_()</a>.</p>
+<p class="reference">References <a class="el" href="mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348">mtxx_add_()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
 </div>
-<a id="a8f5408d8d195275abe2a8bfe75a4f64a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f5408d8d195275abe2a8bfe75a4f64a">&#9670;&nbsp;</a></span>mtxx_add_()</h2>
+<a id="a7cd1eaac773abe39e84cb25c8046f348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd1eaac773abe39e84cb25c8046f348">&#9670;&nbsp;</a></span>mtxx_add_()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,25 +211,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mtxx_add_ </td>
           <td>(</td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>

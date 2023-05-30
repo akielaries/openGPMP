@@ -61,7 +61,7 @@ var searchData=
   ['mtx_5fz1_418',['mtx_z1',['../namespacepython_1_1linalg.html#ab23ed29b6cf31e7f1b40458d13fc983d',1,'python::linalg']]],
   ['mtx_5fz2_419',['mtx_z2',['../namespacepython_1_1linalg.html#ac9d40235255fd376e3c2cc4b8fd67071',1,'python::linalg']]],
   ['mtxx_5fadd_420',['mtxx_add',['../mtx_8f90.html#a1d96f357b22bf908e9e9e7a18706342e',1,'mtx.f90']]],
-  ['mtxx_5fadd_5f_421',['mtxx_add_',['../mtx2_8cpp.html#a8f5408d8d195275abe2a8bfe75a4f64a',1,'mtx2.cpp']]],
+  ['mtxx_5fadd_5f_421',['mtxx_add_',['../mtx2_8cpp.html#a7cd1eaac773abe39e84cb25c8046f348',1,'mtx2.cpp']]],
   ['mu_422',['mu',['../classmtpk_1_1ml_1_1BayesGauss.html#aea28cb2f16fb7fd5701d8595744d49e4',1,'mtpk::ml::BayesGauss']]],
   ['mult_423',['mult',['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a74414cf56c6edec8d0af427a078c07d0',1,'openmtpk.linalg.linalg.MatrixI.mult()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#a70f47d60545ebff010454039e368783f',1,'openmtpk.linalg.linalg.Matrix.mult()'],['../classmtpk_1_1Matrix.html#aaf09c65a0c5214525caf887405a522fc',1,'mtpk::Matrix::mult()'],['../f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236',1,'mult():&#160;mtx.cpp'],['../mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236',1,'mult():&#160;mtx.cpp']]],
   ['multiply_5fmatrices_424',['multiply_matrices',['../__simd__intel__mtx_8cpp.html#a6b4d9e4f161420f04adeaf364f307a6d',1,'multiply_matrices(float A[N][N], float B[N][N], float C[N][N]):&#160;_simd_intel_mtx.cpp'],['../__simd__mtx_8cpp.html#a6b4d9e4f161420f04adeaf364f307a6d',1,'multiply_matrices(float A[N][N], float B[N][N], float C[N][N]):&#160;_simd_mtx.cpp']]],
