@@ -6,7 +6,7 @@
 #include <random>
 #include <vector>
 
-constexpr int matrixSize = 12;
+constexpr int matrixSize = 24;
 constexpr int blockSize = 2;
 
 void matrixAddition_t(const std::vector<std::vector<int>> &A,
@@ -32,7 +32,11 @@ void matrixAddition_u(const std::vector<std::vector<int>> &A,
 
     for (int i = 0; i < size; ++i) {
         // must be a multiple of the overall matrix size
-        for (int j = 0; j < size; j += matrixSize / 6) {  // Unroll by 4 elements
+        for (int j = 0; j < size; j += matrixSize / 2) { // this number determine 
+                                                         // how many times to iterate 
+                                                         // corresponds to the number 
+                                                         // of operations performed 
+                                                         // within this loop
             // perform matrix addition
             // TODO : make these 
             C[i][j] = A[i][j] + B[i][j];
@@ -43,6 +47,32 @@ void matrixAddition_u(const std::vector<std::vector<int>> &A,
     }
 
 }
+
+void matrixAddition_cont(const std::vector<int>& A,
+                      const std::vector<int>& B,
+                      std::vector<int>& C) {
+    const int size = matrixSize;
+
+    for (int i = 0; i < size; ++i) {
+        int rowOffset = i * size;
+        for (int j = 0; j < size; j += matrixSize / 2) {  // Unroll by 4 elements
+            int index = rowOffset + j;
+            // perform matrix addition
+            C[index] = A[index] + B[index];
+            C[index + 1] = A[index + 1] + B[index + 1];
+            C[index + 2] = A[index + 2] + B[index + 2];
+            C[index + 3] = A[index + 3] + B[index + 3];
+            /*C[index + 4] = A[index + 4] + B[index + 4];
+            C[index + 5] = A[index + 5] + B[index + 5];
+            C[index + 6] = A[index + 6] + B[index + 6];
+            C[index + 7] = A[index + 7] + B[index + 7];
+            C[index + 8] = A[index + 8] + B[index + 8];
+            C[index + 9] = A[index + 9] + B[index + 9];
+            */// for (int k = 0; k < )
+        }
+    }
+}
+
 
 void matrixAddition_c(const std::vector<std::vector<int>> &A,
                       const std::vector<std::vector<int>> &B,
@@ -140,6 +170,7 @@ void matrixAddition_n(const std::vector<std::vector<int>> &A,
 int main() {
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
+    
     std::vector<std::vector<int>> C(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> D(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> E(matrixSize, std::vector<int>(matrixSize));
@@ -147,6 +178,10 @@ int main() {
     std::vector<std::vector<int>> G(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> H(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> I(matrixSize, std::vector<int>(matrixSize));
+
+    std::vector<int> X(matrixSize * matrixSize);
+    std::vector<int> Y(matrixSize * matrixSize);
+    std::vector<int> Z(matrixSize * matrixSize);
 
     // Initialize random number generator
     std::random_device rd;
@@ -160,6 +195,16 @@ int main() {
             B[i][j] = distribution(gen);
         }
     }
+
+    for (int i = 0; i < matrixSize; ++i) {
+        for (int j = 0; j < matrixSize; ++j) {
+            int index = i * matrixSize + j;
+            X[index] = distribution(gen);
+            Y[index] = distribution(gen);
+        }
+    }
+
+
 
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
@@ -209,7 +254,15 @@ int main() {
     matrixAddition_tf(A, B, I);
     std::chrono::steady_clock::time_point end_time_th =
         std::chrono::steady_clock::now();
-    
+
+
+    std::chrono::steady_clock::time_point start_time_cont =
+        std::chrono::steady_clock::now();
+    // Perform matrix addition
+    matrixAddition_cont(X, Y, Z);
+    std::chrono::steady_clock::time_point end_time_cont =
+        std::chrono::steady_clock::now();
+
         std::cout << "Matrix A:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
             for (int j = 0; j < matrixSize; ++j) {
@@ -233,14 +286,35 @@ int main() {
             }
             std::cout << std::endl;
         }
-   /*     std::cout << "\nMatrix D after addition:" << std::endl;
+
+        std::cout << std::endl;
+        std::cout << "\nMatrix X:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
             for (int j = 0; j < matrixSize; ++j) {
-                std::cout << D[i][j] << " ";
+                int index = i * matrixSize + j;
+                std::cout << X[index] << " ";
             }
             std::cout << std::endl;
         }
 
+        std::cout << "\nMatrix Y:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                int index = i * matrixSize + j;
+                std::cout << Y[index] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "\nMatrix Z after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                int index = i * matrixSize + j;
+                std::cout << Z[index] << " ";
+            }
+            std::cout << std::endl;
+        }
+/*
         std::cout << "\nMatrix E after addition:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
             for (int j = 0; j < matrixSize; ++j) {
@@ -275,6 +349,12 @@ int main() {
     std::cout << "Loop Unrolling - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
                      end_time_u - start_time_u)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "Loop Unrolling + continuous  - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time_cont - start_time_cont)
                      .count()
               << " ms" << std::endl;
 

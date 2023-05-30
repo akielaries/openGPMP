@@ -41,6 +41,18 @@
 !! @param nrows Number of rows
 !! @param ncols Number of columns
 subroutine mtx_add(a, b, c, nrows, ncols)
+  !implicit none
+  !< Using 64-bit (8-byte) width for numeric types 
+  !integer(kind=8), intent(in) :: nrows, ncols
+  !real(kind=8), intent(in) :: a(nrows, ncols), b(nrows, ncols)
+  !real(kind=8), intent(out) :: c(nrows, ncols)
+  !integer(kind=8) :: i, j
+
+  !do i = 1, nrows
+  !  do j = 1, ncols
+  !    c(i, j) = a(i, j) + b(i, j)
+  !  end do
+  !end do
   implicit none
   !< Using 64-bit (8-byte) width for numeric types 
   integer(kind=8), intent(in) :: nrows, ncols
@@ -49,8 +61,11 @@ subroutine mtx_add(a, b, c, nrows, ncols)
   integer(kind=8) :: i, j
 
   do i = 1, nrows
-    do j = 1, ncols
-      c(i, j) = a(i, j) + b(i, j)
+    do j = 1, ncols, 128
+      c(i, j)   = a(i, j)   + b(i, j)
+      c(i, j+1) = a(i, j+1) + b(i, j+1)
+      c(i, j+2) = a(i, j+2) + b(i, j+2)
+      c(i, j+3) = a(i, j+3) + b(i, j+3)
     end do
   end do
 

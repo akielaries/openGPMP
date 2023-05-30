@@ -4,13 +4,13 @@
 #include <vector>
 
 extern "C" {
-    void mtxx_add_(const int* A, const int* B, const int* C, const int* size);
+    void mtxx_add_(int* A, int* B, int* C, int* size);
 }
 
 void matrixAddition(const std::vector<std::vector<int>>& A,
                     const std::vector<std::vector<int>>& B,
                     std::vector<std::vector<int>>& C) {
-    const int size = A.size();
+    int size = A.size();
 
     std::vector<int> flatA(size * size);
     std::vector<int> flatB(size * size);

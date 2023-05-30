@@ -36,7 +36,7 @@ void matrixMultiply(const std::vector<std::vector<double>> &a,
 int main() {
 
     add();
-    mult();
+    //mult();
     return 0;
 }
 
@@ -65,8 +65,8 @@ void mult() {
 }
 
 void add() {
-    int64_t rows = 2;
-    int64_t cols = 2;
+    int64_t rows = 10000;
+    int64_t cols = 10000;
 
     // Create variables a and b as vectors of vectors
     std::vector<std::vector<double>> a(rows, std::vector<double>(cols));
@@ -112,23 +112,23 @@ void add() {
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
-    matrixMultiply(a, b, c);
+    //matrixMultiply(a, b, c);
 
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();
 
     std::cout << "Time elapsed CPP: "
-              << std::chrono::duration_cast<std::chrono::microseconds>(
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
                      end_time - start_time)
                      .count()
-              << " microseconds" << std::endl;
-    std::cout << "A x B" << std::endl;
+              << " milliseconds" << std::endl;
+    /*std::cout << "A x B" << std::endl;
     for (int64_t i = 0; i < rows; ++i) {
         for (int64_t j = 0; j < cols; ++j) {
             std::cout << c[i][j] << " ";
         }
         std::cout << std::endl;
-    }
+    }*/
 
     start_time = std::chrono::steady_clock::now();
 
@@ -136,10 +136,10 @@ void add() {
     end_time = std::chrono::steady_clock::now();
 
     std::cout << "Time elapsed FORTRAN: "
-              << std::chrono::duration_cast<std::chrono::microseconds>(
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
                      end_time - start_time)
                      .count()
-              << " microseconds" << std::endl;
+              << " milliseconds" << std::endl;
     // Convert result back to matrix format
     for (int64_t i = 0; i < nrows; ++i) {
         for (int64_t j = 0; j < ncols; ++j) {
@@ -148,7 +148,7 @@ void add() {
     }
 
     // Display matrices
-    std::cout << "Matrix A:" << std::endl;
+    /*std::cout << "Matrix A:" << std::endl;
     for (int64_t i = 0; i < nrows; ++i) {
         for (int64_t j = 0; j < ncols; ++j) {
             std::cout << a[i][j] << " ";
@@ -170,5 +170,5 @@ void add() {
             std::cout << c[i][j] << " ";
         }
         std::cout << std::endl;
-    }
+    }*/
 }
