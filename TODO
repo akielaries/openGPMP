@@ -1,0 +1,51 @@
+TODO FOR V1.0.0 RELEASE
+
+CALCULUS
+--------
+- Differential calculus methods 
+- Integral calculus methods 
+- Multivariate calculus methods
+- Numerical Analysis
+
+*NOTE* this module should be relied on by machine learning module for several
+methods
+
+LINEAR ALGEBRA
+--------------
+FORTRAN matrix subroutines
+    - benchmarks vs pure c++ implementation
+    - use SIMD
+OpenCL GPU matrix related techniques 
+CUDA GPU matrix related techniques
+
+
+MACHINE LEARNING
+----------------
+- Entire Machine Learning module needs updates and implementations. This
+will be easier and clearer when linear algebra matrix/vector/scalar operations
+are implemented that way machine learning modules can make use of them.
+- Keep optimization in mind and benchmark as you go
+├── ml
+│   ├── activators.cpp
+│   ├── bayes_clf.cpp
+│   ├── bayes_net.cpp
+│   ├── CMakeLists.txt
+│   ├── encoder.cpp
+│   ├── k-foldCV.cpp
+│   ├── knn.cpp
+│   ├── kohonen_net.cpp
+│   ├── linreg.cpp
+│   ├── logreg.cpp
+│   ├── mlp_net.cpp
+│   ├── mlp_network.cpp
+│   ├── naive_net.cpp
+│   ├── naive_network.cpp
+│   ├── nearest_neighbors.cpp
+│   ├── nn.cpp
+│   ├── optimizers.cpp
+│   ├── regularizers.cpp
+│   ├── statistics.cpp
+│   ├── svc.cpp
+│   └── trainers.cpp
+
+

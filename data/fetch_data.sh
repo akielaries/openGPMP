@@ -19,8 +19,15 @@ function download_files {
 
 # Function to delete the downloaded files
 function delete_files {
-    # Delete files with .json, .csv, .gz, .data, .dat, and .tsv extensions in the current directory
-    find . -maxdepth 1 -type f \( -name "*.json" -o -name "*.csv" -o -name "*.gz" -o -name "*.data" -o -name "*.dat" -o -name "*.tsv" \) -delete
+    # Delete files with .json, .csv, .gz, .data, .dat, and .tsv extensions in 
+    # the current directory
+    find . -maxdepth 1 -type f \( \
+    -name "*.json" \
+    -o -name "*.csv" \
+    -o -name "*.gz" \
+    -o -name "*.data" \
+    -o -name "*.dat" \
+    -o -name "*.tsv" \) -delete
 }
 
 # Check if the command-line argument is -del to delete the downloaded files

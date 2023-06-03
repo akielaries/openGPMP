@@ -1,8 +1,11 @@
 #!/usr/bin/sh
+# Utility script to test running openMTPK unit tests and generate coverage 
+# files in openMTPK/.coverage
 
 # test all modules together with googletest. produce ONE .info coverage
 # file for the whole test suite. 
-g++ -std=c++2a -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -Wall --coverage \
+g++ -std=c++2a -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 \
+    -Wall --coverage \
     arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
     calc/t_calc.cpp ../modules/calculus/differential.cpp \
     nt/t_cipher.cpp ../modules/nt/cipher.cpp \
