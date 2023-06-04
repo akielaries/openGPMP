@@ -7,7 +7,7 @@
 [![license](https://img.shields.io/github/license/akielaries/openGPMP?color=23228B22)](https://github.com/akielaries/openGPMP/blob/main/LICENSE)
 [![codecov](https://codecov.io/gh/akielaries/openGPMP/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openGPMP)
 ![clones](https://raw.githubusercontent.com/akielaries/openGPMP/traffic/traffic-openGPMP/clones.svg)
-[![Py](https://github.com/akielaries/openGPMP/actions/workflows/pygpmp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)
+[![openGPMP](https://github.com/akielaries/openGPMP/actions/workflows/opengpmp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)
 
 # Overview
 **openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with a primary
