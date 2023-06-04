@@ -36,7 +36,7 @@ void matrixMultiply(const std::vector<std::vector<double>> &a,
 int main() {
 
     add();
-    //mult();
+    // mult();
     return 0;
 }
 
@@ -112,7 +112,7 @@ void add() {
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
-    //matrixMultiply(a, b, c);
+    // matrixMultiply(a, b, c);
 
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();

@@ -4,12 +4,12 @@
 #include <vector>
 
 extern "C" {
-    void mtxx_add_(int* A, int* B, int* C, int* size);
+void mtxx_add_(int *A, int *B, int *C, int *size);
 }
 
-void matrixAddition(const std::vector<std::vector<int>>& A,
-                    const std::vector<std::vector<int>>& B,
-                    std::vector<std::vector<int>>& C) {
+void matrixAddition(const std::vector<std::vector<int>> &A,
+                    const std::vector<std::vector<int>> &B,
+                    std::vector<std::vector<int>> &C) {
     int size = A.size();
 
     std::vector<int> flatA(size * size);
@@ -43,8 +43,8 @@ int main() {
     matrixAddition(A, B, C);
 
     // Print the result
-    for (const auto& row : C) {
-        for (const auto& element : row) {
+    for (const auto &row : C) {
+        for (const auto &element : row) {
             std::cout << element << " ";
         }
         std::cout << std::endl;
@@ -52,4 +52,3 @@ int main() {
 
     return 0;
 }
-
