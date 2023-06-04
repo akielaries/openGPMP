@@ -227,7 +227,7 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00242">242</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                  {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// -------</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">unsigned</span> nb_threads_hint = 10;<span class="comment">// std::thread::hardware_concurrency();</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">unsigned</span> nb_threads_hint = 10; <span class="comment">// std::thread::hardware_concurrency();</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">unsigned</span> nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">unsigned</span> batch_size = nb_elements / nb_threads;</div>
