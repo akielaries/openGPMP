@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['weights_1373',['weights',['../classmtpk_1_1ml_1_1Logreg.html#a7c0722c29736f7d8dc3ed9f52ee6c1b1',1,'mtpk::ml::Logreg::weights()'],['../classmtpk_1_1NaiveNet.html#a60cc701ee3cb17805110fdd3e12ce7ce',1,'mtpk::NaiveNet::weights()'],['../classmtpk_1_1ml_1_1SVC.html#acc4e2c2e6f031e91836769ee4d5f3c01',1,'mtpk::ml::SVC::weights()']]],
-  ['weights1_1374',['weights1',['../classmtpk_1_1ml_1_1AutoEncoder.html#a9a6ba2273aa5f1814eeb7d2ee0356cd3',1,'mtpk::ml::AutoEncoder']]],
-  ['weights2_1375',['weights2',['../classmtpk_1_1ml_1_1AutoEncoder.html#ac077482ff060c944b75df7f436db1d36',1,'mtpk::ml::AutoEncoder']]],
-  ['workers_1376',['workers',['../classmtpk_1_1core_1_1ThreadPool.html#a7c012f9a65a2b48a18aa0272646cf85e',1,'mtpk::core::ThreadPool']]],
-  ['wt_1377',['wt',['../structmtpk_1_1ml_1_1neuron.html#a6cee05b2d2a490755d8860ea1af04ec5',1,'mtpk::ml::neuron']]],
-  ['wt_5flast_1378',['wt_last',['../structmtpk_1_1ml_1_1neuron.html#ab7016b420f793b86e44a8e2996599c24',1,'mtpk::ml::neuron']]],
-  ['wt_5fmtx_1379',['wt_mtx',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a7b8a07eaf26f528995f42190539c7855',1,'mtpk::ml::SecondaryMLP']]],
-  ['wt_5fsaved_1380',['wt_saved',['../structmtpk_1_1ml_1_1neuron.html#ae296b2f6f486c8e6cbc16a4a03f4080a',1,'mtpk::ml::neuron']]]
+  ['weights_1326',['weights',['../classgpmp_1_1ml_1_1Logreg.html#ab68d3d7b2ec2d3f2d9efde7d5194c18a',1,'gpmp::ml::Logreg::weights()'],['../classgpmp_1_1NaiveNet.html#a4df00bf4ebae39e858bf61580303b970',1,'gpmp::NaiveNet::weights()'],['../classgpmp_1_1ml_1_1SVC.html#a78a90a2d08eebc52e00ac749feadbe11',1,'gpmp::ml::SVC::weights()']]],
+  ['weights1_1327',['weights1',['../classgpmp_1_1ml_1_1AutoEncoder.html#ab48e0d515e2ca46f7d43307e7a48a87b',1,'gpmp::ml::AutoEncoder']]],
+  ['weights2_1328',['weights2',['../classgpmp_1_1ml_1_1AutoEncoder.html#a637683b5e22fe74d0541cd8cf6e10f64',1,'gpmp::ml::AutoEncoder']]],
+  ['workers_1329',['workers',['../classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b',1,'gpmp::core::ThreadPool']]],
+  ['wt_1330',['wt',['../structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323',1,'gpmp::ml::neuron']]],
+  ['wt_5flast_1331',['wt_last',['../structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287',1,'gpmp::ml::neuron']]],
+  ['wt_5fmtx_1332',['wt_mtx',['../classgpmp_1_1ml_1_1SecondaryMLP.html#abc31ddbe0f10a55682f6ae52b1ca18c3',1,'gpmp::ml::SecondaryMLP']]],
+  ['wt_5fsaved_1333',['wt_saved',['../structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037',1,'gpmp::ml::neuron']]]
 ];

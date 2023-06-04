@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['prim_1340',['prim',['../prime__test_8cpp.html#ae705b16e0f91ad04a0d1892bd85d3b5b',1,'prime_test.cpp']]],
-  ['prior_5f0_1341',['prior_0',['../classmtpk_1_1ml_1_1BayesBernoulli.html#afcece46469800999da156c2429602326',1,'mtpk::ml::BayesBernoulli']]],
-  ['prior_5f1_1342',['prior_1',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a0d259f927ae44e42b93f8a2908cbd4f1',1,'mtpk::ml::BayesBernoulli']]],
-  ['priors_1343',['priors',['../classmtpk_1_1ml_1_1BayesGauss.html#ac9988e4fd713b9eff63db5984687c73d',1,'mtpk::ml::BayesGauss::priors()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#a188b16acd9b3b80203bff61469358454',1,'mtpk::ml::BayesMutliNom::priors()']]]
+  ['prim_1293',['prim',['../prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d',1,'prime_test.cpp']]],
+  ['prior_5f0_1294',['prior_0',['../classgpmp_1_1ml_1_1BayesBernoulli.html#a5a9e5de1c06b5b8e8b39d9094dbde390',1,'gpmp::ml::BayesBernoulli']]],
+  ['prior_5f1_1295',['prior_1',['../classgpmp_1_1ml_1_1BayesBernoulli.html#a964168d35d63c0282e01e70dbf911c87',1,'gpmp::ml::BayesBernoulli']]],
+  ['priors_1296',['priors',['../classgpmp_1_1ml_1_1BayesGauss.html#ae1125dbcf2af7b07eb97e265a414c3a8',1,'gpmp::ml::BayesGauss::priors()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#aede9047f0656af37fea66d00dfab6782',1,'gpmp::ml::BayesMutliNom::priors()']]]
 ];

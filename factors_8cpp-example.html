@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: factors.cpp</title>
+<title>openGPMP: factors.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -75,27 +75,27 @@ $(function() {
 <div class="title">factors.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Driver for showing how to use the core functionalities of the Number Theory module by itself as well as with the openMTPK ThreadPool. This features functions related to integer factorization.</p>
+<p>Driver for showing how to use the core functionalities of the Number Theory module by itself as well as with the openGPMP ThreadPool. This features functions related to integer factorization.</p>
 <div class="fragment"><div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;openMTPK/core/threadpool.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;openMTPK/nt/factorization.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;openGPMP/core/threadpool.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;openGPMP/nt/factorization.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="factors_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line">    <a name="_a1"></a><a class="code" href="classmtpk_1_1Factorization.html">mtpk::Factorization</a> factorization;</div>
+<div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1Factorization.html">gpmp::Factorization</a> factorization;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// find prime factor of 123456789</span></div>
 <div class="line">    int64_t n = 9223372036854775803;</div>
-<div class="line">    int64_t factor = factorization.<a name="a2"></a><a class="code" href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">pollard_rho</a>(n);</div>
+<div class="line">    int64_t factor = factorization.<a name="a2"></a><a class="code" href="classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637">pollard_rho</a>(n);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// print the result</span></div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;The smallest prime factor of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; factor</div>
 <div class="line">              &lt;&lt; std::endl;</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">    /******* EXAMPLE USING openMTPK&#39;s THREADPOOL *******/</span></div>
+<div class="line"><span class="comment">    /******* EXAMPLE USING openGPMP&#39;s THREADPOOL *******/</span></div>
 <div class="line">    <span class="comment">//</span></div>
 <div class="line">    <span class="comment">// specify the numbers to factorize</span></div>
 <div class="line">    <span class="comment">// pollard_rho accepts 64 bit integers</span></div>
@@ -121,11 +121,11 @@ $(function() {
 <div class="line">    <span class="comment">//    }</span></div>
 <div class="line"> </div>
 <div class="line">    std::vector&lt;std::future&lt;uint64_t&gt;&gt; results;</div>
-<div class="line">    <a name="_a3"></a><a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a>(2);</div>
-<div class="line">    <a class="code" href="classmtpk_1_1Factorization.html">mtpk::Factorization</a> factors;</div>
+<div class="line">    <a name="_a3"></a><a class="code" href="classgpmp_1_1core_1_1ThreadPool.html">gpmp::core::ThreadPool</a> *pool = <span class="keyword">new</span> <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html">gpmp::core::ThreadPool</a>(2);</div>
+<div class="line">    <a class="code" href="classgpmp_1_1Factorization.html">gpmp::Factorization</a> factors;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;num : nums_to_factorize) {</div>
-<div class="line">        results.emplace_back(<a name="_a4"></a><a class="code" href="classmtpk_1_1core_1_1ThreadDispatch.html">mtpk::core::ThreadDispatch</a>().<a name="a5"></a><a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(</div>
-<div class="line">            *pool, &amp;<a class="code" href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">mtpk::Factorization::pollard_rho</a>, &amp;factors, num));</div>
+<div class="line">        results.emplace_back(<a name="_a4"></a><a class="code" href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a>().<a name="a5"></a><a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(</div>
+<div class="line">            *pool, &amp;<a class="code" href="classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637">gpmp::Factorization::pollard_rho</a>, &amp;factors, num));</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;res : results) {</div>
@@ -137,10 +137,10 @@ $(function() {
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="ac__threadpool_8c_html_a40f3db62ccfd7fdffb7624bb565ba425"><div class="ttname"><a href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a></div><div class="ttdeci">void dispatch(threadpool from_me, dispatch_fn dispatch_to_here, void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00137">c_threadpool.c:137</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Factorization_html"><div class="ttname"><a href="classmtpk_1_1Factorization.html">mtpk::Factorization</a></div><div class="ttdef"><b>Definition:</b> <a href="factorization_8hpp_source.html#l00056">factorization.hpp:56</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Factorization_html_a3ff5e6f6789d9f05892f64066eab23c2"><div class="ttname"><a href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">mtpk::Factorization::pollard_rho</a></div><div class="ttdeci">uint64_t pollard_rho(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00082">factorization.cpp:82</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadDispatch.html">mtpk::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00201">threadpool.hpp:201</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1core_1_1ThreadPool_html"><div class="ttname"><a href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool</a></div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00060">threadpool.hpp:60</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Factorization_html"><div class="ttname"><a href="classgpmp_1_1Factorization.html">gpmp::Factorization</a></div><div class="ttdef"><b>Definition:</b> <a href="factorization_8hpp_source.html#l00056">factorization.hpp:56</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Factorization_html_affe0a305d01e421c609e59fee921d637"><div class="ttname"><a href="classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637">gpmp::Factorization::pollard_rho</a></div><div class="ttdeci">uint64_t pollard_rho(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="factorization_8cpp_source.html#l00082">factorization.cpp:82</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00201">threadpool.hpp:201</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html">gpmp::core::ThreadPool</a></div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00060">threadpool.hpp:60</a></div></div>
 <div class="ttc" id="afactors_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="factors_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="factors_8cpp_source.html#l00015">factors.cpp:15</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->

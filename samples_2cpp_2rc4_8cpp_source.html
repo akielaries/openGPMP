@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: samples/cpp/rc4.cpp Source File</title>
+<title>openGPMP: samples/cpp/rc4.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -81,7 +81,7 @@ $(function() {
 <div class="contents">
 <a href="samples_2cpp_2rc4_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;openMTPK/nt/rc4.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;openGPMP/nt/rc4.hpp&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
@@ -101,7 +101,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/*&lt;--------------------------------INIT---------------------------------&gt;*/</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// declare RC4 class obj</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classmtpk_1_1RC4.html">mtpk::RC4</a> rc;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classgpmp_1_1RC4.html">gpmp::RC4</a> rc;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * declare some key values and strings to hash</span></div>
@@ -147,12 +147,12 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    clock_t a;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    a = clock();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text = rc.<a class="code" href="classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664">compute</a>(key0, text0, hashtext_0, x_swap);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text = rc.<a class="code" href="classgpmp_1_1RC4.html#afbb43f7b46a3f724afcca0b143425bdf">compute</a>(key0, text0, hashtext_0, x_swap);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;computed_text addr: &quot;</span> &lt;&lt; &amp;computed_text &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * function to store the computed hash</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string display_text = rc.<a class="code" href="classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0">store_hash</a>(text0, hashtext_0, x_swap);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string display_text = rc.<a class="code" href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">store_hash</a>(text0, hashtext_0, x_swap);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;COMPUTED HASH(XSWAP) = &quot;</span> &lt;&lt; display_text &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// free whats no longer in use</span></div>
@@ -168,9 +168,9 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    clock_t b;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    b = clock();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text1 = rc.<a class="code" href="classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664">compute</a>(key1, text1, hashtext_1, t_swap);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text1 = rc.<a class="code" href="classgpmp_1_1RC4.html#afbb43f7b46a3f724afcca0b143425bdf">compute</a>(key1, text1, hashtext_1, t_swap);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;computed_text1 addr: &quot;</span> &lt;&lt; &amp;computed_text1 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::string display_text1 = rc.<a class="code" href="classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0">store_hash</a>(text1, hashtext_1, t_swap);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::string display_text1 = rc.<a class="code" href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">store_hash</a>(text1, hashtext_1, t_swap);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;COMPUTED HASH (TSWAP) = &quot;</span> &lt;&lt; display_text1 &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    free(hashtext_1);</div>
@@ -184,9 +184,9 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    clock_t c;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    c = clock();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text2 = rc.<a class="code" href="classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664">compute</a>(key2, text2, hashtext_2, b_swap);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text2 = rc.<a class="code" href="classgpmp_1_1RC4.html#afbb43f7b46a3f724afcca0b143425bdf">compute</a>(key2, text2, hashtext_2, b_swap);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;computed_text2 addr: &quot;</span> &lt;&lt; &amp;computed_text2 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::string display_text2 = rc.<a class="code" href="classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0">store_hash</a>(text2, hashtext_2, b_swap);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::string display_text2 = rc.<a class="code" href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">store_hash</a>(text2, hashtext_2, b_swap);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;COMPUTED HASH (BSWAP) = &quot;</span> &lt;&lt; display_text2 &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    free(hashtext_2);</div>
@@ -201,9 +201,9 @@ $(function() {
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    clock_t d;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    d = clock();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text3 = rc.<a class="code" href="classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664">compute</a>(key3, text3, hashtext_3, x_swap);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *computed_text3 = rc.<a class="code" href="classgpmp_1_1RC4.html#afbb43f7b46a3f724afcca0b143425bdf">compute</a>(key3, text3, hashtext_3, x_swap);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;computed_text2 addr: &quot;</span> &lt;&lt; &amp;computed_text3 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    std::string display_text3 = rc.<a class="code" href="classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0">store_hash</a>(text2, hashtext_3, x_swap);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    std::string display_text3 = rc.<a class="code" href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">store_hash</a>(text2, hashtext_3, x_swap);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;COMPUTED HASH (XSWAP) = &quot;</span> &lt;&lt; display_text3 &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    free(hashtext_3);</div>
@@ -213,9 +213,9 @@ $(function() {
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html"><div class="ttname"><a href="classmtpk_1_1RC4.html">mtpk::RC4</a></div><div class="ttdef"><b>Definition:</b> <a href="rc4_8hpp_source.html#l00072">rc4.hpp:72</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a5c07022bfab349fb887e8067e76c9664"><div class="ttname"><a href="classmtpk_1_1RC4.html#a5c07022bfab349fb887e8067e76c9664">mtpk::RC4::compute</a></div><div class="ttdeci">unsigned char * compute(char *key, char *plaintext, unsigned char *hashtext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00141">rc4.cpp:141</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1RC4_html_a83b075a0d58d785e743f38a83e43c6f0"><div class="ttname"><a href="classmtpk_1_1RC4.html#a83b075a0d58d785e743f38a83e43c6f0">mtpk::RC4::store_hash</a></div><div class="ttdeci">std::string store_hash(char *plaintext, unsigned char *hashtext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00115">rc4.cpp:115</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1RC4_html"><div class="ttname"><a href="classgpmp_1_1RC4.html">gpmp::RC4</a></div><div class="ttdef"><b>Definition:</b> <a href="rc4_8hpp_source.html#l00072">rc4.hpp:72</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1RC4_html_a2ec1ae1f6acd899dbf041f1afea7663c"><div class="ttname"><a href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">gpmp::RC4::store_hash</a></div><div class="ttdeci">std::string store_hash(char *plaintext, unsigned char *hashtext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00115">rc4.cpp:115</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1RC4_html_afbb43f7b46a3f724afcca0b143425bdf"><div class="ttname"><a href="classgpmp_1_1RC4.html#afbb43f7b46a3f724afcca0b143425bdf">gpmp::RC4::compute</a></div><div class="ttdeci">unsigned char * compute(char *key, char *plaintext, unsigned char *hashtext, int swap_type)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc4_8cpp_source.html#l00141">rc4.cpp:141</a></div></div>
 <div class="ttc" id="asamples_2cpp_2rc4_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="samples_2cpp_2rc4_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2rc4_8cpp_source.html#l00014">rc4.cpp:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

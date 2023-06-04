@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/arithmetic.hpp Source File</title>
+<title>openGPMP: include/arithmetic.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -117,11 +117,11 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define ARITHMETIC_HPP</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html">   69</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classmtpk_1_1Arith.html">Arith</a> {</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html">   69</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classgpmp_1_1Arith.html">Arith</a> {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#a70e6cf997a4479047e129b355d903d21">   71</a></span>&#160;    T <a class="code" href="classmtpk_1_1Arith.html#a70e6cf997a4479047e129b355d903d21">arr_add</a>(T arr[], int64_t n) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html#aaa1012515876f07ddccf22bf170510e0">   71</a></span>&#160;    T <a class="code" href="classgpmp_1_1Arith.html#aaa1012515876f07ddccf22bf170510e0">arr_add</a>(T arr[], int64_t n) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        T sum = 0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
@@ -130,7 +130,7 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> sum;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#a6dfd044e3afcf86a1bb4895c6dfc1d41">   80</a></span>&#160;    T <a class="code" href="classmtpk_1_1Arith.html#a6dfd044e3afcf86a1bb4895c6dfc1d41">arr_sub</a>(T arr[], int64_t n) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615">   80</a></span>&#160;    T <a class="code" href="classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615">arr_sub</a>(T arr[], int64_t n) {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        T diff = arr[0];</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 1; i &lt; n; i++) {</div>
@@ -139,7 +139,7 @@ $(function() {
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> diff;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#ab0f54cca9c0fe1652be9f9a91b86d1a1">   89</a></span>&#160;    T <a class="code" href="classmtpk_1_1Arith.html#ab0f54cca9c0fe1652be9f9a91b86d1a1">arr_mlt</a>(T arr[], int64_t n) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d">   89</a></span>&#160;    T <a class="code" href="classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d">arr_mlt</a>(T arr[], int64_t n) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        T prod = arr[0];</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
@@ -149,11 +149,11 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classmtpk_1_1Basics.html">  104</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Basics.html">Basics</a> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classgpmp_1_1Basics.html">  104</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgpmp_1_1Basics.html">Basics</a> {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Basics.html#ab3cbc7901b3921638d357ee19acc6cd7">greatest_power</a>(int64_t n, int64_t p);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    int64_t <a class="code" href="classgpmp_1_1Basics.html#a15b80edc366e7758958f6cbfc21e18f5">greatest_power</a>(int64_t n, int64_t p);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">op_gcd</a>(int64_t x, int64_t y);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    int64_t <a class="code" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">op_gcd</a>(int64_t x, int64_t y);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// TODO floating point operations for square root, logarithms,</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// exponentation, trigonometric functions of floating points</span></div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// TODO FIXME XXX BUG CHECKME TESTME PENDING DOCME</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">// namespace mtpk</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">// namespace gpmp</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//  public:</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span><span class="comment">//    template &lt;typename T&gt; inline T add(T t) {</span></div>
@@ -203,14 +203,14 @@ $(function() {
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">//};</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html"><div class="ttname"><a href="classmtpk_1_1Arith.html">mtpk::Arith</a></div><div class="ttdoc">Arithmetic Basics</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00069">arithmetic.hpp:69</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a6dfd044e3afcf86a1bb4895c6dfc1d41"><div class="ttname"><a href="classmtpk_1_1Arith.html#a6dfd044e3afcf86a1bb4895c6dfc1d41">mtpk::Arith::arr_sub</a></div><div class="ttdeci">T arr_sub(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00080">arithmetic.hpp:80</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a70e6cf997a4479047e129b355d903d21"><div class="ttname"><a href="classmtpk_1_1Arith.html#a70e6cf997a4479047e129b355d903d21">mtpk::Arith::arr_add</a></div><div class="ttdeci">T arr_add(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00071">arithmetic.hpp:71</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_ab0f54cca9c0fe1652be9f9a91b86d1a1"><div class="ttname"><a href="classmtpk_1_1Arith.html#ab0f54cca9c0fe1652be9f9a91b86d1a1">mtpk::Arith::arr_mlt</a></div><div class="ttdeci">T arr_mlt(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00089">arithmetic.hpp:89</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html"><div class="ttname"><a href="classmtpk_1_1Basics.html">mtpk::Basics</a></div><div class="ttdoc">Arithmetic Operations</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00104">arithmetic.hpp:104</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_a12cc5cd615b0c1a39851c440cfc55a3e"><div class="ttname"><a href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int64_t op_gcd(int64_t x, int64_t y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00052">arith.cpp:52</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_ab3cbc7901b3921638d357ee19acc6cd7"><div class="ttname"><a href="classmtpk_1_1Basics.html#ab3cbc7901b3921638d357ee19acc6cd7">mtpk::Basics::greatest_power</a></div><div class="ttdeci">int64_t greatest_power(int64_t n, int64_t p)</div><div class="ttdoc">Find greatest power of 2 itegers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00041">arith.cpp:41</a></div></div>
-<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html"><div class="ttname"><a href="classgpmp_1_1Arith.html">gpmp::Arith</a></div><div class="ttdoc">Arithmetic Basics</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00069">arithmetic.hpp:69</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html_a62f566efb43bfac691fc958f409b7615"><div class="ttname"><a href="classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615">gpmp::Arith::arr_sub</a></div><div class="ttdeci">T arr_sub(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00080">arithmetic.hpp:80</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html_aaa1012515876f07ddccf22bf170510e0"><div class="ttname"><a href="classgpmp_1_1Arith.html#aaa1012515876f07ddccf22bf170510e0">gpmp::Arith::arr_add</a></div><div class="ttdeci">T arr_add(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00071">arithmetic.hpp:71</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html_ab46786cb479bcd7e9ee6cd684473323d"><div class="ttname"><a href="classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d">gpmp::Arith::arr_mlt</a></div><div class="ttdeci">T arr_mlt(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00089">arithmetic.hpp:89</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Basics_html"><div class="ttname"><a href="classgpmp_1_1Basics.html">gpmp::Basics</a></div><div class="ttdoc">Arithmetic Operations</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00104">arithmetic.hpp:104</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Basics_html_a15b80edc366e7758958f6cbfc21e18f5"><div class="ttname"><a href="classgpmp_1_1Basics.html#a15b80edc366e7758958f6cbfc21e18f5">gpmp::Basics::greatest_power</a></div><div class="ttdeci">int64_t greatest_power(int64_t n, int64_t p)</div><div class="ttdoc">Find greatest power of 2 itegers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00041">arith.cpp:41</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Basics_html_a5b741b9ada725183e343422a00be724c"><div class="ttname"><a href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">gpmp::Basics::op_gcd</a></div><div class="ttdeci">int64_t op_gcd(int64_t x, int64_t y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00052">arith.cpp:52</a></div></div>
+<div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

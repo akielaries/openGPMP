@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: samples/cpp/mlp.cpp File Reference</title>
+<title>openGPMP: samples/cpp/mlp.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -122,9 +122,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    int64_t inputs{1}, outputs{1}, hidden_layer_units{8}, hidden_layers{3};</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">double</span> lr{.5};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1Trainers.html">mtpk::ml::Trainers</a> util;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a> util;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">auto</span> model =</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        util.<a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">init_SecondaryMLP</a>(inputs = 1, outputs = 1, hidden_layer_units = 8,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        util.<a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">init_SecondaryMLP</a>(inputs = 1, outputs = 1, hidden_layer_units = 8,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                               hidden_layers = 3, lr = .5);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// declare a data file</span></div>
@@ -136,15 +136,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    uint64_t max_iters{1000}, return_every{500};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// call the train method for the SecondaryMLP model</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    util.<a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">train_SecondaryMLP</a>(model, data_file, max_iters, return_every);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    util.<a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">train_SecondaryMLP</a>(model, data_file, max_iters, return_every);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html">mtpk::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html_a07e9a39d8f34995c08667d3634a08155"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">mtpk::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00072">trainers.hpp:72</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html_a40de007548f1313fc1a27af9aa8a886d"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">mtpk::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00090">trainers.hpp:90</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a56c7851631307ac5550f73af82466ef1"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">gpmp::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00090">trainers.hpp:90</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a84e47e709ab39c08fd00351221707065"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">gpmp::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00072">trainers.hpp:72</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">mtpk::ml::Trainers::init_SecondaryMLP()</a>, and <a class="el" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">mtpk::ml::Trainers::train_SecondaryMLP()</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">gpmp::ml::Trainers::init_SecondaryMLP()</a>, and <a class="el" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">gpmp::ml::Trainers::train_SecondaryMLP()</a>.</p>
 
 </div>
 </div>

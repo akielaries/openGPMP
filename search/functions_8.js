@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['hadamard_1062',['hadamard',['../classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce',1,'mtpk::Matrix::hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#af9a488f17821dd401fa7c43454be3561',1,'openmtpk.linalg.linalg.Matrix.hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a7ef148fda934d3f635bc5880418aefa4',1,'openmtpk.linalg.linalg.MatrixI.hadamard()']]],
-  ['halleymethod_1063',['halleyMethod',['../classmtpk_1_1NumericalAnalysis.html#a0c5db24c24730c41efa60742a984fe96',1,'mtpk::NumericalAnalysis']]],
-  ['harmonicmean_1064',['harmonicMean',['../classmtpk_1_1ml_1_1Stats.html#ac6028f5ae026ff9297a2da515cc63b65',1,'mtpk::ml::Stats']]],
-  ['heinzmean_1065',['heinzMean',['../classmtpk_1_1ml_1_1Stats.html#a6bea38f2f53caa316fa3aec5a290a6d4',1,'mtpk::ml::Stats']]],
-  ['heronianmean_1066',['heronianMean',['../classmtpk_1_1ml_1_1Stats.html#a6ebbfda6dbc867a5522722c1d09c4e85',1,'mtpk::ml::Stats']]],
-  ['hessian_1067',['hessian',['../classmtpk_1_1NumericalAnalysis.html#ab0b88ad31db54adfa5fb5322bc9c8390',1,'mtpk::NumericalAnalysis']]]
+  ['identricmean_1025',['identricMean',['../classgpmp_1_1ml_1_1Stats.html#a734c952f4ec20e8385f60434bcc7c03f',1,'gpmp::ml::Stats']]],
+  ['init_1026',['init',['../modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus.cpp'],['../torus__animated_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'init():&#160;torus_animated.cpp']]],
+  ['init_5fsecondarymlp_1027',['init_SecondaryMLP',['../classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065',1,'gpmp::ml::Trainers']]],
+  ['init_5fvec_1028',['init_vec',['../__gpu__mtx_8h.html#a97064e8e7b735b6f6bfb19c9e625ae68',1,'init_vec(int *vec, int len, int set_one_flag):&#160;_gpu_mtx.c'],['../__gpu__mtx_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68',1,'init_vec(int *vec, int len, int set_one_flag):&#160;_gpu_mtx.c'],['../__gpu__mtx__add_8c.html#a97064e8e7b735b6f6bfb19c9e625ae68',1,'init_vec(int *vec, int len, int set_one_flag):&#160;_gpu_mtx_add.c']]],
+  ['invquadraticinterpolation_1029',['invQuadraticInterpolation',['../classgpmp_1_1NumericalAnalysis.html#af0971c6855c6c88c8d4a5609dd5da2d3',1,'gpmp::NumericalAnalysis']]],
+  ['is_5fprime_1030',['is_prime',['../classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1',1,'gpmp::PrimalityTest']]]
 ];

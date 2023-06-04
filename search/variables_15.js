@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_1381',['x',['../classmtpk_1_1Vectors.html#a457e8a55b3bc8fb04918973548153ab1',1,'mtpk::Vectors::x()'],['../classmtpk_1_1ml_1_1LinearRegression.html#aa7790571e7254acf057337177b7fb28c',1,'mtpk::ml::LinearRegression::x()']]]
+  ['x_1334',['x',['../classgpmp_1_1Vectors.html#a31a81c2930d7d10b03e18815ccef9732',1,'gpmp::Vectors::x()'],['../classgpmp_1_1ml_1_1LinearRegression.html#ab6dc1c4d89d1c3302f6c9ad63979ccda',1,'gpmp::ml::LinearRegression::x()']]]
 ];

@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['c_1293',['C',['../classmtpk_1_1ml_1_1SVC.html#abb9d7eb674b5c4b7900c242ed46d041b',1,'mtpk::ml::SVC']]],
-  ['cache_5flayers_1294',['cache_layers',['../classmtpk_1_1NaiveNet.html#a4e6278e34713c92864b1955bd12c9a7d',1,'mtpk::NaiveNet']]],
-  ['characteristics_1295',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
-  ['class_5fnum_1296',['class_num',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a3779c233b7c576df21e787389dd75d2d',1,'mtpk::ml::BayesBernoulli::class_num()'],['../classmtpk_1_1ml_1_1BayesGauss.html#a170adb8c6d2a4083fc9c90fce77c96bb',1,'mtpk::ml::BayesGauss::class_num()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#ad76d0bdf4567717f3b482c6318548e12',1,'mtpk::ml::BayesMutliNom::class_num()']]],
-  ['class_5fprob_1297',['class_prob',['../structmtpk_1_1ml_1_1summary.html#a907ade7755bd768ffe9f7930aaafc239',1,'mtpk::ml::summary']]],
-  ['coeff_1298',['coeff',['../classmtpk_1_1ml_1_1LinearRegression.html#a0ef25c17bc3a48621946e53d76dae228',1,'mtpk::ml::LinearRegression']]],
-  ['cols_1299',['cols',['../classmtpk_1_1Matrix.html#ae3be5dd5bf62c808af6e0a7f24b08875',1,'mtpk::Matrix']]],
-  ['condition_1300',['condition',['../classmtpk_1_1core_1_1ThreadPool.html#a28f1277fecf7facd124a14ba71948876',1,'mtpk::core::ThreadPool']]],
-  ['constant_1301',['constant',['../classmtpk_1_1ml_1_1LinearRegression.html#a3ff0ca2475f7692f3f04995426026fcc',1,'mtpk::ml::LinearRegression']]],
-  ['current_5frot_1302',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]]
+  ['c_1245',['C',['../classgpmp_1_1ml_1_1SVC.html#adee5c3d6dd5a58ae614b51ad1ec191e4',1,'gpmp::ml::SVC']]],
+  ['cache_5flayers_1246',['cache_layers',['../classgpmp_1_1NaiveNet.html#a56dbc465a3096320f7332dbbe20aa620',1,'gpmp::NaiveNet']]],
+  ['characteristics_1247',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
+  ['class_5fnum_1248',['class_num',['../classgpmp_1_1ml_1_1BayesBernoulli.html#a3475ef720a39c1abf04d8415ae228e45',1,'gpmp::ml::BayesBernoulli::class_num()'],['../classgpmp_1_1ml_1_1BayesGauss.html#a253cc957463f421f94d90ea086b402ae',1,'gpmp::ml::BayesGauss::class_num()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#a42275836084a95861ee25cfab384ed25',1,'gpmp::ml::BayesMutliNom::class_num()']]],
+  ['class_5fprob_1249',['class_prob',['../structgpmp_1_1ml_1_1summary.html#a2e134a46683bd64f821d1b523bc992e7',1,'gpmp::ml::summary']]],
+  ['coeff_1250',['coeff',['../classgpmp_1_1ml_1_1LinearRegression.html#a7c91fe16d4120fceeda7c96f4e972f20',1,'gpmp::ml::LinearRegression']]],
+  ['cols_1251',['cols',['../classgpmp_1_1Matrix.html#a42c9832b977ac25d88fa04ce6b8478d3',1,'gpmp::Matrix']]],
+  ['condition_1252',['condition',['../classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5',1,'gpmp::core::ThreadPool']]],
+  ['constant_1253',['constant',['../classgpmp_1_1ml_1_1LinearRegression.html#a91c5823d9b367e24e8e6d777aa7f4b70',1,'gpmp::ml::LinearRegression']]],
+  ['current_5frot_1254',['current_rot',['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'torus_animated.cpp']]]
 ];

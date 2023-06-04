@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['hadamard_274',['hadamard',['../classmtpk_1_1Matrix.html#a826b8daf54b5032da5aaaa3085687dce',1,'mtpk::Matrix::hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#af9a488f17821dd401fa7c43454be3561',1,'openmtpk.linalg.linalg.Matrix.hadamard()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a7ef148fda934d3f635bc5880418aefa4',1,'openmtpk.linalg.linalg.MatrixI.hadamard()']]],
-  ['halleymethod_275',['halleyMethod',['../classmtpk_1_1NumericalAnalysis.html#a0c5db24c24730c41efa60742a984fe96',1,'mtpk::NumericalAnalysis']]],
-  ['harmonicmean_276',['harmonicMean',['../classmtpk_1_1ml_1_1Stats.html#ac6028f5ae026ff9297a2da515cc63b65',1,'mtpk::ml::Stats']]],
-  ['heinzmean_277',['heinzMean',['../classmtpk_1_1ml_1_1Stats.html#a6bea38f2f53caa316fa3aec5a290a6d4',1,'mtpk::ml::Stats']]],
-  ['heronianmean_278',['heronianMean',['../classmtpk_1_1ml_1_1Stats.html#a6ebbfda6dbc867a5522722c1d09c4e85',1,'mtpk::ml::Stats']]],
-  ['hessian_279',['hessian',['../classmtpk_1_1NumericalAnalysis.html#ab0b88ad31db54adfa5fb5322bc9c8390',1,'mtpk::NumericalAnalysis']]]
+  ['hadamard_267',['hadamard',['../classgpmp_1_1Matrix.html#a59d822575579bf22c0be51724e62afa2',1,'gpmp::Matrix']]],
+  ['halleymethod_268',['halleyMethod',['../classgpmp_1_1NumericalAnalysis.html#a9780dafb470df01a41217ce10331a960',1,'gpmp::NumericalAnalysis']]],
+  ['harmonicmean_269',['harmonicMean',['../classgpmp_1_1ml_1_1Stats.html#a7b2e1384c19ce7865ec6556058babe8a',1,'gpmp::ml::Stats']]],
+  ['heinzmean_270',['heinzMean',['../classgpmp_1_1ml_1_1Stats.html#a63383622a9500e94fe7f8129ef50b56b',1,'gpmp::ml::Stats']]],
+  ['heronianmean_271',['heronianMean',['../classgpmp_1_1ml_1_1Stats.html#a1e2946961486f464d503c9ac1dbd1367',1,'gpmp::ml::Stats']]],
+  ['hessian_272',['hessian',['../classgpmp_1_1NumericalAnalysis.html#a9643c7e75906668ef8e409df1c3d796d',1,'gpmp::NumericalAnalysis']]]
 ];
