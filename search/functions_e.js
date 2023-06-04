@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['one_5frep_1099',['one_rep',['../classgpmp_1_1core_1_1Data.html#ab5f6135d30382bd2803f4b0a6f653d5f',1,'gpmp::core::Data']]],
-  ['one_5frep_5freverse_1100',['one_rep_reverse',['../classgpmp_1_1core_1_1Data.html#a2f34db1e7321b7f8cea416cb3f0115d0',1,'gpmp::core::Data']]],
-  ['ones_1101',['ones',['../structgpmp_1_1mtx.html#a69995480c72b9a3de3472a2593b0c65d',1,'gpmp::mtx']]],
-  ['op_5fgcd_1102',['op_gcd',['../classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c',1,'gpmp::Basics']]],
-  ['operator_28_29_1103',['operator()',['../classgpmp_1_1Matrix.html#aedfb46decf0927b80ec77832a5e78363',1,'gpmp::Matrix']]],
-  ['operator_2b_1104',['operator+',['../classgpmp_1_1Matrix.html#a938f3bbd63712f2309d04b59a6739366',1,'gpmp::Matrix']]],
-  ['operator_2d_1105',['operator-',['../classgpmp_1_1Matrix.html#a6c8be13167c6bd69b890319ce410959e',1,'gpmp::Matrix::operator-()'],['../classgpmp_1_1Matrix.html#ac127f63aad5585be6c559caa085daee7',1,'gpmp::Matrix::operator-(Matrix &amp;target)']]],
-  ['operator_3d_3d_1106',['operator==',['../classgpmp_1_1Matrix.html#a5f02de285c953a63957e520dba09a5b3',1,'gpmp::Matrix']]],
-  ['outlierfinder_1107',['OutlierFinder',['../classgpmp_1_1core_1_1OutlierFinder.html#a4708c30e0d1b21e9e96bc8adb4ce0bb0',1,'gpmp::core::OutlierFinder']]],
-  ['output_5ferr_1108',['output_err',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a3feea5fa1b7f7387d31f28ad13c75b06',1,'gpmp::ml::PrimaryMLP']]]
+  ['naive_5fnetwork_1128',['naive_network',['../classgpmp_1_1NaiveNet.html#a139464bf99f61bc4c05651e03273ab04',1,'gpmp::NaiveNet']]],
+  ['napier_1129',['napier',['../test_8cpp.html#a2b28ef06e11f0239fa815675ab151b0b',1,'test.cpp']]],
+  ['nearestneighbors_1130',['nearestNeighbors',['../classgpmp_1_1ml_1_1kNN.html#adbc01fb08890532d3db51c68ef8ec5f0',1,'gpmp::ml::kNN']]],
+  ['neumansandormean_1131',['neumanSandorMean',['../classgpmp_1_1ml_1_1Stats.html#af2348ce90ef2ab60ac370a81e186d1fc',1,'gpmp::ml::Stats']]],
+  ['newton_5fraphson_1132',['newton_raphson',['../classgpmp_1_1EuclideanDivision.html#a906d64d0bf1c5e98a47572747a527670',1,'gpmp::EuclideanDivision']]],
+  ['newtonraphsonmethod_1133',['newtonRaphsonMethod',['../classgpmp_1_1NumericalAnalysis.html#af86927c0706e86158959b2020b5b4313',1,'gpmp::NumericalAnalysis']]],
+  ['num_5frows_1134',['num_rows',['../classgpmp_1_1ml_1_1LinearRegression.html#ad8b5dcb073ad09912ea45c0016ac93d3',1,'gpmp::ml::LinearRegression::num_rows()'],['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#aca9a9d4be27550c9753cd3018851b13c',1,'pygpmp.ml.ml.LinearRegression.num_rows()']]],
+  ['numdiff_1135',['numDiff',['../classgpmp_1_1NumericalAnalysis.html#a11c5f95f0f01513a85ced7276453c697',1,'gpmp::NumericalAnalysis::numDiff(double(*function)(double), double x)'],['../classgpmp_1_1NumericalAnalysis.html#a9a7304c4d604f83b486ddefc9bb2c5a4',1,'gpmp::NumericalAnalysis::numDiff(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis)']]],
+  ['numdiff_5f2_1136',['numDiff_2',['../classgpmp_1_1NumericalAnalysis.html#ab84ecda7a4e0619726b4c5cc6679332e',1,'gpmp::NumericalAnalysis::numDiff_2(double(*function)(double), double x)'],['../classgpmp_1_1NumericalAnalysis.html#a91e9fbf1716c36cbec0bf981a807923f',1,'gpmp::NumericalAnalysis::numDiff_2(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis1, int axis2)']]],
+  ['numdiff_5f3_1137',['numDiff_3',['../classgpmp_1_1NumericalAnalysis.html#a28b1927069cf5b5fcea4e226a64e8082',1,'gpmp::NumericalAnalysis::numDiff_3(double(*function)(double), double x)'],['../classgpmp_1_1NumericalAnalysis.html#afcf1cf63af7b98091b0dc2f071ddac81',1,'gpmp::NumericalAnalysis::numDiff_3(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis1, int axis2, int axis3)']]]
 ];

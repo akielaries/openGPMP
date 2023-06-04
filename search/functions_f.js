@@ -1,21 +1,13 @@
 var searchData=
 [
-  ['parallel_5ffor_1109',['parallel_for',['../namespacegpmp_1_1core.html#ae891916df42ab9ac1edca274ef8861ed',1,'gpmp::core']]],
-  ['pi_1110',['pi',['../test_8cpp.html#ac3114372c3f9f7747a060b753cb51783',1,'test.cpp']]],
-  ['pollard_5frho_1111',['pollard_rho',['../classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637',1,'gpmp::Factorization']]],
-  ['pollard_5frho_5flog_1112',['pollard_rho_log',['../classgpmp_1_1Logarithms.html#ace07593787f2a60b9f281ba5a07e9010',1,'gpmp::Logarithms']]],
-  ['powermean_1113',['powerMean',['../classgpmp_1_1ml_1_1Stats.html#a3c2efdf552da6bb0d02abb40e2e6fa58',1,'gpmp::ml::Stats']]],
-  ['predict_1114',['predict',['../classgpmp_1_1ml_1_1LinearRegression.html#af840b5cacce13006c5b0a26599f09441',1,'gpmp::ml::LinearRegression::predict()'],['../classgpmp_1_1ml_1_1BayesClf.html#af4f7c2250512f359a44d3ed3bff43eb9',1,'gpmp::ml::BayesClf::predict()']]],
-  ['prga_1115',['PRGA',['../classgpmp_1_1RC4.html#a16d9cd8b6b060631a72ca69b10de833e',1,'gpmp::RC4::PRGA()'],['../classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c',1,'RC5::PRGA()']]],
-  ['primarymlp_1116',['PrimaryMLP',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a1b10acbaf7c12edc10086b946c9f34ce',1,'gpmp::ml::PrimaryMLP']]],
-  ['print_5fcsv_1117',['print_csv',['../linalg__ops_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032',1,'linalg_ops.cpp']]],
-  ['print_5fmtx_1118',['print_mtx',['../classgpmp_1_1Matrix.html#a2cb42703f15e16d7f98f41f7e0b92b08',1,'gpmp::Matrix']]],
-  ['print_5fshape_1119',['print_shape',['../classgpmp_1_1Matrix.html#a4bc6d42a04279035a72cc8aa6918ee35',1,'gpmp::Matrix']]],
-  ['print_5fvec_1120',['print_vec',['../__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218',1,'print_vec(int *vec, int len):&#160;_gpu_mtx_add.c'],['../__gpu__mtx_8c.html#ae4102c61b63bca9d654cd712033bf218',1,'print_vec(int *vec, int len):&#160;_gpu_mtx.c']]],
-  ['printdata_1121',['printData',['../classgpmp_1_1core_1_1Data.html#a0c848a128b208cd75cd9e5ec8d1bec35',1,'gpmp::core::Data::printData(std::vector&lt; std::string &gt; inputName, std::vector&lt; std::vector&lt; double &gt;&gt; inputSet)'],['../classgpmp_1_1core_1_1Data.html#afe13a973a9063591685eb0b65d3be895',1,'gpmp::core::Data::printData(std::vector&lt; std::string &gt; inputName, std::string outputName, std::vector&lt; std::vector&lt; double &gt;&gt; inputSet, std::vector&lt; double &gt; outputSet)']]],
-  ['prob_5fby_5fsumm_1122',['prob_by_summ',['../namespacegpmp_1_1ml.html#a75f238bf6b0ee0d5c8e986cd115df5c8',1,'gpmp::ml']]],
-  ['prop_5fbackwards_1123',['prop_backwards',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a1a23a74cfdea9967f30498e20e1b4be1',1,'gpmp::ml::SecondaryMLP']]],
-  ['prop_5fforwards_1124',['prop_forwards',['../classgpmp_1_1ml_1_1SecondaryMLP.html#adfc7fc67f5f6e980a731637b0890f72a',1,'gpmp::ml::SecondaryMLP']]],
-  ['prop_5fsignal_1125',['prop_signal',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a90b6a8d8ffb8e271afa3db925baf3688',1,'gpmp::ml::PrimaryMLP']]],
-  ['propagate_1126',['propagate',['../classgpmp_1_1ml_1_1SVC.html#aafe27928a621d55ba79b8dd2757b9826',1,'gpmp::ml::SVC::propagate(std::vector&lt; double &gt; x)'],['../classgpmp_1_1ml_1_1SVC.html#ac71ac6ee3d446e35f9a0fbf43097ea6d',1,'gpmp::ml::SVC::propagate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1AutoEncoder.html#a4000fc9a503e7d88d6e964ebca60f8e2',1,'gpmp::ml::AutoEncoder::propagate(std::vector&lt; double &gt; x)'],['../classgpmp_1_1ml_1_1AutoEncoder.html#a196a70b3abe781fcf0a8ceaf95e11b86',1,'gpmp::ml::AutoEncoder::propagate(std::vector&lt; std::vector&lt; double &gt;&gt; X)']]]
+  ['one_5frep_1138',['one_rep',['../classgpmp_1_1core_1_1Data.html#ab5f6135d30382bd2803f4b0a6f653d5f',1,'gpmp::core::Data']]],
+  ['one_5frep_5freverse_1139',['one_rep_reverse',['../classgpmp_1_1core_1_1Data.html#a2f34db1e7321b7f8cea416cb3f0115d0',1,'gpmp::core::Data']]],
+  ['ones_1140',['ones',['../structgpmp_1_1mtx.html#a69995480c72b9a3de3472a2593b0c65d',1,'gpmp::mtx::ones()'],['../classpygpmp_1_1linalg_1_1linalg_1_1mtx.html#a9d9626adecdc808c2f37fb2b25fc872b',1,'pygpmp.linalg.linalg.mtx.ones()']]],
+  ['op_5fgcd_1141',['op_gcd',['../classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c',1,'gpmp::Basics::op_gcd()'],['../classpygpmp_1_1arithmetic_1_1arithmetic_1_1Basics.html#afa1c9b374c70fbcdabf57757a8ee4af3',1,'pygpmp.arithmetic.arithmetic.Basics.op_gcd()'],['../classpygpmp_1_1nt_1_1nt_1_1Basics.html#acf5982e56573cab2ed893697721d244c',1,'pygpmp.nt.nt.Basics.op_gcd()']]],
+  ['operator_28_29_1142',['operator()',['../classgpmp_1_1Matrix.html#aedfb46decf0927b80ec77832a5e78363',1,'gpmp::Matrix']]],
+  ['operator_2b_1143',['operator+',['../classgpmp_1_1Matrix.html#a938f3bbd63712f2309d04b59a6739366',1,'gpmp::Matrix']]],
+  ['operator_2d_1144',['operator-',['../classgpmp_1_1Matrix.html#a6c8be13167c6bd69b890319ce410959e',1,'gpmp::Matrix::operator-()'],['../classgpmp_1_1Matrix.html#ac127f63aad5585be6c559caa085daee7',1,'gpmp::Matrix::operator-(Matrix &amp;target)']]],
+  ['operator_3d_3d_1145',['operator==',['../classgpmp_1_1Matrix.html#a5f02de285c953a63957e520dba09a5b3',1,'gpmp::Matrix']]],
+  ['outlierfinder_1146',['OutlierFinder',['../classgpmp_1_1core_1_1OutlierFinder.html#a4708c30e0d1b21e9e96bc8adb4ce0bb0',1,'gpmp::core::OutlierFinder']]],
+  ['output_5ferr_1147',['output_err',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a3feea5fa1b7f7387d31f28ad13c75b06',1,'gpmp::ml::PrimaryMLP']]]
 ];

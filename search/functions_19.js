@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eprimarymlp_1224',['~PrimaryMLP',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a8ac96374c91aa485fa4aedd0a34b5175',1,'gpmp::ml::PrimaryMLP']]],
-  ['_7ethreadpool_1225',['~ThreadPool',['../classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03',1,'gpmp::core::ThreadPool']]]
+  ['zeros_1262',['zeros',['../structgpmp_1_1mtx.html#a33a6bdf56b2e5b64bac85fee9d24aec6',1,'gpmp::mtx::zeros()'],['../classpygpmp_1_1linalg_1_1linalg_1_1mtx.html#ab43d85e4fee35762bdf165dd327e2deb',1,'pygpmp.linalg.linalg.mtx.zeros()']]]
 ];

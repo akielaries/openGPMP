@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arm_5fsimd_1366',['ARM_SIMD',['../linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79',1,'linalg.hpp']]]
+  ['arm_5fsimd_1415',['ARM_SIMD',['../linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79',1,'linalg.hpp']]]
 ];

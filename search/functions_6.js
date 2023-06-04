@@ -1,17 +1,11 @@
 var searchData=
 [
-  ['gaussiancdf_1005',['gaussianCDF',['../classgpmp_1_1ml_1_1Activate.html#af47231ff6b03abe372aa2c0d53a221af',1,'gpmp::ml::Activate::gaussianCDF(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#a217f48e25e9ff299212d61af5000a519',1,'gpmp::ml::Activate::gaussianCDF(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#a8eacbf1479a906961c0cab3c496b72ee',1,'gpmp::ml::Activate::gaussianCDF(double z, bool deriv=0)']]],
-  ['gelu_1006',['GELU',['../classgpmp_1_1ml_1_1Activate.html#a9a9a440d5d5a5e26ebddd837ba6deef9',1,'gpmp::ml::Activate::GELU(double z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#ade19fdf5ceac61dad8f78a9c42a0b5cd',1,'gpmp::ml::Activate::GELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#a41da35b081b9ec607fb5746687bc3b87',1,'gpmp::ml::Activate::GELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['gen_5fsumm_1007',['gen_summ',['../namespacegpmp_1_1ml.html#aebf3950e2dd3eb5e7f60e4ac5d65f29a',1,'gpmp::ml']]],
-  ['geometricmean_1008',['geometricMean',['../classgpmp_1_1ml_1_1Stats.html#a7066e328e63852de0f3713367103bd32',1,'gpmp::ml::Stats']]],
-  ['get_5finput_1009',['get_input',['../classgpmp_1_1ml_1_1LinearRegression.html#a2f63e49165adffe29c74763c5fd5309f',1,'gpmp::ml::LinearRegression']]],
-  ['get_5fsignal_5fout_1010',['get_signal_out',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a8b9c25c87cdd0a292e17ea6724b112c0',1,'gpmp::ml::PrimaryMLP']]],
-  ['get_5ftest_5ffold_1011',['get_test_fold',['../classgpmp_1_1ml_1_1CV.html#a44f2f5673edd11f8443df5569d440b8c',1,'gpmp::ml::CV::get_test_fold()'],['../classgpmp_1_1ml_1_1KF__CV.html#aa7402a41c343a4d12a0530eb8e19a3d2',1,'gpmp::ml::KF_CV::get_test_fold()']]],
-  ['get_5ftrain_5ffold_1012',['get_train_fold',['../classgpmp_1_1ml_1_1CV.html#ae526350bb70e6774ff37e230efa77f79',1,'gpmp::ml::CV::get_train_fold()'],['../classgpmp_1_1ml_1_1KF__CV.html#a671541822833a3bac0fb56c49eb59869',1,'gpmp::ml::KF_CV::get_train_fold()']]],
-  ['getdata_1013',['getData',['../classCSVReader.html#a702c239c4cc205c02d37056acc3dda6b',1,'CSVReader']]],
-  ['goldschmidt_1014',['goldschmidt',['../classgpmp_1_1EuclideanDivision.html#ad390a96f80a60b91ece8da96135cea05',1,'gpmp::EuclideanDivision']]],
-  ['gradient_5fdescent_1015',['gradient_descent',['../classgpmp_1_1ml_1_1Optimizers.html#af82d317250ca6174dc587d4a1caf5f2c',1,'gpmp::ml::Optimizers']]],
-  ['gradientdescent_1016',['gradientDescent',['../classgpmp_1_1ml_1_1AutoEncoder.html#af00387ae19981cd38779e2e84efaeb63',1,'gpmp::ml::AutoEncoder::gradientDescent()'],['../classgpmp_1_1ml_1_1Logreg.html#aa6aef8cab208f22a00297f717c1bc7b2',1,'gpmp::ml::Logreg::gradientDescent()'],['../classgpmp_1_1ml_1_1SVC.html#a6ef373d6bc54f1470faf0bcc1b7936f4',1,'gpmp::ml::SVC::gradientDescent()']]],
-  ['greatest_5fpower_1017',['greatest_power',['../classgpmp_1_1Basics.html#a15b80edc366e7758958f6cbfc21e18f5',1,'gpmp::Basics']]],
-  ['growthmethod_1018',['growthMethod',['../classgpmp_1_1NumericalAnalysis.html#aa0230df80d89321187aa35008ba2ea93',1,'gpmp::NumericalAnalysis']]]
+  ['feature_5fscaling_1036',['feature_scaling',['../classgpmp_1_1core_1_1Data.html#afb80d5e2675c1ef66cdf38ec3d2c3ee8',1,'gpmp::core::Data']]],
+  ['fill_5findex_1037',['fill_index',['../classgpmp_1_1Matrix.html#ae11a90e81baae92e0e8d3be147b43910',1,'gpmp::Matrix::fill_index()'],['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#aae8b51acbc079d056fbe59e775eb2d3b',1,'pygpmp.linalg.linalg.Matrix.fill_index()'],['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#a58adbd273b91686c789165925e94cbe4',1,'pygpmp.linalg.linalg.MatrixI.fill_index()']]],
+  ['filldistances_1038',['fillDistances',['../classgpmp_1_1ml_1_1NearestNeighbor.html#ae4bca1ee30c0b77369109bdff5dd2e61',1,'gpmp::ml::NearestNeighbor::fillDistances()'],['../nearest__neighbors_8cpp.html#a91599ec4f74a72f07af0d53665025e52',1,'fillDistances():&#160;nearest_neighbors.cpp']]],
+  ['fit_1039',['fit',['../classgpmp_1_1ml_1_1BayesClf.html#a5e604f8f262b251752b21dbfa95d1677',1,'gpmp::ml::BayesClf']]],
+  ['forward_5fprop_1040',['forward_prop',['../classgpmp_1_1NaiveNet.html#a152927577aed3920b48ed13c2fce1084',1,'gpmp::NaiveNet']]],
+  ['forwardpass_1041',['forwardPass',['../classgpmp_1_1ml_1_1AutoEncoder.html#a1f54ef6f47594fd0f619de9d4183a2e9',1,'gpmp::ml::AutoEncoder::forwardPass()'],['../classgpmp_1_1ml_1_1Logreg.html#a59067f3cfbdd2e4cf12b17f3c7701dec',1,'gpmp::ml::Logreg::forwardPass()'],['../classgpmp_1_1ml_1_1SVC.html#afc645acabf8d013cfba3027e686eb9e5',1,'gpmp::ml::SVC::forwardPass()']]],
+  ['fourier_1042',['fourier',['../classgpmp_1_1EuclideanDivision.html#a392b368a771604ee54688951d5c83263',1,'gpmp::EuclideanDivision']]],
+  ['fractal_1043',['fractal',['../Mandelbrot_8cpp.html#a2cd501dd888cff55029d5490fb5e1c0f',1,'Mandelbrot.cpp']]]
 ];
