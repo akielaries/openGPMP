@@ -124,7 +124,7 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
    - Greatest Common Divisors
    - Squares
    - Cryptography/Encryption
-6. Topology/Complex
+6. Complex
    - Dynamical Systems
    - Topology
    - Spline
