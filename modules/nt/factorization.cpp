@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -55,9 +55,9 @@
 #include <vector>
 
 // declare Basics and Primality class objects
-mtpk::Basics __FACT_BASICS__;
-mtpk::Factorization __FACTOR__;
-mtpk::PrimalityTest __FACT_PRIMES__;
+gpmp::Basics __FACT_BASICS__;
+gpmp::Factorization __FACTOR__;
+gpmp::PrimalityTest __FACT_PRIMES__;
 
 // OSX uses srand() opposed to rand()
 #ifdef __APPLE__
@@ -65,21 +65,21 @@ mtpk::PrimalityTest __FACT_PRIMES__;
 #endif
 
 /*
-std::vector<std::future<uint64_t>> mtpk::Factorization::pollard_rho_thread(
+std::vector<std::future<uint64_t>> gpmp::Factorization::pollard_rho_thread(
     const std::vector<uint64_t> &nums_to_factorize) {
-    mtpk::ThreadPool pool(2);
-    mtpk::Factorization factors;
+    gpmp::ThreadPool pool(2);
+    gpmp::Factorization factors;
     std::vector<std::future<uint64_t>> results;
 
     for (const auto &num : nums_to_factorize) {
         results.emplace_back(pool.enqueue(
-            &mtpk::Factorization::pollard_rho, &factors, num));
+            &gpmp::Factorization::pollard_rho, &factors, num));
     }
 
     return results;
 }*/
 
-uint64_t mtpk::Factorization::pollard_rho(uint64_t n) {
+uint64_t gpmp::Factorization::pollard_rho(uint64_t n) {
     /* initialize random seed */
     std::mt19937_64 rng(
         std::chrono::steady_clock::now().time_since_epoch().count());

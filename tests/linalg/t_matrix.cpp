@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -43,12 +43,12 @@
 using ::testing::DoubleLE;
 using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
-using namespace mtpk;
+using namespace gpmp;
 
 namespace {
 
 TEST(matrix_print, print_mtx) {
-    mtpk::Matrix<int> mat(3, 4);
+    gpmp::Matrix<int> mat(3, 4);
     mat.print_mtx();
 
     std::tuple<Matrix<double>, Matrix<double>> matrices =

@@ -1,4 +1,4 @@
-/* openMTPK Machine Learning Module */
+/* openGPMP Machine Learning Module */
 
 %module ml
 %include <std_vector.i>
@@ -7,7 +7,7 @@
 
 %{
     #include "../../include/ml/linreg.hpp"
-    using namespace mtpk;
+    using namespace gpmp;
 %}
 
 %include "../../include/ml/linreg.hpp"

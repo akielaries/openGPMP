@@ -13,7 +13,7 @@ void matrixAddition_t(const std::vector<std::vector<int>> &A,
                       const std::vector<std::vector<int>> &B,
                       std::vector<std::vector<int>> &C) {
     const int size = A.size();
-    mtpk::core::ThreadPool threadPool(8);
+    gpmp::core::ThreadPool threadPool(8);
 
     for (int i = 0; i < size; ++i) {
         threadPool.enqueue([&A, &B, &C, i]() {
@@ -140,7 +140,7 @@ void matrixAddition_tf(const std::vector<std::vector<int>>& A,
                        std::vector<std::vector<int>>& C) {
     const int size = A.size();
 
-    mtpk::core::parallel_for(size, [&](int start, int end) {
+    gpmp::core::parallel_for(size, [&](int start, int end) {
         for (int i = start; i < end; ++i) {
             std::vector<int>& C_row = C[i];
             const std::vector<int>& A_row = A[i];

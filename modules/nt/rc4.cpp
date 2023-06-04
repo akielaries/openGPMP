@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -47,26 +47,26 @@
 #include <string.h>
 #include <string>
 
-void mtpk::RC4::byte_swap(uint8_t *a, uint8_t *b) {
+void gpmp::RC4::byte_swap(uint8_t *a, uint8_t *b) {
     uint8_t swapped = *a;
     swapped = *a;
     *a = *b;
     *b = swapped;
 }
 
-void mtpk::RC4::trad_swap(unsigned char *a, unsigned char *b) {
+void gpmp::RC4::trad_swap(unsigned char *a, unsigned char *b) {
     int swapped = *a;
     *a = *b;
     *b = swapped;
 }
 
-void mtpk::RC4::XOR_swap(unsigned char *a, unsigned char *b) {
+void gpmp::RC4::XOR_swap(unsigned char *a, unsigned char *b) {
     *a ^= *b;
     *b ^= *a;
     *a ^= *b;
 }
 
-void mtpk::RC4::KSA(char *key, unsigned char *S, int swap_type) {
+void gpmp::RC4::KSA(char *key, unsigned char *S, int swap_type) {
     uint32_t len = strlen(key);
     int j = 0;
 
@@ -88,7 +88,7 @@ void mtpk::RC4::KSA(char *key, unsigned char *S, int swap_type) {
     }
 }
 
-void mtpk::RC4::PRGA(unsigned char *S, char *plaintext,
+void gpmp::RC4::PRGA(unsigned char *S, char *plaintext,
                      unsigned char *ciphertext, int swap_type) {
     int i = 0;
     int j = 0;
@@ -112,7 +112,7 @@ void mtpk::RC4::PRGA(unsigned char *S, char *plaintext,
     }
 }
 
-std::string mtpk::RC4::store_hash(char *plaintext, unsigned char *hashtext,
+std::string gpmp::RC4::store_hash(char *plaintext, unsigned char *hashtext,
                                   int swap_type) {
     // length of our plaintext
     int len = strlen((char *)plaintext);
@@ -138,7 +138,7 @@ std::string mtpk::RC4::store_hash(char *plaintext, unsigned char *hashtext,
     return stored_text;
 }
 
-unsigned char *mtpk::RC4::compute(char *key, char *plaintext,
+unsigned char *gpmp::RC4::compute(char *key, char *plaintext,
                                   unsigned char *ciphertext, int swap_type) {
     if (ciphertext == NULL) {
         throw std::runtime_error("[-] Error Allocating Memory");

@@ -1,48 +1,48 @@
-![](https://raw.githubusercontent.com/akielaries/openMTPK/rolling/docs/openMTPK_logo_med.png)
+![](https://raw.githubusercontent.com/akielaries/openGPMP/rolling/docs/openGPMP_logo_med.png)
 --------------------------------------------------------------------------------
 
-![Version](https://img.shields.io/github/v/release/akielaries/openMTPK?color=%23BF40BF)
-[![PyPi](https://img.shields.io/pypi/v/openmtpk.svg)](https://pypi.python.org/pypi/openmtpk)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openMTPK/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openMTPK&amp;utm_campaign=Badge_Grade)
-[![license](https://img.shields.io/github/license/akielaries/openMTPK?color=23228B22)](https://github.com/akielaries/openMTPK/blob/main/LICENSE)
-[![codecov](https://codecov.io/gh/akielaries/openMTPK/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openMTPK)
-![clones](https://raw.githubusercontent.com/akielaries/openMTPK/traffic/traffic-openMTPK/clones.svg)
-[![Py](https://github.com/akielaries/openMTPK/actions/workflows/openmtpk.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)
+![Version](https://img.shields.io/github/v/release/akielaries/openGPMP?color=%23BF40BF)
+[![PyPi](https://img.shields.io/pypi/v/pygpmp.svg)](https://pypi.python.org/pypi/pygpmp)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cccab2412bac4217827559131efea8ee)](https://www.codacy.com/gh/akielaries/openGPMP/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=akielaries/openGPMP&amp;utm_campaign=Badge_Grade)
+[![license](https://img.shields.io/github/license/akielaries/openGPMP?color=23228B22)](https://github.com/akielaries/openGPMP/blob/main/LICENSE)
+[![codecov](https://codecov.io/gh/akielaries/openGPMP/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openGPMP)
+![clones](https://raw.githubusercontent.com/akielaries/openGPMP/traffic/traffic-openGPMP/clones.svg)
+[![Py](https://github.com/akielaries/openGPMP/actions/workflows/pygpmp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)
 
 # Overview
-**openMTPK** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with a primary
-focus on Number Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts. openMTPK 
+**openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with a primary
+focus on Number Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts. openGPMP 
 aims to provide options for pre-built functions, models, etc. along with modularity for user freedom. Additional 
 acceleration methods are featured for optional use and installation featuring OpenCL GPU acceleration functions 
 written in C and wrapped for C++ and CUDA GPU acceleration. By default, SIMD intrinsics will be used for the 
 supported platforms.
 
-Look in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder for examples 
-on how to use some of openMTPK's functionalities. 
+Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder for examples 
+on how to use some of openGPMP's functionalities. 
 
 
 # Installation
-openMTPK C++ & Python is tested on the following:
+openGPMP C++ & Python is tested on the following:
 | OS    | Architecture | Status |
 |-------|--------------|--------|
-OSX Monterey 12.6.3 | x86 | [![darwin](https://github.com/akielaries/openMTPK/actions/workflows/build_osx.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | 
-RasPi OS | ARMv6/v7 | [![cppRPi](https://github.com/akielaries/openMTPK/actions/workflows/cpp_rpi.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-| bullseye 11.6 | ARMv6        | [![arm6CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | 
-| ubuntu 22.10 | ARMv7        | [![arm7CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV7cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | 
-| ubuntu 22.10 | ARMv8        | [![arm8CPP](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8cpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | [![arm8Py](https://github.com/akielaries/openMTPK/actions/workflows/ARMV8py.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      |
-| ubuntu 22.10 | RISCV64      | [![riscCPP](https://github.com/akielaries/openMTPK/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      | [![riscPy](https://github.com/akielaries/openMTPK/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)      |
-| ubuntu 22.10 | S390X        | [![s390xCPP](https://github.com/akielaries/openMTPK/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     | [![s390xPy](https://github.com/akielaries/openMTPK/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)     |
-| ubuntu 22.10 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) | [![ppc64lePy](https://github.com/akielaries/openMTPK/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/) |
-ubuntu 22.10  | Intel CPU | [![INTELCPU](https://github.com/akielaries/openMTPK/actions/workflows/intelcpu.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
-ubuntu 22.10  | ARM CPU | [![ARMCPU](https://github.com/akielaries/openMTPK/actions/workflows/armcpu.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
-ubuntu 22.10  | Intel GPU | [![INTELGPU](https://github.com/akielaries/openMTPK/actions/workflows/intelgpu.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
-ubuntu 18.04  | Nvidia GPU (CUDA) | [![NVIDIACUDA](https://github.com/akielaries/openMTPK/actions/workflows/CUDA.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
-ubuntu 18.04  | Nvidia GPU (OpenCL) | [![NVIDIAOPENCL](https://github.com/akielaries/openMTPK/actions/workflows/nvid_opencl.yml/badge.svg)](https://github.com/akielaries/openMTPK/actions/)  |
+OSX Monterey 12.6.3 | x86 | [![darwin](https://github.com/akielaries/openGPMP/actions/workflows/build_osx.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) | 
+RasPi OS | ARMv6/v7 | [![cppRPi](https://github.com/akielaries/openGPMP/actions/workflows/cpp_rpi.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) |
+| bullseye 11.6 | ARMv6        | [![arm6CPP](https://github.com/akielaries/openGPMP/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | 
+| ubuntu 22.10 | ARMv7        | [![arm7CPP](https://github.com/akielaries/openGPMP/actions/workflows/ARMV7cpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | 
+| ubuntu 22.10 | ARMv8        | [![arm8CPP](https://github.com/akielaries/openGPMP/actions/workflows/ARMV8cpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | [![arm8Py](https://github.com/akielaries/openGPMP/actions/workflows/ARMV8py.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      |
+| ubuntu 22.10 | RISCV64      | [![riscCPP](https://github.com/akielaries/openGPMP/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | [![riscPy](https://github.com/akielaries/openGPMP/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      |
+| ubuntu 22.10 | S390X        | [![s390xCPP](https://github.com/akielaries/openGPMP/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)     | [![s390xPy](https://github.com/akielaries/openGPMP/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)     |
+| ubuntu 22.10 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openGPMP/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) | [![ppc64lePy](https://github.com/akielaries/openGPMP/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) |
+ubuntu 22.10  | Intel CPU | [![INTELCPU](https://github.com/akielaries/openGPMP/actions/workflows/intelcpu.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
+ubuntu 22.10  | ARM CPU | [![ARMCPU](https://github.com/akielaries/openGPMP/actions/workflows/armcpu.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
+ubuntu 22.10  | Intel GPU | [![INTELGPU](https://github.com/akielaries/openGPMP/actions/workflows/intelgpu.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
+ubuntu 18.04  | Nvidia GPU (CUDA) | [![NVIDIACUDA](https://github.com/akielaries/openGPMP/actions/workflows/CUDA.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
+ubuntu 18.04  | Nvidia GPU (OpenCL) | [![NVIDIAOPENCL](https://github.com/akielaries/openGPMP/actions/workflows/nvid_opencl.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
 > **Note** Testing on Apple specific hardware (M1, M2) is in progress. 
 
 ## Python
 To install the Python interface, use the pip package manager and run the following, `pip install
-openmtpk`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip 
+pygpmp`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip 
 installation.
 
 ## Build from source
@@ -55,8 +55,8 @@ installation.
 
 ```
 # clone repo
-$ git clone git@github.com:akielaries/openMTPK.git
-$ cd openMTPK
+$ git clone git@github.com:akielaries/openGPMP.git
+$ cd openGPMP
 # create build dir
 $ mkdir build && cd build
 # create necessary objects and static library
@@ -76,19 +76,19 @@ $ LD_LIBRARY_PATH=/usr/local/lib
 ```
 
 To test the installation build some of the example drivers in the projects 
-[samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
+[samples](https://github.com/akielaries/openGPMP/tree/main/samples) directory.
 
 ```
 # compile yourself
 $ cd samples/cpp
-$ g++ cipher.cpp -lopenMTPK -o cipher
-$ g++ arith.cpp -lopenMTPK -o arith
+$ g++ cipher.cpp -lopenGPMP -o cipher
+$ g++ arith.cpp -lopenGPMP -o arith
 # script to test all modules and their drivers
 # using the projects root makefile
 $ cd scripts && ./all.sh
 ```
 
-To uninstall files related to openMTPK, simply run the following:
+To uninstall files related to openGPMP, simply run the following:
 
 ```
 # enter the build dir from installation
@@ -129,17 +129,17 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
    - Topology
    - Spline
 
-For more details view the project [documentation](https://akielaries.github.io/openMTPK/).
+For more details view the project [documentation](https://akielaries.github.io/openGPMP/).
 
 
 # Examples
 
-View the simple examples on how to use some of the modules in different languages [here](https://github.com/akielaries/openMTPK/tree/main/samples).
+View the simple examples on how to use some of the modules in different languages [here](https://github.com/akielaries/openGPMP/tree/main/samples).
 
 ```
 # clone the repo and enter
-$ git clone git@github.com:akielaries/openMTPK.git 
-$ cd openMTPK/scripts
+$ git clone git@github.com:akielaries/openGPMP.git 
+$ cd openGPMP/scripts
 
 # to run all examples 
 $ ./all.sh
@@ -161,11 +161,11 @@ Keyword cipher:
 #include <iostream>
 #include <string>
 // include the number theory module header
-#include <openMTPK/nt.hpp>
+#include <openGPMP/nt.hpp>
 
 int main() {
     // declare CIPHER class obj
-    mtpk::Cipher cc;
+    gpmp::Cipher cc;
 
     /* CAESAR CIPHER */
     std::string text0 = "Plaintext";
@@ -193,7 +193,7 @@ A Python example showing the same functionalities.
 ```python
 #!/usr/bin/python3
 # import the Number Theory module
-from openmtpk import nt
+from pygpmp import nt
 
 c = Cipher()
 ciphertext_0 = c.caesar('Plaintext', 5)

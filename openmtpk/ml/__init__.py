@@ -17,7 +17,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -33,7 +33,7 @@
  *
  ************************************************************************/
 
-openMTPK Machine Learning Module
+openGPMP Machine Learning Module
 ================================
 The Machine Learning Module features multiple methods and techniques most
 of which are in progress.
@@ -44,13 +44,13 @@ FEATURES :
     METHODS :
 
     USAGE :
-        >> import openmtpk
-        >> linreg = openmtpk.ml.linreg()
+        >> import pygpmp
+        >> linreg = pygpmp.ml.linreg()
         OR
-        >> from openmtpk import ml
+        >> from pygpmp import ml
 """
 
-from openmtpk.ml.ml import (
+from pygpmp.ml.ml import (
     Regression,
 )
 

@@ -1,5 +1,5 @@
 """
-Main entrypoint for building the openMTPK Python API.
+Main entrypoint for building the openGPMP Python API.
 Leverages SWIG, setuptools, and a few other dependencies.
 """
 
@@ -20,10 +20,10 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 
 # arithmetic module related information
 arithmetic = Extension(
-    'openmtpk.arithmetic._arithmetic',
+    'pygpmp.arithmetic._arithmetic',
     include_dirs=[os.path.join(this_dir, 'include/arithmetic')],
     sources=[
-        'openmtpk/arithmetic/arithmetic.i',
+        'pygpmp/arithmetic/arithmetic.i',
         'modules/arithmetic/arith.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-Wall', '-c++'],
@@ -31,10 +31,10 @@ arithmetic = Extension(
 
 # calculus module related information
 calculus = Extension(
-    'openmtpk.calculus._calculus',
+    'pygpmp.calculus._calculus',
     include_dirs=[os.path.join(this_dir, 'include/calculus')],
     sources=[
-        'openmtpk/calculus/calculus.i',
+        'pygpmp/calculus/calculus.i',
         'modules/calculus/differential.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
@@ -42,10 +42,10 @@ calculus = Extension(
 
 # machine learning module related information
 ml = Extension(
-    'openmtpk.ml._ml',
+    'pygpmp.ml._ml',
     include_dirs=[os.path.join(this_dir, 'include/ml')],
     sources=[
-        'openmtpk/ml/ml.i',
+        'pygpmp/ml/ml.i',
         'modules/ml/linreg.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
@@ -53,10 +53,10 @@ ml = Extension(
 
 # linear algebra module related information
 linalg = Extension(
-    'openmtpk.linalg._linalg',
+    'pygpmp.linalg._linalg',
     include_dirs=[os.path.join(this_dir, 'include/linalg')],
     sources=[
-        'openmtpk/linalg/linalg.i',
+        'pygpmp/linalg/linalg.i',
         'modules/linalg/lao.cpp'],
     extra_compile_args=['-std=c++2a'],
     swig_opts=['-c++'],
@@ -64,10 +64,10 @@ linalg = Extension(
 
 # number_theory module related information
 nt = Extension(
-    'openmtpk.nt._nt',
+    'pygpmp.nt._nt',
     include_dirs=[os.path.join(this_dir, 'include/nt')],
     sources=[
-        'openmtpk/nt/nt.i',
+        'pygpmp/nt/nt.i',
         'modules/arithmetic/arith.cpp',
         'modules/nt/prime_test.cpp',
         'modules/nt/prime_gen.cpp',
@@ -88,7 +88,7 @@ class BinaryDistribution(dist.Distribution):
 
 def main():
     # main execution for building the dist
-    # openmtpk Python API modules
+    # pygpmp Python API modules
     modules = [arithmetic, calculus, ml, linalg, nt]
 
     # use the project readme as the description
@@ -97,31 +97,31 @@ def main():
 
     # def build_pkg():
     setuptools.setup(
-        name='openmtpk',
+        name='pygpmp',
         distclass=BinaryDistribution,
         # get version from PyPI package, use bump to increment
         version=versioneer.get_version(),
         cmdclass=versioneer.get_cmdclass(),
         author='Akiel Aries',
         author_email='akiel@akiel.org',
-        description='openMTPK Python API',
-        keywords='openmtpk, example, pypi, package',
+        description='openGPMP Python API',
+        keywords='pygpmp, example, pypi, package',
         long_description=long_description,
         long_description_content_type='text/markdown',
-        url='https://github.com/akielaries/openMTPK',
+        url='https://github.com/akielaries/openGPMP',
         project_urls={
-            'Documentation': 'https://akielaries.github.io/openMTPK/',
+            'Documentation': 'https://akielaries.github.io/openGPMP/',
             'Bug Reports':
-            'https://github.com/akielaries/openMTPK/issues',
-            'Source Code': 'https://github.com/akielaries/openMTPK/',
+            'https://github.com/akielaries/openGPMP/issues',
+            'Source Code': 'https://github.com/akielaries/openGPMP/',
         },
         package_dir={'': '.'},
-        packages=['openmtpk',
-                  'openmtpk.arithmetic',
-                  'openmtpk.calculus',
-                  'openmtpk.linalg',
-                  'openmtpk.ml',
-                  'openmtpk.nt',
+        packages=['pygpmp',
+                  'pygpmp.arithmetic',
+                  'pygpmp.calculus',
+                  'pygpmp.linalg',
+                  'pygpmp.ml',
+                  'pygpmp.nt',
                   ],
         ext_modules=modules,
         include_package_data=True,

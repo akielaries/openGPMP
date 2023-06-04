@@ -1,5 +1,5 @@
 /**
- * openMTPK core module TODO FIXME
+ * openGPMP core module TODO FIXME
  */
 
 /*

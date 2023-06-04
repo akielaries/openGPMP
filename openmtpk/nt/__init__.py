@@ -17,7 +17,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -33,7 +33,7 @@
  *
  ************************************************************************/
 
-openMTPK Number Theory Module
+openGPMP Number Theory Module
 =============================
 The Number Theory Module encapsulates methods related to prime numbers as
 well as cryptography/encryption algorithms.
@@ -67,13 +67,13 @@ FEATURES :
         - Contains methods related to Caesar Cipher and a Keyword Swap Cipher
 
     USAGE :
-        >> import openmtpk
-        >> prime_num = openmtpk.nt.primality.is_prime(2999)
+        >> import pygpmp
+        >> prime_num = pygpmp.nt.primality.is_prime(2999)
         OR
-        >> from openmtpk import nt
+        >> from pygpmp import nt
 """
 
-from openmtpk.nt.nt import (
+from pygpmp.nt.nt import (
     PrimalityTest,
     PrimalityGen,
     Factorization,

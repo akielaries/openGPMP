@@ -1,6 +1,6 @@
 /**
  * Driver for showing how to use the core functionalities of the Number Theory
- * module by itself as well as with the openMTPK ThreadPool. This features
+ * module by itself as well as with the openGPMP ThreadPool. This features
  * functions related to primes specifically generation and testing.
  *
  * @example primes.cpp
@@ -8,9 +8,9 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
-#include <openMTPK/core/threadpool.hpp>
-#include <openMTPK/nt/prime_gen.hpp>
-#include <openMTPK/nt/prime_test.hpp>
+#include <openGPMP/core/threadpool.hpp>
+#include <openGPMP/nt/prime_gen.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 #include <vector>
 
 void testing_miller(std::vector<int64_t> nums) {
@@ -18,7 +18,7 @@ void testing_miller(std::vector<int64_t> nums) {
     std::chrono::steady_clock::time_point start_time =
         std::chrono::steady_clock::now();
 
-    mtpk::PrimalityTest prims;
+    gpmp::PrimalityTest prims;
     std::cout << "Miller-Rabin sequentially without ThreadPool" << std::endl;
 
     for (uint64_t n : nums) {
@@ -44,10 +44,10 @@ void testing_miller_thread(std::vector<int64_t> nums) {
         std::chrono::steady_clock::now();
 
     // declares a threadpool with 4 threads
-    mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(4);
+    gpmp::core::ThreadPool *pool = new gpmp::core::ThreadPool(4);
 
     std::vector<std::future<bool>> miller_results;
-    mtpk::PrimalityTest prim;
+    gpmp::PrimalityTest prim;
     for (auto n : nums) {
         miller_results.emplace_back(pool->enqueue(
             [&prim, n]() { return prim.miller_rabin_prime(n, 120000); }));
@@ -81,14 +81,14 @@ void testing_new_miller(std::vector<int64_t> nums) {
 
     std::vector<std::future<bool>> miller_results;
 
-    mtpk::PrimalityTest prim;
-    mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(4);
+    gpmp::PrimalityTest prim;
+    gpmp::core::ThreadPool *pool = new gpmp::core::ThreadPool(4);
 
     for (auto n : nums) {
         // enqueue the function call to the thread pool using the
         // ThreadDispatch.dispatch() function
-        miller_results.emplace_back(mtpk::core::ThreadDispatch().dispatch(
-            *pool, &mtpk::PrimalityTest::miller_rabin_prime, &prim, n, 120000));
+        miller_results.emplace_back(gpmp::core::ThreadDispatch().dispatch(
+            *pool, &gpmp::PrimalityTest::miller_rabin_prime, &prim, n, 120000));
     }
 
     // Print the results
@@ -116,7 +116,7 @@ void testing_new_miller(std::vector<int64_t> nums) {
 int main() {
     std::cout << "BASIC NUMBER THEORY OPERATIONS\n" << std::endl;
     // declare primality class object
-    mtpk::PrimalityTest p;
+    gpmp::PrimalityTest p;
 
     std::cout << "<--------- IS IT PRIME? --------->\n";
     int a = 9;

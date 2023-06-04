@@ -17,7 +17,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -33,7 +33,7 @@
  *
  ************************************************************************/
 
-openMTPK Linear Algebra Module
+openGPMP Linear Algebra Module
 ==============================
 since the Matrix class is a template class, there are classes created
 for both Doubles and Integers
@@ -87,14 +87,14 @@ FEATURES :
         - Tensor Class?
 
     USAGE :
-        >> import openmtpk
+        >> import pygpmp
         >> # create matrix of 3,4 size
-        >> mtx = openmtpk.linalg.Matrix(3, 4)
+        >> mtx = pygpmp.linalg.Matrix(3, 4)
         OR
-        >> from openmtpk import linalg
+        >> from pygpmp import linalg
 """
 
-from openmtpk.linalg.linalg import (
+from pygpmp.linalg.linalg import (
     Matrix,
     mtx,
     Vectors,

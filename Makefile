@@ -21,7 +21,7 @@ CXX_DBG 	= -Wno-unused-result -Wsign-compare -DNDEBUG -g -O3 -Wall -Wextra
 LIBXBGI		= /usr/lib/libXbgi.a
 CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
 
-OPM			= -lopenMTPK
+OPM			= -lopenGPMP
 
 
 SRCDIR		= $(PROJDIR)/modules
@@ -185,17 +185,17 @@ run-tests:
 	gcovr
 
 clean-tests:
-	cd tests/ && rm -f *.gc* web/ openMTPK_tests
+	cd tests/ && rm -f *.gc* web/ openGPMP_tests
 	rm -f ${TMEMBIN}
 	rm -f ${TSARBIN}
 	rm -f ${TCALCBIN}
 
 clean-misc:
-	cd openmtpk && rm -rf */*.cpp
-	rm -rf build/ dist/ openmtpk.egg-info/ 
+	cd pygpmp && rm -rf */*.cpp
+	rm -rf build/ dist/ pygpmp.egg-info/ 
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
 
-openMTPK-docs:
+openGPMP-docs:
 	doxygen
 

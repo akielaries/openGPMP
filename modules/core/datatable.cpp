@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -41,8 +41,8 @@
 #include <string>
 #include <vector>
 
-mtpk::core::DataTableStr
-mtpk::core::DataTable::csv_read(std::string filename,
+gpmp::core::DataTableStr
+gpmp::core::DataTable::csv_read(std::string filename,
                                 std::vector<std::string> columns) {
     std::ifstream file(filename);
 
@@ -104,9 +104,9 @@ mtpk::core::DataTable::csv_read(std::string filename,
     return make_pair(columns, data);
 }
 
-mtpk::core::DataTableInt
-mtpk::core::DataTable::str_to_int(mtpk::core::DataTableStr src) {
-    mtpk::core::DataTableInt dest;
+gpmp::core::DataTableInt
+gpmp::core::DataTable::str_to_int(gpmp::core::DataTableStr src) {
+    gpmp::core::DataTableInt dest;
 
     for (const auto &v : src.first) {
         // check if v contains only digits
@@ -127,9 +127,9 @@ mtpk::core::DataTable::str_to_int(mtpk::core::DataTableStr src) {
     return dest;
 }
 
-mtpk::core::DataTableDouble
-mtpk::core::DataTable::str_to_double(mtpk::core::DataTableStr src) {
-    mtpk::core::DataTableDouble dest;
+gpmp::core::DataTableDouble
+gpmp::core::DataTable::str_to_double(gpmp::core::DataTableStr src) {
+    gpmp::core::DataTableDouble dest;
 
     for (const auto &v : src.first) {
         if (std::regex_match(v, std::regex("[-+]?\\d*\\.?\\d+"))) {

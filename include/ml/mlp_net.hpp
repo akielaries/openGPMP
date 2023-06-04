@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -46,10 +46,10 @@
 #include <utility>
 #include <vector>
 
-namespace mtpk {
+namespace gpmp {
 
 /**
- * @brief Namespace for openMTPK Machine Learning
+ * @brief Namespace for openGPMP Machine Learning
  */
 namespace ml {
 
@@ -198,10 +198,10 @@ template <typename T> class SecondaryMLP {
 
             // set to random Guassian Noise related values
             // weights
-            auto gauss_wt = mtpk::mtx<T>::randn(outputs, inputs);
+            auto gauss_wt = gpmp::mtx<T>::randn(outputs, inputs);
             wt_mtx.push_back(gauss_wt);
             // biases
-            auto bias_wt = mtpk::mtx<T>::randn(outputs, 1);
+            auto bias_wt = gpmp::mtx<T>::randn(outputs, 1);
             bias_vectors.push_back(bias_wt);
             // activation function
             activations.resize(layer_units.size());
@@ -267,6 +267,6 @@ template <typename T> class SecondaryMLP {
 
 } // namespace ml
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

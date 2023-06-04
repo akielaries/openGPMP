@@ -17,7 +17,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -33,17 +33,17 @@
  *
  ************************************************************************/
 
-openMTPK Arithmetic Module
+openGPMP Arithmetic Module
 ==========================
 The Arithmetic Module... TODO
 
     USAGE :
-        >> import openmtpk
+        >> import pygpmp
         OR
-        >> from openmtpk import arithmetic
+        >> from pygpmp import arithmetic
 """
 
-from openmtpk.arithmetic.arithmetic import (
+from pygpmp.arithmetic.arithmetic import (
     Basics,
 )
 

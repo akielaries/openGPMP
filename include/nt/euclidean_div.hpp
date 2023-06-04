@@ -2,7 +2,7 @@
 #define EUCLIDEAN_DIV_HPP
 #include <cstdint>
 
-namespace mtpk {
+namespace gpmp {
 
 /*
  * @class EuclideanDivision
@@ -19,6 +19,6 @@ class EuclideanDivision {
     void SRT();
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

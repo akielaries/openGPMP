@@ -1,6 +1,6 @@
 /**
  * Driver for showing how to use the core functionalities of the Number Theory
- * module by itself as well as with the openMTPK ThreadPool. This features
+ * module by itself as well as with the openGPMP ThreadPool. This features
  * functions related to integer factorization.
  *
  * @example factors.cpp
@@ -8,12 +8,12 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
-#include <openMTPK/core/threadpool.hpp>
-#include <openMTPK/nt/factorization.hpp>
+#include <openGPMP/core/threadpool.hpp>
+#include <openGPMP/nt/factorization.hpp>
 #include <vector>
 
 int main() {
-    mtpk::Factorization factorization;
+    gpmp::Factorization factorization;
 
     // find prime factor of 123456789
     int64_t n = 9223372036854775803;
@@ -23,7 +23,7 @@ int main() {
     std::cout << "The smallest prime factor of " << n << " is " << factor
               << std::endl;
 
-    /******* EXAMPLE USING openMTPK's THREADPOOL *******/
+    /******* EXAMPLE USING openGPMP's THREADPOOL *******/
     //
     // specify the numbers to factorize
     // pollard_rho accepts 64 bit integers
@@ -49,11 +49,11 @@ int main() {
     //    }
 
     std::vector<std::future<uint64_t>> results;
-    mtpk::core::ThreadPool *pool = new mtpk::core::ThreadPool(2);
-    mtpk::Factorization factors;
+    gpmp::core::ThreadPool *pool = new gpmp::core::ThreadPool(2);
+    gpmp::Factorization factors;
     for (const auto &num : nums_to_factorize) {
-        results.emplace_back(mtpk::core::ThreadDispatch().dispatch(
-            *pool, &mtpk::Factorization::pollard_rho, &factors, num));
+        results.emplace_back(gpmp::core::ThreadDispatch().dispatch(
+            *pool, &gpmp::Factorization::pollard_rho, &factors, num));
     }
 
     for (auto &res : results) {

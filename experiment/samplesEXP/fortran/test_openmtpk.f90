@@ -1,7 +1,7 @@
-program TEST_openMTPK
+program TEST_openGPMP
 
-    print *, "Welcome to openMTPK's Fortran API"
+    print *, "Welcome to openGPMP's Fortran API"
 
-end program TEST_openMTPK
+end program TEST_openGPMP
 
 

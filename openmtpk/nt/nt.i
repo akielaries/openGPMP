@@ -16,7 +16,7 @@
     #include "../../include/nt/factorization.hpp"
     #include "../../include/nt/rc4.hpp"
     #include "../../include/nt/cipher.hpp"
-    using namespace mtpk;
+    using namespace gpmp;
 %}
 
 %include "../../include/arithmetic.hpp"

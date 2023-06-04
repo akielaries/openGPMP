@@ -1,8 +1,8 @@
-"""!@brief Python API for openMTPK. 
+"""!@brief Python API for openGPMP. 
 @details See the following links for details and documentation:
-    SOURCE CODE : https://github.com/akielaries/openMTPK/
-    DOCS        : https://akielaries.github.io/openMTPK/
-    PyPI        : https://pypi.org/project/openmtpk/
+    SOURCE CODE : https://github.com/akielaries/openGPMP/
+    DOCS        : https://akielaries.github.io/openGPMP/
+    PyPI        : https://pypi.org/project/pygpmp/
 """
 """
 /*************************************************************************
@@ -23,7 +23,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute

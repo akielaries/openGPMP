@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the Github repository URL and the output directory
-REPO_URL="https://api.github.com/repos/akielaries/openMTPK-utils/contents/sets"
+REPO_URL="https://api.github.com/repos/akielaries/openGPMP-utils/contents/sets"
 
 # Function to download the files
 function download_files {

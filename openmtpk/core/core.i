@@ -1,4 +1,4 @@
-/* openMTPK Structures Module */
+/* openGPMP Structures Module */
 
 %module ml
 %include <std_vector.i>
@@ -7,7 +7,7 @@
 
 %{
     #include "../../include/struct/datatable.hpp"
-    using namespace mtpk;
+    using namespace gpmp;
 %}
 
 %include "../../include/struct/datatable.hpp"

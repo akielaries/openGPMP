@@ -1,6 +1,6 @@
 Installation
 =====
-Requirements are loose and mostly tied to what openMTPK was tested and used on.
+Requirements are loose and mostly tied to what openGPMP was tested and used on.
 The current installation does not allow for the building of the packages language
 bindings, limiting use to the core c++ lib. See below on how to build the bindings 
 from source if interested.
@@ -13,7 +13,7 @@ publishing the binding to PyPI.
 * pip
 
 ```
-$ pip install openmtpk
+$ pip install pygpmp
 ```
 
 
@@ -25,8 +25,8 @@ $ pip install openmtpk
 
 ```
 # clone repo
-$ git clone git@github.com:akielaries/openMTPK.git
-$ cd oepnMTPK
+$ git clone git@github.com:akielaries/openGPMP.git
+$ cd oepngpmp
 # create build dir
 $ mkdir build && cd build
 # create necessary objects and static library
@@ -43,12 +43,12 @@ $ LD_LIBRARY_PATH=/usr/local/lib
 ```
 
 To test the installation build some of the example drivers in the projects 
-[samples](https://github.com/akielaries/openMTPK/tree/main/samples) directory.
+[samples](https://github.com/akielaries/openGPMP/tree/main/samples) directory.
 ```
 # compile yourself
 $ cd samples
-$ g++ cipher.cpp -lopenMTPK -o cipher
-$ g++ arith.cpp -lopenMTPK -o arith
+$ g++ cipher.cpp -lopenGPMP -o cipher
+$ g++ arith.cpp -lopenGPMP -o arith
 # script to test all modules and their drivers
 # using the projects root makefile
 $ make arith
@@ -59,10 +59,10 @@ $ make num-theory
 > **Warning**
 > At the moment these dependencies do not apply to the current release. 
 
-The goal of openMTPK is to have as little dependencies as possible without re-inventing 
+The goal of openGPMP is to have as little dependencies as possible without re-inventing 
 the wheel too much while performing speedy computations. Other than C and C++ standard 
 libraries the 3rd-party dependencies that are used are deemed necessary for many of the
-packages functionalities. openMTPK makes use of a few open source cross-platform 
+packages functionalities. openGPMP makes use of a few open source cross-platform 
 compatible packages and libraries in the cases of threading for performance, graphics 
 libraries, and packages for testing and fuzzing.
 
@@ -97,7 +97,7 @@ for implementing strong and secure code.
 
 The code below is an example on how testing on the arithmetic module was done.
 ```c++
-    #include <openMTPK/arithmetic/arith.hpp>
+    #include <openGPMP/arithmetic/arith.hpp>
     #include <gtest/gtest.h>
     namespace {
         arith ar;

@@ -1,4 +1,4 @@
-# openMTPK Python API
+# openGPMP Python API
 
 > **Warning**
 > Do not edit the source `.py` files. 

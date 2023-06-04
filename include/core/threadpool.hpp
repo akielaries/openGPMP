@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -33,7 +33,7 @@
  ************************************************************************/
 /**
  * @file
- * @brief openMTPK Thread Pool
+ * @brief openGPMP Thread Pool
  */
 #ifndef THREADPOOL_HPP
 #define THREADPOOL_HPP
@@ -49,11 +49,11 @@
 /**
  * @brief Marcro defs for parallelized for loops
  */
-#define PARALLEL_FOR_BEGIN(nb_elements) mtpk::core::parallel_for(nb_elements, [&](int start, int end){ for(int i = start; i < end; ++i)
+#define PARALLEL_FOR_BEGIN(nb_elements) gpmp::core::parallel_for(nb_elements, [&](int start, int end){ for(int i = start; i < end; ++i)
 #define PARALLEL_FOR_END()                                                     \
     })
 
-namespace mtpk {
+namespace gpmp {
 
 namespace core {
 
@@ -278,6 +278,6 @@ static void parallel_for(unsigned nb_elements,
 
 } // namespace core
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

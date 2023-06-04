@@ -1,6 +1,6 @@
 # Examples
-See the [openMTPK/samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder
-for many more examples on how to use openMTPK.
+See the [openGPMP/samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder
+for many more examples on how to use openGPMP.
 
 Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
 Keyword cipher:
@@ -10,13 +10,13 @@ Keyword cipher:
  */
 #include <iostream>
 #include <string>
-// include the openMTPK Number Theory header
-#include <openMTPK/nt.hpp>
+// include the openGPMP Number Theory header
+#include <openGPMP/nt.hpp>
 
 
 int main() {
-    // declare CIPHER class obj (this lies within the mtpk namespace)
-    mtpk::Cipher cc;
+    // declare CIPHER class obj (this lies within the gpmp namespace)
+    gpmp::Cipher cc;
     
     /* CAESAR CIPHER */
     std::string text0 = "Plaintext";
@@ -41,7 +41,7 @@ A Python example showing the same functionalities.
 
 ```python
 #!/usr/bin/python3
-from openmtpk import nt
+from pygpmp import nt
 
 
 def main():

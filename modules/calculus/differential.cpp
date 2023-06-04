@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -70,7 +70,7 @@ int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
 }
 */
 
-int64_t mtpk::Differential::derivative_term(std::string p_term, int64_t val) {
+int64_t gpmp::Differential::derivative_term(std::string p_term, int64_t val) {
     // Get coefficient
     std::string coeffStr = "";
     int64_t i;
@@ -100,7 +100,7 @@ int64_t mtpk::Differential::derivative_term(std::string p_term, int64_t val) {
     return coeff * expo * pow(val, expo - 1);
 }
 
-int64_t mtpk::Differential::deriv_at(std::string &poly, int64_t val) {
+int64_t gpmp::Differential::deriv_at(std::string &poly, int64_t val) {
     int64_t ans = 0;
 
     // We use istringstream to get input in tokens
@@ -121,7 +121,7 @@ int64_t mtpk::Differential::deriv_at(std::string &poly, int64_t val) {
     return ans;
 }
 
-std::string mtpk::Differential::deriv_str(std::string &poly) {
+std::string gpmp::Differential::deriv_str(std::string &poly) {
     int64_t ans = 0;
 
     // We use istringstream to get input in tokens

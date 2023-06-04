@@ -3,7 +3,7 @@
  */
 #include <cassert>
 #include <iostream>
-#include <openMTPK/arithmetic.hpp>
+#include <openGPMP/arithmetic.hpp>
 #include <stdio.h>
 #include <time.h>
 #include <vector>
@@ -29,7 +29,7 @@ int main() {
      */
 
     // declare our arithmetic class object
-    mtpk::Arith ar;
+    gpmp::Arith ar;
 
     // declare some variables
     int a = 10;
@@ -90,7 +90,7 @@ int main() {
     /*
      * arithmetic basics
      */
-    mtpk::Basics ba;
+    gpmp::Basics ba;
     int r10 = 10;
     int r11 = 3;
     int r12 = ba.greatest_power(r10, r11);

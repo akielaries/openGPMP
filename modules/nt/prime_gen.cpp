@@ -15,7 +15,7 @@
  * Eratosthenes is able to capture all prime numbers to any given
  * limit
  */
-void mtpk::PrimalityGen::sieve_of_eratosthenes(uint64_t n) {
+void gpmp::PrimalityGen::sieve_of_eratosthenes(uint64_t n) {
     // Create a boolean array "prime[0..n]" and initialize
     // all entries it as true. A value in prime[i] will
     // finally be false if i is Not a prime, else true.

@@ -1,4 +1,4 @@
-# Introduction to openMTPK
+# Introduction to openGPMP
 TODO
 
 ## Basics

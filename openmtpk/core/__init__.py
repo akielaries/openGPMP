@@ -17,7 +17,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -33,11 +33,11 @@
  *
  ************************************************************************/
 
-openMTPK Core Module containing many utility related functions
+openGPMP Core Module containing many utility related functions
 ================================
 """
 
-from openmtpk.struct.struct import (
+from pygpmp.struct.struct import (
     Datatable,
     Datablock,
 )

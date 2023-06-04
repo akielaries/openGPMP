@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -48,7 +48,7 @@
 #define __64BIT 18446744073709600000   /** 2^64        */
 #define __64BIT_1 18446744073709551615 /** 2^64 - 1    */
 
-namespace mtpk {
+namespace gpmp {
 
 namespace core {
 
@@ -76,6 +76,6 @@ uint64_t LCGl(uint64_t lower = 0, uint64_t upper = __64BIT_1);
 
 } // namespace core
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

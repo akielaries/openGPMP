@@ -45,8 +45,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = "v"
-    cfg.parentdir_prefix = "openmtpk"
-    cfg.versionfile_source = "openmtpk/_version.py"
+    cfg.parentdir_prefix = "pygpmp"
+    cfg.versionfile_source = "pygpmp/_version.py"
     cfg.verbose = False
     return cfg
 

@@ -14,22 +14,22 @@
 %{
     #include "../../include/linalg/matrix.hpp"
     #include "../../include/linalg/vectors.hpp"
-    using namespace mtpk;
+    using namespace gpmp;
 %}
 
 %include "../../include/linalg/matrix.hpp"
 %include "../../include/linalg/vectors.hpp"
 
 // rename operators
-%rename(__add__) mtpk::Matrix::operator+;
+%rename(__add__) gpmp::Matrix::operator+;
 
 // re-declare class templates specifying a datatype
-%template(Matrix) mtpk::Matrix<double>;
-%template(MatrixI) mtpk::Matrix<int>;
+%template(Matrix) gpmp::Matrix<double>;
+%template(MatrixI) gpmp::Matrix<int>;
 
-%naturalvar mtpk::mtx;
+%naturalvar gpmp::mtx;
 
 // re-declare struct templates specifying a datatype
-%template(mtx) mtpk::mtx<double>;
-//%template(mtxI) mtpk::mtx<int>;
+%template(mtx) gpmp::mtx<double>;
+//%template(mtxI) gpmp::mtx<int>;
 

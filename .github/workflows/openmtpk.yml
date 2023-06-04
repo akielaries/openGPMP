@@ -1,6 +1,6 @@
 # THIS FILE CONTAINS THE PIP PACKAGING PROCESS FOR PUBLISHING
 # TO PyPI AND BUILDING FOR A PLETHORA OF PLATFORMS. THIS FILE
-# SERVERS AS THE MAIN ENTRY POINT FOR THE openMTPK WORKFLOW 
+# SERVERS AS THE MAIN ENTRY POINT FOR THE openGPMP WORKFLOW 
 
 name: CI/CD
 
@@ -94,10 +94,10 @@ jobs:
     steps:
     - uses: oprypin/find-latest-tag@v1
       with:
-        repository: akielaries/openMTPK
-      id: mtpk_version
+        repository: akielaries/openGPMP
+      id: gpmp_version
 
-    - run: echo ${{ steps.mtpk_version.outputs.tag }}
+    - run: echo ${{ steps.gpmp_version.outputs.tag }}
 
   bump_version:
     needs: [ latest_version ]
@@ -130,7 +130,7 @@ jobs:
     name: Build source distribution
     needs: [ bump_version , latest_version ]
     if: contains(github.event.head_commit.message, '#PATCH:') || contains(github.event.head_commit.message, '#MINOR:') || contains(github.event.head_commit.message, '#MAJOR:')
-    #if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.mtpk_version.outputs.tag }}
+    #if: ${{ needs.bump_version.new_version.outputs.new_tag }} != ${{ needs.latest_version.gpmp_version.outputs.tag }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -215,7 +215,7 @@ jobs:
 
   # the build installation is supported by x86 based OSX 
   # versions and LINUX distros by the CIBUILDWHEEL utilities.
-  # test pip install openmtpk on the following platforms
+  # test pip install pygpmp on the following platforms
   pip_test:
     needs: publish
     uses: ./.github/workflows/test_pip.yml

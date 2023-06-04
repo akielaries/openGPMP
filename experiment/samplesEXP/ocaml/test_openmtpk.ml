@@ -1,5 +1,5 @@
 open Swig
-open OpenMTPK
+open pygpmp
 
-let _ = print_endline "Welcome to openMTPK's OCaml API."
+let _ = print_endline "Welcome to openGPMP's OCaml API."
 

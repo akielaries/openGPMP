@@ -1,4 +1,4 @@
-/* openMTPK Arithmetic Module */
+/* openGPMP Arithmetic Module */
 
 %module arithmetic
 %include <std_vector.i>
@@ -8,7 +8,7 @@
 
 %{
     #include "../../include/arithmetic.hpp"
-    using namespace mtpk;
+    using namespace gpmp;
 %}
 
 %include "../../include/arithmetic.hpp"

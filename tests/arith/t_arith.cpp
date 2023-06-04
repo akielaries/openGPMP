@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -45,7 +45,7 @@ using ::testing::InitGoogleTest;
 
 /*
 namespace {
-mtpk::Arith ar;
+gpmp::Arith ar;
 
 
 // test case, test name
@@ -70,12 +70,12 @@ TEST(arith_test, sub_positive) {
 } // namespace
 */
 namespace {
-mtpk::Arith<int> ar;
+gpmp::Arith<int> ar;
 
 }
 
 namespace {
-mtpk::Basics ba;
+gpmp::Basics ba;
 
 // greatest power
 TEST(basics, greatest_pow) {

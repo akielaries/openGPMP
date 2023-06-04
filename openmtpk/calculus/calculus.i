@@ -1,4 +1,4 @@
-/* openMTPK Calculus Module */
+/* openGPMP Calculus Module */
 
 %module calculus 
 %include <std_vector.i>
@@ -9,7 +9,7 @@
 
 %{
     #include "../../include/calculus/differential.hpp"
-    using namespace mtpk;
+    using namespace gpmp;
 %}
 
 %include "../../include/calculus/differential.hpp"

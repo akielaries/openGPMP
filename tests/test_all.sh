@@ -1,6 +1,6 @@
 #!/usr/bin/sh
-# Utility script to test running openMTPK unit tests and generate coverage 
-# files in openMTPK/.coverage
+# Utility script to test running openGPMP unit tests and generate coverage 
+# files in openGPMP/.coverage
 
 # test all modules together with googletest. produce ONE .info coverage
 # file for the whole test suite. 
@@ -14,10 +14,10 @@ g++ -std=c++2a -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 \
     nt/t_factorization.cpp ../modules/nt/factorization.cpp \
     nt/t_logarithms.cpp ../modules/nt/logarithms.cpp \
     core/t_threadpool.cpp \
-    -lgtest -lgtest_main -o openMTPK_tests -fprofile-arcs -ftest-coverage -fPIC
+    -lgtest -lgtest_main -o openGPMP_tests -fprofile-arcs -ftest-coverage -fPIC
 
 # run compiled binary
-./openMTPK_tests
+./openGPMP_tests
 
 #number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
 # generate lcov files

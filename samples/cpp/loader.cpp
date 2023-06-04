@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    mtpk::Data data;
+    gpmp::Data data;
 
     auto [inputSet, outputSet] = data.load();
 

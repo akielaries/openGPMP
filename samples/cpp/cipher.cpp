@@ -1,11 +1,11 @@
 /**
- * Example driver using the mtpk::Cipher class that contains a caesar cipher,
+ * Example driver using the gpmp::Cipher class that contains a caesar cipher,
  * and keyword cipher
  *
  * @example cipher.cpp
  */
 #include <iostream>
-#include <openMTPK/nt/cipher.hpp>
+#include <openGPMP/nt/cipher.hpp>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -18,7 +18,7 @@ int main() {
                  "---->\n\n";
 
     // declare CIPHER class obj
-    mtpk::Cipher cc;
+    gpmp::Cipher cc;
 
     /*
      * declare some key values and strings to hash
