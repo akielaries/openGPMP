@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/akielaries/openGPMP/rolling/docs/openGPMP_logo_med.png)
+![](https://raw.githubusercontent.com/akielaries/openGPMP/v1.0.0-rc.1/docs/openGPMP_logo_med.png)
 --------------------------------------------------------------------------------
 
 ![Version](https://img.shields.io/github/v/release/akielaries/openGPMP?color=%23BF40BF)
