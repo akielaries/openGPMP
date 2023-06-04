@@ -3,6 +3,7 @@
 # v1.0.0-rc.1
 See [new contributors](https://github.com/akielaries/openGPMP/graphs/contributors?from=2023-02-07&to=2023-05-09&type=c)
 ## What's Changed 
+* **Project from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp**
 * Documentation layout + additions
 * `gpmp::accl` namespace introduced hardware acceleration methods using GPUs with the help of 
 OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The

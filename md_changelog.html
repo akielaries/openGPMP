@@ -81,6 +81,7 @@ v1.0.0-rc.1</h1>
 <h2><a class="anchor" id="autotoc_md19"></a>
 What's Changed</h2>
 <ul>
+<li><b>Project from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp</b></li>
 <li>Documentation layout + additions</li>
 <li><code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openGPMP with the use of <code>cmake</code>.<ul>
 <li><code>gpmp::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openGPMP modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace.</li>
