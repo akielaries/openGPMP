@@ -1,4 +1,4 @@
-#include "../../include/core/threadpool.hpp"
+#include "../../include/core/threads.hpp"
 #include <chrono>
 #include <immintrin.h>
 #include <iostream>
@@ -6,7 +6,7 @@
 #include <random>
 #include <vector>
 
-constexpr int matrixSize = 24;
+constexpr int matrixSize = 8912;
 constexpr int blockSize = 2;
 
 void matrixAddition_t(const std::vector<std::vector<int>> &A,
@@ -32,12 +32,11 @@ void matrixAddition_u(const std::vector<std::vector<int>> &A,
 
     for (int i = 0; i < size; ++i) {
         // must be a multiple of the overall matrix size
-        for (int j = 0; j < size;
-             j += matrixSize / 2) { // this number determine
-                                    // how many times to iterate
-                                    // corresponds to the number
-                                    // of operations performed
-                                    // within this loop
+        for (int j = 0; j < size; j += 4) { // this number determine
+                                            // how many times to iterate
+                                            // corresponds to the number
+                                            // of operations performed
+                                            // within this loop
             // perform matrix addition
             // TODO : make these
             C[i][j] = A[i][j] + B[i][j];
@@ -253,82 +252,81 @@ int main() {
     std::chrono::steady_clock::time_point end_time_cont =
         std::chrono::steady_clock::now();
 
-    std::cout << "Matrix A:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            std::cout << A[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    std::cout << "Matrix B:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            std::cout << B[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-    // Display the result
-    std::cout << "Matrix C after addition:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            std::cout << F[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    std::cout << std::endl;
-    std::cout << "\nMatrix X:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            int index = i * matrixSize + j;
-            std::cout << X[index] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    std::cout << "\nMatrix Y:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            int index = i * matrixSize + j;
-            std::cout << Y[index] << " ";
-        }
-        std::cout << std::endl;
-    }
-
-    std::cout << "\nMatrix Z after addition:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            int index = i * matrixSize + j;
-            std::cout << Z[index] << " ";
-        }
-        std::cout << std::endl;
-    }
-    /*
-            std::cout << "\nMatrix E after addition:" << std::endl;
-            for (int i = 0; i < matrixSize; ++i) {
-                for (int j = 0; j < matrixSize; ++j) {
-                    std::cout << E[i][j] << " ";
-                }
-                std::cout << std::endl;
+    /*    std::cout << "Matrix A:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << A[i][j] << " ";
             }
+            std::cout << std::endl;
+        }
 
-            std::cout << "\nMatrix F after addition:" << std::endl;
-            for (int i = 0; i < matrixSize; ++i) {
-                for (int j = 0; j < matrixSize; ++j) {
-                    std::cout << F[i][j] << " ";
-                }
-                std::cout << std::endl;
+        std::cout << "Matrix B:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << B[i][j] << " ";
             }
+            std::cout << std::endl;
+        }
+        // Display the result
+        std::cout << "Matrix C after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << F[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
 
-            std::cout << "\nMatrix G after addition:" << std::endl;
-            for (int i = 0; i < matrixSize; ++i) {
-                for (int j = 0; j < matrixSize; ++j) {
-                    std::cout << G[i][j] << " ";
-                }
-                std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "\nMatrix X:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                int index = i * matrixSize + j;
+                std::cout << X[index] << " ";
             }
-            */
+            std::cout << std::endl;
+        }
+
+        std::cout << "\nMatrix Y:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                int index = i * matrixSize + j;
+                std::cout << Y[index] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "\nMatrix Z after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                int index = i * matrixSize + j;
+                std::cout << Z[index] << " ";
+            }
+            std::cout << std::endl;
+        }
+                std::cout << "\nMatrix E after addition:" << std::endl;
+                for (int i = 0; i < matrixSize; ++i) {
+                    for (int j = 0; j < matrixSize; ++j) {
+                        std::cout << E[i][j] << " ";
+                    }
+                    std::cout << std::endl;
+                }
+
+                std::cout << "\nMatrix F after addition:" << std::endl;
+                for (int i = 0; i < matrixSize; ++i) {
+                    for (int j = 0; j < matrixSize; ++j) {
+                        std::cout << F[i][j] << " ";
+                    }
+                    std::cout << std::endl;
+                }
+
+                std::cout << "\nMatrix G after addition:" << std::endl;
+                for (int i = 0; i < matrixSize; ++i) {
+                    for (int j = 0; j < matrixSize; ++j) {
+                        std::cout << G[i][j] << " ";
+                    }
+                    std::cout << std::endl;
+                }
+                */
 
     std::cout << "NULL!! INTRINSICS - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(

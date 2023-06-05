@@ -1,4 +1,4 @@
-#include "../../include/core/threadpool.hpp"
+#include "../../include/core/threads.hpp"
 #include <chrono>
 #include <gtest/gtest.h>
 #include <iostream>

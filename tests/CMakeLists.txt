@@ -20,6 +20,7 @@ include(FetchContent)
 set(CPP_SOURCES
     ../modules/arithmetic/arith.cpp
     ../modules/calculus/differential.cpp
+    ../modules/linalg/mtx.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp
@@ -32,6 +33,7 @@ set(CPP_SOURCES
 set(CPP_TEST_FILES
     arith/t_arith.cpp
     calc/t_calc.cpp
+    linalg/t_matrix.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp

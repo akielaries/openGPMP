@@ -35,8 +35,8 @@
  * @file
  * @brief openGPMP Thread Pool
  */
-#ifndef THREADPOOL_HPP
-#define THREADPOOL_HPP
+#ifndef THREADS_HPP
+#define THREADS_HPP
 
 #include <condition_variable>
 #include <functional>

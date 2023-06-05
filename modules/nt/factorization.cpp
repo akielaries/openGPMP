@@ -38,7 +38,7 @@
  */
 #include "../../include/nt/factorization.hpp"
 #include "../../include/arithmetic.hpp"
-#include "../../include/core/threadpool.hpp"
+#include "../../include/core/threads.hpp"
 #include "../../include/nt/prime_test.hpp"
 
 #include <algorithm>

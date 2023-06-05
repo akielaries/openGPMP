@@ -8,7 +8,7 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
-#include <openGPMP/core/threadpool.hpp>
+#include <openGPMP/core/threads.hpp>
 #include <openGPMP/nt/prime_gen.hpp>
 #include <openGPMP/nt/prime_test.hpp>
 #include <vector>

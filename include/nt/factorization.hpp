@@ -41,16 +41,8 @@
 #ifndef FACTORIZATION_HPP
 #define FACTORIZATION_HPP
 
-#include "../core/threadpool.hpp"
-#include <condition_variable>
+#include "../core/threads.hpp"
 #include <cstdint>
-#include <functional>
-#include <future>
-#include <mutex>
-#include <queue>
-#include <stdio.h>
-#include <thread>
-#include <vector>
 
 namespace gpmp {
 class Factorization {
