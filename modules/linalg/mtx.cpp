@@ -37,12 +37,12 @@ constexpr int matrixSize = 32;
     defined(__i386) || defined(__amd64__) || defined(__amd64)
 
 // matrix addition using intrinsic functions
+// TODO: this should be templated and possibly return a vector
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                            const std::vector<std::vector<int>> &B,
                            std::vector<std::vector<int>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
-    std::cout << rows * cols;
 
     for (int i = 0; i < rows; ++i) {
         int j = 0;
