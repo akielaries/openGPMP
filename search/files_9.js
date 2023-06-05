@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['k_2dfoldcv_2ecpp_854',['k-foldCV.cpp',['../k-foldCV_8cpp.html',1,'']]],
-  ['k_2dfoldcv_2ehpp_855',['k-foldCV.hpp',['../k-foldCV_8hpp.html',1,'']]],
-  ['knn_2ecpp_856',['knn.cpp',['../knn_8cpp.html',1,'']]],
-  ['knn_2ehpp_857',['knn.hpp',['../knn_8hpp.html',1,'']]],
-  ['kohonen_5fnet_2ecpp_858',['kohonen_net.cpp',['../kohonen__net_8cpp.html',1,'']]],
-  ['kohonen_5fnet_2ehpp_859',['kohonen_net.hpp',['../kohonen__net_8hpp.html',1,'']]]
+  ['k_2dfoldcv_2ecpp_864',['k-foldCV.cpp',['../k-foldCV_8cpp.html',1,'']]],
+  ['k_2dfoldcv_2ehpp_865',['k-foldCV.hpp',['../k-foldCV_8hpp.html',1,'']]],
+  ['knn_2ecpp_866',['knn.cpp',['../knn_8cpp.html',1,'']]],
+  ['knn_2ehpp_867',['knn.hpp',['../knn_8hpp.html',1,'']]],
+  ['kohonen_5fnet_2ecpp_868',['kohonen_net.cpp',['../kohonen__net_8cpp.html',1,'']]],
+  ['kohonen_5fnet_2ehpp_869',['kohonen_net.hpp',['../kohonen__net_8hpp.html',1,'']]]
 ];

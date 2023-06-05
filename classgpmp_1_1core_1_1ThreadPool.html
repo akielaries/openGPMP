@@ -84,7 +84,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="threads_8hpp_source.html">threads.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -118,7 +118,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="factors_8cpp-example.html#_a3">factors.cpp</a>, and <a class="el" href="primes_8cpp-example.html#_a4">primes.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00060">60</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00060">60</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa6230e518031bf087ed06a83a1c2ba75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6230e518031bf087ed06a83a1c2ba75">&#9670;&nbsp;</a></span>ThreadPool() <span class="overload">[1/2]</span></h2>
@@ -145,10 +145,10 @@ Private Attributes</h2></td></tr>
 
 <p>Default constructor that creates a <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html">ThreadPool</a> with the number of threads. </p>
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00078">78</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00078">78</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                 : <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#aa6230e518031bf087ed06a83a1c2ba75">ThreadPool</a>(std::thread::hardware_concurrency()) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_aa6230e518031bf087ed06a83a1c2ba75"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#aa6230e518031bf087ed06a83a1c2ba75">gpmp::core::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool()</div><div class="ttdoc">Default constructor that creates a ThreadPool with the number of threads.</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00078">threadpool.hpp:78</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_aa6230e518031bf087ed06a83a1c2ba75"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#aa6230e518031bf087ed06a83a1c2ba75">gpmp::core::ThreadPool::ThreadPool</a></div><div class="ttdeci">ThreadPool()</div><div class="ttdoc">Default constructor that creates a ThreadPool with the number of threads.</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00078">threads.hpp:78</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -185,7 +185,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Constructs a <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html">ThreadPool</a> object with the specified number of worker threads. </p>
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00088">88</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00088">88</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                        : <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>(<span class="keyword">false</span>) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// traverse through the number of threads specified</span></div>
@@ -231,11 +231,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            });</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a0867d2fd825266998762f3c6684c6393"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">gpmp::core::ThreadPool::stop</a></div><div class="ttdeci">bool stop</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00071">threadpool.hpp:71</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a3a7749dd9db2467655f9f60da2d8c0c5"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">gpmp::core::ThreadPool::condition</a></div><div class="ttdeci">std::condition_variable condition</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00069">threadpool.hpp:69</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a7102885ad6a9ae7885fdbc7dd412df1b"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b">gpmp::core::ThreadPool::workers</a></div><div class="ttdeci">std::vector&lt; std::thread &gt; workers</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00063">threadpool.hpp:63</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a8aaba033e30909b93e215a5a46f31e29"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">gpmp::core::ThreadPool::queue_mutex</a></div><div class="ttdeci">std::mutex queue_mutex</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00067">threadpool.hpp:67</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_aac48a29d2d2815558fba4941a7f83d96"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">gpmp::core::ThreadPool::tasks</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; tasks</div><div class="ttdef"><b>Definition:</b> <a href="threadpool_8hpp_source.html#l00065">threadpool.hpp:65</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a0867d2fd825266998762f3c6684c6393"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">gpmp::core::ThreadPool::stop</a></div><div class="ttdeci">bool stop</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00071">threads.hpp:71</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a3a7749dd9db2467655f9f60da2d8c0c5"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">gpmp::core::ThreadPool::condition</a></div><div class="ttdeci">std::condition_variable condition</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00069">threads.hpp:69</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a7102885ad6a9ae7885fdbc7dd412df1b"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b">gpmp::core::ThreadPool::workers</a></div><div class="ttdeci">std::vector&lt; std::thread &gt; workers</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00063">threads.hpp:63</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a8aaba033e30909b93e215a5a46f31e29"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">gpmp::core::ThreadPool::queue_mutex</a></div><div class="ttdeci">std::mutex queue_mutex</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00067">threads.hpp:67</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_aac48a29d2d2815558fba4941a7f83d96"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">gpmp::core::ThreadPool::tasks</a></div><div class="ttdeci">std::queue&lt; std::function&lt; void()&gt; &gt; tasks</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00065">threads.hpp:65</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b">workers</a>.</p>
 
@@ -264,7 +264,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00182">182</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00182">182</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                  {</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="comment">// lock queue_mutex &amp; set stop to true</span></div>
@@ -345,7 +345,7 @@ template&lt;class F , class... Args&gt; </div>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="primes_8cpp-example.html#a6">primes.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00148">148</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00148">148</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                            {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// this is the return type of the passed in function</span></div>
@@ -406,7 +406,7 @@ template&lt;class F , class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00069">69</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00069">69</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a6e477bb8a2996b6b12e57d42e101c4ea">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
@@ -432,7 +432,7 @@ template&lt;class F , class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00067">67</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00067">67</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a6e477bb8a2996b6b12e57d42e101c4ea">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
@@ -458,7 +458,7 @@ template&lt;class F , class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00071">71</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00071">71</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a6e477bb8a2996b6b12e57d42e101c4ea">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
@@ -484,7 +484,7 @@ template&lt;class F , class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00065">65</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00065">65</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a6e477bb8a2996b6b12e57d42e101c4ea">enqueue()</a>.</p>
 
@@ -510,14 +510,14 @@ template&lt;class F , class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threadpool_8hpp_source.html#l00063">63</a> of file <a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00063">63</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a65d539413af80888ebf35138f99493ae">ThreadPool()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/core/<a class="el" href="threadpool_8hpp_source.html">threadpool.hpp</a></li>
+<li>include/core/<a class="el" href="threads_8hpp_source.html">threads.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
