@@ -118,12 +118,12 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">    defined(__i386) || defined(__amd64__) || defined(__amd64)</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// matrix addition using intrinsic functions</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="f90_2mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">gpmp::linalg::Mtx::mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                           <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                           std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rows = A.size();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cols = A[0].size();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::cout &lt;&lt; rows * cols;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// TODO: this should be templated and possibly return a vector</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="f90_2mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">gpmp::linalg::Mtx::mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                           <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                           std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rows = A.size();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cols = A[0].size();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; ++i) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">int</span> j = 0;</div>
