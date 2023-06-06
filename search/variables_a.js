@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['matrixsize_1333',['matrixSize',['../mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6',1,'mtx.cpp']]],
-  ['mean_5fstdev_1334',['mean_stdev',['../structgpmp_1_1ml_1_1summary.html#a797be00f841478dc89cb28cccaa5a319',1,'gpmp::ml::summary']]],
-  ['mtx_5fneg_1335',['mtx_neg',['../namespacepython_1_1linalg.html#ac78734a635d502405ccfe13cf5ac6b52',1,'python::linalg']]],
-  ['mtx_5fo_1336',['mtx_o',['../namespacepython_1_1linalg.html#a0343bd4d51e02f97e21ae10be5c3c50e',1,'python::linalg']]],
-  ['mtx_5fpos_1337',['mtx_pos',['../namespacepython_1_1linalg.html#a8efb00aa7aefef926dc00d6ad1c5ca75',1,'python::linalg']]],
-  ['mtx_5fz1_1338',['mtx_z1',['../namespacepython_1_1linalg.html#ab23ed29b6cf31e7f1b40458d13fc983d',1,'python::linalg']]],
-  ['mtx_5fz2_1339',['mtx_z2',['../namespacepython_1_1linalg.html#ac9d40235255fd376e3c2cc4b8fd67071',1,'python::linalg']]],
-  ['mu_1340',['mu',['../classgpmp_1_1ml_1_1BayesGauss.html#a7b74c1284e6437c2baf6b59b9aed5491',1,'gpmp::ml::BayesGauss']]]
+  ['lambda_1415',['lambda',['../classgpmp_1_1ml_1_1Logreg.html#a013d234420cea2f998974e879188b311',1,'gpmp::ml::Logreg']]],
+  ['layer_5fptr_1416',['layer_ptr',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270',1,'gpmp::ml::PrimaryMLP']]],
+  ['layer_5funits_1417',['layer_units',['../classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19',1,'gpmp::ml::SecondaryMLP']]],
+  ['learning_5frate_1418',['learning_rate',['../classgpmp_1_1ml_1_1Logreg.html#a83124fdd29ca6e2010d3d18e82ffd0ea',1,'gpmp::ml::Logreg::learning_rate()'],['../classgpmp_1_1NaiveNet.html#ae65199583ba9a559b76f888d38846113',1,'gpmp::NaiveNet::learning_rate()']]],
+  ['lr_1419',['lr',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89',1,'gpmp::ml::SecondaryMLP']]]
 ];

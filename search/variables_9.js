@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['lambda_1328',['lambda',['../classgpmp_1_1ml_1_1Logreg.html#a013d234420cea2f998974e879188b311',1,'gpmp::ml::Logreg']]],
-  ['layer_5fptr_1329',['layer_ptr',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270',1,'gpmp::ml::PrimaryMLP']]],
-  ['layer_5funits_1330',['layer_units',['../classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19',1,'gpmp::ml::SecondaryMLP']]],
-  ['learning_5frate_1331',['learning_rate',['../classgpmp_1_1ml_1_1Logreg.html#a83124fdd29ca6e2010d3d18e82ffd0ea',1,'gpmp::ml::Logreg::learning_rate()'],['../classgpmp_1_1NaiveNet.html#ae65199583ba9a559b76f888d38846113',1,'gpmp::NaiveNet::learning_rate()']]],
-  ['lr_1332',['lr',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89',1,'gpmp::ml::SecondaryMLP']]]
+  ['k_1413',['k',['../classgpmp_1_1ml_1_1AutoEncoder.html#af0d1977287ff0646ab4f53a33a37bb98',1,'gpmp::ml::AutoEncoder::k()'],['../classgpmp_1_1ml_1_1kNN.html#ab08d3ac7c1118bcae9a5e5eee418f219',1,'gpmp::ml::kNN::k()'],['../classgpmp_1_1ml_1_1Logreg.html#a4bc0a9699239baef7fbe885bb94c5a6f',1,'gpmp::ml::Logreg::k()'],['../classgpmp_1_1ml_1_1SVC.html#a693fffd9e039d3e8500f320e8bf2c586',1,'gpmp::ml::SVC::k()']]],
+  ['k_1414',['K',['../classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f',1,'gpmp::ml::CV']]]
 ];
