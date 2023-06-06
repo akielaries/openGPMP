@@ -52,11 +52,11 @@ namespace {
 
 // Test fixture for the matrix addition tests
 class MatrixAdditionTest : public ::testing::Test {
-protected:
+  protected:
     // Helper function to compare two matrices
-    template<typename T>
-    bool matricesAreEqual(const std::vector<std::vector<T>>& A,
-                         const std::vector<std::vector<T>>& B) {
+    template <typename T>
+    bool matricesAreEqual(const std::vector<std::vector<T>> &A,
+                          const std::vector<std::vector<T>> &B) {
         if (A.size() != B.size() || A[0].size() != B[0].size())
             return false;
 
@@ -71,14 +71,17 @@ protected:
     }
 };
 
-// Test case to compare the results of the intrinsics implementation with the naive implementation
+// Test case to compare the results of the intrinsics implementation with the
+// naive implementation
 TEST_F(MatrixAdditionTest, IntrinsicsMatchesNaive) {
     int matrixSize = 32;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> expected(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> result(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> expected(matrixSize,
+                                           std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> result(matrixSize,
+                                         std::vector<int>(matrixSize));
 
     // Initialize random number generator
     std::random_device rd;
@@ -100,28 +103,27 @@ TEST_F(MatrixAdditionTest, IntrinsicsMatchesNaive) {
     // result using the intrinsics implementation
     mtx.mtx_add(A, B, result);
 
-/*
-    std::cout << "Matrix EXPECTED after addition:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            std::cout << expected[i][j] << " ";
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
-    }
 
-    std::cout << "Matrix RESULT after addition:" << std::endl;
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
-            std::cout << result[i][j] << " ";
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
-    }
-*/
+    */
 
     // Compare the results
     ASSERT_TRUE(matricesAreEqual(expected, result));
 }
-
 
 TEST(matrix_print, print_mtx) {
     gpmp::Matrix<int> mat(3, 4);
