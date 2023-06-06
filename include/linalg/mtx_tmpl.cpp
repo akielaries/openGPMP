@@ -53,6 +53,9 @@
 
 namespace gpmp {
 
+namespace linalg {
+
+
 /**
  * @class Matrix
  * @brief Matrix and Scalar operations
@@ -451,6 +454,8 @@ struct mtx {
         return MTX;
     }
 };
+
+} // namespace linalg
 
 } // namespace gpmp
 

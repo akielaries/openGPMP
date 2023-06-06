@@ -1,3 +1,7 @@
+/**
+  * This file implements CUDA kernel functions as well as utility/setup
+  * in order to execute the kernel functions
+  */
 #include <iostream>
 #include <math.h>
 // Kernel function to add the elements of two arrays

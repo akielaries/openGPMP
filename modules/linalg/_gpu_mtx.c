@@ -31,6 +31,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
+/**
+ * This file serves as the utility/setup for executing the OpenCL based
+ * Kernel functions
+ */
 #include "../../include/linalg/_gpu_mtx.h"
 #include <math.h>
 #include <stddef.h>
