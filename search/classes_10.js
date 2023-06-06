@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['secondarymlp_825',['SecondaryMLP',['../classgpmp_1_1ml_1_1SecondaryMLP.html',1,'gpmp::ml']]],
-  ['sidmmtxarm_826',['SIDMmtxARM',['../classSIDMmtxARM.html',1,'']]],
-  ['simdmtxintel_827',['SIMDmtxIntel',['../classSIMDmtxIntel.html',1,'']]],
-  ['squares_828',['Squares',['../classgpmp_1_1Squares.html',1,'gpmp']]],
-  ['stats_829',['Stats',['../classgpmp_1_1ml_1_1Stats.html',1,'gpmp::ml']]],
-  ['summary_830',['summary',['../structgpmp_1_1ml_1_1summary.html',1,'gpmp::ml']]],
-  ['svc_831',['SVC',['../classgpmp_1_1ml_1_1SVC.html',1,'gpmp::ml']]]
+  ['threaddispatch_811',['ThreadDispatch',['../classgpmp_1_1core_1_1ThreadDispatch.html',1,'gpmp::core']]],
+  ['threadpool_812',['ThreadPool',['../classgpmp_1_1core_1_1ThreadPool.html',1,'gpmp::core']]],
+  ['trainers_813',['Trainers',['../classgpmp_1_1ml_1_1Trainers.html',1,'gpmp::ml']]],
+  ['typecast_814',['TypeCast',['../classgpmp_1_1core_1_1TypeCast.html',1,'gpmp::core']]]
 ];
