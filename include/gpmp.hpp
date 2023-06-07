@@ -34,8 +34,10 @@
 
 /**
  * @file gpmp.hpp
- * @brief Core openGPMP header file
+ * @brief Central user facing API for OpenGPMP
  */
+#ifndef GPMP_HPP
+#define GPMP_HPP
 
 // TODO FIXME
 #include "arithmetic.hpp"
@@ -44,3 +46,5 @@
 #include "linalg.hpp"
 #include "ml.hpp"
 #include "nt.hpp"
+
+#endif

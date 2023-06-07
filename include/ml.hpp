@@ -35,7 +35,7 @@
 /**
  * @file
  *
- * @brief openGPMP MACHINE/DEEP LEARNING MODULE
+ * @brief User API for OpenGPMP MACHINE/DEEP LEARNING MODULE
  *
  * @details This file serves as the core header for the Machine & Deep
  * Learning module. This header includes the following :

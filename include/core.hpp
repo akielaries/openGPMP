@@ -1,5 +1,6 @@
 /**
- * openGPMP core module TODO FIXME
+ * @file core.hpp
+ * @brief User API for OpenGPMP CORE MODULE
  */
 
 /*

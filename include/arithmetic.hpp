@@ -34,9 +34,7 @@
 
 /**
  * @file
- * @author Akiel Aries
- *
- * @brief openGPMP ARITHMETIC MODULE
+ * @brief User API for openGPMP ARITHMETIC MODULE
  *
  * @details This file serves as the core Arithmetic module housing the
  * basic operations and operations based on/using arithmetic.

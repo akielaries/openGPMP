@@ -34,8 +34,7 @@
 
 /**
  * @file
- *
- * @brief openGPMP LINEAR ALGEBRA MODULE
+ * @brief User API for OpenGPMP LINEAR ALGEBRA MODULE
  *
  * @details This file serves as the core header for the Linear Algebra
  * module. This header includes Vector/Matrix related operations. Also

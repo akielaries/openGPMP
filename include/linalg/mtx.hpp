@@ -8,7 +8,8 @@ namespace gpmp {
 namespace linalg {
 
 /**
- * @brief Mtx class offers matrix arithmetic element wise operations
+ * @brief Mtx class offers matrix arithmetic operations. Some methods are 
+ * element-wise while others make use of grouping and unrolling
  */
 class Mtx {
 
@@ -67,12 +68,26 @@ class Mtx {
                  const std::vector<std::vector<double>> &B,
                  std::vector<std::vector<double>> &C);
 
-    /** @brief Matrix Multiplication Intel SIMD, accepts integers */
+    /** 
+     * @brief Perform matrix multiplication using Intel intrinsics, accepts
+     * vectors of type int
+     * @param A input matrix A
+     * @param B input matrix B
+     * @param C output matrix C
+     * @note matrices must be of at least size 8x8
+     */
     void mtx_mult(const std::vector<std::vector<int>> &A,
                   const std::vector<std::vector<int>> &B,
                   std::vector<std::vector<int>> &C);
 
-    /** @brief Matrix Multiplication Intel SIMD, accepts idoubles */
+    /** 
+     * @brief Perform matrix multiplication using Intel intrinsics, accepts
+     * vectors of type double
+     * @param A input matrix A
+     * @param B input matrix B
+     * @param C output matrix C
+     * @note matrices must be of at least size 4x4
+     */
     void mtx_mult(const std::vector<std::vector<double>> &A,
                   const std::vector<std::vector<double>> &B,
                   std::vector<std::vector<double>> &C);
@@ -136,14 +151,37 @@ class Mtx {
                  const std::vector<std::vector<double>> &B,
                  std::vector<std::vector<double>> &C);
 
+    /**
+     * @brief Perform matrix multiplication using ARM intrinsics, accepts
+     * vectors of type int
+     * @param A input matrix A
+     * @param B input matrix B
+     * @param C output matrix C
+     * @note matrices must be of at least size 8x8
+     */
     void mtx_mult(const std::vector<std::vector<int>> &A,
                   const std::vector<std::vector<int>> &B,
                   std::vector<std::vector<int>> &C);
 
-    /** @brief Matrix Multiplication ARM SIMD, accepts idoubles */
+    /** 
+     * @brief Perform matrix multiplication using ARM intrinsics, accepts
+     * vectors of type double
+     * @param A input matrix A
+     * @param B input matrix B
+     * @param C output matrix C
+     * @note matrices must be of at least size 4x4
+     */
     void mtx_mult(const std::vector<std::vector<double>> &A,
                   const std::vector<std::vector<double>> &B,
                   std::vector<std::vector<double>> &C);
+
+    void strass_mtx_mult(const std::vector<std::vector<int>> &A,
+                         const std::vector<std::vector<int>> &B,
+                         std::vector<std::vector<int>> &C);
+
+    void strass_mtx_mult(const std::vector<std::vector<double>> &A,
+                         const std::vector<std::vector<double>> &B,
+                         std::vector<std::vector<double>> &C);
 
     /**
      * @brief Transpose matrices using Intel intrinsics
@@ -183,6 +221,18 @@ class Mtx {
     void std_mtx_mult(const std::vector<std::vector<int>> &A,
                       const std::vector<std::vector<int>> &B,
                       std::vector<std::vector<int>> &C);
+
+    /**
+     * @brief Performs matrix multiplication using the Strassen algorithm
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note The input matrices A and B should be square matrices with
+     * dimensions that are powers of 2
+     */
+    void std_strass_mtx_mult(const std::vector<std::vector<int>> &A,
+                             const std::vector<std::vector<int>> &B,
+                             std::vector<std::vector<int>> &C)
 };
 
 } // namespace linalg

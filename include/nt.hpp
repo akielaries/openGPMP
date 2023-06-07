@@ -35,7 +35,7 @@
 /**
  * @file
  *
- * @brief openGPMP NUMBER THEORY MODULE
+ * @brief User API for OpenGPMP NUMBER THEORY MODULE
  *
  * @details This file serves as the core header for the Number Theory
  * module. This header includes the following :

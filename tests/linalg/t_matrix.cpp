@@ -70,10 +70,13 @@ class MatrixAdditionTest : public ::testing::Test {
         return true;
     }
 };
+// unit tests for Mtx class methods using Intel intrinsics
+#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
+    defined(__i386) || defined(__amd64__) || defined(__amd64)
 
-// Test case to compare the results of the intrinsics implementation with the
-// naive implementation
-TEST_F(MatrixAdditionTest, IntrinsicsMatchesNaive) {
+// test case to compare the results of the intrinsics implementation with the
+// naive implementation for matrix addition
+TEST_MTX_ADD_INTEL(mtx_add, assert_intel_intrin) {
     int matrixSize = 32;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
@@ -124,6 +127,63 @@ TEST_F(MatrixAdditionTest, IntrinsicsMatchesNaive) {
     // Compare the results
     ASSERT_TRUE(matricesAreEqual(expected, result));
 }
+
+// unit tests for Mtx class methods using ARM intrinsics
+#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
+    defined(__ARM_ARCH) || defined(__aarch64__)
+
+TEST_MTX_ADD_ARM(mtx_add, assert_arm_intrin) {
+    int matrixSize = 32;
+    // Define input matrices A and B
+    std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> expected(matrixSize,
+                                           std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> result(matrixSize,
+                                         std::vector<int>(matrixSize));
+
+    // Initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // Populate matrices A and B with random values
+    for (int i = 0; i < matrixSize; ++i) {
+        for (int j = 0; j < matrixSize; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result);
+
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+
+    // Compare the results
+    ASSERT_TRUE(matricesAreEqual(expected, result));
+}
+#endif
 
 TEST(matrix_print, print_mtx) {
     gpmp::Matrix<int> mat(3, 4);
