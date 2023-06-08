@@ -41,5 +41,5 @@ var searchData=
   ['rows_596',['rows',['../classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb',1,'gpmp::linalg::Matrix::rows()'],['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#ad9f69dabc851035bf2b910bac34d2ae3',1,'pygpmp.linalg.linalg.MatrixI.rows()'],['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#aa1b62f91245783ea8d71b5a28d1a9980',1,'pygpmp.linalg.linalg.Matrix.rows()']]],
   ['rowvector_597',['RowVector',['../naive__net_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_net.hpp']]],
   ['run_598',['run',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a5c73eb9084563467fcf6985ebce230f1',1,'gpmp::ml::PrimaryMLP']]],
-  ['run_5fmtx_5fadd_599',['run_mtx_add',['../mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]]
+  ['run_5fmtx_5fadd_599',['run_mtx_add',['../samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]]
 ];

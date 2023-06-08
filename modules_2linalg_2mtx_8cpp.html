@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: Member List</title>
+<title>openGPMP: modules/linalg/mtx.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,22 +71,59 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacegpmp.html">gpmp</a></li><li class="navelem"><a class="el" href="namespacegpmp_1_1linalg.html">linalg</a></li><li class="navelem"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html">Mtx</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_78861b883ab737ec574de6748f1329c7.html">linalg</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">gpmp::linalg::Mtx Member List</div>  </div>
+<div class="title">mtx.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="mtx_8hpp_source.html">../../include/linalg/mtx.hpp</a>&quot;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div>
+<p><a href="modules_2linalg_2mtx_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad6548ce9849f89f541959b5bf06374a6"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modules_2linalg_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a> = 10000</td></tr>
+<tr class="separator:ad6548ce9849f89f541959b5bf06374a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad6548ce9849f89f541959b5bf06374a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6548ce9849f89f541959b5bf06374a6">&#9670;&nbsp;</a></span>matrixSize</h2>
 
-<p>This is the complete list of members for <a class="el" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a8ee4f24c114dae48abcefc61e4d15ef5">std_mtx_add</a>(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#ad27c0595645b0fe2ee4d318320dbae7b">std_mtx_mult</a>(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">std_mtx_mult_strass</a>(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#ae349c85464f17d22cf6a1f8a60a72d53">std_mtx_sub</a>(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td><td class="entry"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int matrixSize = 10000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l00034">34</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c">run_mtx_add()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

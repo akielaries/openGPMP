@@ -18,5 +18,5 @@ var searchData=
   ['rotate_5fleft_1231',['rotate_left',['../classRC5.html#ae1fe017f0adfcc82c0661f452067d89f',1,'RC5::rotate_left()'],['../modules_2nt_2rc5_8cpp.html#ae44a7eb005369d52e6666b6cfc5b0e19',1,'rotate_left():&#160;rc5.cpp']]],
   ['rotate_5fright_1232',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../modules_2nt_2rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
   ['run_1233',['run',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a5c73eb9084563467fcf6985ebce230f1',1,'gpmp::ml::PrimaryMLP']]],
-  ['run_5fmtx_5fadd_1234',['run_mtx_add',['../mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]]
+  ['run_5fmtx_5fadd_1234',['run_mtx_add',['../samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]]
 ];

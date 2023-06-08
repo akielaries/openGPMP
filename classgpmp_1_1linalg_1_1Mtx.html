@@ -99,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad27c0595645b0fe2ee4d318320dbae7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#ad27c0595645b0fe2ee4d318320dbae7b">std_mtx_mult</a> (const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td></tr>
 <tr class="memdesc:ad27c0595645b0fe2ee4d318320dbae7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix multiplication on two matrices.  <a href="classgpmp_1_1linalg_1_1Mtx.html#ad27c0595645b0fe2ee4d318320dbae7b">More...</a><br /></td></tr>
 <tr class="separator:ad27c0595645b0fe2ee4d318320dbae7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa104990c868728ef51d6372280c8fb0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">std_mtx_mult_strass</a> (const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</td></tr>
+<tr class="memdesc:aa104990c868728ef51d6372280c8fb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs matrix multiplication using the Strassen algorithm.  <a href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">More...</a><br /></td></tr>
+<tr class="separator:aa104990c868728ef51d6372280c8fb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html" title="Mtx class offers matrix arithmetic operations. Some methods are element-wise while others make use of...">Mtx</a> class offers matrix arithmetic operations. Some methods are element-wise while others make use of grouping and unrolling. </p>
@@ -142,12 +145,12 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">A</td><td>Input matrix A </td></tr>
     <tr><td class="paramname">B</td><td>Input matrix B </td></tr>
-    <tr><td class="paramname">C</td><td>Output matrix C </td></tr>
+    <tr><td class="paramname">C</td><td>Output matrix C This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx_8cpp_source.html#l00493">493</a> of file <a class="el" href="mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l00493">493</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                                                  {</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
@@ -198,12 +201,12 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">A</td><td>Input matrix A </td></tr>
     <tr><td class="paramname">B</td><td>Input matrix B </td></tr>
-    <tr><td class="paramname">C</td><td>Output matrix C </td></tr>
+    <tr><td class="paramname">C</td><td>Output matrix C This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx_8cpp_source.html#l00521">521</a> of file <a class="el" href="mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l00521">521</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                                                                   {</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    assert(A.size() == B.size());</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    assert(A[0].size() == B[0].size());</div>
@@ -221,6 +224,51 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    }</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aa104990c868728ef51d6372280c8fb0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa104990c868728ef51d6372280c8fb0b">&#9670;&nbsp;</a></span>std_mtx_mult_strass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpmp::linalg::Mtx::std_mtx_mult_strass </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; int &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs matrix multiplication using the Strassen algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>Input matrix A </td></tr>
+    <tr><td class="paramname">B</td><td>Input matrix B </td></tr>
+    <tr><td class="paramname">C</td><td>Output matrix C </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The input matrices A and B should be square matrices with dimensions that are powers of 2 This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </dd></dl>
+
 </div>
 </div>
 <a id="ae349c85464f17d22cf6a1f8a60a72d53"></a>
@@ -260,12 +308,12 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">A</td><td>Input matrix A </td></tr>
     <tr><td class="paramname">B</td><td>Input matrix B </td></tr>
-    <tr><td class="paramname">C</td><td>Output matrix C </td></tr>
+    <tr><td class="paramname">C</td><td>Output matrix C This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx_8cpp_source.html#l00507">507</a> of file <a class="el" href="mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l00507">507</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                                                                  {</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
@@ -281,7 +329,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/linalg/<a class="el" href="mtx_8hpp_source.html">mtx.hpp</a></li>
-<li>modules/linalg/<a class="el" href="mtx_8cpp_source.html">mtx.cpp</a></li>
+<li>modules/linalg/<a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
