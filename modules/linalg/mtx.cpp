@@ -31,7 +31,7 @@ void mtx_mult_(float *matrix1, float *matrix2, float *res, int *nrows1,
 }*/
 
 // for testing matrix sizes
-constexpr int matrixSize = 32;
+constexpr int matrixSize = 10000;
 
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
@@ -207,9 +207,9 @@ void gpmp::linalg::Mtx::mtx_mult(const std::vector<std::vector<int>> &A,
 }
 
 // matrix multiplication using Intel intrinsics, accepts double types
-void gpmp::linal::Mtx::mtx_mult(const std::vector<std::vector<double>> &A,
-                                const std::vector<std::vector<double>> &B,
-                                std::vector<std::vector<double>> &C) {
+void gpmp::linalg::Mtx::mtx_mult(const std::vector<std::vector<double>> &A,
+                                 const std::vector<std::vector<double>> &B,
+                                 std::vector<std::vector<double>> &C) {
     const int rows_a = A.size();
     const int cols_a = A[0].size();
     const int cols_b = B[0].size();
@@ -536,9 +536,9 @@ void gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<int>> &A,
         }
     }
 }
-
+/*
 // naive implementation of Strassen matrix multiplication algorithm
-void gpmp::linalg::Mtx::std_trass_mtx_mult(
+void gpmp::linalg::Mtx::std_mtx_mult_strass(
     const std::vector<std::vector<int>> &A,
     const std::vector<std::vector<int>> &B, std::vector<std::vector<int>> &C) {
     int n = A.size();
@@ -588,23 +588,24 @@ void gpmp::linalg::Mtx::std_trass_mtx_mult(
     std::vector<std::vector<int>> M7(half, std::vector<int>(half));
 
     // M1 = (A11 + A22) * (B11 + B22)
-    strass_mtx_mult(std_mtx_add(A11, A22), std_mtx_add(B11, B22), M1);
+    std_mtx_mult_strass(std_mtx_add(A11, A22), std_mtx_add(B11, B22), M1);
     // M2 = (A21 + A22) * B11
-    strass_mtx_mult(std_mtx_add(A21, A22), B11, M2);
+    std_mtx_mult_strass(std_mtx_add(A21, A22), B11, M2);
     // M3 = A11 * (B12 - B22)
-    strass_mtx_mult(A11, std_mtx_sub(B12, B22), M3);
+    std_mtx_mult_strass(A11, std_mtx_sub(B12, B22), M3);
     // M4 = A22 * (B21 - B11)
-    strass_mtx_mult(A22, std_mtx_sub(B21, B11), M4);
+    std_mtx_mult_strass(A22, std_mtx_sub(B21, B11), M4);
     // M5 = (A11 + A12) * B22
-    strass_mtx_mult(std_mtx_add(A11, A12), B22, M5);
+    std_mtx_mult_strass(std_mtx_add(A11, A12), B22, M5);
     // M6 = (A21 - A11) * (B11 + B12)
-    strass_mtx_mult(std_mtx_sub(A21, A11), std_mtx_add(B11, B12), M6);
+    std_mtx_mult_strass(std_mtx_sub(A21, A11), std_mtx_add(B11, B12), M6);
     // M7 = (A12 - A22) * (B21 + B22)
-    strass_mtx_mult(std_mtx_sub(A12, A22), std_mtx_add(B21, B22), M7);
+    std_mtx_mult_strass(std_mtx_sub(A12, A22), std_mtx_add(B21, B22), M7);
 
     // Computing the sub-matrices of the result matrix
     std::vector<std::vector<int>> C11_temp =
-        std_mtx_add(std_mtx_sub(std_mtx_add(M1, M4), M5), M7);
+
+    std_mtx_add(std_mtx_sub(std_mtx_add(M1, M4), M5), M7);
 
     std::vector<std::vector<int>> C12_temp = std_mtx_add(M3, M5);
     std::vector<std::vector<int>> C21_temp = std_mtx_add(M2, M4);
@@ -620,9 +621,9 @@ void gpmp::linalg::Mtx::std_trass_mtx_mult(
             C[i + half][j + half] = C22_temp[i][j];
         }
     }
-}
+}*/
 
-void run_mtx_add() {
+/*void run_mtx_add() {
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> C(matrixSize, std::vector<int>(matrixSize));
@@ -648,7 +649,7 @@ void run_mtx_add() {
     std::chrono::steady_clock::time_point end_time_u =
         std::chrono::steady_clock::now();
 
-    /*
+
         std::cout << "Matrix A:" << std::endl;
         for (int i = 0; i < matrixSize; ++i) {
             for (int j = 0; j < matrixSize; ++j) {
@@ -672,11 +673,11 @@ void run_mtx_add() {
             }
             std::cout << std::endl;
         }
-    */
+
 
     std::cout << "Loop Unrolling - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
                      end_time_u - start_time_u)
                      .count()
               << " ms" << std::endl;
-}
+}*/
