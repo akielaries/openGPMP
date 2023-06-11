@@ -35,8 +35,8 @@
 /*
  * Testing Linear Algebra Operations
  */
-#include "../../include/linalg/matrix.hpp"
 #include "../../include/linalg/mtx.hpp"
+#include "../../include/linalg/mtx_tmpl.hpp"
 #include <gtest/gtest.h>
 #include <iostream>
 #include <limits.h>
@@ -50,33 +50,34 @@ using namespace gpmp;
 
 namespace {
 
-// Test fixture for the matrix addition tests
-class MatrixAdditionTest : public ::testing::Test {
-  protected:
-    // Helper function to compare two matrices
-    template <typename T>
-    bool matricesAreEqual(const std::vector<std::vector<T>> &A,
-                          const std::vector<std::vector<T>> &B) {
-        if (A.size() != B.size() || A[0].size() != B[0].size())
-            return false;
+// utility test helper function to compare two matrices. used for verifying 
+// accelerated/non-standard implementations to the simple naive algorithm
+// for matrix arithmetic operations
+template <typename T>
+bool mtx_verif(const std::vector<std::vector<T>> &A,
+               const std::vector<std::vector<T>> &B) {
+    if (A.size() != B.size() || A[0].size() != B[0].size()) {
+        return false;
+    }
 
-        for (size_t i = 0; i < A.size(); ++i) {
-            for (size_t j = 0; j < A[i].size(); ++j) {
-                if (A[i][j] != B[i][j])
-                    return false;
+    for (size_t i = 0; i < A.size(); ++i) {
+        for (size_t j = 0; j < A[i].size(); ++j) {
+            if (A[i][j] != B[i][j]) {
+                return false;
             }
         }
-
-        return true;
     }
-};
+    return true;
+}
+
+
 // unit tests for Mtx class methods using Intel intrinsics
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
 
 // test case to compare the results of the intrinsics implementation with the
 // naive implementation for matrix addition
-TEST_MTX_ADD_INTEL(mtx_add, assert_intel_intrin) {
+TEST(ADD_MATRICES, assert_intel_intrin) {
     int matrixSize = 32;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
@@ -125,14 +126,16 @@ TEST_MTX_ADD_INTEL(mtx_add, assert_intel_intrin) {
     */
 
     // Compare the results
-    ASSERT_TRUE(matricesAreEqual(expected, result));
+    ASSERT_TRUE(mtx_verif(expected, result));
 }
+
+// TODO: implement tests for large matrices, tests for ints, floats, doubles
 
 // unit tests for Mtx class methods using ARM intrinsics
 #elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
     defined(__ARM_ARCH) || defined(__aarch64__)
 
-TEST_MTX_ADD_ARM(mtx_add, assert_arm_intrin) {
+TEST(ADD_MATRICES, assert_arm_intrin) {
     int matrixSize = 32;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
@@ -181,16 +184,17 @@ TEST_MTX_ADD_ARM(mtx_add, assert_arm_intrin) {
     */
 
     // Compare the results
-    ASSERT_TRUE(matricesAreEqual(expected, result));
+    ASSERT_TRUE(mtx_verif(expected, result));
 }
 #endif
 
 TEST(matrix_print, print_mtx) {
-    gpmp::Matrix<int> mat(3, 4);
+    gpmp::linalg::Matrix<int> mat(3, 4);
     mat.print_mtx();
 
-    std::tuple<Matrix<int>, Matrix<int>> matrices =
-        std::make_tuple(Matrix<int>(5, 3), Matrix<int>(6, 4));
+    std::tuple<gpmp::linalg::Matrix<int>, gpmp::linalg::Matrix<int>> matrices =
+        std::make_tuple(gpmp::linalg::Matrix<int>(5, 3),
+                        gpmp::linalg::Matrix<int>(6, 4));
 
     std::get<0>(matrices).print_mtx();
     std::get<1>(matrices).print_mtx();

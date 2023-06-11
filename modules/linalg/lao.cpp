@@ -36,7 +36,7 @@
  * taking a look at different mathematical operations seen in Linear
  * Algebra in C++
  */
-#include "../../include/linalg/matrix.hpp"
+#include "../../include/linalg/mtx_tmpl.hpp"
 #include "../../include/linalg/vectors.hpp"
 #include <fstream>
 #include <iostream>

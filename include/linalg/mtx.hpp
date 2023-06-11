@@ -14,9 +14,6 @@ namespace linalg {
 class Mtx {
 
   public:
-/**
- * @brief If system is x86 / Intel overall
- */
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
 
@@ -213,9 +210,10 @@ class Mtx {
      * @param C Output matrix C
      * @overload
      */
-    void std_mtx_add(const std::vector<std::vector<int>> &A,
-                     const std::vector<std::vector<int>> &B,
-                     std::vector<std::vector<int>> &C);
+    template <typename T>
+    void std_mtx_add(const std::vector<std::vector<T>> &A,
+                     const std::vector<std::vector<T>> &B,
+                     std::vector<std::vector<T>> &C);
 
     /**
      * @brief Perform matrix subtraction on two matrices
@@ -224,9 +222,10 @@ class Mtx {
      * @param C Output matrix C
      * @overload
      */
-    void std_mtx_sub(const std::vector<std::vector<int>> &A,
-                     const std::vector<std::vector<int>> &B,
-                     std::vector<std::vector<int>> &C);
+    template <typename T>
+    void std_mtx_sub(const std::vector<std::vector<T>> &A,
+                     const std::vector<std::vector<T>> &B,
+                     std::vector<std::vector<T>> &C);
 
     /**
      * @brief Perform matrix multiplication on two matrices
@@ -235,9 +234,10 @@ class Mtx {
      * @param C Output matrix C
      * @overload
      */
-    void std_mtx_mult(const std::vector<std::vector<int>> &A,
-                      const std::vector<std::vector<int>> &B,
-                      std::vector<std::vector<int>> &C);
+    template <typename T>
+    void std_mtx_mult(const std::vector<std::vector<T>> &A,
+                      const std::vector<std::vector<T>> &B,
+                      std::vector<std::vector<T>> &C);
 
     /**
      * @brief Performs matrix multiplication using the Strassen algorithm

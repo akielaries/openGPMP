@@ -490,9 +490,10 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
 #endif
 
 // naive matrix addition algorithm
-void gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<int>> &A,
-                                    const std::vector<std::vector<int>> &B,
-                                    std::vector<std::vector<int>> &C) {
+template <typename T>
+void gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<T>> &A,
+                                    const std::vector<std::vector<T>> &B,
+                                    std::vector<std::vector<T>> &C) {
     const int size = A.size();
 
     for (int i = 0; i < size; ++i) {
@@ -503,10 +504,27 @@ void gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<int>> &A,
     }
 }
 
+// instantiations for types accepted by templated std_mtx_add function
+template void
+gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<int>> &A,
+                               const std::vector<std::vector<int>> &B,
+                               std::vector<std::vector<int>> &C);
+
+template void
+gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<double>> &A,
+                               const std::vector<std::vector<double>> &B,
+                               std::vector<std::vector<double>> &C);
+
+template void
+gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<float>> &A,
+                               const std::vector<std::vector<float>> &B,
+                               std::vector<std::vector<float>> &C);
+
 // naive matrix subtraction algorithm
-void gpmp::linalg::Mtx::std_mtx_sub(const std::vector<std::vector<int>> &A,
-                                    const std::vector<std::vector<int>> &B,
-                                    std::vector<std::vector<int>> &C) {
+template <typename T>
+void gpmp::linalg::Mtx::std_mtx_sub(const std::vector<std::vector<T>> &A,
+                                    const std::vector<std::vector<T>> &B,
+                                    std::vector<std::vector<T>> &C) {
     const int size = A.size();
 
     for (int i = 0; i < size; ++i) {
@@ -517,10 +535,27 @@ void gpmp::linalg::Mtx::std_mtx_sub(const std::vector<std::vector<int>> &A,
     }
 }
 
+// instantiations for types accepted by templated std_mtx_sub function
+template void
+gpmp::linalg::Mtx::std_mtx_sub(const std::vector<std::vector<int>> &A,
+                               const std::vector<std::vector<int>> &B,
+                               std::vector<std::vector<int>> &C);
+
+template void
+gpmp::linalg::Mtx::std_mtx_sub(const std::vector<std::vector<double>> &A,
+                               const std::vector<std::vector<double>> &B,
+                               std::vector<std::vector<double>> &C);
+
+template void
+gpmp::linalg::Mtx::std_mtx_sub(const std::vector<std::vector<float>> &A,
+                               const std::vector<std::vector<float>> &B,
+                               std::vector<std::vector<float>> &C);
+
 // naive matrix multiplication algorithm
-void gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<int>> &A,
-                                     const std::vector<std::vector<int>> &B,
-                                     std::vector<std::vector<int>> &C) {
+template <typename T>
+void gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<T>> &A,
+                                     const std::vector<std::vector<T>> &B,
+                                     std::vector<std::vector<T>> &C) {
     assert(A.size() == B.size());
     assert(A[0].size() == B[0].size());
 
@@ -536,6 +571,23 @@ void gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<int>> &A,
         }
     }
 }
+
+// instantiations for types accepted by templated std_mtx_mult function
+template void
+gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<int>> &A,
+                                const std::vector<std::vector<int>> &B,
+                                std::vector<std::vector<int>> &C);
+
+template void
+gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<double>> &A,
+                                const std::vector<std::vector<double>> &B,
+                                std::vector<std::vector<double>> &C);
+
+template void
+gpmp::linalg::Mtx::std_mtx_mult(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C);
+
 /*
 // naive implementation of Strassen matrix multiplication algorithm
 void gpmp::linalg::Mtx::std_mtx_mult_strass(
