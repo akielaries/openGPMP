@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['matrix_1466',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]],
-  ['memaddr_5ft_1467',['memaddr_t',['../extra_8h.html#a4627a531c18ea1de91a16510522fbb22',1,'extra.h']]]
+  ['matrix_1463',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]],
+  ['memaddr_5ft_1464',['memaddr_t',['../extra_8h.html#a4627a531c18ea1de91a16510522fbb22',1,'extra.h']]]
 ];

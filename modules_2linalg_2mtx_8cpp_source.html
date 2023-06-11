@@ -571,200 +571,252 @@ $(function() {
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="comment">// naive matrix addition algorithm</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#a8ee4f24c114dae48abcefc61e4d15ef5">  493</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a8ee4f24c114dae48abcefc61e4d15ef5">gpmp::linalg::Mtx::std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                    std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            <span class="comment">// Perform matrix addition</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            C[i][j] = A[i][j] + B[i][j];</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        }</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    }</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;}</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="comment">// naive matrix subtraction algorithm</span></div>
-<div class="line"><a name="l00507"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#ae349c85464f17d22cf6a1f8a60a72d53">  507</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#ae349c85464f17d22cf6a1f8a60a72d53">gpmp::linalg::Mtx::std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                                    std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="comment">// Perform matrix subtraction</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            C[i][j] = A[i][j] - B[i][j];</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        }</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    }</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;}</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;<span class="comment">// naive matrix multiplication algorithm</span></div>
-<div class="line"><a name="l00521"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#ad27c0595645b0fe2ee4d318320dbae7b">  521</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#ad27c0595645b0fe2ee4d318320dbae7b">gpmp::linalg::Mtx::std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                                     std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    assert(A.size() == B.size());</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    assert(A[0].size() == B[0].size());</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    int64_t nrows = A.size();</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    int64_t ncols = A[0].size();</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00494"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#a97ceaef05db8622853d4a7884a77ef7e">  494</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a97ceaef05db8622853d4a7884a77ef7e">gpmp::linalg::Mtx::std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                    std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C) {</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            <span class="comment">// Perform matrix addition</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            C[i][j] = A[i][j] + B[i][j];</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        }</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;}</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="comment">// instantiations for types accepted by templated std_mtx_add function</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a97ceaef05db8622853d4a7884a77ef7e">gpmp::linalg::Mtx::std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                               <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                               std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a97ceaef05db8622853d4a7884a77ef7e">gpmp::linalg::Mtx::std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                               <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                               std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a97ceaef05db8622853d4a7884a77ef7e">gpmp::linalg::Mtx::std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                               <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                               std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="comment">// naive matrix subtraction algorithm</span></div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00525"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">  525</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                                    std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C) {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; nrows; ++i) {</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">for</span> (int64_t j = 0; j &lt; ncols; ++j) {</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            C[i][j] = 0.0;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <span class="keywordflow">for</span> (int64_t k = 0; k &lt; ncols; ++k) {</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                C[i][j] += A[i][k] * B[k][j];</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            }</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        }</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    }</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;}</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;<span class="comment">// naive implementation of Strassen matrix multiplication algorithm</span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="comment">void gpmp::linalg::Mtx::std_mtx_mult_strass(</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="comment">    const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="comment">    const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</span></div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<span class="comment">    int n = A.size();</span></div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;<span class="comment">    // base case: If the matrix size is 1x1, perform regular multiplication</span></div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="comment">    if (n == 1) {</span></div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;<span class="comment">        C[0][0] = A[0][0] * B[0][0];</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="comment">    // splitting the matrices into quadrants</span></div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="comment">    int half = n / 2;</span></div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A11(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A12(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A21(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A22(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B11(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B12(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B21(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B22(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C11(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C12(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C21(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C22(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;<span class="comment">    // dividing the input matrices into quadrants</span></div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="comment">    for (int i = 0; i &lt; half; i++) {</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="comment">        for (int j = 0; j &lt; half; j++) {</span></div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="comment">            A11[i][j] = A[i][j];</span></div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="comment">            A12[i][j] = A[i][j + half];</span></div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="comment">            A21[i][j] = A[i + half][j];</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="comment">            A22[i][j] = A[i + half][j + half];</span></div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="comment">            B11[i][j] = B[i][j];</span></div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="comment">            B12[i][j] = B[i][j + half];</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="comment">            B21[i][j] = B[i + half][j];</span></div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="comment">            B22[i][j] = B[i + half][j + half];</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="comment">    // recursive calls for sub-matrix multiplication</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M1(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M2(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M3(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M4(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M5(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M6(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M7(half, std::vector&lt;int&gt;(half));</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="comment">    // M1 = (A11 + A22) * (B11 + B22)</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_add(A11, A22), std_mtx_add(B11, B22), M1);</span></div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="comment">    // M2 = (A21 + A22) * B11</span></div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_add(A21, A22), B11, M2);</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="comment">    // M3 = A11 * (B12 - B22)</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="comment">    std_mtx_mult_strass(A11, std_mtx_sub(B12, B22), M3);</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="comment">    // M4 = A22 * (B21 - B11)</span></div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="comment">    std_mtx_mult_strass(A22, std_mtx_sub(B21, B11), M4);</span></div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="comment">    // M5 = (A11 + A12) * B22</span></div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_add(A11, A12), B22, M5);</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="comment">    // M6 = (A21 - A11) * (B11 + B12)</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_sub(A21, A11), std_mtx_add(B11, B12), M6);</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="comment">    // M7 = (A12 - A22) * (B21 + B22)</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_sub(A12, A22), std_mtx_add(B21, B22), M7);</span></div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="comment">    // Computing the sub-matrices of the result matrix</span></div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C11_temp =</span></div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="comment">    std_mtx_add(std_mtx_sub(std_mtx_add(M1, M4), M5), M7);</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C12_temp = std_mtx_add(M3, M5);</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C21_temp = std_mtx_add(M2, M4);</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C22_temp =</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="comment">        std_mtx_add(std_mtx_sub(std_mtx_add(M1, M3), M2), M6);</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="comment">    // Combining the sub-matrices to form the resulting matrix</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="comment">    for (int i = 0; i &lt; half; i++) {</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;<span class="comment">        for (int j = 0; j &lt; half; j++) {</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="comment">            C[i][j] = C11_temp[i][j];</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;<span class="comment">            C[i][j + half] = C12_temp[i][j];</span></div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;<span class="comment">            C[i + half][j] = C21_temp[i][j];</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;<span class="comment">            C[i + half][j + half] = C22_temp[i][j];</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="comment">}*/</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="comment">/*void run_mtx_add() {</span></div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A(matrixSize, std::vector&lt;int&gt;(matrixSize));</span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B(matrixSize, std::vector&lt;int&gt;(matrixSize));</span></div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C(matrixSize, std::vector&lt;int&gt;(matrixSize));</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="comment">    // Initialize random number generator</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment">    std::random_device rd;</span></div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="comment">    std::mt19937 gen(rd());</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="comment">    std::uniform_int_distribution&lt;int&gt; distribution(1, 100);</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">    // Populate matrices A and B with random values</span></div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="comment">    for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="comment">        for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;<span class="comment">            A[i][j] = distribution(gen);</span></div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;<span class="comment">            B[i][j] = distribution(gen);</span></div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="comment">    std::chrono::steady_clock::time_point start_time_u =</span></div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="comment">        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;<span class="comment">    // Perform matrix addition</span></div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">    gpmp::linalg::Mtx mtx;</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="comment">    mtx.mtx_add(A, B, C);</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="comment">    std::chrono::steady_clock::time_point end_time_u =</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;<span class="comment">        std::chrono::steady_clock::now();</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix A:&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="comment">            for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="comment">                std::cout &lt;&lt; A[i][j] &lt;&lt; &quot; &quot;;</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="comment">            std::cout &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix B:&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;<span class="comment">            for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="comment">                std::cout &lt;&lt; B[i][j] &lt;&lt; &quot; &quot;;</span></div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="comment">            std::cout &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="comment">        // Display the result</span></div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix C after addition:&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="comment">            for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="comment">                std::cout &lt;&lt; C[i][j] &lt;&lt; &quot; &quot;;</span></div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="comment">            }</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="comment">            std::cout &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="comment">    std::cout &lt;&lt; &quot;Loop Unrolling - Time elapsed: &quot;</span></div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;<span class="comment">              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="comment">                     end_time_u - start_time_u)</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="comment">                     .count()</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="comment">              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="comment">}*/</span></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a8ee4f24c114dae48abcefc61e4d15ef5"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a8ee4f24c114dae48abcefc61e4d15ef5">gpmp::linalg::Mtx::std_mtx_add</a></div><div class="ttdeci">void std_mtx_add(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</div><div class="ttdoc">If system is x86 / Intel overall.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00493">mtx.cpp:493</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_ad27c0595645b0fe2ee4d318320dbae7b"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#ad27c0595645b0fe2ee4d318320dbae7b">gpmp::linalg::Mtx::std_mtx_mult</a></div><div class="ttdeci">void std_mtx_mult(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix multiplication on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00521">mtx.cpp:521</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_ae349c85464f17d22cf6a1f8a60a72d53"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#ae349c85464f17d22cf6a1f8a60a72d53">gpmp::linalg::Mtx::std_mtx_sub</a></div><div class="ttdeci">void std_mtx_sub(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix subtraction on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00507">mtx.cpp:507</a></div></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="comment">// Perform matrix subtraction</span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            C[i][j] = A[i][j] - B[i][j];</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    }</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;}</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="comment">// instantiations for types accepted by templated std_mtx_sub function</span></div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                               <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                               std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                               <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                               std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                               <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                               std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;<span class="comment">// naive matrix multiplication algorithm</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00556"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">  556</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                                     std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C) {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    assert(A.size() == B.size());</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    assert(A[0].size() == B[0].size());</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    int64_t nrows = A.size();</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    int64_t ncols = A[0].size();</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; nrows; ++i) {</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keywordflow">for</span> (int64_t j = 0; j &lt; ncols; ++j) {</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            C[i][j] = 0.0;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <span class="keywordflow">for</span> (int64_t k = 0; k &lt; ncols; ++k) {</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                C[i][j] += A[i][k] * B[k][j];</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            }</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        }</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    }</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;}</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="comment">// instantiations for types accepted by templated std_mtx_mult function</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                                std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                                std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="keyword">template</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                                std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="comment">// naive implementation of Strassen matrix multiplication algorithm</span></div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="comment">void gpmp::linalg::Mtx::std_mtx_mult_strass(</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="comment">    const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</span></div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="comment">    const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C) {</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="comment">    int n = A.size();</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="comment">    // base case: If the matrix size is 1x1, perform regular multiplication</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="comment">    if (n == 1) {</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="comment">        C[0][0] = A[0][0] * B[0][0];</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;<span class="comment">    // splitting the matrices into quadrants</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="comment">    int half = n / 2;</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A11(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A12(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A21(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A22(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B11(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B12(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B21(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B22(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C11(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C12(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C21(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C22(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="comment">    // dividing the input matrices into quadrants</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;<span class="comment">    for (int i = 0; i &lt; half; i++) {</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;<span class="comment">        for (int j = 0; j &lt; half; j++) {</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;<span class="comment">            A11[i][j] = A[i][j];</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;<span class="comment">            A12[i][j] = A[i][j + half];</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;<span class="comment">            A21[i][j] = A[i + half][j];</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="comment">            A22[i][j] = A[i + half][j + half];</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="comment">            B11[i][j] = B[i][j];</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="comment">            B12[i][j] = B[i][j + half];</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="comment">            B21[i][j] = B[i + half][j];</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="comment">            B22[i][j] = B[i + half][j + half];</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="comment">    // recursive calls for sub-matrix multiplication</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M1(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M2(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M3(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M4(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M5(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M6(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; M7(half, std::vector&lt;int&gt;(half));</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="comment">    // M1 = (A11 + A22) * (B11 + B22)</span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_add(A11, A22), std_mtx_add(B11, B22), M1);</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;<span class="comment">    // M2 = (A21 + A22) * B11</span></div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_add(A21, A22), B11, M2);</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;<span class="comment">    // M3 = A11 * (B12 - B22)</span></div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">    std_mtx_mult_strass(A11, std_mtx_sub(B12, B22), M3);</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="comment">    // M4 = A22 * (B21 - B11)</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="comment">    std_mtx_mult_strass(A22, std_mtx_sub(B21, B11), M4);</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;<span class="comment">    // M5 = (A11 + A12) * B22</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_add(A11, A12), B22, M5);</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;<span class="comment">    // M6 = (A21 - A11) * (B11 + B12)</span></div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_sub(A21, A11), std_mtx_add(B11, B12), M6);</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;<span class="comment">    // M7 = (A12 - A22) * (B21 + B22)</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;<span class="comment">    std_mtx_mult_strass(std_mtx_sub(A12, A22), std_mtx_add(B21, B22), M7);</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;<span class="comment">    // Computing the sub-matrices of the result matrix</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C11_temp =</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;<span class="comment">    std_mtx_add(std_mtx_sub(std_mtx_add(M1, M4), M5), M7);</span></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C12_temp = std_mtx_add(M3, M5);</span></div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C21_temp = std_mtx_add(M2, M4);</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C22_temp =</span></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;<span class="comment">        std_mtx_add(std_mtx_sub(std_mtx_add(M1, M3), M2), M6);</span></div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="comment">    // Combining the sub-matrices to form the resulting matrix</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="comment">    for (int i = 0; i &lt; half; i++) {</span></div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="comment">        for (int j = 0; j &lt; half; j++) {</span></div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;<span class="comment">            C[i][j] = C11_temp[i][j];</span></div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="comment">            C[i][j + half] = C12_temp[i][j];</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="comment">            C[i + half][j] = C21_temp[i][j];</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="comment">            C[i + half][j + half] = C22_temp[i][j];</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="comment">}*/</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="comment">/*void run_mtx_add() {</span></div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; A(matrixSize, std::vector&lt;int&gt;(matrixSize));</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; B(matrixSize, std::vector&lt;int&gt;(matrixSize));</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="comment">    std::vector&lt;std::vector&lt;int&gt;&gt; C(matrixSize, std::vector&lt;int&gt;(matrixSize));</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;<span class="comment">    // Initialize random number generator</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;<span class="comment">    std::random_device rd;</span></div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;<span class="comment">    std::mt19937 gen(rd());</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;<span class="comment">    std::uniform_int_distribution&lt;int&gt; distribution(1, 100);</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;<span class="comment">    // Populate matrices A and B with random values</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;<span class="comment">    for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;<span class="comment">        for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;<span class="comment">            A[i][j] = distribution(gen);</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;<span class="comment">            B[i][j] = distribution(gen);</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;<span class="comment">    std::chrono::steady_clock::time_point start_time_u =</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<span class="comment">        std::chrono::steady_clock::now();</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;<span class="comment">    // Perform matrix addition</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;<span class="comment">    gpmp::linalg::Mtx mtx;</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;<span class="comment">    mtx.mtx_add(A, B, C);</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;<span class="comment">    std::chrono::steady_clock::time_point end_time_u =</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="comment">        std::chrono::steady_clock::now();</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix A:&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="comment">            for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;<span class="comment">                std::cout &lt;&lt; A[i][j] &lt;&lt; &quot; &quot;;</span></div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;<span class="comment">            std::cout &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix B:&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="comment">            for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="comment">                std::cout &lt;&lt; B[i][j] &lt;&lt; &quot; &quot;;</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;<span class="comment">            std::cout &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="comment">        // Display the result</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix C after addition:&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="comment">            for (int j = 0; j &lt; matrixSize; ++j) {</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;<span class="comment">                std::cout &lt;&lt; C[i][j] &lt;&lt; &quot; &quot;;</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="comment">            std::cout &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="comment">    std::cout &lt;&lt; &quot;Loop Unrolling - Time elapsed: &quot;</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="comment">              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;<span class="comment">                     end_time_u - start_time_u)</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="comment">                     .count()</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="comment">              &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="comment">}*/</span></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a797ab3a6754ca998c009d0e4f7041cd8"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a></div><div class="ttdeci">void std_mtx_sub(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix subtraction on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00525">mtx.cpp:525</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a865c77bec1b61111225dfce2eaff1d0c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a></div><div class="ttdeci">void std_mtx_mult(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix multiplication on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00556">mtx.cpp:556</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a97ceaef05db8622853d4a7884a77ef7e"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a97ceaef05db8622853d4a7884a77ef7e">gpmp::linalg::Mtx::std_mtx_add</a></div><div class="ttdeci">void std_mtx_add(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix addition on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00494">mtx.cpp:494</a></div></div>
 <div class="ttc" id="af90_2mtx_8f90_html_a92b3608e1a91c313e90ccafd2c77d3b8"><div class="ttname"><a href="f90_2mtx_8f90.html#a92b3608e1a91c313e90ccafd2c77d3b8">mtx_add</a></div><div class="ttdeci">subroutine mtx_add(a, b, c, nrows, ncols)</div><div class="ttdoc">FORTRAN Subroutine for Matrix Addition. Contains C++ wrapper function.</div><div class="ttdef"><b>Definition:</b> <a href="f90_2mtx_8f90_source.html#l00043">mtx.f90:44</a></div></div>
 <div class="ttc" id="af90_2mtx_8f90_html_ab5347b6c35e3e1dc1403c734fb167fa9"><div class="ttname"><a href="f90_2mtx_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div><div class="ttdeci">subroutine mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div><div class="ttdoc">FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function.</div><div class="ttdef"><b>Definition:</b> <a href="f90_2mtx_8f90_source.html#l00066">mtx.f90:67</a></div></div>
 <div class="ttc" id="amodules_2linalg_2mtx_8cpp_html_ad6548ce9849f89f541959b5bf06374a6"><div class="ttname"><a href="modules_2linalg_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a></div><div class="ttdeci">constexpr int matrixSize</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00034">mtx.cpp:34</a></div></div>

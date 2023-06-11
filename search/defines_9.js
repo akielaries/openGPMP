@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['matrix_1506',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'linalg.hpp']]],
-  ['matrix_5fhpp_1507',['MATRIX_HPP',['../mtx__tmpl_8cpp.html#a1f0d1856ae21020d7cbd94962caf97a9',1,'mtx_tmpl.cpp']]],
-  ['max_5frows_1508',['MAX_ROWS',['../datatable_8hpp.html#a3b94af9dcb0358f28d175d80eed98330',1,'datatable.hpp']]],
-  ['max_5fsource_5fsize_1509',['MAX_SOURCE_SIZE',['../__gpu__mtx_8c.html#a1f672842beaeeeb118a74c1b198b94e3',1,'_gpu_mtx.c']]],
-  ['maxcount_1510',['MAXCOUNT',['../Mandelbrot_8c.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'MAXCOUNT():&#160;Mandelbrot.c'],['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'MAXCOUNT():&#160;Mandelbrot.cpp']]],
-  ['maxt_5fin_5fpool_1511',['MAXT_IN_POOL',['../modules_2core_2CTHR_2c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4',1,'c_threadpool.h']]],
-  ['mem_5fsize_1512',['MEM_SIZE',['../__gpu__mtx_8c.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'_gpu_mtx.c']]],
-  ['modular_1513',['MODULAR',['../nt_8hpp.html#a9e0a086a8dd7e94a3cedca5bfb57ad0d',1,'nt.hpp']]]
+  ['parallel_5ffor_5fbegin_1509',['PARALLEL_FOR_BEGIN',['../threads_8hpp.html#a0914f73d404378d399cfab53760e2ea0',1,'threads.hpp']]],
+  ['parallel_5ffor_5fend_1510',['PARALLEL_FOR_END',['../threads_8hpp.html#a09556bb3c29a43e693cd7361e0b5b739',1,'threads.hpp']]],
+  ['pi_1511',['pi',['../openGL__astronomy__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_astronomy_animated.cpp'],['../openGL__bounce_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_bounce.cpp'],['../openGL__example00_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_example00.c'],['../openGL__torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus.cpp'],['../openGL__torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus_animated.cpp'],['../openGL__tri_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_tri.cpp'],['../modules_2complex_2torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
+  ['primes_1512',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]],
+  ['print_5fline_1513',['PRINT_LINE',['../__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'_gpu_mtx.c']]]
 ];

@@ -86,6 +86,8 @@ $(function() {
 
 <p><a class="el" href="classgpmp_1_1linalg_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> and Scalar operations.  
  <a href="classgpmp_1_1linalg_1_1Matrix.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -166,7 +168,7 @@ class gpmp::linalg::Matrix&lt; Type &gt;</h3>
 
 <p><a class="el" href="classgpmp_1_1linalg_1_1Matrix.html" title="Matrix and Scalar operations.">Matrix</a> and Scalar operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00062">62</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00062">62</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a96c1e4570091c1cab6660c1990136b40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a96c1e4570091c1cab6660c1990136b40">&#9670;&nbsp;</a></span>Matrix() <span class="overload">[1/2]</span></h2>
@@ -213,16 +215,16 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00078">78</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00078">78</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                     : <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>), <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>), <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a48b52ccb28533da5b475a3786131fd28">data</a>({}) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// initialize an empty vector for storage</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a48b52ccb28533da5b475a3786131fd28">data</a>.resize(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a> * <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, Type());</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">dim</a> = std::make_tuple(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a31ca84bc8249b8448c1b422bf0fb1acb"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">gpmp::linalg::Matrix::rows</a></div><div class="ttdeci">size_t rows</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00065">mtx_tmpl.cpp:65</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a48b52ccb28533da5b475a3786131fd28"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a48b52ccb28533da5b475a3786131fd28">gpmp::linalg::Matrix::data</a></div><div class="ttdeci">std::vector&lt; Type &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00067">mtx_tmpl.cpp:67</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a88b4481a4fde936d6de651a4206ba1fb"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">gpmp::linalg::Matrix::cols</a></div><div class="ttdeci">size_t cols</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00064">mtx_tmpl.cpp:64</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_ac87bdec18668802e3c90d758c201af6b"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">gpmp::linalg::Matrix::dim</a></div><div class="ttdeci">std::tuple&lt; size_t, size_t &gt; dim</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00068">mtx_tmpl.cpp:68</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a31ca84bc8249b8448c1b422bf0fb1acb"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">gpmp::linalg::Matrix::rows</a></div><div class="ttdeci">size_t rows</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00065">mtx_tmpl.hpp:65</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a48b52ccb28533da5b475a3786131fd28"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a48b52ccb28533da5b475a3786131fd28">gpmp::linalg::Matrix::data</a></div><div class="ttdeci">std::vector&lt; Type &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00067">mtx_tmpl.hpp:67</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a88b4481a4fde936d6de651a4206ba1fb"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">gpmp::linalg::Matrix::cols</a></div><div class="ttdeci">size_t cols</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00064">mtx_tmpl.hpp:64</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_ac87bdec18668802e3c90d758c201af6b"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">gpmp::linalg::Matrix::dim</a></div><div class="ttdeci">std::tuple&lt; size_t, size_t &gt; dim</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00068">mtx_tmpl.hpp:68</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,7 +253,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00083">83</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00083">83</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;             : <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>(0), <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>(0), <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a48b52ccb28533da5b475a3786131fd28">data</a>({}) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">dim</a> = {<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>};</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    };</div>
@@ -285,7 +287,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00165">165</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00165">165</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                               {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        assert(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">dim</a> == target.dim);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, target.cols);</div>
@@ -330,7 +332,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00235">235</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00235">235</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;               {</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        int64_t counter{0};</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
@@ -342,7 +344,7 @@ template&lt;typename Type &gt; </div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        }</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> (counter == <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92">num_elements</a>);</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a20e43f34fc939f2ebac8d38e7f2cea92"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92">gpmp::linalg::Matrix::num_elements</a></div><div class="ttdeci">int64_t num_elements</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00070">mtx_tmpl.cpp:70</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a20e43f34fc939f2ebac8d38e7f2cea92"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92">gpmp::linalg::Matrix::num_elements</a></div><div class="ttdeci">int64_t num_elements</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00070">mtx_tmpl.hpp:70</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">gpmp::linalg::Matrix&lt; Type &gt;::cols</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92">gpmp::linalg::Matrix&lt; Type &gt;::num_elements</a>, and <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">gpmp::linalg::Matrix&lt; Type &gt;::rows</a>.</p>
 
@@ -374,7 +376,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00368">368</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00368">368</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                                                       {</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
@@ -426,7 +428,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00320">320</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00320">320</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                                        {</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        (dimension == 0) ? assert(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a> == target.rows)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                         : assert(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a> == target.cols);</div>
@@ -487,7 +489,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00351">351</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00351">351</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                  {</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        assert((<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a> == 1 || <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a> == 1) || (<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a> == <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>));</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
@@ -535,7 +537,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00394">394</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00394">394</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                              {</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>; ++r) {</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keywordflow">for</span> (int64_t c = 0; c &lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>; ++c) {</div>
@@ -576,7 +578,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00139">139</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00139">139</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                    {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        assert(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">dim</a> == target.dim);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
@@ -620,13 +622,13 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00304">304</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00304">304</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                  {</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keyword">auto</span> m = Type(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92">num_elements</a>);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">sum</a>().<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">scalar_mult</a>(1 / m);</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_acdcee464dc730ba8ff9937fe4581055a"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">gpmp::linalg::Matrix::sum</a></div><div class="ttdeci">Matrix sum()</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00269">mtx_tmpl.cpp:269</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_af183183ce8898463bb3f216817c86dd7"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">gpmp::linalg::Matrix::scalar_mult</a></div><div class="ttdeci">Matrix scalar_mult(Type scalar)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00124">mtx_tmpl.cpp:124</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_acdcee464dc730ba8ff9937fe4581055a"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">gpmp::linalg::Matrix::sum</a></div><div class="ttdeci">Matrix sum()</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00269">mtx_tmpl.hpp:269</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_af183183ce8898463bb3f216817c86dd7"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">gpmp::linalg::Matrix::scalar_mult</a></div><div class="ttdeci">Matrix scalar_mult(Type scalar)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00124">mtx_tmpl.hpp:124</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92">gpmp::linalg::Matrix&lt; Type &gt;::num_elements</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">gpmp::linalg::Matrix&lt; Type &gt;::scalar_mult()</a>, and <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">gpmp::linalg::Matrix&lt; Type &gt;::sum()</a>.</p>
 
@@ -658,7 +660,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00312">312</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00312">312</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                  {</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">auto</span> m = (dimension == 0) ? Type(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>) : Type(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">sum</a>().<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">scalar_mult</a>(1 / m);</div>
@@ -702,7 +704,7 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00107">107</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00107">107</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        assert(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a> == target.rows);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, target.cols);</div>
@@ -766,7 +768,7 @@ template&lt;typename Type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00093">93</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00093">93</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                             {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        assert(0 &lt;= row &amp;&amp; row &lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        assert(0 &lt;= col &amp;&amp; col &lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>);</div>
@@ -804,11 +806,11 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00176">176</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00176">176</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                     {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">add</a>(target);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a62e7e74a4de6e49cbe105a496be1ee70"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">gpmp::linalg::Matrix::add</a></div><div class="ttdeci">Matrix add(Matrix &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00165">mtx_tmpl.cpp:165</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a62e7e74a4de6e49cbe105a496be1ee70"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">gpmp::linalg::Matrix::add</a></div><div class="ttdeci">Matrix add(Matrix &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00165">mtx_tmpl.hpp:165</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">gpmp::linalg::Matrix&lt; Type &gt;::add()</a>.</p>
 
@@ -839,7 +841,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00194">194</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00194">194</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                       {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
@@ -881,11 +883,11 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00212">212</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00212">212</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                     {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#adc5c969c160e24938c6c740cfcc38545">sub</a>(target);</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_adc5c969c160e24938c6c740cfcc38545"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#adc5c969c160e24938c6c740cfcc38545">gpmp::linalg::Matrix::sub</a></div><div class="ttdeci">Matrix sub(Matrix &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00208">mtx_tmpl.cpp:208</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_adc5c969c160e24938c6c740cfcc38545"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#adc5c969c160e24938c6c740cfcc38545">gpmp::linalg::Matrix::sub</a></div><div class="ttdeci">Matrix sub(Matrix &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00208">mtx_tmpl.hpp:208</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#adc5c969c160e24938c6c740cfcc38545">gpmp::linalg::Matrix&lt; Type &gt;::sub()</a>.</p>
 
@@ -917,7 +919,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00216">216</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00216">216</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                                      {</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        assert(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#ac87bdec18668802e3c90d758c201af6b">dim</a> == target.dim);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;unsigned short&gt;</a> res(<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>);</div>
@@ -962,7 +964,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00384">384</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00384">384</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                     {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>; ++r) {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="keywordflow">for</span> (int64_t c = 0; c &lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>; ++c) {</div>
@@ -1002,7 +1004,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00379">379</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00379">379</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                       {</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Matrix Size([&quot;</span> &lt;&lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a> &lt;&lt; <span class="stringliteral">&quot;])&quot;</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                  &lt;&lt; std::endl;</div>
@@ -1038,7 +1040,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00183">183</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00183">183</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                   {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
@@ -1080,7 +1082,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00124">124</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00124">124</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                    {</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
@@ -1123,14 +1125,14 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00155">155</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00155">155</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                     {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res((*<span class="keyword">this</span>));</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        res = <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">hadamard</a>(res);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a7e3cf6aa9107154d8d36f6033322c0b2"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">gpmp::linalg::Matrix::hadamard</a></div><div class="ttdeci">Matrix hadamard(Matrix &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8cpp_source.html#l00139">mtx_tmpl.cpp:139</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Matrix_html_a7e3cf6aa9107154d8d36f6033322c0b2"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">gpmp::linalg::Matrix::hadamard</a></div><div class="ttdeci">Matrix hadamard(Matrix &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__tmpl_8hpp_source.html#l00139">mtx_tmpl.hpp:139</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">gpmp::linalg::Matrix&lt; Type &gt;::hadamard()</a>.</p>
 
@@ -1162,7 +1164,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00208">208</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00208">208</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                               {</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> target_neg = -target;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">add</a>(target_neg);</div>
@@ -1199,7 +1201,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00269">269</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00269">269</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                 {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> res{1, 1};</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
@@ -1243,7 +1245,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00283">283</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00283">283</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                 {</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        assert(0 &lt;= dimension &amp;&amp; dimension &lt; 2);</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">auto</span> res = (dimension = 0) ? <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a>{1, <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>} : <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a>{<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>, 1};</div>
@@ -1293,7 +1295,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00262">262</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00262">262</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;               {</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">return</span> (*this).transpose();</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
@@ -1327,7 +1329,7 @@ template&lt;typename Type &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00250">250</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00250">250</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                       {</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordtype">size_t</span> new_rows{<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb">cols</a>}, new_cols{<a class="code" href="classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb">rows</a>};</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a> transposed(new_rows, new_cols);</div>
@@ -1361,7 +1363,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00064">64</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00064">64</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">gpmp::linalg::Matrix&lt; Type &gt;::add()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ad91dfb2bb1ead14be72a36ebe7105651">gpmp::linalg::Matrix&lt; Type &gt;::all()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#aec4479803f2aa834c70e104d28a4dffd">gpmp::linalg::Matrix&lt; Type &gt;::apply_func()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ad3afa9aac2fb909793c8c8f319e9f299">gpmp::linalg::Matrix&lt; Type &gt;::concatenate()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a610624ce0fb37a9681cd19b7a7fac29d">gpmp::linalg::Matrix&lt; Type &gt;::diag()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a5ecc3e8ccf8ee3cdff0f021ff6c98530">gpmp::linalg::Matrix&lt; Type &gt;::fill_index()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">gpmp::linalg::Matrix&lt; Type &gt;::hadamard()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a3dd547afc1dbe776a2ac024e1c52c64c">gpmp::linalg::Matrix&lt; Type &gt;::mean()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#aed746e17e36dbe4771d7d8fae88c8e99">gpmp::linalg::Matrix&lt; Type &gt;::mult()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a9df3ae62759fd47c0a5be51b6ad7e629">gpmp::linalg::Matrix&lt; Type &gt;::operator()()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a84a1c5229e3875128d0d0f448b83ad50">gpmp::linalg::Matrix&lt; Type &gt;::operator-()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a29f6f7fe8cc8ed57dc5dca77492f2442">gpmp::linalg::Matrix&lt; Type &gt;::operator==()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#af29185a5fad89abebff49a74fd1661af">gpmp::linalg::Matrix&lt; Type &gt;::print_mtx()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ae035552161950bce34c416afba850182">gpmp::linalg::Matrix&lt; Type &gt;::print_shape()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a5d48d9f834d6e480f09e759bc072622f">gpmp::linalg::Matrix&lt; Type &gt;::scalar_add()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">gpmp::linalg::Matrix&lt; Type &gt;::scalar_mult()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">gpmp::linalg::Matrix&lt; Type &gt;::sum()</a>, and <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a83a6e7e1befd8674c928ba6703cb37e0">gpmp::linalg::Matrix&lt; Type &gt;::transpose()</a>.</p>
 
@@ -1381,7 +1383,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00067">67</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00067">67</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a9df3ae62759fd47c0a5be51b6ad7e629">gpmp::linalg::Matrix&lt; Type &gt;::operator()()</a>.</p>
 
@@ -1401,7 +1403,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00068">68</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00068">68</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">gpmp::linalg::Matrix&lt; Type &gt;::add()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">gpmp::linalg::Matrix&lt; Type &gt;::hadamard()</a>, and <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a29f6f7fe8cc8ed57dc5dca77492f2442">gpmp::linalg::Matrix&lt; Type &gt;::operator==()</a>.</p>
 
@@ -1421,7 +1423,7 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00070">70</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00070">70</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ad91dfb2bb1ead14be72a36ebe7105651">gpmp::linalg::Matrix&lt; Type &gt;::all()</a>, and <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a74d23a5e5469691fbd3d306b79df9cca">gpmp::linalg::Matrix&lt; Type &gt;::mean()</a>.</p>
 
@@ -1441,14 +1443,14 @@ template&lt;typename Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8cpp_source.html#l00065">65</a> of file <a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mtx__tmpl_8hpp_source.html#l00065">65</a> of file <a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a62e7e74a4de6e49cbe105a496be1ee70">gpmp::linalg::Matrix&lt; Type &gt;::add()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ad91dfb2bb1ead14be72a36ebe7105651">gpmp::linalg::Matrix&lt; Type &gt;::all()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#aec4479803f2aa834c70e104d28a4dffd">gpmp::linalg::Matrix&lt; Type &gt;::apply_func()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ad3afa9aac2fb909793c8c8f319e9f299">gpmp::linalg::Matrix&lt; Type &gt;::concatenate()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a610624ce0fb37a9681cd19b7a7fac29d">gpmp::linalg::Matrix&lt; Type &gt;::diag()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a5ecc3e8ccf8ee3cdff0f021ff6c98530">gpmp::linalg::Matrix&lt; Type &gt;::fill_index()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a7e3cf6aa9107154d8d36f6033322c0b2">gpmp::linalg::Matrix&lt; Type &gt;::hadamard()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a3dd547afc1dbe776a2ac024e1c52c64c">gpmp::linalg::Matrix&lt; Type &gt;::mean()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#aed746e17e36dbe4771d7d8fae88c8e99">gpmp::linalg::Matrix&lt; Type &gt;::mult()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a9df3ae62759fd47c0a5be51b6ad7e629">gpmp::linalg::Matrix&lt; Type &gt;::operator()()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a84a1c5229e3875128d0d0f448b83ad50">gpmp::linalg::Matrix&lt; Type &gt;::operator-()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a29f6f7fe8cc8ed57dc5dca77492f2442">gpmp::linalg::Matrix&lt; Type &gt;::operator==()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#af29185a5fad89abebff49a74fd1661af">gpmp::linalg::Matrix&lt; Type &gt;::print_mtx()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#ae035552161950bce34c416afba850182">gpmp::linalg::Matrix&lt; Type &gt;::print_shape()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a5d48d9f834d6e480f09e759bc072622f">gpmp::linalg::Matrix&lt; Type &gt;::scalar_add()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#af183183ce8898463bb3f216817c86dd7">gpmp::linalg::Matrix&lt; Type &gt;::scalar_mult()</a>, <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#acdcee464dc730ba8ff9937fe4581055a">gpmp::linalg::Matrix&lt; Type &gt;::sum()</a>, and <a class="el" href="classgpmp_1_1linalg_1_1Matrix.html#a83a6e7e1befd8674c928ba6703cb37e0">gpmp::linalg::Matrix&lt; Type &gt;::transpose()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/linalg/<a class="el" href="mtx__tmpl_8cpp_source.html">mtx_tmpl.cpp</a></li>
+<li>include/linalg/<a class="el" href="mtx__tmpl_8hpp_source.html">mtx_tmpl.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
