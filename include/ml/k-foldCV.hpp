@@ -81,7 +81,8 @@ template <class T> class KF_CV : public CV<T> {
 template <class T>
 KF_CV<T>::KF_CV(const vector<T> &instance_list, int64_t K, uint64_t seed) {
     this->instance_list = instance_list;
-    shuffle(this->instance_list.begin(), this->instance_list.end(),
+    shuffle(this->instance_list.begin(),
+            this->instance_list.end(),
             default_random_engine(seed));
     N = instance_list.size();
     this->K = K;

@@ -53,7 +53,10 @@ int main() {
     gpmp::Factorization factors;
     for (const auto &num : nums_to_factorize) {
         results.emplace_back(gpmp::core::ThreadDispatch().dispatch(
-            *pool, &gpmp::Factorization::pollard_rho, &factors, num));
+            *pool,
+            &gpmp::Factorization::pollard_rho,
+            &factors,
+            num));
     }
 
     for (auto &res : results) {

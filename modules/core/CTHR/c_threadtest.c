@@ -11,8 +11,8 @@
 #include <unistd.h>
 
 extern int errno;
-extern int add_memory_access(memaddr_t addr, line_type_e type,
-                             pthread_t thread);
+extern int
+add_memory_access(memaddr_t addr, line_type_e type, pthread_t thread);
 
 void dispatch_to_me(void *arg) {
     int seconds = (int)arg;

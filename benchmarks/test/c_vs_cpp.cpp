@@ -24,7 +24,8 @@ int main() {
     c_end = clock();
     c_cpu_time_used = ((double)(c_end - c_start)) / CLOCKS_PER_SEC;
 
-    printf("C benchmark: Performed %d operations in %f seconds.\n", NUM_OPS,
+    printf("C benchmark: Performed %d operations in %f seconds.\n",
+           NUM_OPS,
            c_cpu_time_used);
 
     // C++ benchmark

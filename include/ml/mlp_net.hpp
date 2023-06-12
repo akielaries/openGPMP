@@ -118,7 +118,9 @@ class PrimaryMLP {
     /* returns the computed error from backwards propogation */
     void back_prop_err();
     /* simulate the Multi-Layer Perceptron Neual Network */
-    void simulate(long double *input, long double *output, long double *target,
+    void simulate(long double *input,
+                  long double *output,
+                  long double *target,
                   bool training);
 
   public:

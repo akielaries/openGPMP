@@ -49,7 +49,8 @@ namespace ml {
 class kNN {
   public:
     kNN(std::vector<std::vector<double>> inputSet,
-        std::vector<double> outputSet, int k);
+        std::vector<double> outputSet,
+        int k);
 
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
     int modelTest(std::vector<double> x);

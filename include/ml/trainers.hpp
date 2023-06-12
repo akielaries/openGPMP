@@ -69,8 +69,10 @@ class Trainers {
      * given the dimensions of the inputs and outputs as well as specs
      * related to the hidden layers of the network
      */
-    auto init_SecondaryMLP(size_t inputs, size_t outputs,
-                           size_t hidden_layer_units, int64_t hidden_layers,
+    auto init_SecondaryMLP(size_t inputs,
+                           size_t outputs,
+                           size_t hidden_layer_units,
+                           int64_t hidden_layers,
                            float lr) {
         std::vector<size_t> layer_units;
         layer_units.push_back(inputs);
@@ -87,8 +89,10 @@ class Trainers {
     /**
      * @details SecondaryMLP training method
      */
-    void train_SecondaryMLP(auto initialized_model, const std::string data_file,
-                            uint64_t iterations, uint64_t print_increment) {
+    void train_SecondaryMLP(auto initialized_model,
+                            const std::string data_file,
+                            uint64_t iterations,
+                            uint64_t print_increment) {
         std::fstream input(data_file.c_str());
         std::cout << "FILE: " << data_file << " ITERS: " << iterations
                   << " INCREMENT: " << print_increment;

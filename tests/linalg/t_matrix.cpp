@@ -50,7 +50,7 @@ using namespace gpmp;
 
 namespace {
 
-// utility test helper function to compare two matrices. used for verifying 
+// utility test helper function to compare two matrices. used for verifying
 // accelerated/non-standard implementations to the simple naive algorithm
 // for matrix arithmetic operations
 template <typename T>
@@ -69,7 +69,6 @@ bool mtx_verif(const std::vector<std::vector<T>> &A,
     }
     return true;
 }
-
 
 // unit tests for Mtx class methods using Intel intrinsics
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \

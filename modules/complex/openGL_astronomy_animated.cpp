@@ -77,8 +77,15 @@ void timer(int v) {
     day = (day + 1) % 360;
     year = (year + 2) % 360;
     glLoadIdentity();
-    gluLookAt(20 * cos(u / 8.0) + 12, 5 * sin(u / 8.0) + 1,
-              10 * cos(u / 8.0) + 2, 0, 0, 0, 0, 1, 0);
+    gluLookAt(20 * cos(u / 8.0) + 12,
+              5 * sin(u / 8.0) + 1,
+              10 * cos(u / 8.0) + 2,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0);
     glutPostRedisplay();
     glutTimerFunc(1000 / 60, timer, v);
 }

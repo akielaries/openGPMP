@@ -271,7 +271,8 @@ static void parallel_for(unsigned nb_elements,
 
     // Wait for the other thread to finish their task
     if (use_threads) {
-        std::for_each(my_threads.begin(), my_threads.end(),
+        std::for_each(my_threads.begin(),
+                      my_threads.end(),
                       std::mem_fn(&std::thread::join));
     }
 }

@@ -149,14 +149,17 @@ long double manhattanDistance(Company &lhs, Company &test) {
             abs(lhs.characteristics - test.characteristics));
 }
 
-void fillDistances(vector<Company> &data, Company &test,
+void fillDistances(vector<Company> &data,
+                   Company &test,
                    double (*distanceFunction)(Company &, Company &)) {
     for (size_t i = 0; i < data.size(); ++i) {
         data[i].distance = distanceFunction(data[i], test);
     }
 }
 
-bool KNN(vector<Company> &data, Company &test, int k,
+bool KNN(vector<Company> &data,
+         Company &test,
+         int k,
          double (*distanceFunction)(Company &, Company &)) {
     // filling the distances between all points and test
     fillDistances(data, test, distanceFunction);

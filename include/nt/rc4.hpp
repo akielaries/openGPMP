@@ -80,14 +80,16 @@ class RC4 {
     /* Key Scheduling Algorithm */
     void KSA(char *key, unsigned char *S, int swap_type);
     /* Pseudo-Random Generation Algorithm */
-    void PRGA(unsigned char *S, char *plaintext, unsigned char *ciphertext,
+    void PRGA(unsigned char *S,
+              char *plaintext,
+              unsigned char *ciphertext,
               int swap_type);
     /* function to display our hashed text */
-    std::string store_hash(char *plaintext, unsigned char *hashtext,
-                           int swap_type);
+    std::string
+    store_hash(char *plaintext, unsigned char *hashtext, int swap_type);
     /* compute our hash using the the RC4 encryption algorithm */
-    unsigned char *compute(char *key, char *plaintext, unsigned char *hashtext,
-                           int swap_type);
+    unsigned char *
+    compute(char *key, char *plaintext, unsigned char *hashtext, int swap_type);
 };
 
 } // namespace gpmp

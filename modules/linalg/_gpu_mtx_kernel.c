@@ -5,19 +5,19 @@
 /**
  * add vectors using GPU
  */
-__kernel void add_vec_gpu(__global const int *a, __global const int *b,
-                          __global int *res, const int len) {
-    // current worker, each worker adds a element from A & B
-    const int idx = get_global_id(0);
-    // ensure number of workers created doesnt exceed elements of array
-    // by checking its bounds
-    if (idx < len) {
-        res[idx] = a[idx] + b[idx];
-    }
+__kernel void
+gpu_mtx_add(__global const int *A, __global const int *B, __global int *C) {
+    int i = get_global_id(0);
+    int j = get_global_id(1);
+    int index = i * get_global_size(1) + j;
+    C[index] = A[index] + B[index];
 }
 
-__kernel void matrixMul(__global float *C, __global float *A, __global float *B,
-                        int wA, int wB) {
+__kernel void matrixMul(__global float *C,
+                        __global float *A,
+                        __global float *B,
+                        int wA,
+                        int wB) {
 
     int tx = get_global_id(0);
     int ty = get_global_id(1);

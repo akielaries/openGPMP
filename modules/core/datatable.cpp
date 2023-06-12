@@ -89,7 +89,8 @@ gpmp::core::DataTable::csv_read(std::string filename,
 
         while (getline(rowStream, value, ',')) {
             // If column is specified, only read in specified columns
-            if (find(columns.begin(), columns.end(),
+            if (find(columns.begin(),
+                     columns.end(),
                      headerColumns[columnIndex]) != columns.end()) {
                 row.push_back(value);
             }

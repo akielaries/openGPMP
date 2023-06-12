@@ -127,7 +127,8 @@ class Checkerboard {
 
         for (int x = 0; x < width - 1; x++) {
             for (int z = 0; z < depth - 1; z++) {
-                glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE,
+                glMaterialfv(GL_FRONT,
+                             GL_AMBIENT_AND_DIFFUSE,
                              (x + z) % 2 == 0 ? RED : WHITE);
 
                 glVertex3d(x, 0, z);
@@ -148,7 +149,8 @@ class Checkerboard {
 // Global variables: a camera, a checkerboard and some balls.
 Checkerboard checkerboard(8, 8);
 Camera camera;
-Ball balls[] = {Ball(1, GREEN, 7, 6, 1), Ball(1.5, MAGENTA, 6, 3, 4),
+Ball balls[] = {Ball(1, GREEN, 7, 6, 1),
+                Ball(1.5, MAGENTA, 6, 3, 4),
                 Ball(0.4, WHITE, 5, 1, 7)};
 
 // Application-specific initialization: Set up global lighting
@@ -169,8 +171,14 @@ void init() {
 void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
-    gluLookAt(camera.getX(), camera.getY(), camera.getZ(),
-              checkerboard.centerx(), 0.0, checkerboard.centerz(), 0.0, 1.0,
+    gluLookAt(camera.getX(),
+              camera.getY(),
+              camera.getZ(),
+              checkerboard.centerx(),
+              0.0,
+              checkerboard.centerz(),
+              0.0,
+              1.0,
               0.0);
     checkerboard.draw();
     for (int i = 0; i < sizeof balls / sizeof(Ball); i++) {

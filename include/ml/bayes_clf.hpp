@@ -117,7 +117,8 @@ class BayesBernoulli {
 class BayesGauss {
   public:
     BayesGauss(std::vector<std::vector<double>> inputSet,
-               std::vector<double> outputSet, int class_num);
+               std::vector<double> outputSet,
+               int class_num);
 
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
 
@@ -148,7 +149,8 @@ class BayesGauss {
 class BayesMutliNom {
   public:
     BayesMutliNom(std::vector<std::vector<double>> inputSet,
-                  std::vector<double> outputSet, int class_num);
+                  std::vector<double> outputSet,
+                  int class_num);
 
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
 

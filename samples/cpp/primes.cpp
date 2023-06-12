@@ -88,7 +88,11 @@ void testing_new_miller(std::vector<int64_t> nums) {
         // enqueue the function call to the thread pool using the
         // ThreadDispatch.dispatch() function
         miller_results.emplace_back(gpmp::core::ThreadDispatch().dispatch(
-            *pool, &gpmp::PrimalityTest::miller_rabin_prime, &prim, n, 120000));
+            *pool,
+            &gpmp::PrimalityTest::miller_rabin_prime,
+            &prim,
+            n,
+            120000));
     }
 
     // Print the results

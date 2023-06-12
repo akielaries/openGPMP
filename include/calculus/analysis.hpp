@@ -59,40 +59,51 @@ class NumericalAnalysis {
 
     double linearApproximation(double (*function)(double), double c, double x);
 
-    double quadraticApproximation(double (*function)(double), double c,
-                                  double x);
+    double
+    quadraticApproximation(double (*function)(double), double c, double x);
 
     double cubicApproximation(double (*function)(double), double c, double x);
 
     double numDiff(double (*function)(std::vector<double>),
-                   std::vector<double> x, int axis);
+                   std::vector<double> x,
+                   int axis);
 
     double numDiff_2(double (*function)(std::vector<double>),
-                     std::vector<double> x, int axis1, int axis2);
+                     std::vector<double> x,
+                     int axis1,
+                     int axis2);
 
     double numDiff_3(double (*function)(std::vector<double>),
-                     std::vector<double> x, int axis1, int axis2, int axis3);
+                     std::vector<double> x,
+                     int axis1,
+                     int axis2,
+                     int axis3);
 
-    double newtonRaphsonMethod(double (*function)(double), double x_0,
+    double newtonRaphsonMethod(double (*function)(double),
+                               double x_0,
                                double epoch_num);
 
-    double halleyMethod(double (*function)(double), double x_0,
-                        double epoch_num);
+    double
+    halleyMethod(double (*function)(double), double x_0, double epoch_num);
 
     double invQuadraticInterpolation(double (*function)(double),
-                                     std::vector<double> x_0, double epoch_num);
+                                     std::vector<double> x_0,
+                                     double epoch_num);
 
-    double eulerianMethod(double (*derivative)(double), std::vector<double> q_0,
+    double eulerianMethod(double (*derivative)(double),
+                          std::vector<double> q_0,
                           double p,
                           double h); // Euler's method for solving
                                      // diffrential equations.
 
     double eulerianMethod(double (*derivative)(std::vector<double>),
-                          std::vector<double> q_0, double p,
+                          std::vector<double> q_0,
+                          double p,
                           double h); // Euler's method for solving
                                      // diffrential equations.
 
-    double growthMethod(double C, double k,
+    double growthMethod(double C,
+                        double k,
                         double t); // General growth-based diffrential equations
                                    // can be solved by seperation of variables.
 
@@ -112,13 +123,16 @@ class NumericalAnalysis {
                                  std::vector<double> c);
 
     double linearApproximation(double (*function)(std::vector<double>),
-                               std::vector<double> c, std::vector<double> x);
+                               std::vector<double> c,
+                               std::vector<double> x);
 
     double quadraticApproximation(double (*function)(std::vector<double>),
-                                  std::vector<double> c, std::vector<double> x);
+                                  std::vector<double> c,
+                                  std::vector<double> x);
 
     double cubicApproximation(double (*function)(std::vector<double>),
-                              std::vector<double> c, std::vector<double> x);
+                              std::vector<double> c,
+                              std::vector<double> x);
 
     double laplacian(double (*function)(std::vector<double>),
                      std::vector<double> x); // laplacian

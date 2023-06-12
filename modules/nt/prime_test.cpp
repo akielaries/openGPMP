@@ -120,10 +120,9 @@ bool gpmp::PrimalityTest::is_prime(uint64_t n) {
  * determining if a given number is likely to be prime
  */
 bool gpmp::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
+    uint64_t a;
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
-
-    uint64_t a;
 #ifdef __APPLE__
     a = 2 + arc4random_uniform(n - 4);
 #else
@@ -166,7 +165,9 @@ bool gpmp::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
     return false;
 }
 
-bool gpmp::PrimalityTest::witness(uint64_t n, uint64_t d, uint64_t a,
+bool gpmp::PrimalityTest::witness(uint64_t n,
+                                  uint64_t d,
+                                  uint64_t a,
                                   uint64_t s) {
     uint64_t x = mod_pow(a, d, n);
     if (x == 1 || x == n - 1) {
@@ -181,8 +182,7 @@ bool gpmp::PrimalityTest::witness(uint64_t n, uint64_t d, uint64_t a,
     return true;
 }
 
-bool gpmp::PrimalityTest::miller_rabin_prime(
-    uint64_t n, uint64_t iters = 10 /* default */) {
+bool gpmp::PrimalityTest::miller_rabin_prime(uint64_t n, uint64_t iters = 10) {
     if (n < 2) {
         return false;
     }
@@ -206,7 +206,8 @@ bool gpmp::PrimalityTest::miller_rabin_prime(
     return true;
 }
 
-void gpmp::PrimalityTest::miller_rabin(uint64_t iters, uint64_t min_val,
+void gpmp::PrimalityTest::miller_rabin(uint64_t iters,
+                                       uint64_t min_val,
                                        uint64_t max_val) {
     std::cout << "Primes between " << min_val << " and " << max_val
               << std::endl;

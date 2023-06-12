@@ -50,8 +50,10 @@ namespace ml {
 class Logreg {
   public:
     Logreg(std::vector<std::vector<double>> inputSet,
-           std::vector<double> outputSet, std::string reg = "None",
-           double lambda = 0.5, double alpha = 0.5);
+           std::vector<double> outputSet,
+           std::string reg = "None",
+           double lambda = 0.5,
+           double alpha = 0.5);
 
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
     double modelTest(std::vector<double> x);
@@ -62,8 +64,8 @@ class Logreg {
 
     void SGD(double learning_rate, int max_epoch, bool UI = 1);
 
-    void MBGD(double learning_rate, int max_epoch, int mini_batch_size,
-              bool UI = 1);
+    void
+    MBGD(double learning_rate, int max_epoch, int mini_batch_size, bool UI = 1);
 
     double score();
     void save(std::string fileName);

@@ -108,14 +108,16 @@ class Data {
 
     std::tuple<std::vector<double>, std::vector<double>> load();
 
-    void setData(int k, std::string fileName,
+    void setData(int k,
+                 std::string fileName,
                  std::vector<std::vector<double>> &inputSet,
                  std::vector<double> &outputSet);
 
     void printData(std::vector<std::string> inputName,
                    std::vector<std::vector<double>> inputSet);
 
-    void printData(std::vector<std::string> inputName, std::string outputName,
+    void printData(std::vector<std::string> inputName,
+                   std::string outputName,
                    std::vector<std::vector<double>> inputSet,
                    std::vector<double> outputSet);
 

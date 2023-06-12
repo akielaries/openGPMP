@@ -88,8 +88,10 @@ void gpmp::RC4::KSA(char *key, unsigned char *S, int swap_type) {
     }
 }
 
-void gpmp::RC4::PRGA(unsigned char *S, char *plaintext,
-                     unsigned char *ciphertext, int swap_type) {
+void gpmp::RC4::PRGA(unsigned char *S,
+                     char *plaintext,
+                     unsigned char *ciphertext,
+                     int swap_type) {
     int i = 0;
     int j = 0;
 
@@ -112,8 +114,8 @@ void gpmp::RC4::PRGA(unsigned char *S, char *plaintext,
     }
 }
 
-std::string gpmp::RC4::store_hash(char *plaintext, unsigned char *hashtext,
-                                  int swap_type) {
+std::string
+gpmp::RC4::store_hash(char *plaintext, unsigned char *hashtext, int swap_type) {
     // length of our plaintext
     int len = strlen((char *)plaintext);
     // for snprintf declare a buffer
@@ -138,8 +140,10 @@ std::string gpmp::RC4::store_hash(char *plaintext, unsigned char *hashtext,
     return stored_text;
 }
 
-unsigned char *gpmp::RC4::compute(char *key, char *plaintext,
-                                  unsigned char *ciphertext, int swap_type) {
+unsigned char *gpmp::RC4::compute(char *key,
+                                  char *plaintext,
+                                  unsigned char *ciphertext,
+                                  int swap_type) {
     if (ciphertext == NULL) {
         throw std::runtime_error("[-] Error Allocating Memory");
     }

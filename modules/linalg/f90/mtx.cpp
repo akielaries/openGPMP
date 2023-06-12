@@ -10,8 +10,12 @@ void add();
 
 extern "C" {
 void mtx_add_(double *a, double *b, double *c, int64_t *nrows, int64_t *ncols);
-void mtx_mult_(float *matrix1, float *matrix2, float *res, int *nrows1,
-               int *ncols1, int *ncols2);
+void mtx_mult_(float *matrix1,
+               float *matrix2,
+               float *res,
+               int *nrows1,
+               int *ncols1,
+               int *ncols2);
 }
 
 void matrixMultiply(const std::vector<std::vector<double>> &a,
@@ -52,7 +56,11 @@ void mult() {
     float result[nrows1][ncols2];
 
     // Call the Fortran subroutine
-    mtx_mult_(&matrix1[0][0], &matrix2[0][0], &result[0][0], &nrows1, &ncols1,
+    mtx_mult_(&matrix1[0][0],
+              &matrix2[0][0],
+              &result[0][0],
+              &nrows1,
+              &ncols1,
               &ncols2);
 
     // Print the result

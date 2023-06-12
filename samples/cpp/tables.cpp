@@ -20,8 +20,9 @@ int main() {
 
     // of type std::pair<std::vector<std::string>,
     //         std::vector<std::vector<std::string>>>
-    gpmp::core::DataTableStr result = dt.csv_read(
-        "../../data/forestfires.csv", {"month", "day", "temp", "wind"});
+    gpmp::core::DataTableStr result =
+        dt.csv_read("../../data/forestfires.csv",
+                    {"month", "day", "temp", "wind"});
     // print result
     dt.display(result);
 
