@@ -255,10 +255,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// Wait for the other thread to finish their task</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (use_threads) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        std::for_each(my_threads.begin(), my_threads.end(),</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                      std::mem_fn(&amp;std::thread::join));</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        std::for_each(my_threads.begin(),</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                      my_threads.end(),</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                      std::mem_fn(&amp;std::thread::join));</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

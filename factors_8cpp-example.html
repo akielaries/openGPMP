@@ -125,7 +125,10 @@ $(function() {
 <div class="line">    <a class="code" href="classgpmp_1_1Factorization.html">gpmp::Factorization</a> factors;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;num : nums_to_factorize) {</div>
 <div class="line">        results.emplace_back(<a name="_a4"></a><a class="code" href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a>().<a name="a5"></a><a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(</div>
-<div class="line">            *pool, &amp;<a class="code" href="classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637">gpmp::Factorization::pollard_rho</a>, &amp;factors, num));</div>
+<div class="line">            *pool,</div>
+<div class="line">            &amp;<a class="code" href="classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637">gpmp::Factorization::pollard_rho</a>,</div>
+<div class="line">            &amp;factors,</div>
+<div class="line">            num));</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;res : results) {</div>

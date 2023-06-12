@@ -152,36 +152,37 @@ $(function() {
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#a440563ab7c44ed43a1529a06f0ed3d0c">   82</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::KF_CV</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;instance_list, int64_t K, uint64_t seed) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;instance_list = instance_list;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    shuffle(this-&gt;instance_list.begin(), this-&gt;instance_list.end(),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            default_random_engine(seed));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    N = instance_list.size();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    this-&gt;K = K;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#a671541822833a3bac0fb56c49eb59869">   98</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_train_fold</a>(int64_t k) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    vector&lt;T&gt; train_fold;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * N) / this-&gt;K; i++) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * N) / this-&gt;K; i &lt; N; i++) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#aa7402a41c343a4d12a0530eb8e19a3d2">  116</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_test_fold</a>(int64_t k) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    vector&lt;T&gt; test_fold;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * N) / this-&gt;K; i &lt; ((k + 1) * N) / this-&gt;K; i++) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        test_fold.push_back(instance_list.at(i));</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <span class="comment">// namespace ml</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">// namespace gpmp</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    shuffle(this-&gt;instance_list.begin(),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            this-&gt;instance_list.end(),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            default_random_engine(seed));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    N = instance_list.size();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    this-&gt;K = K;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#a671541822833a3bac0fb56c49eb59869">   99</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_train_fold</a>(int64_t k) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    vector&lt;T&gt; train_fold;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * N) / this-&gt;K; i++) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * N) / this-&gt;K; i &lt; N; i++) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#aa7402a41c343a4d12a0530eb8e19a3d2">  117</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_test_fold</a>(int64_t k) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    vector&lt;T&gt; test_fold;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * N) / this-&gt;K; i &lt; ((k + 1) * N) / this-&gt;K; i++) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        test_fold.push_back(instance_list.at(i));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;} <span class="comment">// namespace ml</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html">gpmp::ml::CV</a></div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00051">k-foldCV.hpp:51</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html_a3acc59fbea13324f54bec6284371a65f"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f">gpmp::ml::CV::K</a></div><div class="ttdeci">int64_t K</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00053">k-foldCV.hpp:53</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html_a44f2f5673edd11f8443df5569d440b8c"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html#a44f2f5673edd11f8443df5569d440b8c">gpmp::ml::CV::get_test_fold</a></div><div class="ttdeci">virtual vector&lt; T &gt; get_test_fold(int64_t k)=0</div></div>

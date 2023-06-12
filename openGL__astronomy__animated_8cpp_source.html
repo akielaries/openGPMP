@@ -158,47 +158,54 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="openGL__astronomy__animated_8cpp.html#a4c11afc03fc3ee49bab660def6558f2a">day</a> = (<a class="code" href="openGL__astronomy__animated_8cpp.html#a4c11afc03fc3ee49bab660def6558f2a">day</a> + 1) % 360;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="openGL__astronomy__animated_8cpp.html#abeac221e38b7b9ce7df8722c842bf671">year</a> = (<a class="code" href="openGL__astronomy__animated_8cpp.html#abeac221e38b7b9ce7df8722c842bf671">year</a> + 2) % 360;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    glLoadIdentity();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    gluLookAt(20 * cos(<a class="code" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a> / 8.0) + 12, 5 * sin(<a class="code" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a> / 8.0) + 1,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              10 * cos(<a class="code" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a> / 8.0) + 2, 0, 0, 0, 0, 1, 0);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    glutPostRedisplay();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    glutTimerFunc(1000 / 60, <a class="code" href="openGL__astronomy__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, v);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// As usual we reset the projection transformation whenever the window</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// is reshaped.  This is done (of course) by setting the current</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// matrix mode to GL_PROJECTION and then setting the matrix.  It is</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// easiest to use the perspective-projection-making matrix from the GL</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// utiltiy library.  Here we set a perspective camera with a 60-degree</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// vertical field of view, an aspect ratio to perfectly map into the</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// system window, a near clipping plane distance of 1.0 and a far</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// clipping distance of 40.0.  The last thing done is to reset the</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// current matrix mode to GL_MODELVIEW, as that is expected in all the</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// calls to display().</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>(GLint w, GLint h) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    glViewport(0, 0, w, h);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    glMatrixMode(GL_PROJECTION);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    glLoadIdentity();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    gluPerspective(60.0, (GLfloat)w / (GLfloat)h, 1.0, 40.0);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    glMatrixMode(GL_MODELVIEW);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// The usual main() for a GLUT application.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="openGL__astronomy__animated_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  105</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="openGL__astronomy__animated_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    glutInit(&amp;argc, argv);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    glutInitWindowSize(800, 600);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    glutCreateWindow(<span class="stringliteral">&quot;Comet, Planet Simulation&quot;</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    glutDisplayFunc(<a class="code" href="openGL__astronomy__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    glutReshapeFunc(<a class="code" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    glutTimerFunc(100, <a class="code" href="openGL__astronomy__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, 0);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    glutMainLoop();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    gluLookAt(20 * cos(<a class="code" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a> / 8.0) + 12,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              5 * sin(<a class="code" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a> / 8.0) + 1,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              10 * cos(<a class="code" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a> / 8.0) + 2,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              0,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;              0,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              0,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;              0,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;              1,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;              0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    glutPostRedisplay();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    glutTimerFunc(1000 / 60, <a class="code" href="openGL__astronomy__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, v);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// As usual we reset the projection transformation whenever the window</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// is reshaped.  This is done (of course) by setting the current</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// matrix mode to GL_PROJECTION and then setting the matrix.  It is</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// easiest to use the perspective-projection-making matrix from the GL</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// utiltiy library.  Here we set a perspective camera with a 60-degree</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// vertical field of view, an aspect ratio to perfectly map into the</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// system window, a near clipping plane distance of 1.0 and a far</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// clipping distance of 40.0.  The last thing done is to reset the</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// current matrix mode to GL_MODELVIEW, as that is expected in all the</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// calls to display().</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>(GLint w, GLint h) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    glViewport(0, 0, w, h);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    glMatrixMode(GL_PROJECTION);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    glLoadIdentity();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    gluPerspective(60.0, (GLfloat)w / (GLfloat)h, 1.0, 40.0);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    glMatrixMode(GL_MODELVIEW);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// The usual main() for a GLUT application.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="openGL__astronomy__animated_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  112</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="openGL__astronomy__animated_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    glutInit(&amp;argc, argv);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    glutInitWindowSize(800, 600);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    glutCreateWindow(<span class="stringliteral">&quot;Comet, Planet Simulation&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    glutDisplayFunc(<a class="code" href="openGL__astronomy__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    glutReshapeFunc(<a class="code" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    glutTimerFunc(100, <a class="code" href="openGL__astronomy__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, 0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    glutMainLoop();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 <div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a05e32724a12468fadef696a24b65b03d"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a05e32724a12468fadef696a24b65b03d">du</a></div><div class="ttdeci">static GLfloat du</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00073">openGL_astronomy_animated.cpp:73</a></div></div>
 <div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00040">openGL_astronomy_animated.cpp:40</a></div></div>
-<div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00096">openGL_astronomy_animated.cpp:96</a></div></div>
+<div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00103">openGL_astronomy_animated.cpp:103</a></div></div>
 <div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a38d573ac847aff2170e5585b156fa4e2"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2">current_rot</a></div><div class="ttdeci">static GLfloat current_rot</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00014">openGL_astronomy_animated.cpp:14</a></div></div>
-<div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00105">openGL_astronomy_animated.cpp:105</a></div></div>
+<div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00112">openGL_astronomy_animated.cpp:112</a></div></div>
 <div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a4c11afc03fc3ee49bab660def6558f2a"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a4c11afc03fc3ee49bab660def6558f2a">day</a></div><div class="ttdeci">static int day</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00032">openGL_astronomy_animated.cpp:32</a></div></div>
 <div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a61a498df564c00cba535b55fcf8e9cc3"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a></div><div class="ttdeci">void timer(int v)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00075">openGL_astronomy_animated.cpp:75</a></div></div>
 <div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_abeac221e38b7b9ce7df8722c842bf671"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#abeac221e38b7b9ce7df8722c842bf671">year</a></div><div class="ttdeci">static int year</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00032">openGL_astronomy_animated.cpp:32</a></div></div>

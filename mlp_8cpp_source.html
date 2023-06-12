@@ -98,25 +98,27 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">double</span> lr{.5};</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a> util;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">auto</span> model =</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        util.<a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">init_SecondaryMLP</a>(inputs = 1, outputs = 1, hidden_layer_units = 8,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                               hidden_layers = 3, lr = .5);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// declare a data file</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">auto</span> model = util.<a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">init_SecondaryMLP</a>(inputs = 1,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                        outputs = 1,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                        hidden_layer_units = 8,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                        hidden_layers = 3,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                        lr = .5);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// TODO : create util method to save/read/parse datafile, and</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// columns</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// std::ofstream data_file;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string data_file = <span class="stringliteral">&quot;../../data/school_scores.csv&quot;</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    uint64_t max_iters{1000}, return_every{500};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// call the train method for the SecondaryMLP model</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    util.<a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">train_SecondaryMLP</a>(model, data_file, max_iters, return_every);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// declare a data file</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// TODO : create util method to save/read/parse datafile, and</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// columns</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// std::ofstream data_file;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string data_file = <span class="stringliteral">&quot;../../data/school_scores.csv&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    uint64_t max_iters{1000}, return_every{500};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// call the train method for the SecondaryMLP model</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    util.<a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">train_SecondaryMLP</a>(model, data_file, max_iters, return_every);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a56c7851631307ac5550f73af82466ef1"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">gpmp::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00090">trainers.hpp:90</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a56c7851631307ac5550f73af82466ef1"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">gpmp::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00092">trainers.hpp:92</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a84e47e709ab39c08fd00351221707065"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">gpmp::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00072">trainers.hpp:72</a></div></div>
 <div class="ttc" id="amlp_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="mlp_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="mlp_8cpp_source.html#l00017">mlp.cpp:17</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1ml_html"><div class="ttname"><a href="namespacegpmp_1_1ml.html">gpmp::ml</a></div><div class="ttdoc">Namespace for openGPMP Machine Learning.</div><div class="ttdef"><b>Definition:</b> <a href="activators_8hpp_source.html#l00049">activators.hpp:49</a></div></div>

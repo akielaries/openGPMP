@@ -27,7 +27,7 @@ var searchData=
   ['_5fcuda_5fmtx_5fcuh_24',['_CUDA_MTX_CUH',['../__cuda__mtx_8cuh.html#aa9a94cf4e835108a113aed72e36d14ac',1,'_cuda_mtx.cuh']]],
   ['_5feta_25',['_Eta',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a89e4f642f09e853ebe313ece804af871',1,'gpmp::ml::PrimaryMLP']]],
   ['_5fgain_26',['_Gain',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a61e09c137714a21991f245e76dd35eca',1,'gpmp::ml::PrimaryMLP']]],
-  ['_5fgpu_5fmtx_2ec_27',['_gpu_mtx.c',['../__gpu__mtx_8c.html',1,'']]],
+  ['_5fgpu_5fmtx_2ecpp_27',['_gpu_mtx.cpp',['../__gpu__mtx_8cpp.html',1,'']]],
   ['_5fgpu_5fmtx_2ecu_28',['_gpu_mtx.cu',['../__gpu__mtx_8cu.html',1,'']]],
   ['_5fgpu_5fmtx_2eh_29',['_gpu_mtx.h',['../__gpu__mtx_8h.html',1,'']]],
   ['_5fgpu_5fmtx_5fkernel_2ec_30',['_gpu_mtx_kernel.c',['../__gpu__mtx__kernel_8c.html',1,'']]],

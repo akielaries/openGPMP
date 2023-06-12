@@ -86,41 +86,35 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af1361538530ca5175206909457013a77"><td class="memItemLeft" align="right" valign="top">__kernel void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__mtx__kernel_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a> (__global const int *a, __global const int *b, __global int *res, const int len)</td></tr>
-<tr class="separator:af1361538530ca5175206909457013a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c29b60067c8b6ab266f23f489483ec"><td class="memItemLeft" align="right" valign="top">__kernel void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__mtx__kernel_8c.html#a94c29b60067c8b6ab266f23f489483ec">gpu_mtx_add</a> (__global const int *A, __global const int *B, __global int *C)</td></tr>
+<tr class="separator:a94c29b60067c8b6ab266f23f489483ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe33847ea3766a6cff2410a65a91dbc8"><td class="memItemLeft" align="right" valign="top">__kernel void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="__gpu__mtx__kernel_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a> (__global float *C, __global float *A, __global float *B, int wA, int wB)</td></tr>
 <tr class="separator:afe33847ea3766a6cff2410a65a91dbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af1361538530ca5175206909457013a77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1361538530ca5175206909457013a77">&#9670;&nbsp;</a></span>add_vec_gpu()</h2>
+<a id="a94c29b60067c8b6ab266f23f489483ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c29b60067c8b6ab266f23f489483ec">&#9670;&nbsp;</a></span>gpu_mtx_add()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__kernel void add_vec_gpu </td>
+          <td class="memname">__kernel void gpu_mtx_add </td>
           <td>(</td>
           <td class="paramtype">__global const int *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
+          <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">__global const int *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
+          <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">__global int *&#160;</td>
-          <td class="paramname"><em>res</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -131,16 +125,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This file implements OpenCL matrix operation related kernel functions add vectors using GPU </p>
 
-<p class="definition">Definition at line <a class="el" href="__gpu__mtx__kernel_8c_source.html#l00008">8</a> of file <a class="el" href="__gpu__mtx__kernel_8c_source.html">_gpu_mtx_kernel.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                            {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// current worker, each worker adds a element from A &amp; B</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// ensure number of workers created doesnt exceed elements of array</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// by checking its bounds</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        res[idx] = a[idx] + b[idx];</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="__gpu__mtx__kernel_8c_source.html#l00009">9</a> of file <a class="el" href="__gpu__mtx__kernel_8c_source.html">_gpu_mtx_kernel.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> i = get_global_id(0);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">int</span> j = get_global_id(1);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> index = i * get_global_size(1) + j;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    C[index] = A[index] + B[index];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -188,8 +179,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="__gpu__mtx__kernel_8c_source.html#l00019">19</a> of file <a class="el" href="__gpu__mtx__kernel_8c_source.html">_gpu_mtx_kernel.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                        {</div>
+<p class="definition">Definition at line <a class="el" href="__gpu__mtx__kernel_8c_source.html#l00016">16</a> of file <a class="el" href="__gpu__mtx__kernel_8c_source.html">_gpu_mtx_kernel.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> tx = get_global_id(0);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> ty = get_global_id(1);</div>

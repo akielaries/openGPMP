@@ -291,16 +291,17 @@ $(function() {
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// Wait for the other thread to finish their task</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (use_threads) {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        std::for_each(my_threads.begin(), my_threads.end(),</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                      std::mem_fn(&amp;std::thread::join));</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;} <span class="comment">// namespace core</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;} <span class="comment">// namespace gpmp</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        std::for_each(my_threads.begin(),</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                      my_threads.end(),</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                      std::mem_fn(&amp;std::thread::join));</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;} <span class="comment">// namespace core</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00201">threads.hpp:201</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1ThreadDispatch_html_aa4b776f1c04aa2617871d27963118993"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadDispatch.html#aa4b776f1c04aa2617871d27963118993">gpmp::core::ThreadDispatch::dispatch</a></div><div class="ttdeci">auto dispatch(ThreadPool &amp;pool, Function &amp;&amp;func, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::result_of&lt; Function(Args...)&gt;::type &gt;</div><div class="ttdoc">Dispatches a function call to a ThreadPool and returns a future object for obtaining the result.</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00217">threads.hpp:217</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html">gpmp::core::ThreadPool</a></div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00060">threads.hpp:60</a></div></div>

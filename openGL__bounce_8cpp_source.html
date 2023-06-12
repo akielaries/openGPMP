@@ -208,108 +208,116 @@ $(function() {
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; <a class="code" href="classCheckerboard.html#a163161b2a9900345ff4bed3062db7d0b">width</a> - 1; x++) {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt; <a class="code" href="classCheckerboard.html#aca22dc89081ced7191306112d44c9e04">depth</a> - 1; z++) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                             (x + z) % 2 == 0 ? <a class="code" href="openGL__bounce_8cpp.html#a0d8ee36fabd3e5f0368a7e834ab1f80a">RED</a> : <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                glVertex3d(x, 0, z);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                glVertex3d(x + 1, 0, z);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                glVertex3d(x + 1, 0, z + 1);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                glVertex3d(x, 0, z + 1);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        glEnd();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        glEndList();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">  143</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">draw</a>() {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        glCallList(<a class="code" href="classCheckerboard.html#a5801397eeed1c18d0f4a12d732768723">displayListId</a>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;};</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">// Global variables: a camera, a checkerboard and some balls.</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">  149</a></span>&#160;<a class="code" href="classCheckerboard.html">Checkerboard</a> <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>(8, 8);</div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">  150</a></span>&#160;<a class="code" href="classCamera.html">Camera</a> <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">  151</a></span>&#160;<a class="code" href="classBall.html">Ball</a> <a class="code" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a>[] = {<a class="code" href="classBall.html">Ball</a>(1, <a class="code" href="openGL__bounce_8cpp.html#a5e49fcc6d7b6ca732f95efc9b413349e">GREEN</a>, 7, 6, 1), <a class="code" href="classBall.html">Ball</a>(1.5, <a class="code" href="openGL__bounce_8cpp.html#a3614a44b501c2ddc43d2be5b12c52ee6">MAGENTA</a>, 6, 3, 4),</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <a class="code" href="classBall.html">Ball</a>(0.4, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>, 5, 1, 7)};</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">// Application-specific initialization: Set up global lighting</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">// parameters and create display lists.</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">  156</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>() {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    glLightfv(GL_LIGHT0, GL_DIFFUSE, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    glLightfv(GL_LIGHT0, GL_SPECULAR, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    glMaterialfv(GL_FRONT, GL_SPECULAR, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    glMaterialf(GL_FRONT, GL_SHININESS, 30);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    glEnable(GL_LIGHTING);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    glEnable(GL_LIGHT0);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#ad9fddd3dc3ed0b5deda345cd0c645f7c">create</a>();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">// Draws one frame, the checkerboard then the balls, from the current</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">// camera position.</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">  169</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>() {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    glLoadIdentity();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    gluLookAt(<a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#a1af03aa27aafc84436078eb11e16c0e3">getX</a>(), <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#a1a99eaab2127fcc0af20e8e06e9a7eb0">getY</a>(), <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#aead34062d4bdb7fca1241a480d3f563f">getZ</a>(),</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;              <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#afd073e2fa5987420a74c501869e31aff">centerx</a>(), 0.0, <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#ad44651f646e206137ad885d97b143400">centerz</a>(), 0.0, 1.0,</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;              0.0);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">draw</a>();</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span> <a class="code" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a> / <span class="keyword">sizeof</span>(<a class="code" href="classBall.html">Ball</a>); i++) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a>[i].<a class="code" href="classBall.html#af30f4707d26a6e7ba0af1dd8cac37684">update</a>();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    glFlush();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    glutSwapBuffers();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">// On reshape, constructs a camera that perfectly fits the window.</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">  184</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>(GLint w, GLint h) {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    glViewport(0, 0, w, h);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    glMatrixMode(GL_PROJECTION);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    glLoadIdentity();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    gluPerspective(40.0, GLfloat(w) / GLfloat(h), 1.0, 150.0);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    glMatrixMode(GL_MODELVIEW);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">// Requests to draw the next frame.</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">  193</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>(<span class="keywordtype">int</span> v) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    glutPostRedisplay();</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    glutTimerFunc(1000 / 60, <a class="code" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, v);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">// Moves the camera according to the key pressed, then ask to refresh</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">// the display.</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">  200</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">special</a>(<span class="keywordtype">int</span> key, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">switch</span> (key) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_LEFT:</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#acbf35947eb5d887a76538e9525cf34a0">moveLeft</a>();</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_RIGHT:</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#acf2f00de2e99af1fcd9b5e770fce7ae3">moveRight</a>();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_UP:</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#aa6dc57f7ed60e5bfc106d48c7431c8c1">moveUp</a>();</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_DOWN:</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#ab8c429b8547f3a106657ecd07dffc5bc">moveDown</a>();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    glutPostRedisplay();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">// Initializes GLUT and enters the main loop.</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  219</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="openGL__bounce_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    glutInit(&amp;argc, argv);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    glutInitWindowPosition(80, 80);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    glutInitWindowSize(800, 600);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    glutCreateWindow(<span class="stringliteral">&quot;Bouncing Balls&quot;</span>);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    glutDisplayFunc(<a class="code" href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    glutReshapeFunc(<a class="code" href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    glutSpecialFunc(<a class="code" href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">special</a>);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    glutTimerFunc(100, <a class="code" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, 0);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    glutMainLoop();</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                glMaterialfv(GL_FRONT,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                             GL_AMBIENT_AND_DIFFUSE,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                             (x + z) % 2 == 0 ? <a class="code" href="openGL__bounce_8cpp.html#a0d8ee36fabd3e5f0368a7e834ab1f80a">RED</a> : <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                glVertex3d(x, 0, z);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                glVertex3d(x + 1, 0, z);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                glVertex3d(x + 1, 0, z + 1);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                glVertex3d(x, 0, z + 1);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        glEnd();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        glEndList();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">  144</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">draw</a>() {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        glCallList(<a class="code" href="classCheckerboard.html#a5801397eeed1c18d0f4a12d732768723">displayListId</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">// Global variables: a camera, a checkerboard and some balls.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">  150</a></span>&#160;<a class="code" href="classCheckerboard.html">Checkerboard</a> <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>(8, 8);</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">  151</a></span>&#160;<a class="code" href="classCamera.html">Camera</a> <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">  152</a></span>&#160;<a class="code" href="classBall.html">Ball</a> <a class="code" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a>[] = {<a class="code" href="classBall.html">Ball</a>(1, <a class="code" href="openGL__bounce_8cpp.html#a5e49fcc6d7b6ca732f95efc9b413349e">GREEN</a>, 7, 6, 1),</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <a class="code" href="classBall.html">Ball</a>(1.5, <a class="code" href="openGL__bounce_8cpp.html#a3614a44b501c2ddc43d2be5b12c52ee6">MAGENTA</a>, 6, 3, 4),</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="classBall.html">Ball</a>(0.4, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>, 5, 1, 7)};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">// Application-specific initialization: Set up global lighting</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">// parameters and create display lists.</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">  158</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>() {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    glLightfv(GL_LIGHT0, GL_DIFFUSE, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    glLightfv(GL_LIGHT0, GL_SPECULAR, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    glMaterialfv(GL_FRONT, GL_SPECULAR, <a class="code" href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    glMaterialf(GL_FRONT, GL_SHININESS, 30);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    glEnable(GL_LIGHTING);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    glEnable(GL_LIGHT0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#ad9fddd3dc3ed0b5deda345cd0c645f7c">create</a>();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">// Draws one frame, the checkerboard then the balls, from the current</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">// camera position.</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">  171</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>() {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    glLoadIdentity();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    gluLookAt(<a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#a1af03aa27aafc84436078eb11e16c0e3">getX</a>(),</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;              <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#a1a99eaab2127fcc0af20e8e06e9a7eb0">getY</a>(),</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;              <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#aead34062d4bdb7fca1241a480d3f563f">getZ</a>(),</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;              <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#afd073e2fa5987420a74c501869e31aff">centerx</a>(),</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;              0.0,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;              <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#ad44651f646e206137ad885d97b143400">centerz</a>(),</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;              0.0,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;              1.0,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;              0.0);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a>.<a class="code" href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">draw</a>();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span> <a class="code" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a> / <span class="keyword">sizeof</span>(<a class="code" href="classBall.html">Ball</a>); i++) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a>[i].<a class="code" href="classBall.html#af30f4707d26a6e7ba0af1dd8cac37684">update</a>();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    glFlush();</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    glutSwapBuffers();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">// On reshape, constructs a camera that perfectly fits the window.</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">  192</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>(GLint w, GLint h) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    glViewport(0, 0, w, h);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    glMatrixMode(GL_PROJECTION);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    glLoadIdentity();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    gluPerspective(40.0, GLfloat(w) / GLfloat(h), 1.0, 150.0);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    glMatrixMode(GL_MODELVIEW);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">// Requests to draw the next frame.</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">  201</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>(<span class="keywordtype">int</span> v) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    glutPostRedisplay();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    glutTimerFunc(1000 / 60, <a class="code" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, v);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">// Moves the camera according to the key pressed, then ask to refresh</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">// the display.</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">  208</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">special</a>(<span class="keywordtype">int</span> key, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">switch</span> (key) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_LEFT:</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#acbf35947eb5d887a76538e9525cf34a0">moveLeft</a>();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_RIGHT:</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#acf2f00de2e99af1fcd9b5e770fce7ae3">moveRight</a>();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_UP:</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#aa6dc57f7ed60e5bfc106d48c7431c8c1">moveUp</a>();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">case</span> GLUT_KEY_DOWN:</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a>.<a class="code" href="classCamera.html#ab8c429b8547f3a106657ecd07dffc5bc">moveDown</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    glutPostRedisplay();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">// Initializes GLUT and enters the main loop.</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="openGL__bounce_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  227</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="openGL__bounce_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    glutInit(&amp;argc, argv);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    glutInitWindowPosition(80, 80);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    glutInitWindowSize(800, 600);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    glutCreateWindow(<span class="stringliteral">&quot;Bouncing Balls&quot;</span>);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    glutDisplayFunc(<a class="code" href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    glutReshapeFunc(<a class="code" href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    glutSpecialFunc(<a class="code" href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">special</a>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    glutTimerFunc(100, <a class="code" href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a>, 0);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    glutMainLoop();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
 <div class="ttc" id="aclassBall_html"><div class="ttname"><a href="classBall.html">Ball</a></div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00063">openGL_bounce.cpp:63</a></div></div>
 <div class="ttc" id="aclassBall_html_a17d73231eab81d0e74cf28d0068fe5cb"><div class="ttname"><a href="classBall.html#a17d73231eab81d0e74cf28d0068fe5cb">Ball::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00068">openGL_bounce.cpp:68</a></div></div>
 <div class="ttc" id="aclassBall_html_a33894dace962684b65523c2d09f79a16"><div class="ttname"><a href="classBall.html#a33894dace962684b65523c2d09f79a16">Ball::maximumHeight</a></div><div class="ttdeci">double maximumHeight</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00066">openGL_bounce.cpp:66</a></div></div>
@@ -335,25 +343,25 @@ $(function() {
 <div class="ttc" id="aclassCamera_html_aead34062d4bdb7fca1241a480d3f563f"><div class="ttname"><a href="classCamera.html#aead34062d4bdb7fca1241a480d3f563f">Camera::getZ</a></div><div class="ttdeci">double getZ()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00037">openGL_bounce.cpp:37</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html"><div class="ttname"><a href="classCheckerboard.html">Checkerboard</a></div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00104">openGL_bounce.cpp:104</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_a163161b2a9900345ff4bed3062db7d0b"><div class="ttname"><a href="classCheckerboard.html#a163161b2a9900345ff4bed3062db7d0b">Checkerboard::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00106">openGL_bounce.cpp:106</a></div></div>
-<div class="ttc" id="aclassCheckerboard_html_a27db7aec53de6b857653d13f127ba274"><div class="ttname"><a href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">Checkerboard::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00143">openGL_bounce.cpp:143</a></div></div>
+<div class="ttc" id="aclassCheckerboard_html_a27db7aec53de6b857653d13f127ba274"><div class="ttname"><a href="classCheckerboard.html#a27db7aec53de6b857653d13f127ba274">Checkerboard::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00144">openGL_bounce.cpp:144</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_a48089fba1711f6e49e1d1ba006598c5b"><div class="ttname"><a href="classCheckerboard.html#a48089fba1711f6e49e1d1ba006598c5b">Checkerboard::Checkerboard</a></div><div class="ttdeci">Checkerboard(int width, int depth)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00110">openGL_bounce.cpp:110</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_a5801397eeed1c18d0f4a12d732768723"><div class="ttname"><a href="classCheckerboard.html#a5801397eeed1c18d0f4a12d732768723">Checkerboard::displayListId</a></div><div class="ttdeci">int displayListId</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00105">openGL_bounce.cpp:105</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_aca22dc89081ced7191306112d44c9e04"><div class="ttname"><a href="classCheckerboard.html#aca22dc89081ced7191306112d44c9e04">Checkerboard::depth</a></div><div class="ttdeci">int depth</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00107">openGL_bounce.cpp:107</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_ad44651f646e206137ad885d97b143400"><div class="ttname"><a href="classCheckerboard.html#ad44651f646e206137ad885d97b143400">Checkerboard::centerz</a></div><div class="ttdeci">double centerz()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00116">openGL_bounce.cpp:116</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_ad9fddd3dc3ed0b5deda345cd0c645f7c"><div class="ttname"><a href="classCheckerboard.html#ad9fddd3dc3ed0b5deda345cd0c645f7c">Checkerboard::create</a></div><div class="ttdeci">void create()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00120">openGL_bounce.cpp:120</a></div></div>
 <div class="ttc" id="aclassCheckerboard_html_afd073e2fa5987420a74c501869e31aff"><div class="ttname"><a href="classCheckerboard.html#afd073e2fa5987420a74c501869e31aff">Checkerboard::centerx</a></div><div class="ttdeci">double centerx()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00113">openGL_bounce.cpp:113</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00156">openGL_bounce.cpp:156</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="openGL__bounce_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00158">openGL_bounce.cpp:158</a></div></div>
 <div class="ttc" id="aopenGL__bounce_8cpp_html_a0d8ee36fabd3e5f0368a7e834ab1f80a"><div class="ttname"><a href="openGL__bounce_8cpp.html#a0d8ee36fabd3e5f0368a7e834ab1f80a">RED</a></div><div class="ttdeci">GLfloat RED[]</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00013">openGL_bounce.cpp:13</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00169">openGL_bounce.cpp:169</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a2008f4ab70b5e4104c2ca43932536ddf"><div class="ttname"><a href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a></div><div class="ttdeci">Camera camera</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00150">openGL_bounce.cpp:150</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00184">openGL_bounce.cpp:184</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="openGL__bounce_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00171">openGL_bounce.cpp:171</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a2008f4ab70b5e4104c2ca43932536ddf"><div class="ttname"><a href="openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf">camera</a></div><div class="ttdeci">Camera camera</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00151">openGL_bounce.cpp:151</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00192">openGL_bounce.cpp:192</a></div></div>
 <div class="ttc" id="aopenGL__bounce_8cpp_html_a3614a44b501c2ddc43d2be5b12c52ee6"><div class="ttname"><a href="openGL__bounce_8cpp.html#a3614a44b501c2ddc43d2be5b12c52ee6">MAGENTA</a></div><div class="ttdeci">GLfloat MAGENTA[]</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00015">openGL_bounce.cpp:15</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="openGL__bounce_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00219">openGL_bounce.cpp:219</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a56761a2e4464538a3a9d951ca285eccd"><div class="ttname"><a href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">special</a></div><div class="ttdeci">void special(int key, int, int)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00200">openGL_bounce.cpp:200</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="openGL__bounce_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00227">openGL_bounce.cpp:227</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a56761a2e4464538a3a9d951ca285eccd"><div class="ttname"><a href="openGL__bounce_8cpp.html#a56761a2e4464538a3a9d951ca285eccd">special</a></div><div class="ttdeci">void special(int key, int, int)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00208">openGL_bounce.cpp:208</a></div></div>
 <div class="ttc" id="aopenGL__bounce_8cpp_html_a5e49fcc6d7b6ca732f95efc9b413349e"><div class="ttname"><a href="openGL__bounce_8cpp.html#a5e49fcc6d7b6ca732f95efc9b413349e">GREEN</a></div><div class="ttdeci">GLfloat GREEN[]</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00014">openGL_bounce.cpp:14</a></div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a61a498df564c00cba535b55fcf8e9cc3"><div class="ttname"><a href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a></div><div class="ttdeci">void timer(int v)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00193">openGL_bounce.cpp:193</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a61a498df564c00cba535b55fcf8e9cc3"><div class="ttname"><a href="openGL__bounce_8cpp.html#a61a498df564c00cba535b55fcf8e9cc3">timer</a></div><div class="ttdeci">void timer(int v)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00201">openGL_bounce.cpp:201</a></div></div>
 <div class="ttc" id="aopenGL__bounce_8cpp_html_a7752039cfc0dcf46f9e74b7f29c7bdd0"><div class="ttname"><a href="openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0">checkerboard</a></div><div class="ttdeci">Checkerboard checkerboard(8, 8)</div></div>
-<div class="ttc" id="aopenGL__bounce_8cpp_html_a782b37bf6312df8d68e70ccc31b551e0"><div class="ttname"><a href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a></div><div class="ttdeci">Ball balls[]</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00151">openGL_bounce.cpp:151</a></div></div>
+<div class="ttc" id="aopenGL__bounce_8cpp_html_a782b37bf6312df8d68e70ccc31b551e0"><div class="ttname"><a href="openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0">balls</a></div><div class="ttdeci">Ball balls[]</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00152">openGL_bounce.cpp:152</a></div></div>
 <div class="ttc" id="aopenGL__bounce_8cpp_html_ae32da948f8c288c18cea7058ab2d93cb"><div class="ttname"><a href="openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb">WHITE</a></div><div class="ttdeci">GLfloat WHITE[]</div><div class="ttdef"><b>Definition:</b> <a href="openGL__bounce_8cpp_source.html#l00012">openGL_bounce.cpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
