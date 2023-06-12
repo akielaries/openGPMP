@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: mlp.cpp</title>
+<title>openMTPK: mlp.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -75,7 +75,7 @@ $(function() {
 <div class="title">mlp.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Example on using the Multi-Layer Perceptrons networks supplied from pygpmp </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>: TODO</dd></dl>
+<p>Example on using the Multi-Layer Perceptrons networks supplied from openMTPk </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>: TODO</dd></dl>
 <div class="fragment"><div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;../../include/ml/mlp_net.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../../include/ml/trainers.hpp&quot;</span></div>
@@ -83,8 +83,8 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// use the openGPMP Machine Learning namespaces</span></div>
-<div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacegpmp_1_1ml.html">gpmp::ml</a>;</div>
+<div class="line"><span class="comment">// use the openMTPK Machine Learning namespaces</span></div>
+<div class="line"><span class="keyword">using namespace </span><a class="code" href="namespacemtpk_1_1ml.html">mtpk::ml</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="mlp_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;SAMPLE USING THE MULTI-LAYER PERCEPTRON NETWORK.\n&quot;</span>;</div>
@@ -94,12 +94,10 @@ $(function() {
 <div class="line">    int64_t inputs{1}, outputs{1}, hidden_layer_units{8}, hidden_layers{3};</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">double</span> lr{.5};</div>
-<div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a> util;</div>
-<div class="line">    <span class="keyword">auto</span> model = util.<a name="a2"></a><a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">init_SecondaryMLP</a>(inputs = 1,</div>
-<div class="line">                                        outputs = 1,</div>
-<div class="line">                                        hidden_layer_units = 8,</div>
-<div class="line">                                        hidden_layers = 3,</div>
-<div class="line">                                        lr = .5);</div>
+<div class="line">    <a name="_a1"></a><a class="code" href="classmtpk_1_1ml_1_1Trainers.html">mtpk::ml::Trainers</a> util;</div>
+<div class="line">    <span class="keyword">auto</span> model =</div>
+<div class="line">        util.<a name="a2"></a><a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">init_SecondaryMLP</a>(inputs = 1, outputs = 1, hidden_layer_units = 8,</div>
+<div class="line">                               hidden_layers = 3, lr = .5);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// declare a data file</span></div>
 <div class="line"> </div>
@@ -110,15 +108,15 @@ $(function() {
 <div class="line"> </div>
 <div class="line">    uint64_t max_iters{1000}, return_every{500};</div>
 <div class="line">    <span class="comment">// call the train method for the SecondaryMLP model</span></div>
-<div class="line">    util.<a name="a3"></a><a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">train_SecondaryMLP</a>(model, data_file, max_iters, return_every);</div>
+<div class="line">    util.<a name="a3"></a><a class="code" href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">train_SecondaryMLP</a>(model, data_file, max_iters, return_every);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a56c7851631307ac5550f73af82466ef1"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">gpmp::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00092">trainers.hpp:92</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a84e47e709ab39c08fd00351221707065"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">gpmp::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00072">trainers.hpp:72</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html">mtpk::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html_a07e9a39d8f34995c08667d3634a08155"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html#a07e9a39d8f34995c08667d3634a08155">mtpk::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00072">trainers.hpp:72</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1ml_1_1Trainers_html_a40de007548f1313fc1a27af9aa8a886d"><div class="ttname"><a href="classmtpk_1_1ml_1_1Trainers.html#a40de007548f1313fc1a27af9aa8a886d">mtpk::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00090">trainers.hpp:90</a></div></div>
 <div class="ttc" id="amlp_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="mlp_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="mlp_8cpp_source.html#l00017">mlp.cpp:17</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1ml_html"><div class="ttname"><a href="namespacegpmp_1_1ml.html">gpmp::ml</a></div><div class="ttdoc">Namespace for openGPMP Machine Learning.</div><div class="ttdef"><b>Definition:</b> <a href="activators_8hpp_source.html#l00049">activators.hpp:49</a></div></div>
+<div class="ttc" id="anamespacemtpk_1_1ml_html"><div class="ttname"><a href="namespacemtpk_1_1ml.html">mtpk::ml</a></div><div class="ttdoc">Namespace for openMTPK Machine Learning.</div><div class="ttdef"><b>Definition:</b> <a href="activators_8hpp_source.html#l00049">activators.hpp:49</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

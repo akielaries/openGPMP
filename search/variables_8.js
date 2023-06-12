@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inputset_1364',['inputSet',['../classgpmp_1_1ml_1_1BayesBernoulli.html#aa951e1b4e57f5b16b382f7f086535d81',1,'gpmp::ml::BayesBernoulli::inputSet()'],['../classgpmp_1_1ml_1_1BayesGauss.html#a76cd866abb62ff939dd825533a030855',1,'gpmp::ml::BayesGauss::inputSet()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#af2475956d539dd847641e453426b4201',1,'gpmp::ml::BayesMutliNom::inputSet()'],['../classgpmp_1_1ml_1_1AutoEncoder.html#a9cb7137756e38872694f3e7c4fc93c56',1,'gpmp::ml::AutoEncoder::inputSet()'],['../classgpmp_1_1ml_1_1kNN.html#ad3054d1781f12870b04ab0766509b486',1,'gpmp::ml::kNN::inputSet()'],['../classgpmp_1_1ml_1_1Logreg.html#ad7c0b572c9d15818e0228febe17f047b',1,'gpmp::ml::Logreg::inputSet()'],['../classgpmp_1_1ml_1_1SVC.html#a0ee880e61f155a4c4100d93165ba8d3c',1,'gpmp::ml::SVC::inputSet()']]],
-  ['instance_5flist_1365',['instance_list',['../classgpmp_1_1ml_1_1KF__CV.html#acdf0560db7b09e22f52e8bb02d8602e5',1,'gpmp::ml::KF_CV']]]
+  ['k_1291',['K',['../classmtpk_1_1ml_1_1CV.html#a2b34aaa7323f50b9aa18d521ef509baa',1,'mtpk::ml::CV']]],
+  ['k_1292',['k',['../classmtpk_1_1ml_1_1AutoEncoder.html#a3e1aade5ef45f0fa25564a0a24f0144d',1,'mtpk::ml::AutoEncoder::k()'],['../classmtpk_1_1ml_1_1kNN.html#a64f65655cbb6cde2ea25003cc44584d8',1,'mtpk::ml::kNN::k()'],['../classmtpk_1_1ml_1_1Logreg.html#a4efff75f02011e41ba47d5f9d3ad1d8f',1,'mtpk::ml::Logreg::k()'],['../classmtpk_1_1ml_1_1SVC.html#a05a4ec827ceb4fed451c954301fdff3e',1,'mtpk::ml::SVC::k()']]]
 ];

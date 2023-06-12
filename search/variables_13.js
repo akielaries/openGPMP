@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['u_1427',['u',['../openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff',1,'openGL_astronomy_animated.cpp']]],
-  ['unique_5flabel_1428',['unique_label',['../classgpmp_1_1ml_1_1BayesClf.html#a56d7aef70ea0441cec35780646b519e4',1,'gpmp::ml::BayesClf']]]
+  ['vocab_1348',['vocab',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a7b9f8d4d50b689af0a504bd55a08060e',1,'mtpk::ml::BayesBernoulli::vocab()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#afea6ba260133ffcfb98ada0e55e08df5',1,'mtpk::ml::BayesMutliNom::vocab()']]]
 ];

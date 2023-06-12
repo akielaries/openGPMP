@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gcds_1491',['GCDs',['../nt_8hpp.html#a22f154606ca877e7dd67ba4f32f55443',1,'nt.hpp']]]
+  ['factorization_1408',['FACTORIZATION',['../nt_8hpp.html#a25fc994a92402407a2c2bad86c444976',1,'nt.hpp']]]
 ];

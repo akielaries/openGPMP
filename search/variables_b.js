@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['magenta_1373',['MAGENTA',['../openGL__bounce_8cpp.html#a3614a44b501c2ddc43d2be5b12c52ee6',1,'openGL_bounce.cpp']]],
-  ['matrixsize_1374',['matrixSize',['../modules_2linalg_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6',1,'matrixSize():&#160;mtx.cpp'],['../samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6',1,'matrixSize():&#160;mtx.cpp']]],
-  ['maximumheight_1375',['maximumHeight',['../classBall.html#a33894dace962684b65523c2d09f79a16',1,'Ball']]],
-  ['mean_5fstdev_1376',['mean_stdev',['../structgpmp_1_1ml_1_1summary.html#a797be00f841478dc89cb28cccaa5a319',1,'gpmp::ml::summary']]],
-  ['mtx_5fneg_1377',['mtx_neg',['../namespacepython_1_1linalg.html#ac78734a635d502405ccfe13cf5ac6b52',1,'python::linalg']]],
-  ['mtx_5fo_1378',['mtx_o',['../namespacepython_1_1linalg.html#a0343bd4d51e02f97e21ae10be5c3c50e',1,'python::linalg']]],
-  ['mtx_5fpos_1379',['mtx_pos',['../namespacepython_1_1linalg.html#a8efb00aa7aefef926dc00d6ad1c5ca75',1,'python::linalg']]],
-  ['mtx_5fz1_1380',['mtx_z1',['../namespacepython_1_1linalg.html#ab23ed29b6cf31e7f1b40458d13fc983d',1,'python::linalg']]],
-  ['mtx_5fz2_1381',['mtx_z2',['../namespacepython_1_1linalg.html#ac9d40235255fd376e3c2cc4b8fd67071',1,'python::linalg']]],
-  ['mu_1382',['mu',['../classgpmp_1_1ml_1_1BayesGauss.html#a7b74c1284e6437c2baf6b59b9aed5491',1,'gpmp::ml::BayesGauss']]]
+  ['n_1305',['n',['../classmtpk_1_1ml_1_1AutoEncoder.html#aa256a9bc01971d9b0f8e2f71b0c8fb0c',1,'mtpk::ml::AutoEncoder::n()'],['../classmtpk_1_1ml_1_1Logreg.html#ad120e48e92cf3f2e938ab9cd2d6a019f',1,'mtpk::ml::Logreg::n()'],['../classmtpk_1_1ml_1_1SVC.html#a1545ddee3ed664efde76ddcf96e74489',1,'mtpk::ml::SVC::n()']]],
+  ['n_1306',['N',['../classmtpk_1_1ml_1_1KF__CV.html#a1892d723a9513b53497c9ae3aab5809e',1,'mtpk::ml::KF_CV::N()'],['../__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59',1,'N():&#160;_simd_intel_mtx.cpp'],['../__simd__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59',1,'N():&#160;_simd_mtx.cpp']]],
+  ['n_5fhidden_1307',['n_hidden',['../classmtpk_1_1ml_1_1AutoEncoder.html#a8df8b5c28bb7b6e49048a6d58e6ca549',1,'mtpk::ml::AutoEncoder']]],
+  ['neuron_5flayers_1308',['neuron_layers',['../classmtpk_1_1NaiveNet.html#a46a0a9936b709529cad8dfe4d90816f9',1,'mtpk::NaiveNet']]],
+  ['neuron_5fptr_1309',['neuron_ptr',['../structmtpk_1_1ml_1_1layer.html#a6b3400f94d50b26bb620a27e672c6ecf',1,'mtpk::ml::layer']]],
+  ['next_1310',['next',['../structwork__st.html#af15d2c1d91d69a2ab43b435ddea56e75',1,'work_st']]],
+  ['num_5felements_1311',['num_elements',['../classmtpk_1_1Matrix.html#a35c5074961211248dfbe6bb8bb0f5b23',1,'mtpk::Matrix']]],
+  ['num_5flayers_1312',['num_layers',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a27753bc0c2fa1fb57f272c35b2f3f9f4',1,'mtpk::ml::PrimaryMLP']]],
+  ['num_5fneurons_1313',['num_neurons',['../structmtpk_1_1ml_1_1layer.html#ae123a255612d91473e4a5287264f7218',1,'mtpk::ml::layer']]],
+  ['num_5fthreads_1314',['num_threads',['../struct__threadpool__st.html#a48ef6313275156d61d2b660fed0d3f88',1,'_threadpool_st']]]
 ];

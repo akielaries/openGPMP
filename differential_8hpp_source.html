@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: include/calculus/differential.hpp Source File</title>
+<title>openMTPK: include/calculus/differential.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -117,11 +117,11 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define DERIV_HPP</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classgpmp_1_1Differential.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgpmp_1_1Differential.html">Differential</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classmtpk_1_1Differential.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Differential.html">Differential</a> {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    int64_t <a class="code" href="classgpmp_1_1Differential.html#a1fb385ddf299d3e95f9609125e723305">derivative_term</a>(std::string p_term, int64_t val);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">derivative_term</a>(std::string p_term, int64_t val);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Finds the first derivative of a function</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// deriv_one()</span></div>
@@ -132,19 +132,19 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Finds the third derivative of a function</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// deriv_thr()</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    int64_t <a class="code" href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">deriv_at</a>(std::string &amp;poly, int64_t val);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">deriv_at</a>(std::string &amp;poly, int64_t val);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::string <a class="code" href="classgpmp_1_1Differential.html#ae3cedb9d6684b797df13333e1bf3a2c3">deriv_str</a>(std::string &amp;poly);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::string <a class="code" href="classmtpk_1_1Differential.html#a7554b73b618233e65b0d30a7b33f403d">deriv_str</a>(std::string &amp;poly);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace mtpk</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassgpmp_1_1Differential_html"><div class="ttname"><a href="classgpmp_1_1Differential.html">gpmp::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00050">differential.hpp:50</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Differential_html_a1fb385ddf299d3e95f9609125e723305"><div class="ttname"><a href="classgpmp_1_1Differential.html#a1fb385ddf299d3e95f9609125e723305">gpmp::Differential::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00073">differential.cpp:73</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Differential_html_a7426b8b6830e3c93ce6ff8f4a98c065d"><div class="ttname"><a href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">gpmp::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00103">differential.cpp:103</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Differential_html_ae3cedb9d6684b797df13333e1bf3a2c3"><div class="ttname"><a href="classgpmp_1_1Differential.html#ae3cedb9d6684b797df13333e1bf3a2c3">gpmp::Differential::deriv_str</a></div><div class="ttdeci">std::string deriv_str(std::string &amp;poly)</div><div class="ttdoc">Calculate the derivative of a function, not solving for x.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00124">differential.cpp:124</a></div></div>
-<div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html"><div class="ttname"><a href="classmtpk_1_1Differential.html">mtpk::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00050">differential.hpp:50</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a117639cf3361298eaef4741189813dbb"><div class="ttname"><a href="classmtpk_1_1Differential.html#a117639cf3361298eaef4741189813dbb">mtpk::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00103">differential.cpp:103</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a21a5ca26e14b15a77c93782195d1f8b3"><div class="ttname"><a href="classmtpk_1_1Differential.html#a21a5ca26e14b15a77c93782195d1f8b3">mtpk::Differential::derivative_term</a></div><div class="ttdeci">int64_t derivative_term(std::string p_term, int64_t val)</div><div class="ttdoc">Find the coeffecients and exponents of a polynomial.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00073">differential.cpp:73</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Differential_html_a7554b73b618233e65b0d30a7b33f403d"><div class="ttname"><a href="classmtpk_1_1Differential.html#a7554b73b618233e65b0d30a7b33f403d">mtpk::Differential::deriv_str</a></div><div class="ttdeci">std::string deriv_str(std::string &amp;poly)</div><div class="ttdoc">Calculate the derivative of a function, not solving for x.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00124">differential.cpp:124</a></div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

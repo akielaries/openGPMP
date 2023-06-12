@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['threaddispatch_804',['ThreadDispatch',['../classgpmp_1_1core_1_1ThreadDispatch.html',1,'gpmp::core']]],
-  ['threadpool_805',['ThreadPool',['../classgpmp_1_1core_1_1ThreadPool.html',1,'gpmp::core']]],
-  ['trainers_806',['Trainers',['../classgpmp_1_1ml_1_1Trainers.html',1,'gpmp::ml']]],
-  ['typecast_807',['TypeCast',['../classgpmp_1_1core_1_1TypeCast.html',1,'gpmp::core']]]
+  ['secondarymlp_755',['SecondaryMLP',['../classmtpk_1_1ml_1_1SecondaryMLP.html',1,'mtpk::ml']]],
+  ['sidmmtxarm_756',['SIDMmtxARM',['../classSIDMmtxARM.html',1,'']]],
+  ['simdmtxintel_757',['SIMDmtxIntel',['../classSIMDmtxIntel.html',1,'']]],
+  ['squares_758',['Squares',['../classmtpk_1_1Squares.html',1,'mtpk']]],
+  ['stats_759',['Stats',['../classmtpk_1_1ml_1_1Stats.html',1,'mtpk::ml']]],
+  ['summary_760',['summary',['../structmtpk_1_1ml_1_1summary.html',1,'mtpk::ml']]],
+  ['svc_761',['SVC',['../classmtpk_1_1ml_1_1SVC.html',1,'mtpk::ml']]]
 ];

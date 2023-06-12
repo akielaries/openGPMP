@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['k_1366',['k',['../classgpmp_1_1ml_1_1AutoEncoder.html#af0d1977287ff0646ab4f53a33a37bb98',1,'gpmp::ml::AutoEncoder::k()'],['../classgpmp_1_1ml_1_1kNN.html#ab08d3ac7c1118bcae9a5e5eee418f219',1,'gpmp::ml::kNN::k()'],['../classgpmp_1_1ml_1_1Logreg.html#a4bc0a9699239baef7fbe885bb94c5a6f',1,'gpmp::ml::Logreg::k()'],['../classgpmp_1_1ml_1_1SVC.html#a693fffd9e039d3e8500f320e8bf2c586',1,'gpmp::ml::SVC::k()']]],
-  ['k_1367',['K',['../classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f',1,'gpmp::ml::CV']]]
+  ['lambda_1293',['lambda',['../classmtpk_1_1ml_1_1Logreg.html#a3d9fd6198421b05aaf1e729fae07e1d4',1,'mtpk::ml::Logreg']]],
+  ['layer_5fptr_1294',['layer_ptr',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a',1,'mtpk::ml::PrimaryMLP']]],
+  ['layer_5funits_1295',['layer_units',['../classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910',1,'mtpk::ml::SecondaryMLP']]],
+  ['learning_5frate_1296',['learning_rate',['../classmtpk_1_1ml_1_1Logreg.html#a9aeac0feebe7686ec9da2330cf142898',1,'mtpk::ml::Logreg::learning_rate()'],['../classmtpk_1_1NaiveNet.html#a79f9b50c7791cb5e2b4a96763f5655ed',1,'mtpk::NaiveNet::learning_rate()']]],
+  ['lr_1297',['lr',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640',1,'mtpk::ml::SecondaryMLP']]]
 ];

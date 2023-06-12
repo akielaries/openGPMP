@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['accl_810',['accl',['../namespacegpmp_1_1accl.html',1,'gpmp']]],
-  ['core_811',['core',['../namespacegpmp_1_1core.html',1,'gpmp']]],
-  ['gpmp_812',['gpmp',['../namespacegpmp.html',1,'']]],
-  ['linalg_813',['linalg',['../namespacegpmp_1_1linalg.html',1,'gpmp']]],
-  ['ml_814',['ml',['../namespacegpmp_1_1ml.html',1,'gpmp']]],
-  ['rndm_815',['rndm',['../namespacegpmp_1_1core_1_1rndm.html',1,'gpmp::core']]]
+  ['accl_768',['accl',['../namespacemtpk_1_1accl.html',1,'mtpk']]],
+  ['core_769',['core',['../namespacemtpk_1_1core.html',1,'mtpk']]],
+  ['ml_770',['ml',['../namespacemtpk_1_1ml.html',1,'mtpk']]],
+  ['mtpk_771',['mtpk',['../namespacemtpk.html',1,'']]],
+  ['rndm_772',['rndm',['../namespacemtpk_1_1core_1_1rndm.html',1,'mtpk::core']]]
 ];

@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['lambda_1368',['lambda',['../classgpmp_1_1ml_1_1Logreg.html#a013d234420cea2f998974e879188b311',1,'gpmp::ml::Logreg']]],
-  ['layer_5fptr_1369',['layer_ptr',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270',1,'gpmp::ml::PrimaryMLP']]],
-  ['layer_5funits_1370',['layer_units',['../classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19',1,'gpmp::ml::SecondaryMLP']]],
-  ['learning_5frate_1371',['learning_rate',['../classgpmp_1_1ml_1_1Logreg.html#a83124fdd29ca6e2010d3d18e82ffd0ea',1,'gpmp::ml::Logreg::learning_rate()'],['../classgpmp_1_1NaiveNet.html#ae65199583ba9a559b76f888d38846113',1,'gpmp::NaiveNet::learning_rate()']]],
-  ['lr_1372',['lr',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89',1,'gpmp::ml::SecondaryMLP']]]
+  ['mean_5fstdev_1298',['mean_stdev',['../structmtpk_1_1ml_1_1summary.html#a74e9e858e92c03222dd58a178b477454',1,'mtpk::ml::summary']]],
+  ['mtx_5fneg_1299',['mtx_neg',['../namespacepython_1_1linalg.html#ac78734a635d502405ccfe13cf5ac6b52',1,'python::linalg']]],
+  ['mtx_5fo_1300',['mtx_o',['../namespacepython_1_1linalg.html#a0343bd4d51e02f97e21ae10be5c3c50e',1,'python::linalg']]],
+  ['mtx_5fpos_1301',['mtx_pos',['../namespacepython_1_1linalg.html#a8efb00aa7aefef926dc00d6ad1c5ca75',1,'python::linalg']]],
+  ['mtx_5fz1_1302',['mtx_z1',['../namespacepython_1_1linalg.html#ab23ed29b6cf31e7f1b40458d13fc983d',1,'python::linalg']]],
+  ['mtx_5fz2_1303',['mtx_z2',['../namespacepython_1_1linalg.html#ac9d40235255fd376e3c2cc4b8fd67071',1,'python::linalg']]],
+  ['mu_1304',['mu',['../classmtpk_1_1ml_1_1BayesGauss.html#aea28cb2f16fb7fd5701d8595744d49e4',1,'mtpk::ml::BayesGauss']]]
 ];

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['weightedlehmermean_1297',['weightedLehmerMean',['../classgpmp_1_1ml_1_1Stats.html#a2ca81b5d245f6a819c98d54d37dc4bab',1,'gpmp::ml::Stats']]],
-  ['weightedmean_1298',['weightedMean',['../classgpmp_1_1ml_1_1Stats.html#ae7e2a3e2ad72632e77d6f856708834bb',1,'gpmp::ml::Stats']]],
-  ['weights_5fadjust_1299',['weights_adjust',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a133223fcca190399dead1f0628764c78',1,'gpmp::ml::PrimaryMLP']]],
-  ['weights_5frand_1300',['weights_rand',['../classgpmp_1_1ml_1_1PrimaryMLP.html#aab70380c19477e2c7cd8b9a03fce1d7a',1,'gpmp::ml::PrimaryMLP']]],
-  ['weights_5frestore_1301',['weights_restore',['../classgpmp_1_1ml_1_1PrimaryMLP.html#aacdcddba37721122c88b827bcc77a241',1,'gpmp::ml::PrimaryMLP']]],
-  ['weights_5fsave_1302',['weights_save',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a021114b582116ab9d3b77a37fd0eb023',1,'gpmp::ml::PrimaryMLP']]],
-  ['witness_1303',['witness',['../classgpmp_1_1PrimalityTest.html#a72b1acaf5bb99780e6caf2d8ad8de10f',1,'gpmp::PrimalityTest::witness()'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityTest.html#a86fbd391205cd15a699861675e2d1499',1,'pygpmp.nt.nt.PrimalityTest.witness()']]]
+  ['weightedlehmermean_1234',['weightedLehmerMean',['../classmtpk_1_1ml_1_1Stats.html#addcbdf417f4cb73a531b9f9c31078a90',1,'mtpk::ml::Stats']]],
+  ['weightedmean_1235',['weightedMean',['../classmtpk_1_1ml_1_1Stats.html#a6bbce22ae478afa7e6c3f88aa4b0fa4d',1,'mtpk::ml::Stats']]],
+  ['weights_5fadjust_1236',['weights_adjust',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a3fb446ddfd3e01c0b2f61db8e8cf66f7',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frand_1237',['weights_rand',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a17ae77fa444dba716f6e14d83d2f3e52',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5frestore_1238',['weights_restore',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ac86d80e12567b45439eae866932b6c08',1,'mtpk::ml::PrimaryMLP']]],
+  ['weights_5fsave_1239',['weights_save',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1de057913c17181e734e39e8aea845c1',1,'mtpk::ml::PrimaryMLP']]],
+  ['witness_1240',['witness',['../classmtpk_1_1PrimalityTest.html#acdf45aec6e905ea12470b6e9c48393b2',1,'mtpk::PrimalityTest::witness()'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html#a668efa84b190f5c158fd9689e72799be',1,'openmtpk.nt.nt.PrimalityTest.witness()']]]
 ];

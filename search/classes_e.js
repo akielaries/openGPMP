@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rc4_796',['RC4',['../classgpmp_1_1RC4.html',1,'gpmp::RC4'],['../classpygpmp_1_1nt_1_1nt_1_1RC4.html',1,'pygpmp.nt.nt.RC4']]],
-  ['rc5_797',['RC5',['../classRC5.html',1,'']]],
-  ['regularizers_798',['Regularizers',['../classgpmp_1_1ml_1_1Regularizers.html',1,'gpmp::ml']]]
+  ['primalitygen_749',['PrimalityGen',['../classmtpk_1_1PrimalityGen.html',1,'mtpk::PrimalityGen'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityGen.html',1,'openmtpk.nt.nt.PrimalityGen']]],
+  ['primalitytest_750',['PrimalityTest',['../classmtpk_1_1PrimalityTest.html',1,'mtpk::PrimalityTest'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html',1,'openmtpk.nt.nt.PrimalityTest']]],
+  ['primarymlp_751',['PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html',1,'mtpk::ml']]]
 ];

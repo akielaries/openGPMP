@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/linalg/linsys.f90 Source File</title>
+<title>openMTPK: modules/linalg/linsys.f90 Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">! * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">! * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">! * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">! * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">! * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">! * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">! *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">! * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -139,14 +139,14 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="f90_2linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="linsys_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">   61</a></span>&#160;<span class="keyword">program</span> <a class="code" href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="linsys_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">   61</a></span>&#160;<span class="keyword">program</span> <a class="code" href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: n = 3</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">   real</span> :: a(n, n), b(n), x(n)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keywordtype">integer</span> :: i</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="comment">! Initialize matrix A and vector b</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   a = <a class="code" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   a = <a class="code" href="torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   b = [3.0, 4.0, 5.0]</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   <span class="comment">! Solve the linear system</span></div>
@@ -158,11 +158,11 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keyword">write</span> (*, *) <span class="stringliteral">&quot;x(&quot;</span>, i, <span class="stringliteral">&quot;) = &quot;</span>, x(i)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordflow">   end do</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">end program </span><a class="code" href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">end program </span><a class="code" href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="ttc" id="aMandelbrot_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="Mandelbrot_8c_source.html#l00094">Mandelbrot.c:94</a></div></div>
+<div class="ttc" id="aMandelbrot_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="Mandelbrot_8cpp_source.html#l00112">Mandelbrot.cpp:112</a></div></div>
 <div class="ttc" id="af90_2linsys_8f90_html_a825ea5d7564e58f3b379aaa57d6a56f9"><div class="ttname"><a href="f90_2linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a></div><div class="ttdeci">subroutine solvelinearsystem(A, b, x, n)</div><div class="ttdef"><b>Definition:</b> <a href="f90_2linsys_8f90_source.html#l00035">linsys.f90:36</a></div></div>
-<div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00103">openGL_astronomy_animated.cpp:103</a></div></div>
+<div class="ttc" id="atorus__animated_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="torus__animated_8cpp_source.html#l00053">torus_animated.cpp:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

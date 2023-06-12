@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['variance_714',['variance',['../classgpmp_1_1ml_1_1Stats.html#ad49e5b0f62f471c80afef953a2c7f829',1,'gpmp::ml::Stats']]],
-  ['vectors_715',['Vectors',['../classgpmp_1_1Vectors.html',1,'gpmp::Vectors'],['../classpygpmp_1_1linalg_1_1linalg_1_1Vectors.html',1,'pygpmp.linalg.linalg.Vectors']]],
-  ['vectors_2ehpp_716',['vectors.hpp',['../vectors_8hpp.html',1,'']]],
-  ['vocab_717',['vocab',['../classgpmp_1_1ml_1_1BayesBernoulli.html#aefd6a5ca3d8b68cf4a2013eaa88ef670',1,'gpmp::ml::BayesBernoulli::vocab()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#af1f303a305d6f833380aabfe0f266f51',1,'gpmp::ml::BayesMutliNom::vocab()']]],
-  ['vocklington_718',['vocklington',['../classgpmp_1_1Squares.html#adf8567bfa1f144936c5b69960bed7938',1,'gpmp::Squares']]]
+  ['variance_676',['variance',['../classmtpk_1_1ml_1_1Stats.html#a7ee9c04405674d4ba8eb3b6279f381e3',1,'mtpk::ml::Stats']]],
+  ['vectors_677',['Vectors',['../classmtpk_1_1Vectors.html',1,'mtpk::Vectors'],['../classopenmtpk_1_1linalg_1_1linalg_1_1Vectors.html',1,'openmtpk.linalg.linalg.Vectors']]],
+  ['vectors_2ehpp_678',['vectors.hpp',['../vectors_8hpp.html',1,'']]],
+  ['vocab_679',['vocab',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a7b9f8d4d50b689af0a504bd55a08060e',1,'mtpk::ml::BayesBernoulli::vocab()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#afea6ba260133ffcfb98ada0e55e08df5',1,'mtpk::ml::BayesMutliNom::vocab()']]],
+  ['vocklington_680',['vocklington',['../classmtpk_1_1Squares.html#a69457c463d06a43b6bfc257e7a75bc70',1,'mtpk::Squares']]]
 ];

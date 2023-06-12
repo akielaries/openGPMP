@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['a2_1321',['a2',['../classgpmp_1_1ml_1_1AutoEncoder.html#aa5661c8a3692bde0a5d8d23bd599ad35',1,'gpmp::ml::AutoEncoder']]],
-  ['activations_1322',['activations',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a5f113c7f33d539339c31496d2fa212a9',1,'gpmp::ml::SecondaryMLP']]],
-  ['alpha_1323',['alpha',['../classgpmp_1_1ml_1_1Logreg.html#ad7b370bc76f0e5b6a58e85c3a19dbc4e',1,'gpmp::ml::Logreg']]],
-  ['arg_1324',['arg',['../structwork__st.html#aa7731d45e481fa777bc4601521cde90c',1,'work_st']]]
+  ['a2_1258',['a2',['../classmtpk_1_1ml_1_1AutoEncoder.html#aa144f407c8f2fd3458de8e0c1f42327e',1,'mtpk::ml::AutoEncoder']]],
+  ['activations_1259',['activations',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a31e51e8a50484fe3c2ae9c6c046f04b5',1,'mtpk::ml::SecondaryMLP']]],
+  ['alpha_1260',['alpha',['../classmtpk_1_1ml_1_1Logreg.html#ae4f12bd703a0cb7862d09de3a40c1a06',1,'mtpk::ml::Logreg']]],
+  ['arg_1261',['arg',['../structwork__st.html#aa7731d45e481fa777bc4601521cde90c',1,'work_st']]]
 ];

@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['parallel_5ffor_5fbegin_1500',['PARALLEL_FOR_BEGIN',['../threads_8hpp.html#a0914f73d404378d399cfab53760e2ea0',1,'threads.hpp']]],
-  ['parallel_5ffor_5fend_1501',['PARALLEL_FOR_END',['../threads_8hpp.html#a09556bb3c29a43e693cd7361e0b5b739',1,'threads.hpp']]],
-  ['pi_1502',['pi',['../openGL__astronomy__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_astronomy_animated.cpp'],['../openGL__bounce_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_bounce.cpp'],['../openGL__example00_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_example00.c'],['../openGL__torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus.cpp'],['../openGL__torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus_animated.cpp'],['../openGL__tri_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_tri.cpp'],['../modules_2complex_2torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
-  ['primes_1503',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]],
-  ['print_5fline_1504',['PRINT_LINE',['../__gpu__mtx_8cpp.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'_gpu_mtx.cpp']]]
+  ['matrix_1411',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'linalg.hpp']]],
+  ['max_5frows_1412',['MAX_ROWS',['../datatable_8hpp.html#a3b94af9dcb0358f28d175d80eed98330',1,'datatable.hpp']]],
+  ['max_5fsource_5fsize_1413',['MAX_SOURCE_SIZE',['../__gpu__arr__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_arr_add.c'],['../__gpu__sum_8c.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_sum.c'],['../__gpu__mtx_8c.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_mtx.c'],['../__gpu__mtx__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_mtx_add.c']]],
+  ['maxcount_1414',['MAXCOUNT',['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'Mandelbrot.cpp']]],
+  ['maxt_5fin_5fpool_1415',['MAXT_IN_POOL',['../modules_2core_2CTHR_2c__threadpool_8h.html#a6cfa2c91d90cf6aff4941a70a2c7a5c4',1,'c_threadpool.h']]],
+  ['mem_5fsize_1416',['MEM_SIZE',['../__gpu__arr__add_8c.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE():&#160;_gpu_arr_add.c'],['../__gpu__mtx_8c.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE():&#160;_gpu_mtx.c'],['../__gpu__mtx__add_8c.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE():&#160;_gpu_mtx_add.c']]],
+  ['modular_1417',['MODULAR',['../nt_8hpp.html#a9e0a086a8dd7e94a3cedca5bfb57ad0d',1,'nt.hpp']]]
 ];

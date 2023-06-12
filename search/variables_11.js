@@ -1,15 +1,8 @@
 var searchData=
 [
-  ['shutdown_1410',['shutdown',['../struct__threadpool__st.html#a4ad46e479349b6e9f54ed2b3c38e4b88',1,'_threadpool_st']]],
-  ['sigma_1411',['sigma',['../classgpmp_1_1ml_1_1BayesGauss.html#a6616fbe46b2600fade7c2e5ee2b7ca8a',1,'gpmp::ml::BayesGauss']]],
-  ['sortir_1412',['sortir',['../structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a',1,'gpmp::ml::neuron']]],
-  ['spinning_1413',['spinning',['../openGL__astronomy__animated_8cpp.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;openGL_astronomy_animated.cpp'],['../openGL__torus__animated_8cpp.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;openGL_torus_animated.cpp'],['../torus__animated_8cpp.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;torus_animated.cpp']]],
-  ['stop_1414',['stop',['../classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393',1,'gpmp::core::ThreadPool']]],
-  ['success_1415',['success',['../classCompany.html#a9e3e963105856de6488014086bac5198',1,'Company']]],
-  ['sum_5fx_1416',['sum_x',['../classgpmp_1_1ml_1_1LinearRegression.html#af1efcfbb79bf07ffcf8fe850e310fad7',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fx_5fsquare_1417',['sum_x_square',['../classgpmp_1_1ml_1_1LinearRegression.html#a637123c9cbac49bbb998ff2c4701fa8f',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fxy_1418',['sum_xy',['../classgpmp_1_1ml_1_1LinearRegression.html#a4a8df5fee2599876d5874d578e7b87f9',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fy_1419',['sum_y',['../classgpmp_1_1ml_1_1LinearRegression.html#ad48c7c456e3f5a6e410628e9ef064653',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fy_5fsquare_1420',['sum_y_square',['../classgpmp_1_1ml_1_1LinearRegression.html#ac888fedbc6f80b9654a6ce0ebd8e3ae0',1,'gpmp::ml::LinearRegression']]],
-  ['summary_1421',['Summary',['../classgpmp_1_1ml_1_1BayesClf.html#ab4ced2d4674251074a86de803260501d',1,'gpmp::ml::BayesClf']]]
+  ['tasks_1342',['tasks',['../classmtpk_1_1core_1_1ThreadPool.html#a5d4b1a17c65afeb7e607561632a27cab',1,'mtpk::core::ThreadPool']]],
+  ['theta_1343',['theta',['../classmtpk_1_1ml_1_1BayesBernoulli.html#af123a8aaf35d7d2d3338894a50701801',1,'mtpk::ml::BayesBernoulli::theta()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#ab14b439b5d6e655762b18123ac47da08',1,'mtpk::ml::BayesMutliNom::theta()']]],
+  ['threads_1344',['threads',['../struct__threadpool__st.html#a056bc09374af3da1a337991fc1d86678',1,'_threadpool_st']]],
+  ['threshold_1345',['threshold',['../classmtpk_1_1core_1_1OutlierFinder.html#a95c7516a7fa2153de2dc0b860dde6b67',1,'mtpk::core::OutlierFinder']]],
+  ['turnover_1346',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]]
 ];
