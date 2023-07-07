@@ -11,9 +11,13 @@
  * threadpool
  * datatable
  * utils
- *
- * OPTIONAL:
- * opencl GPU
- *
- * SIMD
  */
+
+#ifndef CORE_HPP
+#define CORE_HPP
+
+#include "core/datatable.hpp"
+#include "core/threads.hpp"
+#include "core/util.hpp"
+
+#endif
