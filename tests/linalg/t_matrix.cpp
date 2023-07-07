@@ -76,8 +76,60 @@ bool mtx_verif(const std::vector<std::vector<T>> &A,
 
 // test case to compare the results of the intrinsics implementation with the
 // naive implementation for matrix addition
-TEST(ADD_MATRICES, assert_intel_intrin) {
+TEST(ADD_MTX_SMALL, assert_intel_intrin) {
     int matrixSize = 32;
+    // Define input matrices A and B
+    std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> expected(matrixSize,
+                                           std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> result(matrixSize,
+                                         std::vector<int>(matrixSize));
+
+    // Initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // Populate matrices A and B with random values
+    for (int i = 0; i < matrixSize; ++i) {
+        for (int j = 0; j < matrixSize; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result);
+
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+
+    // Compare the results
+    ASSERT_TRUE(mtx_verif(expected, result));
+}
+
+TEST(ADD_MTX_LARGE, assert_intel_intrin) {
+    int matrixSize = 8192;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));

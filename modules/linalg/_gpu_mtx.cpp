@@ -36,8 +36,8 @@
  * @brief OpenCL-based GPU acceleration
  */
 #include "../../include/linalg/_gpu_mtx.h"
-#include <iostream>
 #include <chrono>
+#include <iostream>
 #include <math.h>
 #include <random>
 #include <stddef.h>
@@ -300,7 +300,6 @@ int main() {
                      end_time_u - start_time_u)
                      .count()
               << " ms" << std::endl;
-
 
     return 0;
 }

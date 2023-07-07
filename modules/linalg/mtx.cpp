@@ -36,37 +36,48 @@ constexpr int matrixSize = 10000;
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
 
-// TODO: this should be templated and possibly return a vector
+// TODO: keep in mind use of int vs unsigned.
+// should this function return a matrix C instead of modifying it as input?
+
 // matrix addition using Intel intrinsic, accepts integer types
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
                                 std::vector<std::vector<int>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
+    std::cout << rows << "rows \n";
 
-    for (int i = 0; i < rows; ++i) {
-        int j = 0;
-        // requires at least size 8x8 size matrices
-        for (; j < cols - 7; j += 8) {
-            // load 8 elements from A, B, and C matrices using SIMD
-            __m256i a =
-                _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&A[i][j]));
-            __m256i b =
-                _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&B[i][j]));
-            __m256i c =
-                _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&C[i][j]));
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 8x8 size matrices
+            for (; j < cols - 7; j += 8) {
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m256i a = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&A[i][j]));
+                __m256i b = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&B[i][j]));
+                __m256i c = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&C[i][j]));
 
-            // perform vectorized addition
-            c = _mm256_add_epi32(a, b);
+                // perform vectorized addition
+                c = _mm256_add_epi32(a, b);
 
-            // store the result back to the C matrix
-            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i][j]), c);
+                // store the result back to the C matrix
+                _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i][j]), c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
         }
+    }
 
-        // handle the remaining elements that are not multiples of 8
-        for (; j < cols; ++j) {
-            C[i][j] = A[i][j] + B[i][j];
-        }
+    // use standard matrix addition
+    else {
+        std_mtx_add(A, B, C);
+        std::cout << "hello\n";
     }
 }
 
@@ -498,7 +509,7 @@ void gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<T>> &A,
 
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
-            // Perform matrix addition
+            // perform matrix addition
             C[i][j] = A[i][j] + B[i][j];
         }
     }
