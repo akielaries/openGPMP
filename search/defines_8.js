@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intel_5fsimd_1410',['INTEL_SIMD',['../linalg_8hpp.html#a13ae13b7ef0e65a46d90ab7057e2ffb1',1,'linalg.hpp']]]
+  ['neural_5fnetworks_1534',['NEURAL_NETWORKS',['../ml_8hpp.html#a07607da4adfe00593b227c7e8885f17e',1,'ml.hpp']]]
 ];

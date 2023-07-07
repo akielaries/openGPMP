@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/core/CTHR/extra.h Source File</title>
+<title>openGPMP: modules/core/CTHR/extra.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -117,10 +117,13 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    __attribute__((regparm(3)));</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="extra_8h.html#a6faed44ee768ed7953cd91bf82c717dd">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extra_8h.html#a6faed44ee768ed7953cd91bf82c717dd">locksmith_add_lock_to_thread</a>(pthread_mutex_t *mutex)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    __attribute__((regparm(3)));</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="extra_8h.html#ad52604d1e27af75528f48ae2c8d7a4a8">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extra_8h.html#ad52604d1e27af75528f48ae2c8d7a4a8">locksmith_add_memory_access</a>(pthread_t thread, <a class="code" href="extra_8h.html#a4627a531c18ea1de91a16510522fbb22">memaddr_t</a> addr,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                 <a class="code" href="extra_8h.html#a14d376293153f751aabde49801516625">line_type_e</a> type, <span class="keywordtype">int</span> lineno, <span class="keywordtype">char</span> *source);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="extra_8h.html#ad52604d1e27af75528f48ae2c8d7a4a8">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="extra_8h.html#ad52604d1e27af75528f48ae2c8d7a4a8">locksmith_add_memory_access</a>(pthread_t thread,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                 <a class="code" href="extra_8h.html#a4627a531c18ea1de91a16510522fbb22">memaddr_t</a> addr,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                 <a class="code" href="extra_8h.html#a14d376293153f751aabde49801516625">line_type_e</a> type,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                 <span class="keywordtype">int</span> lineno,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                 <span class="keywordtype">char</span> *source);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aextra_8h_html_a10ca28fdadf53c3aa2bfc4a9109e0ac8"><div class="ttname"><a href="extra_8h.html#a10ca28fdadf53c3aa2bfc4a9109e0ac8">construct_locksmith</a></div><div class="ttdeci">void construct_locksmith(unsigned int approx_thread_num)</div></div>
 <div class="ttc" id="aextra_8h_html_a14d376293153f751aabde49801516625"><div class="ttname"><a href="extra_8h.html#a14d376293153f751aabde49801516625">line_type_e</a></div><div class="ttdeci">line_type_e</div><div class="ttdef"><b>Definition:</b> <a href="extra_8h_source.html#l00023">extra.h:23</a></div></div>
 <div class="ttc" id="aextra_8h_html_a14d376293153f751aabde49801516625a68b2007439adda89dfa4ecc797b4c5f3"><div class="ttname"><a href="extra_8h.html#a14d376293153f751aabde49801516625a68b2007439adda89dfa4ecc797b4c5f3">L_DYNAMIC_WRITE</a></div><div class="ttdeci">@ L_DYNAMIC_WRITE</div><div class="ttdef"><b>Definition:</b> <a href="extra_8h_source.html#l00026">extra.h:26</a></div></div>

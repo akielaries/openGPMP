@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7eprimarymlp_1243',['~PrimaryMLP',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a0951d92936443debb2fa0d41020bed9e',1,'mtpk::ml::PrimaryMLP']]],
-  ['_7ethreadpool_1244',['~ThreadPool',['../classmtpk_1_1core_1_1ThreadPool.html#ac1fe22fc380b03330be69e968e90322d',1,'mtpk::core::ThreadPool']]]
+  ['_7eprimarymlp_1334',['~PrimaryMLP',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a8ac96374c91aa485fa4aedd0a34b5175',1,'gpmp::ml::PrimaryMLP']]],
+  ['_7ethreadpool_1335',['~ThreadPool',['../classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03',1,'gpmp::core::ThreadPool']]]
 ];

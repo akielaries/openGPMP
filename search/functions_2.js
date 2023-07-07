@@ -1,16 +1,18 @@
 var searchData=
 [
-  ['b0estimation_942',['b0Estimation',['../classmtpk_1_1ml_1_1Stats.html#a3c31634d36ae8a073e7cd4ec51a311c0',1,'mtpk::ml::Stats']]],
-  ['b1estimation_943',['b1Estimation',['../classmtpk_1_1ml_1_1Stats.html#aaff7e995236e8ee91390ef650f13adc5',1,'mtpk::ml::Stats']]],
-  ['back_5fprop_5ferr_944',['back_prop_err',['../classmtpk_1_1ml_1_1PrimaryMLP.html#a1a02f22009bb07dbd283708bdb6c098f',1,'mtpk::ml::PrimaryMLP']]],
-  ['backward_5fprop_945',['backward_prop',['../classmtpk_1_1NaiveNet.html#a17e3858224c9c6873cb396c2c855d253',1,'mtpk::NaiveNet']]],
-  ['bayesbernoulli_946',['BayesBernoulli',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a0b43c0b4b83f258f70f81f12a6fe0af8',1,'mtpk::ml::BayesBernoulli']]],
-  ['bayesgauss_947',['BayesGauss',['../classmtpk_1_1ml_1_1BayesGauss.html#a78c4832a4e3f4359fde4f6852142941c',1,'mtpk::ml::BayesGauss']]],
-  ['bayesmutlinom_948',['BayesMutliNom',['../classmtpk_1_1ml_1_1BayesMutliNom.html#a51935b203700b4e5811211c622c1e6a4',1,'mtpk::ml::BayesMutliNom']]],
-  ['berlekamp_949',['berlekamp',['../classmtpk_1_1Squares.html#ae00cb3c99c6619b82722986d3f9657ff',1,'mtpk::Squares']]],
-  ['best_5ffit_950',['best_fit',['../classopenmtpk_1_1ml_1_1ml_1_1LinearRegression.html#ade5881fd6bf3258712e85f5eaf704861',1,'openmtpk.ml.ml.LinearRegression.best_fit()'],['../classmtpk_1_1ml_1_1LinearRegression.html#ac4604c86945042bc61d7ee767239cceb',1,'mtpk::ml::LinearRegression::best_fit()']]],
-  ['bfgs_951',['BFGS',['../classmtpk_1_1ml_1_1Optimizers.html#a50fa296c4b421d8ca899c289742304a4',1,'mtpk::ml::Optimizers']]],
-  ['binary_952',['binary',['../classmtpk_1_1EuclideanDivision.html#a7211ef8feff221e00c758cea9fe67b80',1,'mtpk::EuclideanDivision::binary()'],['../classmtpk_1_1GCDS.html#ac096e8cd1d1ddc7b60c555020149536c',1,'mtpk::GCDS::binary()']]],
-  ['bsgs_953',['BSGS',['../classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128',1,'mtpk::Logarithms::BSGS()'],['../classopenmtpk_1_1nt_1_1nt_1_1Logarithms.html#a8ca66802b0624aae8387c90c98142784',1,'openmtpk.nt.nt.Logarithms.BSGS()']]],
-  ['byte_5fswap_954',['byte_swap',['../classmtpk_1_1RC4.html#a9456b14881187b9034092a51bd995332',1,'mtpk::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()'],['../classopenmtpk_1_1nt_1_1nt_1_1RC4.html#a815da77b8c1bdc8fe3dea147abbda473',1,'openmtpk.nt.nt.RC4.byte_swap()']]]
+  ['b0estimation_1004',['b0Estimation',['../classgpmp_1_1ml_1_1Stats.html#adee918e13513f731e193d0c0c2c74e44',1,'gpmp::ml::Stats']]],
+  ['b1estimation_1005',['b1Estimation',['../classgpmp_1_1ml_1_1Stats.html#a84fb82c19d11fcd15abe20f84c2574a2',1,'gpmp::ml::Stats']]],
+  ['back_5fprop_5ferr_1006',['back_prop_err',['../classgpmp_1_1ml_1_1PrimaryMLP.html#aafdf89fa33c9737421af5d5038e76c67',1,'gpmp::ml::PrimaryMLP']]],
+  ['backward_1007',['backward',['../classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a',1,'NeuralNetwork']]],
+  ['backward_5fprop_1008',['backward_prop',['../classgpmp_1_1NaiveNet.html#aecffdeffaaf0ddd331d8466cf74570dc',1,'gpmp::NaiveNet']]],
+  ['ball_1009',['Ball',['../classBall.html#a6c7fcd03555c596aa7ecd65302a08fb9',1,'Ball']]],
+  ['bayesbernoulli_1010',['BayesBernoulli',['../classgpmp_1_1ml_1_1BayesBernoulli.html#a8979c8610b614889f43a3f4bf5671742',1,'gpmp::ml::BayesBernoulli']]],
+  ['bayesgauss_1011',['BayesGauss',['../classgpmp_1_1ml_1_1BayesGauss.html#a6781d8eff9f0137c1b0e4be624950f49',1,'gpmp::ml::BayesGauss']]],
+  ['bayesmutlinom_1012',['BayesMutliNom',['../classgpmp_1_1ml_1_1BayesMutliNom.html#ae2dd2b00006410d294f36ca672cc7cea',1,'gpmp::ml::BayesMutliNom']]],
+  ['berlekamp_1013',['berlekamp',['../classgpmp_1_1Squares.html#af82cea8678d0dc76ef2fa1a3b9d4decf',1,'gpmp::Squares']]],
+  ['best_5ffit_1014',['best_fit',['../classgpmp_1_1ml_1_1LinearRegression.html#a02a7740eb4cfb97314585eecf1ed3669',1,'gpmp::ml::LinearRegression::best_fit()'],['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#ae5db80e13a9d6521bf4aef00c9aa06c3',1,'pygpmp.ml.ml.LinearRegression.best_fit()']]],
+  ['bfgs_1015',['BFGS',['../classgpmp_1_1ml_1_1Optimizers.html#a5186604c48d700a4cff5643f6b2ceb32',1,'gpmp::ml::Optimizers']]],
+  ['binary_1016',['binary',['../classgpmp_1_1EuclideanDivision.html#ae07b7e56c782b9fe9600d93bedc1c181',1,'gpmp::EuclideanDivision::binary()'],['../classgpmp_1_1GCDS.html#a832344b6cd40d9732a6834e6a9cbbf3c',1,'gpmp::GCDS::binary()']]],
+  ['bsgs_1017',['BSGS',['../classgpmp_1_1Logarithms.html#a434f9b47e512203f9dcd1f67f3687b05',1,'gpmp::Logarithms::BSGS()'],['../classpygpmp_1_1nt_1_1nt_1_1Logarithms.html#ae209dd3225b232b875495295e51c2031',1,'pygpmp.nt.nt.Logarithms.BSGS()']]],
+  ['byte_5fswap_1018',['byte_swap',['../classgpmp_1_1RC4.html#a84be13733871285712123c9dfd0d22ef',1,'gpmp::RC4::byte_swap()'],['../classRC5.html#a15ab1d87a0a97303a59a0383a393d81e',1,'RC5::byte_swap()'],['../classpygpmp_1_1nt_1_1nt_1_1RC4.html#a6877d5ee9b0398aad662f4e781c644be',1,'pygpmp.nt.nt.RC4.byte_swap()']]]
 ];

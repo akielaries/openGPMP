@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['variance_1232',['variance',['../classmtpk_1_1ml_1_1Stats.html#a7ee9c04405674d4ba8eb3b6279f381e3',1,'mtpk::ml::Stats']]],
-  ['vocklington_1233',['vocklington',['../classmtpk_1_1Squares.html#a69457c463d06a43b6bfc257e7a75bc70',1,'mtpk::Squares']]]
+  ['variance_1323',['variance',['../classgpmp_1_1ml_1_1Stats.html#ad49e5b0f62f471c80afef953a2c7f829',1,'gpmp::ml::Stats']]],
+  ['vocklington_1324',['vocklington',['../classgpmp_1_1Squares.html#adf8567bfa1f144936c5b69960bed7938',1,'gpmp::Squares']]]
 ];

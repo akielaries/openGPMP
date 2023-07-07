@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/nt/logarithms.cpp Source File</title>
+<title>openGPMP: modules/nt/logarithms.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -130,14 +130,14 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// primes object for this Logarithms file</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="modules_2nt_2logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">   52</a></span>&#160;<a class="code" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> <a class="code" href="modules_2nt_2logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="modules_2nt_2logarithms_8cpp.html#a898bf799ea934994639309a6c640c746">   52</a></span>&#160;<a class="code" href="classgpmp_1_1PrimalityTest.html">gpmp::PrimalityTest</a> <a class="code" href="modules_2nt_2logarithms_8cpp.html#a898bf799ea934994639309a6c640c746">__LOG_PRIMES__</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// OSX uses srand() opposed to rand()</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef __APPLE__</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define USE_SRAND</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">   59</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a>(uint64_t g, uint64_t y, uint64_t p) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classgpmp_1_1Logarithms.html#ace07593787f2a60b9f281ba5a07e9010">   59</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1Logarithms.html#ace07593787f2a60b9f281ba5a07e9010">gpmp::Logarithms::pollard_rho_log</a>(uint64_t g, uint64_t y, uint64_t p) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint64_t x = rand() % (p - 1) + 1;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#ifdef USE_SRAND</span></div>
@@ -177,19 +177,19 @@ $(function() {
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/* Baby-Step Giant-Step */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">   99</a></span>&#160;uint64_t <a class="code" href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classgpmp_1_1Logarithms.html#a434f9b47e512203f9dcd1f67f3687b05">   99</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1Logarithms.html#a434f9b47e512203f9dcd1f67f3687b05">gpmp::Logarithms::BSGS</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    uint64_t n = (uint64_t)sqrt(m) + 1;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::unordered_map&lt;uint64_t, uint64_t&gt; value;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// store all values of a^(n*i) of LHS</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = n; i &gt;= 1; --i) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        value[<a class="code" href="modules_2nt_2logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, i * n, m)] = i;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        value[<a class="code" href="modules_2nt_2logarithms_8cpp.html#a898bf799ea934994639309a6c640c746">__LOG_PRIMES__</a>.<a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">mod_pow</a>(a, i * n, m)] = i;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">for</span> (uint64_t j = 0; j &lt; n; ++j) {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// calculate (a ^ j) * b and check</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        uint64_t cur = (<a class="code" href="modules_2nt_2logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a>.<a class="code" href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mod_pow</a>(a, j, m) * b) % m;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        uint64_t cur = (<a class="code" href="modules_2nt_2logarithms_8cpp.html#a898bf799ea934994639309a6c640c746">__LOG_PRIMES__</a>.<a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">mod_pow</a>(a, j, m) * b) % m;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// If collision occurs i.e., LHS = RHS</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (value[cur]) {</div>
@@ -202,11 +202,11 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="ttc" id="aclassmtpk_1_1Logarithms_html_a57f2e7771487491fe611f2ba0e41bcce"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#a57f2e7771487491fe611f2ba0e41bcce">mtpk::Logarithms::pollard_rho_log</a></div><div class="ttdeci">uint64_t pollard_rho_log(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2logarithms_8cpp_source.html#l00059">logarithms.cpp:59</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Logarithms_html_ab28c97e5d0880ee42d3af2c0358a1128"><div class="ttname"><a href="classmtpk_1_1Logarithms.html#ab28c97e5d0880ee42d3af2c0358a1128">mtpk::Logarithms::BSGS</a></div><div class="ttdeci">uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2logarithms_8cpp_source.html#l00099">logarithms.cpp:99</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a></div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8hpp_source.html#l00051">prime_test.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1PrimalityTest_html_a6fed0cc0fb9ae1f51b1eb6338486fbb9"><div class="ttname"><a href="classmtpk_1_1PrimalityTest.html#a6fed0cc0fb9ae1f51b1eb6338486fbb9">mtpk::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00075">prime_test.cpp:75</a></div></div>
-<div class="ttc" id="amodules_2nt_2logarithms_8cpp_html_a6575e29a564fdb9ed50cc966408043a3"><div class="ttname"><a href="modules_2nt_2logarithms_8cpp.html#a6575e29a564fdb9ed50cc966408043a3">__LOG_PRIMES__</a></div><div class="ttdeci">mtpk::PrimalityTest __LOG_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2logarithms_8cpp_source.html#l00052">logarithms.cpp:52</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Logarithms_html_a434f9b47e512203f9dcd1f67f3687b05"><div class="ttname"><a href="classgpmp_1_1Logarithms.html#a434f9b47e512203f9dcd1f67f3687b05">gpmp::Logarithms::BSGS</a></div><div class="ttdeci">uint64_t BSGS(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2logarithms_8cpp_source.html#l00099">logarithms.cpp:99</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Logarithms_html_ace07593787f2a60b9f281ba5a07e9010"><div class="ttname"><a href="classgpmp_1_1Logarithms.html#ace07593787f2a60b9f281ba5a07e9010">gpmp::Logarithms::pollard_rho_log</a></div><div class="ttdeci">uint64_t pollard_rho_log(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2logarithms_8cpp_source.html#l00059">logarithms.cpp:59</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1PrimalityTest_html"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html">gpmp::PrimalityTest</a></div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8hpp_source.html#l00051">prime_test.hpp:51</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_ac70b21846e5e9abd62748bf3a5aabfc6"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">gpmp::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00075">prime_test.cpp:75</a></div></div>
+<div class="ttc" id="amodules_2nt_2logarithms_8cpp_html_a898bf799ea934994639309a6c640c746"><div class="ttname"><a href="modules_2nt_2logarithms_8cpp.html#a898bf799ea934994639309a6c640c746">__LOG_PRIMES__</a></div><div class="ttdeci">gpmp::PrimalityTest __LOG_PRIMES__</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2logarithms_8cpp_source.html#l00052">logarithms.cpp:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

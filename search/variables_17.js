@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['z_1360',['z',['../classmtpk_1_1ml_1_1SVC.html#a7ca6c1b8674c3e0301c92ab5dff1ed5e',1,'mtpk::ml::SVC']]],
-  ['z2_1361',['z2',['../classmtpk_1_1ml_1_1AutoEncoder.html#af4c0fae7202109346a50be84e53d653d',1,'mtpk::ml::AutoEncoder']]]
+  ['x_1475',['x',['../classgpmp_1_1Vectors.html#a31a81c2930d7d10b03e18815ccef9732',1,'gpmp::Vectors::x()'],['../classgpmp_1_1ml_1_1LinearRegression.html#ab6dc1c4d89d1c3302f6c9ad63979ccda',1,'gpmp::ml::LinearRegression::x()'],['../classBall.html#a60894aab5e27e93bacf2393b9110a049',1,'Ball::x()']]]
 ];

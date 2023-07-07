@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['jacobian_301',['jacobian',['../classmtpk_1_1NumericalAnalysis.html#af833b1d67d66f03902e381b33e36c1a4',1,'mtpk::NumericalAnalysis']]],
-  ['jacobian_5fnumber_302',['jacobian_number',['../classmtpk_1_1PrimalityTest.html#ac5e576d9cd64e907682a4c91ffecc061',1,'mtpk::PrimalityTest::jacobian_number()'],['../classopenmtpk_1_1nt_1_1nt_1_1PrimalityTest.html#a0e361ec34f28c10e443bfce385963661',1,'openmtpk.nt.nt.PrimalityTest.jacobian_number()']]]
+  ['jacobian_315',['jacobian',['../classgpmp_1_1NumericalAnalysis.html#a34ce4f852ae8ceb62d8189c3f8bd6a3d',1,'gpmp::NumericalAnalysis']]],
+  ['jacobian_5fnumber_316',['jacobian_number',['../classgpmp_1_1PrimalityTest.html#a4591d526f24cc4f3fe7a17ea580649e9',1,'gpmp::PrimalityTest::jacobian_number()'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityTest.html#ae0d837f580f166431f3bb6173f2da3e3',1,'pygpmp.nt.nt.PrimalityTest.jacobian_number()']]]
 ];
