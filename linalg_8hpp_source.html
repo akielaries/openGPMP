@@ -121,21 +121,22 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#a20955ce35a1219cc0e46494290097444">   63</a></span>&#160;<span class="preprocessor">#define CUDA_MATRIX</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#if defined(__linux__)</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifdef __NVCC__</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__cuda__mtx_8cuh.html">linalg/_cuda_mtx.cuh</a>&quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#a20955ce35a1219cc0e46494290097444">   64</a></span>&#160;<span class="preprocessor">#define CUDA_MATRIX</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#if defined(__linux__)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef __NVCC__</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__cuda__mtx_8cuh.html">linalg/_cuda_mtx.cuh</a>&quot;</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#if defined(__linux__) || defined(__APPLE__)</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifndef __OPENCL__</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx_8h.html">linalg/_gpu_mtx.h</a>&quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx__wrapper_8hpp.html">linalg/_gpu_mtx_wrapper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#if defined(__linux__) || defined(__APPLE__)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifndef __OPENCL__</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx_8h.html">linalg/_gpu_mtx.h</a>&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx__wrapper_8hpp.html">linalg/_gpu_mtx_wrapper.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a__cuda__mtx_8cuh_html"><div class="ttname"><a href="__cuda__mtx_8cuh.html">_cuda_mtx.cuh</a></div></div>
 <div class="ttc" id="a__gpu__mtx_8h_html"><div class="ttname"><a href="__gpu__mtx_8h.html">_gpu_mtx.h</a></div></div>
 <div class="ttc" id="a__gpu__mtx__wrapper_8hpp_html"><div class="ttname"><a href="__gpu__mtx__wrapper_8hpp.html">_gpu_mtx_wrapper.hpp</a></div></div>
