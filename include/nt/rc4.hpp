@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -38,14 +38,14 @@
  * @details The RC4 algorithm in this case used 5 methods all
  * dependent off eachother with only 2 being available to the user and
  * 1 optional. Required:
- * 1. mtpk::RC4::compute():
+ * 1. gpmp::RC4::compute():
  *      - key (char *)
  *      - text (char *)
  *      - hashtext (allocated unsigned char * w/ size & length of
  * text)
  *      - swap type (int 0-2)
  *          - XOR swap, char swap, byte swap
- * 2. mtpk::RC4::store_hash():
+ * 2. gpmp::RC4::store_hash():
  *      - text
  *      - hashtext : previously declared and passed into compute()
  *      - swap type
@@ -63,7 +63,7 @@
 #define BITS 255
 #define BYTE_LIMIT 256
 
-namespace mtpk {
+namespace gpmp {
 
 /**
  * @class
@@ -80,16 +80,18 @@ class RC4 {
     /* Key Scheduling Algorithm */
     void KSA(char *key, unsigned char *S, int swap_type);
     /* Pseudo-Random Generation Algorithm */
-    void PRGA(unsigned char *S, char *plaintext, unsigned char *ciphertext,
+    void PRGA(unsigned char *S,
+              char *plaintext,
+              unsigned char *ciphertext,
               int swap_type);
     /* function to display our hashed text */
-    std::string store_hash(char *plaintext, unsigned char *hashtext,
-                           int swap_type);
+    std::string
+    store_hash(char *plaintext, unsigned char *hashtext, int swap_type);
     /* compute our hash using the the RC4 encryption algorithm */
-    unsigned char *compute(char *key, char *plaintext, unsigned char *hashtext,
-                           int swap_type);
+    unsigned char *
+    compute(char *key, char *plaintext, unsigned char *hashtext, int swap_type);
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

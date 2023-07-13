@@ -16,7 +16,7 @@
 ! * This software is licensed as described in the file LICENSE, which
 ! * you should have received as part of this distribution. The terms
 ! * among other details are referenced in the official documentation
-! * seen here : https://akielaries.github.io/openMTPK/ along with
+! * seen here : https://akielaries.github.io/openGPMP/ along with
 ! * important files seen in this project.
 ! *
 ! * You may opt to use, copy, modify, merge, publish, distribute
@@ -41,6 +41,18 @@
 !! @param nrows Number of rows
 !! @param ncols Number of columns
 subroutine mtx_add(a, b, c, nrows, ncols)
+  !implicit none
+  !< Using 64-bit (8-byte) width for numeric types 
+  !integer(kind=8), intent(in) :: nrows, ncols
+  !real(kind=8), intent(in) :: a(nrows, ncols), b(nrows, ncols)
+  !real(kind=8), intent(out) :: c(nrows, ncols)
+  !integer(kind=8) :: i, j
+
+  !do i = 1, nrows
+  !  do j = 1, ncols
+  !    c(i, j) = a(i, j) + b(i, j)
+  !  end do
+  !end do
   implicit none
   !< Using 64-bit (8-byte) width for numeric types 
   integer(kind=8), intent(in) :: nrows, ncols
@@ -49,12 +61,33 @@ subroutine mtx_add(a, b, c, nrows, ncols)
   integer(kind=8) :: i, j
 
   do i = 1, nrows
-    do j = 1, ncols
-      c(i, j) = a(i, j) + b(i, j)
+    do j = 1, ncols, 128
+      c(i, j)   = a(i, j)   + b(i, j)
+      c(i, j+1) = a(i, j+1) + b(i, j+1)
+      c(i, j+2) = a(i, j+2) + b(i, j+2)
+      c(i, j+3) = a(i, j+3) + b(i, j+3)
     end do
   end do
 
 end subroutine mtx_add
+
+subroutine mtxx_add(A, B, C, size)
+    integer(kind=8), intent(in) :: A(:,:), B(:,:)
+    integer(kind=8), intent(out) :: C(:,:)
+    integer(kind=8), intent(in) :: size
+    integer(kind=8) :: i, j
+
+    do i = 1, size
+        do j = 1, size, 4
+            C(i,j)   = A(i,j)   + B(i,j)
+            C(i,j+1) = A(i,j+1) + B(i,j+1)
+            C(i,j+2) = A(i,j+2) + B(i,j+2)
+            C(i,j+3) = A(i,j+3) + B(i,j+3)
+        end do
+    end do
+
+end subroutine mtxx_add
+
 
 !> FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. 
 !! Contains C++ wrapper function

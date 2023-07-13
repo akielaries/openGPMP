@@ -1,18 +1,18 @@
 # Contributing
-openMTPK welcomes any and all contributors! There are **many** ways to contribute to openMTPK. New implementations, updates to source code, documentations, language API, and much more. To submit a change simply fork the repository and beging the 
-pull request process. Squash commits, clean up misc. files, etc. and submit a pull request to the openMTPK repository. Be sure
+openGPMP welcomes any and all contributors! There are **many** ways to contribute to openGPMP. New implementations, updates to source code, documentations, language API, and much more. To submit a change simply fork the repository and beging the 
+pull request process. Squash commits, clean up misc. files, etc. and submit a pull request to the openGPMP repository. Be sure
 to include a hash `#` prefixing your commit messages. For example `#EDITS:` or `#UPDATES:` are used to signaling commits that
 feature minor edits/updates. The prefixes, `#PATCH`, `#MINOR`, `#MAJOR`, are reserved for automated versioning/tagging of
 commits based on messages. This process still features a manual intervention by design meaning the maintainer of this project 
 will be in charge of publishing versions.
 
 # Needed Help
-These are the current fixes, ideas, and implementations involved with openMTPK. Contributors are welcome to open a pull request, the maintainer ([me](https://github.com/akielaries)), will take care of assuring passing tests and checks as far as github workflows.
+These are the current fixes, ideas, and implementations involved with openGPMP. Contributors are welcome to open a pull request, the maintainer ([me](https://github.com/akielaries)), will take care of assuring passing tests and checks as far as github workflows.
 
-0. At a glance openMTPK aims to feature fully functional Calculus, Linear Algebra, Number Theory, Machine Learning (and more) modules
+0. At a glance openGPMP aims to feature fully functional Calculus, Linear Algebra, Number Theory, Machine Learning (and more) modules
 for modular and pre-built use.
 
-1. The `Machine and Deep Learning Module` a continuous effort and I find is the most important and reusable module of the openMTPK project for programmers, students, researchers, etc. also meaning it requires the most help regarding implementations, tests, verifications, and any effort helping assure the accuracy of the implemented models. 
+1. The `Machine and Deep Learning Module` a continuous effort and I find is the most important and reusable module of the openGPMP project for programmers, students, researchers, etc. also meaning it requires the most help regarding implementations, tests, verifications, and any effort helping assure the accuracy of the implemented models. 
    * Proper implementation of various styles of Nerual Networks, Regression methods, classifiers, optimizers, accelerators, and more. So far I implement
    the components of the Machine Learning module as I have time and as I familiarize myself with a particular topic using some handy texts, papers, and 
    other resources.. 
@@ -28,19 +28,19 @@ for modular and pre-built use.
 
 3. Creating bindings for languages.
    
-   * The stable `Python API` makes use of **SWIG** and **distutils** to wrap the source C++ code into a shared library, making use of **Github Actions** to publish the package to PyPI with support for just about all `Linux` distros and `OSX` versions and platform architectures, see [here](https://pypi.org/project/openmtpk/#files). If this process can be polished it is highly welcomed. 
+   * The stable `Python API` makes use of **SWIG** and **distutils** to wrap the source C++ code into a shared library, making use of **Github Actions** to publish the package to PyPI with support for just about all `Linux` distros and `OSX` versions and platform architectures, see [here](https://pypi.org/project/pygpmp/#files). If this process can be polished it is highly welcomed. 
    
    * Properly implementing, testing, and updating the unstable/inprogress APIs for `R`, `OCaml`, and `Fortran`. 
      
-     * This will require knowledge of the languages and openMTPK in order to create samples for the respective languages in the [samples](https://github.com/akielaries/openMTPK/tree/main/samples) folder.
+     * This will require knowledge of the languages and openGPMP in order to create samples for the respective languages in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder.
      
      * As of now partial working steps for doing this with **SWIG** is present in each of the respective languages folders. 
 
-4. Formalize openMTPK for real world applications.
+4. Formalize openGPMP for real world applications.
    * Threading, acceleration, optimization, etc. This could include creating a 1-stop-shop implementation using some sort of cross-platform library/framework/technique that enable CPU and/or GPU exploitation just like popular libraries that are capable of handling extremely large data sets (PyTorch, TensorFlow, etc.).
    * pthreads, openCL, openMP? A custom take at this could prove difficult to implement and maintain. 
 
-5. Updates to Documentation published with Doxygen to https://akielaries.github.io/openMTPK/. This is needed for both the C++ and Python uses while the former contains a decent amount already.
+5. Updates to Documentation published with Doxygen to https://akielaries.github.io/openGPMP/. This is needed for both the C++ and Python uses while the former contains a decent amount already.
 
 ## 
 
@@ -50,7 +50,7 @@ for modular and pre-built use.
 
 # Code Style
 
-openMTPK attempts to follow the neat [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) for naming while a custom clang-format file is used for tidying formatting. 
+openGPMP attempts to follow the neat [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) for naming while a custom clang-format file is used for tidying formatting. 
 
 
 

@@ -8,16 +8,16 @@
  * @example reg.cpp
  */
 #include <iostream>
-#include <openMTPK/ml/linreg.hpp>
+#include <openGPMP/ml/linreg.hpp>
 #include <stdio.h>
 
 int main() {
     const char *test_file = "data/school_scores.csv";
     freopen(test_file, "r", stdin);
     // declare Regression class object
-    mtpk::ml::LinearRegression reg;
+    gpmp::ml::LinearRegression reg;
 
-    // mtpk::DataTable dt;
+    // gpmp::DataTable dt;
     // dt.csv_read(test_file, drop_col_names=true);
     //
 

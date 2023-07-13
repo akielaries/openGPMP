@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -44,7 +44,7 @@
 #include <string.h>
 #include <string>
 
-namespace mtpk {
+namespace gpmp {
 
 // monoalphabetic substitution cipher class
 class Cipher {
@@ -57,6 +57,6 @@ class Cipher {
     std::string keyword(std::string plaintext, std::string encoded_text);
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -42,14 +42,15 @@
 
 #include <vector>
 
-namespace mtpk {
+namespace gpmp {
 
 namespace ml {
 
 class kNN {
   public:
     kNN(std::vector<std::vector<double>> inputSet,
-        std::vector<double> outputSet, int k);
+        std::vector<double> outputSet,
+        int k);
 
     std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
     int modelTest(std::vector<double> x);
@@ -68,6 +69,6 @@ class kNN {
 
 } // namespace ml
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

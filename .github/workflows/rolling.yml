@@ -35,11 +35,11 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        token: ${{ secrets.MTPK_BOT_ACCT }}
+        token: ${{ secrets.gpmp_BOT_ACCT }}
 
     - name: Merge with main
       run: |
-        git config user.name "mtpk-bot"
+        git config user.name "gpmp-bot"
         git config user.email "akiel.aries@gmail.com"
         git switch main
         git merge --squash origin/rolling

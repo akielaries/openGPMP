@@ -16,7 +16,7 @@
 # * This software is licensed as described in the file LICENSE, which
 # * you should have received as part of this distribution. The terms
 # * among other details are referenced in the official documentation
-# * seen here : https://akielaries.github.io/openMTPK/ along with 
+# * seen here : https://akielaries.github.io/openGPMP/ along with 
 # * important files seen in this project.
 # *
 # * You may opt to use, copy, modify, merge, publish, distribute 
@@ -33,9 +33,11 @@
 
 cmake_minimum_required(VERSION 3.18)
 set (CMAKE_CXX_STANDARD 20)
-set (CMAKE_CXX_FLAGS "-Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 -Wall")
+set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
+                      -Wsign-compare -DNDEBUG -Wall"
+)
 
-project(openMTPK VERSION 1.0 LANGUAGES CXX C ASM Fortran)
+project(openGPMP VERSION 1.0 LANGUAGES CXX C ASM Fortran)
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -80,7 +82,7 @@ add_library(${PROJECT_NAME} STATIC
   $<TARGET_OBJECTS:nt>
 )
 
-# include directory for openMTPK
+# include directory for openGPMP
 target_include_directories(${PROJECT_NAME} PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
@@ -92,20 +94,20 @@ set_target_properties(${PROJECT_NAME}
     VERSION ${PROJECT_VERSION}
 )
 
-install(TARGETS ${PROJECT_NAME} EXPORT openMTPKConfig 
+install(TARGETS ${PROJECT_NAME} EXPORT openGPMPConfig 
     ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-# install include directory to /usr/local/include/openMTPK
+# install include directory to /usr/local/include/openGPMP
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openMTPK"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openGPMP"
 )
 
-install(EXPORT openMTPKConfig DESTINATION share/openMTPK/cmake)
+install(EXPORT openGPMPConfig DESTINATION share/openGPMP/cmake)
 
-export(TARGETS ${PROJECT_NAME} FILE openMTPKConfig.cmake)
+export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
 
 # run C++ and Fortran unit tests
 add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)

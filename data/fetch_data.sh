@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the Github repository URL and the output directory
-REPO_URL="https://api.github.com/repos/akielaries/openMTPK-utils/contents/sets"
+REPO_URL="https://api.github.com/repos/akielaries/openGPMP-utils/contents/sets"
 
 # Function to download the files
 function download_files {
@@ -19,8 +19,15 @@ function download_files {
 
 # Function to delete the downloaded files
 function delete_files {
-    # Delete files with .json, .csv, .gz, .data, .dat, and .tsv extensions in the current directory
-    find . -maxdepth 1 -type f \( -name "*.json" -o -name "*.csv" -o -name "*.gz" -o -name "*.data" -o -name "*.dat" -o -name "*.tsv" \) -delete
+    # Delete files with .json, .csv, .gz, .data, .dat, and .tsv extensions in 
+    # the current directory
+    find . -maxdepth 1 -type f \( \
+    -name "*.json" \
+    -o -name "*.csv" \
+    -o -name "*.gz" \
+    -o -name "*.data" \
+    -o -name "*.dat" \
+    -o -name "*.tsv" \) -delete
 }
 
 # Check if the command-line argument is -del to delete the downloaded files

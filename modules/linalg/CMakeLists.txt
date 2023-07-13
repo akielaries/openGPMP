@@ -11,7 +11,7 @@ set(SOURCE_FILES
     linsys.f90
 )
 
-# compile OpenCL GPU accelerators into openMTPK binary written
+# compile OpenCL GPU accelerators into openGPMP binary written
 # in C with C++ wrapper
 if (BUILD_GPU_OPENCL)
     message("--   [EXT] : Building OpenCL GPU Extension")

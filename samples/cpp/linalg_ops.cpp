@@ -27,10 +27,10 @@
 #include <stdio.h>
 #include <vector>
 
-#include <openMTPK/linalg.hpp>
+#include <openGPMP/linalg.hpp>
 /*< FOR DEBUGGING LOCAL TESTING >*/
 
-using namespace mtpk;
+using namespace gpmp;
 
 void print_csv() {
     std::ifstream csvFile("data/school_scores.csv");
@@ -49,21 +49,21 @@ void print_csv() {
     csvFile.close();
     size_t rows = data.size();
     size_t cols = data[0].size();
-    mtpk::Matrix<double> mat(rows, cols);
+    gpmp::Matrix<double> mat(rows, cols);
 
     mat.print_mtx();
 }
 
 int main() {
     // declaring an object for the Vectors class is permitted
-    mtpk::Vectors v;
+    gpmp::Vectors v;
     std::cout << "MATRIX/VECTOR OPERATIONS EXAMPLE\n" << std::endl;
 
     int x = v.add(1, 3);
 
     std::cout << "Sum = " << x << "\n\n";
 
-    mtpk::Matrix<int> mat(3, 4);
+    gpmp::Matrix<int> mat(3, 4);
     mat.print_mtx();
 
     std::tuple<Matrix<double>, Matrix<double>> matrices =
@@ -77,13 +77,13 @@ int main() {
 
     // declaring matrix with random negative decimals
     std::cout << "Creating 2x2 matrix of random negative floats\n";
-    auto matrix_neg = mtpk::mtx<double>::randn(2, 2);
+    auto matrix_neg = gpmp::mtx<double>::randn(2, 2);
     matrix_neg.print_shape();
     matrix_neg.print_mtx();
 
     // declaring matrix with random positive decimals
     std::cout << "Creating 2x2 matrix of random positive floats\n";
-    auto matrix_pos = mtpk::mtx<double>::rand(2, 2);
+    auto matrix_pos = gpmp::mtx<double>::rand(2, 2);
     matrix_pos.print_shape();
     matrix_pos.print_mtx();
 
@@ -105,7 +105,7 @@ int main() {
     // declare a matrix of zeros with 3 x 5 dimensions
     std::cout << "Creating 3x5 matrix of 0's"
               << "\n";
-    auto matrix_zero = mtpk::Matrix<double>(3, 5);
+    auto matrix_zero = gpmp::Matrix<double>(3, 5);
     matrix_zero.print_shape();
     matrix_zero.print_mtx();
 
@@ -113,14 +113,14 @@ int main() {
     // dimensions
     std::cout << "Creating 8x9 matrix of 0's"
               << "\n";
-    auto matrix_zero_2 = mtpk::mtx<int>::zeros(8, 9);
+    auto matrix_zero_2 = gpmp::mtx<int>::zeros(8, 9);
     matrix_zero_2.print_shape();
     matrix_zero_2.print_mtx();
 
     // declare matrix of ones with 8 x 9 dimensions
     std::cout << "Creating 8x9 matrix of 1's"
               << "\n";
-    auto matrix_one = mtpk::mtx<int>::ones(8, 9);
+    auto matrix_one = gpmp::mtx<int>::ones(8, 9);
     matrix_one.print_shape();
     matrix_one.print_mtx();
 

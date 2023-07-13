@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -34,8 +34,7 @@
 
 /**
  * @file
- *
- * @brief openMTPK LINEAR ALGEBRA MODULE
+ * @brief User API for OpenGPMP LINEAR ALGEBRA MODULE
  *
  * @details This file serves as the core header for the Linear Algebra
  * module. This header includes Vector/Matrix related operations. Also
@@ -53,10 +52,11 @@
  * @details Encompasses Matrix and Scalar operations
  */
 #define MATRIX
-#include "linalg/matrix.hpp"
+#include "linalg/mtx.hpp"
 /*****************************************************************************/
 
 /*****************************************************************************/
+
 /**
  * @brief \b CUDA \b Matrix \b Operations
  * @details CUDA GPU accelerated Matrix functions
@@ -73,30 +73,10 @@
  * @details OpenCL GPU accelerated Matrix functions
  */
 #if defined(__linux__) || defined(__APPLE__)
-#ifndef __NVCC__
+#ifndef __OPENCL__
 #include "linalg/_gpu_mtx.h"
 #include "linalg/_gpu_mtx_wrapper.hpp"
 #endif
-#endif
-
-/**
- * @brief \b Intel \b CPU \b Matrix \b SIMD \b Operations
- * @details Intel based intrinsic functions
- */
-#define INTEL_SIMD
-#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
-    defined(__i386) || defined(__amd64__) || defined(__amd64)
-#include "linalg/_simd_intel_mtx.hpp"
-#endif
-
-/**
- * @brief \b ARM \b CPU \b Matrix \b SIMD \b Operations
- * @details ARM based intrinsic functions
- */
-#define ARM_SIMD
-#if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                      \
-    defined(__ARM_ARCH) || defined(__aarch64__)
-#include "linalg/_simd_arm_mtx.hpp"
 #endif
 
 #endif

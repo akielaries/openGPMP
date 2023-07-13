@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -40,16 +40,16 @@
 using namespace std;
 
 TEST_CASE("KF_CV-testSmallSample10Fold") {
-    vector<string> small_sample = {"1", "2", "3", "4", "5",
-                                   "6", "7", "8", "9", "10"};
+    vector<string> small_sample =
+        {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     KF_CV<string> kF_CV = KF_CV<string>(smallSample, 10, 1);
     vector<string> test_sample = kF_CV.get_test_fold(0);
     REQUIRE(test_sample[0] == "2");
 }
 
 TEST_CASE("KF_CV-testSmallSample5Fold") {
-    vector<string> small_sample = {"1", "2", "3", "4", "5",
-                                   "6", "7", "8", "9", "10"};
+    vector<string> small_sample =
+        {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     KF_CV<string> kF_CV = KF_CV<string>(small_sample, 5, 1);
     vector<string> test_sample = kF_CV.get_test_fold(0);
     REQUIRE(test_sample[0] == "2");

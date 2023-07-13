@@ -1,6 +1,6 @@
 /**
  * Example on using the Multi-Layer Perceptrons networks
- * supplied from openMTPk
+ * supplied from pygpmp
  * @todo: TODO
  *
  * @example mlp.cpp
@@ -11,8 +11,8 @@
 #include <fstream>
 #include <iostream>
 
-// use the openMTPK Machine Learning namespaces
-using namespace mtpk::ml;
+// use the openGPMP Machine Learning namespaces
+using namespace gpmp::ml;
 
 int main() {
     std::cout << "SAMPLE USING THE MULTI-LAYER PERCEPTRON NETWORK.\n";
@@ -22,10 +22,12 @@ int main() {
     int64_t inputs{1}, outputs{1}, hidden_layer_units{8}, hidden_layers{3};
 
     long double lr{.5};
-    mtpk::ml::Trainers util;
-    auto model =
-        util.init_SecondaryMLP(inputs = 1, outputs = 1, hidden_layer_units = 8,
-                               hidden_layers = 3, lr = .5);
+    gpmp::ml::Trainers util;
+    auto model = util.init_SecondaryMLP(inputs = 1,
+                                        outputs = 1,
+                                        hidden_layer_units = 8,
+                                        hidden_layers = 3,
+                                        lr = .5);
 
     // declare a data file
 

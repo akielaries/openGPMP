@@ -7,7 +7,7 @@ jobs:
   CppS390X:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: openMTPK on S390X
+    name: openGPMP on S390X
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -33,7 +33,7 @@ jobs:
         run: |
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: Test openMTPK install on ubuntu S390X
+      - name: Test openGPMP install on ubuntu S390X
         run: |
           #cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
           cd build && sudo make

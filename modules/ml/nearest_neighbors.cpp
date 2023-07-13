@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -149,14 +149,17 @@ long double manhattanDistance(Company &lhs, Company &test) {
             abs(lhs.characteristics - test.characteristics));
 }
 
-void fillDistances(vector<Company> &data, Company &test,
+void fillDistances(vector<Company> &data,
+                   Company &test,
                    double (*distanceFunction)(Company &, Company &)) {
     for (size_t i = 0; i < data.size(); ++i) {
         data[i].distance = distanceFunction(data[i], test);
     }
 }
 
-bool KNN(vector<Company> &data, Company &test, int k,
+bool KNN(vector<Company> &data,
+         Company &test,
+         int k,
          double (*distanceFunction)(Company &, Company &)) {
     // filling the distances between all points and test
     fillDistances(data, test, distanceFunction);

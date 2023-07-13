@@ -1,5 +1,5 @@
 #! /bin/sh
-# this script acts as the main "runner" for openMTPK demonstrating its
+# this script acts as the main "runner" for openGPMP demonstrating its
 # functionality by running each modules driver file 
 
 # build + run test drivers in Makefile 

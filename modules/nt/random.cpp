@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -36,7 +36,7 @@
 #include <cstdint>
 #include <iostream>
 
-uint32_t mtpk::core::rndm::LCG(uint32_t lower, uint32_t upper) {
+uint32_t gpmp::core::rndm::LCG(uint32_t lower, uint32_t upper) {
     uint32_t mod = __32BIT_1;
     uint32_t mult = 1664525;
     uint32_t incr = 1013904223;
@@ -49,7 +49,7 @@ uint32_t mtpk::core::rndm::LCG(uint32_t lower, uint32_t upper) {
     return res;
 }
 
-uint64_t mtpk::core::rndm::LCGl(uint64_t lower, uint64_t upper) {
+uint64_t gpmp::core::rndm::LCGl(uint64_t lower, uint64_t upper) {
     uint64_t mod = __64BIT_1;
     uint64_t mult = 6364136223846793005;
     uint64_t incr = 1442695040888963407;

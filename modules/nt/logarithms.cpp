@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -49,14 +49,14 @@
 #include <unordered_map>
 
 // primes object for this Logarithms file
-mtpk::PrimalityTest __LOG_PRIMES__;
+gpmp::PrimalityTest __LOG_PRIMES__;
 
 // OSX uses srand() opposed to rand()
 #ifdef __APPLE__
 #define USE_SRAND
 #endif
 
-uint64_t mtpk::Logarithms::pollard_rho_log(uint64_t g, uint64_t y, uint64_t p) {
+uint64_t gpmp::Logarithms::pollard_rho_log(uint64_t g, uint64_t y, uint64_t p) {
     uint64_t x = rand() % (p - 1) + 1;
 
 #ifdef USE_SRAND
@@ -96,7 +96,7 @@ uint64_t mtpk::Logarithms::pollard_rho_log(uint64_t g, uint64_t y, uint64_t p) {
 }
 
 /* Baby-Step Giant-Step */
-uint64_t mtpk::Logarithms::BSGS(uint64_t a, uint64_t b, uint64_t m) {
+uint64_t gpmp::Logarithms::BSGS(uint64_t a, uint64_t b, uint64_t m) {
     uint64_t n = (uint64_t)sqrt(m) + 1;
 
     std::unordered_map<uint64_t, uint64_t> value;

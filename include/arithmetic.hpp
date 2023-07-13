@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -34,9 +34,7 @@
 
 /**
  * @file
- * @author Akiel Aries
- *
- * @brief openMTPK ARITHMETIC MODULE
+ * @brief User API for openGPMP ARITHMETIC MODULE
  *
  * @details This file serves as the core Arithmetic module housing the
  * basic operations and operations based on/using arithmetic.
@@ -46,14 +44,14 @@
 #include <cstdint>
 
 /**
- * @namespace mtpk
+ * @namespace gpmp
  *
- * @brief The source C++ openMTPK namespace
+ * @brief The source C++ openGPMP namespace
  *
  * @details This namespace wraps all classes and methods used within
  * the library
  */
-namespace mtpk {
+namespace gpmp {
 
 /**
  * @brief \b Arithmetic \b Basics
@@ -133,7 +131,7 @@ class Basics {
     // TODO FIXME XXX BUG CHECKME TESTME PENDING DOCME
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 //  public:
 /**

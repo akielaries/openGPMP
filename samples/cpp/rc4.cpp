@@ -5,7 +5,7 @@
  * @example rc4.cpp
  */
 #include <iostream>
-#include <openMTPK/nt/rc4.hpp>
+#include <openGPMP/nt/rc4.hpp>
 #include <stdio.h>
 #include <string>
 #include <time.h>
@@ -25,7 +25,7 @@ int main() {
     /*<--------------------------------INIT--------------------------------->*/
 
     // declare RC4 class obj
-    mtpk::RC4 rc;
+    gpmp::RC4 rc;
 
     /*
      * declare some key values and strings to hash

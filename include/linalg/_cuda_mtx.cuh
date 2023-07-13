@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -41,7 +41,7 @@
 #ifndef _CUDA_MTX_CUH
 #define _CUDA_MTX_CUH
 
-namespace mtpk {
+namespace gpmp {
 
 namespace accl {
 
@@ -57,6 +57,6 @@ class CUDAmtx {
     __global__ void mtx_add_(int n, float *x, float *y);
 };
 } // namespace accl
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

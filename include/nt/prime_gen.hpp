@@ -2,13 +2,13 @@
 #define PRIME_GEN_HPP
 #include <cstdint>
 
-namespace mtpk {
+namespace gpmp {
 
 class PrimalityGen {
   public:
     void sieve_of_eratosthenes(uint64_t n);
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

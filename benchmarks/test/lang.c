@@ -20,7 +20,8 @@ int main() {
     end = clock();
     cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-    printf("C benchmark: Performed %d operations in %f seconds.\n", NUM_OPS,
+    printf("C benchmark: Performed %d operations in %f seconds.\n",
+           NUM_OPS,
            cpu_time_used);
 
     return 0;

@@ -2,7 +2,7 @@
 #define SQUARES_HPP
 #include <cstdint>
 
-namespace mtpk {
+namespace gpmp {
 
 /*
  * @class Squares
@@ -16,6 +16,6 @@ class Squares {
     void kunerth();
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

@@ -15,7 +15,7 @@ methods instead of declaring a method for each type.
         an INTEGER type mtx struct is not possible given floating
         point requirements for certain cases of cassert
 """
-from openmtpk import linalg as la
+from pygpmp import linalg as la
 
 # create and print a 3x4 matrix of zeros
 print("** Method to create Matrix of zeros **")
