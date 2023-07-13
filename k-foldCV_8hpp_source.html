@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/ml/k-foldCV.hpp Source File</title>
+<title>openGPMP: include/ml/k-foldCV.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -125,72 +125,73 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>ml {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1CV.html">   51</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classmtpk_1_1ml_1_1CV.html">CV</a> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1CV.html">   51</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classgpmp_1_1ml_1_1CV.html">CV</a> {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1CV.html#a2b34aaa7323f50b9aa18d521ef509baa">   53</a></span>&#160;    int64_t <a class="code" href="classmtpk_1_1ml_1_1CV.html#a2b34aaa7323f50b9aa18d521ef509baa">K</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f">   53</a></span>&#160;    int64_t <a class="code" href="classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f">K</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1CV.html#a6c07f3469f28d780c45542b83dedd6cd">   56</a></span>&#160;    <span class="keyword">virtual</span> vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1CV.html#a6c07f3469f28d780c45542b83dedd6cd">get_train_fold</a>(int64_t k) = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1CV.html#a2d4e579734298d6cd94ff9dbfccd077e">   57</a></span>&#160;    <span class="keyword">virtual</span> vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1CV.html#a2d4e579734298d6cd94ff9dbfccd077e">get_test_fold</a>(int64_t k) = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1CV.html#ae526350bb70e6774ff37e230efa77f79">   56</a></span>&#160;    <span class="keyword">virtual</span> vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1CV.html#ae526350bb70e6774ff37e230efa77f79">get_train_fold</a>(int64_t k) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1CV.html#a44f2f5673edd11f8443df5569d440b8c">   57</a></span>&#160;    <span class="keyword">virtual</span> vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1CV.html#a44f2f5673edd11f8443df5569d440b8c">get_test_fold</a>(int64_t k) = 0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html">   60</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV</a> : <span class="keyword">public</span> <a class="code" href="classmtpk_1_1ml_1_1CV.html">CV</a>&lt;T&gt; {</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html">   60</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV</a> : <span class="keyword">public</span> <a class="code" href="classgpmp_1_1ml_1_1CV.html">CV</a>&lt;T&gt; {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#a1892d723a9513b53497c9ae3aab5809e">   62</a></span>&#160;    int64_t <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html#a1892d723a9513b53497c9ae3aab5809e">N</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#aa29163509a7173a917f60e4759454640">   63</a></span>&#160;    vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html#aa29163509a7173a917f60e4759454640">instance_list</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#aa074bce1d7007d1840b8fd3e9deac0dc">   62</a></span>&#160;    int64_t <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html#aa074bce1d7007d1840b8fd3e9deac0dc">N</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#acdf0560db7b09e22f52e8bb02d8602e5">   63</a></span>&#160;    vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html#acdf0560db7b09e22f52e8bb02d8602e5">instance_list</a>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;instance_list, int64_t K, uint64_t seed);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;instance_list, int64_t K, uint64_t seed);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    vector&lt;T&gt; get_train_fold(int64_t k);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    vector&lt;T&gt; get_test_fold(int64_t k);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#a965fe21ef42a20d10ac29660b6e28b01">   82</a></span>&#160;<a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::KF_CV</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;instance_list, int64_t K, uint64_t seed) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#a440563ab7c44ed43a1529a06f0ed3d0c">   82</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::KF_CV</a>(<span class="keyword">const</span> vector&lt;T&gt; &amp;instance_list, int64_t K, uint64_t seed) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;instance_list = instance_list;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    shuffle(this-&gt;instance_list.begin(), this-&gt;instance_list.end(),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            default_random_engine(seed));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> = instance_list.size();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    this-&gt;K = K;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#ad5ac3c773d528db5e8adeb67583acb54">   98</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_train_fold</a>(int64_t k) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    vector&lt;T&gt; train_fold;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; i++) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classmtpk_1_1ml_1_1KF__CV.html#a128022dd675659d52fc9ac1142011dac">  116</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classmtpk_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_test_fold</a>(int64_t k) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    vector&lt;T&gt; test_fold;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; ((k + 1) * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        test_fold.push_back(instance_list.at(i));</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <span class="comment">// namespace ml</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;} <span class="comment">// namespace mtpk</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    shuffle(this-&gt;instance_list.begin(),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            this-&gt;instance_list.end(),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            default_random_engine(seed));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> = instance_list.size();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    this-&gt;K = K;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#a671541822833a3bac0fb56c49eb59869">   99</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_train_fold</a>(int64_t k) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    vector&lt;T&gt; train_fold;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; (k * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> (int64_t i = ((k + 1) * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; i++) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        train_fold.push_back(instance_list.at(i));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> train_fold;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1KF__CV.html#aa7402a41c343a4d12a0530eb8e19a3d2">  117</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; vector&lt;T&gt; <a class="code" href="classgpmp_1_1ml_1_1KF__CV.html">KF_CV&lt;T&gt;::get_test_fold</a>(int64_t k) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    vector&lt;T&gt; test_fold;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (int64_t i = (k * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i &lt; ((k + 1) * <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>) / this-&gt;K; i++) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        test_fold.push_back(instance_list.at(i));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> test_fold;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;} <span class="comment">// namespace ml</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a__simd__intel__mtx_8cpp_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdef"><b>Definition:</b> <a href="__simd__intel__mtx_8cpp_source.html#l00009">_simd_intel_mtx.cpp:9</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html">mtpk::ml::CV</a></div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00051">k-foldCV.hpp:51</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html_a2b34aaa7323f50b9aa18d521ef509baa"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html#a2b34aaa7323f50b9aa18d521ef509baa">mtpk::ml::CV::K</a></div><div class="ttdeci">int64_t K</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00053">k-foldCV.hpp:53</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html_a2d4e579734298d6cd94ff9dbfccd077e"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html#a2d4e579734298d6cd94ff9dbfccd077e">mtpk::ml::CV::get_test_fold</a></div><div class="ttdeci">virtual vector&lt; T &gt; get_test_fold(int64_t k)=0</div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1CV_html_a6c07f3469f28d780c45542b83dedd6cd"><div class="ttname"><a href="classmtpk_1_1ml_1_1CV.html#a6c07f3469f28d780c45542b83dedd6cd">mtpk::ml::CV::get_train_fold</a></div><div class="ttdeci">virtual vector&lt; T &gt; get_train_fold(int64_t k)=0</div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1KF__CV_html"><div class="ttname"><a href="classmtpk_1_1ml_1_1KF__CV.html">mtpk::ml::KF_CV</a></div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00060">k-foldCV.hpp:60</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1KF__CV_html_a1892d723a9513b53497c9ae3aab5809e"><div class="ttname"><a href="classmtpk_1_1ml_1_1KF__CV.html#a1892d723a9513b53497c9ae3aab5809e">mtpk::ml::KF_CV::N</a></div><div class="ttdeci">int64_t N</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00062">k-foldCV.hpp:62</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1ml_1_1KF__CV_html_aa29163509a7173a917f60e4759454640"><div class="ttname"><a href="classmtpk_1_1ml_1_1KF__CV.html#aa29163509a7173a917f60e4759454640">mtpk::ml::KF_CV::instance_list</a></div><div class="ttdeci">vector&lt; T &gt; instance_list</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00063">k-foldCV.hpp:63</a></div></div>
-<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html">gpmp::ml::CV</a></div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00051">k-foldCV.hpp:51</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html_a3acc59fbea13324f54bec6284371a65f"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f">gpmp::ml::CV::K</a></div><div class="ttdeci">int64_t K</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00053">k-foldCV.hpp:53</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html_a44f2f5673edd11f8443df5569d440b8c"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html#a44f2f5673edd11f8443df5569d440b8c">gpmp::ml::CV::get_test_fold</a></div><div class="ttdeci">virtual vector&lt; T &gt; get_test_fold(int64_t k)=0</div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1CV_html_ae526350bb70e6774ff37e230efa77f79"><div class="ttname"><a href="classgpmp_1_1ml_1_1CV.html#ae526350bb70e6774ff37e230efa77f79">gpmp::ml::CV::get_train_fold</a></div><div class="ttdeci">virtual vector&lt; T &gt; get_train_fold(int64_t k)=0</div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1KF__CV_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1KF__CV.html">gpmp::ml::KF_CV</a></div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00060">k-foldCV.hpp:60</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1KF__CV_html_aa074bce1d7007d1840b8fd3e9deac0dc"><div class="ttname"><a href="classgpmp_1_1ml_1_1KF__CV.html#aa074bce1d7007d1840b8fd3e9deac0dc">gpmp::ml::KF_CV::N</a></div><div class="ttdeci">int64_t N</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00062">k-foldCV.hpp:62</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1KF__CV_html_acdf0560db7b09e22f52e8bb02d8602e5"><div class="ttname"><a href="classgpmp_1_1ml_1_1KF__CV.html#acdf0560db7b09e22f52e8bb02d8602e5">gpmp::ml::KF_CV::instance_list</a></div><div class="ttdeci">vector&lt; T &gt; instance_list</div><div class="ttdef"><b>Definition:</b> <a href="k-foldCV_8hpp_source.html#l00063">k-foldCV.hpp:63</a></div></div>
+<div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

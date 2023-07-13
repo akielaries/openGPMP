@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: include/arithmetic.hpp Source File</title>
+<title>openGPMP: include/arithmetic.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -113,104 +113,104 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> ************************************************************************/</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifndef ARITHMETIC_HPP</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define ARITHMETIC_HPP</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html">   69</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classmtpk_1_1Arith.html">Arith</a> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#a70e6cf997a4479047e129b355d903d21">   71</a></span>&#160;    T <a class="code" href="classmtpk_1_1Arith.html#a70e6cf997a4479047e129b355d903d21">arr_add</a>(T arr[], int64_t n) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        T sum = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            sum += arr[i];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#a6dfd044e3afcf86a1bb4895c6dfc1d41">   80</a></span>&#160;    T <a class="code" href="classmtpk_1_1Arith.html#a6dfd044e3afcf86a1bb4895c6dfc1d41">arr_sub</a>(T arr[], int64_t n) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        T diff = arr[0];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 1; i &lt; n; i++) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            diff -= arr[i];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> diff;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classmtpk_1_1Arith.html#ab0f54cca9c0fe1652be9f9a91b86d1a1">   89</a></span>&#160;    T <a class="code" href="classmtpk_1_1Arith.html#ab0f54cca9c0fe1652be9f9a91b86d1a1">arr_mlt</a>(T arr[], int64_t n) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        T prod = arr[0];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            prod *= arr[i];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> prod;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classmtpk_1_1Basics.html">  104</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmtpk_1_1Basics.html">Basics</a> {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Basics.html#ab3cbc7901b3921638d357ee19acc6cd7">greatest_power</a>(int64_t n, int64_t p);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    int64_t <a class="code" href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">op_gcd</a>(int64_t x, int64_t y);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// TODO floating point operations for square root, logarithms,</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// exponentation, trigonometric functions of floating points</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef ARITHMETIC_HPP</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define ARITHMETIC_HPP</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html">   67</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="classgpmp_1_1Arith.html">Arith</a> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html#aaa1012515876f07ddccf22bf170510e0">   69</a></span>&#160;    T <a class="code" href="classgpmp_1_1Arith.html#aaa1012515876f07ddccf22bf170510e0">arr_add</a>(T arr[], int64_t n) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        T sum = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            sum += arr[i];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615">   78</a></span>&#160;    T <a class="code" href="classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615">arr_sub</a>(T arr[], int64_t n) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        T diff = arr[0];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 1; i &lt; n; i++) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            diff -= arr[i];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> diff;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d">   87</a></span>&#160;    T <a class="code" href="classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d">arr_mlt</a>(T arr[], int64_t n) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        T prod = arr[0];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; n; i++) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            prod *= arr[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> prod;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classgpmp_1_1Basics.html">  102</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgpmp_1_1Basics.html">Basics</a> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    int64_t <a class="code" href="classgpmp_1_1Basics.html#a15b80edc366e7758958f6cbfc21e18f5">greatest_power</a>(int64_t n, int64_t p);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    int64_t <a class="code" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">op_gcd</a>(int64_t x, int64_t y);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// TODO floating point operations for square root, logarithms,</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// exponentation, trigonometric functions of floating points</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// complex arithmetic, arithmetic on complex numbers</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// complex arithmetic, arithmetic on complex numbers</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// precision arithmetic</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// precision arithmetic</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// TODO FIXME XXX BUG CHECKME TESTME PENDING DOCME</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// TODO FIXME XXX BUG CHECKME TESTME PENDING DOCME</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;} <span class="comment">// namespace gpmp</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">// namespace mtpk</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//  public:</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span><span class="comment">//    template &lt;typename T&gt; inline T add(T t) {</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">//        return t;</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//    template &lt;typename T, typename... Ts&gt; inline auto add(T t, Ts... ts)</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//        return t + add(ts...);</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">//    template &lt;typename X&gt; inline X sub(X x) {</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//        return x;</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">//    template &lt;typename X, typename... Xy&gt; inline auto sub(X x, Xy... xy)</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">//        return x - sub(xy...);</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//    template &lt;typename W&gt; inline W mult(W w) {</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">//        return w;</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">//    template &lt;typename W, typename... Wv&gt; inline auto mult(W w, Wv... wv)</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment">//        return w * mult(wv...);</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">//    template &lt;typename Z&gt; inline Z exp(Z z) {</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//        return z;</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">//    template &lt;typename Z, typename... Zy&gt; inline auto exp(Z z, Zy... zy)</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//    {</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//        return z *= exp(zy...);</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">//    }</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">//};</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html"><div class="ttname"><a href="classmtpk_1_1Arith.html">mtpk::Arith</a></div><div class="ttdoc">Arithmetic Basics</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00069">arithmetic.hpp:69</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a6dfd044e3afcf86a1bb4895c6dfc1d41"><div class="ttname"><a href="classmtpk_1_1Arith.html#a6dfd044e3afcf86a1bb4895c6dfc1d41">mtpk::Arith::arr_sub</a></div><div class="ttdeci">T arr_sub(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00080">arithmetic.hpp:80</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_a70e6cf997a4479047e129b355d903d21"><div class="ttname"><a href="classmtpk_1_1Arith.html#a70e6cf997a4479047e129b355d903d21">mtpk::Arith::arr_add</a></div><div class="ttdeci">T arr_add(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00071">arithmetic.hpp:71</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Arith_html_ab0f54cca9c0fe1652be9f9a91b86d1a1"><div class="ttname"><a href="classmtpk_1_1Arith.html#ab0f54cca9c0fe1652be9f9a91b86d1a1">mtpk::Arith::arr_mlt</a></div><div class="ttdeci">T arr_mlt(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00089">arithmetic.hpp:89</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html"><div class="ttname"><a href="classmtpk_1_1Basics.html">mtpk::Basics</a></div><div class="ttdoc">Arithmetic Operations</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00104">arithmetic.hpp:104</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_a12cc5cd615b0c1a39851c440cfc55a3e"><div class="ttname"><a href="classmtpk_1_1Basics.html#a12cc5cd615b0c1a39851c440cfc55a3e">mtpk::Basics::op_gcd</a></div><div class="ttdeci">int64_t op_gcd(int64_t x, int64_t y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00052">arith.cpp:52</a></div></div>
-<div class="ttc" id="aclassmtpk_1_1Basics_html_ab3cbc7901b3921638d357ee19acc6cd7"><div class="ttname"><a href="classmtpk_1_1Basics.html#ab3cbc7901b3921638d357ee19acc6cd7">mtpk::Basics::greatest_power</a></div><div class="ttdeci">int64_t greatest_power(int64_t n, int64_t p)</div><div class="ttdoc">Find greatest power of 2 itegers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00041">arith.cpp:41</a></div></div>
-<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">//  public:</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"></span><span class="comment">//    template &lt;typename T&gt; inline T add(T t) {</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//        return t;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//    template &lt;typename T, typename... Ts&gt; inline auto add(T t, Ts... ts)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//        return t + add(ts...);</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">//    template &lt;typename X&gt; inline X sub(X x) {</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">//        return x;</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">//    template &lt;typename X, typename... Xy&gt; inline auto sub(X x, Xy... xy)</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">//        return x - sub(xy...);</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//    template &lt;typename W&gt; inline W mult(W w) {</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">//        return w;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">//    template &lt;typename W, typename... Wv&gt; inline auto mult(W w, Wv... wv)</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">//        return w * mult(wv...);</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment">//    template &lt;typename Z&gt; inline Z exp(Z z) {</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">//        return z;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//    template &lt;typename Z, typename... Zy&gt; inline auto exp(Z z, Zy... zy)</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">//        return z *= exp(zy...);</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//};</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html"><div class="ttname"><a href="classgpmp_1_1Arith.html">gpmp::Arith</a></div><div class="ttdoc">Arithmetic Basics</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00067">arithmetic.hpp:67</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html_a62f566efb43bfac691fc958f409b7615"><div class="ttname"><a href="classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615">gpmp::Arith::arr_sub</a></div><div class="ttdeci">T arr_sub(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00078">arithmetic.hpp:78</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html_aaa1012515876f07ddccf22bf170510e0"><div class="ttname"><a href="classgpmp_1_1Arith.html#aaa1012515876f07ddccf22bf170510e0">gpmp::Arith::arr_add</a></div><div class="ttdeci">T arr_add(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00069">arithmetic.hpp:69</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Arith_html_ab46786cb479bcd7e9ee6cd684473323d"><div class="ttname"><a href="classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d">gpmp::Arith::arr_mlt</a></div><div class="ttdeci">T arr_mlt(T arr[], int64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00087">arithmetic.hpp:87</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Basics_html"><div class="ttname"><a href="classgpmp_1_1Basics.html">gpmp::Basics</a></div><div class="ttdoc">Arithmetic Operations</div><div class="ttdef"><b>Definition:</b> <a href="arithmetic_8hpp_source.html#l00102">arithmetic.hpp:102</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Basics_html_a15b80edc366e7758958f6cbfc21e18f5"><div class="ttname"><a href="classgpmp_1_1Basics.html#a15b80edc366e7758958f6cbfc21e18f5">gpmp::Basics::greatest_power</a></div><div class="ttdeci">int64_t greatest_power(int64_t n, int64_t p)</div><div class="ttdoc">Find greatest power of 2 itegers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00041">arith.cpp:41</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Basics_html_a5b741b9ada725183e343422a00be724c"><div class="ttname"><a href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">gpmp::Basics::op_gcd</a></div><div class="ttdeci">int64_t op_gcd(int64_t x, int64_t y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00052">arith.cpp:52</a></div></div>
+<div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zeros_1242',['zeros',['../structmtpk_1_1mtx.html#a1d0a2cdd2e9d7a09de5c0fda0cc32bca',1,'mtpk::mtx::zeros()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1mtx.html#ae1bc48f4a266dd60383b8557d8e19ea2',1,'openmtpk.linalg.linalg.mtx.zeros()']]]
+  ['zeros_1361',['zeros',['../structgpmp_1_1linalg_1_1mtx.html#a138dacbb57aee11191bf92bbc2834871',1,'gpmp::linalg::mtx::zeros()'],['../classpygpmp_1_1linalg_1_1linalg_1_1mtx.html#ab43d85e4fee35762bdf165dd327e2deb',1,'pygpmp.linalg.linalg.mtx.zeros()']]]
 ];
