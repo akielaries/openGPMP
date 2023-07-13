@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: Changelog</title>
+<title>openMTPK: Changelog</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -77,38 +77,37 @@ $(function() {
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md18"></a>
 v1.0.0-rc.1</h1>
-<p>See <a href="https://github.com/akielaries/openGPMP/graphs/contributors?from=2023-02-07&amp;to=2023-05-09&amp;type=c">new contributors</a> </p>
+<p>See <a href="https://github.com/akielaries/openMTPK/graphs/contributors?from=2023-02-07&amp;to=2023-05-09&amp;type=c">new contributors</a> </p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 What's Changed</h2>
 <ul>
-<li><b>Project from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp</b></li>
 <li>Documentation layout + additions</li>
-<li><code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openGPMP with the use of <code>cmake</code>.<ul>
-<li><code>gpmp::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openGPMP modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace.</li>
-<li><code>gpmp::accl::SIMD()</code> class features accelerated functions seen in the core mathematical openGPMP modules ideal for wide register computations using Intel specific intrinsic functions. <br  />
+<li><code><a class="el" href="namespacemtpk_1_1accl.html">mtpk::accl</a></code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openMTPK with the use of <code>cmake</code>.<ul>
+<li><code>mtpk::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openMTPK modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code><a class="el" href="namespacemtpk_1_1accl.html">mtpk::accl</a></code> namespace.</li>
+<li><code>mtpk::accl::SIMD()</code> class features accelerated functions seen in the core mathematical openMTPK modules ideal for wide register computations using Intel specific intrinsic functions. <br  />
 </li>
 </ul>
 </li>
-<li><code><a class="el" href="classgpmp_1_1core_1_1ThreadPool.html">gpmp::core::ThreadPool()</a></code> class capable of spawning a specific number of threads or the default <code>std::thread::hardware_concurrency()</code>.<ul>
-<li>view docs <a href="https://akielaries.github.io/openGPMP/classgpmp_1_1ThreadPool.html">here</a> &gt; <b>Note</b> This class is not yet used innately within openGPMP and is provided as a user utility for now.</li>
+<li><code><a class="el" href="classmtpk_1_1core_1_1ThreadPool.html">mtpk::core::ThreadPool()</a></code> class capable of spawning a specific number of threads or the default <code>std::thread::hardware_concurrency()</code>.<ul>
+<li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadPool.html">here</a> &gt; <b>Note</b> This class is not yet used innately within openMTPK and is provided as a user utility for now.</li>
 </ul>
 </li>
-<li><code><a class="el" href="classgpmp_1_1core_1_1ThreadDispatch.html" title="A class that provides a function to dispatch a function call to a thread pool and return a future obj...">gpmp::core::ThreadDispatch()</a></code> class that dispatches functions to the threadpool.<ul>
-<li>view docs <a href="https://akielaries.github.io/openGPMP/classgpmp_1_1ThreadDispatch.html">here</a></li>
+<li><code><a class="el" href="classmtpk_1_1core_1_1ThreadDispatch.html" title="A class that provides a function to dispatch a function call to a thread pool and return a future obj...">mtpk::core::ThreadDispatch()</a></code> class that dispatches functions to the threadpool.<ul>
+<li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1ThreadDispatch.html">here</a></li>
 </ul>
 </li>
-<li><code><a class="el" href="classgpmp_1_1core_1_1DataTable.html">gpmp::core::DataTable()</a></code> class capable of reading in CSV files storing them as a pair of vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely, or specific columns), formatted displaying, and two conversion methods for the <code>string-&gt;int</code> &amp; <code>string-&gt;double</code>.<ul>
-<li>Solves open enhancement <a href="https://github.com/akielaries/openGPMP/issues/29"><code>#29 DataFrame/DataTable related functionality</code></a></li>
-<li>view docs <a href="https://akielaries.github.io/openGPMP/classgpmp_1_1core_1_1DataTable.html">here</a></li>
+<li><code><a class="el" href="classmtpk_1_1core_1_1DataTable.html">mtpk::core::DataTable()</a></code> class capable of reading in CSV files storing them as a pair of vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely, or specific columns), formatted displaying, and two conversion methods for the <code>string-&gt;int</code> &amp; <code>string-&gt;double</code>.<ul>
+<li>Solves open enhancement <a href="https://github.com/akielaries/openMTPK/issues/29"><code>#29 DataFrame/DataTable related functionality</code></a></li>
+<li>view docs <a href="https://akielaries.github.io/openMTPK/classmtpk_1_1core_1_1DataTable.html">here</a></li>
 </ul>
 </li>
-<li><code><a class="el" href="classgpmp_1_1core_1_1TypeCast.html">gpmp::core::TypeCast()</a></code> class featuring several methods to convert C++ <code>std::</code> specific data types to C-compatible data types. This class is utilized for the C++ wrapping of the C-based acceleration methods.</li>
-<li>Created <a href="https://github.com/akielaries/openGPMP/tree/rolling"><code>rolling</code></a> branch that will update its commits from the <a href="https://github.com/gpmp-bot">gpmp-bot</a> user on a nightly basis, using the <code>#NIGHTLY:</code> commit message prefix.</li>
+<li><code><a class="el" href="classmtpk_1_1core_1_1TypeCast.html">mtpk::core::TypeCast()</a></code> class featuring several methods to convert C++ <code>std::</code> specific data types to C-compatible data types. This class is utilized for the C++ wrapping of the C-based acceleration methods.</li>
+<li>Created <a href="https://github.com/akielaries/openMTPK/tree/rolling"><code>rolling</code></a> branch that will update its commits from the <a href="https://github.com/mtpk-bot">mtpk-bot</a> user on a nightly basis, using the <code>#NIGHTLY:</code> commit message prefix.</li>
 <li>Introduced updates to calculus module in numerical differentation methods. First, second, and third order derivatives methods of a given polynomial in a function at a given value. For example f(x) = x^2ln(x) = <code>x*x*log(x)</code>.</li>
 <li>Updates to unit tests and additions for the new classes introduced.</li>
-<li>Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous tools lies under the <code><a class="el" href="namespacegpmp_1_1core.html">gpmp::core</a></code> namespace.</li>
-<li>Patches introduced for <a href="https://github.com/akielaries/openGPMP/issues/27"><code>#27 OSX Build reaches dead state</code></a><ul>
-<li>This introduced additional testing and CICD work related to openGPMP on OSX.</li>
+<li>Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous tools lies under the <code><a class="el" href="namespacemtpk_1_1core.html">mtpk::core</a></code> namespace.</li>
+<li>Patches introduced for <a href="https://github.com/akielaries/openMTPK/issues/27"><code>#27 OSX Build reaches dead state</code></a><ul>
+<li>This introduced additional testing and CICD work related to openMTPK on OSX.</li>
 </ul>
 </li>
 <li>TODO</li>
@@ -164,10 +163,10 @@ New Changes in v0.6.0</h2>
 <ol type="1">
 <li>Continued changes to Linear Algebra Module + samples</li>
 <li>Continued updates to Python API, injecting new C++ source functionalities into the <code>setup.py</code> file used in packaging process for PyPI<ul>
-<li>Install with <code>pip install pygpmp==0.6.1</code></li>
+<li>Install with <code>pip install openmtpk==0.6.1</code></li>
 </ul>
 </li>
-<li>Updates to the <code>gpmp</code> namespace. Wrapped more classes in the namespace, does not affect Python API</li>
+<li>Updates to the <code>mtpk</code> namespace. Wrapped more classes in the namespace, does not affect Python API</li>
 <li>Changes/updates to datatypes to allow for maximum precision while also avoiding potential overflow as well as for conciseness &gt; <b>Note</b> Some int and char types will be updated later on to ensure nothing breaks<ul>
 <li><code>int</code>--------&mdash;&gt;<code>int64_t</code></li>
 <li><code>long long</code>--&gt;<code>int64_t</code></li>
@@ -176,7 +175,7 @@ New Changes in v0.6.0</h2>
 <li><code>float</code>------&mdash;&gt;<code>long double</code></li>
 </ul>
 </li>
-<li>Adding <code>make uninstall</code> option for the project's build process with CMake. See the install/uninstall directions <a href="https://github.com/akielaries/openGPMP#installation">here</a>.</li>
+<li>Adding <code>make uninstall</code> option for the project's build process with CMake. See the install/uninstall directions <a href="https://github.com/akielaries/openMTPK#installation">here</a>.</li>
 </ol>
 <h1><a class="anchor" id="autotoc_md27"></a>
 v0.5.3</h1>
@@ -184,13 +183,13 @@ v0.5.3</h1>
 What's Changed</h2>
 <ol type="1">
 <li>Updates to Linear Algebra Module and samples<ul>
-<li>See this <a href="https://github.com/akielaries/openGPMP/blob/main/samples/cpp/linalg_ops.cpp">example</a> to view operations on matrices</li>
+<li>See this <a href="https://github.com/akielaries/openMTPK/blob/main/samples/cpp/linalg_ops.cpp">example</a> to view operations on matrices</li>
 <li>More updates to samples as development continues</li>
 </ul>
 </li>
 <li>PyPI updates<ul>
 <li>Adjusting SWIG process to accommodate for template based classes and methods</li>
-<li>pygpmp <code>0.5.14</code> release <a href="https://pypi.org/project/pygpmp/0.5.13/">here</a></li>
+<li>openmtpk <code>0.5.14</code> release <a href="https://pypi.org/project/openmtpk/0.5.13/">here</a></li>
 </ul>
 </li>
 <li>Updated to CMake installation of source C++ code</li>
@@ -199,8 +198,8 @@ What's Changed</h2>
 Next :</h3>
 <hr  />
 <ol type="1">
-<li>Create first of many Neural Network Models and Machine Learning techniques for the <a href="https://akielaries.github.io/openGPMP/ml_8hpp.html">ml</a> module<ul>
-<li>Update the overarching <code><a class="el" href="ml_8hpp.html" title="User API for OpenGPMP MACHINE/DEEP LEARNING MODULE.">ml.hpp</a></code> header to make use of implemented models and techniques &gt; <b>Note</b> So far the <a href="https://akielaries.github.io/openGPMP/linreg_8hpp.html">Linear Regression</a> technique works on select two-column data</li>
+<li>Create first of many Neural Network Models and Machine Learning techniques for the <a href="https://akielaries.github.io/openMTPK/ml_8hpp.html">ml</a> module<ul>
+<li>Update the overarching <code><a class="el" href="ml_8hpp.html" title="openMTPK MACHINE/DEEP LEARNING MODULE">ml.hpp</a></code> header to make use of implemented models and techniques &gt; <b>Note</b> So far the <a href="https://akielaries.github.io/openMTPK/linreg_8hpp.html">Linear Regression</a> technique works on select two-column data</li>
 </ul>
 </li>
 <li>Progress on CPP-&gt;R &amp; OCaml language binding process</li>
@@ -216,12 +215,12 @@ What's Changed</h2>
 Major Updates to Python PyPI packaging process.</h3>
 <ul>
 <li>Builds wheels for OSX and Linux platforms (Windows will not be supported)</li>
-<li>See all <a href="https://pypi.org/project/pygpmp/0.5.1/#files">supported platforms</a>.<ul>
+<li>See all <a href="https://pypi.org/project/openmtpk/0.5.1/#files">supported platforms</a>.<ul>
 <li>Manually tested on <em><b>Kali(latest), Ubuntu(latest)</b></em> &amp; <em><b>macOS Ventura 13.1 (latest)</b></em>. Works for most OSX and Linux distro versions.</li>
 </ul>
 </li>
-<li>New versions must be specified in the <code>setup.py</code> file and will be published to <a href="https://pypi.org/project/pygpmp/">https://pypi.org/project/pygpmp/</a> on pushes to <code>MAIN</code>.</li>
-<li>Install with <code>pip install pygpmp</code></li>
+<li>New versions must be specified in the <code>setup.py</code> file and will be published to <a href="https://pypi.org/project/openmtpk/">https://pypi.org/project/openmtpk/</a> on pushes to <code>MAIN</code>.</li>
+<li>Install with <code>pip install openmtpk</code></li>
 <li>Tools available:<ul>
 <li>Arithmetic based operations</li>
 <li>Primes</li>
@@ -240,7 +239,7 @@ v0.4.0</h1>
 <h2><a class="anchor" id="autotoc_md35"></a>
 What's Changed</h2>
 <ul>
-<li>Created Python pip package for Python API. Install with <code>pip install pygpmp</code><ul>
+<li>Created Python pip package for Python API. Install with <code>pip install openmtpk</code><ul>
 <li>Functionality is limited to Primes, RC4, Ciphers, and part of the Arithmetic module</li>
 <li>Fixes to template classes/methods cpp-&gt;python conversion</li>
 </ul>
@@ -249,14 +248,14 @@ What's Changed</h2>
 <h1><a class="anchor" id="autotoc_md36"></a>
 v0.3.2</h1>
 <p>CMake installation make Googletest as a dependency.</p><ul>
-<li>openGPMP tests must pass in order to build and install the static library</li>
+<li>openMTPK tests must pass in order to build and install the static library</li>
 <li>TEST -&gt; BUILD -&gt; INSTALL</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md37"></a>
 v0.3.1</h1>
 <p>Minor Release with updates to CMake installation process.</p><ul>
 <li>Headers are now installed in nested fashion with a parent-level header representing each module. For example:<ul>
-<li>Files in a module directory such as the <code>ml/</code> directory (<a class="el" href="linreg_8hpp.html">linreg.hpp</a>, <a class="el" href="logreg_8hpp.html" title="Logistic Regression.">logreg.hpp</a>, mlp_network.hpp, etc.) will make up that modules header file(<a href="https://github.com/akielaries/openGPMP/blob/main/include/ml.hpp">ml.hpp</a>).</li>
+<li>Files in a module directory such as the <code>ml/</code> directory (<a class="el" href="linreg_8hpp.html">linreg.hpp</a>, <a class="el" href="logreg_8hpp.html" title="Logistic Regression.">logreg.hpp</a>, mlp_network.hpp, etc.) will make up that modules header file(<a href="https://github.com/akielaries/openMTPK/blob/main/include/ml.hpp">ml.hpp</a>).</li>
 </ul>
 </li>
 <li>Will include googletest workflow into CMake installation<ul>
@@ -266,7 +265,7 @@ v0.3.1</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md38"></a>
 v0.3</h1>
-<p>Formal documentation created with Doxygen deployed to github pages, see <a href="https://akielaries.github.io/openGPMP">here</a>.</p><ul>
+<p>Formal documentation created with Doxygen deployed to github pages, see <a href="https://akielaries.github.io/openMTPK">here</a>.</p><ul>
 <li>Documentation updates within headers</li>
 <li>Linear Regression model testing</li>
 <li>Additional work and plans for Machine/Deep Learning module<ul>
@@ -277,10 +276,10 @@ v0.3</h1>
 </ul>
 </li>
 </ul>
-<p>As always refer to the project <a href="https://github.com/akielaries/openGPMP#installation">README</a>.</p>
+<p>As always refer to the project <a href="https://github.com/akielaries/openMTPK#installation">README</a>.</p>
 <h1><a class="anchor" id="autotoc_md39"></a>
 v0.2</h1>
-<p>Formal installation of source C++ API with CMake. See installation steps in the project <a href="https://github.com/akielaries/openGPMP#installation">README</a>.</p><ul>
+<p>Formal installation of source C++ API with CMake. See installation steps in the project <a href="https://github.com/akielaries/openMTPK#installation">README</a>.</p><ul>
 <li>Linux is supported.</li>
 <li>OSX testing is in progress.</li>
 <li>Working Python API, user installation mandatory.</li>
@@ -290,12 +289,12 @@ v0.2</h1>
 <li>Fixes + testing + formal installation of language bindings.</li>
 <li>Neural Networks, Classifiers</li>
 </ul>
-<p><a href="https://pygpmp-docs.readthedocs.io/en/latest/index.html">https://pygpmp-docs.readthedocs.io/en/latest/index.html</a></p>
+<p><a href="https://openmtpk-docs.readthedocs.io/en/latest/index.html">https://openmtpk-docs.readthedocs.io/en/latest/index.html</a></p>
 <h1><a class="anchor" id="autotoc_md40"></a>
 v0.1</h1>
 <h3><a class="anchor" id="autotoc_md41"></a>
-Initial introduction beta release of openGPMP</h3>
-<p>Open-source (intended) mathematics package written in C++ with a working Python API allowing for the use of algorithms and equations seen in many mathematical topics. See the <a href="https://github.com/akielaries/openGPMP/blob/main/README.md">README</a> for more details</p>
+Initial introduction beta release of openMTPK</h3>
+<p>Open-source (intended) mathematics package written in C++ with a working Python API allowing for the use of algorithms and equations seen in many mathematical topics. See the <a href="https://github.com/akielaries/openMTPK/blob/main/README.md">README</a> for more details</p>
 <h4><a class="anchor" id="autotoc_md42"></a>
 Modules</h4>
 <table class="markdownTable">

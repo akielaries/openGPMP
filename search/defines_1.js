@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bits_1514',['BITS',['../rc4_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc4.hpp'],['../rc5_8hpp.html#a9d2a7c69bd3fabc41e1ee87df2f283b3',1,'BITS():&#160;rc5.hpp']]],
-  ['byte_5flimit_1515',['BYTE_LIMIT',['../rc4_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc4.hpp'],['../rc5_8hpp.html#aea95cbd2fc2a755e5fd8230fda5bac47',1,'BYTE_LIMIT():&#160;rc5.hpp']]]
+  ['arm_5fsimd_1395',['ARM_SIMD',['../linalg_8hpp.html#aedc4bb967627d5531dda2be791fb0b79',1,'linalg.hpp']]],
+  ['array_5fsize_1396',['ARRAY_SIZE',['../__gpu__arr__add_8c.html#a7ec751f49d6391028a94f1419374c2fa',1,'_gpu_arr_add.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadraticapproximation_1231',['quadraticApproximation',['../classgpmp_1_1NumericalAnalysis.html#a2ac3d064fdce0296ebb9b8d01f9f86fd',1,'gpmp::NumericalAnalysis::quadraticApproximation(double(*function)(double), double c, double x)'],['../classgpmp_1_1NumericalAnalysis.html#a553666ae24c51beffe131b3495d722ba',1,'gpmp::NumericalAnalysis::quadraticApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)']]]
+  ['quadraticapproximation_1146',['quadraticApproximation',['../classmtpk_1_1NumericalAnalysis.html#aace0f71682afff4f15a22a0f0c64035f',1,'mtpk::NumericalAnalysis::quadraticApproximation(double(*function)(double), double c, double x)'],['../classmtpk_1_1NumericalAnalysis.html#a16c28dd269c6b0f4cc02d813e225e183',1,'mtpk::NumericalAnalysis::quadraticApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)']]]
 ];

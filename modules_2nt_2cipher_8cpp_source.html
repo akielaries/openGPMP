@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/nt/cipher.cpp Source File</title>
+<title>openMTPK: modules/nt/cipher.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classgpmp_1_1Cipher.html#a968b391259b866390c08e71b2d6bdb68">   47</a></span>&#160;std::string <a class="code" href="classgpmp_1_1Cipher.html#a968b391259b866390c08e71b2d6bdb68">gpmp::Cipher::caesar</a>(std::string plaintext, int64_t key) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classmtpk_1_1Cipher.html#af74d0a735ad756c673f06332ca4319b0">   47</a></span>&#160;std::string <a class="code" href="classmtpk_1_1Cipher.html#af74d0a735ad756c673f06332ca4319b0">mtpk::Cipher::caesar</a>(std::string plaintext, int64_t key) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::string hashtext = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; uint64_t(i) &lt; plaintext.length(); i++) {</div>
@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> hashtext;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classgpmp_1_1Cipher.html#a7bfa8f3b291a7ebe263d3ce9d1c4bad6">   64</a></span>&#160;std::string <a class="code" href="classgpmp_1_1Cipher.html#a7bfa8f3b291a7ebe263d3ce9d1c4bad6">gpmp::Cipher::keyword_encode</a>(std::string key) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classmtpk_1_1Cipher.html#a5dd0f3471582c795443cf56d22516d0e">   64</a></span>&#160;std::string <a class="code" href="classmtpk_1_1Cipher.html#a5dd0f3471582c795443cf56d22516d0e">mtpk::Cipher::keyword_encode</a>(std::string key) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string encoded = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// This array represents the 26 letters of alphabets</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> arr[26] = {0};</div>
@@ -178,7 +178,7 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> encoded;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classgpmp_1_1Cipher.html#a816f35c91049a9b7c6e258a39dc9dc1b">  100</a></span>&#160;std::string <a class="code" href="classgpmp_1_1Cipher.html#a816f35c91049a9b7c6e258a39dc9dc1b">gpmp::Cipher::keyword</a>(std::string plaintext,</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classmtpk_1_1Cipher.html#ad608312d0dc9fc44153c5c222d3b9690">  100</a></span>&#160;std::string <a class="code" href="classmtpk_1_1Cipher.html#ad608312d0dc9fc44153c5c222d3b9690">mtpk::Cipher::keyword</a>(std::string plaintext,</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                  std::string encoded_text) {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::string cipher = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
@@ -203,9 +203,9 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> cipher;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1Cipher_html_a7bfa8f3b291a7ebe263d3ce9d1c4bad6"><div class="ttname"><a href="classgpmp_1_1Cipher.html#a7bfa8f3b291a7ebe263d3ce9d1c4bad6">gpmp::Cipher::keyword_encode</a></div><div class="ttdeci">std::string keyword_encode(std::string key)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2cipher_8cpp_source.html#l00064">cipher.cpp:64</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Cipher_html_a816f35c91049a9b7c6e258a39dc9dc1b"><div class="ttname"><a href="classgpmp_1_1Cipher.html#a816f35c91049a9b7c6e258a39dc9dc1b">gpmp::Cipher::keyword</a></div><div class="ttdeci">std::string keyword(std::string plaintext, std::string encoded_text)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2cipher_8cpp_source.html#l00100">cipher.cpp:100</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Cipher_html_a968b391259b866390c08e71b2d6bdb68"><div class="ttname"><a href="classgpmp_1_1Cipher.html#a968b391259b866390c08e71b2d6bdb68">gpmp::Cipher::caesar</a></div><div class="ttdeci">std::string caesar(std::string plaintext, int64_t key)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2cipher_8cpp_source.html#l00047">cipher.cpp:47</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Cipher_html_a5dd0f3471582c795443cf56d22516d0e"><div class="ttname"><a href="classmtpk_1_1Cipher.html#a5dd0f3471582c795443cf56d22516d0e">mtpk::Cipher::keyword_encode</a></div><div class="ttdeci">std::string keyword_encode(std::string key)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2cipher_8cpp_source.html#l00064">cipher.cpp:64</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Cipher_html_ad608312d0dc9fc44153c5c222d3b9690"><div class="ttname"><a href="classmtpk_1_1Cipher.html#ad608312d0dc9fc44153c5c222d3b9690">mtpk::Cipher::keyword</a></div><div class="ttdeci">std::string keyword(std::string plaintext, std::string encoded_text)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2cipher_8cpp_source.html#l00100">cipher.cpp:100</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Cipher_html_af74d0a735ad756c673f06332ca4319b0"><div class="ttname"><a href="classmtpk_1_1Cipher.html#af74d0a735ad756c673f06332ca4319b0">mtpk::Cipher::caesar</a></div><div class="ttdeci">std::string caesar(std::string plaintext, int64_t key)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2cipher_8cpp_source.html#l00047">cipher.cpp:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

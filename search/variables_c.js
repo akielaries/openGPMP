@@ -1,13 +1,4 @@
 var searchData=
 [
-  ['magenta_1404',['MAGENTA',['../openGL__bounce_8cpp.html#a3614a44b501c2ddc43d2be5b12c52ee6',1,'openGL_bounce.cpp']]],
-  ['matrixsize_1405',['matrixSize',['../modules_2linalg_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6',1,'matrixSize():&#160;mtx.cpp'],['../samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6',1,'matrixSize():&#160;mtx.cpp']]],
-  ['maximumheight_1406',['maximumHeight',['../classBall.html#a33894dace962684b65523c2d09f79a16',1,'Ball']]],
-  ['mean_5fstdev_1407',['mean_stdev',['../structgpmp_1_1ml_1_1summary.html#a797be00f841478dc89cb28cccaa5a319',1,'gpmp::ml::summary']]],
-  ['mtx_5fneg_1408',['mtx_neg',['../namespacepython_1_1linalg.html#ac78734a635d502405ccfe13cf5ac6b52',1,'python::linalg']]],
-  ['mtx_5fo_1409',['mtx_o',['../namespacepython_1_1linalg.html#a0343bd4d51e02f97e21ae10be5c3c50e',1,'python::linalg']]],
-  ['mtx_5fpos_1410',['mtx_pos',['../namespacepython_1_1linalg.html#a8efb00aa7aefef926dc00d6ad1c5ca75',1,'python::linalg']]],
-  ['mtx_5fz1_1411',['mtx_z1',['../namespacepython_1_1linalg.html#ab23ed29b6cf31e7f1b40458d13fc983d',1,'python::linalg']]],
-  ['mtx_5fz2_1412',['mtx_z2',['../namespacepython_1_1linalg.html#ac9d40235255fd376e3c2cc4b8fd67071',1,'python::linalg']]],
-  ['mu_1413',['mu',['../classgpmp_1_1ml_1_1BayesGauss.html#a7b74c1284e6437c2baf6b59b9aed5491',1,'gpmp::ml::BayesGauss']]]
+  ['outputset_1315',['outputSet',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a2b1b447de0ee1af961574738641b7236',1,'mtpk::ml::BayesBernoulli::outputSet()'],['../classmtpk_1_1ml_1_1BayesGauss.html#a930a0789d2d0411a3bc27905d368934c',1,'mtpk::ml::BayesGauss::outputSet()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#ab3717c8f9446b1d6baf59c8f52e6e208',1,'mtpk::ml::BayesMutliNom::outputSet()'],['../classmtpk_1_1ml_1_1kNN.html#a080f7f67db74e055e55a321f3959f418',1,'mtpk::ml::kNN::outputSet()'],['../classmtpk_1_1ml_1_1Logreg.html#ab1f266228c786933e934833400724a97',1,'mtpk::ml::Logreg::outputSet()'],['../classmtpk_1_1ml_1_1SVC.html#a9e63114e3fa5f2f3b2e47407e9c55ca4',1,'mtpk::ml::SVC::outputSet()']]]
 ];
