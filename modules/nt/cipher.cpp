@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -44,7 +44,7 @@
 #include <stdio.h>
 #include <string>
 
-std::string mtpk::Cipher::caesar(std::string plaintext, int64_t key) {
+std::string gpmp::Cipher::caesar(std::string plaintext, int64_t key) {
     std::string hashtext = "";
 
     for (int64_t i = 0; uint64_t(i) < plaintext.length(); i++) {
@@ -61,7 +61,7 @@ std::string mtpk::Cipher::caesar(std::string plaintext, int64_t key) {
     return hashtext;
 }
 
-std::string mtpk::Cipher::keyword_encode(std::string key) {
+std::string gpmp::Cipher::keyword_encode(std::string key) {
     std::string encoded = "";
     // This array represents the 26 letters of alphabets
     bool arr[26] = {0};
@@ -97,7 +97,7 @@ std::string mtpk::Cipher::keyword_encode(std::string key) {
     return encoded;
 }
 
-std::string mtpk::Cipher::keyword(std::string plaintext,
+std::string gpmp::Cipher::keyword(std::string plaintext,
                                   std::string encoded_text) {
     std::string cipher = "";
 

@@ -2,7 +2,7 @@
  * of text.
  */
 #include <iostream>
-#include <openMTPK/rc5.hpp>
+#include <openGPMP/rc5.hpp>
 #include <stdio.h>
 #include <string>
 #include <vector>

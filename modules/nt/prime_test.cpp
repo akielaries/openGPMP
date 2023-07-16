@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -38,7 +38,7 @@
  */
 #include "../../include/nt/prime_test.hpp"
 #include "../../include/arithmetic.hpp"
-#include "../../include/core/threadpool.hpp"
+#include "../../include/core/threads.hpp"
 
 #include <algorithm>
 #include <cmath>
@@ -55,11 +55,11 @@
 #include <string>
 
 // declare Basics and Primality class objects
-mtpk::Basics ba;
-mtpk::PrimalityTest prim;
+gpmp::Basics ba;
+gpmp::PrimalityTest prim;
 
 // Calculates (a * b) mod m
-uint64_t mtpk::PrimalityTest::mod_mul(uint64_t a, uint64_t b, uint64_t m) {
+uint64_t gpmp::PrimalityTest::mod_mul(uint64_t a, uint64_t b, uint64_t m) {
     uint64_t res = 0;
     while (b > 0) {
         if (b & 1) {
@@ -72,7 +72,7 @@ uint64_t mtpk::PrimalityTest::mod_mul(uint64_t a, uint64_t b, uint64_t m) {
 }
 
 // Calculates (a ^ b) mod m
-uint64_t mtpk::PrimalityTest::mod_pow(uint64_t a, uint64_t b, uint64_t m) {
+uint64_t gpmp::PrimalityTest::mod_pow(uint64_t a, uint64_t b, uint64_t m) {
     uint64_t res = 1;
     a %= m;
     while (b > 0) {
@@ -86,7 +86,7 @@ uint64_t mtpk::PrimalityTest::mod_pow(uint64_t a, uint64_t b, uint64_t m) {
 }
 
 /*
-uint64_t mtpk::PrimalityTest::mod_pow(uint64_t base, uint64_t exponent,
+uint64_t gpmp::PrimalityTest::mod_pow(uint64_t base, uint64_t exponent,
                                  uint64_t mod) {
     uint64_t x = 1;
     uint64_t y = base;
@@ -102,7 +102,7 @@ uint64_t mtpk::PrimalityTest::mod_pow(uint64_t base, uint64_t exponent,
     return x;
 }*/
 
-bool mtpk::PrimalityTest::is_prime(uint64_t n) {
+bool gpmp::PrimalityTest::is_prime(uint64_t n) {
     if (n <= 1) {
         return false;
     }
@@ -119,11 +119,10 @@ bool mtpk::PrimalityTest::is_prime(uint64_t n) {
 /*
  * determining if a given number is likely to be prime
  */
-bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
+bool gpmp::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
+    uint64_t a;
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
-
-    uint64_t a;
 #ifdef __APPLE__
     a = 2 + arc4random_uniform(n - 4);
 #else
@@ -166,7 +165,9 @@ bool mtpk::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
     return false;
 }
 
-bool mtpk::PrimalityTest::witness(uint64_t n, uint64_t d, uint64_t a,
+bool gpmp::PrimalityTest::witness(uint64_t n,
+                                  uint64_t d,
+                                  uint64_t a,
                                   uint64_t s) {
     uint64_t x = mod_pow(a, d, n);
     if (x == 1 || x == n - 1) {
@@ -181,8 +182,7 @@ bool mtpk::PrimalityTest::witness(uint64_t n, uint64_t d, uint64_t a,
     return true;
 }
 
-bool mtpk::PrimalityTest::miller_rabin_prime(
-    uint64_t n, uint64_t iters = 10 /* default */) {
+bool gpmp::PrimalityTest::miller_rabin_prime(uint64_t n, uint64_t iters = 10) {
     if (n < 2) {
         return false;
     }
@@ -206,7 +206,8 @@ bool mtpk::PrimalityTest::miller_rabin_prime(
     return true;
 }
 
-void mtpk::PrimalityTest::miller_rabin(uint64_t iters, uint64_t min_val,
+void gpmp::PrimalityTest::miller_rabin(uint64_t iters,
+                                       uint64_t min_val,
                                        uint64_t max_val) {
     std::cout << "Primes between " << min_val << " and " << max_val
               << std::endl;
@@ -224,7 +225,7 @@ void mtpk::PrimalityTest::miller_rabin(uint64_t iters, uint64_t min_val,
     std::cout << "\n";
 }
 
-bool mtpk::PrimalityTest::AKS(uint64_t n) {
+bool gpmp::PrimalityTest::AKS(uint64_t n) {
     // Check if n is a perfect power
     for (uint64_t b = 2; b <= std::sqrt(n); b++) {
         uint64_t a = std::round(std::pow(n, 1.0 / b));
@@ -272,7 +273,7 @@ bool mtpk::PrimalityTest::AKS(uint64_t n) {
 /*
  * another algorithm capable of finding primes
  */
-uint64_t mtpk::PrimalityTest::jacobian_number(uint64_t a, uint64_t n) {
+uint64_t gpmp::PrimalityTest::jacobian_number(uint64_t a, uint64_t n) {
     if (!a)
         return 0; // (0/n) = 0
 
@@ -321,7 +322,7 @@ uint64_t mtpk::PrimalityTest::jacobian_number(uint64_t a, uint64_t n) {
  *
  * a^(p-1)/2 = (a/p) (mod p)
  */
-bool mtpk::PrimalityTest::solovoy_strassen(uint64_t p, uint64_t iters) {
+bool gpmp::PrimalityTest::solovoy_strassen(uint64_t p, uint64_t iters) {
     if (p < 2)
         return false;
 
@@ -345,7 +346,7 @@ bool mtpk::PrimalityTest::solovoy_strassen(uint64_t p, uint64_t iters) {
  * are composite integers satisfying the congruence forumla below
  * b^n - 1 = b (mod n)
  */
-bool mtpk::PrimalityTest::carmichael_num(uint64_t n) {
+bool gpmp::PrimalityTest::carmichael_num(uint64_t n) {
     for (uint64_t b = 2; b < n; b++) {
         // If "b" is relatively prime to n
         if (ba.op_gcd(b, n) == 1)
@@ -363,7 +364,7 @@ bool mtpk::PrimalityTest::carmichael_num(uint64_t n) {
  * limit
  */
 /*
-void mtpk::PrimalityTest::sieve_of_eratosthenes(uint64_t n) {
+void gpmp::PrimalityTest::sieve_of_eratosthenes(uint64_t n) {
     // Create a boolean array "prime[0..n]" and initialize
     // all entries it as true. A value in prime[i] will
     // finally be false if i is Not a prime, else true.
@@ -404,7 +405,7 @@ void mtpk::PrimalityTest::sieve_of_eratosthenes(uint64_t n) {
  *          Φ(4) = 2
  *          Φ(5) = 4
  */
-uint64_t mtpk::PrimalityTest::ETF(uint64_t n) {
+uint64_t gpmp::PrimalityTest::ETF(uint64_t n) {
     uint64_t result = 1;
 
     for (uint64_t index = 2; uint64_t(index) < n; index++) {

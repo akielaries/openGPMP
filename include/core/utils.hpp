@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -35,7 +35,7 @@
 /**
  * @file
  *
- * @brief Miscellaneous utilities methods related to openMTPK
+ * @brief Miscellaneous utilities methods related to openGPMP
  *
  */
 #ifndef UTILS_HPP
@@ -46,7 +46,7 @@
 #include <tuple>
 #include <vector>
 
-namespace mtpk {
+namespace gpmp {
 
 namespace core {
 
@@ -108,14 +108,16 @@ class Data {
 
     std::tuple<std::vector<double>, std::vector<double>> load();
 
-    void setData(int k, std::string fileName,
+    void setData(int k,
+                 std::string fileName,
                  std::vector<std::vector<double>> &inputSet,
                  std::vector<double> &outputSet);
 
     void printData(std::vector<std::string> inputName,
                    std::vector<std::vector<double>> inputSet);
 
-    void printData(std::vector<std::string> inputName, std::string outputName,
+    void printData(std::vector<std::string> inputName,
+                   std::string outputName,
                    std::vector<std::vector<double>> inputSet,
                    std::vector<double> outputSet);
 
@@ -163,6 +165,6 @@ class OutlierFinder {
 
 } // namespace core
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

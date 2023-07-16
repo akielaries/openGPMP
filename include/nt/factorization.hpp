@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -41,18 +41,10 @@
 #ifndef FACTORIZATION_HPP
 #define FACTORIZATION_HPP
 
-#include "../core/threadpool.hpp"
-#include <condition_variable>
+#include "../core/threads.hpp"
 #include <cstdint>
-#include <functional>
-#include <future>
-#include <mutex>
-#include <queue>
-#include <stdio.h>
-#include <thread>
-#include <vector>
 
-namespace mtpk {
+namespace gpmp {
 class Factorization {
   public:
     // std::vector<uint64_t> pollard_rho(const std::vector<uint64_t>&
@@ -89,6 +81,6 @@ class Factorization {
     /*  */
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

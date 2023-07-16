@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from openmtpk import arithmetic as ar
+from pygpmp import arithmetic as ar
 
 
 def main():

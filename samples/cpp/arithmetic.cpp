@@ -1,11 +1,11 @@
 /**
- * A simple driver program showing how to use the simplest module in openMTPK
+ * A simple driver program showing how to use the simplest module in openGPMP
  *
  * @example arithmetic.cpp
  */
 #include <cassert>
 #include <iostream>
-#include <openMTPK/arithmetic.hpp>
+#include <openGPMP/arithmetic.hpp>
 #include <stdio.h>
 #include <time.h>
 #include <vector>
@@ -32,7 +32,7 @@ int main() {
 
     // declare our arithmetic class object, template class keep in mind
     // numeric datatypes
-    mtpk::Arith<int> ar;
+    gpmp::Arith<int> ar;
 
     // declare some variables
     int a = 10;
@@ -58,7 +58,7 @@ int main() {
     /*
      * arithmetic basics
      */
-    mtpk::Basics ba;
+    gpmp::Basics ba;
     int r10 = 10;
     int r11 = 3;
     int r12 = ba.greatest_power(r10, r11);

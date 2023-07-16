@@ -2,7 +2,7 @@
 #define GCDS_HPP
 #include <cstdint>
 
-namespace mtpk {
+namespace gpmp {
 
 /*
  * @class GCDS (Greatest Common Divisors)
@@ -17,6 +17,6 @@ class GCDS {
     void lehmers();
 };
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

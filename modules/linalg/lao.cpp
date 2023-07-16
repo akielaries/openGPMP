@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -36,7 +36,7 @@
  * taking a look at different mathematical operations seen in Linear
  * Algebra in C++
  */
-#include "../../include/linalg/matrix.hpp"
+#include "../../include/linalg/mtx_tmpl.hpp"
 #include "../../include/linalg/vectors.hpp"
 #include <fstream>
 #include <iostream>
@@ -44,7 +44,7 @@
 #include <string>
 #include <vector>
 
-int64_t mtpk::Vectors::add(int64_t a, int64_t b) {
+int64_t gpmp::Vectors::add(int64_t a, int64_t b) {
     int64_t c = a + b;
     return c;
 }

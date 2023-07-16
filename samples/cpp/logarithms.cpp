@@ -6,10 +6,10 @@
  * @example logarithms.cpp
  */
 #include <iostream>
-#include <openMTPK/nt/logarithms.hpp>
+#include <openGPMP/nt/logarithms.hpp>
 
 int main() {
-    mtpk::Logarithms logs;
+    gpmp::Logarithms logs;
     int64_t g = 3;
     int64_t y = 7;
     int64_t p = 11;

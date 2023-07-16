@@ -7,7 +7,7 @@ jobs:
   CppPPC64LE:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: openMTPK on PPC64LE
+    name: openGPMP on PPC64LE
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -33,7 +33,7 @@ jobs:
         run: |
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: Test openMTPK install on ubuntu PPC64LE
+      - name: Test openGPMP install on ubuntu PPC64LE
         run: |
           #cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
           cd build && sudo make

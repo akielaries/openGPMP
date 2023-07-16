@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -48,7 +48,7 @@ using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
 
 namespace {
-mtpk::RC4 rc;
+gpmp::RC4 rc;
 
 // BBF316E8D940AF0AD3
 char *key_0 = (char *)"Key";

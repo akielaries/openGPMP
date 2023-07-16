@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -39,28 +39,28 @@
 #include <string.h>
 #include <time.h>
 
-using namespace mtpk::ml;
+using namespace gpmp::ml;
 
 /*
  * Initialize randomly generated values for network's method
  */
-void mtpk::ml::PrimaryMLP::rand_init() {
+void gpmp::ml::PrimaryMLP::rand_init() {
     srand(4711);
     // srand((uint64_t)time(NULL));
 }
 
 /* verify the random is an integer */
-int64_t mtpk::ml::PrimaryMLP::rand_int(int64_t hi, int64_t low) {
+int64_t gpmp::ml::PrimaryMLP::rand_int(int64_t hi, int64_t low) {
     return rand() % (hi - low + 1) + low;
 }
 
 /* verify generated random is a real number */
-long double mtpk::ml::PrimaryMLP::rand_real(long double low, long double hi) {
+long double gpmp::ml::PrimaryMLP::rand_real(long double low, long double hi) {
     return ((long double)rand() / RAND_MAX) * (hi - low) + low;
 }
 
 /* PRIMARY MLP CONSTRUCTOR */
-mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
+gpmp::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
     : num_layers(0), layer_ptr(0), _MSE(0.0), _MAE(0.0), _Eta(0.25),
       _Alpha(0.9), _Gain(1.0), _AvgTestError(0.0) {
     int64_t _LAYER, _NEURON;
@@ -111,7 +111,7 @@ mtpk::ml::PrimaryMLP::PrimaryMLP(int64_t nl, int64_t npl[])
 }
 
 /* PRIMARY MLP DECONSTRUCTOR */
-mtpk::ml::PrimaryMLP::~PrimaryMLP() {
+gpmp::ml::PrimaryMLP::~PrimaryMLP() {
     int64_t _LAYER, _NEURON;
 
     // TODO : thread the loops dealing with rudimentary computations

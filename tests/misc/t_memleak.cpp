@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -150,8 +150,9 @@ int main(int argc, char **argv) {
     if (argc > 1 && strcmp(argv[1], "--check_for_leaks") == 0)
         check_for_leaks = true;
     else
-        printf("%s\n", "Run this program with --check_for_leaks to enable "
-                       "custom leak checking in the tests.");
+        printf("%s\n",
+               "Run this program with --check_for_leaks to enable "
+               "custom leak checking in the tests.");
 
     // If we are given the --check_for_leaks command line flag,
     // installs the leak checker.

@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -38,7 +38,7 @@
 #include "../../include/arithmetic.hpp"
 #include <cstdint>
 
-int64_t mtpk::Basics::greatest_power(int64_t n, int64_t p) {
+int64_t gpmp::Basics::greatest_power(int64_t n, int64_t p) {
     int64_t result = 0;
 
     // Calculate x = n/p + n/(p^2) + n/(p^3) + ....
@@ -49,7 +49,7 @@ int64_t mtpk::Basics::greatest_power(int64_t n, int64_t p) {
     return result;
 }
 
-int64_t mtpk::Basics::op_gcd(int64_t x, int64_t y) {
+int64_t gpmp::Basics::op_gcd(int64_t x, int64_t y) {
     if (x < y)
         return op_gcd(y, x);
 

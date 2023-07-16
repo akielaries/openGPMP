@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -58,12 +58,16 @@ class RC5 {
     /* Key Scheduling Algorithm */
     void KSA(char *key, unsigned char *S, int swap_type);
     /* Pseudo-Random Generation Algorithm */
-    void PRGA(unsigned char *S, char *plaintext, unsigned char *ciphertext,
+    void PRGA(unsigned char *S,
+              char *plaintext,
+              unsigned char *ciphertext,
               int swap_type);
     /* functoin to display our hashed text */
     void display_hash(unsigned char *ciphertext);
     /* compute our hash using the the RC4 encryption algorithm */
-    void compute(char *key, char *plaintext, unsigned char *ciphertext,
+    void compute(char *key,
+                 char *plaintext,
+                 unsigned char *ciphertext,
                  int swap_type);
 
     uint32_t shift_left(uint32_t v, uint32_t n);

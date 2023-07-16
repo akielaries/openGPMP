@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -39,6 +39,8 @@
 #ifndef MLP_NETWORK_HPP
 #define MLP_NETWORK_HPP
 #include "../linalg.hpp"
+#include "../linalg/mtx_tmpl.hpp"
+
 #include <cassert>
 #include <fstream>
 #include <random>
@@ -46,10 +48,10 @@
 #include <utility>
 #include <vector>
 
-namespace mtpk {
+namespace gpmp {
 
 /**
- * @brief Namespace for openMTPK Machine Learning
+ * @brief Namespace for openGPMP Machine Learning
  */
 namespace ml {
 
@@ -116,7 +118,9 @@ class PrimaryMLP {
     /* returns the computed error from backwards propogation */
     void back_prop_err();
     /* simulate the Multi-Layer Perceptron Neual Network */
-    void simulate(long double *input, long double *output, long double *target,
+    void simulate(long double *input,
+                  long double *output,
+                  long double *target,
                   bool training);
 
   public:
@@ -175,9 +179,9 @@ template <typename T> class SecondaryMLP {
     }
 
     std::vector<size_t> layer_units;
-    std::vector<Matrix<T>> bias_vectors;
-    std::vector<Matrix<T>> wt_mtx;
-    std::vector<Matrix<T>> activations;
+    std::vector<gpmp::linalg::Matrix<T>> bias_vectors;
+    std::vector<gpmp::linalg::Matrix<T>> wt_mtx;
+    std::vector<gpmp::linalg::Matrix<T>> activations;
 
     long double lr;
 
@@ -198,10 +202,10 @@ template <typename T> class SecondaryMLP {
 
             // set to random Guassian Noise related values
             // weights
-            auto gauss_wt = mtpk::mtx<T>::randn(outputs, inputs);
+            auto gauss_wt = gpmp::linalg::mtx<T>::randn(outputs, inputs);
             wt_mtx.push_back(gauss_wt);
             // biases
-            auto bias_wt = mtpk::mtx<T>::randn(outputs, 1);
+            auto bias_wt = gpmp::linalg::mtx<T>::randn(outputs, 1);
             bias_vectors.push_back(bias_wt);
             // activation function
             activations.resize(layer_units.size());
@@ -213,15 +217,15 @@ template <typename T> class SecondaryMLP {
      * passing it forwards to use as an input paramater on the next
      * layer
      */
-    auto prop_forwards(Matrix<T> x) {
+    auto prop_forwards(gpmp::linalg::Matrix<T> x) {
         assert(get<0>(x.shape) == layer_units[0] && get<1>(x.shape));
         // input = to previously declared acitvations method
         activations[0] = x;
-        Matrix prev(x);
+        gpmp::linalg::Matrix prev(x);
 
         // traverse layer units
         for (uint64_t i = 0; i < layer_units.size() - 1; ++i) {
-            Matrix y = wt_mtx[i].mult(prev);
+            gpmp::linalg::Matrix y = wt_mtx[i].mult(prev);
             y = y + bias_vectors[i];
             y = y.apply_function(&SecondaryMLP::sigmoid_activ);
             activations[i + 1] = y;
@@ -237,7 +241,7 @@ template <typename T> class SecondaryMLP {
      * output being closer to the target output.
      * This method takes the target output as an input parameter
      */
-    void prop_backwards(Matrix<T> target) {
+    void prop_backwards(gpmp::linalg::Matrix<T> target) {
         assert(get<0>(target.shape) == layer_units.back());
         // calculate the error, target - ouput
         auto y = target;
@@ -267,6 +271,6 @@ template <typename T> class SecondaryMLP {
 
 } // namespace ml
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

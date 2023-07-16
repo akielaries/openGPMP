@@ -2,7 +2,7 @@
  *
  */
 #include <iostream>
-#include <openMTPK/torus.hpp>
+#include <openGPMP/torus.hpp>
 #include <stdio.h>
 #include <string>
 #include <time.h>

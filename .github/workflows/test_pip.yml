@@ -7,7 +7,7 @@ jobs:
   PyARMV6:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: PyPI openMTPK ARMv6
+    name: PyPI openGPMP ARMv6
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -32,9 +32,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install on bullseye ARMv6
+      - name: Test openGPMP install on bullseye ARMv6
         run: | 
-          pip install openmtpk
+          pip install pygpmp
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
           cd samples/python 
@@ -47,7 +47,7 @@ jobs:
   PyARMV7:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: PyPI openMTPK ARMv7 
+    name: PyPI openGPMP ARMv7 
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -72,9 +72,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install on ubuntu ARMv7
+      - name: Test openGPMP install on ubuntu ARMv7
         run: | 
-          pip install openmtpk
+          pip install pygpmp
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
           cd samples/python 
@@ -88,7 +88,7 @@ jobs:
   PyARMV8:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: PyPI openMTPK ARMv6 
+    name: PyPI openGPMP ARMv6 
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -113,9 +113,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install on ubuntu ARMv8
+      - name: Test openGPMP install on ubuntu ARMv8
         run: | 
-          pip install openmtpk
+          pip install pygpmp
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
           cd samples/python 
@@ -127,7 +127,7 @@ jobs:
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
 
   PyNix:
-    name: Test openMTPK on Linux
+    name: Test openGPMP on Linux
     runs-on: [ ubuntu-latest ] 
 
     steps:
@@ -137,15 +137,15 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install
+      - name: Test openGPMP install
         run: |
-          pip install openmtpk
+          pip install pygpmp
           # confirm samples run
           cd samples/python 
           for f in *.py; do python3 "$f"; done 
 
   PyOSX:
-    name: Test openMTPK on Darwin
+    name: Test openGPMP on Darwin
     runs-on: [ macos-latest ] 
 
     steps:
@@ -155,9 +155,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install
+      - name: Test openGPMP install
         run: |
-          pip install openmtpk
+          pip install pygpmp
           # confirm samples run
           cd samples/python 
           for f in *.py; do python3 "$f"; done 
@@ -176,7 +176,7 @@ jobs:
           python-version: "3.x"
 
       -   
-        name: pip install openmtpk on RPI OS ARMv8 Image
+        name: pip install pygpmp on RPI OS ARMv8 Image
         uses: pguyot/arm-runner-action@v2
         id: build_image
         with:
@@ -188,7 +188,7 @@ jobs:
             apt-get install -y python3 python3-distutils python3-pip python3-apt python3-dev
             apt-get install -y pkg-config
             pip install --upgrade pip setuptools wheel
-            pip install openmtpk
+            pip install pygpmp
             cd samples/python
             for f in *.py; do python3 "$f"; done
       -   
@@ -200,7 +200,7 @@ jobs:
   PyPPC64LE:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: PyPI openMTPK PPC64LE
+    name: PyPI openGPMP PPC64LE
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -225,9 +225,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install on ubuntu PPC64LE
+      - name: Test openGPMP install on ubuntu PPC64LE
         run: | 
-          pip install openmtpk
+          pip install pygpmp
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
           cd samples/python 
@@ -241,7 +241,7 @@ jobs:
   PyRISCV:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: PyPI openMTPK RISCV64
+    name: PyPI openGPMP RISCV64
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -266,9 +266,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install on ubuntu RISCV64
+      - name: Test openGPMP install on ubuntu RISCV64
         run: | 
-          pip install openmtpk
+          pip install pygpmp
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
           cd samples/python 
@@ -282,7 +282,7 @@ jobs:
   PyS390X:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: PyPI openMTPK S390X
+    name: PyPI openGPMP S390X
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -307,9 +307,9 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Test openMTPK install on ubuntu S390X
+      - name: Test openGPMP install on ubuntu S390X
         run: | 
-          pip install openmtpk
+          pip install pygpmp
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
           # confirm samples run
           cd samples/python 

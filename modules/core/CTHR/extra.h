@@ -36,7 +36,10 @@ void locksmith_remove_lock_from_thread(pthread_mutex_t *mutex)
     __attribute__((regparm(3)));
 void locksmith_add_lock_to_thread(pthread_mutex_t *mutex)
     __attribute__((regparm(3)));
-void locksmith_add_memory_access(pthread_t thread, memaddr_t addr,
-                                 line_type_e type, int lineno, char *source);
+void locksmith_add_memory_access(pthread_t thread,
+                                 memaddr_t addr,
+                                 line_type_e type,
+                                 int lineno,
+                                 char *source);
 
 #endif

@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -44,7 +44,7 @@
 
 using namespace std;
 
-namespace mtpk {
+namespace gpmp {
 
 namespace ml {
 
@@ -56,15 +56,18 @@ class NearestNeighbor {
 
     long double manhattanDistance(Company &lhs, Company &test);
 
-    void fillDistances(vector<Company> &data, Company &test,
+    void fillDistances(vector<Company> &data,
+                       Company &test,
                        long double (*distanceFunction)(Company &, Company &));
 
-    bool KNN(vector<Company> &data, Company &test, int64_t k,
+    bool KNN(vector<Company> &data,
+             Company &test,
+             int64_t k,
              long double (*distanceFunction)(Company &, Company &));
 };
 
 } // namespace ml
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

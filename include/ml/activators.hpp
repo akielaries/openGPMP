@@ -16,7 +16,7 @@
  * This software is licensed as described in the file LICENSE, which
  * you should have received as part of this distribution. The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openMTPK/ along with
+ * seen here : https://akielaries.github.io/openGPMP/ along with
  * important files seen in this project.
  *
  * You may opt to use, copy, modify, merge, publish, distribute
@@ -44,7 +44,7 @@
 
 #include <vector>
 
-namespace mtpk {
+namespace gpmp {
 
 namespace ml {
 
@@ -151,8 +151,8 @@ class Activate {
 
     double leakyReLU(double z, double c, bool deriv = 0);
 
-    std::vector<double> leakyReLU(std::vector<double> z, double c,
-                                  bool deriv = 0);
+    std::vector<double>
+    leakyReLU(std::vector<double> z, double c, bool deriv = 0);
 
     std::vector<std::vector<double>>
     leakyReLU(std::vector<std::vector<double>> z, double c, bool deriv = 0);
@@ -161,16 +161,17 @@ class Activate {
 
     std::vector<double> ELU(std::vector<double> z, double c, bool deriv = 0);
 
-    std::vector<std::vector<double>> ELU(std::vector<std::vector<double>> z,
-                                         double c, bool deriv = 0);
+    std::vector<std::vector<double>>
+    ELU(std::vector<std::vector<double>> z, double c, bool deriv = 0);
 
     double SELU(double z, double lambda, double c, bool deriv = 0);
 
-    std::vector<double> SELU(std::vector<double> z, double lambda, double c,
-                             bool deriv = 0);
+    std::vector<double>
+    SELU(std::vector<double> z, double lambda, double c, bool deriv = 0);
 
     std::vector<std::vector<double>> SELU(std::vector<std::vector<double>>,
-                                          double lambda, double c,
+                                          double lambda,
+                                          double c,
                                           bool deriv = 0);
 
     double GELU(double z, bool deriv = 0);
@@ -271,7 +272,8 @@ class Activate {
     std::vector<std::vector<double>> arcoth(std::vector<std::vector<double>> z,
                                             bool deriv = 0);
 
-    std::vector<double> activation(std::vector<double> z, bool deriv,
+    std::vector<double> activation(std::vector<double> z,
+                                   bool deriv,
                                    double (*function)(double, bool));
 
   private:
@@ -279,6 +281,6 @@ class Activate {
 
 } // namespace ml
 
-} // namespace mtpk
+} // namespace gpmp
 
 #endif

@@ -8,7 +8,7 @@ jobs:
   CppARMV6:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: openMTPK on ARMv6
+    name: openGPMP on ARMv6
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -34,7 +34,7 @@ jobs:
         run: |
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: Test openMTPK install on bullseye ARMv6
+      - name: Test openGPMP install on bullseye ARMv6
         run: |
           #cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
           cd build && sudo make

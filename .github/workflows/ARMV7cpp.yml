@@ -7,7 +7,7 @@ jobs:
   CppARMV7:
     # The host should always be Linux
     runs-on: ubuntu-latest
-    name: openMTPK on ARMv7
+    name: openGPMP on ARMv7
     steps:
       - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
@@ -33,7 +33,7 @@ jobs:
         run: |
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: Test openMTPK install on ubuntu ARMv7
+      - name: Test openGPMP install on ubuntu ARMv7
         run: |
           #cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
           cd build && sudo make
