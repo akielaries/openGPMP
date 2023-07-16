@@ -45,4 +45,7 @@ jobs:
         git merge --squash origin/rolling
         git commit -m "#NIGHTLY: Merging rolling -> main"
         git push
+        git checkout rolling
+        git merge -X theirs main
+        git push origin rolling
 

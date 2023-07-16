@@ -78,6 +78,7 @@ bool mtx_verif(const std::vector<std::vector<T>> &A,
 // naive implementation for matrix addition
 TEST(ADD_MTX_SMALL, assert_intel_intrin) {
     int matrixSize = 32;
+    std::cout << "    \033[1;34m[+] MTX SIZE: \033[0m" << matrixSize << std::endl;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
@@ -130,6 +131,7 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
 
 TEST(ADD_MTX_LARGE, assert_intel_intrin) {
     int matrixSize = 8192;
+    std::cout << "    \033[1;34m[+] MTX SIZE: \033[0m" << matrixSize << std::endl;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
@@ -188,6 +190,7 @@ TEST(ADD_MTX_LARGE, assert_intel_intrin) {
 
 TEST(ADD_MATRICES, assert_arm_intrin) {
     int matrixSize = 32;
+    std::cout << "    \033[1;34m[+] MTX SIZE: \033[0m" << matrixSize << std::endl;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
     std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));

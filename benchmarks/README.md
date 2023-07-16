@@ -14,3 +14,5 @@ openGPMP: ~430ms
 Armadillo: ~1000ms
 Eigen: ~1950ms
 
+Official benchmarks are available with the help of Google benchmark.
+

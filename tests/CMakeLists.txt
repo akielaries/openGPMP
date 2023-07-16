@@ -1,22 +1,32 @@
 # Download and install GoogleTest
+find_package(GTest QUIET)
 
-
-include(FetchContent)
-
-#find_package(GTest REQUIRED)
-
-# check if installation is present
-#if(NOT GTEST_FOUND)
+if(NOT GTest_FOUND)
+    message("-- Googletest not found, installing...")
+    # GoogleTest not found, download and install it
+    include(FetchContent)
+    
     FetchContent_Declare(
         googletest
-        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        URL https://github.com/google/googletest/archive/refs/tags/v1.13.0.zip
     )
     FetchContent_MakeAvailable(googletest)
-    #endif()
+    
+    if(NOT googletest_POPULATED)
+        FetchContent_Populate(googletest)
+        add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
+    endif()
+    
+    # Set GTest variables after downloading and installing
+    set(GTest_INCLUDE_DIRS ${googletest_SOURCE_DIR}/include)
+    set(GTest_LIBRARIES gtest_main)
+else()
+    message("-- Googletest found")
+endif()
 
-#FetchContent_MakeAvailable(googletest)
 
-# source files that will be tested
+
+
 set(CPP_SOURCES
     ../modules/arithmetic/arith.cpp
     ../modules/calculus/differential.cpp

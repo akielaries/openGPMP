@@ -37,7 +37,7 @@ set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
                       -Wsign-compare -DNDEBUG -Wall"
 )
 
-project(openGPMP VERSION 1.0 LANGUAGES CXX C ASM Fortran)
+project(openGPMP VERSION 1.0 LANGUAGES CXX C)
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
