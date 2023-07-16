@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openMTPK: modules/nt/factorization.cpp File Reference</title>
+<title>openGPMP: modules/nt/factorization.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openMTPK
+   <div id="projectname">openGPMP
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -83,7 +83,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="factorization_8hpp_source.html">../../include/nt/factorization.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="arithmetic_8hpp_source.html">../../include/arithmetic.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="threadpool_8hpp_source.html">../../include/core/threadpool.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="threads_8hpp_source.html">../../include/core/threads.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="prime__test_8hpp_source.html">../../include/nt/prime_test.hpp</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
@@ -101,22 +101,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad970c8bba7af7a85019e4d3eb88fa6fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtpk_1_1Basics.html">mtpk::Basics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factorization_8cpp.html#ad970c8bba7af7a85019e4d3eb88fa6fa">__FACT_BASICS__</a></td></tr>
-<tr class="separator:ad970c8bba7af7a85019e4d3eb88fa6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45872043df6439710271af8a0a90b826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtpk_1_1Factorization.html">mtpk::Factorization</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factorization_8cpp.html#a45872043df6439710271af8a0a90b826">__FACTOR__</a></td></tr>
-<tr class="separator:a45872043df6439710271af8a0a90b826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe138010c8c76a71f901e2f9920108fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factorization_8cpp.html#abe138010c8c76a71f901e2f9920108fa">__FACT_PRIMES__</a></td></tr>
-<tr class="separator:abe138010c8c76a71f901e2f9920108fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ce8b3109353347bf8460501b3edf67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgpmp_1_1Basics.html">gpmp::Basics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factorization_8cpp.html#ad5ce8b3109353347bf8460501b3edf67">__FACT_BASICS__</a></td></tr>
+<tr class="separator:ad5ce8b3109353347bf8460501b3edf67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84fed0379dcecaf212b75b165951a391"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgpmp_1_1Factorization.html">gpmp::Factorization</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factorization_8cpp.html#a84fed0379dcecaf212b75b165951a391">__FACTOR__</a></td></tr>
+<tr class="separator:a84fed0379dcecaf212b75b165951a391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b01b00dccdca39ab80eb015b8d54cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgpmp_1_1PrimalityTest.html">gpmp::PrimalityTest</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="factorization_8cpp.html#a05b01b00dccdca39ab80eb015b8d54cb">__FACT_PRIMES__</a></td></tr>
+<tr class="separator:a05b01b00dccdca39ab80eb015b8d54cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ad970c8bba7af7a85019e4d3eb88fa6fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad970c8bba7af7a85019e4d3eb88fa6fa">&#9670;&nbsp;</a></span>__FACT_BASICS__</h2>
+<a id="ad5ce8b3109353347bf8460501b3edf67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ce8b3109353347bf8460501b3edf67">&#9670;&nbsp;</a></span>__FACT_BASICS__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmtpk_1_1Basics.html">mtpk::Basics</a> __FACT_BASICS__</td>
+          <td class="memname"><a class="el" href="classgpmp_1_1Basics.html">gpmp::Basics</a> __FACT_BASICS__</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -125,32 +125,32 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="abe138010c8c76a71f901e2f9920108fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe138010c8c76a71f901e2f9920108fa">&#9670;&nbsp;</a></span>__FACT_PRIMES__</h2>
+<a id="a05b01b00dccdca39ab80eb015b8d54cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b01b00dccdca39ab80eb015b8d54cb">&#9670;&nbsp;</a></span>__FACT_PRIMES__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmtpk_1_1PrimalityTest.html">mtpk::PrimalityTest</a> __FACT_PRIMES__</td>
+          <td class="memname"><a class="el" href="classgpmp_1_1PrimalityTest.html">gpmp::PrimalityTest</a> __FACT_PRIMES__</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="factorization_8cpp_source.html#l00060">60</a> of file <a class="el" href="factorization_8cpp_source.html">factorization.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classmtpk_1_1Factorization.html#a3ff5e6f6789d9f05892f64066eab23c2">mtpk::Factorization::pollard_rho()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637">gpmp::Factorization::pollard_rho()</a>.</p>
 
 </div>
 </div>
-<a id="a45872043df6439710271af8a0a90b826"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45872043df6439710271af8a0a90b826">&#9670;&nbsp;</a></span>__FACTOR__</h2>
+<a id="a84fed0379dcecaf212b75b165951a391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84fed0379dcecaf212b75b165951a391">&#9670;&nbsp;</a></span>__FACTOR__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmtpk_1_1Factorization.html">mtpk::Factorization</a> __FACTOR__</td>
+          <td class="memname"><a class="el" href="classgpmp_1_1Factorization.html">gpmp::Factorization</a> __FACTOR__</td>
         </tr>
       </table>
 </div><div class="memdoc">

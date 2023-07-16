@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['lambda_1293',['lambda',['../classmtpk_1_1ml_1_1Logreg.html#a3d9fd6198421b05aaf1e729fae07e1d4',1,'mtpk::ml::Logreg']]],
-  ['layer_5fptr_1294',['layer_ptr',['../classmtpk_1_1ml_1_1PrimaryMLP.html#ab44d549917a926ca38f278440071322a',1,'mtpk::ml::PrimaryMLP']]],
-  ['layer_5funits_1295',['layer_units',['../classmtpk_1_1ml_1_1SecondaryMLP.html#adcfe96d79227b0139b424bba5e8bd910',1,'mtpk::ml::SecondaryMLP']]],
-  ['learning_5frate_1296',['learning_rate',['../classmtpk_1_1ml_1_1Logreg.html#a9aeac0feebe7686ec9da2330cf142898',1,'mtpk::ml::Logreg::learning_rate()'],['../classmtpk_1_1NaiveNet.html#a79f9b50c7791cb5e2b4a96763f5655ed',1,'mtpk::NaiveNet::learning_rate()']]],
-  ['lr_1297',['lr',['../classmtpk_1_1ml_1_1SecondaryMLP.html#a50f60db18b3b28cfd61e2a981da66640',1,'mtpk::ml::SecondaryMLP']]]
+  ['inputset_1421',['inputSet',['../classgpmp_1_1ml_1_1BayesBernoulli.html#aa951e1b4e57f5b16b382f7f086535d81',1,'gpmp::ml::BayesBernoulli::inputSet()'],['../classgpmp_1_1ml_1_1BayesGauss.html#a76cd866abb62ff939dd825533a030855',1,'gpmp::ml::BayesGauss::inputSet()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#af2475956d539dd847641e453426b4201',1,'gpmp::ml::BayesMutliNom::inputSet()'],['../classgpmp_1_1ml_1_1AutoEncoder.html#a9cb7137756e38872694f3e7c4fc93c56',1,'gpmp::ml::AutoEncoder::inputSet()'],['../classgpmp_1_1ml_1_1kNN.html#ad3054d1781f12870b04ab0766509b486',1,'gpmp::ml::kNN::inputSet()'],['../classgpmp_1_1ml_1_1Logreg.html#ad7c0b572c9d15818e0228febe17f047b',1,'gpmp::ml::Logreg::inputSet()'],['../classgpmp_1_1ml_1_1SVC.html#a0ee880e61f155a4c4100d93165ba8d3c',1,'gpmp::ml::SVC::inputSet()']]],
+  ['inputsize_1422',['inputSize',['../TEST_8cpp.html#a8a85cb88e40ad12c9b86417834629251',1,'TEST.cpp']]],
+  ['instance_5flist_1423',['instance_list',['../classgpmp_1_1ml_1_1KF__CV.html#acdf0560db7b09e22f52e8bb02d8602e5',1,'gpmp::ml::KF_CV']]]
 ];
