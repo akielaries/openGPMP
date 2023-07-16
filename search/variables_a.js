@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['k_1424',['k',['../classgpmp_1_1ml_1_1AutoEncoder.html#af0d1977287ff0646ab4f53a33a37bb98',1,'gpmp::ml::AutoEncoder::k()'],['../classgpmp_1_1ml_1_1kNN.html#ab08d3ac7c1118bcae9a5e5eee418f219',1,'gpmp::ml::kNN::k()'],['../classgpmp_1_1ml_1_1Logreg.html#a4bc0a9699239baef7fbe885bb94c5a6f',1,'gpmp::ml::Logreg::k()'],['../classgpmp_1_1ml_1_1SVC.html#a693fffd9e039d3e8500f320e8bf2c586',1,'gpmp::ml::SVC::k()']]],
-  ['k_1425',['K',['../classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f',1,'gpmp::ml::CV']]]
+  ['mean_5fstdev_1298',['mean_stdev',['../structmtpk_1_1ml_1_1summary.html#a74e9e858e92c03222dd58a178b477454',1,'mtpk::ml::summary']]],
+  ['mtx_5fneg_1299',['mtx_neg',['../namespacepython_1_1linalg.html#ac78734a635d502405ccfe13cf5ac6b52',1,'python::linalg']]],
+  ['mtx_5fo_1300',['mtx_o',['../namespacepython_1_1linalg.html#a0343bd4d51e02f97e21ae10be5c3c50e',1,'python::linalg']]],
+  ['mtx_5fpos_1301',['mtx_pos',['../namespacepython_1_1linalg.html#a8efb00aa7aefef926dc00d6ad1c5ca75',1,'python::linalg']]],
+  ['mtx_5fz1_1302',['mtx_z1',['../namespacepython_1_1linalg.html#ab23ed29b6cf31e7f1b40458d13fc983d',1,'python::linalg']]],
+  ['mtx_5fz2_1303',['mtx_z2',['../namespacepython_1_1linalg.html#ac9d40235255fd376e3c2cc4b8fd67071',1,'python::linalg']]],
+  ['mu_1304',['mu',['../classmtpk_1_1ml_1_1BayesGauss.html#aea28cb2f16fb7fd5701d8595744d49e4',1,'mtpk::ml::BayesGauss']]]
 ];

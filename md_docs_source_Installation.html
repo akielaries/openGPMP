@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: Installation</title>
+<title>openMTPK: Installation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -75,7 +75,7 @@ $(function() {
 <div class="title">Installation </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Requirements are loose and mostly tied to what openGPMP was tested and used on. The current installation does not allow for the building of the packages language bindings, limiting use to the core c++ lib. See below on how to build the bindings from source if interested.</p>
+<div class="textblock"><p>Requirements are loose and mostly tied to what openMTPK was tested and used on. The current installation does not allow for the building of the packages language bindings, limiting use to the core c++ lib. See below on how to build the bindings from source if interested.</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
 Python</h1>
 <p>The Python API installation is easy through the pipeline in place for creating and publishing the binding to PyPI. </p>
@@ -85,7 +85,7 @@ Requirements</h2>
 <li>Python 3.x</li>
 <li>pip</li>
 </ul>
-<div class="fragment"><div class="line">$ pip install pygpmp</div>
+<div class="fragment"><div class="line">$ pip install openmtpk</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Source</h1>
 <h2><a class="anchor" id="autotoc_md10"></a>
@@ -96,8 +96,8 @@ Requirements</h2>
 <li>g++</li>
 </ul>
 <div class="fragment"><div class="line"># clone repo</div>
-<div class="line">$ git clone git@github.com:akielaries/openGPMP.git</div>
-<div class="line">$ cd oepngpmp</div>
+<div class="line">$ git clone git@github.com:akielaries/openMTPK.git</div>
+<div class="line">$ cd oepnMTPK</div>
 <div class="line"># create build dir</div>
 <div class="line">$ mkdir build &amp;&amp; cd build</div>
 <div class="line"># create necessary objects and static library</div>
@@ -109,10 +109,10 @@ Requirements</h2>
 <p><b>Note</b> This process asumes your STDLIB path is /usr/local/lib, where most 3rd-party libs are located if not, run the following: </p>
 </blockquote>
 <div class="fragment"><div class="line">$ LD_LIBRARY_PATH=/usr/local/lib</div>
-</div><!-- fragment --><p>To test the installation build some of the example drivers in the projects <a href="https://github.com/akielaries/openGPMP/tree/main/samples">samples</a> directory. </p><div class="fragment"><div class="line"># compile yourself</div>
+</div><!-- fragment --><p>To test the installation build some of the example drivers in the projects <a href="https://github.com/akielaries/openMTPK/tree/main/samples">samples</a> directory. </p><div class="fragment"><div class="line"># compile yourself</div>
 <div class="line">$ cd samples</div>
-<div class="line">$ g++ cipher.cpp -lopenGPMP -o cipher</div>
-<div class="line">$ g++ arith.cpp -lopenGPMP -o arith</div>
+<div class="line">$ g++ cipher.cpp -lopenMTPK -o cipher</div>
+<div class="line">$ g++ arith.cpp -lopenMTPK -o arith</div>
 <div class="line"># script to test all modules and their drivers</div>
 <div class="line"># using the projects root makefile</div>
 <div class="line">$ make arith</div>
@@ -123,7 +123,7 @@ Dependencies</h2>
 <blockquote class="doxtable">
 <p><b>Warning</b> At the moment these dependencies do not apply to the current release. </p>
 </blockquote>
-<p>The goal of openGPMP is to have as little dependencies as possible without re-inventing the wheel too much while performing speedy computations. Other than C and C++ standard libraries the 3rd-party dependencies that are used are deemed necessary for many of the packages functionalities. openGPMP makes use of a few open source cross-platform compatible packages and libraries in the cases of threading for performance, graphics libraries, and packages for testing and fuzzing.</p>
+<p>The goal of openMTPK is to have as little dependencies as possible without re-inventing the wheel too much while performing speedy computations. Other than C and C++ standard libraries the 3rd-party dependencies that are used are deemed necessary for many of the packages functionalities. openMTPK makes use of a few open source cross-platform compatible packages and libraries in the cases of threading for performance, graphics libraries, and packages for testing and fuzzing.</p>
 <ul>
 <li>openMP: Open Multi-Processing is useful for simple threading when needed. For loops that don't make complex calls can be encosed in a <code>#pragma omp parallel for {}</code> declaration.</li>
 <li>openCL: Open Computing Language is another useful threading API that allows for more customized parallelization techniques.</li>
@@ -137,7 +137,7 @@ Tools</h2>
 <li>AFL and AFL++: AFL is a fuzzing tool built by Google but now deprecated. AFL++ is an open source community effort forked from AFL offering the same functionalities but much better. Advertised as better mutations, more speed, and better instrumentation. Fuzzing comes in handy for generating random inputs for your program and analyzing the outputs Analyzing crashes, unique or not, proves valuable for implementing strong and secure code.</li>
 </ul>
 <p>The code below is an example on how testing on the arithmetic module was done. </p><div class="fragment"><div class="line">{c++}</div>
-<div class="line">   #include &lt;openGPMP/arithmetic/arith.hpp&gt;</div>
+<div class="line">   #include &lt;openMTPK/arithmetic/arith.hpp&gt;</div>
 <div class="line">   #include &lt;gtest/gtest.h&gt;</div>
 <div class="line">   namespace {</div>
 <div class="line">       arith ar;</div>

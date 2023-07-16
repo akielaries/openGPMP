@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: include/nt/random.hpp Source File</title>
+<title>openMTPK: include/nt/random.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -123,25 +123,25 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">   47</a></span>&#160;<span class="preprocessor">#define __32BIT_1 4294967295           </span></div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="random_8hpp.html#a75e78476facb8b3d67ceb192dd0843d8">   48</a></span>&#160;<span class="preprocessor">#define __64BIT 18446744073709600000   </span></div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">   49</a></span>&#160;<span class="preprocessor">#define __64BIT_1 18446744073709551615 </span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemtpk.html">mtpk</a> {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">namespace </span>core {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html">   58</a></span>&#160;<span class="keyword">namespace </span>rndm {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">LCG</a>(uint32_t lower = 0, uint32_t upper = <a class="code" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespacemtpk_1_1core_1_1rndm.html">   58</a></span>&#160;<span class="keyword">namespace </span>rndm {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;uint32_t <a class="code" href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">LCG</a>(uint32_t lower = 0, uint32_t upper = <a class="code" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uint64_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">LCGl</a>(uint64_t lower = 0, uint64_t upper = <a class="code" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uint64_t <a class="code" href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">LCGl</a>(uint64_t lower = 0, uint64_t upper = <a class="code" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace rndm</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// namespace core</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace mtpk</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a877ba1281f401e554032278eea7fa9de"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">gpmp::core::rndm::LCGl</a></div><div class="ttdeci">uint64_t LCGl(uint64_t lower=0, uint64_t upper=__64BIT_1)</div><div class="ttdoc">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (fr...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00052">random.cpp:52</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_ada44469bf3b8992afab596e348be771c"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">gpmp::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=__32BIT_1)</div><div class="ttdoc">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increme...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
-<div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
+<div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a0af7086889f0187b749ceceac6f8d802"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a0af7086889f0187b749ceceac6f8d802">mtpk::core::rndm::LCGl</a></div><div class="ttdeci">uint64_t LCGl(uint64_t lower=0, uint64_t upper=__64BIT_1)</div><div class="ttdoc">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (fr...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00052">random.cpp:52</a></div></div>
+<div class="ttc" id="anamespacemtpk_1_1core_1_1rndm_html_a7328b85c888165bbe34e83379e12c186"><div class="ttname"><a href="namespacemtpk_1_1core_1_1rndm.html#a7328b85c888165bbe34e83379e12c186">mtpk::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=__32BIT_1)</div><div class="ttdoc">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increme...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
 <div class="ttc" id="arandom_8hpp_html_a2ef0e997da61852a686f4bfe380e0f71"><div class="ttname"><a href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a></div><div class="ttdeci">#define __32BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00047">random.hpp:47</a></div></div>
 <div class="ttc" id="arandom_8hpp_html_a62ccd8be8ddb4f823775dc0bb92343a5"><div class="ttname"><a href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a></div><div class="ttdeci">#define __64BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00049">random.hpp:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

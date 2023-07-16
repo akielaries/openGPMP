@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/linalg/_gpu_kernel_mtx_mul.c Source File</title>
+<title>openMTPK: modules/linalg/accl/_gpu_kernel_mtx_mul.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -71,7 +71,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_78861b883ab737ec574de6748f1329c7.html">linalg</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e05d7e2b1ecd646af5bb94391405f3b5.html">modules</a></li><li class="navelem"><a class="el" href="dir_78861b883ab737ec574de6748f1329c7.html">linalg</a></li><li class="navelem"><a class="el" href="dir_61c341a1783b9f7967b19270bd42f6df.html">accl</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="__gpu__kernel__mtx__mul_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a>(__global <span class="keywordtype">float</span> *C, __global <span class="keywordtype">float</span> *A, __global <span class="keywordtype">float</span> *B,</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__gpu__kernel__mtx_8h.html#afe33847ea3766a6cff2410a65a91dbc8">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a>(__global <span class="keywordtype">float</span> *C, __global <span class="keywordtype">float</span> *A, __global <span class="keywordtype">float</span> *B,</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                        <span class="keywordtype">int</span> wA, <span class="keywordtype">int</span> wB) {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> tx = get_global_id(0);</div>
@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// thread writes one element</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    C[ty * wA + tx] = value;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="a__gpu__kernel__mtx__mul_8c_html_afe33847ea3766a6cff2410a65a91dbc8"><div class="ttname"><a href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a></div><div class="ttdeci">__kernel void matrixMul(__global float *C, __global float *A, __global float *B, int wA, int wB)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__kernel__mtx__mul_8c_source.html#l00004">_gpu_kernel_mtx_mul.c:4</a></div></div>
+<div class="ttc" id="a__gpu__kernel__mtx__mul_8c_html_afe33847ea3766a6cff2410a65a91dbc8"><div class="ttname"><a href="__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8">matrixMul</a></div><div class="ttdeci">__kernel void matrixMul(__global float *C, __global float *A, __global float *B, int wA, int wB)</div><div class="ttdoc">Matrix Multiplication kernel function.</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__kernel__mtx__mul_8c_source.html#l00004">_gpu_kernel_mtx_mul.c:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

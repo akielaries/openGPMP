@@ -1,15 +1,5 @@
 var searchData=
 [
-  ['weights_1492',['weights',['../classgpmp_1_1ml_1_1Logreg.html#ab68d3d7b2ec2d3f2d9efde7d5194c18a',1,'gpmp::ml::Logreg::weights()'],['../classgpmp_1_1NaiveNet.html#a4df00bf4ebae39e858bf61580303b970',1,'gpmp::NaiveNet::weights()'],['../classgpmp_1_1ml_1_1SVC.html#a78a90a2d08eebc52e00ac749feadbe11',1,'gpmp::ml::SVC::weights()']]],
-  ['weights1_1493',['weights1',['../classgpmp_1_1ml_1_1AutoEncoder.html#ab48e0d515e2ca46f7d43307e7a48a87b',1,'gpmp::ml::AutoEncoder']]],
-  ['weights2_1494',['weights2',['../classgpmp_1_1ml_1_1AutoEncoder.html#a637683b5e22fe74d0541cd8cf6e10f64',1,'gpmp::ml::AutoEncoder']]],
-  ['weightshiddenoutput_1495',['weightsHiddenOutput',['../classNeuralNetwork.html#af2962e88299a85524864997ca77f4318',1,'NeuralNetwork']]],
-  ['weightsinputhidden_1496',['weightsInputHidden',['../classNeuralNetwork.html#ad3f73550228cc1c950bbcc76097d0aa1',1,'NeuralNetwork']]],
-  ['white_1497',['WHITE',['../openGL__bounce_8cpp.html#ae32da948f8c288c18cea7058ab2d93cb',1,'openGL_bounce.cpp']]],
-  ['width_1498',['width',['../classCheckerboard.html#a163161b2a9900345ff4bed3062db7d0b',1,'Checkerboard']]],
-  ['workers_1499',['workers',['../classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b',1,'gpmp::core::ThreadPool']]],
-  ['wt_1500',['wt',['../structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323',1,'gpmp::ml::neuron']]],
-  ['wt_5flast_1501',['wt_last',['../structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287',1,'gpmp::ml::neuron']]],
-  ['wt_5fmtx_1502',['wt_mtx',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a5621abb427db0e1f932cfdbff3e25762',1,'gpmp::ml::SecondaryMLP']]],
-  ['wt_5fsaved_1503',['wt_saved',['../structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037',1,'gpmp::ml::neuron']]]
+  ['y_1358',['y',['../classmtpk_1_1Vectors.html#a3507b05366f61c6cf61023f5829fa5c7',1,'mtpk::Vectors::y()'],['../classmtpk_1_1ml_1_1LinearRegression.html#a8b1b6154319dfdad276baf8a55454bec',1,'mtpk::ml::LinearRegression::y()']]],
+  ['y_5fhat_1359',['y_hat',['../classmtpk_1_1ml_1_1BayesBernoulli.html#a925dfda544a637db2f6d5cd11511feec',1,'mtpk::ml::BayesBernoulli::y_hat()'],['../classmtpk_1_1ml_1_1BayesGauss.html#a88be942e130ebfb521afd8b0b0a660f4',1,'mtpk::ml::BayesGauss::y_hat()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#a252b6edb055bd587315c0c9f7e20bdab',1,'mtpk::ml::BayesMutliNom::y_hat()'],['../classmtpk_1_1ml_1_1AutoEncoder.html#ac3f74c19a898c15b3148069bf2eaf970',1,'mtpk::ml::AutoEncoder::y_hat()'],['../classmtpk_1_1ml_1_1Logreg.html#ae8b77910d93f14fb3260bc2b4b31c2a4',1,'mtpk::ml::Logreg::y_hat()'],['../classmtpk_1_1ml_1_1SVC.html#ad79f5c65ce4cd7335a133065ec49d975',1,'mtpk::ml::SVC::y_hat()']]]
 ];

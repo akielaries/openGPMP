@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['regression_1569',['REGRESSION',['../ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43',1,'ml.hpp']]],
-  ['resampling_1570',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]]
+  ['neural_5fnetworks_1418',['NEURAL_NETWORKS',['../ml_8hpp.html#a07607da4adfe00593b227c7e8885f17e',1,'ml.hpp']]]
 ];

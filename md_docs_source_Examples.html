@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: Examples</title>
+<title>openMTPK: Examples</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -75,17 +75,17 @@ $(function() {
 <div class="title">Examples </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>See the <a href="https://github.com/akielaries/openGPMP/tree/main/samples">openGPMP/samples</a> folder for many more examples on how to use openGPMP.</p>
+<div class="textblock"><p>See the <a href="https://github.com/akielaries/openMTPK/tree/main/samples">openMTPK/samples</a> folder for many more examples on how to use openMTPK.</p>
 <p>Example C++ driver file for running Caesar Cipher &amp; Mono-Alphabetic Substitution Keyword cipher: </p><div class="fragment"><div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><span class="comment">// include the openGPMP Number Theory header</span></div>
-<div class="line"><span class="preprocessor">#include &lt;openGPMP/nt.hpp&gt;</span></div>
+<div class="line"><span class="comment">// include the openMTPK Number Theory header</span></div>
+<div class="line"><span class="preprocessor">#include &lt;openMTPK/nt.hpp&gt;</span></div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>() {</div>
-<div class="line">    <span class="comment">// declare CIPHER class obj (this lies within the gpmp namespace)</span></div>
-<div class="line">    <a class="code" href="classgpmp_1_1Cipher.html">gpmp::Cipher</a> cc;</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line">    <span class="comment">// declare CIPHER class obj (this lies within the mtpk namespace)</span></div>
+<div class="line">    <a class="code" href="classmtpk_1_1Cipher.html">mtpk::Cipher</a> cc;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">/* CAESAR CIPHER */</span></div>
 <div class="line">    std::string text0 = <span class="stringliteral">&quot;Plaintext&quot;</span>;</div>
@@ -104,11 +104,11 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Hashtext2 = &quot;</span> &lt;&lt; hashtext_2 &lt;&lt; std::endl;</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aMandelbrot_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="Mandelbrot_8c_source.html#l00094">Mandelbrot.c:94</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Cipher_html"><div class="ttname"><a href="classgpmp_1_1Cipher.html">gpmp::Cipher</a></div><div class="ttdef"><b>Definition:</b> <a href="cipher_8hpp_source.html#l00050">cipher.hpp:50</a></div></div>
+<div class="ttc" id="aMandelbrot_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="Mandelbrot_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="Mandelbrot_8cpp_source.html#l00112">Mandelbrot.cpp:112</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Cipher_html"><div class="ttname"><a href="classmtpk_1_1Cipher.html">mtpk::Cipher</a></div><div class="ttdef"><b>Definition:</b> <a href="cipher_8hpp_source.html#l00050">cipher.hpp:50</a></div></div>
 </div><!-- fragment --><p>A Python example showing the same functionalities.</p>
 <div class="fragment"><div class="line">#!/usr/bin/python3</div>
-<div class="line">from pygpmp import nt</div>
+<div class="line">from openmtpk import nt</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line">def main():</div>

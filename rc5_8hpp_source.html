@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: include/nt/rc5.hpp Source File</title>
+<title>openMTPK: include/nt/rc5.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This software is licensed as described in the file LICENSE, which</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * you should have received as part of this distribution. The terms</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * among other details are referenced in the official documentation</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openGPMP/ along with</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * seen here : https://akielaries.github.io/openMTPK/ along with</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * important files seen in this project.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
@@ -139,29 +139,25 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/* Key Scheduling Algorithm */</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classRC5.html#ab984d44b40653fcd0fcadb8b65f9764e">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#ab984d44b40653fcd0fcadb8b65f9764e">KSA</a>(<span class="keywordtype">char</span> *key, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *S, <span class="keywordtype">int</span> swap_type);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/* Pseudo-Random Generation Algorithm */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c">PRGA</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *S,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;              <span class="keywordtype">char</span> *plaintext,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;              <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ciphertext,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;              <span class="keywordtype">int</span> swap_type);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* functoin to display our hashed text */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0">display_hash</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ciphertext);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">/* compute our hash using the the RC4 encryption algorithm */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classRC5.html#a83718fea487a833eb2ea84a536d178f0">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a83718fea487a833eb2ea84a536d178f0">compute</a>(<span class="keywordtype">char</span> *key,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                 <span class="keywordtype">char</span> *plaintext,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ciphertext,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                 <span class="keywordtype">int</span> swap_type);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classRC5.html#aaff32327548c82f78c779fd0420c3782">   73</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#aaff32327548c82f78c779fd0420c3782">shift_left</a>(uint32_t v, uint32_t n);</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classRC5.html#a3f33a715574965175a89af9f6cf9a04e">   74</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#a3f33a715574965175a89af9f6cf9a04e">shift_right</a>(uint32_t v, uint32_t n);</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classRC5.html#ae1fe017f0adfcc82c0661f452067d89f">   75</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#ae1fe017f0adfcc82c0661f452067d89f">rotate_left</a>(uint32_t v, uint32_t n);</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classRC5.html#a2ce91193b4d8b594654fe6253344b790">   76</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#a2ce91193b4d8b594654fe6253344b790">rotate_right</a>(uint32_t v, uint32_t n);</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classRC5.html#a53618a2600455e5d7d2c2b7a7a795bea">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a53618a2600455e5d7d2c2b7a7a795bea">encrypt</a>(uint32_t S[26], uint32_t inout[4]);</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad">   78</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad">decrypt</a>(uint32_t S[26], uint32_t inout[4]);</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443">expand</a>(uint32_t L[4], uint32_t S[26]);</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classRC5.html#a7d8cfbb3d9376caec420f4d5fa22be4d">   80</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classRC5.html#a7d8cfbb3d9376caec420f4d5fa22be4d">test</a>(uint32_t S[26], uint32_t messg[4]);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a77df198cca2a9572d9854dfd03aa6f7c">PRGA</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *S, <span class="keywordtype">char</span> *plaintext, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ciphertext,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;              <span class="keywordtype">int</span> swap_type);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/* functoin to display our hashed text */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0">display_hash</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ciphertext);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* compute our hash using the the RC4 encryption algorithm */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classRC5.html#a83718fea487a833eb2ea84a536d178f0">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a83718fea487a833eb2ea84a536d178f0">compute</a>(<span class="keywordtype">char</span> *key, <span class="keywordtype">char</span> *plaintext, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *ciphertext,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                 <span class="keywordtype">int</span> swap_type);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classRC5.html#aaff32327548c82f78c779fd0420c3782">   69</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#aaff32327548c82f78c779fd0420c3782">shift_left</a>(uint32_t v, uint32_t n);</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classRC5.html#a3f33a715574965175a89af9f6cf9a04e">   70</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#a3f33a715574965175a89af9f6cf9a04e">shift_right</a>(uint32_t v, uint32_t n);</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classRC5.html#ae1fe017f0adfcc82c0661f452067d89f">   71</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#ae1fe017f0adfcc82c0661f452067d89f">rotate_left</a>(uint32_t v, uint32_t n);</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classRC5.html#a2ce91193b4d8b594654fe6253344b790">   72</a></span>&#160;    uint32_t <a class="code" href="classRC5.html#a2ce91193b4d8b594654fe6253344b790">rotate_right</a>(uint32_t v, uint32_t n);</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classRC5.html#a53618a2600455e5d7d2c2b7a7a795bea">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a53618a2600455e5d7d2c2b7a7a795bea">encrypt</a>(uint32_t S[26], uint32_t inout[4]);</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad">   74</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad">decrypt</a>(uint32_t S[26], uint32_t inout[4]);</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443">   75</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443">expand</a>(uint32_t L[4], uint32_t S[26]);</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classRC5.html#a7d8cfbb3d9376caec420f4d5fa22be4d">   76</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classRC5.html#a7d8cfbb3d9376caec420f4d5fa22be4d">test</a>(uint32_t S[26], uint32_t messg[4]);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassRC5_html"><div class="ttname"><a href="classRC5.html">RC5</a></div><div class="ttdef"><b>Definition:</b> <a href="rc5_8hpp_source.html#l00050">rc5.hpp:50</a></div></div>
 <div class="ttc" id="aclassRC5_html_a08bb89bb76594e9b5ea87a9237a3e443"><div class="ttname"><a href="classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443">RC5::expand</a></div><div class="ttdeci">void expand(uint32_t L[4], uint32_t S[26])</div></div>
 <div class="ttc" id="aclassRC5_html_a0fa6a3930a7e372d8606af8505ff5dd0"><div class="ttname"><a href="classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0">RC5::display_hash</a></div><div class="ttdeci">void display_hash(unsigned char *ciphertext)</div></div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['show_5frows_1571',['SHOW_ROWS',['../datatable_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3',1,'datatable.hpp']]],
-  ['statistics_1572',['STATISTICS',['../ml_8hpp.html#a39a896b530488d9edc8b60797d3574e2',1,'ml.hpp']]],
-  ['svc_5fhpp_1573',['SVC_HPP',['../svc_8hpp.html#a8302a15c90dd2865f4946da12d6afad3',1,'svc.hpp']]]
+  ['pi_1419',['pi',['../modules_2complex_2torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.cpp'],['../torus__animated_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.cpp']]],
+  ['primes_1420',['PRIMES',['../nt_8hpp.html#a48293241e70c61f3645fc82a34b6c75e',1,'nt.hpp']]],
+  ['print_5fline_1421',['PRINT_LINE',['../__gpu__mtx_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'PRINT_LINE():&#160;_gpu_mtx.c'],['../__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'PRINT_LINE():&#160;_gpu_mtx_add.c']]]
 ];

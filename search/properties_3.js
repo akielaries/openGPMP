@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rows_1534',['rows',['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#aa1b62f91245783ea8d71b5a28d1a9980',1,'pygpmp.linalg.linalg.Matrix.rows()'],['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#ad9f69dabc851035bf2b910bac34d2ae3',1,'pygpmp.linalg.linalg.MatrixI.rows()']]]
+  ['rows_1386',['rows',['../classopenmtpk_1_1linalg_1_1linalg_1_1Matrix.html#a39b008fa896b0787b0770b297c8fdef4',1,'openmtpk.linalg.linalg.Matrix.rows()'],['../classopenmtpk_1_1linalg_1_1linalg_1_1MatrixI.html#a2a12f6d36581ca50264ce3c6f3185063',1,'openmtpk.linalg.linalg.MatrixI.rows()']]]
 ];

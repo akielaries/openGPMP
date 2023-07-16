@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['radius_1467',['radius',['../classBall.html#ae75638f44296592c288bf7c87590fee0',1,'Ball']]],
-  ['red_1468',['RED',['../openGL__bounce_8cpp.html#a0d8ee36fabd3e5f0368a7e834ab1f80a',1,'openGL_bounce.cpp']]],
-  ['reg_1469',['reg',['../classgpmp_1_1ml_1_1Logreg.html#ae52f326a14c4a2765b4a4751ecca4b51',1,'gpmp::ml::Logreg']]],
-  ['routine_1470',['routine',['../structwork__st.html#aac5b5c8b8b8b7b441cfebc86e9ec7adc',1,'work_st']]],
-  ['rows_1471',['rows',['../classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb',1,'gpmp::linalg::Matrix']]]
+  ['tasks_1342',['tasks',['../classmtpk_1_1core_1_1ThreadPool.html#a5d4b1a17c65afeb7e607561632a27cab',1,'mtpk::core::ThreadPool']]],
+  ['theta_1343',['theta',['../classmtpk_1_1ml_1_1BayesBernoulli.html#af123a8aaf35d7d2d3338894a50701801',1,'mtpk::ml::BayesBernoulli::theta()'],['../classmtpk_1_1ml_1_1BayesMutliNom.html#ab14b439b5d6e655762b18123ac47da08',1,'mtpk::ml::BayesMutliNom::theta()']]],
+  ['threads_1344',['threads',['../struct__threadpool__st.html#a056bc09374af3da1a337991fc1d86678',1,'_threadpool_st']]],
+  ['threshold_1345',['threshold',['../classmtpk_1_1core_1_1OutlierFinder.html#a95c7516a7fa2153de2dc0b860dde6b67',1,'mtpk::core::OutlierFinder']]],
+  ['turnover_1346',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]]
 ];

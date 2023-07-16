@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: samples/cpp/linalg_ops.cpp Source File</title>
+<title>openMTPK: samples/cpp/linalg_ops.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="openGPMP_icon_smaller.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="openMTPK_icon_smaller.png"/></td>
   <td id="projectalign">
-   <div id="projectname">openGPMP
+   <div id="projectname">openMTPK
    </div>
    <div id="projectbrief">Open Source Mathematics Package</div>
   </td>
@@ -87,10 +87,10 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;openGPMP/linalg.hpp&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;openMTPK/linalg.hpp&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*&lt; FOR DEBUGGING LOCAL TESTING &gt;*/</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacegpmp.html">gpmp</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacemtpk.html">mtpk</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="linalg__ops_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="linalg__ops_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv</a>() {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::ifstream csvFile(<span class="stringliteral">&quot;data/school_scores.csv&quot;</span>);</div>
@@ -109,25 +109,25 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    csvFile.close();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">size_t</span> rows = data.size();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">size_t</span> cols = data[0].size();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    gpmp::Matrix&lt;double&gt; mat(rows, cols);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classmtpk_1_1Matrix.html">mtpk::Matrix&lt;double&gt;</a> mat(rows, cols);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mat.print_mtx();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mat.<a class="code" href="classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6">print_mtx</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="linalg__ops_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   57</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="linalg__ops_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// declaring an object for the Vectors class is permitted</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classgpmp_1_1Vectors.html">gpmp::Vectors</a> v;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classmtpk_1_1Vectors.html">mtpk::Vectors</a> v;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;MATRIX/VECTOR OPERATIONS EXAMPLE\n&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> x = v.<a class="code" href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">add</a>(1, 3);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> x = v.<a class="code" href="classmtpk_1_1Vectors.html#a4fb9434e406936d8be052c99f18f727f">add</a>(1, 3);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Sum = &quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    gpmp::Matrix&lt;int&gt; mat(3, 4);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    mat.print_mtx();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classmtpk_1_1Matrix.html">mtpk::Matrix&lt;int&gt;</a> mat(3, 4);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    mat.<a class="code" href="classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6">print_mtx</a>();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::tuple&lt;Matrix&lt;double&gt;, <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;double&gt;</a>&gt; matrices =</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::make_tuple(<a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;double&gt;</a>(5, 3), <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;double&gt;</a>(6, 4));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::tuple&lt;Matrix&lt;double&gt;, <a class="code" href="classmtpk_1_1Matrix.html">Matrix&lt;double&gt;</a>&gt; matrices =</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::make_tuple(<a class="code" href="classmtpk_1_1Matrix.html">Matrix&lt;double&gt;</a>(5, 3), <a class="code" href="classmtpk_1_1Matrix.html">Matrix&lt;double&gt;</a>(6, 4));</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::get&lt;0&gt;(matrices).print_mtx();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::get&lt;1&gt;(matrices).print_mtx();</div>
@@ -137,13 +137,13 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// declaring matrix with random negative decimals</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 2x2 matrix of random negative floats\n&quot;</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> matrix_neg = gpmp::mtx&lt;double&gt;::randn(2, 2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> matrix_neg = <a class="code" href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx&lt;double&gt;::randn</a>(2, 2);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    matrix_neg.print_shape();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    matrix_neg.print_mtx();</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// declaring matrix with random positive decimals</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 2x2 matrix of random positive floats\n&quot;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">auto</span> matrix_pos = gpmp::mtx&lt;double&gt;::rand(2, 2);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">auto</span> matrix_pos = <a class="code" href="structmtpk_1_1mtx.html#a672570f8832dff00d202613257093546">mtpk::mtx&lt;double&gt;::rand</a>(2, 2);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    matrix_pos.print_shape();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    matrix_pos.print_mtx();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// declare a matrix of zeros with 3 x 5 dimensions</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 3x5 matrix of 0&#39;s&quot;</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">auto</span> matrix_zero = gpmp::Matrix&lt;double&gt;(3, 5);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">auto</span> matrix_zero = <a class="code" href="classmtpk_1_1Matrix.html">mtpk::Matrix&lt;double&gt;</a>(3, 5);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    matrix_zero.print_shape();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    matrix_zero.print_mtx();</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
@@ -173,25 +173,30 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// dimensions</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 8x9 matrix of 0&#39;s&quot;</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">auto</span> matrix_zero_2 = gpmp::mtx&lt;int&gt;::zeros(8, 9);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">auto</span> matrix_zero_2 = <a class="code" href="structmtpk_1_1mtx.html#a1d0a2cdd2e9d7a09de5c0fda0cc32bca">mtpk::mtx&lt;int&gt;::zeros</a>(8, 9);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    matrix_zero_2.print_shape();</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    matrix_zero_2.print_mtx();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// declare matrix of ones with 8 x 9 dimensions</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 8x9 matrix of 1&#39;s&quot;</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">auto</span> matrix_one = gpmp::mtx&lt;int&gt;::ones(8, 9);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">auto</span> matrix_one = <a class="code" href="structmtpk_1_1mtx.html#a844bc20fffd518adf98003889a6a1df8">mtpk::mtx&lt;int&gt;::ones</a>(8, 9);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    matrix_one.print_shape();</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    matrix_one.print_mtx();</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1Vectors_html"><div class="ttname"><a href="classgpmp_1_1Vectors.html">gpmp::Vectors</a></div><div class="ttdoc">Operations related to Vectors and Scalars.</div><div class="ttdef"><b>Definition:</b> <a href="vectors_8hpp_source.html#l00054">vectors.hpp:54</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Vectors_html_a6ed10371570017245242252b44ef382b"><div class="ttname"><a href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">gpmp::Vectors::add</a></div><div class="ttdeci">int64_t add(int64_t a, int64_t b)</div><div class="ttdef"><b>Definition:</b> <a href="lao_8cpp_source.html#l00047">lao.cpp:47</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html"><div class="ttname"><a href="classmtpk_1_1Matrix.html">mtpk::Matrix</a></div><div class="ttdoc">Matrix and Scalar operations.</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00060">matrix.hpp:60</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Matrix_html_aebd09100745a823d9f0df5e58a2e65f6"><div class="ttname"><a href="classmtpk_1_1Matrix.html#aebd09100745a823d9f0df5e58a2e65f6">mtpk::Matrix::print_mtx</a></div><div class="ttdeci">void print_mtx()</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00382">matrix.hpp:382</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Vectors_html"><div class="ttname"><a href="classmtpk_1_1Vectors.html">mtpk::Vectors</a></div><div class="ttdoc">Operations related to Vectors and Scalars.</div><div class="ttdef"><b>Definition:</b> <a href="vectors_8hpp_source.html#l00054">vectors.hpp:54</a></div></div>
+<div class="ttc" id="aclassmtpk_1_1Vectors_html_a4fb9434e406936d8be052c99f18f727f"><div class="ttname"><a href="classmtpk_1_1Vectors.html#a4fb9434e406936d8be052c99f18f727f">mtpk::Vectors::add</a></div><div class="ttdeci">int64_t add(int64_t a, int64_t b)</div><div class="ttdef"><b>Definition:</b> <a href="lao_8cpp_source.html#l00047">lao.cpp:47</a></div></div>
 <div class="ttc" id="alinalg__ops_8cpp_html_a87392f7d6eb56debc9b16d4fabb79032"><div class="ttname"><a href="linalg__ops_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv</a></div><div class="ttdeci">void print_csv()</div><div class="ttdef"><b>Definition:</b> <a href="linalg__ops_8cpp_source.html#l00035">linalg_ops.cpp:35</a></div></div>
 <div class="ttc" id="alinalg__ops_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="linalg__ops_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="linalg__ops_8cpp_source.html#l00057">linalg_ops.cpp:57</a></div></div>
-<div class="ttc" id="anaive__net_8hpp_html_aca89ce710ee8842221a0df25940c6a36"><div class="ttname"><a href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a></div><div class="ttdeci">Eigen::MatrixXf Matrix</div><div class="ttdef"><b>Definition:</b> <a href="naive__net_8hpp_source.html#l00045">naive_net.hpp:45</a></div></div>
-<div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
+<div class="ttc" id="anamespacemtpk_html"><div class="ttname"><a href="namespacemtpk.html">mtpk</a></div><div class="ttdoc">The source C++ openMTPK namespace.</div></div>
+<div class="ttc" id="astructmtpk_1_1mtx_html_a1d0a2cdd2e9d7a09de5c0fda0cc32bca"><div class="ttname"><a href="structmtpk_1_1mtx.html#a1d0a2cdd2e9d7a09de5c0fda0cc32bca">mtpk::mtx::zeros</a></div><div class="ttdeci">static Matrix&lt; T &gt; zeros(size_t rows, size_t cols)</div><div class="ttdoc">Matrix zeros method.</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00410">matrix.hpp:410</a></div></div>
+<div class="ttc" id="astructmtpk_1_1mtx_html_a672570f8832dff00d202613257093546"><div class="ttname"><a href="structmtpk_1_1mtx.html#a672570f8832dff00d202613257093546">mtpk::mtx::rand</a></div><div class="ttdeci">static Matrix&lt; T &gt; rand(size_t rows, size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00439">matrix.hpp:439</a></div></div>
+<div class="ttc" id="astructmtpk_1_1mtx_html_a844bc20fffd518adf98003889a6a1df8"><div class="ttname"><a href="structmtpk_1_1mtx.html#a844bc20fffd518adf98003889a6a1df8">mtpk::mtx::ones</a></div><div class="ttdeci">static Matrix&lt; T &gt; ones(size_t rows, size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00417">matrix.hpp:417</a></div></div>
+<div class="ttc" id="astructmtpk_1_1mtx_html_a97b03f5f01387e000198f1db437681be"><div class="ttname"><a href="structmtpk_1_1mtx.html#a97b03f5f01387e000198f1db437681be">mtpk::mtx::randn</a></div><div class="ttdeci">static Matrix&lt; T &gt; randn(size_t rows, size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="matrix_8hpp_source.html#l00423">matrix.hpp:423</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
