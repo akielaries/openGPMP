@@ -1,12 +1,12 @@
 # Changelog
 
-# v1.0.0-rc.1
-See [new contributors](https://github.com/akielaries/openGPMP/graphs/contributors?from=2023-02-07&to=2023-05-09&type=c)
+# v0.10.0
+New contributions from [@eeddgg](https://github.com/eeddgg), [@sidsbrmnn](https://github.com/sidsbrmnn), [@igorsteinmacher](https://github.com/igorsteinmacher)
 ## What's Changed 
-* **Project from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp**
+* **Project renamed from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp. Experimental Julia API as gpmp.jl**
 * Documentation layout + additions
 * `gpmp::accl` namespace introduced hardware acceleration methods using GPUs with the help of 
-OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The
+OpenCL and CUDA for supported platforms (still very much experimental) and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The
 acceleration unit is an optional install with openGPMP with the use of `cmake`.
     * `gpmp::accl::GPU()` class features methods of GPU acceleration using OpenCL. This class will house
     methods seen in the mathematical openGPMP modules that are ideal for GPU computation. The GPU functions
@@ -22,6 +22,7 @@ the default `std::thread::hardware_concurrency()`.
 
 * `gpmp::core::ThreadDispatch()` class that dispatches functions to the threadpool. 
     * view docs [here](https://akielaries.github.io/openGPMP/classgpmp_1_1ThreadDispatch.html)
+
 * `gpmp::core::DataTable()` class capable of reading in CSV files storing them as a pair of 
 vector strings. For now, the DataTable class features very limited functionality, reading in CSVs(entirely,
 or specific columns), formatted displaying, and two conversion methods for the `string->int` & `string->double`.
@@ -39,9 +40,7 @@ of a given polynomial in a function at a given value. For example f(x) = x^2ln(x
 * Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous
 tools lies under the `gpmp::core` namespace. 
 * Patches introduced for [`#27 OSX Build reaches dead state`](https://github.com/akielaries/openGPMP/issues/27)
-    * This introduced additional testing and CICD work related to openGPMP on OSX.
-* TODO
-
+    * This introduced additional testing and CICD work related to openGPMP on OSX
 
 # v0.9.4
 ## What's Changed
