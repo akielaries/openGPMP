@@ -75,13 +75,55 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">redpike.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;../../include/number_theory/redpike.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="redpike_8hpp_source.html">../../include/nt/redpike.hpp</a>&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 </div>
 <p><a href="redpike_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="redpike_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="redpike_8cpp_source.html#l00083">83</a> of file <a class="el" href="redpike_8cpp_source.html">redpike.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;           {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Example usage</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    word plaintext[2] = {0x12345678, 0x9ABCDEF0};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    word key[2] = {0xA0B1C2D3, 0xE4F50607};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">encrypt</a>(plaintext, key);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="amodules_2nt_2rc5_8cpp_html_a563d7b68e1edbd96dfa6a5e4a555a878"><div class="ttname"><a href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">encrypt</a></div><div class="ttdeci">void encrypt(uint32_t S[26], uint32_t inout[4])</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc5_8cpp_source.html#l00052">rc5.cpp:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">encrypt()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

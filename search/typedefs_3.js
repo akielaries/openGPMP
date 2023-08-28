@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['func_5ft_1517',['func_t',['../test_8cpp.html#a6bbbea5ccb1ad0cd907e045aba0f2c73',1,'test.cpp']]]
+  ['matrix_1529',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]],
+  ['memaddr_5ft_1530',['memaddr_t',['../extra_8h.html#a4627a531c18ea1de91a16510522fbb22',1,'extra.h']]]
 ];

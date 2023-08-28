@@ -100,7 +100,7 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;DERIVATIVE EXAMPLE\n\n&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// declare calculus class obj</span></div>
-<div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> <a name="a2"></a><a class="code" href="test_8cpp.html#ace0436f45b86437139aff3edf77bdb64">calc</a>;</div>
+<div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> calc;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// we can declare our equation as a string for ease of use</span></div>
 <div class="line">    std::string st0 = <span class="stringliteral">&quot;4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4&quot;</span>;</div>
@@ -128,7 +128,7 @@ $(function() {
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;First derivative at a given value.\n&quot;</span>;</div>
 <div class="line">    <span class="keywordtype">int</span> val0 = 2;</div>
 <div class="line">    <span class="keywordtype">int</span> val1 = 3;</div>
-<div class="line">    int64_t deriv_result2 = <a class="code" href="test_8cpp.html#ace0436f45b86437139aff3edf77bdb64">calc</a>.deriv_at(st0, val0);</div>
+<div class="line">    int64_t deriv_result2 = calc.<a name="a2"></a><a class="code" href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">deriv_at</a>(st0, val0);</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;df&#39;/dx = &quot;</span> &lt;&lt; deriv_result2 &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/*</span></div>
@@ -143,8 +143,8 @@ $(function() {
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassgpmp_1_1Differential_html"><div class="ttname"><a href="classgpmp_1_1Differential.html">gpmp::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00050">differential.hpp:50</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Differential_html_a7426b8b6830e3c93ce6ff8f4a98c065d"><div class="ttname"><a href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">gpmp::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00103">differential.cpp:103</a></div></div>
 <div class="ttc" id="aderiv_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00015">deriv.cpp:15</a></div></div>
-<div class="ttc" id="atest_8cpp_html_ace0436f45b86437139aff3edf77bdb64"><div class="ttname"><a href="test_8cpp.html#ace0436f45b86437139aff3edf77bdb64">calc</a></div><div class="ttdeci">double calc(func_t func, int n)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00008">test.cpp:8</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

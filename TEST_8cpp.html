@@ -83,13 +83,13 @@ $(function() {
 <div class="title">TEST.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;cmath&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="TEST_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -155,12 +155,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00149">149</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                               {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">double</span> target = (label == 0) ? 0.0 : 1.0;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">double</span> error = output[0] - target;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> error * error;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00166">166</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                               {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">double</span> target = (label == 0) ? 0.0 : 1.0;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">double</span> error = output[0] - target;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> error * error;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="TEST_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -182,30 +182,30 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00156">156</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                                        {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    std::ifstream file(imagePath, std::ios::binary | std::ios::ate);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (!file) {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to open image: &quot;</span> &lt;&lt; imagePath &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        exit(1);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::streamsize fileSize = file.tellg();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    file.seekg(0, std::ios::beg);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::vector&lt;uint8_t&gt; imageBuffer(fileSize);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (!file.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(imageBuffer.data()), fileSize)) {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to read image: &quot;</span> &lt;&lt; imagePath &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        exit(1);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    std::vector&lt;double&gt; imagePixels(imageBuffer.size());</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; imageBuffer.size(); i++) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        imagePixels[i] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(imageBuffer[i]) / 255.0;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> imagePixels;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00173">173</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                        {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    std::ifstream file(imagePath, std::ios::binary | std::ios::ate);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (!file) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to open image: &quot;</span> &lt;&lt; imagePath &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    std::streamsize fileSize = file.tellg();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    file.seekg(0, std::ios::beg);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    std::vector&lt;uint8_t&gt; imageBuffer(fileSize);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span> (!file.read(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(imageBuffer.data()), fileSize)) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to read image: &quot;</span> &lt;&lt; imagePath &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    std::vector&lt;double&gt; imagePixels(imageBuffer.size());</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; imageBuffer.size(); i++) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        imagePixels[i] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(imageBuffer[i]) / 255.0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> imagePixels;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="TEST_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -227,77 +227,74 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00187">187</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;           {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// Load the training images and labels</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    std::vector&lt;std::string&gt; imagePaths = {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="stringliteral">&quot;../../data/cat1.jpg&quot;</span>,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="stringliteral">&quot;../../data/cat2.jpg&quot;</span>,</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="stringliteral">&quot;../../data/cat3.jpg&quot;</span>,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="stringliteral">&quot;../../data/cat4.jpg&quot;</span>,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="stringliteral">&quot;../../data/cat5.jpg&quot;</span>,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="stringliteral">&quot;../../data/dog1.jpg&quot;</span>,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="stringliteral">&quot;../../data/dog2.jpg&quot;</span>,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="stringliteral">&quot;../../data/dog3.jpg&quot;</span>,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="stringliteral">&quot;../../data/dog4.jpg&quot;</span>,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="stringliteral">&quot;../../data/dog5.jpg&quot;</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    };</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    std::vector&lt;double&gt; labels = {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        0, 0, 0, 0, 0, 1, 1, 1, 1, 1</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    };</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// Preprocess the training images</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; preprocessedImages;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string&amp; imagePath : imagePaths) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        std::vector&lt;double&gt; imagePixels = <a class="code" href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage</a>(imagePath);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        std::vector&lt;double&gt; preprocessedImage = <a class="code" href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage</a>(imagePixels);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        preprocessedImages.push_back(preprocessedImage);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// Initialize the neural network</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <a class="code" href="classNeuralNetwork.html">NeuralNetwork</a> neuralNetwork;</div>
+<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00204">204</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;           {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// Load the training images and labels</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    std::vector&lt;std::string&gt; imagePaths = {<span class="stringliteral">&quot;../../data/cat1.jpg&quot;</span>,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                           <span class="stringliteral">&quot;../../data/cat2.jpg&quot;</span>,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                                           <span class="stringliteral">&quot;../../data/cat3.jpg&quot;</span>,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                           <span class="stringliteral">&quot;../../data/cat4.jpg&quot;</span>,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                           <span class="stringliteral">&quot;../../data/cat5.jpg&quot;</span>,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                           <span class="stringliteral">&quot;../../data/dog1.jpg&quot;</span>,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                                           <span class="stringliteral">&quot;../../data/dog2.jpg&quot;</span>,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                           <span class="stringliteral">&quot;../../data/dog3.jpg&quot;</span>,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                           <span class="stringliteral">&quot;../../data/dog4.jpg&quot;</span>,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                           <span class="stringliteral">&quot;../../data/dog5.jpg&quot;</span>};</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// Train the network</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; <a class="code" href="TEST_8cpp.html#accaf8aa17a5e29b1fe33d882fd492cb9">numEpochs</a>; epoch++) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordtype">double</span> totalLoss = 0.0;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; preprocessedImages.size(); i++) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="comment">// Forward pass</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            std::vector&lt;double&gt; output = neuralNetwork.<a class="code" href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">forward</a>(preprocessedImages[i]);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="comment">// Compute the loss</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordtype">double</span> loss = <a class="code" href="TEST_8cpp.html#a5f43ac8b84a19852d730c9afeabdf8e9">computeLoss</a>(output, labels[i]);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            totalLoss += loss;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">// Backward pass and weight update</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            neuralNetwork.<a class="code" href="classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a">backward</a>(preprocessedImages[i], labels[i]);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">// Print average loss for the epoch</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordtype">double</span> averageLoss = totalLoss / preprocessedImages.size();</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Epoch &quot;</span> &lt;&lt; epoch &lt;&lt; <span class="stringliteral">&quot; Loss: &quot;</span> &lt;&lt; averageLoss &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// Classify new images</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    std::string newImagePath = <span class="stringliteral">&quot;../../data/staffy.jpg&quot;</span>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    std::vector&lt;double&gt; newImagePixels = <a class="code" href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage</a>(newImagePath);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    std::vector&lt;double&gt; preprocessedNewImage = <a class="code" href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage</a>(newImagePixels);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    std::vector&lt;double&gt; labels = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1};</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// Preprocess the training images</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; preprocessedImages;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string &amp;imagePath : imagePaths) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        std::vector&lt;double&gt; imagePixels = <a class="code" href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage</a>(imagePath);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        std::vector&lt;double&gt; preprocessedImage = <a class="code" href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage</a>(imagePixels);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        preprocessedImages.push_back(preprocessedImage);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// Initialize the neural network</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="classNeuralNetwork.html">NeuralNetwork</a> neuralNetwork;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// Train the network</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; <a class="code" href="TEST_8cpp.html#accaf8aa17a5e29b1fe33d882fd492cb9">numEpochs</a>; epoch++) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordtype">double</span> totalLoss = 0.0;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; preprocessedImages.size(); i++) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="comment">// Forward pass</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            std::vector&lt;double&gt; output =</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                neuralNetwork.<a class="code" href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">forward</a>(preprocessedImages[i]);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="comment">// Compute the loss</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordtype">double</span> loss = <a class="code" href="TEST_8cpp.html#a5f43ac8b84a19852d730c9afeabdf8e9">computeLoss</a>(output, labels[i]);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            totalLoss += loss;</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// Forward pass</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    std::vector&lt;double&gt; output = neuralNetwork.<a class="code" href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">forward</a>(preprocessedNewImage);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// Perform classification based on the output</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
-<div class="ttc" id="aTEST_8cpp_html_a460d637a69f1f9af917c56793eb190ff"><div class="ttname"><a href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage</a></div><div class="ttdeci">std::vector&lt; double &gt; loadImage(const std::string &amp;imagePath)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00156">TEST.cpp:156</a></div></div>
-<div class="ttc" id="aTEST_8cpp_html_a5f43ac8b84a19852d730c9afeabdf8e9"><div class="ttname"><a href="TEST_8cpp.html#a5f43ac8b84a19852d730c9afeabdf8e9">computeLoss</a></div><div class="ttdeci">double computeLoss(const std::vector&lt; double &gt; &amp;output, int label)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00149">TEST.cpp:149</a></div></div>
-<div class="ttc" id="aTEST_8cpp_html_a8a9db13652af1add29ba84f484f463bd"><div class="ttname"><a href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage</a></div><div class="ttdeci">std::vector&lt; double &gt; preprocessImage(const std::vector&lt; double &gt; &amp;imagePixels)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00180">TEST.cpp:180</a></div></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="comment">// Backward pass and weight update</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            neuralNetwork.<a class="code" href="classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a">backward</a>(preprocessedImages[i], labels[i]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// Print average loss for the epoch</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">double</span> averageLoss = totalLoss / preprocessedImages.size();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Epoch &quot;</span> &lt;&lt; epoch &lt;&lt; <span class="stringliteral">&quot; Loss: &quot;</span> &lt;&lt; averageLoss &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// Classify new images</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    std::string newImagePath = <span class="stringliteral">&quot;../../data/staffy.jpg&quot;</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    std::vector&lt;double&gt; newImagePixels = <a class="code" href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage</a>(newImagePath);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    std::vector&lt;double&gt; preprocessedNewImage = <a class="code" href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage</a>(newImagePixels);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// Forward pass</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    std::vector&lt;double&gt; output = neuralNetwork.<a class="code" href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">forward</a>(preprocessedNewImage);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// Perform classification based on the output</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="ttc" id="aTEST_8cpp_html_a460d637a69f1f9af917c56793eb190ff"><div class="ttname"><a href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage</a></div><div class="ttdeci">std::vector&lt; double &gt; loadImage(const std::string &amp;imagePath)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00173">TEST.cpp:173</a></div></div>
+<div class="ttc" id="aTEST_8cpp_html_a5f43ac8b84a19852d730c9afeabdf8e9"><div class="ttname"><a href="TEST_8cpp.html#a5f43ac8b84a19852d730c9afeabdf8e9">computeLoss</a></div><div class="ttdeci">double computeLoss(const std::vector&lt; double &gt; &amp;output, int label)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00166">TEST.cpp:166</a></div></div>
+<div class="ttc" id="aTEST_8cpp_html_a8a9db13652af1add29ba84f484f463bd"><div class="ttname"><a href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage</a></div><div class="ttdeci">std::vector&lt; double &gt; preprocessImage(const std::vector&lt; double &gt; &amp;imagePixels)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00197">TEST.cpp:197</a></div></div>
 <div class="ttc" id="aTEST_8cpp_html_accaf8aa17a5e29b1fe33d882fd492cb9"><div class="ttname"><a href="TEST_8cpp.html#accaf8aa17a5e29b1fe33d882fd492cb9">numEpochs</a></div><div class="ttdeci">const int numEpochs</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00014">TEST.cpp:14</a></div></div>
-<div class="ttc" id="aclassNeuralNetwork_html"><div class="ttname"><a href="classNeuralNetwork.html">NeuralNetwork</a></div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00048">TEST.cpp:48</a></div></div>
-<div class="ttc" id="aclassNeuralNetwork_html_a6e1c9be8f02cf5fab4ece96622a69516"><div class="ttname"><a href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">NeuralNetwork::forward</a></div><div class="ttdeci">std::vector&lt; double &gt; forward(const std::vector&lt; double &gt; &amp;input)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00073">TEST.cpp:73</a></div></div>
-<div class="ttc" id="aclassNeuralNetwork_html_a8facf303c014361abb4e8d96e6aedd7a"><div class="ttname"><a href="classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a">NeuralNetwork::backward</a></div><div class="ttdeci">void backward(const std::vector&lt; double &gt; &amp;input, double target)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00097">TEST.cpp:97</a></div></div>
+<div class="ttc" id="aclassNeuralNetwork_html"><div class="ttname"><a href="classNeuralNetwork.html">NeuralNetwork</a></div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00050">TEST.cpp:50</a></div></div>
+<div class="ttc" id="aclassNeuralNetwork_html_a6e1c9be8f02cf5fab4ece96622a69516"><div class="ttname"><a href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">NeuralNetwork::forward</a></div><div class="ttdeci">std::vector&lt; double &gt; forward(const std::vector&lt; double &gt; &amp;input)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00079">TEST.cpp:79</a></div></div>
+<div class="ttc" id="aclassNeuralNetwork_html_a8facf303c014361abb4e8d96e6aedd7a"><div class="ttname"><a href="classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a">NeuralNetwork::backward</a></div><div class="ttdeci">void backward(const std::vector&lt; double &gt; &amp;input, double target)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00107">TEST.cpp:107</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a">NeuralNetwork::backward()</a>, <a class="el" href="TEST_8cpp.html#a5f43ac8b84a19852d730c9afeabdf8e9">computeLoss()</a>, <a class="el" href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">NeuralNetwork::forward()</a>, <a class="el" href="TEST_8cpp.html#a460d637a69f1f9af917c56793eb190ff">loadImage()</a>, <a class="el" href="TEST_8cpp.html#accaf8aa17a5e29b1fe33d882fd492cb9">numEpochs</a>, and <a class="el" href="TEST_8cpp.html#a8a9db13652af1add29ba84f484f463bd">preprocessImage()</a>.</p>
 
@@ -329,24 +326,25 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00028">28</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                                 {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> rowsA = a.size();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> colsA = a[0].size();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> colsB = b[0].size();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; result(rowsA, std::vector&lt;double&gt;(colsB, 0.0));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rowsA; i++) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; colsB; j++) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; colsA; k++) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                result[i][j] += a[i][k] * b[k][j];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00029">29</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> rowsA = a.size();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> colsA = a[0].size();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> colsB = b[0].size();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; result(rowsA,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                            std::vector&lt;double&gt;(colsB, 0.0));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rowsA; i++) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; colsB; j++) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; colsA; k++) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                result[i][j] += a[i][k] * b[k][j];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a">NeuralNetwork::backward()</a>, and <a class="el" href="classNeuralNetwork.html#a6e1c9be8f02cf5fab4ece96622a69516">NeuralNetwork::forward()</a>.</p>
 
@@ -368,13 +366,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00180">180</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// Perform image preprocessing steps (e.g., resize, normalize, etc.)</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Placeholder implementation: return the original image as is</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> imagePixels;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="TEST_8cpp_source.html#l00197">197</a> of file <a class="el" href="TEST_8cpp_source.html">TEST.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// Perform image preprocessing steps (e.g., resize, normalize, etc.)</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// Placeholder implementation: return the original image as is</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> imagePixels;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="TEST_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 

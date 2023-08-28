@@ -80,16 +80,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="__gpu__kernel__mtx__add_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__gpu__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__gpu__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a>(__global <span class="keyword">const</span> <span class="keywordtype">int</span> *a, __global <span class="keyword">const</span> <span class="keywordtype">int</span> *b,</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                          __global <span class="keywordtype">int</span> *res, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// current worker, each worker adds a element from A &amp; B</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// ensure number of workers created doesnt exceed elements of array</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// by checking its bounds</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        res[idx] = a[idx] + b[idx];</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="__gpu__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">    4</a></span>&#160;__kernel <span class="keywordtype">void</span> <a class="code" href="__gpu__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a>(__global <span class="keyword">const</span> <span class="keywordtype">int</span> *a,</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                          __global <span class="keyword">const</span> <span class="keywordtype">int</span> *b,</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                          __global <span class="keywordtype">int</span> *res,</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// current worker, each worker adds a element from A &amp; B</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// ensure number of workers created doesnt exceed elements of array</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// by checking its bounds</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        res[idx] = a[idx] + b[idx];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="ttc" id="a__gpu__kernel__mtx__add_8c_html_af1361538530ca5175206909457013a77"><div class="ttname"><a href="__gpu__kernel__mtx__add_8c.html#af1361538530ca5175206909457013a77">add_vec_gpu</a></div><div class="ttdeci">__kernel void add_vec_gpu(__global const int *a, __global const int *b, __global int *res, const int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__kernel__mtx__add_8c_source.html#l00004">_gpu_kernel_mtx_add.c:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

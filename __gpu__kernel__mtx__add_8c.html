@@ -130,15 +130,15 @@ Functions</h2></td></tr>
 <p>add vectors using GPU </p>
 
 <p class="definition">Definition at line <a class="el" href="__gpu__kernel__mtx__add_8c_source.html#l00004">4</a> of file <a class="el" href="__gpu__kernel__mtx__add_8c_source.html">_gpu_kernel_mtx_add.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                                            {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// current worker, each worker adds a element from A &amp; B</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// ensure number of workers created doesnt exceed elements of array</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// by checking its bounds</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        res[idx] = a[idx] + b[idx];</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                         {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// current worker, each worker adds a element from A &amp; B</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> idx = get_global_id(0);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// ensure number of workers created doesnt exceed elements of array</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// by checking its bounds</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span> (idx &lt; len) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        res[idx] = a[idx] + b[idx];</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

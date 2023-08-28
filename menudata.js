@@ -119,6 +119,7 @@ var menudata={children:[
 {text:"x",url:"functions_vars.html#index_x"},
 {text:"y",url:"functions_vars.html#index_y"},
 {text:"z",url:"functions_vars.html#index_z"}]},
+{text:"Typedefs",url:"functions_type.html"},
 {text:"Properties",url:"functions_prop.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
@@ -157,7 +158,6 @@ var menudata={children:[
 {text:"k",url:"globals_func.html#index_k"},
 {text:"l",url:"globals_func.html#index_l"},
 {text:"m",url:"globals_func.html#index_m"},
-{text:"n",url:"globals_func.html#index_n"},
 {text:"p",url:"globals_func.html#index_p"},
 {text:"r",url:"globals_func.html#index_r"},
 {text:"s",url:"globals_func.html#index_s"},
