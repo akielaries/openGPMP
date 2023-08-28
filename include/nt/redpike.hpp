@@ -31,30 +31,41 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-/*
- * definitions for openGPMP naive ciphers
+/**
+ * @file random.hpp
+ * @brief Pseudorandom Number Generators
  */
+#ifndef REDPIKE_HPP
+#define REDPIKE_HPP
 
-#ifndef CIPHER_H
-#define CIPHER_H
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <string>
+#include <cstdint>
 
 namespace gpmp {
-
-// monoalphabetic substitution cipher class
-class Cipher {
+/**
+ * Red Pike encryption algorithm.
+ */
+class RedPike {
   public:
-    /* compute the caesar cipher of a given string with a shift key */
-    std::string caesar(std::string plaintext, int64_t key);
-    /* encode and prepare the given string for the cipher */
-    std::string keyword_encode(std::string key);
-    /* compute the keyword cipher of a given string */
-    std::string keyword(std::string plaintext, std::string encoded_text);
+
+    typedef uint32_t word;
+    constexpr word CONST = 0x9E3779B9;
+    constexpr int ROUNDS = 16;
+
+    /**
+     * Left rotate operation.
+     * @param X Value to rotate.
+     * @param R Number of bits to rotate by.
+     * @return Rotated value.
+     */
+    word ROTL(word X, int R);
+
+    /**
+     * Right rotate operation.
+     * @param X Value to rotate.
+     * @param R Number of bits to rotate by.
+     * @return Rotated value.
+     */
+    word ROTR(word X, int R);
 };
 
 } // namespace gpmp

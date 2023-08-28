@@ -1,8 +1,11 @@
 /**
  * OpenCL C GPU kernel
  */
-__kernel void matrixMul(__global float *C, __global float *A, __global float *B,
-                        int wA, int wB) {
+__kernel void matrixMul(__global float *C,
+                        __global float *A,
+                        __global float *B,
+                        int wA,
+                        int wB) {
 
     int tx = get_global_id(0);
     int ty = get_global_id(1);

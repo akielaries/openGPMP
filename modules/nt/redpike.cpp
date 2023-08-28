@@ -36,4 +36,56 @@
  * Implementation of the Red Pike block cipher algorithm
  */
 
-#include "../../include/number_theory/redpike.hpp"
+#include "../../include/nt/redpike.hpp"
+
+#include <cstdint>
+
+gpmp::RedPike::word gpmp::RedPike::ROTL(gpmp::RedPike::word X, int R) {
+    return (X << (R & 31)) | (X >> (32 - (R & 31)));
+}
+
+gpmp::RedPike::word gpmp::RedPike::ROTR(gpmp::RedPike::word X, int R) {
+    return (X >> (R & 31)) | (X << (32 - (R & 31)));
+}
+
+void gpmp::RedPike::encrypt(gpmp::RedPike::word *x,
+                            const gpmp::RedPike::word *k) {
+    gpmp::RedPike::word rk0 = k[0];
+    gpmp::RedPike::word rk1 = k[1];
+
+    for (int i = 0; i < gpmp::RedPike::ROUNDS; i++) {
+        rk0 += gpmp::RedPike::CONST;
+        rk1 -= gpmp::RedPike::CONST;
+
+        x[0] ^= rk0;
+        x[0] += x[1];
+        x[0] = gpmp::RedPike::ROTL(x[0], x[1]);
+
+        x[1] = gpmp::RedPike::ROTR(x[1], x[0]);
+        x[1] -= x[0];
+        x[1] ^= rk1;
+    }
+
+    rk0 = x[0];
+    x[0] = x[1];
+    x[1] = rk0;
+}
+
+void gpmp::RedPike::decrypt(gpmp::RedPike::word *x,
+                            const gpmp::RedPike::word *k) {
+    gpmp::RedPike::word dk[2] = {
+        k[1] - gpmp::RedPike::CONST * (gpmp::RedPike::ROUNDS + 1),
+        k[0] + gpmp::RedPike::CONST * (gpmp::RedPike::ROUNDS + 1)};
+
+    gpmp::RedPike::encrypt(x, dk);
+}
+
+int main() {
+    // Example usage
+    word plaintext[2] = {0x12345678, 0x9ABCDEF0};
+    word key[2] = {0xA0B1C2D3, 0xE4F50607};
+
+    encrypt(plaintext, key);
+
+    return 0;
+}

@@ -1,13 +1,13 @@
-#include <iostream>
 #include <cmath>
-#include <fstream>
-#include <vector>
-#include <string>
 #include <cstdint>
 #include <cstring>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
 
 // Neural network parameters
-const int inputSize = 100;  // Adjust this according to the image size
+const int inputSize = 100; // Adjust this according to the image size
 const int hiddenSize = 64;
 const int outputSize = 2;
 const double learningRate = 0.1;
@@ -25,13 +25,15 @@ double sigmoidDerivative(double x) {
 }
 
 // Matrix multiplication
-std::vector<std::vector<double>> multiply(const std::vector<std::vector<double>>& a,
-                                          const std::vector<std::vector<double>>& b) {
+std::vector<std::vector<double>>
+multiply(const std::vector<std::vector<double>> &a,
+         const std::vector<std::vector<double>> &b) {
     int rowsA = a.size();
     int colsA = a[0].size();
     int colsB = b[0].size();
 
-    std::vector<std::vector<double>> result(rowsA, std::vector<double>(colsB, 0.0));
+    std::vector<std::vector<double>> result(rowsA,
+                                            std::vector<double>(colsB, 0.0));
 
     for (int i = 0; i < rowsA; i++) {
         for (int j = 0; j < colsB; j++) {
@@ -46,15 +48,19 @@ std::vector<std::vector<double>> multiply(const std::vector<std::vector<double>>
 
 // Neural network class
 class NeuralNetwork {
-private:
+  private:
     std::vector<std::vector<double>> weightsInputHidden;
     std::vector<std::vector<double>> weightsHiddenOutput;
 
-public:
+  public:
     NeuralNetwork() {
         // Initialize weights with random values between -1 and 1
-        weightsInputHidden = std::vector<std::vector<double>>(inputSize, std::vector<double>(hiddenSize, 0.0));
-        weightsHiddenOutput = std::vector<std::vector<double>>(hiddenSize, std::vector<double>(outputSize, 0.0));
+        weightsInputHidden = std::vector<std::vector<double>>(
+            inputSize,
+            std::vector<double>(hiddenSize, 0.0));
+        weightsHiddenOutput = std::vector<std::vector<double>>(
+            hiddenSize,
+            std::vector<double>(outputSize, 0.0));
 
         for (int i = 0; i < inputSize; i++) {
             for (int j = 0; j < hiddenSize; j++) {
@@ -70,12 +76,16 @@ public:
     }
 
     // Forward propagation
-    std::vector<double> forward(const std::vector<double>& input) {
-        std::vector<std::vector<double>> hiddenLayer(hiddenSize, std::vector<double>(1, 0.0));
-        std::vector<std::vector<double>> outputLayer(outputSize, std::vector<double>(1, 0.0));
+    std::vector<double> forward(const std::vector<double> &input) {
+        std::vector<std::vector<double>> hiddenLayer(
+            hiddenSize,
+            std::vector<double>(1, 0.0));
+        std::vector<std::vector<double>> outputLayer(
+            outputSize,
+            std::vector<double>(1, 0.0));
 
         // Compute hidden layer activations
-        hiddenLayer = multiply(weightsInputHidden, { input });
+        hiddenLayer = multiply(weightsInputHidden, {input});
 
         // Apply activation function to hidden layer activations
         for (int i = 0; i < hiddenSize; i++) {
@@ -90,16 +100,20 @@ public:
             outputLayer[i][0] = sigmoid(outputLayer[i][0]);
         }
 
-        return outputLayer[0];  // Return the output of the neural network
+        return outputLayer[0]; // Return the output of the neural network
     }
 
     // Backward propagation and weight update
-    void backward(const std::vector<double>& input, double target) {
-        std::vector<std::vector<double>> hiddenLayer(hiddenSize, std::vector<double>(1, 0.0));
-        std::vector<std::vector<double>> outputLayer(outputSize, std::vector<double>(1, 0.0));
+    void backward(const std::vector<double> &input, double target) {
+        std::vector<std::vector<double>> hiddenLayer(
+            hiddenSize,
+            std::vector<double>(1, 0.0));
+        std::vector<std::vector<double>> outputLayer(
+            outputSize,
+            std::vector<double>(1, 0.0));
 
         // Compute hidden layer activations
-        hiddenLayer = multiply(weightsInputHidden, { input });
+        hiddenLayer = multiply(weightsInputHidden, {input});
 
         // Apply activation function to hidden layer activations
         for (int i = 0; i < hiddenSize; i++) {
@@ -117,7 +131,8 @@ public:
         // Compute the error at the output layer
         std::vector<double> outputError(outputSize, 0.0);
         for (int i = 0; i < outputSize; i++) {
-            outputError[i] = (target[i] - outputLayer[i][0]) * sigmoidDerivative(outputLayer[i][0]);
+            outputError[i] = (target[i] - outputLayer[i][0]) *
+                             sigmoidDerivative(outputLayer[i][0]);
         }
 
         // Compute the error at the hidden layer
@@ -133,27 +148,29 @@ public:
         // Update the weights between the hidden and output layers
         for (int i = 0; i < hiddenSize; i++) {
             for (int j = 0; j < outputSize; j++) {
-                weightsHiddenOutput[i][j] += learningRate * outputError[j] * hiddenLayer[i][0];
+                weightsHiddenOutput[i][j] +=
+                    learningRate * outputError[j] * hiddenLayer[i][0];
             }
         }
 
         // Update the weights between the input and hidden layers
         for (int i = 0; i < inputSize; i++) {
             for (int j = 0; j < hiddenSize; j++) {
-                weightsInputHidden[i][j] += learningRate * hiddenError[j] * input[i];
+                weightsInputHidden[i][j] +=
+                    learningRate * hiddenError[j] * input[i];
             }
         }
     }
 };
 // Compute the loss
-double computeLoss(const std::vector<double>& output, int label) {
+double computeLoss(const std::vector<double> &output, int label) {
     double target = (label == 0) ? 0.0 : 1.0;
     double error = output[0] - target;
     return error * error;
 }
 
 // Image preprocessing functions
-std::vector<double> loadImage(const std::string& imagePath) {
+std::vector<double> loadImage(const std::string &imagePath) {
     std::ifstream file(imagePath, std::ios::binary | std::ios::ate);
     if (!file) {
         std::cerr << "Failed to open image: " << imagePath << std::endl;
@@ -164,7 +181,7 @@ std::vector<double> loadImage(const std::string& imagePath) {
     file.seekg(0, std::ios::beg);
 
     std::vector<uint8_t> imageBuffer(fileSize);
-    if (!file.read(reinterpret_cast<char*>(imageBuffer.data()), fileSize)) {
+    if (!file.read(reinterpret_cast<char *>(imageBuffer.data()), fileSize)) {
         std::cerr << "Failed to read image: " << imagePath << std::endl;
         exit(1);
     }
@@ -177,7 +194,7 @@ std::vector<double> loadImage(const std::string& imagePath) {
     return imagePixels;
 }
 
-std::vector<double> preprocessImage(const std::vector<double>& imagePixels) {
+std::vector<double> preprocessImage(const std::vector<double> &imagePixels) {
     // Perform image preprocessing steps (e.g., resize, normalize, etc.)
 
     // Placeholder implementation: return the original image as is
@@ -186,26 +203,22 @@ std::vector<double> preprocessImage(const std::vector<double>& imagePixels) {
 
 int main() {
     // Load the training images and labels
-    std::vector<std::string> imagePaths = {
-        "../../data/cat1.jpg",
-        "../../data/cat2.jpg",
-        "../../data/cat3.jpg",
-        "../../data/cat4.jpg",
-        "../../data/cat5.jpg",
-        "../../data/dog1.jpg",
-        "../../data/dog2.jpg",
-        "../../data/dog3.jpg",
-        "../../data/dog4.jpg",
-        "../../data/dog5.jpg"
-    };
+    std::vector<std::string> imagePaths = {"../../data/cat1.jpg",
+                                           "../../data/cat2.jpg",
+                                           "../../data/cat3.jpg",
+                                           "../../data/cat4.jpg",
+                                           "../../data/cat5.jpg",
+                                           "../../data/dog1.jpg",
+                                           "../../data/dog2.jpg",
+                                           "../../data/dog3.jpg",
+                                           "../../data/dog4.jpg",
+                                           "../../data/dog5.jpg"};
 
-    std::vector<double> labels = {
-        0, 0, 0, 0, 0, 1, 1, 1, 1, 1
-    };
+    std::vector<double> labels = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1};
 
     // Preprocess the training images
     std::vector<std::vector<double>> preprocessedImages;
-    for (const std::string& imagePath : imagePaths) {
+    for (const std::string &imagePath : imagePaths) {
         std::vector<double> imagePixels = loadImage(imagePath);
         std::vector<double> preprocessedImage = preprocessImage(imagePixels);
         preprocessedImages.push_back(preprocessedImage);
@@ -220,7 +233,8 @@ int main() {
 
         for (int i = 0; i < preprocessedImages.size(); i++) {
             // Forward pass
-            std::vector<double> output = neuralNetwork.forward(preprocessedImages[i]);
+            std::vector<double> output =
+                neuralNetwork.forward(preprocessedImages[i]);
 
             // Compute the loss
             double loss = computeLoss(output, labels[i]);
@@ -247,4 +261,3 @@ int main() {
 
     return 0;
 }
-

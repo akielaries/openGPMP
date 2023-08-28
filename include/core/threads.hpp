@@ -145,7 +145,7 @@ class ThreadPool {
      * stopped.
      */
     template <class F, class... Args>
-    auto enqueue(F &&f, Args &&... args)
+    auto enqueue(F &&f, Args &&...args)
         -> std::future<typename std::result_of<F(Args...)>::type> {
 
         // this is the return type of the passed in function
@@ -214,7 +214,7 @@ class ThreadDispatch {
      * function call.
      */
     template <typename Function, typename... Args>
-    auto dispatch(ThreadPool &pool, Function &&func, Args &&... args)
+    auto dispatch(ThreadPool &pool, Function &&func, Args &&...args)
         -> std::future<typename std::result_of<Function(Args...)>::type> {
 
         // enqueue the function call to the thread pool

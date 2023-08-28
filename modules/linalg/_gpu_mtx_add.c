@@ -89,7 +89,9 @@ void check_result(int *v1, int *v2, int len) {
             correct_num += 1;
         }
     }
-    printf("correct rate: %d / %d , %1.2f\n", correct_num, len,
+    printf("correct rate: %d / %d , %1.2f\n",
+           correct_num,
+           len,
            (float)correct_num / len);
 }
 
@@ -192,17 +194,34 @@ void accl_mtx_exec() {
     b_buff = clCreateBuffer(context, CL_MEM_READ_ONLY, data_size, NULL, &ret);
     c_buff = clCreateBuffer(context, CL_MEM_WRITE_ONLY, data_size, NULL, &ret);
 
-    ret = clEnqueueWriteBuffer(command_queue, a_buff, CL_TRUE, 0, data_size,
-                               (void *)a, 0, NULL, NULL);
-    ret |= clEnqueueWriteBuffer(command_queue, b_buff, CL_TRUE, 0, data_size,
-                                (void *)b, 0, NULL, NULL);
+    ret = clEnqueueWriteBuffer(command_queue,
+                               a_buff,
+                               CL_TRUE,
+                               0,
+                               data_size,
+                               (void *)a,
+                               0,
+                               NULL,
+                               NULL);
+    ret |= clEnqueueWriteBuffer(command_queue,
+                                b_buff,
+                                CL_TRUE,
+                                0,
+                                data_size,
+                                (void *)b,
+                                0,
+                                NULL,
+                                NULL);
     if (ret != CL_SUCCESS) {
         printf("Failed to copy date from host to device: %d\n", (int)ret);
         goto error;
     }
     // Create Kernel Program from source
-    program = clCreateProgramWithSource(context, 1, (const char **)&source_str,
-                                        (const size_t *)&source_size, &ret);
+    program = clCreateProgramWithSource(context,
+                                        1,
+                                        (const char **)&source_str,
+                                        (const size_t *)&source_size,
+                                        &ret);
     if (ret != CL_SUCCESS) {
         printf("Failed to create OpenCL program from source %d\n", (int)ret);
         goto error;
@@ -212,8 +231,12 @@ void accl_mtx_exec() {
     if (ret != CL_SUCCESS) {
         printf("Failed to build program %d\n", (int)ret);
         char build_log[16348];
-        clGetProgramBuildInfo(program, device_id, CL_PROGRAM_BUILD_LOG,
-                              sizeof(build_log), build_log, NULL);
+        clGetProgramBuildInfo(program,
+                              device_id,
+                              CL_PROGRAM_BUILD_LOG,
+                              sizeof(build_log),
+                              build_log,
+                              NULL);
         printf("Error in kernel: %s\n", build_log);
         goto error;
     }
@@ -245,8 +268,14 @@ void accl_mtx_exec() {
 
     // size_t local_work_size[2] = { 8, 8 };
     // size_t global_work_size[2] = { 1, len };
-    ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL,
-                                 &global_work_size, &local_work_size, 0, NULL,
+    ret = clEnqueueNDRangeKernel(command_queue,
+                                 kernel,
+                                 1,
+                                 NULL,
+                                 &global_work_size,
+                                 &local_work_size,
+                                 0,
+                                 NULL,
                                  NULL);
     if (ret != CL_SUCCESS) {
         printf("Failed to execute kernel for execution %d\n", (int)ret);
@@ -255,8 +284,15 @@ void accl_mtx_exec() {
 
     init_vec(c_d, len, 0);
     /* Copy results from the memory buffer */
-    ret = clEnqueueReadBuffer(command_queue, c_buff, CL_TRUE, 0, data_size,
-                              (void *)c_d, 0, NULL, NULL);
+    ret = clEnqueueReadBuffer(command_queue,
+                              c_buff,
+                              CL_TRUE,
+                              0,
+                              data_size,
+                              (void *)c_d,
+                              0,
+                              NULL,
+                              NULL);
     if (ret != CL_SUCCESS) {
         printf("Failed to copy data from device to host %d\n", (int)ret);
         goto error;
@@ -267,9 +303,15 @@ void accl_mtx_exec() {
     printf("c_d: ");
     print_vec(c_d, len);
     check_result(c, c_d, len);
-    printf("len-1=%d, c_d[%d]==c[%d]: %d, c_d[%d]=%d, c[%d]=%d \n", len - 1,
-           len - 1, len - 1, c_d[len - 1] == c[len - 1], len - 1, c_d[len - 1],
-           len - 1, c[len - 1]);
+    printf("len-1=%d, c_d[%d]==c[%d]: %d, c_d[%d]=%d, c[%d]=%d \n",
+           len - 1,
+           len - 1,
+           len - 1,
+           c_d[len - 1] == c[len - 1],
+           len - 1,
+           c_d[len - 1],
+           len - 1,
+           c[len - 1]);
 
     PRINT_LINE("CHECK RESULT ELEMENT BY ELEMENT");
     printf("idx  c  c_d\n");
