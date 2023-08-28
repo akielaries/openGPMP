@@ -76,14 +76,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md18"></a>
-v1.0.0-rc.1</h1>
-<p>See <a href="https://github.com/akielaries/openGPMP/graphs/contributors?from=2023-02-07&amp;to=2023-05-09&amp;type=c">new contributors</a> </p>
+v0.10.0</h1>
+<p>New contributions from <a href="https://github.com/eeddgg">@eeddgg</a>, <a href="https://github.com/sidsbrmnn">@sidsbrmnn</a>, <a href="https://github.com/igorsteinmacher">@igorsteinmacher</a> </p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 What's Changed</h2>
 <ul>
-<li><b>Project from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp</b></li>
+<li><b>Project renamed from openMTPK to openGPMP. Python API renamed from openmtpk to pygpmp. Experimental Julia API as gpmp.jl</b></li>
 <li>Documentation layout + additions</li>
-<li><code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openGPMP with the use of <code>cmake</code>.<ul>
+<li><code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace introduced hardware acceleration methods using GPUs with the help of OpenCL and CUDA for supported platforms (still very much experimental) and additional methods for CPU exploitation with Intel specific SIMD intrinsic functions. The acceleration unit is an optional install with openGPMP with the use of <code>cmake</code>.<ul>
 <li><code>gpmp::accl::GPU()</code> class features methods of GPU acceleration using OpenCL. This class will house methods seen in the mathematical openGPMP modules that are ideal for GPU computation. The GPU functions themselves will be written in <code>C</code> with wrapper methods for use in <code>C++</code> using <code>extern "C" {/* function definitions */}</code> making them available under the <code><a class="el" href="namespacegpmp_1_1accl.html">gpmp::accl</a></code> namespace.</li>
 <li><code>gpmp::accl::SIMD()</code> class features accelerated functions seen in the core mathematical openGPMP modules ideal for wide register computations using Intel specific intrinsic functions. <br  />
 </li>
@@ -108,10 +108,9 @@ What's Changed</h2>
 <li>Updates to unit tests and additions for the new classes introduced.</li>
 <li>Updates to namespaces, the core module containing the ThreadPool and DataTable related methods along with other miscellaneous tools lies under the <code><a class="el" href="namespacegpmp_1_1core.html">gpmp::core</a></code> namespace.</li>
 <li>Patches introduced for <a href="https://github.com/akielaries/openGPMP/issues/27"><code>#27 OSX Build reaches dead state</code></a><ul>
-<li>This introduced additional testing and CICD work related to openGPMP on OSX.</li>
+<li>This introduced additional testing and CICD work related to openGPMP on OSX</li>
 </ul>
 </li>
-<li>TODO</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md20"></a>
 v0.9.4</h1>
