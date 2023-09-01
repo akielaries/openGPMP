@@ -32,8 +32,8 @@
  *
  ************************************************************************/
 
-/*
- * taking a look at implementing regression in c++
+/**
+ * openGPMP implementation of Linear Regression
  */
 #include "../../include/ml/linreg.hpp"
 #include <fstream>
