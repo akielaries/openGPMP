@@ -35,8 +35,9 @@ var searchData=
   ['trainers_2ehpp_733',['trainers.hpp',['../trainers_8hpp.html',1,'']]],
   ['transformcharacteristics_734',['transformCharacteristics',['../classCompany.html#adb867bb69be78855c273a1dc498c5c08',1,'Company']]],
   ['transpose_735',['transpose',['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#a66f7c48044233568ed4c8ad78a7753bf',1,'pygpmp.linalg.linalg.Matrix.transpose()'],['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#aab8a9c67abcdfc41835d520512cc2465',1,'pygpmp.linalg.linalg.MatrixI.transpose()'],['../classgpmp_1_1linalg_1_1Matrix.html#a83a6e7e1befd8674c928ba6703cb37e0',1,'gpmp::linalg::Matrix::transpose()']]],
-  ['turnover_736',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]],
-  ['tutorials_2emd_737',['Tutorials.md',['../Tutorials_8md.html',1,'']]],
-  ['tutorials_5fpython_2emd_738',['Tutorials_Python.md',['../Tutorials__Python_8md.html',1,'']]],
-  ['typecast_739',['TypeCast',['../classgpmp_1_1core_1_1TypeCast.html',1,'gpmp::core']]]
+  ['tsv_5fread_736',['tsv_read',['../classgpmp_1_1core_1_1DataTable.html#ae83c4dd5f71073f9a57d57b5c4a9f875',1,'gpmp::core::DataTable']]],
+  ['turnover_737',['turnover',['../classCompany.html#a66da188152d90e0788a0e1666589ce31',1,'Company']]],
+  ['tutorials_2emd_738',['Tutorials.md',['../Tutorials_8md.html',1,'']]],
+  ['tutorials_5fpython_2emd_739',['Tutorials_Python.md',['../Tutorials__Python_8md.html',1,'']]],
+  ['typecast_740',['TypeCast',['../classgpmp_1_1core_1_1TypeCast.html',1,'gpmp::core']]]
 ];
