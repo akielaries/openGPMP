@@ -8,11 +8,12 @@
  * @example reg.cpp
  */
 #include <iostream>
-#include <openGPMP/ml/linreg.hpp>
+//#include <openGPMP/ml/linreg.hpp>
+#include "../../include/ml/linreg.hpp"
 #include <stdio.h>
 
 int main() {
-    const char *test_file = "data/school_scores.csv";
+    const char *test_file = "../../data/school_scores.csv";
     freopen(test_file, "r", stdin);
     // declare Regression class object
     gpmp::ml::LinearRegression reg;
@@ -27,7 +28,7 @@ int main() {
 
     // printf("Number of rows in data set: %d\n", n);
     // Calling function takeInput to take input of n pairs
-    reg.get_input(n);
+    reg.get_input(test_file);
 
     // Printing the best fitting line
     reg.best_fit();

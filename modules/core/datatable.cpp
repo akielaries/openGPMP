@@ -41,8 +41,8 @@
 #include <string>
 #include <vector>
 
-// TODO: optimize these methods, CSV reader using threads? loop unrolling?, etc?
-// conversion functtions to be quicker,
+// TODO : optimize these methods, CSV reader using threads? loop unrolling?, etc?
+// conversion functions to be quicker,
 gpmp::core::DataTableStr
 gpmp::core::DataTable::csv_read(std::string filename,
                                 std::vector<std::string> columns) {
@@ -75,7 +75,7 @@ gpmp::core::DataTable::csv_read(std::string filename,
     for (const auto &column : columns) {
         if (find(headerColumns.begin(), headerColumns.end(), column) ==
             headerColumns.end()) {
-            std::cerr << "Column not found: " << column << std::endl;
+            std::cerr << "Column " << column << " not found!\n";
             exit(EXIT_FAILURE);
         }
     }

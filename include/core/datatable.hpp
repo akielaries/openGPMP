@@ -58,9 +58,9 @@ typedef std::pair<std::vector<std::string>,
                   std::vector<std::vector<std::string>>>
     DataTableStr;
 // alias for pair type of 64 bit integers
-typedef std::pair<std::vector<int64_t>, std::vector<std::vector<int64_t>>>
+typedef std::pair<std::vector<int64_t>, 
+                  std::vector<std::vector<int64_t>>>
     DataTableInt;
-
 // alias for pair type of long doubles
 typedef std::pair<std::vector<long double>,
                   std::vector<std::vector<long double>>>
@@ -69,7 +69,7 @@ typedef std::pair<std::vector<long double>,
 class DataTable {
   public:
     /**
-     * @brief Reads a CSV file and returns a DataTableStr.
+     * @brief Reads a CSV file and returns a DataTableStr
      * parses CSV files and stores all data as strings
      * @param filename the path to the CSV file
      * @param columns optional vector of column names to read in, if empty all
@@ -80,14 +80,34 @@ class DataTable {
                           std::vector<std::string> columns = {});
 
     // TODO: TOML and JSON readers?
+    /**
+     * @brief Reads a TSV file and returns a DataTableStr
+     * parses TSV files and stores all data as strings
+     * @param filename the path to the TSV file
+     * @param columns optional vector of column names to read in, if empty all
+     * columns will be read in
+     * @return a DataTableStr containing the column names and data
+     */
+    DataTableStr tsv_read(std::string filename,
+                          std::vector<std::string> columns = {});
 
-    // converts a type DataTableStr to DataTableInt
+    /**
+     * @brief Reads a JSON file and returns a DataTableStr
+     * parses JSON files and stores all data as strings
+     * @param filename the path to the JSON file
+     * @param objs optional vector of JSON object names to read in, if empty all
+     * objects will be read in
+     * @return a DataTableStr containing the column names and data
+     */
+    DataTableStr json_read(std::string filename, 
+                           std::vector<std::string> objs = {});
+
     /**
      * @brief Converts a DataTableStr to a DataTableInt
      * @param src The DataTableStr to convert
      * @return The converted DataTableInt
      * @note This function assumes that the input DataTableStr contains only
-     * elements that can be converted to a 64-bit integer using std::stoi().
+     * elements that can be converted to a 64-bit integer using std::stoi()
      * @TODO allow for specific columns to be converted
      * @TODO make use of ThreadPool
      */
@@ -95,12 +115,16 @@ class DataTable {
 
     /**
      * @brief Converts a DataTableStr to a DataTableDouble
-     * @param src A DataTableStr object to be converted.
-     * @return The converted DataTableDouble.
+     * @param src A DataTableStr object to be converted
+     * @return The converted DataTableDouble
      * @note The function assumes the input DataTableStr contains only valid
      * double type elements
      */
     DataTableDouble str_to_double(DataTableStr src);
+
+    /**
+     * @brief Sort a DataTable based on a specified column
+     */
 
     /**
      * @brief Displays a DataTable of type T with the option to display all or a

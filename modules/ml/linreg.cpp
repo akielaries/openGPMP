@@ -106,7 +106,8 @@ void gpmp::ml::LinearRegression::best_fit() {
 }
 
 // Function to take input from the dataset
-void gpmp::ml::LinearRegression::get_input(int64_t n) {
+void gpmp::ml::LinearRegression::get_input(const char *file) {
+    int n = num_rows(file);
     for (int64_t i = 0; i < n; i++) {
         /*
          * In a csv file all the values of xi and yi are separated by

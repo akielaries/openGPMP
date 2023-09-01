@@ -2,7 +2,8 @@
 #include <chrono>
 #include <fstream>
 #include <iostream>
-#include <openGPMP/core/datatable.hpp>
+//#include <openGPMP/core/datatable.hpp>
+#include "../../include/core/datatable.hpp"
 #include <regex>
 #include <sstream>
 #include <string>
