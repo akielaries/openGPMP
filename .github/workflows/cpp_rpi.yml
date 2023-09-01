@@ -24,6 +24,7 @@ jobs:
         with:
           base_image: raspios_lite_arm64:latest
           commands: |
+            sudo apt-get install gfortran
             uname -a
             echo ::set-output name=uname::$(uname -a) 
             sudo apt-get install -y cmake
