@@ -35,6 +35,8 @@
 /*
  * taking a look at different mathematical operations seen in Linear
  * Algebra in C++
+ *
+ * This will be deleted and migrated out of build sys
  */
 #include "../../include/linalg/mtx_tmpl.hpp"
 #include "../../include/linalg/vectors.hpp"
