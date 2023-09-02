@@ -143,8 +143,8 @@ class LinearRegression(object):
     def best_fit(self):
         return _ml.LinearRegression_best_fit(self)
 
-    def get_input(self, n):
-        return _ml.LinearRegression_get_input(self, n)
+    def get_input(self, file):
+        return _ml.LinearRegression_get_input(self, file)
 
     def show_data(self):
         return _ml.LinearRegression_show_data(self)

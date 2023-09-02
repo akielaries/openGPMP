@@ -118,23 +118,23 @@ class SwigPyIterator(object):
 
 # Register SwigPyIterator in _calculus:
 _calculus.SwigPyIterator_swigregister(SwigPyIterator)
-class Calculus(object):
+class Differential(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
 
     def derivative_term(self, p_term, val):
-        return _calculus.Calculus_derivative_term(self, p_term, val)
+        return _calculus.Differential_derivative_term(self, p_term, val)
 
     def deriv_at(self, poly, val):
-        return _calculus.Calculus_deriv_at(self, poly, val)
+        return _calculus.Differential_deriv_at(self, poly, val)
 
-    def deriv(self, poly):
-        return _calculus.Calculus_deriv(self, poly)
+    def deriv_str(self, poly):
+        return _calculus.Differential_deriv_str(self, poly)
 
     def __init__(self):
-        _calculus.Calculus_swiginit(self, _calculus.new_Calculus())
-    __swig_destroy__ = _calculus.delete_Calculus
+        _calculus.Differential_swiginit(self, _calculus.new_Differential())
+    __swig_destroy__ = _calculus.delete_Differential
 
-# Register Calculus in _calculus:
-_calculus.Calculus_swigregister(Calculus)
+# Register Differential in _calculus:
+_calculus.Differential_swigregister(Differential)
 
