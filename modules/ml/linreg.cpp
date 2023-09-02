@@ -36,6 +36,7 @@
  * openGPMP implementation of Linear Regression
  */
 #include "../../include/ml/linreg.hpp"
+#include "../../include/core/datatable.hpp"
 #include <fstream>
 #include <iostream>
 #include <stdio.h>
@@ -103,6 +104,92 @@ void gpmp::ml::LinearRegression::best_fit() {
     }
     std::cout << "The best fitting line is y = " << coeff << "x + " << constant
               << std::endl;
+}
+
+// get input that accepts datatable type
+void gpmp::ml::LinearRegression::get_input(
+    const std::vector<long double> &x_data,
+    const std::vector<long double> &y_data) {
+    // Clear any existing data
+    x.clear();
+    y.clear();
+    sum_xy = 0;
+    sum_x = 0;
+    sum_y = 0;
+    sum_x_square = 0;
+    sum_y_square = 0;
+
+    if (x_data.size() != y_data.size()) {
+        std::cerr << "Input vectors must have the same size." << std::endl;
+        return;
+    }
+
+    for (size_t i = 0; i < x_data.size(); i++) {
+        x.push_back(x_data[i]);
+        y.push_back(y_data[i]);
+        sum_xy += x_data[i] * y_data[i];
+        sum_x += x_data[i];
+        sum_y += y_data[i];
+        sum_x_square += x_data[i] * x_data[i];
+        sum_y_square += y_data[i] * y_data[i];
+    }
+}
+
+void gpmp::ml::LinearRegression::get_input(
+    const gpmp::core::DataTableStr &data,
+    const std::vector<std::string> &columns) {
+    // Clear any existing data
+    x.clear();
+    y.clear();
+    sum_xy = 0;
+    sum_x = 0;
+    sum_y = 0;
+    sum_x_square = 0;
+    sum_y_square = 0;
+
+    // Ensure that columns is not empty and has at least 2 elements
+    if (columns.size() < 2) {
+        std::cerr
+            << "Error: columns vector must contain at least 2 column names."
+            << std::endl;
+        return;
+    }
+
+    // Find the column indices for the specified column names
+    std::vector<size_t> column_indices;
+    for (const auto &column_name : columns) {
+        bool found = false;
+        for (size_t i = 0; i < data.first.size(); ++i) {
+            if (data.first[i] == column_name) {
+                column_indices.push_back(i);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            std::cerr << "Error: Column '" << column_name
+                      << "' not found in DataTableStr." << std::endl;
+            return;
+        }
+    }
+
+    for (const auto &row : data.second) {
+        try {
+            long double xi = std::stold(row[column_indices[0]]);
+            long double yi = std::stold(row[column_indices[1]]);
+            x.push_back(xi);
+            y.push_back(yi);
+            sum_xy += xi * yi;
+            sum_x += xi;
+            sum_y += yi;
+            sum_x_square += xi * xi;
+            sum_y_square += yi * yi;
+        } catch (const std::exception &e) {
+            // Handle parsing errors here
+            std::cerr << "Error parsing data: " << e.what() << std::endl;
+            continue;
+        }
+    }
 }
 
 // Function to take input from the dataset

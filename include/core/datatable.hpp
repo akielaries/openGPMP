@@ -58,8 +58,7 @@ typedef std::pair<std::vector<std::string>,
                   std::vector<std::vector<std::string>>>
     DataTableStr;
 // alias for pair type of 64 bit integers
-typedef std::pair<std::vector<int64_t>, 
-                  std::vector<std::vector<int64_t>>>
+typedef std::pair<std::vector<int64_t>, std::vector<std::vector<int64_t>>>
     DataTableInt;
 // alias for pair type of long doubles
 typedef std::pair<std::vector<long double>,
@@ -99,7 +98,7 @@ class DataTable {
      * objects will be read in
      * @return a DataTableStr containing the column names and data
      */
-    DataTableStr json_read(std::string filename, 
+    DataTableStr json_read(std::string filename,
                            std::vector<std::string> objs = {});
 
     /**

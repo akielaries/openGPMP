@@ -40,6 +40,7 @@
 
 #ifndef LINREG_H
 #define LINREG_H
+#include "../core/datatable.hpp"
 #include <cstdint>
 #include <vector>
 
@@ -48,6 +49,8 @@ namespace gpmp {
 namespace ml {
 
 class LinearRegression {
+// class Regression
+// class LinReg : public Regression {? TODO
     // Dynamic array which is going to contain all (i-th x)
     std::vector<long double> x;
     // Dynamic array which is going to contain all (i-th y)
@@ -107,6 +110,16 @@ class LinearRegression {
     void best_fit();
 
     /**
+     * @brief Read input data from a file
+     * @param data `gpmp::core::DataTableStr` obj
+     */
+    // void get_input(const gpmp::core::DataTableStr& data);
+    void get_input(const std::vector<long double> &x_data,
+                   const std::vector<long double> &y_data);
+    void get_input(const gpmp::core::DataTableStr &data,
+                   const std::vector<std::string> &columns);
+
+    /**
      * @brief Read input data from a file.
      * @param file Path to the input file.
      */
@@ -143,7 +156,6 @@ class LinearRegression {
      * @return Number of rows in the file.
      */
     int64_t num_rows(const char *input);
-
 };
 
 } // namespace ml

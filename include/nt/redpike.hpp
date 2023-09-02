@@ -46,7 +46,6 @@ namespace gpmp {
  */
 class RedPike {
   public:
-
     typedef uint32_t word;
     constexpr word CONST = 0x9E3779B9;
     constexpr int ROUNDS = 16;

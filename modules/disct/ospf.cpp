@@ -33,14 +33,14 @@
  ************************************************************************/
 
 /*
- * definitions for openGPMP naive implementation of Open Shortest Path First 
+ * definitions for openGPMP naive implementation of Open Shortest Path First
  * (OSPF)
  */
 
 #include <iostream>
-#include <vector>
-#include <queue>
 #include <limits>
+#include <queue>
+#include <vector>
 
 // Constants
 const int INF = std::numeric_limits<int>::max();
@@ -52,13 +52,19 @@ struct Edge {
 };
 
 // Dijkstra's algorithm implementation
-void dijkstra(const std::vector<std::vector<Edge>>& graph, int source, std::vector<int>& distances, std::vector<int>& parents) {
+void dijkstra(const std::vector<std::vector<Edge>> &graph,
+              int source,
+              std::vector<int> &distances,
+              std::vector<int> &parents) {
     int n = graph.size();
     distances.assign(n, INF);
     parents.assign(n, -1);
 
     distances[source] = 0;
-    std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
+    std::priority_queue<std::pair<int, int>,
+                        std::vector<std::pair<int, int>>,
+                        std::greater<std::pair<int, int>>>
+        pq;
     pq.push(std::make_pair(0, source));
 
     while (!pq.empty()) {
@@ -69,7 +75,7 @@ void dijkstra(const std::vector<std::vector<Edge>>& graph, int source, std::vect
         if (distance > distances[current])
             continue;
 
-        for (const Edge& edge : graph[current]) {
+        for (const Edge &edge : graph[current]) {
             int neighbor = edge.to;
             int new_distance = distance + edge.weight;
 
@@ -83,7 +89,7 @@ void dijkstra(const std::vector<std::vector<Edge>>& graph, int source, std::vect
 }
 
 int main() {
-    int n = 4;  // Number of nodes
+    int n = 4; // Number of nodes
     std::vector<std::vector<Edge>> graph(n);
 
     graph[0].push_back({1, 2});
@@ -97,7 +103,8 @@ int main() {
     dijkstra(graph, source, distances, parents);
 
     int destination = 3;
-    std::cout << "Shortest distance from " << source << " to " << destination << ": " << distances[destination] << std::endl;
+    std::cout << "Shortest distance from " << source << " to " << destination
+              << ": " << distances[destination] << std::endl;
     std::cout << "Shortest path: ";
     for (int node = destination; node != -1; node = parents[node])
         std::cout << node << " ";
@@ -105,5 +112,3 @@ int main() {
 
     return 0;
 }
-
-
