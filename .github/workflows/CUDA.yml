@@ -24,4 +24,4 @@ jobs:
       run: |
         echo "Installed cuda version is: ${{ steps.cuda-toolkit.outputs.cuda }}"
         echo "Cuda install location: ${{ steps.cuda-toolkit.outputs.CUDA_PATH }}"
-        nvcc modules/linalg/_gpu_mtx_add.cu
+        nvcc --version
