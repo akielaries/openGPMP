@@ -41,16 +41,31 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
-#include "linalg/matrix.hpp"
+#include <fstream>
 #include <string>
 #include <tuple>
 #include <vector>
+
+enum LogLevel {
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR
+};
+
+enum LogDestination {
+    CONSOLE,
+    FILE_ONLY,
+    CONSOLE_AND_FILE
+};
 
 namespace gpmp {
 
 namespace core {
 
 class TypeCast {
+  public:
+    void convert();
     /** std::string -> c string
      *
      */
@@ -87,80 +102,27 @@ class TypeCast {
      *
      */
 };
+class Logger {
+public:
+    Logger(LogLevel level = INFO, bool useTimestamp = true, LogDestination destination = CONSOLE, const std::string& logFile = "");
+    ~Logger();
 
-/**
- * @class Data
- */
-class Data {
-  public:
-    /**
-     * std::vector<std::vector<double>> is a 2D vector which is a
-     * Matrix. We could define it with Matrix class
-     */
+    void setLogLevel(LogLevel level);
+    void enableTimestamps(bool enable);
+    void setLogDestination(LogDestination destination);
+    void setLogFile(const std::string& logFile);
+    void log(LogLevel level, const std::string& message);
 
-    std::tuple<std::vector<std::vector<double>>, std::vector<double>> load();
+private:
+    LogLevel logLevel;
+    bool enableTimestamp;
+    LogDestination logDestination;
+    bool logToFile;
+    std::ofstream logFileStream;
 
-    std::tuple<std::vector<std::vector<double>>,
-               std::vector<std::vector<double>>>
-    load();
-
-    std::tuple<std::vector<std::vector<double>>, std::vector<double>> load();
-
-    std::tuple<std::vector<double>, std::vector<double>> load();
-
-    void setData(int k,
-                 std::string fileName,
-                 std::vector<std::vector<double>> &inputSet,
-                 std::vector<double> &outputSet);
-
-    void printData(std::vector<std::string> inputName,
-                   std::vector<std::vector<double>> inputSet);
-
-    void printData(std::vector<std::string> inputName,
-                   std::string outputName,
-                   std::vector<std::vector<double>> inputSet,
-                   std::vector<double> outputSet);
-
-    void set_input_names(std::string file_name,
-                         std::vector<std::string> &input_names);
-
-    std::vector<std::vector<double>>
-    feature_scaling(std::vector<std::vector<double>> X);
-
-    std::vector<std::vector<double>>
-    one_rep(std::vector<double> temp_output_set, int n_class);
-
-    std::vector<double>
-    one_rep_reverse(std::vector<std::vector<double>> temp_output_set);
-
-    std::vector<char> split(std::string text);
-    std::vector<std::string> splitSentences(std::string data);
-    std::vector<std::string> removeSpaces(std::vector<std::string> data);
-    std::vector<std::string> removeNullByte(std::vector<std::string> data);
-    std::vector<std::string> segment(std::string text);
-};
-
-// exponentiate
-
-// square root
-
-// cube root
-
-/**
- * @class OutlierFinder
- * @brief Finds outliers in models
- */
-class OutlierFinder {
-  public:
-    // Cnstr
-    OutlierFinder(int threshold);
-
-    std::vector<std::vector<double>>
-    modelSetTest(std::vector<std::vector<double>> inputSet);
-    std::vector<double> modelTest(std::vector<double> inputSet);
-
-    // Variables required
-    int threshold;
+    std::string getLogPrefix(LogLevel level);
+    std::string getCurrentTimestamp();
+    std::string formatLogMessage(const std::string& prefix, const std::string& message);
 };
 
 } // namespace core

@@ -13,20 +13,75 @@
 #include "../../include/ml/linreg.hpp"
 #include <stdio.h>
 
-int main() {
-    gpmp::ml::LinearRegression reg;
+void test_train() {
+    std::cout << "using openGPMP's LinearRegression class\n";
     gpmp::core::DataTable dt;
-    // gpmp::core::DataTableStr result =
-    // dt.csv_read("../../data/forestfires.csv",
-    //                                               {"month", "day", "temp",
-    //                                               "wind"});
 
     gpmp::core::DataTableStr result =
         dt.csv_read("../../data/school_scores.csv", {"Year", "GPA"});
 
+    // Create a LinearRegression object
+    gpmp::ml::LinearRegression reg;
+
+    std::vector<std::string> columns = {"Year", "GPA"};
+
+    // Load data into the LinearRegression object
+    reg.get_input(result, columns);
+
+    printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS (Before "
+           "Splitting)\n");
+
+    // Printing the best fitting line before splitting
+    reg.best_fit();
+
+    int v1 = 2007;
+    double v1_v = reg.predict(v1, reg.x);
+    double v1_e = reg.error_in(v1, reg.x, reg.y);
+    printf("Predicted value at %d   = %f\n", v1, v1_v);
+    printf("Error value at %d       = %f\n\n", v1, v1_e);
+
+    // Now, perform data splitting
+    reg.split_data(0.3, 42, false); // 70% for training, 30% for testing
+
+    printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS (After "
+           "Splitting)\n");
+
+    // Printing the best fitting line after splitting
+    reg.best_fit();
+
+    double v1_v_after_split = reg.predict(v1, reg.x_test);
+    double v1_e_after_split = reg.error_in(v1, reg.x_test, reg.y_test);
+    printf("Predicted value at %d   = %f\n", v1, v1_v_after_split);
+    printf("Error value at %d       = %f\n\n", v1, v1_e_after_split);
+
+    // Calculate MSE and R2 score after splitting
+    double mse_after_split = reg.mse(reg.x_test, reg.y_test);
+    double r_squared_after_split = reg.r_sqrd(reg.x_test, reg.y_test);
+
+    printf("Mean Squared Error (MSE) after splitting: %f\n", mse_after_split);
+    printf("R-squared (R2) Score after splitting: %f\n\n",
+           r_squared_after_split);
+}
+
+int main() {
+    test_train();
+    // gpmp::ml::LinearRegression reg;
+    // gpmp::core::DataTable dt;
+    //  gpmp::core::DataTableStr result =
+    //  dt.csv_read("../../data/forestfires.csv",
+    //                                                {"month", "day", "temp",
+    //                                                "wind"});
+
+    /*gpmp::core::DataTableStr result =
+        dt.csv_read("../../data/school_scores.csv", {"Year", "GPA"});
+
     dt.display(result);
     std::vector<std::string> columns = {"Year", "GPA"};
+    // pass in the datatable (result) and specify x , y columns
     reg.get_input(result, columns);
+
+    // split data into 75% training and 25% testing
+    reg.split_data(0.25);
 
     // declare Regression class object
 
@@ -36,7 +91,6 @@ int main() {
     // Printing the best fitting line
     reg.best_fit();
 
-    /* CALCULATING PREDICTIONS */
     int v1 = 1995;
     double v1_v = reg.predict(v1);
     double v1_e = reg.error_in(v1);
@@ -96,6 +150,6 @@ int main() {
     double v11_e = reg.error_in(v11);
     printf("Predicted value at %d   = %f\n", v11, v11_v);
     printf("Error value at %d       = %f\n\n", v11, v11_e);
-
+*/
     return 0;
 }
