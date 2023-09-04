@@ -10,11 +10,16 @@
 #include <iostream>
 //#include <openGPMP/ml/linreg.hpp>
 #include "../../include/core/datatable.hpp"
+#include "../../include/core/utils.hpp"
 #include "../../include/ml/linreg.hpp"
 #include <stdio.h>
 
+/** Logger class object*/
+static gpmp::core::Logger _log_;
+
 void test_train() {
-    std::cout << "using openGPMP's LinearRegression class\n";
+    _log_.log(INFO, "OpenGPMP LinearRegression class");
+
     gpmp::core::DataTable dt;
 
     gpmp::core::DataTableStr result =
@@ -28,8 +33,7 @@ void test_train() {
     // Load data into the LinearRegression object
     reg.get_input(result, columns);
 
-    printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS (Before "
-           "Splitting)\n");
+    _log_.log(INFO, "Before splitting");
 
     // Printing the best fitting line before splitting
     reg.best_fit();
@@ -37,14 +41,18 @@ void test_train() {
     int v1 = 2007;
     double v1_v = reg.predict(v1, reg.x);
     double v1_e = reg.error_in(v1, reg.x, reg.y);
-    printf("Predicted value at %d   = %f\n", v1, v1_v);
-    printf("Error value at %d       = %f\n\n", v1, v1_e);
+    _log_.log(INFO,
+              "Predicted value at " + std::to_string(v1) + " = " +
+                  std::to_string(v1_v));
+
+    _log_.log(INFO,
+              "Error value at " + std::to_string(v1) + " = " +
+                  std::to_string(v1_e));
 
     // Now, perform data splitting
     reg.split_data(0.3, 42, false); // 70% for training, 30% for testing
 
-    printf("LINEAR REGRESSION EXAMPLE ON YEAR/GPA DATA IN MATHEMATICS (After "
-           "Splitting)\n");
+    _log_.log(INFO, "After splitting");
 
     // Printing the best fitting line after splitting
     reg.best_fit();
@@ -53,14 +61,20 @@ void test_train() {
     double v1_e_after_split = reg.error_in(v1, reg.x_test, reg.y_test);
     printf("Predicted value at %d   = %f\n", v1, v1_v_after_split);
     printf("Error value at %d       = %f\n\n", v1, v1_e_after_split);
+    _log_.log(INFO,
+              "Predicted value at " + std::to_string(v1) + " = " +
+                  std::to_string(v1_v_after_split));
+
+    _log_.log(INFO,
+              "Error value at " + std::to_string(v1) + " = " +
+                  std::to_string(v1_e_after_split));
 
     // Calculate MSE and R2 score after splitting
     double mse_after_split = reg.mse(reg.x_test, reg.y_test);
     double r_squared_after_split = reg.r_sqrd(reg.x_test, reg.y_test);
 
-    printf("Mean Squared Error (MSE) after splitting: %f\n", mse_after_split);
-    printf("R-squared (R2) Score after splitting: %f\n\n",
-           r_squared_after_split);
+    _log_.log(INFO, "MSE = " + std::to_string(mse_after_split));
+    _log_.log(INFO, "R2 score = " + std::to_string(r_squared_after_split));
 }
 
 int main() {

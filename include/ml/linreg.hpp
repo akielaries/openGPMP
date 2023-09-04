@@ -43,6 +43,7 @@
 #ifndef LINREG_HPP
 #define LINREG_HPP
 #include "../core/datatable.hpp"
+#include "../core/utils.hpp"
 #include <cstdint>
 #include <vector>
 
@@ -52,33 +53,31 @@ namespace ml {
 
 class LinearRegression {
   public:
-    // class Regression
-    // class LinReg : public Regression {? TODO
-    // Dynamic array which is going to contain all (i-th x)
+    /** Dynamic array which is going to contain all (i-th x) */
     std::vector<long double> x;
-    // Dynamic array which is going to contain all (i-th y)
+    /** Dynamic array which is going to contain all (i-th y) */
     std::vector<long double> y;
-    // Store the coefficient/slope in the best fitting line
+    /** Store the coefficient/slope in the best fitting line */
     long double coeff;
-    // Store the constant term in the best fitting line
+    /** Store the constant term in the best fitting line */
     long double constant;
-    // Contains sum of product of all (i-th x) and (i-th y)
+    /** Contains sum of product of all (i-th x) and (i-th y) */
     long double sum_xy;
-    // Contains sum of all (i-th x)
+    /** Contains sum of all (i-th x) */
     long double sum_x;
-    // Contains sum of all (i-th y)
+    /** Contains sum of all (i-th y) */
     long double sum_y;
-    // Contains sum of square of all (i-th x)
+    /** Contains sum of square of all (i-th x) */
     long double sum_x_square;
-    // Contains sum of square of all (i-th y)
+    /** Contains sum of square of all (i-th y) */
     long double sum_y_square;
-    // Vector holding x training data
+    /** Vector holding x training data */
     std::vector<long double> x_train;
-    // Vector holding y training data
+    /** Vector holding y training data */
     std::vector<long double> y_train;
-    // Vector holding x testing data
+    /** Vector holding x testing data */
     std::vector<long double> x_test;
-    // Vector holding y testing data
+    /** Vector holding y testing data */
     std::vector<long double> y_test;
 
     /**

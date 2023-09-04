@@ -45,6 +45,9 @@
 #include <string>
 #include <vector>
 
+/** Logger class object*/
+static gpmp::core::Logger _log_;
+
 /*
  * Constructor to provide the default values to all the terms in the
  * object of class regression
@@ -108,8 +111,7 @@ long double gpmp::ml::LinearRegression::return_constant() {
 void gpmp::ml::LinearRegression::best_fit() {
     if (x_train.empty() || y_train.empty()) {
         // Check if training data is empty
-        std::cout << "Training data is empty. Please split data first."
-                  << std::endl;
+        _log_.log(WARNING, "Training data is empty.");
 
         if (coeff == 0 && constant == 0) {
             // If coefficients are not calculated, calculate them
@@ -117,8 +119,9 @@ void gpmp::ml::LinearRegression::best_fit() {
             calculate_constant();
         }
         // Display the best fitting line equation
-        std::cout << "The best fitting line is y = " << coeff << "x + "
-                  << constant << std::endl;
+        _log_.log(INFO,
+                  "Best fitting line : y = " + std::to_string(coeff) + "x + " +
+                      std::to_string(constant));
         return;
     }
 
@@ -144,10 +147,10 @@ void gpmp::ml::LinearRegression::best_fit() {
     // Calculate the coefficients of the best fitting line
     coeff = numerator / denominator;
     constant = (sum_y_train - coeff * sum_x_train) / N;
-
     // Display the best fitting line equation
-    std::cout << "The best fitting line is y = " << coeff << "x + " << constant
-              << std::endl;
+    _log_.log(INFO,
+              "Best fitting line : y = " + std::to_string(coeff) + "x + " +
+                  std::to_string(constant));
 }
 
 // Function to accept input data in the form of two vectors
@@ -166,7 +169,7 @@ void gpmp::ml::LinearRegression::get_input(
 
     if (x_data.size() != y_data.size()) {
         // Check if input vectors have the same size
-        std::cerr << "Input vectors must have the same size." << std::endl;
+        _log_.log(ERROR, "Input vectors must have the same size");
         return;
     }
 
@@ -200,9 +203,7 @@ void gpmp::ml::LinearRegression::get_input(
 
     // Ensure that columns is not empty and has at least 2 elements
     if (columns.size() < 2) {
-        std::cerr
-            << "Error: columns vector must contain at least 2 column names."
-            << std::endl;
+        _log_.log(ERROR, "Input vectors must have at least 2 column names.");
         return;
     }
 
@@ -218,8 +219,9 @@ void gpmp::ml::LinearRegression::get_input(
             }
         }
         if (!found) {
-            std::cerr << "Error: Column '" << column_name
-                      << "' not found in DataTableStr." << std::endl;
+            _log_.log(ERROR,
+                      "Column '" + column_name +
+                          "' not found in DataTableStr.");
             return;
         }
     }
@@ -241,7 +243,7 @@ void gpmp::ml::LinearRegression::get_input(
             sum_y_square += yi * yi;
         } catch (const std::exception &e) {
             // Handle parsing errors here
-            std::cerr << "Error parsing data: " << e.what() << std::endl;
+            _log_.log(ERROR, "Error parsing data: " + std::string(e.what()));
             continue;
         }
     }
@@ -278,14 +280,12 @@ void gpmp::ml::LinearRegression::split_data(double test_size,
                                             unsigned int seed,
                                             bool shuffle) {
     if (x.empty() || y.empty()) {
-        std::cerr << "Input data is empty. Please load data first."
-                  << std::endl;
+        _log_.log(ERROR, "Training data is empty.");
         return;
     }
-    
+
     if (test_size <= 0 || test_size >= 1) {
-        std::cerr << "Invalid test_size. It should be between 0 and 1."
-                  << std::endl;
+        _log_.log(ERROR, "Invalid `test_size`. Must be between 0 - 1.");
         return;
     }
 
@@ -294,7 +294,7 @@ void gpmp::ml::LinearRegression::split_data(double test_size,
 
     // Shuffle the data randomly if specified
     if (shuffle == true) {
-        // Create vector of indices 
+        // Create vector of indices
         std::vector<size_t> indices(data_size);
         // Fill vector sequentially w/ `iota`
         std::iota(indices.begin(), indices.end(), 0);
@@ -302,14 +302,15 @@ void gpmp::ml::LinearRegression::split_data(double test_size,
         std::shuffle(indices.begin(),
                      indices.end(),
                      std::default_random_engine(seed));
-        
+
         // Clear training and testing data vectors
         x_train.clear();
         y_train.clear();
         x_test.clear();
         y_test.clear();
 
-        // Split the data into training and testing sets based on shuffled indices
+        // Split the data into training and testing sets based on shuffled
+        // indices
         for (size_t i = 0; i < data_size; ++i) {
             if (i < test_data_size) {
                 // Append x test vector with shuffled x value
@@ -322,7 +323,7 @@ void gpmp::ml::LinearRegression::split_data(double test_size,
             }
         }
     } else {
-        // Without shuffling, split the data without changing its order by 
+        // Without shuffling, split the data without changing its order by
         // assigning the first training element to the training set
         x_train.assign(x.begin(), x.begin() + data_size - test_data_size);
         y_train.assign(y.begin(), y.begin() + data_size - test_data_size);
@@ -411,7 +412,6 @@ gpmp::ml::LinearRegression::mse(const std::vector<long double> &x_data,
                                 const std::vector<long double> &y_data) const {
     if (x_data.size() != y_data.size()) {
         // Check if input vectors have the same size
-        std::cerr << "Input vectors must have the same size." << std::endl;
         return -1; // Return an error value
     }
 
@@ -439,7 +439,7 @@ long double gpmp::ml::LinearRegression::r_sqrd(
     const std::vector<long double> &y_data) const {
     if (x_data.size() != y_data.size()) {
         // Check if input vectors have the same size
-        std::cerr << "Input vectors must have the same size." << std::endl;
+        _log_.log(ERROR, "Input vectors must have the same size.");
         return -1; // Return an error value
     }
 

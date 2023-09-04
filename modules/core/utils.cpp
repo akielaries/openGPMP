@@ -44,17 +44,9 @@
 #include <iostream>
 #include <string>
 
-gpmp::core::Logger::Logger(LogLevel level,
-                           bool useTimestamp,
-                           const std::string &logFile)
-    : logLevel(level), enableTimestamp(useTimestamp), logDestination(destination), logToFile(false) {
-    if (destination != CONSOLE) {
-        logToFile = true;
-        logFileStream.open(logFile, std::ios::out | std::ios::app);
-        if (!logFileStream.is_open()) {
-            std::cerr << "Error: Could not open log file " << logFile << std::endl;
-        }
-    }
+gpmp::core::Logger::Logger(LogLevel level, bool useTimestamp)
+    : logLevel(level), enableTimestamp(useTimestamp), logDestination(CONSOLE),
+      logToFile(false) {
 }
 
 gpmp::core::Logger::~Logger() {
@@ -75,13 +67,11 @@ void gpmp::core::Logger::setLogDestination(LogDestination destination) {
     logDestination = destination;
 }
 
-void gpmp::core::Logger::setLogFile(const std::string& logFile) {
-    if (logDestination != CONSOLE) {
-        logToFile = true;
-        logFileStream.open(logFile, std::ios::out | std::ios::app);
-        if (!logFileStream.is_open()) {
-            std::cerr << "Error: Could not open log file " << logFile << std::endl;
-        }
+void gpmp::core::Logger::setLogFile(const std::string &logFile) {
+    logToFile = true;
+    logFileStream.open(logFile, std::ios::out | std::ios::app);
+    if (!logFileStream.is_open()) {
+        std::cerr << "Error: Could not open log file " << logFile << std::endl;
     }
 }
 
@@ -110,11 +100,11 @@ std::string gpmp::core::Logger::getLogPrefix(LogLevel level) {
     case INFO:
         return "[INFO]";
     case WARNING:
-        return "[WARNING]";
+        return "[WARN]";
     case ERROR:
-        return "[ERROR]";
+        return "[ERR]";
     default:
-        return "[UNKNOWN]";
+        return "[UNKN]";
     }
 }
 
@@ -127,7 +117,7 @@ std::string gpmp::core::Logger::getCurrentTimestamp() {
     std::tm tm = *std::localtime(&nowTime);
 
     std::ostringstream oss;
-    oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S") << '.' << std::setfill('0')
+    oss << std::put_time(&tm, "%H:%M:%S") << '.' << std::setfill('0')
         << std::setw(3) << ms.count();
 
     return oss.str();
@@ -142,13 +132,15 @@ std::string gpmp::core::Logger::formatLogMessage(const std::string &prefix,
     return logMessage;
 }
 
-int main() {
-    gpmp::core::Logger logger(INFO, false, );
+/*int main() {
+    // Create a logger with default settings (log to console with timestamps)
+    gpmp::core::Logger logger;
 
+    // Log messages at various log levels
     logger.log(DEBUG, "This is a debug message.");
-    logger.log(INFO, "This is an informational message.");
+    logger.log(INFO, "This is an info message.");
     logger.log(WARNING, "This is a warning message.");
     logger.log(ERROR, "This is an error message.");
 
     return 0;
-}
+}*/
