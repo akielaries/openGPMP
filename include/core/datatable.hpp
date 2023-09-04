@@ -43,6 +43,7 @@
 #define SHOW_ROWS 5
 
 #include <algorithm>
+#include <chrono>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -66,6 +67,14 @@ typedef std::pair<std::vector<long double>,
     DataTableDouble;
 
 class DataTable {
+  private:
+    std::vector<std::string> headers;
+
+    // vector to hold datetime col
+    std::vector<std::string> datetime_column_;
+    // vector to hold data
+    std::vector<std::vector<std::string>> data_;
+
   public:
     /**
      * @brief Reads a CSV file and returns a DataTableStr
@@ -100,6 +109,33 @@ class DataTable {
      */
     DataTableStr json_read(std::string filename,
                            std::vector<std::string> objs = {});
+
+    void to_datetime(const std::string &new_column_name,
+                     const std::string &source_column_name);
+
+    std::string extract_month(const std::string &new_column_name,
+                              const std::string &source_column_name);
+
+    void extract_year(const std::string &new_column_name,
+                      const std::string &source_column_name);
+
+    DataTableStr groupby_sum(const std::string &group1,
+                             const std::string &group2,
+                             const std::string &aggregate_column);
+
+    /**
+     * @brief Group the DataTable by specified columns.
+     * @param groupby_columns A vector of column names to group by.
+     * @return A grouped DataTable.
+     */
+    DataTableStr groupby(const std::vector<std::string> &groupby_columns);
+
+    /**
+     * @brief Sum the values in a specified column.
+     * @param target_column The column to sum.
+     * @return A DataTable containing the summed values.
+     */
+    DataTable sum(const std::string &target_column);
 
     /**
      * @brief Converts a DataTableStr to a DataTableInt
@@ -137,20 +173,53 @@ class DataTable {
     template <typename T>
     void display(std::pair<std::vector<T>, std::vector<std::vector<T>>> data,
                  bool display_all = false) {
+        // Get the number of columns and rows in the data
         int num_columns = data.first.size();
         int num_rows = data.second.size();
         int num_omitted_rows = 0;
 
-        for (const auto &header : data.first) {
-            std::cout << header << "\t";
+        // Initialize max_column_widths with the lengths of column headers
+        std::vector<int> max_column_widths(num_columns, 0);
+
+        // Calculate the maximum width for each column based on column headers
+        for (int i = 0; i < num_columns; i++) {
+            max_column_widths[i] = data.first[i].length();
+        }
+
+        // Calculate the maximum width for each column based on data rows
+        for (int i = 0; i < num_columns; i++) {
+            for (const auto &row : data.second) {
+                if (i < static_cast<int>(row.size())) {
+                    max_column_widths[i] =
+                        std::max(max_column_widths[i],
+                                 static_cast<int>(row[i].length()));
+                }
+            }
+        }
+
+        // Set a larger width for the DateTime column (adjust the index as
+        // needed)
+        const int dateTimeColumnIndex = 0;
+        max_column_widths[dateTimeColumnIndex] =
+            std::max(max_column_widths[dateTimeColumnIndex],
+                     0); // Adjust as needed
+
+        // Print headers with right-aligned values
+        for (int i = 0; i < num_columns; i++) {
+            std::cout << std::setw(max_column_widths[i]) << std::right
+                      << data.first[i] << "  ";
         }
         std::cout << std::endl;
 
         int num_elements = data.second.size();
         if (!display_all && num_elements > MAX_ROWS) {
             for (int i = 0; i < SHOW_ROWS; i++) {
-                for (const auto &value : data.second[i]) {
-                    std::cout << value << "\t";
+                // Print each row with right-aligned values
+                for (int j = 0; j < num_columns; j++) {
+                    if (j < static_cast<int>(data.second[i].size())) {
+                        std::cout << std::setw(max_column_widths[j])
+                                  << std::right << data.second[i][j] << "  ";
+                    }
                 }
                 std::cout << std::endl;
             }
@@ -158,20 +227,29 @@ class DataTable {
             std::cout << "...\n";
             std::cout << "[" << num_omitted_rows << " rows omitted]\n";
             for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
-                for (const auto &value : data.second[i]) {
-                    std::cout << value << "\t";
+                // Print each row with right-aligned values
+                for (int j = 0; j < num_columns; j++) {
+                    if (j < static_cast<int>(data.second[i].size())) {
+                        std::cout << std::setw(max_column_widths[j])
+                                  << std::right << data.second[i][j] << "  ";
+                    }
                 }
                 std::cout << std::endl;
             }
         } else {
+            // Print all rows with right-aligned values
             for (const auto &row : data.second) {
-                for (const auto &value : row) {
-                    std::cout << value << "\t";
+                for (int j = 0; j < num_columns; j++) {
+                    if (j < static_cast<int>(row.size())) {
+                        std::cout << std::setw(max_column_widths[j])
+                                  << std::right << row[j] << "  ";
+                    }
                 }
                 std::cout << std::endl;
             }
         }
 
+        // Print the number of rows and columns
         std::cout << "[" << num_rows << " rows"
                   << " x " << num_columns << " columns";
         std::cout << "]\n\n";

@@ -158,7 +158,8 @@ class Logger {
     bool enableTimestamp;
 
     /**
-     * @brief The log destination, which can be CONSOLE, FILE_ONLY, or CONSOLE_AND_FILE.
+     * @brief The log destination, which can be CONSOLE, FILE_ONLY, or
+     * CONSOLE_AND_FILE.
      */
     LogDestination logDestination;
 
@@ -191,8 +192,8 @@ class Logger {
      * @param message The log message content.
      * @return The formatted log message as a string.
      */
-    std::string formatLogMessage(const std::string& prefix, const std::string& message);
-
+    std::string formatLogMessage(const std::string &prefix,
+                                 const std::string &message);
 };
 
 } // namespace core

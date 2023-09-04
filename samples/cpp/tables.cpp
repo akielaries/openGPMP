@@ -21,11 +21,25 @@ int main() {
 
     // of type std::pair<std::vector<std::string>,
     //         std::vector<std::vector<std::string>>>
-    gpmp::core::DataTableStr result =
-        dt.csv_read("../../data/forestfires.csv",
-                    {"month", "day", "temp", "wind"});
+    // gpmp::core::DataTableStr result =
+    //    dt.csv_read("../../data/forestfires.csv",
+    //                {"month", "day", "temp", "wind"});
+    gpmp::core::DataTableStr result = dt.csv_read(
+        "../../data/Tetuan_power_consumption.csv",
+        {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
+
     // print result
     dt.display(result);
+    // Extract Month and Year
+    dt.extract_month("Month", "DateTime");
+    dt.extract_year("Year", "DateTime");
+
+    // Group by Year and Month, and then sum "Zone 1 Power Consumption"
+    gpmp::core::DataTableStr grouped_data =
+        dt.groupby_sum("Year", "Month", "Zone 1 Power Consumption");
+
+    // Display the grouped data
+    dt.display(grouped_data);
 
     // gpmp::DataTable dt_b;
 
