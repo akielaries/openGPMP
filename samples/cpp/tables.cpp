@@ -30,16 +30,23 @@ int main() {
 
     // print result
     dt.display(result);
-    // Extract Month and Year
-    dt.extract_month("Month", "DateTime");
-    dt.extract_year("Year", "DateTime");
 
-    // Group by Year and Month, and then sum "Zone 1 Power Consumption"
-    gpmp::core::DataTableStr grouped_data =
-        dt.groupby_sum("Year", "Month", "Zone 1 Power Consumption");
+    // date_time accepts options to extract year, month, and time specifically
+    // another way to call is date_time("col",true, true, true) - gets all
+    // fields
+    gpmp::core::DataTableStr date_time_result = dt.date_time("DateTime");
+    dt.display(date_time_result);
 
-    // Display the grouped data
-    dt.display(grouped_data);
+    // Group the data by "Year" and "Month" columns
+    std::vector<std::string> group_by_columns = {"Year", "Month"};
+    std::vector<gpmp::core::DataTableStr> grouped_data =
+        dt.group_by(group_by_columns);
+
+    // Print each group
+    for (size_t i = 0; i < grouped_data.size(); ++i) {
+        std::cout << "\nGroup " << i + 1 << ":\n";
+        dt.display(grouped_data[i]);
+    }
 
     // gpmp::DataTable dt_b;
 

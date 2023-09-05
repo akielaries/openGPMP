@@ -39,8 +39,8 @@
 #ifndef DATATABLE_HPP
 #define DATATABLE_HPP
 
-#define MAX_ROWS 10
-#define SHOW_ROWS 5
+#define MAX_ROWS 30
+#define SHOW_ROWS 15
 
 #include <algorithm>
 #include <chrono>
@@ -110,32 +110,28 @@ class DataTable {
     DataTableStr json_read(std::string filename,
                            std::vector<std::string> objs = {});
 
-    void to_datetime(const std::string &new_column_name,
-                     const std::string &source_column_name);
-
-    std::string extract_month(const std::string &new_column_name,
-                              const std::string &source_column_name);
-
-    void extract_year(const std::string &new_column_name,
-                      const std::string &source_column_name);
-
-    DataTableStr groupby_sum(const std::string &group1,
-                             const std::string &group2,
-                             const std::string &aggregate_column);
+    void TEST_PRINT();
 
     /**
-     * @brief Group the DataTable by specified columns.
-     * @param groupby_columns A vector of column names to group by.
-     * @return A grouped DataTable.
+     * @brief Extracts date and time components from a timestamp column
+     * @param column_name The name of the timestamp column
+     * @param extract_year If true, extract the year component
+     * @param extract_month If true, extract the month component
+     * @param extract_time If true, extract the time component
+     * @return A new DataTableStr with extracted components
      */
-    DataTableStr groupby(const std::vector<std::string> &groupby_columns);
+    DataTableStr date_time(std::string column_name,
+                           bool extract_year = true,
+                           bool extract_month = true,
+                           bool extract_time = false);
 
     /**
-     * @brief Sum the values in a specified column.
-     * @param target_column The column to sum.
-     * @return A DataTable containing the summed values.
+     * @brief Groups the data by specified columns
+     * @param group_by_columns The column names to group by
+     * @return A vector of DataTableStr, each containing a group of rows
      */
-    DataTable sum(const std::string &target_column);
+    std::vector<DataTableStr>
+    group_by(std::vector<std::string> group_by_columns);
 
     /**
      * @brief Converts a DataTableStr to a DataTableInt
@@ -198,13 +194,16 @@ class DataTable {
         }
 
         // Set a larger width for the DateTime column (adjust the index as
-        // needed)
+        // needed later on)
         const int dateTimeColumnIndex = 0;
+        // adjust as needed?
         max_column_widths[dateTimeColumnIndex] =
-            std::max(max_column_widths[dateTimeColumnIndex],
-                     0); // Adjust as needed
+            std::max(max_column_widths[dateTimeColumnIndex], 0);
 
         // Print headers with right-aligned values
+        std::cout << std::setw(7) << std::right << "Index"
+                  << "  ";
+
         for (int i = 0; i < num_columns; i++) {
             std::cout << std::setw(max_column_widths[i]) << std::right
                       << data.first[i] << "  ";
@@ -214,6 +213,8 @@ class DataTable {
         int num_elements = data.second.size();
         if (!display_all && num_elements > MAX_ROWS) {
             for (int i = 0; i < SHOW_ROWS; i++) {
+                // Prit index
+                std::cout << std::setw(7) << std::right << i << "  ";
                 // Print each row with right-aligned values
                 for (int j = 0; j < num_columns; j++) {
                     if (j < static_cast<int>(data.second[i].size())) {
@@ -227,6 +228,7 @@ class DataTable {
             std::cout << "...\n";
             std::cout << "[" << num_omitted_rows << " rows omitted]\n";
             for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
+                std::cout << std::setw(7) << std::right << i << "  ";
                 // Print each row with right-aligned values
                 for (int j = 0; j < num_columns; j++) {
                     if (j < static_cast<int>(data.second[i].size())) {
@@ -238,11 +240,16 @@ class DataTable {
             }
         } else {
             // Print all rows with right-aligned values
-            for (const auto &row : data.second) {
+            for (int i = 0; i < num_elements; i++) {
+
+                // Print index
+                std::cout << std::setw(7) << std::right << i << "  ";
                 for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(row.size())) {
+                    if (j < static_cast<int>(data.second[i].size())) {
+
+                        // Print formatted row
                         std::cout << std::setw(max_column_widths[j])
-                                  << std::right << row[j] << "  ";
+                                  << std::right << data.second[i][j] << "  ";
                     }
                 }
                 std::cout << std::endl;

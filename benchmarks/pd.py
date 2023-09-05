@@ -3,6 +3,7 @@ pd.set_option('display.float_format', '{:.2f}'.format)  # Set the float format t
 
 # Load the dataset
 data = pd.read_csv('../data/Tetuan_power_consumption.csv')
+print(data)
 
 # Convert the 'DateTime' column to a datetime object
 data['DateTime'] = pd.to_datetime(data['DateTime'])

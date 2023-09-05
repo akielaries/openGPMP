@@ -103,230 +103,122 @@ gpmp::core::DataTable::csv_read(std::string filename,
             data.push_back(row);
         }
     }
+    // populate headers class variable
     headers = headerColumns;
+    // populate data_ class variable
+    data_ = data;
 
     file.close();
     return make_pair(columns, data);
 }
 
-void gpmp::core::DataTable::to_datetime(const std::string &new_column_name,
-                                        const std::string &source_column_name) {
-    // Find the index of the source column
-    int source_index = -1;
-    for (int i = 0; i < data_[0].size(); ++i) {
-        if (data_[0][i] == source_column_name) {
-            source_index = i;
-            break;
+void gpmp::core::DataTable::TEST_PRINT() {
+    for (const std::vector<std::string> &row : data_) {
+        for (const std::string &cell : row) {
+            std::cout << cell << "\t";
         }
+        std::cout << std::endl;
     }
-
-    // Check if the source column exists
-    if (source_index == -1) {
-        std::cerr << "Source column not found: " << source_column_name
-                  << std::endl;
-        return;
-    }
-
-    // Iterate through the data and convert to datetime
-    for (int i = 1; i < data_.size(); ++i) {
-        std::string datetime_str = data_[i][source_index];
-        // Convert the string to a datetime object (you can use your preferred
-        // datetime library) Then replace the source column with the new
-        // datetime column
-        data_[i][source_index] =
-            datetime_str;                    // Replace with the datetime object
-        data_[0].push_back(new_column_name); // Add the new column name
-    }
-}
-
-std::string
-gpmp::core::DataTable::extract_month(const std::string &new_column_name,
-                                     const std::string &source_column_name) {
-    // Find the index of the source column in the headers
-    int source_index = -1;
-    for (int i = 0; i < headers.size(); ++i) {
-        if (headers[i] == source_column_name) {
-            source_index = i;
-            break;
-        }
-    }
-
-    // Check if the source column was found
-    if (source_index == -1) {
-        std::cerr << "Source column not found: " << source_column_name
-                  << std::endl;
-        return "";
-    }
-
-    // Create a new DataTable with the added month column
-    gpmp::core::DataTable new_table;
-
-    // Copy the headers
-    new_table.headers = headers; // Copy the headers to the new DataTable
-    new_table.headers.push_back(new_column_name); // Add the new column name
-
-    // Iterate through the data and extract the month
-    for (int i = 0; i < data_.size(); ++i) {
-        if (data_[i].size() <= source_index) {
-            std::cerr << "Row " << i
-                      << " doesn't have enough columns for source column: "
-                      << source_column_name << std::endl;
-            continue; // Skip this row
-        }
-
-        std::string datetime_str = data_[i][source_index];
-
-        // Assuming datetime_str is in the format "YYYY-MM-DD HH:MM:SS"
-        std::tm timeinfo = {};
-        std::istringstream ss(datetime_str);
-        ss >> std::get_time(&timeinfo, "%m/%d/%Y %H:%M");
-
-        if (ss.fail()) {
-            std::cerr << "Failed to parse datetime: " << datetime_str
-                      << std::endl;
-            continue;
-        }
-
-        // Extract the month
-        int month = timeinfo.tm_mon + 1; // tm_mon is 0-based
-
-        // Add the month value to the new column in the new DataTable
-        new_table.data_.push_back({std::to_string(month)});
-    }
-
-    // Replace the current instance with the new DataTable
-    *this = new_table;
-
-    // std::cout << ;
-
-    return new_column_name;
-}
-
-void gpmp::core::DataTable::extract_year(
-    const std::string &new_column_name,
-    const std::string &source_column_name) {
-    // Find the index of the source column in the headers
-    int source_index = -1;
-    for (int i = 0; i < headers.size(); ++i) {
-        if (headers[i] == source_column_name) {
-            source_index = i;
-            break;
-        }
-    }
-
-    // Check if the source column was found
-    if (source_index == -1) {
-        std::cerr << "Source column not found: " << source_column_name
-                  << std::endl;
-        return;
-    }
-
-    // Add the new column name for the year to the headers
-    headers.push_back(new_column_name);
-
-    // Iterate through the data and extract the year
-    for (int i = 0; i < data_.size(); ++i) {
-        if (data_[i].size() <= source_index) {
-            std::cerr << "Row " << i
-                      << " doesn't have enough columns for source column: "
-                      << source_column_name << std::endl;
-            continue; // Skip this row
-        }
-
-        std::string datetime_str = data_[i][source_index];
-
-        // Assuming datetime_str is in the format "YYYY-MM-DD HH:MM:SS"
-        std::tm timeinfo = {};
-        std::istringstream ss(datetime_str);
-        ss >> std::get_time(&timeinfo, "%Y-%m-%d %H:%M:%S");
-
-        if (ss.fail()) {
-            std::cerr << "Failed to parse datetime: " << datetime_str
-                      << std::endl;
-            continue;
-        }
-
-        // Extract the year
-        int year = timeinfo.tm_year + 1900; // tm_year is years since 1900
-
-        // Add the year value to the new column in the current DataTable
-        data_[i].push_back(std::to_string(year));
-    }
-}
-// Function to parse a datetime string and extract Year and Month
-void parse_datetime(const std::string &datetime,
-                    std::string &year,
-                    std::string &month) {
-    // Assuming the datetime format is "MM/DD/YYYY HH:MM" (you might need to
-    // adjust this)
-    std::istringstream ss(datetime);
-    std::string datePart;
-    std::getline(ss, datePart, ' '); // Get the date part (MM/DD/YYYY)
-
-    std::istringstream dateStream(datePart);
-    std::getline(dateStream, month, '/');
-    std::getline(dateStream, month, '/');
-    std::getline(dateStream, year, '/');
 }
 
 gpmp::core::DataTableStr
-gpmp::core::DataTable::groupby_sum(const std::string &groupby_column1,
-                                   const std::string &groupby_column2,
-                                   const std::string &sum_column) {
+gpmp::core::DataTable::date_time(std::string column_name,
+                                 bool extract_year,
+                                 bool extract_month,
+                                 bool extract_time) {
+    // Find the index of the specified column
+    auto column_iter = std::find(headers.begin(), headers.end(), column_name);
+    if (column_iter == headers.end()) {
+        std::cerr << "Column " << column_name << " not found!\n";
+        exit(EXIT_FAILURE);
+    }
+    int column_index = std::distance(headers.begin(), column_iter);
 
-    // Create a new DataTableStr to store the grouped data
-    gpmp::core::DataTableStr grouped_data;
+    // Extract components from each row
+    std::vector<std::string> new_headers;
+    std::vector<std::vector<std::string>> new_data;
 
-    // Copy the headers to the new DataTableStr
-    grouped_data.first = {"Year", "Month", sum_column};
+    for (size_t row_index = 0; row_index < data_.size(); ++row_index) {
+        std::vector<std::string> row = data_[row_index];
+        if (row.size() <= static_cast<size_t>(column_index)) {
+            std::cerr << "Column " << column_name << " not found in row "
+                      << row_index + 1 << "!\n";
+            exit(EXIT_FAILURE);
+        }
+        std::string timestamp = row[column_index];
+        std::string year, month, time;
 
-    // Initialize a map to store the grouped sum for each month
-    std::map<std::pair<std::string, std::string>, double> group_sum;
-
-    // Iterate through the data and calculate the sum for each group
-    for (int i = 1; i < data_.size();
-         ++i) { // Start from index 1 to skip the header row
-        if (data_[i].size() <= 0) {
-            continue; // Skip empty rows
+        // Extract year, month, and time components
+        if (extract_year) {
+            // Extract year from timestamp (assuming a certain format)
+            year = timestamp.substr(timestamp.find_last_of('/') + 1, 4);
+        }
+        if (extract_month) {
+            // Extract month from timestamp (assuming a certain format)
+            month = timestamp.substr(0, timestamp.find_first_of('/'));
+        }
+        if (extract_time) {
+            // Extract time from timestamp (assuming a certain format)
+            time = timestamp.substr(timestamp.find(' ') + 1);
         }
 
-        std::string datetime =
-            data_[i][0]; // Assuming DateTime is in the first column
-        double value = 0.0;
+        // Create a new row with extracted components
+        std::vector<std::string> new_row;
+        if (extract_year)
+            new_row.push_back(year);
+        if (extract_month)
+            new_row.push_back(month);
+        if (extract_time)
+            new_row.push_back(time);
 
-        for (int j = 1; j < headers.size(); ++j) {
-            if (headers[j] == sum_column) {
-                // Convert the value to double
-                value = std::stod(data_[i][j]);
-                break;
-            }
-        }
-
-        // Parse the DateTime to extract Year and Month
-        std::string year, month;
-        parse_datetime(datetime, year, month);
-
-        // Use a pair of Year and Month as the key
-        std::pair<std::string, std::string> group_key(year, month);
-
-        // Add the value to the sum for this group
-        group_sum[group_key] += value;
+        new_data.push_back(new_row);
     }
 
-    // Iterate through the map and add the grouped data to the new DataTableStr
-    for (const auto &pair : group_sum) {
-        // Create a new row for the grouped data
-        std::vector<std::string> row;
+    // Create new headers based on the extracted components
+    if (extract_year)
+        new_headers.push_back("Year");
+    if (extract_month)
+        new_headers.push_back("Month");
+    if (extract_time)
+        new_headers.push_back("Time");
+    data_ = new_data;
 
-        // Add the group values to the row
-        row.push_back(pair.first.first);  // Year
-        row.push_back(pair.first.second); // Month
+    return std::make_pair(new_headers, new_data);
+}
 
-        // Add the sum value to the row
-        row.push_back(std::to_string(pair.second));
+std::vector<gpmp::core::DataTableStr>
+gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
+    // Find the indices of the specified group by columns
+    std::vector<int> group_by_indices;
+    for (const std::string &column_name : group_by_columns) {
+        auto column_iter =
+            std::find(headers.begin(), headers.end(), column_name);
+        if (column_iter == headers.end()) {
+            std::cerr << "Column " << column_name << " not found!\n";
+            exit(EXIT_FAILURE);
+        }
+        int column_index = std::distance(headers.begin(), column_iter);
+        group_by_indices.push_back(column_index);
+    }
 
-        // Add the row to the new DataTableStr
-        grouped_data.second.push_back(row);
+    // Group the data based on the specified columns
+    std::map<std::vector<std::string>, gpmp::core::DataTableStr> groups;
+
+    for (const std::vector<std::string> &row : data_) {
+        std::vector<std::string> group_key;
+        for (int index : group_by_indices) {
+            group_key.push_back(row[index]);
+        }
+        if (groups.find(group_key) == groups.end()) {
+            groups[group_key] = gpmp::core::DataTableStr(headers, {});
+        }
+        groups[group_key].second.push_back(row);
+    }
+
+    // Extract the grouped data into a vector
+    std::vector<gpmp::core::DataTableStr> grouped_data;
+    for (const auto &group : groups) {
+        grouped_data.push_back(group.second);
     }
 
     return grouped_data;
