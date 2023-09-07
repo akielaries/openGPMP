@@ -190,21 +190,21 @@ int main() {
 A Python example showing the same functionalities.
 
 ```python
-#!/usr/bin/python3
-# import the Number Theory module
-from pygpmp import nt
-
-c = Cipher()
-ciphertext_0 = c.caesar('Plaintext', 5)
-print(ciphertext_0)
-
-ciphertext_1 = c.caesar('ATTACKATONCE', 4)
-print(ciphertext_1)
-
-text = "Password"
-shift = "Computer"
-encoded_text = c.keyword_encode(shift);
-hashtext = c.keyword(text, encoded_text);
-print(hashtext)
+>>> from pygpmp import nt
+>>> c = nt.Cipher()
+>>> text0 = c.caesar('Plaintext', 5)
+>>> print(ciphertext_0)
+Uqfnsyjcy
+>>> 
+>>> text1 = c.caesar('ATTACKATONCE', 4)
+>>> print(text1)
+EXXEGOEXSRGI
+>>> 
+>>> text = "Password"
+>>> shift = "Computer"
+>>> encoded_text = c.keyword_encode(shift);
+>>> hashtext = c.keyword(text, encoded_text);
+>>> print(hashtext)
+JCNNWILP
 ```
 
