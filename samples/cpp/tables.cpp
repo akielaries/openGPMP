@@ -29,24 +29,25 @@ int main() {
         {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
     // print result
+    std::cout << "FULL DATASET: \n";
     dt.display(result);
 
     // date_time accepts options to extract year, month, and time specifically
     // another way to call is date_time("col",true, true, true) - gets all
     // fields
     gpmp::core::DataTableStr date_time_result = dt.date_time("DateTime");
+    std::cout << "TIMESTAMPS: \n";
     dt.display(date_time_result);
 
     // Group the data by "Year" and "Month" columns
     std::vector<std::string> group_by_columns = {"Year", "Month"};
-    std::vector<gpmp::core::DataTableStr> grouped_data =
+    // Print each group
+    std::cout << "GROUPS: \n";
+    std::vector<gpmp::core::DataTableStr> groups =
         dt.group_by(group_by_columns);
 
-    // Print each group
-    for (size_t i = 0; i < grouped_data.size(); ++i) {
-        std::cout << "\nGroup " << i + 1 << ":\n";
-        dt.display(grouped_data[i]);
-    }
+    gpmp::core::DataTableStr first_element = dt.first(groups);
+    dt.display(first_element);
 
     // gpmp::DataTable dt_b;
 

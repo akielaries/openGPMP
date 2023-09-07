@@ -42,6 +42,8 @@
 #include <string>
 #include <vector>
 
+// create method to create datatable from scratch? insert, drop, etc?
+
 // TODO : optimize these methods, CSV reader using threads? loop unrolling?,
 // etc? conversion functions to be quicker,
 gpmp::core::DataTableStr
@@ -103,8 +105,9 @@ gpmp::core::DataTable::csv_read(std::string filename,
             data.push_back(row);
         }
     }
-    // populate headers class variable
-    headers = headerColumns;
+    // populate headers_ class variable
+    //headers_ = headerColumns;
+    headers_ = columns;
     // populate data_ class variable
     data_ = data;
 
@@ -127,17 +130,18 @@ gpmp::core::DataTable::date_time(std::string column_name,
                                  bool extract_month,
                                  bool extract_time) {
     // Find the index of the specified column
-    auto column_iter = std::find(headers.begin(), headers.end(), column_name);
-    if (column_iter == headers.end()) {
+    auto column_iter = std::find(headers_.begin(), headers_.end(), column_name);
+    if (column_iter == headers_.end()) {
         std::cerr << "Column " << column_name << " not found!\n";
         exit(EXIT_FAILURE);
     }
-    int column_index = std::distance(headers.begin(), column_iter);
+    int column_index = std::distance(headers_.begin(), column_iter);
 
     // Extract components from each row
-    std::vector<std::string> new_headers;
+    std::vector<std::string> new_headers = headers_;
     std::vector<std::vector<std::string>> new_data;
 
+    // iterate and populate the additional columns
     for (size_t row_index = 0; row_index < data_.size(); ++row_index) {
         std::vector<std::string> row = data_[row_index];
         if (row.size() <= static_cast<size_t>(column_index)) {
@@ -145,6 +149,7 @@ gpmp::core::DataTable::date_time(std::string column_name,
                       << row_index + 1 << "!\n";
             exit(EXIT_FAILURE);
         }
+
         std::string timestamp = row[column_index];
         std::string year, month, time;
 
@@ -170,34 +175,46 @@ gpmp::core::DataTable::date_time(std::string column_name,
             new_row.push_back(month);
         if (extract_time)
             new_row.push_back(time);
-
+        // append original row data
+        new_row.insert(new_row.end(), row.begin(), row.end());
+        // add now rows
         new_data.push_back(new_row);
     }
 
     // Create new headers based on the extracted components
-    if (extract_year)
+    /*if (extract_year)
         new_headers.push_back("Year");
     if (extract_month)
         new_headers.push_back("Month");
     if (extract_time)
-        new_headers.push_back("Time");
+        new_headers.push_back("Time");*/
+    if (extract_month) new_headers.insert(new_headers.begin(), "Month");
+    if (extract_year) new_headers.insert(new_headers.begin(), "Year");
+    if (extract_time) new_headers.insert(new_headers.begin(), "Time");
+
     data_ = new_data;
+    // set class var modified headers to new headers
+    new_headers_ = new_headers;
 
     return std::make_pair(new_headers, new_data);
 }
 
-std::vector<gpmp::core::DataTableStr>
+/*std::vector<gpmp::core::DataTableStr>
 gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
     // Find the indices of the specified group by columns
     std::vector<int> group_by_indices;
+    std::cout << "HEADERS:" << headers_[0] << std::endl;
+    std::cout << "HEADERS:" << new_headers_[0] << std::endl;
+
+
     for (const std::string &column_name : group_by_columns) {
         auto column_iter =
-            std::find(headers.begin(), headers.end(), column_name);
-        if (column_iter == headers.end()) {
+            std::find(new_headers_.begin(), new_headers_.end(), column_name);
+        if (column_iter == new_headers_.end()) {
             std::cerr << "Column " << column_name << " not found!\n";
             exit(EXIT_FAILURE);
         }
-        int column_index = std::distance(headers.begin(), column_iter);
+        int column_index = std::distance(new_headers_.begin(), column_iter);
         group_by_indices.push_back(column_index);
     }
 
@@ -210,7 +227,7 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
             group_key.push_back(row[index]);
         }
         if (groups.find(group_key) == groups.end()) {
-            groups[group_key] = gpmp::core::DataTableStr(headers, {});
+            groups[group_key] = gpmp::core::DataTableStr(new_headers_, {});
         }
         groups[group_key].second.push_back(row);
     }
@@ -222,6 +239,107 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
     }
 
     return grouped_data;
+}*/
+
+std::vector<gpmp::core::DataTableStr>
+gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
+    // Find the indices of the specified group by columns
+    std::vector<int> group_by_indices;
+
+    for (const std::string &column_name : group_by_columns) {
+        auto column_iter =
+            std::find(new_headers_.begin(), new_headers_.end(), column_name);
+        if (column_iter == new_headers_.end()) {
+            std::cerr << "Column " << column_name << " not found!\n";
+            exit(EXIT_FAILURE);
+        }
+        int column_index = std::distance(new_headers_.begin(), column_iter);
+        group_by_indices.push_back(column_index);
+    }
+    // Add columns from group_columns variable
+    //new_headers_.insert(new_headers_.end(), headers_.begin(), headers_.end());
+
+    // Group the data based on the specified columns using a vector
+    std::vector<std::pair<std::vector<std::string>, gpmp::core::DataTableStr>>
+        groups;
+
+    for (const std::vector<std::string> &row : data_) {
+        std::vector<std::string> group_key;
+        for (int index : group_by_indices) {
+            group_key.push_back(row[index]);
+        }
+
+        // Check if the group already exists
+        auto group_iter = std::find_if(
+            groups.begin(),
+            groups.end(),
+            [&group_key](const std::pair<std::vector<std::string>,
+                                         gpmp::core::DataTableStr> &group) {
+                return group.first == group_key;
+            });
+
+        if (group_iter == groups.end()) {
+            // Create a new group
+            groups.push_back(
+                {group_key, gpmp::core::DataTableStr(new_headers_, {})});
+            group_iter = groups.end() - 1;
+        }
+
+        group_iter->second.second.push_back(row);
+    }
+
+    std::sort(
+        groups.begin(),
+        groups.end(),
+        [](const std::pair<std::vector<std::string>, gpmp::core::DataTableStr>
+               &a,
+           const std::pair<std::vector<std::string>, gpmp::core::DataTableStr>
+               &b) {
+            // Sort primarily by Year (assuming it's in the first column)
+            if (a.first[0] != b.first[0]) {
+                return a.first[0] < b.first[0];
+            }
+            // If the Year values are the same, convert and sort by Month
+            // (assuming it's in the second column)
+            int monthA = std::stoi(a.first[1]);
+            int monthB = std::stoi(b.first[1]);
+            return monthA < monthB;
+        });
+
+    // Extract the grouped data into a vector
+    std::vector<gpmp::core::DataTableStr> grouped_data;
+    for (const auto &group : groups) {
+        grouped_data.push_back(group.second);
+    }
+
+    return grouped_data;
+}
+gpmp::core::DataTableStr gpmp::core::DataTable::first(
+    const std::vector<gpmp::core::DataTableStr> &groups) const {
+    if (groups.empty()) {
+        // Handle the case when there are no groups
+        return std::make_pair(std::vector<std::string>(),
+                              std::vector<std::vector<std::string>>());
+    }
+
+    std::vector<std::vector<std::string>> first_rows;
+
+    for (const gpmp::core::DataTableStr &group : groups) {
+        if (!group.second.empty()) {
+            first_rows.push_back(
+                group.second[0]); // Get the first row of each group
+        }
+    }
+
+    if (!first_rows.empty()) {
+        // Assuming all groups have the same headers as the first group
+        return std::make_pair(groups[0].first, first_rows);
+    } else {
+        // Handle the case when there are no first rows found.
+        // You can return an empty DataTableStr or handle it as needed.
+        return std::make_pair(groups[0].first,
+                              std::vector<std::vector<std::string>>());
+    }
 }
 
 gpmp::core::DataTableInt

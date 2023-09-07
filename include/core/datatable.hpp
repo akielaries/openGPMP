@@ -68,14 +68,28 @@ typedef std::pair<std::vector<long double>,
 
 class DataTable {
   private:
-    std::vector<std::string> headers;
-
+    // original DataTable object headers
+    std::vector<std::string> headers_;
+    // original DataTable object rows
+    std::vector<std::vector<std::string>> rows_;
+    // specified headers to read
+    std::vector<std::string> spec_headers_;
+    // modified DataTable object headers
+    std::vector<std::string> new_headers_;
     // vector to hold datetime col
     std::vector<std::string> datetime_column_;
     // vector to hold data
     std::vector<std::vector<std::string>> data_;
+    // original DataTable data
+    DataTableStr original_data_;
 
   public:
+    DataTable() {
+        // Initialize data_ and headers_ to empty vectors
+        data_ = std::vector<std::vector<std::string>>();
+        headers_ = std::vector<std::string>();
+    }
+
     /**
      * @brief Reads a CSV file and returns a DataTableStr
      * parses CSV files and stores all data as strings
@@ -132,6 +146,9 @@ class DataTable {
      */
     std::vector<DataTableStr>
     group_by(std::vector<std::string> group_by_columns);
+
+    DataTableStr
+    first(const std::vector<gpmp::core::DataTableStr> &groups) const;
 
     /**
      * @brief Converts a DataTableStr to a DataTableInt
