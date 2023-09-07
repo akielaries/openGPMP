@@ -28,7 +28,6 @@ int main() {
         "../../data/Tetuan_power_consumption.csv",
         {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
-    // print result
     std::cout << "FULL DATASET: \n";
     dt.display(result);
 
@@ -39,17 +38,34 @@ int main() {
     std::cout << "TIMESTAMPS: \n";
     dt.display(date_time_result);
 
-    // Group the data by "Year" and "Month" columns
     std::vector<std::string> group_by_columns = {"Year", "Month"};
-    // Print each group
     std::cout << "GROUPS: \n";
+    // group rows based on year/month
     std::vector<gpmp::core::DataTableStr> groups =
         dt.group_by(group_by_columns);
 
+    // get first element of each group
     gpmp::core::DataTableStr first_element = dt.first(groups);
     dt.display(first_element);
 
-    // gpmp::DataTable dt_b;
+    gpmp::core::DataTable dt2;
+
+    gpmp::core::DataTableStr result2 =
+        dt2.csv_read("../../data/forestfires.csv",
+                     {"month", "day", "temp", "wind"});
+
+    dt2.display(result2);
+    // gpmp::core::DataTableStr date_time_result2 = dt2.date_time("month",
+    // false, true, false); dt2.display(date_time_result2);
+    std::vector<std::string> group_by_columns2 = {"month"};
+    std::cout << "GROUPS: \n";
+    // group rows based on year/month
+    std::vector<gpmp::core::DataTableStr> groups2 =
+        dt2.group_by(group_by_columns2);
+
+    // get first element of each group
+    gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
+    dt2.display(first_element2);
 
     /* of type std::pair<std::vector<std::string>,
      *         std::vector<std::vector<std::string>>>

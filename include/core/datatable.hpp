@@ -124,8 +124,6 @@ class DataTable {
     DataTableStr json_read(std::string filename,
                            std::vector<std::string> objs = {});
 
-    void TEST_PRINT();
-
     /**
      * @brief Extracts date and time components from a timestamp column
      * @param column_name The name of the timestamp column
@@ -147,6 +145,11 @@ class DataTable {
     std::vector<DataTableStr>
     group_by(std::vector<std::string> group_by_columns);
 
+    /**
+     * @brief Gets the first element of each created group
+     * @param groups Return type of `gpmp::core::DataTable.group()`
+     * @return a DataTableStr
+     */
     DataTableStr
     first(const std::vector<gpmp::core::DataTableStr> &groups) const;
 
