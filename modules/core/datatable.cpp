@@ -32,6 +32,7 @@
  *
  ************************************************************************/
 #include "../../include/core/datatable.hpp"
+#include "../../include/core/utils.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
@@ -41,6 +42,9 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
+/** Logger class object*/
+static gpmp::core::Logger _log_;
 
 // create method to create datatable from scratch? insert, drop, etc?
 
@@ -52,7 +56,7 @@ gpmp::core::DataTable::csv_read(std::string filename,
     std::ifstream file(filename);
 
     if (!file.is_open()) {
-        std::cerr << "Unable to open file: " << filename << std::endl;
+        _log_.log(ERROR, "Unable to open file: " + filename + ".");
         exit(EXIT_FAILURE);
     }
 
@@ -78,7 +82,7 @@ gpmp::core::DataTable::csv_read(std::string filename,
     for (const auto &column : columns) {
         if (find(headerColumns.begin(), headerColumns.end(), column) ==
             headerColumns.end()) {
-            std::cerr << "Column " << column << " not found!\n";
+            _log_.log(ERROR, "Column " + column + " not found.");
             exit(EXIT_FAILURE);
         }
     }
