@@ -66,23 +66,23 @@ gpmp::core::DataTable::csv_read(std::string filename,
     // Get the header line and parse the column names
     getline(file, line);
     std::stringstream header(line);
-    std::vector<std::string> headerColumns;
+    std::vector<std::string> header_cols;
     std::string columnName;
 
     while (getline(header, columnName, ',')) {
-        headerColumns.push_back(columnName);
+        header_cols.push_back(columnName);
     }
 
     // If no columns are specified, read in all columns
     if (columns.empty()) {
-        columns = headerColumns;
+        columns = header_cols;
     }
 
     // Check if specified columns exist in the header
     for (const auto &column : columns) {
-        if (find(headerColumns.begin(), headerColumns.end(), column) ==
-            headerColumns.end()) {
-            _log_.log(ERROR, "Column " + column + " not found.");
+        if (find(header_cols.begin(), header_cols.end(), column) ==
+            header_cols.end()) {
+            _log_.log(ERROR, "Column: " + column + " not found");
             exit(EXIT_FAILURE);
         }
     }
@@ -98,7 +98,7 @@ gpmp::core::DataTable::csv_read(std::string filename,
             // If column is specified, only read in specified columns
             if (find(columns.begin(),
                      columns.end(),
-                     headerColumns[columnIndex]) != columns.end()) {
+                     header_cols[columnIndex]) != columns.end()) {
                 row.push_back(value);
             }
 
@@ -118,16 +118,18 @@ gpmp::core::DataTable::csv_read(std::string filename,
     return make_pair(columns, data);
 }
 
-// extracts date/time information from given column
+// Extracts date/time information from given column
+// TODO: add additional options for detecting/converting date/time columns
+// to numeric formats
 gpmp::core::DataTableStr
-gpmp::core::DataTable::date_time(std::string column_name,
-                                 bool extract_year,
-                                 bool extract_month,
-                                 bool extract_time) {
+gpmp::core::DataTable::datetime(std::string column_name,
+                                bool extract_year,
+                                bool extract_month,
+                                bool extract_time) {
     // Find the index of the specified column
     auto column_iter = std::find(headers_.begin(), headers_.end(), column_name);
     if (column_iter == headers_.end()) {
-        std::cerr << "Column " << column_name << " not found!\n";
+        _log_.log(ERROR, "Column: " + column_name + " node found");
         exit(EXIT_FAILURE);
     }
     int column_index = std::distance(headers_.begin(), column_iter);
@@ -136,12 +138,13 @@ gpmp::core::DataTable::date_time(std::string column_name,
     std::vector<std::string> new_headers = headers_;
     std::vector<std::vector<std::string>> new_data;
 
-    // iterate and populate the additional columns
+    // Iterate and populate the additional columns
     for (size_t row_index = 0; row_index < data_.size(); ++row_index) {
         std::vector<std::string> row = data_[row_index];
+        // If column row is not found
         if (row.size() <= static_cast<size_t>(column_index)) {
-            std::cerr << "Column " << column_name << " not found in row "
-                      << row_index + 1 << "!\n";
+            _log_.log(ERROR, "Column: " + column_name + " not found");
+
             exit(EXIT_FAILURE);
         }
 
@@ -167,7 +170,7 @@ gpmp::core::DataTable::date_time(std::string column_name,
 
         // append original row data
         new_row.insert(new_row.end(), row.begin(), row.end());
-        // add now rows
+        // add new rows
         new_data.push_back(new_row);
     }
 
@@ -182,9 +185,42 @@ gpmp::core::DataTable::date_time(std::string column_name,
     // set class car data_ to hold rows/lines
     data_ = new_data;
     // set class var modified headers to new headers
-    new_headers_ = new_headers;
+    // new_headers_ = new_headers;
+    headers_ = new_headers;
 
     return std::make_pair(new_headers, new_data);
+}
+
+// Sort specified columns, by default in asending order
+void gpmp::core::DataTable::sort(const std::vector<std::string> &sort_columns,
+                                 bool ascending) {
+    // Extract the column indices to be sorted by from the original data
+    std::vector<size_t> column_indices;
+    for (const std::string &column : sort_columns) {
+        auto iter = std::find(headers_.begin(), headers_.end(), column);
+        if (iter != headers_.end()) {
+            size_t index = std::distance(headers_.begin(), iter);
+            column_indices.push_back(index);
+        }
+    }
+
+    // Sort the data based on the specified columns
+    std::stable_sort(data_.begin(),
+                     data_.end(),
+                     [&](const std::vector<std::string> &row1,
+                         const std::vector<std::string> &row2) {
+                         for (size_t index : column_indices) {
+                             if (row1[index] != row2[index]) {
+                                 if (ascending) {
+                                     return row1[index] < row2[index];
+                                 } else {
+                                     return row1[index] > row2[index];
+                                 }
+                             }
+                         }
+                         // Rows are equal, nothing to sort
+                         return false;
+                     });
 }
 
 // Group rows by specific columns
@@ -195,16 +231,19 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
 
     // Traverse group column names
     for (const std::string &column_name : group_by_columns) {
+        std::cout << "Searching for column: " << column_name << std::endl;
+
         // Find start/end and match column name
         auto column_iter =
-            std::find(new_headers_.begin(), new_headers_.end(), column_name);
+            std::find(headers_.begin(), headers_.end(), column_name);
+
         // If no columns
-        if (column_iter == new_headers_.end()) {
-            std::cerr << "Column " << column_name << " not found!\n";
+        if (column_iter == headers_.end()) {
+            _log_.log(ERROR, "Column: " + column_name + " not found");
             exit(EXIT_FAILURE);
         }
         // column index set to distance from start of first col to nexter iter
-        int column_index = std::distance(new_headers_.begin(), column_iter);
+        int column_index = std::distance(headers_.begin(), column_iter);
         // add column index to group
         group_by_indices.push_back(column_index);
     }
@@ -234,30 +273,12 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
         if (group_iter == groups.end()) {
             // Create a new group
             groups.push_back(
-                {group_key, gpmp::core::DataTableStr(new_headers_, {})});
+                {group_key, gpmp::core::DataTableStr(headers_, {})});
             group_iter = groups.end() - 1;
         }
         // Add current row to group
         group_iter->second.second.push_back(row);
     }
-
-    // Sort groups based on the group/key values
-    std::sort(
-        groups.begin(),
-        groups.end(),
-        [](const std::pair<std::vector<std::string>, gpmp::core::DataTableStr>
-               &a,
-           const std::pair<std::vector<std::string>, gpmp::core::DataTableStr>
-               &b) {
-            // Sort primarily by the first element of the group key
-            if (a.first[0] != b.first[0]) {
-                return a.first[0] < b.first[0];
-            }
-            // If first two elements are the same order sort the second
-            int first = std::stoi(a.first[1]);
-            int second = std::stoi(b.first[1]);
-            return first < second;
-        });
 
     // Extract the grouped data into a vector
     std::vector<gpmp::core::DataTableStr> grouped_data;
@@ -297,6 +318,8 @@ gpmp::core::DataTableStr gpmp::core::DataTable::first(
                               std::vector<std::vector<std::string>>());
     }
 }
+
+// Prints some basic information about a DataTable object
 
 gpmp::core::DataTableInt
 gpmp::core::DataTable::str_to_int(gpmp::core::DataTableStr src) {

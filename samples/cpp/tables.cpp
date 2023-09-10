@@ -19,22 +19,20 @@ int main() {
         std::chrono::steady_clock::now();
     gpmp::core::DataTable dt;
 
-    // of type std::pair<std::vector<std::string>,
-    //         std::vector<std::vector<std::string>>>
-    // gpmp::core::DataTableStr result =
-    //    dt.csv_read("../../data/forestfires.csv",
-    //                {"month", "day", "temp", "wind"});
+    // DataTableStr is of type std::pair<std::vector<std::string>,
+    //                                   std::vector<std::vector<std::string>>>
     gpmp::core::DataTableStr result = dt.csv_read(
         "../../data/Tetuan_power_consumption.csv",
         {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
     std::cout << "FULL DATASET: \n";
+    // display() takes a DataTableStr or default to displaying the current obj
     dt.display(result);
 
     // date_time accepts options to extract year, month, and time specifically
     // another way to call is date_time("col",true, true, true) - gets all
     // fields
-    gpmp::core::DataTableStr date_time_result = dt.date_time("DateTime");
+    gpmp::core::DataTableStr date_time_result = dt.datetime("DateTime");
     std::cout << "TIMESTAMPS: \n";
     dt.display(date_time_result);
 
@@ -48,6 +46,7 @@ int main() {
     gpmp::core::DataTableStr first_element = dt.first(groups);
     dt.display(first_element);
 
+    // Second DataTable object
     gpmp::core::DataTable dt2;
 
     gpmp::core::DataTableStr result2 =
@@ -55,17 +54,23 @@ int main() {
                      {"month", "day", "temp", "wind"});
 
     dt2.display(result2);
-    // gpmp::core::DataTableStr date_time_result2 = dt2.date_time("month",
-    // false, true, false); dt2.display(date_time_result2);
+    std::vector<std::string> sort_cols = {"month", "day"};
+    std::cout << "SORT: \n";
+    // sort based on the specified columns
+    dt2.sort(sort_cols);
+    dt2.display();
+    std::cout << "DESCRIBE: \n";
+    // prints some basic info about our DataTable object
+    dt2.describe();
+    std::cout << "GROUPS2: \n";
     std::vector<std::string> group_by_columns2 = {"month"};
-    std::cout << "GROUPS: \n";
-    // group rows based on year/month
-    std::vector<gpmp::core::DataTableStr> groups2 =
-        dt2.group_by(group_by_columns2);
+    // group rows based on month/day
+    // std::vector<gpmp::core::DataTableStr> groups2 =
+    // dt2.group_by(group_by_columns2);
 
     // get first element of each group
-    gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
-    dt2.display(first_element2);
+    // gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
+    // dt2.display(first_element2);
 
     /* of type std::pair<std::vector<std::string>,
      *         std::vector<std::vector<std::string>>>

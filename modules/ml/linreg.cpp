@@ -410,8 +410,8 @@ long double gpmp::ml::LinearRegression::error_square() {
 long double
 gpmp::ml::LinearRegression::mse(const std::vector<long double> &x_data,
                                 const std::vector<long double> &y_data) const {
+    // Check if input vectors have the same size
     if (x_data.size() != y_data.size()) {
-        // Check if input vectors have the same size
         return -1; // Return an error value
     }
 
@@ -437,8 +437,8 @@ gpmp::ml::LinearRegression::mse(const std::vector<long double> &x_data,
 long double gpmp::ml::LinearRegression::r_sqrd(
     const std::vector<long double> &x_data,
     const std::vector<long double> &y_data) const {
+    // Check if input vectors have the same size
     if (x_data.size() != y_data.size()) {
-        // Check if input vectors have the same size
         _log_.log(ERROR, "Input vectors must have the same size.");
         return -1; // Return an error value
     }

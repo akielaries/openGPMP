@@ -54,14 +54,22 @@
 namespace gpmp {
 
 namespace core {
-// alias for the pair type of strings
+
+/** @brief enum for representing different data types
+ */
+enum class DataType { Unknown, String, Integer, Double };
+
+/** @typedef alias for the pair type of strings
+ */
 typedef std::pair<std::vector<std::string>,
                   std::vector<std::vector<std::string>>>
     DataTableStr;
-// alias for pair type of 64 bit integers
+/** @typedef alias for pair type of 64 bit integers
+ */
 typedef std::pair<std::vector<int64_t>, std::vector<std::vector<int64_t>>>
     DataTableInt;
-// alias for pair type of long doubles
+/** @typedef alias for pair type of long doubles
+ */
 typedef std::pair<std::vector<long double>,
                   std::vector<std::vector<long double>>>
     DataTableDouble;
@@ -72,14 +80,11 @@ class DataTable {
     std::vector<std::string> headers_;
     // original DataTable object rows
     std::vector<std::vector<std::string>> rows_;
-    // specified headers to read
-    std::vector<std::string> spec_headers_;
     // modified DataTable object headers
     std::vector<std::string> new_headers_;
-    // vector to hold datetime col
-    std::vector<std::string> datetime_column_;
     // vector to hold data
     std::vector<std::vector<std::string>> data_;
+
     // original DataTable data
     DataTableStr original_data_;
 
@@ -100,6 +105,11 @@ class DataTable {
      */
     DataTableStr csv_read(std::string filename,
                           std::vector<std::string> columns = {});
+
+    /**
+     * @brief Write DataTable to a CSV file
+     */
+    void csv_write();
 
     // TODO: TOML and JSON readers?
     /**
@@ -132,10 +142,22 @@ class DataTable {
      * @param extract_time If true, extract the time component
      * @return A new DataTableStr with extracted components
      */
-    DataTableStr date_time(std::string column_name,
-                           bool extract_year = true,
-                           bool extract_month = true,
-                           bool extract_time = false);
+    DataTableStr datetime(std::string column_name,
+                          bool extract_year = true,
+                          bool extract_month = true,
+                          bool extract_time = false);
+
+    /**
+     * @brief Sorts the rows of the DataTable based on specified columns.
+     * @param sort_columns A vector of column names to sort by.
+     * @param ascending If true, sort in ascending order; otherwise, sort in
+     * descending order, default is true.
+     */
+    void sort(const std::vector<std::string> &sort_columns,
+              bool ascending = true);
+
+    // customSort(const std::vector<std::string>& columnNames,
+    // gpmp::core::DataTableStr& data);
 
     /**
      * @brief Groups the data by specified columns
@@ -152,6 +174,11 @@ class DataTable {
      */
     DataTableStr
     first(const std::vector<gpmp::core::DataTableStr> &groups) const;
+
+    /**
+     * @brief Prints some information about the DataTable
+     */
+    void describe();
 
     /**
      * @brief Converts a DataTableStr to a DataTableInt
@@ -280,6 +307,15 @@ class DataTable {
         std::cout << "[" << num_rows << " rows"
                   << " x " << num_columns << " columns";
         std::cout << "]\n\n";
+    }
+
+    /**
+     * @brief Overload function for display() defaults to displaying what is
+     * currently stored in a DataTable object.
+     * @param display_all Display all rows, defaults to false.
+     */
+    void display(bool display_all = false) {
+        display(std::make_pair(headers_, data_), display_all);
     }
 };
 
