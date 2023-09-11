@@ -51,22 +51,28 @@ int main() {
 
     gpmp::core::DataTableStr result2 =
         dt2.csv_read("../../data/forestfires.csv",
-                     {"month", "day", "temp", "wind"});
+                     //{"month", "day", "temp", "wind"});
+                     {"temp", "wind", "RH"});
 
     dt2.display(result2);
-    std::vector<std::string> sort_cols = {"month", "day"};
+    // std::vector<std::string> sort_cols = {"month", "day"};
     std::cout << "SORT: \n";
     // sort based on the specified columns
-    dt2.sort(sort_cols);
-    dt2.display();
+    // dt2.sort(sort_cols);
+    // dt2.display();
     std::cout << "DESCRIBE: \n";
     // prints some basic info about our DataTable object
-    dt2.describe();
+    // dt2.describe();
     std::cout << "GROUPS2: \n";
     std::vector<std::string> group_by_columns2 = {"month"};
     // group rows based on month/day
     // std::vector<gpmp::core::DataTableStr> groups2 =
     // dt2.group_by(group_by_columns2);
+    std::cout << "NATIVE TYPES: \n";
+    std::vector<std::string> new_cols = {"temp", "wind"};
+    std::vector<std::string> skip_cols = {"temp"};
+    // convert a DataTable objects data to its native types, can exclude columns
+    gpmp::core::TableType new_table = dt2.native_type(skip_cols);
 
     // get first element of each group
     // gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
@@ -91,7 +97,7 @@ int main() {
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();
 
-    std::cout << "Time elapsed: "
+    std::cout << "\nTime elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
                      end_time - start_time)
                      .count()

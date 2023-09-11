@@ -38,9 +38,13 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <numeric>
 #include <regex>
 #include <sstream>
 #include <string>
+#include <typeinfo>
+#include <unordered_map>
+#include <variant>
 #include <vector>
 
 /** Logger class object*/
@@ -116,6 +120,84 @@ gpmp::core::DataTable::csv_read(std::string filename,
 
     file.close();
     return make_pair(columns, data);
+}
+
+// Function to check if a string is an integer
+bool isInteger(const std::string &str) {
+    return std::regex_match(str, std::regex(R"(-?\d+)"));
+}
+
+// Function to check if a string is a double
+bool isDouble(const std::string &str) {
+    return std::regex_match(str, std::regex(R"(-?\d+\.\d+)"));
+}
+
+gpmp::core::DataType
+gpmp::core::DataTable::inferType(const std::vector<std::string> &column) {
+    static int integer_count = 0;
+    static int double_count = 0;
+
+    for (const std::string &cell : column) {
+        if (isInteger(cell)) {
+            integer_count++;
+        } else if (isDouble(cell)) {
+            double_count++;
+        }
+        // You can add more checks for other data types here if needed.
+    }
+
+    std::cout << "ints/doubles : " << integer_count << "/" << double_count
+              << "\n";
+    if (integer_count > double_count) {
+        return DataType::Integer;
+    } else if (double_count > integer_count) {
+        return DataType::Double;
+    } else {
+        return DataType::String;
+    }
+}
+
+gpmp::core::TableType gpmp::core::DataTable::native_type(
+    const std::vector<std::string> &skip_columns) {
+    gpmp::core::TableType mixed_data;
+
+    std::cout << "HEADERS:" << headers_.size() << std::endl;
+    std::cout << "ROWS:" << data_.size() << std::endl;
+
+    // Step 1: Print column headers, skipping specified columns
+    std::cout << "Column Headers:" << std::endl;
+    for (const std::string &header : headers_) {
+
+        if (std::find(skip_columns.begin(), skip_columns.end(), header) !=
+            skip_columns.end()) {
+            continue; // Skip this column
+        }
+
+        std::cout << header << " ";
+    }
+    std::cout << std::endl;
+
+    // Step 2: Print data rows, skipping specified columns
+    std::cout << "Data Rows:" << std::endl;
+    for (const std::vector<std::string> &row : data_) {
+
+        for (size_t col = 0; col < headers_.size(); ++col) {
+
+            if (std::find(skip_columns.begin(),
+                          skip_columns.end(),
+                          headers_[col]) != skip_columns.end()) {
+
+                continue; // Skip this column
+            }
+            // Call inferType on each cell
+            gpmp::core::DataType column_type = inferType(row);
+
+            std::cout << row[col] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    return mixed_data;
 }
 
 // Extracts date/time information from given column

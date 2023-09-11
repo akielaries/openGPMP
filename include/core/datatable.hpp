@@ -59,6 +59,11 @@ namespace core {
  */
 enum class DataType { Unknown, String, Integer, Double };
 
+typedef std::pair<
+    std::vector<std::string>,
+    std::vector<std::vector<std::variant<int64_t, long double, std::string>>>>
+    TableType;
+
 /** @typedef alias for the pair type of strings
  */
 typedef std::pair<std::vector<std::string>,
@@ -179,6 +184,16 @@ class DataTable {
      * @brief Prints some information about the DataTable
      */
     void describe();
+
+    /**
+     * @brief Converts DataTable column's rows to their native types.
+     * Since the existing DataTable read/load related methods hone in
+     * on the DataTableStr type, there must be a way to get those types
+     * to their native formats.
+     */
+    TableType native_type(const std::vector<std::string> &skip_columns = {});
+
+    DataType inferType(const std::vector<std::string> &column);
 
     /**
      * @brief Converts a DataTableStr to a DataTableInt
