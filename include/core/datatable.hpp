@@ -57,7 +57,23 @@ namespace core {
 
 /** @brief enum for representing different data types
  */
-enum class DataType { Unknown, String, Integer, Double };
+enum class DataType {
+    Unknown,
+    String,
+    Integer,
+    Double,
+    dt_uint8,   /** represents 8 bit unsigned integer */
+    dt_int8,    /** represents 8 bit signed integer */
+    dt_uint16,  /** represents 16 bit unsigned integer */
+    dt_int16,   /** represents 16 bit signed integer */
+    dt_uint32,  /** represents 32 bit unsigned integer */
+    dt_int32,   /** represents 32 bit signed integer */
+    dt_uint64,  /** represents 64 bit unsigned integer */
+    dt_int64,   /** represents 64 bit signed integer */
+    dt_double,  /** represents double */
+    dt_ldouble, /** represent long double */
+    dt_str,     /** represents string */
+};
 
 typedef std::pair<
     std::vector<std::string>,
@@ -94,6 +110,9 @@ class DataTable {
     DataTableStr original_data_;
 
   public:
+    /**
+     * @brief DataTable constructor. Initializes column & row storage.
+     */
     DataTable() {
         // Initialize data_ and headers_ to empty vectors
         data_ = std::vector<std::vector<std::string>>();
