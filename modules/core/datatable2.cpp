@@ -54,7 +54,11 @@ static gpmp::core::Logger _log_;
 
 // TODO : optimize these methods, CSV reader using threads? loop unrolling?,
 // etc? conversion functions to be quicker,
-gpmp::core::DataTableStr
+// gpmp::core::DataTableStr
+// gpmp::core::DataTable::csv_read(std::string filename,
+//                                std::vector<std::string> columns) {
+/*
+gpmp::core::TableType
 gpmp::core::DataTable::csv_read(std::string filename,
                                 std::vector<std::string> columns) {
     std::ifstream file(filename);
@@ -64,7 +68,8 @@ gpmp::core::DataTable::csv_read(std::string filename,
         exit(EXIT_FAILURE);
     }
 
-    std::vector<std::vector<std::string>> data;
+    // std::vector<std::vector<std::string>> data;
+    gpmp::core::MixedType data;
     std::string line;
 
     // Get the header line and parse the column names
@@ -91,9 +96,11 @@ gpmp::core::DataTable::csv_read(std::string filename,
         }
     }
 
+    std::vector<std::variant<int64_t, long double, std::string>> row_vector;
     // Read in the data rows
     while (getline(file, line)) {
         std::vector<std::string> row;
+        //gpmp::core::MixedType row;
         std::stringstream rowStream(line);
         std::string value;
         int columnIndex = 0;
@@ -103,6 +110,8 @@ gpmp::core::DataTable::csv_read(std::string filename,
             if (find(columns.begin(),
                      columns.end(),
                      header_cols[columnIndex]) != columns.end()) {
+                //row_vector.push_back(value);
+                //row.push_back(row_vector);
                 row.push_back(value);
             }
 
@@ -110,7 +119,10 @@ gpmp::core::DataTable::csv_read(std::string filename,
         }
 
         if (row.size() > 0) {
-            data.push_back(row);
+            row_vector.clear(); // Clear the previous row_vector
+            row_vector.insert(row_vector.end(), row.begin(), row.end());
+            data.push_back(row_vector);
+            //data.push_back(row);
         }
     }
     // populate headers_ class variable
@@ -119,6 +131,76 @@ gpmp::core::DataTable::csv_read(std::string filename,
     data_ = data;
 
     file.close();
+    return make_pair(columns, data);
+}*/
+gpmp::core::TableType
+gpmp::core::DataTable::csv_read(std::string filename,
+                                std::vector<std::string> columns) {
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        _log_.log(ERROR, "Unable to open file: " + filename + ".");
+        throw std::runtime_error("Unable to open file: " + filename + ".");
+    }
+
+    gpmp::core::MixedType data;
+    std::string line;
+
+    // Get the header line and parse the column names
+    getline(file, line);
+    std::stringstream header(line);
+    std::vector<std::string> header_cols;
+    std::string columnName;
+
+    while (getline(header, columnName, ',')) {
+        header_cols.push_back(columnName);
+    }
+
+    // If no columns are specified, read in all columns
+    if (columns.empty()) {
+        columns = header_cols;
+    }
+
+    // Check if specified columns exist in the header
+    for (const auto &column : columns) {
+        if (std::find(header_cols.begin(), header_cols.end(), column) ==
+            header_cols.end()) {
+            _log_.log(ERROR, "Column: " + column + " not found");
+            throw std::runtime_error("Column: " + column + " not found");
+        }
+    }
+
+    std::vector<std::variant<int64_t, long double, std::string>> row_vector;
+
+    // Read in the data rows
+    while (getline(file, line)) {
+        std::vector<std::string> row;
+        std::stringstream rowStream(line);
+        std::string value;
+        int columnIndex = 0;
+
+        while (getline(rowStream, value, ',')) {
+            if (std::find(columns.begin(),
+                          columns.end(),
+                          header_cols[columnIndex]) != columns.end()) {
+                row_vector.emplace_back(value);
+            }
+            columnIndex++;
+        }
+
+        if (!row_vector.empty()) {
+            data.push_back(row_vector); // Push the row_vector directly
+            row_vector.clear();         // Clear it for the next row
+        }
+    }
+
+    file.close();
+
+    // Populate headers_ class variable
+    headers_ = columns;
+    // Populate data_ class variable
+    data_ = data;
+
     return make_pair(columns, data);
 }
 
@@ -175,6 +257,7 @@ std::string dt_to_str(gpmp::core::DataType type) {
         return "Unknown";
     }
 }
+/*
 gpmp::core::TableType gpmp::core::DataTable::native_type(
     const std::vector<std::string> &skip_columns) {
     gpmp::core::TableType mixed_data;
@@ -249,7 +332,6 @@ gpmp::core::TableType gpmp::core::DataTable::native_type(
     return mixed_data;
 }
 
-/*
 gpmp::core::TableType gpmp::core::DataTable::native_type(
     const std::vector<std::string> &skip_columns) {
     gpmp::core::TableType mixed_data;
@@ -344,6 +426,7 @@ converted_data;
 // Extracts date/time information from given column
 // TODO: add additional options for detecting/converting date/time columns
 // to numeric formats
+/*
 gpmp::core::DataTableStr
 gpmp::core::DataTable::datetime(std::string column_name,
                                 bool extract_year,
@@ -543,7 +626,7 @@ gpmp::core::DataTableStr gpmp::core::DataTable::first(
 }
 
 // Prints some basic information about a DataTable object
-
+*/
 gpmp::core::DataTableInt
 gpmp::core::DataTable::str_to_int(gpmp::core::DataTableStr src) {
     gpmp::core::DataTableInt dest;

@@ -21,20 +21,23 @@ int main() {
 
     // DataTableStr is of type std::pair<std::vector<std::string>,
     //                                   std::vector<std::vector<std::string>>>
-    gpmp::core::DataTableStr result = dt.csv_read(
+    // gpmp::core::DataTableStr result = dt.csv_read(
+    gpmp::core::TableType result = dt.csv_read(
+        //                "../../data/forestfires.csv",
+        //                 {"temp", "RH", "wind"});
         "../../data/Tetuan_power_consumption.csv",
         {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
-    std::cout << "FULL DATASET: \n";
-    // display() takes a DataTableStr or default to displaying the current obj
+    // std::cout << "FULL DATASET: \n";
+    //  display() takes a DataTableStr or default to displaying the current obj
     dt.display(result);
 
     // date_time accepts options to extract year, month, and time specifically
     // another way to call is date_time("col",true, true, true) - gets all
     // fields
-    gpmp::core::DataTableStr date_time_result = dt.datetime("DateTime");
-    std::cout << "TIMESTAMPS: \n";
-    dt.display(date_time_result);
+    // gpmp::core::DataTableStr date_time_result = dt.datetime("DateTime");
+    // std::cout << "TIMESTAMPS: \n";
+    /*dt.display(date_time_result);
 
     std::vector<std::string> group_by_columns = {"Year", "Month"};
     std::cout << "GROUPS: \n";
@@ -52,7 +55,7 @@ int main() {
     gpmp::core::DataTableStr result2 =
         dt2.csv_read("../../data/forestfires.csv",
                      //{"month", "day", "temp", "wind"});
-                     {"temp", "wind", "RH"});
+                     {"temp", "RH", "wind"});
 
     dt2.display(result2);
     // std::vector<std::string> sort_cols = {"month", "day"};
@@ -77,7 +80,7 @@ int main() {
     // get first element of each group
     // gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
     // dt2.display(first_element2);
-
+*/
     /* of type std::pair<std::vector<std::string>,
      *         std::vector<std::vector<std::string>>>
      */
