@@ -671,14 +671,24 @@ void gpmp::core::DataTable::info() {
             std::max(max_column_name_length, column.length());
     }
 
-    // Set the column width for formatting
-    int column_width =
-        static_cast<int>(max_column_name_length) + 2; // Add extra padding
+    // Find the maximum data type length
+    size_t max_data_type_length = 0;
+    for (const std::string &data_type : column_data_types) {
+        max_data_type_length =
+            std::max(max_data_type_length, data_type.length());
+    }
 
-    // Print memory usage and data type for each column
+    // Set the column width for formatting
+    int column_width = static_cast<int>(std::max(max_column_name_length,
+                                                 max_data_type_length)) +
+                       2; // Add extra padding
+
+    // Print header
     std::cout << std::left << std::setw(column_width) << "Column"
-              << std::setw(column_width) << "Data Type"
-              << std::setw(column_width) << "Memory Usage (KB)" << std::endl;
+              << std::setw(column_width) << "Type" << std::setw(column_width)
+              << "Memory Usage (KB)" << std::endl;
+
+    // Print data
     for (size_t i = 0; i < headers_.size(); ++i) {
         std::cout << std::left << std::setw(column_width) << headers_[i]
                   << std::setw(column_width) << column_data_types[i]
@@ -688,7 +698,7 @@ void gpmp::core::DataTable::info() {
     }
 
     // Print total table memory usage
-    std::cout << "Total Memory Usage: " << std::fixed << std::setprecision(2)
+    std::cout << "\nTotal Memory Usage: " << std::fixed << std::setprecision(2)
               << total_memory_usage_kb << " KB" << std::endl;
 }
 
