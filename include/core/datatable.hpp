@@ -49,6 +49,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 namespace gpmp {
@@ -100,13 +101,10 @@ class DataTable {
     // original DataTable object headers
     std::vector<std::string> headers_;
     // original DataTable object rows
-    // std::vector<std::vector<std::string>> rows_;
-    // std::vector<std::variant<int64_t, long double, std::string>> rows_;
     MixedType rows_;
     // modified DataTable object headers
     std::vector<std::string> new_headers_;
     // vector to hold data
-    // std::vector<std::vector<std::string>> data_;
     MixedType data_;
 
     // original DataTable data
@@ -138,6 +136,10 @@ class DataTable {
 
     TableType csv_read(std::string filename,
                        std::vector<std::string> columns = {});
+
+    MixedType convertDataToNativeTypes(
+        const MixedType &data,
+        const std::unordered_map<std::string, DataType> &column_types);
     /**
      * @brief Write DataTable to a CSV file
      */
@@ -265,187 +267,16 @@ class DataTable {
      * @param display_all A flag indicating whether to display all rows or just
      * a subset
      */
-    // template <typename T>
-    // void display(std::pair<std::vector<T>, std::vector<std::vector<T>>> data,
-    //              bool display_all = false) {
-    // template <typename T>
     // TODO : edit this display method to read in the first 15 and last 15 by
     // default. if display_all = true then fetch all rows
-    void display(const TableType &data, bool display_all = false) {
-        int num_columns = data.first.size();
-        int num_rows = data.second.size();
-        int num_omitted_rows = 0;
-
-        // Initialize max_column_widths with the lengths of column headers
-        std::vector<int> max_column_widths(num_columns, 0);
-
-        // Calculate the maximum width for each column based on column headers
-        for (int i = 0; i < num_columns; i++) {
-            max_column_widths[i] = data.first[i].length();
-        }
-
-        // Calculate the maximum width for each column based on data rows
-        for (int i = 0; i < num_columns; i++) {
-            for (const auto &row : data.second) {
-                if (i < static_cast<int>(row.size())) {
-                    std::visit(
-                        [&max_column_widths, &i](const auto &cellValue) {
-                            using T = std::decay_t<decltype(cellValue)>;
-                            if constexpr (std::is_same_v<T, std::string>) {
-                                max_column_widths[i] = std::max(
-                                    max_column_widths[i],
-                                    static_cast<int>(cellValue.length()));
-                            } else if constexpr (std::is_integral_v<T> ||
-                                                 std::is_floating_point_v<T>) {
-                                max_column_widths[i] = std::max(
-                                    max_column_widths[i],
-                                    static_cast<int>(
-                                        std::to_string(cellValue).length()));
-                            }
-                        },
-                        row[i]);
-                }
-            }
-        }
-        // Calculate the maximum width for each column based on data rows
-        /*for (int i = 0; i < num_columns; i++) {
-            for (const auto &row : data.second) {
-                if (i < static_cast<int>(row.size())) {
-                    max_column_widths[i] =
-                        std::max(max_column_widths[i],
-                                 static_cast<int>(row[i].length()));
-                }
-            }
-        }*/
-
-        // Set a larger width for the DateTime column (adjust the index as
-        // needed later on)
-        const int dateTimeColumnIndex = 0;
-        // adjust as needed?
-        max_column_widths[dateTimeColumnIndex] =
-            std::max(max_column_widths[dateTimeColumnIndex], 0);
-
-        // Print headers with right-aligned values
-        std::cout << std::setw(7) << std::right << "Index"
-                  << "  ";
-
-        for (int i = 0; i < num_columns; i++) {
-            std::cout << std::setw(max_column_widths[i]) << std::right
-                      << data.first[i] << "  ";
-        }
-        std::cout << std::endl;
-
-        int num_elements = data.second.size();
-        if (!display_all && num_elements > MAX_ROWS) {
-            for (int i = 0; i < SHOW_ROWS; i++) {
-                // Prit index
-                std::cout << std::setw(7) << std::right << i << "  ";
-                // Print each row with right-aligned values
-                for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(data.second[i].size())) {
-                        // std::cout << std::setw(max_column_widths[j])
-                        //           << std::right << data.second[i][j] << "  ";
-                        std::visit(
-                            [&max_column_widths, &i, &j](
-                                const auto &cellValue) {
-                                using T = std::decay_t<decltype(cellValue)>;
-                                if constexpr (std::is_same_v<T, std::string>) {
-                                    std::cout << std::setw(max_column_widths[j])
-                                              << std::right << cellValue
-                                              << "  ";
-                                } else if constexpr (std::is_integral_v<T> ||
-                                                     std::is_floating_point_v<
-                                                         T>) {
-                                    std::cout << std::setw(max_column_widths[j])
-                                              << std::right << cellValue
-                                              << "  ";
-                                }
-                            },
-                            data.second[i][j]);
-                    }
-                }
-                std::cout << std::endl;
-            }
-            num_omitted_rows = num_elements - MAX_ROWS;
-            std::cout << "...\n";
-            std::cout << "[" << num_omitted_rows << " rows omitted]\n";
-            for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
-                std::cout << std::setw(7) << std::right << i << "  ";
-                // Print each row with right-aligned values
-                for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(data.second[i].size())) {
-                        // std::cout << std::setw(max_column_widths[j])
-                        //           << std::right << data.second[i][j] << "  ";
-                        std::visit(
-                            [&max_column_widths, &i, &j](
-                                const auto &cellValue) {
-                                using T = std::decay_t<decltype(cellValue)>;
-                                if constexpr (std::is_same_v<T, std::string>) {
-                                    std::cout << std::setw(max_column_widths[j])
-                                              << std::right << cellValue
-                                              << "  ";
-                                } else if constexpr (std::is_integral_v<T> ||
-                                                     std::is_floating_point_v<
-                                                         T>) {
-                                    std::cout << std::setw(max_column_widths[j])
-                                              << std::right << cellValue
-                                              << "  ";
-                                }
-                            },
-                            data.second[i][j]);
-                    }
-                }
-                std::cout << std::endl;
-            }
-        } else {
-            // Print all rows with right-aligned values
-            for (int i = 0; i < num_elements; i++) {
-
-                // Print index
-                std::cout << std::setw(7) << std::right << i << "  ";
-                for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(data.second[i].size())) {
-
-                        // Print formatted row
-                        // std::cout << std::setw(max_column_widths[j])
-                        //          << std::right << data.second[i][j] << "  ";
-                        std::visit(
-                            [&max_column_widths, &i, &j](
-                                const auto &cellValue) {
-                                using T = std::decay_t<decltype(cellValue)>;
-                                if constexpr (std::is_same_v<T, std::string>) {
-                                    std::cout << std::setw(max_column_widths[j])
-                                              << std::right << cellValue
-                                              << "  ";
-                                } else if constexpr (std::is_integral_v<T> ||
-                                                     std::is_floating_point_v<
-                                                         T>) {
-                                    std::cout << std::setw(max_column_widths[j])
-                                              << std::right << cellValue
-                                              << "  ";
-                                }
-                            },
-                            data.second[i][j]);
-                    }
-                }
-                std::cout << std::endl;
-            }
-        }
-
-        // Print the number of rows and columns
-        std::cout << "[" << num_rows << " rows"
-                  << " x " << num_columns << " columns";
-        std::cout << "]\n\n";
-    }
+    void display(const TableType &data, bool display_all = false);
 
     /**
      * @brief Overload function for display() defaults to displaying what is
      * currently stored in a DataTable object.
      * @param display_all Display all rows, defaults to false.
      */
-    void display(bool display_all = false) {
-        display(std::make_pair(headers_, data_), display_all);
-    }
+    void display(bool display_all = false);
 };
 
 } // namespace core

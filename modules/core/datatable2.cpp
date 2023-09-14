@@ -52,87 +52,19 @@ static gpmp::core::Logger _log_;
 
 // create method to create datatable from scratch? insert, drop, etc?
 
+// Function to check if a string is an integer
+bool is_int(const std::string &str) {
+    // TODO : determine type of int based on length of largest val?
+    return std::regex_match(str, std::regex(R"(-?\d+)"));
+}
+
+// Function to check if a string is a double
+bool is_double(const std::string &str) {
+    return std::regex_match(str, std::regex(R"(-?\d+\.\d+)"));
+}
+
 // TODO : optimize these methods, CSV reader using threads? loop unrolling?,
 // etc? conversion functions to be quicker,
-// gpmp::core::DataTableStr
-// gpmp::core::DataTable::csv_read(std::string filename,
-//                                std::vector<std::string> columns) {
-/*
-gpmp::core::TableType
-gpmp::core::DataTable::csv_read(std::string filename,
-                                std::vector<std::string> columns) {
-    std::ifstream file(filename);
-
-    if (!file.is_open()) {
-        _log_.log(ERROR, "Unable to open file: " + filename + ".");
-        exit(EXIT_FAILURE);
-    }
-
-    // std::vector<std::vector<std::string>> data;
-    gpmp::core::MixedType data;
-    std::string line;
-
-    // Get the header line and parse the column names
-    getline(file, line);
-    std::stringstream header(line);
-    std::vector<std::string> header_cols;
-    std::string columnName;
-
-    while (getline(header, columnName, ',')) {
-        header_cols.push_back(columnName);
-    }
-
-    // If no columns are specified, read in all columns
-    if (columns.empty()) {
-        columns = header_cols;
-    }
-
-    // Check if specified columns exist in the header
-    for (const auto &column : columns) {
-        if (find(header_cols.begin(), header_cols.end(), column) ==
-            header_cols.end()) {
-            _log_.log(ERROR, "Column: " + column + " not found");
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    std::vector<std::variant<int64_t, long double, std::string>> row_vector;
-    // Read in the data rows
-    while (getline(file, line)) {
-        std::vector<std::string> row;
-        //gpmp::core::MixedType row;
-        std::stringstream rowStream(line);
-        std::string value;
-        int columnIndex = 0;
-
-        while (getline(rowStream, value, ',')) {
-            // If column is specified, only read in specified columns
-            if (find(columns.begin(),
-                     columns.end(),
-                     header_cols[columnIndex]) != columns.end()) {
-                //row_vector.push_back(value);
-                //row.push_back(row_vector);
-                row.push_back(value);
-            }
-
-            columnIndex++;
-        }
-
-        if (row.size() > 0) {
-            row_vector.clear(); // Clear the previous row_vector
-            row_vector.insert(row_vector.end(), row.begin(), row.end());
-            data.push_back(row_vector);
-            //data.push_back(row);
-        }
-    }
-    // populate headers_ class variable
-    headers_ = columns;
-    // populate data_ class variable
-    data_ = data;
-
-    file.close();
-    return make_pair(columns, data);
-}*/
 gpmp::core::TableType
 gpmp::core::DataTable::csv_read(std::string filename,
                                 std::vector<std::string> columns) {
@@ -204,15 +136,163 @@ gpmp::core::DataTable::csv_read(std::string filename,
     return make_pair(columns, data);
 }
 
-// Function to check if a string is an integer
-bool is_int(const std::string &str) {
-    // TODO : determine type of int based on length of largest val?
-    return std::regex_match(str, std::regex(R"(-?\d+)"));
+// The main DataTable display method
+// TODO : edit this display method to read in the first 15 and last 15 by
+// default. if display_all = true then fetch all rows
+void gpmp::core::DataTable::display(const gpmp::core::TableType &data,
+                                    bool display_all) {
+    int num_columns = data.first.size();
+    int num_rows = data.second.size();
+    int num_omitted_rows = 0;
+
+    // Initialize max_column_widths with the lengths of column headers
+    std::vector<int> max_column_widths(num_columns, 0);
+
+    // Calculate the maximum width for each column based on column headers
+    for (int i = 0; i < num_columns; i++) {
+        max_column_widths[i] = data.first[i].length();
+    }
+
+    // Calculate the maximum width for each column based on data rows
+    for (int i = 0; i < num_columns; i++) {
+        for (const auto &row : data.second) {
+            if (i < static_cast<int>(row.size())) {
+                // Use std::visit to iterate over each cell of the
+                // std::variant type
+                // TODO : probably put this std::visit code in its own
+                // helper method!
+                std::visit(
+                    [&max_column_widths, &i](const auto &cellValue) {
+                        using T = std::decay_t<decltype(cellValue)>;
+                        if constexpr (std::is_same_v<T, std::string>) {
+                            max_column_widths[i] =
+                                std::max(max_column_widths[i],
+                                         static_cast<int>(cellValue.length()));
+                        } else if constexpr (std::is_integral_v<T> ||
+                                             std::is_floating_point_v<T>) {
+                            max_column_widths[i] = std::max(
+                                max_column_widths[i],
+                                static_cast<int>(
+                                    std::to_string(cellValue).length()));
+                        }
+                    },
+                    row[i]);
+            }
+        }
+    }
+
+    // Set a larger width for the DateTime column (adjust the index as
+    // needed later on)
+    const int dateTimeColumnIndex = 0;
+    // adjust as needed?
+    max_column_widths[dateTimeColumnIndex] =
+        std::max(max_column_widths[dateTimeColumnIndex], 0);
+
+    // Print headers with right-aligned values
+    std::cout << std::setw(7) << std::right << "Index"
+              << "  ";
+
+    for (int i = 0; i < num_columns; i++) {
+        std::cout << std::setw(max_column_widths[i]) << std::right
+                  << data.first[i] << "  ";
+    }
+    std::cout << std::endl;
+
+    int num_elements = data.second.size();
+    if (!display_all && num_elements > MAX_ROWS) {
+        for (int i = 0; i < SHOW_ROWS; i++) {
+            // Prit index
+            std::cout << std::setw(7) << std::right << i << "  ";
+            // Print each row with right-aligned values
+            for (int j = 0; j < num_columns; j++) {
+                if (j < static_cast<int>(data.second[i].size())) {
+                    // std::cout << std::setw(max_column_widths[j])
+                    //           << std::right << data.second[i][j] << "  ";
+                    std::visit(
+                        [&max_column_widths, &i, &j](const auto &cellValue) {
+                            using T = std::decay_t<decltype(cellValue)>;
+                            if constexpr (std::is_same_v<T, std::string>) {
+                                std::cout << std::setw(max_column_widths[j])
+                                          << std::right << cellValue << "  ";
+                            } else if constexpr (std::is_integral_v<T> ||
+                                                 std::is_floating_point_v<T>) {
+                                std::cout << std::setw(max_column_widths[j])
+                                          << std::right << cellValue << "  ";
+                            }
+                        },
+                        data.second[i][j]);
+                }
+            }
+            std::cout << std::endl;
+        }
+        num_omitted_rows = num_elements - MAX_ROWS;
+        std::cout << "...\n";
+        std::cout << "[" << num_omitted_rows << " rows omitted]\n";
+        for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
+            std::cout << std::setw(7) << std::right << i << "  ";
+            // Print each row with right-aligned values
+            for (int j = 0; j < num_columns; j++) {
+                if (j < static_cast<int>(data.second[i].size())) {
+                    // std::cout << std::setw(max_column_widths[j])
+                    //           << std::right << data.second[i][j] << "  ";
+                    std::visit(
+                        [&max_column_widths, &i, &j](const auto &cellValue) {
+                            using T = std::decay_t<decltype(cellValue)>;
+                            if constexpr (std::is_same_v<T, std::string>) {
+                                std::cout << std::setw(max_column_widths[j])
+                                          << std::right << cellValue << "  ";
+                            } else if constexpr (std::is_integral_v<T> ||
+                                                 std::is_floating_point_v<T>) {
+                                std::cout << std::setw(max_column_widths[j])
+                                          << std::right << cellValue << "  ";
+                            }
+                        },
+                        data.second[i][j]);
+                }
+            }
+            std::cout << std::endl;
+        }
+    } else {
+        // Print all rows with right-aligned values
+        for (int i = 0; i < num_elements; i++) {
+
+            // Print index
+            std::cout << std::setw(7) << std::right << i << "  ";
+            for (int j = 0; j < num_columns; j++) {
+                if (j < static_cast<int>(data.second[i].size())) {
+
+                    // Print formatted row
+                    // std::cout << std::setw(max_column_widths[j])
+                    //          << std::right << data.second[i][j] << "  ";
+                    std::visit(
+                        [&max_column_widths, &i, &j](const auto &cellValue) {
+                            using T = std::decay_t<decltype(cellValue)>;
+                            if constexpr (std::is_same_v<T, std::string>) {
+                                std::cout << std::setw(max_column_widths[j])
+                                          << std::right << cellValue << "  ";
+                            } else if constexpr (std::is_integral_v<T> ||
+                                                 std::is_floating_point_v<T>) {
+                                std::cout << std::setw(max_column_widths[j])
+                                          << std::right << cellValue << "  ";
+                            }
+                        },
+                        data.second[i][j]);
+                }
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    // Print the number of rows and columns
+    std::cout << "[" << num_rows << " rows"
+              << " x " << num_columns << " columns";
+    std::cout << "]\n\n";
 }
 
-// Function to check if a string is a double
-bool is_double(const std::string &str) {
-    return std::regex_match(str, std::regex(R"(-?\d+\.\d+)"));
+// Overload method for display(). Allows user to display the existing
+// data in a DataTable object.
+void gpmp::core::DataTable::display(bool display_all) {
+    display(std::make_pair(headers_, data_), display_all);
 }
 
 gpmp::core::DataType
@@ -257,85 +337,10 @@ std::string dt_to_str(gpmp::core::DataType type) {
         return "Unknown";
     }
 }
-/*
-gpmp::core::TableType gpmp::core::DataTable::native_type(
-    const std::vector<std::string> &skip_columns) {
-    gpmp::core::TableType mixed_data;
-
-    // Include all column headers in mixed_data (including skipped ones)
-    mixed_data.first = headers_;
-
-    std::vector<gpmp::core::DataType> column_data_types;
-
-    // Determine data types for each column (skip_columns remain as strings)
-    for (size_t col = 0; col < headers_.size(); ++col) {
-        // Check if this column should be skipped
-        if (std::find(skip_columns.begin(),
-                      skip_columns.end(),
-                      headers_[col]) != skip_columns.end()) {
-            column_data_types.push_back(gpmp::core::DataType::dt_str);
-            _log_.log(INFO, "Skipping column: " + headers_[col]);
-        } else {
-            std::vector<std::string> column_data;
-            for (const std::vector<std::string> &rowData : data_) {
-                column_data.push_back(rowData[col]);
-            }
-            gpmp::core::DataType column_type = inferType(column_data);
-            column_data_types.push_back(column_type);
-
-            _log_.log(INFO,
-                      "Column " + headers_[col] +
-                          " using type: " + dt_to_str(column_type));
-        }
-    }
-
-    // Traverse rows and convert based on the determined data types
-    for (const std::vector<std::string> &row : data_) {
-        std::vector<std::variant<int64_t, long double, std::string>> mixed_row;
-
-        for (size_t col = 0; col < headers_.size(); ++col) {
-            const std::string &cell = row[col];
-            gpmp::core::DataType column_type = column_data_types[col];
-
-            if (column_type == gpmp::core::DataType::dt_int32) {
-
-                mixed_row.push_back(std::stoi(cell));
-            } else if (column_type == gpmp::core::DataType::dt_double) {
-                mixed_row.push_back(std::stold(cell));
-            } else {
-                mixed_row.push_back(cell); // Keep as a string
-            }
-        }
-
-        mixed_data.second.push_back(mixed_row);
-    }
-
-    std::cout << "Mixed Data:" << std::endl;
-    for (const std::string &header : mixed_data.first) {
-        std::cout << header << " ";
-    }
-    std::cout << std::endl;
-
-    for (const auto &row : mixed_data.second) {
-        for (const auto &cell : row) {
-            if (std::holds_alternative<int64_t>(cell)) {
-                std::cout << std::get<int64_t>(cell) << " ";
-            } else if (std::holds_alternative<long double>(cell)) {
-                std::cout << std::get<long double>(cell) << " ";
-            } else if (std::holds_alternative<std::string>(cell)) {
-                std::cout << std::get<std::string>(cell) << " ";
-            }
-        }
-        std::cout << std::endl;
-    }
-
-    return mixed_data;
-}
 
 gpmp::core::TableType gpmp::core::DataTable::native_type(
     const std::vector<std::string> &skip_columns) {
     gpmp::core::TableType mixed_data;
-
     std::cout << "HEADERS:" << headers_.size() << std::endl;
     std::cout << "ROWS:" << data_.size() << std::endl;
 
@@ -365,12 +370,14 @@ gpmp::core::TableType gpmp::core::DataTable::native_type(
 
         // Collect data for this column
         std::vector<std::string> column_data;
-        for (const std::vector<std::string> &row : data_) {
-            column_data.push_back(row[col]);
+        for (const std::vector<std::variant<int64_t, long double, std::string>>
+                 &row : data_) {
+            column_data.push_back(
+                std::get<std::string>(row[col])); // Convert variant to string
         }
 
         std::vector<std::variant<int64_t, long double, std::string>>
-converted_data;
+            converted_data;
 
         // Call inferType on the column's data
         gpmp::core::DataType column_type = inferType(column_data);
@@ -383,15 +390,12 @@ converted_data;
             for (const std::string &cell : column_data) {
                 converted_data.push_back(std::stoi(cell));
             }
-        }
-        else if (column_type == gpmp::core::DataType::dt_double) {
+        } else if (column_type == gpmp::core::DataType::dt_double) {
             std::cout << "DOUBLE\n";
             for (const std::string &cell : column_data) {
                 converted_data.push_back(std::stod(cell));
             }
-        }
-        //else if (column_type == gpmp::core::DataType::dt_str) {
-        else {
+        } else {
             std::cout << "STRING\n";
             for (const std::string &cell : column_data) {
                 converted_data.push_back(cell);
@@ -401,7 +405,7 @@ converted_data;
         mixed_data.second.push_back(converted_data);
     }
 
-    std::cout << "Mixed Data:" << std::endl;
+    /*std::cout << "Mixed Data:" << std::endl;
     for (const std::string &header : mixed_data.first) {
         std::cout << header << " ";
     }
@@ -418,10 +422,10 @@ converted_data;
             }
         }
         std::cout << std::endl;
-    }
+    }*/
 
     return mixed_data;
-}*/
+}
 
 // Extracts date/time information from given column
 // TODO: add additional options for detecting/converting date/time columns
@@ -624,9 +628,71 @@ gpmp::core::DataTableStr gpmp::core::DataTable::first(
                               std::vector<std::vector<std::string>>());
     }
 }
+*/
+
+void gpmp::core::DataTable::info() {
+    // Calculate memory usage for each column and keep track of data type
+    std::vector<double> column_memory_usages(headers_.size(), 0.0);
+    std::vector<std::string> column_data_types(headers_.size());
+    double total_memory_usage_kb = 0.0;
+
+    // Calculate memory usage in bytes for the entire table
+    size_t memory_usage_bytes = sizeof(headers_);
+    for (const auto &row : data_) {
+        for (size_t i = 0; i < row.size(); ++i) {
+            if (std::holds_alternative<int64_t>(row[i])) {
+                memory_usage_bytes += sizeof(int64_t);
+                column_memory_usages[i] +=
+                    static_cast<double>(sizeof(int64_t)) / 1024.0;
+                column_data_types[i] = "int64_t";
+            } else if (std::holds_alternative<long double>(row[i])) {
+                memory_usage_bytes += sizeof(long double);
+                column_memory_usages[i] +=
+                    static_cast<double>(sizeof(long double)) / 1024.0;
+                column_data_types[i] = "long double";
+            } else if (std::holds_alternative<std::string>(row[i])) {
+                memory_usage_bytes += std::get<std::string>(row[i]).capacity();
+                column_memory_usages[i] +=
+                    static_cast<double>(
+                        std::get<std::string>(row[i]).capacity()) /
+                    1024.0;
+                column_data_types[i] = "std::string";
+            }
+        }
+    }
+
+    // Convert total memory usage to KB
+    total_memory_usage_kb = static_cast<double>(memory_usage_bytes) / 1024.0;
+
+    // Find the maximum column name length
+    size_t max_column_name_length = 0;
+    for (const std::string &column : headers_) {
+        max_column_name_length =
+            std::max(max_column_name_length, column.length());
+    }
+
+    // Set the column width for formatting
+    int column_width =
+        static_cast<int>(max_column_name_length) + 2; // Add extra padding
+
+    // Print memory usage and data type for each column
+    std::cout << std::left << std::setw(column_width) << "Column"
+              << std::setw(column_width) << "Data Type"
+              << std::setw(column_width) << "Memory Usage (KB)" << std::endl;
+    for (size_t i = 0; i < headers_.size(); ++i) {
+        std::cout << std::left << std::setw(column_width) << headers_[i]
+                  << std::setw(column_width) << column_data_types[i]
+                  << std::setw(column_width) << std::fixed
+                  << std::setprecision(2) << column_memory_usages[i]
+                  << std::endl;
+    }
+
+    // Print total table memory usage
+    std::cout << "Total Memory Usage: " << std::fixed << std::setprecision(2)
+              << total_memory_usage_kb << " KB" << std::endl;
+}
 
 // Prints some basic information about a DataTable object
-*/
 gpmp::core::DataTableInt
 gpmp::core::DataTable::str_to_int(gpmp::core::DataTableStr src) {
     gpmp::core::DataTableInt dest;
