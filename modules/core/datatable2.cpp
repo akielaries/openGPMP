@@ -102,20 +102,44 @@ gpmp::core::DataTable::csv_read(std::string filename,
         }
     }
 
-    std::vector<std::variant<int64_t, long double, std::string>> row_vector;
-
     // Read in the data rows
     while (getline(file, line)) {
         std::vector<std::string> row;
         std::stringstream rowStream(line);
         std::string value;
         int columnIndex = 0;
+        std::vector<std::variant<int64_t, long double, std::string>>
+            row_vector; // Define row_vector here
 
         while (getline(rowStream, value, ',')) {
             if (std::find(columns.begin(),
                           columns.end(),
                           header_cols[columnIndex]) != columns.end()) {
-                row_vector.emplace_back(value);
+                std::variant<int64_t, long double, std::string> cell_value;
+
+                try {
+                    size_t pos;
+                    long long int_value = std::stoll(value, &pos);
+                    if (pos == value.size()) {
+                        cell_value = int_value;
+                    } else {
+                        throw std::invalid_argument("");
+                    }
+                } catch (const std::invalid_argument &) {
+                    try {
+                        size_t pos;
+                        long double double_value = std::stold(value, &pos);
+                        if (pos == value.size()) {
+                            cell_value = double_value;
+                        } else {
+                            cell_value = value;
+                        }
+                    } catch (const std::invalid_argument &) {
+                        cell_value = value;
+                    }
+                }
+
+                row_vector.push_back(cell_value);
             }
             columnIndex++;
         }

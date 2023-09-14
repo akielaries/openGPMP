@@ -22,10 +22,11 @@ int main() {
     // DataTableStr is of type std::pair<std::vector<std::string>,
     //                                   std::vector<std::vector<std::string>>>
     // gpmp::core::DataTableStr result = dt.csv_read(
-    gpmp::core::TableType result =
-        dt.csv_read("../../data/forestfires.csv", {"temp", "RH", "wind"});
-    //"../../data/Tetuan_power_consumption.csv",
-    //{"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
+    gpmp::core::TableType result = dt.csv_read(
+        //                "../../data/forestfires.csv",
+        //                 {"temp", "RH", "wind"});
+        "../../data/Tetuan_power_consumption.csv",
+        {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
     // std::cout << "FULL DATASET: \n";
     //  display() takes a DataTableStr or default to displaying the current obj
