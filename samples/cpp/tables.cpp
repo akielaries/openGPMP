@@ -30,8 +30,8 @@ int main() {
 
     // std::cout << "FULL DATASET: \n";
     //  display() takes a DataTableStr or default to displaying the current obj
-    // dt.display(result);
-    // dt.info();
+    dt.display(result);
+    dt.info();
 
     // date_time accepts options to extract year, month, and time specifically
     // another way to call is date_time("col",true, true, true) - gets all

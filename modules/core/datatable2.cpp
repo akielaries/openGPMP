@@ -63,8 +63,7 @@ bool is_double(const std::string &str) {
 // TODO : optimize these methods, CSV reader using threads? loop unrolling?,
 // etc? conversion functions to be quicker,
 gpmp::core::TableType
-gpmp::core::DataTable::csv_read(std::string filename,
-                                std::vector<std::string> columns) {
+gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> columns) {
     std::ifstream file(filename);
 
     if (!file.is_open()) {
@@ -75,8 +74,12 @@ gpmp::core::DataTable::csv_read(std::string filename,
     gpmp::core::MixedType data;
     std::string line;
 
-    // Get the header line and parse the column names
-    getline(file, line);
+    // Read the header line once and parse the column names
+    if (!getline(file, line)) {
+        _log_.log(ERROR, "Empty file: " + filename + ".");
+        throw std::runtime_error("Empty file: " + filename + ".");
+    }
+
     std::stringstream header(line);
     std::vector<std::string> header_cols;
     std::string column_name;
@@ -92,29 +95,24 @@ gpmp::core::DataTable::csv_read(std::string filename,
 
     // Check if specified columns exist in the header
     for (const auto &column : columns) {
-        if (std::find(header_cols.begin(), header_cols.end(), column) ==
-            header_cols.end()) {
+        if (std::find(header_cols.begin(), header_cols.end(), column) == header_cols.end()) {
             _log_.log(ERROR, "Column: " + column + " not found");
             throw std::runtime_error("Column: " + column + " not found");
         }
     }
 
-    // Read in the data rows
+    // Reuse row_vector for each row to reduce memory overhead
+    std::vector<std::variant<int64_t, long double, std::string>> row_vector;
+
     while (getline(file, line)) {
-        std::vector<std::string> row;
         std::stringstream rowStream(line);
         std::string value;
         int columnIndex = 0;
-        std::vector<std::variant<int64_t, long double, std::string>>
-            row_vector; // Define row_vector here
 
         while (getline(rowStream, value, ',')) {
-            if (std::find(columns.begin(),
-                          columns.end(),
-                          header_cols[columnIndex]) != columns.end()) {
+            if (std::find(columns.begin(), columns.end(), header_cols[columnIndex]) != columns.end()) {
                 // Check if the value contains exactly 1 decimal point
-                size_t decimalPointCount =
-                    std::count(value.begin(), value.end(), '.');
+                size_t decimalPointCount = std::count(value.begin(), value.end(), '.');
                 if (decimalPointCount == 1) {
                     try {
                         long double double_value = std::stold(value);
@@ -122,12 +120,8 @@ gpmp::core::DataTable::csv_read(std::string filename,
                     } catch (const std::invalid_argument &) {
                         row_vector.push_back(value);
                     }
-                }
-                // Check if the value contains 1 and only 1 whole positive or
-                // negative number
-                else if ((value.find_first_not_of("0123456789-") ==
-                          std::string::npos) &&
-                         (std::count(value.begin(), value.end(), '-') <= 1)) {
+                } else if ((value.find_first_not_of("0123456789-") == std::string::npos) &&
+                           (std::count(value.begin(), value.end(), '-') <= 1)) {
                     try {
                         int64_t int_value = std::stoll(value);
                         row_vector.push_back(int_value);
@@ -135,16 +129,15 @@ gpmp::core::DataTable::csv_read(std::string filename,
                         row_vector.push_back(value);
                     }
                 } else {
-                    // Anything else or anything containing non-numeric
-                    // characters must be a string
                     row_vector.push_back(value);
                 }
             }
             columnIndex++;
         }
+        
         if (!row_vector.empty()) {
-            data.push_back(row_vector); // Push the row_vector directly
-            row_vector.clear();         // Clear it for the next row
+            data.push_back(row_vector);
+            row_vector.clear();
         }
     }
 
