@@ -34,16 +34,13 @@
 #include "../../include/core/datatable.hpp"
 #include "../../include/core/utils.hpp"
 #include <algorithm>
-#include <fstream>
+#include <cmath>
 #include <iomanip>
 #include <iostream>
-#include <map>
-#include <numeric>
 #include <regex>
-#include <sstream>
 #include <string>
 #include <typeinfo>
-#include <unordered_map>
+#include <unordered_set>
 #include <variant>
 #include <vector>
 
@@ -82,10 +79,10 @@ gpmp::core::DataTable::csv_read(std::string filename,
     getline(file, line);
     std::stringstream header(line);
     std::vector<std::string> header_cols;
-    std::string columnName;
+    std::string column_name;
 
-    while (getline(header, columnName, ',')) {
-        header_cols.push_back(columnName);
+    while (getline(header, column_name, ',')) {
+        header_cols.push_back(column_name);
     }
 
     // If no columns are specified, read in all columns
@@ -115,35 +112,36 @@ gpmp::core::DataTable::csv_read(std::string filename,
             if (std::find(columns.begin(),
                           columns.end(),
                           header_cols[columnIndex]) != columns.end()) {
-                std::variant<int64_t, long double, std::string> cell_value;
-
-                try {
-                    size_t pos;
-                    long long int_value = std::stoll(value, &pos);
-                    if (pos == value.size()) {
-                        cell_value = int_value;
-                    } else {
-                        throw std::invalid_argument("");
-                    }
-                } catch (const std::invalid_argument &) {
+                // Check if the value contains exactly 1 decimal point
+                size_t decimalPointCount =
+                    std::count(value.begin(), value.end(), '.');
+                if (decimalPointCount == 1) {
                     try {
-                        size_t pos;
-                        long double double_value = std::stold(value, &pos);
-                        if (pos == value.size()) {
-                            cell_value = double_value;
-                        } else {
-                            cell_value = value;
-                        }
+                        long double double_value = std::stold(value);
+                        row_vector.push_back(double_value);
                     } catch (const std::invalid_argument &) {
-                        cell_value = value;
+                        row_vector.push_back(value);
                     }
                 }
-
-                row_vector.push_back(cell_value);
+                // Check if the value contains 1 and only 1 whole positive or
+                // negative number
+                else if ((value.find_first_not_of("0123456789-") ==
+                          std::string::npos) &&
+                         (std::count(value.begin(), value.end(), '-') <= 1)) {
+                    try {
+                        int64_t int_value = std::stoll(value);
+                        row_vector.push_back(int_value);
+                    } catch (const std::invalid_argument &) {
+                        row_vector.push_back(value);
+                    }
+                } else {
+                    // Anything else or anything containing non-numeric
+                    // characters must be a string
+                    row_vector.push_back(value);
+                }
             }
             columnIndex++;
         }
-
         if (!row_vector.empty()) {
             data.push_back(row_vector); // Push the row_vector directly
             row_vector.clear();         // Clear it for the next row
@@ -169,7 +167,6 @@ void gpmp::core::DataTable::display(const gpmp::core::TableType &data,
     int num_rows = data.second.size();
     int num_omitted_rows = 0;
 
-    // Initialize max_column_widths with the lengths of column headers
     std::vector<int> max_column_widths(num_columns, 0);
 
     // Calculate the maximum width for each column based on column headers
@@ -181,10 +178,6 @@ void gpmp::core::DataTable::display(const gpmp::core::TableType &data,
     for (int i = 0; i < num_columns; i++) {
         for (const auto &row : data.second) {
             if (i < static_cast<int>(row.size())) {
-                // Use std::visit to iterate over each cell of the
-                // std::variant type
-                // TODO : probably put this std::visit code in its own
-                // helper method!
                 std::visit(
                     [&max_column_widths, &i](const auto &cellValue) {
                         using T = std::decay_t<decltype(cellValue)>;
@@ -205,17 +198,49 @@ void gpmp::core::DataTable::display(const gpmp::core::TableType &data,
         }
     }
 
-    // Set a larger width for the DateTime column (adjust the index as
-    // needed later on)
     const int dateTimeColumnIndex = 0;
-    // adjust as needed?
     max_column_widths[dateTimeColumnIndex] =
         std::max(max_column_widths[dateTimeColumnIndex], 0);
 
-    // Print headers with right-aligned values
+    // Define a function to print a row
+    auto printRow = [&data, &max_column_widths, num_columns](int row_index) {
+        std::cout << std::setw(7) << std::right << row_index << "  ";
+
+        for (int j = 0; j < num_columns; j++) {
+            if (j < static_cast<int>(data.second[row_index].size())) {
+                std::visit(
+                    [&max_column_widths, &j](const auto &cellValue) {
+                        using T = std::decay_t<decltype(cellValue)>;
+                        if constexpr (std::is_same_v<T, double> ||
+                                      std::is_same_v<T, long double>) {
+                            // Convert the value to a string without trailing
+                            // zeros
+                            std::string cellValueStr =
+                                std::to_string(cellValue);
+                            cellValueStr.erase(
+                                cellValueStr.find_last_not_of('0') + 1,
+                                std::string::npos);
+                            cellValueStr.erase(
+                                cellValueStr.find_last_not_of('.') + 1,
+                                std::string::npos);
+
+                            std::cout << std::setw(max_column_widths[j])
+                                      << std::right << cellValueStr << "  ";
+                        } else {
+                            std::cout << std::setw(max_column_widths[j])
+                                      << std::right << cellValue << "  ";
+                        }
+                    },
+                    data.second[row_index][j]);
+            }
+        }
+
+        std::cout << std::endl;
+    };
+
+    // Print headers
     std::cout << std::setw(7) << std::right << "Index"
               << "  ";
-
     for (int i = 0; i < num_columns; i++) {
         std::cout << std::setw(max_column_widths[i]) << std::right
                   << data.first[i] << "  ";
@@ -225,85 +250,18 @@ void gpmp::core::DataTable::display(const gpmp::core::TableType &data,
     int num_elements = data.second.size();
     if (!display_all && num_elements > MAX_ROWS) {
         for (int i = 0; i < SHOW_ROWS; i++) {
-            // Prit index
-            std::cout << std::setw(7) << std::right << i << "  ";
-            // Print each row with right-aligned values
-            for (int j = 0; j < num_columns; j++) {
-                if (j < static_cast<int>(data.second[i].size())) {
-                    // std::cout << std::setw(max_column_widths[j])
-                    //           << std::right << data.second[i][j] << "  ";
-                    std::visit(
-                        [&max_column_widths, &i, &j](const auto &cellValue) {
-                            using T = std::decay_t<decltype(cellValue)>;
-                            if constexpr (std::is_same_v<T, std::string>) {
-                                std::cout << std::setw(max_column_widths[j])
-                                          << std::right << cellValue << "  ";
-                            } else if constexpr (std::is_integral_v<T> ||
-                                                 std::is_floating_point_v<T>) {
-                                std::cout << std::setw(max_column_widths[j])
-                                          << std::right << cellValue << "  ";
-                            }
-                        },
-                        data.second[i][j]);
-                }
-            }
-            std::cout << std::endl;
+            printRow(i);
         }
         num_omitted_rows = num_elements - MAX_ROWS;
         std::cout << "...\n";
         std::cout << "[" << num_omitted_rows << " rows omitted]\n";
         for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
-            std::cout << std::setw(7) << std::right << i << "  ";
-            // Print each row with right-aligned values
-            for (int j = 0; j < num_columns; j++) {
-                if (j < static_cast<int>(data.second[i].size())) {
-                    // std::cout << std::setw(max_column_widths[j])
-                    //           << std::right << data.second[i][j] << "  ";
-                    std::visit(
-                        [&max_column_widths, &i, &j](const auto &cellValue) {
-                            using T = std::decay_t<decltype(cellValue)>;
-                            if constexpr (std::is_same_v<T, std::string>) {
-                                std::cout << std::setw(max_column_widths[j])
-                                          << std::right << cellValue << "  ";
-                            } else if constexpr (std::is_integral_v<T> ||
-                                                 std::is_floating_point_v<T>) {
-                                std::cout << std::setw(max_column_widths[j])
-                                          << std::right << cellValue << "  ";
-                            }
-                        },
-                        data.second[i][j]);
-                }
-            }
-            std::cout << std::endl;
+            printRow(i);
         }
     } else {
-        // Print all rows with right-aligned values
+        // Print all rows
         for (int i = 0; i < num_elements; i++) {
-
-            // Print index
-            std::cout << std::setw(7) << std::right << i << "  ";
-            for (int j = 0; j < num_columns; j++) {
-                if (j < static_cast<int>(data.second[i].size())) {
-
-                    // Print formatted row
-                    // std::cout << std::setw(max_column_widths[j])
-                    //          << std::right << data.second[i][j] << "  ";
-                    std::visit(
-                        [&max_column_widths, &i, &j](const auto &cellValue) {
-                            using T = std::decay_t<decltype(cellValue)>;
-                            if constexpr (std::is_same_v<T, std::string>) {
-                                std::cout << std::setw(max_column_widths[j])
-                                          << std::right << cellValue << "  ";
-                            } else if constexpr (std::is_integral_v<T> ||
-                                                 std::is_floating_point_v<T>) {
-                                std::cout << std::setw(max_column_widths[j])
-                                          << std::right << cellValue << "  ";
-                            }
-                        },
-                        data.second[i][j]);
-                }
-            }
-            std::cout << std::endl;
+            printRow(i);
         }
     }
 

@@ -23,15 +23,15 @@ int main() {
     //                                   std::vector<std::vector<std::string>>>
     // gpmp::core::DataTableStr result = dt.csv_read(
     gpmp::core::TableType result = dt.csv_read(
-        //                "../../data/forestfires.csv",
-        //                 {"temp", "RH", "wind"});
+        //"../../data/forestfires.csv",
+        // {"temp", "RH", "wind"});
         "../../data/Tetuan_power_consumption.csv",
         {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
     // std::cout << "FULL DATASET: \n";
     //  display() takes a DataTableStr or default to displaying the current obj
-    dt.display(result);
-    dt.info();
+    // dt.display(result);
+    // dt.info();
 
     // date_time accepts options to extract year, month, and time specifically
     // another way to call is date_time("col",true, true, true) - gets all
@@ -49,39 +49,40 @@ int main() {
     // get first element of each group
     gpmp::core::DataTableStr first_element = dt.first(groups);
     dt.display(first_element);
-
-    // Second DataTable object
-    gpmp::core::DataTable dt2;
-
-    gpmp::core::DataTableStr result2 =
-        dt2.csv_read("../../data/forestfires.csv",
-                     //{"month", "day", "temp", "wind"});
-                     {"temp", "RH", "wind"});
-
-    dt2.display(result2);
-    // std::vector<std::string> sort_cols = {"month", "day"};
-    std::cout << "SORT: \n";
-    // sort based on the specified columns
-    // dt2.sort(sort_cols);
-    // dt2.display();
-    std::cout << "DESCRIBE: \n";
-    // prints some basic info about our DataTable object
-    // dt2.describe();
-    std::cout << "GROUPS2: \n";
-    std::vector<std::string> group_by_columns2 = {"month"};
-    // group rows based on month/day
-    // std::vector<gpmp::core::DataTableStr> groups2 =
-    // dt2.group_by(group_by_columns2);
-    std::cout << "NATIVE TYPES: \n";
-    std::vector<std::string> new_cols = {"temp", "wind"};
-    std::vector<std::string> skip_cols = {"temp"};
-    // convert a DataTable objects data to its native types, can exclude columns
-    gpmp::core::TableType new_table = dt2.native_type(skip_cols);
-
-    // get first element of each group
-    // gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
-    // dt2.display(first_element2);
 */
+    // Second DataTable object
+    //    gpmp::core::DataTable dt2;
+
+    //    gpmp::core::TableType result2 =
+    //        dt2.csv_read("../../data/forestfires.csv",
+    //{"month", "day", "temp", "wind"});
+    //                     {"temp", "RH", "wind"});
+
+    //    dt2.display(result2);
+    //    dt2.info();
+    /*  // std::vector<std::string> sort_cols = {"month", "day"};
+      std::cout << "SORT: \n";
+      // sort based on the specified columns
+      // dt2.sort(sort_cols);
+      // dt2.display();
+      std::cout << "DESCRIBE: \n";
+      // prints some basic info about our DataTable object
+      // dt2.describe();
+      std::cout << "GROUPS2: \n";
+      std::vector<std::string> group_by_columns2 = {"month"};
+      // group rows based on month/day
+      // std::vector<gpmp::core::DataTableStr> groups2 =
+      // dt2.group_by(group_by_columns2);
+      std::cout << "NATIVE TYPES: \n";
+      std::vector<std::string> new_cols = {"temp", "wind"};
+      std::vector<std::string> skip_cols = {"temp"};
+      // convert a DataTable objects data to its native types, can exclude
+      columns gpmp::core::TableType new_table = dt2.native_type(skip_cols);
+
+      // get first element of each group
+      // gpmp::core::DataTableStr first_element2 = dt2.first(groups2);
+      // dt2.display(first_element2);
+  */
     /* of type std::pair<std::vector<std::string>,
      *         std::vector<std::vector<std::string>>>
      */

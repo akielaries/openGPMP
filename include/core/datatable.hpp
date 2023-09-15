@@ -42,14 +42,8 @@
 #define MAX_ROWS 30
 #define SHOW_ROWS 15
 
-#include <algorithm>
-#include <chrono>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <sstream>
 #include <string>
-#include <unordered_map>
+#include <variant>
 #include <vector>
 
 namespace gpmp {
@@ -116,10 +110,7 @@ class DataTable {
      */
     DataTable() {
         // Initialize data_ and headers_ to empty vectors
-        // data_ = std::vector<std::vector<std::string>>();
         headers_ = std::vector<std::string>();
-        // data_ = std::vector<std::variant<int64_t, long double,
-        // std::string>>();
         data_ = MixedType();
     }
 
@@ -137,9 +128,6 @@ class DataTable {
     TableType csv_read(std::string filename,
                        std::vector<std::string> columns = {});
 
-    MixedType convertDataToNativeTypes(
-        const MixedType &data,
-        const std::unordered_map<std::string, DataType> &column_types);
     /**
      * @brief Write DataTable to a CSV file
      */
