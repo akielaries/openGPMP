@@ -43,6 +43,14 @@
 #include <unordered_set>
 #include <variant>
 #include <vector>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <thread>
+#include <cstring>
+#include <mutex>
+#include <cstdint>
 
 /** Logger class object*/
 static gpmp::core::Logger _log_;
@@ -60,11 +68,39 @@ bool is_double(const std::string &str) {
     return std::regex_match(str, std::regex(R"(-?\d+\.\d+)"));
 }
 
+void handle_error(const char* msg) {
+    perror(msg);
+    exit(255);
+}
+
+const char* map_file(const char* fname, size_t& length)
+{
+    int fd = open(fname, O_RDONLY);
+    if (fd == -1)
+        handle_error("open");
+
+    // Obtain file size
+    struct stat sb;
+    if (fstat(fd, &sb) == -1)
+        handle_error("fstat");
+
+    length = sb.st_size;
+
+    const char* addr = static_cast<const char*>(mmap(NULL, length, PROT_READ, MAP_PRIVATE, fd, 0u));
+    if (addr == MAP_FAILED)
+        handle_error("mmap");
+
+    // TODO: Close fd at some point in time, call munmap(...)
+    return addr;
+}
+
 // TODO : optimize these methods, CSV reader using threads? loop unrolling?,
 // etc? conversion functions to be quicker,
 gpmp::core::TableType
 gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> columns) {
     std::ifstream file(filename);
+    file.rdbuf()->pubsetbuf(nullptr, 0);  // Disable buffering
+
 
     if (!file.is_open()) {
         _log_.log(ERROR, "Unable to open file: " + filename + ".");
@@ -85,7 +121,7 @@ gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> c
     std::string column_name;
 
     while (getline(header, column_name, ',')) {
-        header_cols.push_back(column_name);
+        header_cols.emplace_back(column_name);
     }
 
     // If no columns are specified, read in all columns
@@ -116,27 +152,27 @@ gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> c
                 if (decimalPointCount == 1) {
                     try {
                         long double double_value = std::stold(value);
-                        row_vector.push_back(double_value);
+                        row_vector.emplace_back(double_value);
                     } catch (const std::invalid_argument &) {
-                        row_vector.push_back(value);
+                        row_vector.emplace_back(value);
                     }
                 } else if ((value.find_first_not_of("0123456789-") == std::string::npos) &&
                            (std::count(value.begin(), value.end(), '-') <= 1)) {
                     try {
                         int64_t int_value = std::stoll(value);
-                        row_vector.push_back(int_value);
+                        row_vector.emplace_back(int_value);
                     } catch (const std::invalid_argument &) {
-                        row_vector.push_back(value);
+                        row_vector.emplace_back(value);
                     }
                 } else {
-                    row_vector.push_back(value);
+                    row_vector.emplace_back(value);
                 }
             }
             columnIndex++;
         }
         
         if (!row_vector.empty()) {
-            data.push_back(row_vector);
+            data.emplace_back(row_vector);
             row_vector.clear();
         }
     }
@@ -329,7 +365,7 @@ gpmp::core::TableType gpmp::core::DataTable::native_type(
 
         std::cout << header << " ";
         // push column headers into mixed_data var
-        mixed_data.first.push_back(header);
+        mixed_data.first.emplace_back(header);
     }
 
     std::cout << std::endl;
@@ -347,7 +383,7 @@ gpmp::core::TableType gpmp::core::DataTable::native_type(
         std::vector<std::string> column_data;
         for (const std::vector<std::variant<int64_t, long double, std::string>>
                  &row : data_) {
-            column_data.push_back(
+            column_data.emplace_back(
                 std::get<std::string>(row[col])); // Convert variant to string
         }
 
@@ -363,21 +399,21 @@ gpmp::core::TableType gpmp::core::DataTable::native_type(
         if (column_type == gpmp::core::DataType::dt_int32) {
             std::cout << "INT\n";
             for (const std::string &cell : column_data) {
-                converted_data.push_back(std::stoi(cell));
+                converted_data.emplace_back(std::stoi(cell));
             }
         } else if (column_type == gpmp::core::DataType::dt_double) {
             std::cout << "DOUBLE\n";
             for (const std::string &cell : column_data) {
-                converted_data.push_back(std::stod(cell));
+                converted_data.emplace_back(std::stod(cell));
             }
         } else {
             std::cout << "STRING\n";
             for (const std::string &cell : column_data) {
-                converted_data.push_back(cell);
+                converted_data.emplace_back(cell);
             }
         }
         // push rows into the mixed_data var
-        mixed_data.second.push_back(converted_data);
+        mixed_data.second.emplace_back(converted_data);
     }
 
     /*std::cout << "Mixed Data:" << std::endl;
@@ -442,21 +478,21 @@ gpmp::core::DataTable::datetime(std::string column_name,
         // Extract year, month, and time components
         if (extract_year) {
             year = timestamp.substr(timestamp.find_last_of('/') + 1, 4);
-            new_row.push_back(year);
+            new_row.emplace_back(year);
         }
         if (extract_month) {
             month = timestamp.substr(0, timestamp.find_first_of('/'));
-            new_row.push_back(month);
+            new_row.emplace_back(month);
         }
         if (extract_time) {
             time = timestamp.substr(timestamp.find(' ') + 1);
-            new_row.push_back(time);
+            new_row.emplace_back(time);
         }
 
         // append original row data
         new_row.insert(new_row.end(), row.begin(), row.end());
         // add new rows
-        new_data.push_back(new_row);
+        new_data.emplace_back(new_row);
     }
 
     // Create new headers based on the extracted components
@@ -485,7 +521,7 @@ void gpmp::core::DataTable::sort(const std::vector<std::string> &sort_columns,
         auto iter = std::find(headers_.begin(), headers_.end(), column);
         if (iter != headers_.end()) {
             size_t index = std::distance(headers_.begin(), iter);
-            column_indices.push_back(index);
+            column_indices.emplace_back(index);
         }
     }
 
@@ -530,7 +566,7 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
         // column index set to distance from start of first col to nexter iter
         int column_index = std::distance(headers_.begin(), column_iter);
         // add column index to group
-        group_by_indices.push_back(column_index);
+        group_by_indices.emplace_back(column_index);
     }
 
     // Group the data based on the specified columns using a vector
@@ -543,7 +579,7 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
         std::vector<std::string> group_key;
         // Fill group key from specified group column names
         for (int index : group_by_indices) {
-            group_key.push_back(row[index]);
+            group_key.emplace_back(row[index]);
         }
 
         // Check if the group already exists
@@ -557,19 +593,19 @@ gpmp::core::DataTable::group_by(std::vector<std::string> group_by_columns) {
         // If the group DNE create a new one to add to groups vector
         if (group_iter == groups.end()) {
             // Create a new group
-            groups.push_back(
+            groups.emplace_back(
                 {group_key, gpmp::core::DataTableStr(headers_, {})});
             group_iter = groups.end() - 1;
         }
         // Add current row to group
-        group_iter->second.second.push_back(row);
+        group_iter->second.second.emplace_back(row);
     }
 
     // Extract the grouped data into a vector
     std::vector<gpmp::core::DataTableStr> grouped_data;
     // Iterate over sorted groups to push onto result vector
     for (const auto &group : groups) {
-        grouped_data.push_back(group.second);
+        grouped_data.emplace_back(group.second);
     }
 
     // Return final DataTableStr type
@@ -589,7 +625,7 @@ gpmp::core::DataTableStr gpmp::core::DataTable::first(
 
     for (const gpmp::core::DataTableStr &group : groups) {
         if (!group.second.empty()) {
-            first_rows.push_back(
+            first_rows.emplace_back(
                 group.second[0]); // Get the first row of each group
         }
     }
@@ -685,7 +721,7 @@ gpmp::core::DataTable::str_to_int(gpmp::core::DataTableStr src) {
     for (const auto &v : src.first) {
         // check if v contains only digits
         if (std::regex_match(v, std::regex("\\d+"))) {
-            dest.first.push_back(std::stoi(v));
+            dest.first.emplace_back(std::stoi(v));
         }
     }
     for (const auto &vv : src.second) {
@@ -693,10 +729,10 @@ gpmp::core::DataTable::str_to_int(gpmp::core::DataTableStr src) {
         for (const auto &v : vv) {
             // check if v contains only digits
             if (std::regex_match(v, std::regex("\\d+"))) {
-                new_vec.push_back(std::stoi(v));
+                new_vec.emplace_back(std::stoi(v));
             }
         }
-        dest.second.push_back(new_vec);
+        dest.second.emplace_back(new_vec);
     }
     return dest;
 }
@@ -707,7 +743,7 @@ gpmp::core::DataTable::str_to_double(gpmp::core::DataTableStr src) {
 
     for (const auto &v : src.first) {
         if (std::regex_match(v, std::regex("[-+]?\\d*\\.?\\d+"))) {
-            dest.first.push_back(std::stold(v));
+            dest.first.emplace_back(std::stold(v));
         }
     }
 
@@ -715,10 +751,10 @@ gpmp::core::DataTable::str_to_double(gpmp::core::DataTableStr src) {
         std::vector<long double> new_vec;
         for (const auto &v : vv) {
             if (std::regex_match(v, std::regex("[-+]?\\d*\\.?\\d+"))) {
-                new_vec.push_back(std::stold(v));
+                new_vec.emplace_back(std::stold(v));
             }
         }
-        dest.second.push_back(new_vec);
+        dest.second.emplace_back(new_vec);
     }
 
     return dest;

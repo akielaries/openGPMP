@@ -45,6 +45,7 @@
 #include <string>
 #include <variant>
 #include <vector>
+#include <iostream>
 
 namespace gpmp {
 
@@ -112,6 +113,30 @@ class DataTable {
         // Initialize data_ and headers_ to empty vectors
         headers_ = std::vector<std::string>();
         data_ = MixedType();
+    }
+    void printData() {
+        // Print column headers
+        for (const auto& header : headers_) {
+            std::cout << header << "\t";
+        }
+        std::cout << std::endl;
+
+        // Print data rows
+        for (const auto& row : data_) {
+            for (const auto& cell : row) {
+                // Check the type of cell and print accordingly
+                if (std::holds_alternative<int64_t>(cell)) {
+                    std::cout << std::get<int64_t>(cell);
+                } else if (std::holds_alternative<long double>(cell)) {
+                    std::cout << std::get<long double>(cell);
+                } else if (std::holds_alternative<std::string>(cell)) {
+                    std::cout << std::get<std::string>(cell);
+                }
+
+                std::cout << "\t";
+            }
+            std::cout << std::endl;
+        }
     }
 
     /**
