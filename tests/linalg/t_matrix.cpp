@@ -47,6 +47,7 @@ using ::testing::DoubleLE;
 using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
 using namespace gpmp;
+#define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
 namespace {
 
@@ -77,14 +78,15 @@ bool mtx_verif(const std::vector<std::vector<T>> &A,
 // test case to compare the results of the intrinsics implementation with the
 // naive implementation for matrix addition
 TEST(ADD_MTX_SMALL, assert_intel_intrin) {
-    int matrixSize = 32;
+    int mtx_size = 32;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // Define input matrices A and B
-    std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> expected(matrixSize,
-                                           std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> result(matrixSize,
-                                         std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size,
+                                           std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size,
+                                         std::vector<int>(mtx_size));
 
     // Initialize random number generator
     std::random_device rd;
@@ -92,8 +94,8 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
     std::uniform_int_distribution<int> distribution(1, 100);
 
     // Populate matrices A and B with random values
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
             A[i][j] = distribution(gen);
             B[i][j] = distribution(gen);
         }
@@ -108,16 +110,16 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
 
     /*
         std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < matrixSize; ++i) {
-            for (int j = 0; j < matrixSize; ++j) {
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
                 std::cout << expected[i][j] << " ";
             }
             std::cout << std::endl;
         }
 
         std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < matrixSize; ++i) {
-            for (int j = 0; j < matrixSize; ++j) {
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
                 std::cout << result[i][j] << " ";
             }
             std::cout << std::endl;
@@ -129,14 +131,16 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE, assert_intel_intrin) {
-    int matrixSize = 8192;
+    int mtx_size = 8192;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+
     // Define input matrices A and B
-    std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> expected(matrixSize,
-                                           std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> result(matrixSize,
-                                         std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size,
+                                           std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size,
+                                         std::vector<int>(mtx_size));
 
     // Initialize random number generator
     std::random_device rd;
@@ -144,8 +148,8 @@ TEST(ADD_MTX_LARGE, assert_intel_intrin) {
     std::uniform_int_distribution<int> distribution(1, 100);
 
     // Populate matrices A and B with random values
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
             A[i][j] = distribution(gen);
             B[i][j] = distribution(gen);
         }
@@ -160,16 +164,16 @@ TEST(ADD_MTX_LARGE, assert_intel_intrin) {
 
     /*
         std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < matrixSize; ++i) {
-            for (int j = 0; j < matrixSize; ++j) {
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
                 std::cout << expected[i][j] << " ";
             }
             std::cout << std::endl;
         }
 
         std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < matrixSize; ++i) {
-            for (int j = 0; j < matrixSize; ++j) {
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
                 std::cout << result[i][j] << " ";
             }
             std::cout << std::endl;
@@ -187,14 +191,14 @@ TEST(ADD_MTX_LARGE, assert_intel_intrin) {
     defined(__ARM_ARCH) || defined(__aarch64__)
 
 TEST(ADD_MATRICES, assert_arm_intrin) {
-    int matrixSize = 32;
+    int mtx_size = 32;
     // Define input matrices A and B
-    std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> B(matrixSize, std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> expected(matrixSize,
-                                           std::vector<int>(matrixSize));
-    std::vector<std::vector<int>> result(matrixSize,
-                                         std::vector<int>(matrixSize));
+    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size,
+                                           std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size,
+                                         std::vector<int>(mtx_size));
 
     // Initialize random number generator
     std::random_device rd;
@@ -202,8 +206,8 @@ TEST(ADD_MATRICES, assert_arm_intrin) {
     std::uniform_int_distribution<int> distribution(1, 100);
 
     // Populate matrices A and B with random values
-    for (int i = 0; i < matrixSize; ++i) {
-        for (int j = 0; j < matrixSize; ++j) {
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
             A[i][j] = distribution(gen);
             B[i][j] = distribution(gen);
         }
@@ -218,16 +222,16 @@ TEST(ADD_MATRICES, assert_arm_intrin) {
 
     /*
         std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < matrixSize; ++i) {
-            for (int j = 0; j < matrixSize; ++j) {
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
                 std::cout << expected[i][j] << " ";
             }
             std::cout << std::endl;
         }
 
         std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < matrixSize; ++i) {
-            for (int j = 0; j < matrixSize; ++j) {
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
                 std::cout << result[i][j] << " ";
             }
             std::cout << std::endl;
@@ -239,6 +243,7 @@ TEST(ADD_MATRICES, assert_arm_intrin) {
 }
 #endif
 
+/*
 TEST(matrix_print, print_mtx) {
     gpmp::linalg::Matrix<int> mat(3, 4);
     mat.print_mtx();
@@ -249,6 +254,6 @@ TEST(matrix_print, print_mtx) {
 
     std::get<0>(matrices).print_mtx();
     std::get<1>(matrices).print_mtx();
-}
+}*/
 
 } // namespace

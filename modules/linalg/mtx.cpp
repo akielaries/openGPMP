@@ -78,7 +78,6 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 std::vector<std::vector<int>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
-    std::cout << rows << "rows \n";
 
     if (rows > 16) {
         for (int i = 0; i < rows; ++i) {

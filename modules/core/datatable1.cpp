@@ -38,9 +38,13 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <numeric>
 #include <regex>
 #include <sstream>
 #include <string>
+#include <typeinfo>
+#include <unordered_map>
+#include <variant>
 #include <vector>
 
 /** Logger class object*/
@@ -117,6 +121,225 @@ gpmp::core::DataTable::csv_read(std::string filename,
     file.close();
     return make_pair(columns, data);
 }
+
+// Function to check if a string is an integer
+bool is_int(const std::string &str) {
+    // TODO : determine type of int based on length of largest val?
+    return std::regex_match(str, std::regex(R"(-?\d+)"));
+}
+
+// Function to check if a string is a double
+bool is_double(const std::string &str) {
+    return std::regex_match(str, std::regex(R"(-?\d+\.\d+)"));
+}
+
+gpmp::core::DataType
+gpmp::core::DataTable::inferType(const std::vector<std::string> &column) {
+    int integer_count = 0;
+    int double_count = 0;
+    int string_count = 0;
+
+    for (const std::string &cell : column) {
+        if (is_int(cell)) {
+            integer_count++;
+        } else if (is_double(cell)) {
+            double_count++;
+        } else {
+            string_count++;
+        }
+    }
+
+    _log_.log(INFO,
+              "int/double/str: " + std::to_string(integer_count) + "/" +
+                  std::to_string(double_count) + "/" +
+                  std::to_string(string_count));
+
+    if (integer_count > double_count) {
+        return DataType::dt_int32;
+    } else if (double_count > integer_count) {
+        return DataType::dt_double;
+    } else {
+        return DataType::dt_str;
+    }
+}
+std::string dt_to_str(gpmp::core::DataType type) {
+    switch (type) {
+    case gpmp::core::DataType::dt_int64:
+        return "int64";
+    case gpmp::core::DataType::dt_ldouble:
+        return "long double";
+    case gpmp::core::DataType::dt_str:
+        return "std::string";
+    // TODO : Add more cases if needed
+    default:
+        return "Unknown";
+    }
+}
+gpmp::core::TableType gpmp::core::DataTable::native_type(
+    const std::vector<std::string> &skip_columns) {
+    gpmp::core::TableType mixed_data;
+
+    // Include all column headers in mixed_data (including skipped ones)
+    mixed_data.first = headers_;
+
+    std::vector<gpmp::core::DataType> column_data_types;
+
+    // Determine data types for each column (skip_columns remain as strings)
+    for (size_t col = 0; col < headers_.size(); ++col) {
+        // Check if this column should be skipped
+        if (std::find(skip_columns.begin(),
+                      skip_columns.end(),
+                      headers_[col]) != skip_columns.end()) {
+            column_data_types.push_back(gpmp::core::DataType::dt_str);
+            _log_.log(INFO, "Skipping column: " + headers_[col]);
+        } else {
+            std::vector<std::string> column_data;
+            for (const std::vector<std::string> &rowData : data_) {
+                column_data.push_back(rowData[col]);
+            }
+            gpmp::core::DataType column_type = inferType(column_data);
+            column_data_types.push_back(column_type);
+
+            _log_.log(INFO,
+                      "Column " + headers_[col] +
+                          " using type: " + dt_to_str(column_type));
+        }
+    }
+
+    // Traverse rows and convert based on the determined data types
+    for (const std::vector<std::string> &row : data_) {
+        std::vector<std::variant<int64_t, long double, std::string>> mixed_row;
+
+        for (size_t col = 0; col < headers_.size(); ++col) {
+            const std::string &cell = row[col];
+            gpmp::core::DataType column_type = column_data_types[col];
+
+            if (column_type == gpmp::core::DataType::dt_int32) {
+
+                mixed_row.push_back(std::stoi(cell));
+            } else if (column_type == gpmp::core::DataType::dt_double) {
+                mixed_row.push_back(std::stold(cell));
+            } else {
+                mixed_row.push_back(cell); // Keep as a string
+            }
+        }
+
+        mixed_data.second.push_back(mixed_row);
+    }
+
+    std::cout << "Mixed Data:" << std::endl;
+    for (const std::string &header : mixed_data.first) {
+        std::cout << header << " ";
+    }
+    std::cout << std::endl;
+
+    for (const auto &row : mixed_data.second) {
+        for (const auto &cell : row) {
+            if (std::holds_alternative<int64_t>(cell)) {
+                std::cout << std::get<int64_t>(cell) << " ";
+            } else if (std::holds_alternative<long double>(cell)) {
+                std::cout << std::get<long double>(cell) << " ";
+            } else if (std::holds_alternative<std::string>(cell)) {
+                std::cout << std::get<std::string>(cell) << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    return mixed_data;
+}
+
+/*
+gpmp::core::TableType gpmp::core::DataTable::native_type(
+    const std::vector<std::string> &skip_columns) {
+    gpmp::core::TableType mixed_data;
+
+    std::cout << "HEADERS:" << headers_.size() << std::endl;
+    std::cout << "ROWS:" << data_.size() << std::endl;
+
+    // Traverse column headers, skipping specified columns
+    for (const std::string &header : headers_) {
+
+        if (std::find(skip_columns.begin(), skip_columns.end(), header) !=
+            skip_columns.end()) {
+            continue; // Skip this column
+        }
+
+        std::cout << header << " ";
+        // push column headers into mixed_data var
+        mixed_data.first.push_back(header);
+    }
+
+    std::cout << std::endl;
+
+    // Traverse rows, skip rows of the specified columns
+    for (size_t col = 0; col < headers_.size(); ++col) {
+        if (std::find(skip_columns.begin(),
+                      skip_columns.end(),
+                      headers_[col]) != skip_columns.end()) {
+            continue; // Skip this column
+        }
+        _log_.log(INFO, "Column: " + headers_[col]);
+
+        // Collect data for this column
+        std::vector<std::string> column_data;
+        for (const std::vector<std::string> &row : data_) {
+            column_data.push_back(row[col]);
+        }
+
+        std::vector<std::variant<int64_t, long double, std::string>>
+converted_data;
+
+        // Call inferType on the column's data
+        gpmp::core::DataType column_type = inferType(column_data);
+
+        _log_.log(INFO, "Using type: " + dt_to_str(column_type));
+
+        // Check type and convert rows
+        if (column_type == gpmp::core::DataType::dt_int32) {
+            std::cout << "INT\n";
+            for (const std::string &cell : column_data) {
+                converted_data.push_back(std::stoi(cell));
+            }
+        }
+        else if (column_type == gpmp::core::DataType::dt_double) {
+            std::cout << "DOUBLE\n";
+            for (const std::string &cell : column_data) {
+                converted_data.push_back(std::stod(cell));
+            }
+        }
+        //else if (column_type == gpmp::core::DataType::dt_str) {
+        else {
+            std::cout << "STRING\n";
+            for (const std::string &cell : column_data) {
+                converted_data.push_back(cell);
+            }
+        }
+        // push rows into the mixed_data var
+        mixed_data.second.push_back(converted_data);
+    }
+
+    std::cout << "Mixed Data:" << std::endl;
+    for (const std::string &header : mixed_data.first) {
+        std::cout << header << " ";
+    }
+    std::cout << std::endl;
+
+    for (const auto &row : mixed_data.second) {
+        for (const auto &cell : row) {
+            if (std::holds_alternative<int64_t>(cell)) {
+                std::cout << std::get<int64_t>(cell) << " ";
+            } else if (std::holds_alternative<long double>(cell)) {
+                std::cout << std::get<long double>(cell) << " ";
+            } else if (std::holds_alternative<std::string>(cell)) {
+                std::cout << std::get<std::string>(cell) << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+
+    return mixed_data;
+}*/
 
 // Extracts date/time information from given column
 // TODO: add additional options for detecting/converting date/time columns
