@@ -20,7 +20,6 @@ g++ -std=c++2a -march=native -Wno-unused-result -Wparentheses -Wsign-compare -DN
 # run compiled binary
 ./openGPMP_tests
 
-#number_theory/t_rc4.cpp ../modules/number_theory/rc4.cpp \
 # generate lcov files
 lcov --directory . --capture --output-file lcov.info
 # move lcov file to .coverage
@@ -28,4 +27,3 @@ mv lcov.info ../.coverage
 
 # cd into root directory and run gcovr from here
 cd ../ && gcovr --xml-pretty >> lcov.xml && mv lcov.xml .coverage/
-
