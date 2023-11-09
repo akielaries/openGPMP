@@ -37,8 +37,7 @@
 #include <cstdint>
 
 // if sys is Intel-based
-#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
-    defined(__i386) || defined(__amd64__) || defined(__amd64)
+#if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 // include Intel intrinsics
 #include <immintrin.h>
 
@@ -63,13 +62,11 @@ void mtx_mult_(float *matrix1, float *matrix2, float *res, int *nrows1,
                int *ncols1, int *ncols2);
 }*/
 
-// for testing matrix sizes
-constexpr int matrixSize = 10000;
-
-#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
-    defined(__i386) || defined(__amd64__) || defined(__amd64)
+#if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
 // TODO: keep in mind use of int vs unsigned.
+// TODO/BUG: maybe use a flat array for this instead of vector of vector 
+//  see: https://stackoverflow.com/questions/256297/best-way-to-represent-a-2-d-array-in-c-with-size-determined-at-run-time
 // should this function return a matrix C instead of modifying it as input?
 
 // matrix addition using Intel intrinsic, accepts integer types

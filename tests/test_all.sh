@@ -4,7 +4,7 @@
 
 # test all modules together with googletest. produce ONE .info coverage
 # file for the whole test suite. 
-g++ -std=c++2a -march=native -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g -O3 \
+g++ -std=c++2a -march=native -Wno-unused-result -Wparentheses -Wsign-compare -DNDEBUG -g \
     -Wall --coverage \
     arith/t_arith.cpp ../modules/arithmetic/arith.cpp \
     calc/t_calc.cpp ../modules/calculus/differential.cpp \

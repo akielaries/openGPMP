@@ -83,8 +83,7 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
     // Define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> expected(mtx_size,
-                                           std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> result(mtx_size,
                                          std::vector<int>(mtx_size));
 
@@ -126,7 +125,7 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
         }
     */
 
-    // Compare the results
+    // compare the results
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
