@@ -42,14 +42,10 @@
 #define MAX_ROWS 30
 #define SHOW_ROWS 15
 
-#include <algorithm>
-#include <chrono>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <sstream>
 #include <string>
+#include <variant>
 #include <vector>
+#include <iostream>
 
 namespace gpmp {
 
@@ -57,7 +53,28 @@ namespace core {
 
 /** @brief enum for representing different data types
  */
-enum class DataType { Unknown, String, Integer, Double };
+enum class DataType {
+    dt_uint8,   /** represents 8 bit unsigned integer */
+    dt_int8,    /** represents 8 bit signed integer */
+    dt_uint16,  /** represents 16 bit unsigned integer */
+    dt_int16,   /** represents 16 bit signed integer */
+    dt_uint32,  /** represents 32 bit unsigned integer */
+    dt_int32,   /** represents 32 bit signed integer */
+    dt_uint64,  /** represents 64 bit unsigned integer */
+    dt_int64,   /** represents 64 bit signed integer */
+    dt_double,  /** represents double */
+    dt_ldouble, /** represent long double */
+    dt_str,     /** represents string */
+};
+
+typedef std::pair<
+    std::vector<std::string>,
+    std::vector<std::vector<std::variant<int64_t, long double, std::string>>>>
+    TableType;
+
+typedef std::vector<
+    std::vector<std::variant<int64_t, long double, std::string>>>
+    MixedType;
 
 /** @typedef alias for the pair type of strings
  */
@@ -79,20 +96,47 @@ class DataTable {
     // original DataTable object headers
     std::vector<std::string> headers_;
     // original DataTable object rows
-    std::vector<std::vector<std::string>> rows_;
+    MixedType rows_;
     // modified DataTable object headers
     std::vector<std::string> new_headers_;
     // vector to hold data
-    std::vector<std::vector<std::string>> data_;
+    MixedType data_;
 
     // original DataTable data
     DataTableStr original_data_;
 
   public:
+    /**
+     * @brief DataTable constructor. Initializes column & row storage.
+     */
     DataTable() {
         // Initialize data_ and headers_ to empty vectors
-        data_ = std::vector<std::vector<std::string>>();
         headers_ = std::vector<std::string>();
+        data_ = MixedType();
+    }
+    void printData() {
+        // Print column headers
+        for (const auto& header : headers_) {
+            std::cout << header << "\t";
+        }
+        std::cout << std::endl;
+
+        // Print data rows
+        for (const auto& row : data_) {
+            for (const auto& cell : row) {
+                // Check the type of cell and print accordingly
+                if (std::holds_alternative<int64_t>(cell)) {
+                    std::cout << std::get<int64_t>(cell);
+                } else if (std::holds_alternative<long double>(cell)) {
+                    std::cout << std::get<long double>(cell);
+                } else if (std::holds_alternative<std::string>(cell)) {
+                    std::cout << std::get<std::string>(cell);
+                }
+
+                std::cout << "\t";
+            }
+            std::cout << std::endl;
+        }
     }
 
     /**
@@ -103,8 +147,14 @@ class DataTable {
      * columns will be read in
      * @return a DataTableStr containing the column names and data
      */
+    // DataTableStr csv_read(std::string filename,
+    //                       std::vector<std::string> columns = {});
+
+    TableType csv_read_new(std::string filename,
+                       std::vector<std::string> columns = {});
+
     DataTableStr csv_read(std::string filename,
-                          std::vector<std::string> columns = {});
+            std::vector<std::string> columns);
 
     /**
      * @brief Write DataTable to a CSV file
@@ -133,6 +183,11 @@ class DataTable {
      */
     DataTableStr json_read(std::string filename,
                            std::vector<std::string> objs = {});
+
+    /**
+     * @brief Drop specified rows from a DataTable
+     */
+    void drop(std::vector<std::string> column_name);
 
     /**
      * @brief Extracts date and time components from a timestamp column
@@ -176,9 +231,24 @@ class DataTable {
     first(const std::vector<gpmp::core::DataTableStr> &groups) const;
 
     /**
-     * @brief Prints some information about the DataTable
+     * @brief Displays some information about the DataTable
      */
     void describe();
+
+    /**
+     * @brief Displays data types and null vals for each column
+     */
+    void info();
+
+    /**
+     * @brief Converts DataTable column's rows to their native types.
+     * Since the existing DataTable read/load related methods hone in
+     * on the DataTableStr type, there must be a way to get those types
+     * to their native formats.
+     */
+    TableType native_type(const std::vector<std::string> &skip_columns = {});
+
+    DataType inferType(const std::vector<std::string> &column);
 
     /**
      * @brief Converts a DataTableStr to a DataTableInt
@@ -213,110 +283,16 @@ class DataTable {
      * @param display_all A flag indicating whether to display all rows or just
      * a subset
      */
-    template <typename T>
-    void display(std::pair<std::vector<T>, std::vector<std::vector<T>>> data,
-                 bool display_all = false) {
-        // Get the number of columns and rows in the data
-        int num_columns = data.first.size();
-        int num_rows = data.second.size();
-        int num_omitted_rows = 0;
-
-        // Initialize max_column_widths with the lengths of column headers
-        std::vector<int> max_column_widths(num_columns, 0);
-
-        // Calculate the maximum width for each column based on column headers
-        for (int i = 0; i < num_columns; i++) {
-            max_column_widths[i] = data.first[i].length();
-        }
-
-        // Calculate the maximum width for each column based on data rows
-        for (int i = 0; i < num_columns; i++) {
-            for (const auto &row : data.second) {
-                if (i < static_cast<int>(row.size())) {
-                    max_column_widths[i] =
-                        std::max(max_column_widths[i],
-                                 static_cast<int>(row[i].length()));
-                }
-            }
-        }
-
-        // Set a larger width for the DateTime column (adjust the index as
-        // needed later on)
-        const int dateTimeColumnIndex = 0;
-        // adjust as needed?
-        max_column_widths[dateTimeColumnIndex] =
-            std::max(max_column_widths[dateTimeColumnIndex], 0);
-
-        // Print headers with right-aligned values
-        std::cout << std::setw(7) << std::right << "Index"
-                  << "  ";
-
-        for (int i = 0; i < num_columns; i++) {
-            std::cout << std::setw(max_column_widths[i]) << std::right
-                      << data.first[i] << "  ";
-        }
-        std::cout << std::endl;
-
-        int num_elements = data.second.size();
-        if (!display_all && num_elements > MAX_ROWS) {
-            for (int i = 0; i < SHOW_ROWS; i++) {
-                // Prit index
-                std::cout << std::setw(7) << std::right << i << "  ";
-                // Print each row with right-aligned values
-                for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(data.second[i].size())) {
-                        std::cout << std::setw(max_column_widths[j])
-                                  << std::right << data.second[i][j] << "  ";
-                    }
-                }
-                std::cout << std::endl;
-            }
-            num_omitted_rows = num_elements - MAX_ROWS;
-            std::cout << "...\n";
-            std::cout << "[" << num_omitted_rows << " rows omitted]\n";
-            for (int i = num_elements - SHOW_ROWS; i < num_elements; i++) {
-                std::cout << std::setw(7) << std::right << i << "  ";
-                // Print each row with right-aligned values
-                for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(data.second[i].size())) {
-                        std::cout << std::setw(max_column_widths[j])
-                                  << std::right << data.second[i][j] << "  ";
-                    }
-                }
-                std::cout << std::endl;
-            }
-        } else {
-            // Print all rows with right-aligned values
-            for (int i = 0; i < num_elements; i++) {
-
-                // Print index
-                std::cout << std::setw(7) << std::right << i << "  ";
-                for (int j = 0; j < num_columns; j++) {
-                    if (j < static_cast<int>(data.second[i].size())) {
-
-                        // Print formatted row
-                        std::cout << std::setw(max_column_widths[j])
-                                  << std::right << data.second[i][j] << "  ";
-                    }
-                }
-                std::cout << std::endl;
-            }
-        }
-
-        // Print the number of rows and columns
-        std::cout << "[" << num_rows << " rows"
-                  << " x " << num_columns << " columns";
-        std::cout << "]\n\n";
-    }
+    // TODO : edit this display method to read in the first 15 and last 15 by
+    // default. if display_all = true then fetch all rows
+    void display(const TableType &data, bool display_all = false);
 
     /**
      * @brief Overload function for display() defaults to displaying what is
      * currently stored in a DataTable object.
      * @param display_all Display all rows, defaults to false.
      */
-    void display(bool display_all = false) {
-        display(std::make_pair(headers_, data_), display_all);
-    }
+    void display(bool display_all = false);
 };
 
 } // namespace core
