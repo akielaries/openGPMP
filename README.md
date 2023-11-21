@@ -20,6 +20,11 @@ for C++ and CUDA GPU acceleration. By default, SIMD intrinsics will be used for 
 Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder for examples 
 on how to use some of openGPMP's functionalities. 
 
+## Dev priority list
+* `DataTable` class specifically for file readers and feeding this data into other 
+methods in the project.
+* Additional build systems.
+* Tackle the rest of the issue list from there.
 
 # Installation
 openGPMP C++ & Python is tested on the following:
