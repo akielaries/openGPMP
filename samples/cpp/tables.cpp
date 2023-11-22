@@ -28,7 +28,8 @@ int main() {
     //    "../../data/Tetuan_power_consumption.csv",
     //    {"DateTime", "general diffuse flows", "Zone 1 Power Consumption"});
 
-    gpmp::core::TableType result = dt.csv_read("../../data/1m.csv");
+    //gpmp::core::TableType result = dt.csv_read("../../data/1m.csv");
+    gpmp::core::DataTableStr result = dt.csv_read("../../data/1m.csv");
 
     // std::cout << "FULL DATASET: \n";
     //  display() takes a DataTableStr or default to displaying the current obj
