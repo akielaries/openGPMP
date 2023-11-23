@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['line_5ftype_5fe_1539',['line_type_e',['../extra_8h.html#a14d376293153f751aabde49801516625',1,'extra.h']]]
+  ['datatype_1554',['DataType',['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd',1,'gpmp::core::DataType()'],['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd',1,'gpmp::core::DataType()']]]
 ];

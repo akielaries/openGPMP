@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['edge_812',['Edge',['../structEdge.html',1,'']]],
-  ['euclideandivision_813',['EuclideanDivision',['../classgpmp_1_1EuclideanDivision.html',1,'gpmp']]]
+  ['factorization_826',['Factorization',['../classgpmp_1_1Factorization.html',1,'gpmp::Factorization'],['../classpygpmp_1_1nt_1_1nt_1_1Factorization.html',1,'pygpmp.nt.nt.Factorization']]]
 ];

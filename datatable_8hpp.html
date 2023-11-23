@@ -79,12 +79,14 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">datatable.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -109,19 +111,45 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3b94af9dcb0358f28d175d80eed98330"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datatable_8hpp.html#a3b94af9dcb0358f28d175d80eed98330">MAX_ROWS</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a3b94af9dcb0358f28d175d80eed98330"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datatable_8hpp.html#a3b94af9dcb0358f28d175d80eed98330">MAX_ROWS</a>&#160;&#160;&#160;30</td></tr>
 <tr class="separator:a3b94af9dcb0358f28d175d80eed98330"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77f3e1ac2b5ba60234b2f5e3ffb4adb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datatable_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3">SHOW_ROWS</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memitem:a77f3e1ac2b5ba60234b2f5e3ffb4adb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datatable_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3">SHOW_ROWS</a>&#160;&#160;&#160;15</td></tr>
 <tr class="separator:a77f3e1ac2b5ba60234b2f5e3ffb4adb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a47f3eccb080145c6031ba8a20c9af668"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a47f3eccb080145c6031ba8a20c9af668">gpmp::core::DataTableStr</a></td></tr>
-<tr class="separator:a47f3eccb080145c6031ba8a20c9af668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7d217cb6370caea4bf6517166e6bd4"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; int64_t &gt;, std::vector&lt; std::vector&lt; int64_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a6f7d217cb6370caea4bf6517166e6bd4">gpmp::core::DataTableInt</a></td></tr>
-<tr class="separator:a6f7d217cb6370caea4bf6517166e6bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb4e8bbeaf41bdf708af543f0002f957"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; long double &gt;, std::vector&lt; std::vector&lt; long double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#adb4e8bbeaf41bdf708af543f0002f957">gpmp::core::DataTableDouble</a></td></tr>
-<tr class="separator:adb4e8bbeaf41bdf708af543f0002f957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17852eecc3ecc42068ac87aee76f8fcf"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a17852eecc3ecc42068ac87aee76f8fcf">gpmp::core::DataTableStr</a></td></tr>
+<tr class="separator:a17852eecc3ecc42068ac87aee76f8fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdd3b344e1cd59dfd55fd2845d49079"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; int64_t &gt;, std::vector&lt; std::vector&lt; int64_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#adfdd3b344e1cd59dfd55fd2845d49079">gpmp::core::DataTableInt</a></td></tr>
+<tr class="separator:adfdd3b344e1cd59dfd55fd2845d49079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2cf65fc59fab0cb4927aca85f1602c"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; long double &gt;, std::vector&lt; std::vector&lt; long double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a0b2cf65fc59fab0cb4927aca85f1602c">gpmp::core::DataTableDouble</a></td></tr>
+<tr class="separator:a0b2cf65fc59fab0cb4927aca85f1602c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a9b1fd1118812c658cd9c6786aeb281cd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">gpmp::core::DataType</a> { <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e">gpmp::core::Unknown</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98">gpmp::core::String</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044">gpmp::core::Integer</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b">gpmp::core::Double</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a">gpmp::core::dt_uint8</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c">gpmp::core::dt_int8</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83">gpmp::core::dt_uint16</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7">gpmp::core::dt_int16</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c">gpmp::core::dt_uint32</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430">gpmp::core::dt_int32</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c">gpmp::core::dt_uint64</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">gpmp::core::dt_int64</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc">gpmp::core::dt_double</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">gpmp::core::dt_ldouble</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">gpmp::core::dt_str</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a9b1fd1118812c658cd9c6786aeb281cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum for representing different data types  <a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">More...</a><br /></td></tr>
+<tr class="separator:a9b1fd1118812c658cd9c6786aeb281cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3b94af9dcb0358f28d175d80eed98330"></a>
@@ -131,7 +159,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_ROWS&#160;&#160;&#160;10</td>
+          <td class="memname">#define MAX_ROWS&#160;&#160;&#160;30</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -147,7 +175,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SHOW_ROWS&#160;&#160;&#160;5</td>
+          <td class="memname">#define SHOW_ROWS&#160;&#160;&#160;15</td>
         </tr>
       </table>
 </div><div class="memdoc">

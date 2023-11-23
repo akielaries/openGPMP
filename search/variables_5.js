@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['err_1427',['err',['../structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d',1,'gpmp::ml::neuron']]],
-  ['errno_1428',['errno',['../c__threadtest_8c.html#ad65a8842cc674e3ddf69355898c0ecbf',1,'c_threadtest.c']]]
+  ['enabletimestamp_1444',['enableTimestamp',['../classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be',1,'gpmp::core::Logger']]],
+  ['err_1445',['err',['../structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d',1,'gpmp::ml::neuron']]]
 ];

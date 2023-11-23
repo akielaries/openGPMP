@@ -79,6 +79,7 @@ $(function() {
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">gpmp::core Namespace Reference</div>  </div>
@@ -101,20 +102,70 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1TypeCast.html">TypeCast</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1Data.html">Data</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1OutlierFinder.html">OutlierFinder</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds outliers in models.  <a href="classgpmp_1_1core_1_1OutlierFinder.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1Logger.html">Logger</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a47f3eccb080145c6031ba8a20c9af668"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a47f3eccb080145c6031ba8a20c9af668">DataTableStr</a></td></tr>
-<tr class="separator:a47f3eccb080145c6031ba8a20c9af668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f7d217cb6370caea4bf6517166e6bd4"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; int64_t &gt;, std::vector&lt; std::vector&lt; int64_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a6f7d217cb6370caea4bf6517166e6bd4">DataTableInt</a></td></tr>
-<tr class="separator:a6f7d217cb6370caea4bf6517166e6bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb4e8bbeaf41bdf708af543f0002f957"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; long double &gt;, std::vector&lt; std::vector&lt; long double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#adb4e8bbeaf41bdf708af543f0002f957">DataTableDouble</a></td></tr>
-<tr class="separator:adb4e8bbeaf41bdf708af543f0002f957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17852eecc3ecc42068ac87aee76f8fcf"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a17852eecc3ecc42068ac87aee76f8fcf">DataTableStr</a></td></tr>
+<tr class="separator:a17852eecc3ecc42068ac87aee76f8fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdd3b344e1cd59dfd55fd2845d49079"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; int64_t &gt;, std::vector&lt; std::vector&lt; int64_t &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#adfdd3b344e1cd59dfd55fd2845d49079">DataTableInt</a></td></tr>
+<tr class="separator:adfdd3b344e1cd59dfd55fd2845d49079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2cf65fc59fab0cb4927aca85f1602c"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; long double &gt;, std::vector&lt; std::vector&lt; long double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a0b2cf65fc59fab0cb4927aca85f1602c">DataTableDouble</a></td></tr>
+<tr class="separator:a0b2cf65fc59fab0cb4927aca85f1602c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa8b4f618d62f969c344d2a1d365a27"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::variant&lt; int64_t, long double, std::string &gt; &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a1aa8b4f618d62f969c344d2a1d365a27">TableType</a></td></tr>
+<tr class="separator:a1aa8b4f618d62f969c344d2a1d365a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc5f61b012e99c75ef38d7bacf438466"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::vector&lt; std::variant&lt; int64_t, long double, std::string &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#afc5f61b012e99c75ef38d7bacf438466">MixedType</a></td></tr>
+<tr class="separator:afc5f61b012e99c75ef38d7bacf438466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a9b1fd1118812c658cd9c6786aeb281cd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">DataType</a> { <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98">String</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044">Integer</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b">Double</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a">dt_uint8</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c">dt_int8</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83">dt_uint16</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7">dt_int16</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c">dt_uint32</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430">dt_int32</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c">dt_uint64</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">dt_int64</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc">dt_double</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">dt_ldouble</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">dt_str</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a9b1fd1118812c658cd9c6786aeb281cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum for representing different data types  <a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">More...</a><br /></td></tr>
+<tr class="separator:a9b1fd1118812c658cd9c6786aeb281cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1fd1118812c658cd9c6786aeb281cd"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">DataType</a> { <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98">String</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044">Integer</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b">Double</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a">dt_uint8</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c">dt_int8</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83">dt_uint16</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7">dt_int16</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c">dt_uint32</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430">dt_int32</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c">dt_uint64</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">dt_int64</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc">dt_double</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">dt_ldouble</a>
+, <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">dt_str</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a9b1fd1118812c658cd9c6786aeb281cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum for representing different data types  <a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">More...</a><br /></td></tr>
+<tr class="separator:a9b1fd1118812c658cd9c6786aeb281cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -123,52 +174,220 @@ Functions</h2></td></tr>
 <tr class="separator:ae891916df42ab9ac1edca274ef8861ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="adb4e8bbeaf41bdf708af543f0002f957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb4e8bbeaf41bdf708af543f0002f957">&#9670;&nbsp;</a></span>DataTableDouble</h2>
+<a id="a0b2cf65fc59fab0cb4927aca85f1602c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b2cf65fc59fab0cb4927aca85f1602c">&#9670;&nbsp;</a></span>DataTableDouble</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::pair&lt;std::vector&lt;long double&gt;, std::vector&lt;std::vector&lt;long double&gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#adb4e8bbeaf41bdf708af543f0002f957">gpmp::core::DataTableDouble</a></td>
+          <td class="memname">typedef std::pair&lt; std::vector&lt; long double &gt;, std::vector&lt; std::vector&lt; long double &gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#a0b2cf65fc59fab0cb4927aca85f1602c">gpmp::core::DataTableDouble</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00067">67</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00075">75</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a6f7d217cb6370caea4bf6517166e6bd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f7d217cb6370caea4bf6517166e6bd4">&#9670;&nbsp;</a></span>DataTableInt</h2>
+<a id="adfdd3b344e1cd59dfd55fd2845d49079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfdd3b344e1cd59dfd55fd2845d49079">&#9670;&nbsp;</a></span>DataTableInt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::pair&lt;std::vector&lt;int64_t&gt;, std::vector&lt;std::vector&lt;int64_t&gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#a6f7d217cb6370caea4bf6517166e6bd4">gpmp::core::DataTableInt</a></td>
+          <td class="memname">typedef std::pair&lt; std::vector&lt; int64_t &gt;, std::vector&lt; std::vector&lt; int64_t &gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#adfdd3b344e1cd59dfd55fd2845d49079">gpmp::core::DataTableInt</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00063">63</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00070">70</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a47f3eccb080145c6031ba8a20c9af668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47f3eccb080145c6031ba8a20c9af668">&#9670;&nbsp;</a></span>DataTableStr</h2>
+<a id="a17852eecc3ecc42068ac87aee76f8fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17852eecc3ecc42068ac87aee76f8fcf">&#9670;&nbsp;</a></span>DataTableStr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::pair&lt;std::vector&lt;std::string&gt;, std::vector&lt;std::vector&lt;std::string&gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#a47f3eccb080145c6031ba8a20c9af668">gpmp::core::DataTableStr</a></td>
+          <td class="memname">typedef std::pair&lt; std::vector&lt; std::string &gt;, std::vector&lt; std::vector&lt; std::string &gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#a17852eecc3ecc42068ac87aee76f8fcf">gpmp::core::DataTableStr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00059">59</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00066">66</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
 
+</div>
+</div>
+<a id="afc5f61b012e99c75ef38d7bacf438466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5f61b012e99c75ef38d7bacf438466">&#9670;&nbsp;</a></span>MixedType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; std::vector&lt;std::variant&lt;int64_t, long double, std::string&gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#afc5f61b012e99c75ef38d7bacf438466">gpmp::core::MixedType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="datatable__wip_8hpp_source.html#l00077">77</a> of file <a class="el" href="datatable__wip_8hpp_source.html">datatable_wip.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1aa8b4f618d62f969c344d2a1d365a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa8b4f618d62f969c344d2a1d365a27">&#9670;&nbsp;</a></span>TableType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::pair&lt; std::vector&lt;std::string&gt;, std::vector&lt;std::vector&lt;std::variant&lt;int64_t, long double, std::string&gt; &gt; &gt; &gt; <a class="el" href="namespacegpmp_1_1core.html#a1aa8b4f618d62f969c344d2a1d365a27">gpmp::core::TableType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="datatable__wip_8hpp_source.html#l00073">73</a> of file <a class="el" href="datatable__wip_8hpp_source.html">datatable_wip.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a9b1fd1118812c658cd9c6786aeb281cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1fd1118812c658cd9c6786aeb281cd">&#9670;&nbsp;</a></span>DataType <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">gpmp::core::DataType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>enum for representing different data types </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e"></a>Unknown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98"></a>String&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044"></a>Integer&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b"></a>Double&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a"></a>dt_uint8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c"></a>dt_int8&#160;</td><td class="fielddoc"><p>represents 8 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83"></a>dt_uint16&#160;</td><td class="fielddoc"><p>represents 8 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7"></a>dt_int16&#160;</td><td class="fielddoc"><p>represents 16 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c"></a>dt_uint32&#160;</td><td class="fielddoc"><p>represents 16 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430"></a>dt_int32&#160;</td><td class="fielddoc"><p>represents 32 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c"></a>dt_uint64&#160;</td><td class="fielddoc"><p>represents 32 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e"></a>dt_int64&#160;</td><td class="fielddoc"><p>represents 64 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc"></a>dt_double&#160;</td><td class="fielddoc"><p>represents 64 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679"></a>dt_ldouble&#160;</td><td class="fielddoc"><p>represents double </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2"></a>dt_str&#160;</td><td class="fielddoc"><p>represent long double </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="datatable_8hpp_source.html#l00060">60</a> of file <a class="el" href="datatable_8hpp_source.html">datatable.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>, <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98">String</a>, <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044">Integer</a>, <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b">Double</a> };</div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98">gpmp::core::DataType::String</a></div><div class="ttdeci">@ String</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e">gpmp::core::DataType::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044">gpmp::core::DataType::Integer</a></div><div class="ttdeci">@ Integer</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b">gpmp::core::DataType::Double</a></div><div class="ttdeci">@ Double</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9b1fd1118812c658cd9c6786aeb281cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1fd1118812c658cd9c6786aeb281cd">&#9670;&nbsp;</a></span>DataType <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cd">gpmp::core::DataType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>enum for representing different data types </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e"></a>Unknown&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda27118326006d3829667a400ad23d5d98"></a>String&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaa0faef0851b4294c06f2b94bb1cb2044"></a>Integer&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b"></a>Double&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a"></a>dt_uint8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c"></a>dt_int8&#160;</td><td class="fielddoc"><p>represents 8 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83"></a>dt_uint16&#160;</td><td class="fielddoc"><p>represents 8 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7"></a>dt_int16&#160;</td><td class="fielddoc"><p>represents 16 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c"></a>dt_uint32&#160;</td><td class="fielddoc"><p>represents 16 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430"></a>dt_int32&#160;</td><td class="fielddoc"><p>represents 32 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c"></a>dt_uint64&#160;</td><td class="fielddoc"><p>represents 32 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e"></a>dt_int64&#160;</td><td class="fielddoc"><p>represents 64 bit unsigned integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc"></a>dt_double&#160;</td><td class="fielddoc"><p>represents 64 bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679"></a>dt_ldouble&#160;</td><td class="fielddoc"><p>represents double </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2"></a>dt_str&#160;</td><td class="fielddoc"><p>represent long double </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="datatable__wip_8hpp_source.html#l00056">56</a> of file <a class="el" href="datatable__wip_8hpp_source.html">datatable_wip.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a">dt_uint8</a>,   </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c">dt_int8</a>,    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83">dt_uint16</a>,  </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7">dt_int16</a>,   </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c">dt_uint32</a>,  </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430">dt_int32</a>,   </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c">dt_uint64</a>,  </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">dt_int64</a>,   </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc">dt_double</a>,  </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">dt_ldouble</a>, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">dt_str</a>,     </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda6391dd7a32dcd8d62964427bd7312f7c">gpmp::core::DataType::dt_uint64</a></div><div class="ttdeci">@ dt_uint64</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda651d8a10776fec48c0beaccf40248430">gpmp::core::DataType::dt_int32</a></div><div class="ttdeci">@ dt_int32</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">gpmp::core::DataType::dt_int64</a></div><div class="ttdeci">@ dt_int64</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">gpmp::core::DataType::dt_ldouble</a></div><div class="ttdeci">@ dt_ldouble</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdab4ea0fd02071db83a1f842bbb5554f83">gpmp::core::DataType::dt_uint16</a></div><div class="ttdeci">@ dt_uint16</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdace79d4c7039e472e9416bbd0d6bacf5c">gpmp::core::DataType::dt_int8</a></div><div class="ttdeci">@ dt_int8</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">gpmp::core::DataType::dt_str</a></div><div class="ttdeci">@ dt_str</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae517a22dc018a03316e607b141a4010a">gpmp::core::DataType::dt_uint8</a></div><div class="ttdeci">@ dt_uint8</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaedc7d44eb37c3046a8c921b9fc859bbc">gpmp::core::DataType::dt_double</a></div><div class="ttdeci">@ dt_double</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf38fda7652408a5aea50100016ab0cb7">gpmp::core::DataType::dt_int16</a></div><div class="ttdeci">@ dt_int16</div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdaf61206d1dcf50e5f55ec0b02ae20cf9c">gpmp::core::DataType::dt_uint32</a></div><div class="ttdeci">@ dt_uint32</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>

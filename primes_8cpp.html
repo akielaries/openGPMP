@@ -118,7 +118,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="primes_8cpp-example.html#a10">primes.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="primes_8cpp-example.html#a9">primes.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="primes_8cpp_source.html#l00120">120</a> of file <a class="el" href="primes_8cpp_source.html">primes.cpp</a>.</p>
@@ -403,7 +403,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// enqueue the function call to the thread pool using the</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// ThreadDispatch.dispatch() function</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        miller_results.emplace_back(<a class="code" href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a>().<a class="code" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a>(</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        miller_results.emplace_back(<a class="code" href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a>().dispatch(</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            *pool,</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            &amp;<a class="code" href="classgpmp_1_1PrimalityTest.html#a3165af878859e65c291265cedab27b44">gpmp::PrimalityTest::miller_rabin_prime</a>,</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            &amp;<a class="code" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>,</div>
@@ -432,10 +432,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                     .count()</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="ttc" id="ac__threadpool_8c_html_a40f3db62ccfd7fdffb7624bb565ba425"><div class="ttname"><a href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch</a></div><div class="ttdeci">void dispatch(threadpool from_me, dispatch_fn dispatch_to_here, void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="c__threadpool_8c_source.html#l00137">c_threadpool.c:137</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00201">threads.hpp:201</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="c__threadpool_8c.html#a40f3db62ccfd7fdffb7624bb565ba425">dispatch()</a>, <a class="el" href="classgpmp_1_1PrimalityTest.html#a3165af878859e65c291265cedab27b44">gpmp::PrimalityTest::miller_rabin_prime()</a>, and <a class="el" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1PrimalityTest.html#a3165af878859e65c291265cedab27b44">gpmp::PrimalityTest::miller_rabin_prime()</a>, and <a class="el" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 

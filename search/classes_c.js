@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['optimizers_832',['Optimizers',['../classgpmp_1_1ml_1_1Optimizers.html',1,'gpmp::ml']]],
-  ['outlierfinder_833',['OutlierFinder',['../classgpmp_1_1core_1_1OutlierFinder.html',1,'gpmp::core']]]
+  ['primalitygen_847',['PrimalityGen',['../classgpmp_1_1PrimalityGen.html',1,'gpmp::PrimalityGen'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityGen.html',1,'pygpmp.nt.nt.PrimalityGen']]],
+  ['primalitytest_848',['PrimalityTest',['../classgpmp_1_1PrimalityTest.html',1,'gpmp::PrimalityTest'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityTest.html',1,'pygpmp.nt.nt.PrimalityTest']]],
+  ['primarymlp_849',['PrimaryMLP',['../classgpmp_1_1ml_1_1PrimaryMLP.html',1,'gpmp::ml']]]
 ];
