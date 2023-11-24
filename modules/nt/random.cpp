@@ -36,28 +36,65 @@
 #include <cstdint>
 #include <iostream>
 
-uint32_t gpmp::core::rndm::LCG(uint32_t lower, uint32_t upper) {
-    uint32_t mod = __32BIT_1;
+uint32_t gpmp::core::rndm::LCG(uint32_t lower, uint32_t upper, uint32_t seed) {
+    uint32_t mod = __32MAX;
     uint32_t mult = 1664525;
     uint32_t incr = 1013904223;
+
     // set seed = current time
-    uint32_t seed = std::chrono::system_clock::now().time_since_epoch().count();
+    uint32_t time_seed = std::chrono::system_clock::now().time_since_epoch().count();
+    
+    uint32_t final_seed = (seed == 0) ? time_seed : seed;
 
     // Linear Congruential Generator algorithm
-    uint32_t res = (mult * seed + incr) % mod;
+    uint32_t res = (mult * final_seed + incr) % mod;
+
+    // trim to range
+    res = lower + (res % (upper - lower + 1));
 
     return res;
 }
 
-uint64_t gpmp::core::rndm::LCGl(uint64_t lower, uint64_t upper) {
-    uint64_t mod = __64BIT_1;
-    uint64_t mult = 6364136223846793005;
-    uint64_t incr = 1442695040888963407;
+uint64_t gpmp::core::rndm::LCG_64(uint64_t lower, uint64_t upper, uint64_t seed) {
+    uint64_t mod = __64MAX;
+    uint64_t mult = 1103515245;
+    uint64_t incr = 12345;
+
     // set seed = current time
-    uint64_t seed = std::chrono::system_clock::now().time_since_epoch().count();
+    uint64_t time_seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+    uint64_t final_seed = (seed == 0) ? time_seed : seed;
 
     // Linear Congruential Generator algorithm
-    uint64_t res = (mult * seed + incr) % mod;
+    uint64_t res = (mult * final_seed + incr) % mod;
+
+    // trim to range
+    res = lower + (res % (upper - lower + 1));
+
 
     return res;
 }
+
+/*static uint64_t       __PCG_STATE      = 0x4d595df4d0f33173;		// Or something seed-dependent
+static uint64_t const __PCG_MULTPLR = 6364136223846793005u;
+static uint64_t const __PCG_INCR  = 1442695040888963407u;	// Or an arbitrary odd constant
+*/
+uint32_t rotr32(uint32_t x, unsigned r) {
+	return x >> r | x << (-r & 31);
+}
+
+uint32_t pcg32(void) {
+	uint64_t x = __PCG_STATE;
+	unsigned count = (unsigned)(x >> 59);		// 59 = 64 - 5
+
+	__PCG_STATE = x * __PCG_MULTPLR + __PCG_INCR;
+	x ^= x >> 18;								// 18 = (64 - 27)/2
+	return rotr32((uint32_t)(x >> 27), count);	// 27 = 32 - 5
+}
+
+void pcg32_init(uint64_t seed) {
+	__PCG_STATE = seed + __PCG_INCR;
+	(void)pcg32();
+}
+
+

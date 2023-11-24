@@ -39,14 +39,29 @@
 #define RANDOM_HPP
 
 #include <cstdint>
+#include <chrono>
 
-/** RNG CONSTANTS,, adopted from glibc */
-#define __16BIT 65536                  /** 2^16        */
-#define __16BIT_1 65535                /** 2^16 - 1    */
-#define __32BIT 4294967296             /** 2^32        */
-#define __32BIT_1 4294967295           /** 2^32 - 1    */
-#define __64BIT 18446744073709600000   /** 2^64        */
-#define __64BIT_1 18446744073709551615 /** 2^64 - 1    */
+/** PRNG CONSTANTS */
+#define __8MAX 127                          /** 8 bit signed max    */
+#define __U8MAX 255                         /** 8 bit unsigned max */
+
+#define __16MAX 32767                       /** 16 bit signed max   */
+#define __U16MAX 65535                      /** 16 bit unsigned max */
+
+#define __32MAX 2147483647L                 /** 32 bit signed max   */
+#define __U32MAX 4294967295U                /** 32 bit unsigned max */
+
+#define __64MAX 9223372036854775807LL       /** 64 bit signed max   */
+#define __U64MAX 18446744073709551615ULL    /** 64 bit unsigned max */
+
+/*#define __PCG_STATE 0x4d595df4d0f33173
+#define __PCG_MULTPLR 6364136223846793005u
+#define __PCG_INCR 1442695040888963407u
+*/
+static uint64_t __PCG_STATE      = 0x4d595df4d0f33173;      // Or something seed-dependent
+static uint64_t const __PCG_MULTPLR = 6364136223846793005u;
+static uint64_t const __PCG_INCR  = 1442695040888963407u;   // Or an arbitrary odd constant
+
 
 namespace gpmp {
 
@@ -58,19 +73,24 @@ namespace core {
 namespace rndm {
 /**
  * @brief Linear Congruential Generator
- * m = modulus      : 32-bits
- * a = multiplier   : 1664525 (from Knuth)
- * c = increment    : 1013904223 (from Knuth)
+ * @param m = modulus      : 32-bit int max
+ * @param a = multiplier   : 1664525 (from Knuth & H.W. Lewis)
+ * @param c = increment    : 1013904223 (from Knuth & H.W. Lewis)
  */
-uint32_t LCG(uint32_t lower = 0, uint32_t upper = __32BIT_1);
-
+uint32_t LCG(uint32_t lower = 0, 
+            uint32_t upper = std::numeric_limits<uint32_t>::max(), 
+            uint32_t seed = 0);
 /**
  * @brief Linear Congruential Generator (64-bit)
- * m = modulus      : 64-bits
- * a = multiplier   : 6364136223846793005 (from Knuth)
- * c = increment    : 1442695040888963407 (from Knuth)
+ * @param m = modulus      : 64-bits
+ * @param a = multiplier   : 6364136223846793005 (from Knuth MMIX)
+ * @param c = increment    : 1442695040888963407 (from Knuth MMIX)
  */
-uint64_t LCGl(uint64_t lower = 0, uint64_t upper = __64BIT_1);
+uint64_t LCG_64(uint64_t lower = 0, 
+            uint64_t upper = std::numeric_limits<uint64_t>::max(), 
+            uint64_t seed = 0);
+
+
 
 } // namespace rndm
 
