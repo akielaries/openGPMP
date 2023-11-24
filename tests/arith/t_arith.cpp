@@ -70,7 +70,7 @@ TEST(arith_test, sub_positive) {
 } // namespace
 */
 namespace {
-gpmp::Arith<int> ar;
+//gpmp::Arith<int> ar;
 
 }
 

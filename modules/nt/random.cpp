@@ -79,11 +79,11 @@ uint64_t gpmp::core::rndm::LCG_64(uint64_t lower, uint64_t upper, uint64_t seed)
 static uint64_t const __PCG_MULTPLR = 6364136223846793005u;
 static uint64_t const __PCG_INCR  = 1442695040888963407u;	// Or an arbitrary odd constant
 */
-uint32_t rotr32(uint32_t x, unsigned r) {
+uint32_t gpmp::core::rndm::rotr32(uint32_t x, unsigned r) {
 	return x >> r | x << (-r & 31);
 }
 
-uint32_t pcg32(void) {
+uint32_t gpmp::core::rndm::pcg32(void) {
 	uint64_t x = __PCG_STATE;
 	unsigned count = (unsigned)(x >> 59);		// 59 = 64 - 5
 
@@ -92,7 +92,7 @@ uint32_t pcg32(void) {
 	return rotr32((uint32_t)(x >> 27), count);	// 27 = 32 - 5
 }
 
-void pcg32_init(uint64_t seed) {
+void gpmp::core::rndm::pcg32_init(uint64_t seed) {
 	__PCG_STATE = seed + __PCG_INCR;
 	(void)pcg32();
 }
