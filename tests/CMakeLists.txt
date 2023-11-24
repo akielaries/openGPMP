@@ -27,6 +27,7 @@ set(CPP_SOURCES
     ../modules/nt/prime_gen.cpp
     ../modules/nt/factorization.cpp
     ../modules/nt/logarithms.cpp
+    ../modules/nt/random.cpp
 )
 
 # C++ test files
@@ -39,6 +40,7 @@ set(CPP_TEST_FILES
     nt/t_primes.cpp
     nt/t_factorization.cpp
     nt/t_logarithms.cpp
+    nt/t_random.cpp
     core/t_threadpool.cpp
 )
 

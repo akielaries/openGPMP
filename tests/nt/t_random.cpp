@@ -6,8 +6,6 @@
 #include <iostream>
 
 namespace {
-// declare primality class object
-gpmp::core::rndm __TEST_RNDM__;
 
 // Test fixture class
 class LCGTest : public ::testing::Test {
@@ -26,7 +24,7 @@ TEST_F(LCGTest, range_verify) {
     uint32_t seed = 42;
 
     // Call the LCG function
-    uint32_t result = __TEST_RNDM.LCG(lower, upper, seed);
+    uint32_t result = gpmp::core::rndm::LCG(lower, upper, seed);
 
     // Check if the generated result is within the specified range
     ASSERT_TRUE(in_range(result, lower, upper));
