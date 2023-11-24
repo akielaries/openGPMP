@@ -1,8 +1,8 @@
 var searchData=
 [
   ['parallel_5ffor_1272',['parallel_for',['../namespacegpmp_1_1core.html#ae891916df42ab9ac1edca274ef8861ed',1,'gpmp::core']]],
-  ['pcg32_1273',['pcg32',['../modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379',1,'random.cpp']]],
-  ['pcg32_5finit_1274',['pcg32_init',['../modules_2nt_2random_8cpp.html#aad61f8e19c7a909ad6d894cd40698e33',1,'random.cpp']]],
+  ['pcg32_1273',['pcg32',['../namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210',1,'gpmp::core::rndm']]],
+  ['pcg32_5finit_1274',['pcg32_init',['../namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41',1,'gpmp::core::rndm']]],
   ['pollard_5frho_1275',['pollard_rho',['../classpygpmp_1_1nt_1_1nt_1_1Factorization.html#a84beca73dc3cd4c2687c4cc0cdb3ff11',1,'pygpmp.nt.nt.Factorization.pollard_rho()'],['../classgpmp_1_1Factorization.html#affe0a305d01e421c609e59fee921d637',1,'gpmp::Factorization::pollard_rho()']]],
   ['pollard_5frho_5flog_1276',['pollard_rho_log',['../classgpmp_1_1Logarithms.html#ace07593787f2a60b9f281ba5a07e9010',1,'gpmp::Logarithms::pollard_rho_log()'],['../classpygpmp_1_1nt_1_1nt_1_1Logarithms.html#afc6bf6b468f4bb5a0b09a8a5989f3122',1,'pygpmp.nt.nt.Logarithms.pollard_rho_log()']]],
   ['powermean_1277',['powerMean',['../classgpmp_1_1ml_1_1Stats.html#a3c2efdf552da6bb0d02abb40e2e6fa58',1,'gpmp::ml::Stats']]],

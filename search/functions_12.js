@@ -18,7 +18,7 @@ var searchData=
   ['rotate_5fright_1308',['rotate_right',['../classRC5.html#a2ce91193b4d8b594654fe6253344b790',1,'RC5::rotate_right()'],['../modules_2nt_2rc5_8cpp.html#a3378c5b2021e238629cced05f042fbfa',1,'rotate_right():&#160;rc5.cpp']]],
   ['rotl_1309',['ROTL',['../classgpmp_1_1RedPike.html#a5bc91f405e0e52fd0af7228c206b4269',1,'gpmp::RedPike']]],
   ['rotr_1310',['ROTR',['../classgpmp_1_1RedPike.html#aa058fbe6482459004b8a06dfa44d54c7',1,'gpmp::RedPike']]],
-  ['rotr32_1311',['rotr32',['../modules_2nt_2random_8cpp.html#a33954ab52d3257a63b683fa66d1dfc3a',1,'random.cpp']]],
+  ['rotr32_1311',['rotr32',['../namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55',1,'gpmp::core::rndm']]],
   ['run_1312',['run',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a5c73eb9084563467fcf6985ebce230f1',1,'gpmp::ml::PrimaryMLP']]],
   ['run_5fmtx_5fadd_1313',['run_mtx_add',['../samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]]
 ];

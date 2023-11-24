@@ -140,24 +140,32 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">namespace </span>core {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html">   73</a></span>&#160;<span class="keyword">namespace </span>rndm {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">LCG</a>(uint32_t lower = 0, </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            uint32_t upper = std::numeric_limits&lt;uint32_t&gt;::max(), </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            uint32_t seed = 0);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;uint64_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">LCG_64</a>(uint64_t lower = 0, </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            uint64_t upper = std::numeric_limits&lt;uint64_t&gt;::max(), </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            uint64_t seed = 0);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace rndm</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace core</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">LCG</a>(uint32_t lower = 0, </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            uint32_t upper = std::numeric_limits&lt;uint32_t&gt;::max(), </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            uint32_t seed = 0);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;uint64_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">LCG_64</a>(uint64_t lower = 0, </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            uint64_t upper = std::numeric_limits&lt;uint64_t&gt;::max(), </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            uint64_t seed = 0);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">rotr32</a>(uint32_t x, <span class="keywordtype">unsigned</span> r);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">pcg32</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">pcg32_init</a>(uint64_t seed);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace rndm</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;} <span class="comment">// namespace core</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a0ca372ab3a352a8e532bac73f5d11d41"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">gpmp::core::rndm::pcg32_init</a></div><div class="ttdeci">void pcg32_init(uint64_t seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00095">random.cpp:95</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a15f16b119543b20aeb33030734cb9e8e"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">gpmp::core::rndm::LCG_64</a></div><div class="ttdeci">uint64_t LCG_64(uint64_t lower=0, uint64_t upper=std::numeric_limits&lt; uint64_t &gt;::max(), uint64_t seed=0)</div><div class="ttdoc">Linear Congruential Generator (64-bit)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00058">random.cpp:58</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a98486c848d43a2c597d224082a302e25"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">gpmp::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=std::numeric_limits&lt; uint32_t &gt;::max(), uint32_t seed=0)</div><div class="ttdoc">Linear Congruential Generator.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_acb3103c254e529ca316e5d5438439d55"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">gpmp::core::rndm::rotr32</a></div><div class="ttdeci">uint32_t rotr32(uint32_t x, unsigned r)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00082">random.cpp:82</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_af3ce335f1c4e4d0ea24d5275e3f20210"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">gpmp::core::rndm::pcg32</a></div><div class="ttdeci">uint32_t pcg32(void)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00086">random.cpp:86</a></div></div>
 <div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 <div class="ttc" id="arandom_8hpp_html_ab2351de0401ff3fe5a55b22f66d7e7c6"><div class="ttname"><a href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a></div><div class="ttdeci">static uint64_t const __PCG_MULTPLR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00062">random.hpp:62</a></div></div>
 <div class="ttc" id="arandom_8hpp_html_abd726611edac3ec85ca4ad43d28f31ec"><div class="ttname"><a href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a></div><div class="ttdeci">static uint64_t __PCG_STATE</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00061">random.hpp:61</a></div></div>
