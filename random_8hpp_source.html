@@ -116,34 +116,52 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define RANDOM_HPP</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="random_8hpp.html#aaa326b4efabdfd8a84effd3d103e8c51">   44</a></span>&#160;<span class="preprocessor">#define __16BIT 65536                  </span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="random_8hpp.html#a8c4543f0f8bf1482eb561daea0e4e91f">   45</a></span>&#160;<span class="preprocessor">#define __16BIT_1 65535                </span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="random_8hpp.html#aa01c2aa7be3ff3a0d013f9e509f93566">   46</a></span>&#160;<span class="preprocessor">#define __32BIT 4294967296             </span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">   47</a></span>&#160;<span class="preprocessor">#define __32BIT_1 4294967295           </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="random_8hpp.html#a75e78476facb8b3d67ceb192dd0843d8">   48</a></span>&#160;<span class="preprocessor">#define __64BIT 18446744073709600000   </span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">   49</a></span>&#160;<span class="preprocessor">#define __64BIT_1 18446744073709551615 </span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">namespace </span>core {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html">   58</a></span>&#160;<span class="keyword">namespace </span>rndm {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">LCG</a>(uint32_t lower = 0, uint32_t upper = <a class="code" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uint64_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">LCGl</a>(uint64_t lower = 0, uint64_t upper = <a class="code" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace rndm</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// namespace core</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace gpmp</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a877ba1281f401e554032278eea7fa9de"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">gpmp::core::rndm::LCGl</a></div><div class="ttdeci">uint64_t LCGl(uint64_t lower=0, uint64_t upper=__64BIT_1)</div><div class="ttdoc">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (fr...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00052">random.cpp:52</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_ada44469bf3b8992afab596e348be771c"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">gpmp::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=__32BIT_1)</div><div class="ttdoc">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increme...</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="random_8hpp.html#a27eb8c80849d866c7fc73ab8b4622938">   45</a></span>&#160;<span class="preprocessor">#define __8MAX 127                          </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="random_8hpp.html#affa3ff6722b1a572a9f32876be53f5d6">   46</a></span>&#160;<span class="preprocessor">#define __U8MAX 255                         </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="random_8hpp.html#a2136a4883d31b01dc2d278d9dddef110">   48</a></span>&#160;<span class="preprocessor">#define __16MAX 32767                       </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="random_8hpp.html#acfac244dfec934590ba7103cbae1a6fa">   49</a></span>&#160;<span class="preprocessor">#define __U16MAX 65535                      </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="random_8hpp.html#ad6114f3efb4d0491edb68c1968be46f2">   51</a></span>&#160;<span class="preprocessor">#define __32MAX 2147483647L                 </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="random_8hpp.html#ab188293ce2ef302477537d02e0329ff7">   52</a></span>&#160;<span class="preprocessor">#define __U32MAX 4294967295U                </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="random_8hpp.html#a4f5ff809d8d560f3219d80507ed5768f">   54</a></span>&#160;<span class="preprocessor">#define __64MAX 9223372036854775807LL       </span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="random_8hpp.html#a06e4613c575b5a230242dc2b1f8e3c37">   55</a></span>&#160;<span class="preprocessor">#define __U64MAX 18446744073709551615ULL    </span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/*#define __PCG_STATE 0x4d595df4d0f33173</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">#define __PCG_MULTPLR 6364136223846793005u</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">#define __PCG_INCR 1442695040888963407u</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">   61</a></span>&#160;<span class="keyword">static</span> uint64_t <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a>      = 0x4d595df4d0f33173;      <span class="comment">// Or something seed-dependent</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">   62</a></span>&#160;<span class="keyword">static</span> uint64_t <span class="keyword">const</span> <a class="code" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a> = 6364136223846793005u;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">   63</a></span>&#160;<span class="keyword">static</span> uint64_t <span class="keyword">const</span> <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>  = 1442695040888963407u;   <span class="comment">// Or an arbitrary odd constant</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">namespace </span>core {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html">   73</a></span>&#160;<span class="keyword">namespace </span>rndm {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">LCG</a>(uint32_t lower = 0, </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            uint32_t upper = std::numeric_limits&lt;uint32_t&gt;::max(), </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            uint32_t seed = 0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;uint64_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">LCG_64</a>(uint64_t lower = 0, </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            uint64_t upper = std::numeric_limits&lt;uint64_t&gt;::max(), </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            uint64_t seed = 0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace rndm</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace core</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a15f16b119543b20aeb33030734cb9e8e"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">gpmp::core::rndm::LCG_64</a></div><div class="ttdeci">uint64_t LCG_64(uint64_t lower=0, uint64_t upper=std::numeric_limits&lt; uint64_t &gt;::max(), uint64_t seed=0)</div><div class="ttdoc">Linear Congruential Generator (64-bit)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00058">random.cpp:58</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a98486c848d43a2c597d224082a302e25"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">gpmp::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=std::numeric_limits&lt; uint32_t &gt;::max(), uint32_t seed=0)</div><div class="ttdoc">Linear Congruential Generator.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
 <div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
-<div class="ttc" id="arandom_8hpp_html_a2ef0e997da61852a686f4bfe380e0f71"><div class="ttname"><a href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a></div><div class="ttdeci">#define __32BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00047">random.hpp:47</a></div></div>
-<div class="ttc" id="arandom_8hpp_html_a62ccd8be8ddb4f823775dc0bb92343a5"><div class="ttname"><a href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a></div><div class="ttdeci">#define __64BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00049">random.hpp:49</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_ab2351de0401ff3fe5a55b22f66d7e7c6"><div class="ttname"><a href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a></div><div class="ttdeci">static uint64_t const __PCG_MULTPLR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00062">random.hpp:62</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_abd726611edac3ec85ca4ad43d28f31ec"><div class="ttname"><a href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a></div><div class="ttdeci">static uint64_t __PCG_STATE</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00061">random.hpp:61</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_adb43f9dcbc46d300e6a2bb9326b082d1"><div class="ttname"><a href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a></div><div class="ttdeci">static uint64_t const __PCG_INCR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00063">random.hpp:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

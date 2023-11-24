@@ -84,16 +84,16 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ada44469bf3b8992afab596e348be771c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">LCG</a> (uint32_t lower=0, uint32_t upper=<a class="el" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>)</td></tr>
-<tr class="memdesc:ada44469bf3b8992afab596e348be771c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increment : 1013904223 (from Knuth)  <a href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">More...</a><br /></td></tr>
-<tr class="separator:ada44469bf3b8992afab596e348be771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a877ba1281f401e554032278eea7fa9de"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">LCGl</a> (uint64_t lower=0, uint64_t upper=<a class="el" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>)</td></tr>
-<tr class="memdesc:a877ba1281f401e554032278eea7fa9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (from Knuth) c = increment : 1442695040888963407 (from Knuth)  <a href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">More...</a><br /></td></tr>
-<tr class="separator:a877ba1281f401e554032278eea7fa9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98486c848d43a2c597d224082a302e25"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">LCG</a> (uint32_t lower=0, uint32_t upper=std::numeric_limits&lt; uint32_t &gt;::max(), uint32_t seed=0)</td></tr>
+<tr class="memdesc:a98486c848d43a2c597d224082a302e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator.  <a href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">More...</a><br /></td></tr>
+<tr class="separator:a98486c848d43a2c597d224082a302e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f16b119543b20aeb33030734cb9e8e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">LCG_64</a> (uint64_t lower=0, uint64_t upper=std::numeric_limits&lt; uint64_t &gt;::max(), uint64_t seed=0)</td></tr>
+<tr class="memdesc:a15f16b119543b20aeb33030734cb9e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator (64-bit)  <a href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">More...</a><br /></td></tr>
+<tr class="separator:a15f16b119543b20aeb33030734cb9e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ada44469bf3b8992afab596e348be771c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada44469bf3b8992afab596e348be771c">&#9670;&nbsp;</a></span>LCG()</h2>
+<a id="a98486c848d43a2c597d224082a302e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98486c848d43a2c597d224082a302e25">&#9670;&nbsp;</a></span>LCG()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -108,7 +108,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>upper</em> = <code><a class="el" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a></code>&#160;</td>
+          <td class="paramname"><em>upper</em> = <code>std::numeric_limits&lt;uint32_t&gt;::max()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -118,38 +124,52 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increment : 1013904223 (from Knuth) </p>
+<p>Linear Congruential Generator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>= modulus : 32-bit int max </td></tr>
+    <tr><td class="paramname">a</td><td>= multiplier : 1664525 (from Knuth &amp; H.W. Lewis) </td></tr>
+    <tr><td class="paramname">c</td><td>= increment : 1013904223 (from Knuth &amp; H.W. Lewis) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00039">39</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                         {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint32_t mod = <a class="code" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>;</div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint32_t mod = <a class="code" href="random_8hpp.html#ad6114f3efb4d0491edb68c1968be46f2">__32MAX</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint32_t <a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> = 1664525;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint32_t incr = 1013904223;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// set seed = current time</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    uint32_t seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint32_t res = (<a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> * seed + incr) % mod;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// set seed = current time</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint32_t time_seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint32_t final_seed = (seed == 0) ? time_seed : seed;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint32_t res = (<a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> * final_seed + incr) % mod;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// trim to range</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    res = lower + (res % (upper - lower + 1));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="ttc" id="amodules_2linalg_2f90_2mtx_8cpp_html_a565eb286e8c8a10c86ee0b28eb650236"><div class="ttname"><a href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a></div><div class="ttdeci">void mult()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2f90_2mtx_8cpp_source.html#l00047">mtx.cpp:47</a></div></div>
-<div class="ttc" id="arandom_8hpp_html_a2ef0e997da61852a686f4bfe380e0f71"><div class="ttname"><a href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a></div><div class="ttdeci">#define __32BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00047">random.hpp:47</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_ad6114f3efb4d0491edb68c1968be46f2"><div class="ttname"><a href="random_8hpp.html#ad6114f3efb4d0491edb68c1968be46f2">__32MAX</a></div><div class="ttdeci">#define __32MAX</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00051">random.hpp:51</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>, and <a class="el" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult()</a>.</p>
+<p class="reference">References <a class="el" href="random_8hpp.html#ad6114f3efb4d0491edb68c1968be46f2">__32MAX</a>, and <a class="el" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
 </div>
-<a id="a877ba1281f401e554032278eea7fa9de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a877ba1281f401e554032278eea7fa9de">&#9670;&nbsp;</a></span>LCGl()</h2>
+<a id="a15f16b119543b20aeb33030734cb9e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f16b119543b20aeb33030734cb9e8e">&#9670;&nbsp;</a></span>LCG_64()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint64_t gpmp::core::rndm::LCGl </td>
+          <td class="memname">uint64_t gpmp::core::rndm::LCG_64 </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>lower</em> = <code>0</code>, </td>
@@ -158,7 +178,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>upper</em> = <code><a class="el" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a></code>&#160;</td>
+          <td class="paramname"><em>upper</em> = <code>std::numeric_limits&lt;uint64_t&gt;::max()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,26 +194,39 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (from Knuth) c = increment : 1442695040888963407 (from Knuth) </p>
+<p>Linear Congruential Generator (64-bit) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>= modulus : 64-bits </td></tr>
+    <tr><td class="paramname">a</td><td>= multiplier : 6364136223846793005 (from Knuth MMIX) </td></tr>
+    <tr><td class="paramname">c</td><td>= increment : 1442695040888963407 (from Knuth MMIX) </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00052">52</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                          {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    uint64_t mod = <a class="code" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint64_t <a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> = 6364136223846793005;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    uint64_t incr = 1442695040888963407;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// set seed = current time</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint64_t seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint64_t res = (<a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> * seed + incr) % mod;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="ttc" id="arandom_8hpp_html_a62ccd8be8ddb4f823775dc0bb92343a5"><div class="ttname"><a href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a></div><div class="ttdeci">#define __64BIT_1</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00049">random.hpp:49</a></div></div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00058">58</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    uint64_t mod = <a class="code" href="random_8hpp.html#a4f5ff809d8d560f3219d80507ed5768f">__64MAX</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint64_t <a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> = 1103515245;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    uint64_t incr = 12345;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// set seed = current time</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint64_t time_seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint64_t final_seed = (seed == 0) ? time_seed : seed;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint64_t res = (<a class="code" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult</a> * final_seed + incr) % mod;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// trim to range</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    res = lower + (res % (upper - lower + 1));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="ttc" id="arandom_8hpp_html_a4f5ff809d8d560f3219d80507ed5768f"><div class="ttname"><a href="random_8hpp.html#a4f5ff809d8d560f3219d80507ed5768f">__64MAX</a></div><div class="ttdeci">#define __64MAX</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00054">random.hpp:54</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>, and <a class="el" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+<p class="reference">References <a class="el" href="random_8hpp.html#a4f5ff809d8d560f3219d80507ed5768f">__64MAX</a>, and <a class="el" href="modules_2linalg_2f90_2mtx_8cpp.html#a565eb286e8c8a10c86ee0b28eb650236">mult()</a>.</p>
 
 </div>
 </div>

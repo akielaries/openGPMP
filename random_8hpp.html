@@ -78,7 +78,8 @@ $(function() {
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">random.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -87,6 +88,7 @@ $(function() {
 <p>Pseudorandom Number Generators.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 </div>
 <p><a href="random_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -102,106 +104,54 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aaa326b4efabdfd8a84effd3d103e8c51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#aaa326b4efabdfd8a84effd3d103e8c51">__16BIT</a>&#160;&#160;&#160;65536                  /** 2^16        */</td></tr>
-<tr class="separator:aaa326b4efabdfd8a84effd3d103e8c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c4543f0f8bf1482eb561daea0e4e91f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a8c4543f0f8bf1482eb561daea0e4e91f">__16BIT_1</a>&#160;&#160;&#160;65535                /** 2^16 - 1    */</td></tr>
-<tr class="separator:a8c4543f0f8bf1482eb561daea0e4e91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa01c2aa7be3ff3a0d013f9e509f93566"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#aa01c2aa7be3ff3a0d013f9e509f93566">__32BIT</a>&#160;&#160;&#160;4294967296             /** 2^32        */</td></tr>
-<tr class="separator:aa01c2aa7be3ff3a0d013f9e509f93566"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ef0e997da61852a686f4bfe380e0f71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>&#160;&#160;&#160;4294967295           /** 2^32 - 1    */</td></tr>
-<tr class="separator:a2ef0e997da61852a686f4bfe380e0f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75e78476facb8b3d67ceb192dd0843d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a75e78476facb8b3d67ceb192dd0843d8">__64BIT</a>&#160;&#160;&#160;18446744073709600000   /** 2^64        */</td></tr>
-<tr class="separator:a75e78476facb8b3d67ceb192dd0843d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62ccd8be8ddb4f823775dc0bb92343a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>&#160;&#160;&#160;18446744073709551615 /** 2^64 - 1    */</td></tr>
-<tr class="separator:a62ccd8be8ddb4f823775dc0bb92343a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27eb8c80849d866c7fc73ab8b4622938"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a27eb8c80849d866c7fc73ab8b4622938">__8MAX</a>&#160;&#160;&#160;127                          /** 8 bit signed max    */</td></tr>
+<tr class="separator:a27eb8c80849d866c7fc73ab8b4622938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa3ff6722b1a572a9f32876be53f5d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#affa3ff6722b1a572a9f32876be53f5d6">__U8MAX</a>&#160;&#160;&#160;255                         /** 8 bit unsigned max */</td></tr>
+<tr class="separator:affa3ff6722b1a572a9f32876be53f5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2136a4883d31b01dc2d278d9dddef110"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a2136a4883d31b01dc2d278d9dddef110">__16MAX</a>&#160;&#160;&#160;32767                       /** 16 bit signed max   */</td></tr>
+<tr class="separator:a2136a4883d31b01dc2d278d9dddef110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfac244dfec934590ba7103cbae1a6fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#acfac244dfec934590ba7103cbae1a6fa">__U16MAX</a>&#160;&#160;&#160;65535                      /** 16 bit unsigned max */</td></tr>
+<tr class="separator:acfac244dfec934590ba7103cbae1a6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6114f3efb4d0491edb68c1968be46f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#ad6114f3efb4d0491edb68c1968be46f2">__32MAX</a>&#160;&#160;&#160;2147483647L                 /** 32 bit signed max   */</td></tr>
+<tr class="separator:ad6114f3efb4d0491edb68c1968be46f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab188293ce2ef302477537d02e0329ff7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#ab188293ce2ef302477537d02e0329ff7">__U32MAX</a>&#160;&#160;&#160;4294967295U                /** 32 bit unsigned max */</td></tr>
+<tr class="separator:ab188293ce2ef302477537d02e0329ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5ff809d8d560f3219d80507ed5768f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a4f5ff809d8d560f3219d80507ed5768f">__64MAX</a>&#160;&#160;&#160;9223372036854775807LL       /** 64 bit signed max   */</td></tr>
+<tr class="separator:a4f5ff809d8d560f3219d80507ed5768f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e4613c575b5a230242dc2b1f8e3c37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#a06e4613c575b5a230242dc2b1f8e3c37">__U64MAX</a>&#160;&#160;&#160;18446744073709551615ULL    /** 64 bit unsigned max */</td></tr>
+<tr class="separator:a06e4613c575b5a230242dc2b1f8e3c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ada44469bf3b8992afab596e348be771c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">gpmp::core::rndm::LCG</a> (uint32_t lower=0, uint32_t upper=<a class="el" href="random_8hpp.html#a2ef0e997da61852a686f4bfe380e0f71">__32BIT_1</a>)</td></tr>
-<tr class="memdesc:ada44469bf3b8992afab596e348be771c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator m = modulus : 32-bits a = multiplier : 1664525 (from Knuth) c = increment : 1013904223 (from Knuth)  <a href="namespacegpmp_1_1core_1_1rndm.html#ada44469bf3b8992afab596e348be771c">More...</a><br /></td></tr>
-<tr class="separator:ada44469bf3b8992afab596e348be771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a877ba1281f401e554032278eea7fa9de"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">gpmp::core::rndm::LCGl</a> (uint64_t lower=0, uint64_t upper=<a class="el" href="random_8hpp.html#a62ccd8be8ddb4f823775dc0bb92343a5">__64BIT_1</a>)</td></tr>
-<tr class="memdesc:a877ba1281f401e554032278eea7fa9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator (64-bit) m = modulus : 64-bits a = multiplier : 6364136223846793005 (from Knuth) c = increment : 1442695040888963407 (from Knuth)  <a href="namespacegpmp_1_1core_1_1rndm.html#a877ba1281f401e554032278eea7fa9de">More...</a><br /></td></tr>
-<tr class="separator:a877ba1281f401e554032278eea7fa9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98486c848d43a2c597d224082a302e25"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">gpmp::core::rndm::LCG</a> (uint32_t lower=0, uint32_t upper=std::numeric_limits&lt; uint32_t &gt;::max(), uint32_t seed=0)</td></tr>
+<tr class="memdesc:a98486c848d43a2c597d224082a302e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator.  <a href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">More...</a><br /></td></tr>
+<tr class="separator:a98486c848d43a2c597d224082a302e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f16b119543b20aeb33030734cb9e8e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">gpmp::core::rndm::LCG_64</a> (uint64_t lower=0, uint64_t upper=std::numeric_limits&lt; uint64_t &gt;::max(), uint64_t seed=0)</td></tr>
+<tr class="memdesc:a15f16b119543b20aeb33030734cb9e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear Congruential Generator (64-bit)  <a href="namespacegpmp_1_1core_1_1rndm.html#a15f16b119543b20aeb33030734cb9e8e">More...</a><br /></td></tr>
+<tr class="separator:a15f16b119543b20aeb33030734cb9e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abd726611edac3ec85ca4ad43d28f31ec"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = 0x4d595df4d0f33173</td></tr>
+<tr class="separator:abd726611edac3ec85ca4ad43d28f31ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2351de0401ff3fe5a55b22f66d7e7c6"><td class="memItemLeft" align="right" valign="top">static uint64_t const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a> = 6364136223846793005<a class="el" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a></td></tr>
+<tr class="separator:ab2351de0401ff3fe5a55b22f66d7e7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb43f9dcbc46d300e6a2bb9326b082d1"><td class="memItemLeft" align="right" valign="top">static uint64_t const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a> = 1442695040888963407<a class="el" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a></td></tr>
+<tr class="separator:adb43f9dcbc46d300e6a2bb9326b082d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Pseudorandom Number Generators. </p>
 
 <p class="definition">Definition in file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aaa326b4efabdfd8a84effd3d103e8c51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa326b4efabdfd8a84effd3d103e8c51">&#9670;&nbsp;</a></span>__16BIT</h2>
+<a id="a2136a4883d31b01dc2d278d9dddef110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2136a4883d31b01dc2d278d9dddef110">&#9670;&nbsp;</a></span>__16MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __16BIT&#160;&#160;&#160;65536                  /** 2^16        */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>RNG CONSTANTS,, adopted from glibc </p>
-
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00044">44</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a8c4543f0f8bf1482eb561daea0e4e91f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c4543f0f8bf1482eb561daea0e4e91f">&#9670;&nbsp;</a></span>__16BIT_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __16BIT_1&#160;&#160;&#160;65535                /** 2^16 - 1    */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00045">45</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa01c2aa7be3ff3a0d013f9e509f93566"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa01c2aa7be3ff3a0d013f9e509f93566">&#9670;&nbsp;</a></span>__32BIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __32BIT&#160;&#160;&#160;4294967296             /** 2^32        */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00046">46</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a2ef0e997da61852a686f4bfe380e0f71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ef0e997da61852a686f4bfe380e0f71">&#9670;&nbsp;</a></span>__32BIT_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __32BIT_1&#160;&#160;&#160;4294967295           /** 2^32 - 1    */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00047">47</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a75e78476facb8b3d67ceb192dd0843d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75e78476facb8b3d67ceb192dd0843d8">&#9670;&nbsp;</a></span>__64BIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __64BIT&#160;&#160;&#160;18446744073709600000   /** 2^64        */</td>
+          <td class="memname">#define __16MAX&#160;&#160;&#160;32767                       /** 16 bit signed max   */</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -210,19 +160,195 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a62ccd8be8ddb4f823775dc0bb92343a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62ccd8be8ddb4f823775dc0bb92343a5">&#9670;&nbsp;</a></span>__64BIT_1</h2>
+<a id="ad6114f3efb4d0491edb68c1968be46f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6114f3efb4d0491edb68c1968be46f2">&#9670;&nbsp;</a></span>__32MAX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __64BIT_1&#160;&#160;&#160;18446744073709551615 /** 2^64 - 1    */</td>
+          <td class="memname">#define __32MAX&#160;&#160;&#160;2147483647L                 /** 32 bit signed max   */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00051">51</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4f5ff809d8d560f3219d80507ed5768f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f5ff809d8d560f3219d80507ed5768f">&#9670;&nbsp;</a></span>__64MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __64MAX&#160;&#160;&#160;9223372036854775807LL       /** 64 bit signed max   */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00054">54</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a27eb8c80849d866c7fc73ab8b4622938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27eb8c80849d866c7fc73ab8b4622938">&#9670;&nbsp;</a></span>__8MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __8MAX&#160;&#160;&#160;127                          /** 8 bit signed max    */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>PRNG CONSTANTS </p>
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00045">45</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<a id="acfac244dfec934590ba7103cbae1a6fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfac244dfec934590ba7103cbae1a6fa">&#9670;&nbsp;</a></span>__U16MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __U16MAX&#160;&#160;&#160;65535                      /** 16 bit unsigned max */</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00049">49</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab188293ce2ef302477537d02e0329ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab188293ce2ef302477537d02e0329ff7">&#9670;&nbsp;</a></span>__U32MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __U32MAX&#160;&#160;&#160;4294967295U                /** 32 bit unsigned max */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00052">52</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a06e4613c575b5a230242dc2b1f8e3c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e4613c575b5a230242dc2b1f8e3c37">&#9670;&nbsp;</a></span>__U64MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __U64MAX&#160;&#160;&#160;18446744073709551615ULL    /** 64 bit unsigned max */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00055">55</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<a id="affa3ff6722b1a572a9f32876be53f5d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa3ff6722b1a572a9f32876be53f5d6">&#9670;&nbsp;</a></span>__U8MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __U8MAX&#160;&#160;&#160;255                         /** 8 bit unsigned max */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00046">46</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="adb43f9dcbc46d300e6a2bb9326b082d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb43f9dcbc46d300e6a2bb9326b082d1">&#9670;&nbsp;</a></span>__PCG_INCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t const __PCG_INCR = 1442695040888963407<a class="el" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00063">63</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32()</a>, and <a class="el" href="modules_2nt_2random_8cpp.html#aad61f8e19c7a909ad6d894cd40698e33">pcg32_init()</a>.</p>
+
+</div>
+</div>
+<a id="ab2351de0401ff3fe5a55b22f66d7e7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2351de0401ff3fe5a55b22f66d7e7c6">&#9670;&nbsp;</a></span>__PCG_MULTPLR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t const __PCG_MULTPLR = 6364136223846793005<a class="el" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00062">62</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32()</a>.</p>
+
+</div>
+</div>
+<a id="abd726611edac3ec85ca4ad43d28f31ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd726611edac3ec85ca4ad43d28f31ec">&#9670;&nbsp;</a></span>__PCG_STATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t __PCG_STATE = 0x4d595df4d0f33173</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00061">61</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32()</a>, and <a class="el" href="modules_2nt_2random_8cpp.html#aad61f8e19c7a909ad6d894cd40698e33">pcg32_init()</a>.</p>
 
 </div>
 </div>

@@ -75,6 +75,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">random.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -85,6 +87,115 @@ $(function() {
 <code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="modules_2nt_2random_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a33954ab52d3257a63b683fa66d1dfc3a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modules_2nt_2random_8cpp.html#a33954ab52d3257a63b683fa66d1dfc3a">rotr32</a> (uint32_t x, unsigned r)</td></tr>
+<tr class="separator:a33954ab52d3257a63b683fa66d1dfc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ae4ae88e4b22bcfc8c836dfe16f379"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32</a> (void)</td></tr>
+<tr class="separator:a64ae4ae88e4b22bcfc8c836dfe16f379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad61f8e19c7a909ad6d894cd40698e33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modules_2nt_2random_8cpp.html#aad61f8e19c7a909ad6d894cd40698e33">pcg32_init</a> (uint64_t seed)</td></tr>
+<tr class="separator:aad61f8e19c7a909ad6d894cd40698e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a64ae4ae88e4b22bcfc8c836dfe16f379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ae4ae88e4b22bcfc8c836dfe16f379">&#9670;&nbsp;</a></span>pcg32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t pcg32 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00086">86</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                     {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    uint64_t x = <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">unsigned</span> count = (unsigned)(x &gt;&gt; 59);       <span class="comment">// 59 = 64 - 5</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = x * <a class="code" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a> + <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    x ^= x &gt;&gt; 18;                               <span class="comment">// 18 = (64 - 27)/2</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="modules_2nt_2random_8cpp.html#a33954ab52d3257a63b683fa66d1dfc3a">rotr32</a>((uint32_t)(x &gt;&gt; 27), count);  <span class="comment">// 27 = 32 - 5</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="ttc" id="amodules_2nt_2random_8cpp_html_a33954ab52d3257a63b683fa66d1dfc3a"><div class="ttname"><a href="modules_2nt_2random_8cpp.html#a33954ab52d3257a63b683fa66d1dfc3a">rotr32</a></div><div class="ttdeci">uint32_t rotr32(uint32_t x, unsigned r)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00082">random.cpp:82</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_ab2351de0401ff3fe5a55b22f66d7e7c6"><div class="ttname"><a href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a></div><div class="ttdeci">static uint64_t const __PCG_MULTPLR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00062">random.hpp:62</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_abd726611edac3ec85ca4ad43d28f31ec"><div class="ttname"><a href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a></div><div class="ttdeci">static uint64_t __PCG_STATE</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00061">random.hpp:61</a></div></div>
+<div class="ttc" id="arandom_8hpp_html_adb43f9dcbc46d300e6a2bb9326b082d1"><div class="ttname"><a href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a></div><div class="ttdeci">static uint64_t const __PCG_INCR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00063">random.hpp:63</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>, <a class="el" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a>, <a class="el" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a>, and <a class="el" href="modules_2nt_2random_8cpp.html#a33954ab52d3257a63b683fa66d1dfc3a">rotr32()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="modules_2nt_2random_8cpp.html#aad61f8e19c7a909ad6d894cd40698e33">pcg32_init()</a>.</p>
+
+</div>
+</div>
+<a id="aad61f8e19c7a909ad6d894cd40698e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad61f8e19c7a909ad6d894cd40698e33">&#9670;&nbsp;</a></span>pcg32_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pcg32_init </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>seed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00095">95</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                               {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = seed + <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    (void)<a class="code" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="ttc" id="amodules_2nt_2random_8cpp_html_a64ae4ae88e4b22bcfc8c836dfe16f379"><div class="ttname"><a href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32</a></div><div class="ttdeci">uint32_t pcg32(void)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00086">random.cpp:86</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>, <a class="el" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a>, and <a class="el" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32()</a>.</p>
+
+</div>
+</div>
+<a id="a33954ab52d3257a63b683fa66d1dfc3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33954ab52d3257a63b683fa66d1dfc3a">&#9670;&nbsp;</a></span>rotr32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t rotr32 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00082">82</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> x &gt;&gt; r | x &lt;&lt; (-r &amp; 31);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="modules_2nt_2random_8cpp.html#a64ae4ae88e4b22bcfc8c836dfe16f379">pcg32()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
