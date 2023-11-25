@@ -82,22 +82,32 @@ $(function() {
 <a href="samples_2cpp_2random_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/random.hpp&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    5</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// generates a random 32 bit unsigned integer using a linear</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// congruential generator (LCG)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    uint32_t res = <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">gpmp::core::rndm::LCG</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::cout &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    6</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// generates a random 32 bit unsigned integer using a linear</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// congruential generator (LCG)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html">gpmp::core::rndm::LCG</a> gen(1, 6364136223846793005ULL, 1442695040888963407ULL);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// generates a random 64 bit unsigned integer using a linear</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// congruential generator (LCG)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    uint64_t res2 = gpmp::core::rndm::LCGl();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::cout &lt;&lt; res2 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a98486c848d43a2c597d224082a302e25"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a98486c848d43a2c597d224082a302e25">gpmp::core::rndm::LCG</a></div><div class="ttdeci">uint32_t LCG(uint32_t lower=0, uint32_t upper=std::numeric_limits&lt; uint32_t &gt;::max(), uint32_t seed=0)</div><div class="ttdoc">Linear Congruential Generator.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
-<div class="ttc" id="asamples_2cpp_2random_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2random_8cpp_source.html#l00005">random.cpp:5</a></div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    uint64_t res = gen();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Random value: &quot;</span> &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> std::linear_congruential_engine&lt;uint64_t,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                           6364136223846793005ULL,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                           1442695040888963407ULL,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                           std::numeric_limits&lt;uint64_t&gt;::max()&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        engine;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Get the next random number from the engine</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    uint64_t std_lcg_res = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(engine());</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Random value: &quot;</span> &lt;&lt; std_lcg_res &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html">gpmp::core::rndm::LCG</a></div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00075">random.hpp:75</a></div></div>
+<div class="ttc" id="asamples_2cpp_2random_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="samples_2cpp_2random_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2random_8cpp_source.html#l00006">random.cpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
