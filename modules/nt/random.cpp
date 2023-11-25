@@ -37,37 +37,36 @@
 #include <iostream>
 
 
-// Default constructor
+// dfault constructor
 gpmp::core::rndm::LCG::LCG()
     : state(1), multiplier(6364136223846793005ULL), increment(1442695040888963407ULL) {}
 
-// Constructor
+// constructor
 gpmp::core::rndm::LCG::LCG(uint64_t seed, uint64_t a, uint64_t c) 
     : state(seed), multiplier(a), increment(c) {}
 
-// Function to generate a random number within a specific range
 uint64_t gpmp::core::rndm::LCG::operator()() {
     // Ensure the state is non-negative
-    state = state & ((1ULL << 63) - 1);
+        state &= 0x7FFFFFFFFFFFFFFFULL;
 
-    // Linear Congruential Generator algorithm
-    state = multiplier * state + increment;
+        // Linear Congruential Generator algorithm
+        state = multiplier * state + increment;
 
-    // Overflow handling
-    if (state < increment) {
-        // Overflow occurred, adjust the state
-        state += increment;
-    }
+        // Overflow handling
+        if (state < increment) {
+            // Overflow occurred, adjust the state
+            state += increment;
+        }
 
-    return state;
+        return state;
 }
 
-// Function to set the seed
+// set seed
 void gpmp::core::rndm::LCG::seed(uint64_t new_seed) {
     state = new_seed;
 }
 
-// Functions to retrieve parameters (optional)
+// methods to retrieve parameters (optional)
 uint64_t gpmp::core::rndm::LCG::get_multiplier() const {
     return multiplier;
 }
