@@ -42,10 +42,10 @@
 #define MAX_ROWS 30
 #define SHOW_ROWS 15
 
+#include <iostream>
 #include <string>
 #include <variant>
 #include <vector>
-#include <iostream>
 
 namespace gpmp {
 
@@ -116,14 +116,14 @@ class DataTable {
     }
     void printData() {
         // Print column headers
-        for (const auto& header : headers_) {
+        for (const auto &header : headers_) {
             std::cout << header << "\t";
         }
         std::cout << std::endl;
 
         // Print data rows
-        for (const auto& row : data_) {
-            for (const auto& cell : row) {
+        for (const auto &row : data_) {
+            for (const auto &cell : row) {
                 // Check the type of cell and print accordingly
                 if (std::holds_alternative<int64_t>(cell)) {
                     std::cout << std::get<int64_t>(cell);
@@ -151,10 +151,10 @@ class DataTable {
     //                       std::vector<std::string> columns = {});
 
     TableType csv_read_new(std::string filename,
-                       std::vector<std::string> columns = {});
+                           std::vector<std::string> columns = {});
 
     DataTableStr csv_read(std::string filename,
-            std::vector<std::string> columns);
+                          std::vector<std::string> columns);
 
     /**
      * @brief Write DataTable to a CSV file

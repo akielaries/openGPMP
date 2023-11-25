@@ -1,31 +1,31 @@
 #include "../include/core/datatable.hpp"
 #include "../include/core/utils.hpp"
-#include <iostream>
-#include <vector>
-#include <string>
-#include <cstdint>
-#include <sstream>
-#include <fstream>
 #include <algorithm>
 #include <chrono> // for timing
+#include <cstdint>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 // For mmap:
+#include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
-#include <fcntl.h>
 #include <unistd.h>
 
-void handle_error(const char* msg);
-const char* map_file(const char* fname, size_t& length);
+void handle_error(const char *msg);
+const char *map_file(const char *fname, size_t &length);
 
-//using DataTableStr = std::pair<std::vector<std::string>, std::vector<std::vector<std::string>>>;
+// using DataTableStr = std::pair<std::vector<std::string>,
+// std::vector<std::vector<std::string>>>;
 
+// gpmp::core::DataTableStr csv_read(const char* fname, const
+// std::vector<std::string>& columns);
 
-//gpmp::core::DataTableStr csv_read(const char* fname, const std::vector<std::string>& columns);
-
-int main()
-{
-    const char* file = "../data/1m.csv";
+int main() {
+    const char *file = "../data/1m.csv";
     std::vector<std::string> columns;
     std::vector<std::vector<std::string>> data;
     gpmp::core::DataTable dt;
@@ -36,11 +36,12 @@ int main()
     // Use the efficient CSV reader
     gpmp::core::DataTableStr result = dt.csv_read(file, columns);
 
-
     auto end_time = std::chrono::high_resolution_clock::now(); // End timing
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(
+        end_time - start_time);
 
-    std::cout << "Time to read and store CSV data using efficient method: " << elapsed_time.count() << " ms\n";
+    std::cout << "Time to read and store CSV data using efficient method: "
+              << elapsed_time.count() << " ms\n";
 
     // Access result.columns and result.data as needed
     // result.first is columns, and result.second is data
@@ -50,8 +51,7 @@ int main()
     return 0;
 }
 
-const char* map_file(const char* fname, size_t& length)
-{
+const char *map_file(const char *fname, size_t &length) {
     int fd = open(fname, O_RDONLY);
     if (fd == -1)
         handle_error("open");
@@ -63,15 +63,17 @@ const char* map_file(const char* fname, size_t& length)
 
     length = sb.st_size;
 
-    const char* addr = static_cast<const char*>(mmap(NULL, length, PROT_READ, MAP_PRIVATE, fd, 0u));
+    const char *addr = static_cast<const char *>(
+        mmap(NULL, length, PROT_READ, MAP_PRIVATE, fd, 0u));
     if (addr == MAP_FAILED)
         handle_error("mmap");
 
     // TODO: Close fd at some point in time, call munmap(...)
     return addr;
 }
-gpmp::core::DataTableStr gpmp::core::DataTable::csv_read(
-    std::string filename, std::vector<std::string> columns) {
+gpmp::core::DataTableStr
+gpmp::core::DataTable::csv_read(std::string filename,
+                                std::vector<std::string> columns) {
 
     int fd = open(filename.c_str(), O_RDONLY);
     if (fd == -1) {
@@ -81,7 +83,8 @@ gpmp::core::DataTableStr gpmp::core::DataTable::csv_read(
     }
 
     off_t size = lseek(fd, 0, SEEK_END);
-    char *file_data = static_cast<char*>(mmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0));
+    char *file_data =
+        static_cast<char *>(mmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0));
 
     if (file_data == MAP_FAILED) {
         // Handle memory mapping error
@@ -130,7 +133,8 @@ gpmp::core::DataTableStr gpmp::core::DataTable::csv_read(
 
         while (getline(rowStream, value, ',')) {
             // If column is specified, only read in specified columns
-            if (std::find(columns.begin(), columns.end(),
+            if (std::find(columns.begin(),
+                          columns.end(),
                           header_cols[columnIndex]) != columns.end()) {
                 row.push_back(value);
             }
@@ -154,9 +158,7 @@ gpmp::core::DataTableStr gpmp::core::DataTable::csv_read(
     return std::make_pair(headers_, data_);
 }
 
-void handle_error(const char* msg)
-{
+void handle_error(const char *msg) {
     perror(msg);
     exit(EXIT_FAILURE);
 }
-

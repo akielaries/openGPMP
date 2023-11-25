@@ -47,10 +47,10 @@ TEST(ADD_MTX_SMALL, assert_intel_intrin) {
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
     // define matrix to store expected result in (from std_mtx_add())
-    std::vector<std::vector<int>> expected(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size,
+                                           std::vector<int>(mtx_size));
     // define matrix to store actual result (from mtx_add())
-    std::vector<std::vector<int>> result(mtx_size,
-                                         std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
 
     // initialize random number generator
     std::random_device rd;
@@ -103,8 +103,7 @@ TEST(ADD_MTX_LARGE, assert_intel_intrin) {
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> expected(mtx_size,
                                            std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> result(mtx_size,
-                                         std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
 
     // initialize random number generator
     std::random_device rd;
@@ -161,8 +160,7 @@ TEST(ADD_MATRICES, assert_arm_intrin) {
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> expected(mtx_size,
                                            std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> result(mtx_size,
-                                         std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
 
     // Initialize random number generator
     std::random_device rd;

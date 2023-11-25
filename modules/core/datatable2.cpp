@@ -35,22 +35,22 @@
 #include "../../include/core/utils.hpp"
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
+#include <cstring>
+#include <fcntl.h>
 #include <iomanip>
 #include <iostream>
+#include <mutex>
 #include <regex>
 #include <string>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <thread>
 #include <typeinfo>
+#include <unistd.h>
 #include <unordered_set>
 #include <variant>
 #include <vector>
-#include <sys/mman.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <thread>
-#include <cstring>
-#include <mutex>
-#include <cstdint>
 
 /** Logger class object*/
 static gpmp::core::Logger _log_;
@@ -68,13 +68,12 @@ bool is_double(const std::string &str) {
     return std::regex_match(str, std::regex(R"(-?\d+\.\d+)"));
 }
 
-void handle_error(const char* msg) {
+void handle_error(const char *msg) {
     perror(msg);
     exit(255);
 }
 
-const char* map_file(const char* fname, size_t& length)
-{
+const char *map_file(const char *fname, size_t &length) {
     int fd = open(fname, O_RDONLY);
     if (fd == -1)
         handle_error("open");
@@ -86,7 +85,8 @@ const char* map_file(const char* fname, size_t& length)
 
     length = sb.st_size;
 
-    const char* addr = static_cast<const char*>(mmap(NULL, length, PROT_READ, MAP_PRIVATE, fd, 0u));
+    const char *addr = static_cast<const char *>(
+        mmap(NULL, length, PROT_READ, MAP_PRIVATE, fd, 0u));
     if (addr == MAP_FAILED)
         handle_error("mmap");
 
@@ -97,10 +97,10 @@ const char* map_file(const char* fname, size_t& length)
 // TODO : optimize these methods, CSV reader using threads? loop unrolling?,
 // etc? conversion functions to be quicker,
 gpmp::core::TableType
-gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> columns) {
+gpmp::core::DataTable::csv_read(std::string filename,
+                                std::vector<std::string> columns) {
     std::ifstream file(filename);
-    file.rdbuf()->pubsetbuf(nullptr, 0);  // Disable buffering
-
+    file.rdbuf()->pubsetbuf(nullptr, 0); // Disable buffering
 
     if (!file.is_open()) {
         _log_.log(ERROR, "Unable to open file: " + filename + ".");
@@ -131,7 +131,8 @@ gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> c
 
     // Check if specified columns exist in the header
     for (const auto &column : columns) {
-        if (std::find(header_cols.begin(), header_cols.end(), column) == header_cols.end()) {
+        if (std::find(header_cols.begin(), header_cols.end(), column) ==
+            header_cols.end()) {
             _log_.log(ERROR, "Column: " + column + " not found");
             throw std::runtime_error("Column: " + column + " not found");
         }
@@ -146,9 +147,12 @@ gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> c
         int columnIndex = 0;
 
         while (getline(rowStream, value, ',')) {
-            if (std::find(columns.begin(), columns.end(), header_cols[columnIndex]) != columns.end()) {
+            if (std::find(columns.begin(),
+                          columns.end(),
+                          header_cols[columnIndex]) != columns.end()) {
                 // Check if the value contains exactly 1 decimal point
-                size_t decimalPointCount = std::count(value.begin(), value.end(), '.');
+                size_t decimalPointCount =
+                    std::count(value.begin(), value.end(), '.');
                 if (decimalPointCount == 1) {
                     try {
                         long double double_value = std::stold(value);
@@ -156,7 +160,8 @@ gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> c
                     } catch (const std::invalid_argument &) {
                         row_vector.emplace_back(value);
                     }
-                } else if ((value.find_first_not_of("0123456789-") == std::string::npos) &&
+                } else if ((value.find_first_not_of("0123456789-") ==
+                            std::string::npos) &&
                            (std::count(value.begin(), value.end(), '-') <= 1)) {
                     try {
                         int64_t int_value = std::stoll(value);
@@ -170,7 +175,7 @@ gpmp::core::DataTable::csv_read(std::string filename, std::vector<std::string> c
             }
             columnIndex++;
         }
-        
+
         if (!row_vector.empty()) {
             data.emplace_back(row_vector);
             row_vector.clear();

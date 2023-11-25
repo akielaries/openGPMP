@@ -1,3 +1,4 @@
+# UNIT TESTS
 CXX 		= g++
 CXXFLAGS 	= -std=c++2a -march=native -Wno-unused-result -Wparentheses \
 			  -Wsign-compare -DNDEBUG -g -Wall --coverage -fprofile-arcs \
@@ -48,6 +49,14 @@ coverage: run
 	mv lcov.info ../.coverage
 	cd ../ && gcovr --xml-pretty >> lcov.xml && mv lcov.xml .coverage/
 
+U01_FLAGS	= -Iinclude -Llib -ltestu01 -lprobdist -lmylib -lm
+U01_FILES	= nt/testu01_nt.cpp
+U01_BIN		= openGPMP_U01
+
+TestU01:
+	$(CXX) -g $(U01_FILES) $(NT)/random.cpp -o $(U01_BIN) $(U01_FLAGS)
+
 clean:
-	rm -f $(BIN) *.gc* *.info
+	rm -f $(BIN) $(U01_BIN) *.gc* *.info *.o
+
 
