@@ -113,18 +113,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00059">59</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                         {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    vector&lt;int64_t&gt; large_sample;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 1000; i++) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        large_sample.emplace_back(i);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    KF_CV&lt;int64_t&gt; kF_CV = KF_CV&lt;int64_t&gt;(large_sample, 10, 1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 10; i++) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        REQUIRE(100 == kF_CV.get_test_fold(i).size());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        REQUIRE(900 == kF_CV.get_train_fold(i).size());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00058">58</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                         {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    vector&lt;int64_t&gt; large_sample;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 1000; i++) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        large_sample.emplace_back(i);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    KF_CV&lt;int64_t&gt; kF_CV = KF_CV&lt;int64_t&gt;(large_sample, 10, 1);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 10; i++) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        REQUIRE(100 == kF_CV.get_test_fold(i).size());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        REQUIRE(900 == kF_CV.get_train_fold(i).size());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -144,14 +144,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00042">42</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                         {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;string&gt; small_sample =</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>, <span class="stringliteral">&quot;5&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>, <span class="stringliteral">&quot;7&quot;</span>, <span class="stringliteral">&quot;8&quot;</span>, <span class="stringliteral">&quot;9&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    KF_CV&lt;string&gt; kF_CV = KF_CV&lt;string&gt;(smallSample, 10, 1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    vector&lt;string&gt; test_sample = kF_CV.get_test_fold(0);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    REQUIRE(test_sample[0] == <span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00041">41</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                         {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    vector&lt;string&gt; small_sample =</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>, <span class="stringliteral">&quot;5&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>, <span class="stringliteral">&quot;7&quot;</span>, <span class="stringliteral">&quot;8&quot;</span>, <span class="stringliteral">&quot;9&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    KF_CV&lt;string&gt; kF_CV = KF_CV&lt;string&gt;(smallSample, 10, 1);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    vector&lt;string&gt; test_sample = kF_CV.get_test_fold(0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    REQUIRE(test_sample[0] == <span class="stringliteral">&quot;2&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -171,15 +171,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00050">50</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    vector&lt;string&gt; small_sample =</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>, <span class="stringliteral">&quot;5&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>, <span class="stringliteral">&quot;7&quot;</span>, <span class="stringliteral">&quot;8&quot;</span>, <span class="stringliteral">&quot;9&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    KF_CV&lt;string&gt; kF_CV = KF_CV&lt;string&gt;(small_sample, 5, 1);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    vector&lt;string&gt; test_sample = kF_CV.get_test_fold(0);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    REQUIRE(test_sample[0] == <span class="stringliteral">&quot;2&quot;</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    REQUIRE(test_sample[1] == <span class="stringliteral">&quot;7&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00049">49</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    vector&lt;string&gt; small_sample =</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>, <span class="stringliteral">&quot;5&quot;</span>, <span class="stringliteral">&quot;6&quot;</span>, <span class="stringliteral">&quot;7&quot;</span>, <span class="stringliteral">&quot;8&quot;</span>, <span class="stringliteral">&quot;9&quot;</span>, <span class="stringliteral">&quot;10&quot;</span>};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    KF_CV&lt;string&gt; kF_CV = KF_CV&lt;string&gt;(small_sample, 5, 1);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    vector&lt;string&gt; test_sample = kF_CV.get_test_fold(0);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    REQUIRE(test_sample[0] == <span class="stringliteral">&quot;2&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    REQUIRE(test_sample[1] == <span class="stringliteral">&quot;7&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -199,18 +199,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00071">71</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                       {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    vector&lt;int64_t&gt; large_sample;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 1000; i++) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        large_sample.emplace_back(i);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    KF_CV&lt;int64_t&gt; kF_CV = KF_CV&lt;int64_t&gt;(large_sample, 5, 1);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 5; i++) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        REQUIRE(200 == kF_CV.get_test_fold(i).size());</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        REQUIRE(800 == kF_CV.get_train_fold(i).size());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="k-foldCV_8cpp_source.html#l00070">70</a> of file <a class="el" href="k-foldCV_8cpp_source.html">k-foldCV.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    vector&lt;int64_t&gt; large_sample;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 1000; i++) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        large_sample.emplace_back(i);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    KF_CV&lt;int64_t&gt; kF_CV = KF_CV&lt;int64_t&gt;(large_sample, 5, 1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; 5; i++) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        REQUIRE(200 == kF_CV.get_test_fold(i).size());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        REQUIRE(800 == kF_CV.get_train_fold(i).size());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

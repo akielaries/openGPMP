@@ -85,6 +85,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Linear Congruential Generator.  
+ <a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="random_8hpp_source.html">random.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -119,8 +122,18 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af6db7b8d11f43e58921b126eec9f0748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00075">75</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+<div class="textblock"><p>Linear Congruential Generator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>= modulus : 32-bit int max </td></tr>
+    <tr><td class="paramname">a</td><td>= multiplier : 6364136223846793005 (from Knuth MMIX) </td></tr>
+    <tr><td class="paramname">c</td><td>= increment : 1442695040888963407 (from Knuth MMIX) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>generated number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00082">82</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6efd7e4f60bb12034f1b87af33d2a3a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6efd7e4f60bb12034f1b87af33d2a3a5">&#9670;&nbsp;</a></span>result_type</h2>
@@ -134,7 +147,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00077">77</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00084">84</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
 
 </div>
 </div>
@@ -154,11 +167,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00041">41</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    : <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>(1), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a>(6364136223846793005ULL), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>(1442695040888963407ULL) {}</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a215af564f22c446e4b7fc6efdd368cd0"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">gpmp::core::rndm::LCG::state</a></div><div class="ttdeci">uint64_t state</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00097">random.hpp:97</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a82e8aebaa1f979d23ef97643da74e677"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">gpmp::core::rndm::LCG::multiplier</a></div><div class="ttdeci">uint64_t multiplier</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00098">random.hpp:98</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_af6db7b8d11f43e58921b126eec9f0748"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">gpmp::core::rndm::LCG::increment</a></div><div class="ttdeci">uint64_t increment</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00099">random.hpp:99</a></div></div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00039">39</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    : <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>(1), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a>(6364136223846793005ULL),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>(1442695040888963407ULL) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a215af564f22c446e4b7fc6efdd368cd0"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">gpmp::core::rndm::LCG::state</a></div><div class="ttdeci">uint64_t state</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00106">random.hpp:106</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a82e8aebaa1f979d23ef97643da74e677"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">gpmp::core::rndm::LCG::multiplier</a></div><div class="ttdeci">uint64_t multiplier</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00107">random.hpp:107</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_af6db7b8d11f43e58921b126eec9f0748"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">gpmp::core::rndm::LCG::increment</a></div><div class="ttdeci">uint64_t increment</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00108">random.hpp:108</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,8 +210,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00045">45</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    : <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>(<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">seed</a>), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a>(a), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>(c) {}</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a6558f881d3d152bcdeef28c812226b8f"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">gpmp::core::rndm::LCG::seed</a></div><div class="ttdeci">void seed(uint64_t new_seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00065">random.cpp:65</a></div></div>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    : <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>(<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">seed</a>), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a>(a), <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>(c) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a6558f881d3d152bcdeef28c812226b8f"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">gpmp::core::rndm::LCG::seed</a></div><div class="ttdeci">void seed(uint64_t new_seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00066">random.cpp:66</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,10 +232,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00074">74</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                              {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00075">75</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                              {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -238,10 +254,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00070">70</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                               {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00071">71</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                               {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,10 +276,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00078">78</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                         {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00079">79</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                         {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -282,22 +298,22 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00048">48</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                     {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Ensure the state is non-negative</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> &amp;= 0x7FFFFFFFFFFFFFFFULL;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> = <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a> * <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> + <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// Overflow handling</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> &lt; <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// Overflow occurred, adjust the state</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> += <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00049">49</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                     {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Ensure the state is non-negative</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> &amp;= 0x7FFFFFFFFFFFFFFFULL;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> = <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a82e8aebaa1f979d23ef97643da74e677">multiplier</a> * <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> + <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Overflow handling</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> &lt; <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// Overflow occurred, adjust the state</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> += <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748">increment</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,10 +333,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00065">65</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                            {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> = new_seed;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2nt_2random_8cpp_source.html#l00066">66</a> of file <a class="el" href="modules_2nt_2random_8cpp_source.html">random.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                            {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0">state</a> = new_seed;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -345,7 +361,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00099">99</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00108">108</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
 
 </div>
 </div>
@@ -369,7 +385,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00098">98</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00107">107</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +409,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00097">97</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="random_8hpp_source.html#l00106">106</a> of file <a class="el" href="random_8hpp_source.html">random.hpp</a>.</p>
 
 </div>
 </div>

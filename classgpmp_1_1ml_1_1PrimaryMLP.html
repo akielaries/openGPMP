@@ -162,7 +162,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Primary Multi-Layer Perceptron Class. </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00086">86</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00087">87</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1b10acbaf7c12edc10086b946c9f34ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b10acbaf7c12edc10086b946c9f34ce">&#9670;&nbsp;</a></span>PrimaryMLP()</h2>
@@ -190,72 +190,72 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00063">63</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    : <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a>(0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>(0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a21c6d58c3d353f509b6fac5cae6e9929">_MSE</a>(0.0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#ae7760a484856f4c0e17901f7e75a48e6">_MAE</a>(0.0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a89e4f642f09e853ebe313ece804af871">_Eta</a>(0.25),</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9d86e2939b0d49b46c94191f1fd705e3">_Alpha</a>(0.9), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a61e09c137714a21991f245e76dd35eca">_Gain</a>(1.0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a6db100f15541c1e6a62ed8581d81a626">_AvgTestError</a>(0.0) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    int64_t _LAYER, _NEURON;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// create network layers</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a> = nl;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a> = <span class="keyword">new</span> <a class="code" href="structgpmp_1_1ml_1_1layer.html">layer</a>[nl];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// intialize the data of the created network layers</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (_LAYER = 0; _LAYER &lt; nl; _LAYER++) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// intialize values to neuron struct information</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">num_neurons</a> = npl[_LAYER];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a> = <span class="keyword">new</span> <a class="code" href="structgpmp_1_1ml_1_1neuron.html">neuron</a>[npl[_LAYER]];</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// intialize date of the neurons of the created network layers</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> (_NEURON = 0; _NEURON &lt; npl[_LAYER]; _NEURON++) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// initialize exit value</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a">sortir</a> = 1.0;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">// save the error</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d">err</a> = 0.0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// check if there is at least 1 layer</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (_LAYER &gt; 0) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">/* initialize weight, last weight, and saved weight</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                 * values to _LAYER - 1</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">wt</a> =</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">wt_last</a> =</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">wt_saved</a> =</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// otherwise</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="comment">/*</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">                 * initialize weight, last weight, and saved weight</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">                 * to NULL</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">                 */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">wt</a> = NULL;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">wt_last</a> = NULL;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">wt_saved</a> = NULL;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a21c6d58c3d353f509b6fac5cae6e9929"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a21c6d58c3d353f509b6fac5cae6e9929">gpmp::ml::PrimaryMLP::_MSE</a></div><div class="ttdeci">long double _MSE</div><div class="ttdoc">Mean Squared Error.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00099">mlp_net.hpp:99</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a59895730c7db496a4727c379aa37ed05"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">gpmp::ml::PrimaryMLP::num_layers</a></div><div class="ttdeci">int64_t num_layers</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00094">mlp_net.hpp:94</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a61e09c137714a21991f245e76dd35eca"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a61e09c137714a21991f245e76dd35eca">gpmp::ml::PrimaryMLP::_Gain</a></div><div class="ttdeci">long double _Gain</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00129">mlp_net.hpp:129</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a6db100f15541c1e6a62ed8581d81a626"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a6db100f15541c1e6a62ed8581d81a626">gpmp::ml::PrimaryMLP::_AvgTestError</a></div><div class="ttdeci">long double _AvgTestError</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00130">mlp_net.hpp:130</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a89e4f642f09e853ebe313ece804af871"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a89e4f642f09e853ebe313ece804af871">gpmp::ml::PrimaryMLP::_Eta</a></div><div class="ttdeci">long double _Eta</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00127">mlp_net.hpp:127</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a9276cf8ddc90b7fed199465e083ad270"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">gpmp::ml::PrimaryMLP::layer_ptr</a></div><div class="ttdeci">layer * layer_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00095">mlp_net.hpp:95</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a9d86e2939b0d49b46c94191f1fd705e3"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9d86e2939b0d49b46c94191f1fd705e3">gpmp::ml::PrimaryMLP::_Alpha</a></div><div class="ttdeci">long double _Alpha</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00128">mlp_net.hpp:128</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_ae7760a484856f4c0e17901f7e75a48e6"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#ae7760a484856f4c0e17901f7e75a48e6">gpmp::ml::PrimaryMLP::_MAE</a></div><div class="ttdeci">long double _MAE</div><div class="ttdoc">Mean Absolute Error.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00103">mlp_net.hpp:103</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1layer_html"><div class="ttname"><a href="structgpmp_1_1ml_1_1layer.html">gpmp::ml::layer</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00078">mlp_net.hpp:78</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1layer_html_a4c92ac359ce9d735f69598772353731c"><div class="ttname"><a href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">gpmp::ml::layer::num_neurons</a></div><div class="ttdeci">int64_t num_neurons</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00079">mlp_net.hpp:79</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1layer_html_a57dbd7cf1d0a5434afe5ac6dfc2ef8af"><div class="ttname"><a href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">gpmp::ml::layer::neuron_ptr</a></div><div class="ttdeci">neuron * neuron_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00080">mlp_net.hpp:80</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html">gpmp::ml::neuron</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00065">mlp_net.hpp:65</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a431e668508e0628f1e1abd64acd9f41d"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d">gpmp::ml::neuron::err</a></div><div class="ttdeci">long double err</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00069">mlp_net.hpp:69</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a56c04a5887378cf890eb02ffb7e4e037"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">gpmp::ml::neuron::wt_saved</a></div><div class="ttdeci">long double * wt_saved</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00075">mlp_net.hpp:75</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a61be1520608560dbf74587b4fa356323"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">gpmp::ml::neuron::wt</a></div><div class="ttdeci">long double * wt</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00071">mlp_net.hpp:71</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a94c606842015d48ae8afc8f402eaa81a"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a">gpmp::ml::neuron::sortir</a></div><div class="ttdeci">long double sortir</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00067">mlp_net.hpp:67</a></div></div>
-<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_aacd6adda08ff3d274b90ce36d5f81287"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">gpmp::ml::neuron::wt_last</a></div><div class="ttdeci">long double * wt_last</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00073">mlp_net.hpp:73</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00064">64</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    : <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a>(0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>(0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a21c6d58c3d353f509b6fac5cae6e9929">_MSE</a>(0.0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#ae7760a484856f4c0e17901f7e75a48e6">_MAE</a>(0.0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a89e4f642f09e853ebe313ece804af871">_Eta</a>(0.25),</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9d86e2939b0d49b46c94191f1fd705e3">_Alpha</a>(0.9), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a61e09c137714a21991f245e76dd35eca">_Gain</a>(1.0), <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a6db100f15541c1e6a62ed8581d81a626">_AvgTestError</a>(0.0) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    int64_t _LAYER, _NEURON;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// create network layers</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a> = nl;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a> = <span class="keyword">new</span> <a class="code" href="structgpmp_1_1ml_1_1layer.html">layer</a>[nl];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// intialize the data of the created network layers</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (_LAYER = 0; _LAYER &lt; nl; _LAYER++) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// intialize values to neuron struct information</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">num_neurons</a> = npl[_LAYER];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a> = <span class="keyword">new</span> <a class="code" href="structgpmp_1_1ml_1_1neuron.html">neuron</a>[npl[_LAYER]];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// intialize date of the neurons of the created network layers</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">for</span> (_NEURON = 0; _NEURON &lt; npl[_LAYER]; _NEURON++) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// initialize exit value</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a">sortir</a> = 1.0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// save the error</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d">err</a> = 0.0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// check if there is at least 1 layer</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (_LAYER &gt; 0) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">/* initialize weight, last weight, and saved weight</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">                 * values to _LAYER - 1</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">                 */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">wt</a> =</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">wt_last</a> =</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">wt_saved</a> =</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <span class="keyword">new</span> <span class="keywordtype">long</span> <span class="keywordtype">double</span>[npl[_LAYER - 1]];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">// otherwise</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="comment">/*</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">                 * initialize weight, last weight, and saved weight</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">                 * to NULL</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">                 */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">wt</a> = NULL;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">wt_last</a> = NULL;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">wt_saved</a> = NULL;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a21c6d58c3d353f509b6fac5cae6e9929"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a21c6d58c3d353f509b6fac5cae6e9929">gpmp::ml::PrimaryMLP::_MSE</a></div><div class="ttdeci">long double _MSE</div><div class="ttdoc">Mean Squared Error.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00100">mlp_net.hpp:100</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a59895730c7db496a4727c379aa37ed05"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">gpmp::ml::PrimaryMLP::num_layers</a></div><div class="ttdeci">int64_t num_layers</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00095">mlp_net.hpp:95</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a61e09c137714a21991f245e76dd35eca"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a61e09c137714a21991f245e76dd35eca">gpmp::ml::PrimaryMLP::_Gain</a></div><div class="ttdeci">long double _Gain</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00130">mlp_net.hpp:130</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a6db100f15541c1e6a62ed8581d81a626"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a6db100f15541c1e6a62ed8581d81a626">gpmp::ml::PrimaryMLP::_AvgTestError</a></div><div class="ttdeci">long double _AvgTestError</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00131">mlp_net.hpp:131</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a89e4f642f09e853ebe313ece804af871"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a89e4f642f09e853ebe313ece804af871">gpmp::ml::PrimaryMLP::_Eta</a></div><div class="ttdeci">long double _Eta</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00128">mlp_net.hpp:128</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a9276cf8ddc90b7fed199465e083ad270"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">gpmp::ml::PrimaryMLP::layer_ptr</a></div><div class="ttdeci">layer * layer_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00096">mlp_net.hpp:96</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_a9d86e2939b0d49b46c94191f1fd705e3"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9d86e2939b0d49b46c94191f1fd705e3">gpmp::ml::PrimaryMLP::_Alpha</a></div><div class="ttdeci">long double _Alpha</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00129">mlp_net.hpp:129</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1PrimaryMLP_html_ae7760a484856f4c0e17901f7e75a48e6"><div class="ttname"><a href="classgpmp_1_1ml_1_1PrimaryMLP.html#ae7760a484856f4c0e17901f7e75a48e6">gpmp::ml::PrimaryMLP::_MAE</a></div><div class="ttdeci">long double _MAE</div><div class="ttdoc">Mean Absolute Error.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00104">mlp_net.hpp:104</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1layer_html"><div class="ttname"><a href="structgpmp_1_1ml_1_1layer.html">gpmp::ml::layer</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00079">mlp_net.hpp:79</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1layer_html_a4c92ac359ce9d735f69598772353731c"><div class="ttname"><a href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">gpmp::ml::layer::num_neurons</a></div><div class="ttdeci">int64_t num_neurons</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00080">mlp_net.hpp:80</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1layer_html_a57dbd7cf1d0a5434afe5ac6dfc2ef8af"><div class="ttname"><a href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">gpmp::ml::layer::neuron_ptr</a></div><div class="ttdeci">neuron * neuron_ptr</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00081">mlp_net.hpp:81</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html">gpmp::ml::neuron</a></div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00066">mlp_net.hpp:66</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a431e668508e0628f1e1abd64acd9f41d"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d">gpmp::ml::neuron::err</a></div><div class="ttdeci">long double err</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00070">mlp_net.hpp:70</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a56c04a5887378cf890eb02ffb7e4e037"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">gpmp::ml::neuron::wt_saved</a></div><div class="ttdeci">long double * wt_saved</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00076">mlp_net.hpp:76</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a61be1520608560dbf74587b4fa356323"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">gpmp::ml::neuron::wt</a></div><div class="ttdeci">long double * wt</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00072">mlp_net.hpp:72</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_a94c606842015d48ae8afc8f402eaa81a"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a">gpmp::ml::neuron::sortir</a></div><div class="ttdeci">long double sortir</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00068">mlp_net.hpp:68</a></div></div>
+<div class="ttc" id="astructgpmp_1_1ml_1_1neuron_html_aacd6adda08ff3d274b90ce36d5f81287"><div class="ttname"><a href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">gpmp::ml::neuron::wt_last</a></div><div class="ttdeci">long double * wt_last</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00074">mlp_net.hpp:74</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="structgpmp_1_1ml_1_1neuron.html#a431e668508e0628f1e1abd64acd9f41d">gpmp::ml::neuron::err</a>, <a class="el" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>, <a class="el" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">gpmp::ml::layer::neuron_ptr</a>, <a class="el" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a>, <a class="el" href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">gpmp::ml::layer::num_neurons</a>, <a class="el" href="structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a">gpmp::ml::neuron::sortir</a>, <a class="el" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">gpmp::ml::neuron::wt</a>, <a class="el" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">gpmp::ml::neuron::wt_last</a>, and <a class="el" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">gpmp::ml::neuron::wt_saved</a>.</p>
 
@@ -276,33 +276,33 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00114">114</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                              {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    int64_t _LAYER, _NEURON;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// TODO : thread the loops dealing with rudimentary computations</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (_LAYER = 0; _LAYER &lt; <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a>; _LAYER++) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">for</span> (_NEURON = 0; _NEURON &lt; <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">num_neurons</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                 _NEURON++) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr[_NEURON].wt) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">wt</a>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr[_NEURON].wt_last) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">wt_last</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr[_NEURON].wt_saved) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">wt_saved</a>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00115">115</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                              {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    int64_t _LAYER, _NEURON;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// TODO : thread the loops dealing with rudimentary computations</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">for</span> (_LAYER = 0; _LAYER &lt; <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05">num_layers</a>; _LAYER++) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">for</span> (_NEURON = 0; _NEURON &lt; <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c">num_neurons</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                 _NEURON++) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr[_NEURON].wt) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a61be1520608560dbf74587b4fa356323">wt</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr[_NEURON].wt_last) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#aacd6adda08ff3d274b90ce36d5f81287">wt_last</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].neuron_ptr[_NEURON].wt_saved) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>[_NEURON].<a class="code" href="structgpmp_1_1ml_1_1neuron.html#a56c04a5887378cf890eb02ffb7e4e037">wt_saved</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>[_LAYER].<a class="code" href="structgpmp_1_1ml_1_1layer.html#a57dbd7cf1d0a5434afe5ac6dfc2ef8af">neuron_ptr</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">delete</span>[] <a class="code" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270">layer_ptr</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -449,11 +449,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00047">47</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    srand(4711);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// srand((uint64_t)time(NULL));</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00048">48</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                 {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    srand(4711);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// srand((uint64_t)time(NULL));</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -491,10 +491,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00053">53</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                          {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> rand() % (hi - low + 1) + low;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00054">54</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                          {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> rand() % (hi - low + 1) + low;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,10 +532,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00058">58</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">long</span> <span class="keywordtype">double</span>)rand() / RAND_MAX) * (hi - low) + low;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mlp__network_8cpp_source.html#l00059">59</a> of file <a class="el" href="mlp__network_8cpp_source.html">mlp_network.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">long</span> <span class="keywordtype">double</span>)rand() / RAND_MAX) * (hi - low) + low;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -790,7 +790,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00128">128</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00129">129</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 </div>
 </div>
@@ -806,7 +806,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00130">130</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00131">131</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 </div>
 </div>
@@ -822,7 +822,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00127">127</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00128">128</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 </div>
 </div>
@@ -838,7 +838,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00129">129</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00130">130</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 </div>
 </div>
@@ -864,7 +864,7 @@ Private Attributes</h2></td></tr>
 
 <p>Mean Absolute Error. </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00103">103</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00104">104</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 </div>
 </div>
@@ -890,7 +890,7 @@ Private Attributes</h2></td></tr>
 
 <p>Mean Squared Error. </p>
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00099">99</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00100">100</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 </div>
 </div>
@@ -914,7 +914,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00095">95</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00096">96</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a1b10acbaf7c12edc10086b946c9f34ce">PrimaryMLP()</a>.</p>
 
@@ -940,7 +940,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00094">94</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00095">95</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1PrimaryMLP.html#a1b10acbaf7c12edc10086b946c9f34ce">PrimaryMLP()</a>.</p>
 

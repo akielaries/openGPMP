@@ -100,7 +100,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mlp_8cpp-example.html#_a1">mlp.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00054">54</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00053">53</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a84e47e709ab39c08fd00351221707065"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84e47e709ab39c08fd00351221707065">&#9670;&nbsp;</a></span>init_SecondaryMLP()</h2>
@@ -157,19 +157,19 @@ Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mlp_8cpp-example.html#a2">mlp.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00072">72</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                     {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        std::vector&lt;size_t&gt; layer_units;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        layer_units.push_back(inputs);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; hidden_layers; ++i) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            layer_units.push_back(hidden_layer_units);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        layer_units.push_back(outputs);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        SecondaryMLP&lt;long double&gt; model_SecondaryMLP(layer_units, 0.01);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> model_SecondaryMLP;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00071">71</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                     {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        std::vector&lt;size_t&gt; layer_units;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        layer_units.push_back(inputs);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; hidden_layers; ++i) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            layer_units.push_back(hidden_layer_units);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        layer_units.push_back(outputs);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        SecondaryMLP&lt;long double&gt; model_SecondaryMLP(layer_units, 0.01);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> model_SecondaryMLP;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="mlp_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -262,12 +262,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mlp_8cpp-example.html#a3">mlp.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00092">92</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                      {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::fstream input(data_file.c_str());</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="trainers_8hpp_source.html#l00091">91</a> of file <a class="el" href="trainers_8hpp_source.html">trainers.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                      {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::fstream input(data_file.c_str());</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="mlp_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
