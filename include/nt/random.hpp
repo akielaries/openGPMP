@@ -1,12 +1,12 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
  *
@@ -38,15 +38,30 @@
 #ifndef RANDOM_HPP
 #define RANDOM_HPP
 
+#include <chrono>
 #include <cstdint>
 
-/** RNG CONSTANTS,, adopted from glibc */
-#define __16BIT 65536                  /** 2^16        */
-#define __16BIT_1 65535                /** 2^16 - 1    */
-#define __32BIT 4294967296             /** 2^32        */
-#define __32BIT_1 4294967295           /** 2^32 - 1    */
-#define __64BIT 18446744073709600000   /** 2^64        */
-#define __64BIT_1 18446744073709551615 /** 2^64 - 1    */
+/** PRNG CONSTANTS */
+#define __8MAX 127  /** 8 bit signed max    */
+#define __U8MAX 255 /** 8 bit unsigned max */
+
+#define __16MAX 32767  /** 16 bit signed max   */
+#define __U16MAX 65535 /** 16 bit unsigned max */
+
+#define __32MAX 2147483647L  /** 32 bit signed max   */
+#define __U32MAX 4294967295U /** 32 bit unsigned max */
+
+#define __64MAX 9223372036854775807LL    /** 64 bit signed max   */
+#define __U64MAX 18446744073709551615ULL /** 64 bit unsigned max */
+
+/*#define __PCG_STATE 0x4d595df4d0f33173
+#define __PCG_MULTPLR 6364136223846793005u
+#define __PCG_INCR 1442695040888963407u
+*/
+static uint64_t __PCG_STATE = 0x4d595df4d0f33173; // Or something seed-dependent
+static uint64_t const __PCG_MULTPLR = 6364136223846793005u;
+static uint64_t const __PCG_INCR =
+    1442695040888963407u; // Or an arbitrary odd constant
 
 namespace gpmp {
 
@@ -56,21 +71,48 @@ namespace core {
  * @class
  */
 namespace rndm {
-/**
- * @brief Linear Congruential Generator
- * m = modulus      : 32-bits
- * a = multiplier   : 1664525 (from Knuth)
- * c = increment    : 1013904223 (from Knuth)
- */
-uint32_t LCG(uint32_t lower = 0, uint32_t upper = __32BIT_1);
 
 /**
- * @brief Linear Congruential Generator (64-bit)
- * m = modulus      : 64-bits
- * a = multiplier   : 6364136223846793005 (from Knuth)
- * c = increment    : 1442695040888963407 (from Knuth)
+ * @brief Linear Congruential Generator
+ * @param m = modulus      : 32-bit int max
+ * @param a = multiplier   : 6364136223846793005 (from Knuth MMIX)
+ * @param c = increment    : 1442695040888963407 (from Knuth MMIX)
+ * @return generated number
  */
-uint64_t LCGl(uint64_t lower = 0, uint64_t upper = __64BIT_1);
+class LCG {
+  public:
+    using result_type = uint64_t;
+
+    // Default constructor
+    LCG();
+
+    // Constructor with parameters similar to std::linear_congruential_engine
+    LCG(uint64_t seed,
+        uint64_t a = 6364136223846793005ULL,
+        uint64_t c = 1442695040888963407ULL);
+
+    // Function to generate a random number within a specific range
+    uint64_t operator()();
+
+    // Function to set the seed
+    void seed(uint64_t new_seed);
+
+    // Functions to retrieve parameters (optional)
+    uint64_t get_multiplier() const;
+    uint64_t get_increment() const;
+    uint64_t get_seed() const;
+
+  private:
+    uint64_t state;      // State of the generator
+    uint64_t multiplier; // Multiplier parameter
+    uint64_t increment;  // Increment parameter
+};
+
+uint32_t rotr32(uint32_t x, unsigned r);
+
+uint32_t pcg32(void);
+
+void pcg32_init(uint64_t seed);
 
 } // namespace rndm
 

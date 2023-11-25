@@ -11,16 +11,20 @@
 [![openGPMP](https://github.com/akielaries/openGPMP/actions/workflows/opengpmp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)
 
 # Overview
-**openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with a primary
-focus on Number Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts. openGPMP 
-aims to provide options for pre-built functions, models, etc. along with modularity for user freedom. Additional 
-acceleration methods are featured for optional use and installation featuring OpenCL GPU acceleration functions 
-written in C and wrapped for C++ and CUDA GPU acceleration. By default, SIMD intrinsics will be used for the 
-supported platforms.
+**openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with no runtime dependencies. 
+The primary focus in Number Theory and Cryptographic algorithms, Linear Algebra, Calculus, Statistics, and Machine/Deep 
+learning concepts. openGPMP aims to serve as a warehouse and one-stop shop for mathematical operations. Additional acceleration 
+methods are featured for optional use and installation featuring OpenCL GPU acceleration functions written in C and wrapped 
+for C++ and CUDA GPU acceleration. By default, SIMD intrinsics will be used for the supported platforms.
 
 Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder for examples 
 on how to use some of openGPMP's functionalities. 
 
+## Dev priority list
+* `DataTable` class specifically for file readers and feeding this data into other 
+methods in the project.
+* Additional build systems.
+* Tackle the rest of the issue list from there.
 
 # Installation
 openGPMP C++ & Python is tested on the following:
@@ -49,8 +53,7 @@ installation.
 * Linux/OSX
 * CMake v3.18+ (build from source for latest version)
 * C++20
-* GCC, G++, Gfortran v12+ (other C, C++, and Fortran compilers are being tested)
-* NASM v2.16+
+* gcc, g++, Gfortran v12+ (other C, C++, and Fortran compilers are being tested)
 
 ```
 # clone repo

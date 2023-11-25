@@ -78,7 +78,7 @@ _______________
 ## New Changes in v0.6.0
 1. Continued changes to Linear Algebra Module + samples
 2. Continued updates to Python API, injecting new C++ source functionalities into the `setup.py` file used in packaging process for PyPI
-	* Install with `pip install pygpmp==0.6.1`
+	* Install with `pip install openmtpk==0.6.1`
 3. Updates to the `gpmp` namespace. Wrapped more classes in the namespace, does not affect Python API
 4. Changes/updates to datatypes to allow for maximum precision while also avoiding potential overflow as well as for conciseness
 	> **Note** Some int and char types will be updated later on to ensure nothing breaks
@@ -111,6 +111,7 @@ _______________
 # v0.5.2
 ## What's Changed 
 > **Note** Do not expect much until _**v1.0.0**_
+New contribution from [@earies](https://github.com/earies)
 
 ### Major Updates to Python PyPI packaging process. 
 * Builds wheels for OSX and Linux platforms (Windows will not be supported)
