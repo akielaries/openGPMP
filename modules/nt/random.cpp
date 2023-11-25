@@ -1,15 +1,14 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
- *
  *
  * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
  *
@@ -36,29 +35,31 @@
 #include <cstdint>
 #include <iostream>
 
-
 // dfault constructor
 gpmp::core::rndm::LCG::LCG()
-    : state(1), multiplier(6364136223846793005ULL), increment(1442695040888963407ULL) {}
+    : state(1), multiplier(6364136223846793005ULL),
+      increment(1442695040888963407ULL) {
+}
 
 // constructor
-gpmp::core::rndm::LCG::LCG(uint64_t seed, uint64_t a, uint64_t c) 
-    : state(seed), multiplier(a), increment(c) {}
+gpmp::core::rndm::LCG::LCG(uint64_t seed, uint64_t a, uint64_t c)
+    : state(seed), multiplier(a), increment(c) {
+}
 
 uint64_t gpmp::core::rndm::LCG::operator()() {
     // Ensure the state is non-negative
-        state &= 0x7FFFFFFFFFFFFFFFULL;
+    state &= 0x7FFFFFFFFFFFFFFFULL;
 
-        // Linear Congruential Generator algorithm
-        state = multiplier * state + increment;
+    // Linear Congruential Generator algorithm
+    state = multiplier * state + increment;
 
-        // Overflow handling
-        if (state < increment) {
-            // Overflow occurred, adjust the state
-            state += increment;
-        }
+    // Overflow handling
+    if (state < increment) {
+        // Overflow occurred, adjust the state
+        state += increment;
+    }
 
-        return state;
+    return state;
 }
 
 // set seed

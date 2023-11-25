@@ -1,15 +1,14 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
- *
  *
  * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
  *
@@ -31,6 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
+
 #include "../../include/core/datatable.hpp"
 #include "../../include/core/utils.hpp"
 #include <algorithm>
@@ -42,6 +42,11 @@
 #include <sstream>
 #include <string>
 #include <vector>
+// for memory mapping files
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 /** Logger class object*/
 static gpmp::core::Logger _log_;
@@ -53,18 +58,31 @@ static gpmp::core::Logger _log_;
 gpmp::core::DataTableStr
 gpmp::core::DataTable::csv_read(std::string filename,
                                 std::vector<std::string> columns) {
-    std::ifstream file(filename);
 
-    if (!file.is_open()) {
-        _log_.log(ERROR, "Unable to open file: " + filename + ".");
+    int fd = open(filename.c_str(), O_RDONLY);
+    if (fd == -1) {
+        // Handle file open error
+        perror("Error opening file");
         exit(EXIT_FAILURE);
     }
 
+    off_t size = lseek(fd, 0, SEEK_END);
+    char *file_data =
+        static_cast<char *>(mmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0));
+
+    if (file_data == MAP_FAILED) {
+        // Handle memory mapping error
+        perror("Error mapping file to memory");
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    std::stringstream file_stream(file_data);
     std::vector<std::vector<std::string>> data;
     std::string line;
 
     // Get the header line and parse the column names
-    getline(file, line);
+    getline(file_stream, line);
     std::stringstream header(line);
     std::vector<std::string> header_cols;
     std::string columnName;
@@ -80,15 +98,18 @@ gpmp::core::DataTable::csv_read(std::string filename,
 
     // Check if specified columns exist in the header
     for (const auto &column : columns) {
-        if (find(header_cols.begin(), header_cols.end(), column) ==
+        if (std::find(header_cols.begin(), header_cols.end(), column) ==
             header_cols.end()) {
-            _log_.log(ERROR, "Column: " + column + " not found");
+            // Handle column not found error
+            perror(("Column: " + column + " not found").c_str());
+            munmap(file_data, size);
+            close(fd);
             exit(EXIT_FAILURE);
         }
     }
 
     // Read in the data rows
-    while (getline(file, line)) {
+    while (getline(file_stream, line)) {
         std::vector<std::string> row;
         std::stringstream rowStream(line);
         std::string value;
@@ -96,26 +117,29 @@ gpmp::core::DataTable::csv_read(std::string filename,
 
         while (getline(rowStream, value, ',')) {
             // If column is specified, only read in specified columns
-            if (find(columns.begin(),
-                     columns.end(),
-                     header_cols[columnIndex]) != columns.end()) {
+            if (std::find(columns.begin(),
+                          columns.end(),
+                          header_cols[columnIndex]) != columns.end()) {
                 row.push_back(value);
             }
 
             columnIndex++;
         }
 
-        if (row.size() > 0) {
+        if (!row.empty()) {
             data.push_back(row);
         }
     }
+
     // populate headers_ class variable
     headers_ = columns;
     // populate data_ class variable
     data_ = data;
 
-    file.close();
-    return make_pair(columns, data);
+    munmap(file_data, size);
+    close(fd);
+
+    return std::make_pair(headers_, data_);
 }
 
 // Extracts date/time information from given column

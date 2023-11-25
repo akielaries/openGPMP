@@ -14,7 +14,9 @@ extern "C" {
 unsigned int LCG_wrapper() {
     // You may want to provide appropriate default values for lower, upper, and
     // seed
-    gpmp::core::rndm::LCG gen(1, 6364136223846793005ULL, 1442695040888963407ULL);
+    gpmp::core::rndm::LCG gen(1,
+                              6364136223846793005ULL,
+                              1442695040888963407ULL);
 
     return gen();
 }

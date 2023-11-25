@@ -6,7 +6,9 @@
 int main() {
     // generates a random 32 bit unsigned integer using a linear
     // congruential generator (LCG)
-    gpmp::core::rndm::LCG gen(1, 6364136223846793005ULL, 1442695040888963407ULL);
+    gpmp::core::rndm::LCG gen(1,
+                              6364136223846793005ULL,
+                              1442695040888963407ULL);
 
     uint64_t res = gen();
 

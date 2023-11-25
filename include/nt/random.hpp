@@ -1,12 +1,12 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
  *
@@ -72,15 +72,24 @@ namespace core {
  */
 namespace rndm {
 
+/**
+ * @brief Linear Congruential Generator
+ * @param m = modulus      : 32-bit int max
+ * @param a = multiplier   : 6364136223846793005 (from Knuth MMIX)
+ * @param c = increment    : 1442695040888963407 (from Knuth MMIX)
+ * @return generated number
+ */
 class LCG {
   public:
     using result_type = uint64_t;
-                
+
     // Default constructor
     LCG();
 
     // Constructor with parameters similar to std::linear_congruential_engine
-    LCG(uint64_t seed, uint64_t a = 6364136223846793005ULL, uint64_t c = 1442695040888963407ULL);
+    LCG(uint64_t seed,
+        uint64_t a = 6364136223846793005ULL,
+        uint64_t c = 1442695040888963407ULL);
 
     // Function to generate a random number within a specific range
     uint64_t operator()();
@@ -99,34 +108,6 @@ class LCG {
     uint64_t increment;  // Increment parameter
 };
 
-/**
- * @brief Linear Congruential Generator
- * @param lower lower bound of range
- * @param upper upper bound of range
- * @param seed
- *      - m = modulus      : 32-bit int max
- *      - a = multiplier   : 1664525 (from Knuth & H.W. Lewis)
- *      - c = increment    : 1013904223 (from Knuth & H.W. Lewis)
- */
-/*
-uint32_t LCG(uint32_t lower = 0,
-             uint32_t upper = std::numeric_limits<uint32_t>::max(),
-             uint32_t seed = 0);
-             */
-/**
- * @brief Linear Congruential Generator (64-bit)
- * @param lower lower bound of range
- * @param upper upper bound of range
- * @param seed
- *      - m = modulus      : 64-bits
- *      - a = multiplier   : 6364136223846793005 (from Knuth MMIX)
- *      - c = increment    : 1442695040888963407 (from Knuth MMIX)
- */
-/*
-uint64_t LCG_64(uint64_t lower = 0,
-                uint64_t upper = std::numeric_limits<uint64_t>::max(),
-                uint64_t seed = 0);
-*/
 uint32_t rotr32(uint32_t x, unsigned r);
 
 uint32_t pcg32(void);
