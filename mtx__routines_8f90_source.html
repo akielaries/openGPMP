@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/linalg/linsys.f90 Source File</title>
+<title>openGPMP: modules/linalg/mtx_routines.f90 Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,10 +76,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">linsys.f90</div>  </div>
+<div class="title">mtx_routines.f90</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="linsys_8f90.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">!/*************************************************************************</span></div>
+<a href="mtx__routines_8f90.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">!/*************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">! *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">! *  Project</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">! *                         _____ _____  __  __ _____</span></div>
@@ -111,58 +111,51 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">! * WARRANTY OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">! *</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">! ************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">! linsys.f90</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">! mtx_routines.f90</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">   35</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a>(A, b, x, n)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: n</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">   real</span>, <span class="keywordtype">dimension(n, n)</span>, <span class="keywordtype">intent(inout)</span> :: A</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">   real</span>, <span class="keywordtype">dimension(n)</span>, <span class="keywordtype">intent(inout)</span> :: b</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">   real</span>, <span class="keywordtype">dimension(n)</span>, <span class="keywordtype">intent(out)</span> :: x</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">   real</span> :: factor</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   <span class="keywordtype">integer</span> :: i, j, k</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="comment">! Forward elimination</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keywordflow">do</span> k = 1, n - 1</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordflow">do</span> i = k + 1, n</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;         factor = a(i, k)/a(k, k)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         a(i, k + 1:n) = a(i, k + 1:n) - factor*a(k, k + 1:n)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         b(i) = b(i) - factor*b(k)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordflow">      end do</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordflow">   end do</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="mtx__routines_8f90.html#a2fa45e0230014f5558aa37ba3fdcc838">   42</a></span>&#160;<span class="keyword">SUBROUTINE </span><a class="code" href="modules_2linalg_2mtx_8cpp.html#a9d0fe593c9356d56b01c211c9364d4fd">mtx_add_routine_float_</a>(A, B, C, mtx_size) <span class="keyword">bind(C)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">USE </span>:: iso_fortran_env</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">USE </span>:: iso_c_binding</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">INTEGER</span>, <span class="keywordtype">INTENT(IN)</span> :: mtx_size</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">    REAL</span>(KIND=c_float), <span class="keywordtype">DIMENSION(mtx_size, mtx_size)</span>, <span class="keywordtype">INTENT(IN)</span> :: a, b</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">    REAL</span>(KIND=c_float), <span class="keywordtype">DIMENSION(mtx_size, mtx_size)</span>, <span class="keywordtype">INTENT(OUT)</span> :: c</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    c = a + b</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">END SUBROUTINE </span><a class="code" href="modules_2linalg_2mtx_8cpp.html#a9d0fe593c9356d56b01c211c9364d4fd">mtx_add_routine_float_</a></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="comment">! Back substitution</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   x(n) = b(n)/a(n, n)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   <span class="keywordflow">do</span> i = n - 1, 1, -1</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      x(i) = (b(i) - dot_product(a(i, i + 1:n), x(i + 1:n)))/a(i, i)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordflow">   end do</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="mtx__routines_8f90.html#af515a9551098c2fa5be6c9a6f74a7e2f">   53</a></span>&#160;<span class="keyword">SUBROUTINE </span><a class="code" href="modules_2linalg_2mtx_8cpp.html#a91f378e1f215f16c206609101dba18d1">mtx_add_routine_int_</a>(A, B, C, mtx_size) <span class="keyword">bind(C)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">USE </span>:: iso_fortran_env</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">USE </span>:: iso_c_binding</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">INTEGER</span>, <span class="keywordtype">INTENT(IN)</span> :: mtx_size</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">INTEGER(C_INT)</span>, <span class="keywordtype">DIMENSION(mtx_size, mtx_size)</span>, <span class="keywordtype">INTENT(IN)</span> :: A, B</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">INTEGER(C_INT)</span>, <span class="keywordtype">DIMENSION(mtx_size, mtx_size)</span>, <span class="keywordtype">INTENT(OUT)</span> :: C</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="linsys_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">   61</a></span>&#160;<span class="keyword">program</span> <a class="code" href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: n = 3</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">   real</span> :: a(n, n), b(n), x(n)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   <span class="keywordtype">integer</span> :: i</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="comment">! Initialize matrix A and vector b</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   a = <a class="code" href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a>([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   b = [3.0, 4.0, 5.0]</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   <span class="comment">! Solve the linear system</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   <span class="keyword">call </span><a class="code" href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a>(a, b, x, n)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   <span class="comment">! Output the solution</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <span class="keyword">write</span> (*, *) <span class="stringliteral">&quot;Solution:&quot;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   <span class="keywordflow">do</span> i = 1, n</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keyword">write</span> (*, *) <span class="stringliteral">&quot;x(&quot;</span>, i, <span class="stringliteral">&quot;) = &quot;</span>, x(i)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordflow">   end do</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">end program </span><a class="code" href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="ttc" id="aMandelbrot_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="Mandelbrot_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="Mandelbrot_8c_source.html#l00094">Mandelbrot.c:94</a></div></div>
-<div class="ttc" id="alinsys_8f90_html_a825ea5d7564e58f3b379aaa57d6a56f9"><div class="ttname"><a href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a></div><div class="ttdeci">subroutine solvelinearsystem(A, b, x, n)</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8f90_source.html#l00035">linsys.f90:36</a></div></div>
-<div class="ttc" id="aopenGL__astronomy__animated_8cpp_html_a25e760e42e42389ea3a9b5bb35596b67"><div class="ttname"><a href="openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67">reshape</a></div><div class="ttdeci">void reshape(GLint w, GLint h)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__astronomy__animated_8cpp_source.html#l00103">openGL_astronomy_animated.cpp:103</a></div></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    c = a + b</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">END SUBROUTINE </span><a class="code" href="modules_2linalg_2mtx_8cpp.html#a91f378e1f215f16c206609101dba18d1">mtx_add_routine_int_</a></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">   71</a></span>&#160;<span class="keyword">SUBROUTINE </span><a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">INTEGER</span>, <span class="keywordtype">INTENT(IN)</span> :: nrows1, ncols1, ncols2</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">  REAL</span>, <span class="keywordtype">INTENT(IN)</span> :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">  REAL</span>, <span class="keywordtype">INTENT(OUT)</span> :: result(nrows1, ncols2)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">INTEGER</span> :: i, j, k</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">! Perform matrix multiplication</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">do</span> i = 1, nrows1</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">do</span> j = 1, ncols2</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      result(i, j) = 0.0</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordflow">do</span> k = 1, ncols1</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        result(i, j) = result(i, j) + matrix1(i, k) * matrix2(k, j)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordflow">      end do</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordflow">    end do</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordflow">  end do</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">END SUBROUTINE </span><a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="ttc" id="amodules_2linalg_2mtx_8cpp_html_a91f378e1f215f16c206609101dba18d1"><div class="ttname"><a href="modules_2linalg_2mtx_8cpp.html#a91f378e1f215f16c206609101dba18d1">mtx_add_routine_int_</a></div><div class="ttdeci">void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *matrixSize)</div></div>
+<div class="ttc" id="amodules_2linalg_2mtx_8cpp_html_a9d0fe593c9356d56b01c211c9364d4fd"><div class="ttname"><a href="modules_2linalg_2mtx_8cpp.html#a9d0fe593c9356d56b01c211c9364d4fd">mtx_add_routine_float_</a></div><div class="ttdeci">void mtx_add_routine_float_(float *A, float *B, float *C, std::size_t *matrixSize)</div></div>
+<div class="ttc" id="amtx__routines_8f90_html_ab5347b6c35e3e1dc1403c734fb167fa9"><div class="ttname"><a href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div><div class="ttdeci">subroutine mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div><div class="ttdoc">FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function.</div><div class="ttdef"><b>Definition:</b> <a href="mtx__routines_8f90_source.html#l00071">mtx_routines.f90:72</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
