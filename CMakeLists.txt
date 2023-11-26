@@ -47,6 +47,8 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+set(CMAKE_CXX_FLAGS_RELEASE "-O0")
+set(CMAKE_Fortran_FLAGS "-O0")  
 include(GNUInstallDirs)
 
 option(BUILD_ARITH "[!] Build Arithmetic Module" ON)

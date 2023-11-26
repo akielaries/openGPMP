@@ -2,12 +2,12 @@ set(the_description "Linear Algebra Module")
 
 message("-- Including Linear Algebra Module")
 
-option(BUILD_GPU_OPENCL "Build Intel Linear Algebra Intrinsic Extension" OFF)
+option(BUILD_GPU_OPENCL "Build OpenCL Linear Algebra Extension" OFF)
 
 set(SOURCE_FILES
     lao.cpp
+    mtx_routines.f90
     mtx.cpp
-    mtx.f90
     linsys.f90
 )
 

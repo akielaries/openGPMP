@@ -34,6 +34,7 @@
 #include "../../include/linalg/mtx.hpp"
 #include <cassert>
 #include <chrono>
+#include <cstddef>
 #include <cstdint>
 
 // if sys is Intel-based
@@ -61,6 +62,33 @@ void mtx_add_(double *a, double *b, double *c, int64_t *nrows, int64_t *ncols);
 void mtx_mult_(float *matrix1, float *matrix2, float *res, int *nrows1,
                int *ncols1, int *ncols2);
 }*/
+
+extern "C" {
+void mtx_add_routine_float_(float *A,
+                            float *B,
+                            float *C,
+                            std::size_t *matrixSize);
+void mtx_add_routine_int_(int *A, 
+                          int *B, 
+                          int *C, 
+                          std::size_t *matrixSize);
+}
+
+// C++ wrapper for Fortran mtx addition subroutine FLOAT
+void gpmp::linalg::Mtx::mtx_add_f90(float *A,
+                                    float *B,
+                                    float *C,
+                                    std::size_t matrixSize) {
+    mtx_add_routine_float_(A, B, C, &matrixSize);
+}
+
+// C++ wrapper for Fortran mtx addition subroutine INT
+void gpmp::linalg::Mtx::mtx_add_f90(int *A,
+                                    int *B,
+                                    int *C,
+                                    std::size_t matrixSize) {
+    mtx_add_routine_int_(A, B, C, &matrixSize);
+}
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 

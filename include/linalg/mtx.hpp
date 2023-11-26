@@ -47,6 +47,18 @@ namespace linalg {
 class Mtx {
 
   public:
+    /**
+     * @brief Perform matrix addition using flattened matrices and the
+     * designated Fortran subroutine. Accepts type float
+     */
+    void mtx_add_f90(float *A, float *B, float *C, std::size_t matrixSize);
+
+    /**
+     * @brief Perform matrix addition using flattened matrices and the
+     * designated Fortran subroutine. Accepts type int
+     */
+    void mtx_add_f90(int *A, int *B, int *C, std::size_t matrixSize);
+
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
 
