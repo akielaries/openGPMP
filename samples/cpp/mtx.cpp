@@ -1,4 +1,3 @@
-#include "../../include/linalg/mtx.hpp"
 #include <chrono>
 #include <iostream>
 #include <openGPMP/linalg/mtx.hpp>
@@ -7,7 +6,9 @@
 constexpr int matrixSize = 8912;
 
 void run_mtx_add() {
-    std::chrono::steady_clock::time_point start_time =
+    gpmp::linalg::Mtx mtx;
+
+    std::chrono::steady_clock::time_point gen_start_time =
         std::chrono::steady_clock::now();
 
     std::vector<std::vector<int>> A(matrixSize, std::vector<int>(matrixSize));
@@ -27,12 +28,11 @@ void run_mtx_add() {
         }
     }
 
-    std::chrono::steady_clock::time_point start_time_u =
+    std::chrono::steady_clock::time_point start_time_mtx =
         std::chrono::steady_clock::now();
     // perform matrix addition
-    gpmp::linalg::Mtx mtx;
     mtx.mtx_add(A, B, C);
-    std::chrono::steady_clock::time_point end_time_u =
+    std::chrono::steady_clock::time_point start_time_std_mtx =
         std::chrono::steady_clock::now();
 
     mtx.std_mtx_add(A, B, C);
@@ -64,23 +64,24 @@ void run_mtx_add() {
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();
 
+    std::cout << "Generating random matrices (VECTORS) - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     start_time_mtx - gen_start_time)
+                     .count()
+              << " ms" << std::endl;
+
     std::cout << "SIMD - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
-                     end_time_u - start_time_u)
+                     start_time_std_mtx - start_time_mtx)
                      .count()
               << " ms" << std::endl;
 
     std::cout << "NAIVE - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
-                     end_time - end_time_u)
+                     end_time - start_time_std_mtx)
                      .count()
               << " ms" << std::endl;
 
-    std::cout << "Total Time elapsed: "
-              << std::chrono::duration_cast<std::chrono::milliseconds>(
-                     end_time - start_time)
-                     .count()
-              << " ms" << std::endl;
 }
 
 void fill_matrix_random(float *matrix, std::size_t rows, std::size_t cols) {
@@ -105,6 +106,11 @@ void print_matrix(const float *matrix, std::size_t rows, std::size_t cols) {
 }
 
 void mtx_add_f90() {
+    gpmp::linalg::Mtx mtx;
+
+    std::chrono::steady_clock::time_point gen_start_time =
+        std::chrono::steady_clock::now();
+
     float *A = new float[matrixSize * matrixSize];
     float *B = new float[matrixSize * matrixSize];
     float *C = new float[matrixSize * matrixSize];
@@ -112,9 +118,7 @@ void mtx_add_f90() {
     fill_matrix_random(A, matrixSize, matrixSize);
     fill_matrix_random(B, matrixSize, matrixSize);
 
-    gpmp::linalg::Mtx mtx;
-
-    std::chrono::steady_clock::time_point start_time =
+    std::chrono::steady_clock::time_point mtx_start_time =
         std::chrono::steady_clock::now();
 
     // Call the Fortran matrix addition function through the C++ wrapper
@@ -133,9 +137,15 @@ void mtx_add_f90() {
     std::cout << "\nMatrix C:" << std::endl;
     print_matrix(C, matrixSize, matrixSize);*/
 
-    std::cout << "mtx add using Fortran & flattened matrices: "
+    std::cout << "Generating random matrices (ARRAYS) - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
-                     end_time - start_time)
+                     mtx_start_time - gen_start_time)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "mtx add using Fortran subroutine & flattened matrices: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - mtx_start_time)
                      .count()
               << " ms" << std::endl;
 

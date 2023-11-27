@@ -33,49 +33,49 @@
 ! linsys.f90
 
 subroutine solveLinearSystem(A, b, x, n)
-   implicit none
-   integer, intent(in) :: n
-   real, dimension(n, n), intent(inout) :: A
-   real, dimension(n), intent(inout) :: b
-   real, dimension(n), intent(out) :: x
-   real :: factor
-   integer :: i, j, k
+    implicit none
+    integer, intent(in) :: n
+    real, dimension(n, n), intent(inout) :: A
+    real, dimension(n), intent(inout) :: b
+    real, dimension(n), intent(out) :: x
+    real :: factor
+    integer :: i, j, k
 
-   ! Forward elimination
-   do k = 1, n - 1
-      do i = k + 1, n
-         factor = A(i, k)/A(k, k)
-         A(i, k + 1:n) = A(i, k + 1:n) - factor*A(k, k + 1:n)
-         b(i) = b(i) - factor*b(k)
-      end do
-   end do
+    ! Forward elimination
+    do k = 1, n - 1
+        do i = k + 1, n
+            factor = A(i, k)/A(k, k)
+            A(i, k + 1:n) = A(i, k + 1:n) - factor*A(k, k + 1:n)
+            b(i) = b(i) - factor*b(k)
+        end do
+    end do
 
-   ! Back substitution
-   x(n) = b(n)/A(n, n)
-   do i = n - 1, 1, -1
-      x(i) = (b(i) - dot_product(A(i, i + 1:n), x(i + 1:n)))/A(i, i)
-   end do
+    ! Back substitution
+    x(n) = b(n)/A(n, n)
+    do i = n - 1, 1, -1
+        x(i) = (b(i) - dot_product(A(i, i + 1:n), x(i + 1:n)))/A(i, i)
+    end do
 
 end subroutine solveLinearSystem
 
 program main
-   implicit none
-   integer, parameter :: n = 3
-   real :: A(n, n), b(n), x(n)
-   integer :: i
+    implicit none
+    integer, parameter :: n = 3
+    real :: A(n, n), b(n), x(n)
+    integer :: i
 
-   ! Initialize matrix A and vector b
-   A = reshape([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])
-   b = [3.0, 4.0, 5.0]
+    ! Initialize matrix A and vector b
+    A = reshape([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])
+    b = [3.0, 4.0, 5.0]
 
-   ! Solve the linear system
-   call solveLinearSystem(A, b, x, n)
+    ! Solve the linear system
+    call solveLinearSystem(A, b, x, n)
 
-   ! Output the solution
-   write (*, *) "Solution:"
-   do i = 1, n
-      write (*, *) "x(", i, ") = ", x(i)
-   end do
+    ! Output the solution
+    write (*, *) "Solution:"
+    do i = 1, n
+        write (*, *) "x(", i, ") = ", x(i)
+    end do
 
 end program main
 

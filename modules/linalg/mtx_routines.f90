@@ -32,9 +32,8 @@
 ! ************************************************************************/
 ! mtx_routines.f90
 
-!> FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays of type float. Contains 
-!! C++ wrapper
-!! function
+!> FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays 
+!! of type float. Contains C++ wrapper function
 !! @param A Addend A, an array representing a Matrix
 !! @param B Addend B, an array representing a Matrix
 !! @param C Sum C, an array representing the sum of A + B
@@ -69,20 +68,20 @@ END SUBROUTINE mtx_add_routine_int_
 !! @param nrows_a Number of rows
 !! @param ncols Number of columns
 SUBROUTINE mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)
-  implicit none
-  INTEGER, INTENT(IN) :: nrows1, ncols1, ncols2
-  REAL, INTENT(IN) :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)
-  REAL, INTENT(OUT) :: result(nrows1, ncols2)
-  INTEGER :: i, j, k
+    implicit none
+    INTEGER, INTENT(IN) :: nrows1, ncols1, ncols2
+    REAL, INTENT(IN) :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)
+    REAL, INTENT(OUT) :: result(nrows1, ncols2)
+    INTEGER :: i, j, k
 
-  ! Perform matrix multiplication
-  do i = 1, nrows1
-    do j = 1, ncols2
-      result(i, j) = 0.0
-      do k = 1, ncols1
-        result(i, j) = result(i, j) + matrix1(i, k) * matrix2(k, j)
-      end do
+    ! Perform matrix multiplication
+    do i = 1, nrows1
+        do j = 1, ncols2
+            result(i, j) = 0.0
+            do k = 1, ncols1
+                result(i, j) = result(i, j) + matrix1(i, k)*matrix2(k, j)
+            end do
+        end do
     end do
-  end do
 END SUBROUTINE mtx_mult
 

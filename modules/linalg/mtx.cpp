@@ -1,15 +1,14 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
- *
  *
  * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
  *
@@ -54,24 +53,13 @@
 #include <random>
 #include <vector>
 
-/*void mult();
-void add();
-
-extern "C" {
-void mtx_add_(double *a, double *b, double *c, int64_t *nrows, int64_t *ncols);
-void mtx_mult_(float *matrix1, float *matrix2, float *res, int *nrows1,
-               int *ncols1, int *ncols2);
-}*/
-
+/** FORTRAN SUBROUTINES LOCATED IN `mtx_routines.f90` */
 extern "C" {
 void mtx_add_routine_float_(float *A,
                             float *B,
                             float *C,
                             std::size_t *matrixSize);
-void mtx_add_routine_int_(int *A, 
-                          int *B, 
-                          int *C, 
-                          std::size_t *matrixSize);
+void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *matrixSize);
 }
 
 // C++ wrapper for Fortran mtx addition subroutine FLOAT
