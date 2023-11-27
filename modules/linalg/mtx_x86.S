@@ -1,38 +1,33 @@
-section .text
-global matrix_multiply
+.section .text
+.globl matrix_addition
 
-matrix_multiply:
-    ; Input:
-    ;   rdi: pointer to matrix A
-    ;   rsi: pointer to matrix B
-    ;   rdx: pointer to matrix C (result)
-    ;   rcx: matrix dimensions (rows of A, columns of B, columns of C)
-    ; Output:
-    ;   Matrix C is updated with the result
+matrix_addition:
+    movq    %rdi, %r8         // r8 = pointer to matrix A
+    movq    %rsi, %r9         // r9 = pointer to matrix B
+    movq    %rdx, %rdi        // rdi = pointer to result matrix C
+    movq    %rcx, %r10        // r10 = matrixSize
 
-    mov     r8, rcx        ; r8 = dimension
-    xor     r9, r9         ; r9 = i
+    // Loop through the matrices
+row_loop:
+    mov     %r10, %rcx        // Set column counter for each row
+col_loop:
+    movaps  (%r8), %xmm0      // Load 4 floats from A
+    addps   (%r9), %xmm0      // Add 4 floats from B
+    movaps  %xmm0, (%rdi)     // Store the result in C
 
-outer_loop:
-    xor     r10, r10       ; r10 = j
-inner_loop:
-    movsd   xmm0, [rdi + r9 * r8 * 8 + r10 * 8] ; load A[i][j] into xmm0
-    mov     r11, r10
-    imul    r11, r8        ; r11 = j * dimension
-    add     r11, r9        ; r11 = i + j * dimension
-    imul    r11, 8         ; r11 = (i + j * dimension) * sizeof(double)
-    movsd   xmm1, [rsi + r11] ; load B[j][i] into xmm1 (transposed access)
-    mulsd   xmm0, xmm1     ; multiply A[i][j] by B[j][i]
-    addsd   xmm0, [rdx + r9 * r8 * 8 + r10 * 8] ; add the result to C[i][j]
-    movsd   [rdx + r9 * r8 * 8 + r10 * 8], xmm0 ; store the result back in C[i][j]
+    add     $16, %r8          // Move to the next column in A (4 floats = 16 bytes)
+    add     $16, %r9          // Move to the next column in B
+    add     $16, %rdi         // Move to the next column in C
 
-    inc     r10
-    cmp     r10, r8
-    jl      inner_loop
+    sub     $4, %rcx          // Decrement the column counter
+    jnz     col_loop          // Jump if not zero
 
-inc     r9
-cmp     r9, r8
-jl      outer_loop
+    add     $16, %r8          // Skip to the next row in A
+    add     $16, %r9          // Skip to the next row in B
+    add     $16, %rdi         // Skip to the next row in C
+
+    sub     $1, %r10          // Decrement the row counter
+    jnz     row_loop          // Jump if not zero
 
     ret
 
