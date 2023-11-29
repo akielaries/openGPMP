@@ -382,6 +382,7 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
     for (int i = 0; i < rows; ++i) {
         int j = 0;
 
+        // requires matrices of size of at least 8x8
         for (; j < cols - 15; j += 16) {
             // Load 16 elements from A, B, and C matrices using NEON intrinsics
             int32x4x4_t a = vld1q_s32_x4(&A[i][j]);
