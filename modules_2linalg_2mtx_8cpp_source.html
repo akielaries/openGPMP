@@ -485,10 +485,10 @@ $(function() {
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">// matrix addition using ARM intrinsics, accepts double types</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keywordtype">void</span> gpmp::linalg::Mtx::mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                                std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">// matrix addition using ARM intrinsics, accepts float types</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="keywordtype">void</span> gpmp::linalg::Mtx::mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                                std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C) {</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rows = A.size();</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cols = A[0].size();</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
@@ -549,9 +549,9 @@ $(function() {
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;}</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment">// matrix subtraction using ARM intrinsics, accepts double types</span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="keywordtype">void</span> gpmp::linalg::Mtx::mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                                std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="keywordtype">void</span> gpmp::linalg::Mtx::mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                                std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C) {</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> rows = A.size();</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cols = A[0].size();</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
