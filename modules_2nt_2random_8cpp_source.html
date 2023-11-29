@@ -111,134 +111,133 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/random.hpp&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// dfault constructor</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">   40</a></span>&#160;<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">gpmp::core::rndm::LCG::LCG</a>()</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    : state(1), multiplier(6364136223846793005ULL),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      increment(1442695040888963407ULL) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// constructor</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a926522ed8facffef474f78188a326f7c">   46</a></span>&#160;<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">gpmp::core::rndm::LCG::LCG</a>(uint64_t seed, uint64_t a, uint64_t c)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    : state(seed), multiplier(a), increment(c) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a017dc17480fc6756db27f7b0672b58e1">   50</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a017dc17480fc6756db27f7b0672b58e1">gpmp::core::rndm::LCG::operator()</a>() {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Ensure the state is non-negative</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    state &amp;= 0x7FFFFFFFFFFFFFFFULL;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    state = multiplier * state + increment;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Overflow handling</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (state &lt; increment) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Overflow occurred, adjust the state</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        state += increment;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> state;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// set seed</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">gpmp::core::rndm::LCG::seed</a>(uint64_t new_seed) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    state = new_seed;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// methods to retrieve parameters (optional)</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#aa1f0556a8ae60b63681f87c203366c23">   72</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#aa1f0556a8ae60b63681f87c203366c23">gpmp::core::rndm::LCG::get_multiplier</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> multiplier;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a42c63bab522d790820c6d6f2c10f155d">   76</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a42c63bab522d790820c6d6f2c10f155d">gpmp::core::rndm::LCG::get_increment</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> increment;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a9f30c8ccf38ed9e934f2aa7cafe5977f">   80</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a9f30c8ccf38ed9e934f2aa7cafe5977f">gpmp::core::rndm::LCG::get_seed</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> state;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">uint32_t gpmp::core::rndm::LCG(uint32_t lower, uint32_t upper, uint32_t seed) {</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    uint32_t mod = __32MAX;</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    uint32_t mult = 1664525;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">    uint32_t incr = 1013904223;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    // set seed = current time</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    uint32_t time_seed =</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">        std::chrono::system_clock::now().time_since_epoch().count();</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">    uint32_t final_seed = (seed == 0) ? time_seed : seed;</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">    // Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">    uint32_t res = (mult * final_seed + incr) % mod;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">    // trim to range</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">    res = lower + (res % (upper - lower + 1));</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">    return res;</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">}</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">uint64_t</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">gpmp::core::rndm::LCG_64(uint64_t lower, uint64_t upper, uint64_t seed) {</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">    uint64_t mod = __64MAX;</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">    uint64_t mult = 6364136223846793005ULL; // Large multiplier</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">    uint64_t incr = 1442695040888963407ULL; // Large increment</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">    // set seed = current time</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">    uint64_t time_seed =</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">        std::chrono::system_clock::now().time_since_epoch().count();</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">    uint64_t final_seed = (seed == 0) ? time_seed : seed;</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">    // Linear Congruential Generator algorithm</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">    uint64_t res = (mult * final_seed + incr) % mod;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">    // Calculate the range size</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">    uint64_t range_size = upper - lower + 1;</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">    // Avoid division by zero</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">    if (range_size != 0) {</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">        // Ensure res is non-negative</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">        res = res &amp; ((1ULL &lt;&lt; 63) - 1);</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">        // trim to range</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">        res = lower + (res % range_size);</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">    }</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">    return res;</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">}*/</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">  135</a></span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">gpmp::core::rndm::rotr32</a>(uint32_t x, <span class="keywordtype">unsigned</span> r) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> x &gt;&gt; r | x &lt;&lt; (-r &amp; 31);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">  139</a></span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">gpmp::core::rndm::pcg32</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    uint64_t x = <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">unsigned</span> count = (unsigned)(x &gt;&gt; 59); <span class="comment">// 59 = 64 - 5</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = x * <a class="code" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a> + <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    x ^= x &gt;&gt; 18;                              <span class="comment">// 18 = (64 - 27)/2</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">rotr32</a>((uint32_t)(x &gt;&gt; 27), count); <span class="comment">// 27 = 32 - 5</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">  148</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">gpmp::core::rndm::pcg32_init</a>(uint64_t seed) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = seed + <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    (void)<a class="code" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">pcg32</a>();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a017dc17480fc6756db27f7b0672b58e1"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a017dc17480fc6756db27f7b0672b58e1">gpmp::core::rndm::LCG::operator()</a></div><div class="ttdeci">uint64_t operator()()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00050">random.cpp:50</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a42c63bab522d790820c6d6f2c10f155d"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a42c63bab522d790820c6d6f2c10f155d">gpmp::core::rndm::LCG::get_increment</a></div><div class="ttdeci">uint64_t get_increment() const</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00076">random.cpp:76</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a6558f881d3d152bcdeef28c812226b8f"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">gpmp::core::rndm::LCG::seed</a></div><div class="ttdeci">void seed(uint64_t new_seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00067">random.cpp:67</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a78ec290b48e853f91b02ae404f11edda"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">gpmp::core::rndm::LCG::LCG</a></div><div class="ttdeci">LCG()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00040">random.cpp:40</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a9f30c8ccf38ed9e934f2aa7cafe5977f"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a9f30c8ccf38ed9e934f2aa7cafe5977f">gpmp::core::rndm::LCG::get_seed</a></div><div class="ttdeci">uint64_t get_seed() const</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00080">random.cpp:80</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_aa1f0556a8ae60b63681f87c203366c23"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#aa1f0556a8ae60b63681f87c203366c23">gpmp::core::rndm::LCG::get_multiplier</a></div><div class="ttdeci">uint64_t get_multiplier() const</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00072">random.cpp:72</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a0ca372ab3a352a8e532bac73f5d11d41"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">gpmp::core::rndm::pcg32_init</a></div><div class="ttdeci">void pcg32_init(uint64_t seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00148">random.cpp:148</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_acb3103c254e529ca316e5d5438439d55"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">gpmp::core::rndm::rotr32</a></div><div class="ttdeci">uint32_t rotr32(uint32_t x, unsigned r)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00135">random.cpp:135</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_af3ce335f1c4e4d0ea24d5275e3f20210"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">gpmp::core::rndm::pcg32</a></div><div class="ttdeci">uint32_t pcg32(void)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00139">random.cpp:139</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;../../include/nt/random.hpp&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// dfault constructor</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">   39</a></span>&#160;<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">gpmp::core::rndm::LCG::LCG</a>()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    : state(1), multiplier(6364136223846793005ULL),</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      increment(1442695040888963407ULL) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// constructor</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a926522ed8facffef474f78188a326f7c">   45</a></span>&#160;<a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">gpmp::core::rndm::LCG::LCG</a>(uint64_t seed, uint64_t a, uint64_t c)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    : state(seed), multiplier(a), increment(c) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a017dc17480fc6756db27f7b0672b58e1">   49</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a017dc17480fc6756db27f7b0672b58e1">gpmp::core::rndm::LCG::operator()</a>() {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Ensure the state is non-negative</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    state &amp;= 0x7FFFFFFFFFFFFFFFULL;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Linear Congruential Generator algorithm</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    state = multiplier * state + increment;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Overflow handling</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (state &lt; increment) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// Overflow occurred, adjust the state</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        state += increment;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> state;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// set seed</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">gpmp::core::rndm::LCG::seed</a>(uint64_t new_seed) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    state = new_seed;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// methods to retrieve parameters (optional)</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#aa1f0556a8ae60b63681f87c203366c23">   71</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#aa1f0556a8ae60b63681f87c203366c23">gpmp::core::rndm::LCG::get_multiplier</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> multiplier;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a42c63bab522d790820c6d6f2c10f155d">   75</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a42c63bab522d790820c6d6f2c10f155d">gpmp::core::rndm::LCG::get_increment</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> increment;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a9f30c8ccf38ed9e934f2aa7cafe5977f">   79</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a9f30c8ccf38ed9e934f2aa7cafe5977f">gpmp::core::rndm::LCG::get_seed</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> state;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">uint32_t gpmp::core::rndm::LCG(uint32_t lower, uint32_t upper, uint32_t seed) {</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    uint32_t mod = __32MAX;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    uint32_t mult = 1664525;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    uint32_t incr = 1013904223;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    // set seed = current time</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    uint32_t time_seed =</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">        std::chrono::system_clock::now().time_since_epoch().count();</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">    uint32_t final_seed = (seed == 0) ? time_seed : seed;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">    // Linear Congruential Generator algorithm</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">    uint32_t res = (mult * final_seed + incr) % mod;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">    // trim to range</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">    res = lower + (res % (upper - lower + 1));</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">    return res;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">uint64_t</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">gpmp::core::rndm::LCG_64(uint64_t lower, uint64_t upper, uint64_t seed) {</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">    uint64_t mod = __64MAX;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">    uint64_t mult = 6364136223846793005ULL; // Large multiplier</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">    uint64_t incr = 1442695040888963407ULL; // Large increment</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">    // set seed = current time</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">    uint64_t time_seed =</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">        std::chrono::system_clock::now().time_since_epoch().count();</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">    uint64_t final_seed = (seed == 0) ? time_seed : seed;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">    // Linear Congruential Generator algorithm</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">    uint64_t res = (mult * final_seed + incr) % mod;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">    // Calculate the range size</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">    uint64_t range_size = upper - lower + 1;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">    // Avoid division by zero</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">    if (range_size != 0) {</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">        // Ensure res is non-negative</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">        res = res &amp; ((1ULL &lt;&lt; 63) - 1);</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">        // trim to range</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">        res = lower + (res % range_size);</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">    return res;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">}*/</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">  134</a></span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">gpmp::core::rndm::rotr32</a>(uint32_t x, <span class="keywordtype">unsigned</span> r) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> x &gt;&gt; r | x &lt;&lt; (-r &amp; 31);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">  138</a></span>&#160;uint32_t <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">gpmp::core::rndm::pcg32</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    uint64_t x = <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">unsigned</span> count = (unsigned)(x &gt;&gt; 59); <span class="comment">// 59 = 64 - 5</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = x * <a class="code" href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a> + <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    x ^= x &gt;&gt; 18;                              <span class="comment">// 18 = (64 - 27)/2</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">rotr32</a>((uint32_t)(x &gt;&gt; 27), count); <span class="comment">// 27 = 32 - 5</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">  147</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">gpmp::core::rndm::pcg32_init</a>(uint64_t seed) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a> = seed + <a class="code" href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    (void)<a class="code" href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">pcg32</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a017dc17480fc6756db27f7b0672b58e1"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a017dc17480fc6756db27f7b0672b58e1">gpmp::core::rndm::LCG::operator()</a></div><div class="ttdeci">uint64_t operator()()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00049">random.cpp:49</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a42c63bab522d790820c6d6f2c10f155d"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a42c63bab522d790820c6d6f2c10f155d">gpmp::core::rndm::LCG::get_increment</a></div><div class="ttdeci">uint64_t get_increment() const</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00075">random.cpp:75</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a6558f881d3d152bcdeef28c812226b8f"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a6558f881d3d152bcdeef28c812226b8f">gpmp::core::rndm::LCG::seed</a></div><div class="ttdeci">void seed(uint64_t new_seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00066">random.cpp:66</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a78ec290b48e853f91b02ae404f11edda"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda">gpmp::core::rndm::LCG::LCG</a></div><div class="ttdeci">LCG()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00039">random.cpp:39</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_a9f30c8ccf38ed9e934f2aa7cafe5977f"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#a9f30c8ccf38ed9e934f2aa7cafe5977f">gpmp::core::rndm::LCG::get_seed</a></div><div class="ttdeci">uint64_t get_seed() const</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00079">random.cpp:79</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1rndm_1_1LCG_html_aa1f0556a8ae60b63681f87c203366c23"><div class="ttname"><a href="classgpmp_1_1core_1_1rndm_1_1LCG.html#aa1f0556a8ae60b63681f87c203366c23">gpmp::core::rndm::LCG::get_multiplier</a></div><div class="ttdeci">uint64_t get_multiplier() const</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00071">random.cpp:71</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_a0ca372ab3a352a8e532bac73f5d11d41"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#a0ca372ab3a352a8e532bac73f5d11d41">gpmp::core::rndm::pcg32_init</a></div><div class="ttdeci">void pcg32_init(uint64_t seed)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00147">random.cpp:147</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_acb3103c254e529ca316e5d5438439d55"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55">gpmp::core::rndm::rotr32</a></div><div class="ttdeci">uint32_t rotr32(uint32_t x, unsigned r)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00134">random.cpp:134</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1core_1_1rndm_html_af3ce335f1c4e4d0ea24d5275e3f20210"><div class="ttname"><a href="namespacegpmp_1_1core_1_1rndm.html#af3ce335f1c4e4d0ea24d5275e3f20210">gpmp::core::rndm::pcg32</a></div><div class="ttdeci">uint32_t pcg32(void)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2random_8cpp_source.html#l00138">random.cpp:138</a></div></div>
 <div class="ttc" id="arandom_8hpp_html_ab2351de0401ff3fe5a55b22f66d7e7c6"><div class="ttname"><a href="random_8hpp.html#ab2351de0401ff3fe5a55b22f66d7e7c6">__PCG_MULTPLR</a></div><div class="ttdeci">static uint64_t const __PCG_MULTPLR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00062">random.hpp:62</a></div></div>
 <div class="ttc" id="arandom_8hpp_html_abd726611edac3ec85ca4ad43d28f31ec"><div class="ttname"><a href="random_8hpp.html#abd726611edac3ec85ca4ad43d28f31ec">__PCG_STATE</a></div><div class="ttdeci">static uint64_t __PCG_STATE</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00061">random.hpp:61</a></div></div>
 <div class="ttc" id="arandom_8hpp_html_adb43f9dcbc46d300e6a2bb9326b082d1"><div class="ttname"><a href="random_8hpp.html#adb43f9dcbc46d300e6a2bb9326b082d1">__PCG_INCR</a></div><div class="ttdeci">static uint64_t const __PCG_INCR</div><div class="ttdef"><b>Definition:</b> <a href="random_8hpp_source.html#l00063">random.hpp:63</a></div></div>
