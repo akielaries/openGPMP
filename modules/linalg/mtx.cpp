@@ -381,24 +381,24 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
 
     for (int i = 0; i < rows; ++i) {
         int j = 0;
-        // requires matrices of size of at least 8x8
-        for (; j < cols - 7; j += 8) {
-            // load 8 elements from A, B, and C matrices using NEON intrinsics
-            int32x4_t a_low = vld1q_s32(&A[i][j]);
-            int32x4_t a_high = vld1q_s32(&A[i][j + 4]);
-            int32x4_t b_low = vld1q_s32(&B[i][j]);
-            int32x4_t b_high = vld1q_s32(&B[i][j + 4]);
 
-            // perform vectorized addition
-            int32x4_t c_low = vaddq_s32(a_low, b_low);
-            int32x4_t c_high = vaddq_s32(a_high, b_high);
+        for (; j < cols - 15; j += 16) {
+            // Load 16 elements from A, B, and C matrices using NEON intrinsics
+            int32x4x4_t a = vld1q_s32_x4(&A[i][j]);
+            int32x4x4_t b = vld1q_s32_x4(&B[i][j]);
 
-            // store the result back to the C matrix using NEON intrinsics
-            vst1q_s32(&C[i][j], c_low);
-            vst1q_s32(&C[i][j + 4], c_high);
+            // Perform vectorized addition
+            int32x4x4_t c;
+            c.val[0] = vaddq_s32(a.val[0], b.val[0]);
+            c.val[1] = vaddq_s32(a.val[1], b.val[1]);
+            c.val[2] = vaddq_s32(a.val[2], b.val[2]);
+            c.val[3] = vaddq_s32(a.val[3], b.val[3]);
+
+            // Store the result back to the C matrix using NEON intrinsics
+            vst1q_s32_x4(&C[i][j], c);
         }
 
-        // handle the remaining elements that are not multiples of 8
+        // Handle the remaining elements that are not multiples of 16
         for (; j < cols; ++j) {
             C[i][j] = A[i][j] + B[i][j];
         }
