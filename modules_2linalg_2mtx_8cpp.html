@@ -75,6 +75,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">mtx.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -82,12 +84,107 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="mtx_8hpp_source.html">../../include/linalg/mtx.hpp</a>&quot;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="modules_2linalg_2mtx_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a9d0fe593c9356d56b01c211c9364d4fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modules_2linalg_2mtx_8cpp.html#a9d0fe593c9356d56b01c211c9364d4fd">mtx_add_routine_float_</a> (float *A, float *B, float *C, std::size_t *<a class="el" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>)</td></tr>
+<tr class="separator:a9d0fe593c9356d56b01c211c9364d4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f378e1f215f16c206609101dba18d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="modules_2linalg_2mtx_8cpp.html#a91f378e1f215f16c206609101dba18d1">mtx_add_routine_int_</a> (int *A, int *B, int *C, std::size_t *<a class="el" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>)</td></tr>
+<tr class="separator:a91f378e1f215f16c206609101dba18d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a9d0fe593c9356d56b01c211c9364d4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0fe593c9356d56b01c211c9364d4fd">&#9670;&nbsp;</a></span>mtx_add_routine_float_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtx_add_routine_float_ </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t *&#160;</td>
+          <td class="paramname"><em>matrixSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FORTRAN SUBROUTINES LOCATED IN <code><a class="el" href="mtx__routines_8f90.html">mtx_routines.f90</a></code> </p>
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#ab2fb81bdb02ee504b064a12f2b156a37">gpmp::linalg::Mtx::mtx_add_f90()</a>.</p>
+
+</div>
+</div>
+<a id="a91f378e1f215f16c206609101dba18d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91f378e1f215f16c206609101dba18d1">&#9670;&nbsp;</a></span>mtx_add_routine_int_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtx_add_routine_int_ </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t *&#160;</td>
+          <td class="paramname"><em>matrixSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a838a3d164326e6e6fa8175b282a6eb75">gpmp::linalg::Mtx::mtx_add_f90()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
