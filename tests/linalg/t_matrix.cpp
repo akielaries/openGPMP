@@ -153,7 +153,7 @@ TEST(ADD_MTX_LARGE, assert_intel_intrin) {
 #elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
     defined(__ARM_ARCH) || defined(__aarch64__)
 
-TEST(ADD_MATRICES, assert_arm_intrin) {
+TEST(ADD_MTX_SMALL, assert_arm_intrin) {
     int mtx_size = 32;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
@@ -203,6 +203,58 @@ TEST(ADD_MATRICES, assert_arm_intrin) {
     // Compare the results
     ASSERT_TRUE(mtx_verif(expected, result));
 }
+
+TEST(ADD_MTX_LARGE, assert_arm_intrin) {
+    int mtx_size = 8192;
+    // Define input matrices A and B
+    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size,
+                                           std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
+
+    // Initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // Populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result);
+
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+
+    // Compare the results
+    ASSERT_TRUE(mtx_verif(expected, result));
+}
+
 #endif
 
 /*

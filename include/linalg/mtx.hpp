@@ -174,9 +174,9 @@ class Mtx {
      * @note Matrices must be of at least size 4x4
      * @overload
      */
-    void mtx_add(const std::vector<std::vector<double>> &A,
-                 const std::vector<std::vector<double>> &B,
-                 std::vector<std::vector<double>> &C);
+    void mtx_add(const std::vector<std::vector<float>> &A,
+                 const std::vector<std::vector<float>> &B,
+                 std::vector<std::vector<float>> &C);
 
     /**
      * @brief Perform matrix subtraction using ARM intrinsics, accepts
@@ -200,9 +200,9 @@ class Mtx {
      * @note Matrices must be of at least size 4x4
      * @overload
      */
-    void mtx_sub(const std::vector<std::vector<double>> &A,
-                 const std::vector<std::vector<double>> &B,
-                 std::vector<std::vector<double>> &C);
+    void mtx_sub(const std::vector<std::vector<float>> &A,
+                 const std::vector<std::vector<float>> &B,
+                 std::vector<std::vector<float>> &C);
 
     /**
      * @brief Perform matrix multiplication using ARM intrinsics, accepts

@@ -405,10 +405,10 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
     }
 }
 
-// matrix addition using ARM intrinsics, accepts double types
-void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<double>> &A,
-                                const std::vector<std::vector<double>> &B,
-                                std::vector<std::vector<double>> &C) {
+// matrix addition using ARM intrinsics, accepts float types
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
 
@@ -469,9 +469,9 @@ void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<int>> &A,
 }
 
 // matrix subtraction using ARM intrinsics, accepts double types
-void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<double>> &A,
-                                const std::vector<std::vector<double>> &B,
-                                std::vector<std::vector<double>> &C) {
+void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
 
