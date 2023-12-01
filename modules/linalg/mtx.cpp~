@@ -634,6 +634,37 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
 #elif define(__MMX__)
 #include <mmintrin.h>
 
+// matrix addition using Intel MMX intrinsics, accepts integer types
+void gpmp::linalg::Mtx::mtx_add_mmx(const std::vector<std::vector<int>> &A,
+                                    const std::vector<std::vector<int>> &B,
+                                    std::vector<std::vector<int>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        // requires at least size 4x4 matrices
+        for (; j < cols - 3; j += 4) {
+            // load 4 elements from A, B, and C matrices using MMX
+            __m64 a = _mm_set_pi32(A[i][j + 3], A[i][j + 2], A[i][j + 1], A[i][j]);
+            __m64 b = _mm_set_pi32(B[i][j + 3], B[i][j + 2], B[i][j + 1], B[i][j]);
+            __m64 c = _mm_set_pi32(C[i][j + 3], C[i][j + 2], C[i][j + 1], C[i][j]);
+
+            // perform vectorized addition
+            c = _mm_add_pi32(a, b);
+
+            // store the result back to the C matrix
+            _mm_store_pi32(reinterpret_cast<__int32*>(&C[i][j]), c);
+        }
+
+        // handle the remaining elements that are not multiples of 4
+        for (; j < cols; ++j) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+
+
 // SSE
 #endif
 
