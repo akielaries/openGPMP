@@ -371,16 +371,50 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
     }
 }
 
-// AVX2
-#endif
-
-#if defined(__SSE__)
+#elif defined(__SSE__)
 // SSE2
 #include <emmintrin.h>
 // SSE
 #include <xmmintrin.h>
+
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
+                                const std::vector<std::vector<int>> &B,
+                                std::vector<std::vector<int>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    if (rows > 4) { // Check for at least 4x4 matrices for SSE
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 matrices for SSE
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SSE
+                __m128i a = _mm_loadu_si128(reinterpret_cast<const __m128i *>(&A[i][j]));
+                __m128i b = _mm_loadu_si128(reinterpret_cast<const __m128i *>(&B[i][j]));
+                __m128i c = _mm_loadu_si128(reinterpret_cast<const __m128i *>(&C[i][j]));
+
+                // perform vectorized addition
+                c = _mm_add_epi32(a, b);
+
+                // store the result back to the C matrix
+                _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i][j]), c);
+            }
+
+            // handle the remaining elements that are not multiples of 4
+            for (; j < cols; ++j) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+    }
+    else {
+        // use standard matrix addition for smaller matrices
+        std_mtx_add(A, B, C);
+    }
+}
+
 // SSE
 #endif
+
 // x86
 #endif
 
