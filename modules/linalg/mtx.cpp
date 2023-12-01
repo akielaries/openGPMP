@@ -81,6 +81,7 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
 #if defined(__AVX2__)
+
 // TODO: keep in mind use of int vs unsigned.
 // TODO/BUG: maybe use a flat array for this instead of vector of vector
 //  see:
@@ -411,6 +412,9 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
         std_mtx_add(A, B, C);
     }
 }
+
+#elif define(__MMX__)
+#include <mmintrin.h>
 
 // SSE
 #endif
