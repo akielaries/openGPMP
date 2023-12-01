@@ -80,6 +80,7 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
+#if defined(__AVX2__)
 // TODO: keep in mind use of int vs unsigned.
 // TODO/BUG: maybe use a flat array for this instead of vector of vector
 //  see:
@@ -370,7 +371,20 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
     }
 }
 
-#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
+// AVX2
+#endif
+
+#if defined(__SSE__)
+// SSE2
+#include <emmintrin.h>
+// SSE
+#include <xmmintrin.h>
+// SSE
+#endif
+// x86
+#endif
+
+#if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
     defined(__ARM_ARCH) || defined(__aarch64__)
 // matrix addition using ARM instrinsics, accepts integer types
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
