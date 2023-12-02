@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// matrix addition using Intel intrinsics, accepts integer arrays as matrices</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">void</span> gpmp::linalg::Mtx::mtx_add(<span class="keyword">const</span> <span class="keywordtype">int</span>* A, <span class="keyword">const</span> <span class="keywordtype">int</span>* B, <span class="keywordtype">int</span>* C, <span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// BUG FIXME: this only works with size 256 matrices </span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// BUG FIXME: this only works with size 200+? matrices. dig into WHY!</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (rows &gt; 16) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; ++i) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordtype">int</span> j = 0;</div>
