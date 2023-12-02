@@ -30,7 +30,7 @@ var searchData=
   ['regularizers_634',['Regularizers',['../classgpmp_1_1ml_1_1Regularizers.html',1,'gpmp::ml']]],
   ['regularizers_2ecpp_635',['regularizers.cpp',['../regularizers_8cpp.html',1,'']]],
   ['regularizers_2ehpp_636',['regularizers.hpp',['../regularizers_8hpp.html',1,'']]],
-  ['relu_637',['RELU',['../classgpmp_1_1ml_1_1Activate.html#a5e8e24c184b79f929604c3b1c1c7e44e',1,'gpmp::ml::Activate::RELU(double z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#aa76f6d62abc26d0283d80751318457bd',1,'gpmp::ml::Activate::RELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#aea9c06b39d9a0409ed8f4d25de2c2776',1,'gpmp::ml::Activate::RELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
+  ['relu_637',['RELU',['../classgpmp_1_1ml_1_1Activate.html#aa76f6d62abc26d0283d80751318457bd',1,'gpmp::ml::Activate::RELU(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#a5e8e24c184b79f929604c3b1c1c7e44e',1,'gpmp::ml::Activate::RELU(double z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#aea9c06b39d9a0409ed8f4d25de2c2776',1,'gpmp::ml::Activate::RELU(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
   ['resampling_638',['RESAMPLING',['../ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa',1,'ml.hpp']]],
   ['reshape_639',['reshape',['../torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'reshape(GLint w, GLint h):&#160;torus_animated.cpp'],['../openGL__torus__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'reshape(GLint w, GLint h):&#160;openGL_torus_animated.cpp'],['../openGL__bounce_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'reshape(GLint w, GLint h):&#160;openGL_bounce.cpp'],['../openGL__astronomy__animated_8cpp.html#a25e760e42e42389ea3a9b5bb35596b67',1,'reshape(GLint w, GLint h):&#160;openGL_astronomy_animated.cpp']]],
   ['result_5ftype_640',['result_type',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a6efd7e4f60bb12034f1b87af33d2a3a5',1,'gpmp::core::rndm::LCG']]],
@@ -43,9 +43,12 @@ var searchData=
   ['rotr_647',['ROTR',['../classgpmp_1_1RedPike.html#aa058fbe6482459004b8a06dfa44d54c7',1,'gpmp::RedPike']]],
   ['rotr32_648',['rotr32',['../namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55',1,'gpmp::core::rndm']]],
   ['rounds_649',['ROUNDS',['../classgpmp_1_1RedPike.html#a565aab083316691cc727cdebb77c9195',1,'gpmp::RedPike']]],
-  ['rows_650',['rows',['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#ad9f69dabc851035bf2b910bac34d2ae3',1,'pygpmp.linalg.linalg.MatrixI.rows()'],['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#aa1b62f91245783ea8d71b5a28d1a9980',1,'pygpmp.linalg.linalg.Matrix.rows()'],['../classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb',1,'gpmp::linalg::Matrix::rows()']]],
+  ['rows_650',['rows',['../classgpmp_1_1linalg_1_1Matrix.html#a31ca84bc8249b8448c1b422bf0fb1acb',1,'gpmp::linalg::Matrix::rows()'],['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#ad9f69dabc851035bf2b910bac34d2ae3',1,'pygpmp.linalg.linalg.MatrixI.rows()'],['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#aa1b62f91245783ea8d71b5a28d1a9980',1,'pygpmp.linalg.linalg.Matrix.rows()']]],
   ['rows_5f_651',['rows_',['../classgpmp_1_1core_1_1DataTable.html#a106ac1600ba1a2fbe6f488a24477f991',1,'gpmp::core::DataTable::rows_()'],['../classgpmp_1_1core_1_1DataTable.html#ab51b15294b664762412bd26debed37ec',1,'gpmp::core::DataTable::rows_()']]],
   ['rowvector_652',['RowVector',['../naive__net_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_net.hpp']]],
   ['run_653',['run',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a5c73eb9084563467fcf6985ebce230f1',1,'gpmp::ml::PrimaryMLP']]],
-  ['run_5fmtx_5fadd_654',['run_mtx_add',['../samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]]
+  ['run_5fmtx_5fadd_654',['run_mtx_add',['../samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]],
+  ['run_5fmtx_5fadd_5fdoub_655',['run_mtx_add_doub',['../samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b',1,'mtx.cpp']]],
+  ['run_5fmtx_5fadd_5fflat_5fv_656',['run_mtx_add_flat_v',['../samples_2cpp_2mtx_8cpp.html#a93588baab7327b1fa5f9bb7736e44b4a',1,'mtx.cpp']]],
+  ['run_5fmtx_5fadd_5fflt_657',['run_mtx_add_flt',['../samples_2cpp_2mtx_8cpp.html#a98093e1e4826e10eed1b30d15432a9f9',1,'mtx.cpp']]]
 ];
