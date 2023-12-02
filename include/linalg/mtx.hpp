@@ -71,7 +71,29 @@ class Mtx {
      * @note Matrices must be of at least size 8x8
      * @overload
      */
-    void mtx_add(const int *A, const int *B, int *C);
+    void mtx_add(const int *A, const int *B, int *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix addition using Intel intrinsics, accepts
+     * flat arrays of type double
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_add(const double *A, const double *B, double *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix addition using Intel intrinsics, accepts
+     * flat arrays of type float
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_add(const float *A, const float *B, float *C, int rows, int cols);
 
     /**
      * @brief Perform matrix addition using Intel intrinsics, accepts
@@ -289,7 +311,19 @@ class Mtx {
 #endif
 
     /**
-     * @brief Perform matrix addition on two matrices
+     * @brief Perform matrix addition on two matrices as flat arrays
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @param rows Number of rows
+     * @param cols Number of columns
+     * @overload
+     */
+    template <typename T>
+    void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix addition on two matrices as flat vectors
      * @param A Input matrix A
      * @param B Input matrix B
      * @param C Output matrix C
@@ -299,12 +333,9 @@ class Mtx {
     void std_mtx_add(const std::vector<T> &A,
                      const std::vector<T> &B,
                      std::vector<T> &C);
-    void std_mtx_add(const int *A, 
-                     const int *B, 
-                     int *C);
 
     /**
-     * @brief Perform matrix addition on two matrices
+     * @brief Perform matrix addition on two matrices as 2D vectors
      * @param A Input matrix A
      * @param B Input matrix B
      * @param C Output matrix C
@@ -316,7 +347,7 @@ class Mtx {
                      std::vector<std::vector<T>> &C);
 
     /**
-     * @brief Perform matrix subtraction on two matrices
+     * @brief Perform matrix subtraction on two matrices as 2D vectors
      * @param A Input matrix A
      * @param B Input matrix B
      * @param C Output matrix C
@@ -328,7 +359,7 @@ class Mtx {
                      std::vector<std::vector<T>> &C);
 
     /**
-     * @brief Perform matrix multiplication on two matrices
+     * @brief Perform matrix multiplication on two matrices 2D vectors
      * @param A Input matrix A
      * @param B Input matrix B
      * @param C Output matrix C

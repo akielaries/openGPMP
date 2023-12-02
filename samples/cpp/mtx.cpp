@@ -242,16 +242,20 @@ void run_mtx_add_doub() {
 
 }
 
-void run_mtx_add_flat_v() {
+void run_mtx_add_arr() {
     gpmp::linalg::Mtx mtx;
 
-    //std::chrono::steady_clock::time_point gen_start_time =
-    //    std::chrono::steady_clock::now();
+    std::chrono::steady_clock::time_point gen_start_time =
+        std::chrono::steady_clock::now();
 
-    std::cout << "HERE?? \n";
-    new int A[matrixSize * matrixSize];
+    /*new int A[matrixSize * matrixSize];
     new int B[matrixSize * matrixSize];
     new int C[matrixSize * matrixSize];
+    */
+
+    int *A = new int[matrixSize * matrixSize];
+    int *C = new int[matrixSize * matrixSize];
+    int *B = new int[matrixSize * matrixSize];
 
     // initialize random number generator
     std::random_device rd;
@@ -265,16 +269,15 @@ void run_mtx_add_flat_v() {
             B[i * matrixSize + j] = distribution(gen);
         }
     }
-    std::cout << "WHAT ABOUT HERE? \n";
-/*
+
     std::chrono::steady_clock::time_point start_time_mtx =
         std::chrono::steady_clock::now();
     // perform matrix addition
-    //mtx.mtx_add(A, B, C);
+    mtx.mtx_add(A, B, C, matrixSize, matrixSize);
     std::chrono::steady_clock::time_point start_time_std_mtx =
         std::chrono::steady_clock::now();
 
-    //mtx.std_mtx_add(A, B, C);
+    mtx.std_mtx_add(A, B, C, matrixSize, matrixSize);
 
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();
@@ -296,11 +299,11 @@ void run_mtx_add_flat_v() {
                      end_time - start_time_std_mtx)
                      .count()
               << " ms" << std::endl;
-    */
+    
 
-    delete A[];
-    delete B[];
-    delete C[];
+    delete[] A;
+    delete[] B;
+    delete[] C;
 }
 
 void fill_matrix_random(float *matrix, std::size_t rows, std::size_t cols) {
@@ -380,7 +383,7 @@ int main() {
 
     run_mtx_add_doub();
 
-    run_mtx_add_flat_v();
+    run_mtx_add_arr();
 
     mtx_add_f90();
     return 0;

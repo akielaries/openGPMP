@@ -36,31 +36,37 @@
 #include <cstdint>
 #include <iostream>
 #include <vector>
-#include <malloc.h>
 
-/** FORTRAN SUBROUTINES LOCATED IN `mtx_routines.f90` */
+/************************************************************************
+ *
+ * Matrix Operations on Arrays using Fortran Subroutines 
+ * in `mtx_routins.f90`
+ *
+ ************************************************************************/
 extern "C" {
+// Matrix add routine (FLOAT)
 void mtx_add_routine_float_(float *A,
                             float *B,
                             float *C,
-                            std::size_t *matrixSize);
-void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *matrixSize);
+                            std::size_t *mtx_size);
+// Matrix add routine (INT)
+void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *mtx_size);
 }
 
 // C++ wrapper for Fortran mtx addition subroutine FLOAT
 void gpmp::linalg::Mtx::mtx_add_f90(float *A,
                                     float *B,
                                     float *C,
-                                    std::size_t matrixSize) {
-    mtx_add_routine_float_(A, B, C, &matrixSize);
+                                    std::size_t mtx_size) {
+    mtx_add_routine_float_(A, B, C, &mtx_size);
 }
 
 // C++ wrapper for Fortran mtx addition subroutine INT
 void gpmp::linalg::Mtx::mtx_add_f90(int *A,
                                     int *B,
                                     int *C,
-                                    std::size_t matrixSize) {
-    mtx_add_routine_int_(A, B, C, &matrixSize);
+                                    std::size_t mtx_size) {
+    mtx_add_routine_int_(A, B, C, &mtx_size);
 }
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
@@ -70,14 +76,15 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
 // AVX family intrinsics
 #include <immintrin.h>
 
-// TODO: keep in mind use of int vs unsigned.
-// TODO/BUG: maybe use a flat array for this instead of vector of vector
-//  see:
-//  https://stackoverflow.com/questions/256297/best-way-to-represent-a-2-d-array-in-c-with-size-determined-at-run-time
-// should this function return a matrix C instead of modifying it as input?
-void gpmp::linalg::Mtx::mtx_add(const int* A, const int* B, int* C) {
-    int rows = sizeof(A) / sizeof(int);
-    int cols = rows;
+/************************************************************************
+ *
+ * Matrix Operations on Arrays
+ *
+ ************************************************************************/
+
+// matrix addition using Intel intrinsics, accepts integer arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const int* A, const int* B, int* C, int rows, int cols) {
+    // BUG FIXME: this only works with size 256 matrices 
     if (rows > 16) {
         for (int i = 0; i < rows; ++i) {
             int j = 0;
@@ -103,11 +110,81 @@ void gpmp::linalg::Mtx::mtx_add(const int* A, const int* B, int* C) {
     }
     else {
         // use standard matrix addition
-        std_mtx_add(A, B, C);
+        std_mtx_add(A, B, C, rows, cols);
     }
 }
 
+// matrix addition using Intel intrinsics, accepts double arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const double* A, const double* B, double* C, int rows, int cols) {
+    if (rows > 8) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m256d a = _mm256_loadu_pd(&A[i * cols + j]);
+                __m256d b = _mm256_loadu_pd(&B[i * cols + j]);
+                __m256d c = _mm256_loadu_pd(&C[i * cols + j]);
+                // perform vectorized addition and accumulate the result
+                c = _mm256_add_pd(a, b);
 
+                // store the result back to the C matrix
+                _mm256_storeu_pd(&C[i * cols + j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    }
+    else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts float arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const float* A, const float* B, float* C, int rows, int cols) {
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 7; j += 8) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m256 a = _mm256_loadu_ps(&A[i * cols + j]);
+                __m256 b = _mm256_loadu_ps(&B[i * cols + j]);
+                __m256 c = _mm256_loadu_ps(&C[i * cols + j]);
+                /*
+                __m256d a = _mm256_loadu_si256(reinterpret_cast<const __m256i*>(&A[i * cols + j]));
+                __m256d b = _mm256_loadu_si256(reinterpret_cast<const __m256i*>(&B[i * cols + j]));
+                __m256d c = _mm256_loadu_si256(reinterpret_cast<const __m256i*>(&C[i * cols + j]));
+                */
+                // perform vectorized addition and accumulate the result
+                c = _mm256_add_ps(a, b);
+
+                // store the result back to the C matrix
+                //_mm256_storeu_si256(reinterpret_cast<__m256i*>(&C[i * cols + j]), c);
+                _mm256_storeu_ps(&C[i * cols + j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    }
+    else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+/************************************************************************
+ *
+ * Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
 // matrix addition using Intel intrinsic, accepts integer types
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
@@ -436,7 +513,17 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
 // SSE2
 #include <emmintrin.h>
 #include <smmintrin.h>
+/************************************************************************
+ *
+ * Matrix Operations on Arrays
+ *
+ ************************************************************************/
 
+/************************************************************************
+ *
+ * Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
                                 std::vector<std::vector<int>> &C) {
@@ -703,7 +790,11 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
     }
 }
 
-// MMX
+/************************************************************************
+ *
+ * Matrix Operations for MMX ISA
+ *
+ ************************************************************************/
 #elif define(__MMX__)
 #include <mmintrin.h>
 
@@ -713,11 +804,28 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
 // x86
 #endif
 
+/************************************************************************
+ *
+ * Matrix Operations for ARM NEON CPUs
+ *
+ ************************************************************************/
 #if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
     defined(__ARM_ARCH) || defined(__aarch64__)
 
 // ARM intrinsic function header
 #include <arm_neon.h>
+/************************************************************************
+ *
+ * Matrix Operations on arrays
+ *
+ ************************************************************************/
+
+
+/************************************************************************
+ *
+ * Matrix Operations on vector<vector> 
+ *
+ ************************************************************************/
 // matrix addition using ARM instrinsics, accepts integer types
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
@@ -892,12 +1000,15 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
 
 #endif
 
+/************************************************************************
+ *
+ * Standard/Naive Matrix Operations on Arrays
+ *
+ ************************************************************************/
 // naive matrix addition algorithm on arrays
-void gpmp::linalg::Mtx::std_mtx_add(const int *A, const int *B, int *C) {
+template <typename T>
+void gpmp::linalg::Mtx::std_mtx_add(const T *A, const T *B, T *C, int rows, int cols) {
     // MTX A AND B MUST BE SAME SIZE
-    int rows = sizeof(A) / sizeof(int);
-    int cols = rows;
-
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             // perform matrix addition
@@ -906,8 +1017,19 @@ void gpmp::linalg::Mtx::std_mtx_add(const int *A, const int *B, int *C) {
     }
 }
 
+// instantiations for types accepted by templated std_mtx_add function for
+// flat arrays
+template void gpmp::linalg::Mtx::std_mtx_add(const int *A, const int *B, int *C, int rows, int cols);
 
+template void gpmp::linalg::Mtx::std_mtx_add(const double *A, const double *B, double *C, int rows, int cols);
 
+template void gpmp::linalg::Mtx::std_mtx_add(const float *A, const float *B, float *C, int rows, int cols);
+
+/************************************************************************
+ *
+ * Standard/Naive Matrix Operations on vector<>
+ *
+ ************************************************************************/
 // naive matrix addition algorithm on vector<>
 template <typename T>
 void gpmp::linalg::Mtx::std_mtx_add(const std::vector<T> &A,
@@ -939,6 +1061,12 @@ template void gpmp::linalg::Mtx::std_mtx_add(const std::vector<float> &A,
                                             const std::vector<float> &B,  
                                             std::vector<float> &C); 
 
+
+/************************************************************************
+ *
+ * Standard/Naive Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
 // naive matrix addition algorithm on vector<vector>
 template <typename T>
 void gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<T>> &A,

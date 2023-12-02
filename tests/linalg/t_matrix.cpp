@@ -10,7 +10,7 @@
 #include <vector>
 
 using namespace gpmp;
-#define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
+#define TEST_COUT std::cerr << "\033[64m[          ] [ INFO ] \033[0m"
 
 namespace {
 
@@ -53,14 +53,37 @@ bool mtx_verif(const std::vector<T> &A, const std::vector<T> &B) {
     return true;
 }
 
+template <typename T>
+bool mtx_verif(const T *A, const T *B, int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            if (A[i * cols + j] != B[i * cols + j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+template <typename T>
+void print_matrix(const T *matrix, int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << matrix[i * cols + j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}
+
 // unit tests for Mtx class methods using Intel intrinsics
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
 
 // test case to compare the results of the intrinsics implementation with the
 // naive implementation for matrix addition
-TEST(ADD_MTX_SMALL_INT, assert_intel_intrin) {
-    int mtx_size = 32;
+TEST(ADD_MTX_SMALL_VEC_INT, assert_intel_intrin) {
+    int mtx_size = 64;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
@@ -113,7 +136,7 @@ TEST(ADD_MTX_SMALL_INT, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_LARGE_INT, assert_intel_intrin) {
+TEST(ADD_MTX_LARGE_VEC_INT, assert_intel_intrin) {
     int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
@@ -166,8 +189,8 @@ TEST(ADD_MTX_LARGE_INT, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_SMALL_DOUBLE, assert_intel_intrin) {
-    int mtx_size = 32;
+TEST(ADD_MTX_SMALL_VEC_DOUBLE, assert_intel_intrin) {
+    int mtx_size = 64;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     std::vector<std::vector<double>> A(mtx_size, std::vector<double>(mtx_size));
@@ -220,7 +243,7 @@ TEST(ADD_MTX_SMALL_DOUBLE, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_LARGE_DOUBLE, assert_intel_intrin) {
+TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
     int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
@@ -272,6 +295,226 @@ TEST(ADD_MTX_LARGE_DOUBLE, assert_intel_intrin) {
     // compare the results
     ASSERT_TRUE(mtx_verif(expected, result));
 }
+
+TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
+    int mtx_size = 92;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    int *A = new int[mtx_size * mtx_size];
+    int *B = new int[mtx_size * mtx_size];
+    int *expected = new int[mtx_size * mtx_size];
+    int *result = new int[mtx_size * mtx_size];
+
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = distribution(gen);
+            B[i * mtx_size + j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    /*
+    std::cout << "Matrix A:" << std::endl;
+    print_matrix(A, mtx_size, mtx_size);
+
+    std::cout << "Matrix B:" << std::endl;
+    print_matrix(B, mtx_size, mtx_size);
+
+    std::cout << "Matrix EXPECTED after addition:" << std::endl;
+    print_matrix(expected, mtx_size, mtx_size);
+
+    std::cout << "Matrix RESULT after addition:" << std::endl;
+    print_matrix(result, mtx_size, mtx_size);
+*/
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(ADD_MTX_LARGE_ARR_INT, assert_intel_intrin) {
+    int mtx_size = 8192;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    int *A = new int[mtx_size * mtx_size];
+    int *B = new int[mtx_size * mtx_size];
+    int *expected = new int[mtx_size * mtx_size];
+    int *result = new int[mtx_size * mtx_size];
+
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = distribution(gen);
+            B[i * mtx_size + j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(ADD_MTX_SMALL_ARR_DOUBLE, assert_intel_intrin) {
+    int mtx_size = 64;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    double *A = new double[mtx_size * mtx_size];
+    double *B = new double[mtx_size * mtx_size];
+    double *expected = new double[mtx_size * mtx_size];
+    double *result = new double[mtx_size * mtx_size];
+
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> distribution(1.0, 100.0);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = distribution(gen);
+            B[i * mtx_size + j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
+    int mtx_size = 8192;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+
+    // define input matrices A and B
+    double *A = new double[mtx_size * mtx_size];
+    double *B = new double[mtx_size * mtx_size];
+    double *expected = new double[mtx_size * mtx_size];        
+    double *result = new double[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> distribution(1.0, 100.0);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = distribution(gen);
+            B[i * mtx_size + j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    /*
+        std::cout << "Matrix EXPECTED after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << expected[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix RESULT after addition:" << std::endl;
+        for (int i = 0; i < mtx_size; ++i) {
+            for (int j = 0; j < mtx_size; ++j) {
+                std::cout << result[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
 // TODO: implement tests for large matrices, tests for ints, floats, doubles
 
 // unit tests for Mtx class methods using ARM intrinsics
@@ -279,7 +522,7 @@ TEST(ADD_MTX_LARGE_DOUBLE, assert_intel_intrin) {
     defined(__ARM_ARCH) || defined(__aarch64__)
 
 TEST(ADD_MTX_SMALL, assert_arm_intrin) {
-    int mtx_size = 32;
+    int mtx_size = 64;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
