@@ -64,6 +64,17 @@ class Mtx {
 
     /**
      * @brief Perform matrix addition using Intel intrinsics, accepts
+     * flat arrays of type int
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_add(const int *A, const int *B, int *C);
+
+    /**
+     * @brief Perform matrix addition using Intel intrinsics, accepts
      * vectors of type int
      * @param A Input matrix A
      * @param B Input matrix B
@@ -87,6 +98,19 @@ class Mtx {
     void mtx_add(const std::vector<std::vector<double>> &A,
                  const std::vector<std::vector<double>> &B,
                  std::vector<std::vector<double>> &C);
+
+    /**
+     * @brief Perform matrix addition using Intel intrinsics, accepts
+     * vectors of type float
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 4x4
+     * @overload
+     */
+    void mtx_add(const std::vector<std::vector<float>> &A,
+                 const std::vector<std::vector<float>> &B,
+                 std::vector<std::vector<float>> &C);
 
     /**
      * @brief Perform matrix subtraction using Intel intrinsics, accepts
@@ -263,6 +287,21 @@ class Mtx {
     void mtx_tpose(std::vector<std::vector<double>> &matrix);
 
 #endif
+
+    /**
+     * @brief Perform matrix addition on two matrices
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @overload
+     */
+    template <typename T>
+    void std_mtx_add(const std::vector<T> &A,
+                     const std::vector<T> &B,
+                     std::vector<T> &C);
+    void std_mtx_add(const int *A, 
+                     const int *B, 
+                     int *C);
 
     /**
      * @brief Perform matrix addition on two matrices
