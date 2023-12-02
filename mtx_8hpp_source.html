@@ -131,118 +131,122 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    defined(__i386) || defined(__amd64__) || defined(__amd64)</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> <span class="keywordtype">int</span> *A, <span class="keyword">const</span> <span class="keywordtype">int</span> *B, <span class="keywordtype">int</span> *C);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> <span class="keywordtype">int</span> *A, <span class="keyword">const</span> <span class="keywordtype">int</span> *B, <span class="keywordtype">int</span> *C, <span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                 std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                 std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                 std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                  std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">    defined(__ARM_ARCH) || defined(__aarch64__)</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                 std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                 std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                  std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">void</span> mtx_mult_strass(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                         <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                         std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">void</span> mtx_mult_strass(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                         <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                         std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> <span class="keywordtype">double</span> *A, <span class="keyword">const</span> <span class="keywordtype">double</span> *B, <span class="keywordtype">double</span> *C, <span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> <span class="keywordtype">float</span> *A, <span class="keyword">const</span> <span class="keywordtype">float</span> *B, <span class="keywordtype">float</span> *C, <span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                 std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                 std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                 std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                  std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">    defined(__ARM_ARCH) || defined(__aarch64__)</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">void</span> mtx_add(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                 std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                 std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordtype">void</span> mtx_sub(<span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                 std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                  <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                  std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">void</span> mtx_mult_strass(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                         <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                         std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#ab43355658d69c1c98dfd8fddc67af285">std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;A,</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                     <span class="keyword">const</span> std::vector&lt;T&gt; &amp;B,</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                     std::vector&lt;T&gt; &amp;C);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#ab43355658d69c1c98dfd8fddc67af285">std_mtx_add</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *A, </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">int</span> *B, </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                     <span class="keywordtype">int</span> *C);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#ab43355658d69c1c98dfd8fddc67af285">std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                     <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                     std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                     <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                     std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                      <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                      std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">  351</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">std_mtx_mult_strass</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                             <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                             std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;};</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;} <span class="comment">// namespace linalg</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;} <span class="comment">// namespace gpmp</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">void</span> mtx_mult_strass(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                         <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                         std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">void</span> mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(<span class="keyword">const</span> T *A, <span class="keyword">const</span> T *B, T *C, <span class="keywordtype">int</span> rows, <span class="keywordtype">int</span> cols);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;T&gt; &amp;A,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                     <span class="keyword">const</span> std::vector&lt;T&gt; &amp;B,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                     std::vector&lt;T&gt; &amp;C);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                     <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                     std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">std_mtx_sub</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                     <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                     std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">std_mtx_mult</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                      <span class="keyword">const</span> std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                      std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">  382</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">std_mtx_mult_strass</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                             <span class="keyword">const</span> std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                             std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;};</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;} <span class="comment">// namespace linalg</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a></div><div class="ttdoc">Mtx class offers matrix arithmetic operations. Some methods are element-wise while others make use of...</div><div class="ttdef"><b>Definition:</b> <a href="mtx_8hpp_source.html#l00047">mtx.hpp:47</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a797ab3a6754ca998c009d0e4f7041cd8"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a></div><div class="ttdeci">void std_mtx_sub(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix subtraction on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00975">mtx.cpp:975</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a865c77bec1b61111225dfce2eaff1d0c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a></div><div class="ttdeci">void std_mtx_mult(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix multiplication on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l01006">mtx.cpp:1006</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a713e3eb851f21419cfda066a74c68969"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">gpmp::linalg::Mtx::std_mtx_add</a></div><div class="ttdeci">void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols)</div><div class="ttdoc">Perform matrix addition on two matrices as flat arrays.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l01010">mtx.cpp:1010</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a797ab3a6754ca998c009d0e4f7041cd8"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">gpmp::linalg::Mtx::std_mtx_sub</a></div><div class="ttdeci">void std_mtx_sub(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix subtraction on two matrices as 2D vectors.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l01103">mtx.cpp:1103</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a865c77bec1b61111225dfce2eaff1d0c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">gpmp::linalg::Mtx::std_mtx_mult</a></div><div class="ttdeci">void std_mtx_mult(const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</div><div class="ttdoc">Perform matrix multiplication on two matrices 2D vectors.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l01134">mtx.cpp:1134</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_aa104990c868728ef51d6372280c8fb0b"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#aa104990c868728ef51d6372280c8fb0b">gpmp::linalg::Mtx::std_mtx_mult_strass</a></div><div class="ttdeci">void std_mtx_mult_strass(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</div><div class="ttdoc">Performs matrix multiplication using the Strassen algorithm.</div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_ab2fb81bdb02ee504b064a12f2b156a37"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#ab2fb81bdb02ee504b064a12f2b156a37">gpmp::linalg::Mtx::mtx_add_f90</a></div><div class="ttdeci">void mtx_add_f90(float *A, float *B, float *C, std::size_t matrixSize)</div><div class="ttdoc">Perform matrix addition using flattened matrices and the designated Fortran subroutine....</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00051">mtx.cpp:51</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_ab43355658d69c1c98dfd8fddc67af285"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#ab43355658d69c1c98dfd8fddc67af285">gpmp::linalg::Mtx::std_mtx_add</a></div><div class="ttdeci">void std_mtx_add(const std::vector&lt; T &gt; &amp;A, const std::vector&lt; T &gt; &amp;B, std::vector&lt; T &gt; &amp;C)</div><div class="ttdoc">Perform matrix addition on two matrices.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00913">mtx.cpp:913</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_ab2fb81bdb02ee504b064a12f2b156a37"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#ab2fb81bdb02ee504b064a12f2b156a37">gpmp::linalg::Mtx::mtx_add_f90</a></div><div class="ttdeci">void mtx_add_f90(float *A, float *B, float *C, std::size_t matrixSize)</div><div class="ttdoc">Perform matrix addition using flattened matrices and the designated Fortran subroutine....</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00057">mtx.cpp:57</a></div></div>
 <div class="ttc" id="amtx__routines_8f90_html_ab5347b6c35e3e1dc1403c734fb167fa9"><div class="ttname"><a href="mtx__routines_8f90.html#ab5347b6c35e3e1dc1403c734fb167fa9">mtx_mult</a></div><div class="ttdeci">subroutine mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)</div><div class="ttdoc">FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function.</div><div class="ttdef"><b>Definition:</b> <a href="mtx__routines_8f90_source.html#l00070">mtx_routines.f90:71</a></div></div>
 <div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 <div class="ttc" id="asamples_2cpp_2mtx_8cpp_html_ad6548ce9849f89f541959b5bf06374a6"><div class="ttname"><a href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a></div><div class="ttdeci">constexpr int matrixSize</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2mtx_8cpp_source.html#l00006">mtx.cpp:6</a></div></div>

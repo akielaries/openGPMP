@@ -21,7 +21,7 @@ var searchData=
   ['rotr32_1335',['rotr32',['../namespacegpmp_1_1core_1_1rndm.html#acb3103c254e529ca316e5d5438439d55',1,'gpmp::core::rndm']]],
   ['run_1336',['run',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a5c73eb9084563467fcf6985ebce230f1',1,'gpmp::ml::PrimaryMLP']]],
   ['run_5fmtx_5fadd_1337',['run_mtx_add',['../samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c',1,'mtx.cpp']]],
-  ['run_5fmtx_5fadd_5fdoub_1338',['run_mtx_add_doub',['../samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b',1,'mtx.cpp']]],
-  ['run_5fmtx_5fadd_5fflat_5fv_1339',['run_mtx_add_flat_v',['../samples_2cpp_2mtx_8cpp.html#a93588baab7327b1fa5f9bb7736e44b4a',1,'mtx.cpp']]],
+  ['run_5fmtx_5fadd_5farr_1338',['run_mtx_add_arr',['../samples_2cpp_2mtx_8cpp.html#a8f1f339ed7f50be702f09182a87722aa',1,'mtx.cpp']]],
+  ['run_5fmtx_5fadd_5fdoub_1339',['run_mtx_add_doub',['../samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b',1,'mtx.cpp']]],
   ['run_5fmtx_5fadd_5fflt_1340',['run_mtx_add_flt',['../samples_2cpp_2mtx_8cpp.html#a98093e1e4826e10eed1b30d15432a9f9',1,'mtx.cpp']]]
 ];
