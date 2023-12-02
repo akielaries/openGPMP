@@ -84,6 +84,225 @@ void run_mtx_add() {
 
 }
 
+void run_mtx_add_flt() {
+    gpmp::linalg::Mtx mtx;
+
+    std::chrono::steady_clock::time_point gen_start_time =
+        std::chrono::steady_clock::now();
+
+    std::vector<std::vector<float>> A(matrixSize, std::vector<float>(matrixSize));
+    std::vector<std::vector<float>> B(matrixSize, std::vector<float>(matrixSize));
+    std::vector<std::vector<float>> C(matrixSize, std::vector<float>(matrixSize));
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> distribution(1.0, 100.0);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < matrixSize; ++i) {
+        for (int j = 0; j < matrixSize; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    std::chrono::steady_clock::time_point start_time_mtx =
+        std::chrono::steady_clock::now();
+    // perform matrix addition
+    mtx.mtx_add(A, B, C);
+    std::chrono::steady_clock::time_point start_time_std_mtx =
+        std::chrono::steady_clock::now();
+
+    mtx.std_mtx_add(A, B, C);
+    /*
+        std::cout << "Matrix A:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << A[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix B:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << B[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        // Display the result
+        std::cout << "Matrix C after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << C[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
+
+    std::cout << "Generating random matrices (VECTORS, FLOATS) - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     start_time_mtx - gen_start_time)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "SIMD - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     start_time_std_mtx - start_time_mtx)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "NAIVE - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time_std_mtx)
+                     .count()
+              << " ms" << std::endl;
+
+}
+
+void run_mtx_add_doub() {
+    gpmp::linalg::Mtx mtx;
+
+    std::chrono::steady_clock::time_point gen_start_time =
+        std::chrono::steady_clock::now();
+
+    std::vector<std::vector<double>> A(matrixSize, std::vector<double>(matrixSize));
+    std::vector<std::vector<double>> B(matrixSize, std::vector<double>(matrixSize));
+    std::vector<std::vector<double>> C(matrixSize, std::vector<double>(matrixSize));
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> distribution(1.0, 100.0);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < matrixSize; ++i) {
+        for (int j = 0; j < matrixSize; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    std::chrono::steady_clock::time_point start_time_mtx =
+        std::chrono::steady_clock::now();
+    // perform matrix addition
+    mtx.mtx_add(A, B, C);
+    std::chrono::steady_clock::time_point start_time_std_mtx =
+        std::chrono::steady_clock::now();
+
+    mtx.std_mtx_add(A, B, C);
+    /*
+        std::cout << "Matrix A:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << A[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+
+        std::cout << "Matrix B:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << B[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        // Display the result
+        std::cout << "Matrix C after addition:" << std::endl;
+        for (int i = 0; i < matrixSize; ++i) {
+            for (int j = 0; j < matrixSize; ++j) {
+                std::cout << C[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    */
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
+
+    std::cout << "Generating random matrices (VECTORS, DOUBLES) - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     start_time_mtx - gen_start_time)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "SIMD - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     start_time_std_mtx - start_time_mtx)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "NAIVE - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time_std_mtx)
+                     .count()
+              << " ms" << std::endl;
+
+}
+
+void run_mtx_add_flat_v() {
+    gpmp::linalg::Mtx mtx;
+
+    //std::chrono::steady_clock::time_point gen_start_time =
+    //    std::chrono::steady_clock::now();
+
+    std::cout << "HERE?? \n";
+    new int A[matrixSize * matrixSize];
+    new int B[matrixSize * matrixSize];
+    new int C[matrixSize * matrixSize];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < matrixSize; ++i) {
+        for (int j = 0; j < matrixSize; ++j) {
+            A[i * matrixSize + j] = distribution(gen);
+            B[i * matrixSize + j] = distribution(gen);
+        }
+    }
+    std::cout << "WHAT ABOUT HERE? \n";
+/*
+    std::chrono::steady_clock::time_point start_time_mtx =
+        std::chrono::steady_clock::now();
+    // perform matrix addition
+    //mtx.mtx_add(A, B, C);
+    std::chrono::steady_clock::time_point start_time_std_mtx =
+        std::chrono::steady_clock::now();
+
+    //mtx.std_mtx_add(A, B, C);
+
+    std::chrono::steady_clock::time_point end_time =
+        std::chrono::steady_clock::now();
+
+    std::cout << "Generating random matrices (ARRAYS, INT) - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                  start_time_mtx - gen_start_time)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "SIMD - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     start_time_std_mtx - start_time_mtx)
+                     .count()
+              << " ms" << std::endl;
+
+    std::cout << "NAIVE - Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time_std_mtx)
+                     .count()
+              << " ms" << std::endl;
+    */
+
+    delete A[];
+    delete B[];
+    delete C[];
+}
+
 void fill_matrix_random(float *matrix, std::size_t rows, std::size_t cols) {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -156,6 +375,12 @@ void mtx_add_f90() {
 
 int main() {
     run_mtx_add();
+
+    run_mtx_add_flt();
+
+    run_mtx_add_doub();
+
+    run_mtx_add_flat_v();
 
     mtx_add_f90();
     return 0;
