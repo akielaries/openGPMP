@@ -40,7 +40,7 @@
 /************************************************************************
  *
  * Matrix Operations on Arrays using Fortran Subroutines 
- * in `mtx_routins.f90`
+ * in `mtx_routines.f90`
  *
  ************************************************************************/
 extern "C" {
