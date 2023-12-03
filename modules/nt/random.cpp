@@ -30,6 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
+
 #include "../../include/nt/random.hpp"
 #include <chrono>
 #include <cstdint>

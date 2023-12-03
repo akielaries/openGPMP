@@ -31,54 +31,70 @@
 ! * WARRANTY OF ANY KIND, either express or implied.
 ! *
 ! ************************************************************************/
-
 !> FORTRAN subroutine testing the Matrix Addition subroutine
 subroutine test_mtx_add()
-   implicit none
-   !< Declare variables
-   integer(kind=8) :: nrows, ncols
-   real(kind=8), allocatable :: a(:, :), b(:, :), c(:, :)
-   integer(kind=8) :: i, j
+    IMPLICIT NONE
 
-   !< Initialize variables (e.g., set nrows and ncols)
-   nrows = 3
-   ncols = 3
+    !< declare variables
+    integer(kind=8) :: nrows, ncols
+    real(kind=8), allocatable :: a(:, :), b(:, :), c(:, :)
+    integer(kind=8) :: i, j
+    logical :: failed
 
-   !< Allocate memory for arrays
-   allocate (a(nrows, ncols))
-   allocate (b(nrows, ncols))
-   allocate (c(nrows, ncols))
+    !< initialize variables (e.g., set nrows and ncols)
+    nrows = 3
+    ncols = 3
 
-   !< Initialize input arrays (a and b) with test data
-   a = 1.0
-   b = 2.0
+    !< allocate memory for arrays
+    allocate (a(nrows, ncols))
+    allocate (b(nrows, ncols))
+    allocate (c(nrows, ncols))
 
-   !< Call the subroutine being tested
-   call mtx_add(a, b, c, nrows, ncols)
+    !< initialize input arrays (a and b) with test data
+    a = 1.0
+    b = 2.0
 
-   !< Check the output (c) against expected results
-   do i = 1, nrows
-      do j = 1, ncols
-         if (c(i, j) /= a(i, j) + b(i, j)) then
-            print *,'' //achar(27)//'[31m [!] LINALG MTX ADD FAILED'//achar(27)//'[0m' 
-            stop
-         end if
-      end do
-   end do
+    !< call the subroutine being tested (float version)
+    call mtx_add_routine_float(a, b, c, nrows, ncols)
 
-   !< Clean up allocated memory
-   deallocate (a, b, c)
+    !< check the output (c) against expected results
+    failed = .false.
+    do i = 1, nrows
+        do j = 1, ncols
+            if (c(i, j) /= a(i, j) + b(i, j)) then
+                print *, ''//achar(27)//'[31m [!] LINALG MTX ADD (FLOAT) FAILED'//achar(27)//'[0m'
+                failed = .true.
+                exit
+            end if
+        end do
+    end do
 
-   !< If the execution reaches this point, the test has passed
-   print *, achar(27)//'[32m[LINALG MTX ADD PASSED]'//achar(27)//'[0m'
+    !< call the subroutine being tested (int version)
+    call mtx_add_routine_int(a, b, c, nrows, ncols)
 
+    !< check the output (c) against expected results
+    do i = 1, nrows
+        do j = 1, ncols
+            if (c(i, j) /= a(i, j) + b(i, j)) then
+                print *, ''//achar(27)//'[31m [!] LINALG MTX ADD (INT) FAILED'//achar(27)//'[0m'
+                failed = .true.
+                exit
+            end if
+        end do
+    end do
 
+    !< free allocated memory for a,b,c
+    deallocate (a, b, c)
+
+    !< IF EXECUTION REACHES HERE, PASS!
+    if (.not. failed) then
+        print *, achar(27)//'[32m[LINALG MTX ADD PASSED]'//achar(27)//'[0m'
+    end if
 end subroutine test_mtx_add
 
 !> FORTRAN Linear Alebra subroutine test driver
 program main
-   implicit none
-   !< Call the unit test
-   call test_mtx_add()
+    implicit none
+    call test_mtx_add()
 end program main
 

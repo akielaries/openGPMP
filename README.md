@@ -53,7 +53,7 @@ installation.
 * Linux/OSX
 * CMake v3.18+ (build from source for latest version)
 * C++20
-* gcc, g++, Gfortran v12+ (other C, C++, and Fortran compilers are being tested)
+* gcc, g++, gfortran v12+ (other C, C++, and Fortran compilers are being tested)
 
 ```
 # clone repo

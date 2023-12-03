@@ -31,7 +31,7 @@
 # *
 # ************************************************************************/
 
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.16)
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
                       -Wsign-compare -DNDEBUG -Wall -Wextra"
@@ -47,6 +47,8 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+set(CMAKE_CXX_FLAGS_RELEASE "-O0")
+set(CMAKE_Fortran_FLAGS "-O0")  
 include(GNUInstallDirs)
 
 option(BUILD_ARITH "[!] Build Arithmetic Module" ON)

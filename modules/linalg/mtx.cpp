@@ -1,15 +1,14 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
- *
  *
  * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
  *
@@ -33,43 +32,233 @@
  ************************************************************************/
 #include "../../include/linalg/mtx.hpp"
 #include <cassert>
-#include <chrono>
+#include <cstddef>
 #include <cstdint>
-
-// if sys is Intel-based
-#if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
-// include Intel intrinsics
-#include <immintrin.h>
-
-// if sys is ARM-based
-#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
-    defined(__ARM_ARCH) || defined(__aarch64__)
-// include ARM intrinsics
-#include <arm_neon.h>
-
-#endif
-
 #include <iostream>
-#include <random>
 #include <vector>
 
-/*void mult();
-void add();
-
+/************************************************************************
+ *
+ * Matrix Operations on Arrays using Fortran Subroutines
+ * in `mtx_routines.f90`
+ *
+ ************************************************************************/
 extern "C" {
-void mtx_add_(double *a, double *b, double *c, int64_t *nrows, int64_t *ncols);
-void mtx_mult_(float *matrix1, float *matrix2, float *res, int *nrows1,
-               int *ncols1, int *ncols2);
-}*/
+// Matrix add routine (FLOAT)
+void mtx_add_routine_float_(float *A,
+                            float *B,
+                            float *C,
+                            std::size_t *mtx_size);
+// Matrix add routine (INT)
+void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *mtx_size);
+}
+
+// C++ wrapper for Fortran mtx addition subroutine FLOAT
+void gpmp::linalg::Mtx::mtx_add_f90(float *A,
+                                    float *B,
+                                    float *C,
+                                    std::size_t mtx_size) {
+    mtx_add_routine_float_(A, B, C, &mtx_size);
+}
+
+// C++ wrapper for Fortran mtx addition subroutine INT
+void gpmp::linalg::Mtx::mtx_add_f90(int *A,
+                                    int *B,
+                                    int *C,
+                                    std::size_t mtx_size) {
+    mtx_add_routine_int_(A, B, C, &mtx_size);
+}
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
-// TODO: keep in mind use of int vs unsigned.
-// TODO/BUG: maybe use a flat array for this instead of vector of vector
-//  see:
-//  https://stackoverflow.com/questions/256297/best-way-to-represent-a-2-d-array-in-c-with-size-determined-at-run-time
-// should this function return a matrix C instead of modifying it as input?
+/************************************************************************
+ *
+ * Matrix Operations for AVX ISA
+ *
+ ************************************************************************/
+#if defined(__AVX2__)
 
+// AVX family intrinsics
+#include <immintrin.h>
+
+/************************************************************************
+ *
+ * Matrix Operations on Arrays
+ *
+ ************************************************************************/
+// matrix addition for 8-bit integers using 256-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
+                                const int8_t *B,
+                                int8_t *C,
+                                int rows,
+                                int cols) {
+    // BUG FIXME
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 31; j += 32) {
+            __m256i a = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&A[i * cols + j]));
+            __m256i b = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&B[i * cols + j]));
+            __m256i c = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&C[i * cols + j]));
+
+            // Perform vectorized addition and accumulate the result
+            c = _mm256_add_epi8(c, _mm256_add_epi8(a, b));
+
+            // Store the result back to the C matrix
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols + j]),
+                                c);
+        }
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// matrix addition for 16-bit integers using 256-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
+                                const int16_t *B,
+                                int16_t *C,
+                                int rows,
+                                int cols) {
+    // BUG FIXME
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 15; j += 16) {
+            __m256i a = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&A[i * cols + j]));
+            __m256i b = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&B[i * cols + j]));
+            __m256i c = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&C[i * cols + j]));
+
+            // Perform vectorized addition and accumulate the result
+            c = _mm256_add_epi16(c, _mm256_add_epi16(a, b));
+
+            // Store the result back to the C matrix
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols + j]),
+                                c);
+        }
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts integer arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const int *A,
+                                const int *B,
+                                int *C,
+                                int rows,
+                                int cols) {
+    // BUG FIXME: this only works with size 184+ matrices
+    if (rows > 184) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 8x8 size matrices
+            for (; j < cols - 7; j += 8) {
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m256i a = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&A[i * cols + j]));
+                __m256i b = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&B[i * cols + j]));
+                __m256i c = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&C[i * cols + j]));
+
+                // perform vectorized addition and accumulate the result
+                c = _mm256_add_epi32(c, _mm256_add_epi32(a, b));
+
+                // store the result back to the C matrix
+                _mm256_storeu_si256(
+                    reinterpret_cast<__m256i *>(&C[i * cols + j]),
+                    c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts double arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const double *A,
+                                const double *B,
+                                double *C,
+                                int rows,
+                                int cols) {
+    if (rows > 8) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m256d a = _mm256_loadu_pd(&A[i * cols + j]);
+                __m256d b = _mm256_loadu_pd(&B[i * cols + j]);
+                __m256d c = _mm256_loadu_pd(&C[i * cols + j]);
+                // perform vectorized addition and accumulate the result
+                c = _mm256_add_pd(a, b);
+
+                // store the result back to the C matrix
+                _mm256_storeu_pd(&C[i * cols + j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts float arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const float *A,
+                                const float *B,
+                                float *C,
+                                int rows,
+                                int cols) {
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 7; j += 8) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m256 a = _mm256_loadu_ps(&A[i * cols + j]);
+                __m256 b = _mm256_loadu_ps(&B[i * cols + j]);
+                __m256 c = _mm256_loadu_ps(&C[i * cols + j]);
+                // perform vectorized addition and accumulate the result
+                c = _mm256_add_ps(a, b);
+
+                // store the result back to the C matrix
+                _mm256_storeu_ps(&C[i * cols + j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+/************************************************************************
+ *
+ * Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
 // matrix addition using Intel intrinsic, accepts integer types
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
@@ -110,33 +299,71 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
     }
 }
 
-// matrix addition using Intel intrinsics, accepts double types
+// matrix addition using Intel intrinsics, accepts type double
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<double>> &A,
                                 const std::vector<std::vector<double>> &B,
                                 std::vector<std::vector<double>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
 
-    for (int i = 0; i < rows; ++i) {
-        int j = 0;
-        // requires at least size 4x4 matrices
-        for (; j < cols - 3; j += 4) {
-            // load 4 elements from A, B, and C matrices using SIMD
-            __m256d a = _mm256_loadu_pd(&A[i][j]);
-            __m256d b = _mm256_loadu_pd(&B[i][j]);
-            __m256d c = _mm256_loadu_pd(&C[i][j]);
+    if (rows > 8) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 matrices
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m256d a = _mm256_loadu_pd(&A[i][j]);
+                __m256d b = _mm256_loadu_pd(&B[i][j]);
+                __m256d c = _mm256_loadu_pd(&C[i][j]);
 
-            // perform vectorized addition
-            c = _mm256_add_pd(a, b);
+                // perform vectorized addition
+                c = _mm256_add_pd(a, b);
 
-            // store the result back to the C matrix
-            _mm256_storeu_pd(&C[i][j], c);
+                // store the result back to the C matrix
+                _mm256_storeu_pd(&C[i][j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 4
+            for (; j < cols; ++j) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
         }
+    } else {
+        std_mtx_add(A, B, C);
+    }
+}
 
-        // handle the remaining elements that are not multiples of 4
-        for (; j < cols; ++j) {
-            C[i][j] = A[i][j] + B[i][j];
+// matrix addition using Intel intrinsics, accepts type float
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 8x8 matrices
+            for (; j < cols - 7; j += 8) {
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m256 a = _mm256_loadu_ps(&A[i][j]);
+                __m256 b = _mm256_loadu_ps(&B[i][j]);
+                __m256 c = _mm256_loadu_ps(&C[i][j]);
+
+                // perform vectorized addition
+                c = _mm256_add_ps(a, b);
+
+                // store the result back to the C matrix
+                _mm256_storeu_ps(&C[i][j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
         }
+    } else {
+        std_mtx_add(A, B, C);
     }
 }
 
@@ -354,8 +581,533 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
     }
 }
 
-#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
+/************************************************************************
+ *
+ * Matrix Operations for SSE ISA
+ *
+ ************************************************************************/
+#elif defined(__SSE2__)
+// SSE2
+#include <emmintrin.h>
+#include <smmintrin.h>
+/************************************************************************
+ *
+ * Matrix Operations on Arrays
+ *
+ ************************************************************************/
+// matrix addition for 8-bit integers using SSE and 128-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
+                                const int8_t *B,
+                                int8_t *C,
+                                int rows,
+                                int cols) {
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 15; j += 16) {
+            __m128i a = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&A[i * cols + j]));
+            __m128i b = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&B[i * cols + j]));
+            __m128i c = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&C[i * cols + j]));
+
+            // Perform vectorized addition and accumulate the result
+            c = _mm_add_epi8(c, _mm_add_epi8(a, b));
+
+            // Store the result back to the C matrix
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]),
+                             c);
+        }
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// matrix addition for 16-bit integers using SSE and 128-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
+                                const int16_t *B,
+                                int16_t *C,
+                                int rows,
+                                int cols) {
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 7; j += 8) {
+            __m128i a = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&A[i * cols + j]));
+            __m128i b = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&B[i * cols + j]));
+            __m128i c = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&C[i * cols + j]));
+
+            // Perform vectorized addition and accumulate the result
+            c = _mm_add_epi16(c, _mm_add_epi16(a, b));
+
+            // Store the result back to the C matrix
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]),
+                             c);
+        }
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts integer arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const int *A,
+                                const int *B,
+                                int *C,
+                                int rows,
+                                int cols) {
+    // BUG FIXME: this only works with size 184+ matrices
+    if (rows > 184) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 8x8 size matrices
+            for (; j < cols - 3; j += 4) {
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m128i a = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&A[i * cols + j]));
+                __m128i b = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&B[i * cols + j]));
+                __m128i c = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&C[i * cols + j]));
+
+                // perform vectorized addition and accumulate the result
+                c = _mm_add_epi32(c, _mm_add_epi32(a, b));
+
+                // store the result back to the C matrix
+                _mm_storeu_si128(
+                    reinterpret_cast<__m128i *>(&C[i * cols + j]),
+                    c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts double arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const double *A,
+                                const double *B,
+                                double *C,
+                                int rows,
+                                int cols) {
+    if (rows > 8) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 1; j += 2) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m128d a = _mm_loadu_pd(&A[i * cols + j]);
+                __m128d b = _mm_loadu_pd(&B[i * cols + j]);
+                __m128d c = _mm_loadu_pd(&C[i * cols + j]);
+                // perform vectorized addition and accumulate the result
+                c = _mm_add_pd(a, b);
+
+                // store the result back to the C matrix
+                _mm_storeu_pd(&C[i * cols + j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+// matrix addition using Intel intrinsics, accepts float arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const float *A,
+                                const float *B,
+                                float *C,
+                                int rows,
+                                int cols) {
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m128 a = _mm_loadu_ps(&A[i * cols + j]);
+                __m128 b = _mm_loadu_ps(&B[i * cols + j]);
+                __m128 c = _mm_loadu_ps(&C[i * cols + j]);
+                // perform vectorized addition and accumulate the result
+                c = _mm_add_ps(a, b);
+
+                // store the result back to the C matrix
+                _mm_storeu_ps(&C[i * cols + j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+/************************************************************************
+ *
+ * Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
+                                const std::vector<std::vector<int>> &B,
+                                std::vector<std::vector<int>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    if (rows > 4) { // Check for at least 4x4 matrices for SSE
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 matrices for SSE
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SSE
+                __m128i a = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&A[i][j]));
+                __m128i b = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&B[i][j]));
+                __m128i c = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&C[i][j]));
+
+                // perform vectorized addition (SSE2)
+                c = _mm_add_epi32(a, b);
+
+                // store the result back to the C matrix
+                _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i][j]), c);
+            }
+
+            // handle the remaining elements that are not multiples of 4
+            for (; j < cols; ++j) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+    } else {
+        // use standard matrix addition for smaller matrices
+        std_mtx_add(A, B, C);
+    }
+}
+
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<double>> &A,
+                                const std::vector<std::vector<double>> &B,
+                                std::vector<std::vector<double>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        // requires at least size 2x2 matrices for SSE2
+        for (; j < cols - 1; j += 2) {
+            // load 2 elements from A, B, and C matrices using SSE2
+            __m128d a = _mm_loadu_pd(&A[i][j]);
+            __m128d b = _mm_loadu_pd(&B[i][j]);
+            __m128d c = _mm_loadu_pd(&C[i][j]);
+
+            // perform vectorized addition
+            c = _mm_add_pd(a, b);
+
+            // store the result back to the C matrix
+            _mm_storeu_pd(&C[i][j], c);
+        }
+
+        // handle the remaining elements that are not multiples of 2
+        for (; j < cols; ++j) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 8x8 matrices
+            for (; j < cols - 3; j += 3) {
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m128 a = _mm_loadu_ps(&A[i][j]);
+                __m128 b = _mm_loadu_ps(&B[i][j]);
+                __m128 c = _mm_loadu_ps(&C[i][j]);
+
+                // perform vectorized addition
+                c = _mm_add_ps(a, b);
+
+                // store the result back to the C matrix
+                _mm_storeu_ps(&C[i][j], c);
+            }
+
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+    } else {
+        std_mtx_add(A, B, C);
+    }
+}
+
+void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<int>> &A,
+                                const std::vector<std::vector<int>> &B,
+                                std::vector<std::vector<int>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        // requires at least size 4x4 matrices for SSE2
+        for (; j < cols - 3; j += 4) {
+            // load 4 elements from A, B, and C matrices using SSE2
+            __m128i a =
+                _mm_loadu_si128(reinterpret_cast<const __m128i *>(&A[i][j]));
+            __m128i b =
+                _mm_loadu_si128(reinterpret_cast<const __m128i *>(&B[i][j]));
+            __m128i c =
+                _mm_loadu_si128(reinterpret_cast<const __m128i *>(&C[i][j]));
+
+            // perform vectorized subtraction
+            c = _mm_sub_epi32(a, b);
+
+            // store the result back to the C matrix
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i][j]), c);
+        }
+
+        // handle the remaining elements that are not multiples of 4
+        for (; j < cols; ++j) {
+            C[i][j] = A[i][j] - B[i][j];
+        }
+    }
+}
+
+// matrix subtraction using Intel intrinsics, accepts double types
+void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<double>> &A,
+                                const std::vector<std::vector<double>> &B,
+                                std::vector<std::vector<double>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
+
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        // requires at least size 2x2 matrices for SSE2
+        for (; j < cols - 1; j += 2) {
+            // load 2 elements from A, B, and C matrices using SSE2
+            __m128d a = _mm_loadu_pd(&A[i][j]);
+            __m128d b = _mm_loadu_pd(&B[i][j]);
+            __m128d c = _mm_loadu_pd(&C[i][j]);
+
+            // perform vectorized subtraction
+            c = _mm_sub_pd(a, b);
+
+            // store the result back to the C matrix
+            _mm_storeu_pd(&C[i][j], c);
+        }
+
+        // handle the remaining elements that are not multiples of 2
+        for (; j < cols; ++j) {
+            C[i][j] = A[i][j] - B[i][j];
+        }
+    }
+}
+
+void gpmp::linalg::Mtx::mtx_mult(const std::vector<std::vector<int>> &A,
+                                 const std::vector<std::vector<int>> &B,
+                                 std::vector<std::vector<int>> &C) {
+    const int rows_a = A.size();
+    const int cols_a = A[0].size();
+    const int cols_b = B[0].size();
+
+    for (int i = 0; i < rows_a; ++i) {
+        for (int j = 0; j < cols_b; j += 4) {
+            // initialize a vector of zeros for the result
+            __m128i c = _mm_setzero_si128();
+
+            for (int k = 0; k < cols_a; ++k) {
+                // load 4 elements from matrices A and B using SSE2
+                __m128i a = _mm_set1_epi32(A[i][k]);
+                __m128i b = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&B[k][j]));
+
+                // perform vectorized multiplication
+                __m128i prod = _mm_mullo_epi32(a, b);
+
+                // perform vectorized addition
+                c = _mm_add_epi32(c, prod);
+            }
+
+            // store the result back to the C matrix
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i][j]), c);
+        }
+
+        // handle the remaining elements that are not multiples of 4
+        for (int j = cols_b - cols_b % 4; j < cols_b; ++j) {
+            int sum = 0;
+
+            for (int k = 0; k < cols_a; ++k) {
+                sum += A[i][k] * B[k][j];
+            }
+
+            C[i][j] = sum;
+        }
+    }
+}
+
+// matrix multiplication using Intel intrinsics, accepts double types
+void gpmp::linalg::Mtx::mtx_mult(const std::vector<std::vector<double>> &A,
+                                 const std::vector<std::vector<double>> &B,
+                                 std::vector<std::vector<double>> &C) {
+    const int rows_a = A.size();
+    const int cols_a = A[0].size();
+    const int cols_b = B[0].size();
+
+    for (int i = 0; i < rows_a; ++i) {
+        for (int j = 0; j < cols_b; j += 2) {
+            // initialize a vector of zeros for the result
+            __m128d c = _mm_setzero_pd();
+
+            for (int k = 0; k < cols_a; ++k) {
+                // load 2 elements from matrices A and B using SSE2
+                __m128d a = _mm_set1_pd(A[i][k]);
+                __m128d b = _mm_loadu_pd(&B[k][j]);
+
+                // perform vectorized multiplication
+                __m128d prod = _mm_mul_pd(a, b);
+
+                // perform vectorized addition
+                c = _mm_add_pd(c, prod);
+            }
+
+            // store the result back to the C matrix
+            _mm_storeu_pd(&C[i][j], c);
+        }
+
+        // handle the remaining elements that are not multiples of 2
+        for (int j = cols_b - cols_b % 2; j < cols_b; ++j) {
+            double sum = 0.0;
+
+            for (int k = 0; k < cols_a; ++k) {
+                sum += A[i][k] * B[k][j];
+            }
+
+            C[i][j] = sum;
+        }
+    }
+}
+
+// transpose matrices of type int using Intel intrinsics
+void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
+    const int rows = matrix.size();
+    const int cols = matrix[0].size();
+
+    for (int i = 0; i < rows; i += 4) {
+        for (int j = i; j < cols; j += 4) {
+            __m128i row1 = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&matrix[i][j]));
+            __m128i row2 = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&matrix[i + 1][j]));
+            __m128i row3 = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&matrix[i + 2][j]));
+            __m128i row4 = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&matrix[i + 3][j]));
+
+            __m128i tmp1, tmp2, tmp3, tmp4;
+
+            // transpose 4x4 submatrix
+            tmp1 = _mm_unpacklo_epi32(row1, row2);
+            tmp2 = _mm_unpacklo_epi32(row3, row4);
+            tmp3 = _mm_unpackhi_epi32(row1, row2);
+            tmp4 = _mm_unpackhi_epi32(row3, row4);
+
+            row1 = _mm_unpacklo_epi64(tmp1, tmp2);
+            row2 = _mm_unpackhi_epi64(tmp1, tmp2);
+            row3 = _mm_unpacklo_epi64(tmp3, tmp4);
+            row4 = _mm_unpackhi_epi64(tmp3, tmp4);
+
+            // store the transposed 4x4 submatrix back to the matrix
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&matrix[i][j]), row1);
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&matrix[i + 1][j]),
+                             row2);
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&matrix[i + 2][j]),
+                             row3);
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&matrix[i + 3][j]),
+                             row4);
+        }
+    }
+}
+
+// transpose matrices of type double using Intel intrinsics
+void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
+    const int rows = matrix.size();
+    const int cols = matrix[0].size();
+
+    for (int i = 0; i < rows; i += 2) {
+        for (int j = i; j < cols; j += 2) {
+            __m128d row1 = _mm_loadu_pd(&matrix[i][j]);
+            __m128d row2 = _mm_loadu_pd(&matrix[i + 1][j]);
+
+            // transpose 2x2 submatrix
+            __m128d tmp1 = _mm_unpacklo_pd(row1, row2);
+            __m128d tmp2 = _mm_unpackhi_pd(row1, row2);
+
+            // store the transposed 2x2 submatrix back to the matrix
+            _mm_storeu_pd(&matrix[i][j], tmp1);
+            _mm_storeu_pd(&matrix[i + 1][j], tmp2);
+        }
+    }
+}
+
+/************************************************************************
+ *
+ * Matrix Operations for MMX ISA
+ *
+ ************************************************************************/
+#elif define(__MMX__)
+#include <mmintrin.h>
+
+// SSE
+#endif
+
+// x86
+#endif
+
+/************************************************************************
+ *
+ * Matrix Operations for ARM NEON CPUs
+ *
+ ************************************************************************/
+#if defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                      \
     defined(__ARM_ARCH) || defined(__aarch64__)
+
+// ARM intrinsic function header
+#include <arm_neon.h>
+/************************************************************************
+ *
+ * Matrix Operations on arrays
+ *
+ ************************************************************************/
+
+/************************************************************************
+ *
+ * Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
 // matrix addition using ARM instrinsics, accepts integer types
 void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
@@ -365,34 +1117,35 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<int>> &A,
 
     for (int i = 0; i < rows; ++i) {
         int j = 0;
+
         // requires matrices of size of at least 8x8
-        for (; j < cols - 7; j += 8) {
-            // load 8 elements from A, B, and C matrices using NEON intrinsics
-            int32x4_t a_low = vld1q_s32(&A[i][j]);
-            int32x4_t a_high = vld1q_s32(&A[i][j + 4]);
-            int32x4_t b_low = vld1q_s32(&B[i][j]);
-            int32x4_t b_high = vld1q_s32(&B[i][j + 4]);
+        for (; j < cols - 15; j += 16) {
+            // Load 16 elements from A, B, and C matrices using NEON intrinsics
+            int32x4x4_t a = vld1q_s32_x4(&A[i][j]);
+            int32x4x4_t b = vld1q_s32_x4(&B[i][j]);
 
-            // perform vectorized addition
-            int32x4_t c_low = vaddq_s32(a_low, b_low);
-            int32x4_t c_high = vaddq_s32(a_high, b_high);
+            // Perform vectorized addition
+            int32x4x4_t c;
+            c.val[0] = vaddq_s32(a.val[0], b.val[0]);
+            c.val[1] = vaddq_s32(a.val[1], b.val[1]);
+            c.val[2] = vaddq_s32(a.val[2], b.val[2]);
+            c.val[3] = vaddq_s32(a.val[3], b.val[3]);
 
-            // store the result back to the C matrix using NEON intrinsics
-            vst1q_s32(&C[i][j], c_low);
-            vst1q_s32(&C[i][j + 4], c_high);
+            // Store the result back to the C matrix using NEON intrinsics
+            vst1q_s32_x4(&C[i][j], c);
         }
 
-        // handle the remaining elements that are not multiples of 8
+        // Handle the remaining elements that are not multiples of 16
         for (; j < cols; ++j) {
             C[i][j] = A[i][j] + B[i][j];
         }
     }
 }
 
-// matrix addition using ARM intrinsics, accepts double types
-void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<double>> &A,
-                                const std::vector<std::vector<double>> &B,
-                                std::vector<std::vector<double>> &C) {
+// matrix addition using ARM intrinsics, accepts float types
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
 
@@ -453,9 +1206,9 @@ void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<int>> &A,
 }
 
 // matrix subtraction using ARM intrinsics, accepts double types
-void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<double>> &A,
-                                const std::vector<std::vector<double>> &B,
-                                std::vector<std::vector<double>> &C) {
+void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
     const int rows = A.size();
     const int cols = A[0].size();
 
@@ -529,7 +1282,101 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
 
 #endif
 
-// naive matrix addition algorithm
+/************************************************************************
+ *
+ * Standard/Naive Matrix Operations on Arrays
+ *
+ ************************************************************************/
+// naive matrix addition algorithm on arrays
+template <typename T>
+void gpmp::linalg::Mtx::std_mtx_add(const T *A,
+                                    const T *B,
+                                    T *C,
+                                    int rows,
+                                    int cols) {
+    // MTX A AND B MUST BE SAME SIZE
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            // perform matrix addition
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// instantiations for types accepted by templated std_mtx_add function for
+// flat arrays
+template void gpmp::linalg::Mtx::std_mtx_add(const int8_t *A,
+                                             const int8_t *B,
+                                             int8_t *C,
+                                             int rows,
+                                             int cols);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const int16_t *A,
+                                             const int16_t *B,
+                                             int16_t *C,
+                                             int rows,
+                                             int cols);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const int *A,
+                                             const int *B,
+                                             int *C,
+                                             int rows,
+                                             int cols);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const double *A,
+                                             const double *B,
+                                             double *C,
+                                             int rows,
+                                             int cols);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const float *A,
+                                             const float *B,
+                                             float *C,
+                                             int rows,
+                                             int cols);
+
+/************************************************************************
+ *
+ * Standard/Naive Matrix Operations on vector<>
+ *
+ ************************************************************************/
+// naive matrix addition algorithm on vector<>
+template <typename T>
+void gpmp::linalg::Mtx::std_mtx_add(const std::vector<T> &A,
+                                    const std::vector<T> &B,
+                                    std::vector<T> &C) {
+    // MTX A AND B MUST BE SAME SIZE
+    int rows = A.size();
+    int cols = rows > 0 ? A.size() / rows : 0;
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            // perform matrix addition
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// instantiations for types accepted by templated std_mtx_add function for
+// flat vectors
+template void gpmp::linalg::Mtx::std_mtx_add(const std::vector<int> &A,
+                                             const std::vector<int> &B,
+                                             std::vector<int> &C);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const std::vector<double> &A,
+                                             const std::vector<double> &B,
+                                             std::vector<double> &C);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const std::vector<float> &A,
+                                             const std::vector<float> &B,
+                                             std::vector<float> &C);
+
+/************************************************************************
+ *
+ * Standard/Naive Matrix Operations on vector<vector>
+ *
+ ************************************************************************/
+// naive matrix addition algorithm on vector<vector>
 template <typename T>
 void gpmp::linalg::Mtx::std_mtx_add(const std::vector<std::vector<T>> &A,
                                     const std::vector<std::vector<T>> &B,

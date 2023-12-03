@@ -44,8 +44,9 @@ set(CPP_TEST_FILES
     core/t_threadpool.cpp
 )
 
+# Fortran source files to be tested
 set(FORTRAN_SOURCES
-    ../modules/linalg/mtx.f90
+    ../modules/linalg/mtx_routines.f90
 )
 
 # Fortran test file
@@ -56,6 +57,7 @@ set(FORTRAN_TEST_FILE
 # create separate executables for C++ and Fortran tests
 add_executable(
     test_openGPMP_cpp
+    ${FORTRAN_SOURCES}
     ${CPP_SOURCES}
     ${CPP_TEST_FILES}
 )
@@ -75,6 +77,7 @@ target_link_libraries(
     test_openGPMP_fortran
     GTest::gtest_main
     pthread
+    -lgfortran
 )
 
 
