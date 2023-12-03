@@ -297,7 +297,7 @@ TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
-    int mtx_size = 160;
+    int mtx_size = 211;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int *A = new int[mtx_size * mtx_size];
