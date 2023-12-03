@@ -65,8 +65,7 @@ bool mtx_verif(const T *A, const T *B, int rows, int cols) {
     return true;
 }
 
-template <typename T>
-void print_matrix(const T *matrix, int rows, int cols) {
+template <typename T> void print_matrix(const T *matrix, int rows, int cols) {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             std::cout << matrix[i * cols + j] << " ";
@@ -197,9 +196,10 @@ TEST(ADD_MTX_SMALL_VEC_DOUBLE, assert_intel_intrin) {
     std::vector<std::vector<double>> B(mtx_size, std::vector<double>(mtx_size));
     // define matrix to store expected result in (from std_mtx_add())
     std::vector<std::vector<double>> expected(mtx_size,
-                                           std::vector<double>(mtx_size));
+                                              std::vector<double>(mtx_size));
     // define matrix to store actual result (from mtx_add())
-    std::vector<std::vector<double>> result(mtx_size, std::vector<double>(mtx_size));
+    std::vector<std::vector<double>> result(mtx_size,
+                                            std::vector<double>(mtx_size));
 
     // initialize random number generator
     std::random_device rd;
@@ -251,8 +251,9 @@ TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
     std::vector<std::vector<double>> A(mtx_size, std::vector<double>(mtx_size));
     std::vector<std::vector<double>> B(mtx_size, std::vector<double>(mtx_size));
     std::vector<std::vector<double>> expected(mtx_size,
-                                           std::vector<double>(mtx_size));
-    std::vector<std::vector<double>> result(mtx_size, std::vector<double>(mtx_size));
+                                              std::vector<double>(mtx_size));
+    std::vector<std::vector<double>> result(mtx_size,
+                                            std::vector<double>(mtx_size));
 
     // initialize random number generator
     std::random_device rd;
@@ -305,7 +306,6 @@ TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
     int *expected = new int[mtx_size * mtx_size];
     int *result = new int[mtx_size * mtx_size];
 
-
     // initialize random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -355,7 +355,6 @@ TEST(ADD_MTX_LARGE_ARR_INT, assert_intel_intrin) {
     int *B = new int[mtx_size * mtx_size];
     int *expected = new int[mtx_size * mtx_size];
     int *result = new int[mtx_size * mtx_size];
-
 
     // initialize random number generator
     std::random_device rd;
@@ -412,7 +411,6 @@ TEST(ADD_MTX_SMALL_ARR_DOUBLE, assert_intel_intrin) {
     double *expected = new double[mtx_size * mtx_size];
     double *result = new double[mtx_size * mtx_size];
 
-
     // initialize random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -466,7 +464,7 @@ TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
     // define input matrices A and B
     double *A = new double[mtx_size * mtx_size];
     double *B = new double[mtx_size * mtx_size];
-    double *expected = new double[mtx_size * mtx_size];        
+    double *expected = new double[mtx_size * mtx_size];
     double *result = new double[mtx_size * mtx_size];
 
     // initialize random number generator

@@ -1,11 +1,11 @@
-#include <iostream>
-#include <cstdlib>
-#include <random>
 #include <chrono>
+#include <cstdlib>
+#include <iostream>
+#include <random>
 
-extern "C" void matrix_addition(float* A, float* B, float* C, int matrixSize);
+extern "C" void matrix_addition(float *A, float *B, float *C, int matrixSize);
 
-void initialize_matrix_random(float* matrix, int matrixSize) {
+void initialize_matrix_random(float *matrix, int matrixSize) {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<float> distribution(1.0, 100.0);
@@ -15,7 +15,7 @@ void initialize_matrix_random(float* matrix, int matrixSize) {
     }
 }
 
-void print_matrix(const char* name, float* matrix, int matrixSize) {
+void print_matrix(const char *name, float *matrix, int matrixSize) {
     std::cout << name << ":\n";
     for (int i = 0; i < matrixSize; ++i) {
         for (int j = 0; j < matrixSize; ++j) {
@@ -38,9 +38,11 @@ int main() {
     float *B = new float[matrixSize * matrixSize];
     float *C = new float[matrixSize * matrixSize];
     /*
-    float *A = static_cast<float*>(aligned_alloc(16, matrixSize * matrixSize * sizeof(float)));
-    float *B = static_cast<float*>(aligned_alloc(16, matrixSize * matrixSize * sizeof(float)));
-    float *C = static_cast<float*>(aligned_alloc(16, matrixSize * matrixSize * sizeof(float)));
+    float *A = static_cast<float*>(aligned_alloc(16, matrixSize * matrixSize *
+    sizeof(float))); float *B = static_cast<float*>(aligned_alloc(16, matrixSize
+    * matrixSize * sizeof(float))); float *C =
+    static_cast<float*>(aligned_alloc(16, matrixSize * matrixSize *
+    sizeof(float)));
     */
 
     // Initialize matrices A and B with random values
@@ -51,8 +53,8 @@ int main() {
         std::chrono::steady_clock::now();
 
     // Print matrices A and B
-    //print_matrix("Matrix A", A, matrixSize);
-    //print_matrix("Matrix B", B, matrixSize);
+    // print_matrix("Matrix A", A, matrixSize);
+    // print_matrix("Matrix B", B, matrixSize);
 
     // Call the matrix addition function in assembly
     matrix_addition(A, B, C, matrixSize);
@@ -61,7 +63,7 @@ int main() {
         std::chrono::steady_clock::now();
 
     // Display the result matrix C
-    //print_matrix("Result Matrix C", C, matrixSize);
+    // print_matrix("Result Matrix C", C, matrixSize);
 
     std::cout << "Generating random matrices (ARRAYS) - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -69,7 +71,7 @@ int main() {
                      .count()
               << " ms" << std::endl;
 
-    std::cout << "Mtx add using ASM - Time elapsed: " 
+    std::cout << "Mtx add using ASM - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
                      end_time - mtx_start_time)
                      .count()
@@ -82,4 +84,3 @@ int main() {
 
     return 0;
 }
-

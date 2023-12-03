@@ -8,14 +8,14 @@
  *  - after test
  */
 #include "../lib/sys.hpp"
-#include <sys/sysinfo.h>
-#include <sys/types.h>
 #include <algorithm>
 #include <chrono>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <sys/sysinfo.h>
+#include <sys/types.h>
 #include <thread>
 #include <vector>
 
@@ -130,9 +130,9 @@ double System::cpu_temp() {
         std::cout << "Error reading CPU temperature." << std::endl;
     } else {
         float temp_c = std::stof(cpu_temp) / 1000.0; // convert to Celsius
-        //float temp_f = (temp_c * 9 / 5) + 32;        // convert to Fahrenheit
-        // std::cout << "CPU Temperature: " << temp_c << "°C"
-        //          << " (" << temp_f << "°F)" << std::endl;
+        // float temp_f = (temp_c * 9 / 5) + 32;        // convert to Fahrenheit
+        //  std::cout << "CPU Temperature: " << temp_c << "°C"
+        //           << " (" << temp_f << "°F)" << std::endl;
         return temp_c;
     }
     return -1;
@@ -168,7 +168,7 @@ double System::cpu_idle_temp() {
     double idle_temp = sum / temperatures.size();
 
     // set class var
-    //System::cpu_temp_idle = idle_temp;
+    // System::cpu_temp_idle = idle_temp;
 
     return idle_temp;
 }
@@ -224,7 +224,7 @@ double System::cpu_stats() {
 
     // Calculate CPU usage as a percentage
     double usage = 100.0 * (1.0 - static_cast<double>(idle) / total);
-    //std::cout << "CPU USAGE: " << usage << std::endl;
+    // std::cout << "CPU USAGE: " << usage << std::endl;
     return usage;
 }
 
@@ -257,8 +257,8 @@ void System::mem_stats() {
     uint64_t virt_total =
         (mem_info.totalram + mem_info.totalswap) * mem_info.mem_unit;
     uint64_t virt_used = (mem_info.totalram - mem_info.freeram +
-                                mem_info.totalswap - mem_info.freeswap) *
-                               mem_info.mem_unit;
+                          mem_info.totalswap - mem_info.freeswap) *
+                         mem_info.mem_unit;
 
     uint64_t phys_total = mem_info.totalram * mem_info.mem_unit;
     uint64_t phys_used =

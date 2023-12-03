@@ -81,7 +81,6 @@ void run_mtx_add() {
                      end_time - start_time_std_mtx)
                      .count()
               << " ms" << std::endl;
-
 }
 
 void run_mtx_add_flt() {
@@ -90,9 +89,12 @@ void run_mtx_add_flt() {
     std::chrono::steady_clock::time_point gen_start_time =
         std::chrono::steady_clock::now();
 
-    std::vector<std::vector<float>> A(matrixSize, std::vector<float>(matrixSize));
-    std::vector<std::vector<float>> B(matrixSize, std::vector<float>(matrixSize));
-    std::vector<std::vector<float>> C(matrixSize, std::vector<float>(matrixSize));
+    std::vector<std::vector<float>> A(matrixSize,
+                                      std::vector<float>(matrixSize));
+    std::vector<std::vector<float>> B(matrixSize,
+                                      std::vector<float>(matrixSize));
+    std::vector<std::vector<float>> C(matrixSize,
+                                      std::vector<float>(matrixSize));
 
     // initialize random number generator
     std::random_device rd;
@@ -160,7 +162,6 @@ void run_mtx_add_flt() {
                      end_time - start_time_std_mtx)
                      .count()
               << " ms" << std::endl;
-
 }
 
 void run_mtx_add_doub() {
@@ -169,9 +170,12 @@ void run_mtx_add_doub() {
     std::chrono::steady_clock::time_point gen_start_time =
         std::chrono::steady_clock::now();
 
-    std::vector<std::vector<double>> A(matrixSize, std::vector<double>(matrixSize));
-    std::vector<std::vector<double>> B(matrixSize, std::vector<double>(matrixSize));
-    std::vector<std::vector<double>> C(matrixSize, std::vector<double>(matrixSize));
+    std::vector<std::vector<double>> A(matrixSize,
+                                       std::vector<double>(matrixSize));
+    std::vector<std::vector<double>> B(matrixSize,
+                                       std::vector<double>(matrixSize));
+    std::vector<std::vector<double>> C(matrixSize,
+                                       std::vector<double>(matrixSize));
 
     // initialize random number generator
     std::random_device rd;
@@ -222,11 +226,12 @@ void run_mtx_add_doub() {
     std::chrono::steady_clock::time_point end_time =
         std::chrono::steady_clock::now();
 
-    std::cout << "Generating random matrices (VECTORS, DOUBLES) - Time elapsed: "
-              << std::chrono::duration_cast<std::chrono::milliseconds>(
-                     start_time_mtx - gen_start_time)
-                     .count()
-              << " ms" << std::endl;
+    std::cout
+        << "Generating random matrices (VECTORS, DOUBLES) - Time elapsed: "
+        << std::chrono::duration_cast<std::chrono::milliseconds>(
+               start_time_mtx - gen_start_time)
+               .count()
+        << " ms" << std::endl;
 
     std::cout << "SIMD - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
@@ -239,7 +244,6 @@ void run_mtx_add_doub() {
                      end_time - start_time_std_mtx)
                      .count()
               << " ms" << std::endl;
-
 }
 
 void run_mtx_add_arr() {
@@ -284,7 +288,7 @@ void run_mtx_add_arr() {
 
     std::cout << "Generating random matrices (ARRAYS, INT) - Time elapsed: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(
-                  start_time_mtx - gen_start_time)
+                     start_time_mtx - gen_start_time)
                      .count()
               << " ms" << std::endl;
 
@@ -299,7 +303,6 @@ void run_mtx_add_arr() {
                      end_time - start_time_std_mtx)
                      .count()
               << " ms" << std::endl;
-    
 
     delete[] A;
     delete[] B;

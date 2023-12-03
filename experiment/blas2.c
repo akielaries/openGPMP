@@ -1,6 +1,6 @@
-#include <iostream>
-#include <chrono>
 #include <cblas.h>
+#include <chrono>
+#include <iostream>
 
 const int matrixSize = 8192;
 
@@ -13,9 +13,9 @@ int main() {
 
 void run_openblas_mtx_add() {
     // Create matrices A, B, and C
-    double* A = new double[matrixSize * matrixSize];
-    double* B = new double[matrixSize * matrixSize];
-    double* C = new double[matrixSize * matrixSize];
+    double *A = new double[matrixSize * matrixSize];
+    double *B = new double[matrixSize * matrixSize];
+    double *C = new double[matrixSize * matrixSize];
 
     // Initialize matrices A and B with random values
     for (int i = 0; i < matrixSize * matrixSize; ++i) {
@@ -33,7 +33,9 @@ void run_openblas_mtx_add() {
 
     // Calculate and print the elapsed time
     std::cout << "OpenBLAS - Time elapsed: "
-              << std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count()
+              << std::chrono::duration_cast<std::chrono::milliseconds>(
+                     end_time - start_time)
+                     .count()
               << " ms" << std::endl;
 
     // Cleanup
@@ -41,4 +43,3 @@ void run_openblas_mtx_add() {
     delete[] B;
     delete[] C;
 }
-

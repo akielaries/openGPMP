@@ -32,7 +32,7 @@
 ! ************************************************************************/
 ! mtx_routines.f90
 
-!> FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays 
+!> FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays
 !! of type float. Contains C++ wrapper function
 !! @param A Addend A, an array representing a Matrix
 !! @param B Addend B, an array representing a Matrix

@@ -6,20 +6,19 @@
  * -b (BENCHMARK)   run benchmark system stress programs
  */
 
-#include "lib/montecarlo.hpp"   // monte carlo methods
-#include "lib/primes.hpp"       // prime number methods
-#include "lib/sys.hpp"          // system information methods
-#include "lib/threadpool.hpp"   // threadpool methods
-#include <chrono>               // cpp timing related methods
-#include <cstring>              // C styled strings
-#include <ctime>                // C time related methods
-#include <fstream>              // for file RW
-#include <iostream>             // for std IO
-#include <thread>               // for thread access
-#include <vector>               // vector DS
-#include <unistd.h>             // POSIX API
-#include <limits.h>             // defined limit constants
-
+#include "lib/montecarlo.hpp" // monte carlo methods
+#include "lib/primes.hpp"     // prime number methods
+#include "lib/sys.hpp"        // system information methods
+#include "lib/threadpool.hpp" // threadpool methods
+#include <chrono>             // cpp timing related methods
+#include <cstring>            // C styled strings
+#include <ctime>              // C time related methods
+#include <fstream>            // for file RW
+#include <iostream>           // for std IO
+#include <limits.h>           // defined limit constants
+#include <thread>             // for thread access
+#include <unistd.h>           // POSIX API
+#include <vector>             // vector DS
 
 void bench_naive_primes(std::vector<uint32_t> nums) {
     // TODO at the end of each benchmark run we should log memory
@@ -150,9 +149,9 @@ void gpu_bench_monte_carlo() {
 void daemon() {
     // System class obj
     System sys;
-    //float starting_cpu_temp = sys.cpu_idle_temp();
-    //float starting_cpu_usg = sys.cpu_stats();
-    // std::cout << starting_cpu_temp << starting_cpu_usg << std::endl;
+    // float starting_cpu_temp = sys.cpu_idle_temp();
+    // float starting_cpu_usg = sys.cpu_stats();
+    //  std::cout << starting_cpu_temp << starting_cpu_usg << std::endl;
 
     // infinite loop for continuous collection
     while (true) {
@@ -190,14 +189,13 @@ void daemon() {
             std::cout << curr_cpu_temp << "\n" << curr_cpu_usg << std::endl;
 
             // virtual memory
-            std::cout << "TOTAL VMEM: " << sys.v_mem_total 
-                    << "\n FREE VMEM: " << sys.v_mem_free 
-                    << "\n USED VMEM: " << sys.v_mem_used << std::endl;
+            std::cout << "TOTAL VMEM: " << sys.v_mem_total
+                      << "\n FREE VMEM: " << sys.v_mem_free
+                      << "\n USED VMEM: " << sys.v_mem_used << std::endl;
             // physical memory
-            std::cout << "TOTAL PMEM: " << sys.p_mem_total 
-                    << "\n FREE PMEM: " << sys.p_mem_free 
-                    << "\n USED PMEM: " << sys.p_mem_used << std::endl;
-
+            std::cout << "TOTAL PMEM: " << sys.p_mem_total
+                      << "\n FREE PMEM: " << sys.p_mem_free
+                      << "\n USED PMEM: " << sys.p_mem_used << std::endl;
 
             // WRITE ALL INFO TO CSV FILE
             csvFile << curr_cpu_temp << ","; // Add other data as needed

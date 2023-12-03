@@ -82,7 +82,8 @@ class Mtx {
      * @note Matrices must be of at least size 8x8
      * @overload
      */
-    void mtx_add(const double *A, const double *B, double *C, int rows, int cols);
+    void
+    mtx_add(const double *A, const double *B, double *C, int rows, int cols);
 
     /**
      * @brief Perform matrix addition using Intel intrinsics, accepts
