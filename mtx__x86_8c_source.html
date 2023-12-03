@@ -79,14 +79,14 @@ $(function() {
 <div class="title">mtx_x86.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="mtx__x86_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<a href="mtx__x86_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">    6</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">matrix_addition</a>(<span class="keywordtype">float</span>* A, <span class="keywordtype">float</span>* B, <span class="keywordtype">float</span>* C, <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">    6</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keywordtype">void</span> <a class="code" href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">matrix_addition</a>(<span class="keywordtype">float</span> *A, <span class="keywordtype">float</span> *B, <span class="keywordtype">float</span> *C, <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a>(<span class="keywordtype">float</span>* matrix, <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a>(<span class="keywordtype">float</span> *matrix, <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>) {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::random_device rd;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::mt19937 gen(rd());</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::uniform_real_distribution&lt;float&gt; distribution(1.0, 100.0);</div>
@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="mtx__x86_8c.html#ace7a1cc6e4d3445c314b1e28a977fa30">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx__x86_8c.html#ace7a1cc6e4d3445c314b1e28a977fa30">print_matrix</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">float</span>* matrix, <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="mtx__x86_8c.html#ace7a1cc6e4d3445c314b1e28a977fa30">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx__x86_8c.html#ace7a1cc6e4d3445c314b1e28a977fa30">print_matrix</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keywordtype">float</span> *matrix, <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::cout &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>; ++i) {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>; ++j) {</div>
@@ -119,51 +119,52 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> *B = <span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a> * <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>];</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> *C = <span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a> * <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>];</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    float *A = static_cast&lt;float*&gt;(aligned_alloc(16, matrixSize * matrixSize * sizeof(float)));</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    float *B = static_cast&lt;float*&gt;(aligned_alloc(16, matrixSize * matrixSize * sizeof(float)));</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    float *C = static_cast&lt;float*&gt;(aligned_alloc(16, matrixSize * matrixSize * sizeof(float)));</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Initialize matrices A and B with random values</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a>(A, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a>(B, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::chrono::steady_clock::time_point mtx_start_time =</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::chrono::steady_clock::now();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Print matrices A and B</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//print_matrix(&quot;Matrix A&quot;, A, matrixSize);</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//print_matrix(&quot;Matrix B&quot;, B, matrixSize);</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Call the matrix addition function in assembly</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">matrix_addition</a>(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::chrono::steady_clock::now();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Display the result matrix C</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//print_matrix(&quot;Result Matrix C&quot;, C, matrixSize);</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Generating random matrices (ARRAYS) - Time elapsed: &quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                     mtx_start_time - gen_start_time)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                     .count()</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Mtx add using ASM - Time elapsed: &quot;</span> </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                     end_time - mtx_start_time)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                     .count()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Free allocated memory</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">delete</span>[] A;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">delete</span>[] B;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">delete</span>[] C;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    float *A = static_cast&lt;float*&gt;(aligned_alloc(16, matrixSize * matrixSize *</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    sizeof(float))); float *B = static_cast&lt;float*&gt;(aligned_alloc(16, matrixSize</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    * matrixSize * sizeof(float))); float *C =</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    static_cast&lt;float*&gt;(aligned_alloc(16, matrixSize * matrixSize *</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    sizeof(float)));</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Initialize matrices A and B with random values</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a>(A, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a>(B, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::chrono::steady_clock::time_point mtx_start_time =</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Print matrices A and B</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// print_matrix(&quot;Matrix A&quot;, A, matrixSize);</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// print_matrix(&quot;Matrix B&quot;, B, matrixSize);</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Call the matrix addition function in assembly</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">matrix_addition</a>(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Display the result matrix C</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// print_matrix(&quot;Result Matrix C&quot;, C, matrixSize);</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Generating random matrices (ARRAYS) - Time elapsed: &quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                     mtx_start_time - gen_start_time)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                     .count()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Mtx add using ASM - Time elapsed: &quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;              &lt;&lt; std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                     end_time - mtx_start_time)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                     .count()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Free allocated memory</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">delete</span>[] A;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">delete</span>[] B;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">delete</span>[] C;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="ttc" id="amtx__x86_8c_html_a2aadd815313a9c7e3631ff92bd73bebc"><div class="ttname"><a href="mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc">matrix_addition</a></div><div class="ttdeci">void matrix_addition(float *A, float *B, float *C, int matrixSize)</div></div>
 <div class="ttc" id="amtx__x86_8c_html_a2eb4861891fb3f82b29a706d1c529c51"><div class="ttname"><a href="mtx__x86_8c.html#a2eb4861891fb3f82b29a706d1c529c51">initialize_matrix_random</a></div><div class="ttdeci">void initialize_matrix_random(float *matrix, int matrixSize)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__x86_8c_source.html#l00008">mtx_x86.c:8</a></div></div>
 <div class="ttc" id="amtx__x86_8c_html_ace7a1cc6e4d3445c314b1e28a977fa30"><div class="ttname"><a href="mtx__x86_8c.html#ace7a1cc6e4d3445c314b1e28a977fa30">print_matrix</a></div><div class="ttdeci">void print_matrix(const char *name, float *matrix, int matrixSize)</div><div class="ttdef"><b>Definition:</b> <a href="mtx__x86_8c_source.html#l00018">mtx_x86.c:18</a></div></div>
