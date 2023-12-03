@@ -832,39 +832,6 @@ void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<double>> &A,
     }
 }
 
-void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<float>> &A,
-                                const std::vector<std::vector<float>> &B,
-                                std::vector<std::vector<float>> &C) {
-    const int rows = A.size();
-    const int cols = A[0].size();
-
-    if (rows > 16) {
-        for (int i = 0; i < rows; ++i) {
-            int j = 0;
-            // requires at least size 8x8 matrices
-            for (; j < cols - 3; j += 3) {
-                // load 8 elements from A, B, and C matrices using SIMD
-                __m128 a = _mm_loadu_ps(&A[i][j]);
-                __m128 b = _mm_loadu_ps(&B[i][j]);
-                __m128 c = _mm_loadu_ps(&C[i][j]);
-
-                // perform vectorized addition
-                c = _mm_add_ps(a, b);
-
-                // store the result back to the C matrix
-                _mm_storeu_ps(&C[i][j], c);
-            }
-
-            // handle the remaining elements that are not multiples of 8
-            for (; j < cols; ++j) {
-                C[i][j] = A[i][j] + B[i][j];
-            }
-        }
-    } else {
-        std_mtx_add(A, B, C);
-    }
-}
-
 void gpmp::linalg::Mtx::mtx_sub(const std::vector<std::vector<int>> &A,
                                 const std::vector<std::vector<int>> &B,
                                 std::vector<std::vector<int>> &C) {
