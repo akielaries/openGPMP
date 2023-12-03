@@ -71,6 +71,11 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
+/************************************************************************
+ *
+ * Matrix Operations for AVX ISA
+ *
+ ************************************************************************/
 #if defined(__AVX2__)
 
 // AVX family intrinsics
@@ -576,6 +581,11 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
     }
 }
 
+/************************************************************************
+ *
+ * Matrix Operations for SSE ISA
+ *
+ ************************************************************************/
 #elif defined(__SSE2__)
 // SSE2
 #include <emmintrin.h>
