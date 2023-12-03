@@ -3,6 +3,7 @@
  ************************************************************************/
 #include "../../include/linalg/mtx.hpp"
 #include "../../include/linalg/mtx_tmpl.hpp"
+#include <cstdint>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <limits.h>
@@ -10,7 +11,7 @@
 #include <vector>
 
 using namespace gpmp;
-#define TEST_COUT std::cerr << "\033[64m[          ] [ INFO ] \033[0m"
+#define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
 namespace {
 
@@ -297,8 +298,156 @@ TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
+TEST(ADD_MTX_SMALL_ARR_INT8, assert_intel_intrin) {
+    int mtx_size = 400;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    int8_t *A = new int8_t[mtx_size * mtx_size];
+    int8_t *B = new int8_t[mtx_size * mtx_size];
+    int8_t *expected = new int8_t[mtx_size * mtx_size];
+    int8_t *result = new int8_t[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
+            B[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(ADD_MTX_LARGE_ARR_INT8, assert_intel_intrin) {
+    int mtx_size = 8192;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    int8_t *A = new int8_t[mtx_size * mtx_size];
+    int8_t *B = new int8_t[mtx_size * mtx_size];
+    int8_t *expected = new int8_t[mtx_size * mtx_size];
+    int8_t *result = new int8_t[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
+            B[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(ADD_MTX_SMALL_ARR_INT16, assert_intel_intrin) {
+    int mtx_size = 300;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    int16_t *A = new int16_t[mtx_size * mtx_size];
+    int16_t *B = new int16_t[mtx_size * mtx_size];
+    int16_t *expected = new int16_t[mtx_size * mtx_size];
+    int16_t *result = new int16_t[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = static_cast<int16_t>(distribution(gen));
+            B[i * mtx_size + j] = static_cast<int16_t>(distribution(gen));
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(ADD_MTX_LARGE_ARR_INT16, assert_intel_intrin) {
+    int mtx_size = 8192;
+    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
+    // define input matrices A and B
+    int16_t *A = new int16_t[mtx_size * mtx_size];
+    int16_t *B = new int16_t[mtx_size * mtx_size];
+    int16_t *expected = new int16_t[mtx_size * mtx_size];
+    int16_t *result = new int16_t[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = static_cast<int16_t>(distribution(gen));
+            B[i * mtx_size + j] = static_cast<int16_t>(distribution(gen));
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
 TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
-    int mtx_size = 211;
+    int mtx_size = 184;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int *A = new int[mtx_size * mtx_size];

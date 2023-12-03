@@ -81,6 +81,67 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
  * Matrix Operations on Arrays
  *
  ************************************************************************/
+// matrix addition for 8-bit integers using 256-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
+                                const int8_t *B,
+                                int8_t *C,
+                                int rows,
+                                int cols) {
+    // BUG FIXME
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 31; j += 32) {
+            __m256i a = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&A[i * cols + j]));
+            __m256i b = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&B[i * cols + j]));
+            __m256i c = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&C[i * cols + j]));
+
+            // Perform vectorized addition and accumulate the result
+            c = _mm256_add_epi8(c, _mm256_add_epi8(a, b));
+
+            // Store the result back to the C matrix
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols + j]),
+                                c);
+        }
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
+
+// matrix addition for 16-bit integers using 256-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
+                                const int16_t *B,
+                                int16_t *C,
+                                int rows,
+                                int cols) {
+    // BUG FIXME
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 15; j += 16) {
+            __m256i a = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&A[i * cols + j]));
+            __m256i b = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&B[i * cols + j]));
+            __m256i c = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(&C[i * cols + j]));
+
+            // Perform vectorized addition and accumulate the result
+            c = _mm256_add_epi16(c, _mm256_add_epi16(a, b));
+
+            // Store the result back to the C matrix
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols + j]),
+                                c);
+        }
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
+    }
+}
 
 // matrix addition using Intel intrinsics, accepts integer arrays as matrices
 void gpmp::linalg::Mtx::mtx_add(const int *A,
@@ -174,8 +235,6 @@ void gpmp::linalg::Mtx::mtx_add(const float *A,
                 c = _mm256_add_ps(a, b);
 
                 // store the result back to the C matrix
-                //_mm256_storeu_si256(reinterpret_cast<__m256i*>(&C[i * cols +
-                //j]), c);
                 _mm256_storeu_ps(&C[i * cols + j], c);
             }
 
@@ -1038,6 +1097,18 @@ void gpmp::linalg::Mtx::std_mtx_add(const T *A,
 
 // instantiations for types accepted by templated std_mtx_add function for
 // flat arrays
+template void gpmp::linalg::Mtx::std_mtx_add(const int8_t *A,
+                                             const int8_t *B,
+                                             int8_t *C,
+                                             int rows,
+                                             int cols);
+
+template void gpmp::linalg::Mtx::std_mtx_add(const int16_t *A,
+                                             const int16_t *B,
+                                             int16_t *C,
+                                             int rows,
+                                             int cols);
+
 template void gpmp::linalg::Mtx::std_mtx_add(const int *A,
                                              const int *B,
                                              int *C,

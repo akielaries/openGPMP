@@ -34,6 +34,7 @@
 #ifndef MTX_HPP
 #define MTX_HPP
 
+#include <cstdint>
 #include <vector>
 
 namespace gpmp {
@@ -61,7 +62,29 @@ class Mtx {
 
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)
+    /**
+     * @brief Perform matrix addition using Intel intrinsics, accepts
+     * flat arrays of 8 bit ints
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void
+    mtx_add(const int8_t *A, const int8_t *B, int8_t *C, int rows, int cols);
 
+    /**
+     * @brief Perform matrix addition using Intel intrinsics, accepts
+     * flat arrays of 16 bit ints
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void
+    mtx_add(const int16_t *A, const int16_t *B, int16_t *C, int rows, int cols);
     /**
      * @brief Perform matrix addition using Intel intrinsics, accepts
      * flat arrays of type int
