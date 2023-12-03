@@ -84,7 +84,7 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
 
 // matrix addition using Intel intrinsics, accepts integer arrays as matrices
 void gpmp::linalg::Mtx::mtx_add(const int* A, const int* B, int* C, int rows, int cols) {
-    // BUG FIXME: this only works with size 184+ matrices 
+    // BUG FIXME: this only works with size 256 matrices 
     if (rows > 184) {
         for (int i = 0; i < rows; ++i) {
             int j = 0;
