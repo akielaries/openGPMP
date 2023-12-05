@@ -188,6 +188,7 @@ void gpmp::linalg::Mtx::mtx_add(const int *A,
     }
 }
 
+
 // matrix addition using Intel intrinsics, accepts double arrays as matrices
 void gpmp::linalg::Mtx::mtx_add(const double *A,
                                 const double *B,
