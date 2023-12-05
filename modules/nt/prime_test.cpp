@@ -122,12 +122,11 @@ bool gpmp::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
     uint64_t a;
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
-#ifdef __APPLE__
-    a = 2 + arc4random_uniform(n - 4);
-#else
-    // TODO: update the pseudorandom generator used for this
-    a = 2 + rand() % (n - 4);
-#endif
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<uint64_t> dist(2, n - 3);
+    a = dist(gen);
     //    uint64_t a = 2 + rand() % (n - 4);
     /*
     std::random_device rd;
