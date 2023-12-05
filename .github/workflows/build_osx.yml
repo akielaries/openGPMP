@@ -22,9 +22,14 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v3
 
+      - name: install GCC suite
+        run: |
+          brew install gcc
+
       - name: Configure CMake
         run: |
           cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_FORTRAN_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
       - name: Build
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
