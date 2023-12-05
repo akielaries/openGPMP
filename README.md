@@ -62,7 +62,9 @@ $ cd openGPMP
 # create build dir
 $ mkdir build && cd build
 # create necessary objects and static library
-$ cmake -S ..
+$ cmake -S ../
+# on OSX
+$ cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-12 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-12 -S ../
 $ make
 # install necessary headers and library in correct directories
 $ sudo make install
