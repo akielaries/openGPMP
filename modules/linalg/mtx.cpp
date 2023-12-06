@@ -30,7 +30,6 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
 #include "../../include/linalg/mtx.hpp"
 #include <cassert>
 #include <cstddef>
