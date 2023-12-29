@@ -85,7 +85,11 @@ int main() {
     while (1) {
         // Do some processing or tasks here
         // For example, blink an LED every second
-
+#if __cplusplus
+        printf("C++!!!\n");
+#else
+        printf("C!!!\n");
+#endif
         PORTB ^= (1 << PB7);
         _delay_ms(100);      // Wait for 500 milliseconds
 
