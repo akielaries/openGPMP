@@ -166,20 +166,24 @@ $(function() {
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">while</span> (1) {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// Do some processing or tasks here</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// For example, blink an LED every second</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        PORTB ^= (1 &lt;&lt; PB7);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        _delay_ms(100);      <span class="comment">// Wait for 500 milliseconds</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        printf(<span class="stringliteral">&quot;We&#39;re looping... wait 1000ms\n&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        _delay_ms(100);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#if __cplusplus</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        printf(<span class="stringliteral">&quot;C++!!!\n&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        printf(<span class="stringliteral">&quot;C!!!\n&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        PORTB ^= (1 &lt;&lt; PB7);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        _delay_ms(100);      <span class="comment">// Wait for 500 milliseconds</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        printf(<span class="stringliteral">&quot;We&#39;re looping... wait 1000ms\n&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        _delay_ms(100);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="ttc" id="aavr_8c_html_a3a4a4579c3d622aa198a4eb1b410a1ca"><div class="ttname"><a href="avr_8c.html#a3a4a4579c3d622aa198a4eb1b410a1ca">setup_uart</a></div><div class="ttdeci">void setup_uart()</div><div class="ttdef"><b>Definition:</b> <a href="avr_8c_source.html#l00025">avr.c:25</a></div></div>
 <div class="ttc" id="aavr_8c_html_a91ee74a4d310e646e8e8c3a5f0752532"><div class="ttname"><a href="avr_8c.html#a91ee74a4d310e646e8e8c3a5f0752532">uart_stdout</a></div><div class="ttdeci">FILE uart_stdout</div><div class="ttdef"><b>Definition:</b> <a href="avr_8c_source.html#l00022">avr.c:22</a></div></div>
 <div class="ttc" id="aavr_8c_html_a985ba70f2a53d95f1fd11f70f1d8f4f6"><div class="ttname"><a href="avr_8c.html#a985ba70f2a53d95f1fd11f70f1d8f4f6">uart_putchar</a></div><div class="ttdeci">int uart_putchar(char c, FILE *stream)</div><div class="ttdef"><b>Definition:</b> <a href="avr_8c_source.html#l00009">avr.c:9</a></div></div>
