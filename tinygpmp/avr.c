@@ -1,4 +1,4 @@
-#include "../../include/core/avr.h"
+#include "avr.h"
 #include <avr/io.h>
 #include <util/delay.h>
 #include <util/setbaud.h>
@@ -71,7 +71,27 @@ void setup_uart() {
     stdout = &uart_stdout;
 }
 
+// Matrix addition function
+void matrix_addition(int a[2][2], int b[2][2], int result[2][2]) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            result[i][j] = a[i][j] + b[i][j];
+        }
+    }
+}
+
+void print_matrix(int matrix[2][2]) {
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main() {
+
+
     // Set Pin 7 (Arduino Mega Pin 13) as an output
     DDRB |= (1 << PB7);
 
@@ -83,19 +103,32 @@ int main() {
 
     // Main loop
     while (1) {
-        // Do some processing or tasks here
-        // For example, blink an LED every second
-#if __cplusplus
-        printf("C++!!!\n");
-#else
-        printf("C!!!\n");
-#endif
         PORTB ^= (1 << PB7);
         _delay_ms(100);      // Wait for 500 milliseconds
 
 
         printf("We're looping... wait 1000ms\n");
         _delay_ms(100);
+
+    // Define matrices
+    int matrixA[2][2] = {{1, 2}, {3, 4}};
+    int matrixB[2][2] = {{5, 6}, {7, 8}};
+    int resultMatrix[2][2];
+
+    // Perform matrix addition
+    matrix_addition(matrixA, matrixB, resultMatrix);
+
+    // Print matrices and result
+    printf("Matrix A:\n");
+    print_matrix(matrixA);
+
+    printf("Matrix B:\n");
+    print_matrix(matrixB);
+
+    printf("Result Matrix:\n");
+    print_matrix(resultMatrix);
+
+        _delay_ms(7500);
 
     }
 
