@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ macos-latest ]
+        architecture: [ x86 , x64 ]
     defaults:
       run:
         shell: bash -l {0}
@@ -21,9 +22,19 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v3
 
+      - name: install GCC suite
+        run: |
+          brew install gcc
+
+      - name: get compilers
+        run: |
+          which gcc
+          which g++
+          which gfortran
+
       - name: Configure CMake
         run: |
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+          cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_Fortran_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
       - name: Build
         run: |
