@@ -1,10 +1,10 @@
 #include "avr.h"
 #include <avr/io.h>
+#include <inttypes.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <util/delay.h>
 #include <util/setbaud.h>
-#include <stdio.h>
-#include <inttypes.h>
-#include <stdlib.h>
 
 int uart_putchar(char c, FILE *stream) {
     // if character is newline, also send carriage return
@@ -21,7 +21,6 @@ int uart_putchar(char c, FILE *stream) {
 // create a stream for stdout (printf)
 FILE uart_stdout = FDEV_SETUP_STREAM(uart_putchar, NULL, _FDEV_SETUP_WRITE);
 
-
 void setup_uart() {
 #ifdef __AVR_ATmega2560__
     // disable USART during baud rate setting
@@ -29,7 +28,7 @@ void setup_uart() {
 
 #elif __AVR_ATmega328__
     // in case UART was put into power-reduction mode ...
-    PRR &= ~ _BV(PRUSART0);
+    PRR &= ~_BV(PRUSART0);
 
 #endif
 
@@ -52,10 +51,10 @@ void setup_uart() {
 
 #ifdef __AVR_ATmega2560__
     // set UART frame format to 8 data bits, no parity, 1 stop bit
-    UCSR0C = _BV(UCSZ01) | _BV(UCSZ00);  // 8N1
+    UCSR0C = _BV(UCSZ01) | _BV(UCSZ00); // 8N1
 
     // enable UART TX and RX (transmit x recieve)
-    UCSR0B = _BV(TXEN0) | _BV(RXEN0);  // Enable transmitter and receiver
+    UCSR0B = _BV(TXEN0) | _BV(RXEN0); // Enable transmitter and receiver
 
 #elif __AVR_ATmega328__
     // UART Control and Status Register B:
@@ -91,7 +90,6 @@ void print_matrix(int matrix[2][2]) {
 
 int main() {
 
-
     // Set Pin 7 (Arduino Mega Pin 13) as an output
     DDRB |= (1 << PB7);
 
@@ -104,35 +102,31 @@ int main() {
     // Main loop
     while (1) {
         PORTB ^= (1 << PB7);
-        _delay_ms(100);      // Wait for 500 milliseconds
-
+        _delay_ms(100); // Wait for 500 milliseconds
 
         printf("We're looping... wait 1000ms\n");
         _delay_ms(100);
 
-    // Define matrices
-    int matrixA[2][2] = {{1, 2}, {3, 4}};
-    int matrixB[2][2] = {{5, 6}, {7, 8}};
-    int resultMatrix[2][2];
+        // Define matrices
+        int matrixA[2][2] = {{1, 2}, {3, 4}};
+        int matrixB[2][2] = {{5, 6}, {7, 8}};
+        int resultMatrix[2][2];
 
-    // Perform matrix addition
-    matrix_addition(matrixA, matrixB, resultMatrix);
+        // Perform matrix addition
+        matrix_addition(matrixA, matrixB, resultMatrix);
 
-    // Print matrices and result
-    printf("Matrix A:\n");
-    print_matrix(matrixA);
+        // Print matrices and result
+        printf("Matrix A:\n");
+        print_matrix(matrixA);
 
-    printf("Matrix B:\n");
-    print_matrix(matrixB);
+        printf("Matrix B:\n");
+        print_matrix(matrixB);
 
-    printf("Result Matrix:\n");
-    print_matrix(resultMatrix);
+        printf("Result Matrix:\n");
+        print_matrix(resultMatrix);
 
         _delay_ms(7500);
-
     }
 
     return 0;
-
 }
-

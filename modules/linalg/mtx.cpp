@@ -188,7 +188,6 @@ void gpmp::linalg::Mtx::mtx_add(const int *A,
     }
 }
 
-
 // matrix addition using Intel intrinsics, accepts double arrays as matrices
 void gpmp::linalg::Mtx::mtx_add(const double *A,
                                 const double *B,
@@ -616,8 +615,7 @@ void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
             c = _mm_add_epi8(c, _mm_add_epi8(a, b));
 
             // Store the result back to the C matrix
-            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]),
-                             c);
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]), c);
         }
 
         for (; j < cols; ++j) {
@@ -646,8 +644,7 @@ void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
             c = _mm_add_epi16(c, _mm_add_epi16(a, b));
 
             // Store the result back to the C matrix
-            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]),
-                             c);
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]), c);
         }
 
         for (; j < cols; ++j) {
@@ -680,9 +677,8 @@ void gpmp::linalg::Mtx::mtx_add(const int *A,
                 c = _mm_add_epi32(c, _mm_add_epi32(a, b));
 
                 // store the result back to the C matrix
-                _mm_storeu_si128(
-                    reinterpret_cast<__m128i *>(&C[i * cols + j]),
-                    c);
+                _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]),
+                                 c);
             }
 
             // handle the remaining elements that are not multiples of 8
