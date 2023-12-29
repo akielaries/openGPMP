@@ -1,15 +1,13 @@
 var searchData=
 [
-  ['u_778',['u',['../openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff',1,'openGL_astronomy_animated.cpp']]],
-  ['uart_5fputchar_779',['uart_putchar',['../avr_8c.html#a985ba70f2a53d95f1fd11f70f1d8f4f6',1,'avr.c']]],
-  ['uart_5fstdout_780',['uart_stdout',['../avr_8c.html#a91ee74a4d310e646e8e8c3a5f0752532',1,'avr.c']]],
-  ['ui_781',['UI',['../classgpmp_1_1ml_1_1SVC.html#ad2374b0a904b1c1da3ce4692e0203d1f',1,'gpmp::ml::SVC']]],
-  ['unique_5flabel_782',['unique_label',['../classgpmp_1_1ml_1_1BayesClf.html#a56d7aef70ea0441cec35780646b519e4',1,'gpmp::ml::BayesClf']]],
-  ['unitstep_783',['unitStep',['../classgpmp_1_1ml_1_1Activate.html#a2eeff1b721138d8f228f0887fd1a28dc',1,'gpmp::ml::Activate::unitStep(double z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#ab8579960550ad4a95b88930e20d849f9',1,'gpmp::ml::Activate::unitStep(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#af71bb4485a0f99aedab3e2587c466f0e',1,'gpmp::ml::Activate::unitStep(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
-  ['unknown_784',['Unknown',['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e',1,'gpmp::core::Unknown()'],['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e',1,'gpmp::core::Unknown()']]],
-  ['update_785',['update',['../classgpmp_1_1ml_1_1KohonenNet.html#a5e80ce0f9b144e5b66d3e04f6d06c600',1,'gpmp::ml::KohonenNet::update()'],['../classBall.html#af30f4707d26a6e7ba0af1dd8cac37684',1,'Ball::update()']]],
-  ['update_5fweights_786',['update_weights',['../classgpmp_1_1NaiveNet.html#a589b5e048d7e6f65d3d5a368cb83f543',1,'gpmp::NaiveNet']]],
-  ['utils_787',['UTILS',['../ml_8hpp.html#a5b511bfc979da8860c56686aecfce965',1,'ml.hpp']]],
-  ['utils_2ecpp_788',['utils.cpp',['../utils_8cpp.html',1,'']]],
-  ['utils_2ehpp_789',['utils.hpp',['../utils_8hpp.html',1,'']]]
+  ['u_775',['u',['../openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff',1,'openGL_astronomy_animated.cpp']]],
+  ['ui_776',['UI',['../classgpmp_1_1ml_1_1SVC.html#ad2374b0a904b1c1da3ce4692e0203d1f',1,'gpmp::ml::SVC']]],
+  ['unique_5flabel_777',['unique_label',['../classgpmp_1_1ml_1_1BayesClf.html#a56d7aef70ea0441cec35780646b519e4',1,'gpmp::ml::BayesClf']]],
+  ['unitstep_778',['unitStep',['../classgpmp_1_1ml_1_1Activate.html#a2eeff1b721138d8f228f0887fd1a28dc',1,'gpmp::ml::Activate::unitStep(double z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#ab8579960550ad4a95b88930e20d849f9',1,'gpmp::ml::Activate::unitStep(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#af71bb4485a0f99aedab3e2587c466f0e',1,'gpmp::ml::Activate::unitStep(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
+  ['unknown_779',['Unknown',['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e',1,'gpmp::core::Unknown()'],['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda88183b946cc5f0e8c96b2e66e1c74a7e',1,'gpmp::core::Unknown()']]],
+  ['update_780',['update',['../classgpmp_1_1ml_1_1KohonenNet.html#a5e80ce0f9b144e5b66d3e04f6d06c600',1,'gpmp::ml::KohonenNet::update()'],['../classBall.html#af30f4707d26a6e7ba0af1dd8cac37684',1,'Ball::update()']]],
+  ['update_5fweights_781',['update_weights',['../classgpmp_1_1NaiveNet.html#a589b5e048d7e6f65d3d5a368cb83f543',1,'gpmp::NaiveNet']]],
+  ['utils_782',['UTILS',['../ml_8hpp.html#a5b511bfc979da8860c56686aecfce965',1,'ml.hpp']]],
+  ['utils_2ecpp_783',['utils.cpp',['../utils_8cpp.html',1,'']]],
+  ['utils_2ehpp_784',['utils.hpp',['../utils_8hpp.html',1,'']]]
 ];
