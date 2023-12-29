@@ -271,17 +271,17 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01382">1382</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;                                                                {</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160; </div>
-<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
-<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;            <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;            C[i][j] = A[i][j] + B[i][j];</div>
-<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160;        }</div>
-<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    }</div>
-<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01378">1378</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;                                                                {</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160; </div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;            <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;            C[i][j] = A[i][j] + B[i][j];</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;        }</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    }</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -329,19 +329,19 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01346">1346</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;                                                     {</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    <span class="keywordtype">int</span> rows = A.size();</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    <span class="keywordtype">int</span> cols = rows &gt; 0 ? A.size() / rows : 0;</div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160; </div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; ++i) {</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; ++j) {</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;            <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;        }</div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;    }</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01342">1342</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;                                                     {</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;    <span class="keywordtype">int</span> rows = A.size();</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    <span class="keywordtype">int</span> cols = rows &gt; 0 ? A.size() / rows : 0;</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160; </div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; ++i) {</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; ++j) {</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;            <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;        }</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    }</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,16 +403,16 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01293">1293</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;                                              {</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; ++i) {</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; ++j) {</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;            <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;        }</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;    }</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01289">1289</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;                                              {</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; ++i) {</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; ++j) {</div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;            <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;        }</div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;    }</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c">run_mtx_add()</a>, <a class="el" href="samples_2cpp_2mtx_8cpp.html#a8f1f339ed7f50be702f09182a87722aa">run_mtx_add_arr()</a>, <a class="el" href="samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b">run_mtx_add_doub()</a>, and <a class="el" href="samples_2cpp_2mtx_8cpp.html#a98093e1e4826e10eed1b30d15432a9f9">run_mtx_add_flt()</a>.</p>
 
@@ -462,23 +462,23 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01444">1444</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;                                                                 {</div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    assert(A.size() == B.size());</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;    assert(A[0].size() == B[0].size());</div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160; </div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;    int64_t nrows = A.size();</div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;    int64_t ncols = A[0].size();</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160; </div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; nrows; ++i) {</div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;        <span class="keywordflow">for</span> (int64_t j = 0; j &lt; ncols; ++j) {</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;            C[i][j] = 0.0;</div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;            <span class="keywordflow">for</span> (int64_t k = 0; k &lt; ncols; ++k) {</div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;                C[i][j] += A[i][k] * B[k][j];</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;            }</div>
-<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;        }</div>
-<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;    }</div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01440">1440</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;                                                                 {</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;    assert(A.size() == B.size());</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;    assert(A[0].size() == B[0].size());</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160; </div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;    int64_t nrows = A.size();</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    int64_t ncols = A[0].size();</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160; </div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; nrows; ++i) {</div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;        <span class="keywordflow">for</span> (int64_t j = 0; j &lt; ncols; ++j) {</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;            C[i][j] = 0.0;</div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;            <span class="keywordflow">for</span> (int64_t k = 0; k &lt; ncols; ++k) {</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;                C[i][j] += A[i][k] * B[k][j];</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;            }</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;        }</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;    }</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -571,17 +571,17 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01413">1413</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;                                                                {</div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160; </div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;            <span class="comment">// Perform matrix subtraction</span></div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;            C[i][j] = A[i][j] - B[i][j];</div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;        }</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;    }</div>
-<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="modules_2linalg_2mtx_8cpp_source.html#l01409">1409</a> of file <a class="el" href="modules_2linalg_2mtx_8cpp_source.html">mtx.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;                                                                {</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = A.size();</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160; </div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;            <span class="comment">// Perform matrix subtraction</span></div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;            C[i][j] = A[i][j] - B[i][j];</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;        }</div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    }</div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
