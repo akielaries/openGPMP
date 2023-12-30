@@ -681,7 +681,9 @@ bool gpmp::Graph::is_k33(const std::set<int> &vertices) {
         for (int v : vertices) {
             degree_sum += adj_list[v].size();
         }
-        return degree_sum == 2 * vertices.size();
+        
+        // Cast vertices.size() to int to avoid the comparison warning
+        return degree_sum == 2 * static_cast<int>(vertices.size());
     }
     return false;
 }

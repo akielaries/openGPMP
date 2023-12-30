@@ -35,7 +35,7 @@
 #define __GRAPHS_HPP__
 
 #include <cstdint>
-#include <limits>
+//#include <limits>
 #include <set>
 #include <stack>
 #include <vector>
@@ -299,8 +299,22 @@ class Graph {
                                   std::vector<bool> &visited,
                                   std::vector<int> &component);
 
+    /**
+     * @brief Chooses a random neighbor of a given vertex
+     * @param vertex The vertex for which a random neighbor is chosen
+     * @return The index of the randomly chosen neighbor in the adjacency list
+     */
     int choose_random_neighbor(int vertex);
 
+
+    /**
+     * @brief Utility function for finding a Hamiltonian circuit
+     * @param v The current vertex in the exploration
+     * @param visited Vector indicating whether each vertex has been visited
+     * @param path Vector representing the current path in the exploration
+     * @param count The count of vertices visited so far
+     * @return True if a Hamiltonian circuit is found, false otherwise
+     */
     bool hamiltonian_circuit_util(int v,
                                   std::vector<bool> &visited,
                                   std::vector<int> &path,

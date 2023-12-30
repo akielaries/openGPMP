@@ -1,4 +1,4 @@
-#include "../../include/disct/graphs.hpp"
+#include <openGPMP/disct/graphs.hpp>
 #include <iostream>
 #include <vector>
 

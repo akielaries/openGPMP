@@ -4,13 +4,14 @@
  *
  * @example deriv.cpp
  */
+//#include <openGPMP/calculus/deriv.hpp>
+#include "../../include/calculus/differential.hpp"
 #include <cassert>
 #include <iostream>
 #include <stdio.h>
 #include <string>
 #include <vector>
-//#include <openGPMP/calculus/deriv.hpp>
-#include "../../include/calculus/differential.hpp"
+#include <cmath>
 
 int main() {
     /*
@@ -28,6 +29,30 @@ int main() {
 
     // declare calculus class obj
     gpmp::Differential calc;
+
+
+    double x = 2.0;
+
+    // Given polynomial P(x) = 3x^3 + 2x^2 - 5x + 1
+    double term1 = 3 * std::pow(x, 3);
+    double term2 = 2 * std::pow(x, 2);
+    double term3 = -5 * x;
+    double term4 = 1;
+
+    // Using Differential class methods to calculate derivatives
+    double derivative1 = calc.power_rule(3, x);  // Term 1: 3x^3
+    double derivative2 = calc.power_rule(2, x);  // Term 2: 2x^2
+    double derivative3 = calc.power_rule(1, x);  // Term 3: -5x
+    double derivative4 = calc.power_rule(0, x);  // Term 4: constant
+
+    // Summing up the derivatives of individual terms
+    double result_derivative = derivative1 + derivative2 + derivative3 + derivative4;
+
+    std::cout << "Original Polynomial: 3x^3 + 2x^2 - 5x + 1" << std::endl;
+    std::cout << "Derivative: " << result_derivative << std::endl;
+
+
+    std::cout << "<------------>\n";
 
     // we can declare our equation as a string for ease of use
     std::string st0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";
