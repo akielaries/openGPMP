@@ -80,95 +80,94 @@ $(function() {
 <div class="line"><span class="comment">//#include &lt;openGPMP/calculus/deriv.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;../../include/calculus/differential.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line">    <span class="comment">/*</span></div>
-<div class="line"><span class="comment">     * When calling the rm_deriv() and rm_deriv_at() functions, the</span></div>
-<div class="line"><span class="comment">     * polynomial must be passed in as a string with the following</span></div>
-<div class="line"><span class="comment">     * format: 3x^2 + 7x^4 + 2x^1</span></div>
-<div class="line"><span class="comment">     *</span></div>
-<div class="line"><span class="comment">     * keep in mind :</span></div>
-<div class="line"><span class="comment">     * 1. adding a space in between each operand</span></div>
-<div class="line"><span class="comment">     * 2. using correct variables in your equation</span></div>
-<div class="line"><span class="comment">     * 3. adding a power notation (^1) to every variable even if only</span></div>
-<div class="line"><span class="comment">     * raised to 1</span></div>
-<div class="line"><span class="comment">     */</span></div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;DERIVATIVE EXAMPLE\n\n&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// declare calculus class obj</span></div>
-<div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> calc;</div>
+<div class="line">    <span class="comment">// Example usage for the first polynomial</span></div>
+<div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> *poly1 = <span class="keyword">new</span> <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a>;</div>
+<div class="line">    poly1-&gt;<a name="a2"></a><a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(3, 2);</div>
+<div class="line">    poly1-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(2, 1);</div>
+<div class="line">    poly1-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(1, 0);</div>
 <div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Original Polynomial 1: \n&quot;</span>;</div>
+<div class="line">    poly1-&gt;<a name="a3"></a><a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">double</span> x = 2.0;</div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> derivative1 = poly1-&gt;<a name="a4"></a><a class="code" href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">power_rule</a>();</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Given polynomial P(x) = 3x^3 + 2x^2 - 5x + 1</span></div>
-<div class="line">    <span class="keywordtype">double</span> term1 = 3 * std::pow(x, 3);</div>
-<div class="line">    <span class="keywordtype">double</span> term2 = 2 * std::pow(x, 2);</div>
-<div class="line">    <span class="keywordtype">double</span> term3 = -5 * x;</div>
-<div class="line">    <span class="keywordtype">double</span> term4 = 1;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative 1: \n&quot;</span>;</div>
+<div class="line">    derivative1.<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Using Differential class methods to calculate derivatives</span></div>
-<div class="line">    <span class="keywordtype">double</span> derivative1 = calc.power_rule(3, x);  <span class="comment">// Term 1: 3x^3</span></div>
-<div class="line">    <span class="keywordtype">double</span> derivative2 = calc.power_rule(2, x);  <span class="comment">// Term 2: 2x^2</span></div>
-<div class="line">    <span class="keywordtype">double</span> derivative3 = calc.power_rule(1, x);  <span class="comment">// Term 3: -5x</span></div>
-<div class="line">    <span class="keywordtype">double</span> derivative4 = calc.power_rule(0, x);  <span class="comment">// Term 4: constant</span></div>
+<div class="line">    <span class="keyword">delete</span> poly1;</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// Summing up the derivatives of individual terms</span></div>
-<div class="line">    <span class="keywordtype">double</span> result_derivative = derivative1 + derivative2 + derivative3 + derivative4;</div>
+<div class="line">    <span class="comment">// Example usage for the second polynomial</span></div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> *poly2 = <span class="keyword">new</span> <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a>;</div>
+<div class="line">    poly2-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(3, 3);</div>
+<div class="line">    poly2-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(4, 2);</div>
+<div class="line">    poly2-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(6, 1);</div>
+<div class="line">    poly2-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(89, 1);</div>
 <div class="line"> </div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Original Polynomial: 3x^3 + 2x^2 - 5x + 1&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative: &quot;</span> &lt;&lt; result_derivative &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Original Polynomial 2: \n&quot;</span>;</div>
+<div class="line">    poly2-&gt;<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
 <div class="line"> </div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> derivative2 = poly2-&gt;<a class="code" href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">power_rule</a>();</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative 2: \n&quot;</span>;</div>
+<div class="line">    derivative2.<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">delete</span> poly2;</div>
 <div class="line"> </div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;------------&gt;\n&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// we can declare our equation as a string for ease of use</span></div>
-<div class="line">    std::string st0 = <span class="stringliteral">&quot;4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4&quot;</span>;</div>
-<div class="line">    <span class="comment">// std::string st0 = &quot;4x^3 + 3x^1&quot;;</span></div>
-<div class="line">    std::string st1 = <span class="stringliteral">&quot;1x^3&quot;</span>;</div>
+<div class="line">    <span class="keywordtype">double</span> x_value = 2.0;</div>
+<div class="line">    <span class="keywordtype">double</span> result = derivative2.<a name="a5"></a><a class="code" href="classgpmp_1_1Differential.html#afdcf9f795cf0b7e337a6433ff53bf444">eval</a>(x_value);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative2 at x = &quot;</span> &lt;&lt; x_value &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; result</div>
+<div class="line">              &lt;&lt; std::endl;</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">/*</span></div>
-<div class="line"><span class="comment">     * this derivative function finds the first derivative of a given</span></div>
-<div class="line"><span class="comment">     * polynomial</span></div>
-<div class="line"><span class="comment">     */</span></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Finding the first derivative of a given polynomial.\n&quot;</span>;</div>
-<div class="line">    <span class="comment">// std::string deriv_result0 = calc.rm_deriv(st0);</span></div>
-<div class="line">    <span class="comment">/*</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment">    printf(&quot;f(x) = %s \n&quot;, st0.c_str());</span></div>
-<div class="line"><span class="comment">    printf(&quot;DEBUGGING THIS\n&quot;);</span></div>
-<div class="line"><span class="comment">    //printf(&quot;df/dx of f(x) = %s\n&quot;, deriv_result0.c_str());</span></div>
-<div class="line"><span class="comment">    printf(&quot;\n&quot;);</span></div>
-<div class="line"><span class="comment">    */</span></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;------------------------&gt;\n&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line">    <span class="comment">/*</span></div>
-<div class="line"><span class="comment">     * this specific derivative function calculates the derivative of</span></div>
-<div class="line"><span class="comment">     * a polynomial at a given value</span></div>
-<div class="line"><span class="comment">     */</span></div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;First derivative at a given value.\n&quot;</span>;</div>
-<div class="line">    <span class="keywordtype">int</span> val0 = 2;</div>
-<div class="line">    <span class="keywordtype">int</span> val1 = 3;</div>
-<div class="line">    int64_t deriv_result2 = calc.<a name="a2"></a><a class="code" href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">deriv_at</a>(st0, val0);</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;df&#39;/dx = &quot;</span> &lt;&lt; deriv_result2 &lt;&lt; std::endl;</div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> *poly3 = <span class="keyword">new</span> <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a>;</div>
+<div class="line">    poly3-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(3, 3);</div>
+<div class="line">    poly3-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(-4, 2);</div>
+<div class="line">    poly3-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(22, 1);</div>
+<div class="line">    poly3-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(-89, 1);</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">/*</span></div>
-<div class="line"><span class="comment">    printf(&quot;f(x) = %s \n&quot;, st0.c_str());</span></div>
-<div class="line"><span class="comment">    printf(&quot;df/dx of f(x) at x = %d = %lld\n\n&quot;, val0, deriv_result2);</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment">    long long deriv_result3 = calc.rm_deriv_at(st1, val1);</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment">    printf(&quot;f(x) = %s \n&quot;, st1.c_str());</span></div>
-<div class="line"><span class="comment">    printf(&quot;df/dx of f(x) at x = %d = %lld\n&quot;, val1, deriv_result3);</span></div>
-<div class="line"><span class="comment">    */</span></div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Original Polynomial 3: \n&quot;</span>;</div>
+<div class="line">    poly3-&gt;<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> derivative3 = poly3-&gt;<a class="code" href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">power_rule</a>().<a class="code" href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">power_rule</a>();</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Second derivative of Polynomial 3: \n&quot;</span>;</div>
+<div class="line">    derivative3.<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">delete</span> poly3;</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;------------&gt;\n&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> *poly4 = <span class="keyword">new</span> <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a>;</div>
+<div class="line">    poly4-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(-3, 3);</div>
+<div class="line">    poly4-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(8, 2);</div>
+<div class="line">    poly4-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(-2, 1);</div>
+<div class="line">    poly4-&gt;<a class="code" href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">add_term</a>(1, 0);</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Original Polynomial 4: \n&quot;</span>;</div>
+<div class="line">    poly4-&gt;<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
+<div class="line"> </div>
+<div class="line">    <a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> derivative4 = poly4-&gt;<a class="code" href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">power_rule</a>().<a class="code" href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">power_rule</a>();</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Second derivative of Polynomial 4: \n&quot;</span>;</div>
+<div class="line">    derivative4.<a class="code" href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">display</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keyword">delete</span> poly4;</div>
+<div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassgpmp_1_1Differential_html"><div class="ttname"><a href="classgpmp_1_1Differential.html">gpmp::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00049">differential.hpp:49</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Differential_html_a7426b8b6830e3c93ce6ff8f4a98c065d"><div class="ttname"><a href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">gpmp::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00102">differential.cpp:102</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Differential_html"><div class="ttname"><a href="classgpmp_1_1Differential.html">gpmp::Differential</a></div><div class="ttdoc">Calculus Class with methods pertaining to basic operations.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00067">differential.hpp:67</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Differential_html_a0d3c291d9c93446c9dca55e59a39cbd1"><div class="ttname"><a href="classgpmp_1_1Differential.html#a0d3c291d9c93446c9dca55e59a39cbd1">gpmp::Differential::power_rule</a></div><div class="ttdeci">Differential power_rule() const</div><div class="ttdoc">Computes the derivative using the power rule.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00093">differential.cpp:93</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Differential_html_a58c4bc4d4c73c1ea43b2c629ae3610f1"><div class="ttname"><a href="classgpmp_1_1Differential.html#a58c4bc4d4c73c1ea43b2c629ae3610f1">gpmp::Differential::add_term</a></div><div class="ttdeci">void add_term(double coefficient, int exponent)</div><div class="ttdoc">Adds a term to the Differential object.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00071">differential.cpp:71</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Differential_html_aa6301fc7e3aa6663fa9f008fd1b06c46"><div class="ttname"><a href="classgpmp_1_1Differential.html#aa6301fc7e3aa6663fa9f008fd1b06c46">gpmp::Differential::display</a></div><div class="ttdeci">void display() const</div><div class="ttdoc">Displays the polynomial in a readable format.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00075">differential.cpp:75</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Differential_html_afdcf9f795cf0b7e337a6433ff53bf444"><div class="ttname"><a href="classgpmp_1_1Differential.html#afdcf9f795cf0b7e337a6433ff53bf444">gpmp::Differential::eval</a></div><div class="ttdeci">double eval(double x) const</div><div class="ttdoc">Evaluates the polynomial for a given value of x.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00166">differential.cpp:166</a></div></div>
 <div class="ttc" id="aderiv_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00016">deriv.cpp:16</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
