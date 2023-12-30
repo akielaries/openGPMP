@@ -12,19 +12,13 @@
 
 # Overview
 **openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with no runtime dependencies. 
-The primary focus in Number Theory and Cryptographic algorithms, Linear Algebra, Calculus, Statistics, and Machine/Deep 
-learning concepts. openGPMP aims to serve as a warehouse and one-stop shop for mathematical operations. Additional acceleration 
-methods are featured for optional use and installation featuring OpenCL GPU acceleration functions written in C and wrapped 
-for C++ and CUDA GPU acceleration. By default, SIMD intrinsics will be used for the supported platforms.
+The primary focus in Number Theory and Cryptographic algorithms, Linear Algebra, Calculus, Statistics, and Machine 
+Learning concepts, and more. openGPMP aims to serve as a warehouse and one-stop shop for mathematical operations. Additional 
+acceleration methods are featured for optional use and installation via OpenCL and CUDA. By default, SIMD intrinsics will be 
+used for the supported platforms.
 
 Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder for examples 
 on how to use some of openGPMP's functionalities. 
-
-## Dev priority list
-* `DataTable` class specifically for file readers and feeding this data into other 
-methods in the project.
-* Additional build systems.
-* Tackle the rest of the issue list from there.
 
 # Installation
 openGPMP C++ & Python is tested on the following:
@@ -99,39 +93,23 @@ To uninstall files related to openGPMP, simply run the following:
 $ cd build
 $ sudo make uninstall
 ```
+## tinygpmp
+[`tinygpmp`](/tinygpmp) targets low-voltage, resource-constrained devices and is currently aiming to support
+AVR series MCUs, STM32 chips, and other embedded devices.
 
 ## Modules
 
 During early stages, modules will be developed in breadth while focusing on depth
 in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress.
 
+0. Core (utilities & common interfaces)
 1. Arithmetic
 2. Calculus
-   - Differential
-   - Integral
-   - Numerical Analysis
-3. Linear Algebra
-   - Matrix & Vector Operations
-4. Machine/Deep Learning
-   - Regression
-   - Cross-Validation
-   - K-Nearest Neighbors
-   - Neural Networks
-   - Classifiers
-5. Number Theory
-   - Primality Tests
-   - Primality Generation
-   - Pseudorandom Number Generators
-   - Integer Factorization
-   - Euclidean Division
-   - Logarithms
-   - Greatest Common Divisors
-   - Squares
-   - Cryptography/Encryption
-6. Complex
-   - Dynamical Systems
-   - Topology
-   - Spline
+3. Discrete Mathematics
+4. Linear Algebra
+5. Machine/Deep Learning
+6. Number Theory
+7. Complex
 
 For more details view the project [documentation](https://akielaries.github.io/openGPMP/).
 
