@@ -70,6 +70,7 @@ add_subdirectory(tests)
 
 add_subdirectory(modules/arithmetic)
 add_subdirectory(modules/calculus)
+add_subdirectory(modules/disct)
 add_subdirectory(modules/linalg)
 add_subdirectory(modules/core)
 add_subdirectory(modules/ml)
@@ -78,6 +79,7 @@ add_subdirectory(modules/nt)
 add_library(${PROJECT_NAME} STATIC
   $<TARGET_OBJECTS:arithmetic>
   $<TARGET_OBJECTS:calculus>
+  $<TARGET_OBJECTS:disct>
   $<TARGET_OBJECTS:linalg>
   $<TARGET_OBJECTS:core>
   $<TARGET_OBJECTS:ml>

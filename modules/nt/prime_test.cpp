@@ -119,15 +119,17 @@ bool gpmp::PrimalityTest::is_prime(uint64_t n) {
  * determining if a given number is likely to be prime
  */
 bool gpmp::PrimalityTest::compute_miller_rabin(uint64_t d, uint64_t n) {
-    uint64_t a;
     // Pick a random number in [2..n-2] Corner cases make sure that n
     // > 4
 
+#ifdef __APPLE__
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<uint64_t> dist(2, n - 3);
-    a = dist(gen);
-    //    uint64_t a = 2 + rand() % (n - 4);
+    uint64_t a = dist(gen);
+#else
+    uint64_t a = 2 + rand() % (n - 4);
+#endif
     /*
     std::random_device rd;
     std::mt19937_64 gen(rd());
