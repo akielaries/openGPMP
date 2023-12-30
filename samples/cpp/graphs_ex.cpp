@@ -1,5 +1,5 @@
-#include <openGPMP/disct/graphs.hpp>
 #include <iostream>
+#include <openGPMP/disct/graphs.hpp>
 #include <vector>
 
 int main() {

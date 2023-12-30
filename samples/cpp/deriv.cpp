@@ -7,90 +7,86 @@
 //#include <openGPMP/calculus/deriv.hpp>
 #include "../../include/calculus/differential.hpp"
 #include <cassert>
+#include <cmath>
 #include <iostream>
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <cmath>
 
 int main() {
-    /*
-     * When calling the rm_deriv() and rm_deriv_at() functions, the
-     * polynomial must be passed in as a string with the following
-     * format: 3x^2 + 7x^4 + 2x^1
-     *
-     * keep in mind :
-     * 1. adding a space in between each operand
-     * 2. using correct variables in your equation
-     * 3. adding a power notation (^1) to every variable even if only
-     * raised to 1
-     */
     std::cout << "DERIVATIVE EXAMPLE\n\n";
 
-    // declare calculus class obj
-    gpmp::Differential calc;
+    // Example usage for the first polynomial
+    gpmp::Differential *poly1 = new gpmp::Differential;
+    poly1->add_term(3, 2);
+    poly1->add_term(2, 1);
+    poly1->add_term(1, 0);
 
+    std::cout << "Original Polynomial 1: \n";
+    poly1->display();
 
-    double x = 2.0;
+    gpmp::Differential derivative1 = poly1->power_rule();
 
-    // Given polynomial P(x) = 3x^3 + 2x^2 - 5x + 1
-    double term1 = 3 * std::pow(x, 3);
-    double term2 = 2 * std::pow(x, 2);
-    double term3 = -5 * x;
-    double term4 = 1;
+    std::cout << "Derivative 1: \n";
+    derivative1.display();
 
-    // Using Differential class methods to calculate derivatives
-    double derivative1 = calc.power_rule(3, x);  // Term 1: 3x^3
-    double derivative2 = calc.power_rule(2, x);  // Term 2: 2x^2
-    double derivative3 = calc.power_rule(1, x);  // Term 3: -5x
-    double derivative4 = calc.power_rule(0, x);  // Term 4: constant
+    delete poly1;
 
-    // Summing up the derivatives of individual terms
-    double result_derivative = derivative1 + derivative2 + derivative3 + derivative4;
+    // Example usage for the second polynomial
+    gpmp::Differential *poly2 = new gpmp::Differential;
+    poly2->add_term(3, 3);
+    poly2->add_term(4, 2);
+    poly2->add_term(6, 1);
+    poly2->add_term(89, 1);
 
-    std::cout << "Original Polynomial: 3x^3 + 2x^2 - 5x + 1" << std::endl;
-    std::cout << "Derivative: " << result_derivative << std::endl;
+    std::cout << "Original Polynomial 2: \n";
+    poly2->display();
 
+    gpmp::Differential derivative2 = poly2->power_rule();
+
+    std::cout << "Derivative 2: \n";
+    derivative2.display();
+
+    delete poly2;
 
     std::cout << "<------------>\n";
 
-    // we can declare our equation as a string for ease of use
-    std::string st0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";
-    // std::string st0 = "4x^3 + 3x^1";
-    std::string st1 = "1x^3";
+    double x_value = 2.0;
+    double result = derivative2.eval(x_value);
+    std::cout << "Derivative2 at x = " << x_value << ": " << result
+              << std::endl;
 
-    /*
-     * this derivative function finds the first derivative of a given
-     * polynomial
-     */
-    std::cout << "Finding the first derivative of a given polynomial.\n";
-    // std::string deriv_result0 = calc.rm_deriv(st0);
-    /*
+    gpmp::Differential *poly3 = new gpmp::Differential;
+    poly3->add_term(3, 3);
+    poly3->add_term(-4, 2);
+    poly3->add_term(22, 1);
+    poly3->add_term(-89, 1);
 
-    printf("f(x) = %s \n", st0.c_str());
-    printf("DEBUGGING THIS\n");
-    //printf("df/dx of f(x) = %s\n", deriv_result0.c_str());
-    printf("\n");
-    */
-    std::cout << "<------------------------>\n" << std::endl;
-    /*
-     * this specific derivative function calculates the derivative of
-     * a polynomial at a given value
-     */
-    std::cout << "First derivative at a given value.\n";
-    int val0 = 2;
-    int val1 = 3;
-    int64_t deriv_result2 = calc.deriv_at(st0, val0);
-    std::cout << "df'/dx = " << deriv_result2 << std::endl;
+    std::cout << "Original Polynomial 3: \n";
+    poly3->display();
 
-    /*
-    printf("f(x) = %s \n", st0.c_str());
-    printf("df/dx of f(x) at x = %d = %lld\n\n", val0, deriv_result2);
+    gpmp::Differential derivative3 = poly3->power_rule().power_rule();
+    std::cout << "Second derivative of Polynomial 3: \n";
+    derivative3.display();
 
-    long long deriv_result3 = calc.rm_deriv_at(st1, val1);
+    delete poly3;
 
-    printf("f(x) = %s \n", st1.c_str());
-    printf("df/dx of f(x) at x = %d = %lld\n", val1, deriv_result3);
-    */
+    std::cout << "<------------>\n";
+
+    gpmp::Differential *poly4 = new gpmp::Differential;
+    poly4->add_term(-3, 3);
+    poly4->add_term(8, 2);
+    poly4->add_term(-2, 1);
+    poly4->add_term(1, 0);
+
+    std::cout << "Original Polynomial 4: \n";
+    poly4->display();
+
+    gpmp::Differential derivative4 = poly4->power_rule().power_rule();
+    std::cout << "Second derivative of Polynomial 4: \n";
+    derivative4.display();
+
+    delete poly4;
+
     return 0;
 }

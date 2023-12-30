@@ -42,102 +42,131 @@
 #include <stdio.h>
 #include <string>
 
-/*
-int64_t Calculus::derivativeTerm(std::string p_term, long long val) {
-    // Get coefficient
-    std::string coeffStr = "";
-    int i;
+gpmp::Differential
+gpmp::Differential::operator+(const Differential &other) const {
+    gpmp::Differential result = *this;
 
-    for (i = 0; p_term[i] != 'x'; i++) {
-        coeffStr.push_back(p_term[i]);
+    for (const auto &term : other.terms) {
+        result.add_term(term.coefficient, term.exponent);
     }
-    int64_t coeff = atol(coeffStr.c_str());
 
-    // Get Power (Skip 2 characters for x and ^)
-    std::string powStr = "";
-
-    for (i = i + 2; i != p_term.size(); i++) {
-        powStr.push_back(p_term[i]);
-    }
-    int64_t expo = atol(powStr.c_str());
-
-    // For ax^n, we return anx^(n-1)
-
-    int64_t result = coeff * expo * pow(val, expo - 1);
-
-    return coeff * expo * pow(val, expo - 1);
-}
-*/
-
-int64_t gpmp::Differential::derivative_term(std::string p_term, int64_t val) {
-    // Get coefficient
-    std::string coeffStr = "";
-    int64_t i;
-
-    for (i = 0; p_term[i] != 'x'; i++) {
-        coeffStr.push_back(p_term[i]);
-    }
-    int64_t coeff = atol(coeffStr.c_str());
-
-    // Get Power (Skip 2 characters for x and ^)
-    std::string powStr = "";
-
-    for (i = i + 2; i != p_term.size(); i++) {
-        powStr.push_back(p_term[i]);
-        // printf("powStr = %s \n", powStr.c_str());
-    }
-    int64_t expo = atol(powStr.c_str());
-
-    // For ax^n, we return anx^(n-1)
-    // printf("powStr = %s \n", powStr.c_str());
-    // printf("p_term = %s \n", p_term.c_str());
-    // printf("coeff = %ld \n", coeff);
-    // printf("Exponent = %ld \n", expo);
-
-    int64_t result = coeff * expo * pow(val, expo - 1);
-
-    return coeff * expo * pow(val, expo - 1);
+    return result;
 }
 
-int64_t gpmp::Differential::deriv_at(std::string &poly, int64_t val) {
-    int64_t ans = 0;
+gpmp::Differential
+gpmp::Differential::operator*(const Differential &other) const {
+    gpmp::Differential result;
 
-    // We use istringstream to get input in tokens
-    std::istringstream is(poly);
-
-    std::string p_term;
-    while (is >> p_term) {
-        // If the token is equal to '+' then continue with the string
-        if (p_term == "+")
-            continue;
-
-        // Otherwise find the derivative of that particular term
-        else
-            ans = (ans + derivative_term(p_term, val));
+    for (const auto &term1 : terms) {
+        for (const auto &term2 : other.terms) {
+            double newCoefficient = term1.coefficient * term2.coefficient;
+            int newExponent = term1.exponent + term2.exponent;
+            result.add_term(newCoefficient, newExponent);
+        }
     }
-    // printf("\nDEBUGGING DERIV AT\n\n");
-    // printf("ans = %ld\n", ans);
-    return ans;
+
+    return result;
 }
 
-std::string gpmp::Differential::deriv_str(std::string &poly) {
-    int64_t ans = 0;
+void gpmp::Differential::add_term(double coefficient, int exponent) {
+    terms.emplace_back(coefficient, exponent);
+}
 
-    // We use istringstream to get input in tokens
-    std::istringstream is(poly);
+void gpmp::Differential::display() const {
+    for (size_t i = 0; i < terms.size(); ++i) {
+        const auto &term = terms[i];
+        if (term.exponent > 1) {
+            std::cout << term.coefficient << "*x^" << term.exponent;
+        } else if (term.exponent == 1) {
+            std::cout << term.coefficient << "*x";
+        } else {
+            std::cout << term.coefficient;
+        }
 
-    std::string p_term;
-    while (is >> p_term) {
-        // std::cout << "poly = " << poly << std::endl;
-        // std::cout << "p_term = " << p_term << std:: endl;
-
-        // If the token is equal to '+' then continue with the string
-        if (p_term == "+")
-            continue;
-
-        // Otherwise find the derivative of that particular term
-        else
-            ans = ans;
+        if (i < terms.size() - 1) {
+            std::cout << " + ";
+        }
     }
-    return poly;
+    std::cout << std::endl;
+}
+
+gpmp::Differential gpmp::Differential::power_rule() const {
+    gpmp::Differential result;
+    for (const auto &term : terms) {
+        if (term.exponent > 0) {
+            double newCoefficient = term.coefficient * term.exponent;
+            int newExponent = term.exponent - 1;
+            result.add_term(newCoefficient, newExponent);
+        }
+    }
+    return result;
+}
+
+gpmp::Differential
+gpmp::Differential::product_rule(const Differential &other) const {
+    gpmp::Differential result;
+
+    for (const auto &term1 : terms) {
+        for (const auto &term2 : other.terms) {
+            double newCoefficient = term1.coefficient * term2.coefficient;
+            int newExponent = term1.exponent + term2.exponent;
+            result.add_term(newCoefficient, newExponent);
+        }
+    }
+
+    return result;
+}
+
+gpmp::Differential
+gpmp::Differential::quotient_rule(const Differential &other) const {
+    gpmp::Differential result;
+
+    for (const auto &term1 : terms) {
+        for (const auto &term2 : other.terms) {
+            double newCoefficient = (term1.coefficient * term2.exponent) -
+                                    (term1.exponent * term2.coefficient);
+            int newExponent = term1.exponent - term2.exponent;
+
+            if (term2.coefficient != 0 && term2.exponent != 0) {
+                result.add_term(newCoefficient / std::pow(term2.coefficient, 2),
+                                newExponent);
+            }
+        }
+    }
+
+    return result;
+}
+
+gpmp::Differential
+gpmp::Differential::chain_rule(const Differential &inner) const {
+    gpmp::Differential result;
+
+    for (const auto &term : terms) {
+        gpmp::Differential inner_derivative = inner.power_rule();
+
+        for (auto &inner_term : inner_derivative.terms) {
+            inner_term.coefficient *= term.coefficient;
+            inner_term.exponent += term.exponent;
+        }
+
+        result = result + inner_derivative;
+    }
+
+    return result;
+}
+
+gpmp::Differential gpmp::Differential::nth_derivative(int n) const {
+    gpmp::Differential result = *this;
+    for (int i = 0; i < n; ++i) {
+        result = result.power_rule();
+    }
+    return result;
+}
+
+double gpmp::Differential::eval(double x) const {
+    double result = 0.0;
+    for (const auto &term : terms) {
+        result += term.coefficient * std::pow(x, term.exponent);
+    }
+    return result;
 }

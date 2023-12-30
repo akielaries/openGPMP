@@ -306,7 +306,6 @@ class Graph {
      */
     int choose_random_neighbor(int vertex);
 
-
     /**
      * @brief Utility function for finding a Hamiltonian circuit
      * @param v The current vertex in the exploration

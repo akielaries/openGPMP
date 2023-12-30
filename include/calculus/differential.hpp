@@ -40,53 +40,100 @@
 #ifndef DERIV_HPP
 #define DERIV_HPP
 #include <string>
+#include <vector>
 
 namespace gpmp {
 
 /**
- * Calculus Class with methods pertaining to basic operations.
+ * @brief Represents a term in a polynomial
+ */
+class Term {
+  public:
+    double coefficient; /**< Coefficient of the term */
+    int exponent;       /**< Exponent of the term */
+
+    /**
+     * @brief Constructs a Term with given coefficient and exponent
+     * @param coef The coefficient of the term
+     * @param exp The exponent of the term
+     */
+    Term(double coef, int exp) : coefficient(coef), exponent(exp) {
+    }
+};
+
+/**
+ * @brief Calculus Class with methods pertaining to basic operations
  */
 class Differential {
   public:
-    /**
-     * @brief Find the coeffecients and exponents of a polynomial
-     *
-     * @param[in] p_term : Coeffecients of the polynomial (string)
-     * @param[in] val : 'x' term to find from given polynomial
-     * (long long int)
-     *
-     * @return result : formatted coeffecients + exponents
-     */
-    int64_t derivative_term(std::string p_term, int64_t val);
-
-    // Finds the first derivative of a function
-    // deriv_one()
-
-    // Finds the second derivative of a function
-    // deriv_two()
-
-    // Finds the third derivative of a function
-    // deriv_thr()
+    std::vector<Term> terms; /**< Vector of terms representing the polynomial */
 
     /**
-     * @brief Find the derivative of a function with x = val
-     *
-     * @param[in] poly : polynomial (string)
-     * @param[in] val : value to solve for (int)
-     *
-     * @return result : result of the solved x
+     * @brief Overloaded addition operator for Differential objects
+     * @param other The Differential object to add
+     * @return The sum of two Differential objects
      */
-    int64_t deriv_at(std::string &poly, int64_t val);
+    Differential operator+(const Differential &other) const;
 
     /**
-     * @brief Calculate the derivative of a function, not solving for
-     * x
-     *
-     * @param[in] poly : polynomial (string)
-     *
-     * @returns result : derived function (string)
+     * @brief Overloaded multiplication operator for Differential objects
+     * @param other The Differential object to multiply
+     * @return The product of two Differential objects
      */
-    std::string deriv_str(std::string &poly);
+    Differential operator*(const Differential &other) const;
+
+    /**
+     * @brief Adds a term to the Differential object
+     * @param coefficient The coefficient of the term to add
+     * @param exponent The exponent of the term to add
+     */
+    void add_term(double coefficient, int exponent);
+
+    /**
+     * @brief Displays the polynomial in a readable format
+     */
+    void display() const;
+
+    /**
+     * @brief Computes the derivative using the power rule
+     * @return The derivative of the current Differential object
+     */
+    Differential power_rule() const;
+
+    /**
+     * @brief Computes the derivative using the product rule
+     * @param other The other Differential object in the product
+     * @return The derivative of the product of two Differential objects
+     */
+    Differential product_rule(const Differential &other) const;
+
+    /**
+     * @brief Computes the derivative using the quotient rule
+     * @param other The other Differential object in the quotient
+     * @return The derivative of the quotient of two Differential objects
+     */
+    Differential quotient_rule(const Differential &other) const;
+
+    /**
+     * @brief Computes the derivative using the chain rule
+     * @param inner The inner function for the chain rule
+     * @return The derivative of the composite function
+     */
+    Differential chain_rule(const Differential &inner) const;
+
+    /**
+     * @brief Computes the nth derivative of the current Differential object
+     * @param n The order of the derivative to compute
+     * @return The nth derivative of the current Differential object
+     */
+    Differential nth_derivative(int n) const;
+
+    /**
+     * @brief Evaluates the polynomial for a given value of x
+     * @param x The value at which to evaluate the polynomial
+     * @return The result of evaluating the polynomial at x
+     */
+    double eval(double x) const;
 };
 
 } // namespace gpmp
