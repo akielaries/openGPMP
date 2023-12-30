@@ -200,8 +200,10 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:aeb098ad82dfb2a4275655523ebdd5ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs Depth-First Search (DFS) traversal to find connected components in an undirected graph.  <a href="classgpmp_1_1Graph.html#aeb098ad82dfb2a4275655523ebdd5ce2">More...</a><br /></td></tr>
 <tr class="separator:aeb098ad82dfb2a4275655523ebdd5ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2a0c88cb37e0c17381a0a164f6ce6f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1Graph.html#ad2a0c88cb37e0c17381a0a164f6ce6f0">choose_random_neighbor</a> (int vertex)</td></tr>
+<tr class="memdesc:ad2a0c88cb37e0c17381a0a164f6ce6f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses a random neighbor of a given vertex.  <a href="classgpmp_1_1Graph.html#ad2a0c88cb37e0c17381a0a164f6ce6f0">More...</a><br /></td></tr>
 <tr class="separator:ad2a0c88cb37e0c17381a0a164f6ce6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c12d94ffd1989e26b9ac3282f1c64ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1Graph.html#a8c12d94ffd1989e26b9ac3282f1c64ca">hamiltonian_circuit_util</a> (int v, std::vector&lt; bool &gt; &amp;visited, std::vector&lt; int &gt; &amp;path, int count)</td></tr>
+<tr class="memdesc:a8c12d94ffd1989e26b9ac3282f1c64ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function for finding a Hamiltonian circuit.  <a href="classgpmp_1_1Graph.html#a8c12d94ffd1989e26b9ac3282f1c64ca">More...</a><br /></td></tr>
 <tr class="separator:a8c12d94ffd1989e26b9ac3282f1c64ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -513,6 +515,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Chooses a random neighbor of a given vertex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertex</td><td>The vertex for which a random neighbor is chosen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the randomly chosen neighbor in the adjacency list </dd></dl>
+
 </div>
 </div>
 <a id="a747bc3ed32629b032a044392992a79ff"></a>
@@ -599,31 +610,31 @@ Private Attributes</h2></td></tr>
 <p>Compresses the graph using Elias Gamma encoding. </p>
 <dl class="section return"><dt>Returns</dt><dd>Vector of uint64_t representing the compressed graph </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00697">697</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                                        {</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    std::vector&lt;uint64_t&gt; compressed;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    compressed.push_back(<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>);</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v = 0; v &lt; <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>; ++v) {</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <span class="comment">// encode the number of neighbors using Elias Gamma encoding</span></div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        std::bitset&lt;64&gt; binary_representation(<a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].size() + 1);</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordtype">int</span> length = log2(<a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].size() + 1) + 1;</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <span class="comment">// store the length of the encoded number</span></div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        compressed.push_back(length);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <span class="comment">// store the encoded number</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        compressed.push_back(</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            std::stoull(binary_representation.to_string(), 0, 2));</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="comment">// store the neighbors</span></div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;neighbor : <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v]) {</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            compressed.push_back(neighbor.first);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        }</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    }</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordflow">return</span> compressed;</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00699">699</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                        {</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    std::vector&lt;uint64_t&gt; compressed;</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    compressed.push_back(<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>);</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v = 0; v &lt; <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>; ++v) {</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="comment">// encode the number of neighbors using Elias Gamma encoding</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        std::bitset&lt;64&gt; binary_representation(<a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].size() + 1);</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <span class="keywordtype">int</span> length = log2(<a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].size() + 1) + 1;</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="comment">// store the length of the encoded number</span></div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        compressed.push_back(length);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="comment">// store the encoded number</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        compressed.push_back(</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            std::stoull(binary_representation.to_string(), 0, 2));</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        <span class="comment">// store the neighbors</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;neighbor : <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v]) {</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;            compressed.push_back(neighbor.first);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        }</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    }</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordflow">return</span> compressed;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -688,32 +699,32 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00723">723</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                                                                {</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a> = compressed[index++];</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>.resize(<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>);</div>
+<p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00725">725</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                                                                {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a> = compressed[index++];</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v = 0; v &lt; <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>; ++v) {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="keywordtype">int</span> length = compressed[index++];</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        uint64_t encoded_neighbors = compressed[index++];</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        std::bitset&lt;64&gt; binary_representation(encoded_neighbors);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="comment">// decode the number of neighbors</span></div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="keywordtype">int</span> num_neighbors =</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            std::stoi(binary_representation.to_string().substr(64 - length),</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                      <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                      2) -</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            1;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="comment">// decode and add neighbors</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_neighbors; ++i) {</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].emplace_back(compressed[index++],</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                                     0); <span class="comment">// TODO assuming unweighted graph</span></div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        }</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    }</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;}</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>.resize(<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v = 0; v &lt; <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>; ++v) {</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        <span class="keywordtype">int</span> length = compressed[index++];</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        uint64_t encoded_neighbors = compressed[index++];</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        std::bitset&lt;64&gt; binary_representation(encoded_neighbors);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <span class="comment">// decode the number of neighbors</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordtype">int</span> num_neighbors =</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            std::stoi(binary_representation.to_string().substr(64 - length),</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                      <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                      2) -</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            1;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="comment">// decode and add neighbors</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_neighbors; ++i) {</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].emplace_back(compressed[index++],</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                                     0); <span class="comment">// TODO assuming unweighted graph</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        }</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1020,12 +1031,12 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The Euclidean distance between the two points </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00690">690</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordtype">double</span> dx = point1.first - point2.first;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keywordtype">double</span> dy = point1.second - point2.second;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keywordflow">return</span> std::sqrt(dx * dx + dy * dy);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00692">692</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keywordtype">double</span> dx = point1.first - point2.first;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keywordtype">double</span> dy = point1.second - point2.second;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keywordflow">return</span> std::sqrt(dx * dx + dy * dy);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1237,6 +1248,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Utility function for finding a Hamiltonian circuit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>The current vertex in the exploration </td></tr>
+    <tr><td class="paramname">visited</td><td>Vector indicating whether each vertex has been visited </td></tr>
+    <tr><td class="paramname">path</td><td>Vector representing the current path in the exploration </td></tr>
+    <tr><td class="paramname">count</td><td>The count of vertices visited so far </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a Hamiltonian circuit is found, false otherwise </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00401">401</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                                                      {</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    visited[v] = <span class="keyword">true</span>;</div>
@@ -1270,7 +1293,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    path.pop_back();</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1Graph_html_a8c12d94ffd1989e26b9ac3282f1c64ca"><div class="ttname"><a href="classgpmp_1_1Graph.html#a8c12d94ffd1989e26b9ac3282f1c64ca">gpmp::Graph::hamiltonian_circuit_util</a></div><div class="ttdeci">bool hamiltonian_circuit_util(int v, std::vector&lt; bool &gt; &amp;visited, std::vector&lt; int &gt; &amp;path, int count)</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00401">graphs.cpp:401</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Graph_html_a8c12d94ffd1989e26b9ac3282f1c64ca"><div class="ttname"><a href="classgpmp_1_1Graph.html#a8c12d94ffd1989e26b9ac3282f1c64ca">gpmp::Graph::hamiltonian_circuit_util</a></div><div class="ttdeci">bool hamiltonian_circuit_util(int v, std::vector&lt; bool &gt; &amp;visited, std::vector&lt; int &gt; &amp;path, int count)</div><div class="ttdoc">Utility function for finding a Hamiltonian circuit.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00401">graphs.cpp:401</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1518,10 +1541,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v : <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>) {</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;            degree_sum += <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].size();</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        }</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <span class="keywordflow">return</span> degree_sum == 2 * <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>.size();</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    }</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;}</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        </div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <span class="comment">// Cast vertices.size() to int to avoid the comparison warning</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        <span class="keywordflow">return</span> degree_sum == 2 * <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>.size());</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    }</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1774,7 +1799,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1Graph_html_a08b240ff8cd987952aad46f580a76394"><div class="ttname"><a href="classgpmp_1_1Graph.html#a08b240ff8cd987952aad46f580a76394">gpmp::Graph::radius</a></div><div class="ttdeci">int radius()</div><div class="ttdoc">Calculates the radius of the graph.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00462">graphs.cpp:462</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1Graph_html_a4f9690ca2b8adc087d726afb02230a46"><div class="ttname"><a href="classgpmp_1_1Graph.html#a4f9690ca2b8adc087d726afb02230a46">gpmp::Graph::add_edge</a></div><div class="ttdeci">void add_edge(int v, int w, int weight)</div><div class="ttdoc">Adds an edge between two vertices with a specified weight.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00050">graphs.cpp:50</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1Graph_html_a8c8bd0cf2c4ed196b8a73fda00e958db"><div class="ttname"><a href="classgpmp_1_1Graph.html#a8c8bd0cf2c4ed196b8a73fda00e958db">gpmp::Graph::euclid_dist</a></div><div class="ttdeci">double euclid_dist(const std::pair&lt; double, double &gt; &amp;point1, const std::pair&lt; double, double &gt; &amp;point2)</div><div class="ttdoc">Calculates the Euclidean distance between two 2D points.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00690">graphs.cpp:690</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Graph_html_a8c8bd0cf2c4ed196b8a73fda00e958db"><div class="ttname"><a href="classgpmp_1_1Graph.html#a8c8bd0cf2c4ed196b8a73fda00e958db">gpmp::Graph::euclid_dist</a></div><div class="ttdeci">double euclid_dist(const std::pair&lt; double, double &gt; &amp;point1, const std::pair&lt; double, double &gt; &amp;point2)</div><div class="ttdoc">Calculates the Euclidean distance between two 2D points.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00692">graphs.cpp:692</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="openGL__astronomy__animated_8cpp.html#ac0b468475b86fb96775f432e1f7f92ff">u</a>.</p>
 

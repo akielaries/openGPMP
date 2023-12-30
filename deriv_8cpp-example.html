@@ -77,13 +77,14 @@ $(function() {
 <div class="contents">
 <p>Test driver showing how to use different derivative-based operations in openGPMP.</p>
 <div class="fragment"><div class="line"> </div>
+<div class="line"><span class="comment">//#include &lt;openGPMP/calculus/deriv.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;../../include/calculus/differential.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><span class="comment">//#include &lt;openGPMP/calculus/deriv.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;../../include/calculus/differential.hpp&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line">    <span class="comment">/*</span></div>
@@ -101,6 +102,30 @@ $(function() {
 <div class="line"> </div>
 <div class="line">    <span class="comment">// declare calculus class obj</span></div>
 <div class="line">    <a name="_a1"></a><a class="code" href="classgpmp_1_1Differential.html">gpmp::Differential</a> calc;</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">double</span> x = 2.0;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Given polynomial P(x) = 3x^3 + 2x^2 - 5x + 1</span></div>
+<div class="line">    <span class="keywordtype">double</span> term1 = 3 * std::pow(x, 3);</div>
+<div class="line">    <span class="keywordtype">double</span> term2 = 2 * std::pow(x, 2);</div>
+<div class="line">    <span class="keywordtype">double</span> term3 = -5 * x;</div>
+<div class="line">    <span class="keywordtype">double</span> term4 = 1;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Using Differential class methods to calculate derivatives</span></div>
+<div class="line">    <span class="keywordtype">double</span> derivative1 = calc.power_rule(3, x);  <span class="comment">// Term 1: 3x^3</span></div>
+<div class="line">    <span class="keywordtype">double</span> derivative2 = calc.power_rule(2, x);  <span class="comment">// Term 2: 2x^2</span></div>
+<div class="line">    <span class="keywordtype">double</span> derivative3 = calc.power_rule(1, x);  <span class="comment">// Term 3: -5x</span></div>
+<div class="line">    <span class="keywordtype">double</span> derivative4 = calc.power_rule(0, x);  <span class="comment">// Term 4: constant</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Summing up the derivatives of individual terms</span></div>
+<div class="line">    <span class="keywordtype">double</span> result_derivative = derivative1 + derivative2 + derivative3 + derivative4;</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Original Polynomial: 3x^3 + 2x^2 - 5x + 1&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Derivative: &quot;</span> &lt;&lt; result_derivative &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;&lt;------------&gt;\n&quot;</span>;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// we can declare our equation as a string for ease of use</span></div>
 <div class="line">    std::string st0 = <span class="stringliteral">&quot;4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4&quot;</span>;</div>
@@ -144,7 +169,7 @@ $(function() {
 <div class="line">}</div>
 <div class="ttc" id="aclassgpmp_1_1Differential_html"><div class="ttname"><a href="classgpmp_1_1Differential.html">gpmp::Differential</a></div><div class="ttdef"><b>Definition:</b> <a href="differential_8hpp_source.html#l00049">differential.hpp:49</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1Differential_html_a7426b8b6830e3c93ce6ff8f4a98c065d"><div class="ttname"><a href="classgpmp_1_1Differential.html#a7426b8b6830e3c93ce6ff8f4a98c065d">gpmp::Differential::deriv_at</a></div><div class="ttdeci">int64_t deriv_at(std::string &amp;poly, int64_t val)</div><div class="ttdoc">Find the derivative of a function with x = val.</div><div class="ttdef"><b>Definition:</b> <a href="differential_8cpp_source.html#l00102">differential.cpp:102</a></div></div>
-<div class="ttc" id="aderiv_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00015">deriv.cpp:15</a></div></div>
+<div class="ttc" id="aderiv_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="deriv_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="deriv_8cpp_source.html#l00016">deriv.cpp:16</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
