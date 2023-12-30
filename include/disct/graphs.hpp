@@ -32,9 +32,11 @@
  ************************************************************************/
 
 #ifndef __GRAPHS_HPP__
-#define __GCDS_HPP__
+#define __GRAPHS_HPP__
 
+#include <cstdint>
 #include <limits>
+#include <set>
 #include <stack>
 #include <vector>
 
@@ -117,7 +119,144 @@ class Graph {
      */
     void topo_sort();
 
+    /**
+     * @brief Finds connected components in an undirected graph using
+     * Depth-First Search (DFS)
+     * @return Vector of vectors representing the connected components
+     */
+    std::vector<std::vector<int>> connected_components();
+
+    /**
+     * @brief Determines if a given graph is bipartite using BFS (Breadth First
+     * Search)
+     * @note A bipartite graph is a graph where the vertices can be divided into
+     * two disjoint sets such that all edges connect a vertex in one set to a
+     * vertex in another set
+     */
+    bool is_bipartite();
+
+    /**
+     * @brief Calculates betweenness centrality for each vertex in the graph
+     * @return Vector of doubles representing the betweenness centrality of
+     * each vertex
+     */
+    std::vector<double> betweenness_centrality();
+
+    /**
+     * @brief Checks if the graph contains a Hamiltonian circuit.
+     * @return True if the graph contains a Hamiltonian circuit, false otherwise
+     */
+    bool has_hamiltonian_circuit();
+
+    /**
+     * @brief Checks if the graph contains an Eulerian path
+     * @return True if the graph contains an Eulerian path, false otherwise
+     */
+    bool has_eulerian_path();
+
+    /**
+     * @brief Calculates the eccentricity of a specified vertex in the graph
+     * @param vertex The vertex for which eccentricity is calculated
+     * @return The eccentricity of the specified vertex
+     */
+    int eccentricity(int vertex);
+
+    /**
+     * @brief Calculates the radius of the graph
+     * @return The radius of the graph
+     */
+    int radius();
+
+    /**
+     * @brief Performs graph coloring using the greedy algorithm
+     * @return Vector of integers representing the color assigned to each vertex
+     */
+    std::vector<int> greedy_coloring();
+
+    /**
+     * @brief Calculates the chromatic number of the graph
+     * @return The chromatic number of the graph
+     */
+    int chromatic_number();
+
+    /**
+     * @brief Finds a maximum cardinality matching in the graph using a greedy
+     * algorithm
+     * @return Vector of pairs representing the edges in the maximum cardinality
+     * matching
+     */
+    std::vector<std::pair<int, int>> match_cardinality();
+
+    /**
+     * @brief Finds a maximum weight matching in the graph using a greedy
+     * algorithm
+     * @return Vector of pairs representing the edges in the maximum weight
+     * matching
+     */
+    std::vector<std::pair<int, int>> match_wt();
+
+    /**
+     * @brief Checks if the graph is planar using Kuratowski's theorem
+     * @return True if the graph is planar, false otherwise
+     */
+    bool is_planar();
+
+    /**
+     * @brief Generates a random planar graph using the random geometric graph
+     * model
+     * @param num_vertices The number of vertices in the generated graph
+     * @param radius The radius parameter for the random geometric graph model
+     */
+    void planar_gen(int num_vertices, double radius);
+
+    /**
+     * @brief Checks if the graph contains a subgraph that is a subdivision of
+     * K5
+     * @return True if the graph contains a subgraph that is a subdivision of
+     * K5, false otherwise
+     */
+    bool has_k5();
+
+    /**
+     * @brief Checks if the graph contains a subgraph that is a subdivision of
+     * K3,3
+     * @return True if the graph contains a subgraph that is a subdivision of
+     * K3,3, false otherwise
+     */
+    bool has_k33();
+
+    /**
+     * @brief Checks if a set of vertices forms a subgraph that is a subdivision
+     * of K3,3
+     * @param vertices The set of vertices to be checked
+     * @return True if the set of vertices forms a subgraph that is a
+     * subdivision of K3,3, false otherwise
+     */
+    bool is_k33(const std::set<int> &vertices);
+
+    /**
+     * @brief Calculates the Euclidean distance between two 2D points
+     * @param point1 The first 2D point
+     * @param point2 The second 2D point
+     * @return The Euclidean distance between the two points
+     */
+    double euclid_dist(const std::pair<double, double> &point1,
+                       const std::pair<double, double> &point2);
+
+    /**
+     * @brief Compresses the graph using Elias Gamma encoding
+     * @return Vector of uint64_t representing the compressed graph
+     */
+    std::vector<uint64_t> compress();
+
+    /**
+     * @brief Decompresses a compressed graph using Elias Gamma encoding
+     * @param compressed Vector of uint64_t representing the compressed graph
+     */
+    void decompress(const std::vector<uint64_t> &compressed);
+
   private:
+    std::vector<bool> is_matched;
     /**
      * @brief Helper function for topological sorting
      * @param v The current vertex
@@ -144,6 +283,28 @@ class Graph {
      * @param y The representative element of the second set
      */
     void union_sets(std::vector<int> &parent, int x, int y);
+
+    /**
+     * @brief Performs Depth-First Search (DFS) traversal to find connected
+     * components in an undirected graph
+     *
+     * This method is a helper function used by the connected_components method
+     *
+     * @param v The current vertex during DFS traversal
+     * @param visited A vector indicating whether each vertex has been visited
+     * @param component The connected component being formed during the
+     * traversal
+     */
+    void dfs_connected_components(int v,
+                                  std::vector<bool> &visited,
+                                  std::vector<int> &component);
+
+    int choose_random_neighbor(int vertex);
+
+    bool hamiltonian_circuit_util(int v,
+                                  std::vector<bool> &visited,
+                                  std::vector<int> &path,
+                                  int count);
 };
 
 } // namespace gpmp
