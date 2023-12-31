@@ -34,7 +34,7 @@ var searchData=
   ['graphs_5fex_2ecpp_341',['graphs_ex.cpp',['../graphs__ex_8cpp.html',1,'']]],
   ['greatest_5fpower_342',['greatest_power',['../classgpmp_1_1Basics.html#a15b80edc366e7758958f6cbfc21e18f5',1,'gpmp::Basics::greatest_power()'],['../classpygpmp_1_1arithmetic_1_1arithmetic_1_1Basics.html#a4fbfaeacf2e9466c855fff7f7cf6a152',1,'pygpmp.arithmetic.arithmetic.Basics.greatest_power()'],['../classpygpmp_1_1nt_1_1nt_1_1Basics.html#a7b297830ef1bbf72e5d12daf3b38ee1f',1,'pygpmp.nt.nt.Basics.greatest_power()']]],
   ['greedy_5fcoloring_343',['greedy_coloring',['../classgpmp_1_1Graph.html#a882d299f5eb13fe8e6d48ff9968c308f',1,'gpmp::Graph']]],
-  ['green_344',['GREEN',['../openGL__bounce_8cpp.html#a5e49fcc6d7b6ca732f95efc9b413349e',1,'openGL_bounce.cpp']]],
+  ['green_344',['GREEN',['../openGL__bounce_8c.html#a5e49fcc6d7b6ca732f95efc9b413349e',1,'openGL_bounce.c']]],
   ['group_5fby_345',['group_by',['../classgpmp_1_1core_1_1DataTable.html#a4c65129eed3787a60b2789ad13f1db8c',1,'gpmp::core::DataTable::group_by(std::vector&lt; std::string &gt; group_by_columns)'],['../classgpmp_1_1core_1_1DataTable.html#a0d71473eeaa305d18914edc5ec05e9cd',1,'gpmp::core::DataTable::group_by(std::vector&lt; std::string &gt; group_by_columns)']]],
   ['growthmethod_346',['growthMethod',['../classgpmp_1_1NumericalAnalysis.html#aa0230df80d89321187aa35008ba2ea93',1,'gpmp::NumericalAnalysis']]],
   ['linalg_347',['linalg',['../namespacegpmp_1_1linalg.html',1,'gpmp']]],

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/complex/openGL_torus.cpp File Reference</title>
+<title>openGPMP: modules/complex/openGL_torus.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,69 +75,20 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">openGL_torus.cpp File Reference</div>  </div>
+<div class="title">openGL_torus.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;GL/glut.h&gt;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-</div>
-<p><a href="openGL__torus_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a1daf785e3f68d293c7caa1c756d5cb74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openGL__torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74">pi</a>&#160;&#160;&#160;3.142857</td></tr>
-<tr class="separator:a1daf785e3f68d293c7caa1c756d5cb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openGL__torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a> ()</td></tr>
-<tr class="separator:a1e5b20fed15743656bb6d2e6a6ea6269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openGL__torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
-<tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openGL__torus_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
-<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a1daf785e3f68d293c7caa1c756d5cb74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1daf785e3f68d293c7caa1c756d5cb74">&#9670;&nbsp;</a></span>pi</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define pi&#160;&#160;&#160;3.142857</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="openGL__torus_8cpp_source.html#l00008">8</a> of file <a class="el" href="openGL__torus_8cpp_source.html">openGL_torus.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a1e5b20fed15743656bb6d2e6a6ea6269"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e5b20fed15743656bb6d2e6a6ea6269">&#9670;&nbsp;</a></span>display()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void display </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="openGL__torus_8cpp_source.html#l00010">10</a> of file <a class="el" href="openGL__torus_8cpp_source.html">openGL_torus.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;               {</div>
+<a href="openGL__torus_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Drawing a simple 3 dimensional torus</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;GL/glut.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="openGL__torus_8c.html#a1daf785e3f68d293c7caa1c756d5cb74">    8</a></span>&#160;<span class="preprocessor">#define pi 3.142857</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="openGL__torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>() {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// setting every pixel in frame buffer to a clear color</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    glClear(GL_COLOR_BUFFER_BIT);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
@@ -160,28 +111,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// flush the draw cmd to display image immediately</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    glFlush();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="openGL__torus_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
-
-</div>
-</div>
-<a id="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02fd73d861ef2e4aabb38c0c9ff82947">&#9670;&nbsp;</a></span>init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void init </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="openGL__torus_8cpp_source.html#l00034">34</a> of file <a class="el" href="openGL__torus_8cpp_source.html">openGL_torus.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="openGL__torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="openGL__torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>() {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    glClearColor(0.0, 0.0, 0.0, 1.0);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    glColor3f(1.0, 1.0, 1.0);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -193,39 +124,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    glLoadIdentity();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="openGL__torus_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
-
-</div>
-</div>
-<a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>argv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="openGL__torus_8cpp_source.html#l00047">47</a> of file <a class="el" href="openGL__torus_8cpp_source.html">openGL_torus.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="openGL__torus_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">   47</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="openGL__torus_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    glutInit(&amp;argc, argv);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -236,18 +136,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Tell GLUT that whenever the main window needs to be repainted</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// that it should call the function display().</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    glutDisplayFunc(<a class="code" href="openGL__torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="openGL__torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    glutDisplayFunc(<a class="code" href="openGL__torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="openGL__torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    glutMainLoop();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="aopenGL__torus_8cpp_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="openGL__torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__torus_8cpp_source.html#l00034">openGL_torus.cpp:34</a></div></div>
-<div class="ttc" id="aopenGL__torus_8cpp_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="openGL__torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__torus_8cpp_source.html#l00010">openGL_torus.cpp:10</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="openGL__torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display()</a>, and <a class="el" href="openGL__torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="ttc" id="aopenGL__torus_8c_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="openGL__torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__torus_8c_source.html#l00034">openGL_torus.c:34</a></div></div>
+<div class="ttc" id="aopenGL__torus_8c_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="openGL__torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="openGL__torus_8c_source.html#l00010">openGL_torus.c:10</a></div></div>
+<div class="ttc" id="aopenGL__torus_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="openGL__torus_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="openGL__torus_8c_source.html#l00047">openGL_torus.c:47</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

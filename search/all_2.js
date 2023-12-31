@@ -7,7 +7,7 @@ var searchData=
   ['backward_87',['backward',['../classNeuralNetwork.html#a8facf303c014361abb4e8d96e6aedd7a',1,'NeuralNetwork']]],
   ['backward_5fprop_88',['backward_prop',['../classgpmp_1_1NaiveNet.html#aecffdeffaaf0ddd331d8466cf74570dc',1,'gpmp::NaiveNet']]],
   ['ball_89',['Ball',['../classBall.html',1,'Ball'],['../classBall.html#a6c7fcd03555c596aa7ecd65302a08fb9',1,'Ball::Ball()']]],
-  ['balls_90',['balls',['../openGL__bounce_8cpp.html#a782b37bf6312df8d68e70ccc31b551e0',1,'openGL_bounce.cpp']]],
+  ['balls_90',['balls',['../openGL__bounce_8c.html#a782b37bf6312df8d68e70ccc31b551e0',1,'openGL_bounce.c']]],
   ['basics_91',['Basics',['../classgpmp_1_1Basics.html',1,'gpmp::Basics'],['../classpygpmp_1_1arithmetic_1_1arithmetic_1_1Basics.html',1,'pygpmp.arithmetic.arithmetic.Basics'],['../classpygpmp_1_1nt_1_1nt_1_1Basics.html',1,'pygpmp.nt.nt.Basics']]],
   ['bayes_5fclf_2ecpp_92',['bayes_clf.cpp',['../bayes__clf_8cpp.html',1,'']]],
   ['bayes_5fclf_2ehpp_93',['bayes_clf.hpp',['../bayes__clf_8hpp.html',1,'']]],

@@ -7,7 +7,7 @@ var searchData=
   ['calculate_5fconstant_120',['calculate_constant',['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#a76600e4e2d13d77cdf6f37cccaa08045',1,'pygpmp.ml.ml.LinearRegression.calculate_constant()'],['../classgpmp_1_1ml_1_1LinearRegression.html#afaf28610fcb2e54571eec23fa7cde103',1,'gpmp::ml::LinearRegression::calculate_constant()']]],
   ['calculus_2epy_121',['calculus.py',['../calculus_8py.html',1,'']]],
   ['camera_122',['Camera',['../classCamera.html',1,'Camera'],['../classCamera.html#a01f94c3543f56ede7af49dc778f19331',1,'Camera::Camera()']]],
-  ['camera_123',['camera',['../openGL__bounce_8cpp.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'openGL_bounce.cpp']]],
+  ['camera_123',['camera',['../openGL__bounce_8c.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'openGL_bounce.c']]],
   ['carmichael_5fnum_124',['carmichael_num',['../classpygpmp_1_1nt_1_1nt_1_1PrimalityTest.html#a0c676bce43466904c2a0d4d48544a6d4',1,'pygpmp.nt.nt.PrimalityTest.carmichael_num()'],['../classgpmp_1_1PrimalityTest.html#a601525a2e38ae3c4a7ce1f3e86d08721',1,'gpmp::PrimalityTest::carmichael_num()']]],
   ['centerx_125',['centerx',['../classCheckerboard.html#afd073e2fa5987420a74c501869e31aff',1,'Checkerboard']]],
   ['centerz_126',['centerz',['../classCheckerboard.html#ad44651f646e206137ad885d97b143400',1,'Checkerboard']]],
@@ -19,7 +19,7 @@ var searchData=
   ['check_5ferror_132',['check_error',['../__cl__err_8h.html#ab17a897758b516d24bef60cbce8e9154',1,'_cl_err.h']]],
   ['check_5fresult_133',['check_result',['../__gpu__mtx__add_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae',1,'_gpu_mtx_add.c']]],
   ['checkerboard_134',['Checkerboard',['../classCheckerboard.html#a48089fba1711f6e49e1d1ba006598c5b',1,'Checkerboard']]],
-  ['checkerboard_135',['checkerboard',['../openGL__bounce_8cpp.html#a7752039cfc0dcf46f9e74b7f29c7bdd0',1,'openGL_bounce.cpp']]],
+  ['checkerboard_135',['checkerboard',['../openGL__bounce_8c.html#ab45980d7140f3657eea028dbd07ae774',1,'openGL_bounce.c']]],
   ['checkerboard_136',['Checkerboard',['../classCheckerboard.html',1,'']]],
   ['checkerror_137',['checkError',['../__gpu__mtx_8cpp.html#af9feb28162af92cad795782bd3efb81c',1,'checkError(cl_int status, const char *errorMsg):&#160;_gpu_mtx.cpp'],['../__cl__err_8h.html#a530b6332aaf18154331e27d2121e1ad1',1,'checkError():&#160;_cl_err.h']]],
   ['chisquaretest_138',['chiSquareTest',['../classgpmp_1_1ml_1_1Stats.html#aefcc5da5324ec664d2ec648fbc955416',1,'gpmp::ml::Stats']]],
@@ -79,6 +79,6 @@ var searchData=
   ['cubicapproximation_192',['cubicApproximation',['../classgpmp_1_1NumericalAnalysis.html#aadc5c61380936d0e2865cfb6ce2d545a',1,'gpmp::NumericalAnalysis::cubicApproximation(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; c, std::vector&lt; double &gt; x)'],['../classgpmp_1_1NumericalAnalysis.html#aeef41d00f8ffa851ca5ec1f2e914fb07',1,'gpmp::NumericalAnalysis::cubicApproximation(double(*function)(double), double c, double x)']]],
   ['cuda_5fmatrix_193',['CUDA_MATRIX',['../linalg_8hpp.html#a20955ce35a1219cc0e46494290097444',1,'linalg.hpp']]],
   ['cudamtx_194',['CUDAmtx',['../classgpmp_1_1accl_1_1CUDAmtx.html',1,'gpmp::accl']]],
-  ['current_5frot_195',['current_rot',['../openGL__astronomy__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_astronomy_animated.cpp'],['../openGL__torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_torus_animated.cpp'],['../torus__animated_8cpp.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;torus_animated.cpp']]],
+  ['current_5frot_195',['current_rot',['../openGL__astronomy__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_astronomy_animated.c'],['../openGL__torus__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_torus_animated.c'],['../torus__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;torus_animated.c']]],
   ['cv_196',['CV',['../classgpmp_1_1ml_1_1CV.html',1,'gpmp::ml']]]
 ];

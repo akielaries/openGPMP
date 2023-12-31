@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/complex/torus.cpp Source File</title>
+<title>openGPMP: modules/complex/torus.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,10 +76,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">torus.cpp</div>  </div>
+<div class="title">torus.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="modules_2complex_2torus_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<a href="torus_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Project</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                        __  __ _______ _____  _  __</span></div>
@@ -120,9 +120,9 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="modules_2complex_2torus_8cpp.html#a1daf785e3f68d293c7caa1c756d5cb74">   42</a></span>&#160;<span class="preprocessor">#define pi 3.142857</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="torus_8c.html#a1daf785e3f68d293c7caa1c756d5cb74">   42</a></span>&#160;<span class="preprocessor">#define pi 3.142857</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="modules_2complex_2torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="modules_2complex_2torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>() {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// setting every pixel in frame buffer to a clear color</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    glClear(GL_COLOR_BUFFER_BIT);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
@@ -146,7 +146,7 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    glFlush();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>() {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    glClearColor(0.0, 0.0, 0.0, 1.0);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    glColor3f(1.0, 1.0, 1.0);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
@@ -159,7 +159,7 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    gluLookAt(4, 6, 5, 0, 0, 0, 0, 1, 0);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="modules_2complex_2torus_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">   81</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="modules_2complex_2torus_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="torus_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">   81</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="torus_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    glutInit(&amp;argc, argv);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
@@ -170,13 +170,13 @@ $(function() {
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Tell GLUT that whenever the main window needs to be repainted</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// that it should call the function display().</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    glutDisplayFunc(<a class="code" href="modules_2complex_2torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    glutDisplayFunc(<a class="code" href="torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    glutMainLoop();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="ttc" id="amodules_2complex_2torus_8cpp_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="modules_2complex_2torus_8cpp.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2complex_2torus_8cpp_source.html#l00068">torus.cpp:68</a></div></div>
-<div class="ttc" id="amodules_2complex_2torus_8cpp_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="modules_2complex_2torus_8cpp.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2complex_2torus_8cpp_source.html#l00044">torus.cpp:44</a></div></div>
-<div class="ttc" id="amodules_2complex_2torus_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="modules_2complex_2torus_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="modules_2complex_2torus_8cpp_source.html#l00081">torus.cpp:81</a></div></div>
+<div class="ttc" id="atorus_8c_html_a02fd73d861ef2e4aabb38c0c9ff82947"><div class="ttname"><a href="torus_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="torus_8c_source.html#l00068">torus.c:68</a></div></div>
+<div class="ttc" id="atorus_8c_html_a1e5b20fed15743656bb6d2e6a6ea6269"><div class="ttname"><a href="torus_8c.html#a1e5b20fed15743656bb6d2e6a6ea6269">display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> <a href="torus_8c_source.html#l00044">torus.c:44</a></div></div>
+<div class="ttc" id="atorus_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="torus_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="torus_8c_source.html#l00081">torus.c:81</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
