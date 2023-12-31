@@ -45,15 +45,32 @@ using ::testing::FloatLE;
 using ::testing::InitGoogleTest;
 
 namespace {
-gpmp::Differential calc;
 
-// Test Derivative Operations
-TEST(deriv_test, deriv_at_val) {
-    std::string string_0 = "4x^3 + 3x^1 + 2x^2 + 5x^1 + 2x^4";
-    int x_0 = 2;
+TEST(DifferentialTests, AddTerm) {
+    gpmp::Differential poly;
+    poly.add_term(3, 2);
+    poly.add_term(2, 1);
+    poly.add_term(1, 0);
 
-    EXPECT_EQ(128, calc.deriv_at(string_0, x_0));
+    ASSERT_EQ(poly.terms.size(), 3);
+
+    // Add more assertions based on the specific behavior you expect
+}
+
+TEST(DifferentialTests, PowerRule) {
+    gpmp::Differential poly;
+    poly.add_term(3, 2);
+    poly.add_term(2, 1);
+    poly.add_term(1, 0);
+
+    gpmp::Differential result = poly.power_rule();
+
+    // Assert the result based on the expected derivative
+    ASSERT_EQ(result.terms.size(), 2);
+    ASSERT_EQ(result.terms[0].coefficient, 6);
+    ASSERT_EQ(result.terms[0].exponent, 1);
+    ASSERT_EQ(result.terms[1].coefficient, 2);
+    ASSERT_EQ(result.terms[1].exponent, 0);
 }
 
 } // namespace
-  //

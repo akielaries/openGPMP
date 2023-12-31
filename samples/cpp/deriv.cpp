@@ -82,11 +82,35 @@ int main() {
     std::cout << "Original Polynomial 4: \n";
     poly4->display();
 
+    double limitAtX = poly4->limit_at(2);
+    std::cout << "Limit at x = 2: " << limitAtX << std::endl;
+
+    double limitAtInfinity = poly4->limit_at_infinity();
+    std::cout << "Limit as x approaches infinity: " << limitAtInfinity
+              << std::endl;
+
     gpmp::Differential derivative4 = poly4->power_rule().power_rule();
     std::cout << "Second derivative of Polynomial 4: \n";
     derivative4.display();
 
     delete poly4;
+
+    std::cout << "<------------>\n";
+
+    gpmp::Differential base_func;
+    base_func.add_term(4, 2);
+    base_func.add_term(1, 0);
+
+    gpmp::Differential base_deriv = base_func.chain_rule(base_func);
+
+    gpmp::Differential outer_func;
+    outer_func.add_term(1, 5);
+
+    gpmp::Differential chain_result = outer_func.chain_rule(base_func);
+
+    // Display the result
+    std::cout << "Derivative of (4x^2 + 1)^5 is: ";
+    chain_result.display();
 
     return 0;
 }

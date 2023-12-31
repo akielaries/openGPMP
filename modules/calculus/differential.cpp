@@ -42,32 +42,6 @@
 #include <stdio.h>
 #include <string>
 
-gpmp::Differential
-gpmp::Differential::operator+(const Differential &other) const {
-    gpmp::Differential result = *this;
-
-    for (const auto &term : other.terms) {
-        result.add_term(term.coefficient, term.exponent);
-    }
-
-    return result;
-}
-
-gpmp::Differential
-gpmp::Differential::operator*(const Differential &other) const {
-    gpmp::Differential result;
-
-    for (const auto &term1 : terms) {
-        for (const auto &term2 : other.terms) {
-            double newCoefficient = term1.coefficient * term2.coefficient;
-            int newExponent = term1.exponent + term2.exponent;
-            result.add_term(newCoefficient, newExponent);
-        }
-    }
-
-    return result;
-}
-
 void gpmp::Differential::add_term(double coefficient, int exponent) {
     terms.emplace_back(coefficient, exponent);
 }
@@ -103,53 +77,25 @@ gpmp::Differential gpmp::Differential::power_rule() const {
 }
 
 gpmp::Differential
-gpmp::Differential::product_rule(const Differential &other) const {
+gpmp::Differential::chain_rule(const gpmp::Differential &inner) const {
     gpmp::Differential result;
 
-    for (const auto &term1 : terms) {
-        for (const auto &term2 : other.terms) {
-            double newCoefficient = term1.coefficient * term2.coefficient;
-            int newExponent = term1.exponent + term2.exponent;
+    for (const auto &outerTerm : terms) {
+        // Apply the chain rule to each term of the outer function
+        gpmp::Differential innerDerivative = inner.power_rule();
+
+        // Multiply each term of innerDerivative by the coefficient of the outer
+        // term
+        for (auto &innerTerm : innerDerivative.terms) {
+            innerTerm.coefficient *= outerTerm.coefficient;
+        }
+
+        // Multiply the inner derivative by the derivative of the outer term
+        for (const auto &innerTerm : innerDerivative.terms) {
+            double newCoefficient = innerTerm.coefficient;
+            int newExponent = outerTerm.exponent + innerTerm.exponent;
             result.add_term(newCoefficient, newExponent);
         }
-    }
-
-    return result;
-}
-
-gpmp::Differential
-gpmp::Differential::quotient_rule(const Differential &other) const {
-    gpmp::Differential result;
-
-    for (const auto &term1 : terms) {
-        for (const auto &term2 : other.terms) {
-            double newCoefficient = (term1.coefficient * term2.exponent) -
-                                    (term1.exponent * term2.coefficient);
-            int newExponent = term1.exponent - term2.exponent;
-
-            if (term2.coefficient != 0 && term2.exponent != 0) {
-                result.add_term(newCoefficient / std::pow(term2.coefficient, 2),
-                                newExponent);
-            }
-        }
-    }
-
-    return result;
-}
-
-gpmp::Differential
-gpmp::Differential::chain_rule(const Differential &inner) const {
-    gpmp::Differential result;
-
-    for (const auto &term : terms) {
-        gpmp::Differential inner_derivative = inner.power_rule();
-
-        for (auto &inner_term : inner_derivative.terms) {
-            inner_term.coefficient *= term.coefficient;
-            inner_term.exponent += term.exponent;
-        }
-
-        result = result + inner_derivative;
     }
 
     return result;
@@ -169,4 +115,42 @@ double gpmp::Differential::eval(double x) const {
         result += term.coefficient * std::pow(x, term.exponent);
     }
     return result;
+}
+
+double gpmp::Differential::limit_at(double x) const {
+    double result = 0.0;
+
+    for (const auto &term : terms) {
+        result += term.coefficient * std::pow(x, term.exponent);
+    }
+
+    return result;
+}
+
+double gpmp::Differential::limit_at_infinity() const {
+    // Calculate the limit as x approaches infinity using the highest exponent
+    // term
+    if (!terms.empty()) {
+        const auto &highest_term =
+            *std::max_element(terms.begin(),
+                              terms.end(),
+                              [](const auto &a, const auto &b) {
+                                  return a.exponent < b.exponent;
+                              });
+
+        if (highest_term.exponent > 0) {
+            // If the highest term has a positive exponent, the limit is
+            // infinity or negative infinity
+            return (highest_term.coefficient > 0)
+                       ? std::numeric_limits<double>::infinity()
+                       : -std::numeric_limits<double>::infinity();
+        } else {
+            // If the highest term has a zero exponent, the limit is the
+            // constant term
+            return highest_term.coefficient;
+        }
+    }
+
+    // If the differential is empty, the limit is undefined
+    return std::numeric_limits<double>::quiet_NaN();
 }

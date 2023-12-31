@@ -6,28 +6,28 @@
  *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
  * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
  *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
- * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
+ * \___/| __/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
  *
- * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
+ * Copyright (C) Akiel Aries, <akiel@akielorg>, et al.
  *
  * This software is licensed as described in the file LICENSE, which
- * you should have received as part of this distribution. The terms
+ * you should have received as part of this distribution The terms
  * among other details are referenced in the official documentation
- * seen here : https://akielaries.github.io/openGPMP/ along with
- * important files seen in this project.
+ * seen here : https://akielariesgithub.io/openGPMP/ along with
+ * important files seen in this project
  *
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file As this is an Open Source effort, all implementations
+ * must be of the same methodology
  *
  *
  *
  * This software is distributed on an AS IS basis, WITHOUT
- * WARRANTY OF ANY KIND, either express or implied.
+ * WARRANTY OF ANY KIND, either express or implied
  *
  ************************************************************************/
 
@@ -37,8 +37,8 @@
  * Definitions for derivative operations
  */
 
-#ifndef DERIV_HPP
-#define DERIV_HPP
+#ifndef DIFFERENTIAL_HPP
+#define DIFFERENTIAL_HPP
 #include <string>
 #include <vector>
 
@@ -134,6 +134,30 @@ class Differential {
      * @return The result of evaluating the polynomial at x
      */
     double eval(double x) const;
+
+    /**
+     * @brief Calculate the limit of the polynomial at a specific point
+     *
+     * This method calculates the limit of the polynomial at a specific point by
+     * evaluating the polynomial at that point The limit is undefined if the
+     * polynomial has a term with a positive exponent at the highest degree
+     *
+     * @param x The point at which to calculate the limit
+     * @return The limit of the polynomial at the specified point
+     */
+    double limit_at(double x) const;
+
+    /**
+     * @brief Calculate the limit of the polynomial as x approaches infinity
+     *
+     * This method calculates the limit of the polynomial as x approaches
+     * infinity by examining the term with the highest exponent The limit is
+     * infinity or negative infinity if the highest exponent is greater than
+     * zero Otherwise, the limit is the constant term
+     *
+     * @return The limit of the polynomial as x approaches infinity
+     */
+    double limit_at_infinity() const;
 };
 
 } // namespace gpmp
