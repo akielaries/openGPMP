@@ -48,7 +48,6 @@ namespace linalg {
 class Mtx {
 
   public:
-
 // if Python API compilation is NOT occuring include these methods
 #ifndef __D_PYTHON_API__
 

@@ -8,7 +8,7 @@
  * @example reg.cpp
  */
 #include <iostream>
-//#include <openGPMP/ml/linreg.hpp>
+// #include <openGPMP/ml/linreg.hpp>
 #include "../../include/ml/linreg.hpp"
 #include <stdio.h>
 

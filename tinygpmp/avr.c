@@ -34,7 +34,7 @@ void setup_uart() {
 
     // BAUD is defined via command line: -DBAUD=115200
     // config UART baud rate based on setbaud.h?
-    //#include <util/setbaud.h>
+    // #include <util/setbaud.h>
 
     // UART baud HIGH BYTE
     UBRR0H = UBRRH_VALUE;

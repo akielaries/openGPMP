@@ -4,7 +4,7 @@
  *
  * @example deriv.cpp
  */
-//#include <openGPMP/calculus/deriv.hpp>
+// #include <openGPMP/calculus/deriv.hpp>
 #include "../../include/calculus/differential.hpp"
 #include <cassert>
 #include <cmath>

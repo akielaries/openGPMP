@@ -35,13 +35,13 @@
  * Implementing various derivative related functions in C++
  */
 #include "../../include/calculus/differential.hpp"
+#include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
 #include <stdio.h>
 #include <string>
-#include <algorithm>
 
 void gpmp::Differential::add_term(double coefficient, int exponent) {
     terms.emplace_back(coefficient, exponent);

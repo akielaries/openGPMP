@@ -37,7 +37,7 @@
 #include <graphics.h>
 #include <stdio.h>
 
-//#define MAXCOUNT 30
+// #define MAXCOUNT 30
 #define MAXCOUNT 100
 
 // Function to draw mandelbrot set
