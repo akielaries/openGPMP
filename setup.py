@@ -18,6 +18,16 @@ import versioneer
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
+CXX_ARGS = ['-D__D_PYTHON_API__',
+            '-std=c++20',
+            '-Wparentheses',
+            '-Wsign-compare',
+            '-DNDEBUG',
+            '-Wall',
+            '-Wextra',
+            '-march=native'
+            ]
+
 # arithmetic module related information
 arithmetic = Extension(
     'pygpmp.arithmetic._arithmetic',
@@ -36,7 +46,7 @@ calculus = Extension(
     sources=[
         'pygpmp/calculus/calculus.i',
         'modules/calculus/differential.cpp'],
-    extra_compile_args=['-std=c++20'],
+    extra_compile_args=CXX_ARGS,
     swig_opts=['-c++'],
 )
 
@@ -47,7 +57,7 @@ ml = Extension(
     sources=[
         'pygpmp/ml/ml.i',
         'modules/ml/linreg.cpp'],
-    extra_compile_args=['-std=c++20'],
+    extra_compile_args=CXX_ARGS,
     swig_opts=['-c++'],
 )
 
@@ -57,8 +67,9 @@ linalg = Extension(
     include_dirs=[os.path.join(this_dir, 'include/linalg')],
     sources=[
         'pygpmp/linalg/linalg.i',
-        'modules/linalg/lao.cpp'],
-    extra_compile_args=['-std=c++20'],
+        'modules/linalg/lao.cpp',
+        'modules/linalg/mtx.cpp'],
+    extra_compile_args=CXX_ARGS,
     swig_opts=['-c++'],
 )
 

@@ -130,6 +130,21 @@ class Mtx(object):
 
     def std_mtx_mult_strass(self, A, B, C):
         return _linalg.Mtx_std_mtx_mult_strass(self, A, B, C)
+
+    def mtx_add(self, *args):
+        return _linalg.Mtx_mtx_add(self, *args)
+
+    def mtx_sub(self, *args):
+        return _linalg.Mtx_mtx_sub(self, *args)
+
+    def mtx_mult(self, *args):
+        return _linalg.Mtx_mtx_mult(self, *args)
+
+    def mtx_tpose(self, *args):
+        return _linalg.Mtx_mtx_tpose(self, *args)
+
+    def std_mtx_add(self, *args):
+        return _linalg.Mtx_std_mtx_add(self, *args)
     __swig_destroy__ = _linalg.delete_Mtx
 
 # Register Mtx in _linalg:

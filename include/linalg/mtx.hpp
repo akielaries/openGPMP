@@ -48,6 +48,10 @@ namespace linalg {
 class Mtx {
 
   public:
+
+// if Python API compilation is NOT occuring include these methods
+#ifndef __D_PYTHON_API__
+
     /**
      * @brief Perform matrix addition using flattened matrices and the
      * designated Fortran subroutine. Accepts type float
@@ -59,6 +63,7 @@ class Mtx {
      * designated Fortran subroutine. Accepts type int
      */
     void mtx_add_f90(int *A, int *B, int *C, std::size_t matrixSize);
+#endif
 
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
     defined(__i386) || defined(__amd64__) || defined(__amd64)

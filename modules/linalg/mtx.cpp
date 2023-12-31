@@ -43,6 +43,9 @@
  * in `mtx_routines.f90`
  *
  ************************************************************************/
+
+// if Python API compilation is NOT occuring include these methods
+#ifndef __D_PYTHON_API__
 extern "C" {
 // Matrix add routine (FLOAT)
 void mtx_add_routine_float_(float *A,
@@ -68,6 +71,8 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
                                     std::size_t mtx_size) {
     mtx_add_routine_int_(A, B, C, &mtx_size);
 }
+
+#endif
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 

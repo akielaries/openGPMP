@@ -1,6 +1,6 @@
 /* openGPMP Structures Module */
 
-%module ml
+%module core
 %include <std_vector.i>
 %include <typemaps.i>
 %include <stdint.i>
