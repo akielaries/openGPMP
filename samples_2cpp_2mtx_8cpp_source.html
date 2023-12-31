@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">    6</a></span>&#160;constexpr <span class="keywordtype">int</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a> = 8912;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#ae2c203722be7b3ebb75cd994695f468c">run_mtx_add</a>() {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> mtx;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::chrono::steady_clock::time_point gen_start_time =</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -112,11 +112,11 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::chrono::steady_clock::time_point start_time_mtx =</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mtx.mtx_add(A, B, C);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.mtx_add(A, B, C);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::chrono::steady_clock::time_point start_time_std_mtx =</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mtx.<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(A, B, C);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.std_mtx_add(A, B, C);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix A:&quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="samples_2cpp_2mtx_8cpp.html#a98093e1e4826e10eed1b30d15432a9f9">   86</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#a98093e1e4826e10eed1b30d15432a9f9">run_mtx_add_flt</a>() {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> mtx;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::chrono::steady_clock::time_point gen_start_time =</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -193,11 +193,11 @@ $(function() {
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::chrono::steady_clock::time_point start_time_mtx =</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    mtx.mtx_add(A, B, C);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.mtx_add(A, B, C);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::chrono::steady_clock::time_point start_time_std_mtx =</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    mtx.<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(A, B, C);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.std_mtx_add(A, B, C);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix A:&quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
@@ -246,7 +246,7 @@ $(function() {
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b">  167</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b">run_mtx_add_doub</a>() {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> mtx;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    std::chrono::steady_clock::time_point gen_start_time =</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -274,11 +274,11 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    std::chrono::steady_clock::time_point start_time_mtx =</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    mtx.mtx_add(A, B, C);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.mtx_add(A, B, C);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    std::chrono::steady_clock::time_point start_time_std_mtx =</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    mtx.<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(A, B, C);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.std_mtx_add(A, B, C);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">        std::cout &lt;&lt; &quot;Matrix A:&quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">        for (int i = 0; i &lt; matrixSize; ++i) {</span></div>
@@ -328,7 +328,7 @@ $(function() {
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="samples_2cpp_2mtx_8cpp.html#a8f1f339ed7f50be702f09182a87722aa">  249</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#a8f1f339ed7f50be702f09182a87722aa">run_mtx_add_arr</a>() {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> mtx;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    std::chrono::steady_clock::time_point gen_start_time =</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -358,11 +358,11 @@ $(function() {
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    std::chrono::steady_clock::time_point start_time_mtx =</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    mtx.mtx_add(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.mtx_add(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    std::chrono::steady_clock::time_point start_time_std_mtx =</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    mtx.<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a>(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.std_mtx_add(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -412,7 +412,7 @@ $(function() {
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="samples_2cpp_2mtx_8cpp.html#afe6f4eb58916be128600e8f87a924458">  333</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="samples_2cpp_2mtx_8cpp.html#afe6f4eb58916be128600e8f87a924458">mtx_add_f90</a>() {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> mtx;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a> <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>;</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    std::chrono::steady_clock::time_point gen_start_time =</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -428,7 +428,7 @@ $(function() {
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// Call the Fortran matrix addition function through the C++ wrapper</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    mtx.<a class="code" href="classgpmp_1_1linalg_1_1Mtx.html#ab2fb81bdb02ee504b064a12f2b156a37">mtx_add_f90</a>(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <a class="code" href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">mtx</a>.mtx_add_f90(A, B, C, <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>);</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    std::chrono::steady_clock::time_point end_time =</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        std::chrono::steady_clock::now();</div>
@@ -473,9 +473,8 @@ $(function() {
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html">gpmp::linalg::Mtx</a></div><div class="ttdoc">Mtx class offers matrix arithmetic operations. Some methods are element-wise while others make use of...</div><div class="ttdef"><b>Definition:</b> <a href="mtx_8hpp_source.html#l00048">mtx.hpp:48</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_a713e3eb851f21419cfda066a74c68969"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">gpmp::linalg::Mtx::std_mtx_add</a></div><div class="ttdeci">void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols)</div><div class="ttdoc">Perform matrix addition on two matrices as flat arrays.</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l01289">mtx.cpp:1289</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1Mtx_html_ab2fb81bdb02ee504b064a12f2b156a37"><div class="ttname"><a href="classgpmp_1_1linalg_1_1Mtx.html#ab2fb81bdb02ee504b064a12f2b156a37">gpmp::linalg::Mtx::mtx_add_f90</a></div><div class="ttdeci">void mtx_add_f90(float *A, float *B, float *C, std::size_t matrixSize)</div><div class="ttdoc">Perform matrix addition using flattened matrices and the designated Fortran subroutine....</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2mtx_8cpp_source.html#l00057">mtx.cpp:57</a></div></div>
 <div class="ttc" id="amodules_2linalg_2f90_2mtx_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="modules_2linalg_2f90_2mtx_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="modules_2linalg_2f90_2mtx_8cpp_source.html#l00040">mtx.cpp:40</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a353695726aa863d3b097291721c00b11"><div class="ttname"><a href="namespacepython_1_1linalg.html#a353695726aa863d3b097291721c00b11">python.linalg.mtx</a></div><div class="ttdeci">mtx</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00020">linalg.py:20</a></div></div>
 <div class="ttc" id="asamples_2cpp_2mtx_8cpp_html_a09411cb380dff6bb0520907bc375723b"><div class="ttname"><a href="samples_2cpp_2mtx_8cpp.html#a09411cb380dff6bb0520907bc375723b">run_mtx_add_doub</a></div><div class="ttdeci">void run_mtx_add_doub()</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2mtx_8cpp_source.html#l00167">mtx.cpp:167</a></div></div>
 <div class="ttc" id="asamples_2cpp_2mtx_8cpp_html_a20356d2423d742ba0242942ec3167ff3"><div class="ttname"><a href="samples_2cpp_2mtx_8cpp.html#a20356d2423d742ba0242942ec3167ff3">print_matrix</a></div><div class="ttdeci">void print_matrix(const float *matrix, std::size_t rows, std::size_t cols)</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2mtx_8cpp_source.html#l00324">mtx.cpp:324</a></div></div>
 <div class="ttc" id="asamples_2cpp_2mtx_8cpp_html_a8f1f339ed7f50be702f09182a87722aa"><div class="ttname"><a href="samples_2cpp_2mtx_8cpp.html#a8f1f339ed7f50be702f09182a87722aa">run_mtx_add_arr</a></div><div class="ttdeci">void run_mtx_add_arr()</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2mtx_8cpp_source.html#l00249">mtx.cpp:249</a></div></div>
