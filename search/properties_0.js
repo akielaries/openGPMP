@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['cols_1739',['cols',['../classpygpmp_1_1linalg_1_1linalg_1_1Matrix.html#aa60c482f34ccb92d8a0f99fb22d689ad',1,'pygpmp.linalg.linalg.Matrix.cols()'],['../classpygpmp_1_1linalg_1_1linalg_1_1MatrixI.html#a229caa06813d49d444387f9c6cd2deea',1,'pygpmp.linalg.linalg.MatrixI.cols()']]]
+  ['coeff_1726',['coeff',['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#a05afe28ec9e147061d3fb409e66bf66e',1,'pygpmp::ml::ml::LinearRegression']]],
+  ['coefficient_1727',['coefficient',['../classpygpmp_1_1calculus_1_1calculus_1_1Term.html#aeb84b6c9b4fbcdff2d4547c914611271',1,'pygpmp::calculus::calculus::Term']]],
+  ['constant_1728',['constant',['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#abfa77e90bf01837f257d94851f2a90aa',1,'pygpmp::ml::ml::LinearRegression']]]
 ];
