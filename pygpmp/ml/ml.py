@@ -121,6 +121,19 @@ _ml.SwigPyIterator_swigregister(SwigPyIterator)
 class LinearRegression(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
+    x = property(_ml.LinearRegression_x_get, _ml.LinearRegression_x_set)
+    y = property(_ml.LinearRegression_y_get, _ml.LinearRegression_y_set)
+    coeff = property(_ml.LinearRegression_coeff_get, _ml.LinearRegression_coeff_set)
+    constant = property(_ml.LinearRegression_constant_get, _ml.LinearRegression_constant_set)
+    sum_xy = property(_ml.LinearRegression_sum_xy_get, _ml.LinearRegression_sum_xy_set)
+    sum_x = property(_ml.LinearRegression_sum_x_get, _ml.LinearRegression_sum_x_set)
+    sum_y = property(_ml.LinearRegression_sum_y_get, _ml.LinearRegression_sum_y_set)
+    sum_x_square = property(_ml.LinearRegression_sum_x_square_get, _ml.LinearRegression_sum_x_square_set)
+    sum_y_square = property(_ml.LinearRegression_sum_y_square_get, _ml.LinearRegression_sum_y_square_set)
+    x_train = property(_ml.LinearRegression_x_train_get, _ml.LinearRegression_x_train_set)
+    y_train = property(_ml.LinearRegression_y_train_get, _ml.LinearRegression_y_train_set)
+    x_test = property(_ml.LinearRegression_x_test_get, _ml.LinearRegression_x_test_set)
+    y_test = property(_ml.LinearRegression_y_test_get, _ml.LinearRegression_y_test_set)
 
     def __init__(self):
         _ml.LinearRegression_swiginit(self, _ml.new_LinearRegression())
@@ -143,20 +156,29 @@ class LinearRegression(object):
     def best_fit(self):
         return _ml.LinearRegression_best_fit(self)
 
-    def get_input(self, file):
-        return _ml.LinearRegression_get_input(self, file)
+    def get_input(self, *args):
+        return _ml.LinearRegression_get_input(self, *args)
+
+    def split_data(self, test_size, seed, shuffle):
+        return _ml.LinearRegression_split_data(self, test_size, seed, shuffle)
 
     def show_data(self):
         return _ml.LinearRegression_show_data(self)
 
-    def predict(self, x):
-        return _ml.LinearRegression_predict(self, x)
+    def predict(self, *args):
+        return _ml.LinearRegression_predict(self, *args)
+
+    def error_in(self, *args):
+        return _ml.LinearRegression_error_in(self, *args)
 
     def error_square(self):
         return _ml.LinearRegression_error_square(self)
 
-    def error_in(self, num):
-        return _ml.LinearRegression_error_in(self, num)
+    def mse(self, x_data, y_data):
+        return _ml.LinearRegression_mse(self, x_data, y_data)
+
+    def r_sqrd(self, x_data, y_data):
+        return _ml.LinearRegression_r_sqrd(self, x_data, y_data)
 
     def num_rows(self, input):
         return _ml.LinearRegression_num_rows(self, input)

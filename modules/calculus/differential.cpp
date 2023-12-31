@@ -41,6 +41,7 @@
 #include <sstream>
 #include <stdio.h>
 #include <string>
+#include <algorithm>
 
 void gpmp::Differential::add_term(double coefficient, int exponent) {
     terms.emplace_back(coefficient, exponent);

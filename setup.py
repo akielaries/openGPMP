@@ -25,7 +25,7 @@ arithmetic = Extension(
     sources=[
         'pygpmp/arithmetic/arithmetic.i',
         'modules/arithmetic/arith.cpp'],
-    extra_compile_args=['-std=c++2a'],
+    extra_compile_args=['-std=c++20'],
     swig_opts=['-Wall', '-c++'],
 )
 
@@ -36,7 +36,7 @@ calculus = Extension(
     sources=[
         'pygpmp/calculus/calculus.i',
         'modules/calculus/differential.cpp'],
-    extra_compile_args=['-std=c++2a'],
+    extra_compile_args=['-std=c++20'],
     swig_opts=['-c++'],
 )
 
@@ -47,7 +47,7 @@ ml = Extension(
     sources=[
         'pygpmp/ml/ml.i',
         'modules/ml/linreg.cpp'],
-    extra_compile_args=['-std=c++2a'],
+    extra_compile_args=['-std=c++20'],
     swig_opts=['-c++'],
 )
 
@@ -58,7 +58,7 @@ linalg = Extension(
     sources=[
         'pygpmp/linalg/linalg.i',
         'modules/linalg/lao.cpp'],
-    extra_compile_args=['-std=c++2a'],
+    extra_compile_args=['-std=c++20'],
     swig_opts=['-c++'],
 )
 
@@ -75,7 +75,7 @@ nt = Extension(
         'modules/nt/factorization.cpp',
         'modules/nt/rc4.cpp',
         'modules/nt/cipher.cpp'],
-    extra_compile_args=['-std=c++2a'],
+    extra_compile_args=['-std=c++20'],
     swig_opts=['-c++'],
 )
 
@@ -154,7 +154,6 @@ def main():
             'Programming Language :: Python :: 3 :: Only',
             'Programming Language :: Fortran',
             'Programming Language :: R',
-            'Programming Language :: OCaml',
             'Operating System :: POSIX',
             'Operating System :: Unix',
             'Operating System :: MacOS',

@@ -118,18 +118,58 @@ class SwigPyIterator(object):
 
 # Register SwigPyIterator in _calculus:
 _calculus.SwigPyIterator_swigregister(SwigPyIterator)
+class Term(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+    coefficient = property(_calculus.Term_coefficient_get, _calculus.Term_coefficient_set)
+    exponent = property(_calculus.Term_exponent_get, _calculus.Term_exponent_set)
+
+    def __init__(self, coef, exp):
+        _calculus.Term_swiginit(self, _calculus.new_Term(coef, exp))
+    __swig_destroy__ = _calculus.delete_Term
+
+# Register Term in _calculus:
+_calculus.Term_swigregister(Term)
 class Differential(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
+    terms = property(_calculus.Differential_terms_get, _calculus.Differential_terms_set)
 
-    def derivative_term(self, p_term, val):
-        return _calculus.Differential_derivative_term(self, p_term, val)
+    def __add__(self, other):
+        return _calculus.Differential___add__(self, other)
 
-    def deriv_at(self, poly, val):
-        return _calculus.Differential_deriv_at(self, poly, val)
+    def __mul__(self, other):
+        return _calculus.Differential___mul__(self, other)
 
-    def deriv_str(self, poly):
-        return _calculus.Differential_deriv_str(self, poly)
+    def add_term(self, coefficient, exponent):
+        return _calculus.Differential_add_term(self, coefficient, exponent)
+
+    def display(self):
+        return _calculus.Differential_display(self)
+
+    def power_rule(self):
+        return _calculus.Differential_power_rule(self)
+
+    def product_rule(self, other):
+        return _calculus.Differential_product_rule(self, other)
+
+    def quotient_rule(self, other):
+        return _calculus.Differential_quotient_rule(self, other)
+
+    def chain_rule(self, inner):
+        return _calculus.Differential_chain_rule(self, inner)
+
+    def nth_derivative(self, n):
+        return _calculus.Differential_nth_derivative(self, n)
+
+    def eval(self, x):
+        return _calculus.Differential_eval(self, x)
+
+    def limit_at(self, x):
+        return _calculus.Differential_limit_at(self, x)
+
+    def limit_at_infinity(self):
+        return _calculus.Differential_limit_at_infinity(self)
 
     def __init__(self):
         _calculus.Differential_swiginit(self, _calculus.new_Differential())

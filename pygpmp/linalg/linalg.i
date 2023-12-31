@@ -12,13 +12,13 @@
 
 
 %{
-    #include "../../include/linalg/matrix.hpp"
-    #include "../../include/linalg/vectors.hpp"
+    #include "../../include/linalg/mtx.hpp"
+    // #include "../../include/linalg/mtx_tmpl.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/linalg/matrix.hpp"
-%include "../../include/linalg/vectors.hpp"
+%include "../../include/linalg/mtx.hpp"
+/*%include "../../include/linalg/mtx_tmpl.hpp"
 
 // rename operators
 %rename(__add__) gpmp::Matrix::operator+;
@@ -32,4 +32,5 @@
 // re-declare struct templates specifying a datatype
 %template(mtx) gpmp::mtx<double>;
 //%template(mtxI) gpmp::mtx<int>;
+*/
 
