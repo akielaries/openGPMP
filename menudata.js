@@ -28,22 +28,7 @@ var menudata={children:[
 {text:"Modules",url:"namespaces.html",children:[
 {text:"Modules List",url:"namespaces.html"},
 {text:"Module Members",url:"namespacemembers.html",children:[
-{text:"All",url:"namespacemembers.html",children:[
-{text:"_",url:"namespacemembers.html#index__5F"},
-{text:"a",url:"namespacemembers.html#index_a"},
-{text:"b",url:"namespacemembers.html#index_b"},
-{text:"c",url:"namespacemembers.html#index_c"},
-{text:"d",url:"namespacemembers.html#index_d"},
-{text:"e",url:"namespacemembers.html#index_e"},
-{text:"f",url:"namespacemembers.html#index_f"},
-{text:"g",url:"namespacemembers.html#index_g"},
-{text:"i",url:"namespacemembers.html#index_i"},
-{text:"m",url:"namespacemembers.html#index_m"},
-{text:"p",url:"namespacemembers.html#index_p"},
-{text:"r",url:"namespacemembers.html#index_r"},
-{text:"s",url:"namespacemembers.html#index_s"},
-{text:"t",url:"namespacemembers.html#index_t"},
-{text:"w",url:"namespacemembers.html#index_w"}]},
+{text:"All",url:"namespacemembers.html"},
 {text:"Functions/Subroutines",url:"namespacemembers_func.html"},
 {text:"Variables",url:"namespacemembers_vars.html"},
 {text:"Typedefs",url:"namespacemembers_type.html"},
@@ -137,13 +122,7 @@ var menudata={children:[
 {text:"y",url:"functions_vars.html#index_y"},
 {text:"z",url:"functions_vars.html#index_z"}]},
 {text:"Typedefs",url:"functions_type.html"},
-{text:"Properties",url:"functions_prop.html",children:[
-{text:"c",url:"functions_prop.html#index_c"},
-{text:"e",url:"functions_prop.html#index_e"},
-{text:"s",url:"functions_prop.html#index_s"},
-{text:"t",url:"functions_prop.html#index_t"},
-{text:"x",url:"functions_prop.html#index_x"},
-{text:"y",url:"functions_prop.html#index_y"}]}]}]},
+{text:"Properties",url:"functions_prop.html"}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
