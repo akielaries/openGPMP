@@ -6,9 +6,13 @@
 %include <stdint.i>
 
 %{
-    #include "../../include/struct/datatable.hpp"
+    #include "../../include/core/datatable.hpp"
+    #include "../../include/core/utils.hpp"
+    #include "../../include/core/threads.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/struct/datatable.hpp"
+%include "../../include/core/datatable.hpp"
+%include "../../include/core/utils.hpp"
+%include "../../include/core/threads.hpp"
 

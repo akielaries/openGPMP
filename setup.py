@@ -51,6 +51,18 @@ calculus = Extension(
     swig_opts=['-c++'],
 )
 
+core = Extension(
+    'pygpmp.core._core',
+    include_dirs=[os.path.join(this_dir, 'include/core')],
+    sources=[
+        'pygpmp/core/core.i',
+        'modules/core/datatable.cpp',
+        'modules/core/utils.cpp',
+        ],
+    extra_compile_args=CXX_ARGS,
+    swig_opts=['-c++'],
+)
+
 # machine learning module related information
 ml = Extension(
     'pygpmp.ml._ml',
@@ -101,7 +113,7 @@ class BinaryDistribution(dist.Distribution):
 def main():
     # main execution for building the dist
     # pygpmp Python API modules
-    modules = [arithmetic, calculus, ml, linalg, nt]
+    modules = [arithmetic, calculus, core, ml, linalg, nt]
 
     # use the project readme as the description
     with open('README.md', 'r', encoding='utf-8') as fh:
@@ -131,6 +143,7 @@ def main():
         packages=['pygpmp',
                   'pygpmp.arithmetic',
                   'pygpmp.calculus',
+                  'pygpmp.core',
                   'pygpmp.linalg',
                   'pygpmp.ml',
                   'pygpmp.nt',
