@@ -7,9 +7,9 @@
 from sys import version_info as _swig_python_version_info
 # Import the low-level C/C++ module
 if __package__ or "." in __name__:
-    from . import _linalg
+    from . import _nt
 else:
-    import _linalg
+    import _nt
 
 try:
     import builtins as __builtin__
@@ -64,68 +64,68 @@ class SwigPyIterator(object):
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-    __swig_destroy__ = _linalg.delete_SwigPyIterator
+    __swig_destroy__ = _nt.delete_SwigPyIterator
 
     def value(self):
-        return _linalg.SwigPyIterator_value(self)
+        return _nt.SwigPyIterator_value(self)
 
     def incr(self, n=1):
-        return _linalg.SwigPyIterator_incr(self, n)
+        return _nt.SwigPyIterator_incr(self, n)
 
     def decr(self, n=1):
-        return _linalg.SwigPyIterator_decr(self, n)
+        return _nt.SwigPyIterator_decr(self, n)
 
     def distance(self, x):
-        return _linalg.SwigPyIterator_distance(self, x)
+        return _nt.SwigPyIterator_distance(self, x)
 
     def equal(self, x):
-        return _linalg.SwigPyIterator_equal(self, x)
+        return _nt.SwigPyIterator_equal(self, x)
 
     def copy(self):
-        return _linalg.SwigPyIterator_copy(self)
+        return _nt.SwigPyIterator_copy(self)
 
     def next(self):
-        return _linalg.SwigPyIterator_next(self)
+        return _nt.SwigPyIterator_next(self)
 
     def __next__(self):
-        return _linalg.SwigPyIterator___next__(self)
+        return _nt.SwigPyIterator___next__(self)
 
     def previous(self):
-        return _linalg.SwigPyIterator_previous(self)
+        return _nt.SwigPyIterator_previous(self)
 
     def advance(self, n):
-        return _linalg.SwigPyIterator_advance(self, n)
+        return _nt.SwigPyIterator_advance(self, n)
 
     def __eq__(self, x):
-        return _linalg.SwigPyIterator___eq__(self, x)
+        return _nt.SwigPyIterator___eq__(self, x)
 
     def __ne__(self, x):
-        return _linalg.SwigPyIterator___ne__(self, x)
+        return _nt.SwigPyIterator___ne__(self, x)
 
     def __iadd__(self, n):
-        return _linalg.SwigPyIterator___iadd__(self, n)
+        return _nt.SwigPyIterator___iadd__(self, n)
 
     def __isub__(self, n):
-        return _linalg.SwigPyIterator___isub__(self, n)
+        return _nt.SwigPyIterator___isub__(self, n)
 
     def __add__(self, n):
-        return _linalg.SwigPyIterator___add__(self, n)
+        return _nt.SwigPyIterator___add__(self, n)
 
     def __sub__(self, *args):
-        return _linalg.SwigPyIterator___sub__(self, *args)
+        return _nt.SwigPyIterator___sub__(self, *args)
     def __iter__(self):
         return self
 
-# Register SwigPyIterator in _linalg:
-_linalg.SwigPyIterator_swigregister(SwigPyIterator)
+# Register SwigPyIterator in _nt:
+_nt.SwigPyIterator_swigregister(SwigPyIterator)
 class Mtx(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    __swig_destroy__ = _linalg.delete_Mtx
 
-# Register Mtx in _linalg:
-_linalg.Mtx_swigregister(Mtx)
+    def __init__(self):
+        _nt.Mtx_swiginit(self, _nt.new_Mtx())
+    __swig_destroy__ = _nt.delete_Mtx
+
+# Register Mtx in _nt:
+_nt.Mtx_swigregister(Mtx)
 
