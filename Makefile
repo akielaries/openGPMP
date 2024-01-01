@@ -75,8 +75,7 @@ clean-tests:
 	rm -f ${TCALCBIN}
 
 clean-misc:
-	cd pygpmp && rm -rf */*.cpp
-	rm -rf */*.so
+	cd pygpmp && rm -rf */*.cpp */*.so
 	rm -rf build/ dist/ pygpmp.egg-info/ 
 	find . -name "__pycache__" -type d -exec rm -r "{}" \;
 	rm -rf __pycache__
