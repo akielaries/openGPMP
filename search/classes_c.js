@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['primalitygen_917',['PrimalityGen',['../classgpmp_1_1PrimalityGen.html',1,'gpmp::PrimalityGen'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityGen.html',1,'pygpmp.nt.nt.PrimalityGen']]],
-  ['primalitytest_918',['PrimalityTest',['../classgpmp_1_1PrimalityTest.html',1,'gpmp::PrimalityTest'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityTest.html',1,'pygpmp.nt.nt.PrimalityTest']]],
-  ['primarymlp_919',['PrimaryMLP',['../classgpmp_1_1ml_1_1PrimaryMLP.html',1,'gpmp::ml']]]
+  ['primalitygen_914',['PrimalityGen',['../classgpmp_1_1PrimalityGen.html',1,'gpmp::PrimalityGen'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityGen.html',1,'pygpmp.nt.nt.PrimalityGen']]],
+  ['primalitytest_915',['PrimalityTest',['../classgpmp_1_1PrimalityTest.html',1,'gpmp::PrimalityTest'],['../classpygpmp_1_1nt_1_1nt_1_1PrimalityTest.html',1,'pygpmp.nt.nt.PrimalityTest']]],
+  ['primarymlp_916',['PrimaryMLP',['../classgpmp_1_1ml_1_1PrimaryMLP.html',1,'gpmp::ml']]]
 ];
