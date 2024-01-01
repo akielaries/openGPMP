@@ -39,7 +39,6 @@ openGPMP Core Module containing many utility related functions
 
 from pygpmp.struct.struct import (
     Datatable,
-    Datablock,
 )
 
 __all__: list[str]

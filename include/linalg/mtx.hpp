@@ -48,9 +48,15 @@ namespace linalg {
 class Mtx {
 
   public:
-// if Python API compilation is NOT occuring include these methods
-#ifndef __D_PYTHON_API__
 
+#if defined(__GPMP_PYTHON_API__)
+
+#define __PYTHON_API__
+
+// if Python API compilation is NOT occuring include these methods
+#elif defined(__GPMP_CPP_API__)
+
+#define __GPMP_CPP_API__
     /**
      * @brief Perform matrix addition using flattened matrices and the
      * designated Fortran subroutine. Accepts type float
@@ -312,14 +318,14 @@ class Mtx {
                   const std::vector<std::vector<double>> &B,
                   std::vector<std::vector<double>> &C);
 
-    void mtx_mult_strass(const std::vector<std::vector<int>> &A,
+    /*void mtx_mult_strass(const std::vector<std::vector<int>> &A,
                          const std::vector<std::vector<int>> &B,
                          std::vector<std::vector<int>> &C);
 
     void mtx_mult_strass(const std::vector<std::vector<double>> &A,
                          const std::vector<std::vector<double>> &B,
                          std::vector<std::vector<double>> &C);
-
+    */
     /**
      * @brief Transpose matrices using Intel intrinsics
      * @param matrix Input matrix
@@ -407,9 +413,10 @@ class Mtx {
      * dimensions that are powers of 2
      * @overload
      */
-    void std_mtx_mult_strass(const std::vector<std::vector<int>> &A,
+    /*void std_mtx_mult_strass(const std::vector<std::vector<int>> &A,
                              const std::vector<std::vector<int>> &B,
                              std::vector<std::vector<int>> &C);
+    */
 };
 
 } // namespace linalg

@@ -19,13 +19,15 @@ from pygpmp import linalg
 
 mtx = linalg.Mtx()
 
+A = [1,2,3]
+B = [2,3,1]
+C = []
+
 # Examples of usage
-mtx_add_float_result = mtx.mtx_add([1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [0.0, 0.0, 0.0], 3)
-mtx_add_int_result = mtx.mtx_add([1, 2, 3], [4, 5, 6], [0, 0, 0], 3)
+#mtx_add_float_result = mtx.mtx_add([1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [0.0, 0.0, 0.0], 3)
+#mtx_add_int_result = mtx.mtx_add([1, 2, 3], [4, 5, 6], [0, 0, 0], 3)
+mtx_add_res = mtx.mtx_add(A,B,C)
 
-# Use the result as needed
-print(mtx_add_float_result)
-print(mtx_add_int_result)
-
+print(mtx_add_res)
 
 

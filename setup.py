@@ -18,7 +18,8 @@ import versioneer
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
-CXX_ARGS = ['-D__D_PYTHON_API__',
+CXX_ARGS = ['-D', 
+            '__GPMP_PYTHON_API__',
             '-std=c++20',
             '-Wparentheses',
             '-Wsign-compare',
