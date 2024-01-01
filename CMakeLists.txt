@@ -37,7 +37,27 @@ set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
                       -Wsign-compare -DNDEBUG -Wall -Wextra"
 )
 
-project(openGPMP VERSION 1.0 LANGUAGES CXX C ASM Fortran)
+
+
+project(openGPMP LANGUAGES CXX C ASM Fortran)
+
+# Dynamically determine the project version based on the latest Git tag
+find_package(Git)
+
+if(GIT_FOUND)
+    execute_process(
+        COMMAND ${GIT_EXECUTABLE} describe --tags
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        OUTPUT_VARIABLE GIT_TAG
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+
+    string(SUBSTRING ${GIT_TAG} 1 -1 PROJECT_VERSION)
+    message(STATUS "Determined project version: ${PROJECT_VERSION}")
+else()
+    set(PROJECT_VERSION "1.0")
+    message(WARNING "Git not found. Using default project version: ${PROJECT_VERSION}")
+endif()
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -64,7 +84,7 @@ if(BUILD_PYGPMP)
     message(STATUS "Building Python API")
 
     # Set the path to your Python interpreter
-    set(PYTHON_EXECUTABLE "python3")  # Change this to your Python interpreter
+    set(PYTHON_EXECUTABLE "/usr/bin/python3")
 
     # Set the path to your Python project
     set(PYTHON_PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
