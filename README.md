@@ -42,6 +42,8 @@ To install the Python interface, use the pip package manager and run the followi
 pygpmp`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip 
 installation.
 
+### From source
+setup.py build_ext --inplace sdist bdist_wheel --plat-name=native
 ## Build from source
 ### Requirements
 * Linux/OSX
