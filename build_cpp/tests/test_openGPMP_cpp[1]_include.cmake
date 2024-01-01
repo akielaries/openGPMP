@@ -1,5 +1,0 @@
-if(EXISTS "/home/akiel/Desktop/trunk/github/OSS/openGPMP/build_cpp/tests/test_openGPMP_cpp[1]_tests.cmake")
-  include("/home/akiel/Desktop/trunk/github/OSS/openGPMP/build_cpp/tests/test_openGPMP_cpp[1]_tests.cmake")
-else()
-  add_test(test_openGPMP_cpp_NOT_BUILT test_openGPMP_cpp_NOT_BUILT)
-endif()
