@@ -58,6 +58,32 @@ option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
 ############################################################
 #find_package(GTest REQUIRED)
 
+option(BUILD_PYGPMP "Build Python API" OFF)
+
+if(BUILD_PYGPMP)
+    message(STATUS "Building Python API")
+
+    # Set the path to your Python interpreter
+    set(PYTHON_EXECUTABLE "python3")  # Change this to your Python interpreter
+
+    # Set the path to your Python project
+    set(PYTHON_PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
+    # Run the Python command to build the Python API
+    execute_process(
+        COMMAND ${PYTHON_EXECUTABLE} setup.py build_ext --inplace sdist bdist_wheel --plat-name=native
+        WORKING_DIRECTORY ${PYTHON_PROJECT_DIR}
+        RESULT_VARIABLE PYTHON_BUILD_RESULT
+    )
+
+    if(PYTHON_BUILD_RESULT)
+        message(FATAL_ERROR "Failed to build Python API")
+    else()
+        message(STATUS "Python API built successfully")
+    endif()
+else()
+    message(STATUS "Not building Python API. Use -DBUILD_PYGPMP=ON to build it.")
+
 enable_testing()
 
 add_subdirectory(tests)
@@ -128,3 +154,4 @@ if(NOT TARGET uninstall)
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 endif()
 
+endif()

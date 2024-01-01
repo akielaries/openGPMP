@@ -37,14 +37,7 @@ ubuntu 18.04  | Nvidia GPU (CUDA) | [![NVIDIACUDA](https://github.com/akielaries
 ubuntu 18.04  | Nvidia GPU (OpenCL) | [![NVIDIAOPENCL](https://github.com/akielaries/openGPMP/actions/workflows/nvid_opencl.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
 > **Note** Testing on Apple specific hardware (M1, M2) is in progress. 
 
-## Python
-To install the Python interface, use the pip package manager and run the following, `pip install
-pygpmp`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip 
-installation.
-
-### From source
-setup.py build_ext --inplace sdist bdist_wheel --plat-name=native
-## Build from source
+## C++ (source)
 ### Requirements
 * Linux/OSX
 * CMake v3.18+ (build from source for latest version)
@@ -75,17 +68,35 @@ $ sudo make install
 $ LD_LIBRARY_PATH=/usr/local/lib
 ```
 
+## Python (pygpmp)
+To install the Python interface, use the pip package manager and run the following, `pip install
+pygpmp`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip
+installation.
+
+### From source
+Building the Python pip wheel from source is easy as well. Run the following:
+```
+# install dependencies
+$ pip install -r requirements.txt
+# create CMake files in py_build dir
+$ cmake -B py_build -DBUILD_PYGPMP=ON
+# install
+$ pip install .
+```
+
+## Julia (gpmp.jl)
+> **Note** In progress
+The Julia interface is built with the help of [wrapit](https://github.com/grasph/wrapit).
+
+
 To test the installation build some of the example drivers in the projects 
 [samples](https://github.com/akielaries/openGPMP/tree/main/samples) directory.
 
 ```
 # compile yourself
 $ cd samples/cpp
-$ g++ cipher.cpp -lopenGPMP -o cipher
-$ g++ arith.cpp -lopenGPMP -o arith
-# script to test all modules and their drivers
-# using the projects root makefile
-$ cd scripts && ./all.sh
+$ g++ mtx.cpp -lopenGPMP -o mtx
+$ g++ primes.cpp -lopenGPMP -o primes
 ```
 
 To uninstall files related to openGPMP, simply run the following:

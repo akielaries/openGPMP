@@ -8,11 +8,11 @@
 %{
     #include "../../include/core/datatable.hpp"
     #include "../../include/core/utils.hpp"
-    #include "../../include/core/threads.hpp"
+    //#include "../../include/core/threads.hpp"
     using namespace gpmp;
 %}
 
 %include "../../include/core/datatable.hpp"
 %include "../../include/core/utils.hpp"
-%include "../../include/core/threads.hpp"
+//%include "../../include/core/threads.hpp"
 
