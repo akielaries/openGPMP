@@ -9,6 +9,7 @@
  */
 #include "../lib/sys.hpp"
 #include <algorithm>
+#include <cstdio>
 #include <chrono>
 #include <fstream>
 #include <iostream>
@@ -18,6 +19,14 @@
 #include <sys/types.h>
 #include <thread>
 #include <vector>
+#include <stdexcept>
+
+#ifdef __HAS_NVCC__
+
+// This will break compilation with g++ even if protected with ifdef since cpp files assume g++
+//#include <cuda_runtime_api.h>
+
+#endif
 
 // function to read and return the contents of a file
 std::string System::read_file(const std::string &filename) {
@@ -32,7 +41,7 @@ std::string System::read_file(const std::string &filename) {
 }
 
 // function to get the number of running processes
-int System::proc_info() {
+int System::ps_count() {
     FILE *proc_pipe = popen("ps aux | wc -l", "r");
     if (!proc_pipe) {
         std::cerr << "popen failed for processes." << std::endl;
@@ -43,7 +52,6 @@ int System::proc_info() {
     if (fgets(proc_buffer, sizeof(proc_buffer), proc_pipe) != nullptr) {
         int num_proc = std::stoi(proc_buffer);
         pclose(proc_pipe);
-        std::cout << "Number of running processes: " << num_proc << std::endl;
         return num_proc;
     } else {
         std::cerr << "Failed to read the output of 'ps'." << std::endl;
@@ -93,7 +101,7 @@ void System::cpu_info() {
                 size_t colon_pos = line.find(":");
                 if (colon_pos != std::string::npos) {
                     model = line.substr(colon_pos + 1);
-                    model = model.substr(model.find_first_not_of(" \t"),
+                    System::cpu_model = model.substr(model.find_first_not_of(" \t"),
                                          model.find_last_not_of(" \t") + 1);
                 }
             } else if (line.find("bogomips") != std::string::npos) {
@@ -101,12 +109,14 @@ void System::cpu_info() {
                 size_t colon_pos = line.find(":");
                 if (colon_pos != std::string::npos) {
                     bogoMIPS = std::stod(line.substr(colon_pos + 1));
+                    System::bogus_mips = bogoMIPS;
                 }
             } else if (line.find("cpu(s):") != std::string::npos) {
                 // extract the number of CPU(s)
                 size_t colon_pos = line.find(":");
                 if (colon_pos != std::string::npos) {
                     numCPUs = std::stoi(line.substr(colon_pos + 1));
+                    System::num_proc = numCPUs;
                 }
             }
 
@@ -114,10 +124,12 @@ void System::cpu_info() {
         }
 
         // print the extracted information
-        std::cout << "CPU model: " << model << std::endl;
-        std::cout << "BogoMIPS: " << bogoMIPS << std::endl;
-        std::cout << "Number of CPU(s): " << numCPUs << std::endl;
-    } else {
+        //std::cout << "CPU model: " << model << std::endl;
+        //std::cout << "BogoMIPS: " << bogoMIPS << std::endl;
+        //std::cout << "Number of CPU(s): " << numCPUs << std::endl;
+    }
+    // otherwise
+    else {
         std::cerr << "Failed to run lscpu command." << std::endl;
     }
 }
@@ -131,17 +143,13 @@ double System::cpu_temp() {
     } else {
         float temp_c = std::stof(cpu_temp) / 1000.0; // convert to Celsius
         // float temp_f = (temp_c * 9 / 5) + 32;        // convert to Fahrenheit
-        //  std::cout << "CPU Temperature: " << temp_c << "°C"
-        //           << " (" << temp_f << "°F)" << std::endl;
+        // std::cout << "CPU Temperature: " << temp_c << "°C"
+        //          << " (" << temp_f << "°F)" << std::endl;
         return temp_c;
     }
     return -1;
 }
 
-// TODO: this function should run for some amount of time for the CPU to
-// literally cooloff before the next run, the base CPU temp should be determined
-// at the very start of our benchmark and this function should run for ~30s? and
-// get the average temperature to determine the baseline...
 double System::cpu_idle_temp() {
     std::cout << "Determining idle CPU temperature...\n";
 
@@ -167,9 +175,6 @@ double System::cpu_idle_temp() {
     }
     double idle_temp = sum / temperatures.size();
 
-    // set class var
-    // System::cpu_temp_idle = idle_temp;
-
     return idle_temp;
 }
 
@@ -186,7 +191,7 @@ void System::cpu_idle(double idle_temp) {
 }
 
 // get CPU usage
-double System::cpu_stats() {
+double System::cpu_load() {
     std::ifstream file("/proc/stat");
     if (!file.is_open()) {
         std::cerr << "Failed to open /proc/stat" << std::endl;
@@ -274,10 +279,43 @@ void System::mem_stats() {
     System::p_mem_used = phys_used / 1000;
     System::p_mem_free = (phys_total - phys_used) / 1000;
 }
+
+bool has_nvidia_gpu() {
+    std::string command = "nvcc -V";
+    std::string result;
+
+    FILE* pipe = popen(command.c_str(), "r");
+    if (!pipe) {
+        std::cerr << "Error: Unable to execute command" << std::endl;
+        return false;
+    }   
+
+    // fetch command output
+    char buffer[128];
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        result += buffer;
+    }   
+
+    // close the pipe for cmd
+    int status = pclose(pipe);
+    if (status == -1) {
+        std::cerr << "Error: Unable to close command pipe" << std::endl;
+        return false;
+    }   
+
+    // check if "nvcc" was found in the output
+    return result.find("nvcc") != std::string::npos;
+}
+
+#ifdef __HAS_NVCC__
+
+
+#endif
+
 /*
 int main() {
 
     mem_stats();
-    cpu_stats();
+    cpu_load();
     return 0;
 }*/
