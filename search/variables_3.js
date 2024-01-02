@@ -1,17 +1,19 @@
 var searchData=
 [
-  ['c_1553',['C',['../classgpmp_1_1ml_1_1SVC.html#adee5c3d6dd5a58ae614b51ad1ec191e4',1,'gpmp::ml::SVC']]],
-  ['cache_5flayers_1554',['cache_layers',['../classgpmp_1_1NaiveNet.html#a56dbc465a3096320f7332dbbe20aa620',1,'gpmp::NaiveNet']]],
-  ['camera_1555',['camera',['../openGL__bounce_8c.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'openGL_bounce.c']]],
-  ['characteristics_1556',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
-  ['class_5fnum_1557',['class_num',['../classgpmp_1_1ml_1_1BayesBernoulli.html#a3475ef720a39c1abf04d8415ae228e45',1,'gpmp::ml::BayesBernoulli::class_num()'],['../classgpmp_1_1ml_1_1BayesGauss.html#a253cc957463f421f94d90ea086b402ae',1,'gpmp::ml::BayesGauss::class_num()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#a42275836084a95861ee25cfab384ed25',1,'gpmp::ml::BayesMutliNom::class_num()']]],
-  ['class_5fprob_1558',['class_prob',['../structgpmp_1_1ml_1_1summary.html#a2e134a46683bd64f821d1b523bc992e7',1,'gpmp::ml::summary']]],
-  ['coeff_1559',['coeff',['../classgpmp_1_1ml_1_1LinearRegression.html#a7c91fe16d4120fceeda7c96f4e972f20',1,'gpmp::ml::LinearRegression']]],
-  ['coefficient_1560',['coefficient',['../classgpmp_1_1Term.html#aa84356ff2f3845f09da2a8153f6edbc8',1,'gpmp::Term']]],
-  ['color_1561',['color',['../classBall.html#a7ea265e067c1515233d2bd2a186fadc5',1,'Ball']]],
-  ['cols_1562',['cols',['../classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb',1,'gpmp::linalg::Matrix']]],
-  ['condition_1563',['condition',['../classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5',1,'gpmp::core::ThreadPool']]],
-  ['const_1564',['CONST',['../classgpmp_1_1RedPike.html#ae47be75ccd2e912a02523c85663d0abc',1,'gpmp::RedPike']]],
-  ['constant_1565',['constant',['../classgpmp_1_1ml_1_1LinearRegression.html#a91c5823d9b367e24e8e6d777aa7f4b70',1,'gpmp::ml::LinearRegression']]],
-  ['current_5frot_1566',['current_rot',['../openGL__astronomy__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_astronomy_animated.c'],['../openGL__torus__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_torus_animated.c'],['../torus__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;torus_animated.c']]]
+  ['c_1555',['C',['../classgpmp_1_1ml_1_1SVC.html#adee5c3d6dd5a58ae614b51ad1ec191e4',1,'gpmp::ml::SVC::C()'],['../namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a',1,'python.linalg.C()']]],
+  ['cache_5flayers_1556',['cache_layers',['../classgpmp_1_1NaiveNet.html#a56dbc465a3096320f7332dbbe20aa620',1,'gpmp::NaiveNet']]],
+  ['camera_1557',['camera',['../openGL__bounce_8c.html#a2008f4ab70b5e4104c2ca43932536ddf',1,'openGL_bounce.c']]],
+  ['characteristics_1558',['characteristics',['../classCompany.html#a41ba0338049f56dbd4a4b645834267d0',1,'Company']]],
+  ['class_5fnum_1559',['class_num',['../classgpmp_1_1ml_1_1BayesBernoulli.html#a3475ef720a39c1abf04d8415ae228e45',1,'gpmp::ml::BayesBernoulli::class_num()'],['../classgpmp_1_1ml_1_1BayesGauss.html#a253cc957463f421f94d90ea086b402ae',1,'gpmp::ml::BayesGauss::class_num()'],['../classgpmp_1_1ml_1_1BayesMutliNom.html#a42275836084a95861ee25cfab384ed25',1,'gpmp::ml::BayesMutliNom::class_num()']]],
+  ['class_5fprob_1560',['class_prob',['../structgpmp_1_1ml_1_1summary.html#a2e134a46683bd64f821d1b523bc992e7',1,'gpmp::ml::summary']]],
+  ['coeff_1561',['coeff',['../classgpmp_1_1ml_1_1LinearRegression.html#a7c91fe16d4120fceeda7c96f4e972f20',1,'gpmp::ml::LinearRegression']]],
+  ['coefficient_1562',['coefficient',['../classgpmp_1_1Term.html#aa84356ff2f3845f09da2a8153f6edbc8',1,'gpmp::Term']]],
+  ['color_1563',['color',['../classBall.html#a7ea265e067c1515233d2bd2a186fadc5',1,'Ball']]],
+  ['cols_1564',['cols',['../classgpmp_1_1linalg_1_1Matrix.html#a88b4481a4fde936d6de651a4206ba1fb',1,'gpmp::linalg::Matrix']]],
+  ['condition_1565',['condition',['../classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5',1,'gpmp::core::ThreadPool']]],
+  ['console_1566',['CONSOLE',['../namespacepygpmp_1_1core_1_1core.html#a2a2d6102ef03674f1007aa83c93805fc',1,'pygpmp::core::core']]],
+  ['console_5fand_5ffile_1567',['CONSOLE_AND_FILE',['../namespacepygpmp_1_1core_1_1core.html#a8aa07522081cee12565741dbb210c9b1',1,'pygpmp::core::core']]],
+  ['const_1568',['CONST',['../classgpmp_1_1RedPike.html#ae47be75ccd2e912a02523c85663d0abc',1,'gpmp::RedPike']]],
+  ['constant_1569',['constant',['../classgpmp_1_1ml_1_1LinearRegression.html#a91c5823d9b367e24e8e6d777aa7f4b70',1,'gpmp::ml::LinearRegression']]],
+  ['current_5frot_1570',['current_rot',['../openGL__astronomy__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_astronomy_animated.c'],['../openGL__torus__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;openGL_torus_animated.c'],['../torus__animated_8c.html#a38d573ac847aff2170e5585b156fa4e2',1,'current_rot():&#160;torus_animated.c']]]
 ];

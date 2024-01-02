@@ -22,5 +22,5 @@ var searchData=
   ['train_5fsecondarymlp_1501',['train_SecondaryMLP',['../classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1',1,'gpmp::ml::Trainers']]],
   ['transformcharacteristics_1502',['transformCharacteristics',['../classCompany.html#adb867bb69be78855c273a1dc498c5c08',1,'Company']]],
   ['transpose_1503',['transpose',['../classgpmp_1_1linalg_1_1Matrix.html#a83a6e7e1befd8674c928ba6703cb37e0',1,'gpmp::linalg::Matrix']]],
-  ['tsv_5fread_1504',['tsv_read',['../classgpmp_1_1core_1_1DataTable.html#ae83c4dd5f71073f9a57d57b5c4a9f875',1,'gpmp::core::DataTable::tsv_read(std::string filename, std::vector&lt; std::string &gt; columns={})'],['../classgpmp_1_1core_1_1DataTable.html#ae83c4dd5f71073f9a57d57b5c4a9f875',1,'gpmp::core::DataTable::tsv_read(std::string filename, std::vector&lt; std::string &gt; columns={})']]]
+  ['tsv_5fread_1504',['tsv_read',['../classgpmp_1_1core_1_1DataTable.html#ae83c4dd5f71073f9a57d57b5c4a9f875',1,'gpmp::core::DataTable::tsv_read()'],['../classpygpmp_1_1core_1_1core_1_1DataTable.html#a3ba4e8a076e36d5142a36a9521cdd09e',1,'pygpmp.core.core.DataTable.tsv_read()'],['../classgpmp_1_1core_1_1DataTable.html#ae83c4dd5f71073f9a57d57b5c4a9f875',1,'gpmp::core::DataTable::tsv_read()']]]
 ];

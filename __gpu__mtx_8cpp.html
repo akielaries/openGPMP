@@ -303,8 +303,8 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="__gpu__mtx_8cpp_source.html#l00075">75</a> of file <a class="el" href="__gpu__mtx_8cpp_source.html">_gpu_mtx.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                               {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Matrix dimensions</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> = A.size();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> M = A[0].size();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> M = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[0].size();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Input matrices</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::vector&lt;int&gt; flat_A(<a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a> * M);</div>
@@ -314,8 +314,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Flatten input matrices</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; i++) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; M; j++) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            flat_A[i * M + j] = A[i][j];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            flat_B[i * M + j] = B[i][j];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            flat_A[i * M + j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][j];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            flat_B[i * M + j] = <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i][j];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::chrono::steady_clock::time_point start_time_u =</div>
@@ -452,7 +452,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// Populate the output matrix C</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>; i++) {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; M; j++) {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            C[i][j] = flat_C[i * M + j];</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = flat_C[i * M + j];</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
@@ -469,8 +469,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="a__gpu__mtx_8cpp_html_a1f672842beaeeeb118a74c1b198b94e3"><div class="ttname"><a href="__gpu__mtx_8cpp.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a></div><div class="ttdeci">#define MAX_SOURCE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8cpp_source.html#l00065">_gpu_mtx.cpp:65</a></div></div>
 <div class="ttc" id="a__gpu__mtx_8cpp_html_af9feb28162af92cad795782bd3efb81c"><div class="ttname"><a href="__gpu__mtx_8cpp.html#af9feb28162af92cad795782bd3efb81c">checkError</a></div><div class="ttdeci">void checkError(cl_int status, const char *errorMsg)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8cpp_source.html#l00068">_gpu_mtx.cpp:68</a></div></div>
 <div class="ttc" id="a__simd__intel__mtx_8cpp_html_ab2b6b0c222cd1ce70d6a831f57241e59"><div class="ttname"><a href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a></div><div class="ttdeci">const int N</div><div class="ttdef"><b>Definition:</b> <a href="__simd__intel__mtx_8cpp_source.html#l00009">_simd_intel_mtx.cpp:9</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a0f8ef2cae18ed75d69a2636fd24ae97a"><div class="ttname"><a href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg.C</a></div><div class="ttdeci">list C</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00024">linalg.py:24</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a738e4c85e499d9e4b6450cba9d9e5211"><div class="ttname"><a href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg.A</a></div><div class="ttdeci">list A</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00022">linalg.py:22</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a8ea58a34239179215b0abb1a76c28ab1"><div class="ttname"><a href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg.B</a></div><div class="ttdeci">list B</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00023">linalg.py:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="__gpu__mtx_8cpp.html#af9feb28162af92cad795782bd3efb81c">checkError()</a>, <a class="el" href="__gpu__mtx_8cpp.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, and <a class="el" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>.</p>
+<p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>, <a class="el" href="__gpu__mtx_8cpp.html#af9feb28162af92cad795782bd3efb81c">checkError()</a>, <a class="el" href="__gpu__mtx_8cpp.html#a1f672842beaeeeb118a74c1b198b94e3">MAX_SOURCE_SIZE</a>, and <a class="el" href="__simd__intel__mtx_8cpp.html#ab2b6b0c222cd1ce70d6a831f57241e59">N</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="__gpu__mtx_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -498,9 +501,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// std::vector&lt;std::vector&lt;int&gt;&gt; A = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// std::vector&lt;std::vector&lt;int&gt;&gt; B = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// std::vector&lt;std::vector&lt;int&gt;&gt; C(A.size(), std::vector&lt;int&gt;(A[0].size()));</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; A(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, std::vector&lt;int&gt;(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>));</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; B(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, std::vector&lt;int&gt;(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>));</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; C(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, std::vector&lt;int&gt;(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>));</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, std::vector&lt;int&gt;(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>));</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, std::vector&lt;int&gt;(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>));</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>, std::vector&lt;int&gt;(<a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>));</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// Initialize random number generator</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    std::random_device rd;</div>
@@ -510,15 +513,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// Populate matrices A and B with random values</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>; ++i) {</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>; ++j) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            A[i][j] = distribution(gen);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            B[i][j] = distribution(gen);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][j] = distribution(gen);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i][j] = distribution(gen);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    std::chrono::steady_clock::time_point start_time_u =</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="__gpu__mtx_8cpp.html#a126301a9f8ba89dc48413df13edb7e9d">gpu_mtx_add</a>(A, B, C);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="__gpu__mtx_8cpp.html#a126301a9f8ba89dc48413df13edb7e9d">gpu_mtx_add</a>(<a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>, <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>, <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    std::chrono::steady_clock::time_point end_time_u =</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
@@ -559,7 +562,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="a__gpu__mtx_8cpp_html_a126301a9f8ba89dc48413df13edb7e9d"><div class="ttname"><a href="__gpu__mtx_8cpp.html#a126301a9f8ba89dc48413df13edb7e9d">gpu_mtx_add</a></div><div class="ttdeci">void gpu_mtx_add(const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; int &gt;&gt; &amp;C)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx_8cpp_source.html#l00075">_gpu_mtx.cpp:75</a></div></div>
 <div class="ttc" id="asamples_2cpp_2mtx_8cpp_html_ad6548ce9849f89f541959b5bf06374a6"><div class="ttname"><a href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a></div><div class="ttdeci">constexpr int matrixSize</div><div class="ttdef"><b>Definition:</b> <a href="samples_2cpp_2mtx_8cpp_source.html#l00006">mtx.cpp:6</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="__gpu__mtx_8cpp.html#a126301a9f8ba89dc48413df13edb7e9d">gpu_mtx_add()</a>, and <a class="el" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>.</p>
+<p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>, <a class="el" href="__gpu__mtx_8cpp.html#a126301a9f8ba89dc48413df13edb7e9d">gpu_mtx_add()</a>, and <a class="el" href="samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6">matrixSize</a>.</p>
 
 </div>
 </div>
