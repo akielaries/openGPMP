@@ -1,9 +1,9 @@
 #include "../lib/primes.cuh"
 #include <ctime>
+#include <curand_kernel.h>
 #include <iostream>
 #include <random>
 #include <vector>
-#include <curand_kernel.h>
 
 __device__ uint32_t gpu_mod_mul(uint32_t a, uint32_t b, uint32_t m) {
     uint32_t res = 0;
@@ -86,14 +86,11 @@ miller_rabin_kernel(const uint32_t *input, bool *output, int iters) {
     output[idx] = true;
 }
 
-void run_gpu_miller_rabin(const uint32_t *input, 
-                          bool *output, 
-                          int iters, 
-                          int threads, 
+void run_gpu_miller_rabin(const uint32_t *input,
+                          bool *output,
+                          int iters,
+                          int threads,
                           int blocks) {
 
-    miller_rabin_kernel<<<blocks, threads>>>(input,
-                                             output,
-                                             iters);
+    miller_rabin_kernel<<<blocks, threads>>>(input, output, iters);
 }
-

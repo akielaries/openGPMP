@@ -9,22 +9,23 @@
  */
 #include "../lib/sys.hpp"
 #include <algorithm>
-#include <cstdio>
 #include <chrono>
+#include <cstdio>
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <sys/sysinfo.h>
 #include <sys/types.h>
 #include <thread>
 #include <vector>
-#include <stdexcept>
 
 #ifdef __HAS_NVCC__
 
-// This will break compilation with g++ even if protected with ifdef since cpp files assume g++
-//#include <cuda_runtime_api.h>
+// This will break compilation with g++ even if protected with ifdef since cpp
+// files assume g++
+// #include <cuda_runtime_api.h>
 
 #endif
 
@@ -101,8 +102,9 @@ void System::cpu_info() {
                 size_t colon_pos = line.find(":");
                 if (colon_pos != std::string::npos) {
                     model = line.substr(colon_pos + 1);
-                    System::cpu_model = model.substr(model.find_first_not_of(" \t"),
-                                         model.find_last_not_of(" \t") + 1);
+                    System::cpu_model =
+                        model.substr(model.find_first_not_of(" \t"),
+                                     model.find_last_not_of(" \t") + 1);
                 }
             } else if (line.find("bogomips") != std::string::npos) {
                 // extract BogoMIPS value
@@ -124,9 +126,9 @@ void System::cpu_info() {
         }
 
         // print the extracted information
-        //std::cout << "CPU model: " << model << std::endl;
-        //std::cout << "BogoMIPS: " << bogoMIPS << std::endl;
-        //std::cout << "Number of CPU(s): " << numCPUs << std::endl;
+        // std::cout << "CPU model: " << model << std::endl;
+        // std::cout << "BogoMIPS: " << bogoMIPS << std::endl;
+        // std::cout << "Number of CPU(s): " << numCPUs << std::endl;
     }
     // otherwise
     else {
@@ -284,31 +286,30 @@ bool has_nvidia_gpu() {
     std::string command = "nvcc -V";
     std::string result;
 
-    FILE* pipe = popen(command.c_str(), "r");
+    FILE *pipe = popen(command.c_str(), "r");
     if (!pipe) {
         std::cerr << "Error: Unable to execute command" << std::endl;
         return false;
-    }   
+    }
 
     // fetch command output
     char buffer[128];
     while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
         result += buffer;
-    }   
+    }
 
     // close the pipe for cmd
     int status = pclose(pipe);
     if (status == -1) {
         std::cerr << "Error: Unable to close command pipe" << std::endl;
         return false;
-    }   
+    }
 
     // check if "nvcc" was found in the output
     return result.find("nvcc") != std::string::npos;
 }
 
 #ifdef __HAS_NVCC__
-
 
 #endif
 

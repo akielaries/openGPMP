@@ -48,6 +48,9 @@
 #if defined(__GPMP_PYTHON_API__)
 
 #define __PYTHON_API__
+#include <boost/bind/bind.hpp>
+#include <boost/python.hpp>
+#include <boost/python/numpy.hpp>
 
 // if source C++ API is being compiled, include these Fortran refs and wrappers
 #elif defined(__GPMP_CPP_API__)
@@ -55,18 +58,14 @@
 #define __GPMP_CPP_API__
 
 extern "C" {
-    // Matrix add routine (FLOAT)
-    void mtx_add_routine_float_(float *A,
-                                float *B,
-                                float *C,
-                                std::size_t *mtx_size);
+// Matrix add routine (FLOAT)
+void mtx_add_routine_float_(float *A,
+                            float *B,
+                            float *C,
+                            std::size_t *mtx_size);
 
-    // Matrix add routine (INT)
-    void mtx_add_routine_int_(int *A, 
-                              int *B, 
-                              int *C, 
-                              std::size_t *mtx_size);
-
+// Matrix add routine (INT)
+void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *mtx_size);
 }
 
 // C++ wrapper for Fortran mtx addition subroutine FLOAT
@@ -599,38 +598,38 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
     }
 }
 
-void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>>& matrix) {
-                const int rows = matrix.size();
-                const int cols = matrix[0].size();
+void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
+    const int rows = matrix.size();
+    const int cols = matrix[0].size();
 
-                for (int i = 0; i < rows; i += 4) {
-                    for (int j = i; j < cols; j += 4) {
-                        __m256d row1 = _mm256_loadu_pd(&matrix[i][j]);
-                        __m256d row2 = _mm256_loadu_pd(&matrix[i + 1][j]);
-                        __m256d row3 = _mm256_loadu_pd(&matrix[i + 2][j]);
-                        __m256d row4 = _mm256_loadu_pd(&matrix[i + 3][j]);
+    for (int i = 0; i < rows; i += 4) {
+        for (int j = i; j < cols; j += 4) {
+            __m256d row1 = _mm256_loadu_pd(&matrix[i][j]);
+            __m256d row2 = _mm256_loadu_pd(&matrix[i + 1][j]);
+            __m256d row3 = _mm256_loadu_pd(&matrix[i + 2][j]);
+            __m256d row4 = _mm256_loadu_pd(&matrix[i + 3][j]);
 
-                        __m256d tmp1, tmp2, tmp3, tmp4;
+            __m256d tmp1, tmp2, tmp3, tmp4;
 
-                        // Transpose 4x4 submatrix
-                        tmp1 = _mm256_unpacklo_pd(row1, row2);
-                        tmp2 = _mm256_unpackhi_pd(row1, row2);
-                        tmp3 = _mm256_unpacklo_pd(row3, row4);
-                        tmp4 = _mm256_unpackhi_pd(row3, row4);
+            // Transpose 4x4 submatrix
+            tmp1 = _mm256_unpacklo_pd(row1, row2);
+            tmp2 = _mm256_unpackhi_pd(row1, row2);
+            tmp3 = _mm256_unpacklo_pd(row3, row4);
+            tmp4 = _mm256_unpackhi_pd(row3, row4);
 
-                        row1 = _mm256_permute2f128_pd(tmp1, tmp3, 0x20);
-                        row2 = _mm256_permute2f128_pd(tmp2, tmp4, 0x20);
-                        row3 = _mm256_permute2f128_pd(tmp1, tmp3, 0x31);
-                        row4 = _mm256_permute2f128_pd(tmp2, tmp4, 0x31);
+            row1 = _mm256_permute2f128_pd(tmp1, tmp3, 0x20);
+            row2 = _mm256_permute2f128_pd(tmp2, tmp4, 0x20);
+            row3 = _mm256_permute2f128_pd(tmp1, tmp3, 0x31);
+            row4 = _mm256_permute2f128_pd(tmp2, tmp4, 0x31);
 
-                        // Store the transposed 4x4 submatrix back to the matrix
-                        _mm256_storeu_pd(&matrix[i][j], row1);
-                        _mm256_storeu_pd(&matrix[i + 1][j], row2);
-                        _mm256_storeu_pd(&matrix[i + 2][j], row3);
-                        _mm256_storeu_pd(&matrix[i + 3][j], row4);
-                    }
-                }
-            }
+            // Store the transposed 4x4 submatrix back to the matrix
+            _mm256_storeu_pd(&matrix[i][j], row1);
+            _mm256_storeu_pd(&matrix[i + 1][j], row2);
+            _mm256_storeu_pd(&matrix[i + 2][j], row3);
+            _mm256_storeu_pd(&matrix[i + 3][j], row4);
+        }
+    }
+}
 
 /************************************************************************
  *
@@ -1328,25 +1327,27 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<int>> &matrix) {
     }
 }
 
-void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>>& matrix) {
-                const int rows = matrix.size();
-                const int cols = matrix[0].size();
+void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
+    const int rows = matrix.size();
+    const int cols = matrix[0].size();
 
-                for (int i = 0; i < rows; i += 2) {
-                    for (int j = i; j < cols; j += 2) {
-                        float64x2x2_t row1 = vld2q_f64(&matrix[i][j]);
-                        float64x2x2_t row2 = vld2q_f64(&matrix[i + 1][j]);
+    for (int i = 0; i < rows; i += 2) {
+        for (int j = i; j < cols; j += 2) {
+            float64x2x2_t row1 = vld2q_f64(&matrix[i][j]);
+            float64x2x2_t row2 = vld2q_f64(&matrix[i + 1][j]);
 
-                        // Transpose 2x2 submatrix
-                        float64x2x2_t transposed;
-                        transposed.val[0] = vcombine_f64(vget_low_f64(row1.val[0]), vget_low_f64(row2.val[0]));
-                        transposed.val[1] = vcombine_f64(vget_low_f64(row1.val[1]), vget_low_f64(row2.val[1]));
+            // Transpose 2x2 submatrix
+            float64x2x2_t transposed;
+            transposed.val[0] = vcombine_f64(vget_low_f64(row1.val[0]),
+                                             vget_low_f64(row2.val[0]));
+            transposed.val[1] = vcombine_f64(vget_low_f64(row1.val[1]),
+                                             vget_low_f64(row2.val[1]));
 
-                        // Store the transposed 2x2 submatrix back to the matrix
-                        vst2q_f64(&matrix[i][j], transposed);
-                    }
-                }
-            }
+            // Store the transposed 2x2 submatrix back to the matrix
+            vst2q_f64(&matrix[i][j], transposed);
+        }
+    }
+}
 
 #endif
 

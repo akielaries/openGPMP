@@ -7,9 +7,9 @@
 from sys import version_info as _swig_python_version_info
 # Import the low-level C/C++ module
 if __package__ or "." in __name__:
-    from . import _nt
+    from . import _example
 else:
-    import _nt
+    import _example
 
 try:
     import builtins as __builtin__
@@ -64,68 +64,95 @@ class SwigPyIterator(object):
     def __init__(self, *args, **kwargs):
         raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-    __swig_destroy__ = _nt.delete_SwigPyIterator
+    __swig_destroy__ = _example.delete_SwigPyIterator
 
     def value(self):
-        return _nt.SwigPyIterator_value(self)
+        return _example.SwigPyIterator_value(self)
 
     def incr(self, n=1):
-        return _nt.SwigPyIterator_incr(self, n)
+        return _example.SwigPyIterator_incr(self, n)
 
     def decr(self, n=1):
-        return _nt.SwigPyIterator_decr(self, n)
+        return _example.SwigPyIterator_decr(self, n)
 
     def distance(self, x):
-        return _nt.SwigPyIterator_distance(self, x)
+        return _example.SwigPyIterator_distance(self, x)
 
     def equal(self, x):
-        return _nt.SwigPyIterator_equal(self, x)
+        return _example.SwigPyIterator_equal(self, x)
 
     def copy(self):
-        return _nt.SwigPyIterator_copy(self)
+        return _example.SwigPyIterator_copy(self)
 
     def next(self):
-        return _nt.SwigPyIterator_next(self)
+        return _example.SwigPyIterator_next(self)
 
     def __next__(self):
-        return _nt.SwigPyIterator___next__(self)
+        return _example.SwigPyIterator___next__(self)
 
     def previous(self):
-        return _nt.SwigPyIterator_previous(self)
+        return _example.SwigPyIterator_previous(self)
 
     def advance(self, n):
-        return _nt.SwigPyIterator_advance(self, n)
+        return _example.SwigPyIterator_advance(self, n)
 
     def __eq__(self, x):
-        return _nt.SwigPyIterator___eq__(self, x)
+        return _example.SwigPyIterator___eq__(self, x)
 
     def __ne__(self, x):
-        return _nt.SwigPyIterator___ne__(self, x)
+        return _example.SwigPyIterator___ne__(self, x)
 
     def __iadd__(self, n):
-        return _nt.SwigPyIterator___iadd__(self, n)
+        return _example.SwigPyIterator___iadd__(self, n)
 
     def __isub__(self, n):
-        return _nt.SwigPyIterator___isub__(self, n)
+        return _example.SwigPyIterator___isub__(self, n)
 
     def __add__(self, n):
-        return _nt.SwigPyIterator___add__(self, n)
+        return _example.SwigPyIterator___add__(self, n)
 
     def __sub__(self, *args):
-        return _nt.SwigPyIterator___sub__(self, *args)
+        return _example.SwigPyIterator___sub__(self, *args)
     def __iter__(self):
         return self
 
-# Register SwigPyIterator in _nt:
-_nt.SwigPyIterator_swigregister(SwigPyIterator)
-class Mtx(object):
+# Register SwigPyIterator in _example:
+_example.SwigPyIterator_swigregister(SwigPyIterator)
+
+def new_std_mtx_add(nelements):
+    return _example.new_std_mtx_add(nelements)
+
+def delete_std_mtx_add(ary):
+    return _example.delete_std_mtx_add(ary)
+
+def std_mtx_add_getitem(ary, index):
+    return _example.std_mtx_add_getitem(ary, index)
+
+def std_mtx_add_setitem(ary, index, value):
+    return _example.std_mtx_add_setitem(ary, index, value)
+class MathOperations(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
 
-    def __init__(self):
-        _nt.Mtx_swiginit(self, _nt.new_Mtx())
-    __swig_destroy__ = _nt.delete_Mtx
+    def add(self, *args):
+        return _example.MathOperations_add(self, *args)
 
-# Register Mtx in _nt:
-_nt.Mtx_swigregister(Mtx)
+    def subtract(self, *args):
+        return _example.MathOperations_subtract(self, *args)
+
+    def multiply(self, *args):
+        return _example.MathOperations_multiply(self, *args)
+
+    def divide(self, *args):
+        return _example.MathOperations_divide(self, *args)
+
+    def std_mtx_add(self, *args):
+        return _example.MathOperations_std_mtx_add(self, *args)
+
+    def __init__(self):
+        _example.MathOperations_swiginit(self, _example.new_MathOperations())
+    __swig_destroy__ = _example.delete_MathOperations
+
+# Register MathOperations in _example:
+_example.MathOperations_swigregister(MathOperations)
 

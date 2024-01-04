@@ -5,9 +5,9 @@
 class System {
   public:
     /** CPU/PROC info */
-    std::string cpu_model;  // proc model
-    double bogus_mips;      // proc speed
-    int num_proc;           // # of processors
+    std::string cpu_model; // proc model
+    double bogus_mips;     // proc speed
+    int num_proc;          // # of processors
 
     /** Idle CPU temp set in cpu_idle_temp() */
     double cpu_temp_idle;
@@ -21,7 +21,6 @@ class System {
     uint64_t p_mem_total;
     uint64_t p_mem_used;
     uint64_t p_mem_free;
-
 
     /**
      * @brief reads the contents of a file into a string
@@ -93,7 +92,6 @@ class System {
      */
     bool has_nvidia_gpu();
 
-
 /** IF CUDA CAPABLE DEVICE */
 #ifdef __HAS_NVCC__
     /** NVIDIA GPU INFO */
@@ -145,8 +143,6 @@ class System {
     void gpu_info_print();
 
 #endif
-
-
 };
 
 #endif

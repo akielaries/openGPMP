@@ -37,6 +37,4 @@ float host_monte_carlo(long trials) {
 void run_gpu_monte_carlo(float *dev, curandState *devStates) {
 
     gpu_monte_carlo<<<BLOCKS, THREADS>>>(dev, devStates);
-
 }
-

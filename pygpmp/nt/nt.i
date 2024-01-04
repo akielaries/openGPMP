@@ -1,4 +1,4 @@
-/* 
+/* Defining number theory module methods to be wrapped using SWIG
 */
 
 %include "std_string.i"

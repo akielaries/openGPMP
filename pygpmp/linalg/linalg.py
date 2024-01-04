@@ -120,10 +120,10 @@ class SwigPyIterator(object):
 _linalg.SwigPyIterator_swigregister(SwigPyIterator)
 class Mtx(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
-
-    def __init__(self, *args, **kwargs):
-        raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
+
+    def __init__(self):
+        _linalg.Mtx_swiginit(self, _linalg.new_Mtx())
     __swig_destroy__ = _linalg.delete_Mtx
 
 # Register Mtx in _linalg:

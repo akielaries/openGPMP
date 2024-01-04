@@ -4,7 +4,6 @@
 #ifndef __PRIMES_CUH__
 #define __PRIMES_CUH__
 
-
 #define TRIALS_PER_THREAD 4096
 #define BLOCKS 256
 #define THREADS 256
@@ -15,11 +14,11 @@
 
 /**
  * @brief Driver for CUDA Miller Rabin method
- * @param 
- * @param 
+ * @param
+ * @param
  */
-void run_gpu_miller_rabin(const uint32_t *input, 
-                          bool *output, 
+void run_gpu_miller_rabin(const uint32_t *input,
+                          bool *output,
                           int iters,
                           int threads,
                           int blocks);

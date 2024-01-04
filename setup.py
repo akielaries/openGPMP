@@ -80,7 +80,6 @@ linalg = Extension(
     include_dirs=[os.path.join(this_dir, 'include/linalg')],
     sources=[
         'pygpmp/linalg/linalg.i',
-        'modules/linalg/lao.cpp',
         'modules/linalg/mtx.cpp'],
     extra_compile_args=CXX_ARGS,
     swig_opts=['-c++'],

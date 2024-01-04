@@ -37,6 +37,14 @@
 #include <cstdint>
 #include <vector>
 
+#if defined(__GPMP_PYTHON_API__)
+#define __PYTHON_API__
+
+#include <boost/bind/bind.hpp>
+#include <boost/python.hpp>
+#include <boost/python/numpy.hpp>
+#endif
+
 namespace gpmp {
 
 namespace linalg {
@@ -48,10 +56,21 @@ namespace linalg {
 class Mtx {
 
   public:
-
 #if defined(__GPMP_PYTHON_API__)
 
-#define __PYTHON_API__
+    // boost::python::numpy header
+    // #include <boost/python.hpp>
+    // #include <boost/bind/bind.hpp>
+    // #include <boost/python/numpy.hpp>
+
+    /**
+     * @brief boost::python::numpy wrapper for array-based array methods
+     */
+    void mtx_add(const boost::python::numpy::ndarray &A,
+                 const boost::python::numpy::ndarray &B,
+                 boost::python::numpy::ndarray &C,
+                 int rows,
+                 int cols);
 
 // if Python API compilation is NOT occuring include these methods
 #elif defined(__GPMP_CPP_API__)
