@@ -140,29 +140,29 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// Calculates (a * b) mod m</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classgpmp_1_1PrimalityTest.html#a55c32c3ef9e2391ddec8a8891f2eced1">   61</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1PrimalityTest.html#a55c32c3ef9e2391ddec8a8891f2eced1">gpmp::PrimalityTest::mod_mul</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint64_t res = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint64_t <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = 0;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (b &amp; 1) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            res = (res + a) % m;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = (<a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> + a) % m;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        a = (2 * a) % m;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        b &gt;&gt;= 1;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// Calculates (a ^ b) mod m</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">   74</a></span>&#160;uint64_t <a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">gpmp::PrimalityTest::mod_pow</a>(uint64_t a, uint64_t b, uint64_t m) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    uint64_t res = 1;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    uint64_t <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = 1;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    a %= m;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">while</span> (b &gt; 0) {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (b &amp; 1) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            res = mod_mul(res, a, m);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = mod_mul(<a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>, a, m);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        a = mod_mul(a, a, m);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        b &gt;&gt;= 1;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/*</span></div>
@@ -512,6 +512,7 @@ $(function() {
 <div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_aef5dd881c6bbce6049da1693d8c98bbb"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#aef5dd881c6bbce6049da1693d8c98bbb">gpmp::PrimalityTest::compute_miller_rabin</a></div><div class="ttdeci">bool compute_miller_rabin(uint64_t d, uint64_t n)</div><div class="ttdoc">Algorithm determining liklihood a number is prime.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00121">prime_test.cpp:121</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_af738fc954c790edc7f30d4b913a20ee7"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#af738fc954c790edc7f30d4b913a20ee7">gpmp::PrimalityTest::solovoy_strassen</a></div><div class="ttdeci">bool solovoy_strassen(uint64_t p, uint64_t iters)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00325">prime_test.cpp:325</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_afd4fdd4faf7bc864e0700e93743a0d84"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#afd4fdd4faf7bc864e0700e93743a0d84">gpmp::PrimalityTest::AKS</a></div><div class="ttdeci">bool AKS(uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00228">prime_test.cpp:228</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a92c70c462eef344159fc3d344f1a74d4"><div class="ttname"><a href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00029">linalg.py:29</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_ae798670a69fa63bf4b057de42a04078d"><div class="ttname"><a href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a></div><div class="ttdeci">gpmp::PrimalityTest prim</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00058">prime_test.cpp:58</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_aef78cbe9be16d852f90ffb1785dbce99"><div class="ttname"><a href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a></div><div class="ttdeci">gpmp::Basics ba</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00057">prime_test.cpp:57</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

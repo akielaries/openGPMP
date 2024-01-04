@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: pygpmp.linalg.nt Namespace Reference</title>
+<title>openGPMP: pygpmp/linalg/boost/test_linalg.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,27 +71,34 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacepygpmp.html">pygpmp</a></li><li class="navelem"><a class="el" href="namespacepygpmp_1_1linalg.html">linalg</a></li><li class="navelem"><a class="el" href="namespacepygpmp_1_1linalg_1_1nt.html">nt</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_b5b0203d3d236a1341e4c0fcf7de1324.html">pygpmp</a></li><li class="navelem"><a class="el" href="dir_0f4793e63b0feda1faf511a345dc3d5e.html">linalg</a></li><li class="navelem"><a class="el" href="dir_1bb1e066a1db511cd44e55dc73638988.html">boost</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">pygpmp.linalg.nt Namespace Reference</div>  </div>
+<div class="title">test_linalg.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>_SwigNonDynamicMeta</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>SwigPyIterator</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpygpmp_1_1linalg_1_1nt_1_1Mtx.html">Mtx</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<a href="test__linalg_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html">    1</a></span>&#160;<span class="keyword">import</span> linalg</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html#a508a3140fef16de60f759f95609e3559">    4</a></span>&#160;mtx = linalg.Mtx()</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;print(type(mtx))</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"># Example usage for int matrices</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html#a9e46a409c47599266a81435d3d525587">    9</a></span>&#160;A = np.array([1, 2, 3, 4], dtype=np.int32)</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html#acc2cce380307df8bea003fc4363a89ef">   10</a></span>&#160;B = np.array([5, 6, 7, 8], dtype=np.int32)</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html#a0a76afd515d1c4f0420241f26c7531a1">   11</a></span>&#160;C = np.zeros(4, dtype=np.int32)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">   13</a></span>&#160;rows = 2</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">   14</a></span>&#160;cols = 2</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;mtx.mtx_add(A, B, C, rows, cols)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;print(C)  <span class="comment"># Should print [6, 8, 10, 12]</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
