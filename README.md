@@ -9,6 +9,8 @@
 [![codecov](https://codecov.io/gh/akielaries/openGPMP/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openGPMP)
 ![clones](https://raw.githubusercontent.com/akielaries/openGPMP/traffic/traffic-openGPMP/clones.svg)
 [![openGPMP](https://github.com/akielaries/openGPMP/actions/workflows/opengpmp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)
+![](https://tokei.rs/b1/github/akielaries/openGPMP)
+
 
 # Overview
 **openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with no runtime dependencies. 
