@@ -227,17 +227,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        data.push_back(row);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    csvFile.close();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = data.size();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = data[0].size();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    gpmp::Matrix&lt;double&gt; mat(<a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>, <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">size_t</span> rows = data.size();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">size_t</span> cols = data[0].size();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    gpmp::Matrix&lt;double&gt; mat(rows, cols);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mat.print_mtx();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="anamespacetest__linalg_html_a176978f6f6cc9d111a747fd2202015ed"><div class="ttname"><a href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg.rows</a></div><div class="ttdeci">int rows</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00013">test_linalg.py:13</a></div></div>
-<div class="ttc" id="anamespacetest__linalg_html_a83ed9c138dc5b83ec747058ad3cd157e"><div class="ttname"><a href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg.cols</a></div><div class="ttdeci">int cols</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00014">test_linalg.py:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg::cols</a>, and <a class="el" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg::rows</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

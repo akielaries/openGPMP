@@ -150,9 +150,9 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *a, <span class="keyword">const</span> <span class="keywordtype">int</span> *b, <span class="keywordtype">int</span> *<a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="__gpu__mtx__add_8c.html#a6118c56604dd2aac8bb9daaaff585c02">add_vec_cpu</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *a, <span class="keyword">const</span> <span class="keywordtype">int</span> *b, <span class="keywordtype">int</span> *res, <span class="keyword">const</span> <span class="keywordtype">int</span> len) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>[i] = a[i] + b[i];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        res[i] = a[i] + b[i];</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
@@ -432,7 +432,6 @@ $(function() {
 <div class="ttc" id="a__gpu__mtx__add_8c_html_acf139f5c4eb7a69cd061e22fd7a30304"><div class="ttname"><a href="__gpu__mtx__add_8c.html#acf139f5c4eb7a69cd061e22fd7a30304">accl_mtx_exec</a></div><div class="ttdeci">void accl_mtx_exec()</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00098">_gpu_mtx_add.c:98</a></div></div>
 <div class="ttc" id="a__gpu__mtx__add_8c_html_ae4102c61b63bca9d654cd712033bf218"><div class="ttname"><a href="__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218">print_vec</a></div><div class="ttdeci">void print_vec(int *vec, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00078">_gpu_mtx_add.c:78</a></div></div>
 <div class="ttc" id="a__gpu__mtx__add_8c_html_ae5a1e9cc99ef119abf4bd1b07df87dae"><div class="ttname"><a href="__gpu__mtx__add_8c.html#ae5a1e9cc99ef119abf4bd1b07df87dae">check_result</a></div><div class="ttdeci">void check_result(int *v1, int *v2, int len)</div><div class="ttdef"><b>Definition:</b> <a href="__gpu__mtx__add_8c_source.html#l00085">_gpu_mtx_add.c:85</a></div></div>
-<div class="ttc" id="anamespacepython_1_1linalg_html_a92c70c462eef344159fc3d344f1a74d4"><div class="ttname"><a href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00029">linalg.py:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
