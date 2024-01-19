@@ -360,7 +360,7 @@ template&lt;class F , class... Args&gt; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// the FUTURE obj retrieves the return value of the function passed in</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        std::future&lt;return_type&gt; res = task-&gt;get_future();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        std::future&lt;return_type&gt; <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = task-&gt;get_future();</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="comment">// aquire lock on queue_mutex for synchronization</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>);</div>
@@ -376,10 +376,11 @@ template&lt;class F , class... Args&gt; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="comment">// notify one waiting thread of one new task added to the queue</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>.notify_one();</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// the return is the future object</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a92c70c462eef344159fc3d344f1a74d4"><div class="ttname"><a href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00029">linalg.py:29</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">tasks</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>, <a class="el" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg::res</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">tasks</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="primes_8cpp.html#a33daa0145dde696a317ebf44cde84295">testing_miller_thread()</a>.</p>
 

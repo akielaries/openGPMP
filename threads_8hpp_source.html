@@ -210,7 +210,7 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// the FUTURE obj retrieves the return value of the function passed in</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        std::future&lt;return_type&gt; res = task-&gt;get_future();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        std::future&lt;return_type&gt; <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = task-&gt;get_future();</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="comment">// aquire lock on queue_mutex for synchronization</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>);</div>
@@ -226,7 +226,7 @@ $(function() {
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="comment">// notify one waiting thread of one new task added to the queue</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>.notify_one();</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// the return is the future object</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
 <div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">  182</a></span>&#160;    <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool</a>() {</div>
@@ -316,6 +316,7 @@ $(function() {
 <div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_ae9d0cb8c657d0d19dd43c26b96ef0e03"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">gpmp::core::ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00182">threads.hpp:182</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1core_html_ae891916df42ab9ac1edca274ef8861ed"><div class="ttname"><a href="namespacegpmp_1_1core.html#ae891916df42ab9ac1edca274ef8861ed">gpmp::core::parallel_for</a></div><div class="ttdeci">static void parallel_for(unsigned nb_elements, std::function&lt; void(int start, int end)&gt; functor, bool use_threads=true)</div><div class="ttdoc">Thread rudimentary for loops.</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00242">threads.hpp:242</a></div></div>
 <div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a92c70c462eef344159fc3d344f1a74d4"><div class="ttname"><a href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00029">linalg.py:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
