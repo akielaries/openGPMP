@@ -89,10 +89,12 @@ void print_matrix(int matrix[2][2]) {
 }
 
 int main() {
-
+#ifdef __AVR_ATmega2560__
     // Set Pin 7 (Arduino Mega Pin 13) as an output
     DDRB |= (1 << PB7);
-
+#elif __AVR_ATmega328__
+    DDRB |= (1 << PB0);
+#endif
     // Initialize UART
     setup_uart();
 
@@ -101,7 +103,11 @@ int main() {
 
     // Main loop
     while (1) {
+#ifdef __AVR_ATmega2560__
         PORTB ^= (1 << PB7);
+#elif __AVR_ATmega328__
+        PORTB ^= (1 << PB0);
+#endif
         _delay_ms(100); // Wait for 500 milliseconds
 
         printf("We're looping... wait 1000ms\n");
