@@ -18,9 +18,10 @@ var searchData=
   ['print_5fshape_1400',['print_shape',['../classgpmp_1_1linalg_1_1Matrix.html#ae035552161950bce34c416afba850182',1,'gpmp::linalg::Matrix']]],
   ['print_5fvec_1401',['print_vec',['../__gpu__mtx__add_8c.html#ae4102c61b63bca9d654cd712033bf218',1,'_gpu_mtx_add.c']]],
   ['printdata_1402',['printData',['../classgpmp_1_1core_1_1DataTable.html#a8a471ad2b7033660dcfc0faaf367b30d',1,'gpmp::core::DataTable']]],
-  ['product_5frule_1403',['product_rule',['../classpygpmp_1_1calculus_1_1calculus_1_1Differential.html#aa04808234d7bc5a311daec5e5003302d',1,'pygpmp.calculus.calculus.Differential.product_rule()'],['../classgpmp_1_1Differential.html#a5de2de8f7866daf8f644231732694652',1,'gpmp::Differential::product_rule()']]],
-  ['prop_5fbackwards_1404',['prop_backwards',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46',1,'gpmp::ml::SecondaryMLP']]],
-  ['prop_5fforwards_1405',['prop_forwards',['../classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a',1,'gpmp::ml::SecondaryMLP']]],
-  ['prop_5fsignal_1406',['prop_signal',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a90b6a8d8ffb8e271afa3db925baf3688',1,'gpmp::ml::PrimaryMLP']]],
-  ['propagate_1407',['propagate',['../classgpmp_1_1ml_1_1AutoEncoder.html#a196a70b3abe781fcf0a8ceaf95e11b86',1,'gpmp::ml::AutoEncoder::propagate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1AutoEncoder.html#a4000fc9a503e7d88d6e964ebca60f8e2',1,'gpmp::ml::AutoEncoder::propagate(std::vector&lt; double &gt; x)'],['../classgpmp_1_1ml_1_1SVC.html#ac71ac6ee3d446e35f9a0fbf43097ea6d',1,'gpmp::ml::SVC::propagate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1SVC.html#aafe27928a621d55ba79b8dd2757b9826',1,'gpmp::ml::SVC::propagate(std::vector&lt; double &gt; x)']]]
+  ['printweights_1403',['printWeights',['../classgpmp_1_1ml_1_1AutoEncoder.html#a246bbc29f7dbb4c7a67a32cff9e4bba4',1,'gpmp::ml::AutoEncoder']]],
+  ['product_5frule_1404',['product_rule',['../classpygpmp_1_1calculus_1_1calculus_1_1Differential.html#aa04808234d7bc5a311daec5e5003302d',1,'pygpmp.calculus.calculus.Differential.product_rule()'],['../classgpmp_1_1Differential.html#a5de2de8f7866daf8f644231732694652',1,'gpmp::Differential::product_rule()']]],
+  ['prop_5fbackwards_1405',['prop_backwards',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46',1,'gpmp::ml::SecondaryMLP']]],
+  ['prop_5fforwards_1406',['prop_forwards',['../classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a',1,'gpmp::ml::SecondaryMLP']]],
+  ['prop_5fsignal_1407',['prop_signal',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a90b6a8d8ffb8e271afa3db925baf3688',1,'gpmp::ml::PrimaryMLP']]],
+  ['propagate_1408',['propagate',['../classgpmp_1_1ml_1_1SVC.html#ac71ac6ee3d446e35f9a0fbf43097ea6d',1,'gpmp::ml::SVC::propagate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1SVC.html#aafe27928a621d55ba79b8dd2757b9826',1,'gpmp::ml::SVC::propagate(std::vector&lt; double &gt; x)']]]
 ];

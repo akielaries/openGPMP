@@ -77,8 +77,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classgpmp_1_1ml_1_1AutoEncoder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gpmp::ml::AutoEncoder Class Reference</div>  </div>
@@ -89,69 +88,38 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9c62820398b6a191a2af1c2818409fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#af9c62820398b6a191a2af1c2818409fb">AutoEncoder</a> (std::vector&lt; std::vector&lt; double &gt;&gt; <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a9cb7137756e38872694f3e7c4fc93c56">inputSet</a>, int <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a2b40e67727b55acbe2cd99ebbc921c28">n_hidden</a>)</td></tr>
-<tr class="separator:af9c62820398b6a191a2af1c2818409fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3139a98b9d1c0ff6271137bbb5ca217b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3139a98b9d1c0ff6271137bbb5ca217b">modelSetTest</a> (std::vector&lt; std::vector&lt; double &gt;&gt; X)</td></tr>
-<tr class="separator:a3139a98b9d1c0ff6271137bbb5ca217b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f2c364ab7a6f66aa833fbca31bbda4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ae1f2c364ab7a6f66aa833fbca31bbda4">modelTest</a> (std::vector&lt; double &gt; x)</td></tr>
-<tr class="separator:ae1f2c364ab7a6f66aa833fbca31bbda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00387ae19981cd38779e2e84efaeb63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#af00387ae19981cd38779e2e84efaeb63">gradientDescent</a> (double learning_rate, int max_epoch, bool UI=1)</td></tr>
-<tr class="separator:af00387ae19981cd38779e2e84efaeb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a079405257044bc98f0e9321b5690f0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a079405257044bc98f0e9321b5690f0de">SGD</a> (double learning_rate, int max_epoch, bool UI=1)</td></tr>
-<tr class="separator:a079405257044bc98f0e9321b5690f0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac27b04b86679e6d19e93401f10898908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ac27b04b86679e6d19e93401f10898908">MBGD</a> (double learning_rate, int max_epoch, int mini_batch_size, bool UI=1)</td></tr>
-<tr class="separator:ac27b04b86679e6d19e93401f10898908"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba26dd267e9b8282dc9bf6b425a3177e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aba26dd267e9b8282dc9bf6b425a3177e">score</a> ()</td></tr>
-<tr class="separator:aba26dd267e9b8282dc9bf6b425a3177e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1dfe88fb3b6b2401d5e161fbbed1499"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab1dfe88fb3b6b2401d5e161fbbed1499">save</a> (std::string fileName)</td></tr>
-<tr class="separator:ab1dfe88fb3b6b2401d5e161fbbed1499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b271a27bee23a42d3fb737d0b54eab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder</a> (int <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>, int <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>, int <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>, double <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a>)</td></tr>
+<tr class="separator:a81b271a27bee23a42d3fb737d0b54eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb06de41213caac4e0e7f93896b85cd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">sigmoid</a> (const std::vector&lt; double &gt; &amp;x)</td></tr>
+<tr class="separator:aefb06de41213caac4e0e7f93896b85cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c8839e53db238e30e22c569ff21f0d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">forward</a> (const std::vector&lt; double &gt; &amp;input)</td></tr>
+<tr class="separator:aa0c8839e53db238e30e22c569ff21f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8768d78cf66e95fbab116e22e075706a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a8768d78cf66e95fbab116e22e075706a">train</a> (const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs)</td></tr>
+<tr class="separator:a8768d78cf66e95fbab116e22e075706a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246bbc29f7dbb4c7a67a32cff9e4bba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a246bbc29f7dbb4c7a67a32cff9e4bba4">printWeights</a> ()</td></tr>
+<tr class="separator:a246bbc29f7dbb4c7a67a32cff9e4bba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a424eeb9ca32672412641f9d89bcc4409"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a424eeb9ca32672412641f9d89bcc4409">Cost</a> (std::vector&lt; std::vector&lt; double &gt;&gt; <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aac40cef9499690b78f81b1bae656f1e1">y_hat</a>, std::vector&lt; std::vector&lt; double &gt;&gt; y)</td></tr>
-<tr class="separator:a424eeb9ca32672412641f9d89bcc4409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a37e338d183b33b822b0195ff7210be"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a9a37e338d183b33b822b0195ff7210be">Evaluate</a> (std::vector&lt; std::vector&lt; double &gt;&gt; X)</td></tr>
-<tr class="separator:a9a37e338d183b33b822b0195ff7210be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a196a70b3abe781fcf0a8ceaf95e11b86"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; std::vector&lt; double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a196a70b3abe781fcf0a8ceaf95e11b86">propagate</a> (std::vector&lt; std::vector&lt; double &gt;&gt; X)</td></tr>
-<tr class="separator:a196a70b3abe781fcf0a8ceaf95e11b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb809a0a83652f15cc7f5cc035d194ec"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aeb809a0a83652f15cc7f5cc035d194ec">Evaluate</a> (std::vector&lt; double &gt; x)</td></tr>
-<tr class="separator:aeb809a0a83652f15cc7f5cc035d194ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4000fc9a503e7d88d6e964ebca60f8e2"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::vector&lt; double &gt;, std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a4000fc9a503e7d88d6e964ebca60f8e2">propagate</a> (std::vector&lt; double &gt; x)</td></tr>
-<tr class="separator:a4000fc9a503e7d88d6e964ebca60f8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f54ef6f47594fd0f619de9d4183a2e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1f54ef6f47594fd0f619de9d4183a2e9">forwardPass</a> ()</td></tr>
-<tr class="separator:a1f54ef6f47594fd0f619de9d4183a2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a9cb7137756e38872694f3e7c4fc93c56"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a9cb7137756e38872694f3e7c4fc93c56">inputSet</a></td></tr>
-<tr class="separator:a9cb7137756e38872694f3e7c4fc93c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac40cef9499690b78f81b1bae656f1e1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aac40cef9499690b78f81b1bae656f1e1">y_hat</a></td></tr>
-<tr class="separator:aac40cef9499690b78f81b1bae656f1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab48e0d515e2ca46f7d43307e7a48a87b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab48e0d515e2ca46f7d43307e7a48a87b">weights1</a></td></tr>
-<tr class="separator:ab48e0d515e2ca46f7d43307e7a48a87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a637683b5e22fe74d0541cd8cf6e10f64"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a637683b5e22fe74d0541cd8cf6e10f64">weights2</a></td></tr>
-<tr class="separator:a637683b5e22fe74d0541cd8cf6e10f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4962da4409ab42ba910495dec67cd5b0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a4962da4409ab42ba910495dec67cd5b0">bias1</a></td></tr>
-<tr class="separator:a4962da4409ab42ba910495dec67cd5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b8acac7a7f45742474103978b1d727c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a2b8acac7a7f45742474103978b1d727c">bias2</a></td></tr>
-<tr class="separator:a2b8acac7a7f45742474103978b1d727c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de4eadc5ea42ffee605a2c55de8224b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1de4eadc5ea42ffee605a2c55de8224b">z2</a></td></tr>
-<tr class="separator:a1de4eadc5ea42ffee605a2c55de8224b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5661c8a3692bde0a5d8d23bd599ad35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aa5661c8a3692bde0a5d8d23bd599ad35">a2</a></td></tr>
-<tr class="separator:aa5661c8a3692bde0a5d8d23bd599ad35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e27d36f5ba4848fcaefa7304b4b5a15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a8e27d36f5ba4848fcaefa7304b4b5a15">n</a></td></tr>
-<tr class="separator:a8e27d36f5ba4848fcaefa7304b4b5a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0d1977287ff0646ab4f53a33a37bb98"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#af0d1977287ff0646ab4f53a33a37bb98">k</a></td></tr>
-<tr class="separator:af0d1977287ff0646ab4f53a33a37bb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b40e67727b55acbe2cd99ebbc921c28"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a2b40e67727b55acbe2cd99ebbc921c28">n_hidden</a></td></tr>
-<tr class="separator:a2b40e67727b55acbe2cd99ebbc921c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:af5cdfa0509dc9c832f0193184052cf82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a></td></tr>
+<tr class="separator:af5cdfa0509dc9c832f0193184052cf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea81882cf79b1b83889c138f0d8de72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a></td></tr>
+<tr class="separator:a3ea81882cf79b1b83889c138f0d8de72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88cd43b9710d93b17db59dc5b7c33bb8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a></td></tr>
+<tr class="separator:a88cd43b9710d93b17db59dc5b7c33bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45f27699cb0549d1d404d0b5bd79ce9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a></td></tr>
+<tr class="separator:ab45f27699cb0549d1d404d0b5bd79ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a70487de637a2f7809058a4d5cb395f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a></td></tr>
+<tr class="separator:a1a70487de637a2f7809058a4d5cb395f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292dd4900ae047734febe0d17269e57c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a></td></tr>
+<tr class="separator:a292dd4900ae047734febe0d17269e57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00049">49</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af9c62820398b6a191a2af1c2818409fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9c62820398b6a191a2af1c2818409fb">&#9670;&nbsp;</a></span>AutoEncoder()</h2>
+<a id="a81b271a27bee23a42d3fb737d0b54eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b271a27bee23a42d3fb737d0b54eab">&#9670;&nbsp;</a></span>AutoEncoder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,14 +127,26 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">gpmp::ml::AutoEncoder::AutoEncoder </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>inputSet</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>input_size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n_hidden</em>&#160;</td>
+          <td class="paramname"><em>hidden_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>learning_rate</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,311 +155,97 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00040">40</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    : <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>(in_size), <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>(h_size), <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>(out_size),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a>(l_rate) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// initialize weights randomly</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>.resize(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>, std::vector&lt;double&gt;(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>.resize(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>, std::vector&lt;double&gt;(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++i) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// random values between 0 and 1</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[i][j] = (rand() % 1000) / 1000.0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++j) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[i][j] = (rand() % 1000) / 1000.0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a1a70487de637a2f7809058a4d5cb395f"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">gpmp::ml::AutoEncoder::weights_input_hidden</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; weights_input_hidden</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00059">encoder.hpp:59</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a292dd4900ae047734febe0d17269e57c"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">gpmp::ml::AutoEncoder::weights_hidden_output</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; weights_hidden_output</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00061">encoder.hpp:61</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a3ea81882cf79b1b83889c138f0d8de72"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">gpmp::ml::AutoEncoder::hidden_size</a></div><div class="ttdeci">int hidden_size</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00053">encoder.hpp:53</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a88cd43b9710d93b17db59dc5b7c33bb8"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">gpmp::ml::AutoEncoder::output_size</a></div><div class="ttdeci">int output_size</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00055">encoder.hpp:55</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_ab45f27699cb0549d1d404d0b5bd79ce9"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">gpmp::ml::AutoEncoder::learning_rate</a></div><div class="ttdeci">double learning_rate</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00057">encoder.hpp:57</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_af5cdfa0509dc9c832f0193184052cf82"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">gpmp::ml::AutoEncoder::input_size</a></div><div class="ttdeci">int input_size</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00051">encoder.hpp:51</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>, <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>, <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>, <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>, and <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a424eeb9ca32672412641f9d89bcc4409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a424eeb9ca32672412641f9d89bcc4409">&#9670;&nbsp;</a></span>Cost()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::AutoEncoder::Cost </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>y_hat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aeb809a0a83652f15cc7f5cc035d194ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb809a0a83652f15cc7f5cc035d194ec">&#9670;&nbsp;</a></span>Evaluate() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::AutoEncoder::Evaluate </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9a37e338d183b33b822b0195ff7210be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a37e338d183b33b822b0195ff7210be">&#9670;&nbsp;</a></span>Evaluate() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::Evaluate </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1f54ef6f47594fd0f619de9d4183a2e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f54ef6f47594fd0f619de9d4183a2e9">&#9670;&nbsp;</a></span>forwardPass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpmp::ml::AutoEncoder::forwardPass </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af00387ae19981cd38779e2e84efaeb63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af00387ae19981cd38779e2e84efaeb63">&#9670;&nbsp;</a></span>gradientDescent()</h2>
+<a id="aa0c8839e53db238e30e22c569ff21f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c8839e53db238e30e22c569ff21f0d">&#9670;&nbsp;</a></span>forward()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gpmp::ml::AutoEncoder::gradientDescent </td>
+          <td class="memname">std::vector&lt; double &gt; gpmp::ml::AutoEncoder::forward </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>learning_rate</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_epoch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>UI</em> = <code>1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac27b04b86679e6d19e93401f10898908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac27b04b86679e6d19e93401f10898908">&#9670;&nbsp;</a></span>MBGD()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpmp::ml::AutoEncoder::MBGD </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>learning_rate</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_epoch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mini_batch_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>UI</em> = <code>1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3139a98b9d1c0ff6271137bbb5ca217b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3139a98b9d1c0ff6271137bbb5ca217b">&#9670;&nbsp;</a></span>modelSetTest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::modelSetTest </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00074">74</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                         {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// forward passes</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::vector&lt;double&gt; hidden(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::vector&lt;double&gt; output(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// calculate hidden layer values</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        hidden[i] = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++j) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            hidden[i] += input[j] * <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[j][i];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        hidden[i] = <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">sigmoid</a>({hidden[i]})[0];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// calculate output layer values</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++i) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        output[i] = 0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            output[i] += hidden[j] * <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[j][i];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        output[i] = <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">sigmoid</a>({output[i]})[0];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">return</span> output;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_aefb06de41213caac4e0e7f93896b85cd"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">gpmp::ml::AutoEncoder::sigmoid</a></div><div class="ttdeci">std::vector&lt; double &gt; sigmoid(const std::vector&lt; double &gt; &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00065">encoder.cpp:65</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TEST_8cpp.html#aa924e8c95bc498ebc9f8e08a0c491e7c">sigmoid()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="encoders_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+
 </div>
 </div>
-<a id="ae1f2c364ab7a6f66aa833fbca31bbda4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1f2c364ab7a6f66aa833fbca31bbda4">&#9670;&nbsp;</a></span>modelTest()</h2>
+<a id="a246bbc29f7dbb4c7a67a32cff9e4bba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246bbc29f7dbb4c7a67a32cff9e4bba4">&#9670;&nbsp;</a></span>printWeights()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::AutoEncoder::modelTest </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4000fc9a503e7d88d6e964ebca60f8e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4000fc9a503e7d88d6e964ebca60f8e2">&#9670;&nbsp;</a></span>propagate() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::tuple&lt;std::vector&lt;double&gt;, std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::propagate </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a196a70b3abe781fcf0a8ceaf95e11b86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a196a70b3abe781fcf0a8ceaf95e11b86">&#9670;&nbsp;</a></span>propagate() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::tuple&lt;std::vector&lt;std::vector&lt;double&gt; &gt;, std::vector&lt;std::vector&lt;double&gt; &gt; &gt; gpmp::ml::AutoEncoder::propagate </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab1dfe88fb3b6b2401d5e161fbbed1499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1dfe88fb3b6b2401d5e161fbbed1499">&#9670;&nbsp;</a></span>save()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpmp::ml::AutoEncoder::save </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>fileName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aba26dd267e9b8282dc9bf6b425a3177e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba26dd267e9b8282dc9bf6b425a3177e">&#9670;&nbsp;</a></span>score()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::AutoEncoder::score </td>
+          <td class="memname">void gpmp::ml::AutoEncoder::printWeights </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -487,31 +253,73 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00151">151</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                     {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Input to Hidden Weights:\n&quot;</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++i) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            std::cout &lt;&lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nHidden to Output Weights:\n&quot;</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++j) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            std::cout &lt;&lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="encoders_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+
 </div>
 </div>
-<a id="a079405257044bc98f0e9321b5690f0de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a079405257044bc98f0e9321b5690f0de">&#9670;&nbsp;</a></span>SGD()</h2>
+<a id="aefb06de41213caac4e0e7f93896b85cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb06de41213caac4e0e7f93896b85cd">&#9670;&nbsp;</a></span>sigmoid()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gpmp::ml::AutoEncoder::SGD </td>
+          <td class="memname">std::vector&lt; double &gt; gpmp::ml::AutoEncoder::sigmoid </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>learning_rate</em>, </td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00065">65</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                     {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::vector&lt;double&gt; result;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> val : x) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        result.push_back(1.0 / (1.0 + exp(-val)));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8768d78cf66e95fbab116e22e075706a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8768d78cf66e95fbab116e22e075706a">&#9670;&nbsp;</a></span>train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpmp::ml::AutoEncoder::train </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>training_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_epoch</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>UI</em> = <code>1</code>&#160;</td>
+          <td class="paramname"><em>epochs</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -520,276 +328,173 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00100">100</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; epochs; ++epoch) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;input : training_data) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// forward pass</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            std::vector&lt;double&gt; hidden(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            std::vector&lt;double&gt; output(<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="comment">// calculate hidden layer values</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                hidden[i] = 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++j) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    hidden[i] += input[j] * <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[j][i];</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                hidden[i] = <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">sigmoid</a>({hidden[i]})[0];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment">// calculate output layer values</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++i) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                output[i] = 0;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    output[i] += hidden[j] * <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[j][i];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                output[i] = <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">sigmoid</a>({output[i]})[0];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="comment">// backward pass (gradient descent)</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++i) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[j][i] -=</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a> * (output[i] - input[i]) * hidden[j];</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++j) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    <span class="keywordtype">double</span> error = 0;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++k) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        error += (output[k] - input[k]) *</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                 <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[i][k];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[j][i] -= <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a> * error *</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                  input[j] * (1 - hidden[i]) *</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                                  hidden[i];</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="TEST_8cpp.html#aa924e8c95bc498ebc9f8e08a0c491e7c">sigmoid()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="encoders_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa5661c8a3692bde0a5d8d23bd599ad35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5661c8a3692bde0a5d8d23bd599ad35">&#9670;&nbsp;</a></span>a2</h2>
+<a id="a3ea81882cf79b1b83889c138f0d8de72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea81882cf79b1b83889c138f0d8de72">&#9670;&nbsp;</a></span>hidden_size</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::a2</td>
+          <td class="memname">int gpmp::ml::AutoEncoder::hidden_size</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00097">97</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00053">53</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder()</a>.</p>
 
 </div>
 </div>
-<a id="a4962da4409ab42ba910495dec67cd5b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4962da4409ab42ba910495dec67cd5b0">&#9670;&nbsp;</a></span>bias1</h2>
+<a id="af5cdfa0509dc9c832f0193184052cf82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5cdfa0509dc9c832f0193184052cf82">&#9670;&nbsp;</a></span>input_size</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::AutoEncoder::bias1</td>
+          <td class="memname">int gpmp::ml::AutoEncoder::input_size</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00093">93</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00051">51</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder()</a>.</p>
 
 </div>
 </div>
-<a id="a2b8acac7a7f45742474103978b1d727c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b8acac7a7f45742474103978b1d727c">&#9670;&nbsp;</a></span>bias2</h2>
+<a id="ab45f27699cb0549d1d404d0b5bd79ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45f27699cb0549d1d404d0b5bd79ce9">&#9670;&nbsp;</a></span>learning_rate</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::AutoEncoder::bias2</td>
+          <td class="memname">double gpmp::ml::AutoEncoder::learning_rate</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00094">94</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00057">57</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9cb7137756e38872694f3e7c4fc93c56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cb7137756e38872694f3e7c4fc93c56">&#9670;&nbsp;</a></span>inputSet</h2>
+<a id="a88cd43b9710d93b17db59dc5b7c33bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88cd43b9710d93b17db59dc5b7c33bb8">&#9670;&nbsp;</a></span>output_size</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::inputSet</td>
+          <td class="memname">int gpmp::ml::AutoEncoder::output_size</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00087">87</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00055">55</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder()</a>.</p>
 
 </div>
 </div>
-<a id="af0d1977287ff0646ab4f53a33a37bb98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0d1977287ff0646ab4f53a33a37bb98">&#9670;&nbsp;</a></span>k</h2>
+<a id="a292dd4900ae047734febe0d17269e57c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a292dd4900ae047734febe0d17269e57c">&#9670;&nbsp;</a></span>weights_hidden_output</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int gpmp::ml::AutoEncoder::k</td>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::weights_hidden_output</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00100">100</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00061">61</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder()</a>.</p>
 
 </div>
 </div>
-<a id="a8e27d36f5ba4848fcaefa7304b4b5a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e27d36f5ba4848fcaefa7304b4b5a15">&#9670;&nbsp;</a></span>n</h2>
+<a id="a1a70487de637a2f7809058a4d5cb395f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a70487de637a2f7809058a4d5cb395f">&#9670;&nbsp;</a></span>weights_input_hidden</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int gpmp::ml::AutoEncoder::n</td>
+          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::weights_input_hidden</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00099">99</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00059">59</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder()</a>.</p>
 
 </div>
 </div>
-<a id="a2b40e67727b55acbe2cd99ebbc921c28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b40e67727b55acbe2cd99ebbc921c28">&#9670;&nbsp;</a></span>n_hidden</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int gpmp::ml::AutoEncoder::n_hidden</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00101">101</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ab48e0d515e2ca46f7d43307e7a48a87b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab48e0d515e2ca46f7d43307e7a48a87b">&#9670;&nbsp;</a></span>weights1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::weights1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00090">90</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a637683b5e22fe74d0541cd8cf6e10f64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a637683b5e22fe74d0541cd8cf6e10f64">&#9670;&nbsp;</a></span>weights2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::weights2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00091">91</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aac40cef9499690b78f81b1bae656f1e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac40cef9499690b78f81b1bae656f1e1">&#9670;&nbsp;</a></span>y_hat</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::y_hat</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00088">88</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a1de4eadc5ea42ffee605a2c55de8224b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1de4eadc5ea42ffee605a2c55de8224b">&#9670;&nbsp;</a></span>z2</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::AutoEncoder::z2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="encoder_8hpp_source.html#l00096">96</a> of file <a class="el" href="encoder_8hpp_source.html">encoder.hpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/ml/<a class="el" href="encoder_8hpp_source.html">encoder.hpp</a></li>
+<li>modules/ml/<a class="el" href="encoder_8cpp_source.html">encoder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
