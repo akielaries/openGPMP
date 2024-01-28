@@ -171,8 +171,26 @@ class BayesBernoulli {
  */
 class BayesGauss {
   public:
+    /**
+     * @var class_probs
+     * @brief Map storing the probabilities of each class
+     * @details The key is the class label (string), and the value is the
+     * probability (double)
+     */
     std::unordered_map<std::string, double> class_probs;
+    /**
+     * @var mean
+     * @brief Map storing the mean values for each feature in each class
+     * @details The key is the class label (string), and the value is a vector
+     * of mean values
+     */
     std::unordered_map<std::string, std::vector<double>> mean;
+    /**
+     * @var variance
+     * @brief Map storing the variance values for each feature in each class
+     * @details The key is the class label (string), and the value is a vector
+     * of variance values
+     */
     std::unordered_map<std::string, std::vector<double>> variance;
 
     /**
@@ -226,27 +244,75 @@ class BayesGauss {
  */
 class BayesMultiNom {
   public:
+    /**
+     * @var alpha
+     * @brief Additive smoothing parameter for the Multinomial distribution
+     */
     double alpha;
+    /**
+     * @var fit_prior
+     * @brief Flag indicating whether to learn class prior probabilities during
+     * training
+     */
     bool fit_prior;
+    /**
+     * @var class_probs
+     * @brief Map storing the probabilities of each class
+     * @details The key is the class label (string), and the value is the
+     * probability (double).
+     */
     std::unordered_map<std::string, double> class_probs;
+    /**
+     * @var feature_probs
+     * @brief Map storing the probabilities of features for each class
+     * @details The key is the class label (string), and the value is a vector
+     * of feature probabilities.
+     */
     std::unordered_map<std::string, std::vector<double>> feature_probs;
+    /**
+     * @var class_log_prior
+     * @brief Vector storing the logarithm of the class prior probabilities
+     * @details Used for faster computation during prediction
+     */
     std::vector<double> class_log_prior;
 
+    /**
+     * @brief Constructor for BayesMultiNom class
+     * @param alpha_param Additive smoothing parameter
+     * @param fit_prior_param Whether to learn class prior probabilities or not
+     * @param class_prior Prior probabilities of the classes
+     */
     BayesMultiNom(double alpha_param = 1.0,
                   bool fit_prior_param = true,
                   const std::vector<double> &class_prior = {});
 
+    /**
+     * @brief Destructor for BayesMultiNom class
+     */
     ~BayesMultiNom();
 
+    /**
+     * @brief Train the classifier with a set of labeled data
+     * @param data A vector of vectors representing the training instances
+     * @param labels A vector of strings representing the corresponding class
+     * labels
+     */
     void train(const std::vector<std::vector<size_t>> &data,
                const std::vector<std::string> &labels);
 
+    /**
+     * @brief Predict the class of a new data point
+     * @param new_data A vector of size_t representing the features of the new
+     * data point
+     * @return The predicted class label as a string
+     */
     std::string predict(const std::vector<size_t> &new_data) const;
 
+    /**
+     * @brief Display the learned probabilities
+     * @note This method is for debugging purposes
+     */
     void display() const;
-
-  private:
-    void calculate_class_log_priors();
 };
 
 } // namespace ml
