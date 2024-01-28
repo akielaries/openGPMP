@@ -60,15 +60,39 @@ typedef struct summary {
  */
 class BayesClf {
   public:
+    /** 
+     * @brief Additive smoothing parameter
+     */
+    double alpha;
+
+    /** 
+     * @brief Whether to learn class prior probabilities or not
+     */
+    bool fit_prior;
+    /**
+     * @brief Map of class labels to their probabilities
+     */
+    std::unordered_map<std::string, double> class_probs;
+    /** 
+     * @brief Map of class labels to their feature probabilities
+     */
+    std::unordered_map<std::string, std::vector<double>> feature_probs;
+    /** 
+     * @brief Vector of class log priors
+     */
+    std::vector<double> class_log_prior;
+
     /**
      * @brief Constructor for BayesClf class
      * @param alpha Additive (Laplace/Lidstone) smoothing parameter
      * @param fit_prior Whether to learn class prior probabilities or not
      * @param class_prior Prior probabilities of the classes
      */
-    BayesClf(double alpha = 1.0,
+/*    BayesClf(double alpha_param = 1.0,
              bool fit_prior = true,
              const std::vector<double> &class_prior = {});
+*/
+    BayesClf(double alpha_param = 1.0, bool fit_prior_param = true, const std::vector<double>& class_prior = {});
 
     /**
      * @brief Destructor for BayesClf class
@@ -77,44 +101,25 @@ class BayesClf {
     /**
      * @brief Train the classifier with a set of labeled data
      * @param data A vector of vectors representing the training instances
-     * @param labels A vector of strings representing the corresponding class labels
+     * @param labels A vector of strings representing the corresponding class
+     * labels
      */
-    void train(const std::vector<std::vector<double>>& data, const std::vector<std::string>& labels);
+    void train(const std::vector<std::vector<double>> &data,
+               const std::vector<std::string> &labels);
 
     /**
      * @brief Predict the class of a new data point
-     * @param newData A vector of doubles representing the features of the new data point
+     * @param newData A vector of doubles representing the features of the new
+     * data point
      * @return The predicted class label as a string
      */
-    std::string predict(const std::vector<double>& newData) const;
+    std::string predict(const std::vector<double> &newData) const;
 
     /**
      * @brief Display the learned probabilities
      * @note This method is for debugging purposes
      */
     void display() const;
-    /**
-     * @brief Map of class labels to their probabilities
-     */
-    std::unordered_map<std::string, double> class_probs;
-    /**
-     * @brief Map of class labels to their feature probabilities
-     */
-    std::unordered_map<std::string, std::vector<double>> feature_probs;
-    /**
-     * @brief Vector of class log priors
-     */
-    std::vector<double> class_log_prior;
-
-    /**
-     * @brief Additive smoothing parameter
-     */
-    double alpha;
-
-    /**
-     * @brief Whether to learn class prior probabilities or not
-     */
-    bool fit_prior;
 };
 
 /**
@@ -136,7 +141,7 @@ class BayesBernoulli {
      * @brief Constructor for BayesBernoulli class
      * @param alpha Additive (Laplace/Lidstone) smoothing parameter
      */
-    BayesBernoulli(double alpha = 1.0) : alpha(alpha) {
+    BayesBernoulli(double alpha_param = 1.0) : alpha(alpha_param) {
     }
 
     /**

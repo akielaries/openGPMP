@@ -40,11 +40,15 @@
 #include <unordered_map>
 #include <vector>
 
-gpmp::ml::BayesClf::BayesClf(double alpha,
+/*gpmp::ml::BayesClf::BayesClf(double alpha_param,
                              bool fit_prior,
                              const std::vector<double> &class_prior)
     : alpha(alpha), fit_prior(fit_prior),
       class_log_prior(class_prior.begin(), class_prior.end()) {
+}*/
+
+gpmp::ml::BayesClf::BayesClf(double alpha_param, bool fit_prior_param, const std::vector<double>& class_prior)
+    : alpha(alpha_param), fit_prior(fit_prior_param), class_log_prior(class_prior.begin(), class_prior.end()) {
 }
 
 gpmp::ml::BayesClf::~BayesClf() {
@@ -63,6 +67,11 @@ void gpmp::ml::BayesClf::train(const std::vector<std::vector<double>> &data,
         const std::vector<double> &features = data[i];
 
         class_probs[label] += 1.0;
+
+        // Initialize feature_probs[label] if not present
+        if (feature_probs.find(label) == feature_probs.end()) {
+            feature_probs[label] = std::vector<double>(features.size(), 0.0);
+        }
 
         for (size_t j = 0; j < features.size(); ++j) {
             feature_probs[label][j] += features[j];
