@@ -144,46 +144,47 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// Check if n is a perfect power</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">for</span> (uint64_t b = 2; b &lt;= std::sqrt(n); b++) {</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        uint64_t a = std::round(std::pow(n, 1.0 / b));</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">if</span> (std::pow(a, b) == n) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">// Find the smallest r such that ord_r(n) &gt; log2(n)^2</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    uint64_t r = 2;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">while</span> (r &lt; n) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordtype">bool</span> is_coprime = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">for</span> (uint64_t i = 2; i &lt;= std::sqrt(r); i++) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">if</span> (r % i == 0 &amp;&amp; n % i == 0) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                is_coprime = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">if</span> (is_coprime) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            uint64_t t = 1;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; std::floor(2 * std::log2(n)); i++) {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                t = (t * r) % n;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">if</span> (t == 1) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                r++;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">is_prime</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; std::floor(std::log2(n)); i++) {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                t = (t * t) % n;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">if</span> (t == 1) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    <a class="code" href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">is_prime</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">is_prime</a>) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        r++;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// if (std::pow(a, b) == n) {</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">if</span> (std::pow(a, b) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// Find the smallest r such that ord_r(n) &gt; log2(n)^2</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    uint64_t r = 2;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">while</span> (r &lt; n) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordtype">bool</span> is_coprime = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">for</span> (uint64_t i = 2; i &lt;= std::sqrt(r); i++) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">if</span> (r % i == 0 &amp;&amp; n % i == 0) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                is_coprime = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">if</span> (is_coprime) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            uint64_t t = 1;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; std::floor(2 * std::log2(n)); i++) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                t = (t * r) % n;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">if</span> (t == 1) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                r++;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">is_prime</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; std::floor(std::log2(n)); i++) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                t = (t * t) % n;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <span class="keywordflow">if</span> (t == 1) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                    <a class="code" href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">is_prime</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">is_prime</a>) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        r++;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_ae85dd7355793d0f93cd6dd8652c281d1"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#ae85dd7355793d0f93cd6dd8652c281d1">gpmp::PrimalityTest::is_prime</a></div><div class="ttdeci">bool is_prime(uint64_t n)</div><div class="ttdoc">Determine if an integer is prime.</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00104">prime_test.cpp:104</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -206,17 +207,17 @@ Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="primes_8cpp-example.html#a12">primes.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00349">349</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                 {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">for</span> (uint64_t b = 2; b &lt; n; b++) {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="comment">// If &quot;b&quot; is relatively prime to n</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a>.<a class="code" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">op_gcd</a>(b, n) == 1)</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="comment">// And pow(b, n-1)%n is not 1, return false.</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">mod_pow</a>(b, n - 1, n) != 1)</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00351">351</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                 {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">for</span> (uint64_t b = 2; b &lt; n; b++) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="comment">// If &quot;b&quot; is relatively prime to n</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a>.<a class="code" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">op_gcd</a>(b, n) == 1)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="comment">// And pow(b, n-1)%n is not 1, return false.</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">mod_pow</a>(b, n - 1, n) != 1)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1Basics_html_a5b741b9ada725183e343422a00be724c"><div class="ttname"><a href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">gpmp::Basics::op_gcd</a></div><div class="ttdeci">int64_t op_gcd(int64_t x, int64_t y)</div><div class="ttdoc">Find Greatest Common Divisor of 2 integers.</div><div class="ttdef"><b>Definition:</b> <a href="arith_8cpp_source.html#l00051">arith.cpp:51</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_ac70b21846e5e9abd62748bf3a5aabfc6"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">gpmp::PrimalityTest::mod_pow</a></div><div class="ttdeci">uint64_t mod_pow(uint64_t a, uint64_t b, uint64_t m)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00074">prime_test.cpp:74</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_aef78cbe9be16d852f90ffb1785dbce99"><div class="ttname"><a href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a></div><div class="ttdeci">gpmp::Basics ba</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00057">prime_test.cpp:57</a></div></div>
@@ -330,18 +331,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00408">408</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                                          {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    uint64_t result = 1;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">for</span> (uint64_t index = 2; uint64_t(index) &lt; n; index++) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a>.<a class="code" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">op_gcd</a>(index, n) == 1) {</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            result++;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        }</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    }</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00410">410</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                          {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    uint64_t result = 1;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">for</span> (uint64_t index = 2; uint64_t(index) &lt; n; index++) {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a>.<a class="code" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">op_gcd</a>(index, n) == 1) {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            result++;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="prime__test_8cpp.html#aef78cbe9be16d852f90ffb1785dbce99">ba</a>, and <a class="el" href="classgpmp_1_1Basics.html#a5b741b9ada725183e343422a00be724c">gpmp::Basics::op_gcd()</a>.</p>
 
@@ -419,50 +420,50 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00276">276</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">if</span> (!a)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">return</span> 0; <span class="comment">// (0/n) = 0</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    uint64_t ans = 1;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">if</span> (a &lt; 0) {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        a = -a; <span class="comment">// (a/n) = (-a/n)*(-1/n)</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">if</span> (n % 4 == 3)</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            ans = -ans; <span class="comment">// (-1/n) = -1 if n = 3 (mod 4)</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">if</span> (a == 1)</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">return</span> ans; <span class="comment">// (1/n) = 1</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">while</span> (a) {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span> (a &lt; 0) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            a = -a; <span class="comment">// (a/n) = (-a/n)*(-1/n)</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">if</span> (n % 4 == 3)</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                ans = -ans; <span class="comment">// (-1/n) = -1 if n = 3 (mod 4)</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordflow">while</span> (a % 2 == 0) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            a = a / 2;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">if</span> (n % 8 == 3 || n % 8 == 5)</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                ans = -ans;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        std::swap(a, n);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">if</span> (a % 4 == 3 &amp;&amp; n % 4 == 3)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            ans = -ans;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        a = a % n;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">if</span> (a &gt; n / 2)</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            a = a - n;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (n == 1)</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">return</span> ans;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00277">277</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span> (!a)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">return</span> 0; <span class="comment">// (0/n) = 0</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    uint64_t ans = 1;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">/*if (a &lt; 0) {</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">        a = -a; // (a/n) = (-a/n)*(-1/n)</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">        if (n % 4 == 3)</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">            ans = -ans; // (-1/n) = -1 if n = 3 (mod 4)</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">    }*/</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">if</span> (a == 1)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">return</span> ans; <span class="comment">// (1/n) = 1</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">while</span> (a) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="comment">/*if (a &lt; 0) {</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">            a = -a; // (a/n) = (-a/n)*(-1/n)</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="comment">            if (n % 4 == 3)</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">                ans = -ans; // (-1/n) = -1 if n = 3 (mod 4)</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">while</span> (a % 2 == 0) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            a = a / 2;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordflow">if</span> (n % 8 == 3 || n % 8 == 5)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                ans = -ans;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        std::swap(a, n);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> (a % 4 == 3 &amp;&amp; n % 4 == 3)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            ans = -ans;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        a = a % n;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">if</span> (a &gt; n / 2)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            a = a - n;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span> (n == 1)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">return</span> ans;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -738,26 +739,26 @@ Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="primes_8cpp-example.html#a14">primes.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00325">325</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (p &lt; 2)</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">if</span> (p != 2 &amp;&amp; p % 2 == 0)</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; iters; i++) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// Generate a random number a</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        uint64_t a = rand() % (p - 1) + 1;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        uint64_t jacobian = (p + <a class="code" href="classgpmp_1_1PrimalityTest.html#a4591d526f24cc4f3fe7a17ea580649e9">jacobian_number</a>(a, p)) % p;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        uint64_t mod = <a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">mod_pow</a>(a, (p - 1) / 2, p);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">if</span> (!jacobian || mod != jacobian)</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_a4591d526f24cc4f3fe7a17ea580649e9"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#a4591d526f24cc4f3fe7a17ea580649e9">gpmp::PrimalityTest::jacobian_number</a></div><div class="ttdeci">uint64_t jacobian_number(uint64_t a, uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00276">prime_test.cpp:276</a></div></div>
+<p class="definition">Definition at line <a class="el" href="prime__test_8cpp_source.html#l00327">327</a> of file <a class="el" href="prime__test_8cpp_source.html">prime_test.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (p &lt; 2)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span> (p != 2 &amp;&amp; p % 2 == 0)</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">for</span> (uint64_t i = 0; i &lt; iters; i++) {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="comment">// Generate a random number a</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        uint64_t a = rand() % (p - 1) + 1;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        uint64_t jacobian = (p + <a class="code" href="classgpmp_1_1PrimalityTest.html#a4591d526f24cc4f3fe7a17ea580649e9">jacobian_number</a>(a, p)) % p;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        uint64_t mod = <a class="code" href="classgpmp_1_1PrimalityTest.html#ac70b21846e5e9abd62748bf3a5aabfc6">mod_pow</a>(a, (p - 1) / 2, p);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">if</span> (!jacobian || mod != jacobian)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1PrimalityTest_html_a4591d526f24cc4f3fe7a17ea580649e9"><div class="ttname"><a href="classgpmp_1_1PrimalityTest.html#a4591d526f24cc4f3fe7a17ea580649e9">gpmp::PrimalityTest::jacobian_number</a></div><div class="ttdeci">uint64_t jacobian_number(uint64_t a, uint64_t n)</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00277">prime_test.cpp:277</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 

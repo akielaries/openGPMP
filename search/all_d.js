@@ -11,7 +11,7 @@ var searchData=
   ['match_5fwt_471',['match_wt',['../classgpmp_1_1Graph.html#a509f43330d225a99d63c5b4a6c057314',1,'gpmp::Graph']]],
   ['matrix_472',['Matrix',['../classgpmp_1_1linalg_1_1Matrix.html',1,'gpmp::linalg']]],
   ['matrix_473',['MATRIX',['../linalg_8hpp.html#af1d98fb728b5c7300f80dd782702d1dd',1,'linalg.hpp']]],
-  ['matrix_474',['Matrix',['../classgpmp_1_1linalg_1_1Matrix.html#aa0a5a9742a93628c072e6e2293941882',1,'gpmp::linalg::Matrix::Matrix()'],['../classgpmp_1_1linalg_1_1Matrix.html#a96c1e4570091c1cab6660c1990136b40',1,'gpmp::linalg::Matrix::Matrix(size_t rows, size_t cols)'],['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'Matrix():&#160;naive_net.hpp']]],
+  ['matrix_474',['Matrix',['../classgpmp_1_1linalg_1_1Matrix.html#aa0a5a9742a93628c072e6e2293941882',1,'gpmp::linalg::Matrix::Matrix()'],['../classgpmp_1_1linalg_1_1Matrix.html#a08f0ea63851e2c610e8ee2c0ee7580c9',1,'gpmp::linalg::Matrix::Matrix(size_t mtx_rows, size_t mtx_cols)'],['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'Matrix():&#160;naive_net.hpp']]],
   ['matrix_5faddition_475',['matrix_addition',['../mtx__x86_8c.html#a2aadd815313a9c7e3631ff92bd73bebc',1,'mtx_x86.c']]],
   ['matrixmul_476',['matrixMul',['../__gpu__kernel__mtx__mul_8c.html#afe33847ea3766a6cff2410a65a91dbc8',1,'matrixMul(__global float *C, __global float *A, __global float *B, int wA, int wB):&#160;_gpu_kernel_mtx_mul.c'],['../__gpu__mtx__kernel_8c.html#afe33847ea3766a6cff2410a65a91dbc8',1,'matrixMul(__global float *C, __global float *A, __global float *B, int wA, int wB):&#160;_gpu_mtx_kernel.c']]],
   ['matrixsize_477',['matrixSize',['../samples_2cpp_2mtx_8cpp.html#ad6548ce9849f89f541959b5bf06374a6',1,'mtx.cpp']]],

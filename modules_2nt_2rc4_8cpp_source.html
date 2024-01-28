@@ -197,16 +197,16 @@ $(function() {
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;std::string</div>
 <div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">  117</a></span>&#160;<a class="code" href="classgpmp_1_1RC4.html#a2ec1ae1f6acd899dbf041f1afea7663c">gpmp::RC4::store_hash</a>(<span class="keywordtype">char</span> *plaintext, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *hashtext, <span class="keywordtype">int</span> swap_type) {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// length of our plaintext</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">int</span> len = strlen((<span class="keywordtype">char</span> *)plaintext);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">size_t</span> len = strlen((<span class="keywordtype">char</span> *)plaintext);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// for snprintf declare a buffer</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">char</span> buffer[len + 1];</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">int</span> size = <span class="keyword">sizeof</span>(buffer);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">size_t</span> size = <span class="keyword">sizeof</span>(buffer);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// initialize empty string</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::string stored_text = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// traverse the hashtext appending each block to a string</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> index = 0, len = strlen(plaintext); index &lt; len; index++) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> index = 0; index &lt; len; index++) {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">if</span> (swap_type == 0) {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            snprintf(buffer, size, <span class="stringliteral">&quot;|x%02hhx|&quot;</span>, hashtext[index]);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
