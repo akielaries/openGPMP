@@ -52,7 +52,7 @@ int main() {
     // get first element of each group
     gpmp::core::DataTableStr first_element = dt.first(groups);
     dt.display(first_element);
-*/
+  */
     // Second DataTable object
     //    gpmp::core::DataTable dt2;
 

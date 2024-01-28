@@ -9,12 +9,12 @@ int main() {
     gpmp::ml::AutoEncoder autoencoder(3, 2, 3, 0.1);
 
     // training data (input and output should be the same for an autoencoder)
-    std::vector<std::vector<double>> training_data = {{1, 0, 0},
-                                                      {0, 1, 0},
-                                                      {0, 0, 1}};
+    std::vector<std::vector<double>> ae_training_data = {{1, 0, 0},
+                                                         {0, 1, 0},
+                                                         {0, 0, 1}};
 
     // train for 1000 epochs
-    autoencoder.train(training_data, 1000);
+    autoencoder.train(ae_training_data, 1000);
 
     // print the trained weights
     autoencoder.display();
@@ -28,6 +28,21 @@ int main() {
     for (double val : output) {
         std::cout << val << " ";
     }
+
+    // create an instance of SparseAutoEncoder
+    gpmp::ml::SparseAutoEncoder sparseAutoEncoder(3, 2, 3, 0.1, 0.01, 0.2);
+
+    // training data (input and output should be the same for an autoencoder)
+    std::vector<std::vector<double>> ae_training_data_sparse = {{1, 0, 0},
+                                                                {0, 1, 0},
+                                                                {0, 0, 1}};
+
+    // train using the base class pointer
+    gpmp::ml::AutoEncoder *basePtr = &sparseAutoEncoder;
+    basePtr->train(ae_training_data_sparse, 1000);
+
+    // print the trained weights
+    basePtr->display();
 
     return 0;
 }

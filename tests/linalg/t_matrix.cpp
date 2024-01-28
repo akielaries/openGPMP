@@ -490,7 +490,7 @@ TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
 
     std::cout << "Matrix RESULT after addition:" << std::endl;
     print_matrix(result, mtx_size, mtx_size);
-*/
+  */
     // compare the results
     ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
     delete[] A;

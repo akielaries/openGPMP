@@ -32,11 +32,11 @@
  ************************************************************************/
 
 #include "../../include/ml/encoder.hpp"
+#include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 gpmp::ml::AutoEncoder::AutoEncoder(int in_size,
                                    int h_size,
@@ -167,10 +167,58 @@ void gpmp::ml::AutoEncoder::display() {
     }
 }
 
-gpmp::ml::SparseAutoEncoder::SparseAutoEncoder(int input_size, int hidden_size, int output_size,
-                                     double learning_rate, double sparsity_weight, double sparsity_target)
+gpmp::ml::SparseAutoEncoder::SparseAutoEncoder(int input_size,
+                                               int hidden_size,
+                                               int output_size,
+                                               double learning_rate,
+                                               double sparsity_weight,
+                                               double sparsity_target)
     : AutoEncoder(input_size, hidden_size, output_size, learning_rate),
       sparsity_weight(sparsity_weight), sparsity_target(sparsity_target) {
-    // Initialization code specific to SparseAutoEncoder, if any...
 }
 
+void gpmp::ml::SparseAutoEncoder::train(
+    const std::vector<std::vector<double>> &training_data,
+    int epochs) {
+    for (int epoch = 0; epoch < epochs; ++epoch) {
+        for (const auto &input : training_data) {
+            // Forward pass
+            std::vector<double> hidden = forward(input);
+
+            // Backward pass (gradient descent)
+            for (int i = 0; i < output_size; ++i) {
+                for (int j = 0; j < hidden_size; ++j) {
+                    weights_hidden_output[j][i] -=
+                        learning_rate * (hidden[i] - input[i]) * hidden[j];
+                }
+            }
+
+            for (int i = 0; i < hidden_size; ++i) {
+                for (int j = 0; j < input_size; ++j) {
+                    double error = 0;
+                    for (int k = 0; k < output_size; ++k) {
+                        error += (hidden[k] - input[k]) *
+                                 weights_hidden_output[i][k];
+                    }
+
+                    double sparsity_term =
+                        sparsity_weight * (sparsity_target - hidden[i]);
+
+                    weights_input_hidden[j][i] -=
+                        learning_rate * (error + sparsity_term) * input[j] *
+                        (1 - hidden[i]) * hidden[i];
+                }
+            }
+            for (int i = 0; i < hidden_size; ++i) {
+                double average_activation = 0.0;
+                for (const auto &input : training_data) {
+                    std::vector<double> hidden = forward(input);
+                    average_activation += hidden[i];
+                }
+                average_activation /= training_data.size();
+                sparsity_target =
+                    0.9 * sparsity_target + 0.1 * average_activation;
+            }
+        }
+    }
+}

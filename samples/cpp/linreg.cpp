@@ -164,6 +164,6 @@ int main() {
     double v11_e = reg.error_in(v11);
     printf("Predicted value at %d   = %f\n", v11, v11_v);
     printf("Error value at %d       = %f\n\n", v11, v11_e);
-*/
+  */
     return 0;
 }

@@ -35,8 +35,8 @@
  * @file
  * @brief Auto Encoder Neural Network effecient for unlabeled data
  */
-#ifndef ENCODER_NET_HPP
-#define ENDOCER_NET_HPP
+#ifndef ENCODER_HPP
+#define ENCODER_HPP
 
 #include <string>
 #include <tuple>
@@ -155,17 +155,48 @@ class AutoEncoder {
     void display();
 };
 
+/**
+ * @brief SparseAutoEncoder class, a derived class from AutoEncoder
+ */
 class SparseAutoEncoder : public AutoEncoder {
-public:
-    // weight for sparsity penalty term
+  public:
+    /**
+     * @brief Weight for the sparsity penalty term
+     */
     double sparsity_weight;
-    // target sparsity level
+
+    /**
+     * @brief Target sparsity level
+     */
     double sparsity_target;
 
-    SparseAutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate,
-                      double sparsity_weight, double sparsity_target);
+    /**
+     * @brief Constructor for the SparseAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     * @param sparsity_weight The weight for the sparsity penalty term
+     * @param sparsity_target The target sparsity level
+     */
+    SparseAutoEncoder(int input_size,
+                      int hidden_size,
+                      int output_size,
+                      double learning_rate,
+                      double sparsity_weight,
+                      double sparsity_target);
 
-    //void train(const std::vector<std::vector<double>>& training_data, int epochs) override;
+    /**
+     * @brief Trains the sparse autoencoder on the given training data
+     *
+     * Overrides the train method in the base class with sparsity considerations
+     *
+     * @param training_data The training data
+     * @param epochs The number of training epochs
+     */
+    void train(const std::vector<std::vector<double>> &training_data,
+               int epochs);
 };
 
 } // namespace ml
