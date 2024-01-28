@@ -48,24 +48,16 @@ namespace gpmp {
 namespace ml {
 
 /**
- * @brief Summary data structure responsible for returning results
- */
-typedef struct summary {
-    std::vector<std::vector<long double>> mean_stdev;
-    long double class_prob;
-} summary;
-
-/**
  * @brief Bayes Classifier Class based on assumptions of independence
  */
 class BayesClf {
   public:
-    /** 
+    /**
      * @brief Additive smoothing parameter
      */
     double alpha;
 
-    /** 
+    /**
      * @brief Whether to learn class prior probabilities or not
      */
     bool fit_prior;
@@ -73,11 +65,11 @@ class BayesClf {
      * @brief Map of class labels to their probabilities
      */
     std::unordered_map<std::string, double> class_probs;
-    /** 
+    /**
      * @brief Map of class labels to their feature probabilities
      */
     std::unordered_map<std::string, std::vector<double>> feature_probs;
-    /** 
+    /**
      * @brief Vector of class log priors
      */
     std::vector<double> class_log_prior;
@@ -88,11 +80,9 @@ class BayesClf {
      * @param fit_prior Whether to learn class prior probabilities or not
      * @param class_prior Prior probabilities of the classes
      */
-/*    BayesClf(double alpha_param = 1.0,
-             bool fit_prior = true,
+    BayesClf(double alpha_param = 1.0,
+             bool fit_prior_param = true,
              const std::vector<double> &class_prior = {});
-*/
-    BayesClf(double alpha_param = 1.0, bool fit_prior_param = true, const std::vector<double>& class_prior = {});
 
     /**
      * @brief Destructor for BayesClf class
@@ -181,28 +171,52 @@ class BayesBernoulli {
  */
 class BayesGauss {
   public:
-    BayesGauss(std::vector<std::vector<double>> inputSet,
-               std::vector<double> outputSet,
-               int class_num);
+    std::unordered_map<std::string, double> class_probs;
+    std::unordered_map<std::string, std::vector<double>> mean;
+    std::unordered_map<std::string, std::vector<double>> variance;
 
-    std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
+    /**
+     * @brief Constructor for BayesGauss class
+     */
+    BayesGauss() = default;
 
-    double modelTest(std::vector<double> x);
-    double score();
+    /**
+     * @brief Destructor for BayesGauss class
+     */
+    ~BayesGauss() = default;
+
+    /**
+     * @brief Train the classifier with a set of labeled data
+     * @param data A vector of vectors representing the training instances
+     * @param labels A vector of strings representing the corresponding class
+     * labels
+     */
+    void train(const std::vector<std::vector<double>> &data,
+               const std::vector<std::string> &labels);
+
+    /**
+     * @brief Predict the class of a new data point
+     * @param newData A vector of doubles representing the features of the new
+     * data point
+     * @return The predicted class label as a string
+     */
+    std::string predict(const std::vector<double> &newData) const;
+
+    /**
+     * @brief Display the learned probabilities
+     * @note This method is for debugging purposes
+     */
+    void display() const;
 
   private:
-    void Evaluate();
-
-    int class_num;
-
-    std::vector<double> priors;
-    std::vector<double> mu;
-    std::vector<double> sigma;
-
-    std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-
-    std::vector<double> y_hat;
+    /**
+     * @brief Calculate the mean and variance for each class
+     * @param data A vector of vectors representing the training instances
+     * @param labels A vector of strings representing the corresponding class
+     * labels
+     */
+    void mean_and_var(const std::vector<std::vector<double>> &data,
+                      const std::vector<std::string> &labels);
 };
 
 /**
@@ -210,33 +224,29 @@ class BayesGauss {
  * @details Specific instance of a Naive Bayes classifier which uses a
  * multinomial distribution for each of the features.
  */
-
-class BayesMutliNom {
+class BayesMultiNom {
   public:
-    BayesMutliNom(std::vector<std::vector<double>> inputSet,
-                  std::vector<double> outputSet,
-                  int class_num);
+    double alpha;
+    bool fit_prior;
+    std::unordered_map<std::string, double> class_probs;
+    std::unordered_map<std::string, std::vector<double>> feature_probs;
+    std::vector<double> class_log_prior;
 
-    std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
+    BayesMultiNom(double alpha_param = 1.0,
+                  bool fit_prior_param = true,
+                  const std::vector<double> &class_prior = {});
 
-    double modelTest(std::vector<double> x);
-    double score();
+    ~BayesMultiNom();
+
+    void train(const std::vector<std::vector<size_t>> &data,
+               const std::vector<std::string> &labels);
+
+    std::string predict(const std::vector<size_t> &new_data) const;
+
+    void display() const;
 
   private:
-    void computeTheta();
-    void Evaluate();
-
-    // Model Params
-    std::vector<double> priors;
-
-    std::vector<std::map<double, int>> theta;
-    std::vector<double> vocab;
-    int class_num;
-
-    // Datasets
-    std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-    std::vector<double> y_hat;
+    void calculate_class_log_priors();
 };
 
 } // namespace ml
