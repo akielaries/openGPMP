@@ -39,7 +39,8 @@
 #ifndef BAYES_CLF_HPP
 #define BAYES_CLF_HPP
 #include <map>
-#include <stdio.h>
+#include <string>
+#include <unordered_map>
 #include <vector>
 
 namespace gpmp {
@@ -58,19 +59,63 @@ typedef struct summary {
  * @brief Bayes Classifier Class based on assumptions of independence
  */
 class BayesClf {
-  private:
-    std::vector<class_summary> Summary;
-    std::vector<long double> unique_label;
-
   public:
-    void fit(std::vector<std::vector<long double>> dataset);
-    int64_t predict(const std::vector<long double> &test_data);
-};
-summary gen_summ(std::vector<std::vector<long double>> dataset,
-                 long double class_label);
+    /**
+     * @brief Constructor for BayesClf class
+     * @param alpha Additive (Laplace/Lidstone) smoothing parameter
+     * @param fit_prior Whether to learn class prior probabilities or not
+     * @param class_prior Prior probabilities of the classes
+     */
+    BayesClf(double alpha = 1.0,
+             bool fit_prior = true,
+             const std::vector<double> &class_prior = {});
 
-long double prob_by_summ(const std::vector<long double> &test_data,
-                         const class_summary &summary);
+    /**
+     * @brief Destructor for BayesClf class
+     */
+    ~BayesClf();
+    /**
+     * @brief Train the classifier with a set of labeled data
+     * @param data A vector of vectors representing the training instances
+     * @param labels A vector of strings representing the corresponding class labels
+     */
+    void train(const std::vector<std::vector<double>>& data, const std::vector<std::string>& labels);
+
+    /**
+     * @brief Predict the class of a new data point
+     * @param newData A vector of doubles representing the features of the new data point
+     * @return The predicted class label as a string
+     */
+    std::string predict(const std::vector<double>& newData) const;
+
+    /**
+     * @brief Display the learned probabilities
+     * @note This method is for debugging purposes
+     */
+    void display() const;
+    /**
+     * @brief Map of class labels to their probabilities
+     */
+    std::unordered_map<std::string, double> class_probs;
+    /**
+     * @brief Map of class labels to their feature probabilities
+     */
+    std::unordered_map<std::string, std::vector<double>> feature_probs;
+    /**
+     * @brief Vector of class log priors
+     */
+    std::vector<double> class_log_prior;
+
+    /**
+     * @brief Additive smoothing parameter
+     */
+    double alpha;
+
+    /**
+     * @brief Whether to learn class prior probabilities or not
+     */
+    bool fit_prior;
+};
 
 /**
  * @class BayesBernoulli
@@ -82,29 +127,45 @@ long double prob_by_summ(const std::vector<long double> &test_data,
  */
 class BayesBernoulli {
   public:
-    BayesBernoulli(std::vector<std::vector<double>> inputSet,
-                   std::vector<double> outputSet);
-    std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
-    double modelTest(std::vector<double> x);
-    double score();
+    std::unordered_map<std::string, double> class_probs;
+    std::unordered_map<std::string, std::unordered_map<size_t, double>>
+        feat_probs;
+    double alpha;
 
-  private:
-    void computeVocab();
-    void computeTheta();
-    void Evaluate();
+    /**
+     * @brief Constructor for BayesBernoulli class
+     * @param alpha Additive (Laplace/Lidstone) smoothing parameter
+     */
+    BayesBernoulli(double alpha = 1.0) : alpha(alpha) {
+    }
 
-    // Model Params
-    double prior_1 = 0;
-    double prior_0 = 0;
+    /**
+     * @brief Destructor for BayesBernoulli class
+     */
+    ~BayesBernoulli() {
+    }
 
-    std::vector<std::map<double, int>> theta;
-    std::vector<double> vocab;
-    int class_num;
+    /**
+     * @brief Train the classifier with a set of labeled data
+     * @param data A vector of vectors representing the training instances
+     * @param labels A vector of strings representing the corresponding class
+     * labels
+     */
+    void train(const std::vector<std::vector<size_t>> &data,
+               const std::vector<std::string> &labels);
+    /**
+     * @brief Predict the class of a new data point
+     * @param newData A vector of size_t representing the features of the new
+     * data point
+     * @return The predicted class label as a string
+     */
+    std::string predict(const std::vector<size_t> &newData) const;
 
-    // Datasets
-    std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-    std::vector<double> y_hat;
+    /**
+     * @brief Display the learned probabilities
+     * @note This method is for debugging purposes
+     */
+    void display() const;
 };
 
 /**
