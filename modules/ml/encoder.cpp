@@ -36,6 +36,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 gpmp::ml::AutoEncoder::AutoEncoder(int in_size,
                                    int h_size,
@@ -148,7 +149,7 @@ void gpmp::ml::AutoEncoder::train(
     }
 }
 
-void gpmp::ml::AutoEncoder::printWeights() {
+void gpmp::ml::AutoEncoder::display() {
     std::cout << "Input to Hidden Weights:\n";
     for (int i = 0; i < input_size; ++i) {
         for (int j = 0; j < hidden_size; ++j) {
@@ -165,3 +166,11 @@ void gpmp::ml::AutoEncoder::printWeights() {
         std::cout << "\n";
     }
 }
+
+gpmp::ml::SparseAutoEncoder::SparseAutoEncoder(int input_size, int hidden_size, int output_size,
+                                     double learning_rate, double sparsity_weight, double sparsity_target)
+    : AutoEncoder(input_size, hidden_size, output_size, learning_rate),
+      sparsity_weight(sparsity_weight), sparsity_target(sparsity_target) {
+    // Initialization code specific to SparseAutoEncoder, if any...
+}
+

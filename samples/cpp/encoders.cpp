@@ -17,7 +17,7 @@ int main() {
     autoencoder.train(training_data, 1000);
 
     // print the trained weights
-    autoencoder.printWeights();
+    autoencoder.display();
 
     // test the autoencoder with a new input
     std::vector<double> test_input = {1, 1, 0};
