@@ -117,12 +117,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a> autoencoder(3, 2, 3, 0.1);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">// training data (input and output should be the same for an autoencoder)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; training_data = {{1, 0, 0},</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                      {0, 1, 0},</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                      {0, 0, 1}};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; ae_training_data = {{1, 0, 0},</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                         {0, 1, 0},</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                         {0, 0, 1}};</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// train for 1000 epochs</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    autoencoder.train(training_data, 1000);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    autoencoder.train(ae_training_data, 1000);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// print the trained weights</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    autoencoder.display();</div>
@@ -137,9 +137,27 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::cout &lt;&lt; val &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// create an instance of SparseAutoEncoder</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1SparseAutoEncoder.html">gpmp::ml::SparseAutoEncoder</a> sparseAutoEncoder(3, 2, 3, 0.1, 0.01, 0.2);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// training data (input and output should be the same for an autoencoder)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; ae_training_data_sparse = {{1, 0, 0},</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                                {0, 1, 0},</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                                {0, 0, 1}};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// train using the base class pointer</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a> *basePtr = &amp;sparseAutoEncoder;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    basePtr-&gt;<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a8768d78cf66e95fbab116e22e075706a">train</a>(ae_training_data_sparse, 1000);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// print the trained weights</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    basePtr-&gt;<a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aceee8e64ec99bb891483cfaac7a42e2d">display</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></div><div class="ttdoc">A simple implementation of a vanilla autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00055">encoder.hpp:55</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a8768d78cf66e95fbab116e22e075706a"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a8768d78cf66e95fbab116e22e075706a">gpmp::ml::AutoEncoder::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs)</div><div class="ttdoc">Train the autoencoder on a dataset.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00101">encoder.cpp:101</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_aceee8e64ec99bb891483cfaac7a42e2d"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#aceee8e64ec99bb891483cfaac7a42e2d">gpmp::ml::AutoEncoder::display</a></div><div class="ttdeci">void display()</div><div class="ttdoc">Print the weights of the autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00152">encoder.cpp:152</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SparseAutoEncoder_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1SparseAutoEncoder.html">gpmp::ml::SparseAutoEncoder</a></div><div class="ttdoc">SparseAutoEncoder class, a derived class from AutoEncoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00161">encoder.hpp:161</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aceee8e64ec99bb891483cfaac7a42e2d">gpmp::ml::AutoEncoder::display()</a>, <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">gpmp::ml::AutoEncoder::forward()</a>, and <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a8768d78cf66e95fbab116e22e075706a">gpmp::ml::AutoEncoder::train()</a>.</p>
 
