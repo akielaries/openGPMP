@@ -142,7 +142,9 @@ $(function() {
 : <a class="el" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">gpmp::Graph</a>
 </li>
 <li>alpha
-: <a class="el" href="classgpmp_1_1ml_1_1Logreg.html#ad7b370bc76f0e5b6a58e85c3a19dbc4e">gpmp::ml::Logreg</a>
+: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">gpmp::ml::BayesBernoulli</a>
+, <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#ad67dac605bee1b159c77bb2db3a41a88">gpmp::ml::BayesClf</a>
+, <a class="el" href="classgpmp_1_1ml_1_1Logreg.html#ad7b370bc76f0e5b6a58e85c3a19dbc4e">gpmp::ml::Logreg</a>
 </li>
 </ul>
 
@@ -174,13 +176,19 @@ $(function() {
 <li>characteristics
 : <a class="el" href="classCompany.html#a41ba0338049f56dbd4a4b645834267d0">Company</a>
 </li>
+<li>class_log_prior
+: <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#a671aef04d7f71118cbb76bb052843931">gpmp::ml::BayesClf</a>
+</li>
 <li>class_num
-: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a3475ef720a39c1abf04d8415ae228e45">gpmp::ml::BayesBernoulli</a>
-, <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#a253cc957463f421f94d90ea086b402ae">gpmp::ml::BayesGauss</a>
+: <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#a253cc957463f421f94d90ea086b402ae">gpmp::ml::BayesGauss</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#a42275836084a95861ee25cfab384ed25">gpmp::ml::BayesMutliNom</a>
 </li>
 <li>class_prob
 : <a class="el" href="structgpmp_1_1ml_1_1summary.html#a2e134a46683bd64f821d1b523bc992e7">gpmp::ml::summary</a>
+</li>
+<li>class_probs
+: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">gpmp::ml::BayesBernoulli</a>
+, <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#a7b6264a95c636fc88d84d7f51657f53f">gpmp::ml::BayesClf</a>
 </li>
 <li>coeff
 : <a class="el" href="classgpmp_1_1ml_1_1LinearRegression.html#a7c91fe16d4120fceeda7c96f4e972f20">gpmp::ml::LinearRegression</a>
@@ -257,8 +265,17 @@ $(function() {
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>feat_probs
+: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">gpmp::ml::BayesBernoulli</a>
+</li>
+<li>feature_probs
+: <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#a829a23b25b55b5089307968a0a4f0131">gpmp::ml::BayesClf</a>
+</li>
 <li>fileName
 : <a class="el" href="classCSVReader.html#a0a90d62a46349a148272cb0e087cd191">CSVReader</a>
+</li>
+<li>fit_prior
+: <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#a0e57370b7195fbebc49c9bd57904ca33">gpmp::ml::BayesClf</a>
 </li>
 </ul>
 
@@ -276,7 +293,6 @@ $(function() {
 </li>
 <li>inputSet
 : <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a9cb7137756e38872694f3e7c4fc93c56">gpmp::ml::AutoEncoder</a>
-, <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#aa951e1b4e57f5b16b382f7f086535d81">gpmp::ml::BayesBernoulli</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#a76cd866abb62ff939dd825533a030855">gpmp::ml::BayesGauss</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#af2475956d539dd847641e453426b4201">gpmp::ml::BayesMutliNom</a>
 , <a class="el" href="classgpmp_1_1ml_1_1kNN.html#ad3054d1781f12870b04ab0766509b486">gpmp::ml::kNN</a>
@@ -395,8 +411,7 @@ $(function() {
 : <a class="el" href="classgpmp_1_1core_1_1DataTable.html#a9c44db3ec6f6dd40100b88becdedcbba">gpmp::core::DataTable</a>
 </li>
 <li>outputSet
-: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a908fed7720608ec9440eca73e9115c25">gpmp::ml::BayesBernoulli</a>
-, <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#adb45782874c23d6f21dd3022b8cddbac">gpmp::ml::BayesGauss</a>
+: <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#adb45782874c23d6f21dd3022b8cddbac">gpmp::ml::BayesGauss</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#a0cd084badc0473464503748b5ee27757">gpmp::ml::BayesMutliNom</a>
 , <a class="el" href="classgpmp_1_1ml_1_1kNN.html#a810e3199a92bb5fabfa506a73621f25c">gpmp::ml::kNN</a>
 , <a class="el" href="classgpmp_1_1ml_1_1Logreg.html#aeb111217c8b1b8729e8ada3c3f69a585">gpmp::ml::Logreg</a>
@@ -406,12 +421,6 @@ $(function() {
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
-<li>prior_0
-: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a5a9e5de1c06b5b8e8b39d9094dbde390">gpmp::ml::BayesBernoulli</a>
-</li>
-<li>prior_1
-: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a964168d35d63c0282e01e70dbf911c87">gpmp::ml::BayesBernoulli</a>
-</li>
 <li>priors
 : <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#ae1125dbcf2af7b07eb97e265a414c3a8">gpmp::ml::BayesGauss</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#aede9047f0656af37fea66d00dfab6782">gpmp::ml::BayesMutliNom</a>
@@ -476,9 +485,6 @@ $(function() {
 <li>sum_y_square
 : <a class="el" href="classgpmp_1_1ml_1_1LinearRegression.html#ac888fedbc6f80b9654a6ce0ebd8e3ae0">gpmp::ml::LinearRegression</a>
 </li>
-<li>Summary
-: <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#ab4ced2d4674251074a86de803260501d">gpmp::ml::BayesClf</a>
-</li>
 </ul>
 
 
@@ -491,7 +497,6 @@ $(function() {
 </li>
 <li>theta
 : <a class="el" href="classCamera.html#ab6b0614e3fd3d6cf593655030184db02">Camera</a>
-, <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a245e0c01786e00c16b76dfa609e85761">gpmp::ml::BayesBernoulli</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#a2e7dc849e7a9c0754080180a89757e6b">gpmp::ml::BayesMutliNom</a>
 </li>
 <li>to
@@ -503,20 +508,12 @@ $(function() {
 </ul>
 
 
-<h3><a id="index_u"></a>- u -</h3><ul>
-<li>unique_label
-: <a class="el" href="classgpmp_1_1ml_1_1BayesClf.html#a56d7aef70ea0441cec35780646b519e4">gpmp::ml::BayesClf</a>
-</li>
-</ul>
-
-
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>vertices
 : <a class="el" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">gpmp::Graph</a>
 </li>
 <li>vocab
-: <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#aefd6a5ca3d8b68cf4a2013eaa88ef670">gpmp::ml::BayesBernoulli</a>
-, <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#af1f303a305d6f833380aabfe0f266f51">gpmp::ml::BayesMutliNom</a>
+: <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#af1f303a305d6f833380aabfe0f266f51">gpmp::ml::BayesMutliNom</a>
 </li>
 </ul>
 
@@ -587,7 +584,6 @@ $(function() {
 </li>
 <li>y_hat
 : <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aac40cef9499690b78f81b1bae656f1e1">gpmp::ml::AutoEncoder</a>
-, <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a849fda95b74c83b3ed9bbdd9ad17076b">gpmp::ml::BayesBernoulli</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesGauss.html#ab1c03073c793d62fdfbc4ed88e3fb11a">gpmp::ml::BayesGauss</a>
 , <a class="el" href="classgpmp_1_1ml_1_1BayesMutliNom.html#af4c8e6d263bc560a15265ad48d21ce96">gpmp::ml::BayesMutliNom</a>
 , <a class="el" href="classgpmp_1_1ml_1_1Logreg.html#abbbbce1cced3c5a07f48188ddff6aaf6">gpmp::ml::Logreg</a>

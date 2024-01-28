@@ -77,8 +77,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classgpmp_1_1ml_1_1BayesBernoulli-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gpmp::ml::BayesBernoulli Class Reference</div>  </div>
@@ -89,65 +88,216 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8979c8610b614889f43a3f4bf5671742"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a8979c8610b614889f43a3f4bf5671742">BayesBernoulli</a> (std::vector&lt; std::vector&lt; double &gt;&gt; <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#aa951e1b4e57f5b16b382f7f086535d81">inputSet</a>, std::vector&lt; double &gt; <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a908fed7720608ec9440eca73e9115c25">outputSet</a>)</td></tr>
-<tr class="separator:a8979c8610b614889f43a3f4bf5671742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb133837aa068ef7ce38a8de24e6547c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#abb133837aa068ef7ce38a8de24e6547c">modelSetTest</a> (std::vector&lt; std::vector&lt; double &gt;&gt; X)</td></tr>
-<tr class="separator:abb133837aa068ef7ce38a8de24e6547c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ca1da164aea3ba5d2f49d371fcc2b57"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a6ca1da164aea3ba5d2f49d371fcc2b57">modelTest</a> (std::vector&lt; double &gt; x)</td></tr>
-<tr class="separator:a6ca1da164aea3ba5d2f49d371fcc2b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1bf24d949e352afbf0479f649fa644a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ae1bf24d949e352afbf0479f649fa644a">score</a> ()</td></tr>
-<tr class="separator:ae1bf24d949e352afbf0479f649fa644a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7259279ef920827b78f0e22a5c510af5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a7259279ef920827b78f0e22a5c510af5">BayesBernoulli</a> (double <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a>=1.0)</td></tr>
+<tr class="memdesc:a7259279ef920827b78f0e22a5c510af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html">BayesBernoulli</a> class.  <a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a7259279ef920827b78f0e22a5c510af5">More...</a><br /></td></tr>
+<tr class="separator:a7259279ef920827b78f0e22a5c510af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76282d5957d10fc6654f4223485b543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad76282d5957d10fc6654f4223485b543">~BayesBernoulli</a> ()</td></tr>
+<tr class="memdesc:ad76282d5957d10fc6654f4223485b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html">BayesBernoulli</a> class.  <a href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad76282d5957d10fc6654f4223485b543">More...</a><br /></td></tr>
+<tr class="separator:ad76282d5957d10fc6654f4223485b543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1717c4d894994e7b4f784f68822253ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a1717c4d894994e7b4f784f68822253ac">train</a> (const std::vector&lt; std::vector&lt; size_t &gt;&gt; &amp;data, const std::vector&lt; std::string &gt; &amp;labels)</td></tr>
+<tr class="memdesc:a1717c4d894994e7b4f784f68822253ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Train the classifier with a set of labeled data.  <a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a1717c4d894994e7b4f784f68822253ac">More...</a><br /></td></tr>
+<tr class="separator:a1717c4d894994e7b4f784f68822253ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e5dec9c1817f6d6d04c197d0934aff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a88e5dec9c1817f6d6d04c197d0934aff">predict</a> (const std::vector&lt; size_t &gt; &amp;newData) const</td></tr>
+<tr class="memdesc:a88e5dec9c1817f6d6d04c197d0934aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict the class of a new data point.  <a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a88e5dec9c1817f6d6d04c197d0934aff">More...</a><br /></td></tr>
+<tr class="separator:a88e5dec9c1817f6d6d04c197d0934aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb0ba2ab3a116a84b3d50c0af1c015e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a4bb0ba2ab3a116a84b3d50c0af1c015e">display</a> () const</td></tr>
+<tr class="memdesc:a4bb0ba2ab3a116a84b3d50c0af1c015e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the learned probabilities.  <a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a4bb0ba2ab3a116a84b3d50c0af1c015e">More...</a><br /></td></tr>
+<tr class="separator:a4bb0ba2ab3a116a84b3d50c0af1c015e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a765bbc0ea53512a319bddef97e0936b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a765bbc0ea53512a319bddef97e0936b7">computeVocab</a> ()</td></tr>
-<tr class="separator:a765bbc0ea53512a319bddef97e0936b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abed48acf7a5376f9652b7a03148bd6d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#abed48acf7a5376f9652b7a03148bd6d7">computeTheta</a> ()</td></tr>
-<tr class="separator:abed48acf7a5376f9652b7a03148bd6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48cfae572c6012a67ade62fd23617bac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a48cfae572c6012a67ade62fd23617bac">Evaluate</a> ()</td></tr>
-<tr class="separator:a48cfae572c6012a67ade62fd23617bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a964168d35d63c0282e01e70dbf911c87"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a964168d35d63c0282e01e70dbf911c87">prior_1</a> = 0</td></tr>
-<tr class="separator:a964168d35d63c0282e01e70dbf911c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a9e5de1c06b5b8e8b39d9094dbde390"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a5a9e5de1c06b5b8e8b39d9094dbde390">prior_0</a> = 0</td></tr>
-<tr class="separator:a5a9e5de1c06b5b8e8b39d9094dbde390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a245e0c01786e00c16b76dfa609e85761"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::map&lt; double, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a245e0c01786e00c16b76dfa609e85761">theta</a></td></tr>
-<tr class="separator:a245e0c01786e00c16b76dfa609e85761"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefd6a5ca3d8b68cf4a2013eaa88ef670"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#aefd6a5ca3d8b68cf4a2013eaa88ef670">vocab</a></td></tr>
-<tr class="separator:aefd6a5ca3d8b68cf4a2013eaa88ef670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3475ef720a39c1abf04d8415ae228e45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a3475ef720a39c1abf04d8415ae228e45">class_num</a></td></tr>
-<tr class="separator:a3475ef720a39c1abf04d8415ae228e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa951e1b4e57f5b16b382f7f086535d81"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#aa951e1b4e57f5b16b382f7f086535d81">inputSet</a></td></tr>
-<tr class="separator:aa951e1b4e57f5b16b382f7f086535d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a908fed7720608ec9440eca73e9115c25"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a908fed7720608ec9440eca73e9115c25">outputSet</a></td></tr>
-<tr class="separator:a908fed7720608ec9440eca73e9115c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a849fda95b74c83b3ed9bbdd9ad17076b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a849fda95b74c83b3ed9bbdd9ad17076b">y_hat</a></td></tr>
-<tr class="separator:a849fda95b74c83b3ed9bbdd9ad17076b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a99154bd9f3c9d83d4b76c0a4d9c41d59"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">class_probs</a></td></tr>
+<tr class="separator:a99154bd9f3c9d83d4b76c0a4d9c41d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb90ee056818d7465d9d38e83ac03b3"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::unordered_map&lt; size_t, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">feat_probs</a></td></tr>
+<tr class="separator:adfb90ee056818d7465d9d38e83ac03b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad490f5bbcf0735eb8fe5bd843abb941b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a></td></tr>
+<tr class="separator:ad490f5bbcf0735eb8fe5bd843abb941b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bernoulli Naive Bayes is a part of the Naive Bayes family. It is based on the Bernoulli Distribution and accepts only binary values, i.e., 0 or 1. If the features of the dataset are binary, then we can assume that Bernoulli Naive Bayes is the algorithm to be used. </p>
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00083">83</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00128">128</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8979c8610b614889f43a3f4bf5671742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8979c8610b614889f43a3f4bf5671742">&#9670;&nbsp;</a></span>BayesBernoulli()</h2>
+<a id="a7259279ef920827b78f0e22a5c510af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7259279ef920827b78f0e22a5c510af5">&#9670;&nbsp;</a></span>BayesBernoulli()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gpmp::ml::BayesBernoulli::BayesBernoulli </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alpha</em> = <code>1.0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html">BayesBernoulli</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alpha</td><td>Additive (Laplace/Lidstone) smoothing parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00139">139</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                       : <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a>(<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a>) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_ad490f5bbcf0735eb8fe5bd843abb941b"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">gpmp::ml::BayesBernoulli::alpha</a></div><div class="ttdeci">double alpha</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00133">bayes_clf.hpp:133</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad76282d5957d10fc6654f4223485b543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad76282d5957d10fc6654f4223485b543">&#9670;&nbsp;</a></span>~BayesBernoulli()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gpmp::ml::BayesBernoulli::~BayesBernoulli </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor for <a class="el" href="classgpmp_1_1ml_1_1BayesBernoulli.html">BayesBernoulli</a> class. </p>
+
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00145">145</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                      {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4bb0ba2ab3a116a84b3d50c0af1c015e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb0ba2ab3a116a84b3d50c0af1c015e">&#9670;&nbsp;</a></span>display()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">gpmp::ml::BayesBernoulli::BayesBernoulli </td>
+          <td class="memname">void gpmp::ml::BayesBernoulli::display </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>inputSet</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display the learned probabilities. </p>
+<dl class="section note"><dt>Note</dt><dd>This method is for debugging purposes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00209">209</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                                         {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Class Probabilities:\n&quot;</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">class_probs</a>) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        std::cout &lt;&lt; entry.first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; entry.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nFeature Probabilities:\n&quot;</span>;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;class_entry : <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">feat_probs</a>) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        std::cout &lt;&lt; class_entry.first &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;feat_entry : class_entry.second) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;  Feature &quot;</span> &lt;&lt; feat_entry.first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                      &lt;&lt; feat_entry.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a99154bd9f3c9d83d4b76c0a4d9c41d59"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">gpmp::ml::BayesBernoulli::class_probs</a></div><div class="ttdeci">std::unordered_map&lt; std::string, double &gt; class_probs</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00130">bayes_clf.hpp:130</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_adfb90ee056818d7465d9d38e83ac03b3"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">gpmp::ml::BayesBernoulli::feat_probs</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::unordered_map&lt; size_t, double &gt; &gt; feat_probs</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00132">bayes_clf.hpp:132</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+
+</div>
+</div>
+<a id="a88e5dec9c1817f6d6d04c197d0934aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88e5dec9c1817f6d6d04c197d0934aff">&#9670;&nbsp;</a></span>predict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string gpmp::ml::BayesBernoulli::predict </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>newData</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Predict the class of a new data point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newData</td><td>A vector of size_t representing the features of the new data point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The predicted class label as a string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00187">187</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">double</span> max_prob = -std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    std::string predicted_class;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;class_entry : <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">class_probs</a>) {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordtype">double</span> probability = log(class_entry.second);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; new_data.size(); ++i) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            probability +=</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                new_data[i] * log(<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">feat_probs</a>.at(class_entry.first).at(i));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">if</span> (probability &gt; max_prob) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            max_prob = probability;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            predicted_class = class_entry.first;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> predicted_class;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
+
+</div>
+</div>
+<a id="a1717c4d894994e7b4f784f68822253ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1717c4d894994e7b4f784f68822253ac">&#9670;&nbsp;</a></span>train()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpmp::ml::BayesBernoulli::train </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; size_t &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>outputSet</em>&#160;</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,332 +307,104 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abed48acf7a5376f9652b7a03148bd6d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abed48acf7a5376f9652b7a03148bd6d7">&#9670;&nbsp;</a></span>computeTheta()</h2>
+<p>Train the classifier with a set of labeled data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A vector of vectors representing the training instances </td></tr>
+    <tr><td class="paramname">labels</td><td>A vector of strings representing the corresponding class labels </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpmp::ml::BayesBernoulli::computeTheta </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a765bbc0ea53512a319bddef97e0936b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a765bbc0ea53512a319bddef97e0936b7">&#9670;&nbsp;</a></span>computeVocab()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpmp::ml::BayesBernoulli::computeVocab </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a48cfae572c6012a67ade62fd23617bac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48cfae572c6012a67ade62fd23617bac">&#9670;&nbsp;</a></span>Evaluate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gpmp::ml::BayesBernoulli::Evaluate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb133837aa068ef7ce38a8de24e6547c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb133837aa068ef7ce38a8de24e6547c">&#9670;&nbsp;</a></span>modelSetTest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::BayesBernoulli::modelSetTest </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; double &gt;&gt;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6ca1da164aea3ba5d2f49d371fcc2b57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ca1da164aea3ba5d2f49d371fcc2b57">&#9670;&nbsp;</a></span>modelTest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::BayesBernoulli::modelTest </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; double &gt;&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae1bf24d949e352afbf0479f649fa644a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1bf24d949e352afbf0479f649fa644a">&#9670;&nbsp;</a></span>score()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::BayesBernoulli::score </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00151">151</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                        {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">size_t</span> numInstances = data.size();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">size_t</span> num_feats = data[0].size();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; numInstances; ++i) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        std::string classLabel = labels[i];</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// update class probabilities</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">class_probs</a>[classLabel] += 1.0;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">// update feature probabilities</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_feats; ++j) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">feat_probs</a>[classLabel][j] += data[i][j];</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="comment">// laplace smoothing</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">double</span> smoothing_factor = <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a> * 2.0;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">class_probs</a>) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        entry.second =</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            (entry.second + <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a>) / (numInstances + smoothing_factor);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;class_entry : <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#adfb90ee056818d7465d9d38e83ac03b3">feat_probs</a>) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;feat_entry : class_entry.second) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            feat_entry.second =</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                (feat_entry.second + <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#ad490f5bbcf0735eb8fe5bd843abb941b">alpha</a>) /</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                (<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a99154bd9f3c9d83d4b76c0a4d9c41d59">class_probs</a>[class_entry.first] + smoothing_factor);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3475ef720a39c1abf04d8415ae228e45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3475ef720a39c1abf04d8415ae228e45">&#9670;&nbsp;</a></span>class_num</h2>
+<a id="ad490f5bbcf0735eb8fe5bd843abb941b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad490f5bbcf0735eb8fe5bd843abb941b">&#9670;&nbsp;</a></span>alpha</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int gpmp::ml::BayesBernoulli::class_num</td>
+          <td class="memname">double gpmp::ml::BayesBernoulli::alpha</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00102">102</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00133">133</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aa951e1b4e57f5b16b382f7f086535d81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa951e1b4e57f5b16b382f7f086535d81">&#9670;&nbsp;</a></span>inputSet</h2>
+<a id="a99154bd9f3c9d83d4b76c0a4d9c41d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99154bd9f3c9d83d4b76c0a4d9c41d59">&#9670;&nbsp;</a></span>class_probs</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;double&gt; &gt; gpmp::ml::BayesBernoulli::inputSet</td>
+          <td class="memname">std::unordered_map&lt;std::string, double&gt; gpmp::ml::BayesBernoulli::class_probs</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00105">105</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00130">130</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a908fed7720608ec9440eca73e9115c25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908fed7720608ec9440eca73e9115c25">&#9670;&nbsp;</a></span>outputSet</h2>
+<a id="adfb90ee056818d7465d9d38e83ac03b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb90ee056818d7465d9d38e83ac03b3">&#9670;&nbsp;</a></span>feat_probs</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::BayesBernoulli::outputSet</td>
+          <td class="memname">std::unordered_map&lt;std::string, std::unordered_map&lt;size_t, double&gt; &gt; gpmp::ml::BayesBernoulli::feat_probs</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00106">106</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00132">132</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a5a9e5de1c06b5b8e8b39d9094dbde390"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a9e5de1c06b5b8e8b39d9094dbde390">&#9670;&nbsp;</a></span>prior_0</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::BayesBernoulli::prior_0 = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00098">98</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a964168d35d63c0282e01e70dbf911c87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a964168d35d63c0282e01e70dbf911c87">&#9670;&nbsp;</a></span>prior_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::BayesBernoulli::prior_1 = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00097">97</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a245e0c01786e00c16b76dfa609e85761"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a245e0c01786e00c16b76dfa609e85761">&#9670;&nbsp;</a></span>theta</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::map&lt;double, int&gt; &gt; gpmp::ml::BayesBernoulli::theta</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00100">100</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aefd6a5ca3d8b68cf4a2013eaa88ef670"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefd6a5ca3d8b68cf4a2013eaa88ef670">&#9670;&nbsp;</a></span>vocab</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::BayesBernoulli::vocab</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00101">101</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a849fda95b74c83b3ed9bbdd9ad17076b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a849fda95b74c83b3ed9bbdd9ad17076b">&#9670;&nbsp;</a></span>y_hat</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; gpmp::ml::BayesBernoulli::y_hat</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8hpp_source.html#l00107">107</a> of file <a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/ml/<a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a></li>
+<li>modules/ml/<a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
