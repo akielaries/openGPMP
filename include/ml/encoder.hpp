@@ -48,57 +48,31 @@ namespace ml {
 
 class AutoEncoder {
   public:
-    AutoEncoder(std::vector<std::vector<double>> inputSet, int n_hidden);
+    int input_size;
 
-    std::vector<std::vector<double>>
-    modelSetTest(std::vector<std::vector<double>> X);
+    int hidden_size;
 
-    std::vector<double> modelTest(std::vector<double> x);
+    int output_size;
 
-    void gradientDescent(double learning_rate, int max_epoch, bool UI = 1);
+    double learning_rate;
 
-    void SGD(double learning_rate, int max_epoch, bool UI = 1);
+    std::vector<std::vector<double>> weights_input_hidden;
 
-    void
-    MBGD(double learning_rate, int max_epoch, int mini_batch_size, bool UI = 1);
+    std::vector<std::vector<double>> weights_hidden_output;
 
-    double score();
+    AutoEncoder(int input_size,
+                int hidden_size,
+                int output_size,
+                double learning_rate);
 
-    void save(std::string fileName);
+    std::vector<double> sigmoid(const std::vector<double> &x);
 
-  private:
-    double Cost(std::vector<std::vector<double>> y_hat,
-                std::vector<std::vector<double>> y);
+    std::vector<double> forward(const std::vector<double> &input);
 
-    std::vector<std::vector<double>>
-    Evaluate(std::vector<std::vector<double>> X);
+    void train(const std::vector<std::vector<double>> &training_data,
+               int epochs);
 
-    std::tuple<std::vector<std::vector<double>>,
-               std::vector<std::vector<double>>>
-    propagate(std::vector<std::vector<double>> X);
-
-    std::vector<double> Evaluate(std::vector<double> x);
-
-    std::tuple<std::vector<double>, std::vector<double>>
-    propagate(std::vector<double> x);
-
-    void forwardPass();
-
-    std::vector<std::vector<double>> inputSet;
-    std::vector<std::vector<double>> y_hat;
-
-    std::vector<std::vector<double>> weights1;
-    std::vector<std::vector<double>> weights2;
-
-    std::vector<double> bias1;
-    std::vector<double> bias2;
-
-    std::vector<std::vector<double>> z2;
-    std::vector<std::vector<double>> a2;
-
-    int n;
-    int k;
-    int n_hidden;
+    void printWeights();
 };
 
 } // namespace ml
