@@ -26,7 +26,7 @@ void setup_uart() {
     // disable USART during baud rate setting
     UCSR0B = 0;
 
-#elif __AVR_ATmega328__
+#elif __AVR_ATmega328P__
     // in case UART was put into power-reduction mode ...
     PRR &= ~_BV(PRUSART0);
 
@@ -56,7 +56,7 @@ void setup_uart() {
     // enable UART TX and RX (transmit x recieve)
     UCSR0B = _BV(TXEN0) | _BV(RXEN0); // Enable transmitter and receiver
 
-#elif __AVR_ATmega328__
+#elif __AVR_ATmega328P__
     // UART Control and Status Register B:
     // - Enable transmitter only
     UCSR0B = _BV(TXEN0);
@@ -89,10 +89,12 @@ void print_matrix(int matrix[2][2]) {
 }
 
 int main() {
-
+#ifdef __AVR_ATmega2560__
     // Set Pin 7 (Arduino Mega Pin 13) as an output
     DDRB |= (1 << PB7);
-
+#elif __AVR_ATmega328P__
+    DDRB |= (1 << PB0);
+#endif
     // Initialize UART
     setup_uart();
 
@@ -101,7 +103,11 @@ int main() {
 
     // Main loop
     while (1) {
+#ifdef __AVR_ATmega2560__
         PORTB ^= (1 << PB7);
+#elif __AVR_ATmega328P__
+        PORTB ^= (1 << PB0);
+#endif
         _delay_ms(100); // Wait for 500 milliseconds
 
         printf("We're looping... wait 1000ms\n");

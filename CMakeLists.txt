@@ -1,14 +1,14 @@
 #/************************************************************************* 
 # *                                  
 # *  Project               
-# *                        __  __ _______ _____  _  __
-# *                       |  \/  |__   __|  __ \| |/ /
-# *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' / 
-# * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <  
-# *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \ 
-# * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\  
-# *      | |                                          
-# *      |_|                                         
+# *                         _____ _____  __  __ _____
+# *                        / ____|  __ \|  \/  |  __ \
+# *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+# * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+# *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+# * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
+# *      | |
+# *      |_|
 # *
 # *
 # * Copyright (C) Akiel Aries, <akiel@akiel.org>.
@@ -34,7 +34,7 @@
 cmake_minimum_required(VERSION 3.16)
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
-                      -Wsign-compare -DNDEBUG -Wall -Wextra"
+                      -Wsign-compare -DNDEBUG -Wall -Wextra -D __GPMP_CPP_API__"
 )
 
 
@@ -101,77 +101,77 @@ if(BUILD_PYGPMP)
     else()
         message(STATUS "Python API built successfully")
     endif()
+
 else()
-    message(STATUS "Not building Python API. Use -DBUILD_PYGPMP=ON to build it.")
+    message(STATUS "Building source C++ API")
 
-enable_testing()
+    enable_testing()
 
-add_subdirectory(tests)
+    add_subdirectory(tests)
 
-############################################################
-# Create a library
-############################################################
+    ############################################################
+    # Create a library
+    ############################################################
 
-# Add the module directories
+    # Add the module directories
+    add_subdirectory(modules/arithmetic)
+    add_subdirectory(modules/calculus)
+    add_subdirectory(modules/disct)
+    add_subdirectory(modules/linalg)
+    add_subdirectory(modules/core)
+    add_subdirectory(modules/ml)
+    add_subdirectory(modules/nt)
 
-add_subdirectory(modules/arithmetic)
-add_subdirectory(modules/calculus)
-add_subdirectory(modules/disct)
-add_subdirectory(modules/linalg)
-add_subdirectory(modules/core)
-add_subdirectory(modules/ml)
-add_subdirectory(modules/nt)
+    add_library(${PROJECT_NAME} STATIC
+      $<TARGET_OBJECTS:arithmetic>
+      $<TARGET_OBJECTS:calculus>
+      $<TARGET_OBJECTS:disct>
+      $<TARGET_OBJECTS:linalg>
+      $<TARGET_OBJECTS:core>
+      $<TARGET_OBJECTS:ml>
+      $<TARGET_OBJECTS:nt>
+    )
 
-add_library(${PROJECT_NAME} STATIC
-  $<TARGET_OBJECTS:arithmetic>
-  $<TARGET_OBJECTS:calculus>
-  $<TARGET_OBJECTS:disct>
-  $<TARGET_OBJECTS:linalg>
-  $<TARGET_OBJECTS:core>
-  $<TARGET_OBJECTS:ml>
-  $<TARGET_OBJECTS:nt>
-)
+    # include directory for openGPMP
+    target_include_directories(${PROJECT_NAME} PUBLIC 
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+        PRIVATE modules
+    )
 
-# include directory for openGPMP
-target_include_directories(${PROJECT_NAME} PUBLIC 
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-    PRIVATE modules
-)
+    set_target_properties(${PROJECT_NAME} 
+        PROPERTIES
+        VERSION ${PROJECT_VERSION}
+    )
 
-set_target_properties(${PROJECT_NAME} 
-    PROPERTIES
-    VERSION ${PROJECT_VERSION}
-)
+    install(TARGETS ${PROJECT_NAME} EXPORT openGPMPConfig 
+        ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR}
+    )
 
-install(TARGETS ${PROJECT_NAME} EXPORT openGPMPConfig 
-    ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
+    # install include directory to /usr/local/include/openGPMP
+    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openGPMP"
+    )
 
-# install include directory to /usr/local/include/openGPMP
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openGPMP"
-)
+    install(EXPORT openGPMPConfig DESTINATION share/openGPMP/cmake)
 
-install(EXPORT openGPMPConfig DESTINATION share/openGPMP/cmake)
+    export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
 
-export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
+    # run C++ and Fortran unit tests
+    add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
+    add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
 
-# run C++ and Fortran unit tests
-add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
-add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+    # uninstall target
+    if(NOT TARGET uninstall)
+      configure_file(
+        "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+        IMMEDIATE @ONLY)
 
-# uninstall target
-if(NOT TARGET uninstall)
-  configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-    IMMEDIATE @ONLY)
-
-  add_custom_target(uninstall
-    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
-endif()
+      add_custom_target(uninstall
+        COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+    endif()
 
 endif()

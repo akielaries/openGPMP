@@ -6,7 +6,7 @@
 %include <typemaps.i>
 %include <stdint.i>
 
-%module nt
+%module linalg
 
 %{
     #include "../../include/linalg/mtx.hpp"
