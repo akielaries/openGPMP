@@ -9,6 +9,8 @@
 [![codecov](https://codecov.io/gh/akielaries/openGPMP/branch/main/graph/badge.svg?token=KJBGLP8DYJ)](https://codecov.io/gh/akielaries/openGPMP)
 ![clones](https://raw.githubusercontent.com/akielaries/openGPMP/traffic/traffic-openGPMP/clones.svg)
 [![openGPMP](https://github.com/akielaries/openGPMP/actions/workflows/opengpmp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)
+![](https://tokei.rs/b1/github/akielaries/openGPMP)
+
 
 # Overview
 **openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with no runtime dependencies. 
@@ -68,15 +70,6 @@ $ sudo make install
 $ LD_LIBRARY_PATH=/usr/local/lib
 ```
 
-To uninstall files simply run the following:
-
-```
-# enter the build dir from installation
-$ cd build
-$ sudo make uninstall
-
-```
-
 ## Python (pygpmp)
 To install the Python interface, use the pip package manager and run the following, `pip install
 pygpmp`. Additional hardware support is available with [SWIG](https://github.com/swig/swig) as a dependency for the pip
@@ -97,6 +90,24 @@ $ pip install .
 > **Note** In progress
 The Julia interface is built with the help of [wrapit](https://github.com/grasph/wrapit).
 
+
+To test the installation build some of the example drivers in the projects 
+[samples](https://github.com/akielaries/openGPMP/tree/main/samples) directory.
+
+```
+# compile yourself
+$ cd samples/cpp
+$ g++ mtx.cpp -lopenGPMP -o mtx
+$ g++ primes.cpp -lopenGPMP -o primes
+```
+
+To uninstall files related to openGPMP, simply run the following:
+
+```
+# enter the build dir from installation
+$ cd build
+$ sudo make uninstall
+```
 ## tinygpmp
 [`tinygpmp`](/tinygpmp) targets low-voltage, resource-constrained devices and is currently aiming to support
 AVR series MCUs, STM32 chips, and other embedded devices.
@@ -123,10 +134,21 @@ For more details view the project [documentation](https://akielaries.github.io/o
 View the simple examples on how to use some of the modules in different languages [here](https://github.com/akielaries/openGPMP/tree/main/samples).
 
 ```
-# compile yourself
-$ cd samples/cpp
-$ g++ mtx.cpp -lopenGPMP -o mtx
-$ g++ primes.cpp -lopenGPMP -o primes
+# clone the repo and enter
+$ git clone git@github.com:akielaries/openGPMP.git 
+$ cd openGPMP/scripts
+
+# to run all examples 
+$ ./all.sh
+
+# to remove the generated binaries
+$ cd ../ && make clean-mods
+
+# run unit tests and other checking methods
+$ make run-tests
+
+# clean up generated test files
+$ make clean-tests
 ```
 
 Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
