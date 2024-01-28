@@ -85,33 +85,65 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    6</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    std::vector&lt;std::vector&lt;size_t&gt;&gt; train_data = {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        {1, 0, 1},</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        {0, 1, 0},</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {1, 1, 1},</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {0, 0, 1},</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    };</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::vector&lt;std::string&gt; labels = {<span class="stringliteral">&quot;spam&quot;</span>, <span class="stringliteral">&quot;ham&quot;</span>, <span class="stringliteral">&quot;spam&quot;</span>, <span class="stringliteral">&quot;ham&quot;</span>};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html">gpmp::ml::BayesBernoulli</a> classifier(1.0);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    classifier.<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a1717c4d894994e7b4f784f68822253ac">train</a>(train_data, labels);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;size_t&gt; newData = {1, 0, 0};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string prediction = classifier.<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a88e5dec9c1817f6d6d04c197d0934aff">predict</a>(newData);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Predicted Class: &quot;</span> &lt;&lt; prediction &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">// Example for BayesBernoulli class</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    std::vector&lt;std::vector&lt;size_t&gt;&gt; bernoulli_train_data = {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        {1, 0, 1},</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {0, 1, 0},</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {1, 1, 1},</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {0, 0, 1},</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    };</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::vector&lt;std::string&gt; bernoulli_labels = {<span class="stringliteral">&quot;spam&quot;</span>, <span class="stringliteral">&quot;ham&quot;</span>, <span class="stringliteral">&quot;spam&quot;</span>, <span class="stringliteral">&quot;ham&quot;</span>};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html">gpmp::ml::BayesBernoulli</a> bernoulliClassifier(1.0);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    bernoulliClassifier.<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a1717c4d894994e7b4f784f68822253ac">train</a>(bernoulli_train_data, bernoulli_labels);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::vector&lt;size_t&gt; bernoulliNewData = {1, 0, 0};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::string bernoulliPrediction =</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        bernoulliClassifier.<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a88e5dec9c1817f6d6d04c197d0934aff">predict</a>(bernoulliNewData);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Print learned probabilities</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    classifier.<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a4bb0ba2ab3a116a84b3d50c0af1c015e">display</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Predicted Class (BayesBernoulli): &quot;</span> &lt;&lt; bernoulliPrediction</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Print learned probabilities for BayesBernoulli</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    bernoulliClassifier.<a class="code" href="classgpmp_1_1ml_1_1BayesBernoulli.html#a4bb0ba2ab3a116a84b3d50c0af1c015e">display</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Example for BayesClf class</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; clf_train_data = {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {1.0, 2.0, 3.0},</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {2.0, 3.0, 4.0},</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {3.0, 4.0, 5.0},</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {4.0, 5.0, 6.0},</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;std::string&gt; clf_labels = {<span class="stringliteral">&quot;classA&quot;</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                           <span class="stringliteral">&quot;classB&quot;</span>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                           <span class="stringliteral">&quot;classA&quot;</span>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                           <span class="stringliteral">&quot;classB&quot;</span>};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1BayesClf.html">gpmp::ml::BayesClf</a> clfClassifier(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        1.0,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {0.4, 0.6}); <span class="comment">// Example with predefined class priors</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    clfClassifier.<a class="code" href="classgpmp_1_1ml_1_1BayesClf.html#a29d948728fef27175da92af7fc69038a">train</a>(clf_train_data, clf_labels);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;double&gt; clfNewData = {2.0, 3.0, 4.0};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::string clfPrediction = clfClassifier.predict(clfNewData);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Predicted Class (BayesClf): &quot;</span> &lt;&lt; clfPrediction &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Print learned probabilities for BayesClf</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    clfClassifier.display();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="ttc" id="abayes_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="bayes_8cpp_source.html#l00006">bayes.cpp:6</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html">gpmp::ml::BayesBernoulli</a></div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00128">bayes_clf.hpp:128</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a1717c4d894994e7b4f784f68822253ac"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a1717c4d894994e7b4f784f68822253ac">gpmp::ml::BayesBernoulli::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; size_t &gt;&gt; &amp;data, const std::vector&lt; std::string &gt; &amp;labels)</div><div class="ttdoc">Train the classifier with a set of labeled data.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00151">bayes_clf.cpp:151</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a4bb0ba2ab3a116a84b3d50c0af1c015e"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a4bb0ba2ab3a116a84b3d50c0af1c015e">gpmp::ml::BayesBernoulli::display</a></div><div class="ttdeci">void display() const</div><div class="ttdoc">Display the learned probabilities.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00209">bayes_clf.cpp:209</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a88e5dec9c1817f6d6d04c197d0934aff"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a88e5dec9c1817f6d6d04c197d0934aff">gpmp::ml::BayesBernoulli::predict</a></div><div class="ttdeci">std::string predict(const std::vector&lt; size_t &gt; &amp;newData) const</div><div class="ttdoc">Predict the class of a new data point.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00187">bayes_clf.cpp:187</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html">gpmp::ml::BayesBernoulli</a></div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00133">bayes_clf.hpp:133</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a1717c4d894994e7b4f784f68822253ac"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a1717c4d894994e7b4f784f68822253ac">gpmp::ml::BayesBernoulli::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; size_t &gt;&gt; &amp;data, const std::vector&lt; std::string &gt; &amp;labels)</div><div class="ttdoc">Train the classifier with a set of labeled data.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00160">bayes_clf.cpp:160</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a4bb0ba2ab3a116a84b3d50c0af1c015e"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a4bb0ba2ab3a116a84b3d50c0af1c015e">gpmp::ml::BayesBernoulli::display</a></div><div class="ttdeci">void display() const</div><div class="ttdoc">Display the learned probabilities.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00218">bayes_clf.cpp:218</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesBernoulli_html_a88e5dec9c1817f6d6d04c197d0934aff"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesBernoulli.html#a88e5dec9c1817f6d6d04c197d0934aff">gpmp::ml::BayesBernoulli::predict</a></div><div class="ttdeci">std::string predict(const std::vector&lt; size_t &gt; &amp;newData) const</div><div class="ttdoc">Predict the class of a new data point.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00196">bayes_clf.cpp:196</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesClf_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesClf.html">gpmp::ml::BayesClf</a></div><div class="ttdoc">Bayes Classifier Class based on assumptions of independence.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00061">bayes_clf.hpp:61</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesClf_html_a29d948728fef27175da92af7fc69038a"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesClf.html#a29d948728fef27175da92af7fc69038a">gpmp::ml::BayesClf::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;data, const std::vector&lt; std::string &gt; &amp;labels)</div><div class="ttdoc">Train the classifier with a set of labeled data.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00057">bayes_clf.cpp:57</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
