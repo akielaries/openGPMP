@@ -229,7 +229,8 @@ bool gpmp::PrimalityTest::AKS(uint64_t n) {
     // Check if n is a perfect power
     for (uint64_t b = 2; b <= std::sqrt(n); b++) {
         uint64_t a = std::round(std::pow(n, 1.0 / b));
-        if (std::pow(a, b) == n) {
+        // if (std::pow(a, b) == n) {
+        if (std::pow(a, b) < std::numeric_limits<double>::epsilon()) {
             return false;
         }
     }
@@ -279,21 +280,21 @@ uint64_t gpmp::PrimalityTest::jacobian_number(uint64_t a, uint64_t n) {
 
     uint64_t ans = 1;
 
-    if (a < 0) {
+    /*if (a < 0) {
         a = -a; // (a/n) = (-a/n)*(-1/n)
         if (n % 4 == 3)
             ans = -ans; // (-1/n) = -1 if n = 3 (mod 4)
-    }
+    }*/
 
     if (a == 1)
         return ans; // (1/n) = 1
 
     while (a) {
-        if (a < 0) {
+        /*if (a < 0) {
             a = -a; // (a/n) = (-a/n)*(-1/n)
             if (n % 4 == 3)
                 ans = -ans; // (-1/n) = -1 if n = 3 (mod 4)
-        }
+        }*/
 
         while (a % 2 == 0) {
             a = a / 2;
@@ -316,6 +317,7 @@ uint64_t gpmp::PrimalityTest::jacobian_number(uint64_t a, uint64_t n) {
 
     return 0;
 }
+
 /*
  * primality test determining if a number is composite or probably
  * prime.

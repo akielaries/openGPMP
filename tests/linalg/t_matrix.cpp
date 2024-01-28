@@ -3,6 +3,7 @@
  ************************************************************************/
 #include "../../include/linalg/mtx.hpp"
 #include "../../include/linalg/mtx_tmpl.hpp"
+#include <cmath>
 #include <cstdint>
 #include <gtest/gtest.h>
 #include <iostream>
@@ -27,7 +28,8 @@ bool mtx_verif(const std::vector<std::vector<T>> &A,
 
     for (size_t i = 0; i < A.size(); ++i) {
         for (size_t j = 0; j < A[i].size(); ++j) {
-            if (A[i][j] != B[i][j]) {
+            if (std::abs(A[i][j] - B[i][j]) >
+                std::numeric_limits<T>::epsilon()) {
                 return false;
             }
         }
@@ -58,7 +60,8 @@ template <typename T>
 bool mtx_verif(const T *A, const T *B, int rows, int cols) {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            if (A[i * cols + j] != B[i * cols + j]) {
+            if (std::abs(A[i * cols + j] - B[i * cols + j]) >
+                std::numeric_limits<T>::epsilon()) {
                 return false;
             }
         }
