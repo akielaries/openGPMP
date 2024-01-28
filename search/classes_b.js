@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optimizers_921',['Optimizers',['../classgpmp_1_1ml_1_1Optimizers.html',1,'gpmp::ml']]]
+  ['optimizers_925',['Optimizers',['../classgpmp_1_1ml_1_1Optimizers.html',1,'gpmp::ml']]]
 ];

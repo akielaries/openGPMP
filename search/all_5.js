@@ -27,11 +27,10 @@ var searchData=
   ['euclideandivision_288',['EuclideanDivision',['../classgpmp_1_1EuclideanDivision.html',1,'gpmp']]],
   ['eulerianmethod_289',['eulerianMethod',['../classgpmp_1_1NumericalAnalysis.html#aeef3ab3a9947b91a88be8d5d03ddcd32',1,'gpmp::NumericalAnalysis::eulerianMethod(double(*derivative)(std::vector&lt; double &gt;), std::vector&lt; double &gt; q_0, double p, double h)'],['../classgpmp_1_1NumericalAnalysis.html#a9758dd6c0f72f9dfc7b2b16c101d1a6c',1,'gpmp::NumericalAnalysis::eulerianMethod(double(*derivative)(double), std::vector&lt; double &gt; q_0, double p, double h)']]],
   ['eval_290',['eval',['../classpygpmp_1_1calculus_1_1calculus_1_1Differential.html#ad48da46ac6b5d3290ee083155ce266ae',1,'pygpmp.calculus.calculus.Differential.eval()'],['../classgpmp_1_1Differential.html#afdcf9f795cf0b7e337a6433ff53bf444',1,'gpmp::Differential::eval()']]],
-  ['evaluate_291',['Evaluate',['../classgpmp_1_1ml_1_1Logreg.html#ade5597b2c9da44ab3092ecd24cf5d8e5',1,'gpmp::ml::Logreg::Evaluate()'],['../classgpmp_1_1ml_1_1SVC.html#a8085c62188d5159f2bb5c1923c542bce',1,'gpmp::ml::SVC::Evaluate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1SVC.html#ad24cede61dbaa2d03b807254fd45b404',1,'gpmp::ml::SVC::Evaluate(std::vector&lt; double &gt; x)']]],
+  ['evaluate_291',['Evaluate',['../classgpmp_1_1ml_1_1Logreg.html#a5c5fabf7c5bf3e42e09fc76e55d674fe',1,'gpmp::ml::Logreg::Evaluate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1Logreg.html#ade5597b2c9da44ab3092ecd24cf5d8e5',1,'gpmp::ml::Logreg::Evaluate(std::vector&lt; double &gt; x)'],['../classgpmp_1_1ml_1_1SVC.html#a8085c62188d5159f2bb5c1923c542bce',1,'gpmp::ml::SVC::Evaluate(std::vector&lt; std::vector&lt; double &gt;&gt; X)'],['../classgpmp_1_1ml_1_1SVC.html#ad24cede61dbaa2d03b807254fd45b404',1,'gpmp::ml::SVC::Evaluate(std::vector&lt; double &gt; x)']]],
   ['evaluate_292',['evaluate',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a19348fc95bfda7c7371199ec881ed06e',1,'gpmp::ml::PrimaryMLP']]],
-  ['evaluate_293',['Evaluate',['../classgpmp_1_1ml_1_1Logreg.html#a5c5fabf7c5bf3e42e09fc76e55d674fe',1,'gpmp::ml::Logreg']]],
-  ['examples_294',['Examples',['../md_docs_source_Examples.html',1,'']]],
-  ['examples_2emd_295',['Examples.md',['../Examples_8md.html',1,'']]],
-  ['expand_296',['expand',['../classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443',1,'RC5::expand()'],['../modules_2nt_2rc5_8cpp.html#a99e9fb46d2e7aeb5ffe1393c4fdaf3c0',1,'expand():&#160;rc5.cpp']]],
-  ['exponent_297',['exponent',['../classgpmp_1_1Term.html#a41e99bc7589ad62d6d68c88b9032779f',1,'gpmp::Term::exponent()'],['../classpygpmp_1_1calculus_1_1calculus_1_1Term.html#a4efa75cfaca87e0d82436b27920dcb4a',1,'pygpmp.calculus.calculus.Term.exponent()']]]
+  ['examples_293',['Examples',['../md_docs_source_Examples.html',1,'']]],
+  ['examples_2emd_294',['Examples.md',['../Examples_8md.html',1,'']]],
+  ['expand_295',['expand',['../classRC5.html#a08bb89bb76594e9b5ea87a9237a3e443',1,'RC5::expand()'],['../modules_2nt_2rc5_8cpp.html#a99e9fb46d2e7aeb5ffe1393c4fdaf3c0',1,'expand():&#160;rc5.cpp']]],
+  ['exponent_296',['exponent',['../classgpmp_1_1Term.html#a41e99bc7589ad62d6d68c88b9032779f',1,'gpmp::Term::exponent()'],['../classpygpmp_1_1calculus_1_1calculus_1_1Term.html#a4efa75cfaca87e0d82436b27920dcb4a',1,'pygpmp.calculus.calculus.Term.exponent()']]]
 ];
