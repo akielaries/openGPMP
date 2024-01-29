@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['k_407',['k',['../classgpmp_1_1ml_1_1kNN.html#ab08d3ac7c1118bcae9a5e5eee418f219',1,'gpmp::ml::kNN::k()'],['../classgpmp_1_1ml_1_1Logreg.html#a4bc0a9699239baef7fbe885bb94c5a6f',1,'gpmp::ml::Logreg::k()'],['../classgpmp_1_1ml_1_1SVC.html#a693fffd9e039d3e8500f320e8bf2c586',1,'gpmp::ml::SVC::k()']]],
-  ['k_408',['K',['../classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f',1,'gpmp::ml::CV']]],
+  ['k_407',['K',['../classgpmp_1_1ml_1_1CV.html#a3acc59fbea13324f54bec6284371a65f',1,'gpmp::ml::CV']]],
+  ['k_408',['k',['../classgpmp_1_1ml_1_1kNN.html#ab08d3ac7c1118bcae9a5e5eee418f219',1,'gpmp::ml::kNN::k()'],['../classgpmp_1_1ml_1_1Logreg.html#a4bc0a9699239baef7fbe885bb94c5a6f',1,'gpmp::ml::Logreg::k()'],['../classgpmp_1_1ml_1_1SVC.html#a693fffd9e039d3e8500f320e8bf2c586',1,'gpmp::ml::SVC::k()']]],
   ['k_2dfoldcv_2ecpp_409',['k-foldCV.cpp',['../k-foldCV_8cpp.html',1,'']]],
   ['k_2dfoldcv_2ehpp_410',['k-foldCV.hpp',['../k-foldCV_8hpp.html',1,'']]],
   ['keyword_411',['keyword',['../classpygpmp_1_1nt_1_1nt_1_1Cipher.html#ae2f036894bad8406310ac040bb7b35b0',1,'pygpmp.nt.nt.Cipher.keyword()'],['../classgpmp_1_1Cipher.html#a816f35c91049a9b7c6e258a39dc9dc1b',1,'gpmp::Cipher::keyword()']]],
