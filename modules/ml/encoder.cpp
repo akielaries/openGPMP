@@ -653,3 +653,38 @@ std::vector<double> gpmp::ml::RecurrentAutoEncoder::recurr_fwd(
 
     return recurrent_input;
 }
+
+gpmp::ml::FullAutoEncoder::FullAutoEncoder(int in_size, 
+                                           int h_size, 
+                                           int out_size, 
+                                           double l_rate)
+    : AutoEncoder(in_size, h_size, out_size, l_rate) {
+}
+
+void gpmp::ml::FullAutoEncoder::train(const std::vector<std::vector<double>>& training_data, int epochs) {
+    for (int epoch = 0; epoch < epochs; ++epoch) {
+        for (const auto& input : training_data) {
+            // forward pass
+            std::vector<double> hidden = forward(input);
+            std::vector<double> output = forward(hidden);
+
+            // backward pass (gradient descent)
+            for (int i = 0; i < output_size; ++i) {
+                for (int j = 0; j < hidden_size; ++j) {
+                    weights_hidden_output[j][i] -= learning_rate * (output[i] - input[i]) * hidden[j];
+                }
+            }
+
+            for (int i = 0; i < hidden_size; ++i) {
+                for (int j = 0; j < input_size; ++j) {
+                    double error = 0;
+                    for (int k = 0; k < output_size; ++k) {
+                        error += (output[k] - input[k]) * weights_hidden_output[i][k];
+                    }
+                    weights_input_hidden[j][i] -= learning_rate * error * input[j] * (1 - hidden[i]) * hidden[i];
+                }
+            }
+        }
+    }
+}
+
