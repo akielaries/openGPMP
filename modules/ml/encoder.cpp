@@ -35,8 +35,46 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
+#include <ctime>
+#include <fstream>
 #include <iostream>
 #include <vector>
+
+void gpmp::ml::AutoEncoder::save(const std::string &filename) const {
+    std::ofstream file(filename, std::ios::out | std::ios::binary);
+
+    if (file.is_open()) {
+        file.write(reinterpret_cast<const char *>(&weights_input_hidden[0][0]),
+                   weights_input_hidden.size() *
+                       weights_input_hidden[0].size() * sizeof(double));
+        file.write(reinterpret_cast<const char *>(&weights_hidden_output[0][0]),
+                   weights_hidden_output.size() *
+                       weights_hidden_output[0].size() * sizeof(double));
+
+        file.close();
+        std::cout << "Model saved successfully." << std::endl;
+    } else {
+        std::cerr << "Unable to open the file for saving." << std::endl;
+    }
+}
+
+void gpmp::ml::AutoEncoder::load(const std::string &filename) {
+    std::ifstream file(filename, std::ios::in | std::ios::binary);
+
+    if (file.is_open()) {
+        file.read(reinterpret_cast<char *>(&weights_input_hidden[0][0]),
+                  weights_input_hidden.size() * weights_input_hidden[0].size() *
+                      sizeof(double));
+        file.read(reinterpret_cast<char *>(&weights_hidden_output[0][0]),
+                  weights_hidden_output.size() *
+                      weights_hidden_output[0].size() * sizeof(double));
+
+        file.close();
+        std::cout << "Model loaded successfully." << std::endl;
+    } else {
+        std::cerr << "Unable to open the file for loading." << std::endl;
+    }
+}
 
 gpmp::ml::AutoEncoder::AutoEncoder(int in_size,
                                    int h_size,
@@ -167,25 +205,97 @@ void gpmp::ml::AutoEncoder::display() {
     }
 }
 
-gpmp::ml::SparseAutoEncoder::SparseAutoEncoder(int input_size,
-                                               int hidden_size,
-                                               int output_size,
-                                               double learning_rate,
-                                               double sparsity_weight,
-                                               double sparsity_target)
-    : AutoEncoder(input_size, hidden_size, output_size, learning_rate),
-      sparsity_weight(sparsity_weight), sparsity_target(sparsity_target) {
+gpmp::ml::SparseAutoEncoder::SparseAutoEncoder(int in_size,
+                                               int h_size,
+                                               int out_size,
+                                               double l_rate,
+                                               double s_weight,
+                                               double s_target)
+    : AutoEncoder(in_size, h_size, out_size, l_rate), sparsity_weight(s_weight),
+      sparsity_target(s_target) {
 }
 
 void gpmp::ml::SparseAutoEncoder::train(
     const std::vector<std::vector<double>> &training_data,
     int epochs) {
+
+    const double SPARSITY_TARGET_DECAY = 0.1;
+
+    for (int epoch = 0; epoch < epochs; ++epoch) {
+        for (const auto &current_input : training_data) {
+            // forward pass
+            std::vector<double> hidden = forward(current_input);
+
+            // backward pass (gradient descent)
+            for (int i = 0; i < output_size; ++i) {
+                for (int j = 0; j < hidden_size; ++j) {
+                    weights_hidden_output[j][i] -=
+                        learning_rate * (hidden[i] - current_input[i]) *
+                        hidden[j];
+                }
+            }
+
+            for (int i = 0; i < hidden_size; ++i) {
+                for (int j = 0; j < input_size; ++j) {
+                    double error = 0;
+                    for (int k = 0; k < output_size; ++k) {
+                        error += (hidden[k] - current_input[k]) *
+                                 weights_hidden_output[i][k];
+                    }
+
+                    double sparsity_term =
+                        sparsity_weight * (sparsity_target - hidden[i]);
+
+                    weights_input_hidden[j][i] -=
+                        learning_rate * (error + sparsity_term) *
+                        current_input[j] * (1 - hidden[i]) * hidden[i];
+                }
+            }
+
+            for (int i = 0; i < hidden_size; ++i) {
+                double average_activation = 0.0;
+                for (const auto &input : training_data) {
+                    std::vector<double> current_hidden = forward(input);
+                    average_activation += current_hidden[i];
+                }
+                average_activation /= training_data.size();
+                sparsity_target =
+                    (1.0 - SPARSITY_TARGET_DECAY) * sparsity_target +
+                    SPARSITY_TARGET_DECAY * average_activation;
+            }
+        }
+    }
+}
+
+gpmp::ml::DenoisingAutoEncoder::DenoisingAutoEncoder(int in_size,
+                                                     int h_size,
+                                                     int out_size,
+                                                     double l_rate,
+                                                     double c_level)
+    : AutoEncoder(in_size, h_size, out_size, l_rate),
+      corruption_level(c_level) {
+}
+
+void gpmp::ml::DenoisingAutoEncoder::train(
+    const std::vector<std::vector<double>> &training_data,
+    int epochs) {
+    std::srand(std::time(0));
+
     for (int epoch = 0; epoch < epochs; ++epoch) {
         for (const auto &input : training_data) {
-            // Forward pass
-            std::vector<double> hidden = forward(input);
+            // add noise to the input data
+            std::vector<double> noisy_input = input;
+            for (double &val : noisy_input) {
+                if ((std::rand() / (RAND_MAX + 1.0)) < corruption_level) {
+                    // set to zero with probability corruption_level
+                    val = 0.0;
+                }
+            }
 
-            // Backward pass (gradient descent)
+            // forward pass
+            std::vector<double> hidden = forward(noisy_input);
+
+            // backward pass (gradient descent)
             for (int i = 0; i < output_size; ++i) {
                 for (int j = 0; j < hidden_size; ++j) {
                     weights_hidden_output[j][i] -=
@@ -200,24 +310,10 @@ void gpmp::ml::SparseAutoEncoder::train(
                         error += (hidden[k] - input[k]) *
                                  weights_hidden_output[i][k];
                     }
-
-                    double sparsity_term =
-                        sparsity_weight * (sparsity_target - hidden[i]);
-
-                    weights_input_hidden[j][i] -=
-                        learning_rate * (error + sparsity_term) * input[j] *
-                        (1 - hidden[i]) * hidden[i];
+                    weights_input_hidden[j][i] -= learning_rate * error *
+                                                  noisy_input[j] *
+                                                  (1 - hidden[i]) * hidden[i];
                 }
-            }
-            for (int i = 0; i < hidden_size; ++i) {
-                double average_activation = 0.0;
-                for (const auto &input : training_data) {
-                    std::vector<double> hidden = forward(input);
-                    average_activation += hidden[i];
-                }
-                average_activation /= training_data.size();
-                sparsity_target =
-                    0.9 * sparsity_target + 0.1 * average_activation;
             }
         }
     }

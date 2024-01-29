@@ -143,8 +143,8 @@ class AutoEncoder {
      * @param training_data Matrix containing training data
      * @param epochs Number of training epochs
      */
-    void train(const std::vector<std::vector<double>> &training_data,
-               int epochs);
+    virtual void train(const std::vector<std::vector<double>> &training_data,
+                       int epochs);
 
     /**
      * @brief Print the weights of the autoencoder
@@ -153,6 +153,20 @@ class AutoEncoder {
      * hidden layer to the output layer
      */
     void display();
+
+    /**
+     * @brief Save the model weights to a file
+     *
+     * @param filename The name of the file to save the weights to
+     */
+    virtual void save(const std::string &filename) const;
+
+    /**
+     * @brief Load model weights from a file
+     *
+     * @param filename The name of the file to load the weights from
+     */
+    virtual void load(const std::string &filename);
 };
 
 /**
@@ -196,7 +210,46 @@ class SparseAutoEncoder : public AutoEncoder {
      * @param epochs The number of training epochs
      */
     void train(const std::vector<std::vector<double>> &training_data,
-               int epochs);
+               int epochs) override;
+};
+
+/**
+ * @brief DenoisingAutoEncoder class, a derived class from AutoEncoder
+ */
+class DenoisingAutoEncoder : public AutoEncoder {
+  public:
+    /**
+     * @brief Probability of setting an input value to zero during training
+     * (dropout rate)
+     */
+    double corruption_level;
+
+    /**
+     * @brief Constructor for the DenoisingAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     * @param corruption_level The probability of setting an input value to zero
+     * during training
+     */
+    DenoisingAutoEncoder(int input_size,
+                         int hidden_size,
+                         int output_size,
+                         double learning_rate,
+                         double corruption_level);
+
+    /**
+     * @brief Adds noise to the input data and trains the denoising autoencoder
+     *
+     * Overrides the train method in the base class for denoising
+     *
+     * @param training_data The training data
+     * @param epochs The number of training epochs
+     */
+    void train(const std::vector<std::vector<double>> &training_data,
+               int epochs) override;
 };
 
 } // namespace ml
