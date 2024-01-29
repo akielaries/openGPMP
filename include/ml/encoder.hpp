@@ -469,6 +469,53 @@ class VariationalAutoEncoder : public AutoEncoder {
                        int epochs) override;
 };
 
+/**
+ * @brief RecurrentAutoEncoder class, a derived class from AutoEncoder
+ */
+class RecurrentAutoEncoder : public AutoEncoder {
+  public:
+    /**
+     * @brief Weight matrix for the recurrent connections
+     */
+    std::vector<std::vector<double>> weights_recurrent;
+
+    /**
+     * @brief Constructor for the RecurrentAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     */
+    RecurrentAutoEncoder(int input_size,
+                         int hidden_size,
+                         int output_size,
+                         double learning_rate);
+
+    /**
+     * @brief Trains the recurrent autoencoder on the given sequential data
+     *
+     * Overrides the train method in the base class for handling temporal
+     * dependencies
+     *
+     * @param training_data The training data, which is a sequence of input
+     * vectors
+     * @param epochs The number of training epochs
+     */
+    void train(const std::vector<std::vector<double>> &training_data,
+               int epochs) override;
+
+    /**
+     * @brief Performs a forward pass through the recurrent layer
+     *
+     * @param input The input vector
+     * @param previous_hidden The hidden state from the previous time step
+     * @return The hidden state for the current time step
+     */
+    std::vector<double> recurr_fwd(const std::vector<double> &input,
+                                   const std::vector<double> &previous_hidden);
+};
+
 } // namespace ml
 
 } // namespace gpmp

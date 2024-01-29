@@ -576,3 +576,80 @@ void gpmp::ml::VariationalAutoEncoder::train(
         }
     }
 }
+
+gpmp::ml::RecurrentAutoEncoder::RecurrentAutoEncoder(int in_size,
+                                                     int h_size,
+                                                     int out_size,
+                                                     double l_rate)
+    : AutoEncoder(in_size, h_size, out_size, l_rate),
+      weights_recurrent(h_size, std::vector<double>(h_size, 0.0)) {
+}
+
+void gpmp::ml::RecurrentAutoEncoder::train(
+    const std::vector<std::vector<double>> &training_data,
+    int epochs) {
+    for (int epoch = 0; epoch < epochs; ++epoch) {
+        std::vector<double> previous_hidden(hidden_size, 0.0);
+
+        for (const auto &input : training_data) {
+            // forward pass
+            std::vector<double> hidden = recurr_fwd(input, previous_hidden);
+            std::vector<double> output = forward(hidden);
+
+            // backward pass (gradient descent)
+            for (int i = 0; i < output_size; ++i) {
+                for (int j = 0; j < hidden_size; ++j) {
+                    weights_hidden_output[j][i] -=
+                        learning_rate * (output[i] - input[i]) * hidden[j];
+                }
+            }
+
+            for (int i = 0; i < hidden_size; ++i) {
+                for (int j = 0; j < input_size; ++j) {
+                    double error = 0;
+                    for (int k = 0; k < output_size; ++k) {
+                        error += (output[k] - input[k]) *
+                                 weights_hidden_output[i][k];
+                    }
+                    weights_input_hidden[j][i] -= learning_rate * error *
+                                                  input[j] * (1 - hidden[i]) *
+                                                  hidden[i];
+                }
+            }
+
+            // recurrent weights update
+            for (int i = 0; i < hidden_size; ++i) {
+                for (int j = 0; j < hidden_size; ++j) {
+                    weights_recurrent[j][i] -=
+                        learning_rate * (hidden[i] - previous_hidden[i]) *
+                        hidden[j];
+                }
+            }
+
+            previous_hidden = hidden;
+        }
+    }
+}
+
+std::vector<double> gpmp::ml::RecurrentAutoEncoder::recurr_fwd(
+    const std::vector<double> &input,
+    const std::vector<double> &previous_hidden) {
+    std::vector<double> recurrent_input(hidden_size, 0.0);
+
+    // sum the weighted contributions from the current input and the previous
+    // hidden state
+    for (int i = 0; i < hidden_size; ++i) {
+        recurrent_input[i] = 0.0;
+        for (int j = 0; j < input_size; ++j) {
+            recurrent_input[i] += weights_input_hidden[j][i] * input[j];
+        }
+        for (int j = 0; j < hidden_size; ++j) {
+            recurrent_input[i] += weights_recurrent[j][i] * previous_hidden[j];
+        }
+        // activation function
+        // recurrent_input[i] = 1.0 / (1.0 + std::exp(-recurrent_input[i]));
+        recurrent_input[i] = sigmoid({recurrent_input[i]})[0];
+    }
+
+    return recurrent_input;
+}

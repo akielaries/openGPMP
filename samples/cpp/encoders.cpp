@@ -1,48 +1,60 @@
 #include "../../include/ml/encoder.hpp"
 #include <iostream>
 #include <vector>
-
 int main() {
     srand(time(0));
 
-    // input size, hidden size, output size, learning rate
-    gpmp::ml::AutoEncoder autoencoder(3, 2, 3, 0.1);
+    // Vanilla AutoEncoder
+    gpmp::ml::AutoEncoder ae(3, 2, 3, 0.1);
 
-    // training data (input and output should be the same for an autoencoder)
+    std::cout << "Vanilla AutoEncoder Training:\n";
     std::vector<std::vector<double>> ae_training_data = {{1, 0, 0},
                                                          {0, 1, 0},
                                                          {0, 0, 1}};
+    ae.train(ae_training_data, 1000);
+    ae.display();
 
-    // train for 1000 epochs
-    autoencoder.train(ae_training_data, 1000);
-
-    // print the trained weights
-    autoencoder.display();
-
-    // test the autoencoder with a new input
+    std::cout << "\nTesting Vanilla AutoEncoder:\n";
     std::vector<double> test_input = {1, 1, 0};
-    std::vector<double> output = autoencoder.forward(test_input);
-
-    // print the output
-    std::cout << "\nAutoencoder Output:\n";
+    std::vector<double> output = ae.forward(test_input);
+    std::cout << "Autoencoder Output:\n";
     for (double val : output) {
         std::cout << val << " ";
     }
 
-    // create an instance of SparseAutoEncoder
-    gpmp::ml::SparseAutoEncoder sparseAutoEncoder(3, 2, 3, 0.1, 0.01, 0.2);
+    // Sparse AutoEncoder
+    gpmp::ml::SparseAutoEncoder sparse_ae(3, 2, 3, 0.1, 0.01, 0.2);
 
-    // training data (input and output should be the same for an autoencoder)
+    std::cout << "\n\nSparse AutoEncoder Training:\n";
     std::vector<std::vector<double>> ae_training_data_sparse = {{1, 0, 0},
                                                                 {0, 1, 0},
                                                                 {0, 0, 1}};
+    sparse_ae.train(ae_training_data_sparse, 1000);
+    sparse_ae.display();
 
-    // train using the base class pointer
-    gpmp::ml::AutoEncoder *basePtr = &sparseAutoEncoder;
-    basePtr->train(ae_training_data_sparse, 1000);
+    // Denoising AutoEncoder
+    gpmp::ml::DenoisingAutoEncoder denoise_ae(3, 2, 3, 0.1, 0.2);
 
-    // print the trained weights
-    basePtr->display();
+    std::cout << "\nDenoising AutoEncoder Training:\n";
+    denoise_ae.train(ae_training_data, 1000);
+    denoise_ae.display();
+
+    // Contractive AutoEncoder
+    gpmp::ml::ContractiveAutoEncoder contractive_ae(3, 2, 3, 0.1, 0.01);
+
+    std::cout << "\nContractive AutoEncoder Training:\n";
+    contractive_ae.train(ae_training_data, 1000);
+    contractive_ae.display();
+
+    // Recurrent AutoEncoder
+    gpmp::ml::RecurrentAutoEncoder recurrent_ae(3, 2, 3, 0.1);
+
+    std::cout << "\nRecurrent AutoEncoder Training:\n";
+    std::vector<std::vector<double>> recurrent_ae_training_data = {{1, 0, 0},
+                                                                   {0, 1, 0},
+                                                                   {0, 0, 1}};
+    recurrent_ae.train(recurrent_ae_training_data, 1000);
+    recurrent_ae.display();
 
     return 0;
 }
