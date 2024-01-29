@@ -147,6 +147,20 @@ class AutoEncoder {
                        int epochs);
 
     /**
+     * @brief Set the initial learning rate
+     *
+     * @param initial_rate The initial learning rate
+     */
+    void lrate_set(double initial_rate);
+
+    /**
+     * @brief Update the learning rate based on a schedule
+     *
+     * @param epoch The current training epoch
+     */
+    virtual void lrate_update(int epoch);
+
+    /**
      * @brief Print the weights of the autoencoder
      *
      * Prints the weights from the input layer to the hidden layer and from the

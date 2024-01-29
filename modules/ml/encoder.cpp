@@ -76,6 +76,21 @@ void gpmp::ml::AutoEncoder::load(const std::string &filename) {
     }
 }
 
+void gpmp::ml::AutoEncoder::lrate_set(double initial_rate) {
+    learning_rate = initial_rate;
+}
+
+void gpmp::ml::AutoEncoder::lrate_update(int epoch) {
+    // reduce the learning rate by half every N epochs
+    const int decay_interval = 10;
+    if (epoch % decay_interval == 0) {
+        learning_rate /= 2.0;
+        std::cout << "Learning rate updated to: " << learning_rate
+                  << " at epoch " << epoch << std::endl;
+    }
+    // TODO?
+}
+
 gpmp::ml::AutoEncoder::AutoEncoder(int in_size,
                                    int h_size,
                                    int out_size,
