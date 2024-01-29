@@ -657,6 +657,83 @@ $(function() {
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        }</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    }</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;}</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
+<div class="line"><a name="l00580"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#a893f2521f3871c12fd1e204260ea6358">  580</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#a893f2521f3871c12fd1e204260ea6358">gpmp::ml::RecurrentAutoEncoder::RecurrentAutoEncoder</a>(<span class="keywordtype">int</span> in_size,</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                                                     <span class="keywordtype">int</span> h_size,</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                                                     <span class="keywordtype">int</span> out_size,</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                                                     <span class="keywordtype">double</span> l_rate)</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    : <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html">AutoEncoder</a>(in_size, h_size, out_size, l_rate),</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;      weights_recurrent(h_size, std::vector&lt;double&gt;(h_size, 0.0)) {</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;}</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
+<div class="line"><a name="l00588"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#acca780bef0a1bd33df60811afc10ba28">  588</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#acca780bef0a1bd33df60811afc10ba28">gpmp::ml::RecurrentAutoEncoder::train</a>(</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;training_data,</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="keywordtype">int</span> epochs) {</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; epochs; ++epoch) {</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        std::vector&lt;double&gt; previous_hidden(hidden_size, 0.0);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;input : training_data) {</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            <span class="comment">// forward pass</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            std::vector&lt;double&gt; hidden = recurr_fwd(input, previous_hidden);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            std::vector&lt;double&gt; output = forward(hidden);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="comment">// backward pass (gradient descent)</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; output_size; ++i) {</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; hidden_size; ++j) {</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                    weights_hidden_output[j][i] -=</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                        learning_rate * (output[i] - input[i]) * hidden[j];</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                }</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            }</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; hidden_size; ++i) {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; input_size; ++j) {</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                    <span class="keywordtype">double</span> error = 0;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; output_size; ++k) {</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                        error += (output[k] - input[k]) *</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                 weights_hidden_output[i][k];</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                    }</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                    weights_input_hidden[j][i] -= learning_rate * error *</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                                                  input[j] * (1 - hidden[i]) *</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                                                  hidden[i];</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                }</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;            }</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;            <span class="comment">// recurrent weights update</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; hidden_size; ++i) {</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; hidden_size; ++j) {</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                    weights_recurrent[j][i] -=</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                        learning_rate * (hidden[i] - previous_hidden[i]) *</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                        hidden[j];</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                }</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            }</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            previous_hidden = hidden;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        }</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;}</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#a6f11ee10ef6c556418727c2e21e7e3cf">  634</a></span>&#160;std::vector&lt;double&gt; <a class="code" href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#a6f11ee10ef6c556418727c2e21e7e3cf">gpmp::ml::RecurrentAutoEncoder::recurr_fwd</a>(</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keyword">const</span> std::vector&lt;double&gt; &amp;input,</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keyword">const</span> std::vector&lt;double&gt; &amp;previous_hidden) {</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    std::vector&lt;double&gt; recurrent_input(hidden_size, 0.0);</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; </div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="comment">// sum the weighted contributions from the current input and the previous</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="comment">// hidden state</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; hidden_size; ++i) {</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        recurrent_input[i] = 0.0;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; input_size; ++j) {</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            recurrent_input[i] += weights_input_hidden[j][i] * input[j];</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        }</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; hidden_size; ++j) {</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            recurrent_input[i] += weights_recurrent[j][i] * previous_hidden[j];</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        }</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <span class="comment">// activation function</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <span class="comment">// recurrent_input[i] = 1.0 / (1.0 + std::exp(-recurrent_input[i]));</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        recurrent_input[i] = <a class="code" href="TEST_8cpp.html#aa924e8c95bc498ebc9f8e08a0c491e7c">sigmoid</a>({recurrent_input[i]})[0];</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    }</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keywordflow">return</span> recurrent_input;</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;}</div>
 <div class="ttc" id="aTEST_8cpp_html_aa924e8c95bc498ebc9f8e08a0c491e7c"><div class="ttname"><a href="TEST_8cpp.html#aa924e8c95bc498ebc9f8e08a0c491e7c">sigmoid</a></div><div class="ttdeci">double sigmoid(double x)</div><div class="ttdef"><b>Definition:</b> <a href="TEST_8cpp_source.html#l00017">TEST.cpp:17</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></div><div class="ttdoc">A simple implementation of a vanilla autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00059">encoder.hpp:59</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a1a70487de637a2f7809058a4d5cb395f"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">gpmp::ml::AutoEncoder::weights_input_hidden</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; weights_input_hidden</div><div class="ttdoc">Weights from the input layer to the hidden layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00097">encoder.hpp:97</a></div></div>
@@ -681,6 +758,9 @@ $(function() {
 <div class="ttc" id="aclassgpmp_1_1ml_1_1DenoisingAutoEncoder_html_a8a9841a4a3847d386930dcd49b112af7"><div class="ttname"><a href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html#a8a9841a4a3847d386930dcd49b112af7">gpmp::ml::DenoisingAutoEncoder::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs) override</div><div class="ttdoc">Adds noise to the input data and trains the denoising autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00293">encoder.cpp:293</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1MDLAutoEncoder_html_a42e9dc68b8229c7b4684e61be35adffb"><div class="ttname"><a href="classgpmp_1_1ml_1_1MDLAutoEncoder.html#a42e9dc68b8229c7b4684e61be35adffb">gpmp::ml::MDLAutoEncoder::MDLAutoEncoder</a></div><div class="ttdeci">MDLAutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate, double mdl_weight)</div><div class="ttdoc">Constructor for the MDLAutoEncoder class.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00379">encoder.cpp:379</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1MDLAutoEncoder_html_aaf41a52ccc6827b1181c35ff1fa2eab5"><div class="ttname"><a href="classgpmp_1_1ml_1_1MDLAutoEncoder.html#aaf41a52ccc6827b1181c35ff1fa2eab5">gpmp::ml::MDLAutoEncoder::train</a></div><div class="ttdeci">virtual void train(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs) override</div><div class="ttdoc">Trains the MDL autoencoder on the given training data.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00387">encoder.cpp:387</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1RecurrentAutoEncoder_html_a6f11ee10ef6c556418727c2e21e7e3cf"><div class="ttname"><a href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#a6f11ee10ef6c556418727c2e21e7e3cf">gpmp::ml::RecurrentAutoEncoder::recurr_fwd</a></div><div class="ttdeci">std::vector&lt; double &gt; recurr_fwd(const std::vector&lt; double &gt; &amp;input, const std::vector&lt; double &gt; &amp;previous_hidden)</div><div class="ttdoc">Performs a forward pass through the recurrent layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00634">encoder.cpp:634</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1RecurrentAutoEncoder_html_a893f2521f3871c12fd1e204260ea6358"><div class="ttname"><a href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#a893f2521f3871c12fd1e204260ea6358">gpmp::ml::RecurrentAutoEncoder::RecurrentAutoEncoder</a></div><div class="ttdeci">RecurrentAutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate)</div><div class="ttdoc">Constructor for the RecurrentAutoEncoder class.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00580">encoder.cpp:580</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1RecurrentAutoEncoder_html_acca780bef0a1bd33df60811afc10ba28"><div class="ttname"><a href="classgpmp_1_1ml_1_1RecurrentAutoEncoder.html#acca780bef0a1bd33df60811afc10ba28">gpmp::ml::RecurrentAutoEncoder::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs) override</div><div class="ttdoc">Trains the recurrent autoencoder on the given sequential data.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00588">encoder.cpp:588</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1SparseAutoEncoder_html_ab195583d142126b15e699f62beb26751"><div class="ttname"><a href="classgpmp_1_1ml_1_1SparseAutoEncoder.html#ab195583d142126b15e699f62beb26751">gpmp::ml::SparseAutoEncoder::train</a></div><div class="ttdeci">void train(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs) override</div><div class="ttdoc">Trains the sparse autoencoder on the given training data.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00232">encoder.cpp:232</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1SparseAutoEncoder_html_ad5bc37c15cc1f5045adc6e09ec69fcd6"><div class="ttname"><a href="classgpmp_1_1ml_1_1SparseAutoEncoder.html#ad5bc37c15cc1f5045adc6e09ec69fcd6">gpmp::ml::SparseAutoEncoder::SparseAutoEncoder</a></div><div class="ttdeci">SparseAutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate, double sparsity_weight, double sparsity_target)</div><div class="ttdoc">Constructor for the SparseAutoEncoder class.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00222">encoder.cpp:222</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1VariationalAutoEncoder_html_a1968e3b7baa93b2cf4b5093c4b7ee1a8"><div class="ttname"><a href="classgpmp_1_1ml_1_1VariationalAutoEncoder.html#a1968e3b7baa93b2cf4b5093c4b7ee1a8">gpmp::ml::VariationalAutoEncoder::encoder</a></div><div class="ttdeci">std::vector&lt; double &gt; encoder(const std::vector&lt; double &gt; &amp;input)</div><div class="ttdoc">Performs the forward pass for the encoder and returns hidden activations.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00491">encoder.cpp:491</a></div></div>
