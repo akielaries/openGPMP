@@ -52,6 +52,10 @@ namespace ml {
  * This class represents a basic autoencoder with one hidden layer. It can be
  * used for dimensionality reduction and feature learning
  */
+
+// TODO: this base class could probably use its own gradient descent method to
+// use across all inheriting classes OR create a class of trainers to use in
+// `trainers.cpp`?
 class AutoEncoder {
   public:
     /**
@@ -264,6 +268,205 @@ class DenoisingAutoEncoder : public AutoEncoder {
      */
     void train(const std::vector<std::vector<double>> &training_data,
                int epochs) override;
+};
+
+/**
+ * @brief ContractiveAutoEncoder class, a derived class from AutoEncoder
+ */
+class ContractiveAutoEncoder : public AutoEncoder {
+  public:
+    /**
+     * @brief Weight for the contractive penalty term
+     */
+    double contractive_weight;
+
+    /**
+     * @brief Constructor for the ContractiveAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     * @param contractive_weight The weight for the contractive penalty term
+     */
+    ContractiveAutoEncoder(int input_size,
+                           int hidden_size,
+                           int output_size,
+                           double learning_rate,
+                           double contractive_weight);
+
+    /**
+     * @brief Trains the contractive autoencoder on the given training data
+     *
+     * Overrides the train method in the base class with contractive penalty
+     *
+     * @param training_data The training data
+     * @param epochs The number of training epochs
+     */
+    virtual void train(const std::vector<std::vector<double>> &training_data,
+                       int epochs) override;
+};
+
+/**
+ * @brief MDLAutoEncoder Minimal Description Length class, a derived class from
+ * AutoEncoder
+ */
+class MDLAutoEncoder : public AutoEncoder {
+  public:
+    /**
+     * @brief Weight for the MDL penalty term
+     */
+    double mdl_weight;
+
+    /**
+     * @brief Constructor for the MDLAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     * @param mdl_weight The weight for the MDL penalty term
+     */
+    MDLAutoEncoder(int input_size,
+                   int hidden_size,
+                   int output_size,
+                   double learning_rate,
+                   double mdl_weight);
+
+    /**
+     * @brief Trains the MDL autoencoder on the given training data
+     *
+     * Overrides the train method in the base class with MDL penalty
+     *
+     * @param training_data The training data
+     * @param epochs The number of training epochs
+     */
+    virtual void train(const std::vector<std::vector<double>> &training_data,
+                       int epochs) override;
+};
+
+/**
+ * @brief ConcreteAutoEncoder class, a derived class from AutoEncoder
+ */
+class ConcreteAutoEncoder : public AutoEncoder {
+  public:
+    /**
+     * @brief Temperature parameter for the Concrete distribution
+     */
+    double temperature;
+
+    /**
+     * @brief Constructor for the ConcreteAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     * @param temperature The temperature parameter for the Concrete
+     * distribution
+     */
+    ConcreteAutoEncoder(int input_size,
+                        int hidden_size,
+                        int output_size,
+                        double learning_rate,
+                        double temperature);
+
+    /**
+     * @brief Trains the Concrete autoencoder on the given training data
+     *
+     * Overrides the train method in the base class with Concrete autoencoder
+     * specifics
+     *
+     * @param training_data The training data
+     * @param epochs The number of training epochs
+     */
+    virtual void train(const std::vector<std::vector<double>> &training_data,
+                       int epochs) override;
+};
+
+/**
+ * @brief VariationalAutoEncoder class, a derived class from AutoEncoder
+ */
+class VariationalAutoEncoder : public AutoEncoder {
+  public:
+    /**
+     * @brief keeps track of hidden means
+     */
+    std::vector<double> hidden_mean;
+    /**
+     * @brief keeps track of hidden log variance
+     */
+    std::vector<double> hidden_log_variance;
+
+    /**
+     * @brief Samples from a standard normal distribution
+     *
+     * @return A sample from the standard normal distribution.
+     */
+    double sample_dist();
+
+    /**
+     * @brief Reparameterization trick for variational autoencoders
+     *
+     * @param mean The mean of the distribution
+     * @param log_variance The log variance of the distribution
+     * @return A sample from the specified distribution
+     */
+    double reparameterize(double mean, double log_variance);
+
+    /**
+     * @brief Performs the forward pass for the encoder and returns hidden
+     * activations.
+     *
+     * @param input The input data.
+     * @return The hidden activations.
+     */
+    std::vector<double> encoder(const std::vector<double> &input);
+
+    /**
+     * @brief Performs the forward pass for the decoder and returns output
+     * activations.
+     *
+     * @param hidden_sampled The sampled hidden values.
+     * @return The output activations.
+     */
+    std::vector<double> decoder(const std::vector<double> &hidden_sampled);
+
+    /**
+     * @brief Performs the backward pass (gradient descent) updating weights.
+     *
+     * @param input The input data.
+     * @param output The output activations.
+     * @param hidden_sampled The sampled hidden values.
+     */
+    void gradient_descent(const std::vector<double> &input,
+                          const std::vector<double> &output,
+                          const std::vector<double> &hidden_sampled);
+
+    /**
+     * @brief Constructor for the VariationalAutoEncoder class
+     *
+     * @param input_size The size of the input layer
+     * @param hidden_size The size of the hidden layer
+     * @param output_size The size of the output layer
+     * @param learning_rate The learning rate for training
+     */
+    VariationalAutoEncoder(int input_size,
+                           int hidden_size,
+                           int output_size,
+                           double learning_rate);
+
+    /**
+     * @brief Trains the Variational autoencoder on the given training data
+     *
+     * Overrides the train method in the base class with Variational autoencoder
+     * specifics
+     *
+     * @param training_data The training data
+     * @param epochs The number of training epochs
+     */
+    virtual void train(const std::vector<std::vector<double>> &training_data,
+                       int epochs) override;
 };
 
 } // namespace ml

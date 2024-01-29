@@ -80,6 +80,7 @@ option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
 ############################################################
 #find_package(GTest REQUIRED)
 
+option(BUILD_TESTS "Build Unit Test Suite" OFF)
 option(BUILD_PYGPMP "Build Python API" OFF)
 
 if(BUILD_PYGPMP)
@@ -106,10 +107,6 @@ if(BUILD_PYGPMP)
 
 else()
     message(STATUS "Building source C++ API")
-
-    enable_testing()
-
-    add_subdirectory(tests)
 
     ############################################################
     # Create a library
@@ -161,9 +158,17 @@ else()
 
     export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
 
-    # run C++ and Fortran unit tests
-    add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
-    add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+    if (BUILD_TESTS)
+        message(STATUS "Building and running tests")
+
+        enable_testing()
+
+        add_subdirectory(tests)
+
+        # run C++ and Fortran unit tests
+        add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
+        add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+    endif()
 
     # uninstall target
     if(NOT TARGET uninstall)
