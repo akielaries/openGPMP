@@ -503,7 +503,7 @@ class RecurrentAutoEncoder : public AutoEncoder {
      * @param epochs The number of training epochs
      */
     virtual void train(const std::vector<std::vector<double>> &training_data,
-               int epochs) override;
+                       int epochs) override;
 
     /**
      * @brief Performs a forward pass through the recurrent layer
@@ -520,7 +520,7 @@ class RecurrentAutoEncoder : public AutoEncoder {
  * @brief FullAutoEncoder class, a derived class from AutoEncoder.
  */
 class FullAutoEncoder : public AutoEncoder {
-public:
+  public:
     /**
      * @brief Constructor for the FullAutoEncoder class.
      *
@@ -529,17 +529,22 @@ public:
      * @param output_size The size of the output layer.
      * @param learning_rate The learning rate for training.
      */
-    FullAutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate);
+    FullAutoEncoder(int input_size,
+                    int hidden_size,
+                    int output_size,
+                    double learning_rate);
 
     /**
      * @brief Trains the fully connected autoencoder on the given training data.
      *
-     * Overrides the train method in the base class for a fully connected architecture.
+     * Overrides the train method in the base class for a fully connected
+     * architecture.
      *
      * @param training_data The training data.
      * @param epochs The number of training epochs.
      */
-    virtual void train(const std::vector<std::vector<double>>& training_data, int epochs) override;
+    virtual void train(const std::vector<std::vector<double>> &training_data,
+                       int epochs) override;
 };
 
 } // namespace ml
