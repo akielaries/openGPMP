@@ -71,18 +71,20 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacegpmp.html">gpmp</a></li><li class="navelem"><a class="el" href="namespacegpmp_1_1ml.html">ml</a></li><li class="navelem"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">AutoEncoder</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacegpmp.html">gpmp</a></li><li class="navelem"><a class="el" href="namespacegpmp_1_1ml.html">ml</a></li><li class="navelem"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html">DenoisingAutoEncoder</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">gpmp::ml::AutoEncoder Member List</div>  </div>
+<div class="title">gpmp::ml::DenoisingAutoEncoder Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html">gpmp::ml::DenoisingAutoEncoder</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder</a>(int input_size, int hidden_size, int output_size, double learning_rate)</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html#ad36a09f58483f2f8e962759247f905b1">corruption_level</a></td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html">gpmp::ml::DenoisingAutoEncoder</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html#a71eb23a1e9fdf2c34acc8e5f9cd0b769">DenoisingAutoEncoder</a>(int input_size, int hidden_size, int output_size, double learning_rate, double corruption_level)</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html">gpmp::ml::DenoisingAutoEncoder</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aceee8e64ec99bb891483cfaac7a42e2d">display</a>()</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">forward</a>(const std::vector&lt; double &gt; &amp;input)</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a></td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
@@ -92,7 +94,7 @@ $(function() {
   <tr><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a></td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#ae89809bf0ae2f3383d26a92a9367da18">save</a>(const std::string &amp;filename) const</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#aefb06de41213caac4e0e7f93896b85cd">sigmoid</a>(const std::vector&lt; double &gt; &amp;x)</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a8768d78cf66e95fbab116e22e075706a">train</a>(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs)</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html#a8a9841a4a3847d386930dcd49b112af7">train</a>(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;training_data, int epochs) override</td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1DenoisingAutoEncoder.html">gpmp::ml::DenoisingAutoEncoder</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a></td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a></td><td class="entry"><a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html">gpmp::ml::AutoEncoder</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
