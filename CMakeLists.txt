@@ -44,23 +44,26 @@ set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
 project(openGPMP LANGUAGES CXX C ASM Fortran)
 
 # Dynamically determine the project version based on the latest Git tag
-find_package(Git)
+#find_package(Git)
 
-if(GIT_FOUND)
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} describe --tags
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        OUTPUT_VARIABLE GIT_TAG
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
+#if(GIT_FOUND)
+#    execute_process(
+#        COMMAND ${GIT_EXECUTABLE} describe --tags
+#        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+#        OUTPUT_VARIABLE GIT_TAG
+#        OUTPUT_STRIP_TRAILING_WHITESPACE
+#    )
 
-    string(SUBSTRING "${GIT_TAG}" 1 -1 PROJECT_VERSION)
+#    string(SUBSTRING "${GIT_TAG}" 1 -1 PROJECT_VERSION)
 
-    message(STATUS "Determined project version: ${PROJECT_VERSION}")
-else()
-    set(PROJECT_VERSION "1.0")
-    message(WARNING "Git not found. Using default project version: ${PROJECT_VERSION}")
-endif()
+#    message(STATUS "Determined project version: ${PROJECT_VERSION}")
+#else()
+
+set(PROJECT_VERSION "1.0")
+
+#message(WARNING "Git not found. Using default project version: ${PROJECT_VERSION}")
+    
+#endif()
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
