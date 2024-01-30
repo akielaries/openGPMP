@@ -88,7 +88,7 @@ docs-analysis:
 	cp -r docs/analysis docs/doxygen/html
 
 docs-testcov:
-	cd .coverage && ./genhtml.sh
+	cd .coverage && ./genhtml && cp -r testing ../docs/doxygen
 
 
 clean-docs:

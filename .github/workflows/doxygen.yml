@@ -25,15 +25,17 @@ jobs:
           ls -lash
           tree
         
-      - name: Generate HTML Static Analysis and Unit Test Coverage
-        run: |
-          make docs-analysis
-          make docs-testcov
-
       - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: docs/doxygen/html
           config_file: Doxyfile
+
+      - name: Generate HTML Static Analysis and Unit Test Coverage
+        run: |
+          tree
+          make docs-analysis
+          make docs-testcov
+
 
