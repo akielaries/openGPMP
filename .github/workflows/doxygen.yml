@@ -22,6 +22,7 @@ jobs:
       - name: Dependencies
         run: |
           sudo apt install gcovr lcov cppcheck
+          ls -lash
         
       - name: Generate HTML Static Analysis and Unit Test Coverage
         run: |
