@@ -35,14 +35,13 @@ jobs:
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a 
 
-      - name: initalize github repo
-        uses: actions/checkout@v3
-
       - name: gtest on openGPMP
         run: |
           mkdir build && cd build
           cmake -S ../ -DBUILD_TESTS=ON && make
-          cp tests/lcov.info ../.coverage/
+
+      - name: Copy Code Coverage File
+          cp build/tests/lcov.info ../.coverage/
 
       - name: Codecov Sync
         uses: codecov/codecov-action@v3
