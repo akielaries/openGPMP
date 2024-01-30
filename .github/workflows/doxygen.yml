@@ -14,10 +14,11 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v3
 
-      #- uses: actions/download-artifact@v3
-      #  with:
-      #    name: LCOV
-      #    path: .coverage/lcov.info
+      - uses: actions/download-artifact@v3
+        with:
+          name: LCOV_FILE
+          path: .coverage/lcov.info
+      
       - name: Dependencies
         run: |
           sudo apt install gcovr lcov
