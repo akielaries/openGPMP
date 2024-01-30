@@ -41,6 +41,7 @@ jobs:
           cmake -S ../ -DBUILD_TESTS=ON && make
 
       - name: Copy Code Coverage File
+        run: |
           cp build/tests/lcov.info ../.coverage/
 
       - name: Codecov Sync
