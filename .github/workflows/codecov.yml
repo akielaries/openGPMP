@@ -35,11 +35,6 @@ jobs:
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a 
 
-      - name: action
-        run: |
-          ls -lash
-          git describe --tags
-
       - name: gtest on openGPMP
         run: |
           mkdir build && cd build
