@@ -38,8 +38,7 @@ jobs:
       - name: gtest on openGPMP
         run: |
           mkdir build && cd build
-          cmake -S ../ -DBUILD_TESTS=ON
-          make
+          cmake -S ../ -DBUILD_TESTS=ON && make
           cp tests/lcov.info ../.coverage/
 
       - name: Codecov Sync
