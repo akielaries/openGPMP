@@ -16,9 +16,6 @@ on:
     branches: [ main ]
 
 jobs:
-  documentation:
-    uses: ./.github/workflows/doxygen.yml
-
   src_changes:
     name: Check changes to src
     runs-on: 'ubuntu-20.04'
@@ -65,6 +62,10 @@ jobs:
     #needs: [ test_changes ]
     #if: needs.test_changes.outputs.tests_changed == 'True'
     uses: ./.github/workflows/codecov.yml
+
+  documentation:
+    needs: [tests_codecov]
+    uses: ./.github/workflows/doxygen.yml
 
   cpp:
     needs: [ src_changes ]
