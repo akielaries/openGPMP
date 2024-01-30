@@ -6,7 +6,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
     steps:
+      - name: initalize github repo
+        uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@master
+        with:
+          name: LCOV
+          path: .coverage/lcov.info
+        
+      - name: Generate HTML Static Analysis and Unit Test Coverage
+        run: |
+          make docs-analysis
+          make docs-testcov
+
       - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

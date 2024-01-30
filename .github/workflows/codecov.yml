@@ -36,12 +36,36 @@ jobs:
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a 
 
       - name: gtest on openMPTK
-        run: make run-tests
+        run: |
+          mkdir build && cd build
+          cmake -S ../ -DBUILD_TESTS=ON
+          cp tests/lcov.info ../.coverage/
 
-      - name: Codecov Sync     
+      - name: Codecov Sync
         uses: codecov/codecov-action@v3
         with:
           files: .coverage/lcov.info
           name: codecov-umbrella
           functionalities: fixes
           verbose: true
+
+      - name: Export Codacy token
+        run: |
+          export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }}
+
+      - name: Run Codacy Analysis CLI 
+        uses: codacy/codacy-analysis-cli-action@master
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+    
+      - name: Run Codacy Coverage
+        uses: codacy/codacy-coverage-reporter-action@master
+        with: 
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: .coverage/lcov.info
+          language: cpp 
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: LCOV
+          path: .coverage/lcov.info

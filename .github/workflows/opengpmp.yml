@@ -66,11 +66,6 @@ jobs:
     if: needs.test_changes.outputs.tests_changed == 'True'
     uses: ./.github/workflows/codecov.yml
 
-  tests_codacy:
-    needs: [ test_changes , tests_codecov ]
-    if: needs.test_changes.outputs.tests_changed == 'True'
-    uses: ./.github/workflows/codacy.yml
-
   cpp:
     needs: [ src_changes ]
     if: needs.src_changes.outputs.src_changed == 'True'

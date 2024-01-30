@@ -54,7 +54,8 @@ if(GIT_FOUND)
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
 
-    string(SUBSTRING ${GIT_TAG} 1 -1 PROJECT_VERSION)
+    string(SUBSTRING "${GIT_TAG}" 1 -1 PROJECT_VERSION)
+
     message(STATUS "Determined project version: ${PROJECT_VERSION}")
 else()
     set(PROJECT_VERSION "1.0")

@@ -16,10 +16,8 @@ CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
 
 OPM			= -lopenGPMP
 
-
 SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
-
 
 # testing created modules
 # using gtest
@@ -49,12 +47,6 @@ VGFLAGS		= --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=me
 TMEM		= $(PROJDIR)/tests/misc/t_memleak.cpp
 TMEMBIN		= t_memleak
 
-# test arith
-TSARDIR		= $(PROJDIR)/tests/arith
-TSARDRV		= $(PROJDIR)/tests/arith/t_arith.cpp
-TSARBIN		= t_arith
-
-
 # testing memory
 test-gtest: 
 	${CXX} ${TMEM} ${GTFLAGS} -o ${TMEMBIN}
@@ -82,4 +74,22 @@ clean-misc:
 
 openGPMP-docs:
 	doxygen
+	cd docs/analysis && \
+		cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
+		../../include/ ../../modules/ 2>analysis.xml && \
+		cppcheck-htmlreport --source-dir=docs/analysis --title=openGPMP --file=analysis.xml --report-dir=.
+	cp -r docs/analysis docs/doxygen/html
 
+docs-analysis:
+	cd docs/analysis && \
+		cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
+		../../include/ ../../modules/ 2>analysis.xml && \
+		cppcheck-htmlreport --source-dir=docs/analysis --title=openGPMP --file=analysis.xml --report-dir=.
+	cp -r docs/analysis docs/doxygen/html
+
+docs-testcov:
+	cd .coverage && ./genhtml
+
+
+clean-docs:
+	rm -rf docs/doxygen docs/analysis/*.html
