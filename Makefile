@@ -92,4 +92,4 @@ docs-testcov:
 
 
 clean-docs:
-	rm -rf docs/doxygen docs/analysis/*.html
+	rm -rf docs/doxygen docs/analysis/*.html docs/analysis/*.xml docs/analysis/*.css

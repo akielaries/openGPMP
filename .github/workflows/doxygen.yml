@@ -17,12 +17,12 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: LCOV_FILE
-          path: .coverage/lcov.info
+          path: .coverage
       
       - name: Dependencies
         run: |
           sudo apt install gcovr lcov cppcheck tree
-          ls -lash
+          ls -lash .coverage
           tree
         
       - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
