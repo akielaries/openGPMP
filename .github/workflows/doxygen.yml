@@ -21,8 +21,9 @@ jobs:
       
       - name: Dependencies
         run: |
-          sudo apt install gcovr lcov cppcheck
+          sudo apt install gcovr lcov cppcheck tree
           ls -lash
+          tree
         
       - name: Generate HTML Static Analysis and Unit Test Coverage
         run: |
