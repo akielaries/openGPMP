@@ -39,9 +39,9 @@ jobs:
           mkdir build && cd build
           cmake -S ../ -DBUILD_TESTS=ON && make
 
-      - name: Copy Code Coverage File
-        run: |
-          cp build/tests/lcov.info .coverage/
+        #- name: Copy Code Coverage File
+        #run: |
+        #  cp build/tests/lcov.info .coverage/
 
       - name: Codecov Sync
         uses: codecov/codecov-action@v3
