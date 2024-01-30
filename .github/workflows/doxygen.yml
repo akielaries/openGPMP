@@ -18,6 +18,9 @@ jobs:
       #  with:
       #    name: LCOV
       #    path: .coverage/lcov.info
+      - name: Dependencies
+        run: |
+          sudo apt install gcovr lcov
         
       - name: Generate HTML Static Analysis and Unit Test Coverage
         run: |
