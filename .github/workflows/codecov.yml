@@ -35,9 +35,12 @@ jobs:
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a 
 
-      - name: gtest on openGPMP
+      - name: action
         run: |
           ls -lash
+
+      - name: gtest on openGPMP
+        run: |
           mkdir build && cd build
           cmake -S ../ -DBUILD_TESTS=ON && make
 
