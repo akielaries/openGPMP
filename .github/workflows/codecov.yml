@@ -38,6 +38,7 @@ jobs:
       - name: action
         run: |
           ls -lash
+          git describe --tags
 
       - name: gtest on openGPMP
         run: |
