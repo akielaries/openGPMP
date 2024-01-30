@@ -37,6 +37,7 @@ jobs:
 
       - name: gtest on openGPMP
         run: |
+          ls -lash
           mkdir build && cd build
           cmake -S ../ -DBUILD_TESTS=ON && make
 

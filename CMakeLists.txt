@@ -140,8 +140,7 @@ else()
     )
 
     set_target_properties(${PROJECT_NAME} 
-        PROPERTIES
-        VERSION ${PROJECT_VERSION}
+        PROPERTIES VERSION ${PROJECT_VERSION}
     )
 
     install(TARGETS ${PROJECT_NAME} EXPORT openGPMPConfig 
