@@ -41,7 +41,7 @@ jobs:
 
       - name: Copy Code Coverage File
         run: |
-          cp build/tests/lcov.info ../.coverage/
+          cp build/tests/lcov.info ./.coverage/
 
       - name: Codecov Sync
         uses: codecov/codecov-action@v3
