@@ -14,7 +14,7 @@ jobs:
       - name: initalize github repo
         uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@v4
         with:
           name: LCOV
           path: .coverage/lcov.info
