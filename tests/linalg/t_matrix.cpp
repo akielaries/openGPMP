@@ -140,7 +140,7 @@ TEST(ADD_MTX_SMALL_VEC_INT, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_VEC_INT, assert_intel_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
@@ -248,7 +248,7 @@ TEST(ADD_MTX_SMALL_VEC_DOUBLE, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
@@ -339,7 +339,7 @@ TEST(ADD_MTX_SMALL_ARR_INT8, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_INT8, assert_intel_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int8_t *A = new int8_t[mtx_size * mtx_size];
@@ -413,7 +413,7 @@ TEST(ADD_MTX_SMALL_ARR_INT16, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_INT16, assert_intel_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int16_t *A = new int16_t[mtx_size * mtx_size];
@@ -500,7 +500,7 @@ TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_INT, assert_intel_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int *A = new int[mtx_size * mtx_size];
@@ -610,7 +610,7 @@ TEST(ADD_MTX_SMALL_ARR_DOUBLE, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
@@ -723,7 +723,7 @@ TEST(ADD_MTX_SMALL, assert_arm_intrin) {
 }
 
 TEST(ADD_MTX_LARGE, assert_arm_intrin) {
-    int mtx_size = 128;
+    int mtx_size = 8192;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
