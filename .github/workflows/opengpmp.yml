@@ -62,8 +62,8 @@ jobs:
         Write-Host "::set-output name=tests_changed::$HasDiff"
 
   tests_codecov:
-    needs: [ test_changes ]
-    if: needs.test_changes.outputs.tests_changed == 'True'
+    #needs: [ test_changes ]
+    #if: needs.test_changes.outputs.tests_changed == 'True'
     uses: ./.github/workflows/codecov.yml
 
   cpp:
