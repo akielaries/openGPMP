@@ -38,7 +38,14 @@ jobs:
       - name: gtest on openGPMP
         run: |
           mkdir build && cd build
+          # run tests and populate lcov.info file
           cmake -S ../ -DBUILD_TESTS=ON && make
+      
+      - name: Generate HTML Unit Test Coverage
+        run: |
+          tree
+          genhtml .coverage/lcov.info --legend --output-directory docs/testing
+          #make docs-testcov
 
         #- name: Copy Code Coverage File
         #run: |
@@ -54,5 +61,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: LCOV_FILE
-          path: .coverage/lcov.info
+          name: LCOV_FILES
+          #path: .coverage/lcov.info
+          path: docs/testing/
+
