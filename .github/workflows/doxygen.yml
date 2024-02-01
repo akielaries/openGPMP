@@ -21,6 +21,7 @@ jobs:
       
       - name: Dependencies
         run: |
+          sudo apt update && sudo apt upgrade
           sudo apt install gcovr lcov cppcheck tree
           ls -lash .coverage
           tree
