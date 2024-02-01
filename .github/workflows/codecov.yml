@@ -41,16 +41,12 @@ jobs:
           # run tests and populate lcov.info file
           cmake -S ../ -DBUILD_TESTS=ON && make
       
-      - name: Generate HTML Unit Test Coverage
+      - name: Generate HTML Analysis & Unit Test Coverage
         run: |
-          tree
+          tree docs
           genhtml .coverage/lcov.info --legend --output-directory docs/testing
-          tree
-          #make docs-testcov
-
-        #- name: Copy Code Coverage File
-        #run: |
-        #  cp build/tests/lcov.info .coverage/
+          make docs-analysis
+          tree docs
 
       - name: Codecov Sync
         uses: codecov/codecov-action@v3
@@ -64,5 +60,5 @@ jobs:
         with:
           name: LCOV_FILES
           #path: .coverage/lcov.info
-          path: docs/testing/
+          path: docs/
 
