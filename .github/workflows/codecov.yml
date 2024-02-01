@@ -44,7 +44,7 @@ jobs:
       - name: Generate HTML Analysis & Unit Test Coverage
         run: |
           tree docs
-          genhtml .coverage/lcov.info --legend --output-directory docs/testing
+          genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
           make docs-analysis
           tree docs
 

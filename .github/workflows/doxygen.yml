@@ -26,16 +26,19 @@ jobs:
           ls -lash .coverage
           tree
         
+      - name: Copy HTML Static Analysis and Unit Test Coverage
+        run: |
+          tree docs
+          #make docs-analysis
+          #cp -r docs/testing docs/doxygen/html
+          #cp -r docs/analysis docs/doxygen/html
+          #tree docs
+          #make docs-testcov
+
       - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: docs/doxygen/html
           config_file: Doxyfile
-        run: |
-          tree docs
-          make docs-analysis
-          cp -r docs/testing docs/doxygen/html
-          cp -r docs/analysis docs/doxygen/html
-          tree docs
-          #make docs-testcov
+
