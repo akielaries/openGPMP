@@ -85,7 +85,7 @@ docs-analysis:
 		cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
 		../../include/ ../../modules/ 2>analysis.xml && \
 		cppcheck-htmlreport --source-dir=docs/analysis --title=openGPMP --file=analysis.xml --report-dir=.
-	cp -r docs/analysis docs/doxygen/html
+	#cp -r docs/analysis docs/doxygen/html
 
 docs-testcov:
 	genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/testing
