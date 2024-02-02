@@ -5,41 +5,8 @@
 # define our project director
 PROJDIR     = $(realpath $(CURDIR))
 
-CC			= gcc
-CXX 		= g++ -std=c++20
-VERBOSE 	= TRUE
-
-CXX_DBG 	= -Wno-unused-result -Wsign-compare -DNDEBUG -g -O3 -Wall -Wextra
-# CXX_THREAD	= -lpthread  
-LIBXBGI		= /usr/lib/libXbgi.a
-CXX_VIZ		=  -lX11 -lGL -lGLU -lglut -lm
-
-OPM			= -lopenGPMP
-
 SRCDIR		= $(PROJDIR)/modules
 SRC 		= $(shell find $(PROJDIR)/src -name '*.c')
-
-# testing created modules
-# using gtest
-GTFLAGS		= -pthread -lgtest 
-
-GCOV		= gcov
-LCOV		= lcov
-GCOVFLAGS	= -fprofile-arcs -ftest-coverage
-LCOVFLAGS1	= --capture --directory 
-LCOVFLAGS2	= --output-file
-
-COVDIR		= $(PROJDIR)/.coverage
-COVREPORT	= lcov.info
-STORE_COV	= $(addprefix $(COVDIR), $(COVREPORT))
-
-# clean these coverage files
-GCDALEFTOVERS	= $(shell find $(PROJDIR) -name '*.gcda')
-GCNOLEFTOVERS	= $(shell find $(PROJDIR) -name '*.gcno')
-GCOVLEFTOVERS	= $(shell find $(PROJDIR) -name '*.gcov')
-
-GENREPORT	= genhtml
-GENFLAGS	= --output-directory
 
 VG			= valgrind
 VGFLAGS		= --leak-check=full --show-leak-kinds=all --track-origins=yes --tool=memcheck
@@ -56,16 +23,6 @@ test-gtest:
 test-leaks: 
 	${VG} ${VGFLAGS} ./${TMEMBIN}
 
-run-tests:
-	cd tests/ && sh -x test_all.sh
-	gcovr
-
-clean-tests:
-	cd tests/ && rm -f *.gc* web/ openGPMP_tests
-	rm -f ${TMEMBIN}
-	rm -f ${TSARBIN}
-	rm -f ${TCALCBIN}
-
 clean-misc:
 	cd pygpmp && rm -rf */*.cpp */*.so
 	rm -rf build/ dist/ pygpmp.egg-info/ 
@@ -73,24 +30,29 @@ clean-misc:
 	rm -rf __pycache__
 
 openGPMP-docs:
+	mkdir -p docs/doxygen/html/analysis
+	mkdir -p docs/doxygen/html/testing
 	doxygen
-	cd docs/analysis && \
-		cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
-		../../include/ ../../modules/ 2>analysis.xml && \
-		cppcheck-htmlreport --source-dir=docs/analysis --title=openGPMP --file=analysis.xml --report-dir=.
-	cp -r docs/analysis docs/doxygen/html
-
-docs-analysis:
 	cd docs/doxygen/html/analysis && \
 		cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
-		../../include/ ../../modules/ 2>analysis.xml && \
-		cppcheck-htmlreport --source-dir=docs/doxygen/html/analysis --title=openGPMP --file=analysis.xml --report-dir=.
+		../../../../include/ ../../../../modules/ 2>analysis.xml && \
+		cppcheck-htmlreport --source-dir=. --title=openGPMP --file=analysis.xml --report-dir=.
+	genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
 	#cp -r docs/analysis docs/doxygen/html
 
-docs-testcov:
-	genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
-	#cd .coverage && ./genhtml.sh && cp -r testing ../docs/doxygen/html
+docs-analysis:
+	mkdir -p docs/doxygen/html/analysis
+	#mkdir -p docs/doxygen/html/testing
+	cd docs/doxygen/html/analysis && \
+        cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
+        ../../../../include/ ../../../../modules/ 2>analysis.xml && \
+        cppcheck-htmlreport --source-dir=. --title=openGPMP --file=analysis.xml --report-dir=.
+	#genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
+	#cp -r docs/analysis docs/doxygen/html
 
+docs-testing:
+	mkdir -p docs/doxygen/html/testing
+	genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
 
 clean-docs:
-	rm -rf docs/doxygen docs/analysis/*.html docs/analysis/*.xml docs/analysis/*.css
+	rm -rf docs/doxygen
