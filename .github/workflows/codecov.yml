@@ -43,8 +43,8 @@ jobs:
       
       - name: Generate HTML Analysis & Unit Test Coverage
         run: |
-          make docs-analysis
           make docs-testing
+          make docs-analysis
           tree docs/
 
       - name: Codecov Sync
