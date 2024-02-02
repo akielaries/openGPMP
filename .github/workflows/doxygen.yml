@@ -2,6 +2,8 @@ name: Build Doxygen Documentation
 
 on:
   workflow_call:
+    branches:    
+      - main
 
 jobs:
   deploy:
@@ -23,31 +25,11 @@ jobs:
         run: |
           sudo apt update && sudo apt upgrade
           sudo apt install gcovr lcov cppcheck tree doxygen
-          ls -lash .coverage
-          tree
         
       - name: Copy HTML Static Analysis and Unit Test Coverage
         run: |
-          tree docs
-          #make docs-analysis
-          #cp -r docs/testing docs/doxygen/html
-          #cp -r docs/analysis docs/doxygen/html
-          #tree docs
-          #make docs-testcov
-
-      #- uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    branch: gh-pages
-      #    folder: docs/doxygen/html
-      #    config_file: Doxyfile
-      
-      - name: Copy HTML Static Analysis and Unit Test Coverage
-        run: |
-          tree docs
           cp -r docs/analysis/ docs/doxygen/html/
           cp -r docs/testing/ docs/doxygen/html/
-          tree docs
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
