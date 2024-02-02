@@ -42,16 +42,16 @@ jobs:
       #    folder: docs/doxygen/html
       #    config_file: Doxyfile
       
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs/doxygen/html
-
       - name: Copy HTML Static Analysis and Unit Test Coverage
         run: |
           tree docs
           cp -r docs/analysis/ docs/doxygen/html/
           cp -r docs/testing/ docs/doxygen/html/
           tree docs
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/doxygen/html
