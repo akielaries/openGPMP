@@ -30,14 +30,14 @@ clean-misc:
 	rm -rf __pycache__
 
 openGPMP-docs:
-	mkdir -p docs/doxygen/html/analysis
-	mkdir -p docs/doxygen/html/testing
+	mkdir -p docs/analysis
+	mkdir -p docs/testing
 	doxygen
-	cd docs/doxygen/html/analysis && \
+	cd docs/analysis && \
 		cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
-		../../../../include/ ../../../../modules/ 2>analysis.xml && \
+		../../include/ ../../modules/ 2>analysis.xml && \
 		cppcheck-htmlreport --source-dir=. --title=openGPMP --file=analysis.xml --report-dir=.
-	genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
+	genhtml .coverage/lcov.info --legend --output-directory docs/testing
 	#cp -r docs/analysis docs/doxygen/html
 
 docs-analysis:
