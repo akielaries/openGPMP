@@ -21,9 +21,8 @@ jobs:
 
       - name: install deps
         run: | 
-          sudo apt install lcov
-          pip install gcovr
-      
+          sudo apt update && sudo apt upgrade
+          sudo apt install lcov cmake gfortran cppcheck doxygen
       - name: Configure
         run: |
           sudo apt-get install libgtest-dev && 
@@ -35,13 +34,29 @@ jobs:
           sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && 
           sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a 
 
-      - name: gtest on openMPTK
-        run: make run-tests
+      - name: gtest on openGPMP
+        run: |
+          mkdir build && cd build
+          # run tests and populate lcov.info file
+          cmake -S ../ -DBUILD_TESTS=ON && make
+      
+      - name: Generate HTML Analysis & Unit Test Coverage
+        run: |
+          doxygen
+          make docs-testing
+          make docs-analysis
 
-      - name: Codecov Sync     
+      - name: Codecov Sync
         uses: codecov/codecov-action@v3
         with:
           files: .coverage/lcov.info
           name: codecov-umbrella
           functionalities: fixes
           verbose: true
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: LCOV_FILES
+          #path: .coverage/lcov.info
+          path: docs/
+

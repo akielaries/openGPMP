@@ -75,7 +75,7 @@ class Mtx {
 // if Python API compilation is NOT occuring include these methods
 #elif defined(__GPMP_CPP_API__)
 
-#define __GPMP_CPP_API__
+#define __GPMP_CPP__
     /**
      * @brief Perform matrix addition using flattened matrices and the
      * designated Fortran subroutine. Accepts type float

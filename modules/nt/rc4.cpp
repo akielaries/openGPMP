@@ -116,16 +116,16 @@ void gpmp::RC4::PRGA(unsigned char *S,
 std::string
 gpmp::RC4::store_hash(char *plaintext, unsigned char *hashtext, int swap_type) {
     // length of our plaintext
-    int len = strlen((char *)plaintext);
+    size_t len = strlen((char *)plaintext);
     // for snprintf declare a buffer
     char buffer[len + 1];
-    int size = sizeof(buffer);
+    size_t size = sizeof(buffer);
 
     // initialize empty string
     std::string stored_text = "";
 
     // traverse the hashtext appending each block to a string
-    for (size_t index = 0, len = strlen(plaintext); index < len; index++) {
+    for (size_t index = 0; index < len; index++) {
         if (swap_type == 0) {
             snprintf(buffer, size, "|x%02hhx|", hashtext[index]);
         }

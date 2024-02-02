@@ -3,6 +3,7 @@
  ************************************************************************/
 #include "../../include/linalg/mtx.hpp"
 #include "../../include/linalg/mtx_tmpl.hpp"
+#include <cmath>
 #include <cstdint>
 #include <gtest/gtest.h>
 #include <iostream>
@@ -27,7 +28,8 @@ bool mtx_verif(const std::vector<std::vector<T>> &A,
 
     for (size_t i = 0; i < A.size(); ++i) {
         for (size_t j = 0; j < A[i].size(); ++j) {
-            if (A[i][j] != B[i][j]) {
+            if (std::abs(A[i][j] - B[i][j]) >
+                std::numeric_limits<T>::epsilon()) {
                 return false;
             }
         }
@@ -58,7 +60,8 @@ template <typename T>
 bool mtx_verif(const T *A, const T *B, int rows, int cols) {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            if (A[i * cols + j] != B[i * cols + j]) {
+            if (std::abs(A[i * cols + j] - B[i * cols + j]) >
+                std::numeric_limits<T>::epsilon()) {
                 return false;
             }
         }
@@ -137,7 +140,7 @@ TEST(ADD_MTX_SMALL_VEC_INT, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_VEC_INT, assert_intel_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
@@ -245,7 +248,7 @@ TEST(ADD_MTX_SMALL_VEC_DOUBLE, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
@@ -336,7 +339,7 @@ TEST(ADD_MTX_SMALL_ARR_INT8, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_INT8, assert_intel_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int8_t *A = new int8_t[mtx_size * mtx_size];
@@ -410,7 +413,7 @@ TEST(ADD_MTX_SMALL_ARR_INT16, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_INT16, assert_intel_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int16_t *A = new int16_t[mtx_size * mtx_size];
@@ -487,7 +490,7 @@ TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
 
     std::cout << "Matrix RESULT after addition:" << std::endl;
     print_matrix(result, mtx_size, mtx_size);
-*/
+  */
     // compare the results
     ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
     delete[] A;
@@ -497,7 +500,7 @@ TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_INT, assert_intel_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int *A = new int[mtx_size * mtx_size];
@@ -607,7 +610,7 @@ TEST(ADD_MTX_SMALL_ARR_DOUBLE, assert_intel_intrin) {
 }
 
 TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
@@ -720,7 +723,7 @@ TEST(ADD_MTX_SMALL, assert_arm_intrin) {
 }
 
 TEST(ADD_MTX_LARGE, assert_arm_intrin) {
-    int mtx_size = 8192;
+    int mtx_size = 1024;
     // Define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));

@@ -38,8 +38,8 @@
  * operations
  */
 
-#ifndef MATRIX_HPP
-#define MATRIX_HPP
+#ifndef MATRIX_TMPL_HPP
+#define MATRIX_TMPL_HPP
 
 #include <cassert>
 #include <cmath>
@@ -74,7 +74,8 @@ template <typename Type> class Matrix {
      * @param[in] rows : size of rows
      * @param[in] cols : size of columns
      */
-    Matrix(size_t rows, size_t cols) : cols(cols), rows(rows), data({}) {
+    Matrix(size_t mtx_rows, size_t mtx_cols)
+        : cols(cols), rows(rows), data({}) {
         // initialize an empty vector for storage
         data.resize(cols * rows, Type());
         dim = std::make_tuple(rows, cols);

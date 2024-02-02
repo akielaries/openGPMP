@@ -15,8 +15,8 @@ BOOST_PYTHON_MODULE(linalg) {
                 *)(const int *A, const int *B, int *C, int rows, int cols)>(
             &gpmp::linalg::Mtx::mtx_add));
     //.def("mtx_add", static_cast<bool (gpmp::linalg::Mtx::*)(int,
-    //double)>(&gpmp::linalg::Mtx::mtx_add)) .def("mtx_add", static_cast<bool
+    // double)>(&gpmp::linalg::Mtx::mtx_add)) .def("mtx_add", static_cast<bool
     //(gpmp::linalg::Mtx::*)(int, double, char)>(&gpmp::linalg::Mtx::mtx_add))
     //.def("mtx_add", static_cast<int (gpmp::linalg::Mtx::*)(int, int,
-    //int)>(&gpmp::linalg::Mtx::mtx_add));
+    // int)>(&gpmp::linalg::Mtx::mtx_add));
 }

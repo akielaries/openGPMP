@@ -6,11 +6,32 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.2.0
+      - name: initalize github repo
+        uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: LCOV_FILES
+          path: docs/
+      
+      - name: Dependencies
+        run: |
+          sudo apt update && sudo apt upgrade
+          sudo apt install gcovr lcov cppcheck tree doxygen
+        
+      - name: Copy HTML Static Analysis and Unit Test Coverage
+        run: |
+          cp -r docs/analysis/ docs/doxygen/html/
+          cp -r docs/testing/ docs/doxygen/html/
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: docs/doxygen/html
-          config_file: Doxyfile
-

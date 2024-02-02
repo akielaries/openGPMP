@@ -55,8 +55,6 @@
 // if source C++ API is being compiled, include these Fortran refs and wrappers
 #elif defined(__GPMP_CPP_API__)
 
-#define __GPMP_CPP_API__
-
 extern "C" {
 // Matrix add routine (FLOAT)
 void mtx_add_routine_float_(float *A,

@@ -16,11 +16,18 @@ include(FetchContent)
 
 #FetchContent_MakeAvailable(googletest)
 
+# TODO this could be made dynamic some how?
 # source files that will be tested
 set(CPP_SOURCES
     ../modules/arithmetic/arith.cpp
     ../modules/calculus/differential.cpp
+    ../modules/core/datatable.cpp
+    ../modules/core/utils.cpp
+    ../modules/disct/graphs.cpp
     ../modules/linalg/mtx.cpp
+    ../modules/ml/bayes_clf.cpp
+    ../modules/ml/encoder.cpp
+    ../modules/ml/mlp_network.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp
@@ -68,11 +75,25 @@ add_executable(
     ${FORTRAN_TEST_FILE}
 )
 
+target_compile_options(
+    test_openGPMP_cpp
+    PRIVATE
+    --coverage
+    -fprofile-arcs
+    -ftest-coverage
+    -fPIC
+)
+
 target_link_libraries(
     test_openGPMP_cpp
     GTest::gtest_main 
     pthread
+    --coverage
+    -fprofile-arcs
+    -ftest-coverage
+    -fPIC
 )
+
 target_link_libraries(
     test_openGPMP_fortran
     GTest::gtest_main
@@ -89,6 +110,12 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Running C++ Unit Tests]"
     COMMAND test_openGPMP_cpp
+    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
+    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
+    COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
+    COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+    COMMAND mv lcov.info ../../.coverage
+
 )
 
 add_custom_target(RUN_FORTRAN_TESTS
@@ -98,5 +125,5 @@ add_custom_target(RUN_FORTRAN_TESTS
 )
 
 add_dependencies(RUN_CPP_TESTS test_openGPMP_cpp)
-add_dependencies(RUN_CPP_TESTS test_openGPMP_fortran)
+add_dependencies(RUN_FORTRAN_TESTS test_openGPMP_fortran)
 

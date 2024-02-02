@@ -31,10 +31,12 @@
 # *
 # ************************************************************************/
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.20)
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
-                      -Wsign-compare -DNDEBUG -Wall -Wextra -D __GPMP_CPP_API__"
+                      -Wsign-compare -DNDEBUG -Wall -Wextra \
+                      -Wfloat-equal -Wcast-qual -Wshadow \
+                      -Wunreachable-code -D __GPMP_CPP_API__"
 )
 
 
@@ -42,22 +44,26 @@ set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
 project(openGPMP LANGUAGES CXX C ASM Fortran)
 
 # Dynamically determine the project version based on the latest Git tag
-find_package(Git)
+#find_package(Git)
 
-if(GIT_FOUND)
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} describe --tags
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        OUTPUT_VARIABLE GIT_TAG
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
+#if(GIT_FOUND)
+#    execute_process(
+#        COMMAND ${GIT_EXECUTABLE} describe --tags
+#        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+#        OUTPUT_VARIABLE GIT_TAG
+#        OUTPUT_STRIP_TRAILING_WHITESPACE
+#    )
 
-    string(SUBSTRING ${GIT_TAG} 1 -1 PROJECT_VERSION)
-    message(STATUS "Determined project version: ${PROJECT_VERSION}")
-else()
-    set(PROJECT_VERSION "1.0")
-    message(WARNING "Git not found. Using default project version: ${PROJECT_VERSION}")
-endif()
+#    string(SUBSTRING "${GIT_TAG}" 1 -1 PROJECT_VERSION)
+
+#    message(STATUS "Determined project version: ${PROJECT_VERSION}")
+#else()
+
+set(PROJECT_VERSION "1.0")
+
+#message(WARNING "Git not found. Using default project version: ${PROJECT_VERSION}")
+    
+#endif()
 
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
@@ -78,6 +84,7 @@ option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
 ############################################################
 #find_package(GTest REQUIRED)
 
+option(BUILD_TESTS "Build Unit Test Suite" OFF)
 option(BUILD_PYGPMP "Build Python API" OFF)
 
 if(BUILD_PYGPMP)
@@ -104,10 +111,6 @@ if(BUILD_PYGPMP)
 
 else()
     message(STATUS "Building source C++ API")
-
-    enable_testing()
-
-    add_subdirectory(tests)
 
     ############################################################
     # Create a library
@@ -140,8 +143,7 @@ else()
     )
 
     set_target_properties(${PROJECT_NAME} 
-        PROPERTIES
-        VERSION ${PROJECT_VERSION}
+        PROPERTIES VERSION ${PROJECT_VERSION}
     )
 
     install(TARGETS ${PROJECT_NAME} EXPORT openGPMPConfig 
@@ -159,9 +161,17 @@ else()
 
     export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
 
-    # run C++ and Fortran unit tests
-    add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
-    add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+    if (BUILD_TESTS)
+        message(STATUS "Building and running tests")
+
+        enable_testing()
+
+        add_subdirectory(tests)
+
+        # run C++ and Fortran unit tests
+        add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
+        add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+    endif()
 
     # uninstall target
     if(NOT TARGET uninstall)
