@@ -22,8 +22,7 @@ jobs:
       - name: install deps
         run: | 
           sudo apt update && sudo apt upgrade
-          sudo apt install lcov cmake gfortran cppcheck
-      
+          sudo apt install lcov cmake gfortran cppcheck doxygen
       - name: Configure
         run: |
           sudo apt-get install libgtest-dev && 
@@ -43,6 +42,7 @@ jobs:
       
       - name: Generate HTML Analysis & Unit Test Coverage
         run: |
+          doxygen
           make docs-testing
           make docs-analysis
           tree docs/
