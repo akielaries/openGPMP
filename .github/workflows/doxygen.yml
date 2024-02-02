@@ -45,3 +45,6 @@ jobs:
       - name: Copy HTML Static Analysis and Unit Test Coverage
         run: |
           tree docs
+          cp -r docs/analysis/ docs/doxygen/html/
+          cp -r docs/testing docs/doxygen/html/
+          tree docs

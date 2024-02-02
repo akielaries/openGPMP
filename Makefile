@@ -41,18 +41,18 @@ openGPMP-docs:
 	#cp -r docs/analysis docs/doxygen/html
 
 docs-analysis:
-	mkdir -p docs/doxygen/html/analysis
+	mkdir -p docs/analysis
 	#mkdir -p docs/doxygen/html/testing
-	cd docs/doxygen/html/analysis && \
+	cd docs/analysis && \
         cppcheck --xml --xml-version=2 --enable=all --suppress=missingIncludeSystem \
-        ../../../../include/ ../../../../modules/ 2>analysis.xml && \
+        ../../include/ ../../modules/ 2>analysis.xml && \
         cppcheck-htmlreport --source-dir=. --title=openGPMP --file=analysis.xml --report-dir=.
 	#genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
 	#cp -r docs/analysis docs/doxygen/html
 
 docs-testing:
-	mkdir -p docs/doxygen/html/testing
-	genhtml .coverage/lcov.info --legend --output-directory docs/doxygen/html/testing
+	mkdir -p docs/testing
+	genhtml .coverage/lcov.info --legend --output-directory docs/testing
 
 clean-docs:
 	rm -rf docs/doxygen
