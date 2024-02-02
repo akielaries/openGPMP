@@ -78,6 +78,8 @@ jobs:
     uses: ./.github/workflows/build_osx.yml
 
   CUDA:
+    needs: [ src_changes ]
+    if: needs.src_changes.outputs.src_changed == 'True'
     uses: ./.github/workflows/CUDA.yml
 
   python:
