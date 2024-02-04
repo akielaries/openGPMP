@@ -70,10 +70,10 @@ class Stats {
     double RMS(const std::vector<double> &x);
     double powerMean(const std::vector<double> &x, const double p);
     double lehmerMean(const std::vector<double> &x, const double p);
-    double weightedLehmerMean(const std::vector<double> &x,
-                              const std::vector<double> &weights,
-                              const double p);
-    double contraHarmonicMean(const std::vector<double> &x);
+    double weightedmean_lehmer(const std::vector<double> &x,
+                               const std::vector<double> &weights,
+                               const double p);
+    double contramean_harmonic(const std::vector<double> &x);
     double heronianMean(const double A, const double B);
     double heinzMean(const double A, const double B, const double x);
     double neumanSandorMean(const double a, const double b);

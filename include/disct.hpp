@@ -34,8 +34,6 @@
 #ifndef DISCT_HPP
 #define DISCT_HPP
 
-#include "disct/datatable.hpp"
-#include "disct/threads.hpp"
-#include "disct/util.hpp"
+#include "disct/graphs.hpp"
 
 #endif

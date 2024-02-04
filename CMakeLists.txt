@@ -124,6 +124,7 @@ else()
     add_subdirectory(modules/core)
     add_subdirectory(modules/ml)
     add_subdirectory(modules/nt)
+    add_subdirectory(modules/stats)
 
     add_library(${PROJECT_NAME} STATIC
       $<TARGET_OBJECTS:arithmetic>
@@ -133,6 +134,7 @@ else()
       $<TARGET_OBJECTS:core>
       $<TARGET_OBJECTS:ml>
       $<TARGET_OBJECTS:nt>
+      $<TARGET_OBJECTS:stats>
     )
 
     # include directory for openGPMP

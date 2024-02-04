@@ -19,4 +19,4 @@ TEST(GraphTest, AddEdge) {
     ASSERT_EQ(graph.adj_list[1].size(), 2);
     ASSERT_EQ(graph.adj_list[2].size(), 2);
 }
-}
+} // namespace
