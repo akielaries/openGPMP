@@ -31,10 +31,6 @@
  *
  ************************************************************************/
 
-/*
- * definitions for openGPMP naive implementation of Open Shortest Path First
- * (OSPF)
- */
 #include "../../include/disct/graphs.hpp"
 #include <algorithm>
 #include <bitset>

@@ -16,6 +16,7 @@ infer
 ### Disrete
 ### Machine Learning
 ### Number Theory
+### Statistics
 
 # v0.10.0
 New contributions from [@eeddgg](https://github.com/eeddgg), [@sidsbrmnn](https://github.com/sidsbrmnn), [@igorsteinmacher](https://github.com/igorsteinmacher)

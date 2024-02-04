@@ -1,20 +1,18 @@
 Welcome to openGPMP's documentation.
 ===================================
-**openGPMP** is an open-source, multi-threaded, and general purpose mathematics package written in C++ with
+**openGPMP** is an open-source, multi-threaded capable, general purpose mathematics package written in C++ with
 a primary focus on Numbery Theory and Cryptographic algorithms, Linear Algebra, and Machine/Deep learning concepts
-as well as a range of language API's with zero dependencies. openGPMP aims to provide options for pre-built functions, models, etc.
-along with modularity for user freedom.
+as well as a range of language API's with zero dependencies. openGPMP aims to provide options for pre-built functions, 
+models, etc. along with modularity for user freedom.
 Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder for examples
 on how to use some of openGPMP's functionalities.
 
 This documentation highlights how to use the source C++ library as well as the 
-Python API generated with the help of SWIG. 
+Python API generated with the help of SWIG and Boost Python (which is currently
+being re-written for v1.0.0). 
 
 The published PyPI package for openGPMP can be 
-seen [here](https://pypi.org/project/pygpmp/).
-
-> **Note**
-> This project is under active development.
+seen [here](https://pypi.org/project/pygpmp/) soon.
 
 * View changelog [here](changelog.md).
 
