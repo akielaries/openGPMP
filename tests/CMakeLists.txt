@@ -49,6 +49,7 @@ set(CPP_TEST_FILES
     nt/t_logarithms.cpp
     nt/t_random.cpp
     core/t_threadpool.cpp
+    disct/t_graphs.cpp
 )
 
 # Fortran source files to be tested
@@ -105,18 +106,28 @@ target_link_libraries(
 include(GoogleTest)
 gtest_discover_tests(test_openGPMP_cpp)
 
+find_program(LCOV_FOUND lcov)
+
 # Add a custom target for running the tests
 add_custom_target(RUN_CPP_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Running C++ Unit Tests]"
     COMMAND test_openGPMP_cpp
-    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
-    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
-    COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
-    COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
-    COMMAND mv lcov.info ../../.coverage
-
 )
+
+# if lcov is available on the system
+if(LCOV_FOUND)
+    add_custom_command(
+        TARGET RUN_CPP_TESTS
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
+        COMMAND lcov --directory . --capture --output-file lcov.info#--ignore-errors mismatch
+        COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+        #COMMAND mv lcov.info ../../.coverage
+    )
+else()
+    message(WARNING "lcov not found. Skipping coverage report generation")
+endif()
 
 add_custom_target(RUN_FORTRAN_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"

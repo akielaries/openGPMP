@@ -6,6 +6,10 @@
 * Added static analysis coverage https://akielaries.github.io/openGPMP/analysis/index.html
 * Added unit test coverage https://akielaries.github.io/openGPMP/testing/index.html
 * Reworked CI/CD actions for building/generating documentation
+### Testing and Analysis
+* Updated some unit tests to increase overall coverage
+* Included static analysis workflows with clang-tidy, clang-analyze, cppcheck, osv-scanner, and
+infer
 
 ### Complex
 ### Core
