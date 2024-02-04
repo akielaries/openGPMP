@@ -1,5 +1,18 @@
 # Changelog
 
+# v1.0.0-rc.1
+## What's Changed
+### Documentation
+* Added static analysis coverage https://akielaries.github.io/openGPMP/analysis/index.html
+* Added unit test coverage https://akielaries.github.io/openGPMP/testing/index.html
+* Reworked CI/CD actions for building/generating documentation
+
+### Complex
+### Core
+### Disrete
+### Machine Learning
+### Number Theory
+
 # v0.10.0
 New contributions from [@eeddgg](https://github.com/eeddgg), [@sidsbrmnn](https://github.com/sidsbrmnn), [@igorsteinmacher](https://github.com/igorsteinmacher)
 ## What's Changed 
