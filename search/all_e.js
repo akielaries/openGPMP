@@ -26,7 +26,7 @@ var searchData=
   ['nn_2ehpp_659',['nn.hpp',['../nn_8hpp.html',1,'']]],
   ['normal_5fcdf_660',['normal_CDF',['../classgpmp_1_1stats_1_1ProbDist.html#aa929ea0d4bca82844141a215ff833ff7',1,'gpmp::stats::ProbDist']]],
   ['normal_5fpdf_661',['normal_PDF',['../classgpmp_1_1stats_1_1ProbDist.html#a5089dc110fdfc0b31305eaa34206c05e',1,'gpmp::stats::ProbDist']]],
-  ['normalize_662',['normalize',['../classSigProc.html#a5a8dee176d54972abbb8abe68bc14573',1,'SigProc']]],
+  ['normalize_662',['normalize',['../classgpmp_1_1linalg_1_1SigProc.html#abcdf442f9b1a3bb8be8bdef4045cf15c',1,'gpmp::linalg::SigProc']]],
   ['nt_2ehpp_663',['nt.hpp',['../nt_8hpp.html',1,'']]],
   ['nt_2epy_664',['nt.py',['../nt_8py.html',1,'']]],
   ['nt_5fex_2epy_665',['nt_ex.py',['../nt__ex_8py.html',1,'']]],

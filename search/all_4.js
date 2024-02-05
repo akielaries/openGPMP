@@ -32,7 +32,7 @@ var searchData=
   ['describe_257',['Describe',['../classgpmp_1_1stats_1_1Describe.html',1,'gpmp::stats']]],
   ['describe_2ecpp_258',['describe.cpp',['../describe_8cpp.html',1,'']]],
   ['describe_2ehpp_259',['describe.hpp',['../describe_8hpp.html',1,'']]],
-  ['design_5fdiscrete_5fsystem_260',['design_discrete_system',['../classSigProc.html#ac63f336141a116aa5b34d6fc839147d4',1,'SigProc']]],
+  ['design_5fdiscrete_5fsystem_260',['design_discrete_system',['../classgpmp_1_1linalg_1_1SigProc.html#a543aed93f551a8a509423334b4992ac1',1,'gpmp::linalg::SigProc']]],
   ['determinant_261',['determinant',['../classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a',1,'gpmp::linalg::LinSys::determinant()'],['../classgpmp_1_1linalg_1_1Eigen.html#ae83af53c35f6f192661e7f88e9bcd3fb',1,'gpmp::linalg::Eigen::determinant()']]],
   ['determineclass_262',['determineClass',['../classgpmp_1_1ml_1_1kNN.html#aa175faae51b2fcfff5fb4c22a8f7fcbf',1,'gpmp::ml::kNN']]],
   ['dfs_263',['dfs',['../classgpmp_1_1Graph.html#a138d9b0d13bd401c2045c3e445197675',1,'gpmp::Graph']]],

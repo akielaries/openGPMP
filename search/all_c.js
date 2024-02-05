@@ -47,7 +47,7 @@ var searchData=
   ['logreg_2ecpp_536',['logreg.cpp',['../logreg_8cpp.html',1,'']]],
   ['logreg_2ehpp_537',['logreg.hpp',['../logreg_8hpp.html',1,'']]],
   ['logtofile_538',['logToFile',['../classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4',1,'gpmp::core::Logger']]],
-  ['lpf_539',['lpf',['../classSigProc.html#a2947053034dfbda4f5004f2d5e54d3f7',1,'SigProc']]],
+  ['lpf_539',['lpf',['../classgpmp_1_1linalg_1_1SigProc.html#ad20d1551d68786231fad9c21a8877181',1,'gpmp::linalg::SigProc']]],
   ['lr_540',['lr',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89',1,'gpmp::ml::SecondaryMLP']]],
   ['lrate_5fset_541',['lrate_set',['../classgpmp_1_1ml_1_1AutoEncoder.html#a669c9c98e2841ffcd50eb98a0a46baf7',1,'gpmp::ml::AutoEncoder']]],
   ['lrate_5fupdate_542',['lrate_update',['../classgpmp_1_1ml_1_1AutoEncoder.html#a3ec99e9b2f9aeb0c907be2963ced514b',1,'gpmp::ml::AutoEncoder']]],

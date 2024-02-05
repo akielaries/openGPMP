@@ -1,7 +1,7 @@
 var searchData=
 [
   ['identricmean_429',['identricMean',['../classgpmp_1_1ml_1_1Stats.html#a734c952f4ec20e8385f60434bcc7c03f',1,'gpmp::ml::Stats']]],
-  ['impulse_5finvariance_5ftransform_430',['impulse_invariance_transform',['../classSigProc.html#aaf6463c05942fd3a0bceb309b9506cf6',1,'SigProc']]],
+  ['impulse_5finvariance_5ftransform_430',['impulse_invariance_transform',['../classgpmp_1_1linalg_1_1SigProc.html#a4253b3ea807de4758172f2a8480f3f19',1,'gpmp::linalg::SigProc']]],
   ['increment_431',['increment',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#af6db7b8d11f43e58921b126eec9f0748',1,'gpmp::core::rndm::LCG']]],
   ['index_2emd_432',['index.md',['../index_8md.html',1,'']]],
   ['inf_433',['INF',['../ospf_8cpp.html#a14c9dbab105f1b8b8182a022d73e610c',1,'ospf.cpp']]],

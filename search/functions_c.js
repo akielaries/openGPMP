@@ -21,7 +21,7 @@ var searchData=
   ['logit_1573',['logit',['../classgpmp_1_1ml_1_1Activate.html#ad97747b3bc82bc32467b00cb230481a8',1,'gpmp::ml::Activate::logit(double z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#a001003f3c0d1c7c5b1e50a2a938cf405',1,'gpmp::ml::Activate::logit(std::vector&lt; double &gt; z, bool deriv=0)'],['../classgpmp_1_1ml_1_1Activate.html#a91bca9aa35ef32215bf98fd3d50036c6',1,'gpmp::ml::Activate::logit(std::vector&lt; std::vector&lt; double &gt;&gt; z, bool deriv=0)']]],
   ['logmean_1574',['logMean',['../classgpmp_1_1ml_1_1Stats.html#a565cdaf5080a9987908e1699b46017ac',1,'gpmp::ml::Stats']]],
   ['logreg_1575',['Logreg',['../classgpmp_1_1ml_1_1Logreg.html#abe1aed231c2255558a6f228ab6c1b3b5',1,'gpmp::ml::Logreg']]],
-  ['lpf_1576',['lpf',['../classSigProc.html#a2947053034dfbda4f5004f2d5e54d3f7',1,'SigProc']]],
+  ['lpf_1576',['lpf',['../classgpmp_1_1linalg_1_1SigProc.html#ad20d1551d68786231fad9c21a8877181',1,'gpmp::linalg::SigProc']]],
   ['lrate_5fset_1577',['lrate_set',['../classgpmp_1_1ml_1_1AutoEncoder.html#a669c9c98e2841ffcd50eb98a0a46baf7',1,'gpmp::ml::AutoEncoder']]],
   ['lrate_5fupdate_1578',['lrate_update',['../classgpmp_1_1ml_1_1AutoEncoder.html#a3ec99e9b2f9aeb0c907be2963ced514b',1,'gpmp::ml::AutoEncoder']]],
   ['lu_5fdecomp_1579',['lu_decomp',['../classgpmp_1_1linalg_1_1LinSys.html#ac49c962b4d304a324be583991975f742',1,'gpmp::linalg::LinSys']]]

@@ -8,7 +8,7 @@ var searchData=
   ['decrypt_1416',['decrypt',['../modules_2nt_2rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e',1,'decrypt():&#160;rc5.cpp'],['../classRC5.html#a4a5e4cebc0086f9ad13fd5d7685278ad',1,'RC5::decrypt()']]],
   ['denoisingautoencoder_1417',['DenoisingAutoEncoder',['../classgpmp_1_1ml_1_1DenoisingAutoEncoder.html#a71eb23a1e9fdf2c34acc8e5f9cd0b769',1,'gpmp::ml::DenoisingAutoEncoder']]],
   ['describe_1418',['describe',['../classgpmp_1_1core_1_1DataTable.html#a61b50143e020ac519cc4b2b0f7640868',1,'gpmp::core::DataTable::describe()'],['../classgpmp_1_1core_1_1DataTable.html#a61b50143e020ac519cc4b2b0f7640868',1,'gpmp::core::DataTable::describe()'],['../classpygpmp_1_1core_1_1core_1_1DataTable.html#ad7243931e60302097adb4015212a9d07',1,'pygpmp.core.core.DataTable.describe()']]],
-  ['design_5fdiscrete_5fsystem_1419',['design_discrete_system',['../classSigProc.html#ac63f336141a116aa5b34d6fc839147d4',1,'SigProc']]],
+  ['design_5fdiscrete_5fsystem_1419',['design_discrete_system',['../classgpmp_1_1linalg_1_1SigProc.html#a543aed93f551a8a509423334b4992ac1',1,'gpmp::linalg::SigProc']]],
   ['determinant_1420',['determinant',['../classgpmp_1_1linalg_1_1Eigen.html#ae83af53c35f6f192661e7f88e9bcd3fb',1,'gpmp::linalg::Eigen::determinant()'],['../classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a',1,'gpmp::linalg::LinSys::determinant()']]],
   ['determineclass_1421',['determineClass',['../classgpmp_1_1ml_1_1kNN.html#aa175faae51b2fcfff5fb4c22a8f7fcbf',1,'gpmp::ml::kNN']]],
   ['dfs_1422',['dfs',['../classgpmp_1_1Graph.html#a138d9b0d13bd401c2045c3e445197675',1,'gpmp::Graph']]],

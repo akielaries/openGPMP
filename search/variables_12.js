@@ -1,7 +1,7 @@
 var searchData=
 [
   ['show_5frows_1982',['SHOW_ROWS',['../namespacepygpmp_1_1core_1_1core.html#a602834a40f0616192da2f3674a87bc3f',1,'pygpmp::core::core']]],
-  ['signal_5f_1983',['signal_',['../classSigProc.html#a7c13b4d31e98ecc91710153feb97b7fe',1,'SigProc']]],
+  ['signal_5f_1983',['signal_',['../classgpmp_1_1linalg_1_1SigProc.html#abdd354c0fb454de960ad003ffd8ed91c',1,'gpmp::linalg::SigProc']]],
   ['singularvalues_5f_1984',['singularValues_',['../classgpmp_1_1linalg_1_1SVD.html#ab9ac6aadb30b92dc230b41284ded16b0',1,'gpmp::linalg::SVD']]],
   ['size_1985',['size',['../classgpmp_1_1linalg_1_1Eigen.html#a4a568f2add6c898d0316248571b21103',1,'gpmp::linalg::Eigen']]],
   ['sortir_1986',['sortir',['../structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a',1,'gpmp::ml::neuron']]],
