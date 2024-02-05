@@ -243,6 +243,198 @@ class SigProc {
                                  double analog_sampling_rate,
                                  double discrete_sampling_rate);
 
+    /**
+     * @brief Perform the Zak transform on a given time domain signal
+     *
+     * @param time_domain_signal The input time domain signal
+     * @param frequency The frequency of the Zak transform
+     * @param period The period of the Zak transform
+     * @return The Zak domain signal
+     */
+    std::vector<double>
+    zak_transform(const std::vector<double> &time_domain_signal,
+                  double frequency,
+                  double period);
+
+    /**
+     * @brief Perform the inverse Zak transform on a given Zak domain signal
+     *
+     * @param zak_domain_signal The input Zak domain signal
+     * @param frequency The frequency of the Zak transform
+     * @param period The period of the Zak transform
+     * @return The reconstructed time domain signal
+     */
+    std::vector<double>
+    inverse_zak_transform(const std::vector<double> &zak_domain_signal,
+                          double frequency,
+                          double period);
+
+    /**
+     * @brief Perform Zak transform modulation on a given time domain signal
+     *
+     * @param time_domain_signal The input time domain signal
+     * @param frequency The frequency of the Zak transform
+     * @param period The period of the Zak transform
+     * @param modulation_index The modulation index for Zak transform
+     * modulation
+     * @return The modulated Zak domain signal
+     */
+    std::vector<double>
+    zak_transform_modulation(const std::vector<double> &time_domain_signal,
+                             double frequency,
+                             double period,
+                             double modulation_index);
+
+    /**
+     * @brief Perform the inverse Zak transform modulation on a given modulated
+     * Zak domain signal
+     *
+     * @param zak_domain_signal The input modulated Zak domain signal
+     * @param frequency The frequency of the Zak transform
+     * @param period The period of the Zak transform
+     * @param modulation_index The modulation index for Zak transform
+     * modulation
+     * @return The reconstructed time domain signal after modulation
+     */
+    std::vector<double> inverse_zak_transform_modulation(
+        const std::vector<double> &zak_domain_signal,
+        double frequency,
+        double period,
+        double modulation_index);
+
+    /**
+     * @brief Apply an aliasing filter to a given signal
+     *
+     * @param input_signal The input signal
+     * @param sampling_rate The sampling rate of the signal
+     * @param aliasing_frequency The aliasing frequency to introduce
+     * @return The signal after aliasing
+     */
+    std::vector<double>
+    apply_aliasing_filter(const std::vector<double> &input_signal,
+                          double sampling_rate,
+                          double aliasing_frequency);
+    /**
+     * @brief Apply an anti-aliasing filter to remove high-frequency components
+     * from a signal
+     *
+     * @param input_signal The input signal with potential high-frequency
+     * components
+     * @param sampling_rate The sampling rate of the signal
+     * @param cutoff_frequency The cutoff frequency of the anti-aliasing filter
+     * @return The signal after anti-aliasing
+     */
+    std::vector<double>
+    apply_anti_aliasing_filter(const std::vector<double> &input_signal,
+                               double sampling_rate,
+                               double cutoff_frequency);
+
+    /**
+     * @brief Generate a sinusoidal signal with a frequency beyond the Nyquist
+     * limit, leading to aliasing when sampled
+     *
+     * @param sampling_rate The sampling rate of the signal
+     * @param aliasing_frequency The aliasing frequency to introduce
+     * @param duration The duration of the signal in seconds
+     * @return The aliased sinusoidal signal
+     */
+    std::vector<double> generate_aliased_sinusoid(double sampling_rate,
+                                                  double aliasing_frequency,
+                                                  double duration);
+
+    /**
+     * Downsample a signal by a given factor using the Decimation method
+     *
+     * @param signal The input signal
+     * @param factor The downsampling factor
+     * @return The downsampled signal
+     */
+    std::vector<double> decimate(const std::vector<double> &signal,
+                                 size_t factor);
+
+    /**
+     * Downsample a signal by averaging blocks of samples
+     *
+     * @param signal The input signal
+     * @param factor The downsampling factor
+     * @return The downsampled signal
+     */
+    std::vector<double> average_downsample(const std::vector<double> &signal,
+                                           size_t factor);
+
+    /**
+     * Downsample a signal using the Max-Pooling method
+     *
+     * @param signal The input signal
+     * @param factor The downsampling factor
+     * @return The downsampled signal
+     */
+    std::vector<double> max_pool_downsample(const std::vector<double> &signal,
+                                            size_t factor);
+
+    /**
+     * Downsample a signal by selecting every Nth sample using the Strided
+     * method
+     *
+     * @param signal The input signal
+     * @param factor The downsampling factor
+     * @return The downsampled signal
+     */
+    std::vector<double> strided_downsample(const std::vector<double> &signal,
+                                           size_t factor);
+
+    /**
+     * Downsample a signal by interpolating between samples using Linear
+     * Interpolation
+     *
+     * @param signal The input signal
+     * @param factor The downsampling factor
+     * @return The downsampled signal
+     */
+    std::vector<double>
+    linear_interpolation_downsample(const std::vector<double> &signal,
+                                    size_t factor);
+
+    /**
+     * Downsample a signal by selecting the median value in each block
+     *
+     * @param signal The input signal
+     * @param factor The downsampling factor
+     * @return The downsampled signal
+     */
+    std::vector<double> median_downsample(const std::vector<double> &signal,
+                                          size_t factor);
+    /**
+     * Upsample a signal using the Nearest Neighbor method
+     *
+     * @param signal The input signal
+     * @param factor The upsampling factor
+     * @return The upsampled signal
+     */
+    std::vector<double>
+    nearest_neighbor_upsample(const std::vector<double> &signal, size_t factor);
+
+    /**
+     * Upsample a signal using Linear Interpolation
+     *
+     * @param signal The input signal
+     * @param factor The upsampling factor
+     * @return The upsampled signal
+     */
+    std::vector<double>
+    linear_interpolation_upsample(const std::vector<double> &signal,
+                                  size_t factor);
+
+    /**
+     * Upsample a signal using Zero-Order Hold
+     *
+     * @param signal The input signal
+     * @param factor The upsampling factor
+     * @return The upsampled signal
+     */
+    std::vector<double>
+    zero_order_hold_upsample(const std::vector<double> &signal, size_t factor);
+
   private:
     std::vector<double> signal_;
 };

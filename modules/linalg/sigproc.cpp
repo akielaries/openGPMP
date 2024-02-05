@@ -32,7 +32,9 @@
  ************************************************************************/
 
 #include "../../include/linalg/sigproc.hpp"
+#include <algorithm>
 #include <complex>
+#include <iostream>
 #include <stdexcept>
 #include <vector>
 
@@ -376,4 +378,338 @@ std::vector<double> gpmp::linalg::SigProc::impulse_invariance_transform(
     }
 
     return discrete_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::zak_transform(
+    const std::vector<double> &time_domain_signal,
+    double frequency,
+    double period) {
+    size_t N = time_domain_signal.size();
+    std::vector<double> zak_domain_signal(N, 0.0);
+
+    for (size_t n = 0; n < N; ++n) {
+        zak_domain_signal[n] += time_domain_signal[n] *
+                                std::exp(-2 * M_PI * frequency * n / period);
+    }
+
+    return zak_domain_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::inverse_zak_transform(
+    const std::vector<double> &zak_domain_signal,
+    double frequency,
+    double period) {
+    size_t N = zak_domain_signal.size();
+    std::vector<double> time_domain_signal(N, 0.0);
+
+    for (size_t n = 0; n < N; ++n) {
+        time_domain_signal[n] +=
+            zak_domain_signal[n] * std::exp(2 * M_PI * frequency * n / period);
+    }
+
+    return time_domain_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::zak_transform_modulation(
+    const std::vector<double> &time_domain_signal,
+    double frequency,
+    double period,
+    double modulation_index) {
+    size_t N = time_domain_signal.size();
+    std::vector<double> zak_domain_signal(N, 0.0);
+
+    for (size_t n = 0; n < N; ++n) {
+        zak_domain_signal[n] +=
+            time_domain_signal[n] *
+            std::exp(-2 * M_PI * frequency * n / period +
+                     modulation_index *
+                         std::sin(2 * M_PI * frequency * n / period));
+    }
+
+    return zak_domain_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::inverse_zak_transform_modulation(
+    const std::vector<double> &zak_domain_signal,
+    double frequency,
+    double period,
+    double modulation_index) {
+    size_t N = zak_domain_signal.size();
+    std::vector<double> time_domain_signal(N, 0.0);
+
+    for (size_t n = 0; n < N; ++n) {
+        time_domain_signal[n] +=
+            zak_domain_signal[n] *
+            std::exp(2 * M_PI * frequency * n / period -
+                     modulation_index *
+                         std::sin(2 * M_PI * frequency * n / period));
+    }
+
+    return time_domain_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::apply_aliasing_filter(
+    const std::vector<double> &input_signal,
+    double sampling_rate,
+    double aliasing_frequency) {
+    // Alias the signal by introducing frequency components beyond Nyquist.
+    size_t num_samples = input_signal.size();
+    std::vector<double> aliased_signal(num_samples);
+
+    for (size_t i = 0; i < num_samples; ++i) {
+        double time = static_cast<double>(i) / sampling_rate;
+        aliased_signal[i] = std::sin(2.0 * M_PI * aliasing_frequency * time);
+    }
+
+    return aliased_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::apply_anti_aliasing_filter(
+    const std::vector<double> &input_signal,
+    double sampling_rate,
+    double cutoff_frequency) {
+    // Apply a simple low-pass filter as an anti-aliasing measure.
+    // Note: This is a basic example; actual anti-aliasing filters may require
+    // more sophisticated designs.
+
+    size_t num_samples = input_signal.size();
+    std::vector<double> anti_aliased_signal(num_samples);
+
+    // Design a simple first-order low-pass filter.
+    double RC = 1.0 / (2.0 * M_PI * cutoff_frequency);
+    double alpha = 1.0 / (1.0 + RC * sampling_rate);
+
+    // Apply the low-pass filter.
+    anti_aliased_signal[0] = input_signal[0];
+    for (size_t i = 1; i < num_samples; ++i) {
+        anti_aliased_signal[i] = alpha * input_signal[i] +
+                                 (1.0 - alpha) * anti_aliased_signal[i - 1];
+    }
+
+    return anti_aliased_signal;
+}
+
+std::vector<double>
+gpmp::linalg::SigProc::generate_aliased_sinusoid(double sampling_rate,
+                                                 double aliasing_frequency,
+                                                 double duration) {
+    size_t num_samples = static_cast<size_t>(sampling_rate * duration);
+    std::vector<double> aliased_sinusoid(num_samples);
+
+    for (size_t i = 0; i < num_samples; ++i) {
+        double time = static_cast<double>(i) / sampling_rate;
+        aliased_sinusoid[i] = std::sin(2.0 * M_PI * aliasing_frequency * time);
+    }
+
+    return aliased_sinusoid;
+}
+
+std::vector<double>
+gpmp::linalg::SigProc::decimate(const std::vector<double> &signal,
+                                size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Downsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t downsampled_size = original_size / factor;
+    std::vector<double> downsampled_signal(downsampled_size);
+
+    for (size_t i = 0; i < downsampled_size; ++i) {
+        downsampled_signal[i] = signal[i * factor];
+    }
+
+    return downsampled_signal;
+}
+std::vector<double>
+gpmp::linalg::SigProc::average_downsample(const std::vector<double> &signal,
+                                          size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Downsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t downsampled_size = original_size / factor;
+    std::vector<double> downsampled_signal(downsampled_size);
+
+    for (size_t i = 0; i < downsampled_size; ++i) {
+        size_t start_index = i * factor;
+        size_t end_index = start_index + factor;
+        double sum = 0.0;
+
+        for (size_t j = start_index; j < end_index; ++j) {
+            sum += signal[j];
+        }
+
+        downsampled_signal[i] = sum / static_cast<double>(factor);
+    }
+
+    return downsampled_signal;
+}
+
+std::vector<double>
+gpmp::linalg::SigProc::max_pool_downsample(const std::vector<double> &signal,
+                                           size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Downsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t downsampled_size = original_size / factor;
+    std::vector<double> downsampled_signal(downsampled_size);
+
+    for (size_t i = 0; i < downsampled_size; ++i) {
+        size_t start_index = i * factor;
+        size_t end_index = start_index + factor;
+        downsampled_signal[i] = *std::max_element(signal.begin() + start_index,
+                                                  signal.begin() + end_index);
+    }
+
+    return downsampled_signal;
+}
+std::vector<double>
+gpmp::linalg::SigProc::strided_downsample(const std::vector<double> &signal,
+                                          size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Downsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t downsampled_size = original_size / factor;
+    std::vector<double> downsampled_signal(downsampled_size);
+
+    for (size_t i = 0; i < downsampled_size; ++i) {
+        downsampled_signal[i] = signal[i * factor];
+    }
+
+    return downsampled_signal;
+}
+std::vector<double> gpmp::linalg::SigProc::linear_interpolation_downsample(
+    const std::vector<double> &signal,
+    size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Downsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t downsampled_size = original_size / factor;
+    std::vector<double> downsampled_signal(downsampled_size);
+
+    for (size_t i = 0; i < downsampled_size; ++i) {
+        size_t lower_index = i * factor;
+        size_t upper_index = std::min(lower_index + factor, original_size);
+
+        for (size_t j = lower_index; j < upper_index; ++j) {
+            downsampled_signal[i] += signal[j];
+        }
+
+        downsampled_signal[i] /= static_cast<double>(upper_index - lower_index);
+    }
+
+    return downsampled_signal;
+}
+std::vector<double>
+gpmp::linalg::SigProc::median_downsample(const std::vector<double> &signal,
+                                         size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Downsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t downsampled_size = original_size / factor;
+    std::vector<double> downsampled_signal(downsampled_size);
+
+    for (size_t i = 0; i < downsampled_size; ++i) {
+        size_t start_index = i * factor;
+        size_t end_index = start_index + factor;
+
+        std::vector<double> block(signal.begin() + start_index,
+                                  signal.begin() + end_index);
+        std::sort(block.begin(), block.end());
+        downsampled_signal[i] = block[block.size() / 2]; // Median value
+    }
+
+    return downsampled_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::nearest_neighbor_upsample(
+    const std::vector<double> &signal,
+    size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Upsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t upsampled_size = original_size * factor;
+    std::vector<double> upsampled_signal(upsampled_size);
+
+    for (size_t i = 0; i < original_size; ++i) {
+        upsampled_signal[i * factor] = signal[i];
+    }
+
+    return upsampled_signal;
+}
+std::vector<double> gpmp::linalg::SigProc::linear_interpolation_upsample(
+    const std::vector<double> &signal,
+    size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Upsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t upsampled_size = original_size * factor;
+    std::vector<double> upsampled_signal(upsampled_size);
+
+    for (size_t i = 0; i < original_size - 1; ++i) {
+        upsampled_signal[i * factor] = signal[i];
+        for (size_t j = 1; j < factor; ++j) {
+            upsampled_signal[i * factor + j] =
+                signal[i] + j * (signal[i + 1] - signal[i]) / factor;
+        }
+    }
+
+    upsampled_signal[upsampled_size - 1] = signal[original_size - 1];
+
+    return upsampled_signal;
+}
+
+std::vector<double> gpmp::linalg::SigProc::zero_order_hold_upsample(
+    const std::vector<double> &signal,
+    size_t factor) {
+    if (factor <= 1) {
+        std::cerr << "Error: Upsampling factor must be greater than 1."
+                  << std::endl;
+        return signal;
+    }
+
+    size_t original_size = signal.size();
+    size_t upsampled_size = original_size * factor;
+    std::vector<double> upsampled_signal(upsampled_size);
+
+    for (size_t i = 0; i < original_size - 1; ++i) {
+        upsampled_signal[i * factor] = signal[i];
+        for (size_t j = 1; j < factor; ++j) {
+            upsampled_signal[i * factor + j] = signal[i];
+        }
+    }
+
+    upsampled_signal[upsampled_size - 1] = signal[original_size - 1];
+
+    return upsampled_signal;
 }
