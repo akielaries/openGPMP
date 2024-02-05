@@ -114,77 +114,6 @@
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
             <location file="../../modules/disct/graphs.cpp" line="713" column="24"/>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
-            <symbol>v1</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;v2&apos; can be declared with const" verbose="Parameter &apos;v2&apos; can be declared with const" cwe="398" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="85" column="33" info="Parameter &apos;v2&apos; can be declared with const"/>
-            <symbol>v2</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: start" verbose="Unused variable: start" cwe="563" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="99" column="20"/>
-            <symbol>start</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: finish" verbose="Unused variable: finish" cwe="563" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="99" column="27"/>
-            <symbol>finish</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: duration" verbose="Unused variable: duration" cwe="563" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="100" column="12"/>
-            <symbol>duration</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: ret_num_devices" verbose="Unused variable: ret_num_devices" cwe="563" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="143" column="13"/>
-            <symbol>ret_num_devices</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: string" verbose="Unused variable: string" cwe="563" file0="../../modules/linalg/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/_gpu_mtx_add.c" line="153" column="10"/>
-            <symbol>string</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
-        <error id="selfInitialization" severity="error" msg="Member variable &apos;cols&apos; is initialized by itself." verbose="Member variable &apos;cols&apos; is initialized by itself." cwe="665" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="78" column="9"/>
-            <symbol>cols</symbol>
-        </error>
-        <error id="selfInitialization" severity="error" msg="Member variable &apos;rows&apos; is initialized by itself." verbose="Member variable &apos;rows&apos; is initialized by itself." cwe="665" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="78" column="21"/>
-            <symbol>rows</symbol>
-        </error>
-        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;dimension=0&apos; is always false" verbose="Condition &apos;dimension=0&apos; is always false" cwe="570" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="285" column="31" info="Condition &apos;dimension=0&apos; is always false"/>
-        </error>
-        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;row&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;row&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="94" column="18" info="Unsigned positive"/>
-            <symbol>row</symbol>
-        </error>
-        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;col&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;col&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="95" column="18" info="Unsigned positive"/>
-            <symbol>col</symbol>
-        </error>
-        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;dimension&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;dimension&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="284" column="18" info="Unsigned positive"/>
-            <symbol>dimension</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;target&apos; can be declared with const" verbose="Parameter &apos;target&apos; can be declared with const" cwe="398" file0="../../modules/linalg/lao.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="208" column="24" info="Parameter &apos;target&apos; can be declared with const"/>
-            <symbol>target</symbol>
-        </error>
         <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/linalg/mtx.cpp">
             <location file="../../modules/linalg/mtx.cpp" line="1417" column="36"/>
             <location file="../../modules/linalg/mtx.cpp" line="1416" column="22" info="&apos;rows&apos; is assigned value &apos;A.size()&apos; here."/>
@@ -269,8 +198,52 @@
             <location file="../../modules/linalg/mtx.cpp" line="959" column="23" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
-        <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/mtx_x86.c">
-            <location file="../../modules/linalg/mtx_x86.c" line="9" column="5"/>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
+            <symbol>v1</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;v2&apos; can be declared with const" verbose="Parameter &apos;v2&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="33" info="Parameter &apos;v2&apos; can be declared with const"/>
+            <symbol>v2</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: start" verbose="Unused variable: start" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="99" column="20"/>
+            <symbol>start</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: finish" verbose="Unused variable: finish" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="99" column="27"/>
+            <symbol>finish</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: duration" verbose="Unused variable: duration" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="100" column="12"/>
+            <symbol>duration</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: ret_num_devices" verbose="Unused variable: ret_num_devices" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="143" column="13"/>
+            <symbol>ret_num_devices</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: string" verbose="Unused variable: string" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="153" column="10"/>
+            <symbol>string</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
+        </error>
+        <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
+            <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
         </error>
         <error id="useInitializationList" severity="performance" msg="Variable &apos;weightsInputHidden&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;weightsInputHidden&apos; a value by passing the value to the constructor in the initialization list." cwe="398" file0="../../modules/ml/TEST.cpp">
             <location file="../../modules/ml/TEST.cpp" line="58" column="9"/>
@@ -307,6 +280,14 @@
             <location file="../../modules/ml/k-foldCV.cpp" line="42" column="33"/>
             <symbol>small_sample</symbol>
         </error>
+        <error id="selfInitialization" severity="error" msg="Member variable &apos;cols&apos; is initialized by itself." verbose="Member variable &apos;cols&apos; is initialized by itself." cwe="665" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="78" column="9"/>
+            <symbol>cols</symbol>
+        </error>
+        <error id="selfInitialization" severity="error" msg="Member variable &apos;rows&apos; is initialized by itself." verbose="Member variable &apos;rows&apos; is initialized by itself." cwe="665" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="78" column="21"/>
+            <symbol>rows</symbol>
+        </error>
         <error id="noCopyConstructor" severity="warning" msg="Class &apos;PrimaryMLP&apos; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &apos;PrimaryMLP&apos; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." cwe="398" file0="../../modules/ml/mlp_network.cpp">
             <location file="../../modules/ml/mlp_network.cpp" line="71" column="5"/>
             <symbol>PrimaryMLP</symbol>
@@ -315,10 +296,29 @@
             <location file="../../modules/ml/mlp_network.cpp" line="71" column="5"/>
             <symbol>PrimaryMLP</symbol>
         </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;dimension=0&apos; is always false" verbose="Condition &apos;dimension=0&apos; is always false" cwe="570" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="285" column="31" info="Condition &apos;dimension=0&apos; is always false"/>
+        </error>
+        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;row&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;row&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="94" column="18" info="Unsigned positive"/>
+            <symbol>row</symbol>
+        </error>
+        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;col&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;col&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="95" column="18" info="Unsigned positive"/>
+            <symbol>col</symbol>
+        </error>
+        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;dimension&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;dimension&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="284" column="18" info="Unsigned positive"/>
+            <symbol>dimension</symbol>
+        </error>
         <error id="funcArgOrderDifferent" severity="warning" msg="Function &apos;rand_int&apos; argument order different: declaration &apos;low, hi&apos; definition &apos;hi, low&apos;" verbose="Function &apos;rand_int&apos; argument order different: declaration &apos;low, hi&apos; definition &apos;hi, low&apos;" cwe="683" file0="../../modules/ml/mlp_network.cpp">
             <location file="../../modules/ml/mlp_network.cpp" line="54" column="48"/>
             <location file="../../include/ml/mlp_net.hpp" line="91" column="30"/>
             <symbol>rand_int</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;target&apos; can be declared with const" verbose="Parameter &apos;target&apos; can be declared with const" cwe="398" file0="../../modules/ml/mlp_network.cpp">
+            <location file="../../include/linalg/mtx_tmpl.hpp" line="208" column="24" info="Parameter &apos;target&apos; can be declared with const"/>
+            <symbol>target</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;npl&apos; can be declared with const" verbose="Parameter &apos;npl&apos; can be declared with const" cwe="398" file0="../../modules/ml/mlp_network.cpp">
             <location file="../../modules/ml/mlp_network.cpp" line="64" column="54" info="Parameter &apos;npl&apos; can be declared with const"/>
@@ -405,6 +405,42 @@
         <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="../../modules/nt/rc5.cpp">
             <location file="../../modules/nt/rc5.cpp" line="63" column="1"/>
         </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="42" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="51" column="17"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="80" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="129" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="175" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="185" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="203" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="214" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="223" column="13"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="234" column="13"/>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/stats/probdist.cpp">
+            <location file="../../modules/stats/probdist.cpp" line="105" column="23"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::count_if algorithm instead of a raw loop." verbose="Consider using std::count_if algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/probdist.cpp">
+            <location file="../../modules/stats/probdist.cpp" line="159" column="13"/>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;AKS&apos; is never used." verbose="The function &apos;AKS&apos; is never used." cwe="561">
             <location file="../../modules/nt/prime_test.cpp" line="228" column="0"/>
             <symbol>AKS</symbol>
@@ -413,13 +449,53 @@
             <location file="../../modules/nt/logarithms.cpp" line="98" column="0"/>
             <symbol>BSGS</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;BootstrapResampling&apos; is never used." verbose="The function &apos;BootstrapResampling&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="324" column="0"/>
+            <symbol>BootstrapResampling</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;ConfidenceInterval&apos; is never used." verbose="The function &apos;ConfidenceInterval&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="239" column="0"/>
+            <symbol>ConfidenceInterval</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;ETF&apos; is never used." verbose="The function &apos;ETF&apos; is never used." cwe="561">
             <location file="../../modules/nt/prime_test.cpp" line="410" column="0"/>
             <symbol>ETF</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;JackknifeResampling&apos; is never used." verbose="The function &apos;JackknifeResampling&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="355" column="0"/>
+            <symbol>JackknifeResampling</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;LikelihoodInterval&apos; is never used." verbose="The function &apos;LikelihoodInterval&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="280" column="0"/>
+            <symbol>LikelihoodInterval</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;Median&apos; is never used." verbose="The function &apos;Median&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="114" column="0"/>
+            <symbol>Median</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;Pivot&apos; is never used." verbose="The function &apos;Pivot&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="257" column="0"/>
+            <symbol>Pivot</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;PivotFunctionForConfidenceInterval&apos; is never used." verbose="The function &apos;PivotFunctionForConfidenceInterval&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="268" column="0"/>
+            <symbol>PivotFunctionForConfidenceInterval</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;PredictionInterval&apos; is never used." verbose="The function &apos;PredictionInterval&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="296" column="0"/>
+            <symbol>PredictionInterval</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;ToleranceInterval&apos; is never used." verbose="The function &apos;ToleranceInterval&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="310" column="0"/>
+            <symbol>ToleranceInterval</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;add_vec_gpu&apos; is never used." verbose="The function &apos;add_vec_gpu&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/_gpu_kernel_mtx_add.c" line="4" column="0"/>
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_add.c" line="4" column="0"/>
             <symbol>add_vec_gpu</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;avg_abs_dev&apos; is never used." verbose="The function &apos;avg_abs_dev&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="125" column="0"/>
+            <symbol>avg_abs_dev</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bellman_ford&apos; is never used." verbose="The function &apos;bellman_ford&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="118" column="0"/>
@@ -452,6 +528,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;chromatic_number&apos; is never used." verbose="The function &apos;chromatic_number&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="469" column="0"/>
             <symbol>chromatic_number</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;clt&apos; is never used." verbose="The function &apos;clt&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="191" column="0"/>
+            <symbol>clt</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;compress&apos; is never used." verbose="The function &apos;compress&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="695" column="0"/>
@@ -489,6 +569,14 @@
             <location file="../../modules/disct/graphs.cpp" line="51" column="0"/>
             <symbol>dfs</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;emp_CDF&apos; is never used." verbose="The function &apos;emp_CDF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="154" column="0"/>
+            <symbol>emp_CDF</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;emp_PMF&apos; is never used." verbose="The function &apos;emp_PMF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="166" column="0"/>
+            <symbol>emp_PMF</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;enableTimestamps&apos; is never used." verbose="The function &apos;enableTimestamps&apos; is never used." cwe="561">
             <location file="../../modules/core/utils.cpp" line="61" column="0"/>
             <symbol>enableTimestamps</symbol>
@@ -504,6 +592,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;eval&apos; is never used." verbose="The function &apos;eval&apos; is never used." cwe="561">
             <location file="../../modules/calculus/differential.cpp" line="113" column="0"/>
             <symbol>eval</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;exp_PDF&apos; is never used." verbose="The function &apos;exp_PDF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="146" column="0"/>
+            <symbol>exp_PDF</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;expand&apos; is never used." verbose="The function &apos;expand&apos; is never used." cwe="561">
             <location file="../../modules/nt/rc5.cpp" line="58" column="0"/>
@@ -549,6 +641,14 @@
             <location file="../../modules/disct/graphs.cpp" line="369" column="0"/>
             <symbol>has_hamiltonian_circuit</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;inverse_emp_CDF&apos; is never used." verbose="The function &apos;inverse_emp_CDF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="172" column="0"/>
+            <symbol>inverse_emp_CDF</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;iq_range&apos; is never used." verbose="The function &apos;iq_range&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="142" column="0"/>
+            <symbol>iq_range</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;is_bipartite&apos; is never used." verbose="The function &apos;is_bipartite&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="271" column="0"/>
             <symbol>is_bipartite</symbol>
@@ -556,6 +656,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;is_planar&apos; is never used." verbose="The function &apos;is_planar&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="591" column="0"/>
             <symbol>is_planar</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;kendalls_tau&apos; is never used." verbose="The function &apos;kendalls_tau&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="287" column="0"/>
+            <symbol>kendalls_tau</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;keyword&apos; is never used." verbose="The function &apos;keyword&apos; is never used." cwe="561">
             <location file="../../modules/nt/cipher.cpp" line="99" column="0"/>
@@ -569,6 +673,10 @@
             <location file="../../modules/disct/graphs.cpp" line="141" column="0"/>
             <symbol>kruskal</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;kurtosis&apos; is never used." verbose="The function &apos;kurtosis&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="199" column="0"/>
+            <symbol>kurtosis</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;limit_at&apos; is never used." verbose="The function &apos;limit_at&apos; is never used." cwe="561">
             <location file="../../modules/calculus/differential.cpp" line="121" column="0"/>
             <symbol>limit_at</symbol>
@@ -576,6 +684,14 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;limit_at_infinity&apos; is never used." verbose="The function &apos;limit_at_infinity&apos; is never used." cwe="561">
             <location file="../../modules/calculus/differential.cpp" line="131" column="0"/>
             <symbol>limit_at_infinity</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;lmoment1&apos; is never used." verbose="The function &apos;lmoment1&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="210" column="0"/>
+            <symbol>lmoment1</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;lmoment2&apos; is never used." verbose="The function &apos;lmoment2&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="219" column="0"/>
+            <symbol>lmoment2</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;load&apos; is never used." verbose="The function &apos;load&apos; is never used." cwe="561">
             <location file="../../modules/ml/encoder.cpp" line="60" column="0"/>
@@ -606,12 +722,52 @@
             <symbol>match_wt</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;matrixMul&apos; is never used." verbose="The function &apos;matrixMul&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/_gpu_kernel_mtx_mul.c" line="4" column="0"/>
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="4" column="0"/>
             <symbol>matrixMul</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_cubic&apos; is never used." verbose="The function &apos;mean_cubic&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="57" column="0"/>
+            <symbol>mean_cubic</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_geo&apos; is never used." verbose="The function &apos;mean_geo&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="48" column="0"/>
+            <symbol>mean_geo</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_geo_pow&apos; is never used." verbose="The function &apos;mean_geo_pow&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="67" column="0"/>
+            <symbol>mean_geo_pow</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_harmonic&apos; is never used." verbose="The function &apos;mean_harmonic&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="77" column="0"/>
+            <symbol>mean_harmonic</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_heinz&apos; is never used." verbose="The function &apos;mean_heinz&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="95" column="0"/>
+            <symbol>mean_heinz</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_heronian&apos; is never used." verbose="The function &apos;mean_heronian&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="86" column="0"/>
+            <symbol>mean_heronian</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mean_lehmer&apos; is never used." verbose="The function &apos;mean_lehmer&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="104" column="0"/>
+            <symbol>mean_lehmer</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;median_uniased&apos; is never used." verbose="The function &apos;median_uniased&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="221" column="0"/>
+            <symbol>median_uniased</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;miller_rabin&apos; is never used." verbose="The function &apos;miller_rabin&apos; is never used." cwe="561">
             <location file="../../modules/nt/prime_test.cpp" line="209" column="0"/>
             <symbol>miller_rabin</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mle_est&apos; is never used." verbose="The function &apos;mle_est&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="206" column="0"/>
+            <symbol>mle_est</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mom&apos; is never used." verbose="The function &apos;mom&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="194" column="0"/>
+            <symbol>mom</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mse&apos; is never used." verbose="The function &apos;mse&apos; is never used." cwe="561">
             <location file="../../modules/ml/linreg.cpp" line="410" column="0"/>
@@ -637,13 +793,33 @@
             <location file="../../modules/linalg/mtx.cpp" line="1284" column="0"/>
             <symbol>mtx_tpose</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;mumv&apos; is never used." verbose="The function &apos;mumv&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="212" column="0"/>
+            <symbol>mumv</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;normal_CDF&apos; is never used." verbose="The function &apos;normal_CDF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="131" column="0"/>
+            <symbol>normal_CDF</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;normal_PDF&apos; is never used." verbose="The function &apos;normal_PDF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="123" column="0"/>
+            <symbol>normal_PDF</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;nth_derivative&apos; is never used." verbose="The function &apos;nth_derivative&apos; is never used." cwe="561">
             <location file="../../modules/calculus/differential.cpp" line="105" column="0"/>
             <symbol>nth_derivative</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;partial_corr&apos; is never used." verbose="The function &apos;partial_corr&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="256" column="0"/>
+            <symbol>partial_corr</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;pcg32_init&apos; is never used." verbose="The function &apos;pcg32_init&apos; is never used." cwe="561">
             <location file="../../modules/nt/random.cpp" line="148" column="0"/>
             <symbol>pcg32_init</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;percentile&apos; is never used." verbose="The function &apos;percentile&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="154" column="0"/>
+            <symbol>percentile</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;planar_gen&apos; is never used." verbose="The function &apos;planar_gen&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="599" column="0"/>
@@ -668,6 +844,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;rand_real&apos; is never used." verbose="The function &apos;rand_real&apos; is never used." cwe="561">
             <location file="../../modules/ml/mlp_network.cpp" line="59" column="0"/>
             <symbol>rand_real</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;range&apos; is never used." verbose="The function &apos;range&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="165" column="0"/>
+            <symbol>range</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;rotate_left&apos; is never used." verbose="The function &apos;rotate_left&apos; is never used." cwe="561">
             <location file="../../modules/nt/rc5.cpp" line="45" column="0"/>
@@ -709,9 +889,17 @@
             <location file="../../modules/nt/prime_gen.cpp" line="51" column="0"/>
             <symbol>sieve_of_eratosthenes</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;skewness&apos; is never used." verbose="The function &apos;skewness&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="229" column="0"/>
+            <symbol>skewness</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;solovoy_strassen&apos; is never used." verbose="The function &apos;solovoy_strassen&apos; is never used." cwe="561">
             <location file="../../modules/nt/prime_test.cpp" line="327" column="0"/>
             <symbol>solovoy_strassen</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;spearmans_rho&apos; is never used." verbose="The function &apos;spearmans_rho&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="309" column="0"/>
+            <symbol>spearmans_rho</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;split_data&apos; is never used." verbose="The function &apos;split_data&apos; is never used." cwe="561">
             <location file="../../modules/ml/linreg.cpp" line="278" column="0"/>
@@ -736,6 +924,14 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;train&apos; is never used." verbose="The function &apos;train&apos; is never used." cwe="561">
             <location file="../../modules/ml/bayes_clf.cpp" line="53" column="0"/>
             <symbol>train</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;uniform_CDF&apos; is never used." verbose="The function &apos;uniform_CDF&apos; is never used." cwe="561">
+            <location file="../../modules/stats/probdist.cpp" line="138" column="0"/>
+            <symbol>uniform_CDF</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;var_coeff&apos; is never used." verbose="The function &apos;var_coeff&apos; is never used." cwe="561">
+            <location file="../../modules/stats/describe.cpp" line="135" column="0"/>
+            <symbol>var_coeff</symbol>
         </error>
         <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
     </errors>

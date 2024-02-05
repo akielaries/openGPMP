@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prim_1704',['prim',['../prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d',1,'prime_test.cpp']]]
+  ['prim_1812',['prim',['../prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d',1,'prime_test.cpp']]]
 ];
