@@ -24,6 +24,8 @@ set(CPP_SOURCES
     ../modules/core/datatable.cpp
     ../modules/core/utils.cpp
     ../modules/disct/graphs.cpp
+    ../modules/linalg/linsys.cpp
+    ../modules/linalg/eigen.cpp
     ../modules/linalg/mtx.cpp
     ../modules/ml/bayes_clf.cpp
     ../modules/ml/encoder.cpp
@@ -114,7 +116,7 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND test_openGPMP_cpp
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
-    COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
+    COMMAND lcov --directory . --capture --output-file lcov.info --ignore-errors mismatch
     COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
     COMMAND mv lcov.info ../../.coverage
 )

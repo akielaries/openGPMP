@@ -30,6 +30,9 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
+#ifndef PROBDIST_HPP
+#define PROBDIST_HPP
+
 #include <cmath>
 #include <vector>
 
@@ -221,3 +224,5 @@ class ProbDist {
 
 } // namespace stats
 } // namespace gpmp
+
+#endif

@@ -30,6 +30,8 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
+#ifndef DESCRIBE_HPP
+#define DESCRIBE_HPP
 
 #include <vector>
 
@@ -300,3 +302,5 @@ class Describe {
 
 } // namespace stats
 } // namespace gpmp
+
+#endif

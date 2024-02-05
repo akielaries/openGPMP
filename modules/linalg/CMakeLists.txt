@@ -7,7 +7,9 @@ option(BUILD_GPU_OPENCL "Build OpenCL Linear Algebra Extension" OFF)
 set(SOURCE_FILES
     mtx_routines.f90
     mtx.cpp
-    linsys.f90
+    linsys_routines.f90
+    linsys.cpp
+    eigen.cpp
 )
 
 # compile OpenCL GPU accelerators into openGPMP binary written
