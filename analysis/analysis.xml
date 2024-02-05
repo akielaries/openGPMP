@@ -114,6 +114,14 @@
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
             <location file="../../modules/disct/graphs.cpp" line="713" column="24"/>
         </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/eigen.cpp">
+            <location file="../../include/linalg/eigen.hpp" line="57" column="5"/>
+            <symbol>Eigen</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/linsys.cpp">
+            <location file="../../include/linalg/linsys.hpp" line="57" column="5"/>
+            <symbol>LinSys</symbol>
+        </error>
         <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/linalg/mtx.cpp">
             <location file="../../modules/linalg/mtx.cpp" line="1417" column="36"/>
             <location file="../../modules/linalg/mtx.cpp" line="1416" column="22" info="&apos;rows&apos; is assigned value &apos;A.size()&apos; here."/>
@@ -198,13 +206,13 @@
             <location file="../../modules/linalg/mtx.cpp" line="959" column="23" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
             <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
@@ -234,16 +242,31 @@
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="153" column="10"/>
             <symbol>string</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
             <symbol>B</symbol>
         </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
+        </error>
         <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
             <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/tensor.cpp">
+            <location file="../../include/linalg/tensor.hpp" line="75" column="5"/>
+            <symbol>Tensor</symbol>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/tensor.cpp">
+            <location file="../../modules/linalg/tensor.cpp" line="54" column="19"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;totalSize&apos; is assigned a value that is never used." verbose="Variable &apos;totalSize&apos; is assigned a value that is never used." cwe="563" file0="../../modules/linalg/tensor.cpp">
+            <location file="../../modules/linalg/tensor.cpp" line="52" column="22"/>
+            <symbol>totalSize</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;totalSize&apos; is assigned a value that is never used." verbose="Variable &apos;totalSize&apos; is assigned a value that is never used." cwe="563" file0="../../modules/linalg/tensor.cpp">
+            <location file="../../modules/linalg/tensor.cpp" line="54" column="19"/>
+            <symbol>totalSize</symbol>
         </error>
         <error id="useInitializationList" severity="performance" msg="Variable &apos;weightsInputHidden&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;weightsInputHidden&apos; a value by passing the value to the constructor in the initialization list." cwe="398" file0="../../modules/ml/TEST.cpp">
             <location file="../../modules/ml/TEST.cpp" line="58" column="9"/>
@@ -569,6 +592,14 @@
             <location file="../../modules/disct/graphs.cpp" line="51" column="0"/>
             <symbol>dfs</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;diagonally_dominant&apos; is never used." verbose="The function &apos;diagonally_dominant&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="354" column="0"/>
+            <symbol>diagonally_dominant</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;display_mtx&apos; is never used." verbose="The function &apos;display_mtx&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="46" column="0"/>
+            <symbol>display_mtx</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;emp_CDF&apos; is never used." verbose="The function &apos;emp_CDF&apos; is never used." cwe="561">
             <location file="../../modules/stats/probdist.cpp" line="154" column="0"/>
             <symbol>emp_CDF</symbol>
@@ -605,6 +636,10 @@
             <location file="../../modules/disct/graphs.cpp" line="172" column="0"/>
             <symbol>floyd_warshall</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;frobenius_norm&apos; is never used." verbose="The function &apos;frobenius_norm&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="296" column="0"/>
+            <symbol>frobenius_norm</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;get_increment&apos; is never used." verbose="The function &apos;get_increment&apos; is never used." cwe="561">
             <location file="../../modules/nt/random.cpp" line="76" column="0"/>
             <symbol>get_increment</symbol>
@@ -620,6 +655,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;get_seed&apos; is never used." verbose="The function &apos;get_seed&apos; is never used." cwe="561">
             <location file="../../modules/nt/random.cpp" line="80" column="0"/>
             <symbol>get_seed</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;gram_schmidt&apos; is never used." verbose="The function &apos;gram_schmidt&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="333" column="0"/>
+            <symbol>gram_schmidt</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;greatest_power&apos; is never used." verbose="The function &apos;greatest_power&apos; is never used." cwe="561">
             <location file="../../modules/arithmetic/arith.cpp" line="40" column="0"/>
@@ -641,9 +680,17 @@
             <location file="../../modules/disct/graphs.cpp" line="369" column="0"/>
             <symbol>has_hamiltonian_circuit</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;inf_norm&apos; is never used." verbose="The function &apos;inf_norm&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="320" column="0"/>
+            <symbol>inf_norm</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;inverse_emp_CDF&apos; is never used." verbose="The function &apos;inverse_emp_CDF&apos; is never used." cwe="561">
             <location file="../../modules/stats/probdist.cpp" line="172" column="0"/>
             <symbol>inverse_emp_CDF</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;invert_mtx&apos; is never used." verbose="The function &apos;invert_mtx&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="113" column="0"/>
+            <symbol>invert_mtx</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;iq_range&apos; is never used." verbose="The function &apos;iq_range&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="142" column="0"/>
@@ -653,9 +700,21 @@
             <location file="../../modules/disct/graphs.cpp" line="271" column="0"/>
             <symbol>is_bipartite</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;is_consistent&apos; is never used." verbose="The function &apos;is_consistent&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="371" column="0"/>
+            <symbol>is_consistent</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;is_homogeneous&apos; is never used." verbose="The function &apos;is_homogeneous&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="388" column="0"/>
+            <symbol>is_homogeneous</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;is_planar&apos; is never used." verbose="The function &apos;is_planar&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="591" column="0"/>
             <symbol>is_planar</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;jordan_normal_form&apos; is never used." verbose="The function &apos;jordan_normal_form&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/eigen.cpp" line="181" column="0"/>
+            <symbol>jordan_normal_form</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;kendalls_tau&apos; is never used." verbose="The function &apos;kendalls_tau&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="287" column="0"/>
@@ -809,6 +868,10 @@
             <location file="../../modules/calculus/differential.cpp" line="105" column="0"/>
             <symbol>nth_derivative</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;one_norm&apos; is never used." verbose="The function &apos;one_norm&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="307" column="0"/>
+            <symbol>one_norm</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;partial_corr&apos; is never used." verbose="The function &apos;partial_corr&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="256" column="0"/>
             <symbol>partial_corr</symbol>
@@ -828,6 +891,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;pollard_rho_log&apos; is never used." verbose="The function &apos;pollard_rho_log&apos; is never used." cwe="561">
             <location file="../../modules/nt/logarithms.cpp" line="58" column="0"/>
             <symbol>pollard_rho_log</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;power_iter&apos; is never used." verbose="The function &apos;power_iter&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/eigen.cpp" line="17" column="0"/>
+            <symbol>power_iter</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;r_sqrd&apos; is never used." verbose="The function &apos;r_sqrd&apos; is never used." cwe="561">
             <location file="../../modules/ml/linreg.cpp" line="436" column="0"/>
@@ -849,6 +916,10 @@
             <location file="../../modules/stats/describe.cpp" line="165" column="0"/>
             <symbol>range</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;rayleigh_iter&apos; is never used." verbose="The function &apos;rayleigh_iter&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/eigen.cpp" line="206" column="0"/>
+            <symbol>rayleigh_iter</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;rotate_left&apos; is never used." verbose="The function &apos;rotate_left&apos; is never used." cwe="561">
             <location file="../../modules/nt/rc5.cpp" line="45" column="0"/>
             <symbol>rotate_left</symbol>
@@ -860,6 +931,18 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;save&apos; is never used." verbose="The function &apos;save&apos; is never used." cwe="561">
             <location file="../../modules/ml/encoder.cpp" line="42" column="0"/>
             <symbol>save</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;schur_decomp&apos; is never used." verbose="The function &apos;schur_decomp&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/eigen.cpp" line="150" column="0"/>
+            <symbol>schur_decomp</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;sensitivity&apos; is never used." verbose="The function &apos;sensitivity&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/eigen.cpp" line="123" column="0"/>
+            <symbol>sensitivity</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set&apos; is never used." verbose="The function &apos;set&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/tensor.cpp" line="160" column="0"/>
+            <symbol>set</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;setLogDestination&apos; is never used." verbose="The function &apos;setLogDestination&apos; is never used." cwe="561">
             <location file="../../modules/core/utils.cpp" line="65" column="0"/>
@@ -896,6 +979,18 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;solovoy_strassen&apos; is never used." verbose="The function &apos;solovoy_strassen&apos; is never used." cwe="561">
             <location file="../../modules/nt/prime_test.cpp" line="327" column="0"/>
             <symbol>solovoy_strassen</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;solve_cholesky&apos; is never used." verbose="The function &apos;solve_cholesky&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="176" column="0"/>
+            <symbol>solve_cholesky</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;solve_jacobi&apos; is never used." verbose="The function &apos;solve_jacobi&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="223" column="0"/>
+            <symbol>solve_jacobi</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;solve_lu&apos; is never used." verbose="The function &apos;solve_lu&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/linsys.cpp" line="157" column="0"/>
+            <symbol>solve_lu</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;spearmans_rho&apos; is never used." verbose="The function &apos;spearmans_rho&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="309" column="0"/>

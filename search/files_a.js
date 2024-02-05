@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['lao_2ecpp_1114',['lao.cpp',['../lao_8cpp.html',1,'']]],
-  ['linalg_2ehpp_1115',['linalg.hpp',['../linalg_8hpp.html',1,'']]],
-  ['linalg_2epy_1116',['linalg.py',['../samples_2python_2linalg_8py.html',1,'(Global Namespace)'],['../pygpmp_2linalg_2linalg_8py.html',1,'(Global Namespace)']]],
-  ['linreg_2ecpp_1117',['linreg.cpp',['../modules_2ml_2linreg_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2linreg_8cpp.html',1,'(Global Namespace)']]],
-  ['linreg_2ehpp_1118',['linreg.hpp',['../linreg_8hpp.html',1,'']]],
-  ['linsys_2ef90_1119',['linsys.f90',['../linsys_8f90.html',1,'']]],
-  ['logarithms_2ecpp_1120',['logarithms.cpp',['../modules_2nt_2logarithms_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2logarithms_8cpp.html',1,'(Global Namespace)']]],
-  ['logarithms_2ehpp_1121',['logarithms.hpp',['../logarithms_8hpp.html',1,'']]],
-  ['logreg_2ecpp_1122',['logreg.cpp',['../logreg_8cpp.html',1,'']]],
-  ['logreg_2ehpp_1123',['logreg.hpp',['../logreg_8hpp.html',1,'']]]
+  ['lao_2ecpp_1159',['lao.cpp',['../lao_8cpp.html',1,'']]],
+  ['linalg_2ehpp_1160',['linalg.hpp',['../linalg_8hpp.html',1,'']]],
+  ['linalg_2epy_1161',['linalg.py',['../samples_2python_2linalg_8py.html',1,'(Global Namespace)'],['../pygpmp_2linalg_2linalg_8py.html',1,'(Global Namespace)']]],
+  ['linreg_2ecpp_1162',['linreg.cpp',['../modules_2ml_2linreg_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2linreg_8cpp.html',1,'(Global Namespace)']]],
+  ['linreg_2ehpp_1163',['linreg.hpp',['../linreg_8hpp.html',1,'']]],
+  ['linsys_2ecpp_1164',['linsys.cpp',['../linsys_8cpp.html',1,'']]],
+  ['linsys_2ehpp_1165',['linsys.hpp',['../linsys_8hpp.html',1,'']]],
+  ['linsys_5froutines_2ef90_1166',['linsys_routines.f90',['../linsys__routines_8f90.html',1,'']]],
+  ['logarithms_2ecpp_1167',['logarithms.cpp',['../modules_2nt_2logarithms_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2logarithms_8cpp.html',1,'(Global Namespace)']]],
+  ['logarithms_2ehpp_1168',['logarithms.hpp',['../logarithms_8hpp.html',1,'']]],
+  ['logreg_2ecpp_1169',['logreg.cpp',['../logreg_8cpp.html',1,'']]],
+  ['logreg_2ehpp_1170',['logreg.hpp',['../logreg_8hpp.html',1,'']]]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openGPMP: modules/linalg/linsys.f90 File Reference</title>
+<title>openGPMP: modules/linalg/linsys_routines.f90 File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,17 +78,17 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions/Subroutines</a>  </div>
   <div class="headertitle">
-<div class="title">linsys.f90 File Reference</div>  </div>
+<div class="title">linsys_routines.f90 File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a href="linsys_8f90_source.html">Go to the source code of this file.</a></p>
+<p><a href="linsys__routines_8f90_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
-<tr class="memitem:a825ea5d7564e58f3b379aaa57d6a56f9"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a> (A, b, x, n)</td></tr>
+<tr class="memitem:a825ea5d7564e58f3b379aaa57d6a56f9"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linsys__routines_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem</a> (A, b, x, n)</td></tr>
 <tr class="separator:a825ea5d7564e58f3b379aaa57d6a56f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec2266d83cd6c0b762cbcbc92c0af3d"><td class="memItemLeft" align="right" valign="top">program&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linsys_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></td></tr>
+<tr class="memitem:a8ec2266d83cd6c0b762cbcbc92c0af3d"><td class="memItemLeft" align="right" valign="top">program&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linsys__routines_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main</a></td></tr>
 <tr class="separator:a8ec2266d83cd6c0b762cbcbc92c0af3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
@@ -108,9 +108,9 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="linsys_8f90_source.html#l00061">61</a> of file <a class="el" href="linsys_8f90_source.html">linsys.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="linsys__routines_8f90_source.html#l00061">61</a> of file <a class="el" href="linsys__routines_8f90_source.html">linsys_routines.f90</a>.</p>
 
-<p class="reference">References <a class="el" href="openGL__astronomy__animated_8c.html#a25e760e42e42389ea3a9b5bb35596b67">reshape()</a>, and <a class="el" href="linsys_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem()</a>.</p>
+<p class="reference">References <a class="el" href="openGL__astronomy__animated_8c.html#a25e760e42e42389ea3a9b5bb35596b67">reshape()</a>, and <a class="el" href="linsys__routines_8f90.html#a825ea5d7564e58f3b379aaa57d6a56f9">solvelinearsystem()</a>.</p>
 
 </div>
 </div>
@@ -152,7 +152,7 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="linsys_8f90_source.html#l00035">35</a> of file <a class="el" href="linsys_8f90_source.html">linsys.f90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="linsys__routines_8f90_source.html#l00035">35</a> of file <a class="el" href="linsys__routines_8f90_source.html">linsys_routines.f90</a>.</p>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: n</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">    real</span>, <span class="keywordtype">dimension(n, n)</span>, <span class="keywordtype">intent(inout)</span> :: A</div>
@@ -177,7 +177,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordflow">    end do</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="linsys_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="linsys__routines_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d">main()</a>.</p>
 
 </div>
 </div>
