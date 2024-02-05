@@ -242,13 +242,13 @@
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="153" column="10"/>
             <symbol>string</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
             <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
         </error>
         <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
             <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
@@ -639,6 +639,18 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;frobenius_norm&apos; is never used." verbose="The function &apos;frobenius_norm&apos; is never used." cwe="561">
             <location file="../../modules/linalg/linsys.cpp" line="296" column="0"/>
             <symbol>frobenius_norm</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;getLeftSingularVectors&apos; is never used." verbose="The function &apos;getLeftSingularVectors&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/svd.cpp" line="52" column="0"/>
+            <symbol>getLeftSingularVectors</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;getRightSingularVectors&apos; is never used." verbose="The function &apos;getRightSingularVectors&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/svd.cpp" line="57" column="0"/>
+            <symbol>getRightSingularVectors</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;getSingularValues&apos; is never used." verbose="The function &apos;getSingularValues&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/svd.cpp" line="47" column="0"/>
+            <symbol>getSingularValues</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;get_increment&apos; is never used." verbose="The function &apos;get_increment&apos; is never used." cwe="561">
             <location file="../../modules/nt/random.cpp" line="76" column="0"/>
