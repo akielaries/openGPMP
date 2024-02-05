@@ -11,6 +11,7 @@ set(SOURCE_FILES
     linsys.cpp
     eigen.cpp
     tensor.cpp
+    svd.cpp
 )
 
 # compile OpenCL GPU accelerators into openGPMP binary written
