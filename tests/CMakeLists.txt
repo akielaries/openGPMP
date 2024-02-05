@@ -24,7 +24,12 @@ set(CPP_SOURCES
     ../modules/core/datatable.cpp
     ../modules/core/utils.cpp
     ../modules/disct/graphs.cpp
+    ../modules/linalg/linsys.cpp
+    ../modules/linalg/eigen.cpp
     ../modules/linalg/mtx.cpp
+    ../modules/linalg/tensor.cpp
+    ../modules/linalg/svd.cpp
+    ../modules/linalg/sigproc.cpp
     ../modules/ml/bayes_clf.cpp
     ../modules/ml/encoder.cpp
     ../modules/ml/mlp_network.cpp
@@ -35,6 +40,7 @@ set(CPP_SOURCES
     ../modules/nt/factorization.cpp
     ../modules/nt/logarithms.cpp
     ../modules/nt/random.cpp
+    ../modules/stats/describe.cpp
 )
 
 # C++ test files
@@ -49,6 +55,7 @@ set(CPP_TEST_FILES
     nt/t_logarithms.cpp
     nt/t_random.cpp
     core/t_threadpool.cpp
+    disct/t_graphs.cpp
 )
 
 # Fortran source files to be tested
@@ -115,7 +122,6 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
     COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
     COMMAND mv lcov.info ../../.coverage
-
 )
 
 add_custom_target(RUN_FORTRAN_TESTS
@@ -126,4 +132,3 @@ add_custom_target(RUN_FORTRAN_TESTS
 
 add_dependencies(RUN_CPP_TESTS test_openGPMP_cpp)
 add_dependencies(RUN_FORTRAN_TESTS test_openGPMP_fortran)
-
