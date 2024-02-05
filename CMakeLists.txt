@@ -124,6 +124,7 @@ else()
     add_subdirectory(modules/core)
     add_subdirectory(modules/ml)
     add_subdirectory(modules/nt)
+    add_subdirectory(modules/optim)
     add_subdirectory(modules/stats)
 
     add_library(${PROJECT_NAME} STATIC

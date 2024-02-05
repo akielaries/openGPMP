@@ -40,6 +40,7 @@ set(CPP_SOURCES
     ../modules/nt/factorization.cpp
     ../modules/nt/logarithms.cpp
     ../modules/nt/random.cpp
+    ../modules/optim/function.cpp
     ../modules/stats/describe.cpp
     ../modules/stats/probdist.cpp
 )
