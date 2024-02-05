@@ -114,10 +114,9 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND test_openGPMP_cpp
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
-    COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
+    COMMAND lcov --directory . --capture --output-file lcov.info --ignore-errors mismatch
     COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
-    #COMMAND mv lcov.info ../../.coverage
-
+    COMMAND mv lcov.info ../../.coverage
 )
 
 add_custom_target(RUN_FORTRAN_TESTS
