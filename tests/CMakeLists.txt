@@ -37,6 +37,7 @@ set(CPP_SOURCES
     ../modules/ml/knn.cpp
     ../modules/ml/kfold.cpp
     ../modules/ml/logreg.cpp
+    ../modules/ml/activators.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp

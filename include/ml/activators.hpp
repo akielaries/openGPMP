@@ -31,251 +31,214 @@
  *
  ************************************************************************/
 
-/**
- * @file
- *
- * @brief Activation Functions
- */
+#ifndef ACTIVATION_HPP
+#define ACTIVATION_HPP
 
-// TODO: IMPLEMENT and OPTIMIZE
-#ifndef ML_ACTIVATORS_HPP
-#define ML_ACTIVATORS_HPP
-
+#include <cmath>
 #include <vector>
 
 namespace gpmp {
 
 namespace ml {
 
-class Activate {
+/**
+ * @brief Activation Methods
+ */
+class Activation {
   public:
-    double linear(double z, bool deriv = 0);
+    /**
+     * @brief Computes the sigmoid activation function
+     * @param z The input value
+     * @return The sigmoid of z
+     */
+    double sigmoid(double z);
 
-    std::vector<double> linear(std::vector<double> z, bool deriv = 0);
+    /**
+     * @brief Computes the derivative of the sigmoid activation function
+     * @param z The input value
+     * @return The derivative of sigmoid at z
+     */
+    double sigmoid_derivative(double z);
 
-    std::vector<std::vector<double>> linear(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
+    /**
+     * @brief Computes the ReLU (Rectified Linear Unit) activation function
+     * @param z The input value
+     * @return The ReLU of z
+     */
+    double relu(double z);
 
-    double sigmoid(double z, bool deriv = 0);
+    /**
+     * @brief Computes the derivative of the ReLU (Rectified Linear Unit)
+     * activation function
+     * @param z The input value
+     * @return The derivative of ReLU at z
+     */
+    double relu_derivative(double z);
 
-    std::vector<double> sigmoid(std::vector<double> z, bool deriv = 0);
+    /**
+     * @brief Computes the softmax activation function
+     * @param inputs The input values
+     * @return The softmax of inputs
+     */
+    std::vector<double> softmax(const std::vector<double> &inputs);
 
-    std::vector<std::vector<double>> sigmoid(std::vector<std::vector<double>> z,
-                                             bool deriv = 0);
-
-    std::vector<double> softmax(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> softmax(std::vector<std::vector<double>> z,
-                                             bool deriv = 0);
-
-    std::vector<double> adjSoftmax(std::vector<double> z);
-
+    /**
+     * @brief Computes the derivative of the softmax activation function
+     * @param inputs The input values
+     * @return The derivatives of softmax at inputs
+     */
     std::vector<std::vector<double>>
-    adjSoftmax(std::vector<std::vector<double>> z);
-
-    std::vector<std::vector<double>> softmaxDeriv(std::vector<double> z);
-
-    std::vector<std::vector<std::vector<double>>>
-    softmaxDeriv(std::vector<std::vector<double>> z);
-
-    double softplus(double z, bool deriv = 0);
-
-    std::vector<double> softplus(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>>
-    softplus(std::vector<std::vector<double>> z, bool deriv = 0);
-
-    double softsign(double z, bool deriv = 0);
-
-    std::vector<double> softsign(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>>
-    softsign(std::vector<std::vector<double>> z, bool deriv = 0);
-
-    double gaussianCDF(double z, bool deriv = 0);
-
-    std::vector<double> gaussianCDF(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>>
-    gaussianCDF(std::vector<std::vector<double>> z, bool deriv = 0);
-
-    double cloglog(double z, bool deriv = 0);
-
-    std::vector<double> cloglog(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> cloglog(std::vector<std::vector<double>> z,
-                                             bool deriv = 0);
-
-    double logit(double z, bool deriv = 0);
-
-    std::vector<double> logit(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> logit(std::vector<std::vector<double>> z,
-                                           bool deriv = 0);
-
-    double unitStep(double z, bool deriv = 0);
-
-    std::vector<double> unitStep(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>>
-    unitStep(std::vector<std::vector<double>> z, bool deriv = 0);
-
-    double swish(double z, bool deriv = 0);
-
-    std::vector<double> swish(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> swish(std::vector<std::vector<double>> z,
-                                           bool deriv = 0);
-
-    double mish(double z, bool deriv = 0);
-
-    std::vector<double> mish(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> mish(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double sinc(double z, bool deriv = 0);
-
-    std::vector<double> sinc(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> sinc(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double RELU(double z, bool deriv = 0);
-
-    std::vector<double> RELU(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> RELU(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double leakyReLU(double z, double c, bool deriv = 0);
-
-    std::vector<double>
-    leakyReLU(std::vector<double> z, double c, bool deriv = 0);
-
-    std::vector<std::vector<double>>
-    leakyReLU(std::vector<std::vector<double>> z, double c, bool deriv = 0);
-
-    double ELU(double z, double c, bool deriv = 0);
-
-    std::vector<double> ELU(std::vector<double> z, double c, bool deriv = 0);
-
-    std::vector<std::vector<double>>
-    ELU(std::vector<std::vector<double>> z, double c, bool deriv = 0);
-
-    double SELU(double z, double lambda, double c, bool deriv = 0);
-
-    std::vector<double>
-    SELU(std::vector<double> z, double lambda, double c, bool deriv = 0);
-
-    std::vector<std::vector<double>> SELU(std::vector<std::vector<double>>,
-                                          double lambda,
-                                          double c,
-                                          bool deriv = 0);
-
-    double GELU(double z, bool deriv = 0);
-
-    std::vector<double> GELU(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> GELU(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double sign(double z, bool deriv = 0);
-
-    std::vector<double> sign(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> sign(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double sinh(double z, bool deriv = 0);
-
-    std::vector<double> sinh(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> sinh(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double cosh(double z, bool deriv = 0);
-
-    std::vector<double> cosh(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> cosh(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double tanh(double z, bool deriv = 0);
-
-    std::vector<double> tanh(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> tanh(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double csch(double z, bool deriv = 0);
-
-    std::vector<double> csch(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> csch(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double sech(double z, bool deriv = 0);
-
-    std::vector<double> sech(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> sech(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double coth(double z, bool deriv = 0);
-
-    std::vector<double> coth(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> coth(std::vector<std::vector<double>> z,
-                                          bool deriv = 0);
-
-    double arsinh(double z, bool deriv = 0);
-
-    std::vector<double> arsinh(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> arsinh(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
-
-    double arcosh(double z, bool deriv = 0);
-
-    std::vector<double> arcosh(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> arcosh(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
-
-    double artanh(double z, bool deriv = 0);
-
-    std::vector<double> artanh(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> artanh(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
-
-    double arcsch(double z, bool deriv = 0);
-
-    std::vector<double> arcsch(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> arcsch(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
-
-    double arsech(double z, bool deriv = 0);
-
-    std::vector<double> arsech(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> arsech(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
-
-    double arcoth(double z, bool deriv = 0);
-
-    std::vector<double> arcoth(std::vector<double> z, bool deriv = 0);
-
-    std::vector<std::vector<double>> arcoth(std::vector<std::vector<double>> z,
-                                            bool deriv = 0);
-
-    std::vector<double> activation(std::vector<double> z,
-                                   bool deriv,
-                                   double (*function)(double, bool));
-
-  private:
+    softmax_derivative(const std::vector<double> &inputs);
+
+    /**
+     * @brief Computes the binary step activation function
+     * @param z The input value
+     * @return 1 if z >= 0, otherwise 0
+     */
+    double binary_step(double z);
+
+    /**
+     * @brief Computes the hyperbolic tangent (tanh) activation function
+     * @param z The input value
+     * @return The tanh of z
+     */
+    double tanh(double z);
+
+    /**
+     * @brief Computes the derivative of the hyperbolic tangent (tanh)
+     * activation function
+     * @param z The input value
+     * @return The derivative of tanh at z
+     */
+    double tanh_derivative(double z);
+
+    /**
+     * @brief Computes the Soboleva modified hyperbolic tangent (smht)
+     * activation function
+     * @param z The input value
+     * @return The smht of z
+     */
+    double smht(double z);
+
+    /**
+     * @brief Computes the derivative of the Soboleva modified hyperbolic
+     * tangent (smht) activation function
+     * @param z The input value
+     * @return The derivative of smht at z
+     */
+    double smht_derivative(double z);
+
+    /**
+     * @brief Computes the Gaussian Error Linear Unit (GELU) activation function
+     * @param z The input value
+     * @return The GELU of z
+     */
+    double gelu(double z);
+
+    /**
+     * @brief Computes the derivative of the Gaussian Error Linear Unit (GELU)
+     * activation function
+     * @param z The input value
+     * @return The derivative of GELU at z
+     */
+    double gelu_derivative(double z);
+
+    /**
+     * @brief Computes the softplus activation function
+     * @param z The input value
+     * @return The softplus of z
+     */
+    double softplus(double z);
+
+    /**
+     * @brief Computes the Exponential Linear Unit (ELU) activation function
+     * @param z The input value
+     * @param alpha The ELU parameter (default: 10)
+     * @return The ELU of z
+     */
+    double elu(double z, double alpha = 10);
+
+    /**
+     * @brief Computes the derivative of the Exponential Linear Unit (ELU)
+     * activation function
+     * @param z The input value
+     * @param alpha The ELU parameter (default: 10)
+     * @return The derivative of ELU at z
+     */
+    double elu_derivative(double z, double alpha = 10);
+
+    /**
+     * @brief Computes the Scaled Exponential Linear Unit (SELU) activation
+     * function
+     * @param z The input value
+     * @param alpha The SELU parameter (default: 167326)
+     * @param scale The SELU parameter (default: 10507)
+     * @return The SELU of z
+     */
+    double selu(double z, double alpha = 167326, double scale = 10507);
+
+    /**
+     * @brief Computes the derivative of the Scaled Exponential Linear Unit
+     * (SELU) activation function
+     * @param z The input value
+     * @param alpha The SELU parameter (default: 167326)
+     * @param scale The SELU parameter (default: 10507)
+     * @return The derivative of SELU at z
+     */
+    double
+    selu_derivative(double z, double alpha = 167326, double scale = 10507);
+
+    /**
+     * @brief Computes the Leaky Rectified Linear Unit (Leaky ReLU) activation
+     * function
+     * @param z The input value
+     * @param alpha The Leaky ReLU parameter (default: 001)
+     * @return The Leaky ReLU of z
+     */
+    double leaky_relu(double z, double alpha = 001);
+
+    /**
+     * @brief Computes the derivative of the Leaky Rectified Linear Unit (Leaky
+     * ReLU) activation function
+     * @param z The input value
+     * @param alpha The Leaky ReLU parameter (default: 001)
+     * @return The derivative of Leaky ReLU at z
+     */
+    double leaky_relu_derivative(double z, double alpha = 001);
+
+    /**
+     * @brief Computes the Parametric Rectified Linear Unit (PReLU) activation
+     * function
+     * @param z The input value
+     * @param alpha The PReLU parameter (slope)
+     * @return The PReLU of z
+     */
+    double prelu(double z, double alpha);
+
+    /**
+     * @brief Computes the derivative of the Parametric Rectified Linear Unit
+     * (PReLU) activation function
+     * @param z The input value
+     * @param alpha The PReLU parameter (slope)
+     * @return The derivative of PReLU at z
+     */
+    double prelu_derivative(double z, double alpha);
+
+    /**
+     * @brief Computes the Sigmoid Linear Unit (SiLU or Swish) activation
+     * function
+     * @param z The input value
+     * @return The SiLU of z
+     */
+    double silu(double z);
+
+    /**
+     * @brief Computes the derivative of the Sigmoid Linear Unit (SiLU or Swish)
+     * activation function
+     * @param z The input value
+     * @return The derivative of SiLU at z
+     */
+    double silu_derivative(double z);
 };
 
 } // namespace ml

@@ -12,6 +12,7 @@ set(SOURCE_FILES
     knn.cpp
     kfold.cpp
     logreg.cpp
+    activators.cpp
 )
 
 add_library(ml OBJECT ${SOURCE_FILES})
