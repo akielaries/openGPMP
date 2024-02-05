@@ -41,6 +41,7 @@ set(CPP_SOURCES
     ../modules/nt/logarithms.cpp
     ../modules/nt/random.cpp
     ../modules/stats/describe.cpp
+    ../modules/stats/probdist.cpp
 )
 
 # C++ test files
