@@ -46,51 +46,87 @@ namespace gpmp {
 
 namespace ml {
 
-class Logreg {
+/**
+ * @class LogReg
+ * @brief Represents a Logistic Regression classifier
+ */
+class LogReg {
   public:
-    Logreg(std::vector<std::vector<double>> inputSet,
-           std::vector<double> outputSet,
-           std::string reg = "None",
-           double lambda = 0.5,
-           double alpha = 0.5);
+    /**
+     * @brief Constructor for the LogReg class
+     * @param l_rate The learning rate for gradient descent optimization
+     * (default: 001)
+     * @param num_iters The number of iterations for gradient descent (default:
+     * 1000)
+     * @param lda The regularization parameter lambda (default: 001)
+     */
+    LogReg(double l_rate = 001, int num_iters = 1000, double lda = 001);
 
-    std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
-    double modelTest(std::vector<double> x);
+    /**
+     * @brief Destructor for the LogReg class
+     */
+    ~LogReg();
 
-    void gradientDescent(double learning_rate, int max_epoch, bool UI = 1);
+    /**
+     * @brief Trains the logistic regression model on the given training data
+     * @param X_train The feature matrix of the training data
+     * @param y_train The labels of the training data
+     */
+    void train(const std::vector<std::vector<double>> &X_train,
+               const std::vector<int> &y_train);
 
-    void MLE(double learning_rate, int max_epoch, bool UI = 1);
+    /**
+     * @brief Predicts the class labels for the given test data
+     * @param X_test The feature matrix of the test data
+     * @return A vector of predicted class labels
+     */
+    std::vector<int> classify(const std::vector<std::vector<double>> &X);
 
-    void SGD(double learning_rate, int max_epoch, bool UI = 1);
+    /**
+     * @brief Computes the predicted probabilities for the given test data
+     * @param X_test The feature matrix of the test data
+     * @return A vector of predicted probabilities
+     */
+    std::vector<double> predict(const std::vector<std::vector<double>> &X_test);
 
-    void
-    MBGD(double learning_rate, int max_epoch, int mini_batch_size, bool UI = 1);
+    /**
+     * @brief Computes the accuracy of the model on the given test data
+     * @param X_test The feature matrix of the test data
+     * @param y_test The true labels of the test data
+     * @return The accuracy of the model
+     */
+    double accuracy(const std::vector<std::vector<double>> &X_test,
+                    const std::vector<int> &y_test);
 
-    double score();
-    void save(std::string fileName);
+    /**
+     * @brief Performs feature scaling on the input feature matrix
+     * @param X The feature matrix to be scaled
+     */
+    void feature_scaling(std::vector<std::vector<double>> &X);
 
-  private:
-    double Cost(std::vector<double> y_hat, std::vector<double> y);
+    double learning_rate; /**< The learning rate for gradient descent
+                             optimization */
+    int num_iterations;   /**< The number of iterations for gradient descent */
+    double lambda;        /**< The regularization parameter lambda */
+    std::vector<double>
+        weights; /**< The weights learned by the logistic regression model */
 
-    std::vector<double> Evaluate(std::vector<std::vector<double>> X);
+    /**
+     * @brief Computes the sigmoid function value for the given input
+     * @param z The input value
+     * @return The sigmoid of z
+     */
+    double sigmoid(double z);
 
-    double Evaluate(std::vector<double> x);
-
-    void forwardPass();
-
-    std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-    std::vector<double> y_hat;
-    std::vector<double> weights;
-    double bias;
-
-    int n;
-    int k;
-    double learning_rate;
-    // Regularization Params
-    std::string reg;
-    double lambda; /* Regularization Parameter */
-    double alpha;  /* This is the controlling param for Elastic Net*/
+    /**
+     * @brief Computes the cost function value for the given input data and
+     * labels
+     * @param X The feature matrix of the data
+     * @param y The labels of the data
+     * @return The value of the cost function
+     */
+    double cost_function(const std::vector<std::vector<double>> &X,
+                         const std::vector<int> &y);
 };
 
 } // namespace ml

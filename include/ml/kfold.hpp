@@ -83,8 +83,8 @@ class Kfold {
     /**< The indices of instances grouped into k folds */
     std::vector<std::vector<int>> fold_indices;
 };
-}
+} // namespace ml
 
-}
+} // namespace gpmp
 
 #endif

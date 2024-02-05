@@ -11,6 +11,7 @@ set(SOURCE_FILES
     kohonen_net.cpp
     knn.cpp
     kfold.cpp
+    logreg.cpp
 )
 
 add_library(ml OBJECT ${SOURCE_FILES})
