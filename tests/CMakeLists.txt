@@ -33,6 +33,9 @@ set(CPP_SOURCES
     ../modules/ml/bayes_clf.cpp
     ../modules/ml/encoder.cpp
     ../modules/ml/mlp_network.cpp
+    ../modules/ml/kohonen_net.cpp
+    ../modules/ml/knn.cpp
+    ../modules/ml/kfold.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp
@@ -41,6 +44,7 @@ set(CPP_SOURCES
     ../modules/nt/logarithms.cpp
     ../modules/nt/random.cpp
     ../modules/optim/function.cpp
+    ../modules/optim/quasi.cpp
     ../modules/stats/describe.cpp
     ../modules/stats/probdist.cpp
 )

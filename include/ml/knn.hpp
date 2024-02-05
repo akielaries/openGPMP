@@ -45,25 +45,52 @@ namespace gpmp {
 
 namespace ml {
 
-class kNN {
+/**
+ * @class KNN
+ * @brief Represents a K Nearest Neighbors (KNN) classifier
+ */
+class KNN {
   public:
-    kNN(std::vector<std::vector<double>> inputSet,
-        std::vector<double> outputSet,
-        int k);
+    /**
+     * @brief Constructor for the KNN class
+     */
+    KNN();
 
-    std::vector<double> modelSetTest(std::vector<std::vector<double>> X);
-    int modelTest(std::vector<double> x);
-    double score();
+    /**
+     * @brief Destructor for the KNN class
+     */
+    ~KNN();
+
+    /**
+     * @brief Trains the KNN model with the given training data and labels
+     * @param training_data The training data, a vector of feature vectors
+     * @param labels The corresponding labels for the training data
+     */
+    void train(const std::vector<std::vector<double>> &training_data,
+               const std::vector<int> &labels);
+
+    /**
+     * @brief Predicts the label of a given input vector using KNN algorithm
+     * @param input_vector The input vector for which prediction is to be made
+     * @param k The number of nearest neighbors to consider
+     * @return The predicted label
+     */
+    int predict(const std::vector<double> &input_vector, int k);
 
   private:
-    // Private Model Functions
-    std::vector<double> nearestNeighbors(std::vector<double> x);
-    int determineClass(std::vector<double> knn);
+    std::vector<std::vector<double>>
+        training_data; /**< The training data stored as feature vectors */
+    std::vector<int>
+        labels; /**< The corresponding labels for the training data */
 
-    // Model Inputs and Parameters
-    std::vector<std::vector<double>> inputSet;
-    std::vector<double> outputSet;
-    int k;
+    /**
+     * @brief Calculates the Euclidean distance between two vectors
+     * @param vec1 The first vector
+     * @param vec2 The second vector
+     * @return The Euclidean distance between the two vectors
+     */
+    double calculateEuclideanDistance(const std::vector<double> &vec1,
+                                      const std::vector<double> &vec2);
 };
 
 } // namespace ml

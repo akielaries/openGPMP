@@ -32,9 +32,9 @@
  ************************************************************************/
 
 #include "../../include/optim/function.hpp"
-std::vector<double>
-gpmp::optim::Func::generate_random_point(const std::vector<double> &lower_bounds,
-                            const std::vector<double> &upper_bounds) const {
+std::vector<double> gpmp::optim::Func::generate_random_point(
+    const std::vector<double> &lower_bounds,
+    const std::vector<double> &upper_bounds) const {
     if (lower_bounds.size() != upper_bounds.size()) {
         throw std::invalid_argument(
             "Lower and upper bounds must have the same dimension.");
@@ -51,7 +51,8 @@ gpmp::optim::Func::generate_random_point(const std::vector<double> &lower_bounds
     return point;
 }
 
-std::vector<double> gpmp::optim::Func::generate_fibonacci_sequence(size_t length) const {
+std::vector<double>
+gpmp::optim::Func::generate_fibonacci_sequence(size_t length) const {
     std::vector<double> sequence;
 
     double golden_ratio = (1.0 + std::sqrt(5.0)) / 2.0;
@@ -64,8 +65,9 @@ std::vector<double> gpmp::optim::Func::generate_fibonacci_sequence(size_t length
     return sequence;
 }
 
-std::vector<double> gpmp::optim::Func::vector_addition(const std::vector<double> &a,
-                                          const std::vector<double> &b) const {
+std::vector<double>
+gpmp::optim::Func::vector_addition(const std::vector<double> &a,
+                                   const std::vector<double> &b) const {
     if (a.size() != b.size()) {
         throw std::invalid_argument(
             "Vector dimensions do not match for addition.");
@@ -81,7 +83,7 @@ std::vector<double> gpmp::optim::Func::vector_addition(const std::vector<double>
 
 std::vector<double>
 gpmp::optim::Func::vector_subtraction(const std::vector<double> &a,
-                         const std::vector<double> &b) const {
+                                      const std::vector<double> &b) const {
     if (a.size() != b.size()) {
         throw std::invalid_argument(
             "Vector dimensions do not match for subtraction.");
@@ -95,9 +97,9 @@ gpmp::optim::Func::vector_subtraction(const std::vector<double> &a,
     return result;
 }
 
-std::vector<double>
-gpmp::optim::Func::vector_scalar_multiply(double scalar,
-                             const std::vector<double> &vec) const {
+std::vector<double> gpmp::optim::Func::vector_scalar_multiply(
+    double scalar,
+    const std::vector<double> &vec) const {
     std::vector<double> result;
     for (double value : vec) {
         result.push_back(scalar * value);
@@ -106,14 +108,17 @@ gpmp::optim::Func::vector_scalar_multiply(double scalar,
     return result;
 }
 
-double gpmp::optim::Func::calculate_midpoint(double a, double b, double fraction) const {
+double gpmp::optim::Func::calculate_midpoint(double a,
+                                             double b,
+                                             double fraction) const {
     return a + fraction * (b - a);
 }
 
-double gpmp::optim::Func::golden_section_search(const std::function<double(double)> &func,
-                                   double a,
-                                   double b,
-                                   double tol) {
+double gpmp::optim::Func::golden_section_search(
+    const std::function<double(double)> &func,
+    double a,
+    double b,
+    double tol) {
     if (!is_valid_interval(a, b)) {
         throw std::invalid_argument(
             "Invalid interval: lower bound must be less than upper bound.");
@@ -127,20 +132,20 @@ double gpmp::optim::Func::golden_section_search(const std::function<double(doubl
 }
 
 double gpmp::optim::Func::linear_interpolation(double x,
-                                  double x0,
-                                  double x1,
-                                  double y0,
-                                  double y1) {
+                                               double x0,
+                                               double x1,
+                                               double y0,
+                                               double y1) {
     return y0 + (y1 - y0) / (x1 - x0) * (x - x0);
 }
 
 double gpmp::optim::Func::cubic_interpolation(double x,
-                                 double x0,
-                                 double x1,
-                                 double y0,
-                                 double y1,
-                                 double y0_prime,
-                                 double y1_prime) {
+                                              double x0,
+                                              double x1,
+                                              double y0,
+                                              double y1,
+                                              double y0_prime,
+                                              double y1_prime) {
     double h = x1 - x0;
     double t = (x - x0) / h;
     double t2 = t * t;
@@ -154,13 +159,13 @@ double gpmp::optim::Func::cubic_interpolation(double x,
     return a * y0 + b * (h * y0_prime) + c * (h * y1_prime) + d * y1;
 }
 
-double
-gpmp::optim::Func::golden_section_search_minimize(const std::function<double(double)> &func,
-                                     double a,
-                                     double b,
-                                     double tol,
-                                     double x1,
-                                     double x2) {
+double gpmp::optim::Func::golden_section_search_minimize(
+    const std::function<double(double)> &func,
+    double a,
+    double b,
+    double tol,
+    double x1,
+    double x2) {
     double f1 = func(x1);
     double f2 = func(x2);
 
@@ -250,8 +255,9 @@ double gpmp::optim::Func::random_search(
 
 // Curve-fitting methods
 
-std::vector<double> gpmp::optim::Func::fit_linear(const std::vector<double> &x,
-                                     const std::vector<double> &y) {
+std::vector<double>
+gpmp::optim::Func::fit_linear(const std::vector<double> &x,
+                              const std::vector<double> &y) {
     size_t n = x.size();
 
     if (n != y.size() || n < 2) {
@@ -423,7 +429,7 @@ std::vector<double> gpmp::optim::Func::regula_falsi(
 }
 
 std::vector<double> gpmp::optim::Func::cubic_fit(const std::vector<double> &x,
-                                    const std::vector<double> &y) {
+                                                 const std::vector<double> &y) {
     size_t n = x.size();
 
     if (n != y.size() || n < 4) {
@@ -579,9 +585,9 @@ std::vector<double> gpmp::optim::Func::nelder_mead(
 
 // Helper methods for Nelder–Mead
 
-std::vector<double>
-gpmp::optim::Func::calculate_centroid(const std::vector<std::vector<double>> &simplex,
-                         size_t exclude_index) {
+std::vector<double> gpmp::optim::Func::calculate_centroid(
+    const std::vector<std::vector<double>> &simplex,
+    size_t exclude_index) {
     size_t n = simplex[0].size();
     std::vector<double> centroid(n, 0.0);
 
@@ -600,9 +606,10 @@ gpmp::optim::Func::calculate_centroid(const std::vector<std::vector<double>> &si
     return centroid;
 }
 
-std::vector<double> gpmp::optim::Func::reflect(const std::vector<double> &point,
-                                  const std::vector<double> &centroid,
-                                  double reflection_coefficient) {
+std::vector<double>
+gpmp::optim::Func::reflect(const std::vector<double> &point,
+                           const std::vector<double> &centroid,
+                           double reflection_coefficient) {
     size_t n = point.size();
     std::vector<double> reflected_point(n);
 

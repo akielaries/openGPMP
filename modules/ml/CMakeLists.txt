@@ -8,6 +8,9 @@ set(SOURCE_FILES
     bayes_clf.cpp
     linreg.cpp
     mlp_network.cpp
+    kohonen_net.cpp
+    knn.cpp
+    kfold.cpp
 )
 
 add_library(ml OBJECT ${SOURCE_FILES})
