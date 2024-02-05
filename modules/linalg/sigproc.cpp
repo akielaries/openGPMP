@@ -36,10 +36,10 @@
 #include <stdexcept>
 #include <vector>
 
-SigProc::SigProc(const std::vector<double> &signal) : signal_(signal) {
+gpmp::linalg::SigProc::SigProc(const std::vector<double> &signal) : signal_(signal) {
 }
 
-double SigProc::mean() const {
+double gpmp::linalg::SigProc::mean() const {
     double sum = 0.0;
     for (const auto &value : signal_) {
         sum += value;
@@ -47,7 +47,7 @@ double SigProc::mean() const {
     return sum / static_cast<double>(signal_.size());
 }
 
-double SigProc::stdev() const {
+double gpmp::linalg::SigProc::stdev() const {
     double mn = mean();
     double sumSquaredDiff = 0.0;
 
@@ -59,7 +59,7 @@ double SigProc::stdev() const {
     return std::sqrt(sumSquaredDiff / static_cast<double>(signal_.size()));
 }
 
-void SigProc::lpf(double alpha) {
+void gpmp::linalg::SigProc::lpf(double alpha) {
     if (alpha <= 0.0 || alpha >= 1.0) {
         throw std::invalid_argument(
             "Error: Alpha must be in the range (0, 1).");
@@ -70,7 +70,7 @@ void SigProc::lpf(double alpha) {
     }
 }
 
-void SigProc::normalize() {
+void gpmp::linalg::SigProc::normalize() {
     double mn = mean();
     double stdDev = stdev();
 
@@ -79,11 +79,11 @@ void SigProc::normalize() {
     }
 }
 
-std::vector<double> SigProc::get_sig() const {
+std::vector<double> gpmp::linalg::SigProc::get_sig() const {
     return signal_;
 }
 
-std::complex<double> SigProc::z_tform(const std::complex<double> &z) const {
+std::complex<double> gpmp::linalg::SigProc::z_tform(const std::complex<double> &z) const {
     std::complex<double> result = 0.0;
     for (size_t n = 0; n < signal_.size(); ++n) {
         result += signal_[n] * std::pow(z, -static_cast<double>(n));
@@ -91,7 +91,7 @@ std::complex<double> SigProc::z_tform(const std::complex<double> &z) const {
     return result;
 }
 
-std::complex<double> SigProc::z_adv_tform(const std::complex<double> &z,
+std::complex<double> gpmp::linalg::SigProc::z_adv_tform(const std::complex<double> &z,
                                           int delay) const {
     std::complex<double> result = 0.0;
     for (size_t n = 0; n < signal_.size(); ++n) {
@@ -101,7 +101,7 @@ std::complex<double> SigProc::z_adv_tform(const std::complex<double> &z,
 }
 
 std::complex<double>
-SigProc::z_matched_tform(const std::complex<double> &z,
+gpmp::linalg::SigProc::z_matched_tform(const std::complex<double> &z,
                          const std::vector<double> &referenceSignal) const {
     if (signal_.size() != referenceSignal.size()) {
         throw std::invalid_argument(
@@ -116,7 +116,7 @@ SigProc::z_matched_tform(const std::complex<double> &z,
     return result;
 }
 
-std::vector<double> SigProc::bilinear_tform(double Ts) const {
+std::vector<double> gpmp::linalg::SigProc::bilinear_tform(double Ts) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
 
@@ -128,7 +128,7 @@ std::vector<double> SigProc::bilinear_tform(double Ts) const {
     return result;
 }
 
-std::vector<double> SigProc::bilinear_adv_tform(double Ts, int delay) const {
+std::vector<double> gpmp::linalg::SigProc::bilinear_adv_tform(double Ts, int delay) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
 
@@ -140,7 +140,7 @@ std::vector<double> SigProc::bilinear_adv_tform(double Ts, int delay) const {
     return result;
 }
 
-std::vector<double> SigProc::bilinear_matched_tform(
+std::vector<double> gpmp::linalg::SigProc::bilinear_matched_tform(
     double Ts,
     const std::vector<double> &referenceSignal) const {
     if (signal_.size() != referenceSignal.size()) {
@@ -159,7 +159,7 @@ std::vector<double> SigProc::bilinear_matched_tform(
     return result;
 }
 
-std::vector<double> SigProc::compute_constant_q_transform(double Q,
+std::vector<double> gpmp::linalg::SigProc::compute_constant_q_transform(double Q,
                                                           double Ts) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
@@ -173,7 +173,7 @@ std::vector<double> SigProc::compute_constant_q_transform(double Q,
 }
 
 std::vector<double>
-SigProc::compute_inverse_constant_q_transform(double Q, double Ts) const {
+gpmp::linalg::SigProc::compute_inverse_constant_q_transform(double Q, double Ts) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
 
@@ -185,7 +185,7 @@ SigProc::compute_inverse_constant_q_transform(double Q, double Ts) const {
     return result;
 }
 
-std::vector<double> SigProc::compute_dct(size_t M) const {
+std::vector<double> gpmp::linalg::SigProc::compute_dct(size_t M) const {
     size_t N = signal_.size();
     std::vector<double> result(M, 0.0);
 
@@ -204,7 +204,7 @@ std::vector<double> SigProc::compute_dct(size_t M) const {
     return result;
 }
 
-std::vector<double> SigProc::compute_inverse_dct(size_t M) const {
+std::vector<double> gpmp::linalg::SigProc::compute_inverse_dct(size_t M) const {
     size_t N = signal_.size();
     std::vector<double> result(N, 0.0);
 
@@ -223,7 +223,7 @@ std::vector<double> SigProc::compute_inverse_dct(size_t M) const {
     return result;
 }
 
-std::vector<std::complex<double>> SigProc::compute_dft() const {
+std::vector<std::complex<double>> gpmp::linalg::SigProc::compute_dft() const {
     size_t N = signal_.size();
     std::vector<std::complex<double>> result(N, 0.0);
 
@@ -237,7 +237,7 @@ std::vector<std::complex<double>> SigProc::compute_dft() const {
     return result;
 }
 
-std::vector<double> SigProc::compute_inverse_dft() const {
+std::vector<double> gpmp::linalg::SigProc::compute_inverse_dft() const {
     size_t N = signal_.size();
     std::vector<double> result(N, 0.0);
 
@@ -253,7 +253,7 @@ std::vector<double> SigProc::compute_inverse_dft() const {
     return result;
 }
 
-std::vector<double> SigProc::compute_magnitude_spectrum() const {
+std::vector<double> gpmp::linalg::SigProc::compute_magnitude_spectrum() const {
     auto dft_result = compute_dft();
     std::vector<double> magnitude_spectrum(dft_result.size(), 0.0);
 
@@ -264,7 +264,7 @@ std::vector<double> SigProc::compute_magnitude_spectrum() const {
     return magnitude_spectrum;
 }
 
-std::vector<double> SigProc::compute_phase_spectrum() const {
+std::vector<double> gpmp::linalg::SigProc::compute_phase_spectrum() const {
     auto dft_result = compute_dft();
     std::vector<double> phase_spectrum(dft_result.size(), 0.0);
 
@@ -276,7 +276,7 @@ std::vector<double> SigProc::compute_phase_spectrum() const {
 }
 
 std::vector<std::complex<double>>
-SigProc::compute_dtft(const std::vector<double> &omega) const {
+gpmp::linalg::SigProc::compute_dtft(const std::vector<double> &omega) const {
     size_t N = signal_.size();
     std::vector<std::complex<double>> result(omega.size(), 0.0);
 
@@ -291,7 +291,7 @@ SigProc::compute_dtft(const std::vector<double> &omega) const {
 }
 
 std::vector<double>
-SigProc::compute_inverse_dtft(const std::vector<double> &omega) const {
+gpmp::linalg::SigProc::compute_inverse_dtft(const std::vector<double> &omega) const {
     size_t N = signal_.size();
     std::vector<double> result(omega.size(), 0.0);
 
@@ -305,7 +305,7 @@ SigProc::compute_inverse_dtft(const std::vector<double> &omega) const {
     return result;
 }
 
-std::vector<double> SigProc::compute_dtft_magnitude_spectrum(
+std::vector<double> gpmp::linalg::SigProc::compute_dtft_magnitude_spectrum(
     const std::vector<double> &omega) const {
     auto dtft_result = compute_dtft(omega);
     std::vector<double> magnitude_spectrum(dtft_result.size(), 0.0);
@@ -318,7 +318,7 @@ std::vector<double> SigProc::compute_dtft_magnitude_spectrum(
 }
 
 std::vector<double>
-SigProc::compute_dtft_phase_spectrum(const std::vector<double> &omega) const {
+gpmp::linalg::SigProc::compute_dtft_phase_spectrum(const std::vector<double> &omega) const {
     auto dtft_result = compute_dtft(omega);
     std::vector<double> phase_spectrum(dtft_result.size(), 0.0);
 
@@ -329,7 +329,7 @@ SigProc::compute_dtft_phase_spectrum(const std::vector<double> &omega) const {
     return phase_spectrum;
 }
 
-std::vector<double> SigProc::design_discrete_system(
+std::vector<double> gpmp::linalg::SigProc::design_discrete_system(
     const std::vector<double> &analog_system_coefficients,
     double sampling_rate) {
     // Design a discrete-time system using impulse invariance method
@@ -349,7 +349,7 @@ std::vector<double> SigProc::design_discrete_system(
 }
 
 std::vector<double>
-SigProc::impulse_invariance_transform(const std::vector<double> &analog_signal,
+gpmp::linalg::SigProc::impulse_invariance_transform(const std::vector<double> &analog_signal,
                                       double analog_sampling_rate,
                                       double discrete_sampling_rate) {
     size_t M = analog_signal.size();

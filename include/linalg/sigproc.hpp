@@ -38,6 +38,10 @@
 #include <complex>
 #include <vector>
 
+namespace gpmp {
+
+namespace linalg {
+
 class SigProc {
   public:
     /**
@@ -243,4 +247,6 @@ class SigProc {
     std::vector<double> signal_;
 };
 
+} // linalg
+} // gpmp
 #endif
