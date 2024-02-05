@@ -28,10 +28,12 @@ Contents
     * [Core/Utilities](namespacegpmp_1_1core.html)
     * [Arithmetic](arithmetic_8hpp.html)
     * Differential, Integral, Multivariate and Vector Calculus
+    * Discrete Mathematics
     * [Linear Algebra](linalg_8hpp.html)
     * [Machine/Deep Learning](namespacegpmp_1_1ml.html)
     * [Number Theory](nt_8hpp.html)
     * Topology/Complex
+    * Statistics
     * Much more
 
 

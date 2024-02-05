@@ -125,6 +125,7 @@ in later stages of the `PRE-V1.0.0` phase. The modules below are all in progress
 5. Machine/Deep Learning
 6. Number Theory
 7. Complex
+8. Statistics
 
 For more details view the project [documentation](https://akielaries.github.io/openGPMP/).
 
