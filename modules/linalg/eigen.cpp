@@ -202,3 +202,48 @@ gpmp::linalg::Eigen::jordan_normal_form(double tolerance) const {
 
     return jordanMatrix;
 }
+
+double gpmp::linalg::Eigen::rayleigh_iter(int maxIterations,
+                                          double tolerance) const {
+    // initial guess
+    std::vector<double> x(size, 1.0);
+    double lambdaPrev = 0.0;
+
+    for (int iter = 0; iter < maxIterations; ++iter) {
+        // Rayleigh quotient iteration
+        std::vector<double> Ax(size, 0.0);
+
+        // perform matrix-vector multiplication: Ax = A * x
+        for (int i = 0; i < size; ++i) {
+            for (int j = 0; j < size; ++j) {
+                Ax[i] += matrix[i][j] * x[j];
+            }
+        }
+
+        // compute the Rayleigh quotient
+        double lambda =
+            std::inner_product(x.begin(), x.end(), Ax.begin(), 0.0) /
+            std::inner_product(x.begin(), x.end(), x.begin(), 0.0);
+
+        // check for convergence
+        if (std::abs(lambda - lambdaPrev) < tolerance) {
+            return lambda;
+        }
+
+        // update the guess vector
+        double normAx = std::sqrt(
+            std::inner_product(Ax.begin(), Ax.end(), Ax.begin(), 0.0));
+        for (int i = 0; i < size; ++i) {
+            // normalize each element of x by dividing by its magnitude
+            x[i] = Ax[i] / normAx;
+        }
+
+        lambdaPrev = lambda;
+    }
+
+    std::cerr << "Warning: Rayleigh quotient iteration did not converge within "
+                 "the specified iterations."
+              << std::endl;
+    // if not converged
+    return 0.0;
+}

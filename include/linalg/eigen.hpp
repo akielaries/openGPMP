@@ -129,6 +129,23 @@ class Eigen {
      */
     std::vector<std::vector<double>>
     jordan_normal_form(double tolerance = 1e-10) const;
+
+    /**
+     * @brief Perform Rayleigh Quotient Iteration to approximate the dominant
+     * eigenvalue
+     *
+     * This method iteratively refines an estimate of the dominant eigenvalue of
+     * the matrix using the Rayleigh quotient iteration. The method returns the
+     * final estimate of the dominant eigenvalue
+     *
+     * @param maxIterations Maximum number of iterations
+     * @param tolerance Convergence tolerance
+     * @return The dominant eigenvalue estimate
+     *
+     * @note The iteration may not converge for all matrices. A warning is
+     * issued if convergence is not achieved
+     */
+    double rayleigh_iter(int maxIterations, double tolerance) const;
 };
 
 } // namespace linalg
