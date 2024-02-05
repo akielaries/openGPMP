@@ -127,10 +127,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3c2efdf552da6bb0d02abb40e2e6fa58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca2d54d3405aa4466968f2e2cb34196"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#a2ca2d54d3405aa4466968f2e2cb34196">lehmerMean</a> (const std::vector&lt; double &gt; &amp;x, const double p)</td></tr>
 <tr class="separator:a2ca2d54d3405aa4466968f2e2cb34196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac705ee40d2fc709afd38f650c973e25b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#ac705ee40d2fc709afd38f650c973e25b">weightedmean_lehmer</a> (const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;weights, const double p)</td></tr>
-<tr class="separator:ac705ee40d2fc709afd38f650c973e25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe462e61bd512957260ccaefe6f9d1e9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#afe462e61bd512957260ccaefe6f9d1e9">contramean_harmonic</a> (const std::vector&lt; double &gt; &amp;x)</td></tr>
-<tr class="separator:afe462e61bd512957260ccaefe6f9d1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca81b5d245f6a819c98d54d37dc4bab"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#a2ca81b5d245f6a819c98d54d37dc4bab">weightedLehmerMean</a> (const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;weights, const double p)</td></tr>
+<tr class="separator:a2ca81b5d245f6a819c98d54d37dc4bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bea13d9a20d871b878fb65aa5d7868d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#a5bea13d9a20d871b878fb65aa5d7868d">contraHarmonicMean</a> (const std::vector&lt; double &gt; &amp;x)</td></tr>
+<tr class="separator:a5bea13d9a20d871b878fb65aa5d7868d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e2946961486f464d503c9ac1dbd1367"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#a1e2946961486f464d503c9ac1dbd1367">heronianMean</a> (const double A, const double B)</td></tr>
 <tr class="separator:a1e2946961486f464d503c9ac1dbd1367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63383622a9500e94fe7f8129ef50b56b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1Stats.html#a63383622a9500e94fe7f8129ef50b56b">heinzMean</a> (const double A, const double B, const double x)</td></tr>
@@ -270,14 +270,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afe462e61bd512957260ccaefe6f9d1e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe462e61bd512957260ccaefe6f9d1e9">&#9670;&nbsp;</a></span>contramean_harmonic()</h2>
+<a id="a5bea13d9a20d871b878fb65aa5d7868d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bea13d9a20d871b878fb65aa5d7868d">&#9670;&nbsp;</a></span>contraHarmonicMean()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double gpmp::ml::Stats::contramean_harmonic </td>
+          <td class="memname">double gpmp::ml::Stats::contraHarmonicMean </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -788,6 +788,40 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2ca81b5d245f6a819c98d54d37dc4bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca81b5d245f6a819c98d54d37dc4bab">&#9670;&nbsp;</a></span>weightedLehmerMean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double gpmp::ml::Stats::weightedLehmerMean </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>weights</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae7e2a3e2ad72632e77d6f856708834bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7e2a3e2ad72632e77d6f856708834bb">&#9670;&nbsp;</a></span>weightedMean()</h2>
 
@@ -805,40 +839,6 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>weights</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac705ee40d2fc709afd38f650c973e25b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac705ee40d2fc709afd38f650c973e25b">&#9670;&nbsp;</a></span>weightedmean_lehmer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double gpmp::ml::Stats::weightedmean_lehmer </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>weights</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
