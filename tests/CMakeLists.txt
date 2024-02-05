@@ -27,6 +27,7 @@ set(CPP_SOURCES
     ../modules/linalg/linsys.cpp
     ../modules/linalg/eigen.cpp
     ../modules/linalg/mtx.cpp
+    ../modules/linalg/tensor.cpp
     ../modules/ml/bayes_clf.cpp
     ../modules/ml/encoder.cpp
     ../modules/ml/mlp_network.cpp

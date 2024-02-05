@@ -10,6 +10,7 @@ set(SOURCE_FILES
     linsys_routines.f90
     linsys.cpp
     eigen.cpp
+    tensor.cpp
 )
 
 # compile OpenCL GPU accelerators into openGPMP binary written
