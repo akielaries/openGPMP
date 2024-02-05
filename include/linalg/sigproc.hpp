@@ -247,6 +247,6 @@ class SigProc {
     std::vector<double> signal_;
 };
 
-} // linalg
-} // gpmp
+} // namespace linalg
+} // namespace gpmp
 #endif
