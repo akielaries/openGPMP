@@ -37,9 +37,9 @@
 #include <iostream>
 #include <vector>
 
-std::vector<double>
-QuasiNewton::vector_subtraction(const std::vector<double> &a,
-                                const std::vector<double> &b) const {
+std::vector<double> gpmp::optim::QuasiNewton::vector_subtraction(
+    const std::vector<double> &a,
+    const std::vector<double> &b) const {
     if (a.size() != b.size()) {
         throw std::invalid_argument(
             "Error: Vector dimensions do not match for subtraction.");
@@ -55,7 +55,7 @@ QuasiNewton::vector_subtraction(const std::vector<double> &a,
     return result;
 }
 
-std::vector<double> QuasiNewton::bhhh_optimize(
+std::vector<double> gpmp::optim::QuasiNewton::bhhh_optimize(
     const std::function<double(const std::vector<double> &)> &func,
     const std::vector<double> &initial_point,
     double tolerance,
@@ -93,7 +93,7 @@ std::vector<double> QuasiNewton::bhhh_optimize(
     return current_point;
 }
 
-std::vector<double> QuasiNewton::calculate_gradient(
+std::vector<double> gpmp::optim::QuasiNewton::calculate_gradient(
     const std::function<double(const std::vector<double> &)> &func,
     const std::vector<double> &point,
     double epsilon) {
@@ -114,7 +114,8 @@ std::vector<double> QuasiNewton::calculate_gradient(
 }
 
 std::vector<std::vector<double>>
-QuasiNewton::calculate_bhhh_matrix(const std::vector<double> &gradient) {
+gpmp::optim::QuasiNewton::calculate_bhhh_matrix(
+    const std::vector<double> &gradient) {
     size_t n = gradient.size();
     std::vector<std::vector<double>> bhhh_matrix(n, std::vector<double>(n));
 
@@ -127,10 +128,10 @@ QuasiNewton::calculate_bhhh_matrix(const std::vector<double> &gradient) {
     return bhhh_matrix;
 }
 
-std::vector<double>
-QuasiNewton::update_point(const std::vector<double> &current_point,
-                          const std::vector<double> &gradient,
-                          const std::vector<std::vector<double>> &bhhh_matrix) {
+std::vector<double> gpmp::optim::QuasiNewton::update_point(
+    const std::vector<double> &current_point,
+    const std::vector<double> &gradient,
+    const std::vector<std::vector<double>> &bhhh_matrix) {
     size_t n = current_point.size();
     std::vector<double> updated_point(n);
 
@@ -141,7 +142,7 @@ QuasiNewton::update_point(const std::vector<double> &current_point,
     return updated_point;
 }
 
-std::vector<double> QuasiNewton::bfgs_optimize(
+std::vector<double> gpmp::optim::QuasiNewton::bfgs_optimize(
     const std::function<double(const std::vector<double> &)> &func,
     const std::vector<double> &initial_point,
     double tolerance,
@@ -201,7 +202,7 @@ std::vector<double> QuasiNewton::bfgs_optimize(
     return current_point;
 }
 
-std::vector<double> QuasiNewton::calculate_search_direction(
+std::vector<double> gpmp::optim::QuasiNewton::calculate_search_direction(
     const std::vector<double> &gradient,
     const std::vector<std::vector<double>> &hessian_inverse) {
     size_t n = gradient.size();
@@ -217,14 +218,17 @@ std::vector<double> QuasiNewton::calculate_search_direction(
     return search_direction;
 }
 
-double QuasiNewton::line_search(
+double gpmp::optim::QuasiNewton::line_search(
     const std::function<double(const std::vector<double> &)> &func,
     const std::vector<double> &current_point,
     const std::vector<double> &search_direction) {
-    const double alpha = 0.001; // Step size multiplier
-    const double beta = 0.5;    // Factor for reducing the step size
+    const double alpha = 0.001;      // Step size multiplier
+    const double beta = 0.5;         // Factor for reducing the step size
+    const int maxIterations = 100;   // Maximum number of iterations
+    const double minStepSize = 1e-6; // Minimum step size
 
     double step_size = 1.0; // Initial step size
+    std::vector<double> updated_point = current_point;
 
     // Evaluate the objective function at the current point
     double f_current = func(current_point);
@@ -234,19 +238,26 @@ double QuasiNewton::line_search(
         dot_product(calculate_gradient(func, current_point, 1e-6),
                     search_direction);
 
-    // Armijo condition for line search
-    while (func(update_point(current_point, search_direction, step_size)) >
-           f_current + alpha * step_size * directional_derivative) {
+    int iteration = 0;
+    while (step_size > minStepSize && iteration < maxIterations) {
+        updated_point =
+            update_point(current_point, search_direction, step_size);
+        double f_updated = func(updated_point);
+        if (f_updated <=
+            f_current + alpha * step_size * directional_derivative) {
+            break; // Stop if Armijo condition is satisfied
+        }
         step_size *= beta; // Reduce the step size
+        ++iteration;
     }
 
     return step_size;
 }
 
-std::vector<double>
-QuasiNewton::update_point(const std::vector<double> &current_point,
-                          const std::vector<double> &search_direction,
-                          double step_size) {
+std::vector<double> gpmp::optim::QuasiNewton::update_point(
+    const std::vector<double> &current_point,
+    const std::vector<double> &search_direction,
+    double step_size) {
     size_t n = current_point.size();
     std::vector<double> updated_point(n);
 
@@ -257,7 +268,7 @@ QuasiNewton::update_point(const std::vector<double> &current_point,
     return updated_point;
 }
 
-std::vector<double> QuasiNewton::calculate_gradient_difference(
+std::vector<double> gpmp::optim::QuasiNewton::calculate_gradient_difference(
     const std::vector<double> &next_point,
     const std::vector<double> &current_point,
     const std::vector<double> &gradient) {
@@ -272,17 +283,19 @@ std::vector<double> QuasiNewton::calculate_gradient_difference(
     return gradient_difference;
 }
 
-std::vector<std::vector<double>> QuasiNewton::update_hessian_inverse(
+std::vector<std::vector<double>>
+gpmp::optim::QuasiNewton::update_hessian_inverse(
     const std::vector<std::vector<double>> &hessian_inverse,
     const std::vector<double> &gradient_difference,
     const std::vector<double> &search_direction) {
+
     size_t n = hessian_inverse.size();
     std::vector<std::vector<double>> updated_hessian_inverse(
         n,
         std::vector<double>(n));
 
     // Update Hessian using BFGS update formula
-    double rho = 1.0 / dot_product(gradient_difference, search_direction);
+    double rho = dot_product(gradient_difference, search_direction);
 
     for (size_t i = 0; i < n; ++i) {
         for (size_t j = 0; j < n; ++j) {
@@ -295,8 +308,8 @@ std::vector<std::vector<double>> QuasiNewton::update_hessian_inverse(
     return updated_hessian_inverse;
 }
 
-double QuasiNewton::dot_product(const std::vector<double> &a,
-                                const std::vector<double> &b) {
+double gpmp::optim::QuasiNewton::dot_product(const std::vector<double> &a,
+                                             const std::vector<double> &b) {
     size_t n = a.size();
     double result = 0.0;
 
@@ -307,7 +320,7 @@ double QuasiNewton::dot_product(const std::vector<double> &a,
     return result;
 }
 
-std::vector<double> QuasiNewton::lbfgs_optimize(
+std::vector<double> gpmp::optim::QuasiNewton::lbfgs_optimize(
     const std::function<double(const std::vector<double> &)> &func,
     const std::vector<double> &initial_point,
     double tolerance,

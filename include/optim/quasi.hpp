@@ -37,6 +37,10 @@
 #include <functional>
 #include <vector>
 
+namespace gpmp {
+
+namespace optim {
+
 /**
  * @class QuasiNewton
  * @brief Class implementing Quasi-Newton optimization methods
@@ -213,4 +217,7 @@ class QuasiNewton {
         size_t memory_size);
 };
 
+} // namespace optim
+
+} // namespace gpmp
 #endif

@@ -1,5 +1,5 @@
 /**
- * Unit tests for the Number Theory modules PRNGs
+ * Unit tests for the Optimization module's function class
  */
 #include "../../include/optim/function.hpp"
 #include <cstdlib>

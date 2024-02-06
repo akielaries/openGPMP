@@ -69,6 +69,7 @@ set(CPP_TEST_FILES
     core/t_threadpool.cpp
     disct/t_graphs.cpp
     optim/t_function.cpp
+    optim/t_quasi.cpp
 )
 
 # Fortran source files to be tested
