@@ -32,6 +32,9 @@
  ************************************************************************/
 
 #include "../../include/optim/function.hpp"
+#include <iostream>
+#include <vector>
+
 std::vector<double> gpmp::optim::Func::generate_random_point(
     const std::vector<double> &lower_bounds,
     const std::vector<double> &upper_bounds) const {
@@ -56,10 +59,13 @@ gpmp::optim::Func::generate_fibonacci_sequence(size_t length) const {
     std::vector<double> sequence;
 
     double golden_ratio = (1.0 + std::sqrt(5.0)) / 2.0;
+    double fibonacci_prev = 0.0;
+    double fibonacci_curr = 1.0;
     for (size_t i = 0; i < length; ++i) {
-        double fibonacci_number =
-            std::round(std::pow(golden_ratio, static_cast<double>(i)));
-        sequence.push_back(fibonacci_number);
+        sequence.push_back(fibonacci_prev);
+        double fibonacci_next = fibonacci_curr + fibonacci_prev;
+        fibonacci_prev = fibonacci_curr;
+        fibonacci_curr = fibonacci_next;
     }
 
     return sequence;
@@ -280,31 +286,38 @@ gpmp::optim::Func::fit_linear(const std::vector<double> &x,
 
     return {a, b};
 }
+
 double gpmp::optim::Func::fibonacci_search(
     const std::function<double(const std::vector<double> &)> &func,
     const std::vector<double> &lower_bounds,
     const std::vector<double> &upper_bounds,
     size_t max_iterations) {
+
     if (lower_bounds.size() != upper_bounds.size()) {
         throw std::invalid_argument(
             "Lower and upper bounds must have the same dimension.");
     }
 
     size_t dimension = lower_bounds.size();
-    std::vector<double> fib_sequence =
-        generate_fibonacci_sequence(max_iterations);
+    std::vector<double> fib_sequence = generate_fibonacci_sequence(
+        max_iterations + 2); // Adjusted for proper Fibonacci generation
+
+    // Print Fibonacci sequence for debugging
     std::vector<double> a = lower_bounds;
     std::vector<double> b = upper_bounds;
 
     for (size_t k = 0; k < max_iterations; ++k) {
-        double lambda = (fib_sequence[max_iterations - k - 1] /
-                         fib_sequence[max_iterations - k + 1]);
-        std::vector<double> x1 = vector_addition(
-            a,
-            vector_scalar_multiply(lambda, vector_subtraction(b, a)));
-        std::vector<double> x2 = vector_addition(
-            b,
-            vector_scalar_multiply(lambda, vector_subtraction(a, b)));
+        double lambda = (fib_sequence[max_iterations - k + 1] /
+                         fib_sequence[max_iterations - k +
+                                      2]); // Corrected lambda calculation
+
+        std::vector<double> x1(dimension);
+        std::vector<double> x2(dimension);
+
+        for (size_t i = 0; i < dimension; ++i) {
+            x1[i] = a[i] + lambda * (b[i] - a[i]);
+            x2[i] = b[i] + lambda * (a[i] - b[i]);
+        }
 
         if (func(x1) < func(x2)) {
             b = x2;
@@ -323,6 +336,10 @@ double gpmp::optim::Func::ternary_search(
     size_t max_iterations) const {
     double a = lower_bounds[0];
     double b = upper_bounds[0];
+
+    if (lower_bounds >= upper_bounds) {
+        throw std::invalid_argument("Invalid bounds for ternary search method");
+    }
 
     for (size_t iteration = 0; iteration < max_iterations; ++iteration) {
         double m1 = calculate_midpoint(a, b, 1.0 / 3.0);
