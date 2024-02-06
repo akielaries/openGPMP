@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['lambda_1967',['lambda',['../classgpmp_1_1ml_1_1Logreg.html#a013d234420cea2f998974e879188b311',1,'gpmp::ml::Logreg']]],
-  ['layer_5fptr_1968',['layer_ptr',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270',1,'gpmp::ml::PrimaryMLP']]],
-  ['layer_5funits_1969',['layer_units',['../classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19',1,'gpmp::ml::SecondaryMLP']]],
-  ['learning_5frate_1970',['learning_rate',['../classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9',1,'gpmp::ml::AutoEncoder::learning_rate()'],['../classgpmp_1_1ml_1_1Logreg.html#a83124fdd29ca6e2010d3d18e82ffd0ea',1,'gpmp::ml::Logreg::learning_rate()'],['../classgpmp_1_1NaiveNet.html#ae65199583ba9a559b76f888d38846113',1,'gpmp::NaiveNet::learning_rate()']]],
-  ['learningrate_1971',['learningRate',['../TEST_8cpp.html#abe3440de1accf8ce6538855129ba6b7e',1,'TEST.cpp']]],
-  ['leftsingularvectors_5f_1972',['leftSingularVectors_',['../classgpmp_1_1linalg_1_1SVD.html#ab1797ec6b7a0d662b9bab50539cf2174',1,'gpmp::linalg::SVD']]],
-  ['logdestination_1973',['logDestination',['../classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec',1,'gpmp::core::Logger']]],
-  ['logfilestream_1974',['logFileStream',['../classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03',1,'gpmp::core::Logger']]],
-  ['loglevel_1975',['logLevel',['../classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21',1,'gpmp::core::Logger']]],
-  ['logtofile_1976',['logToFile',['../classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4',1,'gpmp::core::Logger']]],
-  ['lr_1977',['lr',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89',1,'gpmp::ml::SecondaryMLP']]]
+  ['labels_1947',['labels',['../classgpmp_1_1ml_1_1KNN.html#a2c59e6e1b72d7ec84ca523abba5765a6',1,'gpmp::ml::KNN']]],
+  ['lambda_1948',['lambda',['../classgpmp_1_1ml_1_1LogReg.html#a5ad985d039110a664fe68067ed3c365a',1,'gpmp::ml::LogReg']]],
+  ['layer_5fptr_1949',['layer_ptr',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270',1,'gpmp::ml::PrimaryMLP']]],
+  ['layer_5funits_1950',['layer_units',['../classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19',1,'gpmp::ml::SecondaryMLP']]],
+  ['learning_5frate_1951',['learning_rate',['../classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9',1,'gpmp::ml::AutoEncoder::learning_rate()'],['../classgpmp_1_1ml_1_1LogReg.html#a90d2f4ff04230b3ce1fdfd325e048d47',1,'gpmp::ml::LogReg::learning_rate()']]],
+  ['leftsingularvectors_5f_1952',['leftSingularVectors_',['../classgpmp_1_1linalg_1_1SVD.html#ab1797ec6b7a0d662b9bab50539cf2174',1,'gpmp::linalg::SVD']]],
+  ['logdestination_1953',['logDestination',['../classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec',1,'gpmp::core::Logger']]],
+  ['logfilestream_1954',['logFileStream',['../classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03',1,'gpmp::core::Logger']]],
+  ['loglevel_1955',['logLevel',['../classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21',1,'gpmp::core::Logger']]],
+  ['logtofile_1956',['logToFile',['../classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4',1,'gpmp::core::Logger']]],
+  ['lr_1957',['lr',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89',1,'gpmp::ml::SecondaryMLP']]]
 ];

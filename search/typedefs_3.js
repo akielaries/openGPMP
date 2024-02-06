@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['result_5ftype_2067',['result_type',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a6efd7e4f60bb12034f1b87af33d2a3a5',1,'gpmp::core::rndm::LCG']]],
-  ['rowvector_2068',['RowVector',['../naive__net_8hpp.html#af44c90ca17675b918916853b82cc2887',1,'naive_net.hpp']]]
+  ['tabletype_2041',['TableType',['../namespacegpmp_1_1core.html#a1aa8b4f618d62f969c344d2a1d365a27',1,'gpmp::core']]]
 ];

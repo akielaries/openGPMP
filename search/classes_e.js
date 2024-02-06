@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['secondarymlp_1111',['SecondaryMLP',['../classgpmp_1_1ml_1_1SecondaryMLP.html',1,'gpmp::ml']]],
-  ['sigproc_1112',['SigProc',['../classgpmp_1_1linalg_1_1SigProc.html',1,'gpmp::linalg']]],
-  ['sparseautoencoder_1113',['SparseAutoEncoder',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html',1,'gpmp::ml']]],
-  ['squares_1114',['Squares',['../classgpmp_1_1Squares.html',1,'gpmp']]],
-  ['stats_1115',['Stats',['../classgpmp_1_1ml_1_1Stats.html',1,'gpmp::ml']]],
-  ['svc_1116',['SVC',['../classgpmp_1_1ml_1_1SVC.html',1,'gpmp::ml']]],
-  ['svd_1117',['SVD',['../classgpmp_1_1linalg_1_1SVD.html',1,'gpmp::linalg']]]
+  ['rc4_1089',['RC4',['../classgpmp_1_1RC4.html',1,'gpmp::RC4'],['../classpygpmp_1_1nt_1_1nt_1_1RC4.html',1,'pygpmp.nt.nt.RC4']]],
+  ['rc5_1090',['RC5',['../classRC5.html',1,'']]],
+  ['recurrentautoencoder_1091',['RecurrentAutoEncoder',['../classgpmp_1_1ml_1_1RecurrentAutoEncoder.html',1,'gpmp::ml']]],
+  ['redpike_1092',['RedPike',['../classgpmp_1_1RedPike.html',1,'gpmp']]],
+  ['regularizers_1093',['Regularizers',['../classgpmp_1_1ml_1_1Regularizers.html',1,'gpmp::ml']]]
 ];

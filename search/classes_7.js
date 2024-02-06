@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['kf_5fcv_1082',['KF_CV',['../classgpmp_1_1ml_1_1KF__CV.html',1,'gpmp::ml']]],
-  ['knn_1083',['kNN',['../classgpmp_1_1ml_1_1kNN.html',1,'gpmp::ml']]],
-  ['kohonennet_1084',['KohonenNet',['../classgpmp_1_1ml_1_1KohonenNet.html',1,'gpmp::ml']]]
+  ['kfold_1066',['Kfold',['../classgpmp_1_1ml_1_1Kfold.html',1,'gpmp::ml']]],
+  ['knn_1067',['KNN',['../classgpmp_1_1ml_1_1KNN.html',1,'gpmp::ml']]],
+  ['kohonennet_1068',['KohonenNet',['../classgpmp_1_1ml_1_1KohonenNet.html',1,'gpmp::ml']]]
 ];

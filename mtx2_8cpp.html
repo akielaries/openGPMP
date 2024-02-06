@@ -128,8 +128,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    gpmp::Matrix&lt;int&gt; mat(3, 4);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    mat.print_mtx();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::tuple&lt;Matrix&lt;double&gt;, <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;double&gt;</a>&gt; matrices =</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::make_tuple(<a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;double&gt;</a>(5, 3), <a class="code" href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix&lt;double&gt;</a>(6, 4));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::tuple&lt;Matrix&lt;double&gt;, Matrix&lt;double&gt;&gt; matrices =</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::make_tuple(Matrix&lt;double&gt;(5, 3), Matrix&lt;double&gt;(6, 4));</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::get&lt;0&gt;(matrices).print_mtx();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::get&lt;1&gt;(matrices).print_mtx();</div>
@@ -190,7 +190,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1Vectors_html"><div class="ttname"><a href="classgpmp_1_1Vectors.html">gpmp::Vectors</a></div><div class="ttdoc">Operations related to Vectors and Scalars.</div><div class="ttdef"><b>Definition:</b> <a href="vectors_8hpp_source.html#l00053">vectors.hpp:53</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1Vectors_html_a6ed10371570017245242252b44ef382b"><div class="ttname"><a href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">gpmp::Vectors::add</a></div><div class="ttdeci">int64_t add(int64_t a, int64_t b)</div><div class="ttdef"><b>Definition:</b> <a href="lao_8cpp_source.html#l00049">lao.cpp:49</a></div></div>
-<div class="ttc" id="anaive__net_8hpp_html_aca89ce710ee8842221a0df25940c6a36"><div class="ttname"><a href="naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36">Matrix</a></div><div class="ttdeci">Eigen::MatrixXf Matrix</div><div class="ttdef"><b>Definition:</b> <a href="naive__net_8hpp_source.html#l00044">naive_net.hpp:44</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">gpmp::Vectors::add()</a>.</p>
 

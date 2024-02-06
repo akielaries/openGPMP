@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['sigproc_2ecpp_1284',['sigproc.cpp',['../sigproc_8cpp.html',1,'']]],
-  ['sigproc_2ehpp_1285',['sigproc.hpp',['../sigproc_8hpp.html',1,'']]],
-  ['squares_2ehpp_1286',['squares.hpp',['../squares_8hpp.html',1,'']]],
-  ['statistics_2ecpp_1287',['statistics.cpp',['../statistics_8cpp.html',1,'']]],
-  ['statistics_2ehpp_1288',['statistics.hpp',['../statistics_8hpp.html',1,'']]],
-  ['svc_2ecpp_1289',['svc.cpp',['../svc_8cpp.html',1,'']]],
-  ['svc_2ehpp_1290',['svc.hpp',['../svc_8hpp.html',1,'']]],
-  ['svd_2ecpp_1291',['svd.cpp',['../svd_8cpp.html',1,'']]],
-  ['svd_2ehpp_1292',['svd.hpp',['../svd_8hpp.html',1,'']]]
+  ['random_2ecpp_1250',['random.cpp',['../modules_2nt_2random_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2random_8cpp.html',1,'(Global Namespace)']]],
+  ['random_2ehpp_1251',['random.hpp',['../random_8hpp.html',1,'']]],
+  ['rc4_2ecpp_1252',['rc4.cpp',['../modules_2nt_2rc4_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2rc4_8cpp.html',1,'(Global Namespace)']]],
+  ['rc4_2ehpp_1253',['rc4.hpp',['../rc4_8hpp.html',1,'']]],
+  ['rc4_5fex_2epy_1254',['rc4_ex.py',['../rc4__ex_8py.html',1,'']]],
+  ['rc5_2ecpp_1255',['rc5.cpp',['../modules_2nt_2rc5_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2rc5_8cpp.html',1,'(Global Namespace)']]],
+  ['rc5_2ehpp_1256',['rc5.hpp',['../rc5_8hpp.html',1,'']]],
+  ['readme_2emd_1257',['README.md',['../README_8md.html',1,'']]],
+  ['redpike_2ecpp_1258',['redpike.cpp',['../redpike_8cpp.html',1,'']]],
+  ['redpike_2ehpp_1259',['redpike.hpp',['../redpike_8hpp.html',1,'']]],
+  ['regression_2ecpp_1260',['regression.cpp',['../regression_8cpp.html',1,'']]],
+  ['regularizers_2ecpp_1261',['regularizers.cpp',['../regularizers_8cpp.html',1,'']]],
+  ['regularizers_2ehpp_1262',['regularizers.hpp',['../regularizers_8hpp.html',1,'']]]
 ];

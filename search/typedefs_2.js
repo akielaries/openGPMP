@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matrix_2065',['Matrix',['../naive__net_8hpp.html#aca89ce710ee8842221a0df25940c6a36',1,'naive_net.hpp']]],
-  ['mixedtype_2066',['MixedType',['../namespacegpmp_1_1core.html#afc5f61b012e99c75ef38d7bacf438466',1,'gpmp::core']]]
+  ['result_5ftype_2040',['result_type',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a6efd7e4f60bb12034f1b87af33d2a3a5',1,'gpmp::core::rndm::LCG']]]
 ];

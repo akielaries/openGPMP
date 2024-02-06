@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['variance_2035',['variance',['../classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a',1,'gpmp::ml::BayesGauss']]],
-  ['vertices_2036',['vertices',['../classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de',1,'gpmp::Graph']]]
+  ['variance_2012',['variance',['../classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a',1,'gpmp::ml::BayesGauss']]],
+  ['vertices_2013',['vertices',['../classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de',1,'gpmp::Graph']]]
 ];
