@@ -13,6 +13,8 @@ set(SOURCE_FILES
     kfold.cpp
     logreg.cpp
     activators.cpp
+    regularizers.cpp
+    svc.cpp
 )
 
 add_library(ml OBJECT ${SOURCE_FILES})

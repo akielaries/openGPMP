@@ -38,6 +38,8 @@ set(CPP_SOURCES
     ../modules/ml/kfold.cpp
     ../modules/ml/logreg.cpp
     ../modules/ml/activators.cpp
+    ../modules/ml/regularizers.cpp
+    ../modules/ml/svc.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp
