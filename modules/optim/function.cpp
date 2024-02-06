@@ -627,3 +627,44 @@ double gpmp::optim::Func::calculate_range(const std::vector<double> &values) {
 
     return max_value - min_value;
 }
+
+std::vector<double>
+gpmp::optim::Func::golden_section_search_minimize_multivariate(
+    const std::function<double(const std::vector<double> &)> &func,
+    const std::vector<double> &lower_bounds,
+    const std::vector<double> &upper_bounds,
+    double tol,
+    const std::vector<double> &x1,
+    const std::vector<double> &x2) {
+
+    std::vector<double> best_point;
+    double best_value = std::numeric_limits<double>::infinity();
+
+    // Perform golden section search for each dimension
+    for (size_t i = 0; i < lower_bounds.size(); ++i) {
+        double a = lower_bounds[i];
+        double b = upper_bounds[i];
+        double x1_i = x1[i];
+        double x2_i = x2[i];
+
+        double result = golden_section_search_minimize(
+            [&](double t) {
+                std::vector<double> point(x1);
+                point[i] = calculate_midpoint(x1_i, x2_i, t);
+                return func(point);
+            },
+            a,
+            b,
+            tol,
+            0.382,
+            0.618);
+
+        if (result < best_value) {
+            best_value = result;
+            best_point = x1;
+            best_point[i] = calculate_midpoint(x1_i, x2_i, result);
+        }
+    }
+
+    return best_point;
+}
