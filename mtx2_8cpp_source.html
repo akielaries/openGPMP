@@ -88,108 +88,107 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;openGPMP/linalg.hpp&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/*&lt; FOR DEBUGGING LOCAL TESTING &gt;*/</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacegpmp.html">gpmp</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx2_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv</a>() {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::ifstream csvFile(<span class="stringliteral">&quot;data/school_scores.csv&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string line;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; data;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">while</span> (std::getline(csvFile, line)) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::vector&lt;double&gt; row;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::stringstream lineStream(line);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::string cell;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">while</span> (std::getline(lineStream, cell, <span class="charliteral">&#39;,&#39;</span>)) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            row.push_back(std::stod(cell));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            std::cout &lt;&lt; line;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        data.push_back(row);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    csvFile.close();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = data.size();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = data[0].size();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    gpmp::Matrix&lt;double&gt; mat(<a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>, <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mat.print_mtx();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   57</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// declaring an object for the Vectors class is permitted</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classgpmp_1_1Vectors.html">gpmp::Vectors</a> v;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;MATRIX/VECTOR OPERATIONS EXAMPLE\n&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> x = v.<a class="code" href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">add</a>(1, 3);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Sum = &quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    gpmp::Matrix&lt;int&gt; mat(3, 4);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    mat.print_mtx();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::tuple&lt;Matrix&lt;double&gt;, Matrix&lt;double&gt;&gt; matrices =</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::make_tuple(Matrix&lt;double&gt;(5, 3), Matrix&lt;double&gt;(6, 4));</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::get&lt;0&gt;(matrices).print_mtx();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::get&lt;1&gt;(matrices).print_mtx();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;PRINT CSV AS MATRIX \n&quot;</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// print_csv();</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// declaring matrix with random negative decimals</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 2x2 matrix of random negative floats\n&quot;</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> matrix_neg = gpmp::mtx&lt;double&gt;::randn(2, 2);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    matrix_neg.print_shape();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    matrix_neg.print_mtx();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// declaring matrix with random positive decimals</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 2x2 matrix of random positive floats\n&quot;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">auto</span> matrix_pos = gpmp::mtx&lt;double&gt;::rand(2, 2);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    matrix_pos.print_shape();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    matrix_pos.print_mtx();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Transpose the MATRIX \n&quot;</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    (matrix_pos.transpose()).print_mtx();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// multiply each element of matrix_pos by a number</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Multiply each element of the matrix by a number&quot;</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;By 2\n&quot;</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    (matrix_pos.scalar_mult(2.f)).print_mtx();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;By 3\n&quot;</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    (matrix_pos.scalar_mult(3.f)).print_mtx();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// multiply each element of matrix_pos by itself</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Multiply each element of the matrix by itself&quot;</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    (matrix_pos.hadamard(matrix_pos)).print_mtx();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// declare a matrix of zeros with 3 x 5 dimensions</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 3x5 matrix of 0&#39;s&quot;</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">auto</span> matrix_zero = gpmp::Matrix&lt;double&gt;(3, 5);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    matrix_zero.print_shape();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    matrix_zero.print_mtx();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// another method to declare a matrix of zeros with 8 x 9</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// dimensions</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 8x9 matrix of 0&#39;s&quot;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">auto</span> matrix_zero_2 = gpmp::mtx&lt;int&gt;::zeros(8, 9);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    matrix_zero_2.print_shape();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    matrix_zero_2.print_mtx();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// declare matrix of ones with 8 x 9 dimensions</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 8x9 matrix of 1&#39;s&quot;</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">auto</span> matrix_one = gpmp::mtx&lt;int&gt;::ones(8, 9);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    matrix_one.print_shape();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    matrix_one.print_mtx();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacegpmp.html">gpmp</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="mtx2_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv</a>() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::ifstream csvFile(<span class="stringliteral">&quot;data/school_scores.csv&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string line;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; data;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span> (std::getline(csvFile, line)) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::vector&lt;double&gt; row;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::stringstream lineStream(line);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::string cell;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">while</span> (std::getline(lineStream, cell, <span class="charliteral">&#39;,&#39;</span>)) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            row.push_back(std::stod(cell));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            std::cout &lt;&lt; line;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        data.push_back(row);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    csvFile.close();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = data.size();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = data[0].size();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    gpmp::Matrix&lt;double&gt; mat(<a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>, <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    mat.print_mtx();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   56</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// declaring an object for the Vectors class is permitted</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classgpmp_1_1Vectors.html">gpmp::Vectors</a> v;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;MATRIX/VECTOR OPERATIONS EXAMPLE\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> x = v.<a class="code" href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">add</a>(1, 3);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Sum = &quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    gpmp::Matrix&lt;int&gt; mat(3, 4);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    mat.print_mtx();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::tuple&lt;Matrix&lt;double&gt;, Matrix&lt;double&gt;&gt; matrices =</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::make_tuple(Matrix&lt;double&gt;(5, 3), Matrix&lt;double&gt;(6, 4));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::get&lt;0&gt;(matrices).print_mtx();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::get&lt;1&gt;(matrices).print_mtx();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;PRINT CSV AS MATRIX \n&quot;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// print_csv();</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// declaring matrix with random negative decimals</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 2x2 matrix of random negative floats\n&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">auto</span> matrix_neg = gpmp::mtx&lt;double&gt;::randn(2, 2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    matrix_neg.print_shape();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    matrix_neg.print_mtx();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// declaring matrix with random positive decimals</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 2x2 matrix of random positive floats\n&quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">auto</span> matrix_pos = gpmp::mtx&lt;double&gt;::rand(2, 2);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    matrix_pos.print_shape();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    matrix_pos.print_mtx();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Transpose the MATRIX \n&quot;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    (matrix_pos.transpose()).print_mtx();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// multiply each element of matrix_pos by a number</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Multiply each element of the matrix by a number&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;By 2\n&quot;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    (matrix_pos.scalar_mult(2.f)).print_mtx();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;By 3\n&quot;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    (matrix_pos.scalar_mult(3.f)).print_mtx();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// multiply each element of matrix_pos by itself</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Multiply each element of the matrix by itself&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    (matrix_pos.hadamard(matrix_pos)).print_mtx();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// declare a matrix of zeros with 3 x 5 dimensions</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 3x5 matrix of 0&#39;s&quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">auto</span> matrix_zero = gpmp::Matrix&lt;double&gt;(3, 5);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    matrix_zero.print_shape();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    matrix_zero.print_mtx();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// another method to declare a matrix of zeros with 8 x 9</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// dimensions</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 8x9 matrix of 0&#39;s&quot;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">auto</span> matrix_zero_2 = gpmp::mtx&lt;int&gt;::zeros(8, 9);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    matrix_zero_2.print_shape();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    matrix_zero_2.print_mtx();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// declare matrix of ones with 8 x 9 dimensions</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Creating 8x9 matrix of 1&#39;s&quot;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;              &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">auto</span> matrix_one = gpmp::mtx&lt;int&gt;::ones(8, 9);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    matrix_one.print_shape();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    matrix_one.print_mtx();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1Vectors_html"><div class="ttname"><a href="classgpmp_1_1Vectors.html">gpmp::Vectors</a></div><div class="ttdoc">Operations related to Vectors and Scalars.</div><div class="ttdef"><b>Definition:</b> <a href="vectors_8hpp_source.html#l00053">vectors.hpp:53</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1Vectors_html_a6ed10371570017245242252b44ef382b"><div class="ttname"><a href="classgpmp_1_1Vectors.html#a6ed10371570017245242252b44ef382b">gpmp::Vectors::add</a></div><div class="ttdeci">int64_t add(int64_t a, int64_t b)</div><div class="ttdef"><b>Definition:</b> <a href="lao_8cpp_source.html#l00049">lao.cpp:49</a></div></div>
-<div class="ttc" id="amtx2_8cpp_html_a87392f7d6eb56debc9b16d4fabb79032"><div class="ttname"><a href="mtx2_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv</a></div><div class="ttdeci">void print_csv()</div><div class="ttdef"><b>Definition:</b> <a href="mtx2_8cpp_source.html#l00035">mtx2.cpp:35</a></div></div>
-<div class="ttc" id="amtx2_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="mtx2_8cpp_source.html#l00057">mtx2.cpp:57</a></div></div>
+<div class="ttc" id="amtx2_8cpp_html_a87392f7d6eb56debc9b16d4fabb79032"><div class="ttname"><a href="mtx2_8cpp.html#a87392f7d6eb56debc9b16d4fabb79032">print_csv</a></div><div class="ttdeci">void print_csv()</div><div class="ttdef"><b>Definition:</b> <a href="mtx2_8cpp_source.html#l00034">mtx2.cpp:34</a></div></div>
+<div class="ttc" id="amtx2_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="mtx2_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="mtx2_8cpp_source.html#l00056">mtx2.cpp:56</a></div></div>
 <div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 <div class="ttc" id="anamespacetest__linalg_html_a176978f6f6cc9d111a747fd2202015ed"><div class="ttname"><a href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg.rows</a></div><div class="ttdeci">int rows</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00013">test_linalg.py:13</a></div></div>
 <div class="ttc" id="anamespacetest__linalg_html_a83ed9c138dc5b83ec747058ad3cd157e"><div class="ttname"><a href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg.cols</a></div><div class="ttdeci">int cols</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00014">test_linalg.py:14</a></div></div>

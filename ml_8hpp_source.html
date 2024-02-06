@@ -118,45 +118,36 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifndef ML_HPP</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define ML_HPP</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="ml_8hpp.html#a5b511bfc979da8860c56686aecfce965">   75</a></span>&#160;<span class="preprocessor">#define UTILS</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;ml/utils.hpp&quot;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="ml_8hpp.html#a8b483716c17fe4c5365714ca8582da43">   93</a></span>&#160;<span class="preprocessor">#define REGRESSION</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linreg_8hpp.html">ml/linreg.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// #include &quot;ml/logreg.hpp&quot;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// #include &quot;ml/gausreg.hpp&quot;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// #include &quot;ml/polyreg.hpp&quot;</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// #include &quot;ml/lassoreg.hpp&quot;</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// #include &quot;ml/ridgereg.hpp&quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="ml_8hpp.html#a669750181416ae68a4b4684e5006f733">  116</a></span>&#160;<span class="preprocessor">#define CLASSIFICATION</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">// #include &quot;ml/bayes_clf.hpp&quot;</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">// #include &quot;ml/nearest_neighbor.hpp&quot;</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">// #include &quot;ml/decision_tree&quot;</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">// #include &quot;ml/rand_forest&quot;</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// #include &quot;ml/support_vector&quot;</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="ml_8hpp.html#ae1704ccaaf93f8f9a83c8712bf0cf4aa">  133</a></span>&#160;<span class="preprocessor">#define RESAMPLING</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// #include &quot;ml/k-foldCV.hpp&quot;</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// #include &quot;ml/bootstrap.hpp&quot;</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">// #include &quot;ml/perm_test.hpp&quot;</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="ml_8hpp.html#a07607da4adfe00593b227c7e8885f17e">  148</a></span>&#160;<span class="preprocessor">#define NEURAL_NETWORKS</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">// #include &quot;ml/naive_net.hpp&quot;</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">// #include &quot;ml/bayes_net.hpp&quot;</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// #include &quot;ml/kohonen_net.hpp&quot;</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mlp__net_8hpp.html">ml/mlp_net.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="ml_8hpp.html#a39a896b530488d9edc8b60797d3574e2">  160</a></span>&#160;<span class="preprocessor">#define STATISTICS</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="activators_8hpp.html">ml/activators.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bayes__clf_8hpp.html">ml/bayes_clf.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bayes__net_8hpp.html">ml/bayes_net.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="encoder_8hpp.html">ml/encoder.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kfold_8hpp.html">ml/kfold.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="knn_8hpp.html">ml/knn.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kohonen__net_8hpp.html">ml/kohonen_net.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linreg_8hpp.html">ml/linreg.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logreg_8hpp.html">ml/logreg.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mlp__net_8hpp.html">ml/mlp_net.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="regularizers_8hpp.html">ml/regularizers.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="statistics_8hpp.html">ml/statistics.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="svc_8hpp.html">ml/svc.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="trainers_8hpp.html">ml/trainers.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aactivators_8hpp_html"><div class="ttname"><a href="activators_8hpp.html">activators.hpp</a></div></div>
+<div class="ttc" id="abayes__clf_8hpp_html"><div class="ttname"><a href="bayes__clf_8hpp.html">bayes_clf.hpp</a></div></div>
+<div class="ttc" id="abayes__net_8hpp_html"><div class="ttname"><a href="bayes__net_8hpp.html">bayes_net.hpp</a></div></div>
+<div class="ttc" id="aencoder_8hpp_html"><div class="ttname"><a href="encoder_8hpp.html">encoder.hpp</a></div><div class="ttdoc">Auto Encoder Neural Network effecient for unlabeled data.</div></div>
+<div class="ttc" id="akfold_8hpp_html"><div class="ttname"><a href="kfold_8hpp.html">kfold.hpp</a></div></div>
+<div class="ttc" id="aknn_8hpp_html"><div class="ttname"><a href="knn_8hpp.html">knn.hpp</a></div><div class="ttdoc">K-Nearest Neighbors Clustering.</div></div>
+<div class="ttc" id="akohonen__net_8hpp_html"><div class="ttname"><a href="kohonen__net_8hpp.html">kohonen_net.hpp</a></div></div>
 <div class="ttc" id="alinreg_8hpp_html"><div class="ttname"><a href="linreg_8hpp.html">linreg.hpp</a></div></div>
+<div class="ttc" id="alogreg_8hpp_html"><div class="ttname"><a href="logreg_8hpp.html">logreg.hpp</a></div><div class="ttdoc">Logistic Regression.</div></div>
 <div class="ttc" id="amlp__net_8hpp_html"><div class="ttname"><a href="mlp__net_8hpp.html">mlp_net.hpp</a></div></div>
+<div class="ttc" id="aregularizers_8hpp_html"><div class="ttname"><a href="regularizers_8hpp.html">regularizers.hpp</a></div></div>
+<div class="ttc" id="astatistics_8hpp_html"><div class="ttname"><a href="statistics_8hpp.html">statistics.hpp</a></div></div>
+<div class="ttc" id="asvc_8hpp_html"><div class="ttname"><a href="svc_8hpp.html">svc.hpp</a></div></div>
+<div class="ttc" id="atrainers_8hpp_html"><div class="ttname"><a href="trainers_8hpp.html">trainers.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

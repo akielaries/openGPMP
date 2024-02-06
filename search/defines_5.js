@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['factorization_2145',['FACTORIZATION',['../nt_8hpp.html#a25fc994a92402407a2c2bad86c444976',1,'nt.hpp']]]
+  ['show_5frows_2135',['SHOW_ROWS',['../datatable_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3',1,'SHOW_ROWS():&#160;datatable.hpp'],['../datatable__wip_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3',1,'SHOW_ROWS():&#160;datatable_wip.hpp']]]
 ];
