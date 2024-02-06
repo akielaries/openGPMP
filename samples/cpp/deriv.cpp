@@ -4,10 +4,10 @@
  *
  * @example deriv.cpp
  */
-#include <openGPMP/calculus.hpp>
 #include <cassert>
 #include <cmath>
 #include <iostream>
+#include <openGPMP/calculus.hpp>
 #include <stdio.h>
 #include <string>
 #include <vector>

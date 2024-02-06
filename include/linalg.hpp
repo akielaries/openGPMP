@@ -46,12 +46,12 @@
 #ifndef LINALG_HPP
 #define LINALG_HPP
 
+#include "linalg/eigen.hpp"
+#include "linalg/linsys.hpp"
 #include "linalg/mtx.hpp"
 #include "linalg/sigproc.hpp"
-#include "linalg/eigen.hpp"
 #include "linalg/svd.hpp"
 #include "linalg/tensor.hpp"
-#include "linalg/linsys.hpp"
 
 /*****************************************************************************/
 

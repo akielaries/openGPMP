@@ -1,5 +1,5 @@
-#include <openGPMP/ml.hpp>
 #include <iostream>
+#include <openGPMP/ml.hpp>
 #include <vector>
 int main() {
     srand(time(0));

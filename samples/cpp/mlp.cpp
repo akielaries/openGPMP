@@ -6,10 +6,10 @@
  * @example mlp.cpp
  */
 
-#include <openGPMP/ml.hpp>
 #include <deque>
 #include <fstream>
 #include <iostream>
+#include <openGPMP/ml.hpp>
 
 // use the openGPMP Machine Learning namespaces
 using namespace gpmp::ml;

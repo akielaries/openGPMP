@@ -40,7 +40,7 @@
 #ifndef CALCULUS_HPP
 #define CALCULUS_HPP
 
-#include "calc/differential.hpp"
 #include "calc/analysis.hpp"
+#include "calc/differential.hpp"
 
 #endif

@@ -47,15 +47,15 @@
 #ifndef NT_HPP
 #define NT_HPP
 
-#include "nt/prime_gen.hpp"
-#include "nt/prime_test.hpp"
+#include "nt/cipher.hpp"
 #include "nt/euclidean_div.hpp"
 #include "nt/factorization.hpp"
 #include "nt/gcds.hpp"
 #include "nt/logarithms.hpp"
-#include "nt/squares.hpp"
-#include "nt/cipher.hpp"
-#include "nt/rc4.hpp"
+#include "nt/prime_gen.hpp"
+#include "nt/prime_test.hpp"
 #include "nt/random.hpp"
+#include "nt/rc4.hpp"
+#include "nt/squares.hpp"
 
 #endif
