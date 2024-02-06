@@ -668,3 +668,8 @@ gpmp::optim::Func::golden_section_search_minimize_multivariate(
 
     return best_point;
 }
+
+bool gpmp::optim::Func::is_valid_interval(double a, double b) {
+    return a < b;
+}
+
