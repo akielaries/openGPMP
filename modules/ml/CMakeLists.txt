@@ -15,6 +15,7 @@ set(SOURCE_FILES
     activators.cpp
     regularizers.cpp
     svc.cpp
+    bayes_net.cpp
 )
 
 add_library(ml OBJECT ${SOURCE_FILES})
