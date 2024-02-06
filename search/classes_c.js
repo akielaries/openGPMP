@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quasinewton_1091',['QuasiNewton',['../classQuasiNewton.html',1,'']]]
+  ['quasinewton_1093',['QuasiNewton',['../classQuasiNewton.html',1,'']]]
 ];
