@@ -5,7 +5,7 @@
  * @example cipher.cpp
  */
 #include <iostream>
-#include <openGPMP/nt/cipher.hpp>
+#include <openGPMP/nt.hpp>
 #include <stdio.h>
 #include <string>
 #include <vector>

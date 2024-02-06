@@ -28,7 +28,6 @@
 #include <vector>
 
 #include <openGPMP/linalg.hpp>
-/*< FOR DEBUGGING LOCAL TESTING >*/
 
 using namespace gpmp;
 

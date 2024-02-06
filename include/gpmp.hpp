@@ -38,12 +38,14 @@
 #ifndef GPMP_HPP
 #define GPMP_HPP
 
-// TODO FIXME
 #include "arithmetic.hpp"
 #include "calculus.hpp"
 #include "core.hpp"
+#include "disct.hpp"
 #include "linalg.hpp"
 #include "ml.hpp"
 #include "nt.hpp"
+#include "optim.hpp"
+#include "stats.hpp"
 
 #endif

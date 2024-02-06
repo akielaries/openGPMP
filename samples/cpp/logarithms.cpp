@@ -6,7 +6,7 @@
  * @example logarithms.cpp
  */
 #include <iostream>
-#include <openGPMP/nt/logarithms.hpp>
+#include <openGPMP/nt.hpp>
 
 int main() {
     gpmp::Logarithms logs;

@@ -33,48 +33,14 @@
 
 /**
  * @file
- * @brief User API for OpenGPMP LINEAR ALGEBRA MODULE
  *
- * @details This file serves as the core header for the Linear Algebra
- * module. This header includes Vector/Matrix related operations. Also
- * with additional support for GPU utilization through CUDA (Nvidia
- * hardward support) and OpenCL (OSX & Linux system support):
- *
- *  @note Some topics in Linear Algebra overlap and/or heavily
- * influence algorithms seen in Machine Learning
+ * @brief User API for OpenGPMP CALCULUS MODULE
  */
-#ifndef LINALG_HPP
-#define LINALG_HPP
 
-#include "linalg/mtx.hpp"
-#include "linalg/sigproc.hpp"
-#include "linalg/eigen.hpp"
-#include "linalg/svd.hpp"
-#include "linalg/tensor.hpp"
-#include "linalg/linsys.hpp"
+#ifndef CALCULUS_HPP
+#define CALCULUS_HPP
 
-/*****************************************************************************/
-
-/**
- * @brief \b CUDA \b Matrix \b Operations
- * @details CUDA GPU accelerated Matrix functions
- */
-#define CUDA_MATRIX
-#if defined(__linux__)
-#ifdef __NVCC__
-#include "linalg/_cuda_mtx.cuh"
-#endif
-#endif
-
-/**
- * @brief \b OpenCL \b Matrix \b Operations
- * @details OpenCL GPU accelerated Matrix functions
- */
-#if defined(__linux__) || defined(__APPLE__)
-#ifndef __OPENCL__
-#include "linalg/_gpu_mtx.h"
-#include "linalg/_gpu_mtx_wrapper.hpp"
-#endif
-#endif
+#include "calc/differential.hpp"
+#include "calc/analysis.hpp"
 
 #endif

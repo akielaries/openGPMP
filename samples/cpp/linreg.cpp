@@ -5,14 +5,12 @@
  * either be two column in nature or users must disect data for a proper
  * key,value response
  *
- * @example reg.cpp
+ * @example linreg.cpp
  */
 #include <iostream>
-// #include <openGPMP/ml/linreg.hpp>
-#include "../../include/core/datatable.hpp"
-#include "../../include/core/utils.hpp"
-#include "../../include/ml/linreg.hpp"
 #include <stdio.h>
+// include all of the openGPMP headers
+#include <openGPMP/gpmp.h>
 
 /** Logger class object*/
 static gpmp::core::Logger _log_;

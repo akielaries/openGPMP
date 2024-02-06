@@ -1,4 +1,4 @@
-#include "../../include/ml/encoder.hpp"
+#include <openGPMP/ml.hpp>
 #include <iostream>
 #include <vector>
 int main() {

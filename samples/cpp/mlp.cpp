@@ -5,8 +5,8 @@
  *
  * @example mlp.cpp
  */
-#include "../../include/ml/mlp_net.hpp"
-#include "../../include/ml/trainers.hpp"
+
+#include <openGPMP/ml.hpp>
 #include <deque>
 #include <fstream>
 #include <iostream>

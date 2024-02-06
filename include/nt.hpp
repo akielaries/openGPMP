@@ -47,43 +47,15 @@
 #ifndef NT_HPP
 #define NT_HPP
 
-/**
- * @brief \b Primes
- * @details includes :
- * @note
- *
- * @todo TODO: above headers create some documentation that references
- * the actual definition/implementation of the methods within. In doxygen
- * this happens by default when referencing things by their exact name.
- */
-#define PRIMES
 #include "nt/prime_gen.hpp"
 #include "nt/prime_test.hpp"
-
-#define EUCLIDEAN DIVISION
 #include "nt/euclidean_div.hpp"
-
-#define FACTORIZATION
 #include "nt/factorization.hpp"
-
-#define GCDs
 #include "nt/gcds.hpp"
-
-#define DISCRETE LOGARITHMS
 #include "nt/logarithms.hpp"
-
-#define MODULAR SQUARES
 #include "nt/squares.hpp"
-
-/**
- * @brief \b Cryptographic \b Algorithms
- * @details includes :
- * @note
- *
- * @todo
- */
-#define CRYPTOGRAPHY
 #include "nt/cipher.hpp"
 #include "nt/rc4.hpp"
+#include "nt/random.hpp"
 
 #endif

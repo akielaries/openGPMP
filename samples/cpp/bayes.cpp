@@ -1,4 +1,4 @@
-#include "../../include/ml/bayes_clf.hpp"
+#include <openGPMP/ml.hpp>
 #include <iostream>
 #include <string>
 #include <vector>

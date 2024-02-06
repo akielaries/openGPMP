@@ -1,6 +1,6 @@
 #include <chrono>
 #include <iostream>
-#include <openGPMP/linalg/mtx.hpp>
+#include <openGPMP/linalg.hpp>
 #include <random>
 #include <vector>
 constexpr int matrixSize = 8912;
