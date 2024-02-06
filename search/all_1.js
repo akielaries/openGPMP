@@ -5,7 +5,7 @@ var searchData=
   ['absavgdeviation_46',['absAvgDeviation',['../classgpmp_1_1ml_1_1Stats.html#aef1cb7959a85c1fe718263b91f072804',1,'gpmp::ml::Stats']]],
   ['accl_5ferr_47',['accl_err',['../__cl__err_8h.html#ab4ff25ba30505829b2d613cec348a837',1,'_cl_err.h']]],
   ['accl_5fmtx_5fexec_48',['accl_mtx_exec',['../__gpu__mtx__add_8c.html#acf139f5c4eb7a69cd061e22fd7a30304',1,'accl_mtx_exec():&#160;_gpu_mtx_add.c'],['../__gpu__mtx__add__wrapper_8cpp.html#abd10a9ed8f57f8d894ddff817c39677d',1,'accl_mtx_exec():&#160;_gpu_mtx_add.c']]],
-  ['accuracy_49',['accuracy',['../classgpmp_1_1ml_1_1LogReg.html#a992c5a72a228592079e04bfc853970e4',1,'gpmp::ml::LogReg']]],
+  ['accuracy_49',['accuracy',['../classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8',1,'gpmp::ml::SVC::accuracy()'],['../classgpmp_1_1ml_1_1LogReg.html#a992c5a72a228592079e04bfc853970e4',1,'gpmp::ml::LogReg::accuracy()']]],
   ['activation_50',['Activation',['../classgpmp_1_1ml_1_1Activation.html',1,'gpmp::ml']]],
   ['activations_51',['activations',['../classgpmp_1_1ml_1_1SecondaryMLP.html#a5f113c7f33d539339c31496d2fa212a9',1,'gpmp::ml::SecondaryMLP']]],
   ['activators_2ecpp_52',['activators.cpp',['../activators_8cpp.html',1,'']]],

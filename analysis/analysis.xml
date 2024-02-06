@@ -357,6 +357,50 @@
             <location file="../../include/ml/mlp_net.hpp" line="248" column="16"/>
             <symbol>y</symbol>
         </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="53" column="17"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="98" column="17"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="108" column="14"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="114" column="20"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="123" column="16"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="136" column="18"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="142" column="22"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;patience&apos; is assigned a value that is never used." verbose="Variable &apos;patience&apos; is assigned a value that is never used." cwe="563" file0="../../modules/ml/regularizers.cpp">
+            <location file="../../modules/ml/regularizers.cpp" line="78" column="18"/>
+            <symbol>patience</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::kernel_param&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::kernel_param&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
+            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
+            <symbol>SVC::kernel_param</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::random_state&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::random_state&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
+            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
+            <symbol>SVC::random_state</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::verbose&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::verbose&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
+            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
+            <symbol>SVC::verbose</symbol>
+        </error>
+        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::bias&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::bias&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
+            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
+            <symbol>SVC::bias</symbol>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/svc.cpp">
+            <location file="../../modules/ml/svc.cpp" line="93" column="14"/>
+        </error>
         <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;nb_threads_hint==0&apos; is always false" verbose="Condition &apos;nb_threads_hint==0&apos; is always false" cwe="570" file0="../../modules/nt/factorization.cpp">
             <location file="../../include/core/threads.hpp" line="247" column="43" info="Condition &apos;nb_threads_hint==0&apos; is always false"/>
             <location file="../../include/core/threads.hpp" line="246" column="32" info="Assignment &apos;nb_threads_hint=10&apos;, assigned value is 10"/>
@@ -532,10 +576,6 @@
             <location file="../../modules/stats/probdist.cpp" line="310" column="0"/>
             <symbol>ToleranceInterval</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;accuracy&apos; is never used." verbose="The function &apos;accuracy&apos; is never used." cwe="561">
-            <location file="../../modules/ml/logreg.cpp" line="100" column="0"/>
-            <symbol>accuracy</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;add_vec_gpu&apos; is never used." verbose="The function &apos;add_vec_gpu&apos; is never used." cwe="561">
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_add.c" line="4" column="0"/>
             <symbol>add_vec_gpu</symbol>
@@ -555,6 +595,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;avg_abs_dev&apos; is never used." verbose="The function &apos;avg_abs_dev&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="125" column="0"/>
             <symbol>avg_abs_dev</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;batch_normalization&apos; is never used." verbose="The function &apos;batch_normalization&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="127" column="0"/>
+            <symbol>batch_normalization</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bellman_ford&apos; is never used." verbose="The function &apos;bellman_ford&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="118" column="0"/>
@@ -696,6 +740,10 @@
             <location file="../../modules/optim/function.cpp" line="142" column="0"/>
             <symbol>cubic_interpolation</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;data_augmentation&apos; is never used." verbose="The function &apos;data_augmentation&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="158" column="0"/>
+            <symbol>data_augmentation</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;datetime&apos; is never used." verbose="The function &apos;datetime&apos; is never used." cwe="561">
             <location file="../../modules/core/datatable.cpp" line="149" column="0"/>
             <symbol>datetime</symbol>
@@ -728,6 +776,18 @@
             <location file="../../modules/linalg/linsys.cpp" line="46" column="0"/>
             <symbol>display_mtx</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;dropout_regularization&apos; is never used." verbose="The function &apos;dropout_regularization&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="67" column="0"/>
+            <symbol>dropout_regularization</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;early_stopping&apos; is never used." verbose="The function &apos;early_stopping&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="72" column="0"/>
+            <symbol>early_stopping</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;elastic_net_regularization&apos; is never used." verbose="The function &apos;elastic_net_regularization&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="58" column="0"/>
+            <symbol>elastic_net_regularization</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;elu_derivative&apos; is never used." verbose="The function &apos;elu_derivative&apos; is never used." cwe="561">
             <location file="../../modules/ml/activators.cpp" line="131" column="0"/>
             <symbol>elu_derivative</symbol>
@@ -743,6 +803,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;enableTimestamps&apos; is never used." verbose="The function &apos;enableTimestamps&apos; is never used." cwe="561">
             <location file="../../modules/core/utils.cpp" line="61" column="0"/>
             <symbol>enableTimestamps</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;ensemble_predictions&apos; is never used." verbose="The function &apos;ensemble_predictions&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="87" column="0"/>
+            <symbol>ensemble_predictions</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;error_in&apos; is never used." verbose="The function &apos;error_in&apos; is never used." cwe="561">
             <location file="../../modules/ml/linreg.cpp" line="371" column="0"/>
@@ -847,6 +911,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;greedy_coloring&apos; is never used." verbose="The function &apos;greedy_coloring&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="513" column="0"/>
             <symbol>greedy_coloring</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;grid_search&apos; is never used." verbose="The function &apos;grid_search&apos; is never used." cwe="561">
+            <location file="../../modules/ml/svc.cpp" line="196" column="0"/>
+            <symbol>grid_search</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;group_by&apos; is never used." verbose="The function &apos;group_by&apos; is never used." cwe="561">
             <location file="../../modules/core/datatable.cpp" line="252" column="0"/>
@@ -1000,6 +1068,10 @@
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="4" column="0"/>
             <symbol>matrixMul</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;max_norm_regularization&apos; is never used." verbose="The function &apos;max_norm_regularization&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="104" column="0"/>
+            <symbol>max_norm_regularization</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;max_pool_downsample&apos; is never used." verbose="The function &apos;max_pool_downsample&apos; is never used." cwe="561">
             <location file="../../modules/linalg/sigproc.cpp" line="555" column="0"/>
             <symbol>max_pool_downsample</symbol>
@@ -1144,6 +1216,10 @@
             <location file="../../modules/linalg/eigen.cpp" line="50" column="0"/>
             <symbol>power_iter</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;predict_proba&apos; is never used." verbose="The function &apos;predict_proba&apos; is never used." cwe="561">
+            <location file="../../modules/ml/svc.cpp" line="119" column="0"/>
+            <symbol>predict_proba</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;prelu&apos; is never used." verbose="The function &apos;prelu&apos; is never used." cwe="561">
             <location file="../../modules/ml/activators.cpp" line="152" column="0"/>
             <symbol>prelu</symbol>
@@ -1231,6 +1307,14 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;setLogLevel&apos; is never used." verbose="The function &apos;setLogLevel&apos; is never used." cwe="561">
             <location file="../../modules/core/utils.cpp" line="57" column="0"/>
             <symbol>setLogLevel</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_kernel&apos; is never used." verbose="The function &apos;set_kernel&apos; is never used." cwe="561">
+            <location file="../../modules/ml/svc.cpp" line="139" column="0"/>
+            <symbol>set_kernel</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;set_random_state&apos; is never used." verbose="The function &apos;set_random_state&apos; is never used." cwe="561">
+            <location file="../../modules/ml/svc.cpp" line="147" column="0"/>
+            <symbol>set_random_state</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;shift_left&apos; is never used." verbose="The function &apos;shift_left&apos; is never used." cwe="561">
             <location file="../../modules/nt/rc5.cpp" line="39" column="0"/>
@@ -1347,6 +1431,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;var_coeff&apos; is never used." verbose="The function &apos;var_coeff&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="135" column="0"/>
             <symbol>var_coeff</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;weight_decay_regularization&apos; is never used." verbose="The function &apos;weight_decay_regularization&apos; is never used." cwe="561">
+            <location file="../../modules/ml/regularizers.cpp" line="119" column="0"/>
+            <symbol>weight_decay_regularization</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;z_adv_tform&apos; is never used." verbose="The function &apos;z_adv_tform&apos; is never used." cwe="561">
             <location file="../../modules/linalg/sigproc.cpp" line="99" column="0"/>
