@@ -34,6 +34,5 @@ Contents
     * [Number Theory](nt_8hpp.html)
     * Topology/Complex
     * Statistics
-    * Much more
-
+    * Optimization
 
