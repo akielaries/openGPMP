@@ -112,64 +112,47 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> ************************************************************************/</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef ML_TRAINERS_HPP</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define ML_TRAINERS_HPP</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef TRAINERS_HPP</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define TRAINERS_HPP</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mlp__net_8hpp.html">mlp_net.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegpmp.html">gpmp</a> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>ml {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>ml {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1Trainers.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgpmp_1_1ml_1_1Trainers.html">Trainers</a> {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1Trainers.html#a6042bcb26be33057af64912c9e4800d6">   58</a></span>&#160;    int64_t <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a6042bcb26be33057af64912c9e4800d6">train_PrimaryMLP</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fnames);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1Trainers.html#a783744b4712fe8322d90e5dee30b4400">   63</a></span>&#160;    int64_t <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a783744b4712fe8322d90e5dee30b4400">test_PrimaryMLP</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fname);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">   71</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">init_SecondaryMLP</a>(<span class="keywordtype">size_t</span> inputs,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                           <span class="keywordtype">size_t</span> outputs,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           <span class="keywordtype">size_t</span> hidden_layer_units,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                           int64_t hidden_layers,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                           <span class="keywordtype">float</span> lr) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        std::vector&lt;size_t&gt; layer_units;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        layer_units.push_back(inputs);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> (int64_t i = 0; i &lt; hidden_layers; ++i) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            layer_units.push_back(hidden_layer_units);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        layer_units.push_back(outputs);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html">SecondaryMLP&lt;long double&gt;</a> model_SecondaryMLP(layer_units, 0.01);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> model_SecondaryMLP;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">train_SecondaryMLP</a>(<span class="keyword">auto</span> initialized_model,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                            <span class="keyword">const</span> std::string data_file,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                            uint64_t iterations,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                            uint64_t print_increment) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::fstream input(data_file.c_str());</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;FILE: &quot;</span> &lt;&lt; data_file &lt;&lt; <span class="stringliteral">&quot; ITERS: &quot;</span> &lt;&lt; iterations</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; INCREMENT: &quot;</span> &lt;&lt; print_increment;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace ml</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} <span class="comment">// namespace gpmp</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SecondaryMLP_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1SecondaryMLP.html">gpmp::ml::SecondaryMLP</a></div><div class="ttdoc">Secondary Multi-Layer Perceptron Class making use of the Linear Algebra module.</div><div class="ttdef"><b>Definition:</b> <a href="mlp__net_8hpp_source.html#l00151">mlp_net.hpp:151</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a></div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00053">trainers.hpp:53</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a56c7851631307ac5550f73af82466ef1"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a56c7851631307ac5550f73af82466ef1">gpmp::ml::Trainers::train_SecondaryMLP</a></div><div class="ttdeci">void train_SecondaryMLP(auto initialized_model, const std::string data_file, uint64_t iterations, uint64_t print_increment)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00091">trainers.hpp:91</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a6042bcb26be33057af64912c9e4800d6"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a6042bcb26be33057af64912c9e4800d6">gpmp::ml::Trainers::train_PrimaryMLP</a></div><div class="ttdeci">int64_t train_PrimaryMLP(const char *fnames)</div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a783744b4712fe8322d90e5dee30b4400"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a783744b4712fe8322d90e5dee30b4400">gpmp::ml::Trainers::test_PrimaryMLP</a></div><div class="ttdeci">int64_t test_PrimaryMLP(const char *fname)</div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a84e47e709ab39c08fd00351221707065"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a84e47e709ab39c08fd00351221707065">gpmp::ml::Trainers::init_SecondaryMLP</a></div><div class="ttdeci">auto init_SecondaryMLP(size_t inputs, size_t outputs, size_t hidden_layer_units, int64_t hidden_layers, float lr)</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00071">trainers.hpp:71</a></div></div>
-<div class="ttc" id="amlp__net_8hpp_html"><div class="ttname"><a href="mlp__net_8hpp.html">mlp_net.hpp</a></div></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1Trainers.html">   54</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgpmp_1_1ml_1_1Trainers.html">Trainers</a> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::vector&lt;double&gt; <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#ae304b7553efc3a8d7d74796ba35dc074">gradientdesc</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;y,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                     <span class="keywordtype">double</span> alpha,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                     <span class="keywordtype">int</span> num_iters);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::vector&lt;double&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#af9a15f35cef5df3531a61fb8e853b9ad">stoch_gradientdesc</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                       <span class="keyword">const</span> std::vector&lt;double&gt; &amp;y,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                       <span class="keywordtype">double</span> alpha,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                       <span class="keywordtype">int</span> num_iters);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::vector&lt;double&gt;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Trainers.html#a9b21c10a3481abf1a436b26a66b6ad00">minibatch_gradientdesc</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                           <span class="keyword">const</span> std::vector&lt;double&gt; &amp;y,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                           <span class="keywordtype">double</span> alpha,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                           <span class="keywordtype">int</span> num_iters,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                           <span class="keywordtype">int</span> batch_size);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;} <span class="comment">// namespace ml</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;} <span class="comment">// namespace gpmp</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html">gpmp::ml::Trainers</a></div><div class="ttdoc">Training Algorithms.</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8hpp_source.html#l00054">trainers.hpp:54</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_a9b21c10a3481abf1a436b26a66b6ad00"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#a9b21c10a3481abf1a436b26a66b6ad00">gpmp::ml::Trainers::minibatch_gradientdesc</a></div><div class="ttdeci">std::vector&lt; double &gt; minibatch_gradientdesc(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; double &gt; &amp;y, double alpha, int num_iters, int batch_size)</div><div class="ttdoc">Perform mini-batch gradient descent for linear regression.</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8cpp_source.html#l00104">trainers.cpp:104</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_ae304b7553efc3a8d7d74796ba35dc074"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#ae304b7553efc3a8d7d74796ba35dc074">gpmp::ml::Trainers::gradientdesc</a></div><div class="ttdeci">std::vector&lt; double &gt; gradientdesc(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; double &gt; &amp;y, double alpha, int num_iters)</div><div class="ttdoc">Perform gradient descent for linear regression.</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8cpp_source.html#l00038">trainers.cpp:38</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1Trainers_html_af9a15f35cef5df3531a61fb8e853b9ad"><div class="ttname"><a href="classgpmp_1_1ml_1_1Trainers.html#af9a15f35cef5df3531a61fb8e853b9ad">gpmp::ml::Trainers::stoch_gradientdesc</a></div><div class="ttdeci">std::vector&lt; double &gt; stoch_gradientdesc(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; double &gt; &amp;y, double alpha, int num_iters)</div><div class="ttdoc">Perform stochastic gradient descent for linear regression.</div><div class="ttdef"><b>Definition:</b> <a href="trainers_8cpp_source.html#l00074">trainers.cpp:74</a></div></div>
 <div class="ttc" id="anamespacegpmp_html"><div class="ttname"><a href="namespacegpmp.html">gpmp</a></div><div class="ttdoc">The source C++ openGPMP namespace.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

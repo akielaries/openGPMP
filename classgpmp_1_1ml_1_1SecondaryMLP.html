@@ -285,7 +285,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00245">245</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                                    {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        assert(get&lt;0&gt;(target.shape) == <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>.back());</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        assert(std::get&lt;0&gt;(target.shape) == <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>.back());</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// calculate the error, target - ouput</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keyword">auto</span> y = target;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keyword">auto</span> y_hat = <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a5f113c7f33d539339c31496d2fa212a9">activations</a>.back();</div>
@@ -345,7 +345,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00221">221</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                              {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        assert(get&lt;0&gt;(x.shape) == <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>[0] &amp;&amp; get&lt;1&gt;(x.shape));</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        assert(std::get&lt;0&gt;(x.shape) == <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>[0] &amp;&amp; std::get&lt;1&gt;(x.shape));</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// input = to previously declared acitvations method</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a5f113c7f33d539339c31496d2fa212a9">activations</a>[0] = x;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="classgpmp_1_1linalg_1_1Matrix.html">gpmp::linalg::Matrix</a> prev(x);</div>
