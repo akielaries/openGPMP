@@ -37,65 +37,82 @@
  * Training methods and initializers used for the openGPMP Machine
  * Learning module
  */
-#ifndef ML_TRAINERS_HPP
-#define ML_TRAINERS_HPP
+#ifndef TRAINERS_HPP
+#define TRAINERS_HPP
 #include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include "mlp_net.hpp"
-
 namespace gpmp {
 
 namespace ml {
 
+/**
+ * @brief Training Algorithms
+ */
 class Trainers {
   public:
     /**
-     * @details PrimaryMLP training method
+     * @brief Perform gradient descent for linear regression
+     *
+     * Given features X, target y, learning rate alpha, and number of iterations
+     * num_iters, this function optimizes the parameters theta using gradient
+     * descent
+     *
+     * @param X             Features matrix (each row represents a training
+     * example)
+     * @param y             Target vector
+     * @param alpha         Learning rate
+     * @param num_iters     Number of iterations
+     * @return std::vector<double>     Optimized parameters theta
      */
-    int64_t train_PrimaryMLP(const char *fnames);
+    std::vector<double> gradientdesc(const std::vector<std::vector<double>> &X,
+                                     const std::vector<double> &y,
+                                     double alpha,
+                                     int num_iters);
 
     /**
-     * @details PrimaryMLP testing method
+     * @brief Perform stochastic gradient descent for linear regression
+     *
+     * Given features X, target y, learning rate alpha, and number of iterations
+     * num_iters, this function optimizes the parameters theta using stochastic
+     * gradient descent
+     *
+     * @param X             Features matrix (each row represents a training
+     * example)
+     * @param y             Target vector
+     * @param alpha         Learning rate
+     * @param num_iters     Number of iterations
+     * @return std::vector<double>     Optimized parameters theta
      */
-    int64_t test_PrimaryMLP(const char *fname);
+    std::vector<double>
+    stoch_gradientdesc(const std::vector<std::vector<double>> &X,
+                       const std::vector<double> &y,
+                       double alpha,
+                       int num_iters);
 
     /**
-     * These methods acts as a helper to the SecondaryMLP class Model.
-     * the create_SecondaryMLP method will return an initialized model
-     * given the dimensions of the inputs and outputs as well as specs
-     * related to the hidden layers of the network
+     * @brief Perform mini-batch gradient descent for linear regression
+     *
+     * Given features X, target y, learning rate alpha, number of iterations
+     * num_iters, and batch size batch_size, this function optimizes the
+     * parameters theta using mini-batch gradient descent
+     *
+     * @param X             Features matrix (each row represents a training
+     * example)
+     * @param y             Target vector
+     * @param alpha         Learning rate
+     * @param num_iters     Number of iterations
+     * @param batch_size    Size of mini-batch
+     * @return std::vector<double>     Optimized parameters theta
      */
-    auto init_SecondaryMLP(size_t inputs,
-                           size_t outputs,
-                           size_t hidden_layer_units,
-                           int64_t hidden_layers,
-                           float lr) {
-        std::vector<size_t> layer_units;
-        layer_units.push_back(inputs);
-
-        for (int64_t i = 0; i < hidden_layers; ++i) {
-            layer_units.push_back(hidden_layer_units);
-        }
-        layer_units.push_back(outputs);
-        SecondaryMLP<long double> model_SecondaryMLP(layer_units, 0.01);
-
-        return model_SecondaryMLP;
-    }
-
-    /**
-     * @details SecondaryMLP training method
-     */
-    void train_SecondaryMLP(auto initialized_model,
-                            const std::string data_file,
-                            uint64_t iterations,
-                            uint64_t print_increment) {
-        std::fstream input(data_file.c_str());
-        std::cout << "FILE: " << data_file << " ITERS: " << iterations
-                  << " INCREMENT: " << print_increment;
-    }
+    std::vector<double>
+    minibatch_gradientdesc(const std::vector<std::vector<double>> &X,
+                           const std::vector<double> &y,
+                           double alpha,
+                           int num_iters,
+                           int batch_size);
 };
 
 } // namespace ml

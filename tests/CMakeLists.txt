@@ -41,6 +41,7 @@ set(CPP_SOURCES
     ../modules/ml/regularizers.cpp
     ../modules/ml/svc.cpp
     ../modules/ml/bayes_net.cpp
+    ../modules/ml/trainers.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
     ../modules/nt/prime_test.cpp

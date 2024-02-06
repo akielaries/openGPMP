@@ -219,7 +219,7 @@ template <typename T> class SecondaryMLP {
      * layer
      */
     auto prop_forwards(gpmp::linalg::Matrix<T> x) {
-        assert(get<0>(x.shape) == layer_units[0] && get<1>(x.shape));
+        assert(std::get<0>(x.shape) == layer_units[0] && std::get<1>(x.shape));
         // input = to previously declared acitvations method
         activations[0] = x;
         gpmp::linalg::Matrix prev(x);
@@ -243,7 +243,7 @@ template <typename T> class SecondaryMLP {
      * This method takes the target output as an input parameter
      */
     void prop_backwards(gpmp::linalg::Matrix<T> target) {
-        assert(get<0>(target.shape) == layer_units.back());
+        assert(std::get<0>(target.shape) == layer_units.back());
         // calculate the error, target - ouput
         auto y = target;
         auto y_hat = activations.back();
