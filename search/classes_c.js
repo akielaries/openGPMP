@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quasinewton_1093',['QuasiNewton',['../classQuasiNewton.html',1,'']]]
+  ['quasinewton_1093',['QuasiNewton',['../classgpmp_1_1optim_1_1QuasiNewton.html',1,'gpmp::optim']]]
 ];

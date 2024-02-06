@@ -52,7 +52,7 @@ var searchData=
   ['display_5fhash_275',['display_hash',['../classRC5.html#a0fa6a3930a7e372d8606af8505ff5dd0',1,'RC5']]],
   ['display_5fmtx_276',['display_mtx',['../classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea',1,'gpmp::linalg::LinSys']]],
   ['displaylistid_277',['displayListId',['../classCheckerboard.html#a5801397eeed1c18d0f4a12d732768723',1,'Checkerboard']]],
-  ['dot_5fproduct_278',['dot_product',['../classQuasiNewton.html#ada9abf7d0d7dce0e559cb10b877bad5f',1,'QuasiNewton::dot_product()'],['../classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37',1,'gpmp::ml::SVC::dot_product()']]],
+  ['dot_5fproduct_278',['dot_product',['../classgpmp_1_1optim_1_1QuasiNewton.html#a8c0f7ac5f9f84023a724e21689ed4053',1,'gpmp::optim::QuasiNewton::dot_product()'],['../classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37',1,'gpmp::ml::SVC::dot_product()']]],
   ['double_279',['Double',['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b',1,'gpmp::core::Double()'],['../namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdad909d38d705ce75386dd86e611a82f5b',1,'gpmp::core::Double()']]],
   ['draw_280',['draw',['../classCheckerboard.html#a27db7aec53de6b857653d13f127ba274',1,'Checkerboard']]],
   ['drop_281',['drop',['../classgpmp_1_1core_1_1DataTable.html#aa13646f45449b782a59ba431a17ff9c7',1,'gpmp::core::DataTable']]],

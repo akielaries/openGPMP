@@ -5,7 +5,7 @@ var searchData=
   ['quantile_5fdist_762',['quantile_dist',['../classgpmp_1_1stats_1_1ProbDist.html#aad547ef1050e3c03994d2b9e18f3a36c',1,'gpmp::stats::ProbDist']]],
   ['quasi_2ecpp_763',['quasi.cpp',['../quasi_8cpp.html',1,'']]],
   ['quasi_2ehpp_764',['quasi.hpp',['../quasi_8hpp.html',1,'']]],
-  ['quasinewton_765',['QuasiNewton',['../classQuasiNewton.html',1,'']]],
+  ['quasinewton_765',['QuasiNewton',['../classgpmp_1_1optim_1_1QuasiNewton.html',1,'gpmp::optim']]],
   ['queue_5fmutex_766',['queue_mutex',['../classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29',1,'gpmp::core::ThreadPool']]],
   ['quotient_5frule_767',['quotient_rule',['../classgpmp_1_1Differential.html#ad3bc97106e867ee3ba7e4d19238f5a97',1,'gpmp::Differential::quotient_rule()'],['../classpygpmp_1_1calculus_1_1calculus_1_1Differential.html#a0835b3c5beeab30b183015ed4eded31c',1,'pygpmp.calculus.calculus.Differential.quotient_rule()']]]
 ];

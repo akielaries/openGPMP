@@ -463,34 +463,38 @@
             <symbol>sum_x_cubed</symbol>
         </error>
         <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="345" column="16" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="338" column="45" info="Assuming condition is false"/>
+            <location file="../../modules/optim/quasi.cpp" line="358" column="16" info="Access out of bounds"/>
+            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
             <symbol>rho</symbol>
         </error>
         <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="346" column="18" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="338" column="45" info="Assuming condition is false"/>
+            <location file="../../modules/optim/quasi.cpp" line="359" column="18" info="Access out of bounds"/>
+            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
             <symbol>alpha</symbol>
         </error>
         <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="346" column="27" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="338" column="45" info="Assuming condition is false"/>
+            <location file="../../modules/optim/quasi.cpp" line="359" column="27" info="Access out of bounds"/>
+            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
             <symbol>rho</symbol>
         </error>
         <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="348" column="30" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="338" column="45" info="Assuming condition is false"/>
-            <symbol>alpha</symbol>
-        </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
             <location file="../../modules/optim/quasi.cpp" line="361" column="30" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="338" column="45" info="Assuming condition is false"/>
+            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
+            <symbol>alpha</symbol>
+        </error>
+        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
+            <location file="../../modules/optim/quasi.cpp" line="374" column="30" info="Access out of bounds"/>
+            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
             <symbol>rho</symbol>
         </error>
         <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="363" column="31" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="338" column="45" info="Assuming condition is false"/>
+            <location file="../../modules/optim/quasi.cpp" line="376" column="31" info="Access out of bounds"/>
+            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
             <symbol>alpha</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;updated_point&apos; is assigned a value that is never used." verbose="Variable &apos;updated_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/quasi.cpp">
+            <location file="../../modules/optim/quasi.cpp" line="231" column="39"/>
+            <symbol>updated_point</symbol>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
             <location file="../../modules/stats/describe.cpp" line="42" column="13"/>
@@ -613,7 +617,7 @@
             <symbol>betweenness_centrality</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bfgs_optimize&apos; is never used." verbose="The function &apos;bfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="144" column="0"/>
+            <location file="../../modules/optim/quasi.cpp" line="145" column="0"/>
             <symbol>bfgs_optimize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bfs&apos; is never used." verbose="The function &apos;bfs&apos; is never used." cwe="561">
@@ -1001,7 +1005,7 @@
             <symbol>kurtosis</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;lbfgs_optimize&apos; is never used." verbose="The function &apos;lbfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="310" column="0"/>
+            <location file="../../modules/optim/quasi.cpp" line="323" column="0"/>
             <symbol>lbfgs_optimize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;leaky_relu&apos; is never used." verbose="The function &apos;leaky_relu&apos; is never used." cwe="561">

@@ -5,6 +5,6 @@ var searchData=
   ['variationalautoencoder_1850',['VariationalAutoEncoder',['../classgpmp_1_1ml_1_1VariationalAutoEncoder.html#a8ad030182e54a16a22e816dafe07d1dc',1,'gpmp::ml::VariationalAutoEncoder']]],
   ['vector_5faddition_1851',['vector_addition',['../classgpmp_1_1optim_1_1Func.html#ae6139c7c758a4e75d1bb51eaa83f659b',1,'gpmp::optim::Func']]],
   ['vector_5fscalar_5fmultiply_1852',['vector_scalar_multiply',['../classgpmp_1_1optim_1_1Func.html#acc1ea578ddef4089d9205edb7d5d1ad9',1,'gpmp::optim::Func']]],
-  ['vector_5fsubtraction_1853',['vector_subtraction',['../classgpmp_1_1optim_1_1Func.html#a64f467219aef5098c7a093336c0f70b8',1,'gpmp::optim::Func::vector_subtraction()'],['../classQuasiNewton.html#ae4fc6f846455fb80b24cf452a77109bd',1,'QuasiNewton::vector_subtraction()']]],
+  ['vector_5fsubtraction_1853',['vector_subtraction',['../classgpmp_1_1optim_1_1Func.html#a64f467219aef5098c7a093336c0f70b8',1,'gpmp::optim::Func::vector_subtraction()'],['../classgpmp_1_1optim_1_1QuasiNewton.html#ad93755101a8153c3b8912d6104fadb45',1,'gpmp::optim::QuasiNewton::vector_subtraction()']]],
   ['vocklington_1854',['vocklington',['../classgpmp_1_1Squares.html#adf8567bfa1f144936c5b69960bed7938',1,'gpmp::Squares']]]
 ];
