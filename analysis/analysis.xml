@@ -440,26 +440,26 @@
             <location file="../../modules/nt/rc5.cpp" line="63" column="1"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="105" column="16"/>
+            <location file="../../modules/optim/function.cpp" line="111" column="16"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;golden_ratio&apos; is assigned a value that is never used." verbose="Variable &apos;golden_ratio&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
+            <location file="../../modules/optim/function.cpp" line="61" column="25"/>
+            <symbol>golden_ratio</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;best_point&apos; is assigned a value that is never used." verbose="Variable &apos;best_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="239" column="35"/>
+            <location file="../../modules/optim/function.cpp" line="245" column="35"/>
             <symbol>best_point</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;best_point&apos; is assigned a value that is never used." verbose="Variable &apos;best_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="249" column="24"/>
+            <location file="../../modules/optim/function.cpp" line="255" column="24"/>
             <symbol>best_point</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;dimension&apos; is assigned a value that is never used." verbose="Variable &apos;dimension&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="293" column="22"/>
-            <symbol>dimension</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." verbose="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="440" column="71"/>
+            <location file="../../modules/optim/function.cpp" line="457" column="71"/>
             <symbol>sum_x_cubed</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." verbose="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="450" column="21"/>
+            <location file="../../modules/optim/function.cpp" line="467" column="21"/>
             <symbol>sum_x_cubed</symbol>
         </error>
         <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
@@ -641,7 +641,7 @@
             <symbol>binary_step</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bisection_method&apos; is never used." verbose="The function &apos;bisection_method&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="346" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="363" column="0"/>
             <symbol>bisection_method</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;caesar&apos; is never used." verbose="The function &apos;caesar&apos; is never used." cwe="561">
@@ -733,11 +733,11 @@
             <symbol>csv_read</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;cubic_fit&apos; is never used." verbose="The function &apos;cubic_fit&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="431" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="448" column="0"/>
             <symbol>cubic_fit</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;cubic_interpolation&apos; is never used." verbose="The function &apos;cubic_interpolation&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="142" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="148" column="0"/>
             <symbol>cubic_interpolation</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;data_augmentation&apos; is never used." verbose="The function &apos;data_augmentation&apos; is never used." cwe="561">
@@ -833,11 +833,11 @@
             <symbol>feature_scaling</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;fibonacci_search&apos; is never used." verbose="The function &apos;fibonacci_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="283" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="290" column="0"/>
             <symbol>fibonacci_search</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;fit_linear&apos; is never used." verbose="The function &apos;fit_linear&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="259" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="265" column="0"/>
             <symbol>fit_linear</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;floyd_warshall&apos; is never used." verbose="The function &apos;floyd_warshall&apos; is never used." cwe="561">
@@ -893,11 +893,11 @@
             <symbol>get_sig</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;golden_section_search&apos; is never used." verbose="The function &apos;golden_section_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="117" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="123" column="0"/>
             <symbol>golden_section_search</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;golden_section_search_multivariate&apos; is never used." verbose="The function &apos;golden_section_search_multivariate&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="195" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="201" column="0"/>
             <symbol>golden_section_search_multivariate</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;gradientdesc&apos; is never used." verbose="The function &apos;gradientdesc&apos; is never used." cwe="561">
@@ -1021,7 +1021,7 @@
             <symbol>limit_at_infinity</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;linear_interpolation&apos; is never used." verbose="The function &apos;linear_interpolation&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="134" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="140" column="0"/>
             <symbol>linear_interpolation</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;linear_interpolation_downsample&apos; is never used." verbose="The function &apos;linear_interpolation_downsample&apos; is never used." cwe="561">
@@ -1169,11 +1169,11 @@
             <symbol>nearest_neighbor_upsample</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;nelder_mead&apos; is never used." verbose="The function &apos;nelder_mead&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="501" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="518" column="0"/>
             <symbol>nelder_mead</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;newton_method&apos; is never used." verbose="The function &apos;newton_method&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="375" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="392" column="0"/>
             <symbol>newton_method</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;normal_CDF&apos; is never used." verbose="The function &apos;normal_CDF&apos; is never used." cwe="561">
@@ -1253,7 +1253,7 @@
             <symbol>rand_real</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;random_search&apos; is never used." verbose="The function &apos;random_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="228" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="234" column="0"/>
             <symbol>random_search</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;rayleigh_iter&apos; is never used." verbose="The function &apos;rayleigh_iter&apos; is never used." cwe="561">
@@ -1261,7 +1261,7 @@
             <symbol>rayleigh_iter</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;regula_falsi&apos; is never used." verbose="The function &apos;regula_falsi&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="396" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="413" column="0"/>
             <symbol>regula_falsi</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;relu&apos; is never used." verbose="The function &apos;relu&apos; is never used." cwe="561">
@@ -1421,7 +1421,7 @@
             <symbol>tanh_derivative</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;ternary_search&apos; is never used." verbose="The function &apos;ternary_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="319" column="0"/>
+            <location file="../../modules/optim/function.cpp" line="332" column="0"/>
             <symbol>ternary_search</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;test&apos; is never used." verbose="The function &apos;test&apos; is never used." cwe="561">
@@ -1443,6 +1443,14 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;var_coeff&apos; is never used." verbose="The function &apos;var_coeff&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="135" column="0"/>
             <symbol>var_coeff</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;vector_addition&apos; is never used." verbose="The function &apos;vector_addition&apos; is never used." cwe="561">
+            <location file="../../modules/optim/function.cpp" line="75" column="0"/>
+            <symbol>vector_addition</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;vector_scalar_multiply&apos; is never used." verbose="The function &apos;vector_scalar_multiply&apos; is never used." cwe="561">
+            <location file="../../modules/optim/function.cpp" line="106" column="0"/>
+            <symbol>vector_scalar_multiply</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;weight_decay_regularization&apos; is never used." verbose="The function &apos;weight_decay_regularization&apos; is never used." cwe="561">
             <location file="../../modules/ml/regularizers.cpp" line="119" column="0"/>
