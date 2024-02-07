@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-07 03:42:44</td>
+            <td class="headerValue">2024-02-07 23:08:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -116,7 +116,7 @@
 <a name="46"><span class="lineNum">      46 </span>            : // declare primality class object</a>
 <a name="47"><span class="lineNum">      47 </span>            : gpmp::PrimalityTest __PRIMES_CLASS__;</a>
 <a name="48"><span class="lineNum">      48 </span>            : </a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          4 : TEST(prime_test, is_prime) {</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          4 : TEST(PrimalityTestTest, is_prime) {</span></a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">          1 :     uint64_t is_prime_0 = 2;</span></a>
 <a name="51"><span class="lineNum">      51 </span><span class="lineCov">          1 :     bool actual_0 = true;</span></a>
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 :     bool fetched_0 = __PRIMES_CLASS__.is_prime(is_prime_0);</span></a>
@@ -158,7 +158,7 @@
 <a name="88"><span class="lineNum">      88 </span><span class="lineCov">          1 :     EXPECT_EQ(actual_7, fetched_7);</span></a>
 <a name="89"><span class="lineNum">      89 </span><span class="lineCov">          1 : }</span></a>
 <a name="90"><span class="lineNum">      90 </span>            : </a>
-<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          4 : TEST(prime_test, carmichael) {</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          4 : TEST(PrimalityTestTest, carmichael) {</span></a>
 <a name="92"><span class="lineNum">      92 </span><span class="lineCov">          1 :     uint64_t is_cm_0 = 561;</span></a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineCov">          1 :     bool actual_cm_0 = true;</span></a>
 <a name="94"><span class="lineNum">      94 </span><span class="lineCov">          1 :     bool carm_fetched_0 = __PRIMES_CLASS__.carmichael_num(is_cm_0);</span></a>
@@ -170,7 +170,7 @@
 <a name="100"><span class="lineNum">     100 </span><span class="lineCov">          1 :     EXPECT_EQ(actual_cm_1, carm_fetched_1);</span></a>
 <a name="101"><span class="lineNum">     101 </span><span class="lineCov">          1 : }</span></a>
 <a name="102"><span class="lineNum">     102 </span>            : </a>
-<a name="103"><span class="lineNum">     103 </span><span class="lineCov">          4 : TEST(prime_test, mod_pow) {</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineCov">          4 : TEST(PrimalityTestTest, mod_pow) {</span></a>
 <a name="104"><span class="lineNum">     104 </span><span class="lineCov">          1 :     EXPECT_EQ(1, __PRIMES_CLASS__.mod_pow(3, 2, 2));</span></a>
 <a name="105"><span class="lineNum">     105 </span><span class="lineCov">          1 :     EXPECT_EQ(4, __PRIMES_CLASS__.mod_pow(5, 2, 7));</span></a>
 <a name="106"><span class="lineNum">     106 </span><span class="lineCov">          1 :     EXPECT_EQ(2, __PRIMES_CLASS__.mod_pow(8, 9, 3));</span></a>
@@ -182,7 +182,7 @@
 <a name="112"><span class="lineNum">     112 </span>            :  * as a utility function on the overall algorithm that</a>
 <a name="113"><span class="lineNum">     113 </span>            :  * computes primes using the Miller-Rabin method</a>
 <a name="114"><span class="lineNum">     114 </span>            :  */</a>
-<a name="115"><span class="lineNum">     115 </span>            : /*TEST(prime_test, compute_miller_rabin) {</a>
+<a name="115"><span class="lineNum">     115 </span>            : /*TEST(PrimalityTestTest, compute_miller_rabin) {</a>
 <a name="116"><span class="lineNum">     116 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(7, 5));</a>
 <a name="117"><span class="lineNum">     117 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(7, 1));</a>
 <a name="118"><span class="lineNum">     118 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(1049, 5));</a>
@@ -192,7 +192,7 @@
 <a name="122"><span class="lineNum">     122 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(90, 5));</a>
 <a name="123"><span class="lineNum">     123 </span>            : }*/</a>
 <a name="124"><span class="lineNum">     124 </span>            : /*</a>
-<a name="125"><span class="lineNum">     125 </span>            : TEST(prime_test, compute_miller_rabin) {</a>
+<a name="125"><span class="lineNum">     125 </span>            : TEST(PrimalityTestTest, compute_miller_rabin) {</a>
 <a name="126"><span class="lineNum">     126 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));</a>
 <a name="127"><span class="lineNum">     127 </span>            :     EXPECT_EQ(false, __PRIMES_CLASS__.compute_miller_rabin(1));</a>
 <a name="128"><span class="lineNum">     128 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));</a>
@@ -202,7 +202,7 @@
 <a name="132"><span class="lineNum">     132 </span>            :     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));</a>
 <a name="133"><span class="lineNum">     133 </span>            : }*/</a>
 <a name="134"><span class="lineNum">     134 </span>            : </a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineCov">          4 : TEST(prime_test, miller_rabin_prime) {</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">          4 : TEST(PrimalityTestTest, miller_rabin_prime) {</span></a>
 <a name="136"><span class="lineNum">     136 </span><span class="lineCov">          1 :     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(1049, 4));</span></a>
 <a name="137"><span class="lineNum">     137 </span><span class="lineCov">          1 :     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(5, 4));</span></a>
 <a name="138"><span class="lineNum">     138 </span><span class="lineCov">          1 :     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(2999, 4));</span></a>
@@ -212,9 +212,9 @@
 <a name="142"><span class="lineNum">     142 </span><span class="lineCov">          1 :     EXPECT_EQ(false, __PRIMES_CLASS__.miller_rabin_prime(104032, 4));</span></a>
 <a name="143"><span class="lineNum">     143 </span><span class="lineCov">          1 : }</span></a>
 <a name="144"><span class="lineNum">     144 </span>            : </a>
-<a name="145"><span class="lineNum">     145 </span>            : // TEST(prime_test, miller_rabin) {}</a>
+<a name="145"><span class="lineNum">     145 </span>            : // TEST(PrimalityTestTest, miller_rabin) {}</a>
 <a name="146"><span class="lineNum">     146 </span>            : </a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          4 : TEST(prime_test, solovoy_strassen) {</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          4 : TEST(PrimalityTestTest, solovoy_strassen) {</span></a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">          1 :     EXPECT_EQ(false, __PRIMES_CLASS__.solovoy_strassen(15, 50));</span></a>
 <a name="149"><span class="lineNum">     149 </span><span class="lineCov">          1 :     EXPECT_EQ(false, __PRIMES_CLASS__.solovoy_strassen(25, 50));</span></a>
 <a name="150"><span class="lineNum">     150 </span><span class="lineCov">          1 :     EXPECT_EQ(false, __PRIMES_CLASS__.solovoy_strassen(104032, 50));</span></a>

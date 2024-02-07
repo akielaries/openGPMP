@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['var_5fcoeff_981',['var_coeff',['../classgpmp_1_1stats_1_1Describe.html#ac975c7b90c03e9ca27fdc13300493997',1,'gpmp::stats::Describe']]],
-  ['variance_982',['variance',['../classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a',1,'gpmp::ml::BayesGauss::variance()'],['../classgpmp_1_1ml_1_1Stats.html#ad49e5b0f62f471c80afef953a2c7f829',1,'gpmp::ml::Stats::variance()'],['../classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038',1,'gpmp::stats::Describe::variance()']]],
-  ['variationalautoencoder_983',['VariationalAutoEncoder',['../classgpmp_1_1ml_1_1VariationalAutoEncoder.html',1,'gpmp::ml::VariationalAutoEncoder'],['../classgpmp_1_1ml_1_1VariationalAutoEncoder.html#a8ad030182e54a16a22e816dafe07d1dc',1,'gpmp::ml::VariationalAutoEncoder::VariationalAutoEncoder()']]],
-  ['vector_5faddition_984',['vector_addition',['../classgpmp_1_1optim_1_1Func.html#ae6139c7c758a4e75d1bb51eaa83f659b',1,'gpmp::optim::Func']]],
-  ['vector_5fscalar_5fmultiply_985',['vector_scalar_multiply',['../classgpmp_1_1optim_1_1Func.html#acc1ea578ddef4089d9205edb7d5d1ad9',1,'gpmp::optim::Func']]],
-  ['vector_5fsubtraction_986',['vector_subtraction',['../classgpmp_1_1optim_1_1Func.html#a64f467219aef5098c7a093336c0f70b8',1,'gpmp::optim::Func::vector_subtraction()'],['../classgpmp_1_1optim_1_1QuasiNewton.html#ad93755101a8153c3b8912d6104fadb45',1,'gpmp::optim::QuasiNewton::vector_subtraction()']]],
-  ['vectors_987',['Vectors',['../classgpmp_1_1Vectors.html',1,'gpmp']]],
-  ['vectors_2ehpp_988',['vectors.hpp',['../vectors_8hpp.html',1,'']]],
-  ['verbose_989',['verbose',['../classgpmp_1_1ml_1_1SVC.html#a71af2aec62bcdf3d7ff82b92392bcbee',1,'gpmp::ml::SVC']]],
-  ['vertices_990',['vertices',['../classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de',1,'gpmp::Graph']]],
-  ['vocklington_991',['vocklington',['../classgpmp_1_1Squares.html#adf8567bfa1f144936c5b69960bed7938',1,'gpmp::Squares']]]
+  ['var_5fcoeff_980',['var_coeff',['../classgpmp_1_1stats_1_1Describe.html#ac975c7b90c03e9ca27fdc13300493997',1,'gpmp::stats::Describe']]],
+  ['variance_981',['variance',['../classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a',1,'gpmp::ml::BayesGauss::variance()'],['../classgpmp_1_1ml_1_1Stats.html#ad49e5b0f62f471c80afef953a2c7f829',1,'gpmp::ml::Stats::variance()'],['../classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038',1,'gpmp::stats::Describe::variance()']]],
+  ['variationalautoencoder_982',['VariationalAutoEncoder',['../classgpmp_1_1ml_1_1VariationalAutoEncoder.html',1,'gpmp::ml::VariationalAutoEncoder'],['../classgpmp_1_1ml_1_1VariationalAutoEncoder.html#a8ad030182e54a16a22e816dafe07d1dc',1,'gpmp::ml::VariationalAutoEncoder::VariationalAutoEncoder()']]],
+  ['vector_5faddition_983',['vector_addition',['../classgpmp_1_1optim_1_1Func.html#ae6139c7c758a4e75d1bb51eaa83f659b',1,'gpmp::optim::Func']]],
+  ['vector_5fscalar_5fmultiply_984',['vector_scalar_multiply',['../classgpmp_1_1optim_1_1Func.html#acc1ea578ddef4089d9205edb7d5d1ad9',1,'gpmp::optim::Func']]],
+  ['vector_5fsubtraction_985',['vector_subtraction',['../classgpmp_1_1optim_1_1Func.html#a64f467219aef5098c7a093336c0f70b8',1,'gpmp::optim::Func::vector_subtraction()'],['../classgpmp_1_1optim_1_1QuasiNewton.html#ad93755101a8153c3b8912d6104fadb45',1,'gpmp::optim::QuasiNewton::vector_subtraction()']]],
+  ['vectors_986',['Vectors',['../classgpmp_1_1Vectors.html',1,'gpmp']]],
+  ['vectors_2ehpp_987',['vectors.hpp',['../vectors_8hpp.html',1,'']]],
+  ['verbose_988',['verbose',['../classgpmp_1_1ml_1_1SVC.html#a71af2aec62bcdf3d7ff82b92392bcbee',1,'gpmp::ml::SVC']]],
+  ['vertices_989',['vertices',['../classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de',1,'gpmp::Graph']]],
+  ['vocklington_990',['vocklington',['../classgpmp_1_1Squares.html#adf8567bfa1f144936c5b69960bed7938',1,'gpmp::Squares']]]
 ];

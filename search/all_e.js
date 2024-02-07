@@ -18,15 +18,14 @@ var searchData=
   ['nt_2epy_660',['nt.py',['../nt_8py.html',1,'']]],
   ['nt_5fex_2epy_661',['nt_ex.py',['../nt__ex_8py.html',1,'']]],
   ['nth_5fderivative_662',['nth_derivative',['../classgpmp_1_1Differential.html#af4caa5a3a451ba329186c43cbbc9a570',1,'gpmp::Differential::nth_derivative()'],['../classpygpmp_1_1calculus_1_1calculus_1_1Differential.html#a3ad757b2ac17d73a118084204c2f6670',1,'pygpmp.calculus.calculus.Differential.nth_derivative()']]],
-  ['num_5felements_663',['num_elements',['../classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92',1,'gpmp::linalg::Matrix']]],
-  ['num_5fiterations_664',['num_iterations',['../classgpmp_1_1ml_1_1LogReg.html#a9eea8fcde509a76b9a6b8a9cce6255a0',1,'gpmp::ml::LogReg']]],
-  ['num_5flayers_665',['num_layers',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05',1,'gpmp::ml::PrimaryMLP']]],
-  ['num_5fneurons_666',['num_neurons',['../structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c',1,'gpmp::ml::layer']]],
-  ['num_5frows_667',['num_rows',['../classgpmp_1_1ml_1_1LinearRegression.html#ad8b5dcb073ad09912ea45c0016ac93d3',1,'gpmp::ml::LinearRegression::num_rows()'],['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#aca9a9d4be27550c9753cd3018851b13c',1,'pygpmp.ml.ml.LinearRegression.num_rows()']]],
-  ['numcols_668',['numCols',['../classgpmp_1_1linalg_1_1LinSys.html#a120ef332688df55948fe4e2f9a889c16',1,'gpmp::linalg::LinSys']]],
+  ['num_5fcols_663',['num_cols',['../classgpmp_1_1linalg_1_1LinSys.html#aead57113aca75f2415f5ecf3938aca04',1,'gpmp::linalg::LinSys']]],
+  ['num_5felements_664',['num_elements',['../classgpmp_1_1linalg_1_1Matrix.html#a20e43f34fc939f2ebac8d38e7f2cea92',1,'gpmp::linalg::Matrix']]],
+  ['num_5fiterations_665',['num_iterations',['../classgpmp_1_1ml_1_1LogReg.html#a9eea8fcde509a76b9a6b8a9cce6255a0',1,'gpmp::ml::LogReg']]],
+  ['num_5flayers_666',['num_layers',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a59895730c7db496a4727c379aa37ed05',1,'gpmp::ml::PrimaryMLP']]],
+  ['num_5fneurons_667',['num_neurons',['../structgpmp_1_1ml_1_1layer.html#a4c92ac359ce9d735f69598772353731c',1,'gpmp::ml::layer']]],
+  ['num_5frows_668',['num_rows',['../classgpmp_1_1linalg_1_1LinSys.html#afeca99537599bfcffbda4fb22cee9e01',1,'gpmp::linalg::LinSys::num_rows()'],['../classgpmp_1_1ml_1_1LinearRegression.html#ad8b5dcb073ad09912ea45c0016ac93d3',1,'gpmp::ml::LinearRegression::num_rows()'],['../classpygpmp_1_1ml_1_1ml_1_1LinearRegression.html#aca9a9d4be27550c9753cd3018851b13c',1,'pygpmp.ml.ml.LinearRegression.num_rows()']]],
   ['numdiff_669',['numDiff',['../classgpmp_1_1NumericalAnalysis.html#a11c5f95f0f01513a85ced7276453c697',1,'gpmp::NumericalAnalysis::numDiff(double(*function)(double), double x)'],['../classgpmp_1_1NumericalAnalysis.html#a9a7304c4d604f83b486ddefc9bb2c5a4',1,'gpmp::NumericalAnalysis::numDiff(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis)']]],
   ['numdiff_5f2_670',['numDiff_2',['../classgpmp_1_1NumericalAnalysis.html#ab84ecda7a4e0619726b4c5cc6679332e',1,'gpmp::NumericalAnalysis::numDiff_2(double(*function)(double), double x)'],['../classgpmp_1_1NumericalAnalysis.html#a91e9fbf1716c36cbec0bf981a807923f',1,'gpmp::NumericalAnalysis::numDiff_2(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis1, int axis2)']]],
   ['numdiff_5f3_671',['numDiff_3',['../classgpmp_1_1NumericalAnalysis.html#a28b1927069cf5b5fcea4e226a64e8082',1,'gpmp::NumericalAnalysis::numDiff_3(double(*function)(double), double x)'],['../classgpmp_1_1NumericalAnalysis.html#afcf1cf63af7b98091b0dc2f071ddac81',1,'gpmp::NumericalAnalysis::numDiff_3(double(*function)(std::vector&lt; double &gt;), std::vector&lt; double &gt; x, int axis1, int axis2, int axis3)']]],
-  ['numericalanalysis_672',['NumericalAnalysis',['../classgpmp_1_1NumericalAnalysis.html',1,'gpmp']]],
-  ['numrows_673',['numRows',['../classgpmp_1_1linalg_1_1LinSys.html#aacbd289cb40a61bb65b917806dbff61e',1,'gpmp::linalg::LinSys']]]
+  ['numericalanalysis_672',['NumericalAnalysis',['../classgpmp_1_1NumericalAnalysis.html',1,'gpmp']]]
 ];
