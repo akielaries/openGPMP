@@ -64,6 +64,7 @@ set(CPP_TEST_FILES
     linalg/t_matrix.cpp
     linalg/t_eigen.cpp
     linalg/t_linsys.cpp
+    linalg/t_sigproc.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp

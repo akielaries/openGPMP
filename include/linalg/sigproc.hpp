@@ -435,7 +435,6 @@ class SigProc {
     std::vector<double>
     zero_order_hold_upsample(const std::vector<double> &signal, size_t factor);
 
-  private:
     std::vector<double> signal_;
 };
 
