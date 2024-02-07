@@ -2,6 +2,7 @@
  * Unit tests for the Linear Algebra module's Linear Systems class
  */
 #include "../../include/linalg/linsys.hpp"
+#include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <gtest/gtest.h>
@@ -13,10 +14,10 @@
 const double TOLERANCE = 1e-3;
 
 TEST(LinSysTest, SolveGauss) {
-    std::vector<std::vector<double>> squareMat = {{3.0, 2.0, -4.0, 3.0},
-                                                  {2.0, 3.0, 3.0, 15.0},
-                                                  {5.0, -3, 1.0, 14.0}};
-    gpmp::linalg::LinSys linSysSquare(squareMat);
+    std::vector<std::vector<double>> square_mat = {{3.0, 2.0, -4.0, 3.0},
+                                                   {2.0, 3.0, 3.0, 15.0},
+                                                   {5.0, -3, 1.0, 14.0}};
+    gpmp::linalg::LinSys linSysSquare(square_mat);
 
     // execute solve_gauss method
     std::vector<double> solution = linSysSquare.solve_gauss();
@@ -33,15 +34,15 @@ TEST(LinSysTest, SolveGauss) {
 }
 
 TEST(LinSysTest, DeterminantTest) {
-    /*std::vector<std::vector<double>> squareMat = {
+    /*std::vector<std::vector<double>> square_mat = {
         {3.0, 2.0, -4.0, 3.0},
         {2.0, 3.0, 3.0, 15.0},
         {5.0, -3.0, 1.0, 14.0},
         {1.0, 1.0, 1.0, 6.0}};
     */
 
-    std::vector<std::vector<double>> squareMat = {{2, 1}, {5, 3}};
-    gpmp::linalg::LinSys linSysSquare(squareMat);
+    std::vector<std::vector<double>> square_mat = {{2, 1}, {5, 3}};
+    gpmp::linalg::LinSys linSysSquare(square_mat);
 
     double det = linSysSquare.determinant();
 
@@ -51,12 +52,12 @@ TEST(LinSysTest, DeterminantTest) {
 }
 
 TEST(LinSysTest, DeterminantTestB) {
-    std::vector<std::vector<double>> squareMat = {{4, 4, 3, 1},
-                                                  {2, 8, 8, 6},
-                                                  {4, 3, 2, 2},
-                                                  {4, 1, 5, 6}};
+    std::vector<std::vector<double>> square_mat = {{4, 4, 3, 1},
+                                                   {2, 8, 8, 6},
+                                                   {4, 3, 2, 2},
+                                                   {4, 1, 5, 6}};
 
-    gpmp::linalg::LinSys linSysSquare(squareMat);
+    gpmp::linalg::LinSys linSysSquare(square_mat);
 
     double det = linSysSquare.determinant();
 
@@ -67,10 +68,10 @@ TEST(LinSysTest, DeterminantTestB) {
 
 TEST(LinSysTest, LUDecompositionTest) {
     // Define a square matrix
-    std::vector<std::vector<double>> squareMat = {{3.0, 2.0, -4.0, 3.0},
-                                                  {2.0, 3.0, 3.0, 15.0},
-                                                  {5.0, -3.0, 1.0, 14.0},
-                                                  {1.0, 1.0, 1.0, 6.0}};
+    std::vector<std::vector<double>> square_mat = {{3.0, 2.0, -4.0, 3.0},
+                                                   {2.0, 3.0, 3.0, 15.0},
+                                                   {5.0, -3.0, 1.0, 14.0},
+                                                   {1.0, 1.0, 1.0, 6.0}};
 
     // expected lower
     std::vector<std::vector<double>> L = {{1, 0, 0, 0},
@@ -85,7 +86,7 @@ TEST(LinSysTest, LUDecompositionTest) {
                                           {0, 0, 0, 0}};
 
     // Create a LinSys object
-    gpmp::linalg::LinSys linSysSquare(squareMat);
+    gpmp::linalg::LinSys linSysSquare(square_mat);
 
     // execute LU decomposition
     auto LU_mtx = linSysSquare.lu_decomp();
@@ -101,4 +102,114 @@ TEST(LinSysTest, LUDecompositionTest) {
             ASSERT_NEAR(LU_mtx.second[i][j], U[i][j], TOLERANCE);
         }
     }
+}
+
+TEST(LinSysTest, IsSymmetric) {
+    //  symmetric positive-definite matrix
+    std::vector<std::vector<double>> symmetric_mat = {{4.0, 1.0, 2.0},
+                                                      {1.0, 5.0, 3.0},
+                                                      {2.0, 3.0, 6.0}};
+    gpmp::linalg::LinSys linSysSymmetric(symmetric_mat);
+
+    EXPECT_TRUE(linSysSymmetric.is_symmetric());
+
+    //  non-symmetric matrix
+    std::vector<std::vector<double>> nonSymmetric_mat = {{1.0, 2.0, 3.0},
+                                                         {2.0, 4.0, 5.0},
+                                                         {3.0, 5.0, 6.0}};
+    gpmp::linalg::LinSys linSysNonSymmetric(nonSymmetric_mat);
+
+    EXPECT_FALSE(linSysNonSymmetric.is_symmetric());
+}
+
+TEST(LinSysTest, FrobeniusNorm) {
+    std::vector<std::vector<double>> test_mat = {{1.0, 2.0, 3.0},
+                                                 {4.0, 5.0, 6.0},
+                                                 {7.0, 8.0, 9.0}};
+    gpmp::linalg::LinSys linSys(test_mat);
+
+    // expected Frobenius norm for the test matrix
+    double expected_norm = std::sqrt(1 * 1 + 2 * 2 + 3 * 3 + 4 * 4 + 5 * 5 +
+                                     6 * 6 + 7 * 7 + 8 * 8 + 9 * 9);
+
+    EXPECT_DOUBLE_EQ(linSys.frobenius_norm(), expected_norm);
+}
+
+TEST(LinSysTest, OneNorm) {
+    std::vector<std::vector<double>> testMat = {{1.0, 2.0, 3.0},
+                                                {4.0, 5.0, 6.0},
+                                                {7.0, 8.0, 9.0}};
+    gpmp::linalg::LinSys linSys(testMat);
+
+    // expected 1-norm for the test matrix
+    double expectedNorm = 18;
+
+    EXPECT_DOUBLE_EQ(linSys.one_norm(), expectedNorm);
+}
+
+TEST(LinSysTest, InfNorm) {
+    std::vector<std::vector<double>> testMat = {{1.0, 2.0, 3.0},
+                                                {4.0, 5.0, 6.0},
+                                                {7.0, 8.0, 9.0}};
+    gpmp::linalg::LinSys linSys(testMat);
+
+    double expectedNorm = 24;
+
+    EXPECT_DOUBLE_EQ(linSys.inf_norm(), expectedNorm);
+}
+
+TEST(LinSysTest, DiagonallyDominant) {
+    // diagonally dominant matrix
+    std::vector<std::vector<double>> diagonallyDominantMat = {{4.0, -1.0, 0.0},
+                                                              {-1.0, 4.0, -1.0},
+                                                              {0.0, -1.0, 3.0}};
+    gpmp::linalg::LinSys LinSysA(diagonallyDominantMat);
+
+    EXPECT_TRUE(LinSysA.diagonally_dominant());
+
+    // non-diagonally dominant matrix
+    std::vector<std::vector<double>> nonDiagonallyDominantMat = {
+        {1.0, 2.0, 3.0},
+        {4.0, 5.0, 6.0},
+        {7.0, 8.0, 9.0}};
+    gpmp::linalg::LinSys LinSysB(nonDiagonallyDominantMat);
+
+    EXPECT_FALSE(LinSysB.diagonally_dominant());
+}
+
+TEST(LinSysTest, IsConsistent) {
+    // create a consistent system
+    std::vector<std::vector<double>> consistentMat = {{1.0, 2.0, 3.0},
+                                                      {4.0, 5.0, 6.0},
+                                                      {7.0, 8.0, 9.0}};
+    gpmp::linalg::LinSys linSysConsistent(consistentMat);
+
+    EXPECT_TRUE(linSysConsistent.is_consistent());
+
+    // create an inconsistent system
+    std::vector<std::vector<double>> inconsistentMat = {{0.0, 0.0, 0.0, 1.0},
+                                                        {0.0, 0.0, 0.0, 2.0},
+                                                        {0.0, 0.0, 0.0, 3.0}};
+    gpmp::linalg::LinSys linSysInconsistent(inconsistentMat);
+
+    // check if the system is inconsistent
+    EXPECT_FALSE(linSysInconsistent.is_consistent());
+}
+
+TEST(LinSysTest, IsHomogeneous) {
+    // create a homogeneous system
+    std::vector<std::vector<double>> homogeneousMat = {{1.0, 2.0, 3.0, 0.0},
+                                                       {4.0, 5.0, 6.0, 0.0},
+                                                       {7.0, 8.0, 9.0, 0.0}};
+    gpmp::linalg::LinSys LinSysA(homogeneousMat);
+
+    EXPECT_TRUE(LinSysA.is_homogeneous());
+
+    // create a non-homogeneous system
+    std::vector<std::vector<double>> nonHomogeneousMat = {{1.0, 2.0, 3.0, 1.0},
+                                                          {4.0, 5.0, 6.0, 2.0},
+                                                          {7.0, 8.0, 9.0, 3.0}};
+    gpmp::linalg::LinSys LinSysB(nonHomogeneousMat);
+
+    EXPECT_FALSE(LinSysB.is_homogeneous());
 }

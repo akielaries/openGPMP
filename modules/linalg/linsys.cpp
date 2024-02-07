@@ -162,22 +162,6 @@ void gpmp::linalg::LinSys::invert_mtx() {
     }
 }
 
-/*void gpmp::linalg::LinSys::lu_decomp() {
-    for (int i = 0; i < num_rows; ++i) {
-        for (int j = i + 1; j < num_rows; ++j) {
-            if (std::abs(matrix[i][i]) < 1e-10) {
-                throw std::runtime_error("Error: LU decomposition failed. "
-                                         "Diagonal element too small.");
-            }
-            double factor = matrix[j][i] / matrix[i][i];
-            for (int k = i; k < num_cols; ++k) {
-                matrix[j][k] -= factor * matrix[i][k];
-            }
-            matrix[j][i] = factor;
-        }
-    }
-}*/
-
 std::pair<std::vector<std::vector<double>>, std::vector<std::vector<double>>>
 gpmp::linalg::LinSys::lu_decomp() {
     std::vector<std::vector<double>> L(num_rows,
