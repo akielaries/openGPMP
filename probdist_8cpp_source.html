@@ -226,21 +226,21 @@ $(function() {
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1ProbDist.html#a0f83fcefb8d24734ecb21a13d943dcc4">  147</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1ProbDist.html#a0f83fcefb8d24734ecb21a13d943dcc4">gpmp::stats::ProbDist::exp_PDF</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">size_t</span> k, <span class="keywordtype">double</span> lambda) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="comment">// Check if k is valid (k must be 1 for exponential distribution)</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">if</span> (k != 1) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    <span class="comment">// Return 0 if k is not 1, as exponential distribution is only defined for k = 1</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="comment">// Check if lambda is non-positive</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">if</span> (lambda &lt;= 0) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="comment">// Return 0 if lambda is non-positive</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="comment">// Calculate the exponential PDF</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">return</span> (k / lambda) * exp(-k * x);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// Check if k is valid (k must be 1 for exponential distribution)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (k != 1) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">// Return 0 if k is not 1, as exponential distribution is only defined</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// for k = 1</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Check if lambda is non-positive</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span> (lambda &lt;= 0) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// Return 0 if lambda is non-positive</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Calculate the exponential PDF</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> (k / lambda) * exp(-k * x);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1ProbDist.html#a8e837beee84932270453d3baad03b886">  165</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1ProbDist.html#a8e837beee84932270453d3baad03b886">gpmp::stats::ProbDist::emp_CDF</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
