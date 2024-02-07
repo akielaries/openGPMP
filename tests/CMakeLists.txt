@@ -70,6 +70,7 @@ set(CPP_TEST_FILES
     disct/t_graphs.cpp
     optim/t_function.cpp
     optim/t_quasi.cpp
+    stats/t_describe.cpp
 )
 
 # Fortran source files to be tested

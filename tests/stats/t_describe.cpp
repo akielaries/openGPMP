@@ -254,4 +254,22 @@ TEST(DescribeTestSkew, Skewness) {
     EXPECT_NEAR(expected_skewness, actual_skewness, tolerance);
 }
 
+TEST(DescribeTest, RankData) {
+    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
+    gpmp::stats::Describe describe;
+    std::vector<size_t> expected_ranks = {1, 2, 3, 4, 5}; // Expected ranks based on input data
+    std::vector<size_t> actual_ranks = describe.rank_data(data);
+    EXPECT_EQ(expected_ranks, actual_ranks);
+}
+
+
+TEST(DescribeTest, Ppmc) {
+    std::vector<double> x = {1.0, 2.0, 3.0, 4.0, 5.0};
+    std::vector<double> y = {2.0, 3.0, 4.0, 5.0, 6.0};
+    gpmp::stats::Describe describe;
+    double expected_ppmc = 1.0;
+    double actual_ppmc = describe.ppmc(x, y);
+    double tolerance = 1e-3;
+    EXPECT_NEAR(expected_ppmc, actual_ppmc, tolerance);
+}
 
