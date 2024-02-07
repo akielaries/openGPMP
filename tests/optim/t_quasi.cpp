@@ -7,8 +7,8 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include <stdexcept>
-#include <vector>
 #include <tuple>
+#include <vector>
 
 // Define a function to use for testing
 double testFunction(const std::vector<double> &x) {
@@ -427,20 +427,20 @@ double objective_function(const std::vector<double> &x) {
 TEST(QuasiNewtonLBFGS, LBFGSOptimizeQuadraticFunctionB) {
     gpmp::optim::QuasiNewton optimizer;
     std::vector<double> x0 = {1.0, 1.0}; // Initial guess
-    auto result = optimizer.lbfgs_optimize(objective_function, x0, 1e-5, 100, 5);
+    auto result =
+        optimizer.lbfgs_optimize(objective_function, x0, 1e-5, 100, 5);
 
-    //std::cout << "Optimal solution: (" << std::get<0>(result)[0] << ", " << std::get<0>(result)[1] << ")" << std::endl;
-    //std::cout << "Optimal value: " << std::get<1>(result) << std::endl;
+    // std::cout << "Optimal solution: (" << std::get<0>(result)[0] << ", " <<
+    // std::get<0>(result)[1] << ")" << std::endl; std::cout << "Optimal value:
+    // " << std::get<1>(result) << std::endl;
     ASSERT_NEAR(std::get<0>(result)[0], 1, 1e-5);
     ASSERT_NEAR(std::get<0>(result)[1], 1, 1e-5);
-
 }
-
 
 TEST(QuasiNewtonLBFGS, SimpleQuadraticTest) {
     gpmp::optim::QuasiNewton optimizer;
     // Define the objective function (simple quadratic)
-    auto quadratic = [](const std::vector<double>& x) {
+    auto quadratic = [](const std::vector<double> &x) {
         return x[0] * x[0] + x[1] * x[1];
     };
 
@@ -448,9 +448,11 @@ TEST(QuasiNewtonLBFGS, SimpleQuadraticTest) {
     std::vector<double> initial_point = {0.0, 3.0};
 
     // Call the lbfgs_optimize method
-    auto result = optimizer.lbfgs_optimize(quadratic, initial_point, 1e-5, 100, 5);
-    //std::cout << "Optimal solution: (" << std::get<0>(result)[0] << ", " << std::get<0>(result)[1] << ")" << std::endl;
-    //std::cout << "Optimal value: " << std::get<1>(result) << std::endl;
+    auto result =
+        optimizer.lbfgs_optimize(quadratic, initial_point, 1e-5, 100, 5);
+    // std::cout << "Optimal solution: (" << std::get<0>(result)[0] << ", " <<
+    // std::get<0>(result)[1] << ")" << std::endl; std::cout << "Optimal value:
+    // " << std::get<1>(result) << std::endl;
 
     // Check the optimal solution
     ASSERT_NEAR(std::get<0>(result)[0], 0.0, 1e-5);
@@ -459,4 +461,3 @@ TEST(QuasiNewtonLBFGS, SimpleQuadraticTest) {
     // Check the optimal value
     ASSERT_NEAR(std::get<1>(result), 9, 1e-5);
 }
-

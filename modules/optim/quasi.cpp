@@ -35,9 +35,9 @@
 #include <cmath>
 #include <functional>
 #include <iostream>
-#include <vector>
 #include <numeric>
 #include <tuple>
+#include <vector>
 
 std::vector<double> gpmp::optim::QuasiNewton::vector_subtraction(
     const std::vector<double> &a,
@@ -325,7 +325,8 @@ double gpmp::optim::QuasiNewton::dot_product(const std::vector<double> &a,
     return result;
 }
 
-std::tuple<std::vector<double>, double> gpmp::optim::QuasiNewton::lbfgs_optimize(
+std::tuple<std::vector<double>, double>
+gpmp::optim::QuasiNewton::lbfgs_optimize(
     const std::function<double(const std::vector<double> &)> &f,
     const std::vector<double> &initial_point,
     double tolerance,
@@ -337,9 +338,11 @@ std::tuple<std::vector<double>, double> gpmp::optim::QuasiNewton::lbfgs_optimize
     size_t n = initial_point.size();
     std::vector<double> x = initial_point;
     std::vector<double> g(n); // Gradient vector
-    std::vector<std::vector<double>> s(memory_size, std::vector<double>(n)); // s vectors
-    std::vector<std::vector<double>> y(memory_size, std::vector<double>(n)); // y vectors
-    std::vector<double> rho(memory_size); // rho values
+    std::vector<std::vector<double>> s(memory_size,
+                                       std::vector<double>(n)); // s vectors
+    std::vector<std::vector<double>> y(memory_size,
+                                       std::vector<double>(n)); // y vectors
+    std::vector<double> rho(memory_size);                       // rho values
 
     // Evaluate the objective function and gradient at initial_point
     double fx = f(x);
@@ -364,8 +367,11 @@ std::tuple<std::vector<double>, double> gpmp::optim::QuasiNewton::lbfgs_optimize
         // L-BFGS two-loop recursion
         size_t start = std::min(iter, memory_size);
         for (size_t i = start - 1; i >= 0; --i) {
-            rho[i] = 1.0 / inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);
-            double alpha = rho[i] * inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);
+            rho[i] = 1.0 /
+                     inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);
+            double alpha =
+                rho[i] *
+                inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);
             for (size_t j = 0; j < n; ++j) {
                 d[j] -= alpha * y[i][j];
             }
@@ -413,4 +419,3 @@ std::tuple<std::vector<double>, double> gpmp::optim::QuasiNewton::lbfgs_optimize
 
     return std::make_tuple(x, fx);
 }
-
