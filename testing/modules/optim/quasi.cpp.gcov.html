@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">118</td>
-            <td class="headerCovTableEntry">167</td>
-            <td class="headerCovTableEntryLo">70.7 %</td>
+            <td class="headerCovTableEntry">169</td>
+            <td class="headerCovTableEntryLo">69.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-07 01:23:40</td>
+            <td class="headerValue">2024-02-07 02:27:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -105,9 +105,9 @@
 <a name="35"><span class="lineNum">      35 </span>            : #include &lt;cmath&gt;</a>
 <a name="36"><span class="lineNum">      36 </span>            : #include &lt;functional&gt;</a>
 <a name="37"><span class="lineNum">      37 </span>            : #include &lt;iostream&gt;</a>
-<a name="38"><span class="lineNum">      38 </span>            : #include &lt;vector&gt;</a>
-<a name="39"><span class="lineNum">      39 </span>            : #include &lt;numeric&gt;</a>
-<a name="40"><span class="lineNum">      40 </span>            : #include &lt;tuple&gt;</a>
+<a name="38"><span class="lineNum">      38 </span>            : #include &lt;numeric&gt;</a>
+<a name="39"><span class="lineNum">      39 </span>            : #include &lt;tuple&gt;</a>
+<a name="40"><span class="lineNum">      40 </span>            : #include &lt;vector&gt;</a>
 <a name="41"><span class="lineNum">      41 </span>            : </a>
 <a name="42"><span class="lineNum">      42 </span><span class="lineNoCov">          0 : std::vector&lt;double&gt; gpmp::optim::QuasiNewton::vector_subtraction(</span></a>
 <a name="43"><span class="lineNum">      43 </span>            :     const std::vector&lt;double&gt; &amp;a,</a>
@@ -395,95 +395,100 @@
 <a name="325"><span class="lineNum">     325 </span><span class="lineCov">          9 :     return result;</span></a>
 <a name="326"><span class="lineNum">     326 </span>            : }</a>
 <a name="327"><span class="lineNum">     327 </span>            : </a>
-<a name="328"><span class="lineNum">     328 </span><span class="lineCov">          2 : std::tuple&lt;std::vector&lt;double&gt;, double&gt; gpmp::optim::QuasiNewton::lbfgs_optimize(</span></a>
-<a name="329"><span class="lineNum">     329 </span>            :     const std::function&lt;double(const std::vector&lt;double&gt; &amp;)&gt; &amp;f,</a>
-<a name="330"><span class="lineNum">     330 </span>            :     const std::vector&lt;double&gt; &amp;initial_point,</a>
-<a name="331"><span class="lineNum">     331 </span>            :     double tolerance,</a>
-<a name="332"><span class="lineNum">     332 </span>            :     size_t max_iterations,</a>
-<a name="333"><span class="lineNum">     333 </span>            :     size_t memory_size) {</a>
-<a name="334"><span class="lineNum">     334 </span>            : </a>
-<a name="335"><span class="lineNum">     335 </span><span class="lineCov">          2 :     const double eps = 1e-8;</span></a>
-<a name="336"><span class="lineNum">     336 </span>            : </a>
-<a name="337"><span class="lineNum">     337 </span><span class="lineCov">          2 :     size_t n = initial_point.size();</span></a>
-<a name="338"><span class="lineNum">     338 </span><span class="lineCov">          2 :     std::vector&lt;double&gt; x = initial_point;</span></a>
-<a name="339"><span class="lineNum">     339 </span><span class="lineCov">          2 :     std::vector&lt;double&gt; g(n); // Gradient vector</span></a>
-<a name="340"><span class="lineNum">     340 </span><span class="lineCov">          4 :     std::vector&lt;std::vector&lt;double&gt;&gt; s(memory_size, std::vector&lt;double&gt;(n)); // s vectors</span></a>
-<a name="341"><span class="lineNum">     341 </span><span class="lineCov">          4 :     std::vector&lt;std::vector&lt;double&gt;&gt; y(memory_size, std::vector&lt;double&gt;(n)); // y vectors</span></a>
-<a name="342"><span class="lineNum">     342 </span><span class="lineCov">          2 :     std::vector&lt;double&gt; rho(memory_size); // rho values</span></a>
-<a name="343"><span class="lineNum">     343 </span>            : </a>
-<a name="344"><span class="lineNum">     344 </span>            :     // Evaluate the objective function and gradient at initial_point</a>
-<a name="345"><span class="lineNum">     345 </span><span class="lineCov">          2 :     double fx = f(x);</span></a>
-<a name="346"><span class="lineNum">     346 </span>            :     // Calculate gradient at initial_point</a>
-<a name="347"><span class="lineNum">     347 </span>            :     // Gradient calculation logic to be implemented</a>
-<a name="348"><span class="lineNum">     348 </span>            :     // Assign gradient to 'g'</a>
-<a name="349"><span class="lineNum">     349 </span>            : </a>
-<a name="350"><span class="lineNum">     350 </span><span class="lineCov">          2 :     for (size_t iter = 0; iter &lt; max_iterations; ++iter) {</span></a>
-<a name="351"><span class="lineNum">     351 </span>            :         // Check for convergence</a>
-<a name="352"><span class="lineNum">     352 </span><span class="lineCov">          2 :         double norm_grad = 0.0;</span></a>
-<a name="353"><span class="lineNum">     353 </span><span class="lineCov">          6 :         for (size_t i = 0; i &lt; n; ++i) {</span></a>
-<a name="354"><span class="lineNum">     354 </span><span class="lineCov">          4 :             norm_grad += g[i] * g[i];</span></a>
-<a name="355"><span class="lineNum">     355 </span>            :         }</a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineCov">          2 :         norm_grad = sqrt(norm_grad);</span></a>
-<a name="357"><span class="lineNum">     357 </span><span class="lineCov">          2 :         if (norm_grad &lt; tolerance) {</span></a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">          2 :             break;</span></a>
-<a name="359"><span class="lineNum">     359 </span>            :         }</a>
-<a name="360"><span class="lineNum">     360 </span>            : </a>
-<a name="361"><span class="lineNum">     361 </span>            :         // Compute search direction (use initial guess)</a>
-<a name="362"><span class="lineNum">     362 </span><span class="lineNoCov">          0 :         std::vector&lt;double&gt; d = g;</span></a>
+<a name="328"><span class="lineNum">     328 </span>            : std::tuple&lt;std::vector&lt;double&gt;, double&gt;</a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineCov">          2 : gpmp::optim::QuasiNewton::lbfgs_optimize(</span></a>
+<a name="330"><span class="lineNum">     330 </span>            :     const std::function&lt;double(const std::vector&lt;double&gt; &amp;)&gt; &amp;f,</a>
+<a name="331"><span class="lineNum">     331 </span>            :     const std::vector&lt;double&gt; &amp;initial_point,</a>
+<a name="332"><span class="lineNum">     332 </span>            :     double tolerance,</a>
+<a name="333"><span class="lineNum">     333 </span>            :     size_t max_iterations,</a>
+<a name="334"><span class="lineNum">     334 </span>            :     size_t memory_size) {</a>
+<a name="335"><span class="lineNum">     335 </span>            : </a>
+<a name="336"><span class="lineNum">     336 </span><span class="lineCov">          2 :     const double eps = 1e-8;</span></a>
+<a name="337"><span class="lineNum">     337 </span>            : </a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineCov">          2 :     size_t n = initial_point.size();</span></a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineCov">          2 :     std::vector&lt;double&gt; x = initial_point;</span></a>
+<a name="340"><span class="lineNum">     340 </span><span class="lineCov">          2 :     std::vector&lt;double&gt; g(n); // Gradient vector</span></a>
+<a name="341"><span class="lineNum">     341 </span>            :     std::vector&lt;std::vector&lt;double&gt;&gt; s(memory_size,</a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineCov">          4 :                                        std::vector&lt;double&gt;(n)); // s vectors</span></a>
+<a name="343"><span class="lineNum">     343 </span>            :     std::vector&lt;std::vector&lt;double&gt;&gt; y(memory_size,</a>
+<a name="344"><span class="lineNum">     344 </span><span class="lineCov">          4 :                                        std::vector&lt;double&gt;(n)); // y vectors</span></a>
+<a name="345"><span class="lineNum">     345 </span><span class="lineCov">          2 :     std::vector&lt;double&gt; rho(memory_size);                       // rho values</span></a>
+<a name="346"><span class="lineNum">     346 </span>            : </a>
+<a name="347"><span class="lineNum">     347 </span>            :     // Evaluate the objective function and gradient at initial_point</a>
+<a name="348"><span class="lineNum">     348 </span><span class="lineCov">          2 :     double fx = f(x);</span></a>
+<a name="349"><span class="lineNum">     349 </span>            :     // Calculate gradient at initial_point</a>
+<a name="350"><span class="lineNum">     350 </span>            :     // Gradient calculation logic to be implemented</a>
+<a name="351"><span class="lineNum">     351 </span>            :     // Assign gradient to 'g'</a>
+<a name="352"><span class="lineNum">     352 </span>            : </a>
+<a name="353"><span class="lineNum">     353 </span><span class="lineCov">          2 :     for (size_t iter = 0; iter &lt; max_iterations; ++iter) {</span></a>
+<a name="354"><span class="lineNum">     354 </span>            :         // Check for convergence</a>
+<a name="355"><span class="lineNum">     355 </span><span class="lineCov">          2 :         double norm_grad = 0.0;</span></a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineCov">          6 :         for (size_t i = 0; i &lt; n; ++i) {</span></a>
+<a name="357"><span class="lineNum">     357 </span><span class="lineCov">          4 :             norm_grad += g[i] * g[i];</span></a>
+<a name="358"><span class="lineNum">     358 </span>            :         }</a>
+<a name="359"><span class="lineNum">     359 </span><span class="lineCov">          2 :         norm_grad = sqrt(norm_grad);</span></a>
+<a name="360"><span class="lineNum">     360 </span><span class="lineCov">          2 :         if (norm_grad &lt; tolerance) {</span></a>
+<a name="361"><span class="lineNum">     361 </span><span class="lineCov">          2 :             break;</span></a>
+<a name="362"><span class="lineNum">     362 </span>            :         }</a>
 <a name="363"><span class="lineNum">     363 </span>            : </a>
-<a name="364"><span class="lineNum">     364 </span>            :         // L-BFGS two-loop recursion</a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineNoCov">          0 :         size_t start = std::min(iter, memory_size);</span></a>
-<a name="366"><span class="lineNum">     366 </span><span class="lineNoCov">          0 :         for (size_t i = start - 1; i &gt;= 0; --i) {</span></a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineNoCov">          0 :             rho[i] = 1.0 / inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);</span></a>
-<a name="368"><span class="lineNum">     368 </span><span class="lineNoCov">          0 :             double alpha = rho[i] * inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);</span></a>
-<a name="369"><span class="lineNum">     369 </span><span class="lineNoCov">          0 :             for (size_t j = 0; j &lt; n; ++j) {</span></a>
-<a name="370"><span class="lineNum">     370 </span><span class="lineNoCov">          0 :                 d[j] -= alpha * y[i][j];</span></a>
-<a name="371"><span class="lineNum">     371 </span>            :             }</a>
-<a name="372"><span class="lineNum">     372 </span><span class="lineNoCov">          0 :         }</span></a>
-<a name="373"><span class="lineNum">     373 </span>            : </a>
-<a name="374"><span class="lineNum">     374 </span>            :         // Perform scaling</a>
-<a name="375"><span class="lineNum">     375 </span>            :         for (size_t i = 0; i &lt; n; ++i) {</a>
-<a name="376"><span class="lineNum">     376 </span>            :             d[i] *= rho[i];</a>
-<a name="377"><span class="lineNum">     377 </span>            :         }</a>
-<a name="378"><span class="lineNum">     378 </span>            : </a>
-<a name="379"><span class="lineNum">     379 </span>            :         // Compute gradient of the objective function along the search direction</a>
-<a name="380"><span class="lineNum">     380 </span>            :         // Gradient calculation logic to be implemented</a>
-<a name="381"><span class="lineNum">     381 </span>            :         // Assign gradient to 'dg'</a>
-<a name="382"><span class="lineNum">     382 </span>            :         double dg = inner_product(d.begin(), d.end(), g.begin(), 0.0);</a>
-<a name="383"><span class="lineNum">     383 </span>            : </a>
-<a name="384"><span class="lineNum">     384 </span>            :         // Limit curvature</a>
-<a name="385"><span class="lineNum">     385 </span>            :         if (dg &gt; 0) {</a>
-<a name="386"><span class="lineNum">     386 </span>            :             break;</a>
-<a name="387"><span class="lineNum">     387 </span>            :         }</a>
-<a name="388"><span class="lineNum">     388 </span>            : </a>
-<a name="389"><span class="lineNum">     389 </span>            :         // Line search</a>
-<a name="390"><span class="lineNum">     390 </span>            :         double step_size = 1.0;</a>
-<a name="391"><span class="lineNum">     391 </span>            :         std::vector&lt;double&gt; x_new = x;</a>
-<a name="392"><span class="lineNum">     392 </span>            :         for (size_t i = 0; i &lt; n; ++i) {</a>
-<a name="393"><span class="lineNum">     393 </span>            :             x_new[i] += step_size * d[i];</a>
-<a name="394"><span class="lineNum">     394 </span>            :         }</a>
-<a name="395"><span class="lineNum">     395 </span>            : </a>
-<a name="396"><span class="lineNum">     396 </span>            :         double fx_new = f(x_new);</a>
-<a name="397"><span class="lineNum">     397 </span>            :         if (fx_new &lt; fx + eps * step_size * dg) {</a>
-<a name="398"><span class="lineNum">     398 </span>            :             // Update x</a>
-<a name="399"><span class="lineNum">     399 </span>            :             x = x_new;</a>
-<a name="400"><span class="lineNum">     400 </span>            :             fx = fx_new;</a>
+<a name="364"><span class="lineNum">     364 </span>            :         // Compute search direction (use initial guess)</a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineNoCov">          0 :         std::vector&lt;double&gt; d = g;</span></a>
+<a name="366"><span class="lineNum">     366 </span>            : </a>
+<a name="367"><span class="lineNum">     367 </span>            :         // L-BFGS two-loop recursion</a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineNoCov">          0 :         size_t start = std::min(iter, memory_size);</span></a>
+<a name="369"><span class="lineNum">     369 </span><span class="lineNoCov">          0 :         for (size_t i = start - 1; i &gt;= 0; --i) {</span></a>
+<a name="370"><span class="lineNum">     370 </span><span class="lineNoCov">          0 :             rho[i] = 1.0 /</span></a>
+<a name="371"><span class="lineNum">     371 </span><span class="lineNoCov">          0 :                      inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);</span></a>
+<a name="372"><span class="lineNum">     372 </span>            :             double alpha =</a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineNoCov">          0 :                 rho[i] *</span></a>
+<a name="374"><span class="lineNum">     374 </span><span class="lineNoCov">          0 :                 inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);</span></a>
+<a name="375"><span class="lineNum">     375 </span><span class="lineNoCov">          0 :             for (size_t j = 0; j &lt; n; ++j) {</span></a>
+<a name="376"><span class="lineNum">     376 </span><span class="lineNoCov">          0 :                 d[j] -= alpha * y[i][j];</span></a>
+<a name="377"><span class="lineNum">     377 </span>            :             }</a>
+<a name="378"><span class="lineNum">     378 </span><span class="lineNoCov">          0 :         }</span></a>
+<a name="379"><span class="lineNum">     379 </span>            : </a>
+<a name="380"><span class="lineNum">     380 </span>            :         // Perform scaling</a>
+<a name="381"><span class="lineNum">     381 </span>            :         for (size_t i = 0; i &lt; n; ++i) {</a>
+<a name="382"><span class="lineNum">     382 </span>            :             d[i] *= rho[i];</a>
+<a name="383"><span class="lineNum">     383 </span>            :         }</a>
+<a name="384"><span class="lineNum">     384 </span>            : </a>
+<a name="385"><span class="lineNum">     385 </span>            :         // Compute gradient of the objective function along the search direction</a>
+<a name="386"><span class="lineNum">     386 </span>            :         // Gradient calculation logic to be implemented</a>
+<a name="387"><span class="lineNum">     387 </span>            :         // Assign gradient to 'dg'</a>
+<a name="388"><span class="lineNum">     388 </span>            :         double dg = inner_product(d.begin(), d.end(), g.begin(), 0.0);</a>
+<a name="389"><span class="lineNum">     389 </span>            : </a>
+<a name="390"><span class="lineNum">     390 </span>            :         // Limit curvature</a>
+<a name="391"><span class="lineNum">     391 </span>            :         if (dg &gt; 0) {</a>
+<a name="392"><span class="lineNum">     392 </span>            :             break;</a>
+<a name="393"><span class="lineNum">     393 </span>            :         }</a>
+<a name="394"><span class="lineNum">     394 </span>            : </a>
+<a name="395"><span class="lineNum">     395 </span>            :         // Line search</a>
+<a name="396"><span class="lineNum">     396 </span>            :         double step_size = 1.0;</a>
+<a name="397"><span class="lineNum">     397 </span>            :         std::vector&lt;double&gt; x_new = x;</a>
+<a name="398"><span class="lineNum">     398 </span>            :         for (size_t i = 0; i &lt; n; ++i) {</a>
+<a name="399"><span class="lineNum">     399 </span>            :             x_new[i] += step_size * d[i];</a>
+<a name="400"><span class="lineNum">     400 </span>            :         }</a>
 <a name="401"><span class="lineNum">     401 </span>            : </a>
-<a name="402"><span class="lineNum">     402 </span>            :             // Evaluate gradient at new point</a>
-<a name="403"><span class="lineNum">     403 </span>            :             // Gradient calculation logic to be implemented</a>
-<a name="404"><span class="lineNum">     404 </span>            :             // Assign gradient to 'g'</a>
-<a name="405"><span class="lineNum">     405 </span>            : </a>
-<a name="406"><span class="lineNum">     406 </span>            :             // Update s and y</a>
-<a name="407"><span class="lineNum">     407 </span>            :             for (size_t i = 0; i &lt; n; ++i) {</a>
-<a name="408"><span class="lineNum">     408 </span>            :                 s[iter % memory_size][i] = x_new[i] - x[i];</a>
-<a name="409"><span class="lineNum">     409 </span>            :                 y[iter % memory_size][i] = g[i] - d[i];</a>
-<a name="410"><span class="lineNum">     410 </span>            :             }</a>
-<a name="411"><span class="lineNum">     411 </span>            :         }</a>
-<a name="412"><span class="lineNum">     412 </span>            :     }</a>
-<a name="413"><span class="lineNum">     413 </span>            : </a>
-<a name="414"><span class="lineNum">     414 </span><span class="lineCov">          4 :     return std::make_tuple(x, fx);</span></a>
-<a name="415"><span class="lineNum">     415 </span><span class="lineCov">          2 : }</span></a>
-<a name="416"><span class="lineNum">     416 </span>            : </a>
+<a name="402"><span class="lineNum">     402 </span>            :         double fx_new = f(x_new);</a>
+<a name="403"><span class="lineNum">     403 </span>            :         if (fx_new &lt; fx + eps * step_size * dg) {</a>
+<a name="404"><span class="lineNum">     404 </span>            :             // Update x</a>
+<a name="405"><span class="lineNum">     405 </span>            :             x = x_new;</a>
+<a name="406"><span class="lineNum">     406 </span>            :             fx = fx_new;</a>
+<a name="407"><span class="lineNum">     407 </span>            : </a>
+<a name="408"><span class="lineNum">     408 </span>            :             // Evaluate gradient at new point</a>
+<a name="409"><span class="lineNum">     409 </span>            :             // Gradient calculation logic to be implemented</a>
+<a name="410"><span class="lineNum">     410 </span>            :             // Assign gradient to 'g'</a>
+<a name="411"><span class="lineNum">     411 </span>            : </a>
+<a name="412"><span class="lineNum">     412 </span>            :             // Update s and y</a>
+<a name="413"><span class="lineNum">     413 </span>            :             for (size_t i = 0; i &lt; n; ++i) {</a>
+<a name="414"><span class="lineNum">     414 </span>            :                 s[iter % memory_size][i] = x_new[i] - x[i];</a>
+<a name="415"><span class="lineNum">     415 </span>            :                 y[iter % memory_size][i] = g[i] - d[i];</a>
+<a name="416"><span class="lineNum">     416 </span>            :             }</a>
+<a name="417"><span class="lineNum">     417 </span>            :         }</a>
+<a name="418"><span class="lineNum">     418 </span>            :     }</a>
+<a name="419"><span class="lineNum">     419 </span>            : </a>
+<a name="420"><span class="lineNum">     420 </span><span class="lineCov">          4 :     return std::make_tuple(x, fx);</span></a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">          2 : }</span></a>
 </pre>
       </td>
     </tr>

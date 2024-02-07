@@ -242,13 +242,13 @@
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="153" column="10"/>
             <symbol>string</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
             <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
         </error>
         <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
             <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
@@ -463,7 +463,7 @@
             <symbol>sum_x_cubed</symbol>
         </error>
         <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;i&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;i&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="366" column="38" info="Unsigned positive"/>
+            <location file="../../modules/optim/quasi.cpp" line="369" column="38" info="Unsigned positive"/>
             <symbol>i</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;updated_point&apos; is assigned a value that is never used." verbose="Variable &apos;updated_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/quasi.cpp">
@@ -979,7 +979,7 @@
             <symbol>kurtosis</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;lbfgs_optimize&apos; is never used." verbose="The function &apos;lbfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="328" column="0"/>
+            <location file="../../modules/optim/quasi.cpp" line="329" column="0"/>
             <symbol>lbfgs_optimize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;leaky_relu&apos; is never used." verbose="The function &apos;leaky_relu&apos; is never used." cwe="561">
