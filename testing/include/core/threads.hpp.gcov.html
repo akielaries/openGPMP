@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-07 02:27:08</td>
+            <td class="headerValue">2024-02-07 02:34:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">37</td>
@@ -176,7 +176,7 @@
 <a name="106"><span class="lineNum">     106 </span>            :                         // queued task), wait() locks/unlocks based on condition</a>
 <a name="107"><span class="lineNum">     107 </span>            :                         // result</a>
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">       1141 :                         this-&gt;condition.wait(lock, [this] {</span></a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">       2273 :                             return this-&gt;stop || !this-&gt;tasks.empty();</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">       2277 :                             return this-&gt;stop || !this-&gt;tasks.empty();</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :                         });</a>
 <a name="111"><span class="lineNum">     111 </span>            :                         // based on stop OR awaiting tasks, return from the</a>
 <a name="112"><span class="lineNum">     112 </span>            :                         // thread</a>
@@ -240,7 +240,7 @@
 <a name="170"><span class="lineNum">     170 </span>            :             }</a>
 <a name="171"><span class="lineNum">     171 </span>            :             // add a task using emplace to the queue as a lambda that calls the</a>
 <a name="172"><span class="lineNum">     172 </span>            :             // packaged task</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       2226 :             tasks.emplace([task]() { (*task)(); });</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       2225 :             tasks.emplace([task]() { (*task)(); });</span></a>
 <a name="174"><span class="lineNum">     174 </span><span class="lineCov">       1114 :         } // once this is hit, unique_lock is out of scope &amp; mutex is</span></a>
 <a name="175"><span class="lineNum">     175 </span>            :           // automatically unlocked</a>
 <a name="176"><span class="lineNum">     176 </span>            :         // notify one waiting thread of one new task added to the queue</a>

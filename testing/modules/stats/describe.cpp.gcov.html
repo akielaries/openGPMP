@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">124</td>
             <td class="headerCovTableEntry">156</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryMed">79.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-07 02:27:08</td>
+            <td class="headerValue">2024-02-07 02:34:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">22</td>
             <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryMed">84.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -106,59 +106,59 @@
 <a name="36"><span class="lineNum">      36 </span>            : #include &lt;vector&gt;</a>
 <a name="37"><span class="lineNum">      37 </span>            : </a>
 <a name="38"><span class="lineNum">      38 </span>            : // Arithmetic Mean</a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_arith(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineNoCov">          0 :         sum += value;</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">         15 : double gpmp::stats::Describe::mean_arith(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         15 :     double sum = 0.0;</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         71 :     for (const auto &amp;value : data) {</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">         56 :         sum += value;</span></a>
 <a name="43"><span class="lineNum">      43 </span>            :     }</a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineNoCov">          0 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">         15 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : }</a>
 <a name="46"><span class="lineNum">      46 </span>            : </a>
 <a name="47"><span class="lineNum">      47 </span>            : // Geometric Mean</a>
-<a name="48"><span class="lineNum">      48 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_geo(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="49"><span class="lineNum">      49 </span><span class="lineNoCov">          0 :     double product = 1.0;</span></a>
-<a name="50"><span class="lineNum">      50 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="51"><span class="lineNum">      51 </span><span class="lineNoCov">          0 :         product *= value;</span></a>
+<a name="48"><span class="lineNum">      48 </span><span class="lineCov">          2 : double gpmp::stats::Describe::mean_geo(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="49"><span class="lineNum">      49 </span><span class="lineCov">          2 :     double product = 1.0;</span></a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          6 :     for (const auto &amp;value : data) {</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          4 :         product *= value;</span></a>
 <a name="52"><span class="lineNum">      52 </span>            :     }</a>
-<a name="53"><span class="lineNum">      53 </span><span class="lineNoCov">          0 :     return std::pow(product, 1.0 / static_cast&lt;double&gt;(data.size()));</span></a>
+<a name="53"><span class="lineNum">      53 </span><span class="lineCov">          2 :     return std::pow(product, 1.0 / static_cast&lt;double&gt;(data.size()));</span></a>
 <a name="54"><span class="lineNum">      54 </span>            : }</a>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
 <a name="56"><span class="lineNum">      56 </span>            : // Cubic Generalized Mean</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_cubic(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          4 : double gpmp::stats::Describe::mean_cubic(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="58"><span class="lineNum">      58 </span>            :                                          double p) {</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineNoCov">          0 :         sum += std::pow(value, p);</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          4 :     double sum = 0.0;</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         15 :     for (const auto &amp;value : data) {</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">         11 :         sum += std::pow(value, p);</span></a>
 <a name="62"><span class="lineNum">      62 </span>            :     }</a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineNoCov">          0 :     return std::pow(sum / static_cast&lt;double&gt;(data.size()), 1.0 / p);</span></a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          4 :     return std::pow(sum / static_cast&lt;double&gt;(data.size()), 1.0 / p);</span></a>
 <a name="64"><span class="lineNum">      64 </span>            : }</a>
 <a name="65"><span class="lineNum">      65 </span>            : </a>
 <a name="66"><span class="lineNum">      66 </span>            : // Power Geometric Mean</a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_geo_pow(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">          1 : double gpmp::stats::Describe::mean_geo_pow(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="68"><span class="lineNum">      68 </span>            :                                            double p) {</a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineNoCov">          0 :     double product = 1.0;</span></a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineNoCov">          0 :         product *= std::pow(value, p);</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">          1 :     double product = 1.0;</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">          2 :     for (const auto &amp;value : data) {</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          1 :         product *= std::pow(value, p);</span></a>
 <a name="72"><span class="lineNum">      72 </span>            :     }</a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineNoCov">          0 :     return std::pow(product, 1.0 / static_cast&lt;double&gt;(data.size()));</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">          1 :     return std::pow(product, 1.0 / static_cast&lt;double&gt;(data.size()));</span></a>
 <a name="74"><span class="lineNum">      74 </span>            : }</a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <a name="76"><span class="lineNum">      76 </span>            : // Harmonic Mean</a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_harmonic(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineNoCov">          0 :         sum += 1.0 / value;</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          2 : double gpmp::stats::Describe::mean_harmonic(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          2 :     double sum = 0.0;</span></a>
+<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          6 :     for (const auto &amp;value : data) {</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">          4 :         sum += 1.0 / value;</span></a>
 <a name="81"><span class="lineNum">      81 </span>            :     }</a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 :     return static_cast&lt;double&gt;(data.size()) / sum;</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">          2 :     return static_cast&lt;double&gt;(data.size()) / sum;</span></a>
 <a name="83"><span class="lineNum">      83 </span>            : }</a>
 <a name="84"><span class="lineNum">      84 </span>            : </a>
 <a name="85"><span class="lineNum">      85 </span>            : // Heronian Mean</a>
-<a name="86"><span class="lineNum">      86 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_heronian(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="87"><span class="lineNum">      87 </span><span class="lineNoCov">          0 :     double product = 1.0;</span></a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineNoCov">          0 :         product *= std::sqrt(value);</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">          1 : double gpmp::stats::Describe::mean_heronian(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          1 :     double product = 1.0;</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineCov">          2 :     for (const auto &amp;value : data) {</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          1 :         product *= std::sqrt(value);</span></a>
 <a name="90"><span class="lineNum">      90 </span>            :     }</a>
-<a name="91"><span class="lineNum">      91 </span><span class="lineNoCov">          0 :     return std::pow(product, 2.0 / static_cast&lt;double&gt;(data.size()));</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          1 :     return std::pow(product, 2.0 / static_cast&lt;double&gt;(data.size()));</span></a>
 <a name="92"><span class="lineNum">      92 </span>            : }</a>
 <a name="93"><span class="lineNum">      93 </span>            : </a>
 <a name="94"><span class="lineNum">      94 </span>            : // Heinz Mean</a>
@@ -171,156 +171,156 @@
 <a name="101"><span class="lineNum">     101 </span>            : }</a>
 <a name="102"><span class="lineNum">     102 </span>            : </a>
 <a name="103"><span class="lineNum">     103 </span>            : // Lehmer Mean</a>
-<a name="104"><span class="lineNum">     104 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::mean_lehmer(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="104"><span class="lineNum">     104 </span><span class="lineCov">          1 : double gpmp::stats::Describe::mean_lehmer(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="105"><span class="lineNum">     105 </span>            :                                           double p) {</a>
-<a name="106"><span class="lineNum">     106 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineNoCov">          0 :         sum += std::pow(value, p);</span></a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">          1 :     double sum = 0.0;</span></a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          2 :     for (const auto &amp;value : data) {</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">          1 :         sum += std::pow(value, p);</span></a>
 <a name="109"><span class="lineNum">     109 </span>            :     }</a>
-<a name="110"><span class="lineNum">     110 </span><span class="lineNoCov">          0 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          1 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="111"><span class="lineNum">     111 </span>            : }</a>
 <a name="112"><span class="lineNum">     112 </span>            : </a>
 <a name="113"><span class="lineNum">     113 </span>            : // Median</a>
-<a name="114"><span class="lineNum">     114 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::Median(std::vector&lt;double&gt; data) {</span></a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineNoCov">          0 :     std::sort(data.begin(), data.end());</span></a>
-<a name="116"><span class="lineNum">     116 </span><span class="lineNoCov">          0 :     size_t size = data.size();</span></a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineNoCov">          0 :     if (size % 2 == 0) {</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineNoCov">          0 :         return (data[size / 2 - 1] + data[size / 2]) / 2.0;</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          2 : double gpmp::stats::Describe::Median(std::vector&lt;double&gt; data) {</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          2 :     std::sort(data.begin(), data.end());</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          2 :     size_t size = data.size();</span></a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">          2 :     if (size % 2 == 0) {</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">          1 :         return (data[size / 2 - 1] + data[size / 2]) / 2.0;</span></a>
 <a name="119"><span class="lineNum">     119 </span>            :     } else {</a>
-<a name="120"><span class="lineNum">     120 </span><span class="lineNoCov">          0 :         return data[size / 2];</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          1 :         return data[size / 2];</span></a>
 <a name="121"><span class="lineNum">     121 </span>            :     }</a>
 <a name="122"><span class="lineNum">     122 </span>            : }</a>
 <a name="123"><span class="lineNum">     123 </span>            : </a>
 <a name="124"><span class="lineNum">     124 </span>            : // Average Absolute Deviation</a>
-<a name="125"><span class="lineNum">     125 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::avg_abs_dev(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineNoCov">          0 :     double mean = mean_arith(data);</span></a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineNoCov">          0 :         sum += std::abs(value - mean);</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">          2 : double gpmp::stats::Describe::avg_abs_dev(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          2 :     double mean = mean_arith(data);</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          2 :     double sum = 0.0;</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          7 :     for (const auto &amp;value : data) {</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">          5 :         sum += std::abs(value - mean);</span></a>
 <a name="130"><span class="lineNum">     130 </span>            :     }</a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineNoCov">          0 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          2 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="132"><span class="lineNum">     132 </span>            : }</a>
 <a name="133"><span class="lineNum">     133 </span>            : </a>
 <a name="134"><span class="lineNum">     134 </span>            : // Coefficient of Variation</a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::var_coeff(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="136"><span class="lineNum">     136 </span><span class="lineNoCov">          0 :     double mean = mean_arith(data);</span></a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineNoCov">          0 :     double stddev = stdev(data, mean);</span></a>
-<a name="138"><span class="lineNum">     138 </span><span class="lineNoCov">          0 :     return (stddev / mean) * 100.0; // Multiply by 100 for percentage</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">          2 : double gpmp::stats::Describe::var_coeff(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">          2 :     double mean = mean_arith(data);</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">          2 :     double stddev = stdev(data, mean);</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">          2 :     return (stddev / mean) * 100.0; // Multiply by 100 for percentage</span></a>
 <a name="139"><span class="lineNum">     139 </span>            : }</a>
 <a name="140"><span class="lineNum">     140 </span>            : </a>
 <a name="141"><span class="lineNum">     141 </span>            : // Interquartile Range</a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::iq_range(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineNoCov">          0 :     std::vector&lt;double&gt; sortedData = data;</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineNoCov">          0 :     std::sort(sortedData.begin(), sortedData.end());</span></a>
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          1 : double gpmp::stats::Describe::iq_range(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">          1 :     std::vector&lt;double&gt; sortedData = data;</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">          1 :     std::sort(sortedData.begin(), sortedData.end());</span></a>
 <a name="145"><span class="lineNum">     145 </span>            : </a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineNoCov">          0 :     size_t size = sortedData.size();</span></a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineNoCov">          0 :     size_t lowerIndex = size / 4;</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineNoCov">          0 :     size_t upperIndex = 3 * size / 4;</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">          1 :     size_t size = sortedData.size();</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          1 :     size_t lowerIndex = size / 4;</span></a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineCov">          1 :     size_t upperIndex = 3 * size / 4;</span></a>
 <a name="149"><span class="lineNum">     149 </span>            : </a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineNoCov">          0 :     return sortedData[upperIndex] - sortedData[lowerIndex];</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          2 :     return sortedData[upperIndex] - sortedData[lowerIndex];</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">          1 : }</span></a>
 <a name="152"><span class="lineNum">     152 </span>            : </a>
 <a name="153"><span class="lineNum">     153 </span>            : // percentile</a>
-<a name="154"><span class="lineNum">     154 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::percentile(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="154"><span class="lineNum">     154 </span><span class="lineCov">          1 : double gpmp::stats::Describe::percentile(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="155"><span class="lineNum">     155 </span>            :                                          double percentile) {</a>
-<a name="156"><span class="lineNum">     156 </span><span class="lineNoCov">          0 :     std::vector&lt;double&gt; sortedData = data;</span></a>
-<a name="157"><span class="lineNum">     157 </span><span class="lineNoCov">          0 :     std::sort(sortedData.begin(), sortedData.end());</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">          1 :     std::vector&lt;double&gt; sortedData = data;</span></a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineCov">          1 :     std::sort(sortedData.begin(), sortedData.end());</span></a>
 <a name="158"><span class="lineNum">     158 </span>            : </a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineNoCov">          0 :     size_t size = sortedData.size();</span></a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineNoCov">          0 :     size_t index = static_cast&lt;size_t&gt;(percentile * (size - 1));</span></a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineNoCov">          0 :     return sortedData[index];</span></a>
-<a name="162"><span class="lineNum">     162 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          1 :     size_t size = sortedData.size();</span></a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">          1 :     size_t index = static_cast&lt;size_t&gt;(percentile * (size - 1));</span></a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineCov">          2 :     return sortedData[index];</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          1 : }</span></a>
 <a name="163"><span class="lineNum">     163 </span>            : </a>
 <a name="164"><span class="lineNum">     164 </span>            : // Range</a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::range(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineNoCov">          0 :     auto result = std::minmax_element(data.begin(), data.end());</span></a>
-<a name="167"><span class="lineNum">     167 </span><span class="lineNoCov">          0 :     return *result.second - *result.first;</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">          1 : double gpmp::stats::Describe::range(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">          1 :     auto result = std::minmax_element(data.begin(), data.end());</span></a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineCov">          1 :     return *result.second - *result.first;</span></a>
 <a name="168"><span class="lineNum">     168 </span>            : }</a>
 <a name="169"><span class="lineNum">     169 </span>            : </a>
 <a name="170"><span class="lineNum">     170 </span>            : // Standard Deviation</a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::stdev(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">          6 : double gpmp::stats::Describe::stdev(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="172"><span class="lineNum">     172 </span>            :                                     double mean) {</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineNoCov">          0 :         sum += std::pow(value - mean, 2.0);</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">          6 :     double sum = 0.0;</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">         26 :     for (const auto &amp;value : data) {</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         20 :         sum += std::pow(value - mean, 2.0);</span></a>
 <a name="176"><span class="lineNum">     176 </span>            :     }</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineNoCov">          0 :     return std::sqrt(sum / static_cast&lt;double&gt;(data.size()));</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">          6 :     return std::sqrt(sum / static_cast&lt;double&gt;(data.size()));</span></a>
 <a name="178"><span class="lineNum">     178 </span>            : }</a>
 <a name="179"><span class="lineNum">     179 </span>            : </a>
 <a name="180"><span class="lineNum">     180 </span>            : // variance</a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::variance(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">          2 : double gpmp::stats::Describe::variance(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="182"><span class="lineNum">     182 </span>            :                                        double mean) {</a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineNoCov">          0 :         sum += std::pow(value - mean, 2.0);</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">          2 :     double sum = 0.0;</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">          7 :     for (const auto &amp;value : data) {</span></a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          5 :         sum += std::pow(value - mean, 2.0);</span></a>
 <a name="186"><span class="lineNum">     186 </span>            :     }</a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineNoCov">          0 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          2 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : }</a>
 <a name="189"><span class="lineNum">     189 </span>            : </a>
 <a name="190"><span class="lineNum">     190 </span>            : // central limit theorem</a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::clt(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">          1 : double gpmp::stats::Describe::clt(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="192"><span class="lineNum">     192 </span>            :                                   int numSamples) {</a>
-<a name="193"><span class="lineNum">     193 </span><span class="lineNoCov">          0 :     double mean = mean_arith(data);</span></a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineNoCov">          0 :     double stddev = stdev(data, mean);</span></a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineNoCov">          0 :     return stddev / std::sqrt(static_cast&lt;double&gt;(numSamples));</span></a>
+<a name="193"><span class="lineNum">     193 </span><span class="lineCov">          1 :     double mean = mean_arith(data);</span></a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">          1 :     double stddev = stdev(data, mean);</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">          1 :     return stddev / std::sqrt(static_cast&lt;double&gt;(numSamples));</span></a>
 <a name="196"><span class="lineNum">     196 </span>            : }</a>
 <a name="197"><span class="lineNum">     197 </span>            : </a>
 <a name="198"><span class="lineNum">     198 </span>            : // Kurtosis</a>
-<a name="199"><span class="lineNum">     199 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::kurtosis(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="199"><span class="lineNum">     199 </span><span class="lineCov">          1 : double gpmp::stats::Describe::kurtosis(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="200"><span class="lineNum">     200 </span>            :                                        double mean) {</a>
-<a name="201"><span class="lineNum">     201 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="202"><span class="lineNum">     202 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="203"><span class="lineNum">     203 </span><span class="lineNoCov">          0 :         sum += std::pow(value - mean, 4.0);</span></a>
+<a name="201"><span class="lineNum">     201 </span><span class="lineCov">          1 :     double sum = 0.0;</span></a>
+<a name="202"><span class="lineNum">     202 </span><span class="lineCov">          6 :     for (const auto &amp;value : data) {</span></a>
+<a name="203"><span class="lineNum">     203 </span><span class="lineCov">          5 :         sum += std::pow(value - mean, 4.0);</span></a>
 <a name="204"><span class="lineNum">     204 </span>            :     }</a>
-<a name="205"><span class="lineNum">     205 </span><span class="lineNoCov">          0 :     double var = variance(data, mean);</span></a>
-<a name="206"><span class="lineNum">     206 </span><span class="lineNoCov">          0 :     return sum / (data.size() * std::pow(var, 2.0)) - 3.0;</span></a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineCov">          1 :     double var = variance(data, mean);</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineCov">          1 :     return sum / (data.size() * std::pow(var, 2.0)) - 3.0;</span></a>
 <a name="207"><span class="lineNum">     207 </span>            : }</a>
 <a name="208"><span class="lineNum">     208 </span>            : </a>
 <a name="209"><span class="lineNum">     209 </span>            : // l-moments (first two)</a>
-<a name="210"><span class="lineNum">     210 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::lmoment1(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="210"><span class="lineNum">     210 </span><span class="lineCov">          1 : double gpmp::stats::Describe::lmoment1(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="211"><span class="lineNum">     211 </span>            :                                        double mean) {</a>
-<a name="212"><span class="lineNum">     212 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="213"><span class="lineNum">     213 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineNoCov">          0 :         sum += std::pow(value - mean, 3.0);</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineCov">          1 :     double sum = 0.0;</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineCov">          6 :     for (const auto &amp;value : data) {</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineCov">          5 :         sum += std::pow(value - mean, 3.0);</span></a>
 <a name="215"><span class="lineNum">     215 </span>            :     }</a>
-<a name="216"><span class="lineNum">     216 </span><span class="lineNoCov">          0 :     return sum / data.size();</span></a>
+<a name="216"><span class="lineNum">     216 </span><span class="lineCov">          1 :     return sum / data.size();</span></a>
 <a name="217"><span class="lineNum">     217 </span>            : }</a>
 <a name="218"><span class="lineNum">     218 </span>            : </a>
-<a name="219"><span class="lineNum">     219 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::lmoment2(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="219"><span class="lineNum">     219 </span><span class="lineCov">          1 : double gpmp::stats::Describe::lmoment2(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="220"><span class="lineNum">     220 </span>            :                                        double mean) {</a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="223"><span class="lineNum">     223 </span><span class="lineNoCov">          0 :         sum += std::pow(value - mean, 4.0);</span></a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineCov">          1 :     double sum = 0.0;</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineCov">          6 :     for (const auto &amp;value : data) {</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineCov">          5 :         sum += std::pow(value - mean, 4.0);</span></a>
 <a name="224"><span class="lineNum">     224 </span>            :     }</a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineNoCov">          0 :     return sum / data.size();</span></a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineCov">          1 :     return sum / data.size();</span></a>
 <a name="226"><span class="lineNum">     226 </span>            : }</a>
 <a name="227"><span class="lineNum">     227 </span>            : </a>
 <a name="228"><span class="lineNum">     228 </span>            : // skewness</a>
-<a name="229"><span class="lineNum">     229 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::skewness(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">          1 : double gpmp::stats::Describe::skewness(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="230"><span class="lineNum">     230 </span>            :                                        double mean,</a>
 <a name="231"><span class="lineNum">     231 </span>            :                                        double stddev) {</a>
-<a name="232"><span class="lineNum">     232 </span><span class="lineNoCov">          0 :     double sum = 0.0;</span></a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineNoCov">          0 :     for (const auto &amp;value : data) {</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineNoCov">          0 :         sum += std::pow((value - mean) / stddev, 3.0);</span></a>
+<a name="232"><span class="lineNum">     232 </span><span class="lineCov">          1 :     double sum = 0.0;</span></a>
+<a name="233"><span class="lineNum">     233 </span><span class="lineCov">          6 :     for (const auto &amp;value : data) {</span></a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineCov">          5 :         sum += std::pow((value - mean) / stddev, 3.0);</span></a>
 <a name="235"><span class="lineNum">     235 </span>            :     }</a>
-<a name="236"><span class="lineNum">     236 </span><span class="lineNoCov">          0 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="236"><span class="lineNum">     236 </span><span class="lineCov">          1 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="237"><span class="lineNum">     237 </span>            : }</a>
 <a name="238"><span class="lineNum">     238 </span>            : </a>
 <a name="239"><span class="lineNum">     239 </span>            : std::vector&lt;size_t&gt;</a>
-<a name="240"><span class="lineNum">     240 </span><span class="lineNoCov">          0 : gpmp::stats::Describe::rank_data(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="241"><span class="lineNum">     241 </span><span class="lineNoCov">          0 :     std::vector&lt;size_t&gt; ranks(data.size());</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineCov">          1 : gpmp::stats::Describe::rank_data(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="241"><span class="lineNum">     241 </span><span class="lineCov">          1 :     std::vector&lt;size_t&gt; ranks(data.size());</span></a>
 <a name="242"><span class="lineNum">     242 </span>            : </a>
-<a name="243"><span class="lineNum">     243 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; data.size(); ++i) {</span></a>
-<a name="244"><span class="lineNum">     244 </span><span class="lineNoCov">          0 :         size_t rank = 1;</span></a>
-<a name="245"><span class="lineNum">     245 </span><span class="lineNoCov">          0 :         for (size_t j = 0; j &lt; data.size(); ++j) {</span></a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineNoCov">          0 :             if (j != i &amp;&amp; data[j] &lt; data[i]) {</span></a>
-<a name="247"><span class="lineNum">     247 </span><span class="lineNoCov">          0 :                 rank++;</span></a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineCov">          6 :     for (size_t i = 0; i &lt; data.size(); ++i) {</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineCov">          5 :         size_t rank = 1;</span></a>
+<a name="245"><span class="lineNum">     245 </span><span class="lineCov">         30 :         for (size_t j = 0; j &lt; data.size(); ++j) {</span></a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineCov">         25 :             if (j != i &amp;&amp; data[j] &lt; data[i]) {</span></a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineCov">         10 :                 rank++;</span></a>
 <a name="248"><span class="lineNum">     248 </span>            :             }</a>
 <a name="249"><span class="lineNum">     249 </span>            :         }</a>
-<a name="250"><span class="lineNum">     250 </span><span class="lineNoCov">          0 :         ranks[i] = rank;</span></a>
+<a name="250"><span class="lineNum">     250 </span><span class="lineCov">          5 :         ranks[i] = rank;</span></a>
 <a name="251"><span class="lineNum">     251 </span>            :     }</a>
 <a name="252"><span class="lineNum">     252 </span>            : </a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineNoCov">          0 :     return ranks;</span></a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineCov">          1 :     return ranks;</span></a>
 <a name="254"><span class="lineNum">     254 </span>            : }</a>
 <a name="255"><span class="lineNum">     255 </span>            : </a>
 <a name="256"><span class="lineNum">     256 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::partial_corr(const std::vector&lt;double&gt; &amp;x,</span></a>
@@ -335,22 +335,22 @@
 <a name="265"><span class="lineNum">     265 </span>            : }</a>
 <a name="266"><span class="lineNum">     266 </span>            : </a>
 <a name="267"><span class="lineNum">     267 </span>            : // Pearson Product-Moment Correlation</a>
-<a name="268"><span class="lineNum">     268 </span><span class="lineNoCov">          0 : double gpmp::stats::Describe::ppmc(const std::vector&lt;double&gt; &amp;x,</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineCov">          1 : double gpmp::stats::Describe::ppmc(const std::vector&lt;double&gt; &amp;x,</span></a>
 <a name="269"><span class="lineNum">     269 </span>            :                                    const std::vector&lt;double&gt; &amp;y) {</a>
-<a name="270"><span class="lineNum">     270 </span><span class="lineNoCov">          0 :     double mean_x = mean_arith(x);</span></a>
-<a name="271"><span class="lineNum">     271 </span><span class="lineNoCov">          0 :     double mean_y = mean_arith(y);</span></a>
+<a name="270"><span class="lineNum">     270 </span><span class="lineCov">          1 :     double mean_x = mean_arith(x);</span></a>
+<a name="271"><span class="lineNum">     271 </span><span class="lineCov">          1 :     double mean_y = mean_arith(y);</span></a>
 <a name="272"><span class="lineNum">     272 </span>            : </a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineNoCov">          0 :     double numerator = 0.0;</span></a>
-<a name="274"><span class="lineNum">     274 </span><span class="lineNoCov">          0 :     double denominator_x = 0.0;</span></a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineNoCov">          0 :     double denominator_y = 0.0;</span></a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineCov">          1 :     double numerator = 0.0;</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineCov">          1 :     double denominator_x = 0.0;</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          1 :     double denominator_y = 0.0;</span></a>
 <a name="276"><span class="lineNum">     276 </span>            : </a>
-<a name="277"><span class="lineNum">     277 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; x.size(); ++i) {</span></a>
-<a name="278"><span class="lineNum">     278 </span><span class="lineNoCov">          0 :         numerator += (x[i] - mean_x) * (y[i] - mean_y);</span></a>
-<a name="279"><span class="lineNum">     279 </span><span class="lineNoCov">          0 :         denominator_x += std::pow(x[i] - mean_x, 2.0);</span></a>
-<a name="280"><span class="lineNum">     280 </span><span class="lineNoCov">          0 :         denominator_y += std::pow(y[i] - mean_y, 2.0);</span></a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineCov">          6 :     for (size_t i = 0; i &lt; x.size(); ++i) {</span></a>
+<a name="278"><span class="lineNum">     278 </span><span class="lineCov">          5 :         numerator += (x[i] - mean_x) * (y[i] - mean_y);</span></a>
+<a name="279"><span class="lineNum">     279 </span><span class="lineCov">          5 :         denominator_x += std::pow(x[i] - mean_x, 2.0);</span></a>
+<a name="280"><span class="lineNum">     280 </span><span class="lineCov">          5 :         denominator_y += std::pow(y[i] - mean_y, 2.0);</span></a>
 <a name="281"><span class="lineNum">     281 </span>            :     }</a>
 <a name="282"><span class="lineNum">     282 </span>            : </a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineNoCov">          0 :     return numerator / std::sqrt(denominator_x * denominator_y);</span></a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineCov">          1 :     return numerator / std::sqrt(denominator_x * denominator_y);</span></a>
 <a name="284"><span class="lineNum">     284 </span>            : }</a>
 <a name="285"><span class="lineNum">     285 </span>            : </a>
 <a name="286"><span class="lineNum">     286 </span>            : // Kendall's Tau Rank Correlation</a>
