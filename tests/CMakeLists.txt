@@ -63,6 +63,7 @@ set(CPP_TEST_FILES
     disct/t_graphs.cpp
     linalg/t_matrix.cpp
     linalg/t_eigen.cpp
+    linalg/t_linsys.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp

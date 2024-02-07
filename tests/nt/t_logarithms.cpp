@@ -39,6 +39,7 @@
  */
 #include "../../include/nt/logarithms.hpp"
 #include "../../include/nt/prime_test.hpp"
+#include <cstdint>
 #include <gtest/gtest.h>
 #include <iostream>
 
@@ -46,7 +47,8 @@ namespace {
 // declare primality class object
 gpmp::PrimalityTest __TEST_PRIMES__;
 
-TEST(logarithms, pollard_rho) {
-    std::cout << "HELLO" << std::endl;
+TEST(LogarithmsTest, PollardRho) {
+
+    uint32_t i = 10;
 }
 } // namespace

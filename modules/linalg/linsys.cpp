@@ -33,77 +33,100 @@
 
 #include "../../include/linalg/linsys.hpp"
 #include <cmath>
+#include <cstdint>
 #include <iostream>
+#include <utility>
 #include <vector>
 
 gpmp::linalg::LinSys::LinSys(const std::vector<std::vector<double>> &mat)
     : matrix(mat) {
-    numRows = matrix.size();
-    numCols = matrix[0].size();
+    num_rows = matrix.size();
+    num_cols = matrix[0].size();
 }
 
 // display the augmented matrix
 void gpmp::linalg::LinSys::display_mtx() const {
-    for (int i = 0; i < numRows; ++i) {
-        for (int j = 0; j < numCols; ++j) {
+    for (int i = 0; i < num_rows; ++i) {
+        for (int j = 0; j < num_cols; ++j) {
             std::cout << matrix[i][j] << " ";
         }
         std::cout << std::endl;
     }
 }
 
+void gpmp::linalg::LinSys::display(
+    const std::vector<std::vector<double>> &mat) const {
+    uint32_t rows = mat.size();
+    uint32_t cols = mat[0].size();
+
+    for (uint32_t i = 0; i < rows; ++i) {
+        for (uint32_t j = 0; j < cols; ++j) {
+            std::cout << mat[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
 // solve the linear system using Gaussian Elimination
-void gpmp::linalg::LinSys::solve_gauss() {
-    for (int i = 0; i < numRows - 1; ++i) {
+std::vector<double> gpmp::linalg::LinSys::solve_gauss() {
+    // temp matrix because our result is a vector of solutions
+    std::vector<std::vector<double>> temp_mtx = matrix;
+
+    for (int i = 0; i < num_rows - 1; ++i) {
         // perform partial pivot
         int pivotRow = i;
-        for (int k = i + 1; k < numRows; ++k) {
-            if (std::abs(matrix[k][i]) > std::abs(matrix[pivotRow][i]))
+        for (int k = i + 1; k < num_rows; ++k) {
+            if (std::abs(temp_mtx[k][i]) > std::abs(temp_mtx[pivotRow][i]))
                 pivotRow = k;
         }
-        std::swap(matrix[i], matrix[pivotRow]);
+        std::swap(temp_mtx[i], temp_mtx[pivotRow]);
 
         // eliminate entries below pivot
-        for (int k = i + 1; k < numRows; ++k) {
-            double factor = matrix[k][i] / matrix[i][i];
-            for (int j = i; j < numCols; ++j) {
-                matrix[k][j] -= factor * matrix[i][j];
+        for (int k = i + 1; k < num_rows; ++k) {
+            double factor = temp_mtx[k][i] / temp_mtx[i][i];
+            for (int j = i; j < num_cols; ++j) {
+                temp_mtx[k][j] -= factor * temp_mtx[i][j];
             }
         }
     }
 
     // back-substitution
-    for (int i = numRows - 1; i >= 0; --i) {
-        for (int j = i + 1; j < numCols - 1; ++j) {
-            matrix[i][numCols - 1] -= matrix[i][j] * matrix[j][numCols - 1];
+    std::vector<double> solutions(num_rows, 0);
+
+    for (int i = num_rows - 1; i >= 0; --i) {
+        double sum = 0.0;
+        for (int j = i + 1; j < num_cols - 1; ++j) {
+            sum += temp_mtx[i][j] * solutions[j];
         }
-        matrix[i][numCols - 1] /= matrix[i][i];
+        solutions[i] = (temp_mtx[i][num_cols - 1] - sum) / temp_mtx[i][i];
     }
+
+    return solutions;
 }
 
 // calculate the determinant of the matrix
 double gpmp::linalg::LinSys::determinant() const {
     // assuming square matrix
-    if (numRows != numCols) {
+    if (num_rows != num_cols) {
         std::cerr << "Error: Determinant is undefined for non-square matrices."
                   << std::endl;
         return 0.0;
     }
 
-    std::vector<std::vector<double>> tempMatrix = matrix;
+    std::vector<std::vector<double>> temp_mtx = matrix;
     double det = 1.0;
 
-    for (int i = 0; i < numRows - 1; ++i) {
-        for (int k = i + 1; k < numRows; ++k) {
-            double factor = tempMatrix[k][i] / tempMatrix[i][i];
-            for (int j = i; j < numCols; ++j) {
-                tempMatrix[k][j] -= factor * tempMatrix[i][j];
+    for (int i = 0; i < num_rows - 1; ++i) {
+        for (int k = i + 1; k < num_rows; ++k) {
+            double factor = temp_mtx[k][i] / temp_mtx[i][i];
+            for (int j = i; j < num_cols; ++j) {
+                temp_mtx[k][j] -= factor * temp_mtx[i][j];
             }
         }
     }
 
-    for (int i = 0; i < numRows; ++i) {
-        det *= tempMatrix[i][i];
+    for (int i = 0; i < num_rows; ++i) {
+        det *= temp_mtx[i][i];
     }
 
     return det;
@@ -112,7 +135,7 @@ double gpmp::linalg::LinSys::determinant() const {
 // invert the matrix
 void gpmp::linalg::LinSys::invert_mtx() {
     // assuming square matrix
-    if (numRows != numCols) {
+    if (num_rows != num_cols) {
         std::cerr
             << "Error: Matrix inversion is undefined for non-square matrices."
             << std::endl;
@@ -120,11 +143,11 @@ void gpmp::linalg::LinSys::invert_mtx() {
     }
 
     std::vector<std::vector<double>> identity(
-        numRows,
-        std::vector<double>(numCols, 0.0));
+        num_rows,
+        std::vector<double>(num_cols, 0.0));
 
     // augment the matrix with the identity matrix
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         matrix[i].insert(matrix[i].end(),
                          identity[i].begin(),
                          identity[i].end());
@@ -134,42 +157,74 @@ void gpmp::linalg::LinSys::invert_mtx() {
     solve_gauss();
 
     // separate the inverse matrix
-    for (int i = 0; i < numRows; ++i) {
-        matrix[i].erase(matrix[i].begin(), matrix[i].begin() + numRows);
+    for (int i = 0; i < num_rows; ++i) {
+        matrix[i].erase(matrix[i].begin(), matrix[i].begin() + num_rows);
     }
 }
-void gpmp::linalg::LinSys::lu_decomp() {
-    for (int i = 0; i < numRows; ++i) {
-        for (int j = i + 1; j < numRows; ++j) {
+
+/*void gpmp::linalg::LinSys::lu_decomp() {
+    for (int i = 0; i < num_rows; ++i) {
+        for (int j = i + 1; j < num_rows; ++j) {
             if (std::abs(matrix[i][i]) < 1e-10) {
                 throw std::runtime_error("Error: LU decomposition failed. "
                                          "Diagonal element too small.");
             }
             double factor = matrix[j][i] / matrix[i][i];
-            for (int k = i; k < numCols; ++k) {
+            for (int k = i; k < num_cols; ++k) {
                 matrix[j][k] -= factor * matrix[i][k];
             }
             matrix[j][i] = factor;
         }
     }
+}*/
+
+std::pair<std::vector<std::vector<double>>, std::vector<std::vector<double>>>
+gpmp::linalg::LinSys::lu_decomp() {
+    std::vector<std::vector<double>> L(num_rows,
+                                       std::vector<double>(num_cols, 0.0));
+    std::vector<std::vector<double>> U(num_rows,
+                                       std::vector<double>(num_cols, 0.0));
+
+    for (int i = 0; i < num_rows; ++i) {
+        // Set diagonal elements of L to 1
+        L[i][i] = 1.0;
+
+        for (int j = i; j < num_cols; ++j) {
+            U[i][j] = matrix[i][j];
+            for (int k = 0; k < i; ++k) {
+                U[i][j] -= L[i][k] * U[k][j];
+            }
+        }
+
+        for (int j = i + 1; j < num_rows; ++j) {
+            L[j][i] = matrix[j][i];
+            for (int k = 0; k < i; ++k) {
+                L[j][i] -= L[j][k] * U[k][i];
+            }
+            L[j][i] /= U[i][i];
+        }
+    }
+
+    return {L, U};
 }
+
 // solve the linear system using LU decomposition
 void gpmp::linalg::LinSys::solve_lu() {
     lu_decomp();
 
     // forward substitution
-    for (int i = 0; i < numRows - 1; ++i) {
-        for (int j = i + 1; j < numRows; ++j) {
-            matrix[j][numCols - 1] -= matrix[j][i] * matrix[i][numCols - 1];
+    for (int i = 0; i < num_rows - 1; ++i) {
+        for (int j = i + 1; j < num_rows; ++j) {
+            matrix[j][num_cols - 1] -= matrix[j][i] * matrix[i][num_cols - 1];
         }
     }
 
     // back-substitution
-    for (int i = numRows - 1; i >= 0; --i) {
-        for (int j = i + 1; j < numCols - 1; ++j) {
-            matrix[i][numCols - 1] -= matrix[i][j] * matrix[j][numCols - 1];
+    for (int i = num_rows - 1; i >= 0; --i) {
+        for (int j = i + 1; j < num_cols - 1; ++j) {
+            matrix[i][num_cols - 1] -= matrix[i][j] * matrix[j][num_cols - 1];
         }
-        matrix[i][numCols - 1] /= matrix[i][i];
+        matrix[i][num_cols - 1] /= matrix[i][i];
     }
 }
 
@@ -180,7 +235,7 @@ void gpmp::linalg::LinSys::solve_cholesky() {
                      "symmetric positive-definite matrices\n";
     }
 
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         for (int j = 0; j <= i; ++j) {
             if (i == j) {
                 double sum = 0.0;
@@ -201,43 +256,45 @@ void gpmp::linalg::LinSys::solve_cholesky() {
     }
 
     // forward substitution
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         double sum = 0.0;
         for (int j = 0; j < i; ++j) {
-            sum += matrix[i][j] * matrix[numCols - 1][j];
+            sum += matrix[i][j] * matrix[num_cols - 1][j];
         }
-        matrix[numCols - 1][i] = (matrix[numCols - 1][i] - sum) / matrix[i][i];
+        matrix[num_cols - 1][i] =
+            (matrix[num_cols - 1][i] - sum) / matrix[i][i];
     }
 
     // back-substitution
-    for (int i = numRows - 1; i >= 0; --i) {
+    for (int i = num_rows - 1; i >= 0; --i) {
         double sum = 0.0;
-        for (int j = i + 1; j < numCols - 1; ++j) {
-            sum += matrix[j][i] * matrix[i][numCols - 1];
+        for (int j = i + 1; j < num_cols - 1; ++j) {
+            sum += matrix[j][i] * matrix[i][num_cols - 1];
         }
-        matrix[i][numCols - 1] = (matrix[i][numCols - 1] - sum) / matrix[i][i];
+        matrix[i][num_cols - 1] =
+            (matrix[i][num_cols - 1] - sum) / matrix[i][i];
     }
 }
 
 // solve the linear system using Jacobi iteration
 void gpmp::linalg::LinSys::solve_jacobi(int maxIterations, double tolerance) {
-    std::vector<std::vector<double>> x(numRows, std::vector<double>(1, 0.0));
+    std::vector<std::vector<double>> x(num_rows, std::vector<double>(1, 0.0));
     std::vector<std::vector<double>> xOld = x;
 
     for (int iter = 0; iter < maxIterations; ++iter) {
-        for (int i = 0; i < numRows; ++i) {
+        for (int i = 0; i < num_rows; ++i) {
             double sum = 0.0;
-            for (int j = 0; j < numCols - 1; ++j) {
+            for (int j = 0; j < num_cols - 1; ++j) {
                 if (j != i) {
                     sum += matrix[i][j] * xOld[j][0];
                 }
             }
-            x[i][0] = (matrix[i][numCols - 1] - sum) / matrix[i][i];
+            x[i][0] = (matrix[i][num_cols - 1] - sum) / matrix[i][i];
         }
 
         // check convergence
         double maxDiff = 0.0;
-        for (int i = 0; i < numRows; ++i) {
+        for (int i = 0; i < num_rows; ++i) {
             double diff = std::abs(x[i][0] - xOld[i][0]);
             if (diff > maxDiff) {
                 maxDiff = diff;
@@ -253,21 +310,21 @@ void gpmp::linalg::LinSys::solve_jacobi(int maxIterations, double tolerance) {
     }
 
     // copy the solution back to the augmented matrix
-    for (int i = 0; i < numRows; ++i) {
-        matrix[i][numCols - 1] = x[i][0];
+    for (int i = 0; i < num_rows; ++i) {
+        matrix[i][num_cols - 1] = x[i][0];
     }
 }
 
 // check if the matrix is symmetric and positive-definite
 bool gpmp::linalg::LinSys::is_symmetric() const {
     // assuming square matrix
-    if (numRows != numCols) {
+    if (num_rows != num_cols) {
         return false;
     }
 
     // check symmetry
-    for (int i = 0; i < numRows; ++i) {
-        for (int j = 0; j < numCols; ++j) {
+    for (int i = 0; i < num_rows; ++i) {
+        for (int j = 0; j < num_cols; ++j) {
             if (matrix[i][j] != matrix[j][i]) {
                 return false;
             }
@@ -275,7 +332,7 @@ bool gpmp::linalg::LinSys::is_symmetric() const {
     }
 
     // check positive definiteness
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         std::vector<std::vector<double>> submatrix(i + 1,
                                                    std::vector<double>(i + 1));
         for (int j = 0; j <= i; ++j) {
@@ -295,8 +352,8 @@ bool gpmp::linalg::LinSys::is_symmetric() const {
 
 double gpmp::linalg::LinSys::frobenius_norm() const {
     double sum = 0.0;
-    for (int i = 0; i < numRows; ++i) {
-        for (int j = 0; j < numCols; ++j) {
+    for (int i = 0; i < num_rows; ++i) {
+        for (int j = 0; j < num_cols; ++j) {
             sum += std::pow(matrix[i][j], 2);
         }
     }
@@ -306,9 +363,9 @@ double gpmp::linalg::LinSys::frobenius_norm() const {
 // calculate the 1-norm of the matrix
 double gpmp::linalg::LinSys::one_norm() const {
     double maxColSum = 0.0;
-    for (int j = 0; j < numCols; ++j) {
+    for (int j = 0; j < num_cols; ++j) {
         double colSum = 0.0;
-        for (int i = 0; i < numRows; ++i) {
+        for (int i = 0; i < num_rows; ++i) {
             colSum += std::abs(matrix[i][j]);
         }
         maxColSum = std::max(maxColSum, colSum);
@@ -319,9 +376,9 @@ double gpmp::linalg::LinSys::one_norm() const {
 // calculate the infinity norm of the matrix
 double gpmp::linalg::LinSys::inf_norm() const {
     double maxRowSum = 0.0;
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         double rowSum = 0.0;
-        for (int j = 0; j < numCols; ++j) {
+        for (int j = 0; j < num_cols; ++j) {
             rowSum += std::abs(matrix[i][j]);
         }
         maxRowSum = std::max(maxRowSum, rowSum);
@@ -332,11 +389,11 @@ double gpmp::linalg::LinSys::inf_norm() const {
 // perform Gram-Schmidt orthogonalization
 void gpmp::linalg::LinSys::gram_schmidt() {
     std::vector<std::vector<double>> orthoBasis(
-        numRows,
-        std::vector<double>(numCols, 0.0));
+        num_rows,
+        std::vector<double>(num_cols, 0.0));
 
-    for (int j = 0; j < numCols; ++j) {
-        for (int i = 0; i < numRows; ++i) {
+    for (int j = 0; j < num_cols; ++j) {
+        for (int i = 0; i < num_rows; ++i) {
             double projection = 0.0;
             for (int k = 0; k < i; ++k) {
                 projection += (matrix[i][j] * orthoBasis[k][j]) /
@@ -352,10 +409,10 @@ void gpmp::linalg::LinSys::gram_schmidt() {
 
 // check if the matrix is diagonally dominant
 bool gpmp::linalg::LinSys::diagonally_dominant() const {
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         double diagonalValue = std::abs(matrix[i][i]);
         double rowSum = 0.0;
-        for (int j = 0; j < numCols; ++j) {
+        for (int j = 0; j < num_cols; ++j) {
             if (j != i) {
                 rowSum += std::abs(matrix[i][j]);
             }
@@ -369,15 +426,15 @@ bool gpmp::linalg::LinSys::diagonally_dominant() const {
 
 // check if the system is consistent
 bool gpmp::linalg::LinSys::is_consistent() const {
-    for (int i = 0; i < numRows; ++i) {
+    for (int i = 0; i < num_rows; ++i) {
         bool allZeros = true;
-        for (int j = 0; j < numCols - 1; ++j) {
+        for (int j = 0; j < num_cols - 1; ++j) {
             if (matrix[i][j] != 0.0) {
                 allZeros = false;
                 break;
             }
         }
-        if (allZeros && matrix[i][numCols - 1] != 0.0) {
+        if (allZeros && matrix[i][num_cols - 1] != 0.0) {
             return false;
         }
     }
@@ -386,8 +443,8 @@ bool gpmp::linalg::LinSys::is_consistent() const {
 
 // check if the system is homogeneous
 bool gpmp::linalg::LinSys::is_homogeneous() const {
-    for (int i = 0; i < numRows; ++i) {
-        if (matrix[i][numCols - 1] != 0.0) {
+    for (int i = 0; i < num_rows; ++i) {
+        if (matrix[i][num_cols - 1] != 0.0) {
             return false;
         }
     }

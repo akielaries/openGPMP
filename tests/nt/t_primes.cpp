@@ -46,7 +46,7 @@ namespace {
 // declare primality class object
 gpmp::PrimalityTest __PRIMES_CLASS__;
 
-TEST(prime_test, is_prime) {
+TEST(PrimalityTestTest, is_prime) {
     uint64_t is_prime_0 = 2;
     bool actual_0 = true;
     bool fetched_0 = __PRIMES_CLASS__.is_prime(is_prime_0);
@@ -88,7 +88,7 @@ TEST(prime_test, is_prime) {
     EXPECT_EQ(actual_7, fetched_7);
 }
 
-TEST(prime_test, carmichael) {
+TEST(PrimalityTestTest, carmichael) {
     uint64_t is_cm_0 = 561;
     bool actual_cm_0 = true;
     bool carm_fetched_0 = __PRIMES_CLASS__.carmichael_num(is_cm_0);
@@ -100,7 +100,7 @@ TEST(prime_test, carmichael) {
     EXPECT_EQ(actual_cm_1, carm_fetched_1);
 }
 
-TEST(prime_test, mod_pow) {
+TEST(PrimalityTestTest, mod_pow) {
     EXPECT_EQ(1, __PRIMES_CLASS__.mod_pow(3, 2, 2));
     EXPECT_EQ(4, __PRIMES_CLASS__.mod_pow(5, 2, 7));
     EXPECT_EQ(2, __PRIMES_CLASS__.mod_pow(8, 9, 3));
@@ -112,7 +112,7 @@ TEST(prime_test, mod_pow) {
  * as a utility function on the overall algorithm that
  * computes primes using the Miller-Rabin method
  */
-/*TEST(prime_test, compute_miller_rabin) {
+/*TEST(PrimalityTestTest, compute_miller_rabin) {
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(7, 5));
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(7, 1));
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(1049, 5));
@@ -122,7 +122,7 @@ TEST(prime_test, mod_pow) {
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(90, 5));
 }*/
 /*
-TEST(prime_test, compute_miller_rabin) {
+TEST(PrimalityTestTest, compute_miller_rabin) {
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
     EXPECT_EQ(false, __PRIMES_CLASS__.compute_miller_rabin(1));
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
@@ -132,7 +132,7 @@ TEST(prime_test, compute_miller_rabin) {
     EXPECT_EQ(true, __PRIMES_CLASS__.compute_miller_rabin(5));
 }*/
 
-TEST(prime_test, miller_rabin_prime) {
+TEST(PrimalityTestTest, miller_rabin_prime) {
     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(1049, 4));
     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(5, 4));
     EXPECT_EQ(true, __PRIMES_CLASS__.miller_rabin_prime(2999, 4));
@@ -142,9 +142,9 @@ TEST(prime_test, miller_rabin_prime) {
     EXPECT_EQ(false, __PRIMES_CLASS__.miller_rabin_prime(104032, 4));
 }
 
-// TEST(prime_test, miller_rabin) {}
+// TEST(PrimalityTestTest, miller_rabin) {}
 
-TEST(prime_test, solovoy_strassen) {
+TEST(PrimalityTestTest, solovoy_strassen) {
     EXPECT_EQ(false, __PRIMES_CLASS__.solovoy_strassen(15, 50));
     EXPECT_EQ(false, __PRIMES_CLASS__.solovoy_strassen(25, 50));
     EXPECT_EQ(false, __PRIMES_CLASS__.solovoy_strassen(104032, 50));

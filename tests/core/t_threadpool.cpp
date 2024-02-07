@@ -116,7 +116,7 @@ TEST(ThreadPoolTest, TestEnqueueWithLargeNumberOfTasks) {
     }
 }
 
-TEST(ThreadDispatchTest, DispatchFunction) {
+TEST(ThreadPoolTest, DispatchFunction) {
     gpmp::core::ThreadPool pool(2);
     gpmp::core::ThreadDispatch dispatch;
 
@@ -134,7 +134,7 @@ TEST(ThreadDispatchTest, DispatchFunction) {
     EXPECT_EQ(result, 42);
 }
 
-TEST(ThreadDispatchTest, DispatchFunctionWithArgs) {
+TEST(ThreadPoolTest, DispatchFunctionWithArgs) {
     gpmp::core::ThreadPool pool(2);
     gpmp::core::ThreadDispatch dispatch;
 

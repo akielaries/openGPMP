@@ -78,13 +78,13 @@ namespace {
 gpmp::Basics ba;
 
 // greatest power
-TEST(basics, greatest_pow) {
+TEST(BasicsTest, greatest_pow) {
     EXPECT_EQ(4, ba.greatest_power(10, 3));
     EXPECT_EQ(2, ba.greatest_power(7, 3));
 }
 
 // greatest common divisor
-TEST(basics, greatest_common_divisor) {
+TEST(BasicsTest, greatest_common_divisor) {
     EXPECT_EQ(2, ba.op_gcd(2, 4));
     EXPECT_EQ(6, ba.op_gcd(2198466, 96096));
     EXPECT_EQ(11, ba.op_gcd(66, 11));

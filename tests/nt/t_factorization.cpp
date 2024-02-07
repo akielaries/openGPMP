@@ -47,7 +47,11 @@ namespace {
 gpmp::PrimalityTest __TEST_PRIMES__;
 gpmp::Factorization __TEST_FACTORS__;
 
-TEST(factorizations, factorization) {
-    std::cout << "HELLO" << std::endl;
+// Test case for the pollard_rho method
+TEST(FactorizationTest, PollardRhoTest) {
+    gpmp::Factorization factorization;
+    // Test with a prime number
+    uint64_t prime = 997;
 }
+
 } // namespace

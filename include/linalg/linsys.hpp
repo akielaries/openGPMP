@@ -34,6 +34,7 @@
 #ifndef LINSYS_HPP
 #define LINSYS_HPP
 
+#include <utility>
 #include <vector>
 
 namespace gpmp {
@@ -47,8 +48,8 @@ namespace linalg {
 class LinSys {
   public:
     std::vector<std::vector<double>> matrix;
-    int numRows;
-    int numCols;
+    int num_rows;
+    int num_cols;
 
     /**
      * @brief Constructor for LinSys class
@@ -61,10 +62,13 @@ class LinSys {
      */
     void display_mtx() const;
 
+    void display(const std::vector<std::vector<double>> &mat) const;
+
     /**
      * @brief Solve the linear system using Gaussian Elimination
+     * @return vector containing solutinos to system
      */
-    void solve_gauss();
+    std::vector<double> solve_gauss();
 
     /**
      * @brief Calculate the determinant of the matrix
@@ -79,8 +83,11 @@ class LinSys {
 
     /**
      * @brief Perform LU decomposition of the matrix
+     * @return the Lower and Upper matrices of the decomposition
      */
-    void lu_decomp();
+    std::pair<std::vector<std::vector<double>>,
+              std::vector<std::vector<double>>>
+    lu_decomp();
 
     /**
      * @brief Solve the linear system using LU decomposition

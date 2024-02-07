@@ -10,50 +10,50 @@
 #include <stdexcept>
 #include <vector>
 
-TEST(DescribeTestMeanArith, MeanArithEmptyVector) {
+TEST(DescribeTest, MeanArithEmptyVector) {
     gpmp::stats::Describe describe;
     std::vector<double> data;
     EXPECT_TRUE(std::isnan(describe.mean_arith(data)));
 }
 
-TEST(DescribeTestMeanArith, MeanArithSingleElement) {
+TEST(DescribeTest, MeanArithSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     EXPECT_DOUBLE_EQ(describe.mean_arith(data), 5.0);
 }
 
-TEST(DescribeTestMeanArith, MeanArithMultipleElements) {
+TEST(DescribeTest, MeanArithMultipleElements) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     EXPECT_DOUBLE_EQ(describe.mean_arith(data), 3.0);
 }
 
-TEST(DescribeTestMeanGeo, MeanGeoSingleElement) {
+TEST(DescribeTest, MeanGeoSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     EXPECT_DOUBLE_EQ(describe.mean_geo(data), 5.0);
 }
 
-TEST(DescribeTestMeanGeo, MeanGeoMultipleElements) {
+TEST(DescribeTest, MeanGeoMultipleElements) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {1.0, 2.0, 4.0};
     EXPECT_DOUBLE_EQ(describe.mean_geo(data), 2.0);
 }
-TEST(DescribeTestMeanCube, MeanCubicEmptyVector) {
+TEST(DescribeTest, MeanCubicEmptyVector) {
     gpmp::stats::Describe describe;
     std::vector<double> data;
     double p = 3.0; // Arbitrary value for p
     EXPECT_TRUE(std::isnan(describe.mean_cubic(data, p)));
 }
 
-TEST(DescribeTestMeanCube, MeanCubicSingleElement) {
+TEST(DescribeTest, MeanCubicSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     double p = 3.0; // Arbitrary value for p
     EXPECT_DOUBLE_EQ(describe.mean_cubic(data, p), 5.0);
 }
 
-TEST(DescribeTestMeanCube, MeanCubicMultipleElements) {
+TEST(DescribeTest, MeanCubicMultipleElements) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     double p = 3.0; // Arbitrary value for p
@@ -62,7 +62,7 @@ TEST(DescribeTestMeanCube, MeanCubicMultipleElements) {
     EXPECT_NEAR(describe.mean_cubic(data, p), expected, tolerance);
 }
 
-TEST(DescribeTestMeanCube, MeanCubicDifferentP) {
+TEST(DescribeTest, MeanCubicDifferentP) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     double p = 2.0; // Different value for p
@@ -71,39 +71,39 @@ TEST(DescribeTestMeanCube, MeanCubicDifferentP) {
     EXPECT_NEAR(describe.mean_cubic(data, p), expected, tolerance);
 }
 
-TEST(DescribeTestGeoPow, MeanGeoPowSingleElement) {
+TEST(DescribeTest, MeanGeoPowSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     double p = 2.0; // Arbitrary value for p
     EXPECT_DOUBLE_EQ(describe.mean_geo_pow(data, p), 25.0);
 }
 
-TEST(DescribeTestHarm, MeanHarmonicSingleElement) {
+TEST(DescribeTest, MeanHarmonicSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     EXPECT_DOUBLE_EQ(describe.mean_harmonic(data), 5.0);
 }
 
-TEST(DescribeTestHarm, MeanHarmonicMultipleElements) {
+TEST(DescribeTest, MeanHarmonicMultipleElements) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {1.0, 2.0, 4.0};
     EXPECT_NEAR(describe.mean_harmonic(data), 1.714285, 1e-4);
 }
 
-TEST(DescribeTestHeron, MeanHeronianSingleElement) {
+TEST(DescribeTest, MeanHeronianSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     EXPECT_DOUBLE_EQ(describe.mean_heronian(data), 5.0);
 }
 
-TEST(DescribeTestLehmer, MeanLehmerSingleElement) {
+TEST(DescribeTest, MeanLehmerSingleElement) {
     gpmp::stats::Describe describe;
     std::vector<double> data = {5.0};
     double p = 2.0; // Arbitrary value for p
     EXPECT_DOUBLE_EQ(describe.mean_lehmer(data, p), 25.0);
 }
 
-TEST(DescribeTestMedian, MedianOddSize) {
+TEST(DescribeTest, MedianOddSize) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double expected_median = 3.0;
@@ -111,14 +111,14 @@ TEST(DescribeTestMedian, MedianOddSize) {
     EXPECT_EQ(expected_median, actual_median);
 }
 
-TEST(DescribeTestMedian, MedianEvenSize) {
+TEST(DescribeTest, MedianEvenSize) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0};
     gpmp::stats::Describe describe;
     double expected_median = 2.5;
     double actual_median = describe.Median(data);
     EXPECT_EQ(expected_median, actual_median);
 }
-TEST(DescribeTestAbsDev, AvgAbsDev) {
+TEST(DescribeTest, AvgAbsDev) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double expected_avg_abs_dev = 1.2;
@@ -127,7 +127,7 @@ TEST(DescribeTestAbsDev, AvgAbsDev) {
     EXPECT_NEAR(expected_avg_abs_dev, actual_avg_abs_dev, tolerance);
 }
 
-TEST(DescribeTestAbsDev, AvgAbsDevEmptyVector) {
+TEST(DescribeTest, AvgAbsDevEmptyVector) {
     std::vector<double> data;
     gpmp::stats::Describe describe;
     double expected_avg_abs_dev = 0.0;
@@ -136,7 +136,7 @@ TEST(DescribeTestAbsDev, AvgAbsDevEmptyVector) {
                 actual_avg_abs_dev == expected_avg_abs_dev);
 }
 
-TEST(DescribeTestVarCoeff, VarCoeff) {
+TEST(DescribeTest, VarCoeff) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double expected_var_coeff = 47.1405;
@@ -145,7 +145,7 @@ TEST(DescribeTestVarCoeff, VarCoeff) {
     EXPECT_NEAR(expected_var_coeff, actual_var_coeff, tolerance);
 }
 
-TEST(DescribeTestVarCoeff, VarCoeffEmptyVector) {
+TEST(DescribeTest, VarCoeffEmptyVector) {
     std::vector<double> data;
     gpmp::stats::Describe describe;
     double expected_var_coeff = std::numeric_limits<double>::quiet_NaN();
@@ -154,7 +154,7 @@ TEST(DescribeTestVarCoeff, VarCoeffEmptyVector) {
                 actual_var_coeff == expected_var_coeff);
 }
 
-TEST(DescribeTestRange, IqRange) {
+TEST(DescribeTest, IqRange) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double expected_iq_range = 2.0;
@@ -162,7 +162,7 @@ TEST(DescribeTestRange, IqRange) {
     EXPECT_EQ(expected_iq_range, actual_iq_range);
 }
 
-TEST(DescribeTestRange, Percentile) {
+TEST(DescribeTest, Percentile) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double expected_percentile = 3.0;
@@ -170,7 +170,7 @@ TEST(DescribeTestRange, Percentile) {
     EXPECT_EQ(expected_percentile, actual_percentile);
 }
 
-TEST(DescribeTestRange, Range) {
+TEST(DescribeTest, Range) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double expected_range = 4.0;
@@ -178,7 +178,7 @@ TEST(DescribeTestRange, Range) {
     EXPECT_EQ(expected_range, actual_range);
 }
 
-TEST(DescribeTestStdev, Stdev) {
+TEST(DescribeTest, Stdev) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double mean = describe.mean_arith(data);
@@ -188,7 +188,7 @@ TEST(DescribeTestStdev, Stdev) {
     EXPECT_NEAR(expected_stdev, actual_stdev, tolerance);
 }
 
-TEST(DescribeTestStdev, StdevEmptyVector) {
+TEST(DescribeTest, StdevEmptyVector) {
     std::vector<double> data;
     gpmp::stats::Describe describe;
     double expected_stdev = std::numeric_limits<double>::quiet_NaN();
@@ -196,7 +196,7 @@ TEST(DescribeTestStdev, StdevEmptyVector) {
     EXPECT_TRUE(std::isnan(actual_stdev) || actual_stdev == expected_stdev);
 }
 
-TEST(DescribeTestVar, VarianceEmptyVector) {
+TEST(DescribeTest, VarianceEmptyVector) {
     std::vector<double> data;
     gpmp::stats::Describe describe;
     double expected_variance = std::numeric_limits<double>::quiet_NaN();
@@ -205,7 +205,7 @@ TEST(DescribeTestVar, VarianceEmptyVector) {
                 actual_variance == expected_variance);
 }
 
-TEST(DescribeTestCLT, Clt) {
+TEST(DescribeTest, Clt) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     int numSamples = 100;
     gpmp::stats::Describe describe;
@@ -215,7 +215,7 @@ TEST(DescribeTestCLT, Clt) {
     EXPECT_NEAR(expected_clt, actual_clt, tolerance);
 }
 
-TEST(DescribeTestKurt, Kurtosis) {
+TEST(DescribeTest, Kurtosis) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double mean = describe.mean_arith(data);
@@ -225,7 +225,7 @@ TEST(DescribeTestKurt, Kurtosis) {
     EXPECT_NEAR(expected_kurtosis, actual_kurtosis, tolerance);
 }
 
-TEST(DescribeTestLmoment1, Lmoment1) {
+TEST(DescribeTest, Lmoment1) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double mean = describe.mean_arith(data);
@@ -234,7 +234,7 @@ TEST(DescribeTestLmoment1, Lmoment1) {
     EXPECT_EQ(expected_lmoment1, actual_lmoment1);
 }
 
-TEST(DescribeTestLmoment2, Lmoment2) {
+TEST(DescribeTest, Lmoment2) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double mean = describe.mean_arith(data);
@@ -243,7 +243,7 @@ TEST(DescribeTestLmoment2, Lmoment2) {
     EXPECT_EQ(expected_lmoment2, actual_lmoment2);
 }
 
-TEST(DescribeTestSkew, Skewness) {
+TEST(DescribeTest, Skewness) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
     double mean = describe.mean_arith(data);

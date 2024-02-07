@@ -46,7 +46,7 @@ using ::testing::InitGoogleTest;
 namespace {
 gpmp::Cipher cc;
 
-TEST(ccipher_test, caesar_0) {
+TEST(CipherTest, caesar_0) {
     std::string text_0 = "Plaintext";
     int key_shift_0 = 5;
     std::string hashtext_0 = cc.caesar(text_0, key_shift_0);
@@ -55,7 +55,7 @@ TEST(ccipher_test, caesar_0) {
     EXPECT_EQ(expected_0, hashtext_0);
 }
 
-TEST(ccipher_test, caesar_1) {
+TEST(CipherTest, caesar_1) {
     std::string text_1 = "ATTACKATONCE";
     int key_shift_1 = 4;
     std::string hashtext_1 = cc.caesar(text_1, key_shift_1);
@@ -64,7 +64,7 @@ TEST(ccipher_test, caesar_1) {
     EXPECT_EQ(expected_1, hashtext_1);
 }
 
-TEST(ccipher_test, caesar_2) {
+TEST(CipherTest, caesar_2) {
     std::string text_2 = "EaSyPASsWorD";
     int key_shift_2 = 14;
     std::string hashtext_2 = cc.caesar(text_2, key_shift_2);
@@ -73,7 +73,7 @@ TEST(ccipher_test, caesar_2) {
     EXPECT_EQ(expected_2, hashtext_2);
 }
 
-TEST(kcipher_test, keyword_0) {
+TEST(CipherTest, keyword_0) {
     std::string text_3 = "Password";
     std::string key_shift_3 = "Computer";
 
@@ -87,7 +87,7 @@ TEST(kcipher_test, keyword_0) {
     EXPECT_EQ(expected_3, hashtext_3);
 }
 
-TEST(kcipher_test, keyword_1) {
+TEST(CipherTest, keyword_1) {
     std::string text_4 = "Password";
     std::string key_shift_4 = "Password";
 
@@ -101,7 +101,7 @@ TEST(kcipher_test, keyword_1) {
     EXPECT_EQ(expected_4, hashtext_4);
 }
 
-TEST(kcipher_test, error_cipher_text) {
+TEST(CipherTest, error_cipher_text) {
     std::string text_4 = "P455W0RD";
     std::string key_shift_4 = "IN1T_d";
 

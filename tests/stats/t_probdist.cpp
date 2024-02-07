@@ -14,7 +14,7 @@
 const double TOLERANCE = 1e-2;
 
 // Unit test for quantile_dist method
-TEST(ProbDistQuantDist, QuantileDist) {
+TEST(ProbDistTest, QuantileDist) {
     gpmp::stats::ProbDist probDist;
     // median probability
     double probability = 0.5;
@@ -25,7 +25,7 @@ TEST(ProbDistQuantDist, QuantileDist) {
     EXPECT_NEAR(expected_quantile, actual_quantile, TOLERANCE);
 }
 
-TEST(ProbDistQuantDist, QuantileDist_ProbabilityZero) {
+TEST(ProbDistTest, QuantileDist_ProbabilityZero) {
     gpmp::stats::ProbDist probDist;
 
     double probability = 0.0;
@@ -34,7 +34,7 @@ TEST(ProbDistQuantDist, QuantileDist_ProbabilityZero) {
 }
 
 // Unit test for normal_PDF method
-TEST(ProbDistPDF, NormalPDF) {
+TEST(ProbDistTest, NormalPDF) {
     gpmp::stats::ProbDist probDist;
     // value at mean
     double x = 0.0;
@@ -50,7 +50,7 @@ TEST(ProbDistPDF, NormalPDF) {
     EXPECT_NEAR(expected_pdf, actual_pdf, TOLERANCE);
 }
 
-TEST(ProbDistCDF, NormalCDF) {
+TEST(ProbDistTest, NormalCDF) {
     gpmp::stats::ProbDist probDist;
 
     // value at mean
@@ -68,7 +68,7 @@ TEST(ProbDistCDF, NormalCDF) {
 }
 
 // Unit test for uniform_CDF method
-TEST(ProbDistCDF, UniformCDF) {
+TEST(ProbDistTest, UniformCDF) {
     gpmp::stats::ProbDist probDist;
 
     // current rank
@@ -84,7 +84,7 @@ TEST(ProbDistCDF, UniformCDF) {
 }
 
 // Unit test for emp_CDF method
-TEST(ProbDistCDF, EmpCDF) {
+TEST(ProbDistTest, EmpCDF) {
     gpmp::stats::ProbDist probDist;
 
     // Setup
@@ -99,7 +99,7 @@ TEST(ProbDistCDF, EmpCDF) {
     EXPECT_NEAR(expected_cdf, actual_cdf, TOLERANCE);
 }
 
-TEST(ProbDistTestPMF, EmpPMF) {
+TEST(ProbDistTest, EmpPMF) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 2.0, 3.0, 3.0, 3.0, 4.0};
@@ -202,7 +202,7 @@ TEST(ProbDistTest, MedianUnbiased) {
 }
 
 // Unit test for ConfidenceInterval method
-TEST(ProbDistTestIntervals, ConfidenceInterval) {
+TEST(ProbDistTest, ConfidenceInterval) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -215,7 +215,7 @@ TEST(ProbDistTestIntervals, ConfidenceInterval) {
     EXPECT_LT(interval.first, interval.second);
 }
 
-TEST(ProbDistTestIntervals, LikelihoodInterval) {
+TEST(ProbDistTest, LikelihoodInterval) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -227,7 +227,7 @@ TEST(ProbDistTestIntervals, LikelihoodInterval) {
     EXPECT_LT(interval.first, interval.second);
 }
 
-TEST(ProbDistTestIntervals, PredictionInterval) {
+TEST(ProbDistTest, PredictionInterval) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -238,7 +238,7 @@ TEST(ProbDistTestIntervals, PredictionInterval) {
     EXPECT_LT(interval.first, interval.second);
 }
 
-TEST(ProbDistTestIntervals, ToleranceInterval) {
+TEST(ProbDistTest, ToleranceInterval) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};

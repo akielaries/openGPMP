@@ -60,7 +60,7 @@ char *text_1 = (char *)"pedia";
 char *key_2 = (char *)"Secret";
 char *text_2 = (char *)"Attack at dawn";
 
-TEST(rc4_test, hash_XOR) {
+TEST(RC4Test, hash_XOR) {
     int x_swap = 0;
     std::string ptext_0 = "|xbb||xf3||x16||xe8||xd9||x40||xaf||x0a||xd3|";
     // allocate memory for the ciphertext pointer
@@ -86,7 +86,7 @@ TEST(rc4_test, hash_XOR) {
     EXPECT_EQ(ptext_02, displayed_02);
 }
 
-TEST(rc4_test, hash_TRADITIONAL) {
+TEST(RC4Test, hash_TRADITIONAL) {
     int t_swap = 1;
     std::string ptext_1 = "BBF316E8D940AF0AD3";
     unsigned char *hashtext_10 =
@@ -110,7 +110,7 @@ TEST(rc4_test, hash_TRADITIONAL) {
     EXPECT_EQ(ptext_12, displayed_12);
 }
 
-TEST(rc4_test, hash_BYTE) {
+TEST(RC4Test, hash_BYTE) {
     int b_swap = 2;
     std::string ptext_2 = "BBF316E8D940AF0AD3";
     unsigned char *hashtext_20 =
@@ -134,7 +134,7 @@ TEST(rc4_test, hash_BYTE) {
     EXPECT_EQ(ptext_22, displayed_22);
 }
 
-TEST(rc4_test, SWAP_error_4) {
+TEST(RC4Test, SWAP_error_4) {
     int swap_FALSE = 4;
     std::string expected_error_text = "[-] Invalid swap_type";
 
@@ -150,7 +150,7 @@ TEST(rc4_test, SWAP_error_4) {
                  std::runtime_error);
 }
 
-TEST(rc4_test, SWAP_error_127) {
+TEST(RC4Test, SWAP_error_127) {
     int swap_FALSE_127 = 127;
     std::string expected_error_text_127 = "[-] Invalid swap_type";
 
@@ -166,7 +166,7 @@ TEST(rc4_test, SWAP_error_127) {
                  std::runtime_error);
 }
 
-TEST(rc4_test, NULL_ciphertext) {
+TEST(RC4Test, NULL_ciphertext) {
     int swap_NULL = 0;
     std::string expected_error_text_127 = "[-] Error Allocating Memory";
 
