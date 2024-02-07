@@ -59,6 +59,8 @@ set(CPP_SOURCES
 set(CPP_TEST_FILES
     arith/t_arith.cpp
     calc/t_calc.cpp
+    core/t_threadpool.cpp
+    disct/t_graphs.cpp
     linalg/t_matrix.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
@@ -66,11 +68,10 @@ set(CPP_TEST_FILES
     nt/t_factorization.cpp
     nt/t_logarithms.cpp
     nt/t_random.cpp
-    core/t_threadpool.cpp
-    disct/t_graphs.cpp
     optim/t_function.cpp
     optim/t_quasi.cpp
     stats/t_describe.cpp
+    stats/t_probdist.cpp
 )
 
 # Fortran source files to be tested

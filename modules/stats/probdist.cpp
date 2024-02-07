@@ -39,6 +39,7 @@
 #include <numeric>
 #include <random>
 #include <vector>
+
 float my_logf(float);
 
 /* compute inverse error functions with maximum error of 2.35793 ulp */
@@ -144,11 +145,21 @@ double gpmp::stats::ProbDist::uniform_CDF(size_t k, size_t n) {
 }
 
 double gpmp::stats::ProbDist::exp_PDF(double x, size_t k, double lambda) {
-    if (x < 0.0) {
-        return 0.0; // Invalid input, return 0
-    }
+                // Check if k is valid (k must be 1 for exponential distribution)
+                if (k != 1) {
+                    // Return 0 if k is not 1, as exponential distribution is only defined for k = 1
+                    return 0.0;
+                }
 
-    return k * lambda * std::exp(-k * lambda * x);
+                // Check if lambda is non-positive
+                if (lambda <= 0) {
+                    // Return 0 if lambda is non-positive
+                    return 0.0;
+                }
+
+                // Calculate the exponential PDF
+                return (k / lambda) * exp(-k * x);
+
 }
 
 double gpmp::stats::ProbDist::emp_CDF(const std::vector<double> &data,

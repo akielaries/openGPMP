@@ -10,7 +10,6 @@
 #include <stdexcept>
 #include <vector>
 
-
 TEST(DescribeTestMeanArith, MeanArithEmptyVector) {
     gpmp::stats::Describe describe;
     std::vector<double> data;
@@ -124,7 +123,7 @@ TEST(DescribeTestAbsDev, AvgAbsDev) {
     gpmp::stats::Describe describe;
     double expected_avg_abs_dev = 1.2;
     double actual_avg_abs_dev = describe.avg_abs_dev(data);
-    double tolerance = 1e-3; 
+    double tolerance = 1e-3;
     EXPECT_NEAR(expected_avg_abs_dev, actual_avg_abs_dev, tolerance);
 }
 
@@ -133,9 +132,9 @@ TEST(DescribeTestAbsDev, AvgAbsDevEmptyVector) {
     gpmp::stats::Describe describe;
     double expected_avg_abs_dev = 0.0;
     double actual_avg_abs_dev = describe.avg_abs_dev(data);
-    EXPECT_TRUE(std::isnan(actual_avg_abs_dev) || actual_avg_abs_dev == expected_avg_abs_dev);
+    EXPECT_TRUE(std::isnan(actual_avg_abs_dev) ||
+                actual_avg_abs_dev == expected_avg_abs_dev);
 }
-
 
 TEST(DescribeTestVarCoeff, VarCoeff) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -149,9 +148,10 @@ TEST(DescribeTestVarCoeff, VarCoeff) {
 TEST(DescribeTestVarCoeff, VarCoeffEmptyVector) {
     std::vector<double> data;
     gpmp::stats::Describe describe;
-    double expected_var_coeff = std::numeric_limits<double>::quiet_NaN();  
+    double expected_var_coeff = std::numeric_limits<double>::quiet_NaN();
     double actual_var_coeff = describe.var_coeff(data);
-    EXPECT_TRUE(std::isnan(actual_var_coeff) || actual_var_coeff == expected_var_coeff);
+    EXPECT_TRUE(std::isnan(actual_var_coeff) ||
+                actual_var_coeff == expected_var_coeff);
 }
 
 TEST(DescribeTestRange, IqRange) {
@@ -165,7 +165,7 @@ TEST(DescribeTestRange, IqRange) {
 TEST(DescribeTestRange, Percentile) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
-    double expected_percentile = 3.0; 
+    double expected_percentile = 3.0;
     double actual_percentile = describe.percentile(data, 0.5);
     EXPECT_EQ(expected_percentile, actual_percentile);
 }
@@ -196,13 +196,13 @@ TEST(DescribeTestStdev, StdevEmptyVector) {
     EXPECT_TRUE(std::isnan(actual_stdev) || actual_stdev == expected_stdev);
 }
 
-
 TEST(DescribeTestVar, VarianceEmptyVector) {
     std::vector<double> data;
     gpmp::stats::Describe describe;
     double expected_variance = std::numeric_limits<double>::quiet_NaN();
     double actual_variance = describe.variance(data, 0.0);
-    EXPECT_TRUE(std::isnan(actual_variance) || actual_variance == expected_variance);
+    EXPECT_TRUE(std::isnan(actual_variance) ||
+                actual_variance == expected_variance);
 }
 
 TEST(DescribeTestCLT, Clt) {
@@ -257,11 +257,11 @@ TEST(DescribeTestSkew, Skewness) {
 TEST(DescribeTest, RankData) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     gpmp::stats::Describe describe;
-    std::vector<size_t> expected_ranks = {1, 2, 3, 4, 5}; // Expected ranks based on input data
+    std::vector<size_t> expected_ranks =
+        {1, 2, 3, 4, 5}; // Expected ranks based on input data
     std::vector<size_t> actual_ranks = describe.rank_data(data);
     EXPECT_EQ(expected_ranks, actual_ranks);
 }
-
 
 TEST(DescribeTest, Ppmc) {
     std::vector<double> x = {1.0, 2.0, 3.0, 4.0, 5.0};
@@ -272,4 +272,3 @@ TEST(DescribeTest, Ppmc) {
     double tolerance = 1e-3;
     EXPECT_NEAR(expected_ppmc, actual_ppmc, tolerance);
 }
-
