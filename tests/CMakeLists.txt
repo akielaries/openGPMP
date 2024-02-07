@@ -62,6 +62,7 @@ set(CPP_TEST_FILES
     core/t_threadpool.cpp
     disct/t_graphs.cpp
     linalg/t_matrix.cpp
+    linalg/t_eigen.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp
