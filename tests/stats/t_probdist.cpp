@@ -20,7 +20,7 @@ TEST(ProbDistQuantDist, QuantileDist) {
     double probability = 0.5;
     // median of standard normal distribution
     double expected_quantile = 0.0;
-    
+
     double actual_quantile = probDist.quantile_dist(probability);
     EXPECT_NEAR(expected_quantile, actual_quantile, TOLERANCE);
 }
@@ -37,15 +37,15 @@ TEST(ProbDistQuantDist, QuantileDist_ProbabilityZero) {
 TEST(ProbDistPDF, NormalPDF) {
     gpmp::stats::ProbDist probDist;
     // value at mean
-    double x = 0.0; 
+    double x = 0.0;
     // mean of normal distribution
-    double mean = 0.0; 
+    double mean = 0.0;
     // standard deviation of normal distribution
-    double stddev = 1.0; 
+    double stddev = 1.0;
 
     // calculated expected value based on input parameters
-    double expected_pdf = 0.398942; 
-    
+    double expected_pdf = 0.398942;
+
     double actual_pdf = probDist.normal_PDF(x, mean, stddev);
     EXPECT_NEAR(expected_pdf, actual_pdf, TOLERANCE);
 }
@@ -54,15 +54,15 @@ TEST(ProbDistCDF, NormalCDF) {
     gpmp::stats::ProbDist probDist;
 
     // value at mean
-    double x = 0.0; 
+    double x = 0.0;
     // mean of normal distribution
-    double mean = 0.0; 
+    double mean = 0.0;
     // standard deviation of normal distribution
     double stddev = 1.0;
 
     // cumulative distribution function (CDF) at mean
     double expected_cdf = 0.5;
-    
+
     double actual_cdf = probDist.normal_CDF(x, mean, stddev);
     EXPECT_NEAR(expected_cdf, actual_cdf, TOLERANCE);
 }
@@ -76,7 +76,7 @@ TEST(ProbDistCDF, UniformCDF) {
     // items
     size_t n = 5;
 
-    double expected_cdf = 0.333; 
+    double expected_cdf = 0.333;
 
     double actual_cdf = probDist.uniform_CDF(k, n);
 
@@ -88,7 +88,7 @@ TEST(ProbDistCDF, EmpCDF) {
     gpmp::stats::ProbDist probDist;
 
     // Setup
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0}; 
+    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     double x = 3.0;
 
     // Expected empirical cumulative distribution function (CDF) value
@@ -98,8 +98,6 @@ TEST(ProbDistCDF, EmpCDF) {
 
     EXPECT_NEAR(expected_cdf, actual_cdf, TOLERANCE);
 }
-
-
 
 TEST(ProbDistTestPMF, EmpPMF) {
     gpmp::stats::ProbDist probDist;
@@ -137,7 +135,7 @@ TEST(ProbDistTest, MLE) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
 
     // expected maximum likelihood estimate (MLE)
-    double expected_result = 3.0; 
+    double expected_result = 3.0;
 
     double actual_result = probDist.mle(data);
     EXPECT_EQ(expected_result, actual_result);
@@ -160,10 +158,10 @@ TEST(ProbDistTest, MOM) {
 TEST(ProbDistTest, MLEEst) {
     gpmp::stats::ProbDist probDist;
 
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0}; 
+    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
 
     // maximum likelihood estimation
-    double expected_result = 3.0; 
+    double expected_result = 3.0;
 
     double actual_result = probDist.mle_est(data);
 
@@ -177,7 +175,7 @@ TEST(ProbDistTest, MUMV) {
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
 
     // mean of unordered multiset values (MUMV)
-    double expected_result = 3.0; 
+    double expected_result = 3.0;
 
     double actual_result = probDist.mumv(data);
     EXPECT_NEAR(expected_result, actual_result, TOLERANCE);
@@ -207,7 +205,7 @@ TEST(ProbDistTest, MedianUnbiased) {
 TEST(ProbDistTestIntervals, ConfidenceInterval) {
     gpmp::stats::ProbDist probDist;
 
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0}; 
+    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
 
     // sig level
     double alpha = 0.05;
@@ -220,9 +218,9 @@ TEST(ProbDistTestIntervals, ConfidenceInterval) {
 TEST(ProbDistTestIntervals, LikelihoodInterval) {
     gpmp::stats::ProbDist probDist;
 
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0}; 
+    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
     // sig level
-    double alpha = 0.05; 
+    double alpha = 0.05;
 
     auto interval = probDist.LikelihoodInterval(data, alpha);
 
@@ -232,19 +230,19 @@ TEST(ProbDistTestIntervals, LikelihoodInterval) {
 TEST(ProbDistTestIntervals, PredictionInterval) {
     gpmp::stats::ProbDist probDist;
 
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0}; 
-    double alpha = 0.05; 
+    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
+    double alpha = 0.05;
 
     auto interval = probDist.PredictionInterval(data, alpha);
 
-    EXPECT_LT(interval.first, interval.second); 
+    EXPECT_LT(interval.first, interval.second);
 }
 
 TEST(ProbDistTestIntervals, ToleranceInterval) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
-    double alpha = 0.05; 
+    double alpha = 0.05;
 
     auto interval = probDist.ToleranceInterval(data, alpha);
 
@@ -261,8 +259,7 @@ TEST(ProbDistTestBootstrap, BootstrapResampling) {
 
     auto interval = probDist.BootstrapResampling(data, numSamples);
 
-    EXPECT_LT(interval.first, interval.second); 
-
+    EXPECT_LT(interval.first, interval.second);
 }
 
 TEST(ProbDistTest, JackknifeResampling) {
@@ -274,4 +271,3 @@ TEST(ProbDistTest, JackknifeResampling) {
 
     EXPECT_LT(interval.first, interval.second);
 }
-

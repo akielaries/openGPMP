@@ -145,21 +145,21 @@ double gpmp::stats::ProbDist::uniform_CDF(size_t k, size_t n) {
 }
 
 double gpmp::stats::ProbDist::exp_PDF(double x, size_t k, double lambda) {
-                // Check if k is valid (k must be 1 for exponential distribution)
-                if (k != 1) {
-                    // Return 0 if k is not 1, as exponential distribution is only defined for k = 1
-                    return 0.0;
-                }
+    // Check if k is valid (k must be 1 for exponential distribution)
+    if (k != 1) {
+        // Return 0 if k is not 1, as exponential distribution is only defined
+        // for k = 1
+        return 0.0;
+    }
 
-                // Check if lambda is non-positive
-                if (lambda <= 0) {
-                    // Return 0 if lambda is non-positive
-                    return 0.0;
-                }
+    // Check if lambda is non-positive
+    if (lambda <= 0) {
+        // Return 0 if lambda is non-positive
+        return 0.0;
+    }
 
-                // Calculate the exponential PDF
-                return (k / lambda) * exp(-k * x);
-
+    // Calculate the exponential PDF
+    return (k / lambda) * exp(-k * x);
 }
 
 double gpmp::stats::ProbDist::emp_CDF(const std::vector<double> &data,
