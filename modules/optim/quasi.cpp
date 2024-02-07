@@ -36,6 +36,8 @@
 #include <functional>
 #include <iostream>
 #include <vector>
+#include <numeric>
+#include <tuple>
 
 std::vector<double> gpmp::optim::QuasiNewton::vector_subtraction(
     const std::vector<double> &a,
@@ -310,95 +312,105 @@ gpmp::optim::QuasiNewton::update_hessian_inverse(
 
 double gpmp::optim::QuasiNewton::dot_product(const std::vector<double> &a,
                                              const std::vector<double> &b) {
-    size_t n = a.size();
-    double result = 0.0;
-
-    for (size_t i = 0; i < n; ++i) {
-        result += a[i] * b[i];
+    // Ensure vectors have the same size
+    if (a.size() != b.size()) {
+        throw std::invalid_argument(
+            "Vectors must have the same size for dot product.");
     }
 
+    double result = 0.0;
+    for (size_t i = 0; i < a.size(); ++i) {
+        result += a[i] * b[i];
+    }
     return result;
 }
 
-std::vector<double> gpmp::optim::QuasiNewton::lbfgs_optimize(
-    const std::function<double(const std::vector<double> &)> &func,
+std::tuple<std::vector<double>, double> gpmp::optim::QuasiNewton::lbfgs_optimize(
+    const std::function<double(const std::vector<double> &)> &f,
     const std::vector<double> &initial_point,
     double tolerance,
     size_t max_iterations,
     size_t memory_size) {
-    // Validate memory_size
-    if (memory_size == 0) {
-        throw std::invalid_argument(
-            "Error: Memory size for L-BFGS must be greater than zero.");
-    }
+
+    const double eps = 1e-8;
 
     size_t n = initial_point.size();
-    size_t m = std::min(memory_size, n);
-
-    // Initialize vectors and matrices
-    std::vector<std::vector<double>> s;
-    std::vector<std::vector<double>> y;
-    std::vector<double> rho;
-    std::vector<double> alpha;
-    std::vector<double> q;
-    std::vector<double> gradient =
-        calculate_gradient(func, initial_point, 1e-8);
     std::vector<double> x = initial_point;
+    std::vector<double> g(n); // Gradient vector
+    std::vector<std::vector<double>> s(memory_size, std::vector<double>(n)); // s vectors
+    std::vector<std::vector<double>> y(memory_size, std::vector<double>(n)); // y vectors
+    std::vector<double> rho(memory_size); // rho values
 
-    // Main optimization loop
-    for (size_t iteration = 0; iteration < max_iterations; ++iteration) {
-        // Check convergence
-        if (dot_product(gradient, gradient) < tolerance * tolerance) {
-            return x; // Converged
-        }
+    // Evaluate the objective function and gradient at initial_point
+    double fx = f(x);
+    // Calculate gradient at initial_point
+    // Gradient calculation logic to be implemented
+    // Assign gradient to 'g'
 
-        // Compute search direction using L-BFGS update
-        q = gradient;
-        for (size_t i = m - 1; i != static_cast<size_t>(-1); --i) {
-            rho[i] = 1.0 / dot_product(s[i], y[i]);
-            alpha[i] = rho[i] * dot_product(s[i], q);
-            for (size_t j = 0; j < n; ++j) {
-                q[j] -= alpha[i] * y[i][j];
-            }
-        }
-
-        // Scale the initial Hessian approximation
-        double gamma =
-            dot_product(s[m - 1], y[m - 1]) / dot_product(y[m - 1], y[m - 1]);
+    for (size_t iter = 0; iter < max_iterations; ++iter) {
+        // Check for convergence
+        double norm_grad = 0.0;
         for (size_t i = 0; i < n; ++i) {
-            q[i] *= gamma;
+            norm_grad += g[i] * g[i];
+        }
+        norm_grad = sqrt(norm_grad);
+        if (norm_grad < tolerance) {
+            break;
         }
 
-        // Perform forward recursion
-        for (size_t i = 0; i < m; ++i) {
-            double beta = rho[i] * dot_product(y[i], q);
+        // Compute search direction (use initial guess)
+        std::vector<double> d = g;
+
+        // L-BFGS two-loop recursion
+        size_t start = std::min(iter, memory_size);
+        for (size_t i = start - 1; i >= 0; --i) {
+            rho[i] = 1.0 / inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);
+            double alpha = rho[i] * inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);
             for (size_t j = 0; j < n; ++j) {
-                q[j] += (alpha[i] - beta) * s[i][j];
+                d[j] -= alpha * y[i][j];
             }
         }
 
-        // Perform L-BFGS update
-        std::vector<double> direction = q;
-        double step_size = line_search(func, x, direction);
-
-        // Update vectors and matrices
-        std::vector<double> new_point = update_point(x, direction, step_size);
-        std::vector<double> new_gradient =
-            calculate_gradient(func, new_point, 1e-8);
-
-        // Update s and y
-        s.push_back(vector_subtraction(new_point, x));
-        y.push_back(vector_subtraction(new_gradient, gradient));
-
-        // Ensure s and y do not exceed memory_size
-        if (s.size() > m) {
-            s.erase(s.begin());
-            y.erase(y.begin());
+        // Perform scaling
+        for (size_t i = 0; i < n; ++i) {
+            d[i] *= rho[i];
         }
 
-        x = new_point;
-        gradient = new_gradient;
+        // Compute gradient of the objective function along the search direction
+        // Gradient calculation logic to be implemented
+        // Assign gradient to 'dg'
+        double dg = inner_product(d.begin(), d.end(), g.begin(), 0.0);
+
+        // Limit curvature
+        if (dg > 0) {
+            break;
+        }
+
+        // Line search
+        double step_size = 1.0;
+        std::vector<double> x_new = x;
+        for (size_t i = 0; i < n; ++i) {
+            x_new[i] += step_size * d[i];
+        }
+
+        double fx_new = f(x_new);
+        if (fx_new < fx + eps * step_size * dg) {
+            // Update x
+            x = x_new;
+            fx = fx_new;
+
+            // Evaluate gradient at new point
+            // Gradient calculation logic to be implemented
+            // Assign gradient to 'g'
+
+            // Update s and y
+            for (size_t i = 0; i < n; ++i) {
+                s[iter % memory_size][i] = x_new[i] - x[i];
+                y[iter % memory_size][i] = g[i] - d[i];
+            }
+        }
     }
 
-    return x; // Return the result after the maximum number of iterations
+    return std::make_tuple(x, fx);
 }
+

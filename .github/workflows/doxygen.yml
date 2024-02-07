@@ -21,7 +21,6 @@ jobs:
       
       - name: Dependencies
         run: |
-          sudo apt update && sudo apt upgrade
           sudo apt install gcovr lcov cppcheck tree doxygen
         
       - name: Copy HTML Static Analysis and Unit Test Coverage

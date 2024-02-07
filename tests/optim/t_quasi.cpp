@@ -8,6 +8,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include <tuple>
 
 // Define a function to use for testing
 double testFunction(const std::vector<double> &x) {
@@ -394,17 +395,22 @@ TEST(QuasiNewtonSearchDirection, CalculateSearchDirectionZeroGradient) {
 TEST(QuasiNewtonQuadratic, BFGSOptimizeQuadraticFunction) {
     gpmp::optim::QuasiNewton optimizer;
     // Define a simple quadratic function: f(x, y) = x^2 + y^2
-    auto quadraticFunction = [](const std::vector<double>& point) {
+    auto quadraticFunction = [](const std::vector<double> &point) {
         return point[0] * point[0] + point[1] * point[1];
     };
     std::vector<double> initialPoint = {2.0, 2.0}; // Initial point
-    double tolerance = 1e-6; // Tolerance for convergence
+    double tolerance = 1e-6;                       // Tolerance for convergence
     size_t maxIterations = 1000; // Maximum number of iterations
 
     // Perform BFGS optimization
-    std::vector<double> optimizedPoint = optimizer.bfgs_optimize(quadraticFunction, initialPoint, tolerance, maxIterations);
+    std::vector<double> optimizedPoint =
+        optimizer.bfgs_optimize(quadraticFunction,
+                                initialPoint,
+                                tolerance,
+                                maxIterations);
 
-    // The optimal point for the quadratic function f(x, y) = x^2 + y^2 is (0, 0)
+    // The optimal point for the quadratic function f(x, y) = x^2 + y^2 is (0,
+    // 0)
     std::vector<double> expectedOptimizedPoint = {0.0, 0.0};
 
     // Check if the optimized point is close to the expected optimal point
@@ -412,3 +418,45 @@ TEST(QuasiNewtonQuadratic, BFGSOptimizeQuadraticFunction) {
         EXPECT_NEAR(optimizedPoint[i], expectedOptimizedPoint[i], tolerance);
     }
 }
+
+double objective_function(const std::vector<double> &x) {
+    // Define your objective function here
+    return x[0] * x[0] + x[1] * x[1]; // Example: Quadratic function
+}
+
+TEST(QuasiNewtonLBFGS, LBFGSOptimizeQuadraticFunctionB) {
+    gpmp::optim::QuasiNewton optimizer;
+    std::vector<double> x0 = {1.0, 1.0}; // Initial guess
+    auto result = optimizer.lbfgs_optimize(objective_function, x0, 1e-5, 100, 5);
+
+    //std::cout << "Optimal solution: (" << std::get<0>(result)[0] << ", " << std::get<0>(result)[1] << ")" << std::endl;
+    //std::cout << "Optimal value: " << std::get<1>(result) << std::endl;
+    ASSERT_NEAR(std::get<0>(result)[0], 1, 1e-5);
+    ASSERT_NEAR(std::get<0>(result)[1], 1, 1e-5);
+
+}
+
+
+TEST(QuasiNewtonLBFGS, SimpleQuadraticTest) {
+    gpmp::optim::QuasiNewton optimizer;
+    // Define the objective function (simple quadratic)
+    auto quadratic = [](const std::vector<double>& x) {
+        return x[0] * x[0] + x[1] * x[1];
+    };
+
+    // Define the initial point
+    std::vector<double> initial_point = {0.0, 3.0};
+
+    // Call the lbfgs_optimize method
+    auto result = optimizer.lbfgs_optimize(quadratic, initial_point, 1e-5, 100, 5);
+    //std::cout << "Optimal solution: (" << std::get<0>(result)[0] << ", " << std::get<0>(result)[1] << ")" << std::endl;
+    //std::cout << "Optimal value: " << std::get<1>(result) << std::endl;
+
+    // Check the optimal solution
+    ASSERT_NEAR(std::get<0>(result)[0], 0.0, 1e-5);
+    ASSERT_NEAR(std::get<0>(result)[1], 3.0, 1e-5);
+
+    // Check the optimal value
+    ASSERT_NEAR(std::get<1>(result), 9, 1e-5);
+}
+

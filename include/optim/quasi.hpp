@@ -209,12 +209,13 @@ class QuasiNewton {
      * vectors)
      * @return The optimized point that minimizes the given objective function
      */
-    std::vector<double> lbfgs_optimize(
-        const std::function<double(const std::vector<double> &)> &func,
+    std::tuple<std::vector<double>, double> lbfgs_optimize(
+        const std::function<double(const std::vector<double> &)> &f,
         const std::vector<double> &initial_point,
-        double tolerance,
-        size_t max_iterations,
-        size_t memory_size);
+        double tolerance = 1e-4,
+        size_t max_iterations = 100,
+        size_t memory_size = 5);
+
 };
 
 } // namespace optim
