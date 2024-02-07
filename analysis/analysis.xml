@@ -242,13 +242,13 @@
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="153" column="10"/>
             <symbol>string</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
             <symbol>B</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
         </error>
         <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
             <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
@@ -462,38 +462,12 @@
             <location file="../../modules/optim/function.cpp" line="467" column="21"/>
             <symbol>sum_x_cubed</symbol>
         </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="358" column="16" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
-            <symbol>rho</symbol>
-        </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="359" column="18" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
-            <symbol>alpha</symbol>
-        </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="359" column="27" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
-            <symbol>rho</symbol>
-        </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="361" column="30" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
-            <symbol>alpha</symbol>
-        </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="374" column="30" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
-            <symbol>rho</symbol>
-        </error>
-        <error id="containerOutOfBounds" severity="error" msg="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." verbose="Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero." cwe="398" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="376" column="31" info="Access out of bounds"/>
-            <location file="../../modules/optim/quasi.cpp" line="351" column="45" info="Assuming condition is false"/>
-            <symbol>alpha</symbol>
+        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;i&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;i&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/optim/quasi.cpp">
+            <location file="../../modules/optim/quasi.cpp" line="366" column="38" info="Unsigned positive"/>
+            <symbol>i</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;updated_point&apos; is assigned a value that is never used." verbose="Variable &apos;updated_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="231" column="39"/>
+            <location file="../../modules/optim/quasi.cpp" line="233" column="39"/>
             <symbol>updated_point</symbol>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
@@ -617,7 +591,7 @@
             <symbol>betweenness_centrality</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bfgs_optimize&apos; is never used." verbose="The function &apos;bfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="145" column="0"/>
+            <location file="../../modules/optim/quasi.cpp" line="147" column="0"/>
             <symbol>bfgs_optimize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bfs&apos; is never used." verbose="The function &apos;bfs&apos; is never used." cwe="561">
@@ -625,7 +599,7 @@
             <symbol>bfs</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bhhh_optimize&apos; is never used." verbose="The function &apos;bhhh_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="58" column="0"/>
+            <location file="../../modules/optim/quasi.cpp" line="60" column="0"/>
             <symbol>bhhh_optimize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bilinear_adv_tform&apos; is never used." verbose="The function &apos;bilinear_adv_tform&apos; is never used." cwe="561">
@@ -1005,7 +979,7 @@
             <symbol>kurtosis</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;lbfgs_optimize&apos; is never used." verbose="The function &apos;lbfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="323" column="0"/>
+            <location file="../../modules/optim/quasi.cpp" line="328" column="0"/>
             <symbol>lbfgs_optimize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;leaky_relu&apos; is never used." verbose="The function &apos;leaky_relu&apos; is never used." cwe="561">
@@ -1455,6 +1429,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;vector_scalar_multiply&apos; is never used." verbose="The function &apos;vector_scalar_multiply&apos; is never used." cwe="561">
             <location file="../../modules/optim/function.cpp" line="106" column="0"/>
             <symbol>vector_scalar_multiply</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;vector_subtraction&apos; is never used." verbose="The function &apos;vector_subtraction&apos; is never used." cwe="561">
+            <location file="../../modules/optim/function.cpp" line="91" column="0"/>
+            <symbol>vector_subtraction</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;weight_decay_regularization&apos; is never used." verbose="The function &apos;weight_decay_regularization&apos; is never used." cwe="561">
             <location file="../../modules/ml/regularizers.cpp" line="119" column="0"/>

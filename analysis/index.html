@@ -168,20 +168,19 @@
        <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
        <table>
            <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedFunction" name="unusedFunction" checked></td><td>238</td><td>unusedFunction</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedFunction" name="unusedFunction" checked></td><td>239</td><td>unusedFunction</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="useStlAlgorithm" name="useStlAlgorithm" checked></td><td>32</td><td>useStlAlgorithm</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantInitialization" name="redundantInitialization" checked></td><td>18</td><td>redundantInitialization</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>15</td><td>unreadVariable</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedVariable" name="unusedVariable" checked></td><td>12</td><td>unusedVariable</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameter" name="constParameter" checked></td><td>11</td><td>constParameter</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="containerOutOfBounds" name="containerOutOfBounds" checked></td><td>6</td><td>containerOutOfBounds</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="noExplicitConstructor" name="noExplicitConstructor" checked></td><td>6</td><td>noExplicitConstructor</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingReturn" name="missingReturn" checked></td><td>5</td><td>missingReturn</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitMemberVar" name="uninitMemberVar" checked></td><td>4</td><td>uninitMemberVar</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unpreciseMathCall" name="unpreciseMathCall" checked></td><td>4</td><td>unpreciseMathCall</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unsignedPositive" name="unsignedPositive" checked></td><td>4</td><td>unsignedPositive</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>4</td><td>variableScope</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="stlFindInsert" name="stlFindInsert" checked></td><td>3</td><td>stlFindInsert</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unsignedPositive" name="unsignedPositive" checked></td><td>3</td><td>unsignedPositive</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="duplicateExpression" name="duplicateExpression" checked></td><td>2</td><td>duplicateExpression</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>2</td><td>knownConditionTrueFalse</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="selfInitialization" name="selfInitialization" checked></td><td>2</td><td>selfInitialization</td></tr>
@@ -193,7 +192,7 @@
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="noOperatorEq" name="noOperatorEq" checked></td><td>1</td><td>noOperatorEq</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="passedByValue" name="passedByValue" checked></td><td>1</td><td>passedByValue</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>1</td><td>redundantAssignment</td></tr>
-           <tr><td></td><td>377</td><td>total</td></tr>
+           <tr><td></td><td>373</td><td>total</td></tr>
        </table>
        <p><a href="stats.html">Statistics</a></p>
     </div>
@@ -604,6 +603,7 @@
        <tr><td colspan="5"><a href="35.html">../../modules/optim/function.cpp</a></td></tr>
          <tr class="unreadVariable sev_style issue"><td><a href="35.html#line-61">61</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;golden_ratio&apos; is assigned a value that is never used.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="35.html#line-75">75</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_addition&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="35.html#line-91">91</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_subtraction&apos; is never used.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="35.html#line-106">106</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_scalar_multiply&apos; is never used.</td></tr>
          <tr class="useStlAlgorithm sev_style issue"><td><a href="35.html#line-111">111</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::transform algorithm instead of a raw loop.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="35.html#line-123">123</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;golden_section_search&apos; is never used.</td></tr>
@@ -625,16 +625,11 @@
          <tr class="unusedFunction sev_style issue"><td><a href="35.html#line-518">518</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;nelder_mead&apos; is never used.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="36.html">../../modules/optim/quasi.cpp</a></td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="36.html#line-58">58</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;bhhh_optimize&apos; is never used.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="36.html#line-145">145</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;bfgs_optimize&apos; is never used.</td></tr>
-         <tr class="unreadVariable sev_style issue"><td><a href="36.html#line-231">231</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;updated_point&apos; is assigned a value that is never used.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="36.html#line-323">323</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;lbfgs_optimize&apos; is never used.</td></tr>
-         <tr class="containerOutOfBounds sev_error issue"><td><a href="36.html#line-358">358</a></td><td>containerOutOfBounds</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>error</td><td class="error">Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero.</td></tr>
-         <tr class="containerOutOfBounds sev_error issue"><td><a href="36.html#line-359">359</a></td><td>containerOutOfBounds</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>error</td><td class="error">Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero.</td></tr>
-         <tr class="containerOutOfBounds sev_error issue"><td><a href="36.html#line-359">359</a></td><td>containerOutOfBounds</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>error</td><td class="error">Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero.</td></tr>
-         <tr class="containerOutOfBounds sev_error issue"><td><a href="36.html#line-361">361</a></td><td>containerOutOfBounds</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>error</td><td class="error">Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero.</td></tr>
-         <tr class="containerOutOfBounds sev_error issue"><td><a href="36.html#line-374">374</a></td><td>containerOutOfBounds</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>error</td><td class="error">Out of bounds access in expression &apos;rho[i]&apos; because &apos;rho&apos; is empty and &apos;i&apos; may be non-zero.</td></tr>
-         <tr class="containerOutOfBounds sev_error issue"><td><a href="36.html#line-376">376</a></td><td>containerOutOfBounds</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>error</td><td class="error">Out of bounds access in expression &apos;alpha[i]&apos; because &apos;alpha&apos; is empty and &apos;i&apos; may be non-zero.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="36.html#line-60">60</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;bhhh_optimize&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="36.html#line-147">147</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;bfgs_optimize&apos; is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="36.html#line-233">233</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;updated_point&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="36.html#line-328">328</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;lbfgs_optimize&apos; is never used.</td></tr>
+         <tr class="unsignedPositive sev_style issue"><td><a href="36.html#line-366">366</a></td><td>unsignedPositive</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Unsigned expression &apos;i&apos; can&apos;t be negative so it is unnecessary to test it.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="37.html">../../modules/stats/describe.cpp</a></td></tr>
          <tr class="useStlAlgorithm sev_style issue"><td><a href="37.html#line-42">42</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>

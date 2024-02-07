@@ -3,7 +3,7 @@ var searchData=
   ['l1_5fregularization_1571',['l1_regularization',['../classgpmp_1_1ml_1_1Regularize.html#a93f8e1bec01b067e2b997a512a0a9437',1,'gpmp::ml::Regularize']]],
   ['l2_5fregularization_1572',['l2_regularization',['../classgpmp_1_1ml_1_1Regularize.html#a24c3b724e5c0644cc2063fdfebb8d482',1,'gpmp::ml::Regularize']]],
   ['laplacian_1573',['laplacian',['../classgpmp_1_1NumericalAnalysis.html#a0e483917ddcbe3bfde4774d0d0e58f4b',1,'gpmp::NumericalAnalysis']]],
-  ['lbfgs_5foptimize_1574',['lbfgs_optimize',['../classgpmp_1_1optim_1_1QuasiNewton.html#a0567abafa21d82f797983b4ee5493ada',1,'gpmp::optim::QuasiNewton']]],
+  ['lbfgs_5foptimize_1574',['lbfgs_optimize',['../classgpmp_1_1optim_1_1QuasiNewton.html#aa5bbec93b56706e6b1006a0219608921',1,'gpmp::optim::QuasiNewton']]],
   ['lcg_1575',['LCG',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda',1,'gpmp::core::rndm::LCG::LCG()'],['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a926522ed8facffef474f78188a326f7c',1,'gpmp::core::rndm::LCG::LCG(uint64_t seed, uint64_t a=6364136223846793005ULL, uint64_t c=1442695040888963407ULL)']]],
   ['leaky_5frelu_1576',['leaky_relu',['../classgpmp_1_1ml_1_1Activation.html#aa2d4cd8e8c3171b328dc9efaf7ae5a96',1,'gpmp::ml::Activation']]],
   ['leaky_5frelu_5fderivative_1577',['leaky_relu_derivative',['../classgpmp_1_1ml_1_1Activation.html#abe34776de84434879494d9cb2b1787bc',1,'gpmp::ml::Activation']]],

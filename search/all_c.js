@@ -9,7 +9,7 @@ var searchData=
   ['layer_506',['layer',['../structgpmp_1_1ml_1_1layer.html',1,'gpmp::ml']]],
   ['layer_5fptr_507',['layer_ptr',['../classgpmp_1_1ml_1_1PrimaryMLP.html#a9276cf8ddc90b7fed199465e083ad270',1,'gpmp::ml::PrimaryMLP']]],
   ['layer_5funits_508',['layer_units',['../classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19',1,'gpmp::ml::SecondaryMLP']]],
-  ['lbfgs_5foptimize_509',['lbfgs_optimize',['../classgpmp_1_1optim_1_1QuasiNewton.html#a0567abafa21d82f797983b4ee5493ada',1,'gpmp::optim::QuasiNewton']]],
+  ['lbfgs_5foptimize_509',['lbfgs_optimize',['../classgpmp_1_1optim_1_1QuasiNewton.html#aa5bbec93b56706e6b1006a0219608921',1,'gpmp::optim::QuasiNewton']]],
   ['lcg_510',['LCG',['../classgpmp_1_1core_1_1rndm_1_1LCG.html',1,'gpmp::core::rndm::LCG'],['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a78ec290b48e853f91b02ae404f11edda',1,'gpmp::core::rndm::LCG::LCG()'],['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a926522ed8facffef474f78188a326f7c',1,'gpmp::core::rndm::LCG::LCG(uint64_t seed, uint64_t a=6364136223846793005ULL, uint64_t c=1442695040888963407ULL)']]],
   ['leaky_5frelu_511',['leaky_relu',['../classgpmp_1_1ml_1_1Activation.html#aa2d4cd8e8c3171b328dc9efaf7ae5a96',1,'gpmp::ml::Activation']]],
   ['leaky_5frelu_5fderivative_512',['leaky_relu_derivative',['../classgpmp_1_1ml_1_1Activation.html#abe34776de84434879494d9cb2b1787bc',1,'gpmp::ml::Activation']]],
