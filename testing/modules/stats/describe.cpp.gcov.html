@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-07 02:34:43</td>
+            <td class="headerValue">2024-02-07 03:27:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -106,12 +106,12 @@
 <a name="36"><span class="lineNum">      36 </span>            : #include &lt;vector&gt;</a>
 <a name="37"><span class="lineNum">      37 </span>            : </a>
 <a name="38"><span class="lineNum">      38 </span>            : // Arithmetic Mean</a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">         15 : double gpmp::stats::Describe::mean_arith(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="40"><span class="lineNum">      40 </span><span class="lineCov">         15 :     double sum = 0.0;</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">         71 :     for (const auto &amp;value : data) {</span></a>
-<a name="42"><span class="lineNum">      42 </span><span class="lineCov">         56 :         sum += value;</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">       1022 : double gpmp::stats::Describe::mean_arith(const std::vector&lt;double&gt; &amp;data) {</span></a>
+<a name="40"><span class="lineNum">      40 </span><span class="lineCov">       1022 :     double sum = 0.0;</span></a>
+<a name="41"><span class="lineNum">      41 </span><span class="lineCov">       6108 :     for (const auto &amp;value : data) {</span></a>
+<a name="42"><span class="lineNum">      42 </span><span class="lineCov">       5086 :         sum += value;</span></a>
 <a name="43"><span class="lineNum">      43 </span>            :     }</a>
-<a name="44"><span class="lineNum">      44 </span><span class="lineCov">         15 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="44"><span class="lineNum">      44 </span><span class="lineCov">       1022 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="45"><span class="lineNum">      45 </span>            : }</a>
 <a name="46"><span class="lineNum">      46 </span>            : </a>
 <a name="47"><span class="lineNum">      47 </span>            : // Geometric Mean</a>
@@ -238,23 +238,23 @@
 <a name="168"><span class="lineNum">     168 </span>            : }</a>
 <a name="169"><span class="lineNum">     169 </span>            : </a>
 <a name="170"><span class="lineNum">     170 </span>            : // Standard Deviation</a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineCov">          6 : double gpmp::stats::Describe::stdev(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">          7 : double gpmp::stats::Describe::stdev(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="172"><span class="lineNum">     172 </span>            :                                     double mean) {</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">          6 :     double sum = 0.0;</span></a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">         26 :     for (const auto &amp;value : data) {</span></a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         20 :         sum += std::pow(value - mean, 2.0);</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineCov">          7 :     double sum = 0.0;</span></a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">         32 :     for (const auto &amp;value : data) {</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">         25 :         sum += std::pow(value - mean, 2.0);</span></a>
 <a name="176"><span class="lineNum">     176 </span>            :     }</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">          6 :     return std::sqrt(sum / static_cast&lt;double&gt;(data.size()));</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">          7 :     return std::sqrt(sum / static_cast&lt;double&gt;(data.size()));</span></a>
 <a name="178"><span class="lineNum">     178 </span>            : }</a>
 <a name="179"><span class="lineNum">     179 </span>            : </a>
 <a name="180"><span class="lineNum">     180 </span>            : // variance</a>
-<a name="181"><span class="lineNum">     181 </span><span class="lineCov">          2 : double gpmp::stats::Describe::variance(const std::vector&lt;double&gt; &amp;data,</span></a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineCov">          3 : double gpmp::stats::Describe::variance(const std::vector&lt;double&gt; &amp;data,</span></a>
 <a name="182"><span class="lineNum">     182 </span>            :                                        double mean) {</a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineCov">          2 :     double sum = 0.0;</span></a>
-<a name="184"><span class="lineNum">     184 </span><span class="lineCov">          7 :     for (const auto &amp;value : data) {</span></a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">          5 :         sum += std::pow(value - mean, 2.0);</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">          3 :     double sum = 0.0;</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">         13 :     for (const auto &amp;value : data) {</span></a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         10 :         sum += std::pow(value - mean, 2.0);</span></a>
 <a name="186"><span class="lineNum">     186 </span>            :     }</a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          2 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineCov">          3 :     return sum / static_cast&lt;double&gt;(data.size());</span></a>
 <a name="188"><span class="lineNum">     188 </span>            : }</a>
 <a name="189"><span class="lineNum">     189 </span>            : </a>
 <a name="190"><span class="lineNum">     190 </span>            : // central limit theorem</a>
