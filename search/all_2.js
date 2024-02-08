@@ -1,7 +1,7 @@
 var searchData=
 [
   ['b_83',['B',['../namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1',1,'python.linalg.B()'],['../namespacetest__linalg.html#acc2cce380307df8bea003fc4363a89ef',1,'test_linalg.B()']]],
-  ['b_84',['b',['../classgpmp_1_1nt_1_1RC5.html#a55eda6e6f9b32298aa4ecde536e31d99',1,'gpmp::nt::RC5']]],
+  ['b_84',['b',['../classRC6.html#a603bc450c5a6ce6eed3f56f2253906a9',1,'RC6::b()'],['../classgpmp_1_1nt_1_1RC5.html#a55eda6e6f9b32298aa4ecde536e31d99',1,'gpmp::nt::RC5::b()']]],
   ['b0estimation_85',['b0Estimation',['../classgpmp_1_1ml_1_1Stats.html#adee918e13513f731e193d0c0c2c74e44',1,'gpmp::ml::Stats']]],
   ['b1estimation_86',['b1Estimation',['../classgpmp_1_1ml_1_1Stats.html#a84fb82c19d11fcd15abe20f84c2574a2',1,'gpmp::ml::Stats']]],
   ['b_5fint_87',['B_int',['../namespacepython_1_1linalg.html#aaa7cc8b99ff0b213ef32ac43755bf373',1,'python::linalg']]],

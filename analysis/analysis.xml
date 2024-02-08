@@ -206,13 +206,13 @@
             <location file="../../modules/linalg/mtx.cpp" line="959" column="23" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
             <symbol>B</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
@@ -423,6 +423,14 @@
             <location file="../../modules/nt/rc4.cpp" line="51" column="13" info="swapped is overwritten"/>
             <location file="../../modules/nt/rc4.cpp" line="50" column="21" info="swapped is initialized"/>
             <symbol>swapped</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;RC6&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;RC6&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/nt/rc6.cpp">
+            <location file="../../include/nt/rc6.hpp" line="50" column="5"/>
+            <symbol>RC6</symbol>
+        </error>
+        <error id="uninitvar" severity="error" msg="Uninitialized variable: block[j/4]" verbose="Uninitialized variable: block[j/4]" cwe="457" file0="../../modules/nt/rc6.cpp">
+            <location file="../../modules/nt/rc6.cpp" line="114" column="18"/>
+            <symbol>block[j/4]</symbol>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/optim/function.cpp">
             <location file="../../modules/optim/function.cpp" line="111" column="16"/>
