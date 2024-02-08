@@ -44,11 +44,14 @@ set(CPP_SOURCES
     ../modules/ml/trainers.cpp
     ../modules/nt/cipher.cpp
     ../modules/nt/rc4.cpp
+    ../modules/nt/rc5.cpp
+    ../modules/nt/rc6.cpp
     ../modules/nt/prime_test.cpp
     ../modules/nt/prime_gen.cpp
     ../modules/nt/factorization.cpp
     ../modules/nt/logarithms.cpp
     ../modules/nt/random.cpp
+    ../modules/nt/redpike.cpp
     ../modules/optim/function.cpp
     ../modules/optim/quasi.cpp
     ../modules/stats/describe.cpp

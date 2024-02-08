@@ -9,8 +9,10 @@ set(SOURCE_FILES
     logarithms.cpp
     prime_gen.cpp
     prime_test.cpp
+    redpike.cpp
     rc4.cpp
     rc5.cpp
+    rc6.cpp
     random.cpp
 )
 

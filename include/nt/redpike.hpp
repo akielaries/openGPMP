@@ -37,31 +37,65 @@
 #include <cstdint>
 
 namespace gpmp {
+
+namespace nt {
+
 /**
- * Red Pike encryption algorithm.
+ * @class RedPike
+ *
+ * @brief Class for encryption and decryption using the RedPike algorithm
  */
 class RedPike {
   public:
-    typedef uint32_t word;
-    constexpr word CONST = 0x9E3779B9;
-    constexpr int ROUNDS = 16;
+    /**
+     * @brief Encrypts the given data using the RedPike algorithm
+     *
+     * @param x Pointer to the data to be encrypted
+     * @param k Pointer to the key used for encryption
+     */
+    void encrypt(uint32_t *x, const uint32_t *k);
 
     /**
-     * Left rotate operation.
-     * @param X Value to rotate.
-     * @param R Number of bits to rotate by.
-     * @return Rotated value.
+     * @brief Decrypts the given data using the RedPike algorithm
+     *
+     * @param x Pointer to the data to be decrypted
+     * @param k Pointer to the key used for decryption
      */
-    word ROTL(word X, int R);
+    void decrypt(uint32_t *x, const uint32_t *k);
+
+  private:
+    /**
+     * @brief Constant value used in the RedPike algorithm
+     */
+    uint32_t CONST = 0x9E3779B9;
 
     /**
-     * Right rotate operation.
-     * @param X Value to rotate.
-     * @param R Number of bits to rotate by.
-     * @return Rotated value.
+     * @brief Number of rounds in the RedPike algorithm
      */
-    word ROTR(word X, int R);
+    int ROUNDS = 16;
+
+    /**
+     * @brief Performs left rotation on the given value
+     *
+     * @param X Value to be rotated
+     * @param R Number of bits to rotate left by
+     *
+     * @return Rotated value
+     */
+    uint32_t rotl(uint32_t X, int R);
+
+    /**
+     * @brief Performs right rotation on the given value
+     *
+     * @param X Value to be rotated
+     * @param R Number of bits to rotate right by
+     *
+     * @return Rotated value
+     */
+    uint32_t rotr(uint32_t X, int R);
 };
+
+} // namespace nt
 
 } // namespace gpmp
 
