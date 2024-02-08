@@ -10,6 +10,7 @@ set(SOURCE_FILES
     prime_gen.cpp
     prime_test.cpp
     rc4.cpp
+    rc5.cpp
     random.cpp
 )
 

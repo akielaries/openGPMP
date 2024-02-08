@@ -31,52 +31,60 @@
  *
  ************************************************************************/
 
-/*
- * definitions for derivative operations operations
+#ifndef RC5_HPP
+#define RC5_HPP
+
+#include <cstdint>
+#include <vector>
+
+namespace gpmp {
+
+namespace nt {
+
+/**
+ * @brief RC5 encryption and decryption class
  */
-
-#ifndef RC5_H
-#define RC5_H
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-// (2^8)-1, bitmask for a byte
-#define BITS 255
-#define BYTE_LIMIT 256
-
 class RC5 {
   public:
-    /* swaps two values using uint8_t type */
-    void byte_swap(uint8_t *a, uint8_t *b);
-    /* swaps two values in a traditional way using chars */
-    void trad_swap(unsigned char *a, unsigned char *b);
-    /* swaps two values using the XOR operator */
-    void XOR_swap(unsigned char *a, unsigned char *b);
-    /* Key Scheduling Algorithm */
-    void KSA(char *key, unsigned char *S, int swap_type);
-    /* Pseudo-Random Generation Algorithm */
-    void PRGA(unsigned char *S,
-              char *plaintext,
-              unsigned char *ciphertext,
-              int swap_type);
-    /* functoin to display our hashed text */
-    void display_hash(unsigned char *ciphertext);
-    /* compute our hash using the the RC4 encryption algorithm */
-    void compute(char *key,
-                 char *plaintext,
-                 unsigned char *ciphertext,
-                 int swap_type);
+    /**
+     * @brief Constructs an RC5 object
+     *
+     * @param rounds Number of rounds
+     * @param wordSize Size of the word in bits
+     * @param blockSize Size of the block in bytes
+     */
+    RC5(uint32_t rounds = 12, uint32_t wordSize = 32, uint32_t blockSize = 16);
 
-    uint32_t shift_left(uint32_t v, uint32_t n);
-    uint32_t shift_right(uint32_t v, uint32_t n);
-    uint32_t rotate_left(uint32_t v, uint32_t n);
-    uint32_t rotate_right(uint32_t v, uint32_t n);
-    void encrypt(uint32_t S[26], uint32_t inout[4]);
-    void decrypt(uint32_t S[26], uint32_t inout[4]);
-    void expand(uint32_t L[4], uint32_t S[26]);
-    int test(uint32_t S[26], uint32_t messg[4]);
+    /**
+     * @brief Encrypts the given block
+     *
+     * @param A First half of the block
+     * @param B Second half of the block
+     */
+    void encrypt(uint32_t &A, uint32_t &B);
+
+    /**
+     * @brief Decrypts the given block
+     *
+     * @param A First half of the block
+     * @param B Second half of the block
+     */
+    void decrypt(uint32_t &A, uint32_t &B);
+
+  private:
+    uint32_t rotl(uint32_t value, uint32_t shift);
+    uint32_t rotr(uint32_t value, uint32_t shift);
+    void init();
+
+    uint32_t w, r, b;
+    std::vector<uint32_t> S;
+
+    const uint32_t P = 0xB7E15163;
+    const uint32_t Q = 0x9E3779B9;
 };
+
+} // namespace nt
+
+} // namespace gpmp
 
 #endif

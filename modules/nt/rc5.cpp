@@ -31,33 +31,44 @@
  *
  ************************************************************************/
 
-#include "../../include/number_theory/rc5.hpp"
-#include <math.h>
-#include <stdint.h>
-#include <string.h>
+#include "../../include/nt/rc5.hpp"
+#include <cstdint>
 
-uint32_t shift_left(uint32_t v, uint32_t n) {
+gpmp::nt::RC5::RC5(uint32_t rounds, uint32_t wordSize, uint32_t blockSize)
+    : r(rounds), w(wordSize), b(blockSize) {
+    init();
 }
 
-uint32_t shift_right(uint32_t v, uint32_t n) {
+void gpmp::nt::RC5::init() {
+    S.resize(2 * r + 2);
+    S[0] = P;
+    for (uint32_t i = 1; i < 2 * r + 2; ++i) {
+        S[i] = S[i - 1] + Q;
+    }
 }
 
-uint32_t rotate_left(uint32_t v, uint32_t n) {
+void gpmp::nt::RC5::encrypt(uint32_t &A, uint32_t &B) {
+    A += S[0];
+    B += S[1];
+    for (uint32_t i = 1; i <= r; ++i) {
+        A = rotl((A ^ B), B) + S[2 * i];
+        B = rotl((B ^ A), A) + S[2 * i + 1];
+    }
 }
 
-uint32_t rotate_right(uint32_t v, uint32_t n) {
+void gpmp::nt::RC5::decrypt(uint32_t &A, uint32_t &B) {
+    for (uint32_t i = r; i > 0; --i) {
+        B = rotr(B - S[2 * i + 1], A) ^ A;
+        A = rotr(A - S[2 * i], B) ^ B;
+    }
+    B -= S[1];
+    A -= S[0];
 }
 
-void encrypt(uint32_t S[26], uint32_t inout[4]) {
+uint32_t gpmp::nt::RC5::rotl(uint32_t value, uint32_t shift) {
+    return (value << shift) | (value >> (w - shift));
 }
 
-void decrypt(uint32_t S[26], uint32_t inout[4]) {
-}
-
-// expand key into S array using magic numbers derived from e and phi
-void expand(uint32_t L[4], uint32_t S[26]) {
-}
-
-// decrypt of encrypt should be the same
-int test(uint32_t S[26], uint32_t messg[4]) {
+uint32_t gpmp::nt::RC5::rotr(uint32_t value, uint32_t shift) {
+    return (value >> shift) | (value << (w - shift));
 }
