@@ -18,7 +18,7 @@ var searchData=
   ['kohonen_5fnet_2ehpp_494',['kohonen_net.hpp',['../kohonen__net_8hpp.html',1,'']]],
   ['kohonennet_495',['KohonenNet',['../classgpmp_1_1ml_1_1KohonenNet.html',1,'gpmp::ml::KohonenNet'],['../classgpmp_1_1ml_1_1KohonenNet.html#a315c33771c73d8324c79284df64633b9',1,'gpmp::ml::KohonenNet::KohonenNet()']]],
   ['kruskal_496',['kruskal',['../classgpmp_1_1Graph.html#a1209753dd10b7089a40f87a79fcfb9f2',1,'gpmp::Graph']]],
-  ['ksa_497',['KSA',['../classgpmp_1_1RC4.html#afcf6b03562a56dc76392c966a80ad42b',1,'gpmp::RC4::KSA()'],['../classRC5.html#ab984d44b40653fcd0fcadb8b65f9764e',1,'RC5::KSA()'],['../classpygpmp_1_1nt_1_1nt_1_1RC4.html#a5af28c7fbaa29f4a0006cd28f67d7d7c',1,'pygpmp.nt.nt.RC4.KSA()']]],
+  ['ksa_497',['KSA',['../classgpmp_1_1RC4.html#afcf6b03562a56dc76392c966a80ad42b',1,'gpmp::RC4::KSA()'],['../classpygpmp_1_1nt_1_1nt_1_1RC4.html#a5af28c7fbaa29f4a0006cd28f67d7d7c',1,'pygpmp.nt.nt.RC4.KSA()']]],
   ['kunerth_498',['kunerth',['../classgpmp_1_1Squares.html#a61934f65e6fcdf1abe8e29a8ad5b50e8',1,'gpmp::Squares']]],
   ['kurtosis_499',['kurtosis',['../classgpmp_1_1stats_1_1Describe.html#a061291dc8f5789af6b89de6bb2bd96da',1,'gpmp::stats::Describe']]]
 ];

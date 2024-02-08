@@ -424,21 +424,6 @@
             <location file="../../modules/nt/rc4.cpp" line="50" column="21" info="swapped is initialized"/>
             <symbol>swapped</symbol>
         </error>
-        <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="../../modules/nt/rc5.cpp">
-            <location file="../../modules/nt/rc5.cpp" line="40" column="1"/>
-        </error>
-        <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="../../modules/nt/rc5.cpp">
-            <location file="../../modules/nt/rc5.cpp" line="43" column="1"/>
-        </error>
-        <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="../../modules/nt/rc5.cpp">
-            <location file="../../modules/nt/rc5.cpp" line="46" column="1"/>
-        </error>
-        <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="../../modules/nt/rc5.cpp">
-            <location file="../../modules/nt/rc5.cpp" line="49" column="1"/>
-        </error>
-        <error id="missingReturn" severity="error" msg="Found a exit path from function with non-void return type that has missing return statement" verbose="Found a exit path from function with non-void return type that has missing return statement" cwe="758" file0="../../modules/nt/rc5.cpp">
-            <location file="../../modules/nt/rc5.cpp" line="63" column="1"/>
-        </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/optim/function.cpp">
             <location file="../../modules/optim/function.cpp" line="111" column="16"/>
         </error>
@@ -735,7 +720,7 @@
             <symbol>decompress</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;decrypt&apos; is never used." verbose="The function &apos;decrypt&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="54" column="0"/>
+            <location file="../../modules/nt/rc5.cpp" line="59" column="0"/>
             <symbol>decrypt</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;design_discrete_system&apos; is never used." verbose="The function &apos;design_discrete_system&apos; is never used." cwe="561">
@@ -801,10 +786,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;exp_PDF&apos; is never used." verbose="The function &apos;exp_PDF&apos; is never used." cwe="561">
             <location file="../../modules/stats/probdist.cpp" line="147" column="0"/>
             <symbol>exp_PDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;expand&apos; is never used." verbose="The function &apos;expand&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="58" column="0"/>
-            <symbol>expand</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;feature_scaling&apos; is never used." verbose="The function &apos;feature_scaling&apos; is never used." cwe="561">
             <location file="../../modules/ml/logreg.cpp" line="117" column="0"/>
@@ -1250,14 +1231,6 @@
             <location file="../../modules/ml/activators.cpp" line="50" column="0"/>
             <symbol>relu_derivative</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;rotate_left&apos; is never used." verbose="The function &apos;rotate_left&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="45" column="0"/>
-            <symbol>rotate_left</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;rotate_right&apos; is never used." verbose="The function &apos;rotate_right&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="48" column="0"/>
-            <symbol>rotate_right</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;save&apos; is never used." verbose="The function &apos;save&apos; is never used." cwe="561">
             <location file="../../modules/ml/encoder.cpp" line="42" column="0"/>
             <symbol>save</symbol>
@@ -1301,14 +1274,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;set_random_state&apos; is never used." verbose="The function &apos;set_random_state&apos; is never used." cwe="561">
             <location file="../../modules/ml/svc.cpp" line="147" column="0"/>
             <symbol>set_random_state</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;shift_left&apos; is never used." verbose="The function &apos;shift_left&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="39" column="0"/>
-            <symbol>shift_left</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;shift_right&apos; is never used." verbose="The function &apos;shift_right&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="42" column="0"/>
-            <symbol>shift_right</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;show_data&apos; is never used." verbose="The function &apos;show_data&apos; is never used." cwe="561">
             <location file="../../modules/ml/linreg.cpp" line="336" column="0"/>
@@ -1401,10 +1366,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;ternary_search&apos; is never used." verbose="The function &apos;ternary_search&apos; is never used." cwe="561">
             <location file="../../modules/optim/function.cpp" line="332" column="0"/>
             <symbol>ternary_search</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;test&apos; is never used." verbose="The function &apos;test&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="62" column="0"/>
-            <symbol>test</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;topo_sort&apos; is never used." verbose="The function &apos;topo_sort&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="211" column="0"/>

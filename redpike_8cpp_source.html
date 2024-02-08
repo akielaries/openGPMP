@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> (X &gt;&gt; (R &amp; 31)) | (X &lt;&lt; (32 - (R &amp; 31)));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">gpmp::RedPike::encrypt</a>(<a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> *x,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> gpmp::RedPike::encrypt(<a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> *x,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            <span class="keyword">const</span> <a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> *k) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> rk0 = k[0];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> rk1 = k[1];</div>
@@ -151,13 +151,13 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    x[1] = rk0;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> <a class="code" href="modules_2nt_2rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e">gpmp::RedPike::decrypt</a>(<a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> *x,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> gpmp::RedPike::decrypt(<a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> *x,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                            <span class="keyword">const</span> <a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> *k) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classgpmp_1_1RedPike.html#a49ae86642f3bee1b8a894ea833936e54">gpmp::RedPike::word</a> dk[2] = {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        k[1] - <a class="code" href="classgpmp_1_1RedPike.html#ae47be75ccd2e912a02523c85663d0abc">gpmp::RedPike::CONST</a> * (<a class="code" href="classgpmp_1_1RedPike.html#a565aab083316691cc727cdebb77c9195">gpmp::RedPike::ROUNDS</a> + 1),</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        k[0] + <a class="code" href="classgpmp_1_1RedPike.html#ae47be75ccd2e912a02523c85663d0abc">gpmp::RedPike::CONST</a> * (<a class="code" href="classgpmp_1_1RedPike.html#a565aab083316691cc727cdebb77c9195">gpmp::RedPike::ROUNDS</a> + 1)};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">gpmp::RedPike::encrypt</a>(x, dk);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    gpmp::RedPike::encrypt(x, dk);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="redpike_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   82</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="redpike_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
@@ -165,7 +165,7 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    word plaintext[2] = {0x12345678, 0x9ABCDEF0};</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    word key[2] = {0xA0B1C2D3, 0xE4F50607};</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">encrypt</a>(plaintext, key);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    encrypt(plaintext, key);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
@@ -174,8 +174,6 @@ $(function() {
 <div class="ttc" id="aclassgpmp_1_1RedPike_html_a5bc91f405e0e52fd0af7228c206b4269"><div class="ttname"><a href="classgpmp_1_1RedPike.html#a5bc91f405e0e52fd0af7228c206b4269">gpmp::RedPike::ROTL</a></div><div class="ttdeci">word ROTL(word X, int R)</div><div class="ttdef"><b>Definition:</b> <a href="redpike_8cpp_source.html#l00042">redpike.cpp:42</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1RedPike_html_aa058fbe6482459004b8a06dfa44d54c7"><div class="ttname"><a href="classgpmp_1_1RedPike.html#aa058fbe6482459004b8a06dfa44d54c7">gpmp::RedPike::ROTR</a></div><div class="ttdeci">word ROTR(word X, int R)</div><div class="ttdef"><b>Definition:</b> <a href="redpike_8cpp_source.html#l00046">redpike.cpp:46</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1RedPike_html_ae47be75ccd2e912a02523c85663d0abc"><div class="ttname"><a href="classgpmp_1_1RedPike.html#ae47be75ccd2e912a02523c85663d0abc">gpmp::RedPike::CONST</a></div><div class="ttdeci">constexpr word CONST</div><div class="ttdef"><b>Definition:</b> <a href="redpike_8hpp_source.html#l00046">redpike.hpp:46</a></div></div>
-<div class="ttc" id="amodules_2nt_2rc5_8cpp_html_a563d7b68e1edbd96dfa6a5e4a555a878"><div class="ttname"><a href="modules_2nt_2rc5_8cpp.html#a563d7b68e1edbd96dfa6a5e4a555a878">encrypt</a></div><div class="ttdeci">void encrypt(uint32_t S[26], uint32_t inout[4])</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc5_8cpp_source.html#l00051">rc5.cpp:51</a></div></div>
-<div class="ttc" id="amodules_2nt_2rc5_8cpp_html_a7bcf59731a889a62cbed759a707a6c0e"><div class="ttname"><a href="modules_2nt_2rc5_8cpp.html#a7bcf59731a889a62cbed759a707a6c0e">decrypt</a></div><div class="ttdeci">void decrypt(uint32_t S[26], uint32_t inout[4])</div><div class="ttdef"><b>Definition:</b> <a href="modules_2nt_2rc5_8cpp_source.html#l00054">rc5.cpp:54</a></div></div>
 <div class="ttc" id="aredpike_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="redpike_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="redpike_8cpp_source.html#l00082">redpike.cpp:82</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
