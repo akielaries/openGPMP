@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">24</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-08 19:35:03</td>
+            <td class="headerValue">2024-02-09 02:16:27</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">16</td>
-            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry">20</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -116,6 +116,17 @@
 <a name="46"><span class="lineNum">      46 </span>            :     // apply low-pass filter with alpha &gt;= 1</a>
 <a name="47"><span class="lineNum">      47 </span><span class="lineCov">          1 :     EXPECT_THROW(sigProc.lpf(1.0), std::invalid_argument);</span></a>
 <a name="48"><span class="lineNum">      48 </span><span class="lineCov">          1 : }</span></a>
+<a name="49"><span class="lineNum">      49 </span>            : </a>
+<a name="50"><span class="lineNum">      50 </span><span class="lineCov">          4 : TEST_F(SigProcTest, ZTransformRealTest) {</span></a>
+<a name="51"><span class="lineNum">      51 </span><span class="lineCov">          1 :     gpmp::linalg::SigProc sigProc(testSignal1);</span></a>
+<a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 :     std::complex&lt;double&gt; z_real(2.0, 0.0); </span></a>
+<a name="53"><span class="lineNum">      53 </span>            :     //std::complex&lt;double&gt; expected_result(1.0 + 2.0/2.0 + 3.0/4.0 + 4.0/8.0 + 5.0/16.0, 0.0);</a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">          1 :     std::complex&lt;double&gt; expected_result(3.56, 0.0);</span></a>
+<a name="55"><span class="lineNum">      55 </span>            : </a>
+<a name="56"><span class="lineNum">      56 </span>            : </a>
+<a name="57"><span class="lineNum">      57 </span>            :     //EXPECT_EQ(sigProc.z_tform(z_real), expected_result);</a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          1 : }</span></a>
+<a name="59"><span class="lineNum">      59 </span>            : </a>
 </pre>
       </td>
     </tr>
