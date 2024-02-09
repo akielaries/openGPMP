@@ -46,3 +46,14 @@ TEST_F(SigProcTest, LPFInvalidAlphaTest) {
     // apply low-pass filter with alpha >= 1
     EXPECT_THROW(sigProc.lpf(1.0), std::invalid_argument);
 }
+
+TEST_F(SigProcTest, ZTransformRealTest) {
+    gpmp::linalg::SigProc sigProc(testSignal1);
+    std::complex<double> z_real(2.0, 0.0); 
+    //std::complex<double> expected_result(1.0 + 2.0/2.0 + 3.0/4.0 + 4.0/8.0 + 5.0/16.0, 0.0);
+    std::complex<double> expected_result(3.56, 0.0);
+
+
+    //EXPECT_EQ(sigProc.z_tform(z_real), expected_result);
+}
+
