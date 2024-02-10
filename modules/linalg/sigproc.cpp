@@ -60,34 +60,32 @@ std::vector<std::pair<int, double>> gpmp::linalg::sigproc::z_tform(
     return result;
 }
 
+// gaussian function
 double gpmp::linalg::sigproc::gaussian(double x, double mu, double sigma) {
     return exp(-(x - mu) * (x - mu) / (2 * sigma * sigma)) /
            (sigma * sqrt(2 * M_PI));
 }
 
-// Gaussian filter function
+// gaussian filter function
 std::vector<std::pair<int, double>> gpmp::linalg::sigproc::gaussian_filter(
     const std::vector<std::pair<int, double>> &signal,
     double sigma) {
     std::vector<std::pair<int, double>> filtered_signal;
 
-    // Iterate over each element in the signal
     for (size_t i = 0; i < signal.size(); ++i) {
         double filtered_value = 0.0;
         double sum_weights = 0.0;
 
-        // Compute weighted average of neighboring values
+        // calculate weighted avg of neighboring values in the signal
         for (size_t j = 0; j < signal.size(); ++j) {
             double distance = abs(signal[i].first - signal[j].first);
             double weight = gaussian(distance, 0, sigma);
             filtered_value += weight * signal[j].second;
             sum_weights += weight;
         }
-
-        // Normalize filtered value
+        // normalize filtered value
         filtered_value /= sum_weights;
-
-        // Add filtered value to filtered signal
+        // add filtered value to filtered signal
         filtered_signal.push_back({signal[i].first, filtered_value});
     }
 
