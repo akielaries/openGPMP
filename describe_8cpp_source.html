@@ -204,19 +204,19 @@ $(function() {
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// Average Absolute Deviation</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#adb77bdde13740c5c3657d0682669e8eb">  125</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#adb77bdde13740c5c3657d0682669e8eb">gpmp::stats::Describe::avg_abs_dev</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">double</span> mean = mean_arith(data);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> = mean_arith(data);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        sum += std::abs(value - mean);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        sum += std::abs(value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> sum / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(data.size());</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// Coefficient of Variation</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#ac975c7b90c03e9ca27fdc13300493997">  135</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#ac975c7b90c03e9ca27fdc13300493997">gpmp::stats::Describe::var_coeff</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">double</span> mean = mean_arith(data);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">double</span> stddev = stdev(data, mean);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> (stddev / mean) * 100.0; <span class="comment">// Multiply by 100 for percentage</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> = mean_arith(data);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">double</span> stddev = <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">stdev</a>(data, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> (stddev / <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) * 100.0; <span class="comment">// Multiply by 100 for percentage</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">// Interquartile Range</span></div>
@@ -250,20 +250,20 @@ $(function() {
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">// Standard Deviation</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">  171</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">gpmp::stats::Describe::stdev</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                    <span class="keywordtype">double</span> mean) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        sum += std::pow(value - mean, 2.0);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        sum += std::pow(value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>, 2.0);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> std::sqrt(sum / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(data.size()));</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">// variance</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">  181</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">gpmp::stats::Describe::variance</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                       <span class="keywordtype">double</span> mean) {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                       <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        sum += std::pow(value - mean, 2.0);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        sum += std::pow(value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>, 2.0);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> sum / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(data.size());</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
@@ -271,48 +271,48 @@ $(function() {
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">// central limit theorem</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a2af3928713cd069c8975216a394ed127">  191</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a2af3928713cd069c8975216a394ed127">gpmp::stats::Describe::clt</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                                  <span class="keywordtype">int</span> numSamples) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">double</span> mean = mean_arith(data);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">double</span> stddev = stdev(data, mean);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> = mean_arith(data);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">double</span> stddev = <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">stdev</a>(data, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> stddev / std::sqrt(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(numSamples));</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">// Kurtosis</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a061291dc8f5789af6b89de6bb2bd96da">  199</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a061291dc8f5789af6b89de6bb2bd96da">gpmp::stats::Describe::kurtosis</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                       <span class="keywordtype">double</span> mean) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                       <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        sum += std::pow(value - mean, 4.0);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        sum += std::pow(value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>, 4.0);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">double</span> var = variance(data, mean);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">double</span> var = variance(data, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">return</span> sum / (data.size() * std::pow(var, 2.0)) - 3.0;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">// l-moments (first two)</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a26e57203c3c3ff056f654bfdd0a27648">  210</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a26e57203c3c3ff056f654bfdd0a27648">gpmp::stats::Describe::lmoment1</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                       <span class="keywordtype">double</span> mean) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                       <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        sum += std::pow(value - mean, 3.0);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        sum += std::pow(value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>, 3.0);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> sum / data.size();</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a195b70c170daae1eba6b3a1916c43099">  219</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a195b70c170daae1eba6b3a1916c43099">gpmp::stats::Describe::lmoment2</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                       <span class="keywordtype">double</span> mean) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                       <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        sum += std::pow(value - mean, 4.0);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        sum += std::pow(value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>, 4.0);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">return</span> sum / data.size();</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">// skewness</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="classgpmp_1_1stats_1_1Describe.html#a91689c0276bbaf419dce41723e4284d6">  229</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1stats_1_1Describe.html#a91689c0276bbaf419dce41723e4284d6">gpmp::stats::Describe::skewness</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;data,</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                       <span class="keywordtype">double</span> mean,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                       <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>,</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                       <span class="keywordtype">double</span> stddev) {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;value : data) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        sum += std::pow((value - mean) / stddev, 3.0);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        sum += std::pow((value - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) / stddev, 3.0);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">return</span> sum / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(data.size());</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
@@ -426,6 +426,8 @@ $(function() {
 <div class="ttc" id="aclassgpmp_1_1stats_1_1Describe_html_ae7ab83727724ee697c50141fc068775a"><div class="ttname"><a href="classgpmp_1_1stats_1_1Describe.html#ae7ab83727724ee697c50141fc068775a">gpmp::stats::Describe::ppmc</a></div><div class="ttdeci">double ppmc(const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y)</div><div class="ttdoc">Calculates the Pearson Product-Moment Correlation between two variables.</div><div class="ttdef"><b>Definition:</b> <a href="describe_8cpp_source.html#l00268">describe.cpp:268</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1stats_1_1Describe_html_ae9fbdf499f7ecc3eefe157e95d649216"><div class="ttname"><a href="classgpmp_1_1stats_1_1Describe.html#ae9fbdf499f7ecc3eefe157e95d649216">gpmp::stats::Describe::range</a></div><div class="ttdeci">double range(const std::vector&lt; double &gt; &amp;data)</div><div class="ttdoc">Calculates the range of a given dataset.</div><div class="ttdef"><b>Definition:</b> <a href="describe_8cpp_source.html#l00165">describe.cpp:165</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1stats_1_1Describe_html_af9d4aabe91582751579a2d2423078d71"><div class="ttname"><a href="classgpmp_1_1stats_1_1Describe.html#af9d4aabe91582751579a2d2423078d71">gpmp::stats::Describe::mean_geo</a></div><div class="ttdeci">double mean_geo(const std::vector&lt; double &gt; &amp;data)</div><div class="ttdoc">Calculates the geometric mean of a given dataset.</div><div class="ttdef"><b>Definition:</b> <a href="describe_8cpp_source.html#l00048">describe.cpp:48</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_1_1sigproc_html_a5e37b9f5441bbd76edd08aa1966b5c36"><div class="ttname"><a href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">gpmp::linalg::sigproc::stdev</a></div><div class="ttdeci">double stdev() const</div><div class="ttdoc">Compute the standard deviation of the signal.</div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_1_1sigproc_html_ada17b46905f82061e8ffb41bd7282927"><div class="ttname"><a href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean</a></div><div class="ttdeci">double mean() const</div><div class="ttdoc">Constructor Initializes the SigProc object with a signal.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

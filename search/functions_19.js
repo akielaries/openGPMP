@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['z_5fadv_5ftform_1875',['z_adv_tform',['../classgpmp_1_1linalg_1_1SigProc.html#a4e079e1a21fe75d210e26f360ab4d004',1,'gpmp::linalg::SigProc']]],
-  ['z_5fmatched_5ftform_1876',['z_matched_tform',['../classgpmp_1_1linalg_1_1SigProc.html#a33a6d314477e359bb0b033971ec7c2f7',1,'gpmp::linalg::SigProc']]],
-  ['z_5ftform_1877',['z_tform',['../classgpmp_1_1linalg_1_1SigProc.html#ac33c4f5007e21049a7e64613560d4736',1,'gpmp::linalg::SigProc']]],
-  ['zak_5ftransform_1878',['zak_transform',['../classgpmp_1_1linalg_1_1SigProc.html#aabcfe15ac3ed29edb9f4ba184d37bb4a',1,'gpmp::linalg::SigProc']]],
-  ['zak_5ftransform_5fmodulation_1879',['zak_transform_modulation',['../classgpmp_1_1linalg_1_1SigProc.html#af8f9027636ad36ad4a1fcdf2344278ad',1,'gpmp::linalg::SigProc']]],
-  ['zero_5forder_5fhold_5fupsample_1880',['zero_order_hold_upsample',['../classgpmp_1_1linalg_1_1SigProc.html#a0d364435f7e8c0790881974991ccb55b',1,'gpmp::linalg::SigProc']]],
-  ['zeros_1881',['zeros',['../structgpmp_1_1linalg_1_1mtx.html#a138dacbb57aee11191bf92bbc2834871',1,'gpmp::linalg::mtx']]]
+  ['z_5fadv_5ftform_1885',['z_adv_tform',['../namespacegpmp_1_1linalg_1_1sigproc.html#a2d1234e645bcbd5779eba99432d866fd',1,'gpmp::linalg::sigproc']]],
+  ['z_5fmatched_5ftform_1886',['z_matched_tform',['../namespacegpmp_1_1linalg_1_1sigproc.html#acf8c048b7b17d43ff4f6351f9a5f0c3b',1,'gpmp::linalg::sigproc']]],
+  ['z_5ftform_1887',['z_tform',['../namespacegpmp_1_1linalg_1_1sigproc.html#a35d640a175dff3dabb98bf885a53e159',1,'gpmp::linalg::sigproc::z_tform(const std::map&lt; int, double &gt; &amp;signal)'],['../namespacegpmp_1_1linalg_1_1sigproc.html#a824a63969f3b46c76e08db46a33ca773',1,'gpmp::linalg::sigproc::z_tform(const std::vector&lt; std::pair&lt; int, double &gt;&gt; &amp;signal)']]],
+  ['zak_5ftransform_1888',['zak_transform',['../namespacegpmp_1_1linalg_1_1sigproc.html#a5aaff628487c833767386e0728d8c813',1,'gpmp::linalg::sigproc']]],
+  ['zak_5ftransform_5fmodulation_1889',['zak_transform_modulation',['../namespacegpmp_1_1linalg_1_1sigproc.html#a98af83578e4567d7280ff168e699d7e0',1,'gpmp::linalg::sigproc']]],
+  ['zero_5forder_5fhold_5fupsample_1890',['zero_order_hold_upsample',['../namespacegpmp_1_1linalg_1_1sigproc.html#aa651ce06d5d50e8b32bba0804fed5ad8',1,'gpmp::linalg::sigproc']]],
+  ['zeros_1891',['zeros',['../structgpmp_1_1linalg_1_1mtx.html#a138dacbb57aee11191bf92bbc2834871',1,'gpmp::linalg::mtx']]]
 ];

@@ -336,19 +336,19 @@ $(function() {
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        class_probs[label] += 1.0;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// initialize mean[label] and variance[label] if not present</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">if</span> (mean.find(label) == mean.end()) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            mean[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>.find(label) == <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>.end()) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            variance[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">// update mean</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            mean[label][j] += features[j];</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>[label][j] += features[j];</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// calculate mean</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : mean) {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordtype">double</span> class_count = class_probs[label];</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
@@ -363,7 +363,7 @@ $(function() {
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keyword">const</span> std::vector&lt;double&gt; &amp;features = data[i];</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            variance[label][j] += std::pow(features[j] - mean[label][j], 2);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            variance[label][j] += std::pow(features[j] - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>[label][j], 2);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
@@ -389,7 +389,7 @@ $(function() {
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; newData.size(); ++j) {</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            probability -=</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                0.5 * (std::log(2 * M_PI * variance.at(label).at(j)) +</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                       std::pow(newData[j] - mean.at(label).at(j), 2) /</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                       std::pow(newData[j] - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>.at(label).at(j), 2) /</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                           (2 * variance.at(label).at(j)));</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
@@ -409,7 +409,7 @@ $(function() {
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nMean and Variance:\n&quot;</span>;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;class_entry : mean) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;class_entry : <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) {</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        std::cout &lt;&lt; class_entry.first &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;  Mean: &quot;</span>;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; class_entry.second.size(); ++j) {</div>
@@ -557,6 +557,7 @@ $(function() {
 <div class="ttc" id="aclassgpmp_1_1ml_1_1BayesMultiNom_html_ad447313451d8f03f340bc62c652b66c7"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesMultiNom.html#ad447313451d8f03f340bc62c652b66c7">gpmp::ml::BayesMultiNom::~BayesMultiNom</a></div><div class="ttdeci">~BayesMultiNom()</div><div class="ttdoc">Destructor for BayesMultiNom class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00352">bayes_clf.cpp:352</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1BayesMultiNom_html_ae6648a8d46efb36b842eed31c1c66c25"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesMultiNom.html#ae6648a8d46efb36b842eed31c1c66c25">gpmp::ml::BayesMultiNom::display</a></div><div class="ttdeci">void display() const</div><div class="ttdoc">Display the learned probabilities.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00442">bayes_clf.cpp:442</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1BayesMultiNom_html_aea5e6d7bf2410fa729a99ee34999c6db"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesMultiNom.html#aea5e6d7bf2410fa729a99ee34999c6db">gpmp::ml::BayesMultiNom::BayesMultiNom</a></div><div class="ttdeci">BayesMultiNom(double alpha_param=1.0, bool fit_prior_param=true, const std::vector&lt; double &gt; &amp;class_prior={})</div><div class="ttdoc">Constructor for BayesMultiNom class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00345">bayes_clf.cpp:345</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_1_1sigproc_html_ada17b46905f82061e8ffb41bd7282927"><div class="ttname"><a href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean</a></div><div class="ttdeci">double mean() const</div><div class="ttdoc">Constructor Initializes the SigProc object with a signal.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

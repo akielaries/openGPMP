@@ -206,13 +206,13 @@
             <location file="../../modules/linalg/mtx.cpp" line="959" column="23" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
             <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
@@ -253,11 +253,11 @@
         <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
             <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
         </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/sigproc.cpp">
-            <location file="../../modules/linalg/sigproc.cpp" line="48" column="13"/>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/sigproc.og.cpp">
+            <location file="../../modules/linalg/sigproc.og.cpp" line="50" column="13"/>
         </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/sigproc.cpp">
-            <location file="../../modules/linalg/sigproc.cpp" line="81" column="15"/>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/sigproc.og.cpp">
+            <location file="../../modules/linalg/sigproc.og.cpp" line="83" column="15"/>
         </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/tensor.cpp">
             <location file="../../include/linalg/tensor.hpp" line="75" column="5"/>
@@ -551,18 +551,6 @@
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_add.c" line="4" column="0"/>
             <symbol>add_vec_gpu</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;apply_aliasing_filter&apos; is never used." verbose="The function &apos;apply_aliasing_filter&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="451" column="0"/>
-            <symbol>apply_aliasing_filter</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;apply_anti_aliasing_filter&apos; is never used." verbose="The function &apos;apply_anti_aliasing_filter&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="467" column="0"/>
-            <symbol>apply_anti_aliasing_filter</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;average_downsample&apos; is never used." verbose="The function &apos;average_downsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="527" column="0"/>
-            <symbol>average_downsample</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;avg_abs_dev&apos; is never used." verbose="The function &apos;avg_abs_dev&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="125" column="0"/>
             <symbol>avg_abs_dev</symbol>
@@ -574,6 +562,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;bellman_ford&apos; is never used." verbose="The function &apos;bellman_ford&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="118" column="0"/>
             <symbol>bellman_ford</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;bessel_lpf&apos; is never used." verbose="The function &apos;bessel_lpf&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/sigproc.cpp" line="192" column="0"/>
+            <symbol>bessel_lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;best_fit&apos; is never used." verbose="The function &apos;best_fit&apos; is never used." cwe="561">
             <location file="../../modules/ml/linreg.cpp" line="110" column="0"/>
@@ -595,18 +587,6 @@
             <location file="../../modules/optim/quasi.cpp" line="60" column="0"/>
             <symbol>bhhh_optimize</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bilinear_adv_tform&apos; is never used." verbose="The function &apos;bilinear_adv_tform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="136" column="0"/>
-            <symbol>bilinear_adv_tform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bilinear_matched_tform&apos; is never used." verbose="The function &apos;bilinear_matched_tform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="149" column="0"/>
-            <symbol>bilinear_matched_tform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bilinear_tform&apos; is never used." verbose="The function &apos;bilinear_tform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="124" column="0"/>
-            <symbol>bilinear_tform</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;binary_step&apos; is never used." verbose="The function &apos;binary_step&apos; is never used." cwe="561">
             <location file="../../modules/ml/activators.cpp" line="85" column="0"/>
             <symbol>binary_step</symbol>
@@ -614,6 +594,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;bisection_method&apos; is never used." verbose="The function &apos;bisection_method&apos; is never used." cwe="561">
             <location file="../../modules/optim/function.cpp" line="363" column="0"/>
             <symbol>bisection_method</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;butterworth_lpf&apos; is never used." verbose="The function &apos;butterworth_lpf&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/sigproc.cpp" line="97" column="0"/>
+            <symbol>butterworth_lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;caesar&apos; is never used." verbose="The function &apos;caesar&apos; is never used." cwe="561">
             <location file="../../modules/nt/cipher.cpp" line="46" column="0"/>
@@ -626,6 +610,10 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;chain_rule&apos; is never used." verbose="The function &apos;chain_rule&apos; is never used." cwe="561">
             <location file="../../modules/calculus/differential.cpp" line="81" column="0"/>
             <symbol>chain_rule</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;chebyshev_lpf&apos; is never used." verbose="The function &apos;chebyshev_lpf&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/sigproc.cpp" line="140" column="0"/>
+            <symbol>chebyshev_lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;chromatic_number&apos; is never used." verbose="The function &apos;chromatic_number&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="469" column="0"/>
@@ -647,49 +635,9 @@
             <location file="../../modules/nt/rc4.cpp" line="142" column="0"/>
             <symbol>compute</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_constant_q_transform&apos; is never used." verbose="The function &apos;compute_constant_q_transform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="169" column="0"/>
-            <symbol>compute_constant_q_transform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_dct&apos; is never used." verbose="The function &apos;compute_dct&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="195" column="0"/>
-            <symbol>compute_dct</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_dtft_magnitude_spectrum&apos; is never used." verbose="The function &apos;compute_dtft_magnitude_spectrum&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="315" column="0"/>
-            <symbol>compute_dtft_magnitude_spectrum</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_dtft_phase_spectrum&apos; is never used." verbose="The function &apos;compute_dtft_phase_spectrum&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="327" column="0"/>
-            <symbol>compute_dtft_phase_spectrum</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_inverse_constant_q_transform&apos; is never used." verbose="The function &apos;compute_inverse_constant_q_transform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="182" column="0"/>
-            <symbol>compute_inverse_constant_q_transform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_inverse_dct&apos; is never used." verbose="The function &apos;compute_inverse_dct&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="214" column="0"/>
-            <symbol>compute_inverse_dct</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_inverse_dft&apos; is never used." verbose="The function &apos;compute_inverse_dft&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="247" column="0"/>
-            <symbol>compute_inverse_dft</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_inverse_dtft&apos; is never used." verbose="The function &apos;compute_inverse_dtft&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="300" column="0"/>
-            <symbol>compute_inverse_dtft</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_magnitude_spectrum&apos; is never used." verbose="The function &apos;compute_magnitude_spectrum&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="263" column="0"/>
-            <symbol>compute_magnitude_spectrum</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;compute_miller_rabin&apos; is never used." verbose="The function &apos;compute_miller_rabin&apos; is never used." cwe="561">
             <location file="../../modules/nt/prime_test.cpp" line="121" column="0"/>
             <symbol>compute_miller_rabin</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_phase_spectrum&apos; is never used." verbose="The function &apos;compute_phase_spectrum&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="274" column="0"/>
-            <symbol>compute_phase_spectrum</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;connected_components&apos; is never used." verbose="The function &apos;connected_components&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="256" column="0"/>
@@ -719,10 +667,6 @@
             <location file="../../modules/core/datatable.cpp" line="149" column="0"/>
             <symbol>datetime</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;decimate&apos; is never used." verbose="The function &apos;decimate&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="508" column="0"/>
-            <symbol>decimate</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;decompress&apos; is never used." verbose="The function &apos;decompress&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="721" column="0"/>
             <symbol>decompress</symbol>
@@ -730,10 +674,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;decrypt&apos; is never used." verbose="The function &apos;decrypt&apos; is never used." cwe="561">
             <location file="../../modules/nt/rc5.cpp" line="59" column="0"/>
             <symbol>decrypt</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;design_discrete_system&apos; is never used." verbose="The function &apos;design_discrete_system&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="339" column="0"/>
-            <symbol>design_discrete_system</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;dfs&apos; is never used." verbose="The function &apos;dfs&apos; is never used." cwe="561">
             <location file="../../modules/disct/graphs.cpp" line="51" column="0"/>
@@ -815,6 +755,10 @@
             <location file="../../modules/linalg/linsys.cpp" line="337" column="0"/>
             <symbol>frobenius_norm</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;gaussian_filter&apos; is never used." verbose="The function &apos;gaussian_filter&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/sigproc.cpp" line="69" column="0"/>
+            <symbol>gaussian_filter</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;gelu&apos; is never used." verbose="The function &apos;gelu&apos; is never used." cwe="561">
             <location file="../../modules/ml/activators.cpp" line="107" column="0"/>
             <symbol>gelu</symbol>
@@ -822,10 +766,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;gelu_derivative&apos; is never used." verbose="The function &apos;gelu_derivative&apos; is never used." cwe="561">
             <location file="../../modules/ml/activators.cpp" line="112" column="0"/>
             <symbol>gelu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;generate_aliased_sinusoid&apos; is never used." verbose="The function &apos;generate_aliased_sinusoid&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="493" column="0"/>
-            <symbol>generate_aliased_sinusoid</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;getLeftSingularVectors&apos; is never used." verbose="The function &apos;getLeftSingularVectors&apos; is never used." cwe="561">
             <location file="../../modules/linalg/svd.cpp" line="52" column="0"/>
@@ -854,10 +794,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;get_seed&apos; is never used." verbose="The function &apos;get_seed&apos; is never used." cwe="561">
             <location file="../../modules/nt/random.cpp" line="80" column="0"/>
             <symbol>get_seed</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;get_sig&apos; is never used." verbose="The function &apos;get_sig&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="85" column="0"/>
-            <symbol>get_sig</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;golden_section_search&apos; is never used." verbose="The function &apos;golden_section_search&apos; is never used." cwe="561">
             <location file="../../modules/optim/function.cpp" line="123" column="0"/>
@@ -899,10 +835,6 @@
             <location file="../../modules/disct/graphs.cpp" line="369" column="0"/>
             <symbol>has_hamiltonian_circuit</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;impulse_invariance_transform&apos; is never used." verbose="The function &apos;impulse_invariance_transform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="358" column="0"/>
-            <symbol>impulse_invariance_transform</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;inf_norm&apos; is never used." verbose="The function &apos;inf_norm&apos; is never used." cwe="561">
             <location file="../../modules/linalg/linsys.cpp" line="361" column="0"/>
             <symbol>inf_norm</symbol>
@@ -910,14 +842,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;inverse_emp_CDF&apos; is never used." verbose="The function &apos;inverse_emp_CDF&apos; is never used." cwe="561">
             <location file="../../modules/stats/probdist.cpp" line="183" column="0"/>
             <symbol>inverse_emp_CDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;inverse_zak_transform&apos; is never used." verbose="The function &apos;inverse_zak_transform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="398" column="0"/>
-            <symbol>inverse_zak_transform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;inverse_zak_transform_modulation&apos; is never used." verbose="The function &apos;inverse_zak_transform_modulation&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="432" column="0"/>
-            <symbol>inverse_zak_transform_modulation</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;invert_mtx&apos; is never used." verbose="The function &apos;invert_mtx&apos; is never used." cwe="561">
             <location file="../../modules/linalg/linsys.cpp" line="136" column="0"/>
@@ -991,14 +915,6 @@
             <location file="../../modules/optim/function.cpp" line="140" column="0"/>
             <symbol>linear_interpolation</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;linear_interpolation_downsample&apos; is never used." verbose="The function &apos;linear_interpolation_downsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="595" column="0"/>
-            <symbol>linear_interpolation_downsample</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;linear_interpolation_upsample&apos; is never used." verbose="The function &apos;linear_interpolation_upsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="666" column="0"/>
-            <symbol>linear_interpolation_upsample</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;lmoment1&apos; is never used." verbose="The function &apos;lmoment1&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="210" column="0"/>
             <symbol>lmoment1</symbol>
@@ -1010,10 +926,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;load&apos; is never used." verbose="The function &apos;load&apos; is never used." cwe="561">
             <location file="../../modules/ml/encoder.cpp" line="60" column="0"/>
             <symbol>load</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;lpf&apos; is never used." verbose="The function &apos;lpf&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="65" column="0"/>
-            <symbol>lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;lrate_set&apos; is never used." verbose="The function &apos;lrate_set&apos; is never used." cwe="561">
             <location file="../../modules/ml/encoder.cpp" line="78" column="0"/>
@@ -1043,10 +955,6 @@
             <location file="../../modules/ml/regularizers.cpp" line="104" column="0"/>
             <symbol>max_norm_regularization</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;max_pool_downsample&apos; is never used." verbose="The function &apos;max_pool_downsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="555" column="0"/>
-            <symbol>max_pool_downsample</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mean_cubic&apos; is never used." verbose="The function &apos;mean_cubic&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="57" column="0"/>
             <symbol>mean_cubic</symbol>
@@ -1074,10 +982,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;mean_lehmer&apos; is never used." verbose="The function &apos;mean_lehmer&apos; is never used." cwe="561">
             <location file="../../modules/stats/describe.cpp" line="104" column="0"/>
             <symbol>mean_lehmer</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;median_downsample&apos; is never used." verbose="The function &apos;median_downsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="622" column="0"/>
-            <symbol>median_downsample</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;median_uniased&apos; is never used." verbose="The function &apos;median_uniased&apos; is never used." cwe="561">
             <location file="../../modules/stats/probdist.cpp" line="232" column="0"/>
@@ -1131,10 +1035,6 @@
             <location file="../../modules/stats/probdist.cpp" line="223" column="0"/>
             <symbol>mumv</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;nearest_neighbor_upsample&apos; is never used." verbose="The function &apos;nearest_neighbor_upsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="647" column="0"/>
-            <symbol>nearest_neighbor_upsample</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;nelder_mead&apos; is never used." verbose="The function &apos;nelder_mead&apos; is never used." cwe="561">
             <location file="../../modules/optim/function.cpp" line="518" column="0"/>
             <symbol>nelder_mead</symbol>
@@ -1150,10 +1050,6 @@
         <error id="unusedFunction" severity="style" msg="The function &apos;normal_PDF&apos; is never used." verbose="The function &apos;normal_PDF&apos; is never used." cwe="561">
             <location file="../../modules/stats/probdist.cpp" line="124" column="0"/>
             <symbol>normal_PDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;normalize&apos; is never used." verbose="The function &apos;normalize&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="76" column="0"/>
-            <symbol>normalize</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;nth_derivative&apos; is never used." verbose="The function &apos;nth_derivative&apos; is never used." cwe="561">
             <location file="../../modules/calculus/differential.cpp" line="105" column="0"/>
@@ -1363,10 +1259,6 @@
             <location file="../../modules/core/datatable.cpp" line="349" column="0"/>
             <symbol>str_to_int</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;strided_downsample&apos; is never used." verbose="The function &apos;strided_downsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="577" column="0"/>
-            <symbol>strided_downsample</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;tanh_derivative&apos; is never used." verbose="The function &apos;tanh_derivative&apos; is never used." cwe="561">
             <location file="../../modules/ml/activators.cpp" line="93" column="0"/>
             <symbol>tanh_derivative</symbol>
@@ -1407,29 +1299,9 @@
             <location file="../../modules/ml/regularizers.cpp" line="119" column="0"/>
             <symbol>weight_decay_regularization</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;z_adv_tform&apos; is never used." verbose="The function &apos;z_adv_tform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="99" column="0"/>
-            <symbol>z_adv_tform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;z_matched_tform&apos; is never used." verbose="The function &apos;z_matched_tform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="108" column="0"/>
-            <symbol>z_matched_tform</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;z_tform&apos; is never used." verbose="The function &apos;z_tform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="90" column="0"/>
+            <location file="../../modules/linalg/sigproc.cpp" line="43" column="0"/>
             <symbol>z_tform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;zak_transform&apos; is never used." verbose="The function &apos;zak_transform&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="383" column="0"/>
-            <symbol>zak_transform</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;zak_transform_modulation&apos; is never used." verbose="The function &apos;zak_transform_modulation&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="413" column="0"/>
-            <symbol>zak_transform_modulation</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;zero_order_hold_upsample&apos; is never used." verbose="The function &apos;zero_order_hold_upsample&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="692" column="0"/>
-            <symbol>zero_order_hold_upsample</symbol>
         </error>
         <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
     </errors>
