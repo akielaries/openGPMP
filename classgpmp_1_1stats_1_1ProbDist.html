@@ -271,20 +271,19 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordtype">size_t</span> n = data.size();</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="classgpmp_1_1stats_1_1Describe.html">gpmp::stats::Describe</a> desc;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">mean_arith</a>(data);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">double</span> stddev = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">stdev</a>(data, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordtype">double</span> mean = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">mean_arith</a>(data);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">double</span> stddev = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">stdev</a>(data, mean);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// Assuming a normal distribution for simplicity</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">double</span> z = <a class="code" href="classgpmp_1_1stats_1_1ProbDist.html#aad547ef1050e3c03994d2b9e18f3a36c">quantile_dist</a>(1 - alpha / 2.0);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">double</span> margin = z * stddev / std::sqrt(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(n));</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> {<a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> - margin, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> + margin};</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">return</span> {mean - margin, mean + margin};</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1stats_1_1Describe_html_a18ae66803fa90845b48ebcad7465dba1"><div class="ttname"><a href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">gpmp::stats::Describe::stdev</a></div><div class="ttdeci">double stdev(const std::vector&lt; double &gt; &amp;data, double mean)</div><div class="ttdoc">Calculates the standard deviation of a given dataset, given the mean.</div><div class="ttdef"><b>Definition:</b> <a href="describe_8cpp_source.html#l00171">describe.cpp:171</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1stats_1_1ProbDist_html_aad547ef1050e3c03994d2b9e18f3a36c"><div class="ttname"><a href="classgpmp_1_1stats_1_1ProbDist.html#aad547ef1050e3c03994d2b9e18f3a36c">gpmp::stats::ProbDist::quantile_dist</a></div><div class="ttdeci">double quantile_dist(double probability)</div><div class="ttdoc">Compute the quantile of the standard normal distribution.</div><div class="ttdef"><b>Definition:</b> <a href="probdist_8cpp_source.html#l00113">probdist.cpp:113</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_1_1sigproc_html_ada17b46905f82061e8ffb41bd7282927"><div class="ttname"><a href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean</a></div><div class="ttdeci">double mean() const</div><div class="ttdoc">Constructor Initializes the SigProc object with a signal.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean()</a>, <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">gpmp::stats::Describe::mean_arith()</a>, and <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">gpmp::stats::Describe::stdev()</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">gpmp::stats::Describe::mean_arith()</a>, and <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">gpmp::stats::Describe::stdev()</a>.</p>
 
 </div>
 </div>
@@ -758,14 +757,14 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="classgpmp_1_1stats_1_1Describe.html">gpmp::stats::Describe</a> desc;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">mean_arith</a>(data);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">double</span> variance = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">variance</a>(data, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">double</span> mean = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">mean_arith</a>(data);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">double</span> variance = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">variance</a>(data, mean);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> - variance / 2.0;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> mean - variance / 2.0;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1stats_1_1Describe_html_a35e6f64d1ae1aa40070f8a51b932b038"><div class="ttname"><a href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">gpmp::stats::Describe::variance</a></div><div class="ttdeci">double variance(const std::vector&lt; double &gt; &amp;data, double mean)</div><div class="ttdoc">Calculates the variance of a given dataset, given the mean.</div><div class="ttdef"><b>Definition:</b> <a href="describe_8cpp_source.html#l00181">describe.cpp:181</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean()</a>, <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">gpmp::stats::Describe::mean_arith()</a>, and <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">gpmp::stats::Describe::variance()</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">gpmp::stats::Describe::mean_arith()</a>, and <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a35e6f64d1ae1aa40070f8a51b932b038">gpmp::stats::Describe::variance()</a>.</p>
 
 </div>
 </div>
@@ -854,11 +853,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Implement the cumulative distribution function (CDF) for the normal</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// distribution You can use standard libraries or existing implementations</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// for this calculation Example using C++ standard library:</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> 0.5 * (1.0 + std::erf((x - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) / (stddev * std::sqrt(2.0))));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> 0.5 * (1.0 + std::erf((x - mean) / (stddev * std::sqrt(2.0))));</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean()</a>.</p>
-
 </div>
 </div>
 <a id="a5089dc110fdfc0b31305eaa34206c05e"></a>
@@ -909,12 +906,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// Implement the probability density function (PDF) for the normal</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// distribution You can use standard libraries or existing implementations</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// for this calculation Example using C++ standard library:</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">double</span> exponent = -0.5 * std::pow((x - <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>) / stddev, 2.0);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">double</span> exponent = -0.5 * std::pow((x - mean) / stddev, 2.0);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> (1.0 / (stddev * std::sqrt(2.0 * M_PI))) * std::exp(exponent);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean()</a>.</p>
-
 </div>
 </div>
 <a id="a95e3211948983d14ff53d028c89b4aa0"></a>
@@ -994,13 +989,13 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">size_t</span> n = data.size();</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="classgpmp_1_1stats_1_1Describe.html">gpmp::stats::Describe</a> desc;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">mean_arith</a>(data);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">double</span> stddev = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">stdev</a>(data, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a>);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">double</span> mean = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">mean_arith</a>(data);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">double</span> stddev = desc.<a class="code" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">stdev</a>(data, mean);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> + 2 * stddev / std::sqrt(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(n));</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> mean + 2 * stddev / std::sqrt(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(n));</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean()</a>, <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">gpmp::stats::Describe::mean_arith()</a>, and <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">gpmp::stats::Describe::stdev()</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a57efbb8ed2e1dfd2f4b576cfab9ac6b8">gpmp::stats::Describe::mean_arith()</a>, and <a class="el" href="classgpmp_1_1stats_1_1Describe.html#a18ae66803fa90845b48ebcad7465dba1">gpmp::stats::Describe::stdev()</a>.</p>
 
 </div>
 </div>

@@ -206,13 +206,13 @@
             <location file="../../modules/linalg/mtx.cpp" line="959" column="23" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
             <symbol>B</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
             <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
@@ -252,12 +252,6 @@
         </error>
         <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
             <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/sigproc.og.cpp">
-            <location file="../../modules/linalg/sigproc.og.cpp" line="50" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/sigproc.og.cpp">
-            <location file="../../modules/linalg/sigproc.og.cpp" line="83" column="15"/>
         </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/tensor.cpp">
             <location file="../../include/linalg/tensor.hpp" line="75" column="5"/>
@@ -564,7 +558,7 @@
             <symbol>bellman_ford</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;bessel_lpf&apos; is never used." verbose="The function &apos;bessel_lpf&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="192" column="0"/>
+            <location file="../../modules/linalg/sigproc.cpp" line="190" column="0"/>
             <symbol>bessel_lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;best_fit&apos; is never used." verbose="The function &apos;best_fit&apos; is never used." cwe="561">
@@ -596,7 +590,7 @@
             <symbol>bisection_method</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;butterworth_lpf&apos; is never used." verbose="The function &apos;butterworth_lpf&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="97" column="0"/>
+            <location file="../../modules/linalg/sigproc.cpp" line="95" column="0"/>
             <symbol>butterworth_lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;caesar&apos; is never used." verbose="The function &apos;caesar&apos; is never used." cwe="561">
@@ -612,7 +606,7 @@
             <symbol>chain_rule</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;chebyshev_lpf&apos; is never used." verbose="The function &apos;chebyshev_lpf&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="140" column="0"/>
+            <location file="../../modules/linalg/sigproc.cpp" line="138" column="0"/>
             <symbol>chebyshev_lpf</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;chromatic_number&apos; is never used." verbose="The function &apos;chromatic_number&apos; is never used." cwe="561">
@@ -756,7 +750,7 @@
             <symbol>frobenius_norm</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;gaussian_filter&apos; is never used." verbose="The function &apos;gaussian_filter&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sigproc.cpp" line="69" column="0"/>
+            <location file="../../modules/linalg/sigproc.cpp" line="70" column="0"/>
             <symbol>gaussian_filter</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;gelu&apos; is never used." verbose="The function &apos;gelu&apos; is never used." cwe="561">

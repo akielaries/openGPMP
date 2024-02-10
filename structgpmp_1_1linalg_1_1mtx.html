@@ -256,8 +256,8 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        std::random_device rd{};</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        std::mt19937 gen{rd()};</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        T n(MTX.num_elements);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        T <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">stdev</a>{1 / sqrt(n)};</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        std::normal_distribution&lt;T&gt; d{0, <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">stdev</a>};</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        T stdev{1 / sqrt(n)};</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        std::normal_distribution&lt;T&gt; d{0, stdev};</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> r = 0; r &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++r) {</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="keywordflow">for</span> (uint64_t c = 0; c &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++c) {</div>
@@ -266,9 +266,8 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        }</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">return</span> MTX;</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    }</div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_1_1sigproc_html_a5e37b9f5441bbd76edd08aa1966b5c36"><div class="ttname"><a href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">gpmp::linalg::sigproc::stdev</a></div><div class="ttdeci">double stdev() const</div><div class="ttdoc">Compute the standard deviation of the signal.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg::cols</a>, <a class="el" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg::rows</a>, and <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#a5e37b9f5441bbd76edd08aa1966b5c36">gpmp::linalg::sigproc::stdev()</a>.</p>
+<p class="reference">References <a class="el" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg::cols</a>, and <a class="el" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg::rows</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aba78214d223f0c87dd488b6a8772ff9c">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 

@@ -24,8 +24,8 @@ var searchData=
   ['analysis_2ehpp_65',['analysis.hpp',['../analysis_8hpp.html',1,'']]],
   ['apis_66',['APIs',['../md_docs_source_APIs.html',1,'']]],
   ['apis_2emd_67',['APIs.md',['../APIs_8md.html',1,'']]],
-  ['apply_5faliasing_5ffilter_68',['apply_aliasing_filter',['../namespacegpmp_1_1linalg_1_1sigproc.html#a4523ea1dc0b1f73699508533b4d1f8db',1,'gpmp::linalg::sigproc']]],
-  ['apply_5fanti_5faliasing_5ffilter_69',['apply_anti_aliasing_filter',['../namespacegpmp_1_1linalg_1_1sigproc.html#abe79329529a224d0a5af2824cb55d889',1,'gpmp::linalg::sigproc']]],
+  ['apply_5faliasing_5ffilter_68',['apply_aliasing_filter',['../namespacegpmp_1_1linalg_1_1sigproc.html#af2f4e75e67e5115dc4b478b893b82040',1,'gpmp::linalg::sigproc']]],
+  ['apply_5fanti_5faliasing_5ffilter_69',['apply_anti_aliasing_filter',['../namespacegpmp_1_1linalg_1_1sigproc.html#a26d444b3e8877f540c139734d65e2163',1,'gpmp::linalg::sigproc']]],
   ['apply_5ffunc_70',['apply_func',['../classgpmp_1_1linalg_1_1Matrix.html#aec4479803f2aa834c70e104d28a4dffd',1,'gpmp::linalg::Matrix']]],
   ['applyhouseholder_71',['applyHouseholder',['../classgpmp_1_1linalg_1_1SVD.html#aab689ccb91456f24ee99c316712c252d',1,'gpmp::linalg::SVD']]],
   ['arith_72',['Arith',['../classgpmp_1_1Arith.html',1,'gpmp']]],
@@ -37,6 +37,6 @@ var searchData=
   ['arr_5fmlt_78',['arr_mlt',['../classgpmp_1_1Arith.html#ab46786cb479bcd7e9ee6cd684473323d',1,'gpmp::Arith']]],
   ['arr_5fsub_79',['arr_sub',['../classgpmp_1_1Arith.html#a62f566efb43bfac691fc958f409b7615',1,'gpmp::Arith']]],
   ['autoencoder_80',['AutoEncoder',['../classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab',1,'gpmp::ml::AutoEncoder::AutoEncoder()'],['../classgpmp_1_1ml_1_1AutoEncoder.html',1,'gpmp::ml::AutoEncoder']]],
-  ['average_5fdownsample_81',['average_downsample',['../namespacegpmp_1_1linalg_1_1sigproc.html#afaea574b856c1584c4bb057ec843ed76',1,'gpmp::linalg::sigproc']]],
+  ['average_5fdownsample_81',['average_downsample',['../namespacegpmp_1_1linalg_1_1sigproc.html#a17a842389173e598be1f6d73dce79c4c',1,'gpmp::linalg::sigproc']]],
   ['avg_5fabs_5fdev_82',['avg_abs_dev',['../classgpmp_1_1stats_1_1Describe.html#adb77bdde13740c5c3657d0682669e8eb',1,'gpmp::stats::Describe']]]
 ];

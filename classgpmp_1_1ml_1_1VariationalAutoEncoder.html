@@ -444,13 +444,10 @@ Public Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00484">484</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                                                                             {</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keywordtype">double</span> standard_normal_sample = <a class="code" href="classgpmp_1_1ml_1_1VariationalAutoEncoder.html#a31610cb9f5e3f82d4f048872f684a9d6">sample_dist</a>();</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">mean</a> + exp(0.5 * log_variance) * standard_normal_sample;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordflow">return</span> mean + exp(0.5 * log_variance) * standard_normal_sample;</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1VariationalAutoEncoder_html_a31610cb9f5e3f82d4f048872f684a9d6"><div class="ttname"><a href="classgpmp_1_1ml_1_1VariationalAutoEncoder.html#a31610cb9f5e3f82d4f048872f684a9d6">gpmp::ml::VariationalAutoEncoder::sample_dist</a></div><div class="ttdeci">double sample_dist()</div><div class="ttdoc">Samples from a standard normal distribution.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00478">encoder.cpp:478</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_1_1sigproc_html_ada17b46905f82061e8ffb41bd7282927"><div class="ttname"><a href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean</a></div><div class="ttdeci">double mean() const</div><div class="ttdoc">Constructor Initializes the SigProc object with a signal.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacegpmp_1_1linalg_1_1sigproc.html#ada17b46905f82061e8ffb41bd7282927">gpmp::linalg::sigproc::mean()</a>.</p>
-
 </div>
 </div>
 <a id="a31610cb9f5e3f82d4f048872f684a9d6"></a>
