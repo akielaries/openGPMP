@@ -45,33 +45,57 @@ namespace gpmp {
 namespace linalg {
 
 namespace sigproc {
+// class SigProc {
+// public:
 
+// signal to work with
+// std::vector<double> signal_;
+
+// input signal
+// std::vector<std::pair<int, double>> INPUT_SIGNAL;
+
+/**
+ * @brief Constructor
+ * Initializes the SigProc object with a signal
+ * @param signal The input signal
+ */
+// explicit SigProc(const std::vector<double> &signal);
+
+/**
+ * @brief Compute the mean value of the signal
+ * @return The mean value
+ */
+double mean() const;
+
+/**
+ * @brief Compute the standard deviation of the signal
+ * @return The standard deviation
+ */
+double stdev() const;
+
+/**
+ * @brief Apply a simple low-pass filter to the signal
+ * @param alpha Filter coefficient (0 < alpha < 1)
+ */
+void lpf(double alpha);
+
+/**
+ * @brief Normalize the signal to have zero mean and unit variance
+ */
+void normalize();
+
+/**
+ * @brief Get the processed signal
+ * @return The processed signal
+ */
+std::vector<double> get_sig() const;
+
+/**
+ * @brief Compute the Z-transform of the signal
+ * @param z Complex number representing the Z-transform variable
+ * @return The Z-transform of the signal
+ */
 std::map<int, double> z_tform(const std::map<int, double> &signal);
-
-double gaussian(double x, double mu, double sigma);
-
-std::vector<std::pair<int, double>>
-gaussian_filter(const std::vector<std::pair<int, double>> &signal,
-                double sigma);
-
-std::vector<std::pair<int, double>>
-butterworth_lpf(const std::vector<std::pair<int, double>> &signal,
-                double cutoff_frequency,
-                double sampling_frequency,
-                int order);
-
-std::vector<std::pair<int, double>>
-chebyshev_lpf(const std::vector<std::pair<int, double>> &signal,
-              double cutoff_frequency,
-              double sampling_frequency,
-              int order,
-              double ripple);
-
-std::vector<std::pair<int, double>>
-bessel_lpf(const std::vector<std::pair<int, double>> &signal,
-           double cutoff_frequency,
-           double sampling_frequency,
-           int order);
 
 std::vector<std::pair<int, double>>
 z_tform(const std::vector<std::pair<int, double>> &signal);
@@ -82,7 +106,8 @@ z_tform(const std::vector<std::pair<int, double>> &signal);
  * @param delay Delay parameter for the Advanced Z-transform
  * @return The Advanced Z-transform of the signal
  */
-std::complex<double> z_adv_tform(const std::complex<double> &z, int delay);
+std::complex<double> z_adv_tform(const std::complex<double> &z,
+                                 int delay) const;
 
 /**
  * @brief Compute the Matched Z-transform of the signal
@@ -92,14 +117,14 @@ std::complex<double> z_adv_tform(const std::complex<double> &z, int delay);
  */
 std::complex<double>
 z_matched_tform(const std::complex<double> &z,
-                const std::vector<double> &referenceSignal);
+                const std::vector<double> &referenceSignal) const;
 
 /**
  * @brief Compute the Bilinear Transform of the signal
  * @param Ts Sampling period
  * @return The Bilinear Transform of the signal
  */
-std::vector<double> bilinear_tform(double Ts);
+std::vector<double> bilinear_tform(double Ts) const;
 
 /**
  * @brief Compute the Advanced Bilinear Transform of the signal
@@ -107,7 +132,7 @@ std::vector<double> bilinear_tform(double Ts);
  * @param delay Delay parameter for the Advanced Bilinear Transform
  * @return The Advanced Bilinear Transform of the signal
  */
-std::vector<double> bilinear_adv_tform(double Ts, int delay);
+std::vector<double> bilinear_adv_tform(double Ts, int delay) const;
 
 /**
  * @brief Compute the Matched Bilinear Transform of the signal
@@ -117,7 +142,8 @@ std::vector<double> bilinear_adv_tform(double Ts, int delay);
  * @return The Matched Bilinear Transform of the signal
  */
 std::vector<double>
-bilinear_matched_tform(double Ts, const std::vector<double> &referenceSignal);
+bilinear_matched_tform(double Ts,
+                       const std::vector<double> &referenceSignal) const;
 
 /**
  * @brief Compute the constant-Q transform of the signal
@@ -125,7 +151,7 @@ bilinear_matched_tform(double Ts, const std::vector<double> &referenceSignal);
  * @param Ts Sampling period
  * @return The constant-Q transform of the signal
  */
-std::vector<double> compute_constant_q_transform(double Q, double Ts);
+std::vector<double> compute_constant_q_transform(double Q, double Ts) const;
 
 /**
  * @brief Compute the inverse constant-Q transform of the signal
@@ -133,46 +159,47 @@ std::vector<double> compute_constant_q_transform(double Q, double Ts);
  * @param Ts Sampling period
  * @return The inverse constant-Q transform of the signal
  */
-std::vector<double> compute_inverse_constant_q_transform(double Q, double Ts);
+std::vector<double> compute_inverse_constant_q_transform(double Q,
+                                                         double Ts) const;
 
 /**
  * @brief Compute the Discrete Cosine Transform (DCT) of the signal
  * @param M Number of coefficients (non-negative integer)
  * @return The DCT of the signal
  */
-std::vector<double> compute_dct(size_t M);
+std::vector<double> compute_dct(size_t M) const;
 
 /**
  * @brief Compute the Inverse Discrete Cosine Transform (IDCT) of the signal
  * @param M Number of coefficients (non-negative integer)
  * @return The IDCT of the signal
  */
-std::vector<double> compute_inverse_dct(size_t M);
+std::vector<double> compute_inverse_dct(size_t M) const;
 
 /**
  * @brief Compute the Discrete Fourier Transform (DFT) of the signal
  * @return The DFT of the signal
  */
-std::vector<std::complex<double>> compute_dft();
+std::vector<std::complex<double>> compute_dft() const;
 
 /**
  * @brief Compute the Inverse Discrete Fourier Transform (IDFT) of the
  * signal
  * @return The IDFT of the signal
  */
-std::vector<double> compute_inverse_dft();
+std::vector<double> compute_inverse_dft() const;
 
 /**
  * @brief Compute the magnitude spectrum of the signal
  * @return The magnitude spectrum
  */
-std::vector<double> compute_magnitude_spectrum();
+std::vector<double> compute_magnitude_spectrum() const;
 
 /**
  * @brief Compute the phase spectrum of the signal
  * @return The phase spectrum
  */
-std::vector<double> compute_phase_spectrum();
+std::vector<double> compute_phase_spectrum() const;
 
 /**
  * @brief Compute the Discrete-time Fourier Transform (DTFT) of the signal
@@ -180,7 +207,7 @@ std::vector<double> compute_phase_spectrum();
  * @return The DTFT of the signal at the specified frequencies
  */
 std::vector<std::complex<double>>
-compute_dtft(const std::vector<double> &omega);
+compute_dtft(const std::vector<double> &omega) const;
 
 /**
  * @brief Compute the Inverse Discrete-time Fourier Transform (IDTFT) of the
@@ -188,7 +215,8 @@ compute_dtft(const std::vector<double> &omega);
  * @param omega Frequency values at which to compute the IDTFT
  * @return The IDTFT of the signal at the specified frequencies
  */
-std::vector<double> compute_inverse_dtft(const std::vector<double> &omega);
+std::vector<double>
+compute_inverse_dtft(const std::vector<double> &omega) const;
 
 /**
  * @brief Compute the magnitude spectrum of the DTFT of the signal
@@ -196,7 +224,7 @@ std::vector<double> compute_inverse_dtft(const std::vector<double> &omega);
  * @return The magnitude spectrum of the DTFT
  */
 std::vector<double>
-compute_dtft_magnitude_spectrum(const std::vector<double> &omega);
+compute_dtft_magnitude_spectrum(const std::vector<double> &omega) const;
 
 /**
  * @brief Compute the phase spectrum of the DTFT of the signal
@@ -204,7 +232,7 @@ compute_dtft_magnitude_spectrum(const std::vector<double> &omega);
  * @return The phase spectrum of the DTFT
  */
 std::vector<double>
-compute_dtft_phase_spectrum(const std::vector<double> &omega);
+compute_dtft_phase_spectrum(const std::vector<double> &omega) const;
 
 /**
  * @brief Design a discrete-time system using the impulse invariance method

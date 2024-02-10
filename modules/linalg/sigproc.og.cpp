@@ -40,7 +40,75 @@
 #include <utility>
 #include <vector>
 
-std::vector<std::pair<int, double>> gpmp::linalg::sigproc::z_tform(
+gpmp::linalg::SigProc::SigProc(const std::vector<double> &signal)
+    : signal_(signal) {
+}
+
+double gpmp::linalg::SigProc::mean() const {
+    double sum = 0.0;
+    for (const auto &value : signal_) {
+        sum += value;
+    }
+    return sum / static_cast<double>(signal_.size());
+}
+
+double gpmp::linalg::SigProc::stdev() const {
+    double mn = mean();
+    double sumSquaredDiff = 0.0;
+
+    for (const auto &value : signal_) {
+        double diff = value - mn;
+        sumSquaredDiff += diff * diff;
+    }
+
+    return std::sqrt(sumSquaredDiff / static_cast<double>(signal_.size()));
+}
+
+void gpmp::linalg::SigProc::lpf(double alpha) {
+    if (alpha <= 0.0 || alpha >= 1.0) {
+        throw std::invalid_argument(
+            "Error: Alpha must be in the range (0, 1).");
+    }
+
+    for (size_t i = 1; i < signal_.size(); ++i) {
+        signal_[i] = alpha * signal_[i] + (1 - alpha) * signal_[i - 1];
+    }
+}
+
+void gpmp::linalg::SigProc::normalize() {
+    double mn = mean();
+    double stdDev = stdev();
+
+    for (auto &value : signal_) {
+        value = (value - mn) / stdDev;
+    }
+}
+
+std::vector<double> gpmp::linalg::SigProc::get_sig() const {
+    return signal_;
+}
+
+std::map<int, double>
+gpmp::linalg::SigProc::z_tform(const std::map<int, double> &signal) {
+    std::map<int, double> result;
+
+    for (const auto &entry : signal) {
+        int index = entry.first;
+
+        // exponent, negate this for meeting formula requirement
+        int exp = index * (-1);
+
+        // coeffecient
+        double coeff = entry.second;
+
+        // populate result map
+        result.insert({exp, coeff});
+    }
+
+    return result;
+}
+
+std::vector<std::pair<int, double>> gpmp::linalg::SigProc::z_tform(
     const std::vector<std::pair<int, double>> &signal) {
     std::vector<std::pair<int, double>> result;
 
@@ -60,185 +128,8 @@ std::vector<std::pair<int, double>> gpmp::linalg::sigproc::z_tform(
     return result;
 }
 
-double gpmp::linalg::sigproc::gaussian(double x, double mu, double sigma) {
-    return exp(-(x - mu) * (x - mu) / (2 * sigma * sigma)) /
-           (sigma * sqrt(2 * M_PI));
-}
-
-// Gaussian filter function
-std::vector<std::pair<int, double>> gpmp::linalg::sigproc::gaussian_filter(
-    const std::vector<std::pair<int, double>> &signal,
-    double sigma) {
-    std::vector<std::pair<int, double>> filtered_signal;
-
-    // Iterate over each element in the signal
-    for (size_t i = 0; i < signal.size(); ++i) {
-        double filtered_value = 0.0;
-        double sum_weights = 0.0;
-
-        // Compute weighted average of neighboring values
-        for (size_t j = 0; j < signal.size(); ++j) {
-            double distance = abs(signal[i].first - signal[j].first);
-            double weight = gaussian(distance, 0, sigma);
-            filtered_value += weight * signal[j].second;
-            sum_weights += weight;
-        }
-
-        // Normalize filtered value
-        filtered_value /= sum_weights;
-
-        // Add filtered value to filtered signal
-        filtered_signal.push_back({signal[i].first, filtered_value});
-    }
-
-    return filtered_signal;
-}
-
-std::vector<std::pair<int, double>> gpmp::linalg::sigproc::butterworth_lpf(
-    const std::vector<std::pair<int, double>> &signal,
-    double cutoff_frequency,
-    double sampling_frequency,
-    int order) {
-    // Calculate the normalized cutoff frequency
-    double omega_c = 2.0 * M_PI * cutoff_frequency / sampling_frequency;
-
-    // Calculate the poles of the Butterworth filter
-    std::vector<std::complex<double>> poles;
-    for (int k = 0; k < order; ++k) {
-        double real_part = -sin((2 * k + 1) * M_PI / (2 * order));
-        double imag_part = cos((2 * k + 1) * M_PI / (2 * order));
-        poles.push_back(std::complex<double>(real_part, imag_part));
-    }
-
-    // Filter the signal using the Butterworth filter
-    std::vector<std::pair<int, double>> filtered_signal;
-    for (size_t i = 0; i < signal.size(); ++i) {
-        double t = signal[i].first;  // Time index
-        double x = signal[i].second; // Signal value
-
-        // Compute the filtered value at time t
-        double filtered_value = 0.0;
-        for (const auto &pole : poles) {
-            std::complex<double> z(cos(omega_c), sin(omega_c));
-            std::complex<double> num = 1.0;
-            std::complex<double> denom = z - pole;
-            for (int j = 1; j < order; ++j) {
-                num *= z;
-                denom *= (z - poles[j]);
-            }
-            filtered_value += std::real(num / denom);
-        }
-        filtered_value *= x;
-
-        // Add the filtered value to the filtered signal
-        filtered_signal.push_back({t, filtered_value});
-    }
-
-    return filtered_signal;
-}
-
-std::vector<std::pair<int, double>> gpmp::linalg::sigproc::chebyshev_lpf(
-    const std::vector<std::pair<int, double>> &signal,
-    double cutoff_frequency,
-    double sampling_frequency,
-    int order,
-    double ripple) {
-
-    // Calculate the normalized cutoff frequency
-    double omega_c = 2.0 * M_PI * cutoff_frequency / sampling_frequency;
-
-    // Calculate the ripple factor (epsilon)
-    double epsilon = sqrt(pow(10, ripple / 10) - 1);
-
-    // Calculate the poles of the Chebyshev filter
-    std::vector<std::complex<double>> poles;
-    for (int k = 0; k < order; ++k) {
-        double real_part = -sinh(asinh(1 / epsilon) / order) *
-                           sin((2 * k + 1) * M_PI / (2 * order));
-        double imag_part = cosh(asinh(1 / epsilon) / order) *
-                           cos((2 * k + 1) * M_PI / (2 * order));
-        poles.push_back(std::complex<double>(real_part, imag_part));
-    }
-
-    // Filter the signal using the Chebyshev filter
-    std::vector<std::pair<int, double>> filtered_signal;
-    for (size_t i = 0; i < signal.size(); ++i) {
-        double t = signal[i].first;  // Time index
-        double x = signal[i].second; // Signal value
-
-        // Compute the filtered value at time t
-        double filtered_value = 0.0;
-        for (const auto &pole : poles) {
-            std::complex<double> z(cos(omega_c), sin(omega_c));
-            std::complex<double> num = 1.0;
-            std::complex<double> denom = z - pole;
-            for (int j = 0; j < order; ++j) {
-                if (j != i) {
-                    num *= z;
-                    denom *= (z - poles[j]);
-                }
-            }
-            filtered_value += std::real(num / denom);
-        }
-        filtered_value *= x;
-
-        // Add the filtered value to the filtered signal
-        filtered_signal.push_back({t, filtered_value});
-    }
-
-    return filtered_signal;
-}
-
-std::vector<std::pair<int, double>> gpmp::linalg::sigproc::bessel_lpf(
-    const std::vector<std::pair<int, double>> &signal,
-    double cutoff_frequency,
-    double sampling_frequency,
-    int order) {
-    // Calculate the normalized cutoff frequency
-    double omega_c = 2.0 * M_PI * cutoff_frequency / sampling_frequency;
-
-    // Calculate the poles of the Bessel filter
-    std::vector<std::complex<double>> poles;
-    for (int k = 1; k <= order; ++k) {
-        double real_part =
-            -sin(M_PI * (2 * k + 1) / (2 * order)) * sinh(log(2) / (2 * order));
-        double imag_part =
-            cos(M_PI * (2 * k + 1) / (2 * order)) * cosh(log(2) / (2 * order));
-        poles.push_back(std::complex<double>(real_part, imag_part));
-    }
-
-    // Filter the signal using the Bessel filter
-    std::vector<std::pair<int, double>> filtered_signal;
-    for (size_t i = 0; i < signal.size(); ++i) {
-        double t = signal[i].first;  // Time index
-        double x = signal[i].second; // Signal value
-
-        // Compute the filtered value at time t
-        double filtered_value = 0.0;
-        for (const auto &pole : poles) {
-            std::complex<double> z(cos(omega_c), sin(omega_c));
-            std::complex<double> num = 1.0;
-            std::complex<double> denom = z - pole;
-            for (const auto &p : poles) {
-                if (p != pole) {
-                    num *= (z - p);
-                    denom *= (pole - p);
-                }
-            }
-            filtered_value += std::real(num / denom);
-        }
-        filtered_value *= x;
-
-        // Add the filtered value to the filtered signal
-        filtered_signal.push_back({t, filtered_value});
-    }
-
-    return filtered_signal;
-}
-
-/*
 std::complex<double>
-gpmp::linalg::sigproc::z_adv_tform(const std::complex<double> &z,
+gpmp::linalg::SigProc::z_adv_tform(const std::complex<double> &z,
                                    int delay) const {
     std::complex<double> result = 0.0;
     for (size_t n = 0; n < signal_.size(); ++n) {
@@ -247,7 +138,7 @@ gpmp::linalg::sigproc::z_adv_tform(const std::complex<double> &z,
     return result;
 }
 
-std::complex<double> gpmp::linalg::sigproc::z_matched_tform(
+std::complex<double> gpmp::linalg::SigProc::z_matched_tform(
     const std::complex<double> &z,
     const std::vector<double> &referenceSignal) const {
     if (signal_.size() != referenceSignal.size()) {
@@ -263,7 +154,7 @@ std::complex<double> gpmp::linalg::sigproc::z_matched_tform(
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::bilinear_tform(double Ts) const {
+std::vector<double> gpmp::linalg::SigProc::bilinear_tform(double Ts) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
 
@@ -275,7 +166,7 @@ std::vector<double> gpmp::linalg::sigproc::bilinear_tform(double Ts) const {
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::bilinear_adv_tform(double Ts,
+std::vector<double> gpmp::linalg::SigProc::bilinear_adv_tform(double Ts,
                                                               int delay) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
@@ -288,7 +179,7 @@ std::vector<double> gpmp::linalg::sigproc::bilinear_adv_tform(double Ts,
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::bilinear_matched_tform(
+std::vector<double> gpmp::linalg::SigProc::bilinear_matched_tform(
     double Ts,
     const std::vector<double> &referenceSignal) const {
     if (signal_.size() != referenceSignal.size()) {
@@ -308,7 +199,7 @@ std::vector<double> gpmp::linalg::sigproc::bilinear_matched_tform(
 }
 
 std::vector<double>
-gpmp::linalg::sigproc::compute_constant_q_transform(double Q, double Ts) const {
+gpmp::linalg::SigProc::compute_constant_q_transform(double Q, double Ts) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
 
@@ -321,7 +212,7 @@ gpmp::linalg::sigproc::compute_constant_q_transform(double Q, double Ts) const {
 }
 
 std::vector<double>
-gpmp::linalg::sigproc::compute_inverse_constant_q_transform(double Q,
+gpmp::linalg::SigProc::compute_inverse_constant_q_transform(double Q,
                                                             double Ts) const {
     size_t N = signal_.size();
     std::vector<double> result(N);
@@ -334,7 +225,7 @@ gpmp::linalg::sigproc::compute_inverse_constant_q_transform(double Q,
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_dct(size_t M) const {
+std::vector<double> gpmp::linalg::SigProc::compute_dct(size_t M) const {
     size_t N = signal_.size();
     std::vector<double> result(M, 0.0);
 
@@ -353,7 +244,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_dct(size_t M) const {
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_inverse_dct(size_t M) const {
+std::vector<double> gpmp::linalg::SigProc::compute_inverse_dct(size_t M) const {
     size_t N = signal_.size();
     std::vector<double> result(N, 0.0);
 
@@ -372,7 +263,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_inverse_dct(size_t M) const {
     return result;
 }
 
-std::vector<std::complex<double>> gpmp::linalg::sigproc::compute_dft() const {
+std::vector<std::complex<double>> gpmp::linalg::SigProc::compute_dft() const {
     size_t N = signal_.size();
     std::vector<std::complex<double>> result(N, 0.0);
 
@@ -386,7 +277,7 @@ std::vector<std::complex<double>> gpmp::linalg::sigproc::compute_dft() const {
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_inverse_dft() const {
+std::vector<double> gpmp::linalg::SigProc::compute_inverse_dft() const {
     size_t N = signal_.size();
     std::vector<double> result(N, 0.0);
 
@@ -402,7 +293,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_inverse_dft() const {
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_magnitude_spectrum() const {
+std::vector<double> gpmp::linalg::SigProc::compute_magnitude_spectrum() const {
     auto dft_result = compute_dft();
     std::vector<double> magnitude_spectrum(dft_result.size(), 0.0);
 
@@ -413,7 +304,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_magnitude_spectrum() const {
     return magnitude_spectrum;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_phase_spectrum() const {
+std::vector<double> gpmp::linalg::SigProc::compute_phase_spectrum() const {
     auto dft_result = compute_dft();
     std::vector<double> phase_spectrum(dft_result.size(), 0.0);
 
@@ -425,7 +316,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_phase_spectrum() const {
 }
 
 std::vector<std::complex<double>>
-gpmp::linalg::sigproc::compute_dtft(const std::vector<double> &omega) const {
+gpmp::linalg::SigProc::compute_dtft(const std::vector<double> &omega) const {
     size_t N = signal_.size();
     std::vector<std::complex<double>> result(omega.size(), 0.0);
 
@@ -439,7 +330,7 @@ gpmp::linalg::sigproc::compute_dtft(const std::vector<double> &omega) const {
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_inverse_dtft(
+std::vector<double> gpmp::linalg::SigProc::compute_inverse_dtft(
     const std::vector<double> &omega) const {
     size_t N = signal_.size();
     std::vector<double> result(omega.size(), 0.0);
@@ -454,7 +345,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_inverse_dtft(
     return result;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_dtft_magnitude_spectrum(
+std::vector<double> gpmp::linalg::SigProc::compute_dtft_magnitude_spectrum(
     const std::vector<double> &omega) const {
     auto dtft_result = compute_dtft(omega);
     std::vector<double> magnitude_spectrum(dtft_result.size(), 0.0);
@@ -466,7 +357,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_dtft_magnitude_spectrum(
     return magnitude_spectrum;
 }
 
-std::vector<double> gpmp::linalg::sigproc::compute_dtft_phase_spectrum(
+std::vector<double> gpmp::linalg::SigProc::compute_dtft_phase_spectrum(
     const std::vector<double> &omega) const {
     auto dtft_result = compute_dtft(omega);
     std::vector<double> phase_spectrum(dtft_result.size(), 0.0);
@@ -478,7 +369,7 @@ std::vector<double> gpmp::linalg::sigproc::compute_dtft_phase_spectrum(
     return phase_spectrum;
 }
 
-std::vector<double> gpmp::linalg::sigproc::design_discrete_system(
+std::vector<double> gpmp::linalg::SigProc::design_discrete_system(
     const std::vector<double> &analog_system_coefficients,
     double sampling_rate) {
     // Design a discrete-time system using impulse invariance method
@@ -497,7 +388,7 @@ std::vector<double> gpmp::linalg::sigproc::design_discrete_system(
     return discrete_system_coefficients;
 }
 
-std::vector<double> gpmp::linalg::sigproc::impulse_invariance_transform(
+std::vector<double> gpmp::linalg::SigProc::impulse_invariance_transform(
     const std::vector<double> &analog_signal,
     double analog_sampling_rate,
     double discrete_sampling_rate) {
@@ -522,7 +413,7 @@ std::vector<double> gpmp::linalg::sigproc::impulse_invariance_transform(
     return discrete_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::zak_transform(
+std::vector<double> gpmp::linalg::SigProc::zak_transform(
     const std::vector<double> &time_domain_signal,
     double frequency,
     double period) {
@@ -537,7 +428,7 @@ std::vector<double> gpmp::linalg::sigproc::zak_transform(
     return zak_domain_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::inverse_zak_transform(
+std::vector<double> gpmp::linalg::SigProc::inverse_zak_transform(
     const std::vector<double> &zak_domain_signal,
     double frequency,
     double period) {
@@ -552,7 +443,7 @@ std::vector<double> gpmp::linalg::sigproc::inverse_zak_transform(
     return time_domain_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::zak_transform_modulation(
+std::vector<double> gpmp::linalg::SigProc::zak_transform_modulation(
     const std::vector<double> &time_domain_signal,
     double frequency,
     double period,
@@ -571,7 +462,7 @@ std::vector<double> gpmp::linalg::sigproc::zak_transform_modulation(
     return zak_domain_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::inverse_zak_transform_modulation(
+std::vector<double> gpmp::linalg::SigProc::inverse_zak_transform_modulation(
     const std::vector<double> &zak_domain_signal,
     double frequency,
     double period,
@@ -590,7 +481,7 @@ std::vector<double> gpmp::linalg::sigproc::inverse_zak_transform_modulation(
     return time_domain_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::apply_aliasing_filter(
+std::vector<double> gpmp::linalg::SigProc::apply_aliasing_filter(
     const std::vector<double> &input_signal,
     double sampling_rate,
     double aliasing_frequency) {
@@ -606,7 +497,7 @@ std::vector<double> gpmp::linalg::sigproc::apply_aliasing_filter(
     return aliased_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::apply_anti_aliasing_filter(
+std::vector<double> gpmp::linalg::SigProc::apply_anti_aliasing_filter(
     const std::vector<double> &input_signal,
     double sampling_rate,
     double cutoff_frequency) {
@@ -632,7 +523,7 @@ std::vector<double> gpmp::linalg::sigproc::apply_anti_aliasing_filter(
 }
 
 std::vector<double>
-gpmp::linalg::sigproc::generate_aliased_sinusoid(double sampling_rate,
+gpmp::linalg::SigProc::generate_aliased_sinusoid(double sampling_rate,
                                                  double aliasing_frequency,
                                                  double duration) {
     size_t num_samples = static_cast<size_t>(sampling_rate * duration);
@@ -647,7 +538,7 @@ gpmp::linalg::sigproc::generate_aliased_sinusoid(double sampling_rate,
 }
 
 std::vector<double>
-gpmp::linalg::sigproc::decimate(const std::vector<double> &signal,
+gpmp::linalg::SigProc::decimate(const std::vector<double> &signal,
                                 size_t factor) {
     if (factor <= 1) {
         std::cerr << "Error: Downsampling factor must be greater than 1."
@@ -666,7 +557,7 @@ gpmp::linalg::sigproc::decimate(const std::vector<double> &signal,
     return downsampled_signal;
 }
 std::vector<double>
-gpmp::linalg::sigproc::average_downsample(const std::vector<double> &signal,
+gpmp::linalg::SigProc::average_downsample(const std::vector<double> &signal,
                                           size_t factor) {
     if (factor <= 1) {
         std::cerr << "Error: Downsampling factor must be greater than 1."
@@ -694,7 +585,7 @@ gpmp::linalg::sigproc::average_downsample(const std::vector<double> &signal,
 }
 
 std::vector<double>
-gpmp::linalg::sigproc::max_pool_downsample(const std::vector<double> &signal,
+gpmp::linalg::SigProc::max_pool_downsample(const std::vector<double> &signal,
                                            size_t factor) {
     if (factor <= 1) {
         std::cerr << "Error: Downsampling factor must be greater than 1."
@@ -716,7 +607,7 @@ gpmp::linalg::sigproc::max_pool_downsample(const std::vector<double> &signal,
     return downsampled_signal;
 }
 std::vector<double>
-gpmp::linalg::sigproc::strided_downsample(const std::vector<double> &signal,
+gpmp::linalg::SigProc::strided_downsample(const std::vector<double> &signal,
                                           size_t factor) {
     if (factor <= 1) {
         std::cerr << "Error: Downsampling factor must be greater than 1."
@@ -734,7 +625,7 @@ gpmp::linalg::sigproc::strided_downsample(const std::vector<double> &signal,
 
     return downsampled_signal;
 }
-std::vector<double> gpmp::linalg::sigproc::linear_interpolation_downsample(
+std::vector<double> gpmp::linalg::SigProc::linear_interpolation_downsample(
     const std::vector<double> &signal,
     size_t factor) {
     if (factor <= 1) {
@@ -761,7 +652,7 @@ std::vector<double> gpmp::linalg::sigproc::linear_interpolation_downsample(
     return downsampled_signal;
 }
 std::vector<double>
-gpmp::linalg::sigproc::median_downsample(const std::vector<double> &signal,
+gpmp::linalg::SigProc::median_downsample(const std::vector<double> &signal,
                                          size_t factor) {
     if (factor <= 1) {
         std::cerr << "Error: Downsampling factor must be greater than 1."
@@ -786,7 +677,7 @@ gpmp::linalg::sigproc::median_downsample(const std::vector<double> &signal,
     return downsampled_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::nearest_neighbor_upsample(
+std::vector<double> gpmp::linalg::SigProc::nearest_neighbor_upsample(
     const std::vector<double> &signal,
     size_t factor) {
     if (factor <= 1) {
@@ -805,7 +696,7 @@ std::vector<double> gpmp::linalg::sigproc::nearest_neighbor_upsample(
 
     return upsampled_signal;
 }
-std::vector<double> gpmp::linalg::sigproc::linear_interpolation_upsample(
+std::vector<double> gpmp::linalg::SigProc::linear_interpolation_upsample(
     const std::vector<double> &signal,
     size_t factor) {
     if (factor <= 1) {
@@ -831,7 +722,7 @@ std::vector<double> gpmp::linalg::sigproc::linear_interpolation_upsample(
     return upsampled_signal;
 }
 
-std::vector<double> gpmp::linalg::sigproc::zero_order_hold_upsample(
+std::vector<double> gpmp::linalg::SigProc::zero_order_hold_upsample(
     const std::vector<double> &signal,
     size_t factor) {
     if (factor <= 1) {
@@ -855,4 +746,3 @@ std::vector<double> gpmp::linalg::sigproc::zero_order_hold_upsample(
 
     return upsampled_signal;
 }
-*/
