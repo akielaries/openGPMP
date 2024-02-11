@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-11 06:26:28</td>
+            <td class="headerValue">2024-02-11 19:35:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">176</td>
@@ -656,10 +656,10 @@
 <a name="586"><span class="lineNum">     586 </span><span class="lineCov">          1 :     std::chrono::duration&lt;double&gt; elapsed_seconds_std = end_std - start_std;</span></a>
 <a name="587"><span class="lineNum">     587 </span>            : </a>
 <a name="588"><span class="lineNum">     588 </span>            :     // Print the results</a>
-<a name="589"><span class="lineNum">     589 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;INTRINSIC Dot Product Time      : &quot; &lt;&lt; elapsed_seconds_avx2.count()</span></a>
-<a name="590"><span class="lineNum">     590 </span><span class="lineCov">          1 :               &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
-<a name="591"><span class="lineNum">     591 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Dot Product Time      : &quot; &lt;&lt; elapsed_seconds_std.count()</span></a>
-<a name="592"><span class="lineNum">     592 </span><span class="lineCov">          1 :               &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="589"><span class="lineNum">     589 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;INTRINSIC Dot Product Time      : &quot;</span></a>
+<a name="590"><span class="lineNum">     590 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_avx2.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="591"><span class="lineNum">     591 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Dot Product Time      : &quot;</span></a>
+<a name="592"><span class="lineNum">     592 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
 <a name="593"><span class="lineNum">     593 </span><span class="lineCov">          1 : }</span></a>
 <a name="594"><span class="lineNum">     594 </span>            : </a>
 <a name="595"><span class="lineNum">     595 </span><span class="lineCov">          4 : TEST(VectorArithINTRINSICTestDouble, Addition) {</span></a>
@@ -678,8 +678,8 @@
 <a name="608"><span class="lineNum">     608 </span>            :     }</a>
 <a name="609"><span class="lineNum">     609 </span><span class="lineCov">          1 : }</span></a>
 <a name="610"><span class="lineNum">     610 </span>            : </a>
-<a name="611"><span class="lineNum">     611 </span>            : // Unit test to compare results of INTRINSIC vector addition with standard vector</a>
-<a name="612"><span class="lineNum">     612 </span>            : // addition for doubles</a>
+<a name="611"><span class="lineNum">     611 </span>            : // Unit test to compare results of INTRINSIC vector addition with standard</a>
+<a name="612"><span class="lineNum">     612 </span>            : // vector addition for doubles</a>
 <a name="613"><span class="lineNum">     613 </span><span class="lineCov">          4 : TEST(VectorArithINTRINSICTestDouble, AdditionComparison) {</span></a>
 <a name="614"><span class="lineNum">     614 </span>            :     // Create input vectors</a>
 <a name="615"><span class="lineNum">     615 </span><span class="lineCov">          1 :     std::vector&lt;double&gt; vec1 = {1.0, 2.0, 3.0, 4.0};</span></a>
@@ -726,8 +726,8 @@
 <a name="656"><span class="lineNum">     656 </span>            :     }</a>
 <a name="657"><span class="lineNum">     657 </span><span class="lineCov">          1 : }</span></a>
 <a name="658"><span class="lineNum">     658 </span>            : </a>
-<a name="659"><span class="lineNum">     659 </span>            : // Unit test to compare execution time of INTRINSIC vector addition with standard</a>
-<a name="660"><span class="lineNum">     660 </span>            : // vector addition for doubles</a>
+<a name="659"><span class="lineNum">     659 </span>            : // Unit test to compare execution time of INTRINSIC vector addition with</a>
+<a name="660"><span class="lineNum">     660 </span>            : // standard vector addition for doubles</a>
 <a name="661"><span class="lineNum">     661 </span><span class="lineCov">          4 : TEST(VectorArithINTRINSICTestDouble, AdditionPerformanceComparison) {</span></a>
 <a name="662"><span class="lineNum">     662 </span><span class="lineCov">          1 :     const size_t size = 4096 * 4096;</span></a>
 <a name="663"><span class="lineNum">     663 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;Vector size      : &quot; &lt;&lt; size &lt;&lt; std::endl;</span></a>
@@ -914,10 +914,10 @@
 <a name="844"><span class="lineNum">     844 </span><span class="lineCov">          1 :     std::chrono::duration&lt;double&gt; elapsed_seconds_std = end_std - start_std;</span></a>
 <a name="845"><span class="lineNum">     845 </span>            : </a>
 <a name="846"><span class="lineNum">     846 </span>            :     // Print the results</a>
-<a name="847"><span class="lineNum">     847 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;INTRINSIC Dot Product Time      : &quot; &lt;&lt; elapsed_seconds_avx2.count()</span></a>
-<a name="848"><span class="lineNum">     848 </span><span class="lineCov">          1 :               &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
-<a name="849"><span class="lineNum">     849 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Dot Product Time      : &quot; &lt;&lt; elapsed_seconds_std.count()</span></a>
-<a name="850"><span class="lineNum">     850 </span><span class="lineCov">          1 :               &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="847"><span class="lineNum">     847 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;INTRINSIC Dot Product Time      : &quot;</span></a>
+<a name="848"><span class="lineNum">     848 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_avx2.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="849"><span class="lineNum">     849 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Dot Product Time      : &quot;</span></a>
+<a name="850"><span class="lineNum">     850 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
 <a name="851"><span class="lineNum">     851 </span><span class="lineCov">          1 : }</span></a>
 </pre>
       </td>
