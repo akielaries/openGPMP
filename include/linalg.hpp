@@ -49,7 +49,6 @@
 #include "linalg/eigen.hpp"
 #include "linalg/linsys.hpp"
 #include "linalg/mtx.hpp"
-#include "linalg/sigproc.hpp"
 #include "linalg/svd.hpp"
 #include "linalg/tensor.hpp"
 
