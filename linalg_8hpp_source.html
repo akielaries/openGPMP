@@ -118,34 +118,32 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="eigen_8hpp.html">linalg/eigen.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linsys_8hpp.html">linalg/linsys.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mtx_8hpp.html">linalg/mtx.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sigproc_8hpp.html">linalg/sigproc.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="svd_8hpp.html">linalg/svd.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tensor_8hpp.html">linalg/tensor.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#a20955ce35a1219cc0e46494290097444">   62</a></span>&#160;<span class="preprocessor">#define CUDA_MATRIX</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#if defined(__linux__)</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef __NVCC__</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__cuda__mtx_8cuh.html">linalg/_cuda_mtx.cuh</a>&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="svd_8hpp.html">linalg/svd.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tensor_8hpp.html">linalg/tensor.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/*****************************************************************************/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="linalg_8hpp.html#a20955ce35a1219cc0e46494290097444">   61</a></span>&#160;<span class="preprocessor">#define CUDA_MATRIX</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#if defined(__linux__)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#ifdef __NVCC__</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__cuda__mtx_8cuh.html">linalg/_cuda_mtx.cuh</a>&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#if defined(__linux__) || defined(__APPLE__)</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifndef __OPENCL__</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx_8h.html">linalg/_gpu_mtx.h</a>&quot;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx__wrapper_8hpp.html">linalg/_gpu_mtx_wrapper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#if defined(__linux__) || defined(__APPLE__)</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifndef __OPENCL__</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx_8h.html">linalg/_gpu_mtx.h</a>&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="__gpu__mtx__wrapper_8hpp.html">linalg/_gpu_mtx_wrapper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a__cuda__mtx_8cuh_html"><div class="ttname"><a href="__cuda__mtx_8cuh.html">_cuda_mtx.cuh</a></div></div>
 <div class="ttc" id="a__gpu__mtx_8h_html"><div class="ttname"><a href="__gpu__mtx_8h.html">_gpu_mtx.h</a></div></div>
 <div class="ttc" id="a__gpu__mtx__wrapper_8hpp_html"><div class="ttname"><a href="__gpu__mtx__wrapper_8hpp.html">_gpu_mtx_wrapper.hpp</a></div></div>
 <div class="ttc" id="aeigen_8hpp_html"><div class="ttname"><a href="eigen_8hpp.html">eigen.hpp</a></div></div>
 <div class="ttc" id="alinsys_8hpp_html"><div class="ttname"><a href="linsys_8hpp.html">linsys.hpp</a></div></div>
 <div class="ttc" id="amtx_8hpp_html"><div class="ttname"><a href="mtx_8hpp.html">mtx.hpp</a></div></div>
-<div class="ttc" id="asigproc_8hpp_html"><div class="ttname"><a href="sigproc_8hpp.html">sigproc.hpp</a></div></div>
 <div class="ttc" id="asvd_8hpp_html"><div class="ttname"><a href="svd_8hpp.html">svd.hpp</a></div></div>
 <div class="ttc" id="atensor_8hpp_html"><div class="ttname"><a href="tensor_8hpp.html">tensor.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
