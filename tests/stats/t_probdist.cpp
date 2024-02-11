@@ -249,7 +249,7 @@ TEST(ProbDistTest, ToleranceInterval) {
     EXPECT_LT(interval.first, interval.second);
 }
 
-TEST(ProbDistTestBootstrap, BootstrapResampling) {
+TEST(ProbDistTest, BootstrapResampling) {
     gpmp::stats::ProbDist probDist;
 
     std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
