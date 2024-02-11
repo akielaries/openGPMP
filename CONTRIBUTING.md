@@ -2,7 +2,7 @@
 openGPMP welcomes any and all contributors! There are **many** ways to contribute to openGPMP. New implementations, updates to source code, documentations, language API, and much more. To submit a change simply fork the repository and beging the 
 pull request process. Squash commits, clean up misc. files, etc. and submit a pull request to the openGPMP repository. Be sure
 to include a hash `#` prefixing your commit messages. For example `#EDITS:` or `#UPDATES:` are used to signaling commits that
-feature minor edits/updates. The prefixes, `#PATCH`, `#MINOR`, `#MAJOR`, are reserved for automated versioning/tagging of
+feature minor edits/updates. `#BUG:` references a bug fix commit, and `#FEAT` represents a new feature being added to the project. The prefixes, `#PATCH`, `#MINOR`, `#MAJOR`, are reserved for automated versioning/tagging of
 commits based on messages. This process still features a manual intervention by design meaning the maintainer of this project 
 will be in charge of publishing versions.
 
