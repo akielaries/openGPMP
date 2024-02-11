@@ -335,9 +335,9 @@ double gpmp::linalg::dot_product(const std::vector<double> &vec1,
  ************************************************************************/
 
 // Vector addition using ARM NEON intrinsics, operates on integer types
-void vector_add(const std::vector<int> &vec1,
-                const std::vector<int> &vec2,
-                std::vector<int> &result) {
+void gpmp::linalg::vector_add(const std::vector<int> &vec1,
+                              const std::vector<int> &vec2,
+                              std::vector<int> &result) {
     const size_t size = vec1.size();
     const int *data1 = vec1.data();
     const int *data2 = vec2.data();
@@ -365,9 +365,9 @@ void vector_add(const std::vector<int> &vec1,
 }
 
 // Vector addition using ARM NEON intrinsics, operates on double types
-void vector_add(const std::vector<double> &vec1,
-                const std::vector<double> &vec2,
-                std::vector<double> &result) {
+void gpmp::linalg::vector_add(const std::vector<double> &vec1,
+                              const std::vector<double> &vec2,
+                              std::vector<double> &result) {
     const size_t size = vec1.size();
     const double *data1 = vec1.data();
     const double *data2 = vec2.data();
@@ -395,9 +395,9 @@ void vector_add(const std::vector<double> &vec1,
 }
 
 // Vector subtraction using ARM NEON intrinsics, operates on integer types
-void vector_sub(const std::vector<int> &vec1,
-                const std::vector<int> &vec2,
-                std::vector<int> &result) {
+void gpmp::linalg::vector_sub(const std::vector<int> &vec1,
+                              const std::vector<int> &vec2,
+                              std::vector<int> &result) {
     const int vecSize = vec1.size();
     const int remainder = vecSize % 8;
     const int vecSizeAligned = vecSize - remainder;
@@ -421,9 +421,9 @@ void vector_sub(const std::vector<int> &vec1,
 }
 
 // Vector subtraction using ARM NEON intrinsics, operates on double types
-void vector_sub(const std::vector<double> &vec1,
-                const std::vector<double> &vec2,
-                std::vector<double> &result) {
+void gpmp::linalg::vector_sub(const std::vector<double> &vec1,
+                              const std::vector<double> &vec2,
+                              std::vector<double> &result) {
     const int vecSize = vec1.size();
     const int remainder = vecSize % 4;
     const int vecSizeAligned = vecSize - remainder;
@@ -447,9 +447,9 @@ void vector_sub(const std::vector<double> &vec1,
 }
 
 // Vector multiplication using ARM NEON intrinsics, operates on integer types
-void vector_mult(const std::vector<int> &vec,
-                 int scalar,
-                 std::vector<int> &result) {
+void gpmp::linalg::vector_mult(const std::vector<int> &vec,
+                               int scalar,
+                               std::vector<int> &result) {
     const size_t size = vec.size();
     const int *data = vec.data();
     int *result_data = result.data();
@@ -466,9 +466,9 @@ void vector_mult(const std::vector<int> &vec,
 }
 
 // Vector multiplication using ARM NEON intrinsics, operates on double types
-void vector_mult(const std::vector<double> &vec,
-                 double scalar,
-                 std::vector<double> &result) {
+void gpmp::linalg::vector_mult(const std::vector<double> &vec,
+                               double scalar,
+                               std::vector<double> &result) {
     const int vecSize = vec.size();
     const int remainder = vecSize % 2;
     const int vecSizeAligned = vecSize - remainder;
@@ -489,7 +489,8 @@ void vector_mult(const std::vector<double> &vec,
 }
 
 // Dot product using ARM NEON intrinsics, operates on integer types
-int dot_product(const std::vector<int> &vec1, const std::vector<int> &vec2) {
+int gpmp::linalg::dot_product(const std::vector<int> &vec1,
+                              const std::vector<int> &vec2) {
     const int vecSize = vec1.size();
     const int32_t *data1 = vec1.data();
     const int32_t *data2 = vec2.data();
@@ -516,8 +517,8 @@ int dot_product(const std::vector<int> &vec1, const std::vector<int> &vec2) {
 }
 
 // Dot product using ARM NEON intrinsics, operates on double types
-double dot_product(const std::vector<double> &vec1,
-                   const std::vector<double> &vec2) {
+double gpmp::linalg::dot_product(const std::vector<double> &vec1,
+                                 const std::vector<double> &vec2) {
     const int vecSize = vec1.size();
     const double *data1 = vec1.data();
     const double *data2 = vec2.data();
@@ -544,6 +545,13 @@ double dot_product(const std::vector<double> &vec1,
 
 // ARM NEON
 #endif
+
+/************************************************************************
+ *
+ * Standard/Naive Vector  Operations on vector<>
+ *
+ ************************************************************************/
+
 void gpmp::linalg::std_vector_add(const std::vector<double> &vec1,
                                   const std::vector<double> &vec2,
                                   std::vector<double> &result) {

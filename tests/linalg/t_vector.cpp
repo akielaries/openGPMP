@@ -586,10 +586,10 @@ TEST(VectorArithINTRINSICTestInt, DotProductPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "INTRINSIC Dot Product Time      : " << elapsed_seconds_avx2.count()
-              << " seconds" << std::endl;
-    TEST_COUT << "STANDARD  Dot Product Time      : " << elapsed_seconds_std.count()
-              << " seconds" << std::endl;
+    TEST_COUT << "INTRINSIC Dot Product Time      : "
+              << elapsed_seconds_avx2.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Dot Product Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
 TEST(VectorArithINTRINSICTestDouble, Addition) {
@@ -608,8 +608,8 @@ TEST(VectorArithINTRINSICTestDouble, Addition) {
     }
 }
 
-// Unit test to compare results of INTRINSIC vector addition with standard vector
-// addition for doubles
+// Unit test to compare results of INTRINSIC vector addition with standard
+// vector addition for doubles
 TEST(VectorArithINTRINSICTestDouble, AdditionComparison) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
@@ -656,8 +656,8 @@ TEST(VectorArithINTRINSICTestDouble, AdditionComparisonRandom) {
     }
 }
 
-// Unit test to compare execution time of INTRINSIC vector addition with standard
-// vector addition for doubles
+// Unit test to compare execution time of INTRINSIC vector addition with
+// standard vector addition for doubles
 TEST(VectorArithINTRINSICTestDouble, AdditionPerformanceComparison) {
     const size_t size = 4096 * 4096;
     TEST_COUT << "Vector size      : " << size << std::endl;
@@ -844,8 +844,8 @@ TEST(VectorArithINTRINSICTestDouble, DotProductPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "INTRINSIC Dot Product Time      : " << elapsed_seconds_avx2.count()
-              << " seconds" << std::endl;
-    TEST_COUT << "STANDARD  Dot Product Time      : " << elapsed_seconds_std.count()
-              << " seconds" << std::endl;
+    TEST_COUT << "INTRINSIC Dot Product Time      : "
+              << elapsed_seconds_avx2.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Dot Product Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
