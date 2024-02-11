@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['s_1946',['S',['../classRC6.html#a7552aea7401635025603ce49b33023be',1,'RC6::S()'],['../classgpmp_1_1nt_1_1RC5.html#af76f5a500f5283a9165defc4d86c6a24',1,'gpmp::nt::RC5::S()']]],
-  ['show_5frows_1947',['SHOW_ROWS',['../namespacepygpmp_1_1core_1_1core.html#a602834a40f0616192da2f3674a87bc3f',1,'pygpmp::core::core']]],
-  ['singularvalues_5f_1948',['singularValues_',['../classgpmp_1_1linalg_1_1SVD.html#ab9ac6aadb30b92dc230b41284ded16b0',1,'gpmp::linalg::SVD']]],
-  ['size_1949',['size',['../classgpmp_1_1linalg_1_1Eigen.html#a4a568f2add6c898d0316248571b21103',1,'gpmp::linalg::Eigen']]],
-  ['sortir_1950',['sortir',['../structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a',1,'gpmp::ml::neuron']]],
-  ['sparsity_5ftarget_1951',['sparsity_target',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html#a776cd3f60735bb13cb0f703fbc43576f',1,'gpmp::ml::SparseAutoEncoder']]],
-  ['sparsity_5fweight_1952',['sparsity_weight',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html#a999fed861fd5126a5dd43e21a2f7c068',1,'gpmp::ml::SparseAutoEncoder']]],
-  ['spinning_1953',['spinning',['../torus__animated_8c.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;torus_animated.c'],['../openGL__torus__animated_8c.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;openGL_torus_animated.c'],['../openGL__astronomy__animated_8c.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;openGL_astronomy_animated.c']]],
-  ['state_1954',['state',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0',1,'gpmp::core::rndm::LCG']]],
-  ['stop_1955',['stop',['../classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393',1,'gpmp::core::ThreadPool']]],
-  ['sum_5fx_1956',['sum_x',['../classgpmp_1_1ml_1_1LinearRegression.html#af1efcfbb79bf07ffcf8fe850e310fad7',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fx_5fsquare_1957',['sum_x_square',['../classgpmp_1_1ml_1_1LinearRegression.html#a637123c9cbac49bbb998ff2c4701fa8f',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fxy_1958',['sum_xy',['../classgpmp_1_1ml_1_1LinearRegression.html#a4a8df5fee2599876d5874d578e7b87f9',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fy_1959',['sum_y',['../classgpmp_1_1ml_1_1LinearRegression.html#ad48c7c456e3f5a6e410628e9ef064653',1,'gpmp::ml::LinearRegression']]],
-  ['sum_5fy_5fsquare_1960',['sum_y_square',['../classgpmp_1_1ml_1_1LinearRegression.html#ac888fedbc6f80b9654a6ce0ebd8e3ae0',1,'gpmp::ml::LinearRegression']]]
+  ['s_1968',['S',['../classRC6.html#a7552aea7401635025603ce49b33023be',1,'RC6::S()'],['../classgpmp_1_1nt_1_1RC5.html#af76f5a500f5283a9165defc4d86c6a24',1,'gpmp::nt::RC5::S()']]],
+  ['show_5frows_1969',['SHOW_ROWS',['../namespacepygpmp_1_1core_1_1core.html#a602834a40f0616192da2f3674a87bc3f',1,'pygpmp::core::core']]],
+  ['singularvalues_5f_1970',['singularValues_',['../classgpmp_1_1linalg_1_1SVD.html#ab9ac6aadb30b92dc230b41284ded16b0',1,'gpmp::linalg::SVD']]],
+  ['size_1971',['size',['../classgpmp_1_1linalg_1_1Eigen.html#a4a568f2add6c898d0316248571b21103',1,'gpmp::linalg::Eigen']]],
+  ['sortir_1972',['sortir',['../structgpmp_1_1ml_1_1neuron.html#a94c606842015d48ae8afc8f402eaa81a',1,'gpmp::ml::neuron']]],
+  ['sparsity_5ftarget_1973',['sparsity_target',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html#a776cd3f60735bb13cb0f703fbc43576f',1,'gpmp::ml::SparseAutoEncoder']]],
+  ['sparsity_5fweight_1974',['sparsity_weight',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html#a999fed861fd5126a5dd43e21a2f7c068',1,'gpmp::ml::SparseAutoEncoder']]],
+  ['spinning_1975',['spinning',['../torus__animated_8c.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;torus_animated.c'],['../openGL__torus__animated_8c.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;openGL_torus_animated.c'],['../openGL__astronomy__animated_8c.html#acd3bb90a36adc8d910a078425a19fdd8',1,'spinning():&#160;openGL_astronomy_animated.c']]],
+  ['state_1976',['state',['../classgpmp_1_1core_1_1rndm_1_1LCG.html#a215af564f22c446e4b7fc6efdd368cd0',1,'gpmp::core::rndm::LCG']]],
+  ['stop_1977',['stop',['../classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393',1,'gpmp::core::ThreadPool']]],
+  ['sum_5fx_1978',['sum_x',['../classgpmp_1_1ml_1_1LinearRegression.html#af1efcfbb79bf07ffcf8fe850e310fad7',1,'gpmp::ml::LinearRegression']]],
+  ['sum_5fx_5fsquare_1979',['sum_x_square',['../classgpmp_1_1ml_1_1LinearRegression.html#a637123c9cbac49bbb998ff2c4701fa8f',1,'gpmp::ml::LinearRegression']]],
+  ['sum_5fxy_1980',['sum_xy',['../classgpmp_1_1ml_1_1LinearRegression.html#a4a8df5fee2599876d5874d578e7b87f9',1,'gpmp::ml::LinearRegression']]],
+  ['sum_5fy_1981',['sum_y',['../classgpmp_1_1ml_1_1LinearRegression.html#ad48c7c456e3f5a6e410628e9ef064653',1,'gpmp::ml::LinearRegression']]],
+  ['sum_5fy_5fsquare_1982',['sum_y_square',['../classgpmp_1_1ml_1_1LinearRegression.html#ac888fedbc6f80b9654a6ce0ebd8e3ae0',1,'gpmp::ml::LinearRegression']]]
 ];

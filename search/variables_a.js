@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['k_1893',['k',['../classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764',1,'gpmp::ml::Kfold']]],
-  ['kernel_5fparam_1894',['kernel_param',['../classgpmp_1_1ml_1_1SVC.html#ad42cc94416316ef6a19cee3b954218e6',1,'gpmp::ml::SVC']]],
-  ['kernel_5ftype_1895',['kernel_type',['../classgpmp_1_1ml_1_1SVC.html#a3bfff8c8bc1046e0784212800169efb3',1,'gpmp::ml::SVC']]]
+  ['k_1915',['k',['../classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764',1,'gpmp::ml::Kfold']]],
+  ['kernel_5fparam_1916',['kernel_param',['../classgpmp_1_1ml_1_1SVC.html#ad42cc94416316ef6a19cee3b954218e6',1,'gpmp::ml::SVC']]],
+  ['kernel_5ftype_1917',['kernel_type',['../classgpmp_1_1ml_1_1SVC.html#a3bfff8c8bc1046e0784212800169efb3',1,'gpmp::ml::SVC']]]
 ];
