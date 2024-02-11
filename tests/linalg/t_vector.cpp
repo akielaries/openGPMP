@@ -191,7 +191,7 @@ TEST(VectorArithTestInt, Projection) {
     EXPECT_DOUBLE_EQ(result[1], 0.0);
 }
 
-TEST(VectorArithAVX2TestInt, Addition) {
+TEST(VectorArithINTRINSICTestInt, Addition) {
     // Create input vectors
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -207,14 +207,14 @@ TEST(VectorArithAVX2TestInt, Addition) {
     }
 }
 
-TEST(VectorArithAVX2TestInt, AdditionComparison) {
+TEST(VectorArithINTRINSICTestInt, AdditionComparison) {
     // Create input vectors
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
     std::vector<int> result_avx2(vec1.size());
     std::vector<int> result_std(vec1.size());
 
-    // Perform vector addition using AVX2 and standard methods
+    // Perform vector addition using INTRINSIC and standard methods
     gpmp::linalg::vector_add(vec1, vec2, result_avx2);
     gpmp::linalg::std_vector_add(vec1, vec2, result_std);
 
@@ -225,7 +225,7 @@ TEST(VectorArithAVX2TestInt, AdditionComparison) {
     }
 }
 
-TEST(VectorArithAVX2TestInt, AdditionComparisonRandom) {
+TEST(VectorArithINTRINSICTestInt, AdditionComparisonRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -240,7 +240,7 @@ TEST(VectorArithAVX2TestInt, AdditionComparisonRandom) {
         vec2[i] = dist(rng);
     }
 
-    // Perform vector addition using AVX2 and standard methods
+    // Perform vector addition using INTRINSIC and standard methods
     std::vector<int> result_avx2(size);
     std::vector<int> result_std(size);
     gpmp::linalg::vector_add(vec1, vec2, result_avx2);
@@ -253,7 +253,7 @@ TEST(VectorArithAVX2TestInt, AdditionComparisonRandom) {
     }
 }
 
-TEST(VectorArithAVX2TestInt, AdditionPerformanceComparison) {
+TEST(VectorArithINTRINSICTestInt, AdditionPerformanceComparison) {
     const size_t size = 4096 * 4096;
 
     TEST_COUT << "Vector size      : " << size << std::endl;
@@ -269,7 +269,7 @@ TEST(VectorArithAVX2TestInt, AdditionPerformanceComparison) {
         vec2[i] = dist(rng);
     }
 
-    // Measure execution time for AVX2 vector addition
+    // Measure execution time for INTRINSIC vector addition
     std::vector<int> result_avx2(size);
 
     auto start_avx2 = std::chrono::high_resolution_clock::now();
@@ -287,14 +287,14 @@ TEST(VectorArithAVX2TestInt, AdditionPerformanceComparison) {
 
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
-    TEST_COUT << "AVX2 Vector Addition Time      : "
+    TEST_COUT << "INTRINSIC Vector Addition Time      : "
               << elapsed_seconds_avx2.count() << " seconds" << std::endl;
 
-    TEST_COUT << "STD  Vector Addition Time      : "
+    TEST_COUT << "STANDARD  Vector Addition Time      : "
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
-TEST(VectorArithAVX2TestInt, Subtraction) {
+TEST(VectorArithINTRINSICTestInt, Subtraction) {
     // Create input vectors
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -310,14 +310,14 @@ TEST(VectorArithAVX2TestInt, Subtraction) {
     }
 }
 
-TEST(VectorArithAVX2TestInt, SubtractionComparison) {
+TEST(VectorArithINTRINSICTestInt, SubtractionComparison) {
     // Create input vectors
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
     std::vector<int> result_avx2(vec1.size());
     std::vector<int> result_std(vec1.size());
 
-    // Perform vector subtraction using AVX2 and standard methods
+    // Perform vector subtraction using INTRINSIC and standard methods
     gpmp::linalg::vector_sub(vec1, vec2, result_avx2);
     gpmp::linalg::std_vector_sub(vec1, vec2, result_std);
 
@@ -328,7 +328,7 @@ TEST(VectorArithAVX2TestInt, SubtractionComparison) {
     }
 }
 
-TEST(VectorArithAVX2TestInt, SubtractionComparisonRandom) {
+TEST(VectorArithINTRINSICTestInt, SubtractionComparisonRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -343,7 +343,7 @@ TEST(VectorArithAVX2TestInt, SubtractionComparisonRandom) {
         vec2[i] = dist(rng);
     }
 
-    // Perform vector subtraction using AVX2 and standard methods
+    // Perform vector subtraction using INTRINSIC and standard methods
     std::vector<int> result_avx2(size);
     std::vector<int> result_std(size);
     gpmp::linalg::vector_sub(vec1, vec2, result_avx2);
@@ -356,7 +356,7 @@ TEST(VectorArithAVX2TestInt, SubtractionComparisonRandom) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, Subtraction) {
+TEST(VectorArithINTRINSICTestDouble, Subtraction) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
     std::vector<double> vec2 = {8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0};
@@ -372,14 +372,14 @@ TEST(VectorArithAVX2TestDouble, Subtraction) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, SubtractionComparison) {
+TEST(VectorArithINTRINSICTestDouble, SubtractionComparison) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
     std::vector<double> vec2 = {8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0};
     std::vector<double> result_avx2(vec1.size());
     std::vector<double> result_std(vec1.size());
 
-    // Perform vector subtraction using AVX2 and standard methods
+    // Perform vector subtraction using INTRINSIC and standard methods
     gpmp::linalg::vector_sub(vec1, vec2, result_avx2);
     gpmp::linalg::std_vector_sub(vec1, vec2, result_std);
 
@@ -390,7 +390,7 @@ TEST(VectorArithAVX2TestDouble, SubtractionComparison) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, SubtractionComparisonRandom) {
+TEST(VectorArithINTRINSICTestDouble, SubtractionComparisonRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -405,7 +405,7 @@ TEST(VectorArithAVX2TestDouble, SubtractionComparisonRandom) {
         vec2[i] = dist(rng);
     }
 
-    // Perform vector subtraction using AVX2 and standard methods
+    // Perform vector subtraction using INTRINSIC and standard methods
     std::vector<double> result_avx2(size);
     std::vector<double> result_std(size);
     gpmp::linalg::vector_sub(vec1, vec2, result_avx2);
@@ -418,8 +418,8 @@ TEST(VectorArithAVX2TestDouble, SubtractionComparisonRandom) {
     }
 }
 
-// Unit test for vector multiplication using AVX2 intrinsics
-TEST(VectorArithAVX2TestInt, Multiplication) {
+// Unit test for vector multiplication using INTRINSIC intrinsics
+TEST(VectorArithINTRINSICTestInt, Multiplication) {
     // Create input vector and scalar
     std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8};
     int scalar = 2;
@@ -434,16 +434,16 @@ TEST(VectorArithAVX2TestInt, Multiplication) {
     }
 }
 
-// Unit test to compare results of AVX2 vector multiplication with standard
+// Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication
-TEST(VectorArithAVX2TestInt, MultComparison) {
+TEST(VectorArithINTRINSICTestInt, MultComparison) {
     // Create input vector and scalar
     std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8};
     int scalar = 2;
     std::vector<int> result_avx2(vec.size());
     std::vector<int> result_std(vec.size());
 
-    // Perform vector multiplication using AVX2 and standard methods
+    // Perform vector multiplication using INTRINSIC and standard methods
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
     gpmp::linalg::std_vector_mult(vec, scalar, result_std);
 
@@ -453,9 +453,9 @@ TEST(VectorArithAVX2TestInt, MultComparison) {
     }
 }
 
-// Unit test to compare results of AVX2 vector multiplication with standard
+// Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication using random vectors
-TEST(VectorArithAVX2TestInt, MultComparisonRandom) {
+TEST(VectorArithINTRINSICTestInt, MultComparisonRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -469,7 +469,7 @@ TEST(VectorArithAVX2TestInt, MultComparisonRandom) {
         vec[i] = dist(rng);
     }
 
-    // Perform vector multiplication using AVX2 and standard methods
+    // Perform vector multiplication using INTRINSIC and standard methods
     std::vector<int> result_avx2(size);
     std::vector<int> result_std(size);
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
@@ -481,9 +481,9 @@ TEST(VectorArithAVX2TestInt, MultComparisonRandom) {
     }
 }
 
-// Unit test to compare execution time of AVX2 vector multiplication with
+// Unit test to compare execution time of INTRINSIC vector multiplication with
 // standard vector multiplication
-TEST(VectorArithAVX2TestInt, MultPerformanceComparison) {
+TEST(VectorArithINTRINSICTestInt, MultPerformanceComparison) {
     const size_t size = 4096 * 4096;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -498,7 +498,7 @@ TEST(VectorArithAVX2TestInt, MultPerformanceComparison) {
         vec[i] = dist(rng);
     }
 
-    // Measure execution time for AVX2 vector multiplication
+    // Measure execution time for INTRINSIC vector multiplication
     std::vector<int> result_avx2(size);
     auto start_avx2 = std::chrono::high_resolution_clock::now();
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
@@ -513,14 +513,14 @@ TEST(VectorArithAVX2TestInt, MultPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "AVX2 Vector Multiplication Time      : "
+    TEST_COUT << "INTRINSIC Vector Multiplication Time      : "
               << elapsed_seconds_avx2.count() << " seconds" << std::endl;
-    TEST_COUT << "STD  Vector Multiplication Time      : "
+    TEST_COUT << "STANDARD  Vector Multiplication Time      : "
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
-// Unit test for dot product using AVX2 intrinsics
-TEST(VectorArithAVX2TestInt, DotProduct) {
+// Unit test for dot product using INTRINSIC intrinsics
+TEST(VectorArithINTRINSICTestInt, DotProduct) {
     // Create input vectors
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -536,8 +536,8 @@ TEST(VectorArithAVX2TestInt, DotProduct) {
     EXPECT_EQ(result, expected_result);
 }
 
-// Unit test for dot product using AVX2 intrinsics with random vectors
-TEST(VectorArithAVX2TestInt, DotProductRandom) {
+// Unit test for dot product using INTRINSIC intrinsics with random vectors
+TEST(VectorArithINTRINSICTestInt, DotProductRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -552,7 +552,7 @@ TEST(VectorArithAVX2TestInt, DotProductRandom) {
         vec2[i] = dist(rng);
     }
 
-    // Calculate dot product using AVX2 intrinsics
+    // Calculate dot product using INTRINSIC intrinsics
     int result = gpmp::linalg::dot_product(vec1, vec2);
 
     // Calculate dot product using standard method
@@ -565,7 +565,7 @@ TEST(VectorArithAVX2TestInt, DotProductRandom) {
     EXPECT_EQ(result, expected_result);
 }
 
-TEST(VectorArithAVX2TestInt, DotProductPerformanceComparison) {
+TEST(VectorArithINTRINSICTestInt, DotProductPerformanceComparison) {
     const size_t size = 4096 * 4096;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -573,7 +573,7 @@ TEST(VectorArithAVX2TestInt, DotProductPerformanceComparison) {
     std::vector<int> vec1(size, 1);
     std::vector<int> vec2(size, 2);
 
-    // Measure execution time for AVX2 dot product calculation
+    // Measure execution time for INTRINSIC dot product calculation
     auto start_avx2 = std::chrono::high_resolution_clock::now();
     int result_avx2 = gpmp::linalg::dot_product(vec1, vec2);
     auto end_avx2 = std::chrono::high_resolution_clock::now();
@@ -586,19 +586,19 @@ TEST(VectorArithAVX2TestInt, DotProductPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "AVX2 Dot Product Time      : " << elapsed_seconds_avx2.count()
+    TEST_COUT << "INTRINSIC Dot Product Time      : " << elapsed_seconds_avx2.count()
               << " seconds" << std::endl;
-    TEST_COUT << "STD  Dot Product Time      : " << elapsed_seconds_std.count()
+    TEST_COUT << "STANDARD  Dot Product Time      : " << elapsed_seconds_std.count()
               << " seconds" << std::endl;
 }
 
-TEST(VectorArithAVX2TestDouble, Addition) {
+TEST(VectorArithINTRINSICTestDouble, Addition) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};
     std::vector<double> result_avx2(vec1.size());
 
-    // Perform vector addition using AVX2
+    // Perform vector addition using INTRINSIC
     gpmp::linalg::vector_add(vec1, vec2, result_avx2);
 
     // Check the result
@@ -608,16 +608,16 @@ TEST(VectorArithAVX2TestDouble, Addition) {
     }
 }
 
-// Unit test to compare results of AVX2 vector addition with standard vector
+// Unit test to compare results of INTRINSIC vector addition with standard vector
 // addition for doubles
-TEST(VectorArithAVX2TestDouble, AdditionComparison) {
+TEST(VectorArithINTRINSICTestDouble, AdditionComparison) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};
     std::vector<double> result_avx2(vec1.size());
     std::vector<double> result_std(vec1.size());
 
-    // Perform vector addition using AVX2 and standard methods
+    // Perform vector addition using INTRINSIC and standard methods
     gpmp::linalg::vector_add(vec1, vec2, result_avx2);
     gpmp::linalg::std_vector_add(vec1, vec2, result_std);
 
@@ -628,7 +628,7 @@ TEST(VectorArithAVX2TestDouble, AdditionComparison) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, AdditionComparisonRandom) {
+TEST(VectorArithINTRINSICTestDouble, AdditionComparisonRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -643,7 +643,7 @@ TEST(VectorArithAVX2TestDouble, AdditionComparisonRandom) {
         vec2[i] = dist(rng);
     }
 
-    // Perform vector addition using AVX2 and standard methods
+    // Perform vector addition using INTRINSIC and standard methods
     std::vector<double> result_avx2(size);
     std::vector<double> result_std(size);
     gpmp::linalg::vector_add(vec1, vec2, result_avx2);
@@ -656,9 +656,9 @@ TEST(VectorArithAVX2TestDouble, AdditionComparisonRandom) {
     }
 }
 
-// Unit test to compare execution time of AVX2 vector addition with standard
+// Unit test to compare execution time of INTRINSIC vector addition with standard
 // vector addition for doubles
-TEST(VectorArithAVX2TestDouble, AdditionPerformanceComparison) {
+TEST(VectorArithINTRINSICTestDouble, AdditionPerformanceComparison) {
     const size_t size = 4096 * 4096;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -668,7 +668,7 @@ TEST(VectorArithAVX2TestDouble, AdditionPerformanceComparison) {
     std::vector<double> result_avx2(size);
     std::vector<double> result_std(size);
 
-    // Measure execution time for AVX2 vector addition
+    // Measure execution time for INTRINSIC vector addition
     auto start_avx2 = std::chrono::high_resolution_clock::now();
     gpmp::linalg::vector_add(vec1, vec2, result_avx2);
     auto end_avx2 = std::chrono::high_resolution_clock::now();
@@ -683,19 +683,19 @@ TEST(VectorArithAVX2TestDouble, AdditionPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "AVX2 Vector Addition Time      : "
+    TEST_COUT << "INTRINSIC Vector Addition Time      : "
               << elapsed_seconds_avx2.count() << " seconds" << std::endl;
-    TEST_COUT << "STD  Vector Addition Time      : "
+    TEST_COUT << "STANDARD  Vector Addition Time      : "
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
-TEST(VectorArithAVX2TestDouble, Multiplication) {
+TEST(VectorArithINTRINSICTestDouble, Multiplication) {
     // Create input vector
     std::vector<double> vec = {1.0, 2.0, 3.0, 4.0};
     double scalar = 2.0;
     std::vector<double> result_avx2(vec.size());
 
-    // Perform vector multiplication using AVX2
+    // Perform vector multiplication using INTRINSIC
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
 
     // Check the result
@@ -705,14 +705,14 @@ TEST(VectorArithAVX2TestDouble, Multiplication) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, MultComparison) {
+TEST(VectorArithINTRINSICTestDouble, MultComparison) {
     // Create input vector
     std::vector<double> vec = {1.0, 2.0, 3.0, 4.0};
     double scalar = 2.0;
     std::vector<double> result_avx2(vec.size());
     std::vector<double> result_std(vec.size());
 
-    // Perform vector multiplication using AVX2 and standard methods
+    // Perform vector multiplication using INTRINSIC and standard methods
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
     gpmp::linalg::std_vector_mult(vec, scalar, result_std);
 
@@ -723,7 +723,7 @@ TEST(VectorArithAVX2TestDouble, MultComparison) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, MultComparisonRandom) {
+TEST(VectorArithINTRINSICTestDouble, MultComparisonRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -737,7 +737,7 @@ TEST(VectorArithAVX2TestDouble, MultComparisonRandom) {
         vec[i] = dist(rng);
     }
 
-    // Perform vector multiplication using AVX2 and standard methods
+    // Perform vector multiplication using INTRINSIC and standard methods
     std::vector<double> result_avx2(size);
     std::vector<double> result_std(size);
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
@@ -749,7 +749,7 @@ TEST(VectorArithAVX2TestDouble, MultComparisonRandom) {
     }
 }
 
-TEST(VectorArithAVX2TestDouble, MultiplicationPerformanceComparison) {
+TEST(VectorArithINTRINSICTestDouble, MultiplicationPerformanceComparison) {
     const size_t size = 4096 * 4096;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -759,7 +759,7 @@ TEST(VectorArithAVX2TestDouble, MultiplicationPerformanceComparison) {
     std::vector<double> result_avx2(size);
     std::vector<double> result_std(size);
 
-    // Measure execution time for AVX2 vector multiplication
+    // Measure execution time for INTRINSIC vector multiplication
     auto start_avx2 = std::chrono::high_resolution_clock::now();
     gpmp::linalg::vector_mult(vec, scalar, result_avx2);
     auto end_avx2 = std::chrono::high_resolution_clock::now();
@@ -774,18 +774,18 @@ TEST(VectorArithAVX2TestDouble, MultiplicationPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "AVX2 Vector Multiplication Time      : "
+    TEST_COUT << "INTRINSIC Vector Multiplication Time      : "
               << elapsed_seconds_avx2.count() << " seconds" << std::endl;
-    TEST_COUT << "STD  Vector Multiplication Time      : "
+    TEST_COUT << "STANDARD  Vector Multiplication Time      : "
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
-TEST(VectorArithAVX2TestDouble, DotProduct) {
+TEST(VectorArithINTRINSICTestDouble, DotProduct) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};
 
-    // Calculate dot product using AVX2
+    // Calculate dot product using INTRINSIC
     double result_avx2 = gpmp::linalg::dot_product(vec1, vec2);
 
     // Calculate dot product using standard method
@@ -795,7 +795,7 @@ TEST(VectorArithAVX2TestDouble, DotProduct) {
     EXPECT_DOUBLE_EQ(result_avx2, result_std);
 }
 
-TEST(VectorArithAVX2TestDouble, DotProductRandom) {
+TEST(VectorArithINTRINSICTestDouble, DotProductRandom) {
     const size_t size = 4096;
 
     // Create random number generator
@@ -810,7 +810,7 @@ TEST(VectorArithAVX2TestDouble, DotProductRandom) {
         vec2[i] = dist(rng);
     }
 
-    // Calculate dot product using AVX2 intrinsics
+    // Calculate dot product using INTRINSIC intrinsics
     double result = gpmp::linalg::dot_product(vec1, vec2);
 
     // Calculate dot product using standard method
@@ -823,7 +823,7 @@ TEST(VectorArithAVX2TestDouble, DotProductRandom) {
     EXPECT_DOUBLE_EQ(result, expected_result);
 }
 
-TEST(VectorArithAVX2TestDouble, DotProductPerformanceComparison) {
+TEST(VectorArithINTRINSICTestDouble, DotProductPerformanceComparison) {
     const size_t size = 4096 * 4096;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -831,7 +831,7 @@ TEST(VectorArithAVX2TestDouble, DotProductPerformanceComparison) {
     std::vector<double> vec1(size, 1.0);
     std::vector<double> vec2(size, 2.0);
 
-    // Measure execution time for AVX2 dot product calculation
+    // Measure execution time for INTRINSIC dot product calculation
     auto start_avx2 = std::chrono::high_resolution_clock::now();
     double result_avx2 = gpmp::linalg::dot_product(vec1, vec2);
     auto end_avx2 = std::chrono::high_resolution_clock::now();
@@ -844,8 +844,8 @@ TEST(VectorArithAVX2TestDouble, DotProductPerformanceComparison) {
     std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
 
     // Print the results
-    TEST_COUT << "AVX2 Dot Product Time      : " << elapsed_seconds_avx2.count()
+    TEST_COUT << "INTRINSIC Dot Product Time      : " << elapsed_seconds_avx2.count()
               << " seconds" << std::endl;
-    TEST_COUT << "STD  Dot Product Time      : " << elapsed_seconds_std.count()
+    TEST_COUT << "STANDARD  Dot Product Time      : " << elapsed_seconds_std.count()
               << " seconds" << std::endl;
 }
