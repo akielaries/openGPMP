@@ -51,6 +51,7 @@
 #include "linalg/mtx.hpp"
 #include "linalg/svd.hpp"
 #include "linalg/tensor.hpp"
+#include "linalg/vector.hpp"
 
 /*****************************************************************************/
 

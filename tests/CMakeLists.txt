@@ -29,6 +29,7 @@ set(CPP_SOURCES
     ../modules/linalg/mtx.cpp
     ../modules/linalg/tensor.cpp
     ../modules/linalg/svd.cpp
+    ../modules/linalg/vector.cpp
     ../modules/ml/bayes_clf.cpp
     ../modules/ml/encoder.cpp
     ../modules/ml/mlp_network.cpp
@@ -66,6 +67,7 @@ set(CPP_TEST_FILES
     linalg/t_matrix.cpp
     linalg/t_eigen.cpp
     linalg/t_linsys.cpp
+    linalg/t_vector.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp

@@ -12,6 +12,7 @@ set(SOURCE_FILES
     eigen.cpp
     tensor.cpp
     svd.cpp
+    vector.cpp
 )
 
 # compile OpenCL GPU accelerators into openGPMP binary written
