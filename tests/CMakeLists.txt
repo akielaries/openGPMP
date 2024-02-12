@@ -145,11 +145,9 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Running C++ Unit Tests]"
     COMMAND test_openGPMP_cpp
-    #COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
-    #COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
-    #COMMAND mv lcov.info ../../.coverage
 )
 message(STATUS "Detecting lcov")
+
 # Find lcov
 find_program(LCOV lcov)
 
@@ -158,13 +156,14 @@ if(LCOV)
         COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
         COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
         COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
-        COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+        COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
         COMMAND mv lcov.info ../../.coverage
         COMMENT "Generating Coverage Reports"
     )
 else()
     message(STATUS "lcov not found. Coverage reports will not be generated")
 endif()
+
 message(STATUS "Detecting lcov - done")
 
 add_custom_target(RUN_FORTRAN_TESTS
