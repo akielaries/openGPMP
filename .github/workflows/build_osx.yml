@@ -33,7 +33,7 @@ jobs:
           which g++
           which gfortran
 
-      - name: Configure CMake
+      - name: Configure CMake (GCC)
         run: |
 
           #cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_Fortran_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
