@@ -31,6 +31,7 @@ jobs:
       - name: get compilers
         run: |
           ls /usr/bin
+          ls /usr/bin
           which gcc
           which g++-13
           which gfortran
@@ -38,7 +39,7 @@ jobs:
 
       - name: Configure CMake (GCC)
         run: |
-          cmake -DCMAKE_C_COMPILER=/usr/bin/gcc-13 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-13 -DCMAKE_FORTRAN_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON -DCMAKE_VERBOSE_MAKEFILE=ON
+          cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-13 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-13 -DCMAKE_FORTRAN_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON -DCMAKE_VERBOSE_MAKEFILE=ON
 
       - name: Build (GCC)
         run: |
