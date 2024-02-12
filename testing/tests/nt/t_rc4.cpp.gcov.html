@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - tests/nt/t_rc4.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">tests/nt</a> - t_rc4.cpp<span style="font-size: 80%;"> (source / <a href="t_rc4.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">84</td>
+            <td class="headerCovTableEntry">84</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2024-02-12 18:01:47</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /*************************************************************************</a>
+<a name="2"><span class="lineNum">       2 </span>            :  *</a>
+<a name="3"><span class="lineNum">       3 </span>            :  *  Project</a>
+<a name="4"><span class="lineNum">       4 </span>            :  *                        __  __ _______ _____  _  __</a>
+<a name="5"><span class="lineNum">       5 </span>            :  *                       |  \/  |__   __|  __ \| |/ /</a>
+<a name="6"><span class="lineNum">       6 </span>            :  *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /</a>
+<a name="7"><span class="lineNum">       7 </span>            :  * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  &lt;</a>
+<a name="8"><span class="lineNum">       8 </span>            :  *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \</a>
+<a name="9"><span class="lineNum">       9 </span>            :  * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\</a>
+<a name="10"><span class="lineNum">      10 </span>            :  *      | |</a>
+<a name="11"><span class="lineNum">      11 </span>            :  *      |_|</a>
+<a name="12"><span class="lineNum">      12 </span>            :  *</a>
+<a name="13"><span class="lineNum">      13 </span>            :  *</a>
+<a name="14"><span class="lineNum">      14 </span>            :  * Copyright (C) Akiel Aries, &lt;akiel@akiel.org&gt;, et al.</a>
+<a name="15"><span class="lineNum">      15 </span>            :  *</a>
+<a name="16"><span class="lineNum">      16 </span>            :  * This software is licensed as described in the file LICENSE, which</a>
+<a name="17"><span class="lineNum">      17 </span>            :  * you should have received as part of this distribution. The terms</a>
+<a name="18"><span class="lineNum">      18 </span>            :  * among other details are referenced in the official documentation</a>
+<a name="19"><span class="lineNum">      19 </span>            :  * seen here : https://akielaries.github.io/openGPMP/ along with</a>
+<a name="20"><span class="lineNum">      20 </span>            :  * important files seen in this project.</a>
+<a name="21"><span class="lineNum">      21 </span>            :  *</a>
+<a name="22"><span class="lineNum">      22 </span>            :  * You may opt to use, copy, modify, merge, publish, distribute</a>
+<a name="23"><span class="lineNum">      23 </span>            :  * and/or sell copies of the Software, and permit persons to whom</a>
+<a name="24"><span class="lineNum">      24 </span>            :  * the Software is furnished to do so, under the terms of the</a>
+<a name="25"><span class="lineNum">      25 </span>            :  * LICENSE file. As this is an Open Source effort, all implementations</a>
+<a name="26"><span class="lineNum">      26 </span>            :  * must be of the same methodology.</a>
+<a name="27"><span class="lineNum">      27 </span>            :  *</a>
+<a name="28"><span class="lineNum">      28 </span>            :  *</a>
+<a name="29"><span class="lineNum">      29 </span>            :  *</a>
+<a name="30"><span class="lineNum">      30 </span>            :  * This software is distributed on an AS IS basis, WITHOUT</a>
+<a name="31"><span class="lineNum">      31 </span>            :  * WARRANTY OF ANY KIND, either express or implied.</a>
+<a name="32"><span class="lineNum">      32 </span>            :  *</a>
+<a name="33"><span class="lineNum">      33 </span>            :  ************************************************************************/</a>
+<a name="34"><span class="lineNum">      34 </span>            : </a>
+<a name="35"><span class="lineNum">      35 </span>            : /*</a>
+<a name="36"><span class="lineNum">      36 </span>            :  * Testing an implementation of RC4 encryption algorithm based off</a>
+<a name="37"><span class="lineNum">      37 </span>            :  * verified plaintext-&gt;hash conversions</a>
+<a name="38"><span class="lineNum">      38 </span>            :  */</a>
+<a name="39"><span class="lineNum">      39 </span>            : #include &quot;../../include/nt/rc4.hpp&quot;</a>
+<a name="40"><span class="lineNum">      40 </span>            : #include &lt;gtest/gtest.h&gt;</a>
+<a name="41"><span class="lineNum">      41 </span>            : #include &lt;iostream&gt;</a>
+<a name="42"><span class="lineNum">      42 </span>            : #include &lt;limits.h&gt;</a>
+<a name="43"><span class="lineNum">      43 </span>            : #include &lt;sstream&gt;</a>
+<a name="44"><span class="lineNum">      44 </span>            : #include &lt;string&gt;</a>
+<a name="45"><span class="lineNum">      45 </span>            : </a>
+<a name="46"><span class="lineNum">      46 </span>            : using ::testing::DoubleLE;</a>
+<a name="47"><span class="lineNum">      47 </span>            : using ::testing::FloatLE;</a>
+<a name="48"><span class="lineNum">      48 </span>            : using ::testing::InitGoogleTest;</a>
+<a name="49"><span class="lineNum">      49 </span>            : </a>
+<a name="50"><span class="lineNum">      50 </span>            : namespace {</a>
+<a name="51"><span class="lineNum">      51 </span>            : gpmp::RC4 rc;</a>
+<a name="52"><span class="lineNum">      52 </span>            : </a>
+<a name="53"><span class="lineNum">      53 </span>            : // BBF316E8D940AF0AD3</a>
+<a name="54"><span class="lineNum">      54 </span>            : char *key_0 = (char *)&quot;Key&quot;;</a>
+<a name="55"><span class="lineNum">      55 </span>            : char *text_0 = (char *)&quot;Plaintext&quot;;</a>
+<a name="56"><span class="lineNum">      56 </span>            : // 1021BF0420</a>
+<a name="57"><span class="lineNum">      57 </span>            : char *key_1 = (char *)&quot;Wiki&quot;;</a>
+<a name="58"><span class="lineNum">      58 </span>            : char *text_1 = (char *)&quot;pedia&quot;;</a>
+<a name="59"><span class="lineNum">      59 </span>            : // 45A01F645FC35B383552544B9BF5</a>
+<a name="60"><span class="lineNum">      60 </span>            : char *key_2 = (char *)&quot;Secret&quot;;</a>
+<a name="61"><span class="lineNum">      61 </span>            : char *text_2 = (char *)&quot;Attack at dawn&quot;;</a>
+<a name="62"><span class="lineNum">      62 </span>            : </a>
+<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          4 : TEST(RC4Test, hash_XOR) {</span></a>
+<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          1 :     int x_swap = 0;</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">          1 :     std::string ptext_0 = &quot;|xbb||xf3||x16||xe8||xd9||x40||xaf||x0a||xd3|&quot;;</span></a>
+<a name="66"><span class="lineNum">      66 </span>            :     // allocate memory for the ciphertext pointer</a>
+<a name="67"><span class="lineNum">      67 </span>            :     unsigned char *hashtext_0 =</a>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_0));</span></a>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">          1 :     rc.compute(key_0, text_0, hashtext_0, x_swap);</span></a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">          1 :     std::string displayed_0 = rc.store_hash(text_0, hashtext_0, x_swap);</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_0, displayed_0);</span></a>
+<a name="72"><span class="lineNum">      72 </span>            :     /*&lt;------------------------------------------------------------------&gt;*/</a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">          2 :     std::string ptext_01 = &quot;|x10||x21||xbf||x04||x20|&quot;;</span></a>
+<a name="74"><span class="lineNum">      74 </span>            :     unsigned char *hashtext_01 =</a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_1));</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          1 :     rc.compute(key_1, text_1, hashtext_01, x_swap);</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          2 :     std::string displayed_01 = rc.store_hash(text_1, hashtext_01, x_swap);</span></a>
+<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_01, displayed_01);</span></a>
+<a name="79"><span class="lineNum">      79 </span>            :     /*&lt;------------------------------------------------------------------&gt;*/</a>
+<a name="80"><span class="lineNum">      80 </span>            :     std::string ptext_02 = &quot;|x45||xa0||x1f||x64||x5f||xc3||x5b||x38||&quot;</a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">          2 :                            &quot;x35||x52||x54||x4b||x9b||xf5|&quot;;</span></a>
+<a name="82"><span class="lineNum">      82 </span>            :     unsigned char *hashtext_02 =</a>
+<a name="83"><span class="lineNum">      83 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_2));</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">          1 :     rc.compute(key_2, text_2, hashtext_02, x_swap);</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineCov">          2 :     std::string displayed_02 = rc.store_hash(text_2, hashtext_02, x_swap);</span></a>
+<a name="86"><span class="lineNum">      86 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_02, displayed_02);</span></a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineCov">          1 : }</span></a>
+<a name="88"><span class="lineNum">      88 </span>            : </a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          4 : TEST(RC4Test, hash_TRADITIONAL) {</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">          1 :     int t_swap = 1;</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          1 :     std::string ptext_1 = &quot;BBF316E8D940AF0AD3&quot;;</span></a>
+<a name="92"><span class="lineNum">      92 </span>            :     unsigned char *hashtext_10 =</a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_0));</span></a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineCov">          1 :     rc.compute(key_0, text_0, hashtext_10, t_swap);</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineCov">          1 :     std::string displayed_10 = rc.store_hash(text_0, hashtext_10, t_swap);</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_1, displayed_10);</span></a>
+<a name="97"><span class="lineNum">      97 </span>            :     /*&lt;------------------------------------------------------------------&gt;*/</a>
+<a name="98"><span class="lineNum">      98 </span><span class="lineCov">          2 :     std::string ptext_11 = &quot;1021BF0420&quot;;</span></a>
+<a name="99"><span class="lineNum">      99 </span>            :     unsigned char *hashtext_11 =</a>
+<a name="100"><span class="lineNum">     100 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_1));</span></a>
+<a name="101"><span class="lineNum">     101 </span><span class="lineCov">          1 :     rc.compute(key_1, text_1, hashtext_11, t_swap);</span></a>
+<a name="102"><span class="lineNum">     102 </span><span class="lineCov">          2 :     std::string displayed_11 = rc.store_hash(text_1, hashtext_11, t_swap);</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_11, displayed_11);</span></a>
+<a name="104"><span class="lineNum">     104 </span>            :     /*&lt;------------------------------------------------------------------&gt;*/</a>
+<a name="105"><span class="lineNum">     105 </span><span class="lineCov">          2 :     std::string ptext_12 = &quot;45A01F645FC35B383552544B9BF5&quot;;</span></a>
+<a name="106"><span class="lineNum">     106 </span>            :     unsigned char *hashtext_12 =</a>
+<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_2));</span></a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">          1 :     rc.compute(key_2, text_2, hashtext_12, t_swap);</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">          2 :     std::string displayed_12 = rc.store_hash(text_2, hashtext_12, t_swap);</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_12, displayed_12);</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">          1 : }</span></a>
+<a name="112"><span class="lineNum">     112 </span>            : </a>
+<a name="113"><span class="lineNum">     113 </span><span class="lineCov">          4 : TEST(RC4Test, hash_BYTE) {</span></a>
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">          1 :     int b_swap = 2;</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineCov">          1 :     std::string ptext_2 = &quot;BBF316E8D940AF0AD3&quot;;</span></a>
+<a name="116"><span class="lineNum">     116 </span>            :     unsigned char *hashtext_20 =</a>
+<a name="117"><span class="lineNum">     117 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_0));</span></a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineCov">          1 :     rc.compute(key_0, text_0, hashtext_20, b_swap);</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">          1 :     std::string displayed_20 = rc.store_hash(text_0, hashtext_20, b_swap);</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_2, displayed_20);</span></a>
+<a name="121"><span class="lineNum">     121 </span>            :     /*&lt;------------------------------------------------------------------&gt;*/</a>
+<a name="122"><span class="lineNum">     122 </span><span class="lineCov">          2 :     std::string ptext_21 = &quot;1021BF0420&quot;;</span></a>
+<a name="123"><span class="lineNum">     123 </span>            :     unsigned char *hashtext_21 =</a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_1));</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">          1 :     rc.compute(key_1, text_1, hashtext_21, b_swap);</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          2 :     std::string displayed_21 = rc.store_hash(text_1, hashtext_21, b_swap);</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_21, displayed_21);</span></a>
+<a name="128"><span class="lineNum">     128 </span>            :     /*&lt;------------------------------------------------------------------&gt;*/</a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">          2 :     std::string ptext_22 = &quot;45A01F645FC35B383552544B9BF5&quot;;</span></a>
+<a name="130"><span class="lineNum">     130 </span>            :     unsigned char *hashtext_22 =</a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_2));</span></a>
+<a name="132"><span class="lineNum">     132 </span><span class="lineCov">          1 :     rc.compute(key_2, text_2, hashtext_22, b_swap);</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          2 :     std::string displayed_22 = rc.store_hash(text_2, hashtext_22, b_swap);</span></a>
+<a name="134"><span class="lineNum">     134 </span><span class="lineCov">          1 :     EXPECT_EQ(ptext_22, displayed_22);</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">          1 : }</span></a>
+<a name="136"><span class="lineNum">     136 </span>            : </a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">          4 : TEST(RC4Test, SWAP_error_4) {</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">          1 :     int swap_FALSE = 4;</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          1 :     std::string expected_error_text = &quot;[-] Invalid swap_type&quot;;</span></a>
+<a name="140"><span class="lineNum">     140 </span>            : </a>
+<a name="141"><span class="lineNum">     141 </span>            :     /*BEGIN RC4 ITERATIONS*/</a>
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          1 :     std::string ptext_FALSE = &quot;1021BF0420&quot;;</span></a>
+<a name="143"><span class="lineNum">     143 </span>            :     unsigned char *hashtext_FALSE =</a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_2));</span></a>
+<a name="145"><span class="lineNum">     145 </span>            : </a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">          1 :     EXPECT_THROW(rc.compute(key_2, text_2, hashtext_FALSE, swap_FALSE),</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          1 :                  std::runtime_error);</span></a>
+<a name="148"><span class="lineNum">     148 </span>            : </a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">          1 :     ASSERT_THROW(rc.compute(key_2, text_2, hashtext_FALSE, swap_FALSE),</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          1 :                  std::runtime_error);</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">          1 : }</span></a>
+<a name="152"><span class="lineNum">     152 </span>            : </a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">          4 : TEST(RC4Test, SWAP_error_127) {</span></a>
+<a name="154"><span class="lineNum">     154 </span><span class="lineCov">          1 :     int swap_FALSE_127 = 127;</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          1 :     std::string expected_error_text_127 = &quot;[-] Invalid swap_type&quot;;</span></a>
+<a name="156"><span class="lineNum">     156 </span>            : </a>
+<a name="157"><span class="lineNum">     157 </span>            :     /*BEGIN RC4 ITERATIONS*/</a>
+<a name="158"><span class="lineNum">     158 </span><span class="lineCov">          1 :     std::string ptext_FALSE_127 = &quot;1021BF0420&quot;;</span></a>
+<a name="159"><span class="lineNum">     159 </span>            :     unsigned char *hashtext_FALSE_127 =</a>
+<a name="160"><span class="lineNum">     160 </span><span class="lineCov">          1 :         (unsigned char *)malloc(sizeof(int) * strlen(text_2));</span></a>
+<a name="161"><span class="lineNum">     161 </span>            : </a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">          1 :     EXPECT_THROW(rc.compute(key_2, text_2, hashtext_FALSE_127, swap_FALSE_127),</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">          1 :                  std::runtime_error);</span></a>
+<a name="164"><span class="lineNum">     164 </span>            : </a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineCov">          1 :     ASSERT_THROW(rc.compute(key_2, text_2, hashtext_FALSE_127, swap_FALSE_127),</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">          1 :                  std::runtime_error);</span></a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineCov">          1 : }</span></a>
+<a name="168"><span class="lineNum">     168 </span>            : </a>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">          4 : TEST(RC4Test, NULL_ciphertext) {</span></a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineCov">          1 :     int swap_NULL = 0;</span></a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">          1 :     std::string expected_error_text_127 = &quot;[-] Error Allocating Memory&quot;;</span></a>
+<a name="172"><span class="lineNum">     172 </span>            : </a>
+<a name="173"><span class="lineNum">     173 </span>            :     /*BEGIN RC4 ITERATIONS*/</a>
+<a name="174"><span class="lineNum">     174 </span><span class="lineCov">          1 :     std::string ptext_NULL = &quot;1021BF0420&quot;;</span></a>
+<a name="175"><span class="lineNum">     175 </span><span class="lineCov">          1 :     unsigned char *hashtext_NULL = nullptr;</span></a>
+<a name="176"><span class="lineNum">     176 </span>            :     //(unsigned char *)malloc(sizeof(int) *</a>
+<a name="177"><span class="lineNum">     177 </span>            :     //    strlen(swap_NULL));</a>
+<a name="178"><span class="lineNum">     178 </span>            : </a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineCov">          1 :     EXPECT_THROW(rc.compute(key_2, text_2, hashtext_NULL, swap_NULL),</span></a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">          1 :                  std::runtime_error);</span></a>
+<a name="181"><span class="lineNum">     181 </span>            : </a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">          1 :     ASSERT_THROW(rc.compute(key_2, text_2, hashtext_NULL, swap_NULL),</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">          1 :                  std::runtime_error);</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineCov">          1 : }</span></a>
+<a name="185"><span class="lineNum">     185 </span>            : </a>
+<a name="186"><span class="lineNum">     186 </span>            : } // namespace</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
