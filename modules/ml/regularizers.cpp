@@ -167,10 +167,11 @@ std::vector<std::vector<double>> gpmp::ml::Regularize::data_augmentation(
         augmented_data.push_back(instance);
         for (int i = 1; i < augmentation_factor; ++i) {
             std::vector<double> augmented_instance = instance;
-            std::shuffle(augmented_instance.begin(), augmented_instance.end(), gen);
+            std::shuffle(augmented_instance.begin(),
+                         augmented_instance.end(),
+                         gen);
             augmented_data.push_back(augmented_instance);
         }
     }
     return augmented_data;
 }
-

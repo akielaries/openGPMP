@@ -150,7 +150,7 @@ class ThreadPool {
         -> std::future<typename std::invoke_result<F, Args...>::type> {
 
         // this is the return type of the passed in function
-        //using return_type = typename std::result_of<F(Args...)>::type;
+        // using return_type = typename std::result_of<F(Args...)>::type;
         using return_type = typename std::invoke_result<F, Args...>::type;
 
         // * SHARED POINTER to PACKAGED TASK used to store the passed in i

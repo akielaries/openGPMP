@@ -65,9 +65,9 @@ void gpmp::linalg::vector_add(const std::vector<int> &vec1,
     const int *data2 = vec2.data();
     int *result_data = result.data();
 
-    // Check if size is a multiple of 8
-    if (size % 8 == 0) {
-        for (size_t i = 0; i < size; i += 8) {
+    if (size > 16) {
+        int i = 0;
+        for (; i < size - 7; i += 8) {
             // Load 8 elements from vec1 and vec2
             __m256i a = _mm256_loadu_si256(
                 reinterpret_cast<const __m256i *>(data1 + i));
@@ -81,8 +81,13 @@ void gpmp::linalg::vector_add(const std::vector<int> &vec1,
             _mm256_storeu_si256(reinterpret_cast<__m256i *>(result_data + i),
                                 c);
         }
-    } else {
-        // If size is not a multiple of 8, perform standard addition
+        for (; i < size; ++i) {
+            result_data[i] = data1[i] + data2[i];
+        }
+    }
+
+    else {
+        // if size is not a multiple of 8, perform standard addition
         for (size_t i = 0; i < size; ++i) {
             result_data[i] = data1[i] + data2[i];
         }
@@ -97,21 +102,26 @@ void gpmp::linalg::vector_add(const std::vector<double> &vec1,
     const double *data2 = vec2.data();
     double *result_data = result.data();
 
-    // Check if size is a multiple of 4
-    if (size % 4 == 0) {
-        for (size_t i = 0; i < size; i += 4) {
+    if (size > 4) {
+        int i = 0;
+        // perform vectorized addition as long as there are at least 4 elements
+        // remaining
+        for (; i < size - 3; i += 4) {
             // Load 4 elements from vec1 and vec2
             __m256d a = _mm256_loadu_pd(data1 + i);
             __m256d b = _mm256_loadu_pd(data2 + i);
 
-            // Perform vectorized addition
             __m256d c = _mm256_add_pd(a, b);
 
             // Store the result back to result vector
             _mm256_storeu_pd(result_data + i, c);
         }
-    } else {
-        // If size is not a multiple of 4, perform standard addition
+
+        // Perform standard addition on the remaining elements
+        for (; i < size; ++i) {
+            result_data[i] = data1[i] + data2[i];
+        }
+    } else { // If size is not greater than 4, perform standard addition
         for (size_t i = 0; i < size; ++i) {
             result_data[i] = data1[i] + data2[i];
         }
@@ -125,20 +135,28 @@ void gpmp::linalg::vector_sub(const std::vector<int> &vec1,
     const int remainder = vecSize % 8;
     const int vecSizeAligned = vecSize - remainder;
 
-    for (int i = 0; i < vecSizeAligned; i += 8) {
-        __m256i vec1Data =
-            _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&vec1[i]));
-        __m256i vec2Data =
-            _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&vec2[i]));
-        __m256i sub = _mm256_sub_epi32(vec1Data, vec2Data);
-        _mm256_storeu_si256(reinterpret_cast<__m256i *>(&result[i]), sub);
-    }
+    if (vecSize > 8) {
+        for (int i = 0; i < vecSizeAligned; i += 8) {
+            __m256i vec1Data =
+                _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&vec1[i]));
+            __m256i vec2Data =
+                _mm256_loadu_si256(reinterpret_cast<const __m256i *>(&vec2[i]));
+            __m256i sub = _mm256_sub_epi32(vec1Data, vec2Data);
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&result[i]), sub);
+        }
 
-    for (int i = vecSizeAligned; i < vecSize; ++i) {
-        result[i] = vec1[i] - vec2[i];
+        // Perform standard subtraction on the remaining elements
+        for (int i = vecSizeAligned; i < vecSize; ++i) {
+            result[i] = vec1[i] - vec2[i];
+        }
+    } else {
+        for (int i = 0; i < vecSize; ++i) {
+            result[i] = vec1[i] - vec2[i];
+        }
     }
 }
 
+// Vector subtraction using AVX2 intrinsics, operates on double types
 void gpmp::linalg::vector_sub(const std::vector<double> &vec1,
                               const std::vector<double> &vec2,
                               std::vector<double> &result) {
@@ -146,19 +164,25 @@ void gpmp::linalg::vector_sub(const std::vector<double> &vec1,
     const int remainder = vecSize % 4;
     const int vecSizeAligned = vecSize - remainder;
 
-    for (int i = 0; i < vecSizeAligned; i += 4) {
-        __m256d vec1Data = _mm256_loadu_pd(&vec1[i]);
-        __m256d vec2Data = _mm256_loadu_pd(&vec2[i]);
-        __m256d sub = _mm256_sub_pd(vec1Data, vec2Data);
-        _mm256_storeu_pd(&result[i], sub);
-    }
+    if (vecSize > 4) {
+        for (int i = 0; i < vecSizeAligned; i += 4) {
+            __m256d vec1Data = _mm256_loadu_pd(&vec1[i]);
+            __m256d vec2Data = _mm256_loadu_pd(&vec2[i]);
+            __m256d sub = _mm256_sub_pd(vec1Data, vec2Data);
+            _mm256_storeu_pd(&result[i], sub);
+        }
 
-    for (int i = vecSizeAligned; i < vecSize; ++i) {
-        result[i] = vec1[i] - vec2[i];
+        // Perform standard subtraction on the remaining elements
+        for (int i = vecSizeAligned; i < vecSize; ++i) {
+            result[i] = vec1[i] - vec2[i];
+        }
+    } else {
+        for (int i = 0; i < vecSize; ++i) {
+            result[i] = vec1[i] - vec2[i];
+        }
     }
 }
 
-// Vector multiplication using AVX2 intrinsics, operates on integer types
 void gpmp::linalg::vector_mult(const std::vector<int> &vec,
                                int scalar,
                                std::vector<int> &result) {
@@ -166,10 +190,12 @@ void gpmp::linalg::vector_mult(const std::vector<int> &vec,
     const int *data = vec.data();
     int *result_data = result.data();
 
-    // Check if size is a multiple of 8
-    if (size % 8 == 0) {
+    if (size > 8) {
         __m256i scalar_vec = _mm256_set1_epi32(scalar);
-        for (size_t i = 0; i < size; i += 8) {
+        int i = 0;
+        // Perform vectorized multiplication as long as there are at least 8
+        // elements remaining
+        for (; i < size - 7; i += 8) {
             // Load 8 elements from vec
             __m256i a =
                 _mm256_loadu_si256(reinterpret_cast<const __m256i *>(data + i));
@@ -181,8 +207,12 @@ void gpmp::linalg::vector_mult(const std::vector<int> &vec,
             _mm256_storeu_si256(reinterpret_cast<__m256i *>(result_data + i),
                                 c);
         }
+
+        // Perform standard multiplication on the remaining elements
+        for (; i < size; ++i) {
+            result_data[i] = data[i] * scalar;
+        }
     } else {
-        // If size is not a multiple of 8, perform standard multiplication
         for (size_t i = 0; i < size; ++i) {
             result_data[i] = data[i] * scalar;
         }
@@ -217,7 +247,6 @@ void gpmp::linalg::vector_mult(const std::vector<double> &vec,
     }
 }
 
-// Dot product using AVX2 intrinsics, operates on integer types
 int gpmp::linalg::dot_product(const std::vector<int> &vec1,
                               const std::vector<int> &vec2) {
     const size_t size = vec1.size();
@@ -225,9 +254,11 @@ int gpmp::linalg::dot_product(const std::vector<int> &vec1,
     const int *data2 = vec2.data();
     int result = 0;
 
-    // Check if size is a multiple of 8
-    if (size % 8 == 0) {
-        for (size_t i = 0; i < size; i += 8) {
+    if (size > 8) {
+        int i = 0;
+        // Perform vectorized multiplication and addition as long as there are
+        // at least 8 elements remaining
+        for (; i < size - 7; i += 8) {
             // Load 8 elements from vec1 and vec2
             __m256i a = _mm256_loadu_si256(
                 reinterpret_cast<const __m256i *>(data1 + i));
@@ -243,8 +274,12 @@ int gpmp::linalg::dot_product(const std::vector<int> &vec1,
             result += _mm256_extract_epi32(sum, 0);
             result += _mm256_extract_epi32(sum, 4);
         }
-    } else {
-        // If size is not a multiple of 8, perform standard dot product
+
+        // Perform standard dot product on the remaining elements
+        for (; i < size; ++i) {
+            result += data1[i] * data2[i];
+        }
+    } else { // If size is not greater than 8, perform standard dot product
         for (size_t i = 0; i < size; ++i) {
             result += data1[i] * data2[i];
         }
@@ -287,6 +322,36 @@ double gpmp::linalg::dot_product(const std::vector<double> &vec1,
     }
 
     return result;
+}
+
+/************************************************************************
+ *
+ * Vector Operations for AVX ISA
+ *
+ ************************************************************************/
+#elif defined(__AVX__)
+#include <immintrin.h>
+
+// uses 128bit registers since AVX does not support 256bit registers like
+// AVX2
+void gpmp::linalg::vector_sub(const std::vector<int> &vec1,
+                              const std::vector<int> &vec2,
+                              std::vector<int> &result) {
+    const int vecSize = vec1.size();
+    const int remainder = vecSize % 4;
+    const int vecSizeAligned = vecSize - remainder;
+
+    for (int i = 0; i < vecSizeAligned; i += 4) {
+        __m128i v1 = _mm_loadu_si128((__m128i *)(vec1.data() + i));
+        __m128i v2 = _mm_loadu_si128((__m128i *)(vec2.data() + i));
+        __m128i result_vec = _mm_sub_epi32(v1, v2);
+
+        _mm_storeu_si128((__m128i *)(result.data() + i), result_vec);
+    }
+
+    for (int i = vecSizeAligned; i < vecSize; ++i) {
+        result[i] = vec1[i] - vec2[i];
+    }
 }
 
 /************************************************************************
@@ -555,11 +620,6 @@ double gpmp::linalg::dot_product(const std::vector<double> &vec1,
 void gpmp::linalg::std_vector_add(const std::vector<double> &vec1,
                                   const std::vector<double> &vec2,
                                   std::vector<double> &result) {
-    if (vec1.size() != vec2.size()) {
-        // handle error, throw exception, or take appropriate action
-        return;
-    }
-
     result.resize(vec1.size());
     for (size_t i = 0; i < vec1.size(); ++i) {
         result[i] = vec1[i] + vec2[i];
@@ -570,10 +630,6 @@ void gpmp::linalg::std_vector_add(const std::vector<double> &vec1,
 void gpmp::linalg::std_vector_sub(const std::vector<double> &vec1,
                                   const std::vector<double> &vec2,
                                   std::vector<double> &result) {
-    if (vec1.size() != vec2.size()) {
-        // handle error, throw exception, or take appropriate action
-        return;
-    }
 
     result.resize(vec1.size());
     for (size_t i = 0; i < vec1.size(); ++i) {
@@ -594,11 +650,6 @@ void gpmp::linalg::std_vector_mult(const std::vector<double> &vec,
 // function to compute the dot product of two vectors
 double gpmp::linalg::std_dot_product(const std::vector<double> &vec1,
                                      const std::vector<double> &vec2) {
-    if (vec1.size() != vec2.size()) {
-        throw std::invalid_argument(
-            "Vector dimensions must match for dot product");
-    }
-
     double result = 0.0;
     for (size_t i = 0; i < vec1.size(); ++i) {
         result += vec1[i] * vec2[i];
@@ -610,11 +661,6 @@ double gpmp::linalg::std_dot_product(const std::vector<double> &vec1,
 void gpmp::linalg::std_cross_product(const std::vector<double> &vec1,
                                      const std::vector<double> &vec2,
                                      std::vector<double> &result) {
-    if (vec1.size() != 3 || vec2.size() != 3) {
-        throw std::invalid_argument(
-            "Cross product is defined only for 3D vectors");
-    }
-
     result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
     result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];
     result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];
@@ -654,11 +700,6 @@ void gpmp::linalg::std_vector_projection(const std::vector<double> &vec,
 void gpmp::linalg::std_vector_add(const std::vector<int> &vec1,
                                   const std::vector<int> &vec2,
                                   std::vector<int> &result) {
-    if (vec1.size() != vec2.size()) {
-        throw std::invalid_argument(
-            "Vector dimensions must match for addition");
-    }
-
     result.resize(vec1.size());
     for (size_t i = 0; i < vec1.size(); ++i) {
         result[i] = vec1[i] + vec2[i];
@@ -669,11 +710,6 @@ void gpmp::linalg::std_vector_add(const std::vector<int> &vec1,
 void gpmp::linalg::std_vector_sub(const std::vector<int> &vec1,
                                   const std::vector<int> &vec2,
                                   std::vector<int> &result) {
-    if (vec1.size() != vec2.size()) {
-        throw std::invalid_argument(
-            "Vector dimensions must match for subtraction");
-    }
-
     result.resize(vec1.size());
     for (size_t i = 0; i < vec1.size(); ++i) {
         result[i] = vec1[i] - vec2[i];
@@ -693,11 +729,6 @@ void gpmp::linalg::std_vector_mult(const std::vector<int> &vec,
 // function to compute the dot product of two vectors of integers
 int gpmp::linalg::std_dot_product(const std::vector<int> &vec1,
                                   const std::vector<int> &vec2) {
-    if (vec1.size() != vec2.size()) {
-        throw std::invalid_argument(
-            "Vector dimensions must match for dot product");
-    }
-
     int result = 0;
     for (size_t i = 0; i < vec1.size(); ++i) {
         result += vec1[i] * vec2[i];
@@ -709,11 +740,6 @@ int gpmp::linalg::std_dot_product(const std::vector<int> &vec1,
 void gpmp::linalg::std_cross_product(const std::vector<int> &vec1,
                                      const std::vector<int> &vec2,
                                      std::vector<int> &result) {
-    if (vec1.size() != 3 || vec2.size() != 3) {
-        throw std::invalid_argument(
-            "Cross product is defined only for 3D vectors");
-    }
-
     result.resize(3);
     result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
     result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];

@@ -192,6 +192,8 @@ TEST(VectorArithTestInt, Projection) {
     EXPECT_DOUBLE_EQ(result[1], 0.0);
 }
 
+#if defined(__AVX2__) || defined(__AVX__)
+
 TEST(VectorArithINTRINSICTestInt, Addition) {
     // Create input vectors
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
@@ -227,7 +229,7 @@ TEST(VectorArithINTRINSICTestInt, AdditionComparison) {
 }
 
 TEST(VectorArithINTRINSICTestInt, AdditionComparisonRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -255,7 +257,7 @@ TEST(VectorArithINTRINSICTestInt, AdditionComparisonRandom) {
 }
 
 TEST(VectorArithINTRINSICTestInt, AdditionPerformanceComparison) {
-    const size_t size = 4096 * 4096;
+    const size_t size = 4097 * 4097;
 
     TEST_COUT << "Vector size      : " << size << std::endl;
     // Create random number generator
@@ -330,7 +332,7 @@ TEST(VectorArithINTRINSICTestInt, SubtractionComparison) {
 }
 
 TEST(VectorArithINTRINSICTestInt, SubtractionComparisonRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -355,6 +357,47 @@ TEST(VectorArithINTRINSICTestInt, SubtractionComparisonRandom) {
     for (size_t i = 0; i < result_avx2.size(); ++i) {
         EXPECT_EQ(result_avx2[i], result_std[i]);
     }
+}
+
+TEST(VectorArithINTRINSICTestInt, SubtractionPerformanceComparison) {
+    const size_t size = 4097 * 4097;
+
+    TEST_COUT << "Vector size      : " << size << std::endl;
+    // Create random number generator
+    std::mt19937 rng(std::random_device{}());
+    std::uniform_real_distribution<double> dist(-1000, 1000);
+
+    // Generate random vectors
+    std::vector<double> vec1(size);
+    std::vector<double> vec2(size);
+    for (size_t i = 0; i < size; ++i) {
+        vec1[i] = dist(rng);
+        vec2[i] = dist(rng);
+    }
+
+    // Measure execution time for INTRINSIC vector addition
+    std::vector<double> result_avx2(size);
+
+    auto start_avx2 = std::chrono::high_resolution_clock::now();
+    gpmp::linalg::vector_add(vec1, vec2, result_avx2);
+    auto end_avx2 = std::chrono::high_resolution_clock::now();
+
+    std::chrono::duration<double> elapsed_seconds_avx2 = end_avx2 - start_avx2;
+
+    // Measure execution time for standard vector addition
+    std::vector<double> result_std(size);
+
+    auto start_std = std::chrono::high_resolution_clock::now();
+    gpmp::linalg::std_vector_add(vec1, vec2, result_std);
+    auto end_std = std::chrono::high_resolution_clock::now();
+
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    TEST_COUT << "INTRINSIC Vector Subtraction Time      : "
+              << elapsed_seconds_avx2.count() << " seconds" << std::endl;
+
+    TEST_COUT << "STANDARD  Vector Subtraction Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
 TEST(VectorArithINTRINSICTestDouble, Subtraction) {
@@ -392,7 +435,7 @@ TEST(VectorArithINTRINSICTestDouble, SubtractionComparison) {
 }
 
 TEST(VectorArithINTRINSICTestDouble, SubtractionComparisonRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -457,7 +500,7 @@ TEST(VectorArithINTRINSICTestInt, MultComparison) {
 // Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication using random vectors
 TEST(VectorArithINTRINSICTestInt, MultComparisonRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -485,7 +528,7 @@ TEST(VectorArithINTRINSICTestInt, MultComparisonRandom) {
 // Unit test to compare execution time of INTRINSIC vector multiplication with
 // standard vector multiplication
 TEST(VectorArithINTRINSICTestInt, MultPerformanceComparison) {
-    const size_t size = 4096 * 4096;
+    const size_t size = 4097 * 4097;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
     // Create random number generator
@@ -539,7 +582,7 @@ TEST(VectorArithINTRINSICTestInt, DotProduct) {
 
 // Unit test for dot product using INTRINSIC intrinsics with random vectors
 TEST(VectorArithINTRINSICTestInt, DotProductRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -567,7 +610,7 @@ TEST(VectorArithINTRINSICTestInt, DotProductRandom) {
 }
 
 TEST(VectorArithINTRINSICTestInt, DotProductPerformanceComparison) {
-    const size_t size = 4096 * 4096;
+    const size_t size = 4097 * 4097;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
     // Create input vectors
@@ -630,7 +673,7 @@ TEST(VectorArithINTRINSICTestDouble, AdditionComparison) {
 }
 
 TEST(VectorArithINTRINSICTestDouble, AdditionComparisonRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -660,7 +703,7 @@ TEST(VectorArithINTRINSICTestDouble, AdditionComparisonRandom) {
 // Unit test to compare execution time of INTRINSIC vector addition with
 // standard vector addition for doubles
 TEST(VectorArithINTRINSICTestDouble, AdditionPerformanceComparison) {
-    const size_t size = 4096 * 4096;
+    const size_t size = 4097 * 4097;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
     // Create input vectors
@@ -725,7 +768,7 @@ TEST(VectorArithINTRINSICTestDouble, MultComparison) {
 }
 
 TEST(VectorArithINTRINSICTestDouble, MultComparisonRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -751,7 +794,7 @@ TEST(VectorArithINTRINSICTestDouble, MultComparisonRandom) {
 }
 
 TEST(VectorArithINTRINSICTestDouble, MultiplicationPerformanceComparison) {
-    const size_t size = 4096 * 4096;
+    const size_t size = 4097 * 4097;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
     // Create input vector
@@ -797,7 +840,7 @@ TEST(VectorArithINTRINSICTestDouble, DotProduct) {
 }
 
 TEST(VectorArithINTRINSICTestDouble, DotProductRandom) {
-    const size_t size = 4096;
+    const size_t size = 4097;
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
@@ -825,7 +868,7 @@ TEST(VectorArithINTRINSICTestDouble, DotProductRandom) {
 }
 
 TEST(VectorArithINTRINSICTestDouble, DotProductPerformanceComparison) {
-    const size_t size = 4096 * 4096;
+    const size_t size = 4097 * 4097;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
     // Create input vectors
@@ -850,3 +893,5 @@ TEST(VectorArithINTRINSICTestDouble, DotProductPerformanceComparison) {
     TEST_COUT << "STANDARD  Dot Product Time      : "
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
+
+#endif
