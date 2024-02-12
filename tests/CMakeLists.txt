@@ -1,20 +1,25 @@
-# Download and install GoogleTest
-
-
 include(FetchContent)
 
-#find_package(GTest REQUIRED)
+find_package(GTest QUIET)
 
-# check if installation is present
-#if(NOT GTEST_FOUND)
+message(STATUS "Detecting GoogleTest")
+if(NOT GTest_FOUND)
+    message(STATUS "GoogleTest not found")
+    message(STATUS "Fetching GoogleTest")
+    # If GoogleTest is not found, fetch and build it
+    include(FetchContent)
     FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
     )
     FetchContent_MakeAvailable(googletest)
-    #endif()
+    message(STATUS "Fetching GoogleTest - done")
 
-#FetchContent_MakeAvailable(googletest)
+else()
+    message(STATUS "GoogleTest found")
+endif()
+
+message(STATUS "Detecting GoogleTest - done")
 
 # TODO this could be made dynamic some how?
 # source files that will be tested
@@ -139,12 +144,27 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Running C++ Unit Tests]"
     COMMAND test_openGPMP_cpp
-    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
-    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
-    COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
-    COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
-    COMMAND mv lcov.info ../../.coverage
+    #COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
+    #COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+    #COMMAND mv lcov.info ../../.coverage
 )
+message(STATUS "Detecting lcov")
+# Find lcov
+find_program(LCOV lcov)
+
+if(LCOV)
+    add_custom_command(TARGET RUN_CPP_TESTS POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
+        COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
+        COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+        COMMAND mv lcov.info ../../.coverage
+        COMMENT "Generating Coverage Reports"
+    )
+else()
+    message(STATUS "lcov not found. Coverage reports will not be generated")
+endif()
+message(STATUS "Detecting lcov - done")
 
 add_custom_target(RUN_FORTRAN_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
