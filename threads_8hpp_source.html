@@ -200,7 +200,7 @@ $(function() {
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        -&gt; std::future&lt;<span class="keyword">typename</span> std::invoke_result&lt;F, Args...&gt;::type&gt; {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">// this is the return type of the passed in function</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">//using return_type = typename std::result_of&lt;F(Args...)&gt;::type;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// using return_type = typename std::result_of&lt;F(Args...)&gt;::type;</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">using</span> return_type = <span class="keyword">typename</span> std::invoke_result&lt;F, Args...&gt;::type;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">// * SHARED POINTER to PACKAGED TASK used to store the passed in i</span></div>

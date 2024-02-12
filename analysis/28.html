@@ -400,7 +400,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
-<span class="normal">176</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><a id="line-1" name="line-1"></a><span class="cm">/*************************************************************************</span>
+<span class="normal">176</span>
+<span class="normal">177</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><a id="line-1" name="line-1"></a><span class="cm">/*************************************************************************</span>
 <a id="line-2" name="line-2"></a><span class="cm"> *</span>
 <a id="line-3" name="line-3"></a><span class="cm"> *  Project</span>
 <a id="line-4" name="line-4"></a><span class="cm"> *                         _____ _____  __  __ _____</span>
@@ -569,13 +570,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <a id="line-167" name="line-167"></a><span class="w">        </span><span class="n">augmented_data</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">instance</span><span class="p">);</span><span class="w"></span>
 <a id="line-168" name="line-168"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">augmentation_factor</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <a id="line-169" name="line-169"></a><span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">augmented_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span><span class="w"></span>
-<a id="line-170" name="line-170"></a><span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">shuffle</span><span class="p">(</span><span class="n">augmented_instance</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">augmented_instance</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">gen</span><span class="p">);</span><span class="w"></span>
-<a id="line-171" name="line-171"></a><span class="w">            </span><span class="n">augmented_data</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">augmented_instance</span><span class="p">);</span><span class="w"></span>
-<a id="line-172" name="line-172"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
-<a id="line-173" name="line-173"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<a id="line-174" name="line-174"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">augmented_data</span><span class="p">;</span><span class="w"></span>
-<a id="line-175" name="line-175"></a><span class="p">}</span><span class="w"></span>
-<a id="line-176" name="line-176"></a>
+<a id="line-170" name="line-170"></a><span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">shuffle</span><span class="p">(</span><span class="n">augmented_instance</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"></span>
+<a id="line-171" name="line-171"></a><span class="w">                         </span><span class="n">augmented_instance</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"></span>
+<a id="line-172" name="line-172"></a><span class="w">                         </span><span class="n">gen</span><span class="p">);</span><span class="w"></span>
+<a id="line-173" name="line-173"></a><span class="w">            </span><span class="n">augmented_data</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">augmented_instance</span><span class="p">);</span><span class="w"></span>
+<a id="line-174" name="line-174"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="line-175" name="line-175"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="line-176" name="line-176"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">augmented_data</span><span class="p">;</span><span class="w"></span>
+<a id="line-177" name="line-177"></a><span class="p">}</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
     </div>

@@ -248,13 +248,14 @@ $(function() {
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        augmented_data.push_back(instance);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; augmentation_factor; ++i) {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            std::vector&lt;double&gt; augmented_instance = instance;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            std::shuffle(augmented_instance.begin(), augmented_instance.end(), gen);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            augmented_data.push_back(augmented_instance);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">return</span> augmented_data;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            std::shuffle(augmented_instance.begin(),</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                         augmented_instance.end(),</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                         gen);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            augmented_data.push_back(augmented_instance);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> augmented_data;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Regularize_html_a24c3b724e5c0644cc2063fdfebb8d482"><div class="ttname"><a href="classgpmp_1_1ml_1_1Regularize.html#a24c3b724e5c0644cc2063fdfebb8d482">gpmp::ml::Regularize::l2_regularization</a></div><div class="ttdeci">static double l2_regularization(const std::vector&lt; double &gt; &amp;weights, double lambda)</div><div class="ttdoc">Computes L2 regularization penalty (Ridge regression)</div><div class="ttdef"><b>Definition:</b> <a href="regularizers_8cpp_source.html#l00050">regularizers.cpp:50</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Regularize_html_a335fbba7ef2c2cbfa1b566d684fcefb2"><div class="ttname"><a href="classgpmp_1_1ml_1_1Regularize.html#a335fbba7ef2c2cbfa1b566d684fcefb2">gpmp::ml::Regularize::ensemble_predictions</a></div><div class="ttdeci">static std::vector&lt; double &gt; ensemble_predictions(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;predictions)</div><div class="ttdoc">Combines predictions from multiple models using ensembling.</div><div class="ttdef"><b>Definition:</b> <a href="regularizers_8cpp_source.html#l00088">regularizers.cpp:88</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Regularize_html_a401e4ba2185dbc26daca3d4b57c1208e"><div class="ttname"><a href="classgpmp_1_1ml_1_1Regularize.html#a401e4ba2185dbc26daca3d4b57c1208e">gpmp::ml::Regularize::max_norm_regularization</a></div><div class="ttdeci">static void max_norm_regularization(std::vector&lt; double &gt; &amp;weights, double max_norm)</div><div class="ttdoc">Applies max norm regularization to the weights.</div><div class="ttdef"><b>Definition:</b> <a href="regularizers_8cpp_source.html#l00105">regularizers.cpp:105</a></div></div>
