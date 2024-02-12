@@ -37,7 +37,7 @@ jobs:
 
           #cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_Fortran_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-          cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++ -DCMAKE_FORTRAN_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON
+          cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_FORTRAN_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON
 
       - name: Build
         run: |
