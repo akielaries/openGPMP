@@ -8,6 +8,7 @@
 #include <random>
 #include <stdexcept>
 #include <vector>
+#include <chrono>
 
 const double TOLERANCE = 1e-3;
 
