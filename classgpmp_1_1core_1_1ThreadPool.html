@@ -94,10 +94,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a65d539413af80888ebf35138f99493ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a65d539413af80888ebf35138f99493ae">ThreadPool</a> (int numThreads)</td></tr>
 <tr class="memdesc:a65d539413af80888ebf35138f99493ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html">ThreadPool</a> with a given number of worker threads to dispatch functions.  <a href="classgpmp_1_1core_1_1ThreadPool.html#a65d539413af80888ebf35138f99493ae">More...</a><br /></td></tr>
 <tr class="separator:a65d539413af80888ebf35138f99493ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc164f338a7b4e9463eb035d5cabf6e9"><td class="memTemplParams" colspan="2">template&lt;class F , class... Args&gt; </td></tr>
-<tr class="memitem:abc164f338a7b4e9463eb035d5cabf6e9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">enqueue</a> (F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</td></tr>
-<tr class="memdesc:abc164f338a7b4e9463eb035d5cabf6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueues a task to the thread pool.  <a href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">More...</a><br /></td></tr>
-<tr class="separator:abc164f338a7b4e9463eb035d5cabf6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79835a36908df5786ee429886ea7860c"><td class="memTemplParams" colspan="2">template&lt;class F , class... Args&gt; </td></tr>
+<tr class="memitem:a79835a36908df5786ee429886ea7860c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">enqueue</a> (F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; typename std::invoke_result&lt; F, Args... &gt;::type &gt;</td></tr>
+<tr class="memdesc:a79835a36908df5786ee429886ea7860c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueues a task to the thread pool.  <a href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">More...</a><br /></td></tr>
+<tr class="separator:a79835a36908df5786ee429886ea7860c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9d0cb8c657d0d19dd43c26b96ef0e03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool</a> ()</td></tr>
 <tr class="separator:ae9d0cb8c657d0d19dd43c26b96ef0e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -264,28 +264,28 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00182">182</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                  {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="comment">// lock queue_mutex &amp; set stop to true</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// unblock all threads</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>.notify_all();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">// treaverse threads and join</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">for</span> (std::thread &amp;worker : <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b">workers</a>) {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            worker.join();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00185">185</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                  {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="comment">// lock queue_mutex &amp; set stop to true</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// unblock all threads</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>.notify_all();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// treaverse threads and join</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">for</span> (std::thread &amp;worker : <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b">workers</a>) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            worker.join();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a7102885ad6a9ae7885fdbc7dd412df1b">workers</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abc164f338a7b4e9463eb035d5cabf6e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc164f338a7b4e9463eb035d5cabf6e9">&#9670;&nbsp;</a></span>enqueue()</h2>
+<a id="a79835a36908df5786ee429886ea7860c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79835a36908df5786ee429886ea7860c">&#9670;&nbsp;</a></span>enqueue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +310,7 @@ template&lt;class F , class... Args&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;typename std::result_of&lt;F(Args...)&gt;::type&gt; </td>
+          <td></td><td> -&gt; std::future&lt;typename std::invoke_result&lt;F, Args...&gt;::type&gt; </td>
         </tr>
       </table>
   </td>
@@ -346,38 +346,40 @@ template&lt;class F , class... Args&gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00148">148</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                            {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// this is the return type of the passed in function</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">using</span> return_type = <span class="keyword">typename</span> std::result_of&lt;F(Args...)&gt;::type;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// * SHARED POINTER to PACKAGED TASK used to store the passed in i</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="comment">//      function + its arguments</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment">// * std::bind used to create function object binded to the</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">//      function `f` + its args to the packaged tasks</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// * std::forward used for forwarding an argument to another</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">//      function</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">auto</span> task = std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// the FUTURE obj retrieves the return value of the function passed in</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        std::future&lt;return_type&gt; <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = task-&gt;get_future();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="comment">// aquire lock on queue_mutex for synchronization</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="comment">// check if threadpool stop is initiated</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;enqueue on stopped ThreadPool&quot;</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="comment">// add a task using emplace to the queue as a lambda that calls the</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="comment">// packaged task</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">tasks</a>.emplace([task]() { (*task)(); });</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        } <span class="comment">// once this is hit, unique_lock is out of scope &amp; mutex is</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <span class="comment">// automatically unlocked</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="comment">// notify one waiting thread of one new task added to the queue</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>.notify_one();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// the return is the future object</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                                {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">// this is the return type of the passed in function</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">//using return_type = typename std::result_of&lt;F(Args...)&gt;::type;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keyword">using</span> return_type = <span class="keyword">typename</span> std::invoke_result&lt;F, Args...&gt;::type;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">// * SHARED POINTER to PACKAGED TASK used to store the passed in i</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">//      function + its arguments</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">// * std::bind used to create function object binded to the</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">//      function `f` + its args to the packaged tasks</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// * std::forward used for forwarding an argument to another</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">//      function</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">auto</span> task = std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">// the FUTURE obj retrieves the return value of the function passed in</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        std::future&lt;return_type&gt; <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a> = task-&gt;get_future();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="comment">// aquire lock on queue_mutex for synchronization</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="comment">// check if threadpool stop is initiated</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;enqueue on stopped ThreadPool&quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// add a task using emplace to the queue as a lambda that calls the</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="comment">// packaged task</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">tasks</a>.emplace([task]() { (*task)(); });</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        } <span class="comment">// once this is hit, unique_lock is out of scope &amp; mutex is</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;          <span class="comment">// automatically unlocked</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">// notify one waiting thread of one new task added to the queue</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>.notify_one();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// the return is the future object</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">res</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
 <div class="ttc" id="anamespacepython_1_1linalg_html_a92c70c462eef344159fc3d344f1a74d4"><div class="ttname"><a href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg.res</a></div><div class="ttdeci">res</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00029">linalg.py:29</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a3a7749dd9db2467655f9f60da2d8c0c5">condition</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a8aaba033e30909b93e215a5a46f31e29">queue_mutex</a>, <a class="el" href="namespacepython_1_1linalg.html#a92c70c462eef344159fc3d344f1a74d4">python.linalg::res</a>, <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a0867d2fd825266998762f3c6684c6393">stop</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#aac48a29d2d2815558fba4941a7f83d96">tasks</a>.</p>
@@ -409,7 +411,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00069">69</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +437,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00067">67</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -461,7 +463,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00071">71</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">enqueue()</a>, and <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#ae9d0cb8c657d0d19dd43c26b96ef0e03">~ThreadPool()</a>.</p>
 
 </div>
 </div>
@@ -487,7 +489,7 @@ template&lt;class F , class... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="threads_8hpp_source.html#l00065">65</a> of file <a class="el" href="threads_8hpp_source.html">threads.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">enqueue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">enqueue()</a>.</p>
 
 </div>
 </div>

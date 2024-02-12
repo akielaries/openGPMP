@@ -337,7 +337,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;std::future&lt;bool&gt;&gt; miller_results;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classgpmp_1_1PrimalityTest.html">gpmp::PrimalityTest</a> <a class="code" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : nums) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        miller_results.emplace_back(pool-&gt;<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">enqueue</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        miller_results.emplace_back(pool-&gt;<a class="code" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">enqueue</a>(</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            [&amp;<a class="code" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>, n]() { return prim.miller_rabin_prime(n, 120000); }));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
@@ -361,10 +361,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html">gpmp::core::ThreadPool</a></div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00060">threads.hpp:60</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_abc164f338a7b4e9463eb035d5cabf6e9"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">gpmp::core::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; typename std::result_of&lt; F(Args...)&gt;::type &gt;</div><div class="ttdoc">Enqueues a task to the thread pool.</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00148">threads.hpp:148</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadPool_html_a79835a36908df5786ee429886ea7860c"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">gpmp::core::ThreadPool::enqueue</a></div><div class="ttdeci">auto enqueue(F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; typename std::invoke_result&lt; F, Args... &gt;::type &gt;</div><div class="ttdoc">Enqueues a task to the thread pool.</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00148">threads.hpp:148</a></div></div>
 <div class="ttc" id="aprime__test_8cpp_html_ae798670a69fa63bf4b057de42a04078d"><div class="ttname"><a href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a></div><div class="ttdeci">gpmp::PrimalityTest prim</div><div class="ttdef"><b>Definition:</b> <a href="prime__test_8cpp_source.html#l00058">prime_test.cpp:58</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#abc164f338a7b4e9463eb035d5cabf6e9">gpmp::core::ThreadPool::enqueue()</a>, and <a class="el" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>.</p>
+<p class="reference">References <a class="el" href="classgpmp_1_1core_1_1ThreadPool.html#a79835a36908df5786ee429886ea7860c">gpmp::core::ThreadPool::enqueue()</a>, and <a class="el" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="primes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -432,7 +432,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                     .count()</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; ms&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00201">threads.hpp:201</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1ThreadDispatch_html"><div class="ttname"><a href="classgpmp_1_1core_1_1ThreadDispatch.html">gpmp::core::ThreadDispatch</a></div><div class="ttdoc">A class that provides a function to dispatch a function call to a thread pool and return a future obj...</div><div class="ttdef"><b>Definition:</b> <a href="threads_8hpp_source.html#l00204">threads.hpp:204</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="classgpmp_1_1PrimalityTest.html#a3165af878859e65c291265cedab27b44">gpmp::PrimalityTest::miller_rabin_prime()</a>, and <a class="el" href="prime__test_8cpp.html#ae798670a69fa63bf4b057de42a04078d">prim</a>.</p>
 

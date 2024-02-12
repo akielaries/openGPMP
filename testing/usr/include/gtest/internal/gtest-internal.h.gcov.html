@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-12 03:30:28</td>
+            <td class="headerValue">2024-02-12 05:29:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">244</td>
@@ -447,10 +447,10 @@
 <a name="377"><span class="lineNum">     377 </span><span class="lineCov">       8358 :   static Bits SignAndMagnitudeToBiased(const Bits &amp;sam) {</span></a>
 <a name="378"><span class="lineNum">     378 </span><span class="lineCov">       8358 :     if (kSignBitMask &amp; sam) {</span></a>
 <a name="379"><span class="lineNum">     379 </span>            :       // sam represents a negative number.</a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">       4118 :       return ~sam + 1;</span></a>
+<a name="380"><span class="lineNum">     380 </span><span class="lineCov">       4164 :       return ~sam + 1;</span></a>
 <a name="381"><span class="lineNum">     381 </span>            :     } else {</a>
 <a name="382"><span class="lineNum">     382 </span>            :       // sam represents a positive number.</a>
-<a name="383"><span class="lineNum">     383 </span><span class="lineCov">       4240 :       return kSignBitMask | sam;</span></a>
+<a name="383"><span class="lineNum">     383 </span><span class="lineCov">       4194 :       return kSignBitMask | sam;</span></a>
 <a name="384"><span class="lineNum">     384 </span>            :     }</a>
 <a name="385"><span class="lineNum">     385 </span>            :   }</a>
 <a name="386"><span class="lineNum">     386 </span>            : </a>

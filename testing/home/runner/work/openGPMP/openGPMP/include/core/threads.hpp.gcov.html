@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-12 03:30:28</td>
+            <td class="headerValue">2024-02-12 05:29:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">37</td>
@@ -216,142 +216,146 @@
 <a name="146"><span class="lineNum">     146 </span>            :      */</a>
 <a name="147"><span class="lineNum">     147 </span>            :     template &lt;class F, class... Args&gt;</a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">       1114 :     auto enqueue(F &amp;&amp;f, Args &amp;&amp;...args)</span></a>
-<a name="149"><span class="lineNum">     149 </span>            :         -&gt; std::future&lt;typename std::result_of&lt;F(Args...)&gt;::type&gt; {</a>
-<a name="150"><span class="lineNum">     150 </span>            : </a>
-<a name="151"><span class="lineNum">     151 </span>            :         // this is the return type of the passed in function</a>
-<a name="152"><span class="lineNum">     152 </span>            :         using return_type = typename std::result_of&lt;F(Args...)&gt;::type;</a>
-<a name="153"><span class="lineNum">     153 </span>            :         // * SHARED POINTER to PACKAGED TASK used to store the passed in i</a>
-<a name="154"><span class="lineNum">     154 </span>            :         //      function + its arguments</a>
-<a name="155"><span class="lineNum">     155 </span>            :         // * std::bind used to create function object binded to the</a>
-<a name="156"><span class="lineNum">     156 </span>            :         //      function `f` + its args to the packaged tasks</a>
-<a name="157"><span class="lineNum">     157 </span>            :         // * std::forward used for forwarding an argument to another</a>
-<a name="158"><span class="lineNum">     158 </span>            :         //      function</a>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">       1114 :         auto task = std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(</span></a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineCov">       1109 :             std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</span></a>
-<a name="161"><span class="lineNum">     161 </span>            : </a>
-<a name="162"><span class="lineNum">     162 </span>            :         // the FUTURE obj retrieves the return value of the function passed in</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineCov">       1114 :         std::future&lt;return_type&gt; res = task-&gt;get_future();</span></a>
-<a name="164"><span class="lineNum">     164 </span>            :         {</a>
-<a name="165"><span class="lineNum">     165 </span>            :             // aquire lock on queue_mutex for synchronization</a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineCov">       1114 :             std::unique_lock&lt;std::mutex&gt; lock(queue_mutex);</span></a>
-<a name="167"><span class="lineNum">     167 </span>            :             // check if threadpool stop is initiated</a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">       1114 :             if (stop) {</span></a>
-<a name="169"><span class="lineNum">     169 </span><span class="lineCov">          1 :                 throw std::runtime_error(&quot;enqueue on stopped ThreadPool&quot;);</span></a>
-<a name="170"><span class="lineNum">     170 </span>            :             }</a>
-<a name="171"><span class="lineNum">     171 </span>            :             // add a task using emplace to the queue as a lambda that calls the</a>
-<a name="172"><span class="lineNum">     172 </span>            :             // packaged task</a>
-<a name="173"><span class="lineNum">     173 </span><span class="lineCov">       2226 :             tasks.emplace([task]() { (*task)(); });</span></a>
-<a name="174"><span class="lineNum">     174 </span><span class="lineCov">       1114 :         } // once this is hit, unique_lock is out of scope &amp; mutex is</span></a>
-<a name="175"><span class="lineNum">     175 </span>            :           // automatically unlocked</a>
-<a name="176"><span class="lineNum">     176 </span>            :         // notify one waiting thread of one new task added to the queue</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineCov">       1113 :         condition.notify_one();</span></a>
-<a name="178"><span class="lineNum">     178 </span>            :         // the return is the future object</a>
-<a name="179"><span class="lineNum">     179 </span><span class="lineCov">       2226 :         return res;</span></a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineCov">       1115 :     }</span></a>
-<a name="181"><span class="lineNum">     181 </span>            : </a>
-<a name="182"><span class="lineNum">     182 </span><span class="lineCov">         12 :     ~ThreadPool() {</span></a>
-<a name="183"><span class="lineNum">     183 </span>            :         {</a>
-<a name="184"><span class="lineNum">     184 </span>            :             // lock queue_mutex &amp; set stop to true</a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         12 :             std::unique_lock&lt;std::mutex&gt; lock(queue_mutex);</span></a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineCov">         12 :             stop = true;</span></a>
-<a name="187"><span class="lineNum">     187 </span><span class="lineCov">         12 :         }</span></a>
-<a name="188"><span class="lineNum">     188 </span>            :         // unblock all threads</a>
-<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         12 :         condition.notify_all();</span></a>
-<a name="190"><span class="lineNum">     190 </span>            :         // treaverse threads and join</a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">         40 :         for (std::thread &amp;worker : workers) {</span></a>
-<a name="192"><span class="lineNum">     192 </span><span class="lineCov">         28 :             worker.join();</span></a>
-<a name="193"><span class="lineNum">     193 </span>            :         }</a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineCov">         12 :     }</span></a>
-<a name="195"><span class="lineNum">     195 </span>            : };</a>
-<a name="196"><span class="lineNum">     196 </span>            : </a>
-<a name="197"><span class="lineNum">     197 </span>            : /**</a>
-<a name="198"><span class="lineNum">     198 </span>            :  * @brief A class that provides a function to dispatch a function call to a</a>
-<a name="199"><span class="lineNum">     199 </span>            :  * thread pool and return a future object for obtaining the result.</a>
-<a name="200"><span class="lineNum">     200 </span>            :  */</a>
-<a name="201"><span class="lineNum">     201 </span>            : class ThreadDispatch {</a>
-<a name="202"><span class="lineNum">     202 </span>            :   public:</a>
-<a name="203"><span class="lineNum">     203 </span>            :     /**</a>
-<a name="204"><span class="lineNum">     204 </span>            :      * @brief Dispatches a function call to a ThreadPool and returns a</a>
-<a name="205"><span class="lineNum">     205 </span>            :      * future object for obtaining the result.</a>
-<a name="206"><span class="lineNum">     206 </span>            :      * @tparam Function The type of the function to be dispatched.</a>
-<a name="207"><span class="lineNum">     207 </span>            :      * @tparam Args The types of the arguments to be passed to the</a>
-<a name="208"><span class="lineNum">     208 </span>            :      * function.</a>
-<a name="209"><span class="lineNum">     209 </span>            :      * @param pool The ThreadPool object to which the function call is</a>
-<a name="210"><span class="lineNum">     210 </span>            :      * dispatched.</a>
-<a name="211"><span class="lineNum">     211 </span>            :      * @param func The function to be dispatched.</a>
-<a name="212"><span class="lineNum">     212 </span>            :      * @param args The arguments to be passed to the function.</a>
-<a name="213"><span class="lineNum">     213 </span>            :      * @return A future object for obtaining the result of the dispatched</a>
-<a name="214"><span class="lineNum">     214 </span>            :      * function call.</a>
-<a name="215"><span class="lineNum">     215 </span>            :      */</a>
-<a name="216"><span class="lineNum">     216 </span>            :     template &lt;typename Function, typename... Args&gt;</a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineCov">          2 :     auto dispatch(ThreadPool &amp;pool, Function &amp;&amp;func, Args &amp;&amp;...args)</span></a>
-<a name="218"><span class="lineNum">     218 </span>            :         -&gt; std::future&lt;typename std::result_of&lt;Function(Args...)&gt;::type&gt; {</a>
-<a name="219"><span class="lineNum">     219 </span>            : </a>
-<a name="220"><span class="lineNum">     220 </span>            :         // enqueue the function call to the thread pool</a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineCov">          2 :         auto result = pool.enqueue(std::forward&lt;Function&gt;(func),</span></a>
-<a name="222"><span class="lineNum">     222 </span>            :                                    std::forward&lt;Args&gt;(args)...);</a>
+<a name="149"><span class="lineNum">     149 </span>            :         //-&gt; std::future&lt;typename std::result_of&lt;F(Args...)&gt;::type&gt; {</a>
+<a name="150"><span class="lineNum">     150 </span>            :         -&gt; std::future&lt;typename std::invoke_result&lt;F, Args...&gt;::type&gt; {</a>
+<a name="151"><span class="lineNum">     151 </span>            : </a>
+<a name="152"><span class="lineNum">     152 </span>            :         // this is the return type of the passed in function</a>
+<a name="153"><span class="lineNum">     153 </span>            :         //using return_type = typename std::result_of&lt;F(Args...)&gt;::type;</a>
+<a name="154"><span class="lineNum">     154 </span>            :         using return_type = typename std::invoke_result&lt;F, Args...&gt;::type;</a>
+<a name="155"><span class="lineNum">     155 </span>            : </a>
+<a name="156"><span class="lineNum">     156 </span>            :         // * SHARED POINTER to PACKAGED TASK used to store the passed in i</a>
+<a name="157"><span class="lineNum">     157 </span>            :         //      function + its arguments</a>
+<a name="158"><span class="lineNum">     158 </span>            :         // * std::bind used to create function object binded to the</a>
+<a name="159"><span class="lineNum">     159 </span>            :         //      function `f` + its args to the packaged tasks</a>
+<a name="160"><span class="lineNum">     160 </span>            :         // * std::forward used for forwarding an argument to another</a>
+<a name="161"><span class="lineNum">     161 </span>            :         //      function</a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineCov">       1114 :         auto task = std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(</span></a>
+<a name="163"><span class="lineNum">     163 </span><span class="lineCov">       1109 :             std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</span></a>
+<a name="164"><span class="lineNum">     164 </span>            : </a>
+<a name="165"><span class="lineNum">     165 </span>            :         // the FUTURE obj retrieves the return value of the function passed in</a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineCov">       1114 :         std::future&lt;return_type&gt; res = task-&gt;get_future();</span></a>
+<a name="167"><span class="lineNum">     167 </span>            :         {</a>
+<a name="168"><span class="lineNum">     168 </span>            :             // aquire lock on queue_mutex for synchronization</a>
+<a name="169"><span class="lineNum">     169 </span><span class="lineCov">       1114 :             std::unique_lock&lt;std::mutex&gt; lock(queue_mutex);</span></a>
+<a name="170"><span class="lineNum">     170 </span>            :             // check if threadpool stop is initiated</a>
+<a name="171"><span class="lineNum">     171 </span><span class="lineCov">       1114 :             if (stop) {</span></a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineCov">          1 :                 throw std::runtime_error(&quot;enqueue on stopped ThreadPool&quot;);</span></a>
+<a name="173"><span class="lineNum">     173 </span>            :             }</a>
+<a name="174"><span class="lineNum">     174 </span>            :             // add a task using emplace to the queue as a lambda that calls the</a>
+<a name="175"><span class="lineNum">     175 </span>            :             // packaged task</a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineCov">       2226 :             tasks.emplace([task]() { (*task)(); });</span></a>
+<a name="177"><span class="lineNum">     177 </span><span class="lineCov">       1114 :         } // once this is hit, unique_lock is out of scope &amp; mutex is</span></a>
+<a name="178"><span class="lineNum">     178 </span>            :           // automatically unlocked</a>
+<a name="179"><span class="lineNum">     179 </span>            :         // notify one waiting thread of one new task added to the queue</a>
+<a name="180"><span class="lineNum">     180 </span><span class="lineCov">       1113 :         condition.notify_one();</span></a>
+<a name="181"><span class="lineNum">     181 </span>            :         // the return is the future object</a>
+<a name="182"><span class="lineNum">     182 </span><span class="lineCov">       2226 :         return res;</span></a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineCov">       1115 :     }</span></a>
+<a name="184"><span class="lineNum">     184 </span>            : </a>
+<a name="185"><span class="lineNum">     185 </span><span class="lineCov">         12 :     ~ThreadPool() {</span></a>
+<a name="186"><span class="lineNum">     186 </span>            :         {</a>
+<a name="187"><span class="lineNum">     187 </span>            :             // lock queue_mutex &amp; set stop to true</a>
+<a name="188"><span class="lineNum">     188 </span><span class="lineCov">         12 :             std::unique_lock&lt;std::mutex&gt; lock(queue_mutex);</span></a>
+<a name="189"><span class="lineNum">     189 </span><span class="lineCov">         12 :             stop = true;</span></a>
+<a name="190"><span class="lineNum">     190 </span><span class="lineCov">         12 :         }</span></a>
+<a name="191"><span class="lineNum">     191 </span>            :         // unblock all threads</a>
+<a name="192"><span class="lineNum">     192 </span><span class="lineCov">         12 :         condition.notify_all();</span></a>
+<a name="193"><span class="lineNum">     193 </span>            :         // treaverse threads and join</a>
+<a name="194"><span class="lineNum">     194 </span><span class="lineCov">         40 :         for (std::thread &amp;worker : workers) {</span></a>
+<a name="195"><span class="lineNum">     195 </span><span class="lineCov">         28 :             worker.join();</span></a>
+<a name="196"><span class="lineNum">     196 </span>            :         }</a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">         12 :     }</span></a>
+<a name="198"><span class="lineNum">     198 </span>            : };</a>
+<a name="199"><span class="lineNum">     199 </span>            : </a>
+<a name="200"><span class="lineNum">     200 </span>            : /**</a>
+<a name="201"><span class="lineNum">     201 </span>            :  * @brief A class that provides a function to dispatch a function call to a</a>
+<a name="202"><span class="lineNum">     202 </span>            :  * thread pool and return a future object for obtaining the result.</a>
+<a name="203"><span class="lineNum">     203 </span>            :  */</a>
+<a name="204"><span class="lineNum">     204 </span>            : class ThreadDispatch {</a>
+<a name="205"><span class="lineNum">     205 </span>            :   public:</a>
+<a name="206"><span class="lineNum">     206 </span>            :     /**</a>
+<a name="207"><span class="lineNum">     207 </span>            :      * @brief Dispatches a function call to a ThreadPool and returns a</a>
+<a name="208"><span class="lineNum">     208 </span>            :      * future object for obtaining the result.</a>
+<a name="209"><span class="lineNum">     209 </span>            :      * @tparam Function The type of the function to be dispatched.</a>
+<a name="210"><span class="lineNum">     210 </span>            :      * @tparam Args The types of the arguments to be passed to the</a>
+<a name="211"><span class="lineNum">     211 </span>            :      * function.</a>
+<a name="212"><span class="lineNum">     212 </span>            :      * @param pool The ThreadPool object to which the function call is</a>
+<a name="213"><span class="lineNum">     213 </span>            :      * dispatched.</a>
+<a name="214"><span class="lineNum">     214 </span>            :      * @param func The function to be dispatched.</a>
+<a name="215"><span class="lineNum">     215 </span>            :      * @param args The arguments to be passed to the function.</a>
+<a name="216"><span class="lineNum">     216 </span>            :      * @return A future object for obtaining the result of the dispatched</a>
+<a name="217"><span class="lineNum">     217 </span>            :      * function call.</a>
+<a name="218"><span class="lineNum">     218 </span>            :      */</a>
+<a name="219"><span class="lineNum">     219 </span>            :     template &lt;typename Function, typename... Args&gt;</a>
+<a name="220"><span class="lineNum">     220 </span><span class="lineCov">          2 :     auto dispatch(ThreadPool &amp;pool, Function &amp;&amp;func, Args &amp;&amp;...args)</span></a>
+<a name="221"><span class="lineNum">     221 </span>            :         //-&gt; std::future&lt;typename std::result_of&lt;Function(Args...)&gt;::type&gt; {</a>
+<a name="222"><span class="lineNum">     222 </span>            :         -&gt; std::future&lt;typename std::invoke_result&lt;Function, Args...&gt;::type&gt; {</a>
 <a name="223"><span class="lineNum">     223 </span>            : </a>
-<a name="224"><span class="lineNum">     224 </span>            :         // return the future object to get the result later</a>
-<a name="225"><span class="lineNum">     225 </span><span class="lineCov">          2 :         return result;</span></a>
-<a name="226"><span class="lineNum">     226 </span>            :     }</a>
-<a name="227"><span class="lineNum">     227 </span>            : };</a>
-<a name="228"><span class="lineNum">     228 </span>            : </a>
-<a name="229"><span class="lineNum">     229 </span>            : /**</a>
-<a name="230"><span class="lineNum">     230 </span>            :  * @brief Thread rudimentary for loops</a>
-<a name="231"><span class="lineNum">     231 </span>            :  * @param[in] nb_elements : size of your for loop</a>
-<a name="232"><span class="lineNum">     232 </span>            :  * @param[in] functor(start, end) :</a>
-<a name="233"><span class="lineNum">     233 </span>            :  * your function processing a sub chunk of the for loop.</a>
-<a name="234"><span class="lineNum">     234 </span>            :  * &quot;start&quot; is the first index to process (included) until the index &quot;end&quot;</a>
-<a name="235"><span class="lineNum">     235 </span>            :  * (excluded)</a>
-<a name="236"><span class="lineNum">     236 </span>            :  * @code</a>
-<a name="237"><span class="lineNum">     237 </span>            :  *     for(int i = start; i &lt; end; ++i)</a>
-<a name="238"><span class="lineNum">     238 </span>            :  *         computation(i);</a>
-<a name="239"><span class="lineNum">     239 </span>            :  * @endcode</a>
-<a name="240"><span class="lineNum">     240 </span>            :  * @param use_threads : enable / disable threads</a>
-<a name="241"><span class="lineNum">     241 </span>            :  */</a>
-<a name="242"><span class="lineNum">     242 </span><span class="lineNoCov">          0 : static void parallel_for(unsigned nb_elements,</span></a>
-<a name="243"><span class="lineNum">     243 </span>            :                          std::function&lt;void(int start, int end)&gt; functor,</a>
-<a name="244"><span class="lineNum">     244 </span>            :                          bool use_threads = true) {</a>
-<a name="245"><span class="lineNum">     245 </span>            :     // -------</a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineNoCov">          0 :     unsigned nb_threads_hint = 10; // std::thread::hardware_concurrency();</span></a>
-<a name="247"><span class="lineNum">     247 </span><span class="lineNoCov">          0 :     unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);</span></a>
-<a name="248"><span class="lineNum">     248 </span>            : </a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineNoCov">          0 :     unsigned batch_size = nb_elements / nb_threads;</span></a>
-<a name="250"><span class="lineNum">     250 </span><span class="lineNoCov">          0 :     unsigned batch_remainder = nb_elements % nb_threads;</span></a>
-<a name="251"><span class="lineNum">     251 </span>            : </a>
-<a name="252"><span class="lineNum">     252 </span><span class="lineNoCov">          0 :     std::vector&lt;std::thread&gt; my_threads(nb_threads);</span></a>
-<a name="253"><span class="lineNum">     253 </span>            : </a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineNoCov">          0 :     if (use_threads) {</span></a>
-<a name="255"><span class="lineNum">     255 </span>            :         // Multithread execution</a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineNoCov">          0 :         for (unsigned i = 0; i &lt; nb_threads; ++i) {</span></a>
-<a name="257"><span class="lineNum">     257 </span><span class="lineNoCov">          0 :             int start = i * batch_size;</span></a>
-<a name="258"><span class="lineNum">     258 </span><span class="lineNoCov">          0 :             my_threads[i] = std::thread(functor, start, start + batch_size);</span></a>
-<a name="259"><span class="lineNum">     259 </span>            :         }</a>
-<a name="260"><span class="lineNum">     260 </span>            :     } else {</a>
-<a name="261"><span class="lineNum">     261 </span>            :         // Single thread execution (for easy debugging)</a>
-<a name="262"><span class="lineNum">     262 </span><span class="lineNoCov">          0 :         for (unsigned i = 0; i &lt; nb_threads; ++i) {</span></a>
-<a name="263"><span class="lineNum">     263 </span><span class="lineNoCov">          0 :             int start = i * batch_size;</span></a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineNoCov">          0 :             functor(start, start + batch_size);</span></a>
-<a name="265"><span class="lineNum">     265 </span>            :         }</a>
-<a name="266"><span class="lineNum">     266 </span>            :     }</a>
-<a name="267"><span class="lineNum">     267 </span>            : </a>
-<a name="268"><span class="lineNum">     268 </span>            :     // Deform the elements left</a>
-<a name="269"><span class="lineNum">     269 </span><span class="lineNoCov">          0 :     int start = nb_threads * batch_size;</span></a>
-<a name="270"><span class="lineNum">     270 </span><span class="lineNoCov">          0 :     functor(start, start + batch_remainder);</span></a>
+<a name="224"><span class="lineNum">     224 </span>            :         // enqueue the function call to the thread pool</a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineCov">          2 :         auto result = pool.enqueue(std::forward&lt;Function&gt;(func),</span></a>
+<a name="226"><span class="lineNum">     226 </span>            :                                    std::forward&lt;Args&gt;(args)...);</a>
+<a name="227"><span class="lineNum">     227 </span>            : </a>
+<a name="228"><span class="lineNum">     228 </span>            :         // return the future object to get the result later</a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineCov">          2 :         return result;</span></a>
+<a name="230"><span class="lineNum">     230 </span>            :     }</a>
+<a name="231"><span class="lineNum">     231 </span>            : };</a>
+<a name="232"><span class="lineNum">     232 </span>            : </a>
+<a name="233"><span class="lineNum">     233 </span>            : /**</a>
+<a name="234"><span class="lineNum">     234 </span>            :  * @brief Thread rudimentary for loops</a>
+<a name="235"><span class="lineNum">     235 </span>            :  * @param[in] nb_elements : size of your for loop</a>
+<a name="236"><span class="lineNum">     236 </span>            :  * @param[in] functor(start, end) :</a>
+<a name="237"><span class="lineNum">     237 </span>            :  * your function processing a sub chunk of the for loop.</a>
+<a name="238"><span class="lineNum">     238 </span>            :  * &quot;start&quot; is the first index to process (included) until the index &quot;end&quot;</a>
+<a name="239"><span class="lineNum">     239 </span>            :  * (excluded)</a>
+<a name="240"><span class="lineNum">     240 </span>            :  * @code</a>
+<a name="241"><span class="lineNum">     241 </span>            :  *     for(int i = start; i &lt; end; ++i)</a>
+<a name="242"><span class="lineNum">     242 </span>            :  *         computation(i);</a>
+<a name="243"><span class="lineNum">     243 </span>            :  * @endcode</a>
+<a name="244"><span class="lineNum">     244 </span>            :  * @param use_threads : enable / disable threads</a>
+<a name="245"><span class="lineNum">     245 </span>            :  */</a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineNoCov">          0 : static void parallel_for(unsigned nb_elements,</span></a>
+<a name="247"><span class="lineNum">     247 </span>            :                          std::function&lt;void(int start, int end)&gt; functor,</a>
+<a name="248"><span class="lineNum">     248 </span>            :                          bool use_threads = true) {</a>
+<a name="249"><span class="lineNum">     249 </span>            :     // -------</a>
+<a name="250"><span class="lineNum">     250 </span><span class="lineNoCov">          0 :     unsigned nb_threads_hint = 10; // std::thread::hardware_concurrency();</span></a>
+<a name="251"><span class="lineNum">     251 </span><span class="lineNoCov">          0 :     unsigned nb_threads = nb_threads_hint == 0 ? 8 : (nb_threads_hint);</span></a>
+<a name="252"><span class="lineNum">     252 </span>            : </a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineNoCov">          0 :     unsigned batch_size = nb_elements / nb_threads;</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineNoCov">          0 :     unsigned batch_remainder = nb_elements % nb_threads;</span></a>
+<a name="255"><span class="lineNum">     255 </span>            : </a>
+<a name="256"><span class="lineNum">     256 </span><span class="lineNoCov">          0 :     std::vector&lt;std::thread&gt; my_threads(nb_threads);</span></a>
+<a name="257"><span class="lineNum">     257 </span>            : </a>
+<a name="258"><span class="lineNum">     258 </span><span class="lineNoCov">          0 :     if (use_threads) {</span></a>
+<a name="259"><span class="lineNum">     259 </span>            :         // Multithread execution</a>
+<a name="260"><span class="lineNum">     260 </span><span class="lineNoCov">          0 :         for (unsigned i = 0; i &lt; nb_threads; ++i) {</span></a>
+<a name="261"><span class="lineNum">     261 </span><span class="lineNoCov">          0 :             int start = i * batch_size;</span></a>
+<a name="262"><span class="lineNum">     262 </span><span class="lineNoCov">          0 :             my_threads[i] = std::thread(functor, start, start + batch_size);</span></a>
+<a name="263"><span class="lineNum">     263 </span>            :         }</a>
+<a name="264"><span class="lineNum">     264 </span>            :     } else {</a>
+<a name="265"><span class="lineNum">     265 </span>            :         // Single thread execution (for easy debugging)</a>
+<a name="266"><span class="lineNum">     266 </span><span class="lineNoCov">          0 :         for (unsigned i = 0; i &lt; nb_threads; ++i) {</span></a>
+<a name="267"><span class="lineNum">     267 </span><span class="lineNoCov">          0 :             int start = i * batch_size;</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineNoCov">          0 :             functor(start, start + batch_size);</span></a>
+<a name="269"><span class="lineNum">     269 </span>            :         }</a>
+<a name="270"><span class="lineNum">     270 </span>            :     }</a>
 <a name="271"><span class="lineNum">     271 </span>            : </a>
-<a name="272"><span class="lineNum">     272 </span>            :     // Wait for the other thread to finish their task</a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineNoCov">          0 :     if (use_threads) {</span></a>
-<a name="274"><span class="lineNum">     274 </span><span class="lineNoCov">          0 :         std::for_each(my_threads.begin(),</span></a>
-<a name="275"><span class="lineNum">     275 </span>            :                       my_threads.end(),</a>
-<a name="276"><span class="lineNum">     276 </span>            :                       std::mem_fn(&amp;std::thread::join));</a>
-<a name="277"><span class="lineNum">     277 </span>            :     }</a>
-<a name="278"><span class="lineNum">     278 </span><span class="lineNoCov">          0 : }</span></a>
-<a name="279"><span class="lineNum">     279 </span>            : </a>
-<a name="280"><span class="lineNum">     280 </span>            : } // namespace core</a>
-<a name="281"><span class="lineNum">     281 </span>            : </a>
-<a name="282"><span class="lineNum">     282 </span>            : } // namespace gpmp</a>
+<a name="272"><span class="lineNum">     272 </span>            :     // Deform the elements left</a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineNoCov">          0 :     int start = nb_threads * batch_size;</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineNoCov">          0 :     functor(start, start + batch_remainder);</span></a>
+<a name="275"><span class="lineNum">     275 </span>            : </a>
+<a name="276"><span class="lineNum">     276 </span>            :     // Wait for the other thread to finish their task</a>
+<a name="277"><span class="lineNum">     277 </span><span class="lineNoCov">          0 :     if (use_threads) {</span></a>
+<a name="278"><span class="lineNum">     278 </span><span class="lineNoCov">          0 :         std::for_each(my_threads.begin(),</span></a>
+<a name="279"><span class="lineNum">     279 </span>            :                       my_threads.end(),</a>
+<a name="280"><span class="lineNum">     280 </span>            :                       std::mem_fn(&amp;std::thread::join));</a>
+<a name="281"><span class="lineNum">     281 </span>            :     }</a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="283"><span class="lineNum">     283 </span>            : </a>
-<a name="284"><span class="lineNum">     284 </span>            : #endif</a>
+<a name="284"><span class="lineNum">     284 </span>            : } // namespace core</a>
+<a name="285"><span class="lineNum">     285 </span>            : </a>
+<a name="286"><span class="lineNum">     286 </span>            : } // namespace gpmp</a>
+<a name="287"><span class="lineNum">     287 </span>            : </a>
+<a name="288"><span class="lineNum">     288 </span>            : #endif</a>
 </pre>
       </td>
     </tr>
