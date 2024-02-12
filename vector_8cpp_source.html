@@ -597,276 +597,333 @@ $(function() {
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                               <span class="keywordtype">int</span> scalar,</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                               std::vector&lt;int&gt; &amp;result) {</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = vec.size();</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> *data = vec.data();</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keywordtype">int</span> *result_data = result.data();</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keyword">const</span> int32_t *data = vec.data();</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    int32_t *result_data = result.data();</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keyword">const</span> int32x4_t scalarVector = vdupq_n_s32(scalar);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; i += 4) {</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        int32x4_t vecData = vld1q_s32(data + i);</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        int32x4_t mulResult = vmulq_s32(vecData, scalarVector);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">if</span> (size &gt;= 4) {</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        int32x4_t scalar_vec = vdupq_n_s32(scalar);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size - 3; i += 4) {</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            <span class="comment">// Load 4 elements from vec</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            int32x4_t a = vld1q_s32(data + i);</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        vst1q_s32(result_data + i, mulResult);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    }</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;<span class="comment">// Vector multiplication using ARM NEON intrinsics, operates on double types</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#ae60bba8d019ff2ab44308c54e882a1c8">gpmp::linalg::vector_mult</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                               <span class="keywordtype">double</span> scalar,</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                               std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> vecSize = vec.size();</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> remainder = vecSize % 2;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> vecSizeAligned = vecSize - remainder;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keyword">const</span> float64x2_t scalarVector = vdupq_n_f64(scalar);</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vecSizeAligned; i += 2) {</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        float64x2_t vecData = vld1q_f64(&amp;vec[i]);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            <span class="comment">// Perform vectorized multiplication</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            int32x4_t c = vmulq_s32(a, scalar_vec);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            <span class="comment">// Store the result back to result vector</span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            vst1q_s32(result_data + i, c);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <span class="comment">// Perform standard multiplication on the remaining elements</span></div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            result_data[i] = data[i] * scalar;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        }</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            result_data[i] = data[i] * scalar;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        }</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    }</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        float64x2_t mulResult = vmulq_f64(vecData, scalarVector);</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        vst1q_f64(&amp;result[i], mulResult);</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    }</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = vecSizeAligned; i &lt; vecSize; ++i) {</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        result[i] = vec[i] * scalar;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;}</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;<span class="comment">// Dot product using ARM NEON intrinsics, operates on integer types</span></div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacegpmp_1_1linalg.html#af59bcc71c35cb4eb7bf566c357344685">gpmp::linalg::dot_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                              <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2) {</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> vecSize = vec1.size();</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="keyword">const</span> int32_t *data1 = vec1.data();</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keyword">const</span> int32_t *data2 = vec2.data();</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    int32x4_t sumVec = vdupq_n_s32(0);</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vecSize; i += 4) {</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        int32x4_t vec1Data = vld1q_s32(data1 + i);</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        int32x4_t vec2Data = vld1q_s32(data2 + i);</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        int32x4_t mulResult = vmulq_s32(vec1Data, vec2Data);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;}</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160; </div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;<span class="comment">// Vector multiplication using ARM NEON intrinsics, operates on double types</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#ae60bba8d019ff2ab44308c54e882a1c8">gpmp::linalg::vector_mult</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                               <span class="keywordtype">double</span> scalar,</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                               std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = vec.size();</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> *data = vec.data();</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordtype">double</span> *result_data = result.data();</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="keywordflow">if</span> (size &gt;= 2) {</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        float64x2_t scalar_vec = vdupq_n_f64(scalar);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size - 1; i += 2) {</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            <span class="comment">// Load 2 elements from vec</span></div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            float64x2_t a = vld1q_f64(data + i);</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="comment">// Perform vectorized multiplication</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            float64x2_t c = vmulq_f64(a, scalar_vec);</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <span class="comment">// Store the result back to result vector</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            vst1q_f64(result_data + i, c);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        }</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        sumVec = vaddq_s32(sumVec, mulResult);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    }</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    int32_t sum = vgetq_lane_s32(sumVec, 0) + vgetq_lane_s32(sumVec, 1) +</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                  vgetq_lane_s32(sumVec, 2) + vgetq_lane_s32(sumVec, 3);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = vecSize &amp; ~3; i &lt; vecSize; ++i) {</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        sum += data1[i] * data2[i];</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <span class="comment">// Perform standard multiplication on the remaining elements</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            result_data[i] = data[i] * scalar;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        }</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            result_data[i] = data[i] * scalar;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        }</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    }</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;}</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="comment">// Dot product using ARM NEON intrinsics, operates on double types</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#af59bcc71c35cb4eb7bf566c357344685">gpmp::linalg::dot_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2) {</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> vecSize = vec1.size();</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> *data1 = vec1.data();</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> *data2 = vec2.data();</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;}</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="comment">// Dot product using ARM NEON intrinsics, operates on integer types</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacegpmp_1_1linalg.html#af59bcc71c35cb4eb7bf566c357344685">gpmp::linalg::dot_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                              <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2) {</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = vec1.size();</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keyword">const</span> int32_t *data1 = vec1.data();</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keyword">const</span> int32_t *data2 = vec2.data();</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keywordtype">int</span> result = 0;</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    float64x2_t sumVec = vdupq_n_f64(0);</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vecSize; i += 2) {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        float64x2_t vec1Data = vld1q_f64(data1 + i);</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        float64x2_t vec2Data = vld1q_f64(data2 + i);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        float64x2_t mulResult = vmulq_f64(vec1Data, vec2Data);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">if</span> (size &gt;= 4) {</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        int32x4_t sum_vec = vdupq_n_s32(0);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size - 3; i += 4) {</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            <span class="comment">// Load 4 elements from vec1 and vec2</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            int32x4_t a = vld1q_s32(data1 + i);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            int32x4_t b = vld1q_s32(data2 + i);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        sumVec = vaddq_f64(sumVec, mulResult);</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    }</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keywordtype">double</span> sum = vgetq_lane_f64(sumVec, 0) + vgetq_lane_f64(sumVec, 1);</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = vecSize &amp; ~1; i &lt; vecSize; ++i) {</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        sum += data1[i] * data2[i];</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    }</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;}</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="comment">// ARM NEON</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="comment">/************************************************************************</span></div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="comment"> * Standard/Naive Vector  Operations on vector&lt;&gt;</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
-<div class="line"><a name="l00620"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">  620</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">gpmp::linalg::std_vector_add</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                                  std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    result.resize(vec1.size());</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        result[i] = vec1[i] + vec2[i];</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    }</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;}</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="comment">// function to subtract one vector from another</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">  630</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">gpmp::linalg::std_vector_sub</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                                  std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            int32x4_t mul = vmulq_s32(a, b);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            <span class="comment">// Accumulate the results</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            sum_vec = vaddq_s32(sum_vec, mul);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        }</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="comment">// sum the results across the vector</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        int32_t temp[4];</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        vst1q_s32(temp, sum_vec);</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        result = temp[0] + temp[1] + temp[2] + temp[3];</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="comment">// process remaining elements if any</span></div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;            result += data1[i] * data2[i];</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        }</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    } </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="comment">// performs std dot product</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;            result += data1[i] * data2[i];</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        }</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    }</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;}</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;<span class="comment">// Dot product using ARM NEON intrinsics, operates on double types</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#af59bcc71c35cb4eb7bf566c357344685">gpmp::linalg::dot_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2) {</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> size = vec1.size();</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> *data1 = vec1.data();</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> *data2 = vec2.data();</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordtype">double</span> result = 0.0;</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    result.resize(vec1.size());</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        result[i] = vec1[i] - vec2[i];</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    }</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;}</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;<span class="comment">// function to multiply each element of a vector by a scalar</span></div>
-<div class="line"><a name="l00641"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">  641</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">gpmp::linalg::std_vector_mult</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                   <span class="keywordtype">double</span> scalar,</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                   std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    result.resize(vec.size());</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        result[i] = vec[i] * scalar;</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    }</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;}</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; </div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;<span class="comment">// function to compute the dot product of two vectors</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">  651</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">gpmp::linalg::std_dot_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2) {</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="keywordtype">double</span> result = 0.0;</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        result += vec1[i] * vec2[i];</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    }</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;}</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors</span></div>
-<div class="line"><a name="l00661"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">  661</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                                     std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;}</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
-<div class="line"><a name="l00669"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">  669</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec) {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : vec) {</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        norm += value * value;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    }</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keywordflow">if</span> (size &gt;= 2) {</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        float64x2_t sum_vec = vdupq_n_f64(0.0);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size - 1; i += 2) {</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="comment">// Load 2 elements from vec1 and vec2</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            float64x2_t a = vld1q_f64(data1 + i);</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            float64x2_t b = vld1q_f64(data2 + i);</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            <span class="comment">// Perform vectorized multiplication</span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            float64x2_t mul = vmulq_f64(a, b);</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            <span class="comment">// Accumulate the results</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            sum_vec = vaddq_f64(sum_vec, mul);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        }</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <span class="comment">// Sum the results across the vector</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <span class="keywordtype">double</span> temp[2];</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        vst1q_f64(temp, sum_vec);</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        result = temp[0] + temp[1];</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        </div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="comment">// Process remaining elements if any</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;        <span class="keywordflow">for</span> (; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;            result += data1[i] * data2[i];</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;        }</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            result += data1[i] * data2[i];</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        }</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    }</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;}</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="comment">// ARM NEON</span></div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="comment">/************************************************************************</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="comment"> * Standard/Naive Vector  Operations on vector&lt;&gt;</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<span class="comment"> ************************************************************************/</span></div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="comment">// function to normalize a vector to have unit length</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">  678</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(vec);</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    result.resize(vec.size());</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        result[i] = vec[i] / norm;</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    }</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;}</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;<span class="comment">// function to compute the projection of one vector onto another</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">  688</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;double&gt; &amp;onto_vec,</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(vec, onto_vec);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(onto_vec, onto_vec);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    result.resize(onto_vec.size());</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    }</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;}</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
-<div class="line"><a name="l00700"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a83249851f2fd35a61445380cde8008d8">  700</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">gpmp::linalg::std_vector_add</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                                  std::vector&lt;int&gt; &amp;result) {</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    result.resize(vec1.size());</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        result[i] = vec1[i] + vec2[i];</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    }</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;}</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="comment">// function to subtract one vector of integers from another</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#abde36bedcf4371060ebf0effbc6a3573">  710</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">gpmp::linalg::std_vector_sub</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                                  std::vector&lt;int&gt; &amp;result) {</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    result.resize(vec1.size());</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        result[i] = vec1[i] - vec2[i];</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    }</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;}</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;<span class="comment">// function to multiply each element of a vector of integers by a scalar</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a01fca4eca4eac20e05c0a111c4849d6c">  720</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">gpmp::linalg::std_vector_mult</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                                   <span class="keywordtype">int</span> scalar,</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                                   std::vector&lt;int&gt; &amp;result) {</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    result.resize(vec.size());</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        result[i] = vec[i] * scalar;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    }</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;}</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;<span class="comment">// function to compute the dot product of two vectors of integers</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a4c2de03def6f8b01780d39f8c23756a9">  730</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">gpmp::linalg::std_dot_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2) {</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <span class="keywordtype">int</span> result = 0;</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        result += vec1[i] * vec2[i];</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    }</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;}</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors of integers</span></div>
-<div class="line"><a name="l00740"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a412d6b99c140d811fab326151bacffab">  740</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                                     std::vector&lt;int&gt; &amp;result) {</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    result.resize(3);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;}</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
-<div class="line"><a name="l00749"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#af6ba3d39ae5c8f0f0c4debebe8dadaec">  749</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec) {</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> value : vec) {</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        norm += value * value;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    }</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
+<div class="line"><a name="l00677"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">  677</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">gpmp::linalg::std_vector_add</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                                  std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    result.resize(vec1.size());</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        result[i] = vec1[i] + vec2[i];</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    }</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;}</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;<span class="comment">// function to subtract one vector from another</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">  687</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">gpmp::linalg::std_vector_sub</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                                  std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    result.resize(vec1.size());</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        result[i] = vec1[i] - vec2[i];</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    }</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;}</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<span class="comment">// function to multiply each element of a vector by a scalar</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">  698</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">gpmp::linalg::std_vector_mult</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                   <span class="keywordtype">double</span> scalar,</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                                   std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    result.resize(vec.size());</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        result[i] = vec[i] * scalar;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    }</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;}</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="comment">// function to compute the dot product of two vectors</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">  708</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">gpmp::linalg::std_dot_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2) {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordtype">double</span> result = 0.0;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        result += vec1[i] * vec2[i];</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    }</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;}</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">  718</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                                     std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;}</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
+<div class="line"><a name="l00726"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">  726</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec) {</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : vec) {</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        norm += value * value;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    }</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;}</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="comment">// function to normalize a vector to have unit length</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">  735</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(vec);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    result.resize(vec.size());</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        result[i] = vec[i] / norm;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    }</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;}</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="comment">// function to compute the projection of one vector onto another</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">  745</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;double&gt; &amp;onto_vec,</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(vec, onto_vec);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(onto_vec, onto_vec);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160; </div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    result.resize(onto_vec.size());</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    }</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;}</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="comment">// function to normalize a vector of integers to have unit length</span></div>
-<div class="line"><a name="l00758"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#ac9cbfbf61db5bdce8f2c548efc3dce27">  758</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">std_vector_norm</a>(vec);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    result.resize(vec.size());</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        result[i] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(vec[i]) / norm;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    }</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;}</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="comment">// function to compute the projection of one vector of integers onto another</span></div>
-<div class="line"><a name="l00768"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a293c5fece3cedbe43e5f2f1e94dbb9c0">  768</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;int&gt; &amp;onto_vec,</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(vec, onto_vec);</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(onto_vec, onto_vec);</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    result.resize(onto_vec.size());</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    }</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;}</div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a08824c23898616b0e2f5f353940033fb"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">gpmp::linalg::std_vector_sub</a></div><div class="ttdeci">void std_vector_sub(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Subtract one vector from another element-wise.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00630">vector.cpp:630</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a0e4ce6c1c6c9f719b29946afdb4d6618"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a></div><div class="ttdeci">void std_cross_product(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the cross product of two 3D vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00661">vector.cpp:661</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a2311a395273328da7bf1ed0a57892f5a"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">gpmp::linalg::std_vector_mult</a></div><div class="ttdeci">void std_vector_mult(const std::vector&lt; double &gt; &amp;vec, double scalar, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Multiply each element of a vector by a scalar.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00641">vector.cpp:641</a></div></div>
+<div class="line"><a name="l00757"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a83249851f2fd35a61445380cde8008d8">  757</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">gpmp::linalg::std_vector_add</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                                  std::vector&lt;int&gt; &amp;result) {</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    result.resize(vec1.size());</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        result[i] = vec1[i] + vec2[i];</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    }</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;}</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;<span class="comment">// function to subtract one vector of integers from another</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#abde36bedcf4371060ebf0effbc6a3573">  767</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">gpmp::linalg::std_vector_sub</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                                  std::vector&lt;int&gt; &amp;result) {</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    result.resize(vec1.size());</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        result[i] = vec1[i] - vec2[i];</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    }</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;}</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;<span class="comment">// function to multiply each element of a vector of integers by a scalar</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a01fca4eca4eac20e05c0a111c4849d6c">  777</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">gpmp::linalg::std_vector_mult</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                                   <span class="keywordtype">int</span> scalar,</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                                   std::vector&lt;int&gt; &amp;result) {</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    result.resize(vec.size());</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        result[i] = vec[i] * scalar;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    }</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;}</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;<span class="comment">// function to compute the dot product of two vectors of integers</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a4c2de03def6f8b01780d39f8c23756a9">  787</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">gpmp::linalg::std_dot_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2) {</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="keywordtype">int</span> result = 0;</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec1.size(); ++i) {</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        result += vec1[i] * vec2[i];</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    }</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;}</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors of integers</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a412d6b99c140d811fab326151bacffab">  797</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                                     std::vector&lt;int&gt; &amp;result) {</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    result.resize(3);</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;}</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
+<div class="line"><a name="l00806"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#af6ba3d39ae5c8f0f0c4debebe8dadaec">  806</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec) {</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> value : vec) {</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        norm += value * value;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    }</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;}</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;<span class="comment">// function to normalize a vector of integers to have unit length</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#ac9cbfbf61db5bdce8f2c548efc3dce27">  815</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">std_vector_norm</a>(vec);</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    result.resize(vec.size());</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        result[i] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(vec[i]) / norm;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    }</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;}</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160; </div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;<span class="comment">// function to compute the projection of one vector of integers onto another</span></div>
+<div class="line"><a name="l00825"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a293c5fece3cedbe43e5f2f1e94dbb9c0">  825</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;int&gt; &amp;onto_vec,</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(vec, onto_vec);</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">std_dot_product</a>(onto_vec, onto_vec);</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    result.resize(onto_vec.size());</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;    }</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;}</div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a08824c23898616b0e2f5f353940033fb"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a08824c23898616b0e2f5f353940033fb">gpmp::linalg::std_vector_sub</a></div><div class="ttdeci">void std_vector_sub(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Subtract one vector from another element-wise.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00687">vector.cpp:687</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a0e4ce6c1c6c9f719b29946afdb4d6618"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a></div><div class="ttdeci">void std_cross_product(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the cross product of two 3D vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00718">vector.cpp:718</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a2311a395273328da7bf1ed0a57892f5a"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a2311a395273328da7bf1ed0a57892f5a">gpmp::linalg::std_vector_mult</a></div><div class="ttdeci">void std_vector_mult(const std::vector&lt; double &gt; &amp;vec, double scalar, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Multiply each element of a vector by a scalar.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00698">vector.cpp:698</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1linalg_html_a2e520a01bed726db72af4dd745de933b"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a2e520a01bed726db72af4dd745de933b">gpmp::linalg::vector_sub</a></div><div class="ttdeci">void vector_sub(const std::vector&lt; int &gt; &amp;vec1, const std::vector&lt; int &gt; &amp;vec2, std::vector&lt; int &gt; &amp;result)</div><div class="ttdoc">Performs vector subtraction for integer vectors.</div></div>
 <div class="ttc" id="anamespacegpmp_1_1linalg_html_a5fd81212f627fb1541858337e6939d03"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a5fd81212f627fb1541858337e6939d03">gpmp::linalg::vector_add</a></div><div class="ttdeci">void vector_add(const std::vector&lt; int &gt; &amp;vec1, const std::vector&lt; int &gt; &amp;vec2, std::vector&lt; int &gt; &amp;result)</div><div class="ttdoc">Performs vector addition for integer vectors.</div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a8c57622ef169b93c8f30dc31357fa2d0"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a></div><div class="ttdeci">void std_vector_projection(const std::vector&lt; double &gt; &amp;vec, const std::vector&lt; double &gt; &amp;onto_vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the projection of one vector onto another.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00688">vector.cpp:688</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a9987a14caca7780c1f7ea89906e584d1"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a></div><div class="ttdeci">double std_vector_norm(const std::vector&lt; double &gt; &amp;vec)</div><div class="ttdoc">Compute the Euclidean norm (magnitude) of a vector.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00669">vector.cpp:669</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_aa0f3d78088e97d6f47d88b2df888c068"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">gpmp::linalg::std_vector_add</a></div><div class="ttdeci">void std_vector_add(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Add two vectors element-wise.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00620">vector.cpp:620</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_aa4eb272564e8b74b2841677c67aa300d"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a></div><div class="ttdeci">void std_vector_normalize(const std::vector&lt; double &gt; &amp;vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Normalize a vector to have unit length.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00678">vector.cpp:678</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_adb44dc4577119cc2140b8e28e5e7f730"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">gpmp::linalg::std_dot_product</a></div><div class="ttdeci">double std_dot_product(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2)</div><div class="ttdoc">Compute the dot product of two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00651">vector.cpp:651</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a8c57622ef169b93c8f30dc31357fa2d0"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a></div><div class="ttdeci">void std_vector_projection(const std::vector&lt; double &gt; &amp;vec, const std::vector&lt; double &gt; &amp;onto_vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the projection of one vector onto another.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00745">vector.cpp:745</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a9987a14caca7780c1f7ea89906e584d1"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a></div><div class="ttdeci">double std_vector_norm(const std::vector&lt; double &gt; &amp;vec)</div><div class="ttdoc">Compute the Euclidean norm (magnitude) of a vector.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00726">vector.cpp:726</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_aa0f3d78088e97d6f47d88b2df888c068"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#aa0f3d78088e97d6f47d88b2df888c068">gpmp::linalg::std_vector_add</a></div><div class="ttdeci">void std_vector_add(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Add two vectors element-wise.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00677">vector.cpp:677</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_aa4eb272564e8b74b2841677c67aa300d"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a></div><div class="ttdeci">void std_vector_normalize(const std::vector&lt; double &gt; &amp;vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Normalize a vector to have unit length.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00735">vector.cpp:735</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_adb44dc4577119cc2140b8e28e5e7f730"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#adb44dc4577119cc2140b8e28e5e7f730">gpmp::linalg::std_dot_product</a></div><div class="ttdeci">double std_dot_product(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2)</div><div class="ttdoc">Compute the dot product of two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8cpp_source.html#l00708">vector.cpp:708</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1linalg_html_ae60bba8d019ff2ab44308c54e882a1c8"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#ae60bba8d019ff2ab44308c54e882a1c8">gpmp::linalg::vector_mult</a></div><div class="ttdeci">void vector_mult(const std::vector&lt; int &gt; &amp;vec, int scalar, std::vector&lt; int &gt; &amp;result)</div><div class="ttdoc">Performs scalar multiplication for integer vectors.</div></div>
 <div class="ttc" id="anamespacegpmp_1_1linalg_html_af59bcc71c35cb4eb7bf566c357344685"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#af59bcc71c35cb4eb7bf566c357344685">gpmp::linalg::dot_product</a></div><div class="ttdeci">int dot_product(const std::vector&lt; int &gt; &amp;vec1, const std::vector&lt; int &gt; &amp;vec2)</div><div class="ttdoc">Computes the dot product of two integer vectors.</div></div>
 </div><!-- fragment --></div><!-- contents -->
