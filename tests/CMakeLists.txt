@@ -156,7 +156,7 @@ if(LCOV)
         COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
         COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
         COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
-        COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*/gtest" "*tests/*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+        COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*/gtest" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
         COMMAND mv lcov.info ../../.coverage
         COMMENT "Generating Coverage Reports"
     )
