@@ -10,7 +10,8 @@ if(NOT GTest_FOUND)
     include(FetchContent)
     FetchContent_Declare(
         googletest
-        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        #URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        URL https://github.com/google/googletest/archive/b75ecf1bed2fcd416b66c86cb6fe79122abf132e.zip
     )
     FetchContent_MakeAvailable(googletest)
     message(STATUS "Fetching GoogleTest - done")

@@ -41,6 +41,7 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <sstream>
 #include <string>
 
 gpmp::core::Logger::Logger(LogLevel level, bool useTimestamp)

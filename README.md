@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/akielaries/openGPMP/v1.0.0-rc.1/docs/openGPMP_logo_med.png" />
+  <img src="https://raw.githubusercontent.com/akielaries/openGPMP/main/docs/openGPMP_logo_med.png" />
 </p>
 
 ![Version](https://img.shields.io/github/v/release/akielaries/openGPMP?color=%23BF40BF)

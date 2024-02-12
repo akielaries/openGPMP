@@ -146,10 +146,13 @@ class ThreadPool {
      */
     template <class F, class... Args>
     auto enqueue(F &&f, Args &&...args)
-        -> std::future<typename std::result_of<F(Args...)>::type> {
+        //-> std::future<typename std::result_of<F(Args...)>::type> {
+        -> std::future<typename std::invoke_result<F, Args...>::type> {
 
         // this is the return type of the passed in function
-        using return_type = typename std::result_of<F(Args...)>::type;
+        //using return_type = typename std::result_of<F(Args...)>::type;
+        using return_type = typename std::invoke_result<F, Args...>::type;
+
         // * SHARED POINTER to PACKAGED TASK used to store the passed in i
         //      function + its arguments
         // * std::bind used to create function object binded to the
@@ -215,7 +218,8 @@ class ThreadDispatch {
      */
     template <typename Function, typename... Args>
     auto dispatch(ThreadPool &pool, Function &&func, Args &&...args)
-        -> std::future<typename std::result_of<Function(Args...)>::type> {
+        //-> std::future<typename std::result_of<Function(Args...)>::type> {
+        -> std::future<typename std::invoke_result<Function, Args...>::type> {
 
         // enqueue the function call to the thread pool
         auto result = pool.enqueue(std::forward<Function>(func),
