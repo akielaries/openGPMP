@@ -516,96 +516,153 @@ void gpmp::linalg::vector_mult(const std::vector<int> &vec,
                                int scalar,
                                std::vector<int> &result) {
     const size_t size = vec.size();
-    const int *data = vec.data();
-    int *result_data = result.data();
+    const int32_t *data = vec.data();
+    int32_t *result_data = result.data();
 
-    const int32x4_t scalarVector = vdupq_n_s32(scalar);
+    if (size >= 4) {
+        int32x4_t scalar_vec = vdupq_n_s32(scalar);
+        size_t i = 0;
+        for (; i < size - 3; i += 4) {
+            // Load 4 elements from vec
+            int32x4_t a = vld1q_s32(data + i);
 
-    for (size_t i = 0; i < size; i += 4) {
-        int32x4_t vecData = vld1q_s32(data + i);
+            // Perform vectorized multiplication
+            int32x4_t c = vmulq_s32(a, scalar_vec);
 
-        int32x4_t mulResult = vmulq_s32(vecData, scalarVector);
+            // Store the result back to result vector
+            vst1q_s32(result_data + i, c);
+        }
 
-        vst1q_s32(result_data + i, mulResult);
+        // Perform standard multiplication on the remaining elements
+        for (; i < size; ++i) {
+            result_data[i] = data[i] * scalar;
+        }
+    } else {
+        for (size_t i = 0; i < size; ++i) {
+            result_data[i] = data[i] * scalar;
+        }
     }
+
+
 }
 
 // Vector multiplication using ARM NEON intrinsics, operates on double types
 void gpmp::linalg::vector_mult(const std::vector<double> &vec,
                                double scalar,
                                std::vector<double> &result) {
-    const int vecSize = vec.size();
-    const int remainder = vecSize % 2;
-    const int vecSizeAligned = vecSize - remainder;
+    const size_t size = vec.size();
+    const double *data = vec.data();
+    double *result_data = result.data();
 
-    const float64x2_t scalarVector = vdupq_n_f64(scalar);
+    if (size >= 2) {
+        float64x2_t scalar_vec = vdupq_n_f64(scalar);
+        size_t i = 0;
+        for (; i < size - 1; i += 2) {
+            // Load 2 elements from vec
+            float64x2_t a = vld1q_f64(data + i);
 
-    for (int i = 0; i < vecSizeAligned; i += 2) {
-        float64x2_t vecData = vld1q_f64(&vec[i]);
+            // Perform vectorized multiplication
+            float64x2_t c = vmulq_f64(a, scalar_vec);
 
-        float64x2_t mulResult = vmulq_f64(vecData, scalarVector);
+            // Store the result back to result vector
+            vst1q_f64(result_data + i, c);
+        }
 
-        vst1q_f64(&result[i], mulResult);
+        // Perform standard multiplication on the remaining elements
+        for (; i < size; ++i) {
+            result_data[i] = data[i] * scalar;
+        }
+    } else {
+        for (size_t i = 0; i < size; ++i) {
+            result_data[i] = data[i] * scalar;
+        }
     }
 
-    for (int i = vecSizeAligned; i < vecSize; ++i) {
-        result[i] = vec[i] * scalar;
-    }
 }
 
 // Dot product using ARM NEON intrinsics, operates on integer types
 int gpmp::linalg::dot_product(const std::vector<int> &vec1,
                               const std::vector<int> &vec2) {
-    const int vecSize = vec1.size();
+    const size_t size = vec1.size();
     const int32_t *data1 = vec1.data();
     const int32_t *data2 = vec2.data();
+    int result = 0;
 
-    int32x4_t sumVec = vdupq_n_s32(0);
+    if (size >= 4) {
+        int32x4_t sum_vec = vdupq_n_s32(0);
+        size_t i = 0;
+        for (; i < size - 3; i += 4) {
+            // Load 4 elements from vec1 and vec2
+            int32x4_t a = vld1q_s32(data1 + i);
+            int32x4_t b = vld1q_s32(data2 + i);
 
-    for (int i = 0; i < vecSize; i += 4) {
-        int32x4_t vec1Data = vld1q_s32(data1 + i);
-        int32x4_t vec2Data = vld1q_s32(data2 + i);
+            int32x4_t mul = vmulq_s32(a, b);
 
-        int32x4_t mulResult = vmulq_s32(vec1Data, vec2Data);
+            // Accumulate the results
+            sum_vec = vaddq_s32(sum_vec, mul);
+        }
 
-        sumVec = vaddq_s32(sumVec, mulResult);
+        // sum the results across the vector
+        int32_t temp[4];
+        vst1q_s32(temp, sum_vec);
+        result = temp[0] + temp[1] + temp[2] + temp[3];
+        
+        // process remaining elements if any
+        for (; i < size; ++i) {
+            result += data1[i] * data2[i];
+        }
+    } 
+    // performs std dot product
+    else { 
+        for (size_t i = 0; i < size; ++i) {
+            result += data1[i] * data2[i];
+        }
     }
 
-    int32_t sum = vgetq_lane_s32(sumVec, 0) + vgetq_lane_s32(sumVec, 1) +
-                  vgetq_lane_s32(sumVec, 2) + vgetq_lane_s32(sumVec, 3);
+    return result;
 
-    for (int i = vecSize & ~3; i < vecSize; ++i) {
-        sum += data1[i] * data2[i];
-    }
-
-    return sum;
 }
 
 // Dot product using ARM NEON intrinsics, operates on double types
 double gpmp::linalg::dot_product(const std::vector<double> &vec1,
                                  const std::vector<double> &vec2) {
-    const int vecSize = vec1.size();
+    const size_t size = vec1.size();
     const double *data1 = vec1.data();
     const double *data2 = vec2.data();
+    double result = 0.0;
 
-    float64x2_t sumVec = vdupq_n_f64(0);
+    if (size >= 2) {
+        float64x2_t sum_vec = vdupq_n_f64(0.0);
+        size_t i = 0;
+        for (; i < size - 1; i += 2) {
+            // Load 2 elements from vec1 and vec2
+            float64x2_t a = vld1q_f64(data1 + i);
+            float64x2_t b = vld1q_f64(data2 + i);
 
-    for (int i = 0; i < vecSize; i += 2) {
-        float64x2_t vec1Data = vld1q_f64(data1 + i);
-        float64x2_t vec2Data = vld1q_f64(data2 + i);
+            // Perform vectorized multiplication
+            float64x2_t mul = vmulq_f64(a, b);
 
-        float64x2_t mulResult = vmulq_f64(vec1Data, vec2Data);
+            // Accumulate the results
+            sum_vec = vaddq_f64(sum_vec, mul);
+        }
 
-        sumVec = vaddq_f64(sumVec, mulResult);
+        // Sum the results across the vector
+        double temp[2];
+        vst1q_f64(temp, sum_vec);
+        result = temp[0] + temp[1];
+        
+        // Process remaining elements if any
+        for (; i < size; ++i) {
+            result += data1[i] * data2[i];
+        }
+    } else {
+        for (size_t i = 0; i < size; ++i) {
+            result += data1[i] * data2[i];
+        }
     }
 
-    double sum = vgetq_lane_f64(sumVec, 0) + vgetq_lane_f64(sumVec, 1);
+    return result;
 
-    for (int i = vecSize & ~1; i < vecSize; ++i) {
-        sum += data1[i] * data2[i];
-    }
-
-    return sum;
 }
 
 // ARM NEON

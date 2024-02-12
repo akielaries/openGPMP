@@ -192,7 +192,7 @@ TEST(VectorArithTestInt, Projection) {
     EXPECT_DOUBLE_EQ(result[1], 0.0);
 }
 
-#if defined(__AVX2__) || defined(__AVX__)
+#if defined(__AVX2__) || defined(__AVX__) || defined(__ARM_NEON)
 
 TEST(VectorArithINTRINSICTestInt, Addition) {
     // Create input vectors
@@ -573,8 +573,7 @@ TEST(VectorArithINTRINSICTestInt, DotProduct) {
     int result = gpmp::linalg::dot_product(vec1, vec2);
 
     // Expected result
-    int expected_result =
-        1 * 8 + 2 * 7 + 3 * 6 + 4 * 5 + 5 * 4 + 6 * 3 + 7 * 2 + 8 * 1;
+    int expected_result = 120;
 
     // Check the result
     EXPECT_EQ(result, expected_result);
@@ -772,7 +771,7 @@ TEST(VectorArithINTRINSICTestDouble, MultComparisonRandom) {
 
     // Create random number generator
     std::mt19937 rng(std::random_device{}());
-    std::uniform_int_distribution<int> dist(-1000, 1000);
+    std::uniform_real_distribution<double> dist(-1000, 1000);
 
     // Generate random vector and scalar
     std::vector<double> vec(size);
