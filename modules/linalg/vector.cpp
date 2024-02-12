@@ -309,7 +309,7 @@ double gpmp::linalg::dot_product(const std::vector<double> &vec1,
  * Vector Operations for MMX ISA
  *
  ************************************************************************/
-#elif define(__MMX__)
+#elif defined(__MMX__)
 #include <mmintrin.h>
 
 // SSE

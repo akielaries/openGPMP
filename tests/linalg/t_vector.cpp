@@ -2,13 +2,13 @@
  * Unit tests for the Linear Algebra module's Vector operations
  */
 #include "../../include/linalg/vector.hpp"
+#include <chrono>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <random>
 #include <stdexcept>
 #include <vector>
-#include <chrono>
 
 const double TOLERANCE = 1e-3;
 

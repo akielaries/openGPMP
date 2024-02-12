@@ -1123,7 +1123,7 @@ void gpmp::linalg::Mtx::mtx_tpose(std::vector<std::vector<double>> &matrix) {
  * Matrix Operations for MMX ISA
  *
  ************************************************************************/
-#elif define(__MMX__)
+#elif defined(__MMX__)
 #include <mmintrin.h>
 
 // SSE
