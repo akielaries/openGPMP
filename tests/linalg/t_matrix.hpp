@@ -13,7 +13,6 @@
 #include <string>
 #include <vector>
 
-
 // utility test helper function to compare two matrices. used for verifying
 // accelerated/non-standard implementations to the simple naive algorithm
 // for matrix arithmetic operations
@@ -75,6 +74,5 @@ template <typename T> void print_matrix(const T *matrix, int rows, int cols) {
     }
     std::cout << std::endl;
 }
-
 
 #endif

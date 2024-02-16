@@ -3,8 +3,8 @@
  ************************************************************************/
 #include "../../include/linalg/mtx.hpp"
 #include "../../include/linalg/mtx_tmpl.hpp"
-#include <chrono>
 #include "t_matrix.hpp"
+#include <chrono>
 #include <cmath>
 #include <cstdint>
 #include <gtest/gtest.h>

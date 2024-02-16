@@ -143,4 +143,4 @@ TEST(MatrixArrayTestI16, AdditionPerformanceComparison) {
     delete[] result;
 }
 
-}
+} // namespace

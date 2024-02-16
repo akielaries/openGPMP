@@ -4,6 +4,7 @@
 #include "../../include/linalg/mtx.hpp"
 #include "../../include/linalg/mtx_tmpl.hpp"
 #include "t_matrix.hpp"
+#include <chrono>
 #include <cmath>
 #include <cstdint>
 #include <gtest/gtest.h>
@@ -11,13 +12,11 @@
 #include <limits.h>
 #include <string>
 #include <vector>
-#include <chrono>
 
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
 namespace {
-
 
 TEST(MatrixArrayTestF64, AdditionComparisonSmall) {
     int mtx_size = 64;

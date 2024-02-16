@@ -3,6 +3,8 @@
  ************************************************************************/
 #include "../../include/linalg/mtx.hpp"
 #include "../../include/linalg/mtx_tmpl.hpp"
+#include "t_matrix.hpp"
+#include <chrono>
 #include <cmath>
 #include <cstdint>
 #include <gtest/gtest.h>
@@ -10,14 +12,11 @@
 #include <limits.h>
 #include <string>
 #include <vector>
-#include "t_matrix.hpp"
-#include <chrono>
 
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
 namespace {
-
 
 // test case to compare the results of the intrinsics implementation with the
 // naive implementation for matrix addition

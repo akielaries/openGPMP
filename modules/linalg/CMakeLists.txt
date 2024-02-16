@@ -46,8 +46,14 @@ elseif (SIMD_ISA STREQUAL "ARM_NEON")
 
 elseif (SIMD_ISA STREQUAL "SSE")
     list(APPEND SOURCE_FILES
-        mtx_sse2_vec_i32.cpp
 
+        mtx_sse2_arr_i8.cpp
+        mtx_sse2_arr_i16.cpp
+        mtx_sse2_arr_i32.cpp
+        mtx_sse2_arr_f32.cpp
+        mtx_sse2_arr_f64.cpp
+
+        mtx_sse2_vec_i32.cpp
         mtx_sse2_vec_f32.cpp
         mtx_sse2_vec_f64.cpp
     )
