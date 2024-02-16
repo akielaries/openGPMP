@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include "t_matrix.hpp"
+#include <chrono>
+
 
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
