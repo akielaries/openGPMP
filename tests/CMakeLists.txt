@@ -22,48 +22,6 @@ endif()
 
 message(STATUS "Detecting GoogleTest - done")
 
-# TODO this could be made dynamic some how?
-# source files that will be tested
-set(CPP_SOURCES
-    ../modules/arithmetic/arith.cpp
-    ../modules/calculus/differential.cpp
-    ../modules/core/datatable.cpp
-    ../modules/core/utils.cpp
-    ../modules/disct/graphs.cpp
-    ../modules/linalg/linsys.cpp
-    ../modules/linalg/eigen.cpp
-    ../modules/linalg/mtx.cpp
-    ../modules/linalg/tensor.cpp
-    ../modules/linalg/svd.cpp
-    ../modules/linalg/vector.cpp
-    ../modules/ml/bayes_clf.cpp
-    ../modules/ml/encoder.cpp
-    ../modules/ml/mlp_network.cpp
-    ../modules/ml/kohonen_net.cpp
-    ../modules/ml/knn.cpp
-    ../modules/ml/kfold.cpp
-    ../modules/ml/logreg.cpp
-    ../modules/ml/activators.cpp
-    ../modules/ml/regularizers.cpp
-    ../modules/ml/svc.cpp
-    ../modules/ml/bayes_net.cpp
-    ../modules/ml/trainers.cpp
-    ../modules/nt/cipher.cpp
-    ../modules/nt/rc4.cpp
-    ../modules/nt/rc5.cpp
-    ../modules/nt/rc6.cpp
-    ../modules/nt/prime_test.cpp
-    ../modules/nt/prime_gen.cpp
-    ../modules/nt/factorization.cpp
-    ../modules/nt/logarithms.cpp
-    ../modules/nt/random.cpp
-    ../modules/nt/redpike.cpp
-    ../modules/optim/function.cpp
-    ../modules/optim/quasi.cpp
-    ../modules/stats/describe.cpp
-    ../modules/stats/probdist.cpp
-)
-
 # Define the libraries you want to test
 set(LIBRARIES_TO_TEST
     arithmetic
@@ -83,9 +41,9 @@ set(CPP_TEST_FILES
     calc/t_calc.cpp
     core/t_threadpool.cpp
     disct/t_graphs.cpp
-    linalg/t_matrix.cpp
     linalg/t_eigen.cpp
     linalg/t_linsys.cpp
+    linalg/t_matrix.cpp
     linalg/t_vector_vector_f64.cpp
     linalg/t_vector_vector_i8.cpp
     linalg/t_vector_vector_i32.cpp

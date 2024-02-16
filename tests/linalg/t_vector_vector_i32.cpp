@@ -18,7 +18,7 @@ const double TOLERANCE = 1e-3;
 /*****************************************************************************/
 /** VECTOR<INT32> TESTS */
 
-TEST(VectorArithINTRINSICTestI32, Addition) {
+TEST(VectorVectorTestI32, Addition) {
     // Create input vectors
     std::vector<int32_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int32_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -34,7 +34,7 @@ TEST(VectorArithINTRINSICTestI32, Addition) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, AdditionComparison) {
+TEST(VectorVectorTestI32, AdditionComparison) {
     // Create input vectors
     std::vector<int32_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int32_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -52,7 +52,7 @@ TEST(VectorArithINTRINSICTestI32, AdditionComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, AdditionComparisonRandom) {
+TEST(VectorVectorTestI32, AdditionComparisonRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -80,7 +80,7 @@ TEST(VectorArithINTRINSICTestI32, AdditionComparisonRandom) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, AdditionPerformanceComparison) {
+TEST(VectorVectorTestI32, AdditionPerformanceComparison) {
     const size_t size = 3333 * 3333;
 
     TEST_COUT << "Vector size      : " << size << std::endl;
@@ -122,7 +122,7 @@ TEST(VectorArithINTRINSICTestI32, AdditionPerformanceComparison) {
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 }
 
-TEST(VectorArithINTRINSICTestI32, Subtraction) {
+TEST(VectorVectorTestI32, Subtraction) {
     // Create input vectors
     std::vector<int32_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int32_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -138,7 +138,7 @@ TEST(VectorArithINTRINSICTestI32, Subtraction) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, SubtractionComparison) {
+TEST(VectorVectorTestI32, SubtractionComparison) {
     // Create input vectors
     std::vector<int32_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int32_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -156,7 +156,7 @@ TEST(VectorArithINTRINSICTestI32, SubtractionComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, SubtractionComparisonRandom) {
+TEST(VectorVectorTestI32, SubtractionComparisonRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -184,7 +184,7 @@ TEST(VectorArithINTRINSICTestI32, SubtractionComparisonRandom) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, SubtractionPerformanceComparison) {
+TEST(VectorVectorTestI32, SubtractionPerformanceComparison) {
     const size_t size = 3333 * 3333;
 
     TEST_COUT << "Vector size      : " << size << std::endl;
@@ -231,7 +231,7 @@ TEST(VectorArithINTRINSICTestI32, SubtractionPerformanceComparison) {
 }
 
 // Unit test for vector multiplication using INTRINSIC intrinsics
-TEST(VectorArithINTRINSICTestI32, Multiplication) {
+TEST(VectorVectorTestI32, Multiplication) {
     // Create input vector and scalar
     std::vector<int32_t> vec = {1, 2, 3, 4, 5, 6, 7, 8};
     int scalar = 2;
@@ -248,7 +248,7 @@ TEST(VectorArithINTRINSICTestI32, Multiplication) {
 
 // Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication
-TEST(VectorArithINTRINSICTestI32, MultComparison) {
+TEST(VectorVectorTestI32, MultComparison) {
     // Create input vector and scalar
     std::vector<int32_t> vec = {1, 2, 3, 4, 5, 6, 7, 8};
     int scalar = 2;
@@ -267,7 +267,7 @@ TEST(VectorArithINTRINSICTestI32, MultComparison) {
 
 // Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication using random vectors
-TEST(VectorArithINTRINSICTestI32, MultComparisonRandom) {
+TEST(VectorVectorTestI32, MultComparisonRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -293,7 +293,7 @@ TEST(VectorArithINTRINSICTestI32, MultComparisonRandom) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI32, MultPerformanceComparison) {
+TEST(VectorVectorTestI32, MultPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -336,7 +336,7 @@ TEST(VectorArithINTRINSICTestI32, MultPerformanceComparison) {
 }
 
 // Unit test for dot product using INTRINSIC intrinsics
-TEST(VectorArithINTRINSICTestI32, DotProduct) {
+TEST(VectorVectorTestI32, DotProduct) {
     // Create input vectors
     std::vector<int32_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int32_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -352,7 +352,7 @@ TEST(VectorArithINTRINSICTestI32, DotProduct) {
 }
 
 // Unit test for dot product using INTRINSIC intrinsics with random vectors
-TEST(VectorArithINTRINSICTestI32, DotProductRandom) {
+TEST(VectorVectorTestI32, DotProductRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -380,7 +380,7 @@ TEST(VectorArithINTRINSICTestI32, DotProductRandom) {
     EXPECT_EQ(result, expected_result);
 }
 
-TEST(VectorArithINTRINSICTestI32, DotProductPerformanceComparison) {
+TEST(VectorVectorTestI32, DotProductPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 

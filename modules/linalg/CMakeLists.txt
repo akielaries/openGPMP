@@ -6,8 +6,9 @@ option(BUILD_GPU_OPENCL "Build OpenCL Linear Algebra Extension" OFF)
 
 set(SOURCE_FILES
     mtx_routines.f90
+    mtx_arr_f90.cpp
     linsys_routines.f90
-    mtx.cpp
+    mtx_naive.cpp
     linsys.cpp
     eigen.cpp
     tensor.cpp
@@ -18,7 +19,15 @@ set(SOURCE_FILES
 # Add files depending on the detected SIMD ISA
 if (SIMD_ISA STREQUAL "AVX2")
     list(APPEND SOURCE_FILES
-        mtx_avx2_i32.cpp
+        mtx_avx2_arr_i8.cpp
+        mtx_avx2_arr_i16.cpp
+        mtx_avx2_arr_i32.cpp
+        mtx_avx2_arr_f32.cpp
+        mtx_avx2_arr_f64.cpp
+
+        mtx_avx2_vec_i32.cpp
+        mtx_avx2_vec_f32.cpp
+        mtx_avx2_vec_f64.cpp
 
         vector_avx2_i8.cpp
         vector_avx2_i16.cpp
@@ -27,8 +36,20 @@ if (SIMD_ISA STREQUAL "AVX2")
     )
 elseif (SIMD_ISA STREQUAL "ARM_NEON")
     list(APPEND SOURCE_FILES
+        mtx_arm_vec_i32.cpp
+        mtx_arm_vec_f32.cpp
+
+
         vector_arm_i32.cpp
         vector_arm_f64.cpp
+    )
+
+elseif (SIMD_ISA STREQUAL "SSE")
+    list(APPEND SOURCE_FILES
+        mtx_sse2_vec_i32.cpp
+
+        mtx_sse2_vec_f32.cpp
+        mtx_sse2_vec_f64.cpp
     )
 endif()
 

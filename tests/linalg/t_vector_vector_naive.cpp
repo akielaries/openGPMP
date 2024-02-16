@@ -15,7 +15,7 @@ const double TOLERANCE = 1e-3;
 
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
-TEST(VectorArithTestDouble, Addition) {
+TEST(VectorVectorTestDouble, Addition) {
     std::vector<double> vec1 = {1.0, 2.0, 3.0};
     std::vector<double> vec2 = {4.0, 5.0, 6.0};
     std::vector<double> result;
@@ -29,7 +29,7 @@ TEST(VectorArithTestDouble, Addition) {
 }
 
 // Test cases for gpmp::linalg::std_vector_sub function
-TEST(VectorArithTestDouble, Subtraction) {
+TEST(VectorVectorTestDouble, Subtraction) {
     std::vector<double> vec1 = {4.0, 5.0, 6.0};
     std::vector<double> vec2 = {1.0, 2.0, 3.0};
     std::vector<double> result;
@@ -43,7 +43,7 @@ TEST(VectorArithTestDouble, Subtraction) {
 }
 
 // Test cases for gpmp::linalg::std_scalar_mult function
-TEST(VectorArithTestDouble, Multiplication) {
+TEST(VectorVectorTestDouble, Multiplication) {
     std::vector<double> vec = {1.0, 2.0, 3.0};
     std::vector<double> result;
 
@@ -56,7 +56,7 @@ TEST(VectorArithTestDouble, Multiplication) {
 }
 
 // Test cases for std_dot_product function
-TEST(VectorArithTestDouble, DotProduct) {
+TEST(VectorVectorTestDouble, DotProduct) {
     std::vector<double> vec1 = {1.0, 2.0, 3.0};
     std::vector<double> vec2 = {4.0, 5.0, 6.0};
 
@@ -66,7 +66,7 @@ TEST(VectorArithTestDouble, DotProduct) {
 }
 
 // Test cases for std_cross_product function
-TEST(VectorArithTestDouble, CrossProduct) {
+TEST(VectorVectorTestDouble, CrossProduct) {
     std::vector<double> vec1 = {1.0, 2.0, 3.0};
     std::vector<double> vec2 = {3.0, 4.0, 5.0};
     std::vector<double> result(3);
@@ -79,14 +79,14 @@ TEST(VectorArithTestDouble, CrossProduct) {
     EXPECT_DOUBLE_EQ(result[2], -2);
 }
 
-TEST(VectorArithTestDouble, Magnitude) {
+TEST(VectorVectorTestDouble, Magnitude) {
     std::vector<double> vec = {3.0, 4.0};
     double norm = gpmp::linalg::std_vector_norm(vec);
     EXPECT_DOUBLE_EQ(norm, 5.0);
 }
 
 // Unit tests for gpmp::linalg::std_vector_normalize function
-TEST(VectorArithTestDouble, Normalization) {
+TEST(VectorVectorTestDouble, Normalization) {
     std::vector<double> vec = {3.0, 4.0};
     std::vector<double> result;
     gpmp::linalg::std_vector_normalize(vec, result);
@@ -95,7 +95,7 @@ TEST(VectorArithTestDouble, Normalization) {
 }
 
 // Unit tests for gpmp::linalg::std_vector_projection function
-TEST(VectorArithTestDouble, Projection) {
+TEST(VectorVectorTestDouble, Projection) {
     std::vector<double> vec = {3.0, 2.0};
     std::vector<double> onto_vec = {4.0, 0.0};
     std::vector<double> result;
@@ -104,7 +104,7 @@ TEST(VectorArithTestDouble, Projection) {
     EXPECT_DOUBLE_EQ(result[1], 0.0);
 }
 
-TEST(VectorArithTestInt, Addition) {
+TEST(VectorVectorTestInt, Addition) {
     std::vector<int> vec1 = {1, 2, 3};
     std::vector<int> vec2 = {4, 5, 6};
     std::vector<int> result;
@@ -118,7 +118,7 @@ TEST(VectorArithTestInt, Addition) {
 }
 
 // Unit tests for std_vector_sub function
-TEST(VectorArithTestInt, Subtraction) {
+TEST(VectorVectorTestInt, Subtraction) {
     std::vector<int> vec1 = {4, 5, 6};
     std::vector<int> vec2 = {1, 2, 3};
     std::vector<int> result;
@@ -132,7 +132,7 @@ TEST(VectorArithTestInt, Subtraction) {
 }
 
 // Unit tests for std_scalar_mult function
-TEST(VectorArithTestInt, Multiplication) {
+TEST(VectorVectorTestInt, Multiplication) {
     std::vector<int> vec = {1, 2, 3};
     std::vector<int> result;
 
@@ -145,7 +145,7 @@ TEST(VectorArithTestInt, Multiplication) {
 }
 
 // Unit tests for std_dot_product function
-TEST(VectorArithTestInt, DotProduct) {
+TEST(VectorVectorTestInt, DotProduct) {
     std::vector<int> vec1 = {1, 2, 3};
     std::vector<int> vec2 = {4, 5, 6};
 
@@ -155,7 +155,7 @@ TEST(VectorArithTestInt, DotProduct) {
 }
 
 // Unit tests for std_cross_product function
-TEST(VectorArithTestInt, CrossProduct) {
+TEST(VectorVectorTestInt, CrossProduct) {
     std::vector<int> vec1 = {1, 0, 0};
     std::vector<int> vec2 = {0, 1, 0};
     std::vector<int> result(3);
@@ -168,14 +168,14 @@ TEST(VectorArithTestInt, CrossProduct) {
     EXPECT_EQ(result[2], 1);
 }
 
-TEST(VectorArithTestInt, Magnitude) {
+TEST(VectorVectorTestInt, Magnitude) {
     std::vector<int> vec = {3, 4};
     double norm = gpmp::linalg::std_vector_norm(vec);
     EXPECT_DOUBLE_EQ(norm, 5.0);
 }
 
 // Unit tests for std_vector_normalize function
-TEST(VectorArithTestInt, Normalization) {
+TEST(VectorVectorTestInt, Normalization) {
     std::vector<int> vec = {3, 4};
     std::vector<double> result;
     gpmp::linalg::std_vector_normalize(vec, result);
@@ -184,7 +184,7 @@ TEST(VectorArithTestInt, Normalization) {
 }
 
 // Unit tests for std_vector_projection function
-TEST(VectorArithTestInt, Projection) {
+TEST(VectorVectorTestInt, Projection) {
     std::vector<int> vec = {3, 2};
     std::vector<int> onto_vec = {4, 0};
     std::vector<double> result;

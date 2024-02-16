@@ -15,7 +15,7 @@ const double TOLERANCE = 1e-3;
 
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
-TEST(VectorArithINTRINSICTestF64, Addition) {
+TEST(VectorVectorTestF64, Addition) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};
@@ -33,7 +33,7 @@ TEST(VectorArithINTRINSICTestF64, Addition) {
 
 // Unit test to compare results of INTRINSIC vector addition with standard
 // vector addition for doubles
-TEST(VectorArithINTRINSICTestF64, AdditionComparison) {
+TEST(VectorVectorTestF64, AdditionComparison) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};
@@ -51,7 +51,7 @@ TEST(VectorArithINTRINSICTestF64, AdditionComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, AdditionComparisonRandom) {
+TEST(VectorVectorTestF64, AdditionComparisonRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -81,7 +81,7 @@ TEST(VectorArithINTRINSICTestF64, AdditionComparisonRandom) {
 
 // Unit test to compare execution time of INTRINSIC vector addition with
 // standard vector addition for doubles
-TEST(VectorArithINTRINSICTestF64, AdditionPerformanceComparison) {
+TEST(VectorVectorTestF64, AdditionPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -118,7 +118,7 @@ TEST(VectorArithINTRINSICTestF64, AdditionPerformanceComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, Subtraction) {
+TEST(VectorVectorTestF64, Subtraction) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
     std::vector<double> vec2 = {8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0};
@@ -134,7 +134,7 @@ TEST(VectorArithINTRINSICTestF64, Subtraction) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, SubtractionComparison) {
+TEST(VectorVectorTestF64, SubtractionComparison) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0};
     std::vector<double> vec2 = {8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0};
@@ -152,7 +152,7 @@ TEST(VectorArithINTRINSICTestF64, SubtractionComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, SubtractionComparisonRandom) {
+TEST(VectorVectorTestF64, SubtractionComparisonRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -180,7 +180,7 @@ TEST(VectorArithINTRINSICTestF64, SubtractionComparisonRandom) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, SubtractionPerformanceComparison) {
+TEST(VectorVectorTestF64, SubtractionPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -217,7 +217,7 @@ TEST(VectorArithINTRINSICTestF64, SubtractionPerformanceComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, Multiplication) {
+TEST(VectorVectorTestF64, Multiplication) {
     // Create input vector
     std::vector<double> vec = {1.0, 2.0, 3.0, 4.0};
     double scalar = 2.0;
@@ -233,7 +233,7 @@ TEST(VectorArithINTRINSICTestF64, Multiplication) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, MultComparison) {
+TEST(VectorVectorTestF64, MultComparison) {
     // Create input vector
     std::vector<double> vec = {1.0, 2.0, 3.0, 4.0};
     double scalar = 2.0;
@@ -251,7 +251,7 @@ TEST(VectorArithINTRINSICTestF64, MultComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, MultComparisonRandom) {
+TEST(VectorVectorTestF64, MultComparisonRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -277,7 +277,7 @@ TEST(VectorArithINTRINSICTestF64, MultComparisonRandom) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, MultiplicationPerformanceComparison) {
+TEST(VectorVectorTestF64, MultiplicationPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -313,7 +313,7 @@ TEST(VectorArithINTRINSICTestF64, MultiplicationPerformanceComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestF64, DotProduct) {
+TEST(VectorVectorTestF64, DotProduct) {
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};
@@ -328,7 +328,7 @@ TEST(VectorArithINTRINSICTestF64, DotProduct) {
     EXPECT_DOUBLE_EQ(result_intrin, result_std);
 }
 
-TEST(VectorArithINTRINSICTestF64, DotProductRandom) {
+TEST(VectorVectorTestF64, DotProductRandom) {
     const size_t size = 3333;
 
     // Create random number generator
@@ -356,7 +356,7 @@ TEST(VectorArithINTRINSICTestF64, DotProductRandom) {
     EXPECT_DOUBLE_EQ(result, expected_result);
 }
 
-TEST(VectorArithINTRINSICTestF64, DotProductPerformanceComparison) {
+TEST(VectorVectorTestF64, DotProductPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 

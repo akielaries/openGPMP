@@ -18,7 +18,7 @@ const double TOLERANCE = 1e-3;
 /*****************************************************************************/
 /** VECTOR<INT8> TESTS */
 
-TEST(VectorArithINTRINSICTestI8, Addition) {
+TEST(VectorVectorTestI8, Addition) {
     // Create input vectors
     std::vector<int8_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int8_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -34,7 +34,7 @@ TEST(VectorArithINTRINSICTestI8, Addition) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI8, AdditionComparison) {
+TEST(VectorVectorTestI8, AdditionComparison) {
     // Create input vectors
     std::vector<int8_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int8_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -52,7 +52,7 @@ TEST(VectorArithINTRINSICTestI8, AdditionComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI8, AdditionComparisonRandom) {
+TEST(VectorVectorTestI8, AdditionComparisonRandom) {
     const size_t size = 3333;
 
     std::random_device rd;
@@ -79,7 +79,7 @@ TEST(VectorArithINTRINSICTestI8, AdditionComparisonRandom) {
         EXPECT_EQ(result_intrin[i], result_std[i]);
     }
 }
-TEST(VectorArithINTRINSICTestI8, AdditionPerformanceComparison) {
+TEST(VectorVectorTestI8, AdditionPerformanceComparison) {
     const size_t size = 3333 * 3333;
 
     TEST_COUT << "Vector size      : " << size << std::endl;
@@ -128,7 +128,7 @@ TEST(VectorArithINTRINSICTestI8, AdditionPerformanceComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI8, Subtraction) {
+TEST(VectorVectorTestI8, Subtraction) {
     // Create input vectors
     std::vector<int8_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int8_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -144,7 +144,7 @@ TEST(VectorArithINTRINSICTestI8, Subtraction) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI8, SubtractionComparison) {
+TEST(VectorVectorTestI8, SubtractionComparison) {
     // Create input vectors
     std::vector<int8_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int8_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -162,7 +162,7 @@ TEST(VectorArithINTRINSICTestI8, SubtractionComparison) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI8, SubtractionComparisonRandom) {
+TEST(VectorVectorTestI8, SubtractionComparisonRandom) {
     const size_t size = 3333;
     // Create random number generator
     std::random_device rd;
@@ -190,7 +190,7 @@ TEST(VectorArithINTRINSICTestI8, SubtractionComparisonRandom) {
     }
 }
 
-TEST(VectorArithINTRINSICTestI8, SubtractionPerformanceComparison) {
+TEST(VectorVectorTestI8, SubtractionPerformanceComparison) {
     const size_t size = 3333 * 3333;
 
     TEST_COUT << "Vector size      : " << size << std::endl;
@@ -240,7 +240,7 @@ TEST(VectorArithINTRINSICTestI8, SubtractionPerformanceComparison) {
 }
 
 // Unit test for vector multiplication using INTRINSIC intrinsics
-TEST(VectorArithINTRINSICTestI8, Multiplication) {
+TEST(VectorVectorTestI8, Multiplication) {
     // Create input vector and scalar
     std::vector<int8_t> vec = {1, 2, 3, 4, 5, 6, 7, 8};
     int scalar = 2;
@@ -257,7 +257,7 @@ TEST(VectorArithINTRINSICTestI8, Multiplication) {
 
 // Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication
-TEST(VectorArithINTRINSICTestI8, MultComparison) {
+TEST(VectorVectorTestI8, MultComparison) {
     // Create input vector and scalar
     std::vector<int8_t> vec = {1, 2, 3, 4, 5, 6, 7, 8};
     int scalar = 2;
@@ -276,7 +276,7 @@ TEST(VectorArithINTRINSICTestI8, MultComparison) {
 
 // Unit test to compare results of INTRINSIC vector multiplication with standard
 // vector multiplication using random vectors
-TEST(VectorArithINTRINSICTestI8, MultComparisonRandom) {
+TEST(VectorVectorTestI8, MultComparisonRandom) {
     const size_t size = 3333;
     // Create random number generator
     std::random_device rd;
@@ -303,7 +303,7 @@ TEST(VectorArithINTRINSICTestI8, MultComparisonRandom) {
 
 // Unit test to compare execution time of INTRINSIC vector multiplication with
 // standard vector multiplication
-TEST(VectorArithINTRINSICTestI8, MultPerformanceComparison) {
+TEST(VectorVectorTestI8, MultPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 
@@ -345,7 +345,7 @@ TEST(VectorArithINTRINSICTestI8, MultPerformanceComparison) {
 }
 
 // Unit test for dot product using INTRINSIC intrinsics
-TEST(VectorArithINTRINSICTestI8, DotProduct) {
+TEST(VectorVectorTestI8, DotProduct) {
     // Create input vectors
     std::vector<int8_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int8_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};
@@ -361,7 +361,7 @@ TEST(VectorArithINTRINSICTestI8, DotProduct) {
 }
 
 // Unit test for dot product using INTRINSIC intrinsics with random vectors
-TEST(VectorArithINTRINSICTestI8, DotProductRandom) {
+TEST(VectorVectorTestI8, DotProductRandom) {
     const size_t size = 3333;
 
     std::random_device rd;
@@ -384,7 +384,7 @@ TEST(VectorArithINTRINSICTestI8, DotProductRandom) {
     EXPECT_EQ(result, expected_result);
 }
 
-TEST(VectorArithINTRINSICTestI8, DotProductPerformanceComparison) {
+TEST(VectorVectorTestI8, DotProductPerformanceComparison) {
     const size_t size = 3333 * 3333;
     TEST_COUT << "Vector size      : " << size << std::endl;
 

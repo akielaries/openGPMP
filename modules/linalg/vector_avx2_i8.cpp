@@ -189,7 +189,7 @@ void gpmp::linalg::scalar_mult(const std::vector<uint8_t> &vec1,
 }
 
 template <typename T>
-T dot_product_i8(const T *vec1, const T *vec2, size_t size) {
+T gpmp::linalg::dot_product_i8(const T *vec1, const T *vec2, size_t size) {
     int result = 0;
     if (size > 32) {
         size_t i = 0;

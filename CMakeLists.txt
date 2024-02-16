@@ -58,7 +58,7 @@ if(result EQUAL 0)
     string(FIND "${compiler_output}" "#define __SSE__ 1" sse_index)
     string(FIND "${compiler_output}" "#define __MMX__ 1" mmx_index)
 
-    message(STATUS "Detecting available SIMD acceleration")
+    message(STATUS "Detecting available SIMD ISAs")
     
     # order of magnitude for INTRINS:
     # ARM NEON is only available extension on ARM procs
@@ -94,7 +94,7 @@ if(result EQUAL 0)
         message(STATUS "No supported SIMD ISA")
     endif()
 
-    message(STATUS "Detecting available SIMD acceleration - done")
+    message(STATUS "Detecting available SIMD ISAs - done")
 else()
     message(STATUS "Command failed with error code ${result}")
 endif()

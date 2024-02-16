@@ -40,179 +40,512 @@ namespace gpmp {
 
 namespace linalg {
 
+/**
+ * @brief Performs vector addition for signed 8-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_add_i8(const T *data1, const T *data2, T *result_data, size_t size);
 
+/**
+ * @brief Performs vector addition for signed 16-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_add_i16(const T *data1,
                     const T *data2,
                     T *result_data,
                     size_t size);
 
+/**
+ * @brief Performs vector addition for signed 32-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_add_i32(const T *data1,
                     const T *data2,
                     T *result_data,
                     size_t size);
 
+/**
+ * @brief Performs vector addition for signed 64-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_add_i64(const T *data1,
                     const T *data2,
                     T *result_data,
                     size_t size);
 
+/**
+ * @brief Performs vector addition for vectors of signed 8-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<int8_t> &vec1,
                 const std::vector<int8_t> &vec2,
                 std::vector<int8_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of unsigned 8-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<uint8_t> &vec1,
                 const std::vector<uint8_t> &vec2,
                 std::vector<uint8_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of signed 16-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<int16_t> &vec1,
                 const std::vector<int16_t> &vec2,
                 std::vector<int16_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of unsigned 16-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<uint16_t> &vec1,
                 const std::vector<uint16_t> &vec2,
                 std::vector<uint16_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of signed 32-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<int32_t> &vec1,
                 const std::vector<int32_t> &vec2,
                 std::vector<int32_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of unsigned 32-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<uint32_t> &vec1,
                 const std::vector<uint32_t> &vec2,
                 std::vector<uint32_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of signed 64-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<int64_t> &vec1,
                 const std::vector<int64_t> &vec2,
                 std::vector<int64_t> &result);
 
+/**
+ * @brief Performs vector addition for vectors of unsigned 64-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the addition
+ */
 void vector_add(const std::vector<uint64_t> &vec1,
                 const std::vector<uint64_t> &vec2,
                 std::vector<uint64_t> &result);
 
 /*****************************************************************************/
+/**
+ * @brief Performs vector subtraction for signed 8-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_sub_i8(const T *data1, const T *data2, T *result_data, size_t size);
 
+/**
+ * @brief Performs vector subtraction for signed 16-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_sub_i16(const T *data1,
                     const T *data2,
                     T *result_data,
                     size_t size);
 
+/**
+ * @brief Performs vector subtraction for signed 32-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void vector_sub_i32(const T *data1,
                     const T *data2,
                     T *result_data,
                     size_t size);
 
+/**
+ * @brief Performs vector subtraction for signed 64-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data1 Pointer to the first input data array
+ * @param data2 Pointer to the second input data array
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
-void vector_sub_64(const T *data1, const T *data2, T *result_data, size_t size);
+void vector_sub_i64(const T *data1,
+                    const T *data2,
+                    T *result_data,
+                    size_t size);
 
+/**
+ * @brief Performs vector subtraction for vectors of signed 8-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<int8_t> &vec1,
                 const std::vector<int8_t> &vec2,
                 std::vector<int8_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of unsigned 8-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<uint8_t> &vec1,
                 const std::vector<uint8_t> &vec2,
                 std::vector<uint8_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of signed 16-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<int16_t> &vec1,
                 const std::vector<int16_t> &vec2,
                 std::vector<int16_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of unsigned 16-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<uint16_t> &vec1,
                 const std::vector<uint16_t> &vec2,
                 std::vector<uint16_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of signed 32-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<int32_t> &vec1,
                 const std::vector<int32_t> &vec2,
                 std::vector<int32_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of unsigned 32-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<uint32_t> &vec1,
                 const std::vector<uint32_t> &vec2,
                 std::vector<uint32_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of signed 64-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<int64_t> &vec1,
                 const std::vector<int64_t> &vec2,
                 std::vector<int64_t> &result);
 
+/**
+ * @brief Performs vector subtraction for vectors of unsigned 64-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @param result Output vector containing the result of the subtraction
+ */
 void vector_sub(const std::vector<uint64_t> &vec1,
                 const std::vector<uint64_t> &vec2,
                 std::vector<uint64_t> &result);
 
 /*****************************************************************************/
+/**
+ * @brief Performs scalar multiplication for signed 8-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data Pointer to the input data array
+ * @param scalar Scalar value to multiply each element by
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void scalar_mult_i8(const T *data, int scalar, T *result_data, size_t size);
 
+/**
+ * @brief Performs scalar multiplication for signed 16-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data Pointer to the input data array
+ * @param scalar Scalar value to multiply each element by
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void scalar_mult_i16(const T *data, int scalar, T *result_data, size_t size);
 
+/**
+ * @brief Performs scalar multiplication for signed 32-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data Pointer to the input data array
+ * @param scalar Scalar value to multiply each element by
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void scalar_mult_i32(const T *data, int scalar, T *result_data, size_t size);
 
+/**
+ * @brief Performs scalar multiplication for signed 64-bit integers
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param data Pointer to the input data array
+ * @param scalar Scalar value to multiply each element by
+ * @param result_data Pointer to the output data array
+ * @param size Size of the input and output arrays
+ */
 template <typename T>
 void scalar_mult_i64(const T *data, int scalar, T *result_data, size_t size);
 
+/**
+ * @brief Performs scalar multiplication for vectors of signed 8-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<int8_t> &vec1,
                  int scalar,
                  std::vector<int8_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of unsigned 8-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<uint8_t> &vec1,
                  int scalar,
                  std::vector<uint8_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of signed 16-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<int16_t> &vec1,
                  int scalar,
                  std::vector<int16_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of unsigned 16-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<uint16_t> &vec1,
                  int scalar,
                  std::vector<uint16_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of signed 32-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<int32_t> &vec1,
                  int scalar,
                  std::vector<int32_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of unsigned 32-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<uint32_t> &vec1,
                  int scalar,
                  std::vector<uint32_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of signed 64-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<int64_t> &vec1,
                  int scalar,
                  std::vector<int64_t> &result);
 
+/**
+ * @brief Performs scalar multiplication for vectors of unsigned 64-bit integers
+ * @param vec1 Input vector
+ * @param scalar Scalar value to multiply each element by
+ * @param result Output vector containing the result of the multiplication
+ */
 void scalar_mult(const std::vector<uint64_t> &vec1,
                  int scalar,
                  std::vector<uint64_t> &result);
 
+/*****************************************************************************/
+/**
+ * @brief Computes the dot product for signed 8-bit integer vectors
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param vec1 Pointer to the first input vector
+ * @param vec2 Pointer to the second input vector
+ * @param size Size of the input vectors
+ * @return Dot product of the input vectors
+ */
+template <typename T>
+T dot_product_i8(const T *vec1, const T *vec2, size_t size);
+
+/**
+ * @brief Computes the dot product for signed 16-bit integer vectors
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param vec1 Pointer to the first input vector
+ * @param vec2 Pointer to the second input vector
+ * @param size Size of the input vectors
+ * @return Dot product of the input vectors
+ */
+template <typename T>
+T dot_product_i16(const T *vec1, const T *vec2, size_t size);
+
+/**
+ * @brief Computes the dot product for signed 32-bit integer vectors
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param vec1 Pointer to the first input vector
+ * @param vec2 Pointer to the second input vector
+ * @param size Size of the input vectors
+ * @return Dot product of the input vectors
+ */
 template <typename T>
 T dot_product_i32(const T *vec1, const T *vec2, size_t size);
 
+/**
+ * @brief Computes the dot product for signed 64-bit integer vectors
+ * @tparam T The type of the data (int8_t, uint8_t, etc )
+ * @param vec1 Pointer to the first input vector
+ * @param vec2 Pointer to the second input vector
+ * @param size Size of the input vectors
+ * @return Dot product of the input vectors
+ */
+template <typename T>
+T dot_product_i64(const T *vec1, const T *vec2, size_t size);
+
+/**
+ * @brief Computes the dot product for vectors of signed 8-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<int8_t> &vec1,
                 const std::vector<int8_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of unsigned 8-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<uint8_t> &vec1,
                 const std::vector<uint8_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of signed 16-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<int16_t> &vec1,
                 const std::vector<int16_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of unsigned 16-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<uint16_t> &vec1,
                 const std::vector<uint16_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of signed 32-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<int32_t> &vec1,
                 const std::vector<int32_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of unsigned 32-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<uint32_t> &vec1,
                 const std::vector<uint32_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of signed 64-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<int64_t> &vec1,
                 const std::vector<int64_t> &vec2);
 
+/**
+ * @brief Computes the dot product for vectors of unsigned 64-bit integers
+ * @param vec1 First input vector
+ * @param vec2 Second input vector
+ * @return Dot product of the input vectors
+ */
 int dot_product(const std::vector<uint64_t> &vec1,
                 const std::vector<uint64_t> &vec2);
 
@@ -272,6 +605,8 @@ void scalar_mult(const std::vector<double> &vec,
  */
 double dot_product(const std::vector<double> &vec1,
                    const std::vector<double> &vec2);
+
+/*****************************************************************************/
 
 /**
  * @brief Add two vectors element-wise
