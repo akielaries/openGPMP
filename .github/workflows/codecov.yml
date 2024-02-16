@@ -21,8 +21,8 @@ jobs:
 
       - name: install deps
         run: | 
-          sudo apt update && sudo apt upgrade
           sudo apt install lcov cmake gfortran cppcheck doxygen
+          sudo apt update && sudo apt upgrade
       - name: Configure
         run: |
           sudo apt-get install libgtest-dev && 
