@@ -21,6 +21,7 @@ jobs:
 
       - name: install deps
         run: | 
+          sudo apt update && sudo apt upgrade
           sudo apt install lcov cmake gfortran cppcheck doxygen
       - name: Configure
         run: |
