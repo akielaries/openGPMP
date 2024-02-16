@@ -542,8 +542,6 @@ void gpmp::linalg::vector_mult(const std::vector<int> &vec,
             result_data[i] = data[i] * scalar;
         }
     }
-
-
 }
 
 // Vector multiplication using ARM NEON intrinsics, operates on double types
@@ -577,7 +575,6 @@ void gpmp::linalg::vector_mult(const std::vector<double> &vec,
             result_data[i] = data[i] * scalar;
         }
     }
-
 }
 
 // Dot product using ARM NEON intrinsics, operates on integer types
@@ -606,21 +603,20 @@ int gpmp::linalg::dot_product(const std::vector<int> &vec1,
         int32_t temp[4];
         vst1q_s32(temp, sum_vec);
         result = temp[0] + temp[1] + temp[2] + temp[3];
-        
+
         // process remaining elements if any
         for (; i < size; ++i) {
             result += data1[i] * data2[i];
         }
-    } 
+    }
     // performs std dot product
-    else { 
+    else {
         for (size_t i = 0; i < size; ++i) {
             result += data1[i] * data2[i];
         }
     }
 
     return result;
-
 }
 
 // Dot product using ARM NEON intrinsics, operates on double types
@@ -650,7 +646,7 @@ double gpmp::linalg::dot_product(const std::vector<double> &vec1,
         double temp[2];
         vst1q_f64(temp, sum_vec);
         result = temp[0] + temp[1];
-        
+
         // Process remaining elements if any
         for (; i < size; ++i) {
             result += data1[i] * data2[i];
@@ -662,7 +658,6 @@ double gpmp::linalg::dot_product(const std::vector<double> &vec1,
     }
 
     return result;
-
 }
 
 // ARM NEON

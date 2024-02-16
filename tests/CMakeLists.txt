@@ -64,6 +64,19 @@ set(CPP_SOURCES
     ../modules/stats/probdist.cpp
 )
 
+# Define the libraries you want to test
+set(LIBRARIES_TO_TEST
+    arithmetic
+    calculus
+    disct
+    linalg
+    core
+    ml
+    nt
+    optim
+    stats
+)
+
 # C++ test files
 set(CPP_TEST_FILES
     arith/t_arith.cpp
@@ -73,7 +86,10 @@ set(CPP_TEST_FILES
     linalg/t_matrix.cpp
     linalg/t_eigen.cpp
     linalg/t_linsys.cpp
-    linalg/t_vector.cpp
+    linalg/t_vector_vector_f64.cpp
+    linalg/t_vector_vector_i8.cpp
+    linalg/t_vector_vector_i32.cpp
+    linalg/t_vector_vector_naive.cpp
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp
@@ -92,23 +108,25 @@ set(FORTRAN_SOURCES
 )
 
 # Fortran test file
-set(FORTRAN_TEST_FILE
+set(FORTRAN_TEST_FILES
     linalg/t_mtx.f90
 )
 
 # create separate executables for C++ and Fortran tests
 add_executable(
     test_openGPMP_cpp
-    ${FORTRAN_SOURCES}
-    ${CPP_SOURCES}
     ${CPP_TEST_FILES}
 )
 
 add_executable(
     test_openGPMP_fortran
-    ${FORTRAN_SOURCES}
-    ${FORTRAN_TEST_FILE}
+    ${FORTRAN_TEST_FILES}
 )
+
+foreach(library ${LIBRARIES_TO_TEST})
+    target_link_libraries(test_openGPMP_cpp ${library})
+    target_link_libraries(test_openGPMP_fortran ${library})
+endforeach()
 
 target_compile_options(
     test_openGPMP_cpp
@@ -116,6 +134,15 @@ target_compile_options(
     --coverage
     -fprofile-arcs
     -ftest-coverage
+    -fPIC
+)
+
+target_compile_options(
+    test_openGPMP_fortran 
+    PRIVATE 
+    --coverage 
+    -fprofile-arcs 
+    -ftest-coverage 
     -fPIC
 )
 
@@ -134,8 +161,11 @@ target_link_libraries(
     GTest::gtest_main
     pthread
     -lgfortran
+    --coverage
+    -fprofile-arcs
+    -ftest-coverage
+    -fPIC
 )
-
 
 include(GoogleTest)
 gtest_discover_tests(test_openGPMP_cpp)

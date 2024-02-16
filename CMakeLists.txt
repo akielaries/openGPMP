@@ -67,22 +67,26 @@ if(result EQUAL 0)
 
     if(arm_neon_index GREATER -1)
         message(STATUS "SIMD ISA : ARM NEON supported")
+        set(SIMD_ISA "ARM_NEON")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_ARM_NEON__")
         check_include_file_cxx("arm_neon.h" HEADER_EXISTS)
 
     elseif(avx2_index GREATER -1)
         message(STATUS "SIMD ISA : AVX2 is supported")
+        set(SIMD_ISA "AVX2")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_AVX2__")
         check_include_file_cxx("immintrin.h" HEADER_EXISTS)
 
     elseif(sse_index GREATER -1)
         message(STATUS "SIMD ISA : SSE is supported")
+        set(SIMD_ISA "SSE")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_SSE__")
         check_include_file_cxx("emmintrin.h" HEADER_EXISTS)
         check_include_file_cxx("smmintrin.h" HEADER_EXISTS)
 
     elseif(mmx_index GREATER -1)
         message(STATUS "SIMD ISA : MMX is supported")
+        set(SIMD_ISA "MMX")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_MMX__")
         check_include_file_cxx("mmintrin.h" HEADER_EXISTS)
 
