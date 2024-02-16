@@ -48,6 +48,7 @@ set(CPP_TEST_FILES
     linalg/t_matrix_vector_f64.cpp
 
     linalg/t_matrix_arr_i8.cpp
+    linalg/t_matrix_arr_i16.cpp
     linalg/t_matrix_arr_i32.cpp
     linalg/t_matrix_arr_f64.cpp
     
