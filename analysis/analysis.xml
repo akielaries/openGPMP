@@ -118,6 +118,53 @@
             <location file="../../include/linalg/eigen.hpp" line="57" column="5"/>
             <symbol>Eigen</symbol>
         </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
+            <symbol>v1</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;v2&apos; can be declared with const" verbose="Parameter &apos;v2&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="85" column="33" info="Parameter &apos;v2&apos; can be declared with const"/>
+            <symbol>v2</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: start" verbose="Unused variable: start" cwe="563" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="99" column="20"/>
+            <symbol>start</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: finish" verbose="Unused variable: finish" cwe="563" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="99" column="27"/>
+            <symbol>finish</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: duration" verbose="Unused variable: duration" cwe="563" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="100" column="12"/>
+            <symbol>duration</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: ret_num_devices" verbose="Unused variable: ret_num_devices" cwe="563" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="143" column="13"/>
+            <symbol>ret_num_devices</symbol>
+        </error>
+        <error id="unusedVariable" severity="style" msg="Unused variable: string" verbose="Unused variable: string" cwe="563" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="153" column="10"/>
+            <symbol>string</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
+            <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_mtx_kernel.c">
+            <location file="../../modules/linalg/gpu/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
+        </error>
+        <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/gpu/mtx_x86.c">
+            <location file="../../modules/linalg/gpu/mtx_x86.c" line="9" column="5"/>
+        </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/linsys.cpp">
             <location file="../../include/linalg/linsys.hpp" line="58" column="5"/>
             <symbol>LinSys</symbol>
@@ -221,53 +268,6 @@
             <location file="../../modules/linalg/mtx_sse2_vec_i32.cpp" line="113" column="15" info="c is overwritten"/>
             <location file="../../modules/linalg/mtx_sse2_vec_i32.cpp" line="109" column="23" info="c is initialized"/>
             <symbol>c</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
-            <symbol>v1</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;v2&apos; can be declared with const" verbose="Parameter &apos;v2&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="85" column="33" info="Parameter &apos;v2&apos; can be declared with const"/>
-            <symbol>v2</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: start" verbose="Unused variable: start" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="99" column="20"/>
-            <symbol>start</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: finish" verbose="Unused variable: finish" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="99" column="27"/>
-            <symbol>finish</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: duration" verbose="Unused variable: duration" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="100" column="12"/>
-            <symbol>duration</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: ret_num_devices" verbose="Unused variable: ret_num_devices" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="143" column="13"/>
-            <symbol>ret_num_devices</symbol>
-        </error>
-        <error id="unusedVariable" severity="style" msg="Unused variable: string" verbose="Unused variable: string" cwe="563" file0="../../modules/linalg/plat/_gpu_mtx_add.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_add.c" line="153" column="10"/>
-            <symbol>string</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="18" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/plat/_gpu_mtx_kernel.c">
-            <location file="../../modules/linalg/plat/_gpu_mtx_kernel.c" line="17" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
-            <symbol>A</symbol>
-        </error>
-        <error id="syntaxError" severity="error" msg="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/linalg/plat/mtx_x86.c">
-            <location file="../../modules/linalg/plat/mtx_x86.c" line="9" column="5"/>
         </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/tensor.cpp">
             <location file="../../include/linalg/tensor.hpp" line="75" column="5"/>
@@ -564,7 +564,7 @@
             <symbol>ToleranceInterval</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;add_vec_gpu&apos; is never used." verbose="The function &apos;add_vec_gpu&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_add.c" line="4" column="0"/>
+            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_add.c" line="4" column="0"/>
             <symbol>add_vec_gpu</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;avg_abs_dev&apos; is never used." verbose="The function &apos;avg_abs_dev&apos; is never used." cwe="561">
@@ -948,7 +948,7 @@
             <symbol>match_wt</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;matrixMul&apos; is never used." verbose="The function &apos;matrixMul&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/plat/_gpu_kernel_mtx_mul.c" line="4" column="0"/>
+            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="4" column="0"/>
             <symbol>matrixMul</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;max_norm_regularization&apos; is never used." verbose="The function &apos;max_norm_regularization&apos; is never used." cwe="561">
