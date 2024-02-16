@@ -64,8 +64,8 @@ endif()
 if (BUILD_GPU_OPENCL)
     message("--   [EXT] : Building OpenCL GPU Extension")
     list(APPEND SOURCE_FILES
-        plat/_gpu_mtx_add.c
-        plat/_gpu_mtx_add_wrapper.cpp
+        gpu/_gpu_mtx_add.c
+        gpu/_gpu_mtx_add_wrapper.cpp
     )
 endif()
 
