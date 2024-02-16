@@ -43,11 +43,19 @@ set(CPP_TEST_FILES
     disct/t_graphs.cpp
     linalg/t_eigen.cpp
     linalg/t_linsys.cpp
-    linalg/t_matrix.cpp
+    
+    linalg/t_matrix_vector_i32.cpp
+    linalg/t_matrix_vector_f64.cpp
+
+    linalg/t_matrix_arr_i8.cpp
+    linalg/t_matrix_arr_i32.cpp
+    linalg/t_matrix_arr_f64.cpp
+    
     linalg/t_vector_vector_f64.cpp
     linalg/t_vector_vector_i8.cpp
     linalg/t_vector_vector_i32.cpp
     linalg/t_vector_vector_naive.cpp
+    
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp

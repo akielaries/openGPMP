@@ -79,15 +79,10 @@ template <typename T> void print_matrix(const T *matrix, int rows, int cols) {
     std::cout << std::endl;
 }
 
-// unit tests for Mtx class methods using Intel intrinsics
-#if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
-    defined(__i386) || defined(__amd64__) || defined(__amd64)
-
 // test case to compare the results of the intrinsics implementation with the
 // naive implementation for matrix addition
-TEST(ADD_MTX_SMALL_VEC_INT, assert_intel_intrin) {
+TEST(MatrixVectorTestI32, AdditionComparisonSmall) {
     int mtx_size = 64;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
     std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
@@ -139,9 +134,8 @@ TEST(ADD_MTX_SMALL_VEC_INT, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_LARGE_VEC_INT, assert_intel_intrin) {
+TEST(MatrixVectorTestI32, AdditionComparisonLarge) {
     int mtx_size = 1024;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
     std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
@@ -192,9 +186,58 @@ TEST(ADD_MTX_LARGE_VEC_INT, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_SMALL_VEC_DOUBLE, assert_intel_intrin) {
+TEST(MatrixVectorTestI32, AdditionPerformanceComparison) {
+    int mtx_size = 1024;
+    TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
+
+    // define input matrices A and B
+    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> expected(mtx_size,
+                                           std::vector<int>(mtx_size));
+    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+
+    auto start_std = std::chrono::high_resolution_clock::now();
+
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected);
+
+    auto end_std = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    auto start_intrin = std::chrono::high_resolution_clock::now();
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result);
+    auto end_intrin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_intrin =
+        end_intrin - start_intrin;
+
+    TEST_COUT << "INTRINSIC Matrix Addition Time      : "
+              << elapsed_seconds_intrin.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Matrix Addition Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result));
+}
+TEST(MatrixVectorTestF64, AdditionComparisonSmall) {
     int mtx_size = 64;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     std::vector<std::vector<double>> A(mtx_size, std::vector<double>(mtx_size));
     std::vector<std::vector<double>> B(mtx_size, std::vector<double>(mtx_size));
@@ -247,9 +290,8 @@ TEST(ADD_MTX_SMALL_VEC_DOUBLE, assert_intel_intrin) {
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
+TEST(MatrixVectorTestF64, AdditionComparisonLarge) {
     int mtx_size = 1024;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
 
     // define input matrices A and B
     std::vector<std::vector<double>> A(mtx_size, std::vector<double>(mtx_size));
@@ -279,31 +321,62 @@ TEST(ADD_MTX_LARGE_VEC_DOUBLE, assert_intel_intrin) {
     // result using the intrinsics implementation
     mtx.mtx_add(A, B, result);
 
-    /*
-        std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << expected[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-
-        std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << result[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    */
-
     // compare the results
     ASSERT_TRUE(mtx_verif(expected, result));
 }
 
-TEST(ADD_MTX_SMALL_ARR_INT8, assert_intel_intrin) {
+TEST(MatrixVectorTestF64, AdditionPerformanceComparison) {
+    int mtx_size = 1024;
+    TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
+
+    // define input matrices A and B
+    std::vector<std::vector<double>> A(mtx_size, std::vector<double>(mtx_size));
+    std::vector<std::vector<double>> B(mtx_size, std::vector<double>(mtx_size));
+    std::vector<std::vector<double>> expected(mtx_size,
+                                              std::vector<double>(mtx_size));
+    std::vector<std::vector<double>> result(mtx_size,
+                                            std::vector<double>(mtx_size));
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> distribution(1.0, 100.0);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i][j] = distribution(gen);
+            B[i][j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    auto start_std = std::chrono::high_resolution_clock::now();
+
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected);
+
+    auto end_std = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    auto start_intrin = std::chrono::high_resolution_clock::now();
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result);
+    auto end_intrin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_intrin =
+        end_intrin - start_intrin;
+
+    TEST_COUT << "INTRINSIC Matrix Addition Time      : "
+              << elapsed_seconds_intrin.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Matrix Addition Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result));
+}
+TEST(MatrixArrayTestI8, AdditionComparisonSmall) {
     int mtx_size = 400;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int8_t *A = new int8_t[mtx_size * mtx_size];
     int8_t *B = new int8_t[mtx_size * mtx_size];
@@ -338,9 +411,8 @@ TEST(ADD_MTX_SMALL_ARR_INT8, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_LARGE_ARR_INT8, assert_intel_intrin) {
+TEST(MatrixArrayTestI8, AdditionComparisonLarge) {
     int mtx_size = 1024;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int8_t *A = new int8_t[mtx_size * mtx_size];
     int8_t *B = new int8_t[mtx_size * mtx_size];
@@ -375,9 +447,61 @@ TEST(ADD_MTX_LARGE_ARR_INT8, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_SMALL_ARR_INT16, assert_intel_intrin) {
+TEST(MatrixArrayTestI8, AdditionPerformanceComparison) {
+    int mtx_size = 1024;
+    TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
+    // define input matrices A and B
+    int8_t *A = new int8_t[mtx_size * mtx_size];
+    int8_t *B = new int8_t[mtx_size * mtx_size];
+    int8_t *expected = new int8_t[mtx_size * mtx_size];
+    int8_t *result = new int8_t[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
+            B[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+
+    auto start_std = std::chrono::high_resolution_clock::now();
+
+    // expected result using the naive implementation
+
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+    auto end_std = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    auto start_intrin = std::chrono::high_resolution_clock::now();
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+    auto end_intrin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_intrin =
+        end_intrin - start_intrin;
+
+    TEST_COUT << "INTRINSIC Matrix Addition Time      : "
+              << elapsed_seconds_intrin.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Matrix Addition Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(MatrixArrayTestI16, AdditionComparisonSmall) {
     int mtx_size = 300;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int16_t *A = new int16_t[mtx_size * mtx_size];
     int16_t *B = new int16_t[mtx_size * mtx_size];
@@ -412,9 +536,8 @@ TEST(ADD_MTX_SMALL_ARR_INT16, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_LARGE_ARR_INT16, assert_intel_intrin) {
+TEST(MatrixArrayTestI16, AdditionComparisonLarge) {
     int mtx_size = 1024;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int16_t *A = new int16_t[mtx_size * mtx_size];
     int16_t *B = new int16_t[mtx_size * mtx_size];
@@ -449,9 +572,61 @@ TEST(ADD_MTX_LARGE_ARR_INT16, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
+TEST(MatrixArrayTestI16, AdditionPerformanceComparison) {
+    int mtx_size = 1024;
+    TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
+    // define input matrices A and B
+    int16_t *A = new int16_t[mtx_size * mtx_size];
+    int16_t *B = new int16_t[mtx_size * mtx_size];
+    int16_t *expected = new int16_t[mtx_size * mtx_size];
+    int16_t *result = new int16_t[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = static_cast<int16_t>(distribution(gen));
+            B[i * mtx_size + j] = static_cast<int16_t>(distribution(gen));
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+
+    auto start_std = std::chrono::high_resolution_clock::now();
+
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    auto end_std = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    auto start_intrin = std::chrono::high_resolution_clock::now();
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+    auto end_intrin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_intrin =
+        end_intrin - start_intrin;
+
+    TEST_COUT << "INTRINSIC Matrix Addition Time      : "
+              << elapsed_seconds_intrin.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Matrix Addition Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+
+TEST(MatrixArrayTestI32, AdditionComparisonSmall) {
     int mtx_size = 184;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int *A = new int[mtx_size * mtx_size];
     int *B = new int[mtx_size * mtx_size];
@@ -499,9 +674,8 @@ TEST(ADD_MTX_SMALL_ARR_INT, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_LARGE_ARR_INT, assert_intel_intrin) {
+TEST(MatrixArrayTestI32, AdditionComparisonLarge) {
     int mtx_size = 1024;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     int *A = new int[mtx_size * mtx_size];
     int *B = new int[mtx_size * mtx_size];
@@ -554,9 +728,59 @@ TEST(ADD_MTX_LARGE_ARR_INT, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_SMALL_ARR_DOUBLE, assert_intel_intrin) {
+TEST(MatrixArrayTestI32, AdditionPerformanceComparison) {
+    int mtx_size = 1024;
+    TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
+    // define input matrices A and B
+    int *A = new int[mtx_size * mtx_size];
+    int *B = new int[mtx_size * mtx_size];
+    int *expected = new int[mtx_size * mtx_size];
+    int *result = new int[mtx_size * mtx_size];
+
+    // initialize random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(1, 100);
+
+    // populate matrices A and B with random values
+    for (int i = 0; i < mtx_size; ++i) {
+        for (int j = 0; j < mtx_size; ++j) {
+            A[i * mtx_size + j] = distribution(gen);
+            B[i * mtx_size + j] = distribution(gen);
+        }
+    }
+
+    gpmp::linalg::Mtx mtx;
+    auto start_std = std::chrono::high_resolution_clock::now();
+
+    // expected result using the naive implementation
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    auto end_std = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    auto start_intrin = std::chrono::high_resolution_clock::now();
+
+    // result using the intrinsics implementation
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+    auto end_intrin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_intrin =
+        end_intrin - start_intrin;
+
+    TEST_COUT << "INTRINSIC Matrix Addition Time      : "
+              << elapsed_seconds_intrin.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Matrix Addition Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
+
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
+}
+TEST(MatrixArrayTestF64, AdditionComparisonSmall) {
     int mtx_size = 64;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
     // define input matrices A and B
     double *A = new double[mtx_size * mtx_size];
     double *B = new double[mtx_size * mtx_size];
@@ -609,10 +833,8 @@ TEST(ADD_MTX_SMALL_ARR_DOUBLE, assert_intel_intrin) {
     delete[] result;
 }
 
-TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
+TEST(MatrixArrayTestF64, AdditionComparisonLarge) {
     int mtx_size = 1024;
-    TEST_COUT << "Matrix size = " << mtx_size << std::endl;
-
     // define input matrices A and B
     double *A = new double[mtx_size * mtx_size];
     double *B = new double[mtx_size * mtx_size];
@@ -638,25 +860,6 @@ TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
 
     // result using the intrinsics implementation
     mtx.mtx_add(A, B, result, mtx_size, mtx_size);
-
-    /*
-        std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << expected[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-
-        std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << result[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    */
-
     // compare the results
     ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
     delete[] A;
@@ -665,127 +868,55 @@ TEST(ADD_MTX_LARGE_ARR_DOUBLE, assert_intel_intrin) {
     delete[] result;
 }
 
-// TODO: implement tests for large matrices, tests for ints, floats, doubles
-
-// unit tests for Mtx class methods using ARM intrinsics
-#elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \
-    defined(__ARM_ARCH) || defined(__aarch64__)
-
-TEST(ADD_MTX_SMALL, assert_arm_intrin) {
-    int mtx_size = 64;
-    // Define input matrices A and B
-    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> expected(mtx_size,
-                                           std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
-
-    // Initialize random number generator
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribution(1, 100);
-
-    // Populate matrices A and B with random values
-    for (int i = 0; i < mtx_size; ++i) {
-        for (int j = 0; j < mtx_size; ++j) {
-            A[i][j] = distribution(gen);
-            B[i][j] = distribution(gen);
-        }
-    }
-
-    gpmp::linalg::Mtx mtx;
-    // expected result using the naive implementation
-    mtx.std_mtx_add(A, B, expected);
-
-    // result using the intrinsics implementation
-    mtx.mtx_add(A, B, result);
-
-    /*
-        std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << expected[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-
-        std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << result[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    */
-
-    // Compare the results
-    ASSERT_TRUE(mtx_verif(expected, result));
-}
-
-TEST(ADD_MTX_LARGE, assert_arm_intrin) {
+TEST(MatrixArrayTestF64, AdditionPerformanceComparison) {
     int mtx_size = 1024;
-    // Define input matrices A and B
-    std::vector<std::vector<int>> A(mtx_size, std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> B(mtx_size, std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> expected(mtx_size,
-                                           std::vector<int>(mtx_size));
-    std::vector<std::vector<int>> result(mtx_size, std::vector<int>(mtx_size));
+    TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
+    // define input matrices A and B
+    double *A = new double[mtx_size * mtx_size];
+    double *B = new double[mtx_size * mtx_size];
+    double *expected = new double[mtx_size * mtx_size];
+    double *result = new double[mtx_size * mtx_size];
 
-    // Initialize random number generator
+    // initialize random number generator
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribution(1, 100);
+    std::uniform_real_distribution<double> distribution(1.0, 100.0);
 
-    // Populate matrices A and B with random values
+    // populate matrices A and B with random values
     for (int i = 0; i < mtx_size; ++i) {
         for (int j = 0; j < mtx_size; ++j) {
-            A[i][j] = distribution(gen);
-            B[i][j] = distribution(gen);
+            A[i * mtx_size + j] = distribution(gen);
+            B[i * mtx_size + j] = distribution(gen);
         }
     }
 
     gpmp::linalg::Mtx mtx;
+    auto start_std = std::chrono::high_resolution_clock::now();
+
     // expected result using the naive implementation
-    mtx.std_mtx_add(A, B, expected);
+    mtx.std_mtx_add(A, B, expected, mtx_size, mtx_size);
+
+    auto end_std = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_std = end_std - start_std;
+
+    auto start_intrin = std::chrono::high_resolution_clock::now();
 
     // result using the intrinsics implementation
-    mtx.mtx_add(A, B, result);
+    mtx.mtx_add(A, B, result, mtx_size, mtx_size);
+    auto end_intrin = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_seconds_intrin =
+        end_intrin - start_intrin;
 
-    /*
-        std::cout << "Matrix EXPECTED after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << expected[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
+    TEST_COUT << "INTRINSIC Matrix Addition Time      : "
+              << elapsed_seconds_intrin.count() << " seconds" << std::endl;
+    TEST_COUT << "STANDARD  Matrix Addition Time      : "
+              << elapsed_seconds_std.count() << " seconds" << std::endl;
 
-        std::cout << "Matrix RESULT after addition:" << std::endl;
-        for (int i = 0; i < mtx_size; ++i) {
-            for (int j = 0; j < mtx_size; ++j) {
-                std::cout << result[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    */
-
-    // Compare the results
-    ASSERT_TRUE(mtx_verif(expected, result));
+    // compare the results
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    delete[] A;
+    delete[] B;
+    delete[] expected;
+    delete[] result;
 }
-
-#endif
-
-/*
-TEST(matrix_print, print_mtx) {
-    gpmp::linalg::Matrix<int> mat(3, 4);
-    mat.print_mtx();
-
-    std::tuple<gpmp::linalg::Matrix<int>, gpmp::linalg::Matrix<int>> matrices =
-        std::make_tuple(gpmp::linalg::Matrix<int>(5, 3),
-                        gpmp::linalg::Matrix<int>(6, 4));
-
-    std::get<0>(matrices).print_mtx();
-    std::get<1>(matrices).print_mtx();
-}*/
-
 } // namespace
