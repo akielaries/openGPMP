@@ -94,6 +94,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a713e3eb851f21419cfda066a74c68969"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">std_mtx_add</a> (const T *A, const T *B, T *C, int rows, int cols)</td></tr>
 <tr class="memdesc:a713e3eb851f21419cfda066a74c68969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix addition on two matrices as flat arrays.  <a href="classgpmp_1_1linalg_1_1Mtx.html#a713e3eb851f21419cfda066a74c68969">More...</a><br /></td></tr>
 <tr class="separator:a713e3eb851f21419cfda066a74c68969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac603582b7d3eac858aa77bd80a00433"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aac603582b7d3eac858aa77bd80a00433"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#aac603582b7d3eac858aa77bd80a00433">std_mtx_sub</a> (const T *A, const T *B, T *C, int rows, int cols)</td></tr>
+<tr class="memdesc:aac603582b7d3eac858aa77bd80a00433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix subtraction on two matrices as flat arrays.  <a href="classgpmp_1_1linalg_1_1Mtx.html#aac603582b7d3eac858aa77bd80a00433">More...</a><br /></td></tr>
+<tr class="separator:aac603582b7d3eac858aa77bd80a00433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c45c8576640aca2a5a1fcef1ce239d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a51c45c8576640aca2a5a1fcef1ce239d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a51c45c8576640aca2a5a1fcef1ce239d">std_mtx_mult</a> (const T *A, const T *B, U *C, int rows_a, int cols_a, int cols_b)</td></tr>
+<tr class="separator:a51c45c8576640aca2a5a1fcef1ce239d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f6554335e2e8daba5b9f1fc885f546"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae1f6554335e2e8daba5b9f1fc885f546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#ae1f6554335e2e8daba5b9f1fc885f546">std_mtx_tpose</a> (const T *A, T *At, int rows, int cols)</td></tr>
+<tr class="separator:ae1f6554335e2e8daba5b9f1fc885f546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab43355658d69c1c98dfd8fddc67af285"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab43355658d69c1c98dfd8fddc67af285"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#ab43355658d69c1c98dfd8fddc67af285">std_mtx_add</a> (const std::vector&lt; T &gt; &amp;A, const std::vector&lt; T &gt; &amp;B, std::vector&lt; T &gt; &amp;C)</td></tr>
 <tr class="memdesc:ab43355658d69c1c98dfd8fddc67af285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix addition on two matrices as flat vectors.  <a href="classgpmp_1_1linalg_1_1Mtx.html#ab43355658d69c1c98dfd8fddc67af285">More...</a><br /></td></tr>
@@ -102,14 +112,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e2b6ea9bb4a604edaafe46d6b4178e3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a8e2b6ea9bb4a604edaafe46d6b4178e3">std_mtx_add</a> (const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</td></tr>
 <tr class="memdesc:a8e2b6ea9bb4a604edaafe46d6b4178e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix addition on two matrices as 2D vectors.  <a href="classgpmp_1_1linalg_1_1Mtx.html#a8e2b6ea9bb4a604edaafe46d6b4178e3">More...</a><br /></td></tr>
 <tr class="separator:a8e2b6ea9bb4a604edaafe46d6b4178e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797ab3a6754ca998c009d0e4f7041cd8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a797ab3a6754ca998c009d0e4f7041cd8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">std_mtx_sub</a> (const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</td></tr>
-<tr class="memdesc:a797ab3a6754ca998c009d0e4f7041cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix subtraction on two matrices as 2D vectors.  <a href="classgpmp_1_1linalg_1_1Mtx.html#a797ab3a6754ca998c009d0e4f7041cd8">More...</a><br /></td></tr>
-<tr class="separator:a797ab3a6754ca998c009d0e4f7041cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a865c77bec1b61111225dfce2eaff1d0c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a865c77bec1b61111225dfce2eaff1d0c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">std_mtx_mult</a> (const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</td></tr>
-<tr class="memdesc:a865c77bec1b61111225dfce2eaff1d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix multiplication on two matrices 2D vectors.  <a href="classgpmp_1_1linalg_1_1Mtx.html#a865c77bec1b61111225dfce2eaff1d0c">More...</a><br /></td></tr>
-<tr class="separator:a865c77bec1b61111225dfce2eaff1d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56dc76449532b015ee2010f2e05dac5a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a56dc76449532b015ee2010f2e05dac5a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#a56dc76449532b015ee2010f2e05dac5a">std_mtx_sub</a> (const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</td></tr>
+<tr class="memdesc:a56dc76449532b015ee2010f2e05dac5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix subtraction on two matrices as 2D vectors.  <a href="classgpmp_1_1linalg_1_1Mtx.html#a56dc76449532b015ee2010f2e05dac5a">More...</a><br /></td></tr>
+<tr class="separator:a56dc76449532b015ee2010f2e05dac5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab548811df1e9c59e37f44dcb06efbd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:acab548811df1e9c59e37f44dcb06efbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html#acab548811df1e9c59e37f44dcb06efbd">std_mtx_mult</a> (const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;A, const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;B, std::vector&lt; std::vector&lt; T &gt;&gt; &amp;C)</td></tr>
+<tr class="memdesc:acab548811df1e9c59e37f44dcb06efbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform matrix multiplication on two matrices 2D vectors.  <a href="classgpmp_1_1linalg_1_1Mtx.html#acab548811df1e9c59e37f44dcb06efbd">More...</a><br /></td></tr>
+<tr class="separator:acab548811df1e9c59e37f44dcb06efbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classgpmp_1_1linalg_1_1Mtx.html" title="Mtx class offers matrix arithmetic operations. Some methods are element-wise while others make use of...">Mtx</a> class offers matrix arithmetic operations. Some methods are element-wise while others make use of grouping and unrolling. </p>
@@ -160,17 +170,17 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00136">136</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                                                {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][j] + <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i][j];</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00089">89</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                                {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][j] + <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i][j];</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="ttc" id="anamespacepython_1_1linalg_html_a0f8ef2cae18ed75d69a2636fd24ae97a"><div class="ttname"><a href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg.C</a></div><div class="ttdeci">list C</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00024">linalg.py:24</a></div></div>
 <div class="ttc" id="anamespacepython_1_1linalg_html_a738e4c85e499d9e4b6450cba9d9e5211"><div class="ttname"><a href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg.A</a></div><div class="ttdeci">list A</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00022">linalg.py:22</a></div></div>
 <div class="ttc" id="anamespacepython_1_1linalg_html_a8ea58a34239179215b0abb1a76c28ab1"><div class="ttname"><a href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg.B</a></div><div class="ttdeci">list B</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00023">linalg.py:23</a></div></div>
@@ -223,19 +233,19 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00100">100</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                     {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> &gt; 0 ? <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size() / <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> : 0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] + <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j];</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00053">53</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                     {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> &gt; 0 ? <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size() / <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> : 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] + <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="ttc" id="anamespacetest__linalg_html_a176978f6f6cc9d111a747fd2202015ed"><div class="ttname"><a href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg.rows</a></div><div class="ttdeci">int rows</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00013">test_linalg.py:13</a></div></div>
 <div class="ttc" id="anamespacetest__linalg_html_a83ed9c138dc5b83ec747058ad3cd157e"><div class="ttname"><a href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg.cols</a></div><div class="ttdeci">int cols</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00014">test_linalg.py:14</a></div></div>
 </div><!-- fragment -->
@@ -250,6 +260,9 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void gpmp::linalg::Mtx::std_mtx_add </td>
@@ -287,6 +300,11 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Perform matrix addition on two matrices as flat arrays. </p>
@@ -301,23 +319,23 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00047">47</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                              {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// perform matrix addition</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] + <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mtx_8hpp_source.html#l00489">489</a> of file <a class="el" href="mtx_8hpp_source.html">mtx.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] + <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j];</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            }</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        }</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>, <a class="el" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg::cols</a>, and <a class="el" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg::rows</a>.</p>
 
 </div>
 </div>
-<a id="a865c77bec1b61111225dfce2eaff1d0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a865c77bec1b61111225dfce2eaff1d0c">&#9670;&nbsp;</a></span>std_mtx_mult()</h2>
+<a id="acab548811df1e9c59e37f44dcb06efbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab548811df1e9c59e37f44dcb06efbd">&#9670;&nbsp;</a></span>std_mtx_mult() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +343,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">template void gpmp::linalg::Mtx::std_mtx_mult </td>
+          <td class="memname">void gpmp::linalg::Mtx::std_mtx_mult </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -360,30 +378,107 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00198">198</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    assert(<a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size() == <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>.size());</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    assert(<a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[0].size() == <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[0].size());</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    int64_t nrows = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    int64_t ncols = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[0].size();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; nrows; ++i) {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">for</span> (int64_t j = 0; j &lt; ncols; ++j) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = 0.0;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">for</span> (int64_t k = 0; k &lt; ncols; ++k) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] += <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][k] * <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[k][j];</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00151">151</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    assert(<a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size() == <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>.size());</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    assert(<a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[0].size() == <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[0].size());</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    int64_t nrows = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    int64_t ncols = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[0].size();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">for</span> (int64_t i = 0; i &lt; nrows; ++i) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">for</span> (int64_t j = 0; j &lt; ncols; ++j) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = 0.0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">for</span> (int64_t k = 0; k &lt; ncols; ++k) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] += <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][k] * <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[k][j];</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, and <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>.</p>
 
 </div>
 </div>
-<a id="a797ab3a6754ca998c009d0e4f7041cd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a797ab3a6754ca998c009d0e4f7041cd8">&#9670;&nbsp;</a></span>std_mtx_sub()</h2>
+<a id="a51c45c8576640aca2a5a1fcef1ce239d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c45c8576640aca2a5a1fcef1ce239d">&#9670;&nbsp;</a></span>std_mtx_mult() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpmp::linalg::Mtx::std_mtx_mult </td>
+          <td>(</td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rows_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols_b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mtx_8hpp_source.html#l00520">520</a> of file <a class="el" href="mtx_8hpp_source.html">mtx.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                                  {</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows_a; ++i) {</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols_b; ++j) {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                U sum = 0; <span class="comment">// Use T type for sum</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; cols_a; ++k) {</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                    sum += <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * cols_a + k] * <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[k * cols_b + j];</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                }</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i * cols_b + j] = sum;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            }</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, and <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>.</p>
+
+</div>
+</div>
+<a id="a56dc76449532b015ee2010f2e05dac5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56dc76449532b015ee2010f2e05dac5a">&#9670;&nbsp;</a></span>std_mtx_sub() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,7 +486,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">template void gpmp::linalg::Mtx::std_mtx_sub </td>
+          <td class="memname">void gpmp::linalg::Mtx::std_mtx_sub </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::vector&lt; T &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>A</em>, </td>
@@ -426,19 +521,161 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00167">167</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                                                {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// Perform matrix subtraction</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][j] - <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i][j];</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="mtx__naive_8cpp_source.html#l00120">120</a> of file <a class="el" href="mtx__naive_8cpp_source.html">mtx_naive.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                                {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> size = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>.size();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; size; ++j) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="comment">// Perform matrix subtraction</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i][j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i][j] - <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i][j];</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, and <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>.</p>
+
+</div>
+</div>
+<a id="aac603582b7d3eac858aa77bd80a00433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac603582b7d3eac858aa77bd80a00433">&#9670;&nbsp;</a></span>std_mtx_sub() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpmp::linalg::Mtx::std_mtx_sub </td>
+          <td>(</td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform matrix subtraction on two matrices as flat arrays. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>Input matrix A </td></tr>
+    <tr><td class="paramname">B</td><td>Input matrix B </td></tr>
+    <tr><td class="paramname">C</td><td>Output matrix C </td></tr>
+    <tr><td class="paramname">rows</td><td>Number of rows </td></tr>
+    <tr><td class="paramname">cols</td><td>Number of columns This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mtx_8hpp_source.html#l00508">508</a> of file <a class="el" href="mtx_8hpp_source.html">mtx.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                                                                       {</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="comment">// MTX A AND B MUST BE SAME SIZE</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                <span class="comment">// perform matrix addition</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j] - <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j];</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            }</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        }</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg::B</a>, <a class="el" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg::C</a>, <a class="el" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg::cols</a>, and <a class="el" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg::rows</a>.</p>
+
+</div>
+</div>
+<a id="ae1f6554335e2e8daba5b9f1fc885f546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f6554335e2e8daba5b9f1fc885f546">&#9670;&nbsp;</a></span>std_mtx_tpose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gpmp::linalg::Mtx::std_mtx_tpose </td>
+          <td>(</td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>At</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mtx_8hpp_source.html#l00538">538</a> of file <a class="el" href="mtx_8hpp_source.html">mtx.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                                                              {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                At[j * <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> + i] = <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>[i * <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> + j];</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            }</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        }</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg::A</a>, <a class="el" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg::cols</a>, and <a class="el" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg::rows</a>.</p>
 
 </div>
 </div>

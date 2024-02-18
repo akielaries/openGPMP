@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['z_1045',['z',['../classBall.html#ae1e106fca4e6d53ef41b0797743e48c9',1,'Ball']]],
-  ['zeros_1046',['zeros',['../structgpmp_1_1linalg_1_1mtx.html#a138dacbb57aee11191bf92bbc2834871',1,'gpmp::linalg::mtx']]]
+  ['z_1046',['z',['../classBall.html#ae1e106fca4e6d53ef41b0797743e48c9',1,'Ball']]],
+  ['zeros_1047',['zeros',['../structgpmp_1_1linalg_1_1mtx.html#a138dacbb57aee11191bf92bbc2834871',1,'gpmp::linalg::mtx']]]
 ];

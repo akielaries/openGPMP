@@ -189,6 +189,21 @@
             <location file="../../modules/linalg/mtx_avx2_arr_f64.cpp" line="71" column="27" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_i16.cpp">
+            <location file="../../modules/linalg/mtx_avx2_arr_i16.cpp" line="104" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/mtx_avx2_arr_i16.cpp" line="100" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_i32.cpp">
+            <location file="../../modules/linalg/mtx_avx2_arr_i32.cpp" line="116" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/mtx_avx2_arr_i32.cpp" line="112" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_i8.cpp">
+            <location file="../../modules/linalg/mtx_avx2_arr_i8.cpp" line="105" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/mtx_avx2_arr_i8.cpp" line="101" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
         <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_vec_f32.cpp">
             <location file="../../modules/linalg/mtx_avx2_vec_f32.cpp" line="75" column="19" info="c is overwritten"/>
             <location file="../../modules/linalg/mtx_avx2_vec_f32.cpp" line="72" column="26" info="c is initialized"/>
@@ -215,8 +230,8 @@
             <symbol>c</symbol>
         </error>
         <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/linalg/mtx_naive.cpp">
-            <location file="../../modules/linalg/mtx_naive.cpp" line="105" column="36"/>
-            <location file="../../modules/linalg/mtx_naive.cpp" line="104" column="22" info="&apos;rows&apos; is assigned value &apos;A.size()&apos; here."/>
+            <location file="../../modules/linalg/mtx_naive.cpp" line="58" column="36"/>
+            <location file="../../modules/linalg/mtx_naive.cpp" line="57" column="22" info="&apos;rows&apos; is assigned value &apos;A.size()&apos; here."/>
         </error>
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/mtx_sse2_arr_f32.cpp" line="91" column="0"/>
@@ -1016,7 +1031,7 @@
             <symbol>mtx_add_f90</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult&apos; is never used." verbose="The function &apos;mtx_mult&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_avx2_vec_f64.cpp" line="122" column="0"/>
+            <location file="../../modules/linalg/mtx_avx2_arr_i16.cpp" line="117" column="0"/>
             <symbol>mtx_mult</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_sub&apos; is never used." verbose="The function &apos;mtx_sub&apos; is never used." cwe="561">
