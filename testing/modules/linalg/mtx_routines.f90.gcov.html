@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">6</td>
             <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntryLo">46.2 %</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntryLo">65.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-18 05:58:01</td>
+            <td class="headerValue">2024-02-18 07:00:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntryLo">66.7 %</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryMed">75.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -103,7 +103,7 @@
 <a name="33"><span class="lineNum">      33 </span>            : ! mtx_routines.f90</a>
 <a name="34"><span class="lineNum">      34 </span>            : </a>
 <a name="35"><span class="lineNum">      35 </span>            : !&gt; FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays</a>
-<a name="36"><span class="lineNum">      36 </span>            : !! of type float. Contains C++ wrapper function</a>
+<a name="36"><span class="lineNum">      36 </span>            : !! of type float32. Contains C++ wrapper function</a>
 <a name="37"><span class="lineNum">      37 </span>            : !! @param A Addend A, an array representing a Matrix</a>
 <a name="38"><span class="lineNum">      38 </span>            : !! @param B Addend B, an array representing a Matrix</a>
 <a name="39"><span class="lineNum">      39 </span>            : !! @param C Sum C, an array representing the sum of A + B</a>
@@ -119,42 +119,72 @@
 <a name="49"><span class="lineNum">      49 </span><span class="lineCov">         13 :     C = A + B</span></a>
 <a name="50"><span class="lineNum">      50 </span><span class="lineCov">          1 : END SUBROUTINE mtx_add_routine_float_</span></a>
 <a name="51"><span class="lineNum">      51 </span>            : </a>
-<a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 : SUBROUTINE mtx_add_routine_int_(A, B, C, mtx_size) bind(C)</span></a>
-<a name="53"><span class="lineNum">      53 </span>            :     USE :: ISO_FORTRAN_ENV</a>
-<a name="54"><span class="lineNum">      54 </span>            :     USE :: ISO_C_BINDING</a>
-<a name="55"><span class="lineNum">      55 </span>            : </a>
-<a name="56"><span class="lineNum">      56 </span>            :     INTEGER, INTENT(IN) :: mtx_size</a>
-<a name="57"><span class="lineNum">      57 </span>            :     INTEGER(C_INT), DIMENSION(mtx_size, mtx_size), INTENT(IN) :: A, B</a>
-<a name="58"><span class="lineNum">      58 </span>            :     INTEGER(C_INT), DIMENSION(mtx_size, mtx_size), INTENT(OUT) :: C</a>
-<a name="59"><span class="lineNum">      59 </span>            : </a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">         13 :     C = A + B</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          1 : END SUBROUTINE mtx_add_routine_int_</span></a>
-<a name="62"><span class="lineNum">      62 </span>            : </a>
-<a name="63"><span class="lineNum">      63 </span>            : !&gt; FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics.</a>
-<a name="64"><span class="lineNum">      64 </span>            : !! Contains C++ wrapper function</a>
-<a name="65"><span class="lineNum">      65 </span>            : !! @param a Multiplier a, an array representing a Matrix</a>
-<a name="66"><span class="lineNum">      66 </span>            : !! @param b Multiplicand b, an array representing a Matrix</a>
-<a name="67"><span class="lineNum">      67 </span>            : !! @param c Product c, an array representing the sum of a + b</a>
-<a name="68"><span class="lineNum">      68 </span>            : !! @param nrows_a Number of rows</a>
-<a name="69"><span class="lineNum">      69 </span>            : !! @param ncols Number of columns</a>
-<a name="70"><span class="lineNum">      70 </span><span class="lineNoCov">          0 : SUBROUTINE mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)</span></a>
-<a name="71"><span class="lineNum">      71 </span>            :     implicit none</a>
-<a name="72"><span class="lineNum">      72 </span>            :     INTEGER, INTENT(IN) :: nrows1, ncols1, ncols2</a>
-<a name="73"><span class="lineNum">      73 </span>            :     REAL, INTENT(IN) :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)</a>
-<a name="74"><span class="lineNum">      74 </span>            :     REAL, INTENT(OUT) :: result(nrows1, ncols2)</a>
-<a name="75"><span class="lineNum">      75 </span>            :     INTEGER :: i, j, k</a>
-<a name="76"><span class="lineNum">      76 </span>            : </a>
-<a name="77"><span class="lineNum">      77 </span>            :     ! Perform matrix multiplication</a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineNoCov">          0 :     do i = 1, nrows1</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineNoCov">          0 :         do j = 1, ncols2</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineNoCov">          0 :             result(i, j) = 0.0</span></a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineNoCov">          0 :             do k = 1, ncols1</span></a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineNoCov">          0 :                 result(i, j) = result(i, j) + matrix1(i, k)*matrix2(k, j)</span></a>
-<a name="83"><span class="lineNum">      83 </span>            :             end do</a>
-<a name="84"><span class="lineNum">      84 </span>            :         end do</a>
-<a name="85"><span class="lineNum">      85 </span>            :     end do</a>
-<a name="86"><span class="lineNum">      86 </span><span class="lineNoCov">          0 : END SUBROUTINE mtx_mult</span></a>
-<a name="87"><span class="lineNum">      87 </span>            : </a>
+<a name="52"><span class="lineNum">      52 </span>            : !&gt; FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays</a>
+<a name="53"><span class="lineNum">      53 </span>            : !! of type int32. Contains C++ wrapper function</a>
+<a name="54"><span class="lineNum">      54 </span>            : !! @param A Addend A, an array representing a Matrix</a>
+<a name="55"><span class="lineNum">      55 </span>            : !! @param B Addend B, an array representing a Matrix</a>
+<a name="56"><span class="lineNum">      56 </span>            : !! @param C Sum C, an array representing the sum of A + B</a>
+<a name="57"><span class="lineNum">      57 </span>            : !! @param mtx_size Assumes same size M x N</a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">          2 : SUBROUTINE mtx_add_routine_int_(A, B, C, mtx_size) bind(C)</span></a>
+<a name="59"><span class="lineNum">      59 </span>            :     USE :: ISO_FORTRAN_ENV</a>
+<a name="60"><span class="lineNum">      60 </span>            :     USE :: ISO_C_BINDING</a>
+<a name="61"><span class="lineNum">      61 </span>            : </a>
+<a name="62"><span class="lineNum">      62 </span>            :     INTEGER, INTENT(IN) :: mtx_size</a>
+<a name="63"><span class="lineNum">      63 </span>            :     INTEGER(C_INT), DIMENSION(mtx_size, mtx_size), INTENT(IN) :: A, B</a>
+<a name="64"><span class="lineNum">      64 </span>            :     INTEGER(C_INT), DIMENSION(mtx_size, mtx_size), INTENT(OUT) :: C</a>
+<a name="65"><span class="lineNum">      65 </span>            : </a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">    1049614 :     C = A + B</span></a>
+<a name="67"><span class="lineNum">      67 </span><span class="lineCov">          2 : END SUBROUTINE mtx_add_routine_int_</span></a>
+<a name="68"><span class="lineNum">      68 </span>            : </a>
+<a name="69"><span class="lineNum">      69 </span>            : !&gt; FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics.</a>
+<a name="70"><span class="lineNum">      70 </span>            : !! Contains C++ wrapper function</a>
+<a name="71"><span class="lineNum">      71 </span>            : !! @param a Multiplier a, an array representing a Matrix</a>
+<a name="72"><span class="lineNum">      72 </span>            : !! @param b Multiplicand b, an array representing a Matrix</a>
+<a name="73"><span class="lineNum">      73 </span>            : !! @param c Product c, an array representing the sum of a + b</a>
+<a name="74"><span class="lineNum">      74 </span>            : !! @param nrows_a Number of rows</a>
+<a name="75"><span class="lineNum">      75 </span>            : !! @param ncols Number of columns</a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineNoCov">          0 : SUBROUTINE Bmtx_mult_routine_int_(A, B, C, nrows1, ncols1, ncols2) bind(C)</span></a>
+<a name="77"><span class="lineNum">      77 </span>            :     USE :: ISO_FORTRAN_ENV</a>
+<a name="78"><span class="lineNum">      78 </span>            :     USE :: ISO_C_BINDING</a>
+<a name="79"><span class="lineNum">      79 </span>            : </a>
+<a name="80"><span class="lineNum">      80 </span>            :     implicit none</a>
+<a name="81"><span class="lineNum">      81 </span>            :     INTEGER, INTENT(IN) :: nrows1, ncols1, ncols2</a>
+<a name="82"><span class="lineNum">      82 </span>            :     REAL, INTENT(IN) :: A(nrows1, ncols1), B(ncols1, ncols2)</a>
+<a name="83"><span class="lineNum">      83 </span>            :     REAL, INTENT(OUT) :: C(nrows1, ncols2)</a>
+<a name="84"><span class="lineNum">      84 </span>            :     INTEGER :: i, j, k</a>
+<a name="85"><span class="lineNum">      85 </span>            : </a>
+<a name="86"><span class="lineNum">      86 </span>            :     ! Perform matrix multiplication</a>
+<a name="87"><span class="lineNum">      87 </span><span class="lineNoCov">          0 :     do i = 1, nrows1</span></a>
+<a name="88"><span class="lineNum">      88 </span><span class="lineNoCov">          0 :         do j = 1, ncols2</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineNoCov">          0 :             C(i, j) = 0</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineNoCov">          0 :             do k = 1, ncols1</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineNoCov">          0 :                 C(i, j) = C(i, j) + A(i, k)*B(k, j)</span></a>
+<a name="92"><span class="lineNum">      92 </span>            :             end do</a>
+<a name="93"><span class="lineNum">      93 </span>            :         end do</a>
+<a name="94"><span class="lineNum">      94 </span>            :     end do</a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineNoCov">          0 : END SUBROUTINE Bmtx_mult_routine_int_</span></a>
+<a name="96"><span class="lineNum">      96 </span>            : </a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineCov">          1 : SUBROUTINE mtx_mult_routine_int_(A, B, C, mtx_size) bind(C)</span></a>
+<a name="98"><span class="lineNum">      98 </span>            :     USE :: ISO_FORTRAN_ENV</a>
+<a name="99"><span class="lineNum">      99 </span>            :     USE :: ISO_C_BINDING</a>
+<a name="100"><span class="lineNum">     100 </span>            : </a>
+<a name="101"><span class="lineNum">     101 </span>            :     INTEGER, INTENT(IN) :: mtx_size</a>
+<a name="102"><span class="lineNum">     102 </span>            :     INTEGER(KIND=C_INT), DIMENSION(mtx_size, mtx_size), INTENT(IN) :: A, B</a>
+<a name="103"><span class="lineNum">     103 </span>            :     INTEGER(KIND=C_INT), DIMENSION(mtx_size, mtx_size), INTENT(OUT) :: C</a>
+<a name="104"><span class="lineNum">     104 </span>            : </a>
+<a name="105"><span class="lineNum">     105 </span>            :     INTEGER :: i, j, k</a>
+<a name="106"><span class="lineNum">     106 </span>            : </a>
+<a name="107"><span class="lineNum">     107 </span>            :     ! Perform matrix multiplication</a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">       1025 :     DO i = 1, mtx_size</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">    1049601 :         DO j = 1, mtx_size</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">    1048576 :             C(i, j) = 0</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov"> 1074791424 :             DO k = 1, mtx_size</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov"> 1074790400 :                 C(i, j) = C(i, j) + A(i, k) * B(k, j)</span></a>
+<a name="113"><span class="lineNum">     113 </span>            :             END DO</a>
+<a name="114"><span class="lineNum">     114 </span>            :         END DO</a>
+<a name="115"><span class="lineNum">     115 </span>            :     END DO</a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          1 : END SUBROUTINE mtx_mult_routine_int_</span></a>
+<a name="117"><span class="lineNum">     117 </span>            : </a>
 </pre>
       </td>
     </tr>
