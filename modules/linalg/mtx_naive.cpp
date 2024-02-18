@@ -42,53 +42,6 @@
  * Standard/Naive Matrix Operations on Arrays
  *
  ************************************************************************/
-// naive matrix addition algorithm on arrays
-template <typename T>
-void gpmp::linalg::Mtx::std_mtx_add(const T *A,
-                                    const T *B,
-                                    T *C,
-                                    int rows,
-                                    int cols) {
-    // MTX A AND B MUST BE SAME SIZE
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            // perform matrix addition
-            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
-        }
-    }
-}
-
-// instantiations for types accepted by templated std_mtx_add function for
-// flat arrays
-template void gpmp::linalg::Mtx::std_mtx_add(const int8_t *A,
-                                             const int8_t *B,
-                                             int8_t *C,
-                                             int rows,
-                                             int cols);
-
-template void gpmp::linalg::Mtx::std_mtx_add(const int16_t *A,
-                                             const int16_t *B,
-                                             int16_t *C,
-                                             int rows,
-                                             int cols);
-
-template void gpmp::linalg::Mtx::std_mtx_add(const int *A,
-                                             const int *B,
-                                             int *C,
-                                             int rows,
-                                             int cols);
-
-template void gpmp::linalg::Mtx::std_mtx_add(const double *A,
-                                             const double *B,
-                                             double *C,
-                                             int rows,
-                                             int cols);
-
-template void gpmp::linalg::Mtx::std_mtx_add(const float *A,
-                                             const float *B,
-                                             float *C,
-                                             int rows,
-                                             int cols);
 
 /************************************************************************
  *

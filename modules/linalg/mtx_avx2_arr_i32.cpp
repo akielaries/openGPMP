@@ -89,9 +89,47 @@ void gpmp::linalg::Mtx::mtx_add(const int *A,
                 C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
             }
         }
-    } else {
+    }
+
+    else {
         // use standard matrix addition
         std_mtx_add(A, B, C, rows, cols);
+    }
+}
+
+void gpmp::linalg::Mtx::mtx_mult(const int *A,
+                                 const int *B,
+                                 int *C,
+                                 int rows_a,
+                                 int cols_a,
+                                 int cols_b) {
+    for (int i = 0; i < rows_a; ++i) {
+        for (int j = 0; j < cols_b; j += 8) {
+            __m256i c = _mm256_setzero_si256();
+
+            for (int k = 0; k < cols_a; ++k) {
+                __m256i a = _mm256_set1_epi32(A[i * cols_a + k]);
+                __m256i b = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&B[k * cols_b + j]));
+
+                __m256i prod = _mm256_mullo_epi32(a, b);
+                c = _mm256_add_epi32(c, prod);
+            }
+
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols_b + j]),
+                                c);
+        }
+
+        // Handle remaining elements
+        for (int j = cols_b - cols_b % 8; j < cols_b; ++j) {
+            int sum = 0;
+
+            for (int k = 0; k < cols_a; ++k) {
+                sum += A[i * cols_a + k] * B[k * cols_b + j];
+            }
+
+            C[i * cols_b + j] = sum;
+        }
     }
 }
 

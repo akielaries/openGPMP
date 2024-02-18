@@ -55,8 +55,10 @@ set(CPP_TEST_FILES
     linalg/t_vector_vector_f64.cpp
     linalg/t_vector_vector_i8.cpp
     linalg/t_vector_vector_i32.cpp
+
     linalg/t_vector_vector_naive.cpp
-    
+    linalg/t_matrix_arr_naive.cpp
+
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp
@@ -157,9 +159,9 @@ if(LCOV)
     add_custom_command(TARGET RUN_CPP_TESTS POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
         COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
-        COMMAND lcov --directory .. --capture --output-file lcov.info --rc geninfo_unexecuted_blocks=1 #--ignore-errors mismatch,mismatch
+        COMMAND lcov --directory .. --capture --output-file lcov.info --rc geninfo_unexecuted_blocks=1 --ignore-errors mismatch,mismatch
         COMMAND lcov --remove lcov.info "*c++*" "*11*" "*/googletest/*" "*/gtest*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
-        COMMAND mv lcov.info ../../.coverage
+        #COMMAND mv lcov.info ../../.coverage
     )
     endif()
 else()
