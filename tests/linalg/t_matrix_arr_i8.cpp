@@ -279,7 +279,7 @@ TEST(MatrixArrayTestI8, MultiplicationPerformanceComparison) {
     int8_t *result = new int8_t[mtx_size * mtx_size];
 
     // initialize random number generator
-    std::random_device rd; 
+    std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distribution(1, 5);
 
@@ -289,7 +289,7 @@ TEST(MatrixArrayTestI8, MultiplicationPerformanceComparison) {
             A[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
             B[i * mtx_size + j] = static_cast<int8_t>(distribution(gen));
         }
-    }   
+    }
 
     gpmp::linalg::Mtx mtx;
 

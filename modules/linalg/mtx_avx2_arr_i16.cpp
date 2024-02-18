@@ -115,39 +115,40 @@ void gpmp::linalg::Mtx::mtx_sub(const int16_t *A,
 }
 
 void gpmp::linalg::Mtx::mtx_mult(const int16_t *A,
-              const int16_t *B,
-              int16_t *C,
-              int rows_a,
-              int cols_a,
-              int cols_b) {
+                                 const int16_t *B,
+                                 int16_t *C,
+                                 int rows_a,
+                                 int cols_a,
+                                 int cols_b) {
     for (int i = 0; i < rows_a; ++i) {
         for (int j = 0; j < cols_b; j += 16) {
             __m256i c = _mm256_setzero_si256();
-            
+
             for (int k = 0; k < cols_a; ++k) {
                 __m256i a = _mm256_set1_epi16(A[i * cols_a + k]);
-                __m256i b = _mm256_loadu_si256(reinterpret_cast<const __m256i*>(&B[k * cols_b + j]));
-                
+                __m256i b = _mm256_loadu_si256(
+                    reinterpret_cast<const __m256i *>(&B[k * cols_b + j]));
+
                 __m256i prod = _mm256_mullo_epi16(a, b);
                 c = _mm256_add_epi16(c, prod);
             }
-            
-            _mm256_storeu_si256(reinterpret_cast<__m256i*>(&C[i * cols_b + j]), c); 
+
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols_b + j]),
+                                c);
         }
-        
+
         // Handle remaining elements
         for (int j = cols_b - cols_b % 16; j < cols_b; ++j) {
             int sum = 0;
-            
+
             for (int k = 0; k < cols_a; ++k) {
                 sum += A[i * cols_a + k] * B[k * cols_b + j];
             }
-            
+
             C[i * cols_b + j] = sum;
         }
     }
 }
-
 
 #endif
 
