@@ -87,6 +87,19 @@ class Mtx {
      * designated Fortran subroutine. Accepts type int
      */
     void mtx_add_f90(int *A, int *B, int *C, std::size_t matrixSize);
+
+    void mtx_mult_f90(int *A,
+                      int *B,
+                      int *C,
+                      std::size_t rows_a,
+                      std::size_t cols_a,
+                      std::size_t cols_b);
+
+  /*  void mtx_mult_f90(int *A,
+                      int *B,
+                      int *C,
+                      std::size_t mtx_size);
+*/
 #endif
 
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \

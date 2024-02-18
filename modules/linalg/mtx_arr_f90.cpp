@@ -64,6 +64,13 @@ void mtx_add_routine_float_(float *A,
 
 // Matrix add routine (INT)
 void mtx_add_routine_int_(int *A, int *B, int *C, std::size_t *mtx_size);
+
+void mtx_mult_routine_int_(int *A,
+                           int *B,
+                           int *C,
+                           std::size_t *rows_a,
+                           std::size_t *cols_a,
+                           std::size_t *cols_b);
 }
 
 // C++ wrapper for Fortran mtx addition subroutine FLOAT
@@ -80,6 +87,16 @@ void gpmp::linalg::Mtx::mtx_add_f90(int *A,
                                     int *C,
                                     std::size_t mtx_size) {
     mtx_add_routine_int_(A, B, C, &mtx_size);
+}
+
+// C++ wrapper for Fortran mtx multiplication subroutine INT
+void gpmp::linalg::Mtx::mtx_mult_f90(int *A,
+                                     int *B,
+                                     int *C,
+                                     std::size_t rows_a,
+                                     std::size_t cols_a,
+                                     std::size_t cols_b) {
+    mtx_mult_routine_int_(A, B, C, &rows_a, &cols_a, &cols_b);
 }
 
 #endif

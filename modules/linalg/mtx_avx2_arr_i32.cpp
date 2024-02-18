@@ -203,11 +203,11 @@ void gpmp::linalg::Mtx::mtx_mult(const int *A,
 
         // Handle remaining elements
         for (int j = cols_b - cols_b % 4; j < cols_b; ++j) {
-            long long sum = 0;
+            int64_t sum = 0;
 
             for (int k = 0; k < cols_a; ++k) {
-                sum += static_cast<long long>(A[i * cols_a + k]) *
-                       B[k * cols_b + j];
+                sum +=
+                    static_cast<int64_t>(A[i * cols_a + k]) * B[k * cols_b + j];
             }
 
             C[i * cols_b + j] = sum;
@@ -220,9 +220,7 @@ void gpmp::linalg::Mtx::mtx_tpose(const int *A, int *C, int rows, int cols) {
     for (int i = 0; i < rows; i += 8) {
         for (int j = 0; j < cols; j += 8) {
             // Load 8x8 block from A
-            //__m256i a0 = _mm256_loadu_si256((__m256i *)(A + i * cols + j));
-            __m256i a0 = _mm256_loadu_si256((const __m256i *)(A + i * cols + j));
-
+            __m256i a0 = _mm256_loadu_si256((__m256i *)(A + i * cols + j));
             __m256i a1 =
                 _mm256_loadu_si256((__m256i *)(A + (i + 1) * cols + j));
             __m256i a2 =

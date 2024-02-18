@@ -33,7 +33,7 @@
 ! mtx_routines.f90
 
 !> FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays
-!! of type float. Contains C++ wrapper function
+!! of type float32. Contains C++ wrapper function
 !! @param A Addend A, an array representing a Matrix
 !! @param B Addend B, an array representing a Matrix
 !! @param C Sum C, an array representing the sum of A + B
@@ -49,6 +49,12 @@ SUBROUTINE mtx_add_routine_float_(A, B, C, mtx_size) bind(C)
     C = A + B
 END SUBROUTINE mtx_add_routine_float_
 
+!> FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays
+!! of type int32. Contains C++ wrapper function
+!! @param A Addend A, an array representing a Matrix
+!! @param B Addend B, an array representing a Matrix
+!! @param C Sum C, an array representing the sum of A + B
+!! @param mtx_size Assumes same size M x N
 SUBROUTINE mtx_add_routine_int_(A, B, C, mtx_size) bind(C)
     USE :: ISO_FORTRAN_ENV
     USE :: ISO_C_BINDING
@@ -67,21 +73,45 @@ END SUBROUTINE mtx_add_routine_int_
 !! @param c Product c, an array representing the sum of a + b
 !! @param nrows_a Number of rows
 !! @param ncols Number of columns
-SUBROUTINE mtx_mult(matrix1, matrix2, result, nrows1, ncols1, ncols2)
+SUBROUTINE Bmtx_mult_routine_int_(A, B, C, nrows1, ncols1, ncols2) bind(C)
+    USE :: ISO_FORTRAN_ENV
+    USE :: ISO_C_BINDING
+
     implicit none
     INTEGER, INTENT(IN) :: nrows1, ncols1, ncols2
-    REAL, INTENT(IN) :: matrix1(nrows1, ncols1), matrix2(ncols1, ncols2)
-    REAL, INTENT(OUT) :: result(nrows1, ncols2)
+    REAL, INTENT(IN) :: A(nrows1, ncols1), B(ncols1, ncols2)
+    REAL, INTENT(OUT) :: C(nrows1, ncols2)
     INTEGER :: i, j, k
 
     ! Perform matrix multiplication
     do i = 1, nrows1
         do j = 1, ncols2
-            result(i, j) = 0.0
+            C(i, j) = 0
             do k = 1, ncols1
-                result(i, j) = result(i, j) + matrix1(i, k)*matrix2(k, j)
+                C(i, j) = C(i, j) + A(i, k)*B(k, j)
             end do
         end do
     end do
-END SUBROUTINE mtx_mult
+END SUBROUTINE Bmtx_mult_routine_int_
+
+SUBROUTINE mtx_mult_routine_int_(A, B, C, mtx_size) bind(C)
+    USE :: ISO_FORTRAN_ENV
+    USE :: ISO_C_BINDING
+
+    INTEGER, INTENT(IN) :: mtx_size
+    INTEGER(KIND=C_INT), DIMENSION(mtx_size, mtx_size), INTENT(IN) :: A, B
+    INTEGER(KIND=C_INT), DIMENSION(mtx_size, mtx_size), INTENT(OUT) :: C
+
+    INTEGER :: i, j, k
+
+    ! Perform matrix multiplication
+    DO i = 1, mtx_size
+        DO j = 1, mtx_size
+            C(i, j) = 0
+            DO k = 1, mtx_size
+                C(i, j) = C(i, j) + A(i, k) * B(k, j)
+            END DO
+        END DO
+    END DO
+END SUBROUTINE mtx_mult_routine_int_
 

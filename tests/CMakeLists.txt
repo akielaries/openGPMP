@@ -59,6 +59,8 @@ set(CPP_TEST_FILES
     linalg/t_vector_vector_naive.cpp
     linalg/t_matrix_arr_naive.cpp
 
+    linalg/t_matrix_arr_f90.cpp
+
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp
