@@ -14,6 +14,7 @@ set(SOURCE_FILES
     tensor.cpp
     svd.cpp
     vector_naive.cpp
+    dgemm_arr.cpp
 )
 
 # Add files depending on the detected SIMD ISA
@@ -33,6 +34,7 @@ if (SIMD_ISA STREQUAL "AVX2")
         vector_avx2_i16.cpp
         vector_avx2_i32.cpp
         vector_avx2_f64.cpp
+
     )
 elseif (SIMD_ISA STREQUAL "ARM_NEON")
     list(APPEND SOURCE_FILES

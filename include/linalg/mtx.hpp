@@ -312,6 +312,13 @@ class Mtx {
                   int cols_a,
                   int cols_b);
 
+    void mtx_mult(const double *A,
+                  const double *B,
+                  double *C,
+                  int rows_a,
+                  int cols_a,
+                  int cols_b);
+
     void mtx_tpose(const int *A, int *C, int rows, int cols);
 
     /**

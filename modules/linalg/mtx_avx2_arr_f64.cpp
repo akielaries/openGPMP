@@ -87,6 +87,55 @@ void gpmp::linalg::Mtx::mtx_add(const double *A,
     }
 }
 
+void gpmp::linalg::Mtx::mtx_mult(const double *A,
+                                 const double *B,
+                                 double *C,
+                                 int rows_a,
+                                 int cols_a,
+                                 int cols_b) {
+    if (cols_a != rows_a) {
+        // Matrix dimensions don't match for multiplication
+        std::cerr << "Matching error";
+        return;
+    }
+
+    if (rows_a > 8) {
+
+        for (int i = 0; i < rows_a; ++i) {
+            for (int j = 0; j < cols_b - 3; j += 4) {
+                // creat result vector of zeros
+                __m256d sum_vec = _mm256_setzero_pd();
+
+                for (int k = 0; k < cols_a; ++k) {
+                    __m256d a_vec = _mm256_set1_pd(A[i * cols_a + k]);
+
+                    __m256d b_vec = _mm256_loadu_pd(&B[k * cols_b + j]);
+
+                    __m256d prod = _mm256_mul_pd(a_vec, b_vec);
+
+                    sum_vec = _mm256_add_pd(sum_vec, prod);
+                }
+                _mm256_storeu_pd(&C[i * cols_b + j], sum_vec);
+            }
+
+            // handle remaining elements not multiples of 4
+            for (int j = cols_b - cols_b % 4; j < cols_b; ++j) {
+                double sum = 0.0;
+
+                for (int k = 0; k < cols_a; ++k) {
+                    sum += A[i * cols_a + k] * B[k * cols_b + j];
+                }
+                C[i * cols_b + j] = sum;
+            }
+        }
+
+    }
+
+    else {
+        std_mtx_mult(A, B, C, rows_a, cols_a, cols_b);
+    }
+}
+
 #endif
 
 // x86
