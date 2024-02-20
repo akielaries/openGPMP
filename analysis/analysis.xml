@@ -114,6 +114,22 @@
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
             <location file="../../modules/disct/graphs.cpp" line="713" column="24"/>
         </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="76" column="12"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;i&apos; can be reduced." verbose="The scope of the variable &apos;i&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="124" column="9"/>
+            <symbol>i</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;nr&apos; can be reduced." verbose="The scope of the variable &apos;nr&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="276" column="13"/>
+            <symbol>nr</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;nc&apos; can be reduced." verbose="The scope of the variable &apos;nc&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="349" column="13"/>
+            <symbol>nc</symbol>
+        </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/eigen.cpp">
             <location file="../../include/linalg/eigen.hpp" line="57" column="5"/>
             <symbol>Eigen</symbol>
@@ -698,6 +714,10 @@
             <location file="../../modules/disct/graphs.cpp" line="51" column="0"/>
             <symbol>dfs</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;dgemm_nn&apos; is never used." verbose="The function &apos;dgemm_nn&apos; is never used." cwe="561">
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="327" column="0"/>
+            <symbol>dgemm_nn</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;diagonally_dominant&apos; is never used." verbose="The function &apos;diagonally_dominant&apos; is never used." cwe="561">
             <location file="../../modules/linalg/linsys.cpp" line="395" column="0"/>
             <symbol>diagonally_dominant</symbol>
@@ -1031,7 +1051,7 @@
             <symbol>mtx_add_f90</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult&apos; is never used." verbose="The function &apos;mtx_mult&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_avx2_arr_i16.cpp" line="117" column="0"/>
+            <location file="../../modules/linalg/mtx_avx2_arr_f64.cpp" line="90" column="0"/>
             <symbol>mtx_mult</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult_f90&apos; is never used." verbose="The function &apos;mtx_mult_f90&apos; is never used." cwe="561">

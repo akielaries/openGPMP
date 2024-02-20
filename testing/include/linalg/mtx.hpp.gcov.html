@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-20 01:11:05</td>
+            <td class="headerValue">2024-02-20 05:38:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">11</td>
             <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntryHi">91.7 %</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntryHi">92.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -382,317 +382,324 @@
 <a name="312"><span class="lineNum">     312 </span>            :                   int cols_a,</a>
 <a name="313"><span class="lineNum">     313 </span>            :                   int cols_b);</a>
 <a name="314"><span class="lineNum">     314 </span>            : </a>
-<a name="315"><span class="lineNum">     315 </span>            :     void mtx_tpose(const int *A, int *C, int rows, int cols);</a>
-<a name="316"><span class="lineNum">     316 </span>            : </a>
-<a name="317"><span class="lineNum">     317 </span>            :     /**</a>
-<a name="318"><span class="lineNum">     318 </span>            :      * @brief Perform matrix subtraction using Intel intrinsics, accepts</a>
-<a name="319"><span class="lineNum">     319 </span>            :      * vectors of type int</a>
-<a name="320"><span class="lineNum">     320 </span>            :      * @param A Input matrix A</a>
-<a name="321"><span class="lineNum">     321 </span>            :      * @param B Input matrix B</a>
-<a name="322"><span class="lineNum">     322 </span>            :      * @param C Output matrix C</a>
-<a name="323"><span class="lineNum">     323 </span>            :      * @note Matrices must be of at least size 8x8</a>
-<a name="324"><span class="lineNum">     324 </span>            :      * @overload</a>
-<a name="325"><span class="lineNum">     325 </span>            :      */</a>
-<a name="326"><span class="lineNum">     326 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="327"><span class="lineNum">     327 </span>            :                  const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="328"><span class="lineNum">     328 </span>            :                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="329"><span class="lineNum">     329 </span>            : </a>
-<a name="330"><span class="lineNum">     330 </span>            :     /**</a>
-<a name="331"><span class="lineNum">     331 </span>            :      * @brief Perform matrix subtraction using Intel intrinsics, accepts</a>
-<a name="332"><span class="lineNum">     332 </span>            :      * vectors of type double</a>
-<a name="333"><span class="lineNum">     333 </span>            :      * @param A Input matrix A</a>
-<a name="334"><span class="lineNum">     334 </span>            :      * @param B Input matrix B</a>
-<a name="335"><span class="lineNum">     335 </span>            :      * @param C Output matrix C</a>
-<a name="336"><span class="lineNum">     336 </span>            :      * @note Matrices must be of at least size 4x4</a>
-<a name="337"><span class="lineNum">     337 </span>            :      * @overload</a>
-<a name="338"><span class="lineNum">     338 </span>            :      */</a>
-<a name="339"><span class="lineNum">     339 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
-<a name="340"><span class="lineNum">     340 </span>            :                  const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
-<a name="341"><span class="lineNum">     341 </span>            :                  std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
-<a name="342"><span class="lineNum">     342 </span>            : </a>
-<a name="343"><span class="lineNum">     343 </span>            :     /**</a>
-<a name="344"><span class="lineNum">     344 </span>            :      * @brief Perform matrix multiplication using Intel intrinsics, accepts</a>
-<a name="345"><span class="lineNum">     345 </span>            :      * vectors of type int</a>
-<a name="346"><span class="lineNum">     346 </span>            :      * @param A input matrix A</a>
-<a name="347"><span class="lineNum">     347 </span>            :      * @param B input matrix B</a>
-<a name="348"><span class="lineNum">     348 </span>            :      * @param C output matrix C</a>
-<a name="349"><span class="lineNum">     349 </span>            :      * @note matrices must be of at least size 8x8</a>
-<a name="350"><span class="lineNum">     350 </span>            :      * @overload</a>
-<a name="351"><span class="lineNum">     351 </span>            :      */</a>
-<a name="352"><span class="lineNum">     352 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="353"><span class="lineNum">     353 </span>            :                   const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="354"><span class="lineNum">     354 </span>            :                   std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="355"><span class="lineNum">     355 </span>            : </a>
-<a name="356"><span class="lineNum">     356 </span>            :     /**</a>
-<a name="357"><span class="lineNum">     357 </span>            :      * @brief Perform matrix multiplication using Intel intrinsics, accepts</a>
-<a name="358"><span class="lineNum">     358 </span>            :      * vectors of type double</a>
-<a name="359"><span class="lineNum">     359 </span>            :      * @param A input matrix A</a>
-<a name="360"><span class="lineNum">     360 </span>            :      * @param B input matrix B</a>
-<a name="361"><span class="lineNum">     361 </span>            :      * @param C output matrix C</a>
-<a name="362"><span class="lineNum">     362 </span>            :      * @note matrices must be of at least size 4x4</a>
-<a name="363"><span class="lineNum">     363 </span>            :      * @overload</a>
-<a name="364"><span class="lineNum">     364 </span>            :      */</a>
-<a name="365"><span class="lineNum">     365 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
-<a name="366"><span class="lineNum">     366 </span>            :                   const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
-<a name="367"><span class="lineNum">     367 </span>            :                   std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
-<a name="368"><span class="lineNum">     368 </span>            :     /**</a>
-<a name="369"><span class="lineNum">     369 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
-<a name="370"><span class="lineNum">     370 </span>            :      * @param matrix Input matrix</a>
-<a name="371"><span class="lineNum">     371 </span>            :      * @note Require matrices of at least size 8x8</a>
-<a name="372"><span class="lineNum">     372 </span>            :      * @overload</a>
-<a name="373"><span class="lineNum">     373 </span>            :      */</a>
-<a name="374"><span class="lineNum">     374 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</a>
-<a name="375"><span class="lineNum">     375 </span>            : </a>
-<a name="376"><span class="lineNum">     376 </span>            :     /**</a>
-<a name="377"><span class="lineNum">     377 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
-<a name="378"><span class="lineNum">     378 </span>            :      * @param matrix Input matrix</a>
-<a name="379"><span class="lineNum">     379 </span>            :      * @note Require matrices of at least size 8x8</a>
-<a name="380"><span class="lineNum">     380 </span>            :      * @overload</a>
-<a name="381"><span class="lineNum">     381 </span>            :      */</a>
-<a name="382"><span class="lineNum">     382 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</a>
-<a name="383"><span class="lineNum">     383 </span>            : </a>
-<a name="384"><span class="lineNum">     384 </span>            : /**</a>
-<a name="385"><span class="lineNum">     385 </span>            :  * @brief If system is ARM</a>
-<a name="386"><span class="lineNum">     386 </span>            :  */</a>
-<a name="387"><span class="lineNum">     387 </span>            : #elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \</a>
-<a name="388"><span class="lineNum">     388 </span>            :     defined(__ARM_ARCH) || defined(__aarch64__)</a>
-<a name="389"><span class="lineNum">     389 </span>            :     /**</a>
-<a name="390"><span class="lineNum">     390 </span>            :      * @brief Perform matrix addition using ARM intrinsics, accepts</a>
-<a name="391"><span class="lineNum">     391 </span>            :      * vectors of type int</a>
-<a name="392"><span class="lineNum">     392 </span>            :      * @param A Input matrix A</a>
-<a name="393"><span class="lineNum">     393 </span>            :      * @param B Input matrix B</a>
-<a name="394"><span class="lineNum">     394 </span>            :      * @param C Output matrix C</a>
-<a name="395"><span class="lineNum">     395 </span>            :      * @note Matrices must be of at least size 8x8</a>
-<a name="396"><span class="lineNum">     396 </span>            :      * @overload</a>
-<a name="397"><span class="lineNum">     397 </span>            :      */</a>
-<a name="398"><span class="lineNum">     398 </span>            :     void mtx_add(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="399"><span class="lineNum">     399 </span>            :                  const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="400"><span class="lineNum">     400 </span>            :                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="401"><span class="lineNum">     401 </span>            : </a>
-<a name="402"><span class="lineNum">     402 </span>            :     /**</a>
-<a name="403"><span class="lineNum">     403 </span>            :      * @brief Perform matrix addition using ARM intrinsics, accepts</a>
-<a name="404"><span class="lineNum">     404 </span>            :      * vectors of type double</a>
-<a name="405"><span class="lineNum">     405 </span>            :      * @param A Input matrix A</a>
-<a name="406"><span class="lineNum">     406 </span>            :      * @param B Input matrix B</a>
-<a name="407"><span class="lineNum">     407 </span>            :      * @param C Output matrix C</a>
-<a name="408"><span class="lineNum">     408 </span>            :      * @note Matrices must be of at least size 4x4</a>
-<a name="409"><span class="lineNum">     409 </span>            :      * @overload</a>
-<a name="410"><span class="lineNum">     410 </span>            :      */</a>
-<a name="411"><span class="lineNum">     411 </span>            :     void mtx_add(const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</a>
-<a name="412"><span class="lineNum">     412 </span>            :                  const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</a>
-<a name="413"><span class="lineNum">     413 </span>            :                  std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</a>
-<a name="414"><span class="lineNum">     414 </span>            : </a>
-<a name="415"><span class="lineNum">     415 </span>            :     /**</a>
-<a name="416"><span class="lineNum">     416 </span>            :      * @brief Perform matrix subtraction using ARM intrinsics, accepts</a>
-<a name="417"><span class="lineNum">     417 </span>            :      * vectors of type int</a>
-<a name="418"><span class="lineNum">     418 </span>            :      * @param A Input matrix A</a>
-<a name="419"><span class="lineNum">     419 </span>            :      * @param B Input matrix B</a>
-<a name="420"><span class="lineNum">     420 </span>            :      * @param C Output matrix C</a>
-<a name="421"><span class="lineNum">     421 </span>            :      * @note Matrices must be of at least size 8x8</a>
-<a name="422"><span class="lineNum">     422 </span>            :      * @overload</a>
-<a name="423"><span class="lineNum">     423 </span>            :      */</a>
-<a name="424"><span class="lineNum">     424 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="425"><span class="lineNum">     425 </span>            :                  const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="426"><span class="lineNum">     426 </span>            :                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="427"><span class="lineNum">     427 </span>            : </a>
-<a name="428"><span class="lineNum">     428 </span>            :     /**</a>
-<a name="429"><span class="lineNum">     429 </span>            :      * @brief Perform matrix subtraction using ARM intrinsics, accepts</a>
-<a name="430"><span class="lineNum">     430 </span>            :      * vectors of type int</a>
-<a name="431"><span class="lineNum">     431 </span>            :      * @param A Input matrix A</a>
-<a name="432"><span class="lineNum">     432 </span>            :      * @param B Input matrix B</a>
-<a name="433"><span class="lineNum">     433 </span>            :      * @param C Output matrix C</a>
-<a name="434"><span class="lineNum">     434 </span>            :      * @note Matrices must be of at least size 4x4</a>
-<a name="435"><span class="lineNum">     435 </span>            :      * @overload</a>
-<a name="436"><span class="lineNum">     436 </span>            :      */</a>
-<a name="437"><span class="lineNum">     437 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</a>
-<a name="438"><span class="lineNum">     438 </span>            :                  const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</a>
-<a name="439"><span class="lineNum">     439 </span>            :                  std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</a>
-<a name="440"><span class="lineNum">     440 </span>            : </a>
-<a name="441"><span class="lineNum">     441 </span>            :     /**</a>
-<a name="442"><span class="lineNum">     442 </span>            :      * @brief Perform matrix multiplication using ARM intrinsics, accepts</a>
-<a name="443"><span class="lineNum">     443 </span>            :      * vectors of type int</a>
-<a name="444"><span class="lineNum">     444 </span>            :      * @param A input matrix A</a>
-<a name="445"><span class="lineNum">     445 </span>            :      * @param B input matrix B</a>
-<a name="446"><span class="lineNum">     446 </span>            :      * @param C output matrix C</a>
-<a name="447"><span class="lineNum">     447 </span>            :      * @note matrices must be of at least size 8x8</a>
-<a name="448"><span class="lineNum">     448 </span>            :      * @overload</a>
-<a name="449"><span class="lineNum">     449 </span>            :      */</a>
-<a name="450"><span class="lineNum">     450 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="451"><span class="lineNum">     451 </span>            :                   const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="452"><span class="lineNum">     452 </span>            :                   std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="453"><span class="lineNum">     453 </span>            : </a>
-<a name="454"><span class="lineNum">     454 </span>            :     /**</a>
-<a name="455"><span class="lineNum">     455 </span>            :      * @brief Perform matrix multiplication using ARM intrinsics, accepts</a>
-<a name="456"><span class="lineNum">     456 </span>            :      * vectors of type double</a>
-<a name="457"><span class="lineNum">     457 </span>            :      * @param A input matrix A</a>
-<a name="458"><span class="lineNum">     458 </span>            :      * @param B input matrix B</a>
-<a name="459"><span class="lineNum">     459 </span>            :      * @param C output matrix C</a>
-<a name="460"><span class="lineNum">     460 </span>            :      * @note matrices must be of at least size 4x4</a>
-<a name="461"><span class="lineNum">     461 </span>            :      * @overload</a>
-<a name="462"><span class="lineNum">     462 </span>            :      */</a>
-<a name="463"><span class="lineNum">     463 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
-<a name="464"><span class="lineNum">     464 </span>            :                   const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
-<a name="465"><span class="lineNum">     465 </span>            :                   std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
-<a name="466"><span class="lineNum">     466 </span>            : </a>
-<a name="467"><span class="lineNum">     467 </span>            :     /*void mtx_mult_strass(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="468"><span class="lineNum">     468 </span>            :                          const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="469"><span class="lineNum">     469 </span>            :                          std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="470"><span class="lineNum">     470 </span>            : </a>
-<a name="471"><span class="lineNum">     471 </span>            :     void mtx_mult_strass(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
-<a name="472"><span class="lineNum">     472 </span>            :                          const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
-<a name="473"><span class="lineNum">     473 </span>            :                          std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
-<a name="474"><span class="lineNum">     474 </span>            :     */</a>
-<a name="475"><span class="lineNum">     475 </span>            :     /**</a>
-<a name="476"><span class="lineNum">     476 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
-<a name="477"><span class="lineNum">     477 </span>            :      * @param matrix Input matrix</a>
-<a name="478"><span class="lineNum">     478 </span>            :      * @note Require matrices of at least size 8x8</a>
-<a name="479"><span class="lineNum">     479 </span>            :      * @overload</a>
-<a name="480"><span class="lineNum">     480 </span>            :      */</a>
-<a name="481"><span class="lineNum">     481 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</a>
-<a name="482"><span class="lineNum">     482 </span>            : </a>
-<a name="483"><span class="lineNum">     483 </span>            :     /**</a>
-<a name="484"><span class="lineNum">     484 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
-<a name="485"><span class="lineNum">     485 </span>            :      * @param matrix Input matrix</a>
-<a name="486"><span class="lineNum">     486 </span>            :      * @note Require matrices of at least size 4x4</a>
-<a name="487"><span class="lineNum">     487 </span>            :      * @overload</a>
-<a name="488"><span class="lineNum">     488 </span>            :      */</a>
-<a name="489"><span class="lineNum">     489 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</a>
-<a name="490"><span class="lineNum">     490 </span>            : </a>
-<a name="491"><span class="lineNum">     491 </span>            : #endif</a>
-<a name="492"><span class="lineNum">     492 </span>            : </a>
-<a name="493"><span class="lineNum">     493 </span>            :     /**</a>
-<a name="494"><span class="lineNum">     494 </span>            :      * @brief Perform matrix addition on two matrices as flat arrays</a>
-<a name="495"><span class="lineNum">     495 </span>            :      * @param A Input matrix A</a>
-<a name="496"><span class="lineNum">     496 </span>            :      * @param B Input matrix B</a>
-<a name="497"><span class="lineNum">     497 </span>            :      * @param C Output matrix C</a>
-<a name="498"><span class="lineNum">     498 </span>            :      * @param rows Number of rows</a>
-<a name="499"><span class="lineNum">     499 </span>            :      * @param cols Number of columns</a>
-<a name="500"><span class="lineNum">     500 </span>            :      * @overload</a>
-<a name="501"><span class="lineNum">     501 </span>            :      */</a>
-<a name="502"><span class="lineNum">     502 </span>            :     template &lt;typename T&gt;</a>
-<a name="503"><span class="lineNum">     503 </span><span class="lineCov">         14 :     void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols) {</span></a>
-<a name="504"><span class="lineNum">     504 </span>            :         // MTX A AND B MUST BE SAME SIZE</a>
-<a name="505"><span class="lineNum">     505 </span><span class="lineCov">      10362 :         for (int i = 0; i &lt; rows; ++i) {</span></a>
-<a name="506"><span class="lineNum">     506 </span><span class="lineCov">    9769340 :             for (int j = 0; j &lt; cols; ++j) {</span></a>
-<a name="507"><span class="lineNum">     507 </span>            :                 // perform matrix addition</a>
-<a name="508"><span class="lineNum">     508 </span><span class="lineCov">    9758992 :                 C[i * cols + j] = A[i * cols + j] + B[i * cols + j];</span></a>
-<a name="509"><span class="lineNum">     509 </span>            :             }</a>
-<a name="510"><span class="lineNum">     510 </span>            :         }</a>
-<a name="511"><span class="lineNum">     511 </span><span class="lineCov">         14 :     }</span></a>
-<a name="512"><span class="lineNum">     512 </span>            :     /**</a>
-<a name="513"><span class="lineNum">     513 </span>            :      * @brief Perform matrix subtraction on two matrices as flat arrays</a>
-<a name="514"><span class="lineNum">     514 </span>            :      * @param A Input matrix A</a>
-<a name="515"><span class="lineNum">     515 </span>            :      * @param B Input matrix B</a>
-<a name="516"><span class="lineNum">     516 </span>            :      * @param C Output matrix C</a>
-<a name="517"><span class="lineNum">     517 </span>            :      * @param rows Number of rows</a>
-<a name="518"><span class="lineNum">     518 </span>            :      * @param cols Number of columns</a>
-<a name="519"><span class="lineNum">     519 </span>            :      * @overload</a>
-<a name="520"><span class="lineNum">     520 </span>            :      */</a>
-<a name="521"><span class="lineNum">     521 </span>            :     template &lt;typename T&gt;</a>
-<a name="522"><span class="lineNum">     522 </span><span class="lineCov">          5 :     void std_mtx_sub(const T *A, const T *B, T *C, int rows, int cols) {</span></a>
-<a name="523"><span class="lineNum">     523 </span>            :         // MTX A AND B MUST BE SAME SIZE</a>
-<a name="524"><span class="lineNum">     524 </span><span class="lineCov">       4501 :         for (int i = 0; i &lt; rows; ++i) {</span></a>
-<a name="525"><span class="lineNum">     525 </span><span class="lineCov">    4358800 :             for (int j = 0; j &lt; cols; ++j) {</span></a>
-<a name="526"><span class="lineNum">     526 </span>            :                 // perform matrix addition</a>
-<a name="527"><span class="lineNum">     527 </span><span class="lineCov">    4354304 :                 C[i * cols + j] = A[i * cols + j] - B[i * cols + j];</span></a>
-<a name="528"><span class="lineNum">     528 </span>            :             }</a>
-<a name="529"><span class="lineNum">     529 </span>            :         }</a>
-<a name="530"><span class="lineNum">     530 </span><span class="lineCov">          5 :     }</span></a>
-<a name="531"><span class="lineNum">     531 </span>            : </a>
-<a name="532"><span class="lineNum">     532 </span>            :     template &lt;typename T, typename U&gt;</a>
-<a name="533"><span class="lineNum">     533 </span><span class="lineCov">          6 :     void std_mtx_mult(const T *A,</span></a>
-<a name="534"><span class="lineNum">     534 </span>            :                       const T *B,</a>
-<a name="535"><span class="lineNum">     535 </span>            :                       U *C,</a>
-<a name="536"><span class="lineNum">     536 </span>            :                       int rows_a,</a>
-<a name="537"><span class="lineNum">     537 </span>            :                       int cols_a,</a>
-<a name="538"><span class="lineNum">     538 </span>            :                       int cols_b) {</a>
-<a name="539"><span class="lineNum">     539 </span><span class="lineCov">       4108 :         for (int i = 0; i &lt; rows_a; ++i) {</span></a>
-<a name="540"><span class="lineNum">     540 </span><span class="lineCov">    4198426 :             for (int j = 0; j &lt; cols_b; ++j) {</span></a>
-<a name="541"><span class="lineNum">     541 </span><span class="lineCov">    4194324 :                 U sum = 0; // Use T type for sum</span></a>
-<a name="542"><span class="lineNum">     542 </span><span class="lineCov"> 4299161696 :                 for (int k = 0; k &lt; cols_a; ++k) {</span></a>
-<a name="543"><span class="lineNum">     543 </span><span class="lineCov"> 4294967372 :                     sum += A[i * cols_a + k] * B[k * cols_b + j];</span></a>
-<a name="544"><span class="lineNum">     544 </span>            :                 }</a>
-<a name="545"><span class="lineNum">     545 </span><span class="lineCov">    4194324 :                 C[i * cols_b + j] = sum;</span></a>
-<a name="546"><span class="lineNum">     546 </span>            :             }</a>
-<a name="547"><span class="lineNum">     547 </span>            :         }</a>
-<a name="548"><span class="lineNum">     548 </span><span class="lineCov">          6 :     }</span></a>
-<a name="549"><span class="lineNum">     549 </span>            : </a>
-<a name="550"><span class="lineNum">     550 </span>            :     template &lt;typename T&gt;</a>
-<a name="551"><span class="lineNum">     551 </span><span class="lineCov">          1 :     void std_mtx_tpose(const T *A, T *At, int rows, int cols) {</span></a>
-<a name="552"><span class="lineNum">     552 </span><span class="lineCov">       1025 :         for (int i = 0; i &lt; rows; ++i) {</span></a>
-<a name="553"><span class="lineNum">     553 </span><span class="lineCov">    1049600 :             for (int j = 0; j &lt; cols; ++j) {</span></a>
-<a name="554"><span class="lineNum">     554 </span><span class="lineCov">    1048576 :                 At[j * rows + i] = A[i * cols + j];</span></a>
-<a name="555"><span class="lineNum">     555 </span>            :             }</a>
-<a name="556"><span class="lineNum">     556 </span>            :         }</a>
-<a name="557"><span class="lineNum">     557 </span><span class="lineCov">          1 :     }</span></a>
-<a name="558"><span class="lineNum">     558 </span>            :     /**</a>
-<a name="559"><span class="lineNum">     559 </span>            :      * @brief Perform matrix addition on two matrices as flat vectors</a>
-<a name="560"><span class="lineNum">     560 </span>            :      * @param A Input matrix A</a>
-<a name="561"><span class="lineNum">     561 </span>            :      * @param B Input matrix B</a>
-<a name="562"><span class="lineNum">     562 </span>            :      * @param C Output matrix C</a>
-<a name="563"><span class="lineNum">     563 </span>            :      * @overload</a>
-<a name="564"><span class="lineNum">     564 </span>            :      */</a>
-<a name="565"><span class="lineNum">     565 </span>            :     template &lt;typename T&gt;</a>
-<a name="566"><span class="lineNum">     566 </span>            :     void std_mtx_add(const std::vector&lt;T&gt; &amp;A,</a>
-<a name="567"><span class="lineNum">     567 </span>            :                      const std::vector&lt;T&gt; &amp;B,</a>
-<a name="568"><span class="lineNum">     568 </span>            :                      std::vector&lt;T&gt; &amp;C);</a>
-<a name="569"><span class="lineNum">     569 </span>            : </a>
-<a name="570"><span class="lineNum">     570 </span>            :     /**</a>
-<a name="571"><span class="lineNum">     571 </span>            :      * @brief Perform matrix addition on two matrices as 2D vectors</a>
-<a name="572"><span class="lineNum">     572 </span>            :      * @param A Input matrix A</a>
-<a name="573"><span class="lineNum">     573 </span>            :      * @param B Input matrix B</a>
-<a name="574"><span class="lineNum">     574 </span>            :      * @param C Output matrix C</a>
-<a name="575"><span class="lineNum">     575 </span>            :      * @overload</a>
-<a name="576"><span class="lineNum">     576 </span>            :      */</a>
-<a name="577"><span class="lineNum">     577 </span>            :     template &lt;typename T&gt;</a>
-<a name="578"><span class="lineNum">     578 </span>            :     void std_mtx_add(const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</a>
-<a name="579"><span class="lineNum">     579 </span>            :                      const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</a>
-<a name="580"><span class="lineNum">     580 </span>            :                      std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</a>
-<a name="581"><span class="lineNum">     581 </span>            : </a>
-<a name="582"><span class="lineNum">     582 </span>            :     /**</a>
-<a name="583"><span class="lineNum">     583 </span>            :      * @brief Perform matrix subtraction on two matrices as 2D vectors</a>
-<a name="584"><span class="lineNum">     584 </span>            :      * @param A Input matrix A</a>
-<a name="585"><span class="lineNum">     585 </span>            :      * @param B Input matrix B</a>
-<a name="586"><span class="lineNum">     586 </span>            :      * @param C Output matrix C</a>
-<a name="587"><span class="lineNum">     587 </span>            :      * @overload</a>
-<a name="588"><span class="lineNum">     588 </span>            :      */</a>
-<a name="589"><span class="lineNum">     589 </span>            :     template &lt;typename T&gt;</a>
-<a name="590"><span class="lineNum">     590 </span>            :     void std_mtx_sub(const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</a>
-<a name="591"><span class="lineNum">     591 </span>            :                      const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</a>
-<a name="592"><span class="lineNum">     592 </span>            :                      std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</a>
-<a name="593"><span class="lineNum">     593 </span>            : </a>
-<a name="594"><span class="lineNum">     594 </span>            :     /**</a>
-<a name="595"><span class="lineNum">     595 </span>            :      * @brief Perform matrix multiplication on two matrices 2D vectors</a>
-<a name="596"><span class="lineNum">     596 </span>            :      * @param A Input matrix A</a>
-<a name="597"><span class="lineNum">     597 </span>            :      * @param B Input matrix B</a>
-<a name="598"><span class="lineNum">     598 </span>            :      * @param C Output matrix C</a>
-<a name="599"><span class="lineNum">     599 </span>            :      * @overload</a>
-<a name="600"><span class="lineNum">     600 </span>            :      */</a>
-<a name="601"><span class="lineNum">     601 </span>            :     template &lt;typename T&gt;</a>
-<a name="602"><span class="lineNum">     602 </span>            :     void std_mtx_mult(const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</a>
-<a name="603"><span class="lineNum">     603 </span>            :                       const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</a>
-<a name="604"><span class="lineNum">     604 </span>            :                       std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</a>
-<a name="605"><span class="lineNum">     605 </span>            : </a>
-<a name="606"><span class="lineNum">     606 </span>            :     /**</a>
-<a name="607"><span class="lineNum">     607 </span>            :      * @brief Performs matrix multiplication using the Strassen algorithm</a>
-<a name="608"><span class="lineNum">     608 </span>            :      * @param A Input matrix A</a>
-<a name="609"><span class="lineNum">     609 </span>            :      * @param B Input matrix B</a>
-<a name="610"><span class="lineNum">     610 </span>            :      * @param C Output matrix C</a>
-<a name="611"><span class="lineNum">     611 </span>            :      * @note The input matrices A and B should be square matrices with</a>
-<a name="612"><span class="lineNum">     612 </span>            :      * dimensions that are powers of 2</a>
-<a name="613"><span class="lineNum">     613 </span>            :      * @overload</a>
-<a name="614"><span class="lineNum">     614 </span>            :      */</a>
-<a name="615"><span class="lineNum">     615 </span>            :     /*void std_mtx_mult_strass(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
-<a name="616"><span class="lineNum">     616 </span>            :                              const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
-<a name="617"><span class="lineNum">     617 </span>            :                              std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
-<a name="618"><span class="lineNum">     618 </span>            :     */</a>
-<a name="619"><span class="lineNum">     619 </span>            : };</a>
-<a name="620"><span class="lineNum">     620 </span>            : </a>
-<a name="621"><span class="lineNum">     621 </span>            : } // namespace linalg</a>
-<a name="622"><span class="lineNum">     622 </span>            : </a>
-<a name="623"><span class="lineNum">     623 </span>            : } // namespace gpmp</a>
-<a name="624"><span class="lineNum">     624 </span>            : </a>
-<a name="625"><span class="lineNum">     625 </span>            : #endif</a>
+<a name="315"><span class="lineNum">     315 </span>            :     void mtx_mult(const double *A,</a>
+<a name="316"><span class="lineNum">     316 </span>            :                   const double *B,</a>
+<a name="317"><span class="lineNum">     317 </span>            :                   double *C,</a>
+<a name="318"><span class="lineNum">     318 </span>            :                   int rows_a,</a>
+<a name="319"><span class="lineNum">     319 </span>            :                   int cols_a,</a>
+<a name="320"><span class="lineNum">     320 </span>            :                   int cols_b);</a>
+<a name="321"><span class="lineNum">     321 </span>            : </a>
+<a name="322"><span class="lineNum">     322 </span>            :     void mtx_tpose(const int *A, int *C, int rows, int cols);</a>
+<a name="323"><span class="lineNum">     323 </span>            : </a>
+<a name="324"><span class="lineNum">     324 </span>            :     /**</a>
+<a name="325"><span class="lineNum">     325 </span>            :      * @brief Perform matrix subtraction using Intel intrinsics, accepts</a>
+<a name="326"><span class="lineNum">     326 </span>            :      * vectors of type int</a>
+<a name="327"><span class="lineNum">     327 </span>            :      * @param A Input matrix A</a>
+<a name="328"><span class="lineNum">     328 </span>            :      * @param B Input matrix B</a>
+<a name="329"><span class="lineNum">     329 </span>            :      * @param C Output matrix C</a>
+<a name="330"><span class="lineNum">     330 </span>            :      * @note Matrices must be of at least size 8x8</a>
+<a name="331"><span class="lineNum">     331 </span>            :      * @overload</a>
+<a name="332"><span class="lineNum">     332 </span>            :      */</a>
+<a name="333"><span class="lineNum">     333 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="334"><span class="lineNum">     334 </span>            :                  const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="335"><span class="lineNum">     335 </span>            :                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="336"><span class="lineNum">     336 </span>            : </a>
+<a name="337"><span class="lineNum">     337 </span>            :     /**</a>
+<a name="338"><span class="lineNum">     338 </span>            :      * @brief Perform matrix subtraction using Intel intrinsics, accepts</a>
+<a name="339"><span class="lineNum">     339 </span>            :      * vectors of type double</a>
+<a name="340"><span class="lineNum">     340 </span>            :      * @param A Input matrix A</a>
+<a name="341"><span class="lineNum">     341 </span>            :      * @param B Input matrix B</a>
+<a name="342"><span class="lineNum">     342 </span>            :      * @param C Output matrix C</a>
+<a name="343"><span class="lineNum">     343 </span>            :      * @note Matrices must be of at least size 4x4</a>
+<a name="344"><span class="lineNum">     344 </span>            :      * @overload</a>
+<a name="345"><span class="lineNum">     345 </span>            :      */</a>
+<a name="346"><span class="lineNum">     346 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
+<a name="347"><span class="lineNum">     347 </span>            :                  const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
+<a name="348"><span class="lineNum">     348 </span>            :                  std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
+<a name="349"><span class="lineNum">     349 </span>            : </a>
+<a name="350"><span class="lineNum">     350 </span>            :     /**</a>
+<a name="351"><span class="lineNum">     351 </span>            :      * @brief Perform matrix multiplication using Intel intrinsics, accepts</a>
+<a name="352"><span class="lineNum">     352 </span>            :      * vectors of type int</a>
+<a name="353"><span class="lineNum">     353 </span>            :      * @param A input matrix A</a>
+<a name="354"><span class="lineNum">     354 </span>            :      * @param B input matrix B</a>
+<a name="355"><span class="lineNum">     355 </span>            :      * @param C output matrix C</a>
+<a name="356"><span class="lineNum">     356 </span>            :      * @note matrices must be of at least size 8x8</a>
+<a name="357"><span class="lineNum">     357 </span>            :      * @overload</a>
+<a name="358"><span class="lineNum">     358 </span>            :      */</a>
+<a name="359"><span class="lineNum">     359 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="360"><span class="lineNum">     360 </span>            :                   const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="361"><span class="lineNum">     361 </span>            :                   std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="362"><span class="lineNum">     362 </span>            : </a>
+<a name="363"><span class="lineNum">     363 </span>            :     /**</a>
+<a name="364"><span class="lineNum">     364 </span>            :      * @brief Perform matrix multiplication using Intel intrinsics, accepts</a>
+<a name="365"><span class="lineNum">     365 </span>            :      * vectors of type double</a>
+<a name="366"><span class="lineNum">     366 </span>            :      * @param A input matrix A</a>
+<a name="367"><span class="lineNum">     367 </span>            :      * @param B input matrix B</a>
+<a name="368"><span class="lineNum">     368 </span>            :      * @param C output matrix C</a>
+<a name="369"><span class="lineNum">     369 </span>            :      * @note matrices must be of at least size 4x4</a>
+<a name="370"><span class="lineNum">     370 </span>            :      * @overload</a>
+<a name="371"><span class="lineNum">     371 </span>            :      */</a>
+<a name="372"><span class="lineNum">     372 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
+<a name="373"><span class="lineNum">     373 </span>            :                   const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
+<a name="374"><span class="lineNum">     374 </span>            :                   std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
+<a name="375"><span class="lineNum">     375 </span>            :     /**</a>
+<a name="376"><span class="lineNum">     376 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
+<a name="377"><span class="lineNum">     377 </span>            :      * @param matrix Input matrix</a>
+<a name="378"><span class="lineNum">     378 </span>            :      * @note Require matrices of at least size 8x8</a>
+<a name="379"><span class="lineNum">     379 </span>            :      * @overload</a>
+<a name="380"><span class="lineNum">     380 </span>            :      */</a>
+<a name="381"><span class="lineNum">     381 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</a>
+<a name="382"><span class="lineNum">     382 </span>            : </a>
+<a name="383"><span class="lineNum">     383 </span>            :     /**</a>
+<a name="384"><span class="lineNum">     384 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
+<a name="385"><span class="lineNum">     385 </span>            :      * @param matrix Input matrix</a>
+<a name="386"><span class="lineNum">     386 </span>            :      * @note Require matrices of at least size 8x8</a>
+<a name="387"><span class="lineNum">     387 </span>            :      * @overload</a>
+<a name="388"><span class="lineNum">     388 </span>            :      */</a>
+<a name="389"><span class="lineNum">     389 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</a>
+<a name="390"><span class="lineNum">     390 </span>            : </a>
+<a name="391"><span class="lineNum">     391 </span>            : /**</a>
+<a name="392"><span class="lineNum">     392 </span>            :  * @brief If system is ARM</a>
+<a name="393"><span class="lineNum">     393 </span>            :  */</a>
+<a name="394"><span class="lineNum">     394 </span>            : #elif defined(__ARM_ARCH_ISA_A64) || defined(__ARM_NEON) ||                    \</a>
+<a name="395"><span class="lineNum">     395 </span>            :     defined(__ARM_ARCH) || defined(__aarch64__)</a>
+<a name="396"><span class="lineNum">     396 </span>            :     /**</a>
+<a name="397"><span class="lineNum">     397 </span>            :      * @brief Perform matrix addition using ARM intrinsics, accepts</a>
+<a name="398"><span class="lineNum">     398 </span>            :      * vectors of type int</a>
+<a name="399"><span class="lineNum">     399 </span>            :      * @param A Input matrix A</a>
+<a name="400"><span class="lineNum">     400 </span>            :      * @param B Input matrix B</a>
+<a name="401"><span class="lineNum">     401 </span>            :      * @param C Output matrix C</a>
+<a name="402"><span class="lineNum">     402 </span>            :      * @note Matrices must be of at least size 8x8</a>
+<a name="403"><span class="lineNum">     403 </span>            :      * @overload</a>
+<a name="404"><span class="lineNum">     404 </span>            :      */</a>
+<a name="405"><span class="lineNum">     405 </span>            :     void mtx_add(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="406"><span class="lineNum">     406 </span>            :                  const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="407"><span class="lineNum">     407 </span>            :                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="408"><span class="lineNum">     408 </span>            : </a>
+<a name="409"><span class="lineNum">     409 </span>            :     /**</a>
+<a name="410"><span class="lineNum">     410 </span>            :      * @brief Perform matrix addition using ARM intrinsics, accepts</a>
+<a name="411"><span class="lineNum">     411 </span>            :      * vectors of type double</a>
+<a name="412"><span class="lineNum">     412 </span>            :      * @param A Input matrix A</a>
+<a name="413"><span class="lineNum">     413 </span>            :      * @param B Input matrix B</a>
+<a name="414"><span class="lineNum">     414 </span>            :      * @param C Output matrix C</a>
+<a name="415"><span class="lineNum">     415 </span>            :      * @note Matrices must be of at least size 4x4</a>
+<a name="416"><span class="lineNum">     416 </span>            :      * @overload</a>
+<a name="417"><span class="lineNum">     417 </span>            :      */</a>
+<a name="418"><span class="lineNum">     418 </span>            :     void mtx_add(const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</a>
+<a name="419"><span class="lineNum">     419 </span>            :                  const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</a>
+<a name="420"><span class="lineNum">     420 </span>            :                  std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</a>
+<a name="421"><span class="lineNum">     421 </span>            : </a>
+<a name="422"><span class="lineNum">     422 </span>            :     /**</a>
+<a name="423"><span class="lineNum">     423 </span>            :      * @brief Perform matrix subtraction using ARM intrinsics, accepts</a>
+<a name="424"><span class="lineNum">     424 </span>            :      * vectors of type int</a>
+<a name="425"><span class="lineNum">     425 </span>            :      * @param A Input matrix A</a>
+<a name="426"><span class="lineNum">     426 </span>            :      * @param B Input matrix B</a>
+<a name="427"><span class="lineNum">     427 </span>            :      * @param C Output matrix C</a>
+<a name="428"><span class="lineNum">     428 </span>            :      * @note Matrices must be of at least size 8x8</a>
+<a name="429"><span class="lineNum">     429 </span>            :      * @overload</a>
+<a name="430"><span class="lineNum">     430 </span>            :      */</a>
+<a name="431"><span class="lineNum">     431 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="432"><span class="lineNum">     432 </span>            :                  const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="433"><span class="lineNum">     433 </span>            :                  std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="434"><span class="lineNum">     434 </span>            : </a>
+<a name="435"><span class="lineNum">     435 </span>            :     /**</a>
+<a name="436"><span class="lineNum">     436 </span>            :      * @brief Perform matrix subtraction using ARM intrinsics, accepts</a>
+<a name="437"><span class="lineNum">     437 </span>            :      * vectors of type int</a>
+<a name="438"><span class="lineNum">     438 </span>            :      * @param A Input matrix A</a>
+<a name="439"><span class="lineNum">     439 </span>            :      * @param B Input matrix B</a>
+<a name="440"><span class="lineNum">     440 </span>            :      * @param C Output matrix C</a>
+<a name="441"><span class="lineNum">     441 </span>            :      * @note Matrices must be of at least size 4x4</a>
+<a name="442"><span class="lineNum">     442 </span>            :      * @overload</a>
+<a name="443"><span class="lineNum">     443 </span>            :      */</a>
+<a name="444"><span class="lineNum">     444 </span>            :     void mtx_sub(const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;A,</a>
+<a name="445"><span class="lineNum">     445 </span>            :                  const std::vector&lt;std::vector&lt;float&gt;&gt; &amp;B,</a>
+<a name="446"><span class="lineNum">     446 </span>            :                  std::vector&lt;std::vector&lt;float&gt;&gt; &amp;C);</a>
+<a name="447"><span class="lineNum">     447 </span>            : </a>
+<a name="448"><span class="lineNum">     448 </span>            :     /**</a>
+<a name="449"><span class="lineNum">     449 </span>            :      * @brief Perform matrix multiplication using ARM intrinsics, accepts</a>
+<a name="450"><span class="lineNum">     450 </span>            :      * vectors of type int</a>
+<a name="451"><span class="lineNum">     451 </span>            :      * @param A input matrix A</a>
+<a name="452"><span class="lineNum">     452 </span>            :      * @param B input matrix B</a>
+<a name="453"><span class="lineNum">     453 </span>            :      * @param C output matrix C</a>
+<a name="454"><span class="lineNum">     454 </span>            :      * @note matrices must be of at least size 8x8</a>
+<a name="455"><span class="lineNum">     455 </span>            :      * @overload</a>
+<a name="456"><span class="lineNum">     456 </span>            :      */</a>
+<a name="457"><span class="lineNum">     457 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="458"><span class="lineNum">     458 </span>            :                   const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="459"><span class="lineNum">     459 </span>            :                   std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="460"><span class="lineNum">     460 </span>            : </a>
+<a name="461"><span class="lineNum">     461 </span>            :     /**</a>
+<a name="462"><span class="lineNum">     462 </span>            :      * @brief Perform matrix multiplication using ARM intrinsics, accepts</a>
+<a name="463"><span class="lineNum">     463 </span>            :      * vectors of type double</a>
+<a name="464"><span class="lineNum">     464 </span>            :      * @param A input matrix A</a>
+<a name="465"><span class="lineNum">     465 </span>            :      * @param B input matrix B</a>
+<a name="466"><span class="lineNum">     466 </span>            :      * @param C output matrix C</a>
+<a name="467"><span class="lineNum">     467 </span>            :      * @note matrices must be of at least size 4x4</a>
+<a name="468"><span class="lineNum">     468 </span>            :      * @overload</a>
+<a name="469"><span class="lineNum">     469 </span>            :      */</a>
+<a name="470"><span class="lineNum">     470 </span>            :     void mtx_mult(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
+<a name="471"><span class="lineNum">     471 </span>            :                   const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
+<a name="472"><span class="lineNum">     472 </span>            :                   std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
+<a name="473"><span class="lineNum">     473 </span>            : </a>
+<a name="474"><span class="lineNum">     474 </span>            :     /*void mtx_mult_strass(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="475"><span class="lineNum">     475 </span>            :                          const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="476"><span class="lineNum">     476 </span>            :                          std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="477"><span class="lineNum">     477 </span>            : </a>
+<a name="478"><span class="lineNum">     478 </span>            :     void mtx_mult_strass(const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;A,</a>
+<a name="479"><span class="lineNum">     479 </span>            :                          const std::vector&lt;std::vector&lt;double&gt;&gt; &amp;B,</a>
+<a name="480"><span class="lineNum">     480 </span>            :                          std::vector&lt;std::vector&lt;double&gt;&gt; &amp;C);</a>
+<a name="481"><span class="lineNum">     481 </span>            :     */</a>
+<a name="482"><span class="lineNum">     482 </span>            :     /**</a>
+<a name="483"><span class="lineNum">     483 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
+<a name="484"><span class="lineNum">     484 </span>            :      * @param matrix Input matrix</a>
+<a name="485"><span class="lineNum">     485 </span>            :      * @note Require matrices of at least size 8x8</a>
+<a name="486"><span class="lineNum">     486 </span>            :      * @overload</a>
+<a name="487"><span class="lineNum">     487 </span>            :      */</a>
+<a name="488"><span class="lineNum">     488 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix);</a>
+<a name="489"><span class="lineNum">     489 </span>            : </a>
+<a name="490"><span class="lineNum">     490 </span>            :     /**</a>
+<a name="491"><span class="lineNum">     491 </span>            :      * @brief Transpose matrices using Intel intrinsics</a>
+<a name="492"><span class="lineNum">     492 </span>            :      * @param matrix Input matrix</a>
+<a name="493"><span class="lineNum">     493 </span>            :      * @note Require matrices of at least size 4x4</a>
+<a name="494"><span class="lineNum">     494 </span>            :      * @overload</a>
+<a name="495"><span class="lineNum">     495 </span>            :      */</a>
+<a name="496"><span class="lineNum">     496 </span>            :     void mtx_tpose(std::vector&lt;std::vector&lt;double&gt;&gt; &amp;matrix);</a>
+<a name="497"><span class="lineNum">     497 </span>            : </a>
+<a name="498"><span class="lineNum">     498 </span>            : #endif</a>
+<a name="499"><span class="lineNum">     499 </span>            : </a>
+<a name="500"><span class="lineNum">     500 </span>            :     /**</a>
+<a name="501"><span class="lineNum">     501 </span>            :      * @brief Perform matrix addition on two matrices as flat arrays</a>
+<a name="502"><span class="lineNum">     502 </span>            :      * @param A Input matrix A</a>
+<a name="503"><span class="lineNum">     503 </span>            :      * @param B Input matrix B</a>
+<a name="504"><span class="lineNum">     504 </span>            :      * @param C Output matrix C</a>
+<a name="505"><span class="lineNum">     505 </span>            :      * @param rows Number of rows</a>
+<a name="506"><span class="lineNum">     506 </span>            :      * @param cols Number of columns</a>
+<a name="507"><span class="lineNum">     507 </span>            :      * @overload</a>
+<a name="508"><span class="lineNum">     508 </span>            :      */</a>
+<a name="509"><span class="lineNum">     509 </span>            :     template &lt;typename T&gt;</a>
+<a name="510"><span class="lineNum">     510 </span><span class="lineCov">         14 :     void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols) {</span></a>
+<a name="511"><span class="lineNum">     511 </span>            :         // MTX A AND B MUST BE SAME SIZE</a>
+<a name="512"><span class="lineNum">     512 </span><span class="lineCov">      10362 :         for (int i = 0; i &lt; rows; ++i) {</span></a>
+<a name="513"><span class="lineNum">     513 </span><span class="lineCov">    9769340 :             for (int j = 0; j &lt; cols; ++j) {</span></a>
+<a name="514"><span class="lineNum">     514 </span>            :                 // perform matrix addition</a>
+<a name="515"><span class="lineNum">     515 </span><span class="lineCov">    9758992 :                 C[i * cols + j] = A[i * cols + j] + B[i * cols + j];</span></a>
+<a name="516"><span class="lineNum">     516 </span>            :             }</a>
+<a name="517"><span class="lineNum">     517 </span>            :         }</a>
+<a name="518"><span class="lineNum">     518 </span><span class="lineCov">         14 :     }</span></a>
+<a name="519"><span class="lineNum">     519 </span>            :     /**</a>
+<a name="520"><span class="lineNum">     520 </span>            :      * @brief Perform matrix subtraction on two matrices as flat arrays</a>
+<a name="521"><span class="lineNum">     521 </span>            :      * @param A Input matrix A</a>
+<a name="522"><span class="lineNum">     522 </span>            :      * @param B Input matrix B</a>
+<a name="523"><span class="lineNum">     523 </span>            :      * @param C Output matrix C</a>
+<a name="524"><span class="lineNum">     524 </span>            :      * @param rows Number of rows</a>
+<a name="525"><span class="lineNum">     525 </span>            :      * @param cols Number of columns</a>
+<a name="526"><span class="lineNum">     526 </span>            :      * @overload</a>
+<a name="527"><span class="lineNum">     527 </span>            :      */</a>
+<a name="528"><span class="lineNum">     528 </span>            :     template &lt;typename T&gt;</a>
+<a name="529"><span class="lineNum">     529 </span><span class="lineCov">          5 :     void std_mtx_sub(const T *A, const T *B, T *C, int rows, int cols) {</span></a>
+<a name="530"><span class="lineNum">     530 </span>            :         // MTX A AND B MUST BE SAME SIZE</a>
+<a name="531"><span class="lineNum">     531 </span><span class="lineCov">       4501 :         for (int i = 0; i &lt; rows; ++i) {</span></a>
+<a name="532"><span class="lineNum">     532 </span><span class="lineCov">    4358800 :             for (int j = 0; j &lt; cols; ++j) {</span></a>
+<a name="533"><span class="lineNum">     533 </span>            :                 // perform matrix addition</a>
+<a name="534"><span class="lineNum">     534 </span><span class="lineCov">    4354304 :                 C[i * cols + j] = A[i * cols + j] - B[i * cols + j];</span></a>
+<a name="535"><span class="lineNum">     535 </span>            :             }</a>
+<a name="536"><span class="lineNum">     536 </span>            :         }</a>
+<a name="537"><span class="lineNum">     537 </span><span class="lineCov">          5 :     }</span></a>
+<a name="538"><span class="lineNum">     538 </span>            : </a>
+<a name="539"><span class="lineNum">     539 </span>            :     template &lt;typename T, typename U&gt;</a>
+<a name="540"><span class="lineNum">     540 </span><span class="lineCov">          8 :     void std_mtx_mult(const T *A,</span></a>
+<a name="541"><span class="lineNum">     541 </span>            :                       const T *B,</a>
+<a name="542"><span class="lineNum">     542 </span>            :                       U *C,</a>
+<a name="543"><span class="lineNum">     543 </span>            :                       int rows_a,</a>
+<a name="544"><span class="lineNum">     544 </span>            :                       int cols_a,</a>
+<a name="545"><span class="lineNum">     545 </span>            :                       int cols_b) {</a>
+<a name="546"><span class="lineNum">     546 </span><span class="lineCov">       6158 :         for (int i = 0; i &lt; rows_a; ++i) {</span></a>
+<a name="547"><span class="lineNum">     547 </span><span class="lineCov">    6297626 :             for (int j = 0; j &lt; cols_b; ++j) {</span></a>
+<a name="548"><span class="lineNum">     548 </span><span class="lineCov">    6291476 :                 U sum = 0; // Use T type for sum</span></a>
+<a name="549"><span class="lineNum">     549 </span><span class="lineCov"> 6448742496 :                 for (int k = 0; k &lt; cols_a; ++k) {</span></a>
+<a name="550"><span class="lineNum">     550 </span><span class="lineCov"> 6442451020 :                     sum += A[i * cols_a + k] * B[k * cols_b + j];</span></a>
+<a name="551"><span class="lineNum">     551 </span>            :                 }</a>
+<a name="552"><span class="lineNum">     552 </span><span class="lineCov">    6291476 :                 C[i * cols_b + j] = sum;</span></a>
+<a name="553"><span class="lineNum">     553 </span>            :             }</a>
+<a name="554"><span class="lineNum">     554 </span>            :         }</a>
+<a name="555"><span class="lineNum">     555 </span><span class="lineCov">          8 :     }</span></a>
+<a name="556"><span class="lineNum">     556 </span>            : </a>
+<a name="557"><span class="lineNum">     557 </span>            :     template &lt;typename T&gt;</a>
+<a name="558"><span class="lineNum">     558 </span><span class="lineCov">          1 :     void std_mtx_tpose(const T *A, T *At, int rows, int cols) {</span></a>
+<a name="559"><span class="lineNum">     559 </span><span class="lineCov">       1025 :         for (int i = 0; i &lt; rows; ++i) {</span></a>
+<a name="560"><span class="lineNum">     560 </span><span class="lineCov">    1049600 :             for (int j = 0; j &lt; cols; ++j) {</span></a>
+<a name="561"><span class="lineNum">     561 </span><span class="lineCov">    1048576 :                 At[j * rows + i] = A[i * cols + j];</span></a>
+<a name="562"><span class="lineNum">     562 </span>            :             }</a>
+<a name="563"><span class="lineNum">     563 </span>            :         }</a>
+<a name="564"><span class="lineNum">     564 </span><span class="lineCov">          1 :     }</span></a>
+<a name="565"><span class="lineNum">     565 </span>            :     /**</a>
+<a name="566"><span class="lineNum">     566 </span>            :      * @brief Perform matrix addition on two matrices as flat vectors</a>
+<a name="567"><span class="lineNum">     567 </span>            :      * @param A Input matrix A</a>
+<a name="568"><span class="lineNum">     568 </span>            :      * @param B Input matrix B</a>
+<a name="569"><span class="lineNum">     569 </span>            :      * @param C Output matrix C</a>
+<a name="570"><span class="lineNum">     570 </span>            :      * @overload</a>
+<a name="571"><span class="lineNum">     571 </span>            :      */</a>
+<a name="572"><span class="lineNum">     572 </span>            :     template &lt;typename T&gt;</a>
+<a name="573"><span class="lineNum">     573 </span>            :     void std_mtx_add(const std::vector&lt;T&gt; &amp;A,</a>
+<a name="574"><span class="lineNum">     574 </span>            :                      const std::vector&lt;T&gt; &amp;B,</a>
+<a name="575"><span class="lineNum">     575 </span>            :                      std::vector&lt;T&gt; &amp;C);</a>
+<a name="576"><span class="lineNum">     576 </span>            : </a>
+<a name="577"><span class="lineNum">     577 </span>            :     /**</a>
+<a name="578"><span class="lineNum">     578 </span>            :      * @brief Perform matrix addition on two matrices as 2D vectors</a>
+<a name="579"><span class="lineNum">     579 </span>            :      * @param A Input matrix A</a>
+<a name="580"><span class="lineNum">     580 </span>            :      * @param B Input matrix B</a>
+<a name="581"><span class="lineNum">     581 </span>            :      * @param C Output matrix C</a>
+<a name="582"><span class="lineNum">     582 </span>            :      * @overload</a>
+<a name="583"><span class="lineNum">     583 </span>            :      */</a>
+<a name="584"><span class="lineNum">     584 </span>            :     template &lt;typename T&gt;</a>
+<a name="585"><span class="lineNum">     585 </span>            :     void std_mtx_add(const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</a>
+<a name="586"><span class="lineNum">     586 </span>            :                      const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</a>
+<a name="587"><span class="lineNum">     587 </span>            :                      std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</a>
+<a name="588"><span class="lineNum">     588 </span>            : </a>
+<a name="589"><span class="lineNum">     589 </span>            :     /**</a>
+<a name="590"><span class="lineNum">     590 </span>            :      * @brief Perform matrix subtraction on two matrices as 2D vectors</a>
+<a name="591"><span class="lineNum">     591 </span>            :      * @param A Input matrix A</a>
+<a name="592"><span class="lineNum">     592 </span>            :      * @param B Input matrix B</a>
+<a name="593"><span class="lineNum">     593 </span>            :      * @param C Output matrix C</a>
+<a name="594"><span class="lineNum">     594 </span>            :      * @overload</a>
+<a name="595"><span class="lineNum">     595 </span>            :      */</a>
+<a name="596"><span class="lineNum">     596 </span>            :     template &lt;typename T&gt;</a>
+<a name="597"><span class="lineNum">     597 </span>            :     void std_mtx_sub(const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</a>
+<a name="598"><span class="lineNum">     598 </span>            :                      const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</a>
+<a name="599"><span class="lineNum">     599 </span>            :                      std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</a>
+<a name="600"><span class="lineNum">     600 </span>            : </a>
+<a name="601"><span class="lineNum">     601 </span>            :     /**</a>
+<a name="602"><span class="lineNum">     602 </span>            :      * @brief Perform matrix multiplication on two matrices 2D vectors</a>
+<a name="603"><span class="lineNum">     603 </span>            :      * @param A Input matrix A</a>
+<a name="604"><span class="lineNum">     604 </span>            :      * @param B Input matrix B</a>
+<a name="605"><span class="lineNum">     605 </span>            :      * @param C Output matrix C</a>
+<a name="606"><span class="lineNum">     606 </span>            :      * @overload</a>
+<a name="607"><span class="lineNum">     607 </span>            :      */</a>
+<a name="608"><span class="lineNum">     608 </span>            :     template &lt;typename T&gt;</a>
+<a name="609"><span class="lineNum">     609 </span>            :     void std_mtx_mult(const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;A,</a>
+<a name="610"><span class="lineNum">     610 </span>            :                       const std::vector&lt;std::vector&lt;T&gt;&gt; &amp;B,</a>
+<a name="611"><span class="lineNum">     611 </span>            :                       std::vector&lt;std::vector&lt;T&gt;&gt; &amp;C);</a>
+<a name="612"><span class="lineNum">     612 </span>            : </a>
+<a name="613"><span class="lineNum">     613 </span>            :     /**</a>
+<a name="614"><span class="lineNum">     614 </span>            :      * @brief Performs matrix multiplication using the Strassen algorithm</a>
+<a name="615"><span class="lineNum">     615 </span>            :      * @param A Input matrix A</a>
+<a name="616"><span class="lineNum">     616 </span>            :      * @param B Input matrix B</a>
+<a name="617"><span class="lineNum">     617 </span>            :      * @param C Output matrix C</a>
+<a name="618"><span class="lineNum">     618 </span>            :      * @note The input matrices A and B should be square matrices with</a>
+<a name="619"><span class="lineNum">     619 </span>            :      * dimensions that are powers of 2</a>
+<a name="620"><span class="lineNum">     620 </span>            :      * @overload</a>
+<a name="621"><span class="lineNum">     621 </span>            :      */</a>
+<a name="622"><span class="lineNum">     622 </span>            :     /*void std_mtx_mult_strass(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;A,</a>
+<a name="623"><span class="lineNum">     623 </span>            :                              const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;B,</a>
+<a name="624"><span class="lineNum">     624 </span>            :                              std::vector&lt;std::vector&lt;int&gt;&gt; &amp;C);</a>
+<a name="625"><span class="lineNum">     625 </span>            :     */</a>
+<a name="626"><span class="lineNum">     626 </span>            : };</a>
+<a name="627"><span class="lineNum">     627 </span>            : </a>
+<a name="628"><span class="lineNum">     628 </span>            : } // namespace linalg</a>
+<a name="629"><span class="lineNum">     629 </span>            : </a>
+<a name="630"><span class="lineNum">     630 </span>            : } // namespace gpmp</a>
+<a name="631"><span class="lineNum">     631 </span>            : </a>
+<a name="632"><span class="lineNum">     632 </span>            : #endif</a>
 </pre>
       </td>
     </tr>
