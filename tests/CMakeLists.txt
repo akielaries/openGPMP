@@ -63,6 +63,8 @@ set(CPP_TEST_FILES
     linalg/t_vector_vector_i32.cpp
     linalg/t_vector_vector_f64.cpp
 
+    linalg/t_igemm_arr.cpp
+    linalg/t_sgemm_arr.cpp
     linalg/t_dgemm_arr.cpp
 
     nt/t_cipher.cpp

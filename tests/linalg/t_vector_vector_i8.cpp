@@ -370,7 +370,6 @@ TEST(VectorVectorTestI8, DotProductRandom) {
 
     std::vector<int8_t> vec1;
     std::vector<int8_t> vec2;
-    int scalar = dist(rng);
     for (size_t i = 0; i < size; ++i) {
         vec1.push_back(dist(rng));
         vec2.push_back(dist(rng));
@@ -394,7 +393,6 @@ TEST(VectorVectorTestI8, DotProductPerformanceComparison) {
 
     std::vector<int8_t> vec1;
     std::vector<int8_t> vec2;
-    int scalar = dist(rng);
     for (size_t i = 0; i < size; ++i) {
         vec1.push_back(dist(rng));
         vec2.push_back(dist(rng));

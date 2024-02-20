@@ -30,8 +30,8 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#ifndef _DGEMM_HPP
-#define _DGEMM_HPP
+#ifndef _SGEMM_HPP
+#define _SGEMM_HPP
 
 /** BLOCK SIZES */
 #define BLOCK_SZ_M 384  /**< Rows of A and C */
@@ -44,17 +44,17 @@ namespace gpmp {
 namespace linalg {
 
 /**
- * @class DGEMM
- * @brief Class for performing matrix multiplication on double type arrays
+ * @class SGEMM
+ * @brief Class for performing matrix multiplication on float type arrays
  */
-class DGEMM {
+class SGEMM {
   public:
     /**< Buffer for storing packed micro panels of A  */
-    static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
+    static float SGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
     /**< Buffer for storing packed micro panels of B  */
-    static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
+    static float SGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
     /**< Buffer for storing intermediate results  */
-    static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
+    static float SGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_MR rows by k columns from A
@@ -67,10 +67,10 @@ class DGEMM {
      * @param buffer Pointer to the buffer to store the packed micro panels
      */
     void pack_micro_A(int k,
-                      const double *A,
+                      const float *A,
                       int incRowA,
                       int incColA,
-                      double *buffer);
+                      float *buffer);
 
     /**
      * @brief Packs panels from A with padding if needed
@@ -84,10 +84,10 @@ class DGEMM {
      */
     void pack_buffer_A(int mc,
                        int kc,
-                       const double *A,
+                       const float *A,
                        int incRowA,
                        int incColA,
-                       double *buffer);
+                       float *buffer);
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_NR columns by k rows from B
@@ -100,10 +100,10 @@ class DGEMM {
      * @param buffer Pointer to the buffer to store the packed micro panels
      */
     void pack_micro_B(int k,
-                      const double *B,
+                      const float *B,
                       int incRowB,
                       int incColB,
-                      double *buffer);
+                      float *buffer);
 
     /**
      * @brief Packs panels from B with padding if needed
@@ -117,10 +117,10 @@ class DGEMM {
      */
     void pack_buffer_B(int kc,
                        int nc,
-                       const double *B,
+                       const float *B,
                        int incRowB,
                        int incColB,
-                       double *buffer);
+                       float *buffer);
 
     /**
      * @brief Computes the micro kernel that multiplies panels from A and B
@@ -134,17 +134,17 @@ class DGEMM {
      * @param incRowC Increment between consecutive rows of C
      * @param incColC Increment between consecutive columns of C
      */
-    void dgemm_micro_kernel(int kc,
-                            double alpha,
-                            const double *A,
-                            const double *B,
-                            double beta,
-                            double *C,
+    void sgemm_micro_kernel(int kc,
+                            float alpha,
+                            const float *A,
+                            const float *B,
+                            float beta,
+                            float *C,
                             int incRowC,
                             int incColC);
 
     /**
-     * @brief Computes Y += alpha*X (double precision AX + Y)
+     * @brief Computes Y += alpha*X (float precision AX + Y)
      *
      * @param m Number of rows
      * @param n Number of columns
@@ -156,13 +156,13 @@ class DGEMM {
      * @param incRowY Increment between consecutive rows of Y
      * @param incColY Increment between consecutive columns of Y
      */
-    void dgeaxpy(int m,
+    void sgeaxpy(int m,
                  int n,
-                 double alpha,
-                 const double *X,
+                 float alpha,
+                 const float *X,
                  int incRowX,
                  int incColX,
-                 double *Y,
+                 float *Y,
                  int incRowY,
                  int incColY);
 
@@ -176,8 +176,7 @@ class DGEMM {
      * @param incRowX Increment between consecutive rows of X
      * @param incColX Increment between consecutive columns of X
      */
-    void
-    dgescal(int m, int n, double alpha, double *X, int incRowX, int incColX);
+    void sgescal(int m, int n, float alpha, float *X, int incRowX, int incColX);
 
     /**
      * @brief Macro kernel for the multiplication of blocks of A and B
@@ -191,17 +190,17 @@ class DGEMM {
      * @param incRowC Increment between consecutive rows of C
      * @param incColC Increment between consecutive columns of C
      */
-    void dgemm_macro_kernel(int mc,
+    void sgemm_macro_kernel(int mc,
                             int nc,
                             int kc,
-                            double alpha,
-                            double beta,
-                            double *C,
+                            float alpha,
+                            float beta,
+                            float *C,
                             int incRowC,
                             int incColC);
 
     /**
-     * @brief Main DGEMM entrypoint, computes C <- beta*C + alpha*A*B
+     * @brief Main SGEMM entrypoint, computes C <- beta*C + alpha*A*B
      *
      * @param m Number of rows of A and rows of C
      * @param n Number of columns of B and columns of C
@@ -218,18 +217,18 @@ class DGEMM {
      * @param incRowC Increment between consecutive rows of C
      * @param incColC Increment between consecutive columns of C
      */
-    void dgemm_nn(int m,
+    void sgemm_nn(int m,
                   int n,
                   int k,
-                  double alpha,
-                  const double *A,
+                  float alpha,
+                  const float *A,
                   int incRowA,
                   int incColA,
-                  const double *B,
+                  const float *B,
                   int incRowB,
                   int incColB,
-                  double beta,
-                  double *C,
+                  float beta,
+                  float *C,
                   int incRowC,
                   int incColC);
 };

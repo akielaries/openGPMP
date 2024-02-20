@@ -30,8 +30,8 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#ifndef _DGEMM_HPP
-#define _DGEMM_HPP
+#ifndef _IGEMM_HPP
+#define _IGEMM_HPP
 
 /** BLOCK SIZES */
 #define BLOCK_SZ_M 384  /**< Rows of A and C */
@@ -44,17 +44,17 @@ namespace gpmp {
 namespace linalg {
 
 /**
- * @class DGEMM
- * @brief Class for performing matrix multiplication on double type arrays
+ * @class IGEMM
+ * @brief Class for performing matrix multiplication on int type arrays
  */
-class DGEMM {
+class IGEMM {
   public:
     /**< Buffer for storing packed micro panels of A  */
-    static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
+    static int IGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
     /**< Buffer for storing packed micro panels of B  */
-    static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
+    static int IGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
     /**< Buffer for storing intermediate results  */
-    static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
+    static int IGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_MR rows by k columns from A
@@ -66,11 +66,8 @@ class DGEMM {
      * @param incColA Increment between consecutive columns of A
      * @param buffer Pointer to the buffer to store the packed micro panels
      */
-    void pack_micro_A(int k,
-                      const double *A,
-                      int incRowA,
-                      int incColA,
-                      double *buffer);
+    void
+    pack_micro_A(int k, const int *A, int incRowA, int incColA, int *buffer);
 
     /**
      * @brief Packs panels from A with padding if needed
@@ -84,10 +81,10 @@ class DGEMM {
      */
     void pack_buffer_A(int mc,
                        int kc,
-                       const double *A,
+                       const int *A,
                        int incRowA,
                        int incColA,
-                       double *buffer);
+                       int *buffer);
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_NR columns by k rows from B
@@ -99,11 +96,8 @@ class DGEMM {
      * @param incColB Increment between consecutive columns of B
      * @param buffer Pointer to the buffer to store the packed micro panels
      */
-    void pack_micro_B(int k,
-                      const double *B,
-                      int incRowB,
-                      int incColB,
-                      double *buffer);
+    void
+    pack_micro_B(int k, const int *B, int incRowB, int incColB, int *buffer);
 
     /**
      * @brief Packs panels from B with padding if needed
@@ -117,10 +111,10 @@ class DGEMM {
      */
     void pack_buffer_B(int kc,
                        int nc,
-                       const double *B,
+                       const int *B,
                        int incRowB,
                        int incColB,
-                       double *buffer);
+                       int *buffer);
 
     /**
      * @brief Computes the micro kernel that multiplies panels from A and B
@@ -134,17 +128,17 @@ class DGEMM {
      * @param incRowC Increment between consecutive rows of C
      * @param incColC Increment between consecutive columns of C
      */
-    void dgemm_micro_kernel(int kc,
-                            double alpha,
-                            const double *A,
-                            const double *B,
-                            double beta,
-                            double *C,
+    void igemm_micro_kernel(int kc,
+                            int alpha,
+                            const int *A,
+                            const int *B,
+                            int beta,
+                            int *C,
                             int incRowC,
                             int incColC);
 
     /**
-     * @brief Computes Y += alpha*X (double precision AX + Y)
+     * @brief Computes Y += alpha*X (int precision AX + Y)
      *
      * @param m Number of rows
      * @param n Number of columns
@@ -156,13 +150,13 @@ class DGEMM {
      * @param incRowY Increment between consecutive rows of Y
      * @param incColY Increment between consecutive columns of Y
      */
-    void dgeaxpy(int m,
+    void igeaxpy(int m,
                  int n,
-                 double alpha,
-                 const double *X,
+                 int alpha,
+                 const int *X,
                  int incRowX,
                  int incColX,
-                 double *Y,
+                 int *Y,
                  int incRowY,
                  int incColY);
 
@@ -176,8 +170,7 @@ class DGEMM {
      * @param incRowX Increment between consecutive rows of X
      * @param incColX Increment between consecutive columns of X
      */
-    void
-    dgescal(int m, int n, double alpha, double *X, int incRowX, int incColX);
+    void igescal(int m, int n, int alpha, int *X, int incRowX, int incColX);
 
     /**
      * @brief Macro kernel for the multiplication of blocks of A and B
@@ -191,17 +184,17 @@ class DGEMM {
      * @param incRowC Increment between consecutive rows of C
      * @param incColC Increment between consecutive columns of C
      */
-    void dgemm_macro_kernel(int mc,
+    void igemm_macro_kernel(int mc,
                             int nc,
                             int kc,
-                            double alpha,
-                            double beta,
-                            double *C,
+                            int alpha,
+                            int beta,
+                            int *C,
                             int incRowC,
                             int incColC);
 
     /**
-     * @brief Main DGEMM entrypoint, computes C <- beta*C + alpha*A*B
+     * @brief Main IGEMM entrypoint, computes C <- beta*C + alpha*A*B
      *
      * @param m Number of rows of A and rows of C
      * @param n Number of columns of B and columns of C
@@ -218,18 +211,18 @@ class DGEMM {
      * @param incRowC Increment between consecutive rows of C
      * @param incColC Increment between consecutive columns of C
      */
-    void dgemm_nn(int m,
+    void igemm_nn(int m,
                   int n,
                   int k,
-                  double alpha,
-                  const double *A,
+                  int alpha,
+                  const int *A,
                   int incRowA,
                   int incColA,
-                  const double *B,
+                  const int *B,
                   int incRowB,
                   int incColB,
-                  double beta,
-                  double *C,
+                  int beta,
+                  int *C,
                   int incRowC,
                   int incColC);
 };

@@ -31,9 +31,9 @@
  *
  ************************************************************************/
 
-/** Double precision GEneral Matrix-Matrix product */
+/** Single precision GEneral Matrix-Matrix product */
 
-#include "../../include/linalg/_dgemm.hpp"
+#include "../../include/linalg/_sgemm.hpp"
 #include <cmath>
 #include <limits>
 #include <stddef.h>
@@ -42,17 +42,17 @@
 #include <time.h>
 
 // MATRIX BUFFERS
-double gpmp::linalg::DGEMM::DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
-double gpmp::linalg::DGEMM::DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
-double gpmp::linalg::DGEMM::DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
+float gpmp::linalg::SGEMM::SGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
+float gpmp::linalg::SGEMM::SGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
+float gpmp::linalg::SGEMM::SGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
 
 // pack micro panels of size BLOCK_SZ_MR rows by k columns from A without
 // padding
-void gpmp::linalg::DGEMM::pack_micro_A(int k,
-                                       const double *A,
+void gpmp::linalg::SGEMM::pack_micro_A(int k,
+                                       const float *A,
                                        int incRowA,
                                        int incColA,
-                                       double *buffer) {
+                                       float *buffer) {
     int i, j;
 
     for (j = 0; j < k; ++j) {
@@ -65,12 +65,12 @@ void gpmp::linalg::DGEMM::pack_micro_A(int k,
 }
 
 // packs panels from A with padding if needed
-void gpmp::linalg::DGEMM::pack_buffer_A(int mc,
+void gpmp::linalg::SGEMM::pack_buffer_A(int mc,
                                         int kc,
-                                        const double *A,
+                                        const float *A,
                                         int incRowA,
                                         int incColA,
-                                        double *buffer) {
+                                        float *buffer) {
     int mp = mc / BLOCK_SZ_MR;
     int _mr = mc % BLOCK_SZ_MR;
 
@@ -87,7 +87,7 @@ void gpmp::linalg::DGEMM::pack_buffer_A(int mc,
                 buffer[i] = A[i * incRowA];
             }
             for (i = _mr; i < BLOCK_SZ_MR; ++i) {
-                buffer[i] = 0.0;
+                buffer[i] = 0.0f;
             }
             buffer += BLOCK_SZ_MR;
             A += incColA;
@@ -96,11 +96,11 @@ void gpmp::linalg::DGEMM::pack_buffer_A(int mc,
 }
 
 // packing complete panels from B of size BLOCK_SZ_NR by k columns
-void gpmp::linalg::DGEMM::pack_micro_B(int k,
-                                       const double *B,
+void gpmp::linalg::SGEMM::pack_micro_B(int k,
+                                       const float *B,
                                        int incRowB,
                                        int incColB,
-                                       double *buffer) {
+                                       float *buffer) {
     int i, j;
 
     for (i = 0; i < k; ++i) {
@@ -113,12 +113,12 @@ void gpmp::linalg::DGEMM::pack_micro_B(int k,
 }
 
 // packing panels from B with padding if needed
-void gpmp::linalg::DGEMM::pack_buffer_B(int kc,
+void gpmp::linalg::SGEMM::pack_buffer_B(int kc,
                                         int nc,
-                                        const double *B,
+                                        const float *B,
                                         int incRowB,
                                         int incColB,
-                                        double *buffer) {
+                                        float *buffer) {
     int np = nc / BLOCK_SZ_NR;
     int _nr = nc % BLOCK_SZ_NR;
 
@@ -135,7 +135,7 @@ void gpmp::linalg::DGEMM::pack_buffer_B(int kc,
                 buffer[j] = B[j * incColB];
             }
             for (j = _nr; j < BLOCK_SZ_NR; ++j) {
-                buffer[j] = 0.0;
+                buffer[j] = 0.0f;
             }
             buffer += BLOCK_SZ_NR;
             B += incRowB;
@@ -144,15 +144,15 @@ void gpmp::linalg::DGEMM::pack_buffer_B(int kc,
 }
 
 // micro kernel that multiplies panels from A and B
-void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
-                                             double alpha,
-                                             const double *A,
-                                             const double *B,
-                                             double beta,
-                                             double *C,
+void gpmp::linalg::SGEMM::sgemm_micro_kernel(int kc,
+                                             float alpha,
+                                             const float *A,
+                                             const float *B,
+                                             float beta,
+                                             float *C,
                                              int incRowC,
                                              int incColC) {
-    double AB[BLOCK_SZ_MR * BLOCK_SZ_NR];
+    float AB[BLOCK_SZ_MR * BLOCK_SZ_NR];
 
     int i, j, l;
 
@@ -171,13 +171,13 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
     }
 
     // Update C <- beta*C
-    if (fabs(beta - 0.0) < std::numeric_limits<double>::epsilon()) {
+    if (fabs(beta - 0.0f) < std::numeric_limits<float>::epsilon()) {
         for (j = 0; j < BLOCK_SZ_NR; ++j) {
             for (i = 0; i < BLOCK_SZ_MR; ++i) {
-                C[i * incRowC + j * incColC] = 0.0;
+                C[i * incRowC + j * incColC] = 0.0f;
             }
         }
-    } else if (fabs(beta - 1.0) > std::numeric_limits<double>::epsilon()) {
+    } else if (fabs(beta - 1.0f) > std::numeric_limits<float>::epsilon()) {
         for (j = 0; j < BLOCK_SZ_NR; ++j) {
             for (i = 0; i < BLOCK_SZ_MR; ++i) {
                 C[i * incRowC + j * incColC] *= beta;
@@ -185,10 +185,10 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
         }
     }
 
-    // Update C <- C + alpha*AB (note: the case alpha==0.0 was already treated
+    // Update C <- C + alpha*AB (note: the case alpha==0.0f was already treated
     // in
-    //                                  the above layer dgemm_nn)
-    if (fabs(alpha - 1.0) < std::numeric_limits<double>::epsilon()) {
+    //                                  the above layer sgemm_nn)
+    if (fabs(alpha - 1.0f) < std::numeric_limits<float>::epsilon()) {
         for (j = 0; j < BLOCK_SZ_NR; ++j) {
             for (i = 0; i < BLOCK_SZ_MR; ++i) {
                 C[i * incRowC + j * incColC] += AB[i + j * BLOCK_SZ_MR];
@@ -205,19 +205,19 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
     }
 }
 
-// Compute Y += alpha*X (double precision AX + Y)
-void gpmp::linalg::DGEMM::dgeaxpy(int m,
+// Compute Y += alpha*X (float precision AX + Y)
+void gpmp::linalg::SGEMM::sgeaxpy(int m,
                                   int n,
-                                  double alpha,
-                                  const double *X,
+                                  float alpha,
+                                  const float *X,
                                   int incRowX,
                                   int incColX,
-                                  double *Y,
+                                  float *Y,
                                   int incRowY,
                                   int incColY) {
     int i, j;
 
-    if (fabs(alpha - 1.0) > std::numeric_limits<double>::epsilon()) {
+    if (fabs(alpha - 1.0f) > std::numeric_limits<float>::epsilon()) {
 
         for (j = 0; j < n; ++j) {
             for (i = 0; i < m; ++i) {
@@ -237,15 +237,15 @@ void gpmp::linalg::DGEMM::dgeaxpy(int m,
 }
 
 //  Compute X *= alpha (scale elements)
-void gpmp::linalg::DGEMM::dgescal(int m,
+void gpmp::linalg::SGEMM::sgescal(int m,
                                   int n,
-                                  double alpha,
-                                  double *X,
+                                  float alpha,
+                                  float *X,
                                   int incRowX,
                                   int incColX) {
     int i, j;
 
-    if (fabs(alpha - 0.0) > std::numeric_limits<double>::epsilon()) {
+    if (fabs(alpha - 0.0f) > std::numeric_limits<float>::epsilon()) {
         for (j = 0; j < n; ++j) {
             for (i = 0; i < m; ++i) {
                 X[i * incRowX + j * incColX] *= alpha;
@@ -256,20 +256,20 @@ void gpmp::linalg::DGEMM::dgescal(int m,
     else {
         for (j = 0; j < n; ++j) {
             for (i = 0; i < m; ++i) {
-                X[i * incRowX + j * incColX] = 0.0;
+                X[i * incRowX + j * incColX] = 0.0f;
             }
         }
     }
 }
 
 // Macro Kernel for the multiplication of blocks of A and B.  We assume that
-// these blocks were previously packed to buffers DGEMM_BUFF_A and DGEMM_BUFF_B.
-void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
+// these blocks were previously packed to buffers SGEMM_BUFF_A and SGEMM_BUFF_B.
+void gpmp::linalg::SGEMM::sgemm_macro_kernel(int mc,
                                              int nc,
                                              int kc,
-                                             double alpha,
-                                             double beta,
-                                             double *C,
+                                             float alpha,
+                                             float beta,
+                                             float *C,
                                              int incRowC,
                                              int incColC) {
 
@@ -289,36 +289,36 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
             mr = (i != mp - 1 || _mr == 0) ? BLOCK_SZ_MR : _mr;
 
             if (mr == BLOCK_SZ_MR && nr == BLOCK_SZ_NR) {
-                dgemm_micro_kernel(
+                sgemm_micro_kernel(
                     kc,
                     alpha,
-                    &DGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
-                    &DGEMM_BUFF_B[j * kc * BLOCK_SZ_NR],
+                    &SGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
+                    &SGEMM_BUFF_B[j * kc * BLOCK_SZ_NR],
                     beta,
                     &C[i * BLOCK_SZ_MR * incRowC + j * BLOCK_SZ_NR * incColC],
                     incRowC,
                     incColC);
             } else {
-                dgemm_micro_kernel(kc,
+                sgemm_micro_kernel(kc,
                                    alpha,
-                                   &DGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
-                                   &DGEMM_BUFF_B[j * kc * BLOCK_SZ_NR],
-                                   0.0,
-                                   DGEMM_BUFF_C,
+                                   &SGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
+                                   &SGEMM_BUFF_B[j * kc * BLOCK_SZ_NR],
+                                   0.0f,
+                                   SGEMM_BUFF_C,
                                    1,
                                    BLOCK_SZ_MR);
-                dgescal(
+                sgescal(
                     mr,
                     nr,
                     beta,
                     &C[i * BLOCK_SZ_MR * incRowC + j * BLOCK_SZ_NR * incColC],
                     incRowC,
                     incColC);
-                dgeaxpy(
+                sgeaxpy(
                     mr,
                     nr,
-                    1.0,
-                    DGEMM_BUFF_C,
+                    1.0f,
+                    SGEMM_BUFF_C,
                     1,
                     BLOCK_SZ_MR,
                     &C[i * BLOCK_SZ_MR * incRowC + j * BLOCK_SZ_NR * incColC],
@@ -329,19 +329,19 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
     }
 }
 
-// Main DGEMM entrypoint, compute C <- beta*C + alpha*A*B
-void gpmp::linalg::DGEMM::dgemm_nn(int m,
+// Main SGEMM entrypoint, compute C <- beta*C + alpha*A*B
+void gpmp::linalg::SGEMM::sgemm_nn(int m,
                                    int n,
                                    int k,
-                                   double alpha,
-                                   const double *A,
+                                   float alpha,
+                                   const float *A,
                                    int incRowA,
                                    int incColA,
-                                   const double *B,
+                                   const float *B,
                                    int incRowB,
                                    int incColB,
-                                   double beta,
-                                   double *C,
+                                   float beta,
+                                   float *C,
                                    int incRowC,
                                    int incColC) {
     int mb = (m + BLOCK_SZ_M - 1) / BLOCK_SZ_M;
@@ -355,10 +355,10 @@ void gpmp::linalg::DGEMM::dgemm_nn(int m,
     int mc, nc, kc;
     int i, j, l;
 
-    double _beta;
+    float _beta;
 
-    if (fabs(alpha) < std::numeric_limits<double>::epsilon() || k == 0) {
-        dgescal(m, n, beta, C, incRowC, incColC);
+    if (fabs(alpha) < std::numeric_limits<float>::epsilon() || k == 0) {
+        sgescal(m, n, beta, C, incRowC, incColC);
         return;
     }
 
@@ -367,7 +367,7 @@ void gpmp::linalg::DGEMM::dgemm_nn(int m,
 
         for (l = 0; l < kb; ++l) {
             kc = (l != kb - 1 || _kc == 0) ? BLOCK_SZ_K : _kc;
-            _beta = (l == 0) ? beta : 1.0;
+            _beta = (l == 0) ? beta : 1.0f;
 
             pack_buffer_B(
                 kc,
@@ -375,7 +375,7 @@ void gpmp::linalg::DGEMM::dgemm_nn(int m,
                 &B[l * BLOCK_SZ_K * incRowB + j * BLOCK_SZ_N * incColB],
                 incRowB,
                 incColB,
-                DGEMM_BUFF_B);
+                SGEMM_BUFF_B);
 
             for (i = 0; i < mb; ++i) {
                 mc = (i != mb - 1 || _mc == 0) ? BLOCK_SZ_M : _mc;
@@ -386,9 +386,9 @@ void gpmp::linalg::DGEMM::dgemm_nn(int m,
                     &A[i * BLOCK_SZ_M * incRowA + l * BLOCK_SZ_K * incColA],
                     incRowA,
                     incColA,
-                    DGEMM_BUFF_A);
+                    SGEMM_BUFF_A);
 
-                dgemm_macro_kernel(
+                sgemm_macro_kernel(
                     mc,
                     nc,
                     kc,

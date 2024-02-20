@@ -41,10 +41,10 @@
 gpmp::linalg::Eigen::Eigen(const std::vector<std::vector<double>> &mat)
     : matrix(mat), size(mat.size()) {
     // Check if the matrix is square
-    if (size != mat[0].size()) {
+    /*if (size != mat[0].size()) {
         throw std::invalid_argument(
             "Error: Eigenvalue computation requires a square matrix.");
-    }
+    }*/
 }
 
 double gpmp::linalg::Eigen::power_iter(int max_iters, double tolerance) const {

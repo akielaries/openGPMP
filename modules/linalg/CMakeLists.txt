@@ -14,6 +14,8 @@ set(SOURCE_FILES
     tensor.cpp
     svd.cpp
     vector_naive.cpp
+    igemm_arr.cpp
+    sgemm_arr.cpp
     dgemm_arr.cpp
 )
 

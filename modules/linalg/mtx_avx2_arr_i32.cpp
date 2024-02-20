@@ -220,21 +220,22 @@ void gpmp::linalg::Mtx::mtx_tpose(const int *A, int *C, int rows, int cols) {
     for (int i = 0; i < rows; i += 8) {
         for (int j = 0; j < cols; j += 8) {
             // Load 8x8 block from A
-            __m256i a0 = _mm256_loadu_si256((__m256i *)(A + i * cols + j));
-            __m256i a1 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 1) * cols + j));
-            __m256i a2 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 2) * cols + j));
-            __m256i a3 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 3) * cols + j));
-            __m256i a4 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 4) * cols + j));
-            __m256i a5 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 5) * cols + j));
-            __m256i a6 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 6) * cols + j));
-            __m256i a7 =
-                _mm256_loadu_si256((__m256i *)(A + (i + 7) * cols + j));
+            __m256i a0 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + i * cols + j));
+            __m256i a1 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 1) * cols + j));
+            __m256i a2 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 2) * cols + j));
+            __m256i a3 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 3) * cols + j));
+            __m256i a4 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 4) * cols + j));
+            __m256i a5 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 5) * cols + j));
+            __m256i a6 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 6) * cols + j));
+            __m256i a7 = _mm256_loadu_si256(
+                (__m256i *)(const_cast<int *>(A) + (i + 7) * cols + j));
 
             // Transpose 8x8 block
             __m256i t0 = _mm256_unpacklo_epi32(a0, a1);

@@ -65,7 +65,7 @@ void gpmp::linalg::vector_add(const std::vector<double> &vec1,
     double *result_data = result.data();
 
     if (size > 4) {
-        int i = 0;
+        size_t i = 0;
         // perform vectorized addition as long as there are at least 4 elements
         // remaining
         for (; i < size - 3; i += 4) {
