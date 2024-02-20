@@ -92,97 +92,11 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:af515a9551098c2fa5be6c9a6f74a7e2f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx__routines_8f90.html#af515a9551098c2fa5be6c9a6f74a7e2f">mtx_add_routine_int_</a> (A, B, C, mtx_size)</td></tr>
 <tr class="memdesc:af515a9551098c2fa5be6c9a6f74a7e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTRAN Subroutine for Matrix Addition on flattened matrices as arrays of type int32. Contains C++ wrapper function.  <a href="mtx__routines_8f90.html#af515a9551098c2fa5be6c9a6f74a7e2f">More...</a><br /></td></tr>
 <tr class="separator:af515a9551098c2fa5be6c9a6f74a7e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eb2ed02a24329d35dd49e4e7dbaf220"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx__routines_8f90.html#a8eb2ed02a24329d35dd49e4e7dbaf220">bmtx_mult_routine_int_</a> (A, B, C, nrows1, ncols1, ncols2)</td></tr>
-<tr class="memdesc:a8eb2ed02a24329d35dd49e4e7dbaf220"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function.  <a href="mtx__routines_8f90.html#a8eb2ed02a24329d35dd49e4e7dbaf220">More...</a><br /></td></tr>
-<tr class="separator:a8eb2ed02a24329d35dd49e4e7dbaf220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad203422ec0aed5fe843e6af111c15dc4"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx__routines_8f90.html#ad203422ec0aed5fe843e6af111c15dc4">mtx_mult_routine_int_</a> (A, B, C, mtx_size)</td></tr>
-<tr class="separator:ad203422ec0aed5fe843e6af111c15dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36d5e2512b0476cee09d617bdc39ee0"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mtx__routines_8f90.html#ad36d5e2512b0476cee09d617bdc39ee0">mtx_mult_routine_int_</a> (A, B, C, rows_a, cols_a, cols_b)</td></tr>
+<tr class="memdesc:ad36d5e2512b0476cee09d617bdc39ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function.  <a href="mtx__routines_8f90.html#ad36d5e2512b0476cee09d617bdc39ee0">More...</a><br /></td></tr>
+<tr class="separator:ad36d5e2512b0476cee09d617bdc39ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
-<a id="a8eb2ed02a24329d35dd49e4e7dbaf220"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eb2ed02a24329d35dd49e4e7dbaf220">&#9670;&nbsp;</a></span>bmtx_mult_routine_int_()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">subroutine bmtx_mult_routine_int_ </td>
-          <td>(</td>
-          <td class="paramtype">real, dimension(nrows1, ncols1), intent(in)&#160;</td>
-          <td class="paramname"><em>A</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">real, dimension(ncols1, ncols2), intent(in)&#160;</td>
-          <td class="paramname"><em>B</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">real, dimension(nrows1, ncols2), intent(out)&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>nrows1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ncols1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>ncols2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>Multiplier a, an array representing a Matrix </td></tr>
-    <tr><td class="paramname">b</td><td>Multiplicand b, an array representing a Matrix </td></tr>
-    <tr><td class="paramname">c</td><td>Product c, an array representing the sum of a + b </td></tr>
-    <tr><td class="paramname">nrows_a</td><td>Number of rows </td></tr>
-    <tr><td class="paramname">ncols</td><td>Number of columns </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mtx__routines_8f90_source.html#l00076">76</a> of file <a class="el" href="mtx__routines_8f90_source.html">mtx_routines.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">USE </span>:: iso_fortran_env</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">USE </span>:: iso_c_binding</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">INTEGER</span>, <span class="keywordtype">INTENT(IN)</span> :: nrows1, ncols1, ncols2</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">    REAL</span>, <span class="keywordtype">INTENT(IN)</span> :: A(nrows1, ncols1), B(ncols1, ncols2)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">    REAL</span>, <span class="keywordtype">INTENT(OUT)</span> :: C(nrows1, ncols2)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">INTEGER</span> :: i, j, k</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">! Perform matrix multiplication</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">do</span> i = 1, nrows1</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">do</span> j = 1, ncols2</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            c(i, j) = 0</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">do</span> k = 1, ncols1</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                c(i, j) = c(i, j) + a(i, k)*b(k, j)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordflow">            end do</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordflow">        end do</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordflow">    end do</span></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a2fa45e0230014f5558aa37ba3fdcc838"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fa45e0230014f5558aa37ba3fdcc838">&#9670;&nbsp;</a></span>mtx_add_routine_float_()</h2>
 
@@ -305,8 +219,8 @@ Functions/Subroutines</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad203422ec0aed5fe843e6af111c15dc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad203422ec0aed5fe843e6af111c15dc4">&#9670;&nbsp;</a></span>mtx_mult_routine_int_()</h2>
+<a id="ad36d5e2512b0476cee09d617bdc39ee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad36d5e2512b0476cee09d617bdc39ee0">&#9670;&nbsp;</a></span>mtx_mult_routine_int_()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,26 +228,38 @@ Functions/Subroutines</h2></td></tr>
         <tr>
           <td class="memname">subroutine mtx_mult_routine_int_ </td>
           <td>(</td>
-          <td class="paramtype">integer(kind=c_int), dimension(mtx_size, mtx_size), intent(in)&#160;</td>
+          <td class="paramtype">integer(kind=c_int), dimension(rows_a, cols_a), intent(in)&#160;</td>
           <td class="paramname"><em>A</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">integer(kind=c_int), dimension(mtx_size, mtx_size), intent(in)&#160;</td>
+          <td class="paramtype">integer(kind=c_int), dimension(cols_a, cols_b), intent(in)&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">integer(kind=c_int), dimension(mtx_size, mtx_size), intent(out)&#160;</td>
+          <td class="paramtype">integer(kind=c_int), dimension(rows_a, cols_b), intent(out)&#160;</td>
           <td class="paramname"><em>C</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">integer, intent(in)&#160;</td>
-          <td class="paramname"><em>mtx_size</em>&#160;</td>
+          <td class="paramtype">integer(kind=c_int), intent(in)&#160;</td>
+          <td class="paramname"><em>rows_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(kind=c_int), intent(in)&#160;</td>
+          <td class="paramname"><em>cols_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer(kind=c_int), intent(in)&#160;</td>
+          <td class="paramname"><em>cols_b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -343,25 +269,46 @@ Functions/Subroutines</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mtx__routines_8f90_source.html#l00097">97</a> of file <a class="el" href="mtx__routines_8f90_source.html">mtx_routines.f90</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">USE </span>:: iso_fortran_env</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">USE </span>:: iso_c_binding</div>
+<p>FORTRAN Subroutine for Matrix Multiplication using Fortran intrinsics. Contains C++ wrapper function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>Multiplier A, an array representing a Matrix </td></tr>
+    <tr><td class="paramname">B</td><td>Multiplicand B, an array representing a Matrix </td></tr>
+    <tr><td class="paramname">C</td><td>Product C, an array representing the produce Matrix </td></tr>
+    <tr><td class="paramname">rows_a</td><td>Number of rows Matrix A </td></tr>
+    <tr><td class="paramname">cols_a</td><td>Number of columns Matrix A </td></tr>
+    <tr><td class="paramname">cols_b</td><td>Number of columns Matrix B </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mtx__routines_8f90_source.html#l00077">77</a> of file <a class="el" href="mtx__routines_8f90_source.html">mtx_routines.f90</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">USE </span>:: iso_fortran_env</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">USE </span>:: iso_c_binding</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">IMPLICIT NONE</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">INTEGER(KIND=C_INT)</span>, <span class="keywordtype">INTENT(IN)</span> :: rows_a, cols_a, cols_b</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">INTEGER(KIND=C_INT)</span>, <span class="keywordtype">DIMENSION(rows_a, cols_a)</span>, <span class="keywordtype">INTENT(IN)</span> :: A</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">INTEGER(KIND=C_INT)</span>, <span class="keywordtype">DIMENSION(cols_a, cols_b)</span>, <span class="keywordtype">INTENT(IN)</span> :: B</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">INTEGER(KIND=C_INT)</span>, <span class="keywordtype">DIMENSION(rows_a, cols_b)</span>, <span class="keywordtype">INTENT(OUT)</span> :: C</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">INTEGER</span> :: i, j, k</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">! Perform matrix multiplication flipping indexing to keep standard with </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">! C/C++ calls</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">DO</span> i = 1, rows_a</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">DO</span> j = 1, cols_b</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            c(j, i) = 0</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">DO</span> k = 1, cols_a</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                c(j, i) = c(j, i) + a(k, i) * b(j, k)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordflow">            END DO</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">INTEGER</span>, <span class="keywordtype">INTENT(IN)</span> :: mtx_size</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">INTEGER(KIND=C_INT)</span>, <span class="keywordtype">DIMENSION(mtx_size, mtx_size)</span>, <span class="keywordtype">INTENT(IN)</span> :: A, B</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">INTEGER(KIND=C_INT)</span>, <span class="keywordtype">DIMENSION(mtx_size, mtx_size)</span>, <span class="keywordtype">INTENT(OUT)</span> :: C</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">INTEGER</span> :: i, j, k</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">! Perform matrix multiplication</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">DO</span> i = 1, mtx_size</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">DO</span> j = 1, mtx_size</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            c(i, j) = 0</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">DO</span> k = 1, mtx_size</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                c(i, j) = c(i, j) + a(i, k) * b(k, j)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordflow">            END DO</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordflow">        END DO</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordflow">    END DO</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordflow">        END DO</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordflow">    END DO</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
