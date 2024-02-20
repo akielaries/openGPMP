@@ -47,19 +47,21 @@ set(CPP_TEST_FILES
     linalg/t_matrix_vector_i32.cpp
     linalg/t_matrix_vector_f64.cpp
 
+    linalg/t_matrix_arr_naive.cpp
+
     linalg/t_matrix_arr_i8.cpp
     linalg/t_matrix_arr_i16.cpp
     linalg/t_matrix_arr_i32.cpp
     linalg/t_matrix_arr_f64.cpp
     
-    linalg/t_vector_vector_f64.cpp
-    linalg/t_vector_vector_i8.cpp
-    linalg/t_vector_vector_i32.cpp
+    linalg/t_matrix_arr_f90.cpp
+
 
     linalg/t_vector_vector_naive.cpp
-    linalg/t_matrix_arr_naive.cpp
 
-    linalg/t_matrix_arr_f90.cpp
+    linalg/t_vector_vector_i8.cpp
+    linalg/t_vector_vector_i32.cpp
+    linalg/t_vector_vector_f64.cpp
 
     nt/t_cipher.cpp
     nt/t_rc4.cpp

@@ -35,6 +35,7 @@
 #define MTX_HPP
 
 #include <cstdint>
+#include <iostream>
 #include <vector>
 
 #if defined(__GPMP_PYTHON_API__)
@@ -95,11 +96,11 @@ class Mtx {
                       std::size_t cols_a,
                       std::size_t cols_b);
 
-  /*  void mtx_mult_f90(int *A,
-                      int *B,
-                      int *C,
-                      std::size_t mtx_size);
-*/
+    /*  void mtx_mult_f90(int *A,
+                        int *B,
+                        int *C,
+                        std::size_t mtx_size);
+  */
 #endif
 
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
@@ -528,7 +529,6 @@ class Mtx {
         }
     }
 
-    // template <typename T>
     template <typename T, typename U>
     void std_mtx_mult(const T *A,
                       const T *B,

@@ -158,4 +158,5 @@ TEST(MatrixArrayTestF64, AdditionPerformanceComparison) {
     delete[] expected;
     delete[] result;
 }
+
 } // namespace
