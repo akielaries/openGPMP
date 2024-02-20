@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">242</td>
-            <td class="headerCovTableEntry">242</td>
+            <td class="headerCovTableEntry">240</td>
+            <td class="headerCovTableEntry">240</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-20 05:38:00</td>
+            <td class="headerValue">2024-02-20 08:51:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">60</td>
@@ -440,57 +440,55 @@
 <a name="370"><span class="lineNum">     370 </span>            : </a>
 <a name="371"><span class="lineNum">     371 </span><span class="lineCov">          1 :     std::vector&lt;int8_t&gt; vec1;</span></a>
 <a name="372"><span class="lineNum">     372 </span><span class="lineCov">          1 :     std::vector&lt;int8_t&gt; vec2;</span></a>
-<a name="373"><span class="lineNum">     373 </span><span class="lineCov">          1 :     int scalar = dist(rng);</span></a>
-<a name="374"><span class="lineNum">     374 </span><span class="lineCov">       3334 :     for (size_t i = 0; i &lt; size; ++i) {</span></a>
-<a name="375"><span class="lineNum">     375 </span><span class="lineCov">       3333 :         vec1.push_back(dist(rng));</span></a>
-<a name="376"><span class="lineNum">     376 </span><span class="lineCov">       3333 :         vec2.push_back(dist(rng));</span></a>
-<a name="377"><span class="lineNum">     377 </span>            :     }</a>
-<a name="378"><span class="lineNum">     378 </span>            : </a>
-<a name="379"><span class="lineNum">     379 </span>            :     // Calculate dot product using INTRINSIC intrinsics</a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          1 :     int result = gpmp::linalg::dot_product(vec1, vec2);</span></a>
-<a name="381"><span class="lineNum">     381 </span><span class="lineCov">          1 :     int expected_result = gpmp::linalg::std_dot_product(vec1, vec2);</span></a>
-<a name="382"><span class="lineNum">     382 </span>            : </a>
-<a name="383"><span class="lineNum">     383 </span>            :     // Check the result</a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          1 :     EXPECT_EQ(result, expected_result);</span></a>
-<a name="385"><span class="lineNum">     385 </span><span class="lineCov">          1 : }</span></a>
-<a name="386"><span class="lineNum">     386 </span>            : </a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineCov">          4 : TEST(VectorVectorTestI8, DotProductPerformanceComparison) {</span></a>
-<a name="388"><span class="lineNum">     388 </span><span class="lineCov">          1 :     const size_t size = 3333 * 3333;</span></a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;Vector size      : &quot; &lt;&lt; size &lt;&lt; std::endl;</span></a>
-<a name="390"><span class="lineNum">     390 </span>            : </a>
-<a name="391"><span class="lineNum">     391 </span><span class="lineCov">          1 :     std::random_device rd;</span></a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineCov">          1 :     std::mt19937 rng(rd());</span></a>
-<a name="393"><span class="lineNum">     393 </span><span class="lineCov">          1 :     std::uniform_int_distribution&lt;int8_t&gt; dist(0, 11);</span></a>
-<a name="394"><span class="lineNum">     394 </span>            : </a>
-<a name="395"><span class="lineNum">     395 </span><span class="lineCov">          1 :     std::vector&lt;int8_t&gt; vec1;</span></a>
-<a name="396"><span class="lineNum">     396 </span><span class="lineCov">          1 :     std::vector&lt;int8_t&gt; vec2;</span></a>
-<a name="397"><span class="lineNum">     397 </span><span class="lineCov">          1 :     int scalar = dist(rng);</span></a>
-<a name="398"><span class="lineNum">     398 </span><span class="lineCov">   11108890 :     for (size_t i = 0; i &lt; size; ++i) {</span></a>
-<a name="399"><span class="lineNum">     399 </span><span class="lineCov">   11108889 :         vec1.push_back(dist(rng));</span></a>
-<a name="400"><span class="lineNum">     400 </span><span class="lineCov">   11108889 :         vec2.push_back(dist(rng));</span></a>
-<a name="401"><span class="lineNum">     401 </span>            :     }</a>
-<a name="402"><span class="lineNum">     402 </span>            : </a>
-<a name="403"><span class="lineNum">     403 </span>            :     // Measure execution time for INTRINSIC dot product calculation</a>
-<a name="404"><span class="lineNum">     404 </span><span class="lineCov">          1 :     auto start_intrin = std::chrono::high_resolution_clock::now();</span></a>
-<a name="405"><span class="lineNum">     405 </span><span class="lineCov">          1 :     int result_intrin = gpmp::linalg::dot_product(vec1, vec2);</span></a>
-<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          1 :     auto end_intrin = std::chrono::high_resolution_clock::now();</span></a>
-<a name="407"><span class="lineNum">     407 </span>            :     std::chrono::duration&lt;double&gt; elapsed_seconds_intrin =</a>
-<a name="408"><span class="lineNum">     408 </span><span class="lineCov">          1 :         end_intrin - start_intrin;</span></a>
-<a name="409"><span class="lineNum">     409 </span>            : </a>
-<a name="410"><span class="lineNum">     410 </span>            :     // Measure execution time for standard dot product calculation</a>
-<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          1 :     auto start_std = std::chrono::high_resolution_clock::now();</span></a>
-<a name="412"><span class="lineNum">     412 </span><span class="lineCov">          1 :     int result_std = gpmp::linalg::std_dot_product(vec1, vec2);</span></a>
-<a name="413"><span class="lineNum">     413 </span><span class="lineCov">          1 :     auto end_std = std::chrono::high_resolution_clock::now();</span></a>
-<a name="414"><span class="lineNum">     414 </span><span class="lineCov">          1 :     std::chrono::duration&lt;double&gt; elapsed_seconds_std = end_std - start_std;</span></a>
-<a name="415"><span class="lineNum">     415 </span>            : </a>
-<a name="416"><span class="lineNum">     416 </span>            :     // Print the results</a>
-<a name="417"><span class="lineNum">     417 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;INTRINSIC Dot Product Time      : &quot;</span></a>
-<a name="418"><span class="lineNum">     418 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_intrin.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Dot Product Time      : &quot;</span></a>
-<a name="420"><span class="lineNum">     420 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
-<a name="421"><span class="lineNum">     421 </span>            : </a>
-<a name="422"><span class="lineNum">     422 </span><span class="lineCov">          1 :     EXPECT_EQ(result_std, result_intrin);</span></a>
-<a name="423"><span class="lineNum">     423 </span><span class="lineCov">          1 : }</span></a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineCov">       3334 :     for (size_t i = 0; i &lt; size; ++i) {</span></a>
+<a name="374"><span class="lineNum">     374 </span><span class="lineCov">       3333 :         vec1.push_back(dist(rng));</span></a>
+<a name="375"><span class="lineNum">     375 </span><span class="lineCov">       3333 :         vec2.push_back(dist(rng));</span></a>
+<a name="376"><span class="lineNum">     376 </span>            :     }</a>
+<a name="377"><span class="lineNum">     377 </span>            : </a>
+<a name="378"><span class="lineNum">     378 </span>            :     // Calculate dot product using INTRINSIC intrinsics</a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineCov">          1 :     int result = gpmp::linalg::dot_product(vec1, vec2);</span></a>
+<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          1 :     int expected_result = gpmp::linalg::std_dot_product(vec1, vec2);</span></a>
+<a name="381"><span class="lineNum">     381 </span>            : </a>
+<a name="382"><span class="lineNum">     382 </span>            :     // Check the result</a>
+<a name="383"><span class="lineNum">     383 </span><span class="lineCov">          1 :     EXPECT_EQ(result, expected_result);</span></a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">          1 : }</span></a>
+<a name="385"><span class="lineNum">     385 </span>            : </a>
+<a name="386"><span class="lineNum">     386 </span><span class="lineCov">          4 : TEST(VectorVectorTestI8, DotProductPerformanceComparison) {</span></a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineCov">          1 :     const size_t size = 3333 * 3333;</span></a>
+<a name="388"><span class="lineNum">     388 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;Vector size      : &quot; &lt;&lt; size &lt;&lt; std::endl;</span></a>
+<a name="389"><span class="lineNum">     389 </span>            : </a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">          1 :     std::random_device rd;</span></a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineCov">          1 :     std::mt19937 rng(rd());</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">          1 :     std::uniform_int_distribution&lt;int8_t&gt; dist(0, 11);</span></a>
+<a name="393"><span class="lineNum">     393 </span>            : </a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineCov">          1 :     std::vector&lt;int8_t&gt; vec1;</span></a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">          1 :     std::vector&lt;int8_t&gt; vec2;</span></a>
+<a name="396"><span class="lineNum">     396 </span><span class="lineCov">   11108890 :     for (size_t i = 0; i &lt; size; ++i) {</span></a>
+<a name="397"><span class="lineNum">     397 </span><span class="lineCov">   11108889 :         vec1.push_back(dist(rng));</span></a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineCov">   11108889 :         vec2.push_back(dist(rng));</span></a>
+<a name="399"><span class="lineNum">     399 </span>            :     }</a>
+<a name="400"><span class="lineNum">     400 </span>            : </a>
+<a name="401"><span class="lineNum">     401 </span>            :     // Measure execution time for INTRINSIC dot product calculation</a>
+<a name="402"><span class="lineNum">     402 </span><span class="lineCov">          1 :     auto start_intrin = std::chrono::high_resolution_clock::now();</span></a>
+<a name="403"><span class="lineNum">     403 </span><span class="lineCov">          1 :     int result_intrin = gpmp::linalg::dot_product(vec1, vec2);</span></a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineCov">          1 :     auto end_intrin = std::chrono::high_resolution_clock::now();</span></a>
+<a name="405"><span class="lineNum">     405 </span>            :     std::chrono::duration&lt;double&gt; elapsed_seconds_intrin =</a>
+<a name="406"><span class="lineNum">     406 </span><span class="lineCov">          1 :         end_intrin - start_intrin;</span></a>
+<a name="407"><span class="lineNum">     407 </span>            : </a>
+<a name="408"><span class="lineNum">     408 </span>            :     // Measure execution time for standard dot product calculation</a>
+<a name="409"><span class="lineNum">     409 </span><span class="lineCov">          1 :     auto start_std = std::chrono::high_resolution_clock::now();</span></a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">          1 :     int result_std = gpmp::linalg::std_dot_product(vec1, vec2);</span></a>
+<a name="411"><span class="lineNum">     411 </span><span class="lineCov">          1 :     auto end_std = std::chrono::high_resolution_clock::now();</span></a>
+<a name="412"><span class="lineNum">     412 </span><span class="lineCov">          1 :     std::chrono::duration&lt;double&gt; elapsed_seconds_std = end_std - start_std;</span></a>
+<a name="413"><span class="lineNum">     413 </span>            : </a>
+<a name="414"><span class="lineNum">     414 </span>            :     // Print the results</a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;INTRINSIC Dot Product Time      : &quot;</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_intrin.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="417"><span class="lineNum">     417 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Dot Product Time      : &quot;</span></a>
+<a name="418"><span class="lineNum">     418 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="419"><span class="lineNum">     419 </span>            : </a>
+<a name="420"><span class="lineNum">     420 </span><span class="lineCov">          1 :     EXPECT_EQ(result_std, result_intrin);</span></a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">          1 : }</span></a>
 </pre>
       </td>
     </tr>

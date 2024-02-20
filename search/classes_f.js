@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['tensor_1145',['Tensor',['../classgpmp_1_1linalg_1_1Tensor.html',1,'gpmp::linalg']]],
-  ['term_1146',['Term',['../classgpmp_1_1Term.html',1,'gpmp::Term'],['../classpygpmp_1_1calculus_1_1calculus_1_1Term.html',1,'pygpmp.calculus.calculus.Term']]],
-  ['threaddispatch_1147',['ThreadDispatch',['../classgpmp_1_1core_1_1ThreadDispatch.html',1,'gpmp::core']]],
-  ['threadpool_1148',['ThreadPool',['../classgpmp_1_1core_1_1ThreadPool.html',1,'gpmp::core']]],
-  ['trainers_1149',['Trainers',['../classgpmp_1_1ml_1_1Trainers.html',1,'gpmp::ml']]],
-  ['typecast_1150',['TypeCast',['../classgpmp_1_1core_1_1TypeCast.html',1,'gpmp::core::TypeCast'],['../classpygpmp_1_1core_1_1core_1_1TypeCast.html',1,'pygpmp.core.core.TypeCast']]]
+  ['secondarymlp_1161',['SecondaryMLP',['../classgpmp_1_1ml_1_1SecondaryMLP.html',1,'gpmp::ml']]],
+  ['sgemm_1162',['SGEMM',['../classgpmp_1_1linalg_1_1SGEMM.html',1,'gpmp::linalg']]],
+  ['sparseautoencoder_1163',['SparseAutoEncoder',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html',1,'gpmp::ml']]],
+  ['squares_1164',['Squares',['../classgpmp_1_1Squares.html',1,'gpmp']]],
+  ['stats_1165',['Stats',['../classgpmp_1_1ml_1_1Stats.html',1,'gpmp::ml']]],
+  ['svc_1166',['SVC',['../classgpmp_1_1ml_1_1SVC.html',1,'gpmp::ml']]],
+  ['svd_1167',['SVD',['../classgpmp_1_1linalg_1_1SVD.html',1,'gpmp::linalg']]]
 ];

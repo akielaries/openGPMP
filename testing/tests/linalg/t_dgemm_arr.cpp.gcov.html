@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-20 05:38:00</td>
+            <td class="headerValue">2024-02-20 08:51:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -68,24 +68,24 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span>            : #include &quot;../../include/linalg/mtx.hpp&quot;</a>
-<a name="2"><span class="lineNum">       2 </span>            : #include &quot;../../include/linalg/_dgemm.hpp&quot;</a>
+<a name="1"><span class="lineNum">       1 </span>            : #include &quot;../../include/linalg/_dgemm.hpp&quot;</a>
+<a name="2"><span class="lineNum">       2 </span>            : #include &quot;../../include/linalg/mtx.hpp&quot;</a>
 <a name="3"><span class="lineNum">       3 </span>            : #include &quot;t_matrix.hpp&quot;</a>
 <a name="4"><span class="lineNum">       4 </span>            : #include &lt;chrono&gt;</a>
-<a name="5"><span class="lineNum">       5 </span>            : #include &lt;random&gt;</a>
-<a name="6"><span class="lineNum">       6 </span>            : #include &lt;cmath&gt;</a>
-<a name="7"><span class="lineNum">       7 </span>            : #include &lt;cstdint&gt;</a>
-<a name="8"><span class="lineNum">       8 </span>            : #include &lt;gtest/gtest.h&gt;</a>
-<a name="9"><span class="lineNum">       9 </span>            : #include &lt;iostream&gt;</a>
-<a name="10"><span class="lineNum">      10 </span>            : #include &lt;limits.h&gt;</a>
+<a name="5"><span class="lineNum">       5 </span>            : #include &lt;cmath&gt;</a>
+<a name="6"><span class="lineNum">       6 </span>            : #include &lt;cstdint&gt;</a>
+<a name="7"><span class="lineNum">       7 </span>            : #include &lt;gtest/gtest.h&gt;</a>
+<a name="8"><span class="lineNum">       8 </span>            : #include &lt;iostream&gt;</a>
+<a name="9"><span class="lineNum">       9 </span>            : #include &lt;limits.h&gt;</a>
+<a name="10"><span class="lineNum">      10 </span>            : #include &lt;random&gt;</a>
 <a name="11"><span class="lineNum">      11 </span>            : #include &lt;string&gt;</a>
 <a name="12"><span class="lineNum">      12 </span>            : #include &lt;vector&gt;</a>
-<a name="13"><span class="lineNum">      13 </span>            :     </a>
+<a name="13"><span class="lineNum">      13 </span>            : </a>
 <a name="14"><span class="lineNum">      14 </span>            : const double TOLERANCE = 1e-3;</a>
-<a name="15"><span class="lineNum">      15 </span>            :     </a>
+<a name="15"><span class="lineNum">      15 </span>            : </a>
 <a name="16"><span class="lineNum">      16 </span>            : using namespace gpmp;</a>
 <a name="17"><span class="lineNum">      17 </span>            : #define TEST_COUT std::cerr &lt;&lt; &quot;\033[32m[          ] [ INFO ] \033[0m&quot;</a>
-<a name="18"><span class="lineNum">      18 </span>            :     </a>
+<a name="18"><span class="lineNum">      18 </span>            : </a>
 <a name="19"><span class="lineNum">      19 </span>            : namespace {</a>
 <a name="20"><span class="lineNum">      20 </span><span class="lineCov">          4 : TEST(MatrixArrayTestF64, DGEMMPerformanceComparison) {</span></a>
 <a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     int mtx_size = 1024;</span></a>
@@ -122,35 +122,47 @@
 <a name="52"><span class="lineNum">      52 </span><span class="lineCov">          1 :     auto start_intrin = std::chrono::high_resolution_clock::now();</span></a>
 <a name="53"><span class="lineNum">      53 </span>            : </a>
 <a name="54"><span class="lineNum">      54 </span>            :     // result using the intrinsics implementation</a>
-<a name="55"><span class="lineNum">      55 </span><span class="lineCov">          1 :     dgemm.dgemm_nn(mtx_size, mtx_size, mtx_size, 1.0, A, mtx_size, 1, B, mtx_size, 1, 0.0, result, mtx_size, 1);</span></a>
-<a name="56"><span class="lineNum">      56 </span>            : </a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">          1 :     auto end_intrin = std::chrono::high_resolution_clock::now();</span></a>
-<a name="58"><span class="lineNum">      58 </span>            :     std::chrono::duration&lt;double&gt; elapsed_seconds_intrin =</a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">          1 :         end_intrin - start_intrin;</span></a>
-<a name="60"><span class="lineNum">      60 </span>            : </a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;ROUTINE   Matrix Multiplication Time      : &quot;</span></a>
-<a name="62"><span class="lineNum">      62 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_intrin.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
-<a name="63"><span class="lineNum">      63 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Matrix Multiplication Time      : &quot;</span></a>
-<a name="64"><span class="lineNum">      64 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
-<a name="65"><span class="lineNum">      65 </span>            : </a>
-<a name="66"><span class="lineNum">      66 </span>            :     // compare the results</a>
-<a name="67"><span class="lineNum">      67 </span><span class="lineCov">       1025 :     for (int i = 0; i &lt; mtx_size; i++) {</span></a>
-<a name="68"><span class="lineNum">      68 </span><span class="lineCov">    1049600 :         for (int j = 0; j &lt; mtx_size; j++) {</span></a>
-<a name="69"><span class="lineNum">      69 </span><span class="lineCov">    1048576 :             EXPECT_NEAR(expected[i * mtx_size + j],</span></a>
-<a name="70"><span class="lineNum">      70 </span>            :                         result[i * mtx_size + j],</a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">    1048576 :                         TOLERANCE);</span></a>
-<a name="72"><span class="lineNum">      72 </span>            :         }</a>
-<a name="73"><span class="lineNum">      73 </span>            :     }</a>
-<a name="74"><span class="lineNum">      74 </span>            :     // ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</a>
-<a name="75"><span class="lineNum">      75 </span>            : </a>
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          1 :     delete[] A;</span></a>
-<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          1 :     delete[] B;</span></a>
-<a name="78"><span class="lineNum">      78 </span><span class="lineCov">          1 :     delete[] expected;</span></a>
-<a name="79"><span class="lineNum">      79 </span><span class="lineCov">          1 :     delete[] result;</span></a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">          1 : }</span></a>
-<a name="81"><span class="lineNum">      81 </span>            : </a>
-<a name="82"><span class="lineNum">      82 </span>            : </a>
-<a name="83"><span class="lineNum">      83 </span>            : }</a>
+<a name="55"><span class="lineNum">      55 </span><span class="lineCov">          1 :     dgemm.dgemm_nn(mtx_size,</span></a>
+<a name="56"><span class="lineNum">      56 </span>            :                    mtx_size,</a>
+<a name="57"><span class="lineNum">      57 </span>            :                    mtx_size,</a>
+<a name="58"><span class="lineNum">      58 </span>            :                    1.0,</a>
+<a name="59"><span class="lineNum">      59 </span>            :                    A,</a>
+<a name="60"><span class="lineNum">      60 </span>            :                    mtx_size,</a>
+<a name="61"><span class="lineNum">      61 </span>            :                    1,</a>
+<a name="62"><span class="lineNum">      62 </span>            :                    B,</a>
+<a name="63"><span class="lineNum">      63 </span>            :                    mtx_size,</a>
+<a name="64"><span class="lineNum">      64 </span>            :                    1,</a>
+<a name="65"><span class="lineNum">      65 </span>            :                    0.0,</a>
+<a name="66"><span class="lineNum">      66 </span>            :                    result,</a>
+<a name="67"><span class="lineNum">      67 </span>            :                    mtx_size,</a>
+<a name="68"><span class="lineNum">      68 </span>            :                    1);</a>
+<a name="69"><span class="lineNum">      69 </span>            : </a>
+<a name="70"><span class="lineNum">      70 </span><span class="lineCov">          1 :     auto end_intrin = std::chrono::high_resolution_clock::now();</span></a>
+<a name="71"><span class="lineNum">      71 </span>            :     std::chrono::duration&lt;double&gt; elapsed_seconds_intrin =</a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">          1 :         end_intrin - start_intrin;</span></a>
+<a name="73"><span class="lineNum">      73 </span>            : </a>
+<a name="74"><span class="lineNum">      74 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;ROUTINE   Matrix Multiplication Time      : &quot;</span></a>
+<a name="75"><span class="lineNum">      75 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_intrin.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;STANDARD  Matrix Multiplication Time      : &quot;</span></a>
+<a name="77"><span class="lineNum">      77 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
+<a name="78"><span class="lineNum">      78 </span>            : </a>
+<a name="79"><span class="lineNum">      79 </span>            :     // compare the results</a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">       1025 :     for (int i = 0; i &lt; mtx_size; i++) {</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">    1049600 :         for (int j = 0; j &lt; mtx_size; j++) {</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">    1048576 :             EXPECT_NEAR(expected[i * mtx_size + j],</span></a>
+<a name="83"><span class="lineNum">      83 </span>            :                         result[i * mtx_size + j],</a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">    1048576 :                         TOLERANCE);</span></a>
+<a name="85"><span class="lineNum">      85 </span>            :         }</a>
+<a name="86"><span class="lineNum">      86 </span>            :     }</a>
+<a name="87"><span class="lineNum">      87 </span>            :     // ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</a>
+<a name="88"><span class="lineNum">      88 </span>            : </a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          1 :     delete[] A;</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineCov">          1 :     delete[] B;</span></a>
+<a name="91"><span class="lineNum">      91 </span><span class="lineCov">          1 :     delete[] expected;</span></a>
+<a name="92"><span class="lineNum">      92 </span><span class="lineCov">          1 :     delete[] result;</span></a>
+<a name="93"><span class="lineNum">      93 </span><span class="lineCov">          1 : }</span></a>
+<a name="94"><span class="lineNum">      94 </span>            : </a>
+<a name="95"><span class="lineNum">      95 </span>            : } // namespace</a>
 </pre>
       </td>
     </tr>
