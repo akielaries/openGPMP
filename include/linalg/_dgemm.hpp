@@ -50,11 +50,11 @@ namespace linalg {
 class DGEMM {
   public:
     /**< Buffer for storing packed micro panels of A  */
-    static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
+    static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K]__attribute__ ((aligned (16)));
     /**< Buffer for storing packed micro panels of B  */
-    static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N];
+    static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N]__attribute__ ((aligned (16)));
     /**< Buffer for storing intermediate results  */
-    static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR];
+    static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR]__attribute__ ((aligned (16)));
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_MR rows by k columns from A

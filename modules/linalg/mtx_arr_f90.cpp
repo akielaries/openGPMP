@@ -44,16 +44,8 @@
  *
  ************************************************************************/
 
-// if Python API compilation is NOT occuring include these methods
-#if defined(__GPMP_PYTHON_API__)
-
-#define __PYTHON_API__
-#include <boost/bind/bind.hpp>
-#include <boost/python.hpp>
-#include <boost/python/numpy.hpp>
-
 // if source C++ API is being compiled, include these Fortran refs and wrappers
-#elif defined(__GPMP_CPP_API__)
+#if defined(__GPMP_CPP_API__)
 
 extern "C" {
 // Matrix add routine (FLOAT)

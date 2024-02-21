@@ -86,15 +86,15 @@ SUBROUTINE mtx_mult_routine_int_(A, B, C, rows_a, cols_a, cols_b) bind(C)
 
     INTEGER :: i, j, k
 
-    ! Perform matrix multiplication flipping indexing to keep standard with 
+    ! Perform matrix multiplication flipping indexing to keep standard with
     ! C/C++ calls
     DO i = 1, rows_a
         DO j = 1, cols_b
 
             C(j, i) = 0
             DO k = 1, cols_a
-                
-                C(j, i) = C(j, i) + A(k, i) * B(j, k)
+
+                C(j, i) = C(j, i) + A(k, i)*B(j, k)
 
             END DO
 
