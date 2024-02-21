@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-20 08:51:26</td>
+            <td class="headerValue">2024-02-21 05:54:01</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -156,15 +156,15 @@
 <a name="86"><span class="lineNum">      86 </span>            : </a>
 <a name="87"><span class="lineNum">      87 </span>            :     INTEGER :: i, j, k</a>
 <a name="88"><span class="lineNum">      88 </span>            : </a>
-<a name="89"><span class="lineNum">      89 </span>            :     ! Perform matrix multiplication flipping indexing to keep standard with </a>
+<a name="89"><span class="lineNum">      89 </span>            :     ! Perform matrix multiplication flipping indexing to keep standard with</a>
 <a name="90"><span class="lineNum">      90 </span>            :     ! C/C++ calls</a>
 <a name="91"><span class="lineNum">      91 </span><span class="lineCov">       1030 :     DO i = 1, rows_a</span></a>
 <a name="92"><span class="lineNum">      92 </span><span class="lineCov">    1049622 :         DO j = 1, cols_b</span></a>
 <a name="93"><span class="lineNum">      93 </span>            : </a>
 <a name="94"><span class="lineNum">      94 </span><span class="lineCov">    1048592 :             C(j, i) = 0</span></a>
 <a name="95"><span class="lineNum">      95 </span><span class="lineCov"> 1074791508 :             DO k = 1, cols_a</span></a>
-<a name="96"><span class="lineNum">      96 </span>            :                 </a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineCov"> 1074790480 :                 C(j, i) = C(j, i) + A(k, i) * B(j, k)</span></a>
+<a name="96"><span class="lineNum">      96 </span>            : </a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineCov"> 1074790480 :                 C(j, i) = C(j, i) + A(k, i)*B(j, k)</span></a>
 <a name="98"><span class="lineNum">      98 </span>            : </a>
 <a name="99"><span class="lineNum">      99 </span>            :             END DO</a>
 <a name="100"><span class="lineNum">     100 </span>            : </a>
