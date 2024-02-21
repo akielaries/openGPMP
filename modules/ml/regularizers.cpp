@@ -34,6 +34,7 @@
 #include "../../include/ml/regularizers.hpp"
 #include <algorithm>
 #include <cmath>
+#include <random>
 
 double
 gpmp::ml::Regularize::l1_regularization(const std::vector<double> &weights,
@@ -159,12 +160,16 @@ std::vector<std::vector<double>> gpmp::ml::Regularize::data_augmentation(
     const std::vector<std::vector<double>> &input_data,
     int augmentation_factor) {
     std::vector<std::vector<double>> augmented_data;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
     for (const auto &instance : input_data) {
         augmented_data.push_back(instance);
         for (int i = 1; i < augmentation_factor; ++i) {
             std::vector<double> augmented_instance = instance;
-            std::random_shuffle(augmented_instance.begin(),
-                                augmented_instance.end());
+            std::shuffle(augmented_instance.begin(),
+                         augmented_instance.end(),
+                         gen);
             augmented_data.push_back(augmented_instance);
         }
     }

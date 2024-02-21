@@ -1,7 +1,6 @@
 set(the_description "Number Theory Module")
 
 message("-- Including Number Theory Module")
-message("--   [NOTE] : Relies on Arithmetic Module")
 
 set(SOURCE_FILES
     cipher.cpp

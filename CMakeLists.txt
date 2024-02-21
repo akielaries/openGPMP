@@ -33,38 +33,76 @@
 
 cmake_minimum_required(VERSION 3.20)
 set (CMAKE_CXX_STANDARD 20)
-set (CMAKE_CXX_FLAGS "-march=native -g -Wno-unused-result -Wparentheses \
-                      -Wsign-compare -DNDEBUG -Wall -Wextra \
-                      -Wfloat-equal -Wcast-qual -Wshadow \
-                      -Wunreachable-code -D __GPMP_CPP_API__"
-)
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wno-unused-result -Wparentheses -Wsign-compare")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -Wcast-qual")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -D __GPMP_CPP_API__")
 
-
-
-project(openGPMP LANGUAGES CXX C ASM Fortran)
-
-# Dynamically determine the project version based on the latest Git tag
-#find_package(Git)
-
-#if(GIT_FOUND)
-#    execute_process(
-#        COMMAND ${GIT_EXECUTABLE} describe --tags
-#        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-#        OUTPUT_VARIABLE GIT_TAG
-#        OUTPUT_STRIP_TRAILING_WHITESPACE
-#    )
-
-#    string(SUBSTRING "${GIT_TAG}" 1 -1 PROJECT_VERSION)
-
-#    message(STATUS "Determined project version: ${PROJECT_VERSION}")
-#else()
-
+project(openGPMP LANGUAGES CXX C Fortran)
 set(PROJECT_VERSION "1.0")
 
-#message(WARNING "Git not found. Using default project version: ${PROJECT_VERSION}")
-    
-#endif()
+include(CheckIncludeFileCXX)
 
+message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros")
+execute_process(
+    COMMAND ${CMAKE_CXX_COMPILER} -march=native -dM -E -
+    RESULT_VARIABLE result
+    OUTPUT_VARIABLE compiler_output
+    INPUT_FILE /dev/null  # Provide an empty input
+)
+message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros - done")
+
+# check if the command execution was successful
+if(result EQUAL 0)
+    string(FIND "${compiler_output}" "#define __ARM_NEON 1" arm_neon_index)
+    string(FIND "${compiler_output}" "#define __AVX2__ 1" avx2_index)
+    string(FIND "${compiler_output}" "#define __SSE__ 1" sse_index)
+    string(FIND "${compiler_output}" "#define __MMX__ 1" mmx_index)
+
+    message(STATUS "Detecting available SIMD ISAs")
+    
+    # order of magnitude for INTRINS:
+    # ARM NEON is only available extension on ARM procs
+    # AVX2 is the highest order support and x86 procs supporting this will 
+    # also support SSE2, SSE, MMX, and the others that came before it
+
+    if(arm_neon_index GREATER -1)
+        message(STATUS "SIMD ISA : ARM NEON supported")
+        set(SIMD_ISA "ARM_NEON")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_ARM_NEON__")
+        check_include_file_cxx("arm_neon.h" HEADER_EXISTS)
+
+    elseif(avx2_index GREATER -1)
+        message(STATUS "SIMD ISA : AVX2 is supported")
+        set(SIMD_ISA "AVX2")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_AVX2__")
+        check_include_file_cxx("immintrin.h" HEADER_EXISTS)
+
+    elseif(sse_index GREATER -1)
+        message(STATUS "SIMD ISA : SSE is supported")
+        set(SIMD_ISA "SSE")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_SSE__")
+        check_include_file_cxx("emmintrin.h" HEADER_EXISTS)
+        check_include_file_cxx("smmintrin.h" HEADER_EXISTS)
+
+    elseif(mmx_index GREATER -1)
+        message(STATUS "SIMD ISA : MMX is supported")
+        set(SIMD_ISA "MMX")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_MMX__")
+        check_include_file_cxx("mmintrin.h" HEADER_EXISTS)
+
+    else()
+        message(STATUS "No supported SIMD ISA")
+    endif()
+
+    message(STATUS "Detecting available SIMD ISAs - done")
+else()
+    message(STATUS "Command failed with error code ${result}")
+endif()
+
+# compile with native microarchitecture
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+
+# Set build type if not specified
 set(DEFAULT_BUILD_TYPE "Release")
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
@@ -73,8 +111,10 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
+    
 set(CMAKE_CXX_FLAGS_RELEASE "-O0")
-set(CMAKE_Fortran_FLAGS "-O0")  
+set(CMAKE_Fortran_FLAGS "-O0")
+
 include(GNUInstallDirs)
 
 option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
@@ -135,6 +175,7 @@ else()
       $<TARGET_OBJECTS:core>
       $<TARGET_OBJECTS:ml>
       $<TARGET_OBJECTS:nt>
+      $<TARGET_OBJECTS:optim>
       $<TARGET_OBJECTS:stats>
     )
 
@@ -165,7 +206,7 @@ else()
     export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
 
     if (BUILD_TESTS)
-        message(STATUS "Building and running tests")
+        message(STATUS "Including tests")
 
         enable_testing()
 

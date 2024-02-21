@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir build && cd build
           # run tests and populate lcov.info file
-          cmake -S ../ -DBUILD_TESTS=ON && make
+          cmake -S ../ -DBUILD_TESTS=ON -DBUILD_COV=ON && make
       
       - name: Generate HTML Analysis & Unit Test Coverage
         run: |

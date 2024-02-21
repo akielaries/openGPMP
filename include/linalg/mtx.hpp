@@ -35,6 +35,7 @@
 #define MTX_HPP
 
 #include <cstdint>
+#include <iostream>
 #include <vector>
 
 #if defined(__GPMP_PYTHON_API__)
@@ -87,6 +88,19 @@ class Mtx {
      * designated Fortran subroutine. Accepts type int
      */
     void mtx_add_f90(int *A, int *B, int *C, std::size_t matrixSize);
+
+    void mtx_mult_f90(int *A,
+                      int *B,
+                      int *C,
+                      std::size_t rows_a,
+                      std::size_t cols_a,
+                      std::size_t cols_b);
+
+    /*  void mtx_mult_f90(int *A,
+                        int *B,
+                        int *C,
+                        std::size_t mtx_size);
+  */
 #endif
 
 #if defined(__x86_64__) || defined(i386) || defined(__i386__) ||               \
@@ -186,6 +200,126 @@ class Mtx {
     void mtx_add(const std::vector<std::vector<float>> &A,
                  const std::vector<std::vector<float>> &B,
                  std::vector<std::vector<float>> &C);
+
+    /**
+     * @brief Perform matrix subtraction using Intel intrinsics, accepts
+     * flat arrays of 8 bit ints
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void
+    mtx_sub(const int8_t *A, const int8_t *B, int8_t *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix subtraction using Intel intrinsics, accepts
+     * flat arrays of 16 bit ints
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void
+    mtx_sub(const int16_t *A, const int16_t *B, int16_t *C, int rows, int cols);
+    /**
+     * @brief Perform matrix subtraction using Intel intrinsics, accepts
+     * flat arrays of type int
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_sub(const int *A, const int *B, int *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix subtraction using Intel intrinsics, accepts
+     * flat arrays of type double
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void
+    mtx_sub(const double *A, const double *B, double *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix subtraction using Intel intrinsics, accepts
+     * flat arrays of type float
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_sub(const float *A, const float *B, float *C, int rows, int cols);
+
+    /**
+     * @brief Perform matrix multiplication using Intel intrinsics, accepts
+     * flat arrays of 8 bit integers
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_mult(const int8_t *A,
+                  const int8_t *B,
+                  int8_t *C,
+                  int rows_a,
+                  int cols_a,
+                  int cols_b);
+    /**
+     * @brief Perform matrix multiplication using Intel intrinsics, accepts
+     * flat arrays of 16 bit integers
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_mult(const int16_t *A,
+                  const int16_t *B,
+                  int16_t *C,
+                  int rows_a,
+                  int cols_a,
+                  int cols_b);
+
+    /**
+     * @brief Perform matrix multiplication using Intel intrinsics, accepts
+     * flat arrays of 32 bit integers
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @note Matrices must be of at least size 8x8
+     * @overload
+     */
+    void mtx_mult(const int *A,
+                  const int *B,
+                  int *C,
+                  int rows_a,
+                  int cols_a,
+                  int cols_b);
+
+    void mtx_mult(const int *A,
+                  const int *B,
+                  int64_t *C,
+                  int rows_a,
+                  int cols_a,
+                  int cols_b);
+
+    void mtx_mult(const double *A,
+                  const double *B,
+                  double *C,
+                  int rows_a,
+                  int cols_a,
+                  int cols_b);
+
+    void mtx_tpose(const int *A, int *C, int rows, int cols);
 
     /**
      * @brief Perform matrix subtraction using Intel intrinsics, accepts
@@ -373,8 +507,61 @@ class Mtx {
      * @overload
      */
     template <typename T>
-    void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols);
+    void std_mtx_add(const T *A, const T *B, T *C, int rows, int cols) {
+        // MTX A AND B MUST BE SAME SIZE
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                // perform matrix addition
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
+        }
+    }
+    /**
+     * @brief Perform matrix subtraction on two matrices as flat arrays
+     * @param A Input matrix A
+     * @param B Input matrix B
+     * @param C Output matrix C
+     * @param rows Number of rows
+     * @param cols Number of columns
+     * @overload
+     */
+    template <typename T>
+    void std_mtx_sub(const T *A, const T *B, T *C, int rows, int cols) {
+        // MTX A AND B MUST BE SAME SIZE
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                // perform matrix addition
+                C[i * cols + j] = A[i * cols + j] - B[i * cols + j];
+            }
+        }
+    }
 
+    template <typename T, typename U>
+    void std_mtx_mult(const T *A,
+                      const T *B,
+                      U *C,
+                      int rows_a,
+                      int cols_a,
+                      int cols_b) {
+        for (int i = 0; i < rows_a; ++i) {
+            for (int j = 0; j < cols_b; ++j) {
+                U sum = 0; // Use T type for sum
+                for (int k = 0; k < cols_a; ++k) {
+                    sum += A[i * cols_a + k] * B[k * cols_b + j];
+                }
+                C[i * cols_b + j] = sum;
+            }
+        }
+    }
+
+    template <typename T>
+    void std_mtx_tpose(const T *A, T *At, int rows, int cols) {
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                At[j * rows + i] = A[i * cols + j];
+            }
+        }
+    }
     /**
      * @brief Perform matrix addition on two matrices as flat vectors
      * @param A Input matrix A

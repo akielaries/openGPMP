@@ -58,24 +58,22 @@ subroutine solveLinearSystem(A, b, x, n)
 
 end subroutine solveLinearSystem
 
-program main
-    implicit none
-    integer, parameter :: n = 3
-    real :: A(n, n), b(n), x(n)
-    integer :: i
+!program main
+!    implicit none
+!    integer, parameter :: n = 3
+!    real :: A(n, n), b(n), x(n)
+!    integer :: i
+!
+! Initialize matrix A and vector b
+!    A = reshape([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])
+!    b = [3.0, 4.0, 5.0]
 
-    ! Initialize matrix A and vector b
-    A = reshape([1.0, 2.0, -1.0, 3.0, 1.0, 1.0, 2.0, -1.0, 2.0], [n, n])
-    b = [3.0, 4.0, 5.0]
+! Solve the linear system
+!    call solveLinearSystem(A, b, x, n)
 
-    ! Solve the linear system
-    call solveLinearSystem(A, b, x, n)
-
-    ! Output the solution
-    write (*, *) "Solution:"
-    do i = 1, n
-        write (*, *) "x(", i, ") = ", x(i)
-    end do
-
-end program main
+! Output the solution
+!    write (*, *) "Solution:"
+!    do i = 1, n
+!        write (*, *) "x(", i, ") = ", x(i)
+!    end do
 

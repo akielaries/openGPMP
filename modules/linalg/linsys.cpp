@@ -309,7 +309,9 @@ bool gpmp::linalg::LinSys::is_symmetric() const {
     // check symmetry
     for (int i = 0; i < num_rows; ++i) {
         for (int j = 0; j < num_cols; ++j) {
-            if (matrix[i][j] != matrix[j][i]) {
+            // if (matrix[i][j] != matrix[j][i]) {
+            if (fabs(matrix[i][j] - matrix[j][i]) >
+                std::numeric_limits<double>::epsilon()) {
                 return false;
             }
         }
@@ -413,12 +415,14 @@ bool gpmp::linalg::LinSys::is_consistent() const {
     for (int i = 0; i < num_rows; ++i) {
         bool allZeros = true;
         for (int j = 0; j < num_cols - 1; ++j) {
-            if (matrix[i][j] != 0.0) {
+            if (fabs(matrix[i][j]) > std::numeric_limits<double>::epsilon()) {
+
                 allZeros = false;
                 break;
             }
         }
-        if (allZeros && matrix[i][num_cols - 1] != 0.0) {
+        if (allZeros && fabs(matrix[i][num_cols - 1]) >
+                            std::numeric_limits<double>::epsilon()) {
             return false;
         }
     }
@@ -428,7 +432,8 @@ bool gpmp::linalg::LinSys::is_consistent() const {
 // check if the system is homogeneous
 bool gpmp::linalg::LinSys::is_homogeneous() const {
     for (int i = 0; i < num_rows; ++i) {
-        if (matrix[i][num_cols - 1] != 0.0) {
+        if (fabs(matrix[i][num_cols - 1]) >
+            std::numeric_limits<double>::epsilon()) {
             return false;
         }
     }

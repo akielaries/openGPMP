@@ -25,17 +25,20 @@ jobs:
       - name: install GCC suite
         run: |
           brew install gcc
+          brew install lcov
+          brew reinstall gcc
 
       - name: get compilers
         run: |
           which gcc
-          which g++
+          which g++-13
           which gfortran
+          gcc --version
 
-      - name: Configure CMake
+      - name: Configure CMake (GCC)
         run: |
-          cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_Fortran_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+          cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-13 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-13 -DCMAKE_Fortran_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON -DCMAKE_VERBOSE_MAKEFILE=ON
 
-      - name: Build
+      - name: Build (GCC)
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}

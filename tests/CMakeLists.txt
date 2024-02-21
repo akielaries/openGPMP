@@ -1,61 +1,38 @@
-# Download and install GoogleTest
-
-
 include(FetchContent)
 
-#find_package(GTest REQUIRED)
+find_package(GTest QUIET)
 
-# check if installation is present
-#if(NOT GTEST_FOUND)
+message(STATUS "Detecting GoogleTest")
+if(NOT GTest_FOUND)
+    message(STATUS "GoogleTest not found")
+    message(STATUS "Fetching GoogleTest")
+    # If GoogleTest is not found, fetch and build it
+    include(FetchContent)
     FetchContent_Declare(
         googletest
-        URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        #URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        URL https://github.com/google/googletest/archive/b75ecf1bed2fcd416b66c86cb6fe79122abf132e.zip
     )
     FetchContent_MakeAvailable(googletest)
-    #endif()
+    message(STATUS "Fetching GoogleTest - done")
 
-#FetchContent_MakeAvailable(googletest)
+else()
+    message(STATUS "GoogleTest found")
+endif()
 
-# TODO this could be made dynamic some how?
-# source files that will be tested
-set(CPP_SOURCES
-    ../modules/arithmetic/arith.cpp
-    ../modules/calculus/differential.cpp
-    ../modules/core/datatable.cpp
-    ../modules/core/utils.cpp
-    ../modules/disct/graphs.cpp
-    ../modules/linalg/linsys.cpp
-    ../modules/linalg/eigen.cpp
-    ../modules/linalg/mtx.cpp
-    ../modules/linalg/tensor.cpp
-    ../modules/linalg/svd.cpp
-    ../modules/linalg/vector.cpp
-    ../modules/ml/bayes_clf.cpp
-    ../modules/ml/encoder.cpp
-    ../modules/ml/mlp_network.cpp
-    ../modules/ml/kohonen_net.cpp
-    ../modules/ml/knn.cpp
-    ../modules/ml/kfold.cpp
-    ../modules/ml/logreg.cpp
-    ../modules/ml/activators.cpp
-    ../modules/ml/regularizers.cpp
-    ../modules/ml/svc.cpp
-    ../modules/ml/bayes_net.cpp
-    ../modules/ml/trainers.cpp
-    ../modules/nt/cipher.cpp
-    ../modules/nt/rc4.cpp
-    ../modules/nt/rc5.cpp
-    ../modules/nt/rc6.cpp
-    ../modules/nt/prime_test.cpp
-    ../modules/nt/prime_gen.cpp
-    ../modules/nt/factorization.cpp
-    ../modules/nt/logarithms.cpp
-    ../modules/nt/random.cpp
-    ../modules/nt/redpike.cpp
-    ../modules/optim/function.cpp
-    ../modules/optim/quasi.cpp
-    ../modules/stats/describe.cpp
-    ../modules/stats/probdist.cpp
+message(STATUS "Detecting GoogleTest - done")
+
+# Define the libraries you want to test
+set(LIBRARIES_TO_TEST
+    arithmetic
+    calculus
+    disct
+    linalg
+    core
+    ml
+    nt
+    optim
+    stats
 )
 
 # C++ test files
@@ -64,10 +41,32 @@ set(CPP_TEST_FILES
     calc/t_calc.cpp
     core/t_threadpool.cpp
     disct/t_graphs.cpp
-    linalg/t_matrix.cpp
     linalg/t_eigen.cpp
     linalg/t_linsys.cpp
-    linalg/t_vector.cpp
+    
+    linalg/t_matrix_vector_i32.cpp
+    linalg/t_matrix_vector_f64.cpp
+
+    linalg/t_matrix_arr_naive.cpp
+
+    linalg/t_matrix_arr_i8.cpp
+    linalg/t_matrix_arr_i16.cpp
+    linalg/t_matrix_arr_i32.cpp
+    linalg/t_matrix_arr_f64.cpp
+    
+    linalg/t_matrix_arr_f90.cpp
+
+
+    linalg/t_vector_vector_naive.cpp
+
+    linalg/t_vector_vector_i8.cpp
+    linalg/t_vector_vector_i32.cpp
+    linalg/t_vector_vector_f64.cpp
+
+    linalg/t_igemm_arr.cpp
+    linalg/t_sgemm_arr.cpp
+    linalg/t_dgemm_arr.cpp
+
     nt/t_cipher.cpp
     nt/t_rc4.cpp
     nt/t_primes.cpp
@@ -86,23 +85,28 @@ set(FORTRAN_SOURCES
 )
 
 # Fortran test file
-set(FORTRAN_TEST_FILE
+set(FORTRAN_TEST_FILES
     linalg/t_mtx.f90
 )
 
 # create separate executables for C++ and Fortran tests
 add_executable(
     test_openGPMP_cpp
-    ${FORTRAN_SOURCES}
-    ${CPP_SOURCES}
     ${CPP_TEST_FILES}
 )
 
 add_executable(
     test_openGPMP_fortran
-    ${FORTRAN_SOURCES}
-    ${FORTRAN_TEST_FILE}
+    ${FORTRAN_TEST_FILES}
 )
+
+foreach(library ${LIBRARIES_TO_TEST})
+    target_link_libraries(test_openGPMP_cpp ${library})
+    target_link_libraries(test_openGPMP_fortran ${library})
+
+    target_compile_options(${library} PRIVATE --coverage -fprofile-arcs -ftest-coverage -fPIC)
+
+endforeach()
 
 target_compile_options(
     test_openGPMP_cpp
@@ -110,6 +114,15 @@ target_compile_options(
     --coverage
     -fprofile-arcs
     -ftest-coverage
+    -fPIC
+)
+
+target_compile_options(
+    test_openGPMP_fortran 
+    PRIVATE 
+    --coverage 
+    -fprofile-arcs 
+    -ftest-coverage 
     -fPIC
 )
 
@@ -128,8 +141,11 @@ target_link_libraries(
     GTest::gtest_main
     pthread
     -lgfortran
+    --coverage
+    -fprofile-arcs
+    -ftest-coverage
+    -fPIC
 )
-
 
 include(GoogleTest)
 gtest_discover_tests(test_openGPMP_cpp)
@@ -139,12 +155,28 @@ add_custom_target(RUN_CPP_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Running C++ Unit Tests]"
     COMMAND test_openGPMP_cpp
-    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
-    COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
-    COMMAND lcov --directory . --capture --output-file lcov.info# --ignore-errors mismatch
-    COMMAND lcov --remove lcov.info "*11*" "*/googletest/*" "*tests*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
-    COMMAND mv lcov.info ../../.coverage
 )
+message(STATUS "Detecting lcov")
+
+# Find lcov
+find_program(LCOV lcov)
+option(BUILD_COV "Generate coverage reports" OFF)
+
+if(LCOV)
+    if(BUILD_COV)
+    add_custom_command(TARGET RUN_CPP_TESTS POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan --bold "[Generating Coverage Reports]"
+        COMMAND lcov --directory .. --capture --output-file lcov.info --rc geninfo_unexecuted_blocks=1 #--ignore-errors mismatch,mismatch
+        COMMAND lcov --remove lcov.info "*c++*" "*11*" "*/googletest/*" "*/gtest*" "/usr/*" "/src" "/build" -o lcov.info --ignore-errors unused
+        COMMAND mv lcov.info ../../.coverage
+    )
+    endif()
+else()
+    message(STATUS "lcov not found. Coverage reports will not be generated")
+endif()
+
+message(STATUS "Detecting lcov - done")
 
 add_custom_target(RUN_FORTRAN_TESTS
     COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --green "[==========]"
