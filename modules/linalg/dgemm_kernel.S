@@ -32,38 +32,22 @@
  ************************************************************************/
 
 .globl dgemm_kernel_asm
+.type dgemm_micro_kernel, @function
 
 dgemm_kernel_asm:
     
-    /*
     // kb (32 bit) stored in %rsi
-    movq    0,      %rsi
+    movq    %0,      %rsi
     // kl (32 bit) stored in %rdi
-    movq    1,      %rdi
+    movq    %1,      %rdi
     // Address of A stored in %rax
-    movq    2,      %rax
+    movq    %2,      %rax
     // Address of B stored in %rbx
-    movq    3,      %rbx
+    movq    %3,      %rbx
     // Address of nextA stored in %r9
-    movq    9,      %r9
+    movq    %9,      %r9
     // Address of nextB stored in %r10
-    movq    10,     %r10
-
-    */
-
-    // Input parameters:
-    // kb (32 bit) stored in %rsi
-    movq    %rsi, %rsi          // Move kb into %rsi
-    // kl (32 bit) stored in %rdi
-    movq    %rdi, %rdi          // Move kl into %rdi
-    // Address of A stored in %rax
-    movq    %rax, %rax          // Move A into %rax
-    // Address of B stored in %rbx
-    movq    %rbx, %rbx          // Move B into %rbx
-    // Address of nextA stored in %r9
-    movq    %r9, %r9            // Move nextA into %r9
-    // Address of nextB stored in %r10
-    movq    %r10, %r10           // Move nextB into %r10
+    movq    %10,     %r10
 
     // adjust addresses?
     addq    $128,   %rax
@@ -510,7 +494,6 @@ dgemm_kernel_asm:
 
     //  Update C <- beta*C + alpha*AB
 
-/*
     movsd  4,                  %xmm0  // load alpha
     movsd  5,                  %xmm1  // load beta
     movq   6,                  %rcx   // Address of C stored in %rcx
@@ -519,20 +502,6 @@ dgemm_kernel_asm:
     leaq   (,%r8,8),            %r8    // incRowC *= sizeof(double)
     movq   8,                  %r9    // load incColC
     leaq   (,%r9,8),            %r9    // incRowC *= sizeof(double)
-*/
-    // Load alpha
-    movsd   %xmm0, %xmm0        // Move alpha into %xmm0
-    // Load beta
-    movsd   %xmm1, %xmm1        // Move beta into %xmm1
-    // Address of C stored in %rcx
-    movq    %rdx, %rcx          // Move C into %rcx
-
-    // Load incRowC
-    movq    %r8, %r8            // Move incRowC into %r8
-    leaq    (%r8, %r8, 8), %r8  // incRowC *= sizeof(double)
-    // Load incColC
-    movq    %r9, %r9            // Move incColC into %r9
-    leaq    (%r9, %r9, 8), %r9  // incColC *= sizeof(double)
 
     leaq    (%rcx,%r9),          %r10  // Store addr of C01 in %r10
     leaq    (%rcx,%r8,2),        %rdx  // Store addr of C20 in %rdx
@@ -611,7 +580,12 @@ dgemm_kernel_asm:
     movlpd  %xmm4,        (%r11)      // write back (C23,
     movhpd  %xmm4,        (%rdx,%r8) //             C32)
 
+    # specify the input and output operands
+    # input
+    .section .rodata
+    .align 8
+
     // return
-    ret
+    //ret
 
 
