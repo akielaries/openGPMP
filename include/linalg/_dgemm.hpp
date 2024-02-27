@@ -50,11 +50,47 @@ namespace linalg {
 class DGEMM {
   public:
     /**< Buffer for storing packed micro panels of A  */
-    static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K]__attribute__ ((aligned (16)));
+    static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K]
+        __attribute__((aligned(16)));
     /**< Buffer for storing packed micro panels of B  */
-    static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N]__attribute__ ((aligned (16)));
+    static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N]
+        __attribute__((aligned(16)));
     /**< Buffer for storing intermediate results  */
-    static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR]__attribute__ ((aligned (16)));
+    static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR]
+        __attribute__((aligned(16)));
+
+    /**
+     * @brief Performs matrix-matrix multiplication (DGEMM) using an
+     * assembly implementation It computes the product of matrices A and B,
+     * scaled by alpha and beta, and stores the result in matrix C
+     *
+     * @param A Pointer to the first matrix (A) in row-major order
+     * @param B Pointer to the second matrix (B) in row-major order
+     * @param C Pointer to the result matrix (C) in row-major order
+     * @param nextA Pointer to the next matrix A
+     * @param nextB Pointer to the next matrix B
+     * @param kl Value representing the remaining columns of matrix A
+     * @param kb Value representing the remaining rows of matrix B
+     * @param incRowC Increment for moving to the next row of matrix C
+     * @param incColC Increment for moving to the next column of matrix C
+     * @param alpha Scalar value to scale the product of matrices A and B
+     * @param beta Scalar value to scale matrix C before adding the product
+     *
+     * @note This calls an Assembly implementation depending on detected
+     * host system. x86 (SSE, AVX2) and ARM NEON supported
+     */
+    /*void dgemm_kernel_asm(const double *A,
+                          const double *B,
+                          double *C,
+                          const double *nextA,
+                          const double *nextB,
+                          long kl,
+                          long kb,
+                          long incRowC,
+                          long incColC,
+                          double alpha,
+                          double beta);
+*/
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_MR rows by k columns from A
@@ -143,6 +179,16 @@ class DGEMM {
                             int incRowC,
                             int incColC);
 
+    void dgemm_micro_kernel(long kc,
+                            double alpha,
+                            const double *A,
+                            const double *B,
+                            double beta,
+                            double *C,
+                            long incRowC,
+                            long incColC,
+                            const double *nextA,
+                            const double *nextB);
     /**
      * @brief Computes Y += alpha*X (double precision AX + Y)
      *

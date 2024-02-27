@@ -14,11 +14,14 @@
 const double TOLERANCE = 1e-3;
 
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
-
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;31m\033[1m"
 /*****************************************************************************/
 /** VECTOR<INT8> TESTS */
 
 TEST(VectorVectorTestI8, Addition) {
+    INFO_COUT << "Vector (as Vectors) INT8" << std::endl;
+
     // Create input vectors
     std::vector<int8_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int8_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};

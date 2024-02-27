@@ -15,8 +15,11 @@ set(SOURCE_FILES
     svd.cpp
     vector_naive.cpp
     igemm_arr.cpp
+
     sgemm_arr.cpp
+    
     dgemm_arr.cpp
+    dgemm_kernel_sse.S
 )
 
 # Add files depending on the detected SIMD ISA

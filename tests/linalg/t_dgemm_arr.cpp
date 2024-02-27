@@ -17,7 +17,7 @@ using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 
 namespace {
-TEST(MatrixArrayTestF64, DGEMMPerformanceComparison) {
+TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
     int mtx_size = 1024;
     TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
     // define input matrices A and B

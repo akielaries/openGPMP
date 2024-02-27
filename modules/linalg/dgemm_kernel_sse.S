@@ -94,6 +94,8 @@ dgemm_kernel_asm:
     // move addr of A (1st param=rdi register) to rax reg
     movq    %rdi,       %rax
 
+// if kl==0 writeback to AB
+// if kl==0 writeback to AB
     // move kl to rdi reg
     movq    %r9,        %rdi
 
@@ -163,6 +165,19 @@ dgemm_kernel_asm:
     // ab_23_32 = _mm_setzero_pd()
     xorpd %xmm15, %xmm15
     
+    // tmp3 = _mm_setzero_pd
+    xorpd     %xmm3,  %xmm3   
+    // tmp4 = _mm_setzero_pd
+    xorpd     %xmm4,  %xmm4 
+    // tmp5 = _mm_setzero_pd
+    xorpd     %xmm5,  %xmm5   
+    // tmp6 = _mm_setzero_pd
+    xorpd     %xmm6,  %xmm6   
+    // tmp7 = _mm_setzero_pd
+    xorpd     %xmm7,  %xmm7   
+    // if kl==0 writeback to AB
+    testq     %rdi,   %rdi    
+
     // TESTS K1
     // check if kb==0 to handle remaining kl
     testq %rsi, %rsi

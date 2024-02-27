@@ -1,9 +1,20 @@
 #include <stdio.h>
 
 // Declare the assembly function as an external function
-extern int asm_function(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, double l);
+extern int asm_function(int a,
+                        int b,
+                        int c,
+                        int d,
+                        int e,
+                        int f,
+                        int g,
+                        int h,
+                        int i,
+                        int j,
+                        int k,
+                        double l);
 
-int add (int a, int b, int c) {
+int add(int a, int b, int c) {
 
     // performs:
     //
@@ -20,9 +31,8 @@ int main() {
     int a = 5;
     int b = 7;
     int c = 10;
-    //int result = asm_function(5, 7);
+    // int result = asm_function(5, 7);
     int result = add(a, b, c);
     printf("Result: %d\n", result);
     return 0;
 }
-

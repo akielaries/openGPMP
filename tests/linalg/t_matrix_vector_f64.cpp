@@ -15,10 +15,13 @@
 
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
-
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;31m\033[1m"
 namespace {
 
 TEST(MatrixVectorTestF64, AdditionComparisonSmall) {
+    INFO_COUT << "MATRIX (as Vectors) FLOAT64" << std::endl;
+
     int mtx_size = 64;
     // define input matrices A and B
     std::vector<std::vector<double>> A(mtx_size, std::vector<double>(mtx_size));
