@@ -21,10 +21,10 @@ jobs:
 
       - name: install deps
         run: | 
-          sudo apt install lcov cmake gfortran cppcheck doxygen
+           apt-get install lcov cmake gfortran cppcheck doxygen
       - name: Configure
         run: |
-          sudo apt-get install libgtest-dev && 
+          apt-get install libgtest-dev && 
           cd /usr/src/gtest && 
           sudo cmake CMakeLists.txt && 
           sudo make && 
