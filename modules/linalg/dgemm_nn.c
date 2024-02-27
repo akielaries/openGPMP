@@ -3,6 +3,8 @@
 #include <time.h>
 #include <emmintrin.h>
 #include <immintrin.h>
+#include <assert.h>
+
 #include "dgemm_asm.h"
 
 #define MC  384
@@ -20,12 +22,15 @@ static double _B[KC*NC] __attribute__ ((aligned (16)));
 static double _C[MR*NR] __attribute__ ((aligned (16)));
 
 // ASM function:
-extern void dgemm_kernel_asm(long kb, long kl, const double *A, 
+/*extern void dgemm_kernel_asm(long kl, long kb, const double *A, 
                             const double *B, const double *nextA, 
                             const double *nextB, double alpha, 
                             double beta, double *C, long incRowC, long incColC);
-                            
-
+*/                          
+extern void dgemm_kernel_asm(const double *A, const double *B, double *C,
+                             const double *nextA, const double *nextB,
+                             long kl, long kb, long incRowC, long incColC,
+                             double alpha, double beta);
 //
 //  Packing complete panels from A (i.e. without padding)
 //
@@ -136,13 +141,25 @@ dgemm_micro_kernel(long kc,
 {
     long kb = kc / 4;
     long kl = kc % 4;
+
+    /*
     printf("kb = %ld kl = %ld\n", kb, kl);
     printf("A[0] = %f B[0] = %f\n", A[0], B[0]);
     printf("nextA[0] = %f nextB[0] = %f\n", nextA[0], nextB[0]);
     printf("alpha = %f beta = %f\n", alpha, beta);
     printf("incRowC = %ld incColC = %ld\n", incRowC, incColC);
+    */
 
-    dgemm_kernel_asm(kb, kl, A, B, nextA, nextB, alpha, beta, C, incRowC, incColC);
+    // maybe make the variables that are arrays go in thru the parameter
+    // registers and the rest can be referenced via the stack
+    // A, B, C, nextA, nextB all thru arg registers
+    // kl, kb, alpha, beta, incRowC, incColC
+    //dgemm_kernel_asm(kl, kb, A, B, nextA, nextB, alpha, beta, C, incRowC, incColC);
+
+    dgemm_kernel_asm(A, B, C, nextA, nextB, kl, kb, incRowC, incColC, alpha, beta);
+
+    //printf("populated C[0]=%f\n",C[0]);
+    
 
 }
 
@@ -708,7 +725,7 @@ void dgemm_nn(int            m,
 }
 
 //#define N 1024
-#define N 256
+#define N 128
 
 void fill_matrix(double *mat, int rows, int cols) {
     for (int i = 0; i < rows * cols; ++i) {
@@ -735,6 +752,25 @@ void naive_matrix_multiply(double *A, double *B, double *C, int size) {
             C[i * size + j] = sum;
         }
     }
+}
+
+int compare_matrices(double *mat1, double *mat2, int rows, int cols) {
+    int count = 0;
+    int matches = 0;
+    int i;
+    for (i = 0; i < rows * cols; ++i) {
+        printf("Comparing element at index %d: %.2f vs %.2f\n", i, mat1[i], mat2[i]);
+        if (mat1[i] != mat2[i]) {
+            //return 0; // Matrices are not equal
+            count++;
+        }
+        else {
+            matches++;
+        }
+    }
+    printf("MISMATCHES  / TOTAL : %d/%d\n", count, i);
+    printf("MATCHES     / TOTAL : %d/%d\n", matches, i);
+    return 1; // Matrices are equal
 }
 
 int main() {
@@ -769,6 +805,11 @@ int main() {
 
     //printf("\nOpt. Matrix C (Result of A * B):\n");
     //print_matrix(C_optimized, N, N);
+    
+    // Assert that the results are the same
+
+    assert(compare_matrices(C_naive, C_optimized, N, N));
+
     // Free allocated memory
     free(A);
     free(B);

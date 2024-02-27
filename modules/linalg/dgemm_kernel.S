@@ -31,23 +31,107 @@
  *
  ************************************************************************/
 
+.data
+ALPHA_VAR: .double 0.0
+BETA_VAR:  .double 0.0
+C_VAR:     .quad 0
+
+
+.text
 .globl dgemm_kernel_asm
-.type dgemm_micro_kernel, @function
+.type dgemm_kernel_asm, @function
 
 dgemm_kernel_asm:
     
+    /*
     // kb (32 bit) stored in %rsi
-    movq    %0,      %rsi
+    movq    0,      %rsi
     // kl (32 bit) stored in %rdi
-    movq    %1,      %rdi
+    movq    1,      %rdi
     // Address of A stored in %rax
-    movq    %2,      %rax
+    movq    2,      %rax
     // Address of B stored in %rbx
-    movq    %3,      %rbx
+    movq    3,      %rbx
     // Address of nextA stored in %r9
-    movq    %9,      %r9
+    movq    9,      %r9
     // Address of nextB stored in %r10
-    movq    %10,     %r10
+    movq    10,     %r10
+    */
+
+    /***************************************************************************
+    * INPUT PARAMETERS:
+    *
+    * - kl      :   %rdi
+    * - kb      :   %rsi
+    * - A       :   %rdx
+    * - B       :   %rcx
+    * - nextA   :   %r8
+    * - nextB   :   %r9
+    * <--STACK-->
+    * - alpha   :   %rsp + 88
+    * - beta    :   %rsp + 64
+    * - C       :   %rsp + 56
+    * - incRowC :   %rsp + 48
+    * - incColC :   %rsp + 40
+    *
+    * - A       :   %rdi
+    * - B       :   %rsi
+    * - C       :   %rdx
+    * - nextA   :   %rcx
+    * - nextB   :   %r8
+    * - kl      :   %r9
+    * <--STACK-->
+    * - kb      :   %rsp + 8
+    * - alpha   :   %rsp + 88
+    * - beta    :   %rsp + 64
+    * - incRowC :   %rsp + 48
+    * - incColC :   %rsp + 40
+    ***************************************************************************/
+
+    // Address of A stored in %rax (result register)
+    // move addr of A (3rd param=rdx register) to rax reg
+    //movq    %rdx,       %rax
+    // move addr of A (1st param=rdi register) to rax reg
+    movq    %rdi,       %rax
+
+    // move kl to rdi reg
+    movq    %r9,        %rdi
+
+    // Address of B stored in %rax
+    // move addr of B (4th param=rcx register) to rbx reg
+    //movq    %rcx,       %rbx
+    // move addr of B (2nd param=rsi register) to rbx reg
+    movq    %rsi,       %rbx
+
+    // move kb to rsi reg
+    movq 8(%rsp),      %rsi
+
+    // Address of nextB stored in %r10 ()
+    //movq    %r9,        %r10
+    // move addr of nextA (4th param=rcx) to r9 reg
+    movq    %rcx,       %r9
+
+    // Address of nextA stored in %r9 (6th arg register)
+    //movq    %r8,        %r9 
+    // move addr of nextB (5th param=r8) to r10 reg
+    movq    %r8,        %r10
+
+
+    /***************************************************************************
+    * AFTER INITIALIZING PARAMS @ BEGINNING:
+    * - A       :   %rax
+    * - B       :   %rbx
+    * - C       :   %rdx
+    * - nextA   :   %r9
+    * - nextB   :   %r10
+    * - kl      :   %rdi
+    * <--STACK-->
+    * - kb      :   %rsi
+    * - alpha   :   %rsp + 88
+    * - beta    :   %rsp + 64
+    * - incRowC :   %rsp + 48
+    * - incColC :   %rsp + 40
+    ***************************************************************************/
 
     // adjust addresses?
     addq    $128,   %rax
@@ -494,14 +578,31 @@ dgemm_kernel_asm:
 
     //  Update C <- beta*C + alpha*AB
 
-    movsd  4,                  %xmm0  // load alpha
-    movsd  5,                  %xmm1  // load beta
-    movq   6,                  %rcx   // Address of C stored in %rcx
+    //movsd  4,                     %xmm0  // load alpha
+    //movsd  88(%rsp),                %xmm0  // load alpha
+    movsd   88(%rsp),               %xmm0
+    
+    //movsd  5,                     %xmm1  // load beta
+    //movsd  64(%rsp),                %xmm1  // load beta
+    movsd   102(%rsp),               %xmm1
 
-    movq   7,                  %r8    // load incRowC
-    leaq   (,%r8,8),            %r8    // incRowC *= sizeof(double)
-    movq   8,                  %r9    // load incColC
-    leaq   (,%r9,8),            %r9    // incRowC *= sizeof(double)
+    //movq   6,                     %rcx   // Address of C stored in %rcx
+    //movq    56(%rsp),                %rcx   // Address of C stored in %rcx
+
+    // move 3rd param (C) into rcx register
+    movq    %rdx,                   %rcx
+
+    //movq   7,                     %r8    // load incRowC
+    movq   16(%rsp),                %r8    // load incRowC
+    // movq x(%rsp),                %r8
+
+    leaq   (,%r8,8),                %r8    // incRowC *= sizeof(double)
+
+    //movq   8,                     %r9    // load incColC
+    movq   24(%rsp),                %r9    // load incColC
+    // movq x(%rsp),                %r9
+
+    leaq   (,%r9,8),                %r9    // incRowC *= sizeof(double)
 
     leaq    (%rcx,%r9),          %r10  // Store addr of C01 in %r10
     leaq    (%rcx,%r8,2),        %rdx  // Store addr of C20 in %rdx
@@ -582,10 +683,10 @@ dgemm_kernel_asm:
 
     # specify the input and output operands
     # input
-    .section .rodata
-    .align 8
+    #.section .rodata
+    #.align 8
 
     // return
-    //ret
+    ret
 
 
