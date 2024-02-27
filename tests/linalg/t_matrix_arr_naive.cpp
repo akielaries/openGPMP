@@ -13,7 +13,7 @@
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
 #define INFO_COUT                                                              \
-    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;31m\033[1m"
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;34m\033[1m"
 namespace {
 TEST(MatrixArrayTest, BasicTest) {
     INFO_COUT << "MATRIX (as Arrays) NAIVE" << std::endl;

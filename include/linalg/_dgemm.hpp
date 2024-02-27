@@ -60,39 +60,6 @@ class DGEMM {
         __attribute__((aligned(16)));
 
     /**
-     * @brief Performs matrix-matrix multiplication (DGEMM) using an
-     * assembly implementation It computes the product of matrices A and B,
-     * scaled by alpha and beta, and stores the result in matrix C
-     *
-     * @param A Pointer to the first matrix (A) in row-major order
-     * @param B Pointer to the second matrix (B) in row-major order
-     * @param C Pointer to the result matrix (C) in row-major order
-     * @param nextA Pointer to the next matrix A
-     * @param nextB Pointer to the next matrix B
-     * @param kl Value representing the remaining columns of matrix A
-     * @param kb Value representing the remaining rows of matrix B
-     * @param incRowC Increment for moving to the next row of matrix C
-     * @param incColC Increment for moving to the next column of matrix C
-     * @param alpha Scalar value to scale the product of matrices A and B
-     * @param beta Scalar value to scale matrix C before adding the product
-     *
-     * @note This calls an Assembly implementation depending on detected
-     * host system. x86 (SSE, AVX2) and ARM NEON supported
-     */
-    /*void dgemm_kernel_asm(const double *A,
-                          const double *B,
-                          double *C,
-                          const double *nextA,
-                          const double *nextB,
-                          long kl,
-                          long kb,
-                          long incRowC,
-                          long incColC,
-                          double alpha,
-                          double beta);
-*/
-
-    /**
      * @brief Packs micro panels of size BLOCK_SZ_MR rows by k columns from A
      * without padding
      *
