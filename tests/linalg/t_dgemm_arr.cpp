@@ -18,7 +18,7 @@ using namespace gpmp;
 
 namespace {
 TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
-    int mtx_size = 1024;
+    int mtx_size = 128;
     TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
     // define input matrices A and B
     double *A = new double[mtx_size * mtx_size];

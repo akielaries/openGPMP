@@ -59,21 +59,20 @@ dgemm_kernel_asm:
     */
 
     /***************************************************************************
+    * CPP FUNC: 
+    * dgemm_kernel_asm(const double *A,
+    *                  const double *B,
+    *                  double *C,
+    *                  const double *nextA,
+    *                  const double *nextB,
+    *                  long kl,
+    *                  long kb,
+    *                  long incRowC,
+    *                  long incColC,
+    *                  double alpha,
+    *                  double beta);
     * INPUT PARAMETERS:
-    *
-    * - kl      :   %rdi
-    * - kb      :   %rsi
-    * - A       :   %rdx
-    * - B       :   %rcx
-    * - nextA   :   %r8
-    * - nextB   :   %r9
-    * <--STACK-->
-    * - alpha   :   %rsp + 88
-    * - beta    :   %rsp + 64
-    * - C       :   %rsp + 56
-    * - incRowC :   %rsp + 48
-    * - incColC :   %rsp + 40
-    *
+    * <--ARGUMENT REGISTERS-->
     * - A       :   %rdi
     * - B       :   %rsi
     * - C       :   %rdx
@@ -82,10 +81,10 @@ dgemm_kernel_asm:
     * - kl      :   %r9
     * <--STACK-->
     * - kb      :   %rsp + 8
-    * - alpha   :   %rsp + 88
-    * - beta    :   %rsp + 64
-    * - incRowC :   %rsp + 48
-    * - incColC :   %rsp + 40
+    * - alpha   :   %rsp + 80
+    * - beta    :   %rsp + 102
+    * - incRowC :   %rsp + 16
+    * - incColC :   %rsp + 24
     ***************************************************************************/
 
     // Address of A stored in %rax (result register)
@@ -595,7 +594,9 @@ dgemm_kernel_asm:
 
     //movsd  4,                     %xmm0  // load alpha
     //movsd  88(%rsp),                %xmm0  // load alpha
-    movsd   88(%rsp),               %xmm0
+    // THIS WORKS IN NON-OOP ENV
+    //movsd   88(%rsp),               %xmm0
+    movsd   80(%rsp),               %xmm0
     
     //movsd  5,                     %xmm1  // load beta
     //movsd  64(%rsp),                %xmm1  // load beta

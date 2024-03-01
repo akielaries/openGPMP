@@ -188,6 +188,39 @@ void gpmp::linalg::DGEMM::pack_buffer_B(int kc,
     }
 }
 
+
+// use assembly SSE kernel
+#if defined (__SSE__)
+
+void gpmp::linalg::DGEMM::dgemm_micro_kernel(long kc,
+                               double alpha,
+                               const double *A,
+                               const double *B,
+                               double beta,
+                               double *C,
+                               long incRowC,
+                               long incColC,
+                               const double *nextA,
+                               const double *nextB) {
+    long kb = kc / 4;
+    long kl = kc % 4;
+
+    dgemm_kernel_asm(A,
+                     B,
+                     C,
+                     nextA,
+                     nextB,
+                     kl,
+                     kb,
+                     incRowC,
+                     incColC,
+                     alpha,
+                     beta);
+}
+
+// use naive implementation w/o assembly kernel using intrinsics
+#else
+
 // micro kernel that multiplies panels from A and B
 void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
                                              double alpha,
@@ -249,6 +282,8 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
         }
     }
 }
+
+#endif
 
 // Compute Y += alpha*X (double precision AX + Y)
 void gpmp::linalg::DGEMM::dgeaxpy(int m,
@@ -327,6 +362,13 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
     int mr, nr;
     int i, j;
 
+#if defined (__SSE__)
+
+    const double *nextA;
+    const double *nextB;
+
+#endif
+
     for (j = 0; j < np; ++j) {
         nr = (j != np - 1 || _nr == 0) ? BLOCK_SZ_NR : _nr;
 
@@ -334,6 +376,20 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
             mr = (i != mp - 1 || _mr == 0) ? BLOCK_SZ_MR : _mr;
 
             if (mr == BLOCK_SZ_MR && nr == BLOCK_SZ_NR) {
+#if defined (__SSE__)
+                dgemm_micro_kernel(
+                    kc,
+                    alpha,
+                    &DGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
+                    &DGEMM_BUFF_B[j * kc * BLOCK_SZ_NR],
+                    beta,
+                    &C[i * BLOCK_SZ_MR * incRowC + j * BLOCK_SZ_NR * incColC],
+                    incRowC,
+                    incColC,
+                    nextA,
+                    nextB);
+
+#else
                 dgemm_micro_kernel(
                     kc,
                     alpha,
@@ -343,7 +399,24 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
                     &C[i * BLOCK_SZ_MR * incRowC + j * BLOCK_SZ_NR * incColC],
                     incRowC,
                     incColC);
-            } else {
+            
+#endif
+            } 
+
+            else {
+
+#if defined (__SSE__)
+                dgemm_micro_kernel(kc,
+                                   alpha,
+                                   &DGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
+                                   &DGEMM_BUFF_B[j * kc * BLOCK_SZ_NR],
+                                   0.0,
+                                   DGEMM_BUFF_C,
+                                   1,
+                                   BLOCK_SZ_MR,
+                                   nextA,
+                                   nextB);
+#else
                 dgemm_micro_kernel(kc,
                                    alpha,
                                    &DGEMM_BUFF_A[i * kc * BLOCK_SZ_MR],
@@ -352,6 +425,8 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
                                    DGEMM_BUFF_C,
                                    1,
                                    BLOCK_SZ_MR);
+
+#endif
                 dgescal(
                     mr,
                     nr,
