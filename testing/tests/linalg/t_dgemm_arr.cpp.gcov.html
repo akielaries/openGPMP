@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-02-27 18:08:50</td>
+            <td class="headerValue">2024-03-01 17:57:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -88,7 +88,7 @@
 <a name="18"><span class="lineNum">      18 </span>            : </a>
 <a name="19"><span class="lineNum">      19 </span>            : namespace {</a>
 <a name="20"><span class="lineNum">      20 </span><span class="lineCov">          4 : TEST(GEMMArrayTest, DGEMMPerformanceComparison) {</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     int mtx_size = 1024;</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     int mtx_size = 128;</span></a>
 <a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;Matrix size      : &quot; &lt;&lt; mtx_size &lt;&lt; std::endl;</span></a>
 <a name="23"><span class="lineNum">      23 </span>            :     // define input matrices A and B</a>
 <a name="24"><span class="lineNum">      24 </span><span class="lineCov">          1 :     double *A = new double[mtx_size * mtx_size];</span></a>
@@ -102,10 +102,10 @@
 <a name="32"><span class="lineNum">      32 </span><span class="lineCov">          1 :     std::uniform_real_distribution&lt;double&gt; distribution(1.0, 100.0);</span></a>
 <a name="33"><span class="lineNum">      33 </span>            : </a>
 <a name="34"><span class="lineNum">      34 </span>            :     // populate matrices A and B with random values</a>
-<a name="35"><span class="lineNum">      35 </span><span class="lineCov">       1025 :     for (int i = 0; i &lt; mtx_size; ++i) {</span></a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">    1049600 :         for (int j = 0; j &lt; mtx_size; ++j) {</span></a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">    1048576 :             A[i * mtx_size + j] = distribution(gen);</span></a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">    1048576 :             B[i * mtx_size + j] = distribution(gen);</span></a>
+<a name="35"><span class="lineNum">      35 </span><span class="lineCov">        129 :     for (int i = 0; i &lt; mtx_size; ++i) {</span></a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">      16512 :         for (int j = 0; j &lt; mtx_size; ++j) {</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">      16384 :             A[i * mtx_size + j] = distribution(gen);</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">      16384 :             B[i * mtx_size + j] = distribution(gen);</span></a>
 <a name="39"><span class="lineNum">      39 </span>            :         }</a>
 <a name="40"><span class="lineNum">      40 </span>            :     }</a>
 <a name="41"><span class="lineNum">      41 </span>            : </a>
@@ -147,11 +147,11 @@
 <a name="77"><span class="lineNum">      77 </span><span class="lineCov">          1 :               &lt;&lt; elapsed_seconds_std.count() &lt;&lt; &quot; seconds&quot; &lt;&lt; std::endl;</span></a>
 <a name="78"><span class="lineNum">      78 </span>            : </a>
 <a name="79"><span class="lineNum">      79 </span>            :     // compare the results</a>
-<a name="80"><span class="lineNum">      80 </span><span class="lineCov">       1025 :     for (int i = 0; i &lt; mtx_size; i++) {</span></a>
-<a name="81"><span class="lineNum">      81 </span><span class="lineCov">    1049600 :         for (int j = 0; j &lt; mtx_size; j++) {</span></a>
-<a name="82"><span class="lineNum">      82 </span><span class="lineCov">    1048576 :             EXPECT_NEAR(expected[i * mtx_size + j],</span></a>
+<a name="80"><span class="lineNum">      80 </span><span class="lineCov">        129 :     for (int i = 0; i &lt; mtx_size; i++) {</span></a>
+<a name="81"><span class="lineNum">      81 </span><span class="lineCov">      16512 :         for (int j = 0; j &lt; mtx_size; j++) {</span></a>
+<a name="82"><span class="lineNum">      82 </span><span class="lineCov">      16384 :             EXPECT_NEAR(expected[i * mtx_size + j],</span></a>
 <a name="83"><span class="lineNum">      83 </span>            :                         result[i * mtx_size + j],</a>
-<a name="84"><span class="lineNum">      84 </span><span class="lineCov">    1048576 :                         TOLERANCE);</span></a>
+<a name="84"><span class="lineNum">      84 </span><span class="lineCov">      16384 :                         TOLERANCE);</span></a>
 <a name="85"><span class="lineNum">      85 </span>            :         }</a>
 <a name="86"><span class="lineNum">      86 </span>            :     }</a>
 <a name="87"><span class="lineNum">      87 </span>            :     // ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</a>
