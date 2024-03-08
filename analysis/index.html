@@ -182,7 +182,6 @@
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unpreciseMathCall" name="unpreciseMathCall" checked></td><td>4</td><td>unpreciseMathCall</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unsignedPositive" name="unsignedPositive" checked></td><td>4</td><td>unsignedPositive</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="stlFindInsert" name="stlFindInsert" checked></td><td>3</td><td>stlFindInsert</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>3</td><td>uninitvar</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="duplicateExpression" name="duplicateExpression" checked></td><td>2</td><td>duplicateExpression</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>2</td><td>knownConditionTrueFalse</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="selfInitialization" name="selfInitialization" checked></td><td>2</td><td>selfInitialization</td></tr>
@@ -194,7 +193,8 @@
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="noOperatorEq" name="noOperatorEq" checked></td><td>1</td><td>noOperatorEq</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="passedByValue" name="passedByValue" checked></td><td>1</td><td>passedByValue</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>1</td><td>redundantAssignment</td></tr>
-           <tr><td></td><td>360</td><td>total</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>1</td><td>uninitvar</td></tr>
+           <tr><td></td><td>358</td><td>total</td></tr>
        </table>
        <p><a href="stats.html">Statistics</a></p>
     </div>
@@ -334,12 +334,10 @@
          <tr class="unusedFunction sev_style issue"><td><a href="10.html#line-721">721</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;decompress&apos; is never used.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="11.html">../../modules/linalg/dgemm_arr.cpp</a></td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="11.html#line-122">122</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="11.html#line-170">170</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
-         <tr class="uninitvar sev_error issue"><td><a href="11.html#line-389">389</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: nextA</td></tr>
-         <tr class="uninitvar sev_error issue"><td><a href="11.html#line-390">390</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: nextB</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="11.html#line-453">453</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;dgemm_nn&apos; is never used.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="11.html#line-475">475</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-149">149</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-197">197</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="11.html#line-386">386</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;dgemm_nn&apos; is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="11.html#line-408">408</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="74.html">../../modules/linalg/eigen.cpp</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="74.html#line-50">50</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;power_iter&apos; is never used.</td></tr>
