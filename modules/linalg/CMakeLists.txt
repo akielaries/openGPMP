@@ -20,7 +20,7 @@ set(SOURCE_FILES
     
     dgemm_arr.cpp
 
-    dgemm_kernel_sse.S
+    dgemm_kernel_4x4_sse.S
 )
 
 # Add files depending on the detected SIMD ISA

@@ -34,8 +34,8 @@
 #define _DGEMM_HPP
 
 /** BLOCK SIZES */
-#define BLOCK_SZ_M 384  /**< Rows of A and C */
-#define BLOCK_SZ_K 384  /**< Columns of A and rows of B */
+#define BLOCK_SZ_M 2048  /**< Rows of A and C */
+#define BLOCK_SZ_K 2048  /**< Columns of A and rows of B */
 #define BLOCK_SZ_N 4096 /**< Columns of B and C */
 #define BLOCK_SZ_MR 4   /**< Rows of the micro-panel of A and C */
 #define BLOCK_SZ_NR 4   /**< Columns of the micro-panel of B and C */
@@ -51,13 +51,13 @@ class DGEMM {
   public:
     /**< Buffer for storing packed micro panels of A  */
     static double DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K]
-        __attribute__((aligned(16)));
+        __attribute__((aligned(32)));
     /**< Buffer for storing packed micro panels of B  */
     static double DGEMM_BUFF_B[BLOCK_SZ_K * BLOCK_SZ_N]
-        __attribute__((aligned(16)));
+        __attribute__((aligned(32)));
     /**< Buffer for storing intermediate results  */
     static double DGEMM_BUFF_C[BLOCK_SZ_MR * BLOCK_SZ_NR]
-        __attribute__((aligned(16)));
+        __attribute__((aligned(32)));
 
     /**
      * @brief Packs micro panels of size BLOCK_SZ_MR rows by k columns from A

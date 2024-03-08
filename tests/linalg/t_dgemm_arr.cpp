@@ -18,7 +18,7 @@ using namespace gpmp;
 
 namespace {
 TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
-    int mtx_size = 385;
+    int mtx_size = 1024;
 
     TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
     // define input matrices A and B
@@ -85,6 +85,7 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
                         TOLERANCE);
         }
     }*/
+    /*
     int count = 0;
     int matches = 0;
     int i;
@@ -101,8 +102,8 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
     }   
     printf("MISMATCHES  / TOTAL : %d/%d\n", count, i); 
     printf("MATCHES     / TOTAL : %d/%d\n", matches, i); 
-
-    //ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    */
+    ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
 
     delete[] A;
     delete[] B;
