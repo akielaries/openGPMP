@@ -68,13 +68,13 @@ extern "C" {
  * @note This calls an Assembly implementation depending on detected
  * host system. x86 (SSE, AVX2) and ARM NEON supported
  */
-extern void dgemm_kernel_asm(const double *A,
-                             const double *B,
-                             double *C,
+extern void dgemm_kernel_asm(const double *A, 
+                             const double *B, 
+                             double *C, 
                              const double *nextA,
                              const double *nextB,
-                             long kl,
-                             long kb,
+                             long kl, 
+                             long kb, 
                              long incRowC,
                              long incColC,
                              double alpha,
@@ -85,6 +85,33 @@ extern void dgemm_kernel_asm(const double *A,
 #endif
 
 #endif
+
+void gpmp::linalg::DGEMM::dgemm_micro_kernel(long kc,
+                               double alpha,
+                               const double *A,
+                               const double *B,
+                               double beta,
+                               double *C,
+                               long incRowC,
+                               long incColC,
+                               const double *nextA,
+                               const double *nextB) {
+    long kb = kc / 4;
+    long kl = kc % 4;
+
+    dgemm_kernel_asm(A,
+                     B,
+                     C,
+                     nextA,
+                     nextB,
+                     kl,
+                     kb,
+                     incRowC,
+                     incColC,
+                     alpha,
+                     beta);
+}
+
 
 // MATRIX BUFFERS
 double gpmp::linalg::DGEMM::DGEMM_BUFF_A[BLOCK_SZ_M * BLOCK_SZ_K];
@@ -189,101 +216,7 @@ void gpmp::linalg::DGEMM::pack_buffer_B(int kc,
 }
 
 
-// use assembly SSE kernel
-#if defined (__SSE__)
 
-void gpmp::linalg::DGEMM::dgemm_micro_kernel(long kc,
-                               double alpha,
-                               const double *A,
-                               const double *B,
-                               double beta,
-                               double *C,
-                               long incRowC,
-                               long incColC,
-                               const double *nextA,
-                               const double *nextB) {
-    long kb = kc / 4;
-    long kl = kc % 4;
-
-    dgemm_kernel_asm(A,
-                     B,
-                     C,
-                     nextA,
-                     nextB,
-                     kl,
-                     kb,
-                     incRowC,
-                     incColC,
-                     alpha,
-                     beta);
-}
-
-// use naive implementation w/o assembly kernel using intrinsics
-#else
-
-// micro kernel that multiplies panels from A and B
-void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
-                                             double alpha,
-                                             const double *A,
-                                             const double *B,
-                                             double beta,
-                                             double *C,
-                                             int incRowC,
-                                             int incColC) {
-    double AB[BLOCK_SZ_MR * BLOCK_SZ_NR];
-
-    int i, j, l;
-
-    // Compute AB = A*B
-    for (l = 0; l < BLOCK_SZ_MR * BLOCK_SZ_NR; ++l) {
-        AB[l] = 0;
-    }
-    for (l = 0; l < kc; ++l) {
-        for (j = 0; j < BLOCK_SZ_NR; ++j) {
-            for (i = 0; i < BLOCK_SZ_MR; ++i) {
-                AB[i + j * BLOCK_SZ_MR] += A[i] * B[j];
-            }
-        }
-        A += BLOCK_SZ_MR;
-        B += BLOCK_SZ_NR;
-    }
-
-    // Update C <- beta*C
-    if (fabs(beta - 0.0) < std::numeric_limits<double>::epsilon()) {
-        for (j = 0; j < BLOCK_SZ_NR; ++j) {
-            for (i = 0; i < BLOCK_SZ_MR; ++i) {
-                C[i * incRowC + j * incColC] = 0.0;
-            }
-        }
-    } else if (fabs(beta - 1.0) > std::numeric_limits<double>::epsilon()) {
-        for (j = 0; j < BLOCK_SZ_NR; ++j) {
-            for (i = 0; i < BLOCK_SZ_MR; ++i) {
-                C[i * incRowC + j * incColC] *= beta;
-            }
-        }
-    }
-
-    // Update C <- C + alpha*AB (note: the case alpha==0.0 was already treated
-    // in
-    //                                  the above layer dgemm_nn)
-    if (fabs(alpha - 1.0) < std::numeric_limits<double>::epsilon()) {
-        for (j = 0; j < BLOCK_SZ_NR; ++j) {
-            for (i = 0; i < BLOCK_SZ_MR; ++i) {
-                C[i * incRowC + j * incColC] += AB[i + j * BLOCK_SZ_MR];
-            }
-        }
-    }
-
-    else {
-        for (j = 0; j < BLOCK_SZ_NR; ++j) {
-            for (i = 0; i < BLOCK_SZ_MR; ++i) {
-                C[i * incRowC + j * incColC] += alpha * AB[i + j * BLOCK_SZ_MR];
-            }
-        }
-    }
-}
-
-#endif
 
 // Compute Y += alpha*X (double precision AX + Y)
 void gpmp::linalg::DGEMM::dgeaxpy(int m,
@@ -364,8 +297,8 @@ void gpmp::linalg::DGEMM::dgemm_macro_kernel(int mc,
 
 #if defined (__SSE__)
 
-    const double *nextA;
-    const double *nextB;
+    const double *nextA = nullptr;
+    const double *nextB = nullptr;
 
 #endif
 

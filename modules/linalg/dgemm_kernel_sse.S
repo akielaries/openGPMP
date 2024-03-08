@@ -93,8 +93,6 @@ dgemm_kernel_asm:
     // move addr of A (1st param=rdi register) to rax reg
     movq    %rdi,       %rax
 
-// if kl==0 writeback to AB
-// if kl==0 writeback to AB
     // move kl to rdi reg
     movq    %r9,        %rdi
 

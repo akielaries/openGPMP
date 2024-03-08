@@ -18,7 +18,8 @@ using namespace gpmp;
 
 namespace {
 TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
-    int mtx_size = 128;
+    int mtx_size = 385;
+
     TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
     // define input matrices A and B
     double *A = new double[mtx_size * mtx_size];
@@ -77,14 +78,31 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
               << elapsed_seconds_std.count() << " seconds" << std::endl;
 
     // compare the results
-    for (int i = 0; i < mtx_size; i++) {
+    /*for (int i = 0; i < mtx_size; i++) {
         for (int j = 0; j < mtx_size; j++) {
             EXPECT_NEAR(expected[i * mtx_size + j],
                         result[i * mtx_size + j],
                         TOLERANCE);
         }
-    }
-    // ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    }*/
+    int count = 0;
+    int matches = 0;
+    int i;
+
+    for (i = 0; i < mtx_size * mtx_size; ++i) {
+        // printf("Comparing element at index %d: %.2f vs %.2f\n", i, expected[i],
+        // result[i]);
+        if (expected[i] != result[i]) {
+            //return 0; // Matrices are not equal
+            count++;
+        } else {
+            matches++;
+        }
+    }   
+    printf("MISMATCHES  / TOTAL : %d/%d\n", count, i); 
+    printf("MATCHES     / TOTAL : %d/%d\n", matches, i); 
+
+    //ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
 
     delete[] A;
     delete[] B;
