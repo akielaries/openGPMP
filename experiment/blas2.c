@@ -21,7 +21,7 @@ void run_openblas_mtx_mul() {
     double *B = new double[mtx_size * mtx_size];
     double *C = new double[mtx_size * mtx_size];
     // initialize random number generator
-    std::random_device rd; 
+    std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<double> distribution(1.0, 100.0);
 
@@ -32,7 +32,7 @@ void run_openblas_mtx_mul() {
             A[i * mtx_size + j] = distribution(gen);
             B[i * mtx_size + j] = distribution(gen);
         }
-    }   
+    }
 
     // Measure the time for matrix multiplication using OpenBLAS
     auto start_std = std::chrono::high_resolution_clock::now();

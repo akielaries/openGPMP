@@ -91,7 +91,8 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
     int i;
 
     for (i = 0; i < mtx_size * mtx_size; ++i) {
-        // printf("Comparing element at index %d: %.2f vs %.2f\n", i, expected[i],
+        // printf("Comparing element at index %d: %.2f vs %.2f\n", i,
+    expected[i],
         // result[i]);
         if (expected[i] != result[i]) {
             //return 0; // Matrices are not equal
@@ -99,9 +100,9 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
         } else {
             matches++;
         }
-    }   
-    printf("MISMATCHES  / TOTAL : %d/%d\n", count, i); 
-    printf("MATCHES     / TOTAL : %d/%d\n", matches, i); 
+    }
+    printf("MISMATCHES  / TOTAL : %d/%d\n", count, i);
+    printf("MATCHES     / TOTAL : %d/%d\n", matches, i);
     */
     ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
 

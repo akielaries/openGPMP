@@ -34,8 +34,8 @@
 #define _DGEMM_HPP
 
 /** BLOCK SIZES */
-#define BLOCK_SZ_M 2048  /**< Rows of A and C */
-#define BLOCK_SZ_K 2048  /**< Columns of A and rows of B */
+#define BLOCK_SZ_M 2048 /**< Rows of A and C */
+#define BLOCK_SZ_K 2048 /**< Columns of A and rows of B */
 #define BLOCK_SZ_N 4096 /**< Columns of B and C */
 #define BLOCK_SZ_MR 4   /**< Rows of the micro-panel of A and C */
 #define BLOCK_SZ_NR 4   /**< Columns of the micro-panel of B and C */
@@ -146,24 +146,28 @@ class DGEMM {
                             int incRowC,
                             int incColC);
 
-/**
- * @brief Perform a micro-kernel operation for double-precision matrix-matrix multiplication (DGEMM) 
- *
- * This function implements a micro-kernel operation for DGEMM, which is used as a building block in larger
- * DGEMM routines. The micro-kernel performs a basic matrix multiplication operation with optimizations
- * tailored for the SSE (Streaming SIMD Extensions) x86 architecture 
- *
- * @param kc The size of the inner dimension of the matrices A and B 
- * @param alpha Scaling factor for the matrix multiplication 
- * @param A Pointer to the first input matrix A in row-major order 
- * @param B Pointer to the second input matrix B in column-major order 
- * @param beta Scaling factor for the matrix C 
- * @param C Pointer to the output matrix C in row-major order 
- * @param incRowC Increment for moving between rows of the matrix C 
- * @param incColC Increment for moving between columns of the matrix C 
- * @param nextA Pointer to the next block of matrix A (unused in this micro-kernel) 
- * @param nextB Pointer to the next block of matrix B (unused in this micro-kernel) 
- */
+    /**
+     * @brief Perform a micro-kernel operation for double-precision
+     * matrix-matrix multiplication (DGEMM)
+     *
+     * This function implements a micro-kernel operation for DGEMM, which is
+     * used as a building block in larger DGEMM routines. The micro-kernel
+     * performs a basic matrix multiplication operation with optimizations
+     * tailored for the SSE (Streaming SIMD Extensions) x86 architecture
+     *
+     * @param kc The size of the inner dimension of the matrices A and B
+     * @param alpha Scaling factor for the matrix multiplication
+     * @param A Pointer to the first input matrix A in row-major order
+     * @param B Pointer to the second input matrix B in column-major order
+     * @param beta Scaling factor for the matrix C
+     * @param C Pointer to the output matrix C in row-major order
+     * @param incRowC Increment for moving between rows of the matrix C
+     * @param incColC Increment for moving between columns of the matrix C
+     * @param nextA Pointer to the next block of matrix A (unused in this
+     * micro-kernel)
+     * @param nextB Pointer to the next block of matrix B (unused in this
+     * micro-kernel)
+     */
     void dgemm_micro_kernel(long kc,
                             double alpha,
                             const double *A,

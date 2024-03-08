@@ -96,4 +96,3 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
         }
     }
 }
-

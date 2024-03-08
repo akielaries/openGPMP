@@ -66,8 +66,6 @@ bool mtx_verif(const T *A, const T *B, int rows, int cols) {
     return true;
 }
 
-
-
 template <typename T> void print_matrix(const T *matrix, int rows, int cols) {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
