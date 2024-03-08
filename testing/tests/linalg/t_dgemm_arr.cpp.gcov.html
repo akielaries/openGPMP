@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">39</td>
-            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntry">32</td>
+            <td class="headerCovTableEntry">32</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-03-08 02:29:15</td>
+            <td class="headerValue">2024-03-08 05:34:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -88,7 +88,7 @@
 <a name="18"><span class="lineNum">      18 </span>            : </a>
 <a name="19"><span class="lineNum">      19 </span>            : namespace {</a>
 <a name="20"><span class="lineNum">      20 </span><span class="lineCov">          4 : TEST(GEMMArrayTest, DGEMMPerformanceComparison) {</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     int mtx_size = 385;</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :     int mtx_size = 1024;</span></a>
 <a name="22"><span class="lineNum">      22 </span>            : </a>
 <a name="23"><span class="lineNum">      23 </span><span class="lineCov">          1 :     TEST_COUT &lt;&lt; &quot;Matrix size      : &quot; &lt;&lt; mtx_size &lt;&lt; std::endl;</span></a>
 <a name="24"><span class="lineNum">      24 </span>            :     // define input matrices A and B</a>
@@ -103,10 +103,10 @@
 <a name="33"><span class="lineNum">      33 </span><span class="lineCov">          1 :     std::uniform_real_distribution&lt;double&gt; distribution(1.0, 100.0);</span></a>
 <a name="34"><span class="lineNum">      34 </span>            : </a>
 <a name="35"><span class="lineNum">      35 </span>            :     // populate matrices A and B with random values</a>
-<a name="36"><span class="lineNum">      36 </span><span class="lineCov">        386 :     for (int i = 0; i &lt; mtx_size; ++i) {</span></a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">     148610 :         for (int j = 0; j &lt; mtx_size; ++j) {</span></a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">     148225 :             A[i * mtx_size + j] = distribution(gen);</span></a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">     148225 :             B[i * mtx_size + j] = distribution(gen);</span></a>
+<a name="36"><span class="lineNum">      36 </span><span class="lineCov">       1025 :     for (int i = 0; i &lt; mtx_size; ++i) {</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">    1049600 :         for (int j = 0; j &lt; mtx_size; ++j) {</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">    1048576 :             A[i * mtx_size + j] = distribution(gen);</span></a>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">    1048576 :             B[i * mtx_size + j] = distribution(gen);</span></a>
 <a name="40"><span class="lineNum">      40 </span>            :         }</a>
 <a name="41"><span class="lineNum">      41 </span>            :     }</a>
 <a name="42"><span class="lineNum">      42 </span>            : </a>
@@ -155,32 +155,33 @@
 <a name="85"><span class="lineNum">      85 </span>            :                         TOLERANCE);</a>
 <a name="86"><span class="lineNum">      86 </span>            :         }</a>
 <a name="87"><span class="lineNum">      87 </span>            :     }*/</a>
-<a name="88"><span class="lineNum">      88 </span><span class="lineCov">          1 :     int count = 0;</span></a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">          1 :     int matches = 0;</span></a>
-<a name="90"><span class="lineNum">      90 </span>            :     int i;</a>
-<a name="91"><span class="lineNum">      91 </span>            : </a>
-<a name="92"><span class="lineNum">      92 </span><span class="lineCov">     148226 :     for (i = 0; i &lt; mtx_size * mtx_size; ++i) {</span></a>
-<a name="93"><span class="lineNum">      93 </span>            :         // printf(&quot;Comparing element at index %d: %.2f vs %.2f\n&quot;, i, expected[i],</a>
-<a name="94"><span class="lineNum">      94 </span>            :         // result[i]);</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">     148225 :         if (expected[i] != result[i]) {</span></a>
-<a name="96"><span class="lineNum">      96 </span>            :             //return 0; // Matrices are not equal</a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineCov">     147456 :             count++;</span></a>
-<a name="98"><span class="lineNum">      98 </span>            :         } else {</a>
-<a name="99"><span class="lineNum">      99 </span><span class="lineCov">        769 :             matches++;</span></a>
-<a name="100"><span class="lineNum">     100 </span>            :         }</a>
-<a name="101"><span class="lineNum">     101 </span>            :     }   </a>
-<a name="102"><span class="lineNum">     102 </span><span class="lineCov">          1 :     printf(&quot;MISMATCHES  / TOTAL : %d/%d\n&quot;, count, i); </span></a>
-<a name="103"><span class="lineNum">     103 </span><span class="lineCov">          1 :     printf(&quot;MATCHES     / TOTAL : %d/%d\n&quot;, matches, i); </span></a>
-<a name="104"><span class="lineNum">     104 </span>            : </a>
-<a name="105"><span class="lineNum">     105 </span>            :     //ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</a>
-<a name="106"><span class="lineNum">     106 </span>            : </a>
-<a name="107"><span class="lineNum">     107 </span><span class="lineCov">          1 :     delete[] A;</span></a>
-<a name="108"><span class="lineNum">     108 </span><span class="lineCov">          1 :     delete[] B;</span></a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">          1 :     delete[] expected;</span></a>
-<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          1 :     delete[] result;</span></a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">          1 : }</span></a>
-<a name="112"><span class="lineNum">     112 </span>            : </a>
-<a name="113"><span class="lineNum">     113 </span>            : } // namespace</a>
+<a name="88"><span class="lineNum">      88 </span>            :     /*</a>
+<a name="89"><span class="lineNum">      89 </span>            :     int count = 0;</a>
+<a name="90"><span class="lineNum">      90 </span>            :     int matches = 0;</a>
+<a name="91"><span class="lineNum">      91 </span>            :     int i;</a>
+<a name="92"><span class="lineNum">      92 </span>            : </a>
+<a name="93"><span class="lineNum">      93 </span>            :     for (i = 0; i &lt; mtx_size * mtx_size; ++i) {</a>
+<a name="94"><span class="lineNum">      94 </span>            :         // printf(&quot;Comparing element at index %d: %.2f vs %.2f\n&quot;, i, expected[i],</a>
+<a name="95"><span class="lineNum">      95 </span>            :         // result[i]);</a>
+<a name="96"><span class="lineNum">      96 </span>            :         if (expected[i] != result[i]) {</a>
+<a name="97"><span class="lineNum">      97 </span>            :             //return 0; // Matrices are not equal</a>
+<a name="98"><span class="lineNum">      98 </span>            :             count++;</a>
+<a name="99"><span class="lineNum">      99 </span>            :         } else {</a>
+<a name="100"><span class="lineNum">     100 </span>            :             matches++;</a>
+<a name="101"><span class="lineNum">     101 </span>            :         }</a>
+<a name="102"><span class="lineNum">     102 </span>            :     }   </a>
+<a name="103"><span class="lineNum">     103 </span>            :     printf(&quot;MISMATCHES  / TOTAL : %d/%d\n&quot;, count, i); </a>
+<a name="104"><span class="lineNum">     104 </span>            :     printf(&quot;MATCHES     / TOTAL : %d/%d\n&quot;, matches, i); </a>
+<a name="105"><span class="lineNum">     105 </span>            :     */</a>
+<a name="106"><span class="lineNum">     106 </span><span class="lineCov">          1 :     ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</span></a>
+<a name="107"><span class="lineNum">     107 </span>            : </a>
+<a name="108"><span class="lineNum">     108 </span><span class="lineCov">          1 :     delete[] A;</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">          1 :     delete[] B;</span></a>
+<a name="110"><span class="lineNum">     110 </span><span class="lineCov">          1 :     delete[] expected;</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">          1 :     delete[] result;</span></a>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">          1 : }</span></a>
+<a name="113"><span class="lineNum">     113 </span>            : </a>
+<a name="114"><span class="lineNum">     114 </span>            : } // namespace</a>
 </pre>
       </td>
     </tr>

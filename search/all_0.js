@@ -5,7 +5,7 @@ var searchData=
   ['_5f_5f64max_2',['__64MAX',['../random_8hpp.html#a4f5ff809d8d560f3219d80507ed5768f',1,'random.hpp']]],
   ['_5f_5f8max_3',['__8MAX',['../random_8hpp.html#a27eb8c80849d866c7fc73ab8b4622938',1,'random.hpp']]],
   ['_5f_5fadd_5f_5f_4',['__add__',['../classpygpmp_1_1calculus_1_1calculus_1_1Differential.html#add3b1e54b6f197b34fa7cd39bce780aa',1,'pygpmp::calculus::calculus::Differential']]],
-  ['_5f_5fattribute_5f_5f_5',['__attribute__',['../classgpmp_1_1linalg_1_1DGEMM.html#ae0fc1a4a3ed57f73d93acb57b07f9e2f',1,'gpmp::linalg::DGEMM::__attribute__((aligned(16)))'],['../classgpmp_1_1linalg_1_1DGEMM.html#ab652223741b6556878f063c690a47516',1,'gpmp::linalg::DGEMM::__attribute__((aligned(16)))'],['../classgpmp_1_1linalg_1_1DGEMM.html#ad0f10680f5f4f19b8a9c2ce172372dde',1,'gpmp::linalg::DGEMM::__attribute__((aligned(16)))']]],
+  ['_5f_5fattribute_5f_5f_5',['__attribute__',['../classgpmp_1_1linalg_1_1DGEMM.html#ae6320dc4a95e0ee7dff9424ab4c7df0f',1,'gpmp::linalg::DGEMM::__attribute__((aligned(32)))'],['../classgpmp_1_1linalg_1_1DGEMM.html#a301872ad4887d05d230b1a6459873449',1,'gpmp::linalg::DGEMM::__attribute__((aligned(32)))'],['../classgpmp_1_1linalg_1_1DGEMM.html#a541b2788cb63f5e7ff336cdc3539ef90',1,'gpmp::linalg::DGEMM::__attribute__((aligned(32)))']]],
   ['_5f_5ffact_5fbasics_5f_5f_6',['__FACT_BASICS__',['../factorization_8cpp.html#ad5ce8b3109353347bf8460501b3edf67',1,'factorization.cpp']]],
   ['_5f_5ffact_5fprimes_5f_5f_7',['__FACT_PRIMES__',['../factorization_8cpp.html#a05b01b00dccdca39ab80eb015b8d54cb',1,'factorization.cpp']]],
   ['_5f_5ffactor_5f_5f_8',['__FACTOR__',['../factorization_8cpp.html#a84fed0379dcecaf212b75b165951a391',1,'factorization.cpp']]],
