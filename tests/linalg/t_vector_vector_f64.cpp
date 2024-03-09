@@ -14,8 +14,11 @@
 const double TOLERANCE = 1e-3;
 
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
-
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;34m\033[1m"
 TEST(VectorVectorTestF64, Addition) {
+    INFO_COUT << "Vector (as Vectors) FLOAT64" << std::endl;
+
     // Create input vectors
     std::vector<double> vec1 = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> vec2 = {4.0, 3.0, 2.0, 1.0};

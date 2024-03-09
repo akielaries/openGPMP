@@ -14,11 +14,14 @@
 const double TOLERANCE = 1e-3;
 
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
-
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;34m\033[1m"
 /*****************************************************************************/
 /** VECTOR<INT32> TESTS */
 
 TEST(VectorArithINTRINSICTestI64, Addition) {
+    INFO_COUT << "Vector (as Vectors) INT64" << std::endl;
+
     // Create input vectors
     std::vector<int32_t> vec1 = {1, 2, 3, 4, 5, 6, 7, 8};
     std::vector<int32_t> vec2 = {8, 7, 6, 5, 4, 3, 2, 1};

@@ -15,10 +15,13 @@
 
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
-
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;34m\033[1m"
 namespace {
 
 TEST(MatrixArrayTestI16, AdditionComparisonSmall) {
+    INFO_COUT << "MATRIX (as Arrays) INT16" << std::endl;
+
     int mtx_size = 300;
     // define input matrices A and B
     int16_t *A = new int16_t[mtx_size * mtx_size];

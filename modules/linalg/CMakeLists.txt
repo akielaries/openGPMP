@@ -15,7 +15,9 @@ set(SOURCE_FILES
     svd.cpp
     vector_naive.cpp
     igemm_arr.cpp
+
     sgemm_arr.cpp
+    
     dgemm_arr.cpp
 )
 
@@ -37,6 +39,8 @@ if (SIMD_ISA STREQUAL "AVX2")
         vector_avx2_i32.cpp
         vector_avx2_f64.cpp
 
+        #dgemm_kernel_sse.cpp
+        dgemm_kernel_4x4_sse.S
     )
 elseif (SIMD_ISA STREQUAL "ARM_NEON")
     list(APPEND SOURCE_FILES
@@ -60,7 +64,16 @@ elseif (SIMD_ISA STREQUAL "SSE")
         mtx_sse2_vec_i32.cpp
         mtx_sse2_vec_f32.cpp
         mtx_sse2_vec_f64.cpp
+
+        dgemm_kernel_4x4_sse.S
     )
+
+else (
+    list(APPEND SOURCE_FILES
+        dgemm_kernel.cpp
+    )
+
+)
 endif()
 
 # compile OpenCL GPU accelerators into openGPMP binary written

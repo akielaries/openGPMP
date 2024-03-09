@@ -1,19 +1,23 @@
 .globl asm_function
 asm_function:
-    // Assembly code to add two integers
-    // Parameters are passed in registers: a in %edi, b in %esi
-    // Result is stored in %eax
-    // Load a into %eax
-    mov %edi, %eax
+
+    // a + b + c - d - e + f + g - h
+    // Parameters are passed in registers: a in %rdi, b in %rsi
+    // Result is stored in %rax
+    // Load a into %rax
+    mov %rdi, %rax
     
-    // Add b to %eax
-    add %esi, %eax
+    // Add b to %rax
+    add %rsi, %rax
     
-    // Add c to %eax
-    add %edx, %eax
+    // Add c to %rax
+    add %rdx, %rax
     
-    // Subtract d from %eax
-    sub %ecx, %eax
+    // Subtract d from %rax
+    sub %rcx, %rax
+
+    // subtract e from %rax
+    sub %r8, %rax
     
     ret // Return
 

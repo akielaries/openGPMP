@@ -15,9 +15,12 @@ const double TOLERANCE = 1e-3;
 
 using namespace gpmp;
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;34m\033[1m"
 
 namespace {
-TEST(MatrixArrayTestI32, IGEMMPerformanceComparison) {
+TEST(GEMMArrayTest, IGEMMPerformanceComparison) {
+    INFO_COUT << "GEMM ROUTINES" << std::endl;
     int mtx_size = 1024;
     TEST_COUT << "Matrix size      : " << mtx_size << std::endl;
     // define input matrices A and B

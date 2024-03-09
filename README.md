@@ -13,14 +13,14 @@
 
 
 # Overview
-**openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, and Fortran with no runtime dependencies. 
-The primary focus in Number Theory and Cryptographic algorithms, Linear Algebra, Calculus, Statistics, and Machine 
-Learning concepts, and more. openGPMP aims to serve as a warehouse and one-stop shop for mathematical operations. Additional 
-acceleration methods are featured for optional use and installation via OpenCL and CUDA. By default, SIMD intrinsics will be 
-used for the supported platforms.
+**openGPMP** is an open-source, multi-threaded, mathematics package written in C++, C, Fortran and Assembly with 
+no runtime dependencies. The primary focus in Number Theory and Cryptographic algorithms, Linear Algebra, Calculus, 
+Statistics, and Machine Learning concepts, and more. openGPMP aims to serve as a warehouse and one-stop shop for 
+mathematical operations. Additional acceleration methods are featured for optional use and installation via OpenCL 
+and CUDA. By default, SIMD intrinsics will be used for the supported platforms.
 
 Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) folder for examples 
-on how to use some of openGPMP's functionalities. 
+on how to use some of openGPMP's functionalities and the in-depth [documentation](https://akielaries.github.io/openGPMP/).
 
 # Installation
 openGPMP C++ & Python is tested on the following:
@@ -44,31 +44,37 @@ ubuntu 18.04  | Nvidia GPU (OpenCL) | [![NVIDIAOPENCL](https://github.com/akiela
 * Linux/OSX
 * CMake v3.18+ (build from source for latest version)
 * C++20
-* gcc, g++, gfortran v12+ (other C, C++, and Fortran compilers are being tested)
+* gcc, g++, gfortran v12+ (clang, clang++, and flang are being tested)
+
+### Build
+Clone the repository or download the codebase from a release:
 
 ```
 # clone repo
 $ git clone git@github.com:akielaries/openGPMP.git
 $ cd openGPMP
-# create build dir
+```
+
+Create a build directory and configure with CMake:
+```
 $ mkdir build && cd build
-# create necessary objects and static library
 $ cmake -S ../
-# on OSX
-$ cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-12 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-12 -S ../
+```
+* Additional CMake options include:
+    * `-DBUILD_TESTS=ON`
+    * `-DCMAKE_C_COMPILER=/path/to/C/compiler`
+    * `-DCMAKE_CXX_COMPILER=/path/to/CPP/compiler`
+    * `-DCMAKE_FC_COMPILER=/path/to/Fortran/compiler`
+> **Note** ATM OSX requires GCC for compilation
+
+Install the compiled static library and headers:
+```
 $ make
-# install necessary headers and library in correct directories
 $ sudo make install
 ```
 
 > **Note**
-> Keep the build directory for easy uninstallation. This process asumes your 
-> STDLIB path is /usr/local/lib, where most 3rd-party libs are located if not, 
-> run the following:
-
-```
-$ LD_LIBRARY_PATH=/usr/local/lib
-```
+> Keep the build directory for easy uninstallation.
 
 ## Python (pygpmp)
 To install the Python interface, use the pip package manager and run the following, `pip install

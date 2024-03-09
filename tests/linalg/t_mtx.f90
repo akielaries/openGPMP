@@ -62,7 +62,7 @@ subroutine test_mtx_add()
     do i = 1, nrows
         do j = 1, ncols
             if (c(i, j) /= a(i, j) + b(i, j)) then
-                print *, ''//achar(27)//'[31m [!] LINALG MTX ADD (FLOAT) FAILED'//achar(27)//'[0m'
+                print *, ''//achar(27)//'[34m [!] LINALG MTX ADD (FLOAT) FAILED'//achar(27)//'[0m'
                 failed = .true.
                 exit
             end if
@@ -76,7 +76,7 @@ subroutine test_mtx_add()
     do i = 1, nrows
         do j = 1, ncols
             if (c(i, j) /= a(i, j) + b(i, j)) then
-                print *, ''//achar(27)//'[31m [!] LINALG MTX ADD (INT) FAILED'//achar(27)//'[0m'
+                print *, ''//achar(27)//'[34m [!] LINALG MTX ADD (INT) FAILED'//achar(27)//'[0m'
                 failed = .true.
                 exit
             end if

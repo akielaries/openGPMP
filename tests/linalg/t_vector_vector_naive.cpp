@@ -14,8 +14,11 @@
 const double TOLERANCE = 1e-3;
 
 #define TEST_COUT std::cerr << "\033[32m[          ] [ INFO ] \033[0m"
-
+#define INFO_COUT                                                              \
+    std::cerr << "\033[32m[          ] [ INFO ] \033[0m\033[1;34m\033[1m"
 TEST(VectorVectorTestDouble, Addition) {
+    INFO_COUT << "Vector (as Vectors) NAIVE" << std::endl;
+
     std::vector<double> vec1 = {1.0, 2.0, 3.0};
     std::vector<double> vec2 = {4.0, 5.0, 6.0};
     std::vector<double> result;
