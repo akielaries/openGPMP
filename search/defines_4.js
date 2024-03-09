@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['max_5frows_2274',['MAX_ROWS',['../datatable_8hpp.html#a3b94af9dcb0358f28d175d80eed98330',1,'MAX_ROWS():&#160;datatable.hpp'],['../datatable__wip_8hpp.html#a3b94af9dcb0358f28d175d80eed98330',1,'MAX_ROWS():&#160;datatable_wip.hpp']]],
-  ['max_5fsource_5fsize_2275',['MAX_SOURCE_SIZE',['../__gpu__mtx_8cpp.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_mtx.cpp'],['../__gpu__mtx_8cpp.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_mtx.cpp'],['../__gpu__mtx__add_8c.html#a1f672842beaeeeb118a74c1b198b94e3',1,'MAX_SOURCE_SIZE():&#160;_gpu_mtx_add.c']]],
-  ['maxcount_2276',['MAXCOUNT',['../Mandelbrot_8c.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'MAXCOUNT():&#160;Mandelbrot.c'],['../Mandelbrot_8cpp.html#a20651bf0d2fba0cc012cbe9d2cec3335',1,'MAXCOUNT():&#160;Mandelbrot.cpp']]],
-  ['mc_2277',['MC',['../dgemm__nn_8c.html#a71d9e511e7e302cd831e83581219e70d',1,'dgemm_nn.c']]],
-  ['mem_5fsize_2278',['MEM_SIZE',['../__gpu__mtx_8cpp.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE():&#160;_gpu_mtx.cpp'],['../__gpu__mtx__add_8c.html#a2dcf8c45f945dd0c4301a94700f2112c',1,'MEM_SIZE():&#160;_gpu_mtx_add.c']]],
-  ['mr_2279',['MR',['../dgemm__nn_8c.html#a9ecbd9f86f95534f1bcf71015d5ae81a',1,'dgemm_nn.c']]]
+  ['parallel_5ffor_5fbegin_2253',['PARALLEL_FOR_BEGIN',['../threads_8hpp.html#a0914f73d404378d399cfab53760e2ea0',1,'threads.hpp']]],
+  ['parallel_5ffor_5fend_2254',['PARALLEL_FOR_END',['../threads_8hpp.html#a09556bb3c29a43e693cd7361e0b5b739',1,'threads.hpp']]],
+  ['pi_2255',['pi',['../openGL__astronomy__animated_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_astronomy_animated.c'],['../openGL__bounce_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_bounce.c'],['../openGL__example00_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_example00.c'],['../openGL__torus_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus.c'],['../openGL__torus__animated_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_torus_animated.c'],['../openGL__tri_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;openGL_tri.c'],['../torus_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus.c'],['../torus__animated_8c.html#a1daf785e3f68d293c7caa1c756d5cb74',1,'pi():&#160;torus_animated.c']]],
+  ['print_5fline_2256',['PRINT_LINE',['../__gpu__mtx_8cpp.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'PRINT_LINE():&#160;_gpu_mtx.cpp'],['../__gpu__mtx__add_8c.html#a2de8fe82b7e10a1fa207d9f96aa97e83',1,'PRINT_LINE():&#160;_gpu_mtx_add.c']]]
 ];

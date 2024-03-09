@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['n_2280',['N',['../dgemm__nn_8c.html#a0240ac851181b84ac374872dc5434ee4',1,'dgemm_nn.c']]],
-  ['nc_2281',['NC',['../dgemm__nn_8c.html#a1fa2460e32327ade49189c95740bc1b5',1,'dgemm_nn.c']]],
-  ['nr_2282',['NR',['../dgemm__nn_8c.html#af146485306ae74a2edf18636300fd107',1,'dgemm_nn.c']]]
+  ['show_5frows_2257',['SHOW_ROWS',['../datatable_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3',1,'SHOW_ROWS():&#160;datatable.hpp'],['../datatable__wip_8hpp.html#a77f3e1ac2b5ba60234b2f5e3ffb4adb3',1,'SHOW_ROWS():&#160;datatable_wip.hpp']]]
 ];
