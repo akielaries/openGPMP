@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-03-08 16:04:56</td>
+            <td class="headerValue">2024-03-09 00:48:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -124,16 +124,16 @@
 <a name="54"><span class="lineNum">      54 </span>            : }</a>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
 <a name="56"><span class="lineNum">      56 </span>            : template &lt;typename T&gt;</a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         25 : bool mtx_verif(const T *A, const T *B, int rows, int cols) {</span></a>
-<a name="58"><span class="lineNum">      58 </span><span class="lineCov">      20833 :     for (int i = 0; i &lt; rows; ++i) {</span></a>
-<a name="59"><span class="lineNum">      59 </span><span class="lineCov">   20391720 :         for (int j = 0; j &lt; cols; ++j) {</span></a>
-<a name="60"><span class="lineNum">      60 </span><span class="lineCov">   33367920 :             if (std::abs(A[i * cols + j] - B[i * cols + j]) &gt;</span></a>
-<a name="61"><span class="lineNum">      61 </span><span class="lineCov">   20370912 :                 std::numeric_limits&lt;T&gt;::epsilon()) {</span></a>
+<a name="57"><span class="lineNum">      57 </span><span class="lineCov">         24 : bool mtx_verif(const T *A, const T *B, int rows, int cols) {</span></a>
+<a name="58"><span class="lineNum">      58 </span><span class="lineCov">      19808 :     for (int i = 0; i &lt; rows; ++i) {</span></a>
+<a name="59"><span class="lineNum">      59 </span><span class="lineCov">   19342120 :         for (int j = 0; j &lt; cols; ++j) {</span></a>
+<a name="60"><span class="lineNum">      60 </span><span class="lineCov">   31270768 :             if (std::abs(A[i * cols + j] - B[i * cols + j]) &gt;</span></a>
+<a name="61"><span class="lineNum">      61 </span><span class="lineCov">   19322336 :                 std::numeric_limits&lt;T&gt;::epsilon()) {</span></a>
 <a name="62"><span class="lineNum">      62 </span><span class="lineNoCov">          0 :                 return false;</span></a>
 <a name="63"><span class="lineNum">      63 </span>            :             }</a>
 <a name="64"><span class="lineNum">      64 </span>            :         }</a>
 <a name="65"><span class="lineNum">      65 </span>            :     }</a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         25 :     return true;</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">         24 :     return true;</span></a>
 <a name="67"><span class="lineNum">      67 </span>            : }</a>
 <a name="68"><span class="lineNum">      68 </span>            : </a>
 <a name="69"><span class="lineNum">      69 </span>            : template &lt;typename T&gt; void print_matrix(const T *matrix, int rows, int cols) {</a>
