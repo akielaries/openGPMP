@@ -19,8 +19,6 @@ set(SOURCE_FILES
     sgemm_arr.cpp
     
     dgemm_arr.cpp
-
-    dgemm_kernel_4x4_sse.S
 )
 
 # Add files depending on the detected SIMD ISA
@@ -42,7 +40,7 @@ if (SIMD_ISA STREQUAL "AVX2")
         vector_avx2_f64.cpp
 
         #dgemm_kernel_sse.cpp
-
+        dgemm_kernel_4x4_sse.S
     )
 elseif (SIMD_ISA STREQUAL "ARM_NEON")
     list(APPEND SOURCE_FILES
@@ -67,7 +65,7 @@ elseif (SIMD_ISA STREQUAL "SSE")
         mtx_sse2_vec_f32.cpp
         mtx_sse2_vec_f64.cpp
 
-        dgemm_kernel_sse.cpp
+        dgemm_kernel_4x4_sse.S
     )
 
 else (

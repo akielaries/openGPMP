@@ -108,16 +108,19 @@ dgemm_kernel_asm:
     ***************************************************************************/
 
     // adjust addresses?
-    addq    $128,   %rax
-    addq    $128,   %rbx
+    addq    $256, %rax    // A + 256
+    addq    $256, %rbx    // B + 256
 
     // Load data into XMM registers
     // tmp0 = _mm_load_pd(A)
-    movapd -128(%rax), %xmm0
+    //movapd -128(%rax), %xmm0
+    vmovapd -256(%rax), %ymm0
     // tmp1 = _mm_load_pd(A+2)
-    movapd -112(%rax), %xmm1 
+    //movapd -112(%rax), %xmm1 
+    vmovapd -192(%rax), %ymm1    // Load A + 4
     // tmp2 = _mm_load_pd(B)
-    movapd -128(%rbx), %xmm2
+    //movapd -128(%rbx), %xmm2
+    vmovapd -256(%rbx), %ymm2    // Load B
 
     // Initialize XMM registers
     // ab_00_11 = _mm_setzero_pd()
