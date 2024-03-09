@@ -106,50 +106,47 @@ dgemm_kernel_asm:
     * - incRowC :   %rsp + 48
     * - incColC :   %rsp + 40
     ***************************************************************************/
-
     // adjust addresses?
-    addq    $256, %rax    // A + 256
-    addq    $256, %rbx    // B + 256
+    addq    $256,   %rax
+    addq    $256,   %rbx
 
-    // Load data into XMM registers
-    // tmp0 = _mm_load_pd(A)
-    //movapd -128(%rax), %xmm0
+    // Load data into YMM registers
+    // tmp0 = _mm256_load_pd(A)
     vmovapd -256(%rax), %ymm0
-    // tmp1 = _mm_load_pd(A+2)
-    //movapd -112(%rax), %xmm1 
-    vmovapd -192(%rax), %ymm1    // Load A + 4
-    // tmp2 = _mm_load_pd(B)
-    //movapd -128(%rbx), %xmm2
-    vmovapd -256(%rbx), %ymm2    // Load B
+    // tmp1 = _mm256_load_pd(A+4)
+    vmovapd -224(%rax), %ymm1
+    // tmp2 = _mm256_load_pd(B)
+    vmovapd -256(%rbx), %ymm2
 
-    // Initialize XMM registers
-    // ab_00_11 = _mm_setzero_pd()
-    xorpd %xmm8,  %xmm8
-    // ab_20_31 = _mm_setzero_pd()
-    xorpd %xmm9,  %xmm9
-    // ab_01_10 = _mm_setzero_pd()
-    xorpd %xmm10, %xmm10
-    // ab_21_30 = _mm_setzero_pd()
-    xorpd %xmm11, %xmm11
-    // ab_02_13 = _mm_setzero_pd()
-    xorpd %xmm12, %xmm12
-    // ab_22_33 = _mm_setzero_pd()
-    xorpd %xmm13, %xmm13
-    // ab_03_12 = _mm_setzero_pd()
-    xorpd %xmm14, %xmm14
-    // ab_23_32 = _mm_setzero_pd()
-    xorpd %xmm15, %xmm15
-    
-    // tmp3 = _mm_setzero_pd
-    xorpd     %xmm3,  %xmm3   
-    // tmp4 = _mm_setzero_pd
-    xorpd     %xmm4,  %xmm4 
-    // tmp5 = _mm_setzero_pd
-    xorpd     %xmm5,  %xmm5   
-    // tmp6 = _mm_setzero_pd
-    xorpd     %xmm6,  %xmm6   
-    // tmp7 = _mm_setzero_pd
-    xorpd     %xmm7,  %xmm7   
+    // Initialize YMM registers
+    // ab_00_11 = _mm256_setzero_pd()
+    vxorpd   %ymm8,  %ymm8,  %ymm8
+    // ab_20_31 = _mm256_setzero_pd()
+    vxorpd   %ymm9,  %ymm9,  %ymm9
+    // ab_01_10 = _mm256_setzero_pd()
+    vxorpd   %ymm10, %ymm10, %ymm10
+    // ab_21_30 = _mm256_setzero_pd()
+    vxorpd   %ymm11, %ymm11, %ymm11
+    // ab_02_13 = _mm256_setzero_pd()
+    vxorpd   %ymm12, %ymm12, %ymm12
+    // ab_22_33 = _mm256_setzero_pd()
+    vxorpd   %ymm13, %ymm13, %ymm13
+    // ab_03_12 = _mm256_setzero_pd()
+    vxorpd   %ymm14, %ymm14, %ymm14
+    // ab_23_32 = _mm256_setzero_pd()
+    vxorpd   %ymm15, %ymm15, %ymm15
+
+    // tmp3 = _mm256_setzero_pd
+    vxorpd   %ymm3,  %ymm3,  %ymm3
+    // tmp4 = _mm256_setzero_pd
+    vxorpd   %ymm4,  %ymm4,  %ymm4
+    // tmp5 = _mm256_setzero_pd
+    vxorpd   %ymm5,  %ymm5,  %ymm5
+    // tmp6 = _mm256_setzero_pd
+    vxorpd   %ymm6,  %ymm6,  %ymm6
+    // tmp7 = _mm256_setzero_pd
+    vxorpd   %ymm7,  %ymm7,  %ymm7
+
     // if kl==0 writeback to AB
     testq     %rdi,   %rdi    
 
@@ -172,78 +169,58 @@ dgemm_kernel_asm:
 
     // *** 1. update
 
-    // ab_02_13 = _mm_add_pd(ab_02_13, tmp3)
-    addpd   %xmm3,      %xmm12
-    // tmp3     = _mm_load_pd(B+2)
-    movaps  -112(%rbx), %xmm3
-    // ab_22_33 = _mm_add_pd(ab_22_33, tmp6)
-    addpd   %xmm6,      %xmm13
+    // ab_02_13 = _mm256_add_pd(ab_02_13, tmp3)
+    vaddpd  %ymm3, %ymm12, %ymm12
+    // tmp3     = _mm256_load_pd(B+2)
+    vmovaps -224(%rbx), %ymm3
+    // ab_22_33 = _mm256_add_pd(ab_22_33, tmp6)
+    vaddpd  %ymm6, %ymm13, %ymm13
     // tmp6     = tmp2
-    movaps  %xmm2,      %xmm6
-    // tmp4     = _mm_shuffle_pd(tmp2, tmp2, _MM_SHUFFLE2(0, 1))
-    pshufd  $78,        %xmm2,      %xmm4
+    vmovaps %ymm2, %ymm6  
+    // tmp4     = _mm256_shuffle_pd(tmp2, tmp2, _MM_SHUFFLE2(0, 1))
+    vpermilpd  $78, %ymm2, %ymm4
     // Multiply tmp2 by tmp0
-    mulpd   %xmm0,      %xmm2        // tmp2 = _mm_mul_pd(tmp2, tmp0)
-
+    vmulpd  %ymm0, %ymm2, %ymm2
     // Multiply tmp6 by tmp1
-    mulpd   %xmm1,      %xmm6        // tmp6 = _mm_mul_pd(tmp6, tmp1)
-
+    vmulpd  %ymm1, %ymm6, %ymm6
     // Add tmp5 to ab_03_12
-    addpd   %xmm5,      %xmm14       // ab_03_12 = _mm_add_pd(ab_03_12, tmp5)
-
+    vaddpd  %ymm5, %ymm14, %ymm14
     // Add tmp7 to ab_23_32
-    addpd   %xmm7,      %xmm15       // ab_23_32 = _mm_add_pd(ab_23_32, tmp7)
-
+    vaddpd  %ymm7, %ymm15, %ymm15
     // Move tmp4 to tmp7
-    movaps  %xmm4,      %xmm7       // tmp7 = tmp4
-
+    vmovaps %ymm4, %ymm7
     // Multiply tmp4 by tmp0
-    mulpd   %xmm0,      %xmm4        // tmp4 = _mm_mul_pd(tmp4, tmp0)
-
+    vmulpd  %ymm0, %ymm4, %ymm4
     // Multiply tmp7 by tmp1
-    mulpd   %xmm1,      %xmm7        // tmp7 = _mm_mul_pd(tmp7, tmp1)
-    
+    vmulpd  %ymm1, %ymm7, %ymm7
     // Add tmp2 to ab_00_11
-    addpd %xmm2, %xmm8         // ab_00_11 = _mm_add_pd(ab_00_11, tmp2)
-
+    vaddpd  %ymm2, %ymm8, %ymm8
     // Load values from memory (B+4) into tmp2
-    movaps -96(%rbx), %xmm2    // tmp2 = _mm_load_pd(B+4)
-
+    vmovaps -96(%rbx), %ymm2
     // Add tmp6 to ab_20_31
-    addpd %xmm6, %xmm9         // ab_20_31 = _mm_add_pd(ab_20_31, tmp6)
-
+    vaddpd  %ymm6, %ymm9, %ymm9
     // Move tmp3 to tmp6
-    movaps %xmm3, %xmm6        // tmp6 = tmp3
-
+    vmovaps %ymm3, %ymm6
     // Shuffle tmp3 and store result in tmp5
-    pshufd $78,%xmm3, %xmm5    // tmp5 = _mm_shuffle_pd(tmp3, tmp3, _MM_SHUFFLE2(0, 1))
-
+    vpermilpd $78, %ymm3, %ymm5
     // Multiply tmp3 by tmp0
-    mulpd %xmm0, %xmm3         // tmp3 = _mm_mul_pd(tmp3, tmp0)
-
+    vmulpd  %ymm0, %ymm3, %ymm3
     // Multiply tmp6 by tmp1
-    mulpd %xmm1, %xmm6         // tmp6 = _mm_mul_pd(tmp6, tmp1)
-
+    vmulpd  %ymm1, %ymm6, %ymm6
     // Add tmp4 to ab_01_10
-    addpd %xmm4, %xmm10        // ab_01_10 = _mm_add_pd(ab_01_10, tmp4)
-
+    vaddpd  %ymm4, %ymm10, %ymm10
     // Add tmp7 to ab_21_30
-    addpd %xmm7, %xmm11        // ab_21_30 = _mm_add_pd(ab_21_30, tmp7)
-
+    vaddpd  %ymm7, %ymm11, %ymm11
     // Move tmp5 to tmp7
-    movaps %xmm5, %xmm7        // tmp7 = tmp5
-
+    vmovaps %ymm5, %ymm7
     // Multiply tmp5 by tmp0
-    mulpd %xmm0, %xmm5         // tmp5 = _mm_mul_pd(tmp5, tmp0)
-
+    vmulpd  %ymm0, %ymm5, %ymm5
     // Load values from memory (A+4) into tmp0
-    movaps -96(%rax), %xmm0    // tmp0 = _mm_load_pd(A+4)
-
+    vmovaps -96(%rax), %ymm0
     // Multiply tmp7 by tmp1
-    mulpd %xmm1, %xmm7         // tmp7 = _mm_mul_pd(tmp7, tmp1)
-
+    vmulpd  %ymm1, %ymm7, %ymm7
     // Load values from memory (A+6) into tmp1
-    movaps -80(%rax), %xmm1    // tmp1 = _mm_load_pd(A+6)
+    vmovaps -80(%rax), %ymm1
 
     // *** 2. update
 
