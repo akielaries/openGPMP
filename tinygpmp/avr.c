@@ -6,6 +6,37 @@
 #include <util/delay.h>
 #include <util/setbaud.h>
 
+#ifdef __AVR_ATmega2560__
+
+// red for signaing wait LED 11
+#define PIN_SLP PB5
+// yellow LED 12
+#define PIN_GEN PB6
+// red LED pin 13
+#define PIN_MLT PB7
+
+#elif __AVR_ATmega328P__
+
+// yellow LED pin 8
+#define PIN_GEN PB0
+// red LED pin 9
+#define PIN_MLT PB1
+// red for signaing wait LED 11
+#define PIN_SLP PB2
+
+#endif
+
+#ifdef __AVR_ATmega2560__
+
+// if N is assigned to a value too high then we get some undefined behavior
+#define N 24
+
+#elif __AVR_ATmega328P__
+
+#define N 16
+
+#endif
+
 int uart_putchar(char c, FILE *stream) {
     // if character is newline, also send carriage return
     if (c == '\n') {
@@ -79,6 +110,16 @@ void matrix_addition(int a[2][2], int b[2][2], int result[2][2]) {
     }
 }
 
+void std_mtx_add(const double *A, const double *B, double *C) {
+        // MTX A AND B MUST BE SAME SIZE
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < N; ++j) {
+                // perform matrix addition
+                C[i * N + j] = A[i * N + j] + B[i * N + j];
+            }
+        }
+    }
+
 void print_matrix(int matrix[2][2]) {
     for (int i = 0; i < 2; ++i) {
         for (int j = 0; j < 2; ++j) {
@@ -88,50 +129,64 @@ void print_matrix(int matrix[2][2]) {
     }
 }
 
+
 int main() {
-#ifdef __AVR_ATmega2560__
-    // Set Pin 7 (Arduino Mega Pin 13) as an output
-    DDRB |= (1 << PB7);
-#elif __AVR_ATmega328P__
-    DDRB |= (1 << PB0);
-#endif
+
+    // set data direction on designated pins making them outputs
+    DDRB |= (1 << PIN_GEN);
+    DDRB |= (1 << PIN_MLT);
+    DDRB |= (1 << PIN_SLP);
+
+    // blink 30 times
+    for (volatile uint8_t i = 0; i < 30; i++) {
+
+        // toggle state of pin
+        PORTB ^= (1 << PIN_GEN);
+        PORTB ^= (1 << PIN_MLT);
+        
+        _delay_ms(100);
+
+    }
+        
     // Initialize UART
     setup_uart();
 
-    // Print a welcome message
-    printf("UART Example: Hello, AVR!\n");
+    double A[N*N];
+    double B[N*N];
+    double C[N*N];
 
     // Main loop
     while (1) {
-#ifdef __AVR_ATmega2560__
-        PORTB ^= (1 << PB7);
-#elif __AVR_ATmega328P__
-        PORTB ^= (1 << PB0);
-#endif
-        _delay_ms(100); // Wait for 500 milliseconds
+        printf("Generating matrices A and B\n");
 
-        printf("We're looping... wait 1000ms\n");
-        _delay_ms(100);
+        // toggle yellow pin on while matrices are getting generated
+        PORTB ^= (1 << PIN_GEN);
+        
+        for (int i = 0; i < N * N; ++i) {
+            A[i] = (double)rand() / RAND_MAX;
+            B[i] = (double)rand() / RAND_MAX;
+        }   
 
-        // Define matrices
-        int matrixA[2][2] = {{1, 2}, {3, 4}};
-        int matrixB[2][2] = {{5, 6}, {7, 8}};
-        int resultMatrix[2][2];
+        // toggle yellow as off
+        PORTB ^= (1 << PIN_GEN);
+
+        printf("Multiplying matrices A and B\n");
+        
+        // toggle red as on while matrices are being multiplied
+        PORTB ^= (1 << PIN_MLT);
 
         // Perform matrix addition
-        matrix_addition(matrixA, matrixB, resultMatrix);
+        std_mtx_add(A, B, C);
+        
+        // toggle red as off
+        PORTB ^= (1 << PIN_MLT);
 
-        // Print matrices and result
-        printf("Matrix A:\n");
-        print_matrix(matrixA);
+        // reached end of code, pause for a bit
+        PORTB ^= (1 << PIN_SLP);
 
-        printf("Matrix B:\n");
-        print_matrix(matrixB);
+        _delay_ms(3000);
 
-        printf("Result Matrix:\n");
-        print_matrix(resultMatrix);
-
-        _delay_ms(7500);
+        PORTB ^= (1 << PIN_SLP);
     }
 
     return 0;
