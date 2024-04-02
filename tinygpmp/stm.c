@@ -71,7 +71,7 @@ void main() {
         *((volatile unsigned int *)0x40011010) = (1U << 15);
         wait();
 
-        // Reset it again.
+        // RESET
         *((volatile unsigned int *)0x40011010) = (1U << 29);
         *((volatile unsigned int *)0x40011010) = (1U << 30);
         *((volatile unsigned int *)0x40011010) = (1U << 31);
