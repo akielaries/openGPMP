@@ -65,7 +65,8 @@ $ cmake -S ../
     * `-DCMAKE_C_COMPILER=/path/to/C/compiler`
     * `-DCMAKE_CXX_COMPILER=/path/to/CPP/compiler`
     * `-DCMAKE_FC_COMPILER=/path/to/Fortran/compiler`
-> **Note** ATM OSX requires GCC for compilation
+
+> **Note** For now, OSX requires GCC for compilation
 
 Install the compiled static library and headers:
 ```
@@ -115,8 +116,17 @@ $ cd build
 $ sudo make uninstall
 ```
 ## tinygpmp
+> **Note** In progress
 [`tinygpmp`](/tinygpmp) targets low-voltage, resource-constrained devices and is currently aiming to support
 AVR series MCUs, STM32 chips, and other embedded devices.
+
+tinygpmp can be built using the following CMake options:
+```
+    * `-DTINYGPMP_AVR=ON` ***todo***
+    * `-DTINYGPMP_ARM32=ON` ***todo***
+    * `-DTINYGPMP_DYN=ON` ***todo***
+    * `-DTINYGPMP_STAT=ON` ***todo***
+```
 
 ## Modules
 
