@@ -1,106 +1,133 @@
-#/************************************************************************* 
-# *                                  
-# *  Project               
-# *                         _____ _____  __  __ _____
-# *                        / ____|  __ \|  \/  |  __ \
-# *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
-# * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
-# *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
-# * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
-# *      | |
-# *      |_|
-# *
-# *
-# * Copyright (C) Akiel Aries, <akiel@akiel.org>.
-# *
-# * This software is licensed as described in the file LICENSE, which
-# * you should have received as part of this distribution. The terms
-# * among other details are referenced in the official documentation
-# * seen here : https://akielaries.github.io/openGPMP/ along with 
-# * important files seen in this project.
-# *
-# * You may opt to use, copy, modify, merge, publish, distribute 
-# * and/or sell copies of the Software, and permit persons to whom 
-# * the Software is furnished to do so, under the terms of the 
-# * LICENSE file. As this is an Open Source effort, all implementations
-# * must be of the same methodology.
-# * 
-# *
-# * This software is distributed on an "AS IS" basis, WITHOUT 
-# * WARRANTY OF ANY KIND, either express or implied.
-# *
-# ************************************************************************/
+# /*************************************************************************
+# Root CMake file for the openGPMP project
+# *************************************************************************/
 
 cmake_minimum_required(VERSION 3.20)
 set (CMAKE_CXX_STANDARD 20)
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wno-unused-result -Wparentheses -Wsign-compare")
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -Wcast-qual")
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -D __GPMP_CPP_API__")
 
 project(openGPMP LANGUAGES CXX C Fortran ASM)
 set(PROJECT_VERSION "1.0")
 
 include(CheckIncludeFileCXX)
 
-message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros")
-execute_process(
-    COMMAND ${CMAKE_CXX_COMPILER} -march=native -dM -E -
-    RESULT_VARIABLE result
-    OUTPUT_VARIABLE compiler_output
-    INPUT_FILE /dev/null  # Provide an empty input
-)
-message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros - done")
+# MAIN OPTIONS FOR BUILDING
+# * -DBUILD_OPENGPMP: build source C++ API detecting available hardware accl
+#   by default
+# * -DBUILD_PYGPMP  : build Python API wrapper
+# * -DBUILD_TINYGPMP: build tinygpmp subproject for embedded devices
+# * -DBUILD_TESTS   : build C++ and FORTRAN unit tests
 
-# check if the command execution was successful
-if(result EQUAL 0)
-    string(FIND "${compiler_output}" "#define __ARM_NEON 1" arm_neon_index)
-    string(FIND "${compiler_output}" "#define __AVX2__ 1" avx2_index)
-    string(FIND "${compiler_output}" "#define __SSE__ 1" sse_index)
-    string(FIND "${compiler_output}" "#define __MMX__ 1" mmx_index)
+option(BUILD_OPENGPMP   "Build Source C++ API"  ON)     # ON BY DEFAULT
+option(BUILD_TINYGPMP   "Build tinygpmp"        OFF)    # OFF BY DEFAULT
+option(BUILD_PYGPMP     "Build Python API"      OFF)    # OFF BY DEFAULT
+option(BUILD_TESTS      "Build Unit Test Suite" OFF)    # OFF BY DEFAULT
 
-    message(STATUS "Detecting available SIMD ISAs")
-    
-    # order of magnitude for INTRINS:
-    # ARM NEON is only available extension on ARM procs
-    # AVX2 is the highest order support and x86 procs supporting this will 
-    # also support SSE2, SSE, MMX, and the others that came before it
+if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP)
 
-    if(arm_neon_index GREATER -1)
-        message(STATUS "SIMD ISA : ARM NEON supported")
-        set(SIMD_ISA "ARM_NEON")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_ARM_NEON__")
-        check_include_file_cxx("arm_neon.h" HEADER_EXISTS)
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wno-unused-result -Wparentheses -Wsign-compare")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -Wcast-qual")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -D __GPMP_CPP_API__")
 
-    elseif(avx2_index GREATER -1)
-        message(STATUS "SIMD ISA : AVX2 is supported")
-        set(SIMD_ISA "AVX2")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_AVX2__")
-        check_include_file_cxx("immintrin.h" HEADER_EXISTS)
+    message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros")
+    execute_process(
+        COMMAND ${CMAKE_CXX_COMPILER} -march=native -dM -E -
+        RESULT_VARIABLE result
+        # result output
+        OUTPUT_VARIABLE compiler_output
+        INPUT_FILE /dev/null  # Provide an empty input
+    )
+    message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros - done")
 
-    elseif(sse_index GREATER -1)
-        message(STATUS "SIMD ISA : SSE is supported")
-        set(SIMD_ISA "SSE")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_SSE__")
-        check_include_file_cxx("emmintrin.h" HEADER_EXISTS)
-        check_include_file_cxx("smmintrin.h" HEADER_EXISTS)
+    # check if the command execution was successful
+    if(result EQUAL 0)
+        # check if string is in compiler output
+        string(FIND "${compiler_output}" "#define __ARM_NEON 1" arm_neon_index)
+        string(FIND "${compiler_output}" "#define __AVX2__ 1" avx2_index)
+        string(FIND "${compiler_output}" "#define __SSE__ 1" sse_index)
+        string(FIND "${compiler_output}" "#define __MMX__ 1" mmx_index)
 
-    elseif(mmx_index GREATER -1)
-        message(STATUS "SIMD ISA : MMX is supported")
-        set(SIMD_ISA "MMX")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_MMX__")
-        check_include_file_cxx("mmintrin.h" HEADER_EXISTS)
+        message(STATUS "Detecting available SIMD ISAs")
+        
+        # order of magnitude for INTRINS:
+        # ARM NEON is only available extension on ARM procs
+        # AVX2 is the highest order support and x86 procs supporting this will 
+        # also support SSE2, SSE, MMX, and the others that came before it
 
+        if(arm_neon_index GREATER -1)
+            message(STATUS "SIMD ISA : ARM NEON supported")
+            set(SIMD_ISA "ARM_NEON")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_ARM_NEON__")
+            check_include_file_cxx("arm_neon.h" HEADER_EXISTS)
+
+        elseif(avx2_index GREATER -1)
+            message(STATUS "SIMD ISA : AVX2 is supported")
+            set(SIMD_ISA "AVX2")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_AVX2__")
+            check_include_file_cxx("immintrin.h" HEADER_EXISTS)
+
+        elseif(sse_index GREATER -1)
+            message(STATUS "SIMD ISA : SSE is supported")
+            set(SIMD_ISA "SSE")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_SSE__")
+            check_include_file_cxx("emmintrin.h" HEADER_EXISTS)
+            check_include_file_cxx("smmintrin.h" HEADER_EXISTS)
+
+        elseif(mmx_index GREATER -1)
+            message(STATUS "SIMD ISA : MMX is supported")
+            set(SIMD_ISA "MMX")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_MMX__")
+            check_include_file_cxx("mmintrin.h" HEADER_EXISTS)
+
+        else()
+            message(STATUS "No supported SIMD ISA")
+        endif()
+
+        message(STATUS "Detecting available SIMD ISAs - done")
     else()
-        message(STATUS "No supported SIMD ISA")
+        message(STATUS "Command failed with error code ${result}")
     endif()
 
-    message(STATUS "Detecting available SIMD ISAs - done")
-else()
-    message(STATUS "Command failed with error code ${result}")
+    # compile with native microarchitecture
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+
 endif()
 
-# compile with native microarchitecture
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+if(BUILD_TINYGPMP)
+    # this section should have some heirarchy to it. should make the default
+    # 32-bit MCUs. should define macros for each option (src code will use 
+    # this). should take in -mcpu and -march as params to then set for
+    # arm g++ compiler flags. 
+    # THERE AREN'T MANY THINGS FOR US TO RELY ON FOR DETECTING EMBEDDED
+    # DEVICE INFO EASILY SO WE WILL RELY MOSTLY ON PASSED IN INFO AS FLAGS
+    # TODO FIXME
+    message(STATUS "Building tinygpmp")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__TINYGPMP__")
+
+    option(TINYGPMP_AVR8  "Build for 8-bit AVR MCUs" OFF)
+    option(TINYGPMP_AVR32 "Build for 32-bit AVR MCUs" OFF)
+    option(TINYGPMP_STM8  "Build for 8-bit ARM M-Cortex MCUs" OFF)
+    option(TINYGPMP_STM32 "Build for 32-bit ARM M-Cortex MCUs" OFF)
+
+    if (TINYGPMP_AVR8 OR TINYGPMP_AVR32)
+        set(CMAKE_CXX_COMPILER "avr-g++")
+        if (TINYGPMP_AVR8)
+            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR8__")
+        elseif(TINYGPMP_AVR32)
+            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR32__")
+        endif()
+
+    elseif (TINYGPMP_STM8 OR TINYGPMP_STM32)
+        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
+        if (TINYGPMP_STM8)
+            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM8__")
+        elseif(TINYGPMP_STM32)
+            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM32__")
+        endif()
+        
+        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -nostdlib")
+    endif()
+
+endif()
 
 # Set build type if not specified
 set(DEFAULT_BUILD_TYPE "Release")
@@ -124,8 +151,6 @@ option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
 ############################################################
 #find_package(GTest REQUIRED)
 
-option(BUILD_TESTS "Build Unit Test Suite" OFF)
-option(BUILD_PYGPMP "Build Python API" OFF)
 
 if(BUILD_PYGPMP)
     message(STATUS "Building Python API")
@@ -149,7 +174,9 @@ if(BUILD_PYGPMP)
         message(STATUS "Python API built successfully")
     endif()
 
-else()
+#else()
+elseif(NOT BUILD_PYGPMP OR NOT BUILD_TINYGPMP)
+
     message(STATUS "Building source C++ API")
 
     ############################################################
