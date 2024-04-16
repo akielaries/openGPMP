@@ -146,11 +146,6 @@ include(GNUInstallDirs)
 
 option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
 
-############################################################
-# Run Tests
-############################################################
-#find_package(GTest REQUIRED)
-
 
 if(BUILD_PYGPMP)
     message(STATUS "Building Python API")
@@ -175,6 +170,8 @@ if(BUILD_PYGPMP)
     endif()
 
 #else()
+# This is the default option when running with cmake ../ and no other
+# passed in options
 elseif(NOT BUILD_PYGPMP OR NOT BUILD_TINYGPMP)
 
     message(STATUS "Building source C++ API")
@@ -232,6 +229,9 @@ elseif(NOT BUILD_PYGPMP OR NOT BUILD_TINYGPMP)
 
     export(TARGETS ${PROJECT_NAME} FILE openGPMPConfig.cmake)
 
+    ############################################################
+    # Run Tests
+    ############################################################
     if (BUILD_TESTS)
         message(STATUS "Including tests")
 
