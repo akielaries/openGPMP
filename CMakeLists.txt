@@ -22,11 +22,16 @@ option(BUILD_TINYGPMP   "Build tinygpmp"        OFF)    # OFF BY DEFAULT
 option(BUILD_PYGPMP     "Build Python API"      OFF)    # OFF BY DEFAULT
 option(BUILD_TESTS      "Build Unit Test Suite" OFF)    # OFF BY DEFAULT
 
-if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP)
 
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wno-unused-result -Wparentheses -Wsign-compare")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -Wcast-qual")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -D __GPMP_CPP_API__")
+# BASE COMPILER FLAGS SUPPORTED BY GCC & CLANG
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wno-unused-result -Wparentheses -Wsign-compare")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -Wcast-qual")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -O0") 
+
+
+if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP)
+    set(CMAKE_Fortran_FLAGS "-O0")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D __GPMP_CPP_API__")
 
     message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros")
     execute_process(
@@ -92,6 +97,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP)
 
 endif()
 
+# BUILD tinygpmp
 if(BUILD_TINYGPMP)
     # this section should have some heirarchy to it. should make the default
     # 32-bit MCUs. should define macros for each option (src code will use 
@@ -105,26 +111,34 @@ if(BUILD_TINYGPMP)
 
     option(TINYGPMP_AVR8  "Build for 8-bit AVR MCUs" OFF)
     option(TINYGPMP_AVR32 "Build for 32-bit AVR MCUs" OFF)
-    option(TINYGPMP_STM8  "Build for 8-bit ARM M-Cortex MCUs" OFF)
-    option(TINYGPMP_STM32 "Build for 32-bit ARM M-Cortex MCUs" OFF)
+    option(TINYGPMP_ARM32 "Build for 32-bit ARM M-Cortex MCUs" OFF)
+    option(TINYGPMP_STAT "Build tinygpmp as a static library" ON)
+    option(TINYGPMP_DYN "Build tinygpmp as a dynamic library" OFF)
 
+
+    # 8 & 32 BIT AVR MCUs
     if (TINYGPMP_AVR8 OR TINYGPMP_AVR32)
         set(CMAKE_CXX_COMPILER "avr-g++")
+
+        # 8 BIT AVR MCUs
         if (TINYGPMP_AVR8)
+            message(STATUS "Targeting AVR 8-bit MCUs")
             set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR8__")
+
+        # 32 BIT AVR MCUs
         elseif(TINYGPMP_AVR32)
+            message(STATUS "Targeting AVR 8-bit MCUs")
             set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR32__")
         endif()
 
-    elseif (TINYGPMP_STM8 OR TINYGPMP_STM32)
-        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
-        if (TINYGPMP_STM8)
-            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM8__")
-        elseif(TINYGPMP_STM32)
-            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM32__")
-        endif()
+    # 32 BIT ARM Cortex-M 
+    elseif (TINYGPMP_ARM32)
+        message(STATUS "Targeting ARM Cortex-M 32-bit MCUs")
         
-        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -nostdlib")
+        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM32__")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthumb -nostdlib")
+
     endif()
 
 endif()
