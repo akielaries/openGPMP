@@ -4,10 +4,6 @@
 
 cmake_minimum_required(VERSION 3.20)
 set (CMAKE_CXX_STANDARD 20)
-
-project(openGPMP LANGUAGES CXX C Fortran ASM)
-set(PROJECT_VERSION "1.0")
-
 include(CheckIncludeFileCXX)
 
 # MAIN OPTIONS FOR BUILDING
@@ -16,10 +12,9 @@ include(CheckIncludeFileCXX)
 # * -DBUILD_PYGPMP  : build Python API wrapper
 # * -DBUILD_TINYGPMP: build tinygpmp subproject for embedded devices
 # * -DBUILD_TESTS   : build C++ and FORTRAN unit tests
-
-option(BUILD_OPENGPMP   "Build Source C++ API"  ON)     # ON BY DEFAULT
-option(BUILD_TINYGPMP   "Build tinygpmp"        OFF)    # OFF BY DEFAULT
+option(BUILD_OPENGPMP   "Build Source C++ API"  OFF)     # OFF BY DEFAULT
 option(BUILD_PYGPMP     "Build Python API"      OFF)    # OFF BY DEFAULT
+option(BUILD_TINYGPMP   "Build tinygpmp"        OFF)    # OFF BY DEFAULT
 option(BUILD_TESTS      "Build Unit Test Suite" OFF)    # OFF BY DEFAULT
 
 
@@ -29,7 +24,15 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -W
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -O0") 
 
 
-if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP)
+# OPENGPMP INSTALLATION
+if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
+    # this is the default installation for openGPMP when no flags are passed in
+    # OR the -DBUILD_OPENGPMP=ON option is passed
+
+    set(PROJECT_NAME "openGPMP")
+    project(${PROJECT_NAME} LANGUAGES CXX C Fortran ASM)
+    set(PROJECT_VERSION 1.0)
+
     set(CMAKE_Fortran_FLAGS "-O0")
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D __GPMP_CPP_API__")
 
@@ -94,99 +97,6 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP)
 
     # compile with native microarchitecture
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
-
-endif()
-
-# BUILD tinygpmp
-if(BUILD_TINYGPMP)
-    # this section should have some heirarchy to it. should make the default
-    # 32-bit MCUs. should define macros for each option (src code will use 
-    # this). should take in -mcpu and -march as params to then set for
-    # arm g++ compiler flags. 
-    # THERE AREN'T MANY THINGS FOR US TO RELY ON FOR DETECTING EMBEDDED
-    # DEVICE INFO EASILY SO WE WILL RELY MOSTLY ON PASSED IN INFO AS FLAGS
-    # TODO FIXME
-    message(STATUS "Building tinygpmp")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__TINYGPMP__")
-
-    option(TINYGPMP_AVR8  "Build for 8-bit AVR MCUs" OFF)
-    option(TINYGPMP_AVR32 "Build for 32-bit AVR MCUs" OFF)
-    option(TINYGPMP_ARM32 "Build for 32-bit ARM M-Cortex MCUs" OFF)
-    option(TINYGPMP_STAT "Build tinygpmp as a static library" ON)
-    option(TINYGPMP_DYN "Build tinygpmp as a dynamic library" OFF)
-
-
-    # 8 & 32 BIT AVR MCUs
-    if (TINYGPMP_AVR8 OR TINYGPMP_AVR32)
-        set(CMAKE_CXX_COMPILER "avr-g++")
-
-        # 8 BIT AVR MCUs
-        if (TINYGPMP_AVR8)
-            message(STATUS "Targeting AVR 8-bit MCUs")
-            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR8__")
-
-        # 32 BIT AVR MCUs
-        elseif(TINYGPMP_AVR32)
-            message(STATUS "Targeting AVR 8-bit MCUs")
-            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR32__")
-        endif()
-
-    # 32 BIT ARM Cortex-M 
-    elseif (TINYGPMP_ARM32)
-        message(STATUS "Targeting ARM Cortex-M 32-bit MCUs")
-        
-        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM32__")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthumb -nostdlib")
-
-    endif()
-
-endif()
-
-# Set build type if not specified
-set(DEFAULT_BUILD_TYPE "Release")
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
-    message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
-    set(CMAKE_BUILD_TYPE "${DEFAULT_BUILD_TYPE}" CACHE STRING "Choose the type of build." FORCE)
-    # Set the possible values of build type for cmake-gui
-    set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
-endif()
-
-    
-set(CMAKE_CXX_FLAGS_RELEASE "-O0")
-set(CMAKE_Fortran_FLAGS "-O0")
-
-include(GNUInstallDirs)
-
-option(BUILD_ARITH "[!] Build Arithmetic Module" ON)
-
-
-if(BUILD_PYGPMP)
-    message(STATUS "Building Python API")
-
-    # Set the path to your Python interpreter
-    set(PYTHON_EXECUTABLE "/usr/bin/python3")
-
-    # Set the path to your Python project
-    set(PYTHON_PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-
-    # Run the Python command to build the Python API
-    execute_process(
-        COMMAND ${PYTHON_EXECUTABLE} setup.py build_ext --inplace sdist bdist_wheel --plat-name=native
-        WORKING_DIRECTORY ${PYTHON_PROJECT_DIR}
-        RESULT_VARIABLE PYTHON_BUILD_RESULT
-    )
-
-    if(PYTHON_BUILD_RESULT)
-        message(FATAL_ERROR "Failed to build Python API")
-    else()
-        message(STATUS "Python API built successfully")
-    endif()
-
-#else()
-# This is the default option when running with cmake ../ and no other
-# passed in options
-elseif(NOT BUILD_PYGPMP OR NOT BUILD_TINYGPMP)
 
     message(STATUS "Building source C++ API")
 
@@ -269,4 +179,98 @@ elseif(NOT BUILD_PYGPMP OR NOT BUILD_TINYGPMP)
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
     endif()
 
+    set(CMAKE_CXX_FLAGS_RELEASE "-O0")
+    set(CMAKE_Fortran_FLAGS "-O0")
+
+    include(GNUInstallDirs)
+
 endif()
+
+# TINYGPMP INSTALLATION
+if(BUILD_TINYGPMP)
+    set(PROJECT_NAME "tinygpmp")
+    project(PROJECT_NAME LANGUAGES CXX C)
+    set(PROJECT_VERSION 1.0)
+
+    # this section should have some heirarchy to it. should make the default
+    # 32-bit MCUs. should define macros for each option (src code will use 
+    # this). should take in -mcpu and -march as params to then set for
+    # arm g++ compiler flags. 
+    # THERE AREN'T MANY THINGS FOR US TO RELY ON FOR DETECTING EMBEDDED
+    # DEVICE INFO EASILY SO WE WILL RELY MOSTLY ON PASSED IN INFO AS FLAGS
+    # TODO FIXME
+    message(STATUS "Building tinygpmp")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__TINYGPMP__")
+
+    option(TINYGPMP_AVR8  "Build for 8-bit AVR MCUs" OFF)
+    option(TINYGPMP_AVR32 "Build for 32-bit AVR MCUs" OFF)
+    option(TINYGPMP_ARM32 "Build for 32-bit ARM M-Cortex MCUs" OFF)
+    option(TINYGPMP_STAT "Build tinygpmp as a static library" ON)
+    option(TINYGPMP_DYN "Build tinygpmp as a dynamic library" OFF)
+
+
+    # 8 & 32 BIT AVR MCUs
+    if (TINYGPMP_AVR8 OR TINYGPMP_AVR32)
+        set(CMAKE_CXX_COMPILER "avr-g++")
+
+        # 8 BIT AVR MCUs
+        if (TINYGPMP_AVR8)
+            message(STATUS "Targeting AVR 8-bit MCUs")
+            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR8__")
+
+        # 32 BIT AVR MCUs
+        elseif(TINYGPMP_AVR32)
+            message(STATUS "Targeting AVR 8-bit MCUs")
+            set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__AVR32__")
+        endif()
+
+    # 32 BIT ARM Cortex-M 
+    elseif (TINYGPMP_ARM32)
+        message(STATUS "Targeting ARM Cortex-M 32-bit MCUs")
+        
+        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
+        set(CMAKE_C_COMPILER "arm-none-eabi-gcc")
+        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
+
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM32__")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthumb -nostdlib")
+
+    endif()
+
+endif()
+
+# Set build type if not specified
+set(DEFAULT_BUILD_TYPE "Release")
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+    message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
+    set(CMAKE_BUILD_TYPE "${DEFAULT_BUILD_TYPE}" CACHE STRING "Choose the type of build." FORCE)
+    # Set the possible values of build type for cmake-gui
+    set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+endif()
+
+    
+
+if(BUILD_PYGPMP)
+    message(STATUS "Building Python API")
+
+    # Set the path to your Python interpreter
+    set(PYTHON_EXECUTABLE "/usr/bin/python3")
+
+    # Set the path to your Python project
+    set(PYTHON_PROJECT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
+    # Run the Python command to build the Python API
+    execute_process(
+        COMMAND ${PYTHON_EXECUTABLE} setup.py build_ext --inplace sdist bdist_wheel --plat-name=native
+        WORKING_DIRECTORY ${PYTHON_PROJECT_DIR}
+        RESULT_VARIABLE PYTHON_BUILD_RESULT
+    )
+
+    if(PYTHON_BUILD_RESULT)
+        message(FATAL_ERROR "Failed to build Python API")
+    else()
+        message(STATUS "Python API built successfully")
+    endif()
+
+endif()
+
