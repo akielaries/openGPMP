@@ -19,10 +19,10 @@ Modules
     modules/linalg/dgemm_kernel_4x4_sse.S
 
 ```
-    Where:
-    - `mtx.cpp`: main interface for matrix arithmetic operations
-    - `dgemm_arr.cpp`: DGEMM implementation for matrices as arrays
-    - `dgemm_kernel_4x4_sse.S`: 4x4 block micro kernel SSE implementation
+Where:
+- `mtx.cpp`: main interface for matrix arithmetic operations
+- `dgemm_arr.cpp`: DGEMM implementation for matrices as arrays
+- `dgemm_kernel_4x4_sse.S`: 4x4 block micro kernel SSE implementation
 
 4. Machine/Deep Learning
    - Regression
