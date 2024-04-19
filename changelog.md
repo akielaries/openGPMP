@@ -14,6 +14,7 @@ infer
 ### Complex
 ### Core
 ### Disrete
+### Linear Algebra
 ### Machine Learning
 ### Number Theory
 ### Statistics

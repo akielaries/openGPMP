@@ -114,6 +114,66 @@
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
             <location file="../../modules/disct/graphs.cpp" line="713" column="24"/>
         </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/arm/mtx_arm_vec_f32.cpp">
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="73" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="70" column="27" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/arm/mtx_arm_vec_f32.cpp">
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="103" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="100" column="27" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_arr_f32.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_f32.cpp" line="74" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_f32.cpp" line="72" column="26" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_arr_f64.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_f64.cpp" line="73" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_f64.cpp" line="71" column="27" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_arr_i16.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_i16.cpp" line="104" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_i16.cpp" line="100" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_arr_i32.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_i32.cpp" line="116" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_i32.cpp" line="112" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_arr_i8.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_i8.cpp" line="105" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_i8.cpp" line="101" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_vec_f32.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_f32.cpp" line="75" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_f32.cpp" line="72" column="26" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_vec_f64.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_f64.cpp" line="75" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_f64.cpp" line="72" column="27" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_vec_f64.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_f64.cpp" line="108" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_f64.cpp" line="105" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_vec_i32.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_i32.cpp" line="78" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_i32.cpp" line="74" column="27" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/avx/mtx_avx2_vec_i32.cpp">
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_i32.cpp" line="117" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_vec_i32.cpp" line="113" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
             <location file="../../modules/linalg/dgemm_arr.cpp" line="148" column="12"/>
             <symbol>j</symbol>
@@ -130,13 +190,13 @@
             <location file="../../include/linalg/eigen.hpp" line="57" column="5"/>
             <symbol>Eigen</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
             <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
             <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
@@ -197,120 +257,9 @@
             <location file="../../include/linalg/linsys.hpp" line="58" column="5"/>
             <symbol>LinSys</symbol>
         </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_arm_vec_f32.cpp">
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="73" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="70" column="27" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_arm_vec_f32.cpp">
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="103" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="100" column="27" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_f32.cpp">
-            <location file="../../modules/linalg/mtx_avx2_arr_f32.cpp" line="74" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_arr_f32.cpp" line="72" column="26" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_f64.cpp">
-            <location file="../../modules/linalg/mtx_avx2_arr_f64.cpp" line="73" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_arr_f64.cpp" line="71" column="27" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_i16.cpp">
-            <location file="../../modules/linalg/mtx_avx2_arr_i16.cpp" line="104" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_arr_i16.cpp" line="100" column="23" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_i32.cpp">
-            <location file="../../modules/linalg/mtx_avx2_arr_i32.cpp" line="116" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_arr_i32.cpp" line="112" column="23" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_arr_i8.cpp">
-            <location file="../../modules/linalg/mtx_avx2_arr_i8.cpp" line="105" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_arr_i8.cpp" line="101" column="23" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_vec_f32.cpp">
-            <location file="../../modules/linalg/mtx_avx2_vec_f32.cpp" line="75" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_vec_f32.cpp" line="72" column="26" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_vec_f64.cpp">
-            <location file="../../modules/linalg/mtx_avx2_vec_f64.cpp" line="75" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_vec_f64.cpp" line="72" column="27" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_vec_f64.cpp">
-            <location file="../../modules/linalg/mtx_avx2_vec_f64.cpp" line="108" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_vec_f64.cpp" line="105" column="23" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_vec_i32.cpp">
-            <location file="../../modules/linalg/mtx_avx2_vec_i32.cpp" line="78" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_vec_i32.cpp" line="74" column="27" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_avx2_vec_i32.cpp">
-            <location file="../../modules/linalg/mtx_avx2_vec_i32.cpp" line="117" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_avx2_vec_i32.cpp" line="113" column="23" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
         <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/linalg/mtx_naive.cpp">
             <location file="../../modules/linalg/mtx_naive.cpp" line="58" column="36"/>
             <location file="../../modules/linalg/mtx_naive.cpp" line="57" column="22" info="&apos;rows&apos; is assigned value &apos;A.size()&apos; here."/>
-        </error>
-        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
-            <location file="../../modules/linalg/mtx_sse2_arr_f32.cpp" line="91" column="0"/>
-        </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__SSE2__ : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/mtx_sse2_arr_f32.cpp:91] #endif without #if" file0="../../modules/linalg/mtx_sse2_arr_f32.cpp">
-            <location file="../../modules/linalg/mtx_sse2_arr_f32.cpp" line="0" column="0"/>
-        </error>
-        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
-            <location file="../../modules/linalg/mtx_sse2_arr_f64.cpp" line="92" column="0"/>
-        </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__SSE2__ : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/mtx_sse2_arr_f64.cpp:92] #endif without #if" file0="../../modules/linalg/mtx_sse2_arr_f64.cpp">
-            <location file="../../modules/linalg/mtx_sse2_arr_f64.cpp" line="0" column="0"/>
-        </error>
-        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
-            <location file="../../modules/linalg/mtx_sse2_arr_i16.cpp" line="87" column="0"/>
-        </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/mtx_sse2_arr_i16.cpp:87] #endif without #if" file0="../../modules/linalg/mtx_sse2_arr_i16.cpp">
-            <location file="../../modules/linalg/mtx_sse2_arr_i16.cpp" line="0" column="0"/>
-        </error>
-        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
-            <location file="../../modules/linalg/mtx_sse2_arr_i32.cpp" line="98" column="0"/>
-        </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__SSE2__ : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/mtx_sse2_arr_i32.cpp:98] #endif without #if" file0="../../modules/linalg/mtx_sse2_arr_i32.cpp">
-            <location file="../../modules/linalg/mtx_sse2_arr_i32.cpp" line="0" column="0"/>
-        </error>
-        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
-            <location file="../../modules/linalg/mtx_sse2_arr_i8.cpp" line="87" column="0"/>
-        </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/mtx_sse2_arr_i8.cpp:87] #endif without #if" file0="../../modules/linalg/mtx_sse2_arr_i8.cpp">
-            <location file="../../modules/linalg/mtx_sse2_arr_i8.cpp" line="0" column="0"/>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_sse2_vec_f32.cpp">
-            <location file="../../modules/linalg/mtx_sse2_vec_f32.cpp" line="75" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_sse2_vec_f32.cpp" line="72" column="26" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
-            <location file="../../modules/linalg/mtx_sse2_vec_f64.cpp" line="182" column="0"/>
-        </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__SSE2__ : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/mtx_sse2_vec_f64.cpp:182] #endif without #if" file0="../../modules/linalg/mtx_sse2_vec_f64.cpp">
-            <location file="../../modules/linalg/mtx_sse2_vec_f64.cpp" line="0" column="0"/>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_sse2_vec_i32.cpp">
-            <location file="../../modules/linalg/mtx_sse2_vec_i32.cpp" line="77" column="19" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_sse2_vec_i32.cpp" line="73" column="27" info="c is initialized"/>
-            <symbol>c</symbol>
-        </error>
-        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/mtx_sse2_vec_i32.cpp">
-            <location file="../../modules/linalg/mtx_sse2_vec_i32.cpp" line="113" column="15" info="c is overwritten"/>
-            <location file="../../modules/linalg/mtx_sse2_vec_i32.cpp" line="109" column="23" info="c is initialized"/>
-            <symbol>c</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/sgemm_arr.cpp">
             <location file="../../modules/linalg/sgemm_arr.cpp" line="77" column="12"/>
@@ -327,6 +276,57 @@
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;nc&apos; can be reduced." verbose="The scope of the variable &apos;nc&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/sgemm_arr.cpp">
             <location file="../../modules/linalg/sgemm_arr.cpp" line="355" column="13"/>
             <symbol>nc</symbol>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp" line="91" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp" line="0" column="0"/>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp" line="92" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp" line="0" column="0"/>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp" line="87" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp" line="0" column="0"/>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp" line="98" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp" line="0" column="0"/>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp" line="87" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp" line="0" column="0"/>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/sse/mtx_sse2_vec_f32.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_f32.cpp" line="75" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_f32.cpp" line="72" column="26" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp" line="182" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp" line="0" column="0"/>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp" line="77" column="19" info="c is overwritten"/>
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp" line="73" column="27" info="c is initialized"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp">
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp" line="113" column="15" info="c is overwritten"/>
+            <location file="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp" line="109" column="23" info="c is initialized"/>
+            <symbol>c</symbol>
         </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/tensor.cpp">
             <location file="../../include/linalg/tensor.hpp" line="75" column="5"/>
@@ -1075,7 +1075,7 @@
             <symbol>mse</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_add&apos; is never used." verbose="The function &apos;mtx_add&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="57" column="0"/>
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="57" column="0"/>
             <symbol>mtx_add</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_add_f90&apos; is never used." verbose="The function &apos;mtx_add_f90&apos; is never used." cwe="561">
@@ -1083,7 +1083,7 @@
             <symbol>mtx_add_f90</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult&apos; is never used." verbose="The function &apos;mtx_mult&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_avx2_arr_f64.cpp" line="90" column="0"/>
+            <location file="../../modules/linalg/avx/mtx_avx2_arr_f64.cpp" line="90" column="0"/>
             <symbol>mtx_mult</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult_f90&apos; is never used." verbose="The function &apos;mtx_mult_f90&apos; is never used." cwe="561">
@@ -1091,11 +1091,11 @@
             <symbol>mtx_mult_f90</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_sub&apos; is never used." verbose="The function &apos;mtx_sub&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="87" column="0"/>
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="87" column="0"/>
             <symbol>mtx_sub</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;mtx_tpose&apos; is never used." verbose="The function &apos;mtx_tpose&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_arm_vec_f32.cpp" line="116" column="0"/>
+            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="116" column="0"/>
             <symbol>mtx_tpose</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;multiply&apos; is never used." verbose="The function &apos;multiply&apos; is never used." cwe="561">
@@ -1371,7 +1371,7 @@
             <symbol>var_coeff</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;vector_add&apos; is never used." verbose="The function &apos;vector_add&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/vector_arm_f64.cpp" line="59" column="0"/>
+            <location file="../../modules/linalg/arm/vector_arm_f64.cpp" line="58" column="0"/>
             <symbol>vector_add</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;vector_addition&apos; is never used." verbose="The function &apos;vector_addition&apos; is never used." cwe="561">
@@ -1383,7 +1383,7 @@
             <symbol>vector_scalar_multiply</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;vector_sub&apos; is never used." verbose="The function &apos;vector_sub&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/vector_arm_f64.cpp" line="89" column="0"/>
+            <location file="../../modules/linalg/arm/vector_arm_f64.cpp" line="88" column="0"/>
             <symbol>vector_sub</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;vector_subtraction&apos; is never used." verbose="The function &apos;vector_subtraction&apos; is never used." cwe="561">

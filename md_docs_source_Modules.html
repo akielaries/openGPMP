@@ -83,7 +83,14 @@ $(function() {
 </li>
 <li>Linear Algebra<ul>
 <li>Vector Operations</li>
-<li>Matrix Operations</li>
+<li><p class="startli">Matrix Operations ``` DGEMM (Double-precision General Matrix-Matrix product) operations on arrays and vectors call tree:</p>
+<p class="startli">modules/linalg/mtx.cpp | | <a class="el" href="dgemm__arr_8cpp.html">modules/linalg/dgemm_arr.cpp</a> | | modules/linalg/dgemm_kernel_4x4_sse.S</p>
+<p class="startli">``` Where:</p><ul>
+<li><code><a class="el" href="mtx_8cpp.html">mtx.cpp</a></code>: main interface for matrix arithmetic operations</li>
+<li><code><a class="el" href="dgemm__arr_8cpp.html">dgemm_arr.cpp</a></code>: DGEMM implementation for matrices as arrays</li>
+<li><code>dgemm_kernel_4x4_sse.S</code>: 4x4 block micro kernel SSE implementation</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Machine/Deep Learning<ul>

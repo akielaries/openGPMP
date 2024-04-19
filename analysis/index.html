@@ -224,11 +224,11 @@
        <tr><td colspan="5"><a href="9.html">../../include/disct/graphs.hpp</a></td></tr>
          <tr class="noExplicitConstructor sev_style issue"><td><a href="9.html#line-58">58</a></td><td>noExplicitConstructor</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;Graph&apos; has a constructor with 1 argument that is not explicit.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="12.html">../../include/linalg/eigen.hpp</a></td></tr>
-         <tr class="noExplicitConstructor sev_style issue"><td><a href="12.html#line-57">57</a></td><td>noExplicitConstructor</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit.</td></tr>
+       <tr><td colspan="5"><a href="21.html">../../include/linalg/eigen.hpp</a></td></tr>
+         <tr class="noExplicitConstructor sev_style issue"><td><a href="21.html#line-57">57</a></td><td>noExplicitConstructor</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="18.html">../../include/linalg/linsys.hpp</a></td></tr>
-         <tr class="noExplicitConstructor sev_style issue"><td><a href="18.html#line-58">58</a></td><td>noExplicitConstructor</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit.</td></tr>
+       <tr><td colspan="5"><a href="27.html">../../include/linalg/linsys.hpp</a></td></tr>
+         <tr class="noExplicitConstructor sev_style issue"><td><a href="27.html#line-58">58</a></td><td>noExplicitConstructor</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="45.html">../../include/linalg/mtx_tmpl.hpp</a></td></tr>
          <tr class="selfInitialization sev_error issue"><td><a href="45.html#line-78">78</a></td><td>selfInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/665.html">665</a></td><td>error</td><td class="error">Member variable &apos;cols&apos; is initialized by itself.</td></tr>
@@ -333,11 +333,49 @@
          <tr class="useStlAlgorithm sev_style issue"><td><a href="10.html#line-713">713</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::transform algorithm instead of a raw loop.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="10.html#line-721">721</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;decompress&apos; is never used.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="11.html">../../modules/linalg/dgemm_arr.cpp</a></td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="11.html#line-148">148</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="11.html#line-196">196</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="11.html#line-382">382</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;dgemm_nn&apos; is never used.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="11.html#line-404">404</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="11.html">../../modules/linalg/arm/mtx_arm_vec_f32.cpp</a></td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="11.html#line-57">57</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_add&apos; is never used.</td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="11.html#line-73">73</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="11.html#line-87">87</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_sub&apos; is never used.</td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="11.html#line-103">103</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="11.html#line-116">116</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_tpose&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="78.html">../../modules/linalg/arm/vector_arm_f64.cpp</a></td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="78.html#line-58">58</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_add&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="78.html#line-88">88</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_sub&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">../../modules/linalg/avx/mtx_avx2_arr_f32.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="12.html#line-74">74</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">../../modules/linalg/avx/mtx_avx2_arr_f64.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="13.html#line-73">73</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="13.html#line-90">90</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_mult&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">../../modules/linalg/avx/mtx_avx2_arr_i16.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="14.html#line-104">104</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">../../modules/linalg/avx/mtx_avx2_arr_i32.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="15.html#line-116">116</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">../../modules/linalg/avx/mtx_avx2_arr_i8.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="16.html#line-105">105</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">../../modules/linalg/avx/mtx_avx2_vec_f32.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="17.html#line-75">75</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">../../modules/linalg/avx/mtx_avx2_vec_f64.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="18.html#line-75">75</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="18.html#line-108">108</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">../../modules/linalg/avx/mtx_avx2_vec_i32.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="19.html#line-78">78</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="19.html#line-117">117</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">../../modules/linalg/dgemm_arr.cpp</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="20.html#line-148">148</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="20.html#line-196">196</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="20.html#line-382">382</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;dgemm_nn&apos; is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="20.html#line-404">404</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="74.html">../../modules/linalg/eigen.cpp</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="74.html#line-50">50</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;power_iter&apos; is never used.</td></tr>
@@ -349,33 +387,33 @@
        <tr><td colspan="5"><a href="61.html">../../modules/linalg/gpu/_gpu_kernel_mtx_add.c</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="61.html#line-4">4</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;add_vec_gpu&apos; is never used.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="13.html">../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c</a></td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="13.html#line-4">4</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;matrixMul&apos; is never used.</td></tr>
-         <tr class="constParameter sev_style issue"><td><a href="13.html#line-5">5</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;A&apos; can be declared with const</td></tr>
-         <tr class="constParameter sev_style issue"><td><a href="13.html#line-6">6</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;B&apos; can be declared with const</td></tr>
+       <tr><td colspan="5"><a href="22.html">../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c</a></td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="22.html#line-4">4</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;matrixMul&apos; is never used.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="22.html#line-5">5</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;A&apos; can be declared with const</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="22.html#line-6">6</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;B&apos; can be declared with const</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="14.html">../../modules/linalg/gpu/_gpu_mtx_add.c</a></td></tr>
-         <tr class="constParameter sev_style issue"><td><a href="14.html#line-85">85</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;v1&apos; can be declared with const</td></tr>
-         <tr class="constParameter sev_style issue"><td><a href="14.html#line-85">85</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;v2&apos; can be declared with const</td></tr>
-         <tr class="unusedVariable sev_style issue"><td><a href="14.html#line-99">99</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: start</td></tr>
-         <tr class="unusedVariable sev_style issue"><td><a href="14.html#line-99">99</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: finish</td></tr>
-         <tr class="unusedVariable sev_style issue"><td><a href="14.html#line-100">100</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: duration</td></tr>
-         <tr class="unusedVariable sev_style issue"><td><a href="14.html#line-143">143</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: ret_num_devices</td></tr>
-         <tr class="unusedVariable sev_style issue"><td><a href="14.html#line-153">153</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: string</td></tr>
+       <tr><td colspan="5"><a href="23.html">../../modules/linalg/gpu/_gpu_mtx_add.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="23.html#line-85">85</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;v1&apos; can be declared with const</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="23.html#line-85">85</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;v2&apos; can be declared with const</td></tr>
+         <tr class="unusedVariable sev_style issue"><td><a href="23.html#line-99">99</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: start</td></tr>
+         <tr class="unusedVariable sev_style issue"><td><a href="23.html#line-99">99</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: finish</td></tr>
+         <tr class="unusedVariable sev_style issue"><td><a href="23.html#line-100">100</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: duration</td></tr>
+         <tr class="unusedVariable sev_style issue"><td><a href="23.html#line-143">143</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: ret_num_devices</td></tr>
+         <tr class="unusedVariable sev_style issue"><td><a href="23.html#line-153">153</a></td><td>unusedVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Unused variable: string</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="15.html">../../modules/linalg/gpu/_gpu_mtx_kernel.c</a></td></tr>
-         <tr class="constParameter sev_style issue"><td><a href="15.html#line-17">17</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;A&apos; can be declared with const</td></tr>
-         <tr class="constParameter sev_style issue"><td><a href="15.html#line-18">18</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;B&apos; can be declared with const</td></tr>
+       <tr><td colspan="5"><a href="24.html">../../modules/linalg/gpu/_gpu_mtx_kernel.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="24.html#line-17">17</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;A&apos; can be declared with const</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="24.html#line-18">18</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;B&apos; can be declared with const</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="16.html">../../modules/linalg/gpu/mtx_x86.c</a></td></tr>
-         <tr class="syntaxError sev_error issue"><td><a href="16.html#line-9">9</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language.</td></tr>
+       <tr><td colspan="5"><a href="25.html">../../modules/linalg/gpu/mtx_x86.c</a></td></tr>
+         <tr class="syntaxError sev_error issue"><td><a href="25.html#line-9">9</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">Code &apos;std::random_device&apos; is invalid C code. Use --std or --language to configure the language.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="17.html">../../modules/linalg/igemm_arr.cpp</a></td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="17.html#line-77">77</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="17.html#line-125">125</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="17.html#line-281">281</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nr&apos; can be reduced.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="17.html#line-332">332</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;igemm_nn&apos; is never used.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="17.html#line-354">354</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="26.html">../../modules/linalg/igemm_arr.cpp</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="26.html#line-77">77</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="26.html#line-125">125</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="26.html#line-281">281</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nr&apos; can be reduced.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="26.html#line-332">332</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;igemm_nn&apos; is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="26.html#line-354">354</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="68.html">../../modules/linalg/linsys.cpp</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="68.html#line-48">48</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;display_mtx&apos; is never used.</td></tr>
@@ -391,84 +429,50 @@
          <tr class="unusedFunction sev_style issue"><td><a href="68.html#line-414">414</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;is_consistent&apos; is never used.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="68.html#line-433">433</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;is_homogeneous&apos; is never used.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="19.html">../../modules/linalg/mtx_arm_vec_f32.cpp</a></td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="19.html#line-57">57</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_add&apos; is never used.</td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="19.html#line-73">73</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="19.html#line-87">87</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_sub&apos; is never used.</td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="19.html#line-103">103</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="19.html#line-116">116</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_tpose&apos; is never used.</td></tr>
-      <tbody class="fileEntry">
        <tr><td colspan="5"><a href="75.html">../../modules/linalg/mtx_arr_f90.cpp</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="75.html#line-69">69</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_add_f90&apos; is never used.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="75.html#line-85">85</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_mult_f90&apos; is never used.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="20.html">../../modules/linalg/mtx_avx2_arr_f32.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="20.html#line-74">74</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="21.html">../../modules/linalg/mtx_avx2_arr_f64.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="21.html#line-73">73</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="21.html#line-90">90</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;mtx_mult&apos; is never used.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="22.html">../../modules/linalg/mtx_avx2_arr_i16.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="22.html#line-104">104</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="23.html">../../modules/linalg/mtx_avx2_arr_i32.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="23.html#line-116">116</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="24.html">../../modules/linalg/mtx_avx2_arr_i8.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="24.html#line-105">105</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="25.html">../../modules/linalg/mtx_avx2_vec_f32.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="25.html#line-75">75</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="26.html">../../modules/linalg/mtx_avx2_vec_f64.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="26.html#line-75">75</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="26.html#line-108">108</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="27.html">../../modules/linalg/mtx_avx2_vec_i32.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="27.html#line-78">78</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="27.html#line-117">117</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-      <tbody class="fileEntry">
        <tr><td colspan="5"><a href="28.html">../../modules/linalg/mtx_naive.cpp</a></td></tr>
          <tr class="duplicateExpression sev_style issue"><td><a href="28.html#line-58">58</a></td><td>duplicateExpression</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Same expression on both sides of &apos;/&apos;.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="29.html">../../modules/linalg/mtx_sse2_arr_f32.cpp</a></td></tr>
-         <tr class="noValidConfiguration sev_information issue"><td><a href="29.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
-         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="29.html#line-91">91</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
+       <tr><td colspan="5"><a href="29.html">../../modules/linalg/sgemm_arr.cpp</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-77">77</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-125">125</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-282">282</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nr&apos; can be reduced.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="29.html#line-333">333</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;sgemm_nn&apos; is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="29.html#line-355">355</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="30.html">../../modules/linalg/mtx_sse2_arr_f64.cpp</a></td></tr>
+       <tr><td colspan="5"><a href="30.html">../../modules/linalg/sse/mtx_sse2_arr_f32.cpp</a></td></tr>
          <tr class="noValidConfiguration sev_information issue"><td><a href="30.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
-         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="30.html#line-92">92</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
+         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="30.html#line-91">91</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="31.html">../../modules/linalg/mtx_sse2_arr_i16.cpp</a></td></tr>
+       <tr><td colspan="5"><a href="31.html">../../modules/linalg/sse/mtx_sse2_arr_f64.cpp</a></td></tr>
          <tr class="noValidConfiguration sev_information issue"><td><a href="31.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
-         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="31.html#line-87">87</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
+         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="31.html#line-92">92</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="32.html">../../modules/linalg/mtx_sse2_arr_i32.cpp</a></td></tr>
+       <tr><td colspan="5"><a href="32.html">../../modules/linalg/sse/mtx_sse2_arr_i16.cpp</a></td></tr>
          <tr class="noValidConfiguration sev_information issue"><td><a href="32.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
-         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="32.html#line-98">98</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
+         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="32.html#line-87">87</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="33.html">../../modules/linalg/mtx_sse2_arr_i8.cpp</a></td></tr>
+       <tr><td colspan="5"><a href="33.html">../../modules/linalg/sse/mtx_sse2_arr_i32.cpp</a></td></tr>
          <tr class="noValidConfiguration sev_information issue"><td><a href="33.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
-         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="33.html#line-87">87</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
+         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="33.html#line-98">98</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="34.html">../../modules/linalg/mtx_sse2_vec_f32.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="34.html#line-75">75</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+       <tr><td colspan="5"><a href="34.html">../../modules/linalg/sse/mtx_sse2_arr_i8.cpp</a></td></tr>
+         <tr class="noValidConfiguration sev_information issue"><td><a href="34.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
+         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="34.html#line-87">87</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="35.html">../../modules/linalg/mtx_sse2_vec_f64.cpp</a></td></tr>
-         <tr class="noValidConfiguration sev_information issue"><td><a href="35.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
-         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="35.html#line-182">182</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
+       <tr><td colspan="5"><a href="35.html">../../modules/linalg/sse/mtx_sse2_vec_f32.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="35.html#line-75">75</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="36.html">../../modules/linalg/mtx_sse2_vec_i32.cpp</a></td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="36.html#line-77">77</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
-         <tr class="redundantInitialization sev_style issue"><td><a href="36.html#line-113">113</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+       <tr><td colspan="5"><a href="36.html">../../modules/linalg/sse/mtx_sse2_vec_f64.cpp</a></td></tr>
+         <tr class="noValidConfiguration sev_information issue"><td><a href="36.html#line-0">0</a></td><td>noValidConfiguration</td><td></td><td>information</td><td>This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details.</td></tr>
+         <tr class="preprocessorErrorDirective sev_error issue"><td><a href="36.html#line-182">182</a></td><td>preprocessorErrorDirective</td><td></td><td>error</td><td class="error">#endif without #if</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="37.html">../../modules/linalg/sgemm_arr.cpp</a></td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="37.html#line-77">77</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;j&apos; can be reduced.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="37.html#line-125">125</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="37.html#line-282">282</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nr&apos; can be reduced.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="37.html#line-333">333</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;sgemm_nn&apos; is never used.</td></tr>
-         <tr class="variableScope sev_style issue"><td><a href="37.html#line-355">355</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
+       <tr><td colspan="5"><a href="37.html">../../modules/linalg/sse/mtx_sse2_vec_i32.cpp</a></td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="37.html#line-77">77</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
+         <tr class="redundantInitialization sev_style issue"><td><a href="37.html#line-113">113</a></td><td>redundantInitialization</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="70.html">../../modules/linalg/svd.cpp</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="70.html#line-47">47</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;getSingularValues&apos; is never used.</td></tr>
@@ -481,10 +485,6 @@
          <tr class="unreadVariable sev_style issue"><td><a href="39.html#line-54">54</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;totalSize&apos; is assigned a value that is never used.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="39.html#line-98">98</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;multiply&apos; is never used.</td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="39.html#line-160">160</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;set&apos; is never used.</td></tr>
-      <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="78.html">../../modules/linalg/vector_arm_f64.cpp</a></td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="78.html#line-59">59</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_add&apos; is never used.</td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="78.html#line-89">89</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;vector_sub&apos; is never used.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="40.html">../../modules/linalg/vector_naive.cpp</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="40.html#line-49">49</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;std_cross_product&apos; is never used.</td></tr>
