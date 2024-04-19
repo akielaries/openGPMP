@@ -30,7 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/linalg/mtx.hpp"
+#include "../../../include/linalg/mtx.hpp"
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
@@ -41,54 +41,47 @@
 
 /************************************************************************
  *
- * Matrix Operations for AVX ISA
+ * Matrix Operations for SSE ISA
  *
  ************************************************************************/
-#if defined(__AVX2__)
-
-// AVX family intrinsics
-#include <immintrin.h>
-
+#elif defined(__SSE2__)
+// SSE2
+#include <emmintrin.h>
+#include <smmintrin.h>
 /************************************************************************
  *
  * Matrix Operations on Arrays
  *
  ************************************************************************/
-
-// matrix addition using Intel intrinsics, accepts float arrays as matrices
-void gpmp::linalg::Mtx::mtx_add(const float *A,
-                                const float *B,
-                                float *C,
+// matrix addition for 16-bit integers using SSE and 128-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
+                                const int16_t *B,
+                                int16_t *C,
                                 int rows,
                                 int cols) {
-    if (rows > 16) {
-        for (int i = 0; i < rows; ++i) {
-            int j = 0;
-            // requires at least size 4x4 size matrices
-            for (; j < cols - 7; j += 8) {
-                // load 4 elements from A, B, and C matrices using SIMD
-                __m256 a = _mm256_loadu_ps(&A[i * cols + j]);
-                __m256 b = _mm256_loadu_ps(&B[i * cols + j]);
-                __m256 c = _mm256_loadu_ps(&C[i * cols + j]);
-                // perform vectorized addition and accumulate the result
-                c = _mm256_add_ps(a, b);
+    for (int i = 0; i < rows; ++i) {
+        int j = 0;
+        for (; j < cols - 7; j += 8) {
+            __m128i a = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&A[i * cols + j]));
+            __m128i b = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&B[i * cols + j]));
+            __m128i c = _mm_loadu_si128(
+                reinterpret_cast<const __m128i *>(&C[i * cols + j]));
 
-                // store the result back to the C matrix
-                _mm256_storeu_ps(&C[i * cols + j], c);
-            }
+            // Perform vectorized addition and accumulate the result
+            c = _mm_add_epi16(c, _mm_add_epi16(a, b));
 
-            // handle the remaining elements that are not multiples of 8
-            for (; j < cols; ++j) {
-                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
-            }
+            // Store the result back to the C matrix
+            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]), c);
         }
-    } else {
-        // use standard matrix addition
-        std_mtx_add(A, B, C, rows, cols);
+
+        for (; j < cols; ++j) {
+            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+        }
     }
 }
 
 #endif
 
-// x86
 #endif

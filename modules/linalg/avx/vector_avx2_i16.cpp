@@ -30,58 +30,72 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/linalg/mtx.hpp"
-#include <cassert>
-#include <cstddef>
+
+#include "../../../include/linalg/vector.hpp"
+#include <cmath>
 #include <cstdint>
 #include <iostream>
+#include <numeric>
+#include <stdexcept>
 #include <vector>
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
 /************************************************************************
  *
- * Matrix Operations for SSE ISA
+ * Vector Operations for AVX ISA
  *
  ************************************************************************/
-#elif defined(__SSE2__)
-// SSE2
-#include <emmintrin.h>
-#include <smmintrin.h>
+#if defined(__AVX2__)
+
+// AVX family intrinsics
+#include <immintrin.h>
+
 /************************************************************************
  *
- * Matrix Operations on Arrays
+ * Vector Operations on Vectors
  *
  ************************************************************************/
-// matrix addition for 16-bit integers using SSE and 128-bit SIMD registers
-void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
-                                const int16_t *B,
-                                int16_t *C,
-                                int rows,
-                                int cols) {
-    for (int i = 0; i < rows; ++i) {
-        int j = 0;
-        for (; j < cols - 7; j += 8) {
-            __m128i a = _mm_loadu_si128(
-                reinterpret_cast<const __m128i *>(&A[i * cols + j]));
-            __m128i b = _mm_loadu_si128(
-                reinterpret_cast<const __m128i *>(&B[i * cols + j]));
-            __m128i c = _mm_loadu_si128(
-                reinterpret_cast<const __m128i *>(&C[i * cols + j]));
 
-            // Perform vectorized addition and accumulate the result
-            c = _mm_add_epi16(c, _mm_add_epi16(a, b));
+/*****************************************************************************/
 
-            // Store the result back to the C matrix
-            _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]), c);
+template <typename T>
+void gpmp::linalg::vector_add_i16(const T *data1,
+                                  const T *data2,
+                                  T *result_data,
+                                  size_t size) {
+    size_t i = 0;
+    if (size > 32) {
+        for (; i < size - 15; i += 16) {
+            __m256i a = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(data1 + i));
+            __m256i b = _mm256_loadu_si256(
+                reinterpret_cast<const __m256i *>(data2 + i));
+            __m256i c = _mm256_add_epi8(a, b);
+            _mm256_storeu_si256(reinterpret_cast<__m256i *>(result_data + i),
+                                c);
         }
-
-        for (; j < cols; ++j) {
-            C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
-        }
+    }
+    for (; i < size; ++i) {
+        result_data[i] = data1[i] + data2[i];
     }
 }
 
-#endif
+void gpmp::linalg::vector_add(const std::vector<int16_t> &vec1,
+                              const std::vector<int16_t> &vec2,
+                              std::vector<int16_t> &result) {
 
-#endif
+    const size_t size = vec1.size();
+    vector_add_i16(vec1.data(), vec2.data(), result.data(), size);
+}
+
+void gpmp::linalg::vector_add(const std::vector<uint16_t> &vec1,
+                              const std::vector<uint16_t> &vec2,
+                              std::vector<uint16_t> &result) {
+    const size_t size = vec1.size();
+    vector_add_i16(vec1.data(), vec2.data(), result.data(), size);
+}
+
+#endif // AVX2
+
+#endif // x86

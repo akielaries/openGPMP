@@ -24,48 +24,47 @@ set(SOURCE_FILES
 # Add files depending on the detected SIMD ISA
 if (SIMD_ISA STREQUAL "AVX2")
     list(APPEND SOURCE_FILES
-        mtx_avx2_arr_i8.cpp
-        mtx_avx2_arr_i16.cpp
-        mtx_avx2_arr_i32.cpp
-        mtx_avx2_arr_f32.cpp
-        mtx_avx2_arr_f64.cpp
+        avx/mtx_avx2_arr_i8.cpp
+        avx/mtx_avx2_arr_i16.cpp
+        avx/mtx_avx2_arr_i32.cpp
+        avx/mtx_avx2_arr_f32.cpp
+        avx/mtx_avx2_arr_f64.cpp
 
-        mtx_avx2_vec_i32.cpp
-        mtx_avx2_vec_f32.cpp
-        mtx_avx2_vec_f64.cpp
+        avx/mtx_avx2_vec_i32.cpp
+        avx/mtx_avx2_vec_f32.cpp
+        avx/mtx_avx2_vec_f64.cpp
 
-        vector_avx2_i8.cpp
-        vector_avx2_i16.cpp
-        vector_avx2_i32.cpp
-        vector_avx2_f64.cpp
+        avx/vector_avx2_i8.cpp
+        avx/vector_avx2_i16.cpp
+        avx/vector_avx2_i32.cpp
+        avx/vector_avx2_f64.cpp
 
         #dgemm_kernel_sse.cpp
-        dgemm_kernel_4x4_sse.S
+        sse/dgemm_kernel_4x4_sse.S
     )
 elseif (SIMD_ISA STREQUAL "ARM_NEON")
     list(APPEND SOURCE_FILES
-        mtx_arm_vec_i32.cpp
-        mtx_arm_vec_f32.cpp
+        arm/mtx_arm_vec_i32.cpp
+        arm/mtx_arm_vec_f32.cpp
 
-
-        vector_arm_i32.cpp
-        vector_arm_f64.cpp
+        arm/vector_arm_i32.cpp
+        arm/vector_arm_f64.cpp
     )
 
 elseif (SIMD_ISA STREQUAL "SSE")
     list(APPEND SOURCE_FILES
 
-        mtx_sse2_arr_i8.cpp
-        mtx_sse2_arr_i16.cpp
-        mtx_sse2_arr_i32.cpp
-        mtx_sse2_arr_f32.cpp
-        mtx_sse2_arr_f64.cpp
+        sse/mtx_sse2_arr_i8.cpp
+        sse/mtx_sse2_arr_i16.cpp
+        sse/mtx_sse2_arr_i32.cpp
+        sse/mtx_sse2_arr_f32.cpp
+        sse/mtx_sse2_arr_f64.cpp
 
-        mtx_sse2_vec_i32.cpp
-        mtx_sse2_vec_f32.cpp
-        mtx_sse2_vec_f64.cpp
+        sse/mtx_sse2_vec_i32.cpp
+        sse/mtx_sse2_vec_f32.cpp
+        sse/mtx_sse2_vec_f64.cpp
 
-        dgemm_kernel_4x4_sse.S
+        sse/dgemm_kernel_4x4_sse.S
     )
 
 else (

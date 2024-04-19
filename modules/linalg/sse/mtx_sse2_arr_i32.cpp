@@ -30,7 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/linalg/mtx.hpp"
+#include "../../../include/linalg/mtx.hpp"
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
@@ -53,26 +53,33 @@
  * Matrix Operations on Arrays
  *
  ************************************************************************/
-// matrix addition using Intel intrinsics, accepts float arrays as matrices
-void gpmp::linalg::Mtx::mtx_add(const float *A,
-                                const float *B,
-                                float *C,
+
+// matrix addition using Intel intrinsics, accepts integer arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const int *A,
+                                const int *B,
+                                int *C,
                                 int rows,
                                 int cols) {
-    if (rows > 16) {
+    // BUG FIXME: this only works with size 184+ matrices
+    if (rows > 184) {
         for (int i = 0; i < rows; ++i) {
             int j = 0;
-            // requires at least size 4x4 size matrices
+            // requires at least size 8x8 size matrices
             for (; j < cols - 3; j += 4) {
-                // load 4 elements from A, B, and C matrices using SIMD
-                __m128 a = _mm_loadu_ps(&A[i * cols + j]);
-                __m128 b = _mm_loadu_ps(&B[i * cols + j]);
-                __m128 c = _mm_loadu_ps(&C[i * cols + j]);
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m128i a = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&A[i * cols + j]));
+                __m128i b = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&B[i * cols + j]));
+                __m128i c = _mm_loadu_si128(
+                    reinterpret_cast<const __m128i *>(&C[i * cols + j]));
+
                 // perform vectorized addition and accumulate the result
-                c = _mm_add_ps(a, b);
+                c = _mm_add_epi32(c, _mm_add_epi32(a, b));
 
                 // store the result back to the C matrix
-                _mm_storeu_ps(&C[i * cols + j], c);
+                _mm_storeu_si128(reinterpret_cast<__m128i *>(&C[i * cols + j]),
+                                 c);
             }
 
             // handle the remaining elements that are not multiples of 8

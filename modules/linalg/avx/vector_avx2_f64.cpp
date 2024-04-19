@@ -31,7 +31,7 @@
  *
  ************************************************************************/
 
-#include "../../include/linalg/vector.hpp"
+#include "../../../include/linalg/vector.hpp"
 #include <cmath>
 #include <iostream>
 #include <numeric>

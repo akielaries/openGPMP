@@ -2,7 +2,7 @@
 # Root CMake file for the openGPMP project
 # *************************************************************************/
 
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.25)
 set (CMAKE_CXX_STANDARD 20)
 include(CheckIncludeFileCXX)
 
@@ -12,16 +12,15 @@ include(CheckIncludeFileCXX)
 # * -DBUILD_PYGPMP  : build Python API wrapper
 # * -DBUILD_TINYGPMP: build tinygpmp subproject for embedded devices
 # * -DBUILD_TESTS   : build C++ and FORTRAN unit tests
-option(BUILD_OPENGPMP   "Build Source C++ API"  OFF)     # OFF BY DEFAULT
+option(BUILD_OPENGPMP   "Build Source C++ API"  OFF)    # OFF BY DEFAULT
 option(BUILD_PYGPMP     "Build Python API"      OFF)    # OFF BY DEFAULT
 option(BUILD_TINYGPMP   "Build tinygpmp"        OFF)    # OFF BY DEFAULT
 option(BUILD_TESTS      "Build Unit Test Suite" OFF)    # OFF BY DEFAULT
 
-
 # BASE COMPILER FLAGS SUPPORTED BY GCC & CLANG
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wno-unused-result -Wparentheses -Wsign-compare")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG -Wall -Wextra -Wfloat-equal -Wcast-qual")
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code -O0") 
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wunreachable-code") 
 
 
 # OPENGPMP INSTALLATION
@@ -97,6 +96,28 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
     # compile with native microarchitecture
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+    # OVERRIDE DEFAULT RELEASE COMPILER OPTIMIZATION FLAG
+    add_compile_options("$<$<CONFIG:RELEASE>:-O0>")
+
+    # Check if OpenBLAS is available. Use these routines instead of native
+    # ones of the OpenGPMP project
+    message(STATUS "Detecting OpenBLAS")
+
+    find_package(OpenBLAS)
+    check_include_file_cxx("cblas.h" BLAS_HEADER)
+
+    if(OpenBLAS_FOUND)
+        message(STATUS "Using OpenBLAS routines")
+        message(STATUS "lib : ${OpenBLAS_LIBRARIES}")
+        message(STATUS "headers: ${OpenBLAS_INCLUDE_DIRS}")
+
+        # add compilation flags based on this
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__USE_BLAS__")
+
+    else()
+        message(STATUS "OpenBLAS not found")
+    endif()
+    message(STATUS "Detecting OpenBLAS - done")
 
     message(STATUS "Building source C++ API")
 
@@ -126,6 +147,14 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
       $<TARGET_OBJECTS:optim>
       $<TARGET_OBJECTS:stats>
     )
+
+    if(OpenBLAS_FOUND)
+        # link against OpenBLAS if found
+        target_link_libraries(${PROJECT_NAME} PRIVATE openblas)
+        # Verify that the linking was successful
+        get_target_property(project_link_libraries ${PROJECT_NAME} INTERFACE_LINK_LIBRARIES)
+        message(STATUS "Linking ${PROJECT_NAME} against : ${project_link_libraries}")
+    endif()
 
     # include directory for openGPMP
     target_include_directories(${PROJECT_NAME} PUBLIC 
@@ -179,8 +208,6 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
     endif()
 
-    set(CMAKE_CXX_FLAGS_RELEASE "-O0")
-    set(CMAKE_Fortran_FLAGS "-O0")
 
     include(GNUInstallDirs)
 
@@ -272,4 +299,3 @@ if(BUILD_PYGPMP)
     endif()
 
 endif()
-

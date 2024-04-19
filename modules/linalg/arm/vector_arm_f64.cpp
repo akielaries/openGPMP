@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/linalg/vector.hpp"
+#include "../../../include/linalg/vector.hpp"
 #include <cmath>
 #include <cstdint>
 #include <iostream>
@@ -55,55 +54,55 @@
  *
  ************************************************************************/
 
-// Vector addition using ARM NEON intrinsics, operates on integer types
-void gpmp::linalg::vector_add(const std::vector<int> &vec1,
-                              const std::vector<int> &vec2,
-                              std::vector<int> &result) {
+// Vector addition using ARM NEON intrinsics, operates on double types
+void gpmp::linalg::vector_add(const std::vector<double> &vec1,
+                              const std::vector<double> &vec2,
+                              std::vector<double> &result) {
     const size_t size = vec1.size();
-    const int *data1 = vec1.data();
-    const int *data2 = vec2.data();
-    int *result_data = result.data();
+    const double *data1 = vec1.data();
+    const double *data2 = vec2.data();
+    double *result_data = result.data();
 
-    // Check if size is a multiple of 4
-    if (size % 4 == 0) {
-        for (size_t i = 0; i < size; i += 4) {
-            // Load 4 elements from vec1 and vec2
-            int32x4_t a = vld1q_s32(data1 + i);
-            int32x4_t b = vld1q_s32(data2 + i);
+    // Check if size is a multiple of 2
+    if (size % 2 == 0) {
+        for (size_t i = 0; i < size; i += 2) {
+            // Load 2 elements from vec1 and vec2
+            float64x2_t a = vld1q_f64(data1 + i);
+            float64x2_t b = vld1q_f64(data2 + i);
 
             // Perform vectorized addition
-            int32x4_t c = vaddq_s32(a, b);
+            float64x2_t c = vaddq_f64(a, b);
 
             // Store the result back to result vector
-            vst1q_s32(result_data + i, c);
+            vst1q_f64(result_data + i, c);
         }
     } else {
-        // If size is not a multiple of 4, perform standard addition
+        // If size is not a multiple of 2, perform standard addition
         for (size_t i = 0; i < size; ++i) {
             result_data[i] = data1[i] + data2[i];
         }
     }
 }
 
-// Vector subtraction using ARM NEON intrinsics, operates on integer types
-void gpmp::linalg::vector_sub(const std::vector<int> &vec1,
-                              const std::vector<int> &vec2,
-                              std::vector<int> &result) {
+// Vector subtraction using ARM NEON intrinsics, operates on double types
+void gpmp::linalg::vector_sub(const std::vector<double> &vec1,
+                              const std::vector<double> &vec2,
+                              std::vector<double> &result) {
     const int vecSize = vec1.size();
-    const int remainder = vecSize % 8;
+    const int remainder = vecSize % 4;
     const int vecSizeAligned = vecSize - remainder;
 
-    for (int i = 0; i < vecSizeAligned; i += 8) {
-        int32x4_t vec1Data1 = vld1q_s32(&vec1[i]);
-        int32x4_t vec1Data2 = vld1q_s32(&vec1[i + 4]);
-        int32x4_t vec2Data1 = vld1q_s32(&vec2[i]);
-        int32x4_t vec2Data2 = vld1q_s32(&vec2[i + 4]);
+    for (int i = 0; i < vecSizeAligned; i += 4) {
+        float64x2_t vec1Data1 = vld1q_f64(&vec1[i]);
+        float64x2_t vec1Data2 = vld1q_f64(&vec1[i + 2]);
+        float64x2_t vec2Data1 = vld1q_f64(&vec2[i]);
+        float64x2_t vec2Data2 = vld1q_f64(&vec2[i + 2]);
 
-        int32x4_t sub1 = vsubq_s32(vec1Data1, vec2Data1);
-        int32x4_t sub2 = vsubq_s32(vec1Data2, vec2Data2);
+        float64x2_t sub1 = vsubq_f64(vec1Data1, vec2Data1);
+        float64x2_t sub2 = vsubq_f64(vec1Data2, vec2Data2);
 
-        vst1q_s32(&result[i], sub1);
-        vst1q_s32(&result[i + 4], sub2);
+        vst1q_f64(&result[i], sub1);
+        vst1q_f64(&result[i + 2], sub2);
     }
 
     for (int i = vecSizeAligned; i < vecSize; ++i) {
@@ -111,26 +110,26 @@ void gpmp::linalg::vector_sub(const std::vector<int> &vec1,
     }
 }
 
-// Vector multiplication using ARM NEON intrinsics, operates on integer types
-void gpmp::linalg::scalar_mult(const std::vector<int> &vec,
-                               int scalar,
-                               std::vector<int> &result) {
+// Vector multiplication using ARM NEON intrinsics, operates on double types
+void gpmp::linalg::scalar_mult(const std::vector<double> &vec,
+                               double scalar,
+                               std::vector<double> &result) {
     const size_t size = vec.size();
-    const int32_t *data = vec.data();
-    int32_t *result_data = result.data();
+    const double *data = vec.data();
+    double *result_data = result.data();
 
-    if (size >= 4) {
-        int32x4_t scalar_vec = vdupq_n_s32(scalar);
+    if (size >= 2) {
+        float64x2_t scalar_vec = vdupq_n_f64(scalar);
         size_t i = 0;
-        for (; i < size - 3; i += 4) {
-            // Load 4 elements from vec
-            int32x4_t a = vld1q_s32(data + i);
+        for (; i < size - 1; i += 2) {
+            // Load 2 elements from vec
+            float64x2_t a = vld1q_f64(data + i);
 
             // Perform vectorized multiplication
-            int32x4_t c = vmulq_s32(a, scalar_vec);
+            float64x2_t c = vmulq_f64(a, scalar_vec);
 
             // Store the result back to result vector
-            vst1q_s32(result_data + i, c);
+            vst1q_f64(result_data + i, c);
         }
 
         // Perform standard multiplication on the remaining elements
@@ -144,40 +143,39 @@ void gpmp::linalg::scalar_mult(const std::vector<int> &vec,
     }
 }
 
-// Dot product using ARM NEON intrinsics, operates on integer types
-int gpmp::linalg::dot_product(const std::vector<int> &vec1,
-                              const std::vector<int> &vec2) {
+// Dot product using ARM NEON intrinsics, operates on double types
+double gpmp::linalg::dot_product(const std::vector<double> &vec1,
+                                 const std::vector<double> &vec2) {
     const size_t size = vec1.size();
-    const int32_t *data1 = vec1.data();
-    const int32_t *data2 = vec2.data();
-    int result = 0;
+    const double *data1 = vec1.data();
+    const double *data2 = vec2.data();
+    double result = 0.0;
 
-    if (size >= 4) {
-        int32x4_t sum_vec = vdupq_n_s32(0);
+    if (size >= 2) {
+        float64x2_t sum_vec = vdupq_n_f64(0.0);
         size_t i = 0;
-        for (; i < size - 3; i += 4) {
-            // Load 4 elements from vec1 and vec2
-            int32x4_t a = vld1q_s32(data1 + i);
-            int32x4_t b = vld1q_s32(data2 + i);
+        for (; i < size - 1; i += 2) {
+            // Load 2 elements from vec1 and vec2
+            float64x2_t a = vld1q_f64(data1 + i);
+            float64x2_t b = vld1q_f64(data2 + i);
 
-            int32x4_t mul = vmulq_s32(a, b);
+            // Perform vectorized multiplication
+            float64x2_t mul = vmulq_f64(a, b);
 
             // Accumulate the results
-            sum_vec = vaddq_s32(sum_vec, mul);
+            sum_vec = vaddq_f64(sum_vec, mul);
         }
 
-        // sum the results across the vector
-        int32_t temp[4];
-        vst1q_s32(temp, sum_vec);
-        result = temp[0] + temp[1] + temp[2] + temp[3];
+        // Sum the results across the vector
+        double temp[2];
+        vst1q_f64(temp, sum_vec);
+        result = temp[0] + temp[1];
 
-        // process remaining elements if any
+        // Process remaining elements if any
         for (; i < size; ++i) {
             result += data1[i] * data2[i];
         }
-    }
-    // performs std dot product
-    else {
+    } else {
         for (size_t i = 0; i < size; ++i) {
             result += data1[i] * data2[i];
         }

@@ -30,11 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/linalg/mtx.hpp"
+#include "../../../include/linalg/mtx.hpp"
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
-#include <cstring>
 #include <iostream>
 #include <vector>
 
@@ -55,16 +54,16 @@
  * Matrix Operations on Arrays
  *
  ************************************************************************/
-// matrix addition for 8-bit integers using 256-bit SIMD registers
-void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
-                                const int8_t *B,
-                                int8_t *C,
+// matrix addition for 16-bit integers using 256-bit SIMD registers
+void gpmp::linalg::Mtx::mtx_add(const int16_t *A,
+                                const int16_t *B,
+                                int16_t *C,
                                 int rows,
                                 int cols) {
     // BUG FIXME
     for (int i = 0; i < rows; ++i) {
         int j = 0;
-        for (; j < cols - 31; j += 32) {
+        for (; j < cols - 15; j += 16) {
             __m256i a = _mm256_loadu_si256(
                 reinterpret_cast<const __m256i *>(&A[i * cols + j]));
             __m256i b = _mm256_loadu_si256(
@@ -73,7 +72,7 @@ void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
                 reinterpret_cast<const __m256i *>(&C[i * cols + j]));
 
             // Perform vectorized addition and accumulate the result
-            c = _mm256_add_epi8(c, _mm256_add_epi8(a, b));
+            c = _mm256_add_epi16(c, _mm256_add_epi16(a, b));
 
             // Store the result back to the C matrix
             _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols + j]),
@@ -86,14 +85,14 @@ void gpmp::linalg::Mtx::mtx_add(const int8_t *A,
     }
 }
 
-void gpmp::linalg::Mtx::mtx_sub(const int8_t *A,
-                                const int8_t *B,
-                                int8_t *C,
+void gpmp::linalg::Mtx::mtx_sub(const int16_t *A,
+                                const int16_t *B,
+                                int16_t *C,
                                 int rows,
                                 int cols) {
     for (int i = 0; i < rows; ++i) {
         int j = 0;
-        for (; j < cols - 31; j += 32) {
+        for (; j < cols - 15; j += 16) {
             __m256i a = _mm256_loadu_si256(
                 reinterpret_cast<const __m256i *>(&A[i * cols + j]));
             __m256i b = _mm256_loadu_si256(
@@ -102,7 +101,7 @@ void gpmp::linalg::Mtx::mtx_sub(const int8_t *A,
                 reinterpret_cast<const __m256i *>(&C[i * cols + j]));
 
             // Perform vectorized subtraction and accumulate the result
-            c = _mm256_sub_epi8(a, b);
+            c = _mm256_sub_epi16(a, b);
 
             // Store the result back to the C matrix
             _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols + j]),
@@ -115,35 +114,31 @@ void gpmp::linalg::Mtx::mtx_sub(const int8_t *A,
     }
 }
 
-void gpmp::linalg::Mtx::mtx_mult(const int8_t *A,
-                                 const int8_t *B,
-                                 int8_t *C,
+void gpmp::linalg::Mtx::mtx_mult(const int16_t *A,
+                                 const int16_t *B,
+                                 int16_t *C,
                                  int rows_a,
                                  int cols_a,
                                  int cols_b) {
-
     for (int i = 0; i < rows_a; ++i) {
-        for (int j = 0; j < cols_b; j += 32) {
+        for (int j = 0; j < cols_b; j += 16) {
             __m256i c = _mm256_setzero_si256();
 
             for (int k = 0; k < cols_a; ++k) {
-                __m256i a = _mm256_set1_epi8(A[i * cols_a + k]);
+                __m256i a = _mm256_set1_epi16(A[i * cols_a + k]);
                 __m256i b = _mm256_loadu_si256(
                     reinterpret_cast<const __m256i *>(&B[k * cols_b + j]));
 
-                __m256i prod = _mm256_maddubs_epi16(a, b);
+                __m256i prod = _mm256_mullo_epi16(a, b);
                 c = _mm256_add_epi16(c, prod);
             }
-
-            c = _mm256_srai_epi16(c, 8);
-            c = _mm256_packs_epi16(c, _mm256_setzero_si256());
 
             _mm256_storeu_si256(reinterpret_cast<__m256i *>(&C[i * cols_b + j]),
                                 c);
         }
 
         // Handle remaining elements
-        for (int j = cols_b - cols_b % 32; j < cols_b; ++j) {
+        for (int j = cols_b - cols_b % 16; j < cols_b; ++j) {
             int sum = 0;
 
             for (int k = 0; k < cols_a; ++k) {

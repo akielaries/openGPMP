@@ -30,7 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/linalg/mtx.hpp"
+#include "../../../include/linalg/mtx.hpp"
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
@@ -41,49 +41,50 @@
 
 /************************************************************************
  *
- * Matrix Operations for SSE ISA
+ * Matrix Operations for AVX ISA
  *
  ************************************************************************/
-#elif defined(__SSE2__)
-// SSE2
-#include <emmintrin.h>
-#include <smmintrin.h>
+#if defined(__AVX2__)
+
+// AVX family intrinsics
+#include <immintrin.h>
+
 /************************************************************************
  *
- * Matrix Operations on Arrays
+ * Matrix Operations on vector<vector>
  *
  ************************************************************************/
+// matrix addition using Intel intrinsics, accepts type float
+void gpmp::linalg::Mtx::mtx_add(const std::vector<std::vector<float>> &A,
+                                const std::vector<std::vector<float>> &B,
+                                std::vector<std::vector<float>> &C) {
+    const int rows = A.size();
+    const int cols = A[0].size();
 
-// matrix addition using Intel intrinsics, accepts double arrays as matrices
-void gpmp::linalg::Mtx::mtx_add(const double *A,
-                                const double *B,
-                                double *C,
-                                int rows,
-                                int cols) {
-    if (rows > 8) {
+    if (rows > 16) {
         for (int i = 0; i < rows; ++i) {
             int j = 0;
-            // requires at least size 4x4 size matrices
-            for (; j < cols - 1; j += 2) {
-                // load 4 elements from A, B, and C matrices using SIMD
-                __m128d a = _mm_loadu_pd(&A[i * cols + j]);
-                __m128d b = _mm_loadu_pd(&B[i * cols + j]);
-                __m128d c = _mm_loadu_pd(&C[i * cols + j]);
-                // perform vectorized addition and accumulate the result
-                c = _mm_add_pd(a, b);
+            // requires at least size 8x8 matrices
+            for (; j < cols - 7; j += 8) {
+                // load 8 elements from A, B, and C matrices using SIMD
+                __m256 a = _mm256_loadu_ps(&A[i][j]);
+                __m256 b = _mm256_loadu_ps(&B[i][j]);
+                __m256 c = _mm256_loadu_ps(&C[i][j]);
+
+                // perform vectorized addition
+                c = _mm256_add_ps(a, b);
 
                 // store the result back to the C matrix
-                _mm_storeu_pd(&C[i * cols + j], c);
+                _mm256_storeu_ps(&C[i][j], c);
             }
 
             // handle the remaining elements that are not multiples of 8
             for (; j < cols; ++j) {
-                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+                C[i][j] = A[i][j] + B[i][j];
             }
         }
     } else {
-        // use standard matrix addition
-        std_mtx_add(A, B, C, rows, cols);
+        std_mtx_add(A, B, C);
     }
 }
 

@@ -30,72 +30,62 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/linalg/vector.hpp"
-#include <cmath>
+#include "../../../include/linalg/mtx.hpp"
+#include <cassert>
+#include <cstddef>
 #include <cstdint>
 #include <iostream>
-#include <numeric>
-#include <stdexcept>
 #include <vector>
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)
 
 /************************************************************************
  *
- * Vector Operations for AVX ISA
+ * Matrix Operations for SSE ISA
  *
  ************************************************************************/
-#if defined(__AVX2__)
-
-// AVX family intrinsics
-#include <immintrin.h>
-
+#elif defined(__SSE2__)
+// SSE2
+#include <emmintrin.h>
+#include <smmintrin.h>
 /************************************************************************
  *
- * Vector Operations on Vectors
+ * Matrix Operations on Arrays
  *
  ************************************************************************/
+// matrix addition using Intel intrinsics, accepts float arrays as matrices
+void gpmp::linalg::Mtx::mtx_add(const float *A,
+                                const float *B,
+                                float *C,
+                                int rows,
+                                int cols) {
+    if (rows > 16) {
+        for (int i = 0; i < rows; ++i) {
+            int j = 0;
+            // requires at least size 4x4 size matrices
+            for (; j < cols - 3; j += 4) {
+                // load 4 elements from A, B, and C matrices using SIMD
+                __m128 a = _mm_loadu_ps(&A[i * cols + j]);
+                __m128 b = _mm_loadu_ps(&B[i * cols + j]);
+                __m128 c = _mm_loadu_ps(&C[i * cols + j]);
+                // perform vectorized addition and accumulate the result
+                c = _mm_add_ps(a, b);
 
-/*****************************************************************************/
+                // store the result back to the C matrix
+                _mm_storeu_ps(&C[i * cols + j], c);
+            }
 
-template <typename T>
-void gpmp::linalg::vector_add_i16(const T *data1,
-                                  const T *data2,
-                                  T *result_data,
-                                  size_t size) {
-    size_t i = 0;
-    if (size > 32) {
-        for (; i < size - 15; i += 16) {
-            __m256i a = _mm256_loadu_si256(
-                reinterpret_cast<const __m256i *>(data1 + i));
-            __m256i b = _mm256_loadu_si256(
-                reinterpret_cast<const __m256i *>(data2 + i));
-            __m256i c = _mm256_add_epi8(a, b);
-            _mm256_storeu_si256(reinterpret_cast<__m256i *>(result_data + i),
-                                c);
+            // handle the remaining elements that are not multiples of 8
+            for (; j < cols; ++j) {
+                C[i * cols + j] = A[i * cols + j] + B[i * cols + j];
+            }
         }
+    } else {
+        // use standard matrix addition
+        std_mtx_add(A, B, C, rows, cols);
     }
-    for (; i < size; ++i) {
-        result_data[i] = data1[i] + data2[i];
-    }
 }
 
-void gpmp::linalg::vector_add(const std::vector<int16_t> &vec1,
-                              const std::vector<int16_t> &vec2,
-                              std::vector<int16_t> &result) {
+#endif
 
-    const size_t size = vec1.size();
-    vector_add_i16(vec1.data(), vec2.data(), result.data(), size);
-}
-
-void gpmp::linalg::vector_add(const std::vector<uint16_t> &vec1,
-                              const std::vector<uint16_t> &vec2,
-                              std::vector<uint16_t> &result) {
-    const size_t size = vec1.size();
-    vector_add_i16(vec1.data(), vec2.data(), result.data(), size);
-}
-
-#endif // AVX2
-
-#endif // x86
+#endif
