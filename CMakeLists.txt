@@ -34,7 +34,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
     set(PROJECT_VERSION 1.0)
 
     set(CMAKE_Fortran_FLAGS "-O0")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D __GPMP_CPP_API__")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_CPP_API__")
 
     message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros")
     execute_process(
@@ -211,7 +211,7 @@ if(BUILD_TINYGPMP)
 
     # 8 & 32 BIT AVR MCUs
     if (TINYGPMP_AVR8 OR TINYGPMP_AVR32)
-        set(CMAKE_CXX_COMPILER "avr-g++")
+        set(CMAKE_CXX_COMPILER "/usr/bin/avr-g++")
 
         # 8 BIT AVR MCUs
         if (TINYGPMP_AVR8)
@@ -228,9 +228,8 @@ if(BUILD_TINYGPMP)
     elseif (TINYGPMP_ARM32)
         message(STATUS "Targeting ARM Cortex-M 32-bit MCUs")
         
-        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
-        set(CMAKE_C_COMPILER "arm-none-eabi-gcc")
-        set(CMAKE_CXX_COMPILER "arm-none-eabi-g++")
+        set(CMAKE_C_COMPILER "/usr/bin/arm-none-eabi-gcc")
+        set(CMAKE_CXX_COMPILER "/usr/bin/arm-none-eabi-g++")
 
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__STM32__")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mthumb -nostdlib")

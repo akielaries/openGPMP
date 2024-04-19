@@ -60,9 +60,9 @@ class Mtx {
 #if defined(__GPMP_PYTHON_API__)
 
     // boost::python::numpy header
-    // #include <boost/python.hpp>
-    // #include <boost/bind/bind.hpp>
-    // #include <boost/python/numpy.hpp>
+    #include <boost/python.hpp>
+    #include <boost/bind/bind.hpp>
+    #include <boost/python/numpy.hpp>
 
     /**
      * @brief boost::python::numpy wrapper for array-based array methods
