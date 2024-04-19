@@ -6,7 +6,7 @@ Modules
 3. Linear Algebra
    - Vector Operations
    - Matrix Operations
-    ```
+```
     DGEMM (Double-precision General Matrix-Matrix product) 
     operations on arrays and vectors call tree:
 
@@ -18,7 +18,7 @@ Modules
                 |
     modules/linalg/dgemm_kernel_4x4_sse.S
 
-    ```
+```
     Where:
     - `mtx.cpp`: main interface for matrix arithmetic operations
     - `dgemm_arr.cpp`: DGEMM implementation for matrices as arrays
