@@ -1,9 +1,9 @@
 Modules
 ====
-Arithmetic
-Calculus
+* Arithmetic
+* Calculus
     - Differential
-Linear Algebra
+* Linear Algebra
     - Linear Systems
     - Eigenvalues & Operations
     - Singular Value Decomposition (SVD)
@@ -27,14 +27,14 @@ Linear Algebra
         - `dgemm_kernel_4x4_sse.S`: 4x4 block micro kernel SSE implementation
     - Tensor Operations ***TODO***
 
-Machine/Deep Learning
+* Machine/Deep Learning
     - Regression
     - Cross-Validation
     - K-Nearest Neighbors
     - Neural Networks
     - Classifiers
 
-Number Theory
+* Number Theory
     - Primality Tests
     - Primality Generation
     - Integer Factorization
@@ -44,7 +44,7 @@ Number Theory
     - Squares
     - Cryptography
 
-Topology/Complex ***TODO***
+* Topology/Complex ***TODO***
     - Dynamical Systems
     - Topology
     - Spline
