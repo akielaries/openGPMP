@@ -37,12 +37,10 @@
  */
 #include "../../include/nt/factorization.hpp"
 #include "../../include/arithmetic.hpp"
-#include "../../include/core/threads.hpp"
 #include "../../include/nt/prime_test.hpp"
 
 #include <algorithm>
 #include <chrono>
-// #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <future>

@@ -111,14 +111,14 @@ void matrix_addition(int a[2][2], int b[2][2], int result[2][2]) {
 }
 
 void std_mtx_add(const double *A, const double *B, double *C) {
-        // MTX A AND B MUST BE SAME SIZE
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < N; ++j) {
-                // perform matrix addition
-                C[i * N + j] = A[i * N + j] + B[i * N + j];
-            }
+    // MTX A AND B MUST BE SAME SIZE
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < N; ++j) {
+            // perform matrix addition
+            C[i * N + j] = A[i * N + j] + B[i * N + j];
         }
     }
+}
 
 void print_matrix(int matrix[2][2]) {
     for (int i = 0; i < 2; ++i) {
@@ -128,7 +128,6 @@ void print_matrix(int matrix[2][2]) {
         printf("\n");
     }
 }
-
 
 int main() {
 
@@ -143,17 +142,16 @@ int main() {
         // toggle state of pin
         PORTB ^= (1 << PIN_GEN);
         PORTB ^= (1 << PIN_MLT);
-        
-        _delay_ms(100);
 
+        _delay_ms(100);
     }
-        
+
     // Initialize UART
     setup_uart();
 
-    double A[N*N];
-    double B[N*N];
-    double C[N*N];
+    double A[N * N];
+    double B[N * N];
+    double C[N * N];
 
     // Main loop
     while (1) {
@@ -161,23 +159,23 @@ int main() {
 
         // toggle yellow pin on while matrices are getting generated
         PORTB ^= (1 << PIN_GEN);
-        
+
         for (int i = 0; i < N * N; ++i) {
             A[i] = (double)rand() / RAND_MAX;
             B[i] = (double)rand() / RAND_MAX;
-        }   
+        }
 
         // toggle yellow as off
         PORTB ^= (1 << PIN_GEN);
 
         printf("Multiplying matrices A and B\n");
-        
+
         // toggle red as on while matrices are being multiplied
         PORTB ^= (1 << PIN_MLT);
 
         // Perform matrix addition
         std_mtx_add(A, B, C);
-        
+
         // toggle red as off
         PORTB ^= (1 << PIN_MLT);
 

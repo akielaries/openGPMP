@@ -85,13 +85,14 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
                         TOLERANCE);
         }
     }*/
-    
+
     int count = 0;
     int matches = 0;
     int i;
 
     for (i = 0; i < mtx_size * mtx_size; ++i) {
-        // printf("Comparing element at index %d: %.2f vs %.2f\n", i, expected[i], result[i]);
+        // printf("Comparing element at index %d: %.2f vs %.2f\n", i,
+        // expected[i], result[i]);
         if (expected[i] != result[i]) {
             count++;
         } else {
@@ -100,9 +101,8 @@ TEST(GEMMArrayTest, DGEMMPerformanceComparison) {
     }
     printf("MISMATCHES  / TOTAL : %d/%d\n", count, i);
     printf("MATCHES     / TOTAL : %d/%d\n", matches, i);
-    
 
-    //ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
+    // ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));
 
     delete[] A;
     delete[] B;

@@ -43,14 +43,15 @@ gpmp::ml::KNN::KNN() {
 gpmp::ml::KNN::~KNN() {
 }
 
-void gpmp::ml::KNN::train(const std::vector<std::vector<double>> &training_data,
-                          const std::vector<int> &labels) {
-    if (training_data.size() != labels.size() || training_data.empty()) {
+void gpmp::ml::KNN::train(
+    const std::vector<std::vector<double>> &_training_data,
+    const std::vector<int> &_labels) {
+    if (_training_data.size() != _labels.size() || _training_data.empty()) {
         throw std::invalid_argument("Invalid training data or labels.");
     }
 
-    this->training_data = training_data;
-    this->labels = labels;
+    this->training_data = _training_data;
+    this->labels = _labels;
 }
 
 int gpmp::ml::KNN::predict(const std::vector<double> &input_vector, int k) {
@@ -63,7 +64,8 @@ int gpmp::ml::KNN::predict(const std::vector<double> &input_vector, int k) {
         throw std::invalid_argument("Invalid input vector size.");
     }
 
-    if (k <= 0 || k > training_data.size()) {
+    // if (k <= 0 || k > training_data.size()) {
+    if (k <= 0 || static_cast<size_t>(k) > training_data.size()) {
         throw std::invalid_argument("Invalid value of k.");
     }
 

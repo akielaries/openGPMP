@@ -671,15 +671,15 @@ bool gpmp::Graph::has_k33() {
 }
 
 // helper method to check if a set of vertices forms a K3,3 subgraph
-bool gpmp::Graph::is_k33(const std::set<int> &vertices) {
-    if (vertices.size() == 6) {
+bool gpmp::Graph::is_k33(const std::set<int> &k_vertices) {
+    if (k_vertices.size() == 6) {
         int degree_sum = 0;
-        for (int v : vertices) {
+        for (int v : k_vertices) {
             degree_sum += adj_list[v].size();
         }
 
         // Cast vertices.size() to int to avoid the comparison warning
-        return degree_sum == 2 * static_cast<int>(vertices.size());
+        return degree_sum == 2 * static_cast<int>(k_vertices.size());
     }
     return false;
 }

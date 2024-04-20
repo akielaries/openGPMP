@@ -232,7 +232,7 @@ class Graph {
      * @return True if the set of vertices forms a subgraph that is a
      * subdivision of K3,3, false otherwise
      */
-    bool is_k33(const std::set<int> &vertices);
+    bool is_k33(const std::set<int> &k_vertices);
 
     /**
      * @brief Calculates the Euclidean distance between two 2D points

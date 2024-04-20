@@ -4,16 +4,16 @@ struct Arith {
     int (*mul)(int, int);
 };
 
-int add(int n1, int n2) { 
+int add(int n1, int n2) {
     return n1 + n2;
 }
 
 int sub(int n1, int n2) {
-    return n1 - n2; 
+    return n1 - n2;
 }
 
 int mul(int n1, int n2) {
-    return n1 * n2; 
+    return n1 * n2;
 }
 
 int main() {
@@ -27,4 +27,3 @@ int main() {
 
     return 0;
 }
-

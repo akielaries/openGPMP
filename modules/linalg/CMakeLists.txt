@@ -5,6 +5,7 @@ message("-- Including Linear Algebra Module")
 option(BUILD_GPU_OPENCL "Build OpenCL Linear Algebra Extension" OFF)
 
 set(SOURCE_FILES
+    mtx.cpp
     mtx_routines.f90
     mtx_arr_f90.cpp
     linsys_routines.f90

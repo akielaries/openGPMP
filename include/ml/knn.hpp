@@ -78,10 +78,10 @@ class KNN {
     int predict(const std::vector<double> &input_vector, int k);
 
   private:
-    std::vector<std::vector<double>>
-        training_data; /**< The training data stored as feature vectors */
-    std::vector<int>
-        labels; /**< The corresponding labels for the training data */
+    /**< The training data stored as feature vectors */
+    std::vector<std::vector<double>> training_data;
+    /**< The corresponding labels for the training data */
+    std::vector<int> labels;
 
     /**
      * @brief Calculates the Euclidean distance between two vectors

@@ -131,7 +131,7 @@ void gpmp::ml::LogReg::feature_scaling(std::vector<std::vector<double>> &X) {
             }
         }
 
-        if (min_val == max_val) {
+        if (fabs(min_val - max_val) < std::numeric_limits<double>::epsilon()) {
             continue; // Skip if all values are the same
         }
 

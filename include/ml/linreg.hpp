@@ -177,7 +177,7 @@ class LinearRegression {
      * @param x Input value.
      * @return Predicted value.
      */
-    long double predict(long double x) const;
+    long double predict(long double _x) const;
 
     /**
      * @brief Predict a value based on the input.
@@ -185,7 +185,7 @@ class LinearRegression {
      * @param x_data X value data.
      * @return Predicted value.
      */
-    long double predict(long double x, const std::vector<long double> &x_data);
+    long double predict(long double _x, const std::vector<long double> &x_data);
 
     /**
      * @brief Calculates the error (residual) for a given independent variable

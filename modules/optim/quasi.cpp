@@ -366,7 +366,9 @@ gpmp::optim::QuasiNewton::lbfgs_optimize(
 
         // L-BFGS two-loop recursion
         size_t start = std::min(iter, memory_size);
-        for (size_t i = start - 1; i >= 0; --i) {
+        // for (size_t i = start - 1; i >= 0; --i) {
+        for (size_t i = start; i > 0; --i) {
+
             rho[i] = 1.0 /
                      inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);
             double alpha =

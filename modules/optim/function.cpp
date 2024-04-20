@@ -58,7 +58,7 @@ std::vector<double>
 gpmp::optim::Func::generate_fibonacci_sequence(size_t length) const {
     std::vector<double> sequence;
 
-    double golden_ratio = (1.0 + std::sqrt(5.0)) / 2.0;
+    // double golden_ratio = (1.0 + std::sqrt(5.0)) / 2.0;
     double fibonacci_prev = 0.0;
     double fibonacci_curr = 1.0;
     for (size_t i = 0; i < length; ++i) {
@@ -375,7 +375,9 @@ std::vector<double> gpmp::optim::Func::bisection_method(
     for (size_t iteration = 0; iteration < max_iterations; ++iteration) {
         double midpoint = (a + b) / 2.0;
 
-        if (func({midpoint}) == 0.0) {
+        // if (func({midpoint}) == 0.0) {
+        if (fabs(func({midpoint}) - 0.0f) <
+            std::numeric_limits<double>::epsilon()) {
             return {midpoint};
         } else if (func({midpoint}) * func({a}) < 0) {
             b = midpoint;
@@ -400,7 +402,7 @@ std::vector<double> gpmp::optim::Func::newton_method(
         double fx = func({x});
         double dfx = derivative({x});
 
-        if (dfx == 0.0) {
+        if ((fabs(dfx) - 0.0f) < std::numeric_limits<double>::epsilon()) {
             throw std::runtime_error("Newton's method: Derivative is zero.");
         }
 
@@ -433,7 +435,7 @@ std::vector<double> gpmp::optim::Func::regula_falsi(
 
         double c = (a * fb - b * fa) / (fb - fa);
 
-        if (func({c}) == 0.0) {
+        if (fabs(func({c}) - 0.0f) < std::numeric_limits<double>::epsilon()) {
             return {c};
         } else if (fa * func({c}) < 0.0) {
             b = c;

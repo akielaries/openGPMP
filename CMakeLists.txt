@@ -153,7 +153,6 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
         target_link_libraries(${PROJECT_NAME} PRIVATE openblas)
         # Verify that the linking was successful
         get_target_property(project_link_libraries ${PROJECT_NAME} INTERFACE_LINK_LIBRARIES)
-        message(STATUS "Linking ${PROJECT_NAME} against : ${project_link_libraries}")
     endif()
 
     # include directory for openGPMP
@@ -299,3 +298,5 @@ if(BUILD_PYGPMP)
     endif()
 
 endif()
+
+message(STATUS "Linking ${PROJECT_NAME} against : ${project_link_libraries}")

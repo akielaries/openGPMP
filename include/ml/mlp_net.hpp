@@ -191,9 +191,9 @@ template <typename T> class SecondaryMLP {
      * Initialize a set of weights + biases for each layer
      * set to random Gaussian Noise related values
      */
-    explicit SecondaryMLP(std::vector<size_t> layer_units,
-                          long double lr = .001)
-        : layer_units(layer_units), wt_mtx(), bias_vectors(), lr(lr) {
+    explicit SecondaryMLP(std::vector<size_t> _layer_units,
+                          long double _lr = .001)
+        : layer_units(_layer_units), wt_mtx(), bias_vectors(), lr(_lr) {
         // traverse the elements
         for (size_t i = 0; i < layer_units.size() - 1; ++i) {
             // size of inputs

@@ -35,6 +35,7 @@
 #include "../../include/stats/describe.hpp"
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <math.h>
 #include <numeric>
 #include <random>
@@ -104,8 +105,10 @@ float my_logf(float a) {
         r = a + a;                                 // silence NaNs if necessary
         if (a < 0.0f)
             r = (0.0f / 0.0f); //  NaN
-        if (a == 0.0f)
+        // if (a == 0.0f)
+        if (fabs(a - 0.0f) < std::numeric_limits<double>::epsilon()) {
             r = (-1.0f / 0.0f); // -Inf
+        }
     }
     return r;
 }

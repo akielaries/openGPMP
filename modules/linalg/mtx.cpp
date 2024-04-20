@@ -31,44 +31,14 @@
  *
  ************************************************************************/
 
-#include "../../include/nt/rc5.hpp"
-#include <cstdint>
+/** Main Matrix operation interface for matrices as arrays & vectors */
 
-gpmp::nt::RC5::RC5(uint32_t rounds, uint32_t wordSize, uint32_t blockSize)
-    : w(wordSize), r(rounds), b(blockSize) {
-    init();
-}
+#include "../../include/linalg/_dgemm.hpp"
+#include <cmath>
+#include <limits>
 
-void gpmp::nt::RC5::init() {
-    S.resize(2 * r + 2);
-    S[0] = P;
-    for (uint32_t i = 1; i < 2 * r + 2; ++i) {
-        S[i] = S[i - 1] + Q;
-    }
-}
+#if defined(__USE_BLAS__)
 
-void gpmp::nt::RC5::encrypt(uint32_t &A, uint32_t &B) {
-    A += S[0];
-    B += S[1];
-    for (uint32_t i = 1; i <= r; ++i) {
-        A = rotl((A ^ B), B) + S[2 * i];
-        B = rotl((B ^ A), A) + S[2 * i + 1];
-    }
-}
+#include <cblas.h>
 
-void gpmp::nt::RC5::decrypt(uint32_t &A, uint32_t &B) {
-    for (uint32_t i = r; i > 0; --i) {
-        B = rotr(B - S[2 * i + 1], A) ^ A;
-        A = rotr(A - S[2 * i], B) ^ B;
-    }
-    B -= S[1];
-    A -= S[0];
-}
-
-uint32_t gpmp::nt::RC5::rotl(uint32_t value, uint32_t shift) {
-    return (value << shift) | (value >> (w - shift));
-}
-
-uint32_t gpmp::nt::RC5::rotr(uint32_t value, uint32_t shift) {
-    return (value >> shift) | (value << (w - shift));
-}
+#endif

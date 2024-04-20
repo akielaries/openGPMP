@@ -92,7 +92,7 @@ int64_t gpmp::ml::LinearRegression::data_size() {
 
 // Function that return the coefficient/slope of the best fitting line
 long double gpmp::ml::LinearRegression::return_coeffecient() {
-    if (coeff == 0) {
+    if (fabs(coeff - 0.0f) < std::numeric_limits<double>::epsilon()) {
         calculate_coeffecient();
     }
     return coeff;
@@ -100,7 +100,7 @@ long double gpmp::ml::LinearRegression::return_coeffecient() {
 
 // Function that return the constant term of the best fitting line
 long double gpmp::ml::LinearRegression::return_constant() {
-    if (constant == 0) {
+    if (fabs(constant - 0.0f) < std::numeric_limits<double>::epsilon()) {
         calculate_constant();
     }
     return constant;
@@ -112,7 +112,8 @@ void gpmp::ml::LinearRegression::best_fit() {
         // Check if training data is empty
         _log_.log(WARNING, "Training data is empty.");
 
-        if (coeff == 0 && constant == 0) {
+        if (fabs(coeff - 0.0f) < std::numeric_limits<double>::epsilon() &&
+            fabs(constant - 0.0f) < std::numeric_limits<double>::epsilon()) {
             // If coefficients are not calculated, calculate them
             calculate_coeffecient();
             calculate_constant();
@@ -352,25 +353,26 @@ void gpmp::ml::LinearRegression::show_data() {
 }
 
 // Function to predict a value based on input x
-long double gpmp::ml::LinearRegression::predict(long double x) const {
-    return coeff * x + constant;
+long double gpmp::ml::LinearRegression::predict(long double _x) const {
+    return coeff * _x + constant;
 }
 
 // Function to predict a value based on input x and a dataset
 long double
-gpmp::ml::LinearRegression::predict(long double x,
+gpmp::ml::LinearRegression::predict(long double _x,
                                     const std::vector<long double> &x_data) {
     // Calculate the coefficient if not already calculated
-    long double coeff = return_coeffecient();
+    long double _coeff = return_coeffecient();
     // Calculate the constant if not already calculated
-    long double constant = return_constant();
-    return coeff * x + constant;
+    long double _constant = return_constant();
+    // TODO FIXME unused variable
+    return _coeff * _x + _constant + x_data[0];
 }
 
 // Function to calculate the error for a given value
 long double gpmp::ml::LinearRegression::error_in(long double num) {
     for (int64_t i = 0; uint64_t(i) < x.size(); i++) {
-        if (num == x[i]) {
+        if (fabs(num - x[i]) < std::numeric_limits<double>::epsilon()) {
             return (y[i] - predict(x[i]));
         }
     }
@@ -385,7 +387,7 @@ gpmp::ml::LinearRegression::error_in(long double num,
     long double prediction = predict(num, x_data);
     // Find the corresponding y value for the input x
     for (size_t i = 0; i < x_data.size(); i++) {
-        if (num == x_data[i]) {
+        if (fabs(num - x_data[i]) < std::numeric_limits<double>::epsilon()) {
             return y_data[i] - prediction;
         }
     }
