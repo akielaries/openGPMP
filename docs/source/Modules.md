@@ -28,7 +28,9 @@ Modules
     - Tensor Operations ***TODO***
 
 * Machine/Deep Learning
-    - Regression
+    - Activations
+    - Linear Regression
+    - Logistic Regression
     - Cross-Validation
     - K-Nearest Neighbors
     - Neural Networks
@@ -43,6 +45,12 @@ Modules
     - Greatest Common Divisors
     - Squares
     - Cryptography
+
+* Optimization
+
+* Statistics
+    - Descriptive
+    - Probility Distribution
 
 * Topology/Complex ***TODO***
     - Dynamical Systems
