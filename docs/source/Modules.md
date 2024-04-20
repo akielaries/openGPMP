@@ -30,6 +30,7 @@ Modules
                 |
     modules/linalg/dgemm_kernel_4x4_sse.S
     ```
+
     Where:
     * `mtx.cpp`: main interface for matrix arithmetic operations
     * `dgemm_arr.cpp`: DGEMM implementation for matrices as arrays

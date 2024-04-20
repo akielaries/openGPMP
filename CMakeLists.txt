@@ -113,7 +113,6 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
         # add compilation flags based on this
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__USE_BLAS__")
-
     else()
         message(STATUS "OpenBLAS not found")
     endif()
