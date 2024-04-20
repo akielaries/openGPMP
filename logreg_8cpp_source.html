@@ -212,7 +212,7 @@ $(function() {
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (min_val == max_val) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (fabs(min_val - max_val) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">continue</span>; <span class="comment">// Skip if all values are the same</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>

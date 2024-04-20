@@ -10,7 +10,7 @@ var searchData=
   ['fibonacci_5fsearch_348',['fibonacci_search',['../classgpmp_1_1optim_1_1Func.html#a0af7e1a0faca3ff89688994b5c7c3fc3',1,'gpmp::optim::Func']]],
   ['file_5fonly_349',['FILE_ONLY',['../namespacepygpmp_1_1core_1_1core.html#a9848ea802092d67c2b0ee500d362650a',1,'pygpmp.core.core.FILE_ONLY()'],['../utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca4c5135d5bf19dba502441a2c7edf6f5b',1,'FILE_ONLY():&#160;utils.hpp']]],
   ['fill_5findex_350',['fill_index',['../classgpmp_1_1linalg_1_1Matrix.html#a5ecc3e8ccf8ee3cdff0f021ff6c98530',1,'gpmp::linalg::Matrix']]],
-  ['fill_5fmatrix_5frandom_351',['fill_matrix_random',['../mtx_8cpp.html#af4841aa6b3c5aa84bab39bd0ba178474',1,'mtx.cpp']]],
+  ['fill_5fmatrix_5frandom_351',['fill_matrix_random',['../samples_2cpp_2mtx_8cpp.html#af4841aa6b3c5aa84bab39bd0ba178474',1,'mtx.cpp']]],
   ['find_352',['find',['../classgpmp_1_1Graph.html#a828cb062dda288a0c2360ca4bb56b5ef',1,'gpmp::Graph']]],
   ['first_353',['first',['../classgpmp_1_1core_1_1DataTable.html#a8bcdc885a37ed6999ea1fd94a128a763',1,'gpmp::core::DataTable::first(const std::vector&lt; gpmp::core::DataTableStr &gt; &amp;groups) const'],['../classgpmp_1_1core_1_1DataTable.html#a4dec7436182d5aedc1fea94975ee1a61',1,'gpmp::core::DataTable::first(const std::vector&lt; gpmp::core::DataTableStr &gt; &amp;groups) const'],['../classpygpmp_1_1core_1_1core_1_1DataTable.html#a24dceed6ff2939fbe5a71a353a6ac706',1,'pygpmp.core.core.DataTable.first()']]],
   ['fit_354',['fit',['../classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb',1,'gpmp::ml::SVC::fit()'],['../classBNN.html#a18c2de8aeb520eb248e5ac8d0b7702dd',1,'BNN::fit()']]],

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-20 03:28:31</td>
+            <td class="headerValue">2024-04-20 06:38:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -741,15 +741,15 @@
 <a name="671"><span class="lineNum">     671 </span>            : }</a>
 <a name="672"><span class="lineNum">     672 </span>            : </a>
 <a name="673"><span class="lineNum">     673 </span>            : // helper method to check if a set of vertices forms a K3,3 subgraph</a>
-<a name="674"><span class="lineNum">     674 </span><span class="lineNoCov">          0 : bool gpmp::Graph::is_k33(const std::set&lt;int&gt; &amp;vertices) {</span></a>
-<a name="675"><span class="lineNum">     675 </span><span class="lineNoCov">          0 :     if (vertices.size() == 6) {</span></a>
+<a name="674"><span class="lineNum">     674 </span><span class="lineNoCov">          0 : bool gpmp::Graph::is_k33(const std::set&lt;int&gt; &amp;k_vertices) {</span></a>
+<a name="675"><span class="lineNum">     675 </span><span class="lineNoCov">          0 :     if (k_vertices.size() == 6) {</span></a>
 <a name="676"><span class="lineNum">     676 </span><span class="lineNoCov">          0 :         int degree_sum = 0;</span></a>
-<a name="677"><span class="lineNum">     677 </span><span class="lineNoCov">          0 :         for (int v : vertices) {</span></a>
+<a name="677"><span class="lineNum">     677 </span><span class="lineNoCov">          0 :         for (int v : k_vertices) {</span></a>
 <a name="678"><span class="lineNum">     678 </span><span class="lineNoCov">          0 :             degree_sum += adj_list[v].size();</span></a>
 <a name="679"><span class="lineNum">     679 </span>            :         }</a>
 <a name="680"><span class="lineNum">     680 </span>            : </a>
 <a name="681"><span class="lineNum">     681 </span>            :         // Cast vertices.size() to int to avoid the comparison warning</a>
-<a name="682"><span class="lineNum">     682 </span><span class="lineNoCov">          0 :         return degree_sum == 2 * static_cast&lt;int&gt;(vertices.size());</span></a>
+<a name="682"><span class="lineNum">     682 </span><span class="lineNoCov">          0 :         return degree_sum == 2 * static_cast&lt;int&gt;(k_vertices.size());</span></a>
 <a name="683"><span class="lineNum">     683 </span>            :     }</a>
 <a name="684"><span class="lineNum">     684 </span><span class="lineNoCov">          0 :     return false;</span></a>
 <a name="685"><span class="lineNum">     685 </span>            : }</a>

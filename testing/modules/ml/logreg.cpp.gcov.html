@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-20 03:28:31</td>
+            <td class="headerValue">2024-04-20 06:38:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -201,7 +201,7 @@
 <a name="131"><span class="lineNum">     131 </span>            :             }</a>
 <a name="132"><span class="lineNum">     132 </span>            :         }</a>
 <a name="133"><span class="lineNum">     133 </span>            : </a>
-<a name="134"><span class="lineNum">     134 </span><span class="lineNoCov">          0 :         if (min_val == max_val) {</span></a>
+<a name="134"><span class="lineNum">     134 </span><span class="lineNoCov">          0 :         if (fabs(min_val - max_val) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</span></a>
 <a name="135"><span class="lineNum">     135 </span><span class="lineNoCov">          0 :             continue; // Skip if all values are the same</span></a>
 <a name="136"><span class="lineNum">     136 </span>            :         }</a>
 <a name="137"><span class="lineNum">     137 </span>            : </a>

@@ -165,9 +165,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afafa9196d6abc82287fb5598d6605a3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1Graph.html#afafa9196d6abc82287fb5598d6605a3f">has_k33</a> ()</td></tr>
 <tr class="memdesc:afafa9196d6abc82287fb5598d6605a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the graph contains a subgraph that is a subdivision of K3,3.  <a href="classgpmp_1_1Graph.html#afafa9196d6abc82287fb5598d6605a3f">More...</a><br /></td></tr>
 <tr class="separator:afafa9196d6abc82287fb5598d6605a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62ae022bba868e83c92e8f4bbe5fcaa0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1Graph.html#a62ae022bba868e83c92e8f4bbe5fcaa0">is_k33</a> (const std::set&lt; int &gt; &amp;<a class="el" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>)</td></tr>
-<tr class="memdesc:a62ae022bba868e83c92e8f4bbe5fcaa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a set of vertices forms a subgraph that is a subdivision of K3,3.  <a href="classgpmp_1_1Graph.html#a62ae022bba868e83c92e8f4bbe5fcaa0">More...</a><br /></td></tr>
-<tr class="separator:a62ae022bba868e83c92e8f4bbe5fcaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e071bd7305ec93f504efbda73f233c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1Graph.html#af6e071bd7305ec93f504efbda73f233c">is_k33</a> (const std::set&lt; int &gt; &amp;k_vertices)</td></tr>
+<tr class="memdesc:af6e071bd7305ec93f504efbda73f233c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a set of vertices forms a subgraph that is a subdivision of K3,3.  <a href="classgpmp_1_1Graph.html#af6e071bd7305ec93f504efbda73f233c">More...</a><br /></td></tr>
+<tr class="separator:af6e071bd7305ec93f504efbda73f233c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c8bd0cf2c4ed196b8a73fda00e958db"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1Graph.html#a8c8bd0cf2c4ed196b8a73fda00e958db">euclid_dist</a> (const std::pair&lt; double, double &gt; &amp;point1, const std::pair&lt; double, double &gt; &amp;point2)</td></tr>
 <tr class="memdesc:a8c8bd0cf2c4ed196b8a73fda00e958db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the Euclidean distance between two 2D points.  <a href="classgpmp_1_1Graph.html#a8c8bd0cf2c4ed196b8a73fda00e958db">More...</a><br /></td></tr>
 <tr class="separator:a8c8bd0cf2c4ed196b8a73fda00e958db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1394,7 +1394,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                neighbors.insert(neighbor.first);</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;            }</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1Graph.html#a62ae022bba868e83c92e8f4bbe5fcaa0">is_k33</a>(neighbors)) {</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1Graph.html#af6e071bd7305ec93f504efbda73f233c">is_k33</a>(neighbors)) {</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;            }</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        }</div>
@@ -1402,7 +1402,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1Graph_html_a62ae022bba868e83c92e8f4bbe5fcaa0"><div class="ttname"><a href="classgpmp_1_1Graph.html#a62ae022bba868e83c92e8f4bbe5fcaa0">gpmp::Graph::is_k33</a></div><div class="ttdeci">bool is_k33(const std::set&lt; int &gt; &amp;vertices)</div><div class="ttdoc">Checks if a set of vertices forms a subgraph that is a subdivision of K3,3.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00674">graphs.cpp:674</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Graph_html_af6e071bd7305ec93f504efbda73f233c"><div class="ttname"><a href="classgpmp_1_1Graph.html#af6e071bd7305ec93f504efbda73f233c">gpmp::Graph::is_k33</a></div><div class="ttdeci">bool is_k33(const std::set&lt; int &gt; &amp;k_vertices)</div><div class="ttdoc">Checks if a set of vertices forms a subgraph that is a subdivision of K3,3.</div><div class="ttdef"><b>Definition:</b> <a href="graphs_8cpp_source.html#l00674">graphs.cpp:674</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1509,8 +1509,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a62ae022bba868e83c92e8f4bbe5fcaa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62ae022bba868e83c92e8f4bbe5fcaa0">&#9670;&nbsp;</a></span>is_k33()</h2>
+<a id="af6e071bd7305ec93f504efbda73f233c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e071bd7305ec93f504efbda73f233c">&#9670;&nbsp;</a></span>is_k33()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1519,7 +1519,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">bool gpmp::Graph::is_k33 </td>
           <td>(</td>
           <td class="paramtype">const std::set&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vertices</em></td><td>)</td>
+          <td class="paramname"><em>k_vertices</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1535,15 +1535,15 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True if the set of vertices forms a subgraph that is a subdivision of K3,3, false otherwise </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="graphs_8cpp_source.html#l00674">674</a> of file <a class="el" href="graphs_8cpp_source.html">graphs.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                                  {</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>.size() == 6) {</div>
+<div class="fragment"><div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                                    {</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keywordflow">if</span> (k_vertices.size() == 6) {</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;        <span class="keywordtype">int</span> degree_sum = 0;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v : <a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>) {</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v : k_vertices) {</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;            degree_sum += <a class="code" href="classgpmp_1_1Graph.html#a31627efabc7f10797435c61e8aca9c4b">adj_list</a>[v].size();</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        }</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <span class="comment">// Cast vertices.size() to int to avoid the comparison warning</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keywordflow">return</span> degree_sum == 2 * <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classgpmp_1_1Graph.html#aa24bd3eec5e82bd1eb303c648e9888de">vertices</a>.size());</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keywordflow">return</span> degree_sum == 2 * <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(k_vertices.size());</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    }</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;}</div>

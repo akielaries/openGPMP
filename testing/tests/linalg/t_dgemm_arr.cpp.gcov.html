@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-20 03:28:31</td>
+            <td class="headerValue">2024-04-20 06:38:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -155,24 +155,24 @@
 <a name="85"><span class="lineNum">      85 </span>            :                         TOLERANCE);</a>
 <a name="86"><span class="lineNum">      86 </span>            :         }</a>
 <a name="87"><span class="lineNum">      87 </span>            :     }*/</a>
-<a name="88"><span class="lineNum">      88 </span>            :     </a>
+<a name="88"><span class="lineNum">      88 </span>            : </a>
 <a name="89"><span class="lineNum">      89 </span><span class="lineCov">          1 :     int count = 0;</span></a>
 <a name="90"><span class="lineNum">      90 </span><span class="lineCov">          1 :     int matches = 0;</span></a>
 <a name="91"><span class="lineNum">      91 </span>            :     int i;</a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineCov">    1048577 :     for (i = 0; i &lt; mtx_size * mtx_size; ++i) {</span></a>
-<a name="94"><span class="lineNum">      94 </span>            :         // printf(&quot;Comparing element at index %d: %.2f vs %.2f\n&quot;, i, expected[i], result[i]);</a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineCov">    1048576 :         if (expected[i] != result[i]) {</span></a>
-<a name="96"><span class="lineNum">      96 </span><span class="lineNoCov">          0 :             count++;</span></a>
-<a name="97"><span class="lineNum">      97 </span>            :         } else {</a>
-<a name="98"><span class="lineNum">      98 </span><span class="lineCov">    1048576 :             matches++;</span></a>
-<a name="99"><span class="lineNum">      99 </span>            :         }</a>
-<a name="100"><span class="lineNum">     100 </span>            :     }</a>
-<a name="101"><span class="lineNum">     101 </span><span class="lineCov">          1 :     printf(&quot;MISMATCHES  / TOTAL : %d/%d\n&quot;, count, i);</span></a>
-<a name="102"><span class="lineNum">     102 </span><span class="lineCov">          1 :     printf(&quot;MATCHES     / TOTAL : %d/%d\n&quot;, matches, i);</span></a>
-<a name="103"><span class="lineNum">     103 </span>            :     </a>
+<a name="94"><span class="lineNum">      94 </span>            :         // printf(&quot;Comparing element at index %d: %.2f vs %.2f\n&quot;, i,</a>
+<a name="95"><span class="lineNum">      95 </span>            :         // expected[i], result[i]);</a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineCov">    1048576 :         if (expected[i] != result[i]) {</span></a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineNoCov">          0 :             count++;</span></a>
+<a name="98"><span class="lineNum">      98 </span>            :         } else {</a>
+<a name="99"><span class="lineNum">      99 </span><span class="lineCov">    1048576 :             matches++;</span></a>
+<a name="100"><span class="lineNum">     100 </span>            :         }</a>
+<a name="101"><span class="lineNum">     101 </span>            :     }</a>
+<a name="102"><span class="lineNum">     102 </span><span class="lineCov">          1 :     printf(&quot;MISMATCHES  / TOTAL : %d/%d\n&quot;, count, i);</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineCov">          1 :     printf(&quot;MATCHES     / TOTAL : %d/%d\n&quot;, matches, i);</span></a>
 <a name="104"><span class="lineNum">     104 </span>            : </a>
-<a name="105"><span class="lineNum">     105 </span>            :     //ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</a>
+<a name="105"><span class="lineNum">     105 </span>            :     // ASSERT_TRUE(mtx_verif(expected, result, mtx_size, mtx_size));</a>
 <a name="106"><span class="lineNum">     106 </span>            : </a>
 <a name="107"><span class="lineNum">     107 </span><span class="lineCov">          1 :     delete[] A;</span></a>
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">          1 :     delete[] B;</span></a>

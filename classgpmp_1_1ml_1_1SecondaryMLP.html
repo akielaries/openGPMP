@@ -99,8 +99,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aae5d512cb3d8c7926e0fb4cc2eeee2af"><td class="memItemLeft" align="right" valign="top">long double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aae5d512cb3d8c7926e0fb4cc2eeee2af">sigmoid_deriv</a> (long double x)</td></tr>
 <tr class="memdesc:aae5d512cb3d8c7926e0fb4cc2eeee2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid Derivative for backwards propogation.  <a href="classgpmp_1_1ml_1_1SecondaryMLP.html#aae5d512cb3d8c7926e0fb4cc2eeee2af">More...</a><br /></td></tr>
 <tr class="separator:aae5d512cb3d8c7926e0fb4cc2eeee2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba78214d223f0c87dd488b6a8772ff9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aba78214d223f0c87dd488b6a8772ff9c">SecondaryMLP</a> (std::vector&lt; size_t &gt; <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>, long double <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89">lr</a>=.001)</td></tr>
-<tr class="separator:aba78214d223f0c87dd488b6a8772ff9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd7f4a1e235b98f136dfee05eb91228"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a7dd7f4a1e235b98f136dfee05eb91228">SecondaryMLP</a> (std::vector&lt; size_t &gt; _layer_units, long double _lr=.001)</td></tr>
+<tr class="separator:a7dd7f4a1e235b98f136dfee05eb91228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5be5a8161925832dbbc279dfe8721a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">prop_forwards</a> (<a class="el" href="classgpmp_1_1linalg_1_1Matrix.html">gpmp::linalg::Matrix</a>&lt; T &gt; x)</td></tr>
 <tr class="separator:acb5be5a8161925832dbbc279dfe8721a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c74ed3df388cfdf1c6393d392666c46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">prop_backwards</a> (<a class="el" href="classgpmp_1_1linalg_1_1Matrix.html">gpmp::linalg::Matrix</a>&lt; T &gt; target)</td></tr>
@@ -127,8 +127,8 @@ class gpmp::ml::SecondaryMLP&lt; T &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00151">151</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aba78214d223f0c87dd488b6a8772ff9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba78214d223f0c87dd488b6a8772ff9c">&#9670;&nbsp;</a></span>SecondaryMLP()</h2>
+<a id="a7dd7f4a1e235b98f136dfee05eb91228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd7f4a1e235b98f136dfee05eb91228">&#9670;&nbsp;</a></span>SecondaryMLP()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,13 +142,13 @@ template&lt;typename T &gt; </div>
           <td class="memname"><a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html">gpmp::ml::SecondaryMLP</a>&lt; T &gt;::<a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html">SecondaryMLP</a> </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; size_t &gt;&#160;</td>
-          <td class="paramname"><em>layer_units</em>, </td>
+          <td class="paramname"><em>_layer_units</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long double&#160;</td>
-          <td class="paramname"><em>lr</em> = <code>.001</code>&#160;</td>
+          <td class="paramname"><em>_lr</em> = <code>.001</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,7 +165,7 @@ template&lt;typename T &gt; </div>
 <p>Secondary Multi-Layer Perceptron Constructor Initialize a set of weights + biases for each layer set to random Gaussian Noise related values </p>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00194">194</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        : <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>(<a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>), <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a5621abb427db0e1f932cfdbff3e25762">wt_mtx</a>(), <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a24c2d018bc6968c1d7d325f04ff82e74">bias_vectors</a>(), <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89">lr</a>(<a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89">lr</a>) {</div>
+<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        : <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>(_layer_units), <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a5621abb427db0e1f932cfdbff3e25762">wt_mtx</a>(), <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a24c2d018bc6968c1d7d325f04ff82e74">bias_vectors</a>(), <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0fdbd805f487f28fe763e4653485fa89">lr</a>(_lr) {</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="comment">// traverse the elements</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1SecondaryMLP.html#af79ecdda0c677ed78d865a72b716ca19">layer_units</a>.size() - 1; ++i) {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="comment">// size of inputs</span></div>
@@ -470,7 +470,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00185">185</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aba78214d223f0c87dd488b6a8772ff9c">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a7dd7f4a1e235b98f136dfee05eb91228">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>
 </div>
@@ -490,7 +490,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00183">183</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aba78214d223f0c87dd488b6a8772ff9c">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a7dd7f4a1e235b98f136dfee05eb91228">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>
 </div>
@@ -510,7 +510,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00182">182</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aba78214d223f0c87dd488b6a8772ff9c">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a7dd7f4a1e235b98f136dfee05eb91228">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>
 </div>
@@ -550,7 +550,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="mlp__net_8hpp_source.html#l00184">184</a> of file <a class="el" href="mlp__net_8hpp_source.html">mlp_net.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#aba78214d223f0c87dd488b6a8772ff9c">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a0c74ed3df388cfdf1c6393d392666c46">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_backwards()</a>, <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#acb5be5a8161925832dbbc279dfe8721a">gpmp::ml::SecondaryMLP&lt; T &gt;::prop_forwards()</a>, and <a class="el" href="classgpmp_1_1ml_1_1SecondaryMLP.html#a7dd7f4a1e235b98f136dfee05eb91228">gpmp::ml::SecondaryMLP&lt; T &gt;::SecondaryMLP()</a>.</p>
 
 </div>
 </div>

@@ -447,59 +447,61 @@ $(function() {
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="comment">// L-BFGS two-loop recursion</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordtype">size_t</span> start = std::min(iter, memory_size);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = start - 1; i &gt;= 0; --i) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            rho[i] = 1.0 /</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                     inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordtype">double</span> alpha =</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                rho[i] *</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; n; ++j) {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                d[j] -= alpha * y[i][j];</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            }</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="comment">// Perform scaling</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            d[i] *= rho[i];</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="comment">// Compute gradient of the objective function along the search direction</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="comment">// Gradient calculation logic to be implemented</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="comment">// Assign gradient to &#39;dg&#39;</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordtype">double</span> dg = inner_product(d.begin(), d.end(), g.begin(), 0.0);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="comment">// Limit curvature</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> (dg &gt; 0) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        }</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="comment">// Line search</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordtype">double</span> step_size = 1.0;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        std::vector&lt;double&gt; x_new = x;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            x_new[i] += step_size * d[i];</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        }</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordtype">double</span> fx_new = f(x_new);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">if</span> (fx_new &lt; fx + eps * step_size * dg) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="comment">// Update x</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            x = x_new;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            fx = fx_new;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="comment">// Evaluate gradient at new point</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="comment">// Gradient calculation logic to be implemented</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="comment">// Assign gradient to &#39;g&#39;</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="comment">// Update s and y</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                s[iter % memory_size][i] = x_new[i] - x[i];</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                y[iter % memory_size][i] = g[i] - d[i];</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            }</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        }</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    }</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">return</span> std::make_tuple(x, fx);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;}</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="comment">// for (size_t i = start - 1; i &gt;= 0; --i) {</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = start; i &gt; 0; --i) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            rho[i] = 1.0 /</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                     inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="keywordtype">double</span> alpha =</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                rho[i] *</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                inner_product(s[i].begin(), s[i].end(), d.begin(), 0.0);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; n; ++j) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                d[j] -= alpha * y[i][j];</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="comment">// Perform scaling</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            d[i] *= rho[i];</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="comment">// Compute gradient of the objective function along the search direction</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="comment">// Gradient calculation logic to be implemented</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="comment">// Assign gradient to &#39;dg&#39;</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordtype">double</span> dg = inner_product(d.begin(), d.end(), g.begin(), 0.0);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="comment">// Limit curvature</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span> (dg &gt; 0) {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="comment">// Line search</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordtype">double</span> step_size = 1.0;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        std::vector&lt;double&gt; x_new = x;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            x_new[i] += step_size * d[i];</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keywordtype">double</span> fx_new = f(x_new);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (fx_new &lt; fx + eps * step_size * dg) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="comment">// Update x</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            x = x_new;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            fx = fx_new;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="comment">// Evaluate gradient at new point</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <span class="comment">// Gradient calculation logic to be implemented</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="comment">// Assign gradient to &#39;g&#39;</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="comment">// Update s and y</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                s[iter % memory_size][i] = x_new[i] - x[i];</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                y[iter % memory_size][i] = g[i] - d[i];</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        }</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">return</span> std::make_tuple(x, fx);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1optim_1_1QuasiNewton_html_a0ed465f6f613f92b7d166a447ce575bc"><div class="ttname"><a href="classgpmp_1_1optim_1_1QuasiNewton.html#a0ed465f6f613f92b7d166a447ce575bc">gpmp::optim::QuasiNewton::line_search</a></div><div class="ttdeci">double line_search(const std::function&lt; double(const std::vector&lt; double &gt; &amp;)&gt; &amp;func, const std::vector&lt; double &gt; &amp;current_point, const std::vector&lt; double &gt; &amp;search_direction)</div><div class="ttdoc">Perform line search to find an appropriate step size.</div><div class="ttdef"><b>Definition:</b> <a href="quasi_8cpp_source.html#l00223">quasi.cpp:223</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1optim_1_1QuasiNewton_html_a3a43cd0bdd31b471d3494801693e623e"><div class="ttname"><a href="classgpmp_1_1optim_1_1QuasiNewton.html#a3a43cd0bdd31b471d3494801693e623e">gpmp::optim::QuasiNewton::bhhh_optimize</a></div><div class="ttdeci">std::vector&lt; double &gt; bhhh_optimize(const std::function&lt; double(const std::vector&lt; double &gt; &amp;)&gt; &amp;func, const std::vector&lt; double &gt; &amp;initial_point, double tolerance, size_t max_iterations)</div><div class="ttdoc">Optimize a function using the Berndt–Hall–Hall–Hausman (BHHH) algorithm.</div><div class="ttdef"><b>Definition:</b> <a href="quasi_8cpp_source.html#l00060">quasi.cpp:60</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1optim_1_1QuasiNewton_html_a4ce4f2a18c718dfcdfe52e4055b18f1a"><div class="ttname"><a href="classgpmp_1_1optim_1_1QuasiNewton.html#a4ce4f2a18c718dfcdfe52e4055b18f1a">gpmp::optim::QuasiNewton::calculate_search_direction</a></div><div class="ttdeci">std::vector&lt; double &gt; calculate_search_direction(const std::vector&lt; double &gt; &amp;gradient, const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;hessian_inverse)</div><div class="ttdoc">Calculate the search direction using the BFGS method.</div><div class="ttdef"><b>Definition:</b> <a href="quasi_8cpp_source.html#l00207">quasi.cpp:207</a></div></div>

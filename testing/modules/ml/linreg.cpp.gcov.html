@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">225</td>
+            <td class="headerCovTableEntry">226</td>
             <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-20 03:28:31</td>
+            <td class="headerValue">2024-04-20 06:38:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -162,7 +162,7 @@
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span>            : // Function that return the coefficient/slope of the best fitting line</a>
 <a name="94"><span class="lineNum">      94 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::return_coeffecient() {</span></a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineNoCov">          0 :     if (coeff == 0) {</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineNoCov">          0 :     if (fabs(coeff - 0.0f) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</span></a>
 <a name="96"><span class="lineNum">      96 </span><span class="lineNoCov">          0 :         calculate_coeffecient();</span></a>
 <a name="97"><span class="lineNum">      97 </span>            :     }</a>
 <a name="98"><span class="lineNum">      98 </span><span class="lineNoCov">          0 :     return coeff;</span></a>
@@ -170,7 +170,7 @@
 <a name="100"><span class="lineNum">     100 </span>            : </a>
 <a name="101"><span class="lineNum">     101 </span>            : // Function that return the constant term of the best fitting line</a>
 <a name="102"><span class="lineNum">     102 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::return_constant() {</span></a>
-<a name="103"><span class="lineNum">     103 </span><span class="lineNoCov">          0 :     if (constant == 0) {</span></a>
+<a name="103"><span class="lineNum">     103 </span><span class="lineNoCov">          0 :     if (fabs(constant - 0.0f) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</span></a>
 <a name="104"><span class="lineNum">     104 </span><span class="lineNoCov">          0 :         calculate_constant();</span></a>
 <a name="105"><span class="lineNum">     105 </span>            :     }</a>
 <a name="106"><span class="lineNum">     106 </span><span class="lineNoCov">          0 :     return constant;</span></a>
@@ -182,376 +182,378 @@
 <a name="112"><span class="lineNum">     112 </span>            :         // Check if training data is empty</a>
 <a name="113"><span class="lineNum">     113 </span><span class="lineNoCov">          0 :         _log_.log(WARNING, &quot;Training data is empty.&quot;);</span></a>
 <a name="114"><span class="lineNum">     114 </span>            : </a>
-<a name="115"><span class="lineNum">     115 </span><span class="lineNoCov">          0 :         if (coeff == 0 &amp;&amp; constant == 0) {</span></a>
-<a name="116"><span class="lineNum">     116 </span>            :             // If coefficients are not calculated, calculate them</a>
-<a name="117"><span class="lineNum">     117 </span><span class="lineNoCov">          0 :             calculate_coeffecient();</span></a>
-<a name="118"><span class="lineNum">     118 </span><span class="lineNoCov">          0 :             calculate_constant();</span></a>
-<a name="119"><span class="lineNum">     119 </span>            :         }</a>
-<a name="120"><span class="lineNum">     120 </span>            :         // Display the best fitting line equation</a>
-<a name="121"><span class="lineNum">     121 </span><span class="lineNoCov">          0 :         _log_.log(INFO,</span></a>
-<a name="122"><span class="lineNum">     122 </span><span class="lineNoCov">          0 :                   &quot;Best fitting line : y = &quot; + std::to_string(coeff) + &quot;x + &quot; +</span></a>
-<a name="123"><span class="lineNum">     123 </span><span class="lineNoCov">          0 :                       std::to_string(constant));</span></a>
-<a name="124"><span class="lineNum">     124 </span><span class="lineNoCov">          0 :         return;</span></a>
-<a name="125"><span class="lineNum">     125 </span>            :     }</a>
-<a name="126"><span class="lineNum">     126 </span>            : </a>
-<a name="127"><span class="lineNum">     127 </span>            :     // Calculate the coefficients using the training data</a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineNoCov">          0 :     long double N = x_train.size();</span></a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineNoCov">          0 :     long double sum_xy_train = 0;</span></a>
-<a name="130"><span class="lineNum">     130 </span><span class="lineNoCov">          0 :     long double sum_x_train = 0;</span></a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineNoCov">          0 :     long double sum_y_train = 0;</span></a>
-<a name="132"><span class="lineNum">     132 </span><span class="lineNoCov">          0 :     long double sum_x_square_train = 0;</span></a>
-<a name="133"><span class="lineNum">     133 </span>            : </a>
-<a name="134"><span class="lineNum">     134 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; N; i++) {</span></a>
-<a name="135"><span class="lineNum">     135 </span>            :         // Calculate sums for the training data</a>
-<a name="136"><span class="lineNum">     136 </span><span class="lineNoCov">          0 :         sum_xy_train += x_train[i] * y_train[i];</span></a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineNoCov">          0 :         sum_x_train += x_train[i];</span></a>
-<a name="138"><span class="lineNum">     138 </span><span class="lineNoCov">          0 :         sum_y_train += y_train[i];</span></a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineNoCov">          0 :         sum_x_square_train += x_train[i] * x_train[i];</span></a>
-<a name="140"><span class="lineNum">     140 </span>            :     }</a>
-<a name="141"><span class="lineNum">     141 </span>            : </a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineNoCov">          0 :     long double numerator = (N * sum_xy_train - sum_x_train * sum_y_train);</span></a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineNoCov">          0 :     long double denominator =</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineNoCov">          0 :         (N * sum_x_square_train - sum_x_train * sum_x_train);</span></a>
-<a name="145"><span class="lineNum">     145 </span>            : </a>
-<a name="146"><span class="lineNum">     146 </span>            :     // Calculate the coefficients of the best fitting line</a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineNoCov">          0 :     coeff = numerator / denominator;</span></a>
-<a name="148"><span class="lineNum">     148 </span><span class="lineNoCov">          0 :     constant = (sum_y_train - coeff * sum_x_train) / N;</span></a>
-<a name="149"><span class="lineNum">     149 </span>            :     // Display the best fitting line equation</a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineNoCov">          0 :     _log_.log(INFO,</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineNoCov">          0 :               &quot;Best fitting line : y = &quot; + std::to_string(coeff) + &quot;x + &quot; +</span></a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineNoCov">          0 :                   std::to_string(constant));</span></a>
-<a name="153"><span class="lineNum">     153 </span>            : }</a>
-<a name="154"><span class="lineNum">     154 </span>            : </a>
-<a name="155"><span class="lineNum">     155 </span>            : // Function to accept input data in the form of two vectors</a>
-<a name="156"><span class="lineNum">     156 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::get_input(</span></a>
-<a name="157"><span class="lineNum">     157 </span>            :     const std::vector&lt;long double&gt; &amp;x_data,</a>
-<a name="158"><span class="lineNum">     158 </span>            :     const std::vector&lt;long double&gt; &amp;y_data) {</a>
-<a name="159"><span class="lineNum">     159 </span>            :     // Clear existing data from x and y vectors</a>
-<a name="160"><span class="lineNum">     160 </span><span class="lineNoCov">          0 :     x.clear();</span></a>
-<a name="161"><span class="lineNum">     161 </span><span class="lineNoCov">          0 :     y.clear();</span></a>
-<a name="162"><span class="lineNum">     162 </span>            :     // Initialize LinearRegression class variables</a>
-<a name="163"><span class="lineNum">     163 </span><span class="lineNoCov">          0 :     sum_xy = 0;       /* Set x*y sum */</span></a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :     sum_x = 0;        /* Set sum of x */</span></a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineNoCov">          0 :     sum_y = 0;        /* Set sum of y */</span></a>
-<a name="166"><span class="lineNum">     166 </span><span class="lineNoCov">          0 :     sum_x_square = 0; /* Set sum of x squares */</span></a>
-<a name="167"><span class="lineNum">     167 </span><span class="lineNoCov">          0 :     sum_y_square = 0; /* Set sum of y squares */</span></a>
-<a name="168"><span class="lineNum">     168 </span>            : </a>
-<a name="169"><span class="lineNum">     169 </span><span class="lineNoCov">          0 :     if (x_data.size() != y_data.size()) {</span></a>
-<a name="170"><span class="lineNum">     170 </span>            :         // Check if input vectors have the same size</a>
-<a name="171"><span class="lineNum">     171 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Input vectors must have the same size&quot;);</span></a>
-<a name="172"><span class="lineNum">     172 </span><span class="lineNoCov">          0 :         return;</span></a>
-<a name="173"><span class="lineNum">     173 </span>            :     }</a>
-<a name="174"><span class="lineNum">     174 </span>            : </a>
-<a name="175"><span class="lineNum">     175 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; x_data.size(); i++) {</span></a>
-<a name="176"><span class="lineNum">     176 </span>            :         // Append x and y values to x and y vectors</a>
-<a name="177"><span class="lineNum">     177 </span><span class="lineNoCov">          0 :         x.push_back(x_data[i]);</span></a>
-<a name="178"><span class="lineNum">     178 </span><span class="lineNoCov">          0 :         y.push_back(y_data[i]);</span></a>
-<a name="179"><span class="lineNum">     179 </span>            :         // Update sum of (x * y)</a>
-<a name="180"><span class="lineNum">     180 </span><span class="lineNoCov">          0 :         sum_xy += x_data[i] * y_data[i];</span></a>
-<a name="181"><span class="lineNum">     181 </span>            :         // Update sum of x and y</a>
-<a name="182"><span class="lineNum">     182 </span><span class="lineNoCov">          0 :         sum_x += x_data[i];</span></a>
-<a name="183"><span class="lineNum">     183 </span><span class="lineNoCov">          0 :         sum_y += y_data[i];</span></a>
-<a name="184"><span class="lineNum">     184 </span>            :         // Update sum of x squares and y squares</a>
-<a name="185"><span class="lineNum">     185 </span><span class="lineNoCov">          0 :         sum_x_square += x_data[i] * x_data[i];</span></a>
-<a name="186"><span class="lineNum">     186 </span><span class="lineNoCov">          0 :         sum_y_square += y_data[i] * y_data[i];</span></a>
-<a name="187"><span class="lineNum">     187 </span>            :     }</a>
-<a name="188"><span class="lineNum">     188 </span>            : }</a>
-<a name="189"><span class="lineNum">     189 </span>            : </a>
-<a name="190"><span class="lineNum">     190 </span>            : // Function to accept input data from a DataTableStr</a>
-<a name="191"><span class="lineNum">     191 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::get_input(</span></a>
-<a name="192"><span class="lineNum">     192 </span>            :     const gpmp::core::DataTableStr &amp;data,</a>
-<a name="193"><span class="lineNum">     193 </span>            :     const std::vector&lt;std::string&gt; &amp;columns) {</a>
-<a name="194"><span class="lineNum">     194 </span>            :     // Clear any existing data from x and y vectors</a>
-<a name="195"><span class="lineNum">     195 </span><span class="lineNoCov">          0 :     x.clear();</span></a>
-<a name="196"><span class="lineNum">     196 </span><span class="lineNoCov">          0 :     y.clear();</span></a>
-<a name="197"><span class="lineNum">     197 </span><span class="lineNoCov">          0 :     sum_xy = 0;</span></a>
-<a name="198"><span class="lineNum">     198 </span><span class="lineNoCov">          0 :     sum_x = 0;</span></a>
-<a name="199"><span class="lineNum">     199 </span><span class="lineNoCov">          0 :     sum_y = 0;</span></a>
-<a name="200"><span class="lineNum">     200 </span><span class="lineNoCov">          0 :     sum_x_square = 0;</span></a>
-<a name="201"><span class="lineNum">     201 </span><span class="lineNoCov">          0 :     sum_y_square = 0;</span></a>
-<a name="202"><span class="lineNum">     202 </span>            : </a>
-<a name="203"><span class="lineNum">     203 </span>            :     // Ensure that columns is not empty and has at least 2 elements</a>
-<a name="204"><span class="lineNum">     204 </span><span class="lineNoCov">          0 :     if (columns.size() &lt; 2) {</span></a>
-<a name="205"><span class="lineNum">     205 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Input vectors must have at least 2 column names.&quot;);</span></a>
-<a name="206"><span class="lineNum">     206 </span><span class="lineNoCov">          0 :         return;</span></a>
-<a name="207"><span class="lineNum">     207 </span>            :     }</a>
-<a name="208"><span class="lineNum">     208 </span>            : </a>
-<a name="209"><span class="lineNum">     209 </span>            :     // Find the column indices for the specified column names</a>
-<a name="210"><span class="lineNum">     210 </span><span class="lineNoCov">          0 :     std::vector&lt;size_t&gt; column_indices;</span></a>
-<a name="211"><span class="lineNum">     211 </span><span class="lineNoCov">          0 :     for (const auto &amp;column_name : columns) {</span></a>
-<a name="212"><span class="lineNum">     212 </span><span class="lineNoCov">          0 :         bool found = false;</span></a>
-<a name="213"><span class="lineNum">     213 </span><span class="lineNoCov">          0 :         for (size_t i = 0; i &lt; data.first.size(); ++i) {</span></a>
-<a name="214"><span class="lineNum">     214 </span><span class="lineNoCov">          0 :             if (data.first[i] == column_name) {</span></a>
-<a name="215"><span class="lineNum">     215 </span><span class="lineNoCov">          0 :                 column_indices.push_back(i);</span></a>
-<a name="216"><span class="lineNum">     216 </span><span class="lineNoCov">          0 :                 found = true;</span></a>
-<a name="217"><span class="lineNum">     217 </span><span class="lineNoCov">          0 :                 break;</span></a>
-<a name="218"><span class="lineNum">     218 </span>            :             }</a>
-<a name="219"><span class="lineNum">     219 </span>            :         }</a>
-<a name="220"><span class="lineNum">     220 </span><span class="lineNoCov">          0 :         if (!found) {</span></a>
-<a name="221"><span class="lineNum">     221 </span><span class="lineNoCov">          0 :             _log_.log(ERROR,</span></a>
-<a name="222"><span class="lineNum">     222 </span><span class="lineNoCov">          0 :                       &quot;Column '&quot; + column_name +</span></a>
-<a name="223"><span class="lineNum">     223 </span>            :                           &quot;' not found in DataTableStr.&quot;);</a>
-<a name="224"><span class="lineNum">     224 </span><span class="lineNoCov">          0 :             return;</span></a>
-<a name="225"><span class="lineNum">     225 </span>            :         }</a>
-<a name="226"><span class="lineNum">     226 </span>            :     }</a>
-<a name="227"><span class="lineNum">     227 </span>            : </a>
-<a name="228"><span class="lineNum">     228 </span><span class="lineNoCov">          0 :     for (const auto &amp;row : data.second) {</span></a>
-<a name="229"><span class="lineNum">     229 </span>            :         try {</a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineNoCov">          0 :             long double xi = std::stold(row[column_indices[0]]);</span></a>
-<a name="231"><span class="lineNum">     231 </span><span class="lineNoCov">          0 :             long double yi = std::stold(row[column_indices[1]]);</span></a>
-<a name="232"><span class="lineNum">     232 </span>            :             // Append x and y values to x and y vectors</a>
-<a name="233"><span class="lineNum">     233 </span><span class="lineNoCov">          0 :             x.push_back(xi);</span></a>
-<a name="234"><span class="lineNum">     234 </span><span class="lineNoCov">          0 :             y.push_back(yi);</span></a>
-<a name="235"><span class="lineNum">     235 </span>            :             // Update sum of (x * y)</a>
-<a name="236"><span class="lineNum">     236 </span><span class="lineNoCov">          0 :             sum_xy += xi * yi;</span></a>
-<a name="237"><span class="lineNum">     237 </span>            :             // Update sum of x and y</a>
-<a name="238"><span class="lineNum">     238 </span><span class="lineNoCov">          0 :             sum_x += xi;</span></a>
-<a name="239"><span class="lineNum">     239 </span><span class="lineNoCov">          0 :             sum_y += yi;</span></a>
-<a name="240"><span class="lineNum">     240 </span>            :             // Update sum of x squares and y squares</a>
-<a name="241"><span class="lineNum">     241 </span><span class="lineNoCov">          0 :             sum_x_square += xi * xi;</span></a>
-<a name="242"><span class="lineNum">     242 </span><span class="lineNoCov">          0 :             sum_y_square += yi * yi;</span></a>
-<a name="243"><span class="lineNum">     243 </span><span class="lineNoCov">          0 :         } catch (const std::exception &amp;e) {</span></a>
-<a name="244"><span class="lineNum">     244 </span>            :             // Handle parsing errors here</a>
-<a name="245"><span class="lineNum">     245 </span><span class="lineNoCov">          0 :             _log_.log(ERROR, &quot;Error parsing data: &quot; + std::string(e.what()));</span></a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineNoCov">          0 :             continue;</span></a>
-<a name="247"><span class="lineNum">     247 </span><span class="lineNoCov">          0 :         }</span></a>
-<a name="248"><span class="lineNum">     248 </span>            :     }</a>
-<a name="249"><span class="lineNum">     249 </span><span class="lineNoCov">          0 : }</span></a>
-<a name="250"><span class="lineNum">     250 </span>            : </a>
-<a name="251"><span class="lineNum">     251 </span>            : // Function to accept input data from a file</a>
-<a name="252"><span class="lineNum">     252 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::get_input(const char *file) {</span></a>
-<a name="253"><span class="lineNum">     253 </span><span class="lineNoCov">          0 :     int n = num_rows(file);</span></a>
-<a name="254"><span class="lineNum">     254 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
-<a name="255"><span class="lineNum">     255 </span>            :         /*</a>
-<a name="256"><span class="lineNum">     256 </span>            :          * In a csv file, all the values of xi and yi are separated by</a>
-<a name="257"><span class="lineNum">     257 </span>            :          * commas</a>
-<a name="258"><span class="lineNum">     258 </span>            :          */</a>
-<a name="259"><span class="lineNum">     259 </span>            :         char comma;</a>
-<a name="260"><span class="lineNum">     260 </span>            :         long double xi;</a>
-<a name="261"><span class="lineNum">     261 </span>            :         long double yi;</a>
-<a name="262"><span class="lineNum">     262 </span><span class="lineNoCov">          0 :         std::cin &gt;&gt; xi &gt;&gt; comma &gt;&gt; yi;</span></a>
-<a name="263"><span class="lineNum">     263 </span>            :         // Update sum of (x * y)</a>
-<a name="264"><span class="lineNum">     264 </span><span class="lineNoCov">          0 :         sum_xy += xi * yi;</span></a>
-<a name="265"><span class="lineNum">     265 </span>            :         // Update sum of x and y</a>
-<a name="266"><span class="lineNum">     266 </span><span class="lineNoCov">          0 :         sum_x += xi;</span></a>
-<a name="267"><span class="lineNum">     267 </span><span class="lineNoCov">          0 :         sum_y += yi;</span></a>
-<a name="268"><span class="lineNum">     268 </span>            :         // Update sum of x squares and y squares</a>
-<a name="269"><span class="lineNum">     269 </span><span class="lineNoCov">          0 :         sum_x_square += xi * xi;</span></a>
-<a name="270"><span class="lineNum">     270 </span><span class="lineNoCov">          0 :         sum_y_square += yi * yi;</span></a>
-<a name="271"><span class="lineNum">     271 </span>            :         // Append x and y values to x and y vectors</a>
-<a name="272"><span class="lineNum">     272 </span><span class="lineNoCov">          0 :         x.push_back(xi);</span></a>
-<a name="273"><span class="lineNum">     273 </span><span class="lineNoCov">          0 :         y.push_back(yi);</span></a>
-<a name="274"><span class="lineNum">     274 </span>            :     }</a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineNoCov">          0 : }</span></a>
-<a name="276"><span class="lineNum">     276 </span>            : </a>
-<a name="277"><span class="lineNum">     277 </span>            : // Function to split data into training and testing sets</a>
-<a name="278"><span class="lineNum">     278 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::split_data(double test_size,</span></a>
-<a name="279"><span class="lineNum">     279 </span>            :                                             unsigned int seed,</a>
-<a name="280"><span class="lineNum">     280 </span>            :                                             bool shuffle) {</a>
-<a name="281"><span class="lineNum">     281 </span><span class="lineNoCov">          0 :     if (x.empty() || y.empty()) {</span></a>
-<a name="282"><span class="lineNum">     282 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Training data is empty.&quot;);</span></a>
-<a name="283"><span class="lineNum">     283 </span><span class="lineNoCov">          0 :         return;</span></a>
-<a name="284"><span class="lineNum">     284 </span>            :     }</a>
-<a name="285"><span class="lineNum">     285 </span>            : </a>
-<a name="286"><span class="lineNum">     286 </span><span class="lineNoCov">          0 :     if (test_size &lt;= 0 || test_size &gt;= 1) {</span></a>
-<a name="287"><span class="lineNum">     287 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Invalid `test_size`. Must be between 0 - 1.&quot;);</span></a>
-<a name="288"><span class="lineNum">     288 </span><span class="lineNoCov">          0 :         return;</span></a>
-<a name="289"><span class="lineNum">     289 </span>            :     }</a>
-<a name="290"><span class="lineNum">     290 </span>            : </a>
-<a name="291"><span class="lineNum">     291 </span><span class="lineNoCov">          0 :     size_t data_size = x.size();</span></a>
-<a name="292"><span class="lineNum">     292 </span><span class="lineNoCov">          0 :     size_t test_data_size = static_cast&lt;size_t&gt;(test_size * data_size);</span></a>
-<a name="293"><span class="lineNum">     293 </span>            : </a>
-<a name="294"><span class="lineNum">     294 </span>            :     // Shuffle the data randomly if specified</a>
-<a name="295"><span class="lineNum">     295 </span><span class="lineNoCov">          0 :     if (shuffle == true) {</span></a>
-<a name="296"><span class="lineNum">     296 </span>            :         // Create vector of indices</a>
-<a name="297"><span class="lineNum">     297 </span><span class="lineNoCov">          0 :         std::vector&lt;size_t&gt; indices(data_size);</span></a>
-<a name="298"><span class="lineNum">     298 </span>            :         // Fill vector sequentially w/ `iota`</a>
-<a name="299"><span class="lineNum">     299 </span><span class="lineNoCov">          0 :         std::iota(indices.begin(), indices.end(), 0);</span></a>
-<a name="300"><span class="lineNum">     300 </span>            :         // Randomly shuffle vector indices from start to end</a>
-<a name="301"><span class="lineNum">     301 </span><span class="lineNoCov">          0 :         std::shuffle(indices.begin(),</span></a>
-<a name="302"><span class="lineNum">     302 </span>            :                      indices.end(),</a>
-<a name="303"><span class="lineNum">     303 </span><span class="lineNoCov">          0 :                      std::default_random_engine(seed));</span></a>
-<a name="304"><span class="lineNum">     304 </span>            : </a>
-<a name="305"><span class="lineNum">     305 </span>            :         // Clear training and testing data vectors</a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineNoCov">          0 :         x_train.clear();</span></a>
-<a name="307"><span class="lineNum">     307 </span><span class="lineNoCov">          0 :         y_train.clear();</span></a>
-<a name="308"><span class="lineNum">     308 </span><span class="lineNoCov">          0 :         x_test.clear();</span></a>
-<a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :         y_test.clear();</span></a>
-<a name="310"><span class="lineNum">     310 </span>            : </a>
-<a name="311"><span class="lineNum">     311 </span>            :         // Split the data into training and testing sets based on shuffled</a>
-<a name="312"><span class="lineNum">     312 </span>            :         // indices</a>
-<a name="313"><span class="lineNum">     313 </span><span class="lineNoCov">          0 :         for (size_t i = 0; i &lt; data_size; ++i) {</span></a>
-<a name="314"><span class="lineNum">     314 </span><span class="lineNoCov">          0 :             if (i &lt; test_data_size) {</span></a>
-<a name="315"><span class="lineNum">     315 </span>            :                 // Append x test vector with shuffled x value</a>
-<a name="316"><span class="lineNum">     316 </span><span class="lineNoCov">          0 :                 x_test.push_back(x[indices[i]]);</span></a>
-<a name="317"><span class="lineNum">     317 </span><span class="lineNoCov">          0 :                 y_test.push_back(y[indices[i]]);</span></a>
-<a name="318"><span class="lineNum">     318 </span>            :             } else {</a>
-<a name="319"><span class="lineNum">     319 </span>            :                 // Append x training vector with suffled x value</a>
-<a name="320"><span class="lineNum">     320 </span><span class="lineNoCov">          0 :                 x_train.push_back(x[indices[i]]);</span></a>
-<a name="321"><span class="lineNum">     321 </span><span class="lineNoCov">          0 :                 y_train.push_back(y[indices[i]]);</span></a>
-<a name="322"><span class="lineNum">     322 </span>            :             }</a>
-<a name="323"><span class="lineNum">     323 </span>            :         }</a>
-<a name="324"><span class="lineNum">     324 </span><span class="lineNoCov">          0 :     } else {</span></a>
-<a name="325"><span class="lineNum">     325 </span>            :         // Without shuffling, split the data without changing its order by</a>
-<a name="326"><span class="lineNum">     326 </span>            :         // assigning the first training element to the training set</a>
-<a name="327"><span class="lineNum">     327 </span><span class="lineNoCov">          0 :         x_train.assign(x.begin(), x.begin() + data_size - test_data_size);</span></a>
-<a name="328"><span class="lineNum">     328 </span><span class="lineNoCov">          0 :         y_train.assign(y.begin(), y.begin() + data_size - test_data_size);</span></a>
-<a name="329"><span class="lineNum">     329 </span>            :         // Assign the 1+ testing elements to the testing test</a>
-<a name="330"><span class="lineNum">     330 </span><span class="lineNoCov">          0 :         x_test.assign(x.begin() + data_size - test_data_size, x.end());</span></a>
-<a name="331"><span class="lineNum">     331 </span><span class="lineNoCov">          0 :         y_test.assign(y.begin() + data_size - test_data_size, y.end());</span></a>
-<a name="332"><span class="lineNum">     332 </span>            :     }</a>
-<a name="333"><span class="lineNum">     333 </span>            : }</a>
-<a name="334"><span class="lineNum">     334 </span>            : </a>
-<a name="335"><span class="lineNum">     335 </span>            : // Function to display the dataset</a>
-<a name="336"><span class="lineNum">     336 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::show_data() {</span></a>
-<a name="337"><span class="lineNum">     337 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; 62; i++) {</span></a>
-<a name="338"><span class="lineNum">     338 </span><span class="lineNoCov">          0 :         printf(&quot;_&quot;);</span></a>
-<a name="339"><span class="lineNum">     339 </span>            :     }</a>
-<a name="340"><span class="lineNum">     340 </span><span class="lineNoCov">          0 :     printf(&quot;\n\n&quot;);</span></a>
-<a name="341"><span class="lineNum">     341 </span><span class="lineNoCov">          0 :     printf(&quot;|%15s%5s %15s%5s%20s\n&quot;, &quot;X&quot;, &quot;&quot;, &quot;Y&quot;, &quot;&quot;, &quot;|&quot;);</span></a>
-<a name="342"><span class="lineNum">     342 </span>            : </a>
-<a name="343"><span class="lineNum">     343 </span>            :     // Display each data point in the dataset</a>
-<a name="344"><span class="lineNum">     344 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; uint64_t(i) &lt; x.size(); i++) {</span></a>
-<a name="345"><span class="lineNum">     345 </span><span class="lineNoCov">          0 :         printf(&quot;|%20Lf %20Lf%20s\n&quot;, x[i], y[i], &quot;|&quot;);</span></a>
-<a name="346"><span class="lineNum">     346 </span>            :     }</a>
-<a name="347"><span class="lineNum">     347 </span>            : </a>
-<a name="348"><span class="lineNum">     348 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; 62; i++) {</span></a>
-<a name="349"><span class="lineNum">     349 </span><span class="lineNoCov">          0 :         printf(&quot;_&quot;);</span></a>
-<a name="350"><span class="lineNum">     350 </span>            :     }</a>
-<a name="351"><span class="lineNum">     351 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot;);</span></a>
-<a name="352"><span class="lineNum">     352 </span><span class="lineNoCov">          0 : }</span></a>
-<a name="353"><span class="lineNum">     353 </span>            : </a>
-<a name="354"><span class="lineNum">     354 </span>            : // Function to predict a value based on input x</a>
-<a name="355"><span class="lineNum">     355 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::predict(long double x) const {</span></a>
-<a name="356"><span class="lineNum">     356 </span><span class="lineNoCov">          0 :     return coeff * x + constant;</span></a>
-<a name="357"><span class="lineNum">     357 </span>            : }</a>
-<a name="358"><span class="lineNum">     358 </span>            : </a>
-<a name="359"><span class="lineNum">     359 </span>            : // Function to predict a value based on input x and a dataset</a>
-<a name="360"><span class="lineNum">     360 </span>            : long double</a>
-<a name="361"><span class="lineNum">     361 </span><span class="lineNoCov">          0 : gpmp::ml::LinearRegression::predict(long double x,</span></a>
-<a name="362"><span class="lineNum">     362 </span>            :                                     const std::vector&lt;long double&gt; &amp;x_data) {</a>
-<a name="363"><span class="lineNum">     363 </span>            :     // Calculate the coefficient if not already calculated</a>
-<a name="364"><span class="lineNum">     364 </span><span class="lineNoCov">          0 :     long double coeff = return_coeffecient();</span></a>
-<a name="365"><span class="lineNum">     365 </span>            :     // Calculate the constant if not already calculated</a>
-<a name="366"><span class="lineNum">     366 </span><span class="lineNoCov">          0 :     long double constant = return_constant();</span></a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineNoCov">          0 :     return coeff * x + constant;</span></a>
-<a name="368"><span class="lineNum">     368 </span>            : }</a>
-<a name="369"><span class="lineNum">     369 </span>            : </a>
-<a name="370"><span class="lineNum">     370 </span>            : // Function to calculate the error for a given value</a>
-<a name="371"><span class="lineNum">     371 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::error_in(long double num) {</span></a>
-<a name="372"><span class="lineNum">     372 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; uint64_t(i) &lt; x.size(); i++) {</span></a>
-<a name="373"><span class="lineNum">     373 </span><span class="lineNoCov">          0 :         if (num == x[i]) {</span></a>
-<a name="374"><span class="lineNum">     374 </span><span class="lineNoCov">          0 :             return (y[i] - predict(x[i]));</span></a>
-<a name="375"><span class="lineNum">     375 </span>            :         }</a>
-<a name="376"><span class="lineNum">     376 </span>            :     }</a>
-<a name="377"><span class="lineNum">     377 </span><span class="lineNoCov">          0 :     return 0;</span></a>
-<a name="378"><span class="lineNum">     378 </span>            : }</a>
-<a name="379"><span class="lineNum">     379 </span>            : </a>
-<a name="380"><span class="lineNum">     380 </span>            : // Function to calculate the error for a given value and a dataset</a>
-<a name="381"><span class="lineNum">     381 </span>            : long double</a>
-<a name="382"><span class="lineNum">     382 </span><span class="lineNoCov">          0 : gpmp::ml::LinearRegression::error_in(long double num,</span></a>
-<a name="383"><span class="lineNum">     383 </span>            :                                      const std::vector&lt;long double&gt; &amp;x_data,</a>
-<a name="384"><span class="lineNum">     384 </span>            :                                      const std::vector&lt;long double&gt; &amp;y_data) {</a>
-<a name="385"><span class="lineNum">     385 </span><span class="lineNoCov">          0 :     long double prediction = predict(num, x_data);</span></a>
-<a name="386"><span class="lineNum">     386 </span>            :     // Find the corresponding y value for the input x</a>
-<a name="387"><span class="lineNum">     387 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; x_data.size(); i++) {</span></a>
-<a name="388"><span class="lineNum">     388 </span><span class="lineNoCov">          0 :         if (num == x_data[i]) {</span></a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineNoCov">          0 :             return y_data[i] - prediction;</span></a>
-<a name="390"><span class="lineNum">     390 </span>            :         }</a>
-<a name="391"><span class="lineNum">     391 </span>            :     }</a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineNoCov">          0 :     return 0;</span></a>
-<a name="393"><span class="lineNum">     393 </span>            : }</a>
-<a name="394"><span class="lineNum">     394 </span>            : </a>
-<a name="395"><span class="lineNum">     395 </span>            : // Function that returns the overall sum of the square of errors</a>
-<a name="396"><span class="lineNum">     396 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::error_square() {</span></a>
-<a name="397"><span class="lineNum">     397 </span><span class="lineNoCov">          0 :     long double ans = 0;</span></a>
-<a name="398"><span class="lineNum">     398 </span>            : </a>
-<a name="399"><span class="lineNum">     399 </span>            :     // Iterate through each data point</a>
-<a name="400"><span class="lineNum">     400 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; uint64_t(i) &lt; x.size(); i++) {</span></a>
-<a name="401"><span class="lineNum">     401 </span>            :         // Calculate the square of the error (difference between predicted and</a>
-<a name="402"><span class="lineNum">     402 </span>            :         // actual values)</a>
-<a name="403"><span class="lineNum">     403 </span><span class="lineNoCov">          0 :         ans += ((predict(x[i]) - y[i]) * (predict(x[i]) - y[i]));</span></a>
-<a name="404"><span class="lineNum">     404 </span>            :     }</a>
-<a name="405"><span class="lineNum">     405 </span><span class="lineNoCov">          0 :     return ans; // Return the sum of squared errors</span></a>
-<a name="406"><span class="lineNum">     406 </span>            : }</a>
-<a name="407"><span class="lineNum">     407 </span>            : </a>
-<a name="408"><span class="lineNum">     408 </span>            : // Find the Mean Squared Error (MSE) of the given dataset</a>
-<a name="409"><span class="lineNum">     409 </span>            : long double</a>
-<a name="410"><span class="lineNum">     410 </span><span class="lineNoCov">          0 : gpmp::ml::LinearRegression::mse(const std::vector&lt;long double&gt; &amp;x_data,</span></a>
-<a name="411"><span class="lineNum">     411 </span>            :                                 const std::vector&lt;long double&gt; &amp;y_data) const {</a>
-<a name="412"><span class="lineNum">     412 </span>            :     // Check if input vectors have the same size</a>
-<a name="413"><span class="lineNum">     413 </span><span class="lineNoCov">          0 :     if (x_data.size() != y_data.size()) {</span></a>
-<a name="414"><span class="lineNum">     414 </span><span class="lineNoCov">          0 :         return -1; // Return an error value</span></a>
-<a name="415"><span class="lineNum">     415 </span>            :     }</a>
-<a name="416"><span class="lineNum">     416 </span>            : </a>
-<a name="417"><span class="lineNum">     417 </span><span class="lineNoCov">          0 :     long double mse = 0.0;</span></a>
-<a name="418"><span class="lineNum">     418 </span><span class="lineNoCov">          0 :     int64_t n = x_data.size();</span></a>
-<a name="419"><span class="lineNum">     419 </span>            : </a>
-<a name="420"><span class="lineNum">     420 </span>            :     // Iterate through each data point</a>
-<a name="421"><span class="lineNum">     421 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
-<a name="422"><span class="lineNum">     422 </span>            :         // Calculate the predicted value using the linear regression model</a>
-<a name="423"><span class="lineNum">     423 </span><span class="lineNoCov">          0 :         long double predicted = predict(x_data[i]);</span></a>
-<a name="424"><span class="lineNum">     424 </span>            :         // Calculate the error (difference between predicted and actual values)</a>
-<a name="425"><span class="lineNum">     425 </span><span class="lineNoCov">          0 :         long double error = predicted - y_data[i];</span></a>
-<a name="426"><span class="lineNum">     426 </span>            :         // Accumulate the squared error</a>
-<a name="427"><span class="lineNum">     427 </span><span class="lineNoCov">          0 :         mse += error * error;</span></a>
-<a name="428"><span class="lineNum">     428 </span>            :     }</a>
-<a name="429"><span class="lineNum">     429 </span>            : </a>
-<a name="430"><span class="lineNum">     430 </span>            :     // Calculate the Mean Squared Error by dividing the accumulated squared</a>
-<a name="431"><span class="lineNum">     431 </span>            :     // error by the number of data points</a>
-<a name="432"><span class="lineNum">     432 </span><span class="lineNoCov">          0 :     return mse / static_cast&lt;long double&gt;(n);</span></a>
-<a name="433"><span class="lineNum">     433 </span>            : }</a>
-<a name="434"><span class="lineNum">     434 </span>            : </a>
-<a name="435"><span class="lineNum">     435 </span>            : // Determine an R^2 score value</a>
-<a name="436"><span class="lineNum">     436 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::r_sqrd(</span></a>
-<a name="437"><span class="lineNum">     437 </span>            :     const std::vector&lt;long double&gt; &amp;x_data,</a>
-<a name="438"><span class="lineNum">     438 </span>            :     const std::vector&lt;long double&gt; &amp;y_data) const {</a>
-<a name="439"><span class="lineNum">     439 </span>            :     // Check if input vectors have the same size</a>
-<a name="440"><span class="lineNum">     440 </span><span class="lineNoCov">          0 :     if (x_data.size() != y_data.size()) {</span></a>
-<a name="441"><span class="lineNum">     441 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Input vectors must have the same size.&quot;);</span></a>
-<a name="442"><span class="lineNum">     442 </span><span class="lineNoCov">          0 :         return -1; // Return an error value</span></a>
-<a name="443"><span class="lineNum">     443 </span>            :     }</a>
-<a name="444"><span class="lineNum">     444 </span>            : </a>
-<a name="445"><span class="lineNum">     445 </span><span class="lineNoCov">          0 :     long double total_sum_of_squares = 0.0;</span></a>
-<a name="446"><span class="lineNum">     446 </span><span class="lineNoCov">          0 :     long double sum_of_squared_errors = 0.0;</span></a>
-<a name="447"><span class="lineNum">     447 </span><span class="lineNoCov">          0 :     int64_t n = x_data.size();</span></a>
-<a name="448"><span class="lineNum">     448 </span>            : </a>
-<a name="449"><span class="lineNum">     449 </span><span class="lineNoCov">          0 :     long double y_mean = 0.0;</span></a>
-<a name="450"><span class="lineNum">     450 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
-<a name="451"><span class="lineNum">     451 </span>            :         // Calculate the mean of the dependent variable (Y)</a>
-<a name="452"><span class="lineNum">     452 </span><span class="lineNoCov">          0 :         y_mean += y_data[i];</span></a>
-<a name="453"><span class="lineNum">     453 </span>            :     }</a>
-<a name="454"><span class="lineNum">     454 </span><span class="lineNoCov">          0 :     y_mean /= static_cast&lt;long double&gt;(n);</span></a>
-<a name="455"><span class="lineNum">     455 </span>            : </a>
-<a name="456"><span class="lineNum">     456 </span>            :     // Iterate through each data point</a>
-<a name="457"><span class="lineNum">     457 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
-<a name="458"><span class="lineNum">     458 </span>            :         // Calculate the predicted value using the linear regression model</a>
-<a name="459"><span class="lineNum">     459 </span><span class="lineNoCov">          0 :         long double predicted = predict(x_data[i]);</span></a>
-<a name="460"><span class="lineNum">     460 </span>            :         // Calculate the error (difference between predicted and actual values)</a>
-<a name="461"><span class="lineNum">     461 </span><span class="lineNoCov">          0 :         long double error = predicted - y_data[i];</span></a>
-<a name="462"><span class="lineNum">     462 </span>            :         // Calculate the total sum of squares and sum of squared errors</a>
-<a name="463"><span class="lineNum">     463 </span><span class="lineNoCov">          0 :         total_sum_of_squares += (y_data[i] - y_mean) * (y_data[i] - y_mean);</span></a>
-<a name="464"><span class="lineNum">     464 </span><span class="lineNoCov">          0 :         sum_of_squared_errors += error * error;</span></a>
-<a name="465"><span class="lineNum">     465 </span>            :     }</a>
-<a name="466"><span class="lineNum">     466 </span>            : </a>
-<a name="467"><span class="lineNum">     467 </span>            :     // Calculate the R-squared value using the formula 1 - (SSE / SST)</a>
-<a name="468"><span class="lineNum">     468 </span><span class="lineNoCov">          0 :     return 1.0 - (sum_of_squared_errors / total_sum_of_squares);</span></a>
-<a name="469"><span class="lineNum">     469 </span>            : }</a>
-<a name="470"><span class="lineNum">     470 </span>            : </a>
-<a name="471"><span class="lineNum">     471 </span>            : // Determine number of rows in given dataset</a>
-<a name="472"><span class="lineNum">     472 </span><span class="lineNoCov">          0 : int64_t gpmp::ml::LinearRegression::num_rows(const char *input) {</span></a>
-<a name="473"><span class="lineNum">     473 </span><span class="lineNoCov">          0 :     int64_t num = 0;</span></a>
-<a name="474"><span class="lineNum">     474 </span><span class="lineNoCov">          0 :     std::string row;</span></a>
-<a name="475"><span class="lineNum">     475 </span>            : </a>
-<a name="476"><span class="lineNum">     476 </span>            :     // create input file stream</a>
-<a name="477"><span class="lineNum">     477 </span><span class="lineNoCov">          0 :     std::ifstream file(input);</span></a>
-<a name="478"><span class="lineNum">     478 </span>            : </a>
-<a name="479"><span class="lineNum">     479 </span><span class="lineNoCov">          0 :     while (getline(file, row)) {</span></a>
-<a name="480"><span class="lineNum">     480 </span><span class="lineNoCov">          0 :         num++;</span></a>
-<a name="481"><span class="lineNum">     481 </span>            :     }</a>
-<a name="482"><span class="lineNum">     482 </span>            : </a>
-<a name="483"><span class="lineNum">     483 </span><span class="lineNoCov">          0 :     return num;</span></a>
-<a name="484"><span class="lineNum">     484 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="115"><span class="lineNum">     115 </span><span class="lineNoCov">          0 :         if (fabs(coeff - 0.0f) &lt; std::numeric_limits&lt;double&gt;::epsilon() &amp;&amp;</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineNoCov">          0 :             fabs(constant - 0.0f) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</span></a>
+<a name="117"><span class="lineNum">     117 </span>            :             // If coefficients are not calculated, calculate them</a>
+<a name="118"><span class="lineNum">     118 </span><span class="lineNoCov">          0 :             calculate_coeffecient();</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineNoCov">          0 :             calculate_constant();</span></a>
+<a name="120"><span class="lineNum">     120 </span>            :         }</a>
+<a name="121"><span class="lineNum">     121 </span>            :         // Display the best fitting line equation</a>
+<a name="122"><span class="lineNum">     122 </span><span class="lineNoCov">          0 :         _log_.log(INFO,</span></a>
+<a name="123"><span class="lineNum">     123 </span><span class="lineNoCov">          0 :                   &quot;Best fitting line : y = &quot; + std::to_string(coeff) + &quot;x + &quot; +</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineNoCov">          0 :                       std::to_string(constant));</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineNoCov">          0 :         return;</span></a>
+<a name="126"><span class="lineNum">     126 </span>            :     }</a>
+<a name="127"><span class="lineNum">     127 </span>            : </a>
+<a name="128"><span class="lineNum">     128 </span>            :     // Calculate the coefficients using the training data</a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineNoCov">          0 :     long double N = x_train.size();</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineNoCov">          0 :     long double sum_xy_train = 0;</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineNoCov">          0 :     long double sum_x_train = 0;</span></a>
+<a name="132"><span class="lineNum">     132 </span><span class="lineNoCov">          0 :     long double sum_y_train = 0;</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineNoCov">          0 :     long double sum_x_square_train = 0;</span></a>
+<a name="134"><span class="lineNum">     134 </span>            : </a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; N; i++) {</span></a>
+<a name="136"><span class="lineNum">     136 </span>            :         // Calculate sums for the training data</a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineNoCov">          0 :         sum_xy_train += x_train[i] * y_train[i];</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineNoCov">          0 :         sum_x_train += x_train[i];</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineNoCov">          0 :         sum_y_train += y_train[i];</span></a>
+<a name="140"><span class="lineNum">     140 </span><span class="lineNoCov">          0 :         sum_x_square_train += x_train[i] * x_train[i];</span></a>
+<a name="141"><span class="lineNum">     141 </span>            :     }</a>
+<a name="142"><span class="lineNum">     142 </span>            : </a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineNoCov">          0 :     long double numerator = (N * sum_xy_train - sum_x_train * sum_y_train);</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineNoCov">          0 :     long double denominator =</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineNoCov">          0 :         (N * sum_x_square_train - sum_x_train * sum_x_train);</span></a>
+<a name="146"><span class="lineNum">     146 </span>            : </a>
+<a name="147"><span class="lineNum">     147 </span>            :     // Calculate the coefficients of the best fitting line</a>
+<a name="148"><span class="lineNum">     148 </span><span class="lineNoCov">          0 :     coeff = numerator / denominator;</span></a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineNoCov">          0 :     constant = (sum_y_train - coeff * sum_x_train) / N;</span></a>
+<a name="150"><span class="lineNum">     150 </span>            :     // Display the best fitting line equation</a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineNoCov">          0 :     _log_.log(INFO,</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineNoCov">          0 :               &quot;Best fitting line : y = &quot; + std::to_string(coeff) + &quot;x + &quot; +</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineNoCov">          0 :                   std::to_string(constant));</span></a>
+<a name="154"><span class="lineNum">     154 </span>            : }</a>
+<a name="155"><span class="lineNum">     155 </span>            : </a>
+<a name="156"><span class="lineNum">     156 </span>            : // Function to accept input data in the form of two vectors</a>
+<a name="157"><span class="lineNum">     157 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::get_input(</span></a>
+<a name="158"><span class="lineNum">     158 </span>            :     const std::vector&lt;long double&gt; &amp;x_data,</a>
+<a name="159"><span class="lineNum">     159 </span>            :     const std::vector&lt;long double&gt; &amp;y_data) {</a>
+<a name="160"><span class="lineNum">     160 </span>            :     // Clear existing data from x and y vectors</a>
+<a name="161"><span class="lineNum">     161 </span><span class="lineNoCov">          0 :     x.clear();</span></a>
+<a name="162"><span class="lineNum">     162 </span><span class="lineNoCov">          0 :     y.clear();</span></a>
+<a name="163"><span class="lineNum">     163 </span>            :     // Initialize LinearRegression class variables</a>
+<a name="164"><span class="lineNum">     164 </span><span class="lineNoCov">          0 :     sum_xy = 0;       /* Set x*y sum */</span></a>
+<a name="165"><span class="lineNum">     165 </span><span class="lineNoCov">          0 :     sum_x = 0;        /* Set sum of x */</span></a>
+<a name="166"><span class="lineNum">     166 </span><span class="lineNoCov">          0 :     sum_y = 0;        /* Set sum of y */</span></a>
+<a name="167"><span class="lineNum">     167 </span><span class="lineNoCov">          0 :     sum_x_square = 0; /* Set sum of x squares */</span></a>
+<a name="168"><span class="lineNum">     168 </span><span class="lineNoCov">          0 :     sum_y_square = 0; /* Set sum of y squares */</span></a>
+<a name="169"><span class="lineNum">     169 </span>            : </a>
+<a name="170"><span class="lineNum">     170 </span><span class="lineNoCov">          0 :     if (x_data.size() != y_data.size()) {</span></a>
+<a name="171"><span class="lineNum">     171 </span>            :         // Check if input vectors have the same size</a>
+<a name="172"><span class="lineNum">     172 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Input vectors must have the same size&quot;);</span></a>
+<a name="173"><span class="lineNum">     173 </span><span class="lineNoCov">          0 :         return;</span></a>
+<a name="174"><span class="lineNum">     174 </span>            :     }</a>
+<a name="175"><span class="lineNum">     175 </span>            : </a>
+<a name="176"><span class="lineNum">     176 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; x_data.size(); i++) {</span></a>
+<a name="177"><span class="lineNum">     177 </span>            :         // Append x and y values to x and y vectors</a>
+<a name="178"><span class="lineNum">     178 </span><span class="lineNoCov">          0 :         x.push_back(x_data[i]);</span></a>
+<a name="179"><span class="lineNum">     179 </span><span class="lineNoCov">          0 :         y.push_back(y_data[i]);</span></a>
+<a name="180"><span class="lineNum">     180 </span>            :         // Update sum of (x * y)</a>
+<a name="181"><span class="lineNum">     181 </span><span class="lineNoCov">          0 :         sum_xy += x_data[i] * y_data[i];</span></a>
+<a name="182"><span class="lineNum">     182 </span>            :         // Update sum of x and y</a>
+<a name="183"><span class="lineNum">     183 </span><span class="lineNoCov">          0 :         sum_x += x_data[i];</span></a>
+<a name="184"><span class="lineNum">     184 </span><span class="lineNoCov">          0 :         sum_y += y_data[i];</span></a>
+<a name="185"><span class="lineNum">     185 </span>            :         // Update sum of x squares and y squares</a>
+<a name="186"><span class="lineNum">     186 </span><span class="lineNoCov">          0 :         sum_x_square += x_data[i] * x_data[i];</span></a>
+<a name="187"><span class="lineNum">     187 </span><span class="lineNoCov">          0 :         sum_y_square += y_data[i] * y_data[i];</span></a>
+<a name="188"><span class="lineNum">     188 </span>            :     }</a>
+<a name="189"><span class="lineNum">     189 </span>            : }</a>
+<a name="190"><span class="lineNum">     190 </span>            : </a>
+<a name="191"><span class="lineNum">     191 </span>            : // Function to accept input data from a DataTableStr</a>
+<a name="192"><span class="lineNum">     192 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::get_input(</span></a>
+<a name="193"><span class="lineNum">     193 </span>            :     const gpmp::core::DataTableStr &amp;data,</a>
+<a name="194"><span class="lineNum">     194 </span>            :     const std::vector&lt;std::string&gt; &amp;columns) {</a>
+<a name="195"><span class="lineNum">     195 </span>            :     // Clear any existing data from x and y vectors</a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineNoCov">          0 :     x.clear();</span></a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineNoCov">          0 :     y.clear();</span></a>
+<a name="198"><span class="lineNum">     198 </span><span class="lineNoCov">          0 :     sum_xy = 0;</span></a>
+<a name="199"><span class="lineNum">     199 </span><span class="lineNoCov">          0 :     sum_x = 0;</span></a>
+<a name="200"><span class="lineNum">     200 </span><span class="lineNoCov">          0 :     sum_y = 0;</span></a>
+<a name="201"><span class="lineNum">     201 </span><span class="lineNoCov">          0 :     sum_x_square = 0;</span></a>
+<a name="202"><span class="lineNum">     202 </span><span class="lineNoCov">          0 :     sum_y_square = 0;</span></a>
+<a name="203"><span class="lineNum">     203 </span>            : </a>
+<a name="204"><span class="lineNum">     204 </span>            :     // Ensure that columns is not empty and has at least 2 elements</a>
+<a name="205"><span class="lineNum">     205 </span><span class="lineNoCov">          0 :     if (columns.size() &lt; 2) {</span></a>
+<a name="206"><span class="lineNum">     206 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Input vectors must have at least 2 column names.&quot;);</span></a>
+<a name="207"><span class="lineNum">     207 </span><span class="lineNoCov">          0 :         return;</span></a>
+<a name="208"><span class="lineNum">     208 </span>            :     }</a>
+<a name="209"><span class="lineNum">     209 </span>            : </a>
+<a name="210"><span class="lineNum">     210 </span>            :     // Find the column indices for the specified column names</a>
+<a name="211"><span class="lineNum">     211 </span><span class="lineNoCov">          0 :     std::vector&lt;size_t&gt; column_indices;</span></a>
+<a name="212"><span class="lineNum">     212 </span><span class="lineNoCov">          0 :     for (const auto &amp;column_name : columns) {</span></a>
+<a name="213"><span class="lineNum">     213 </span><span class="lineNoCov">          0 :         bool found = false;</span></a>
+<a name="214"><span class="lineNum">     214 </span><span class="lineNoCov">          0 :         for (size_t i = 0; i &lt; data.first.size(); ++i) {</span></a>
+<a name="215"><span class="lineNum">     215 </span><span class="lineNoCov">          0 :             if (data.first[i] == column_name) {</span></a>
+<a name="216"><span class="lineNum">     216 </span><span class="lineNoCov">          0 :                 column_indices.push_back(i);</span></a>
+<a name="217"><span class="lineNum">     217 </span><span class="lineNoCov">          0 :                 found = true;</span></a>
+<a name="218"><span class="lineNum">     218 </span><span class="lineNoCov">          0 :                 break;</span></a>
+<a name="219"><span class="lineNum">     219 </span>            :             }</a>
+<a name="220"><span class="lineNum">     220 </span>            :         }</a>
+<a name="221"><span class="lineNum">     221 </span><span class="lineNoCov">          0 :         if (!found) {</span></a>
+<a name="222"><span class="lineNum">     222 </span><span class="lineNoCov">          0 :             _log_.log(ERROR,</span></a>
+<a name="223"><span class="lineNum">     223 </span><span class="lineNoCov">          0 :                       &quot;Column '&quot; + column_name +</span></a>
+<a name="224"><span class="lineNum">     224 </span>            :                           &quot;' not found in DataTableStr.&quot;);</a>
+<a name="225"><span class="lineNum">     225 </span><span class="lineNoCov">          0 :             return;</span></a>
+<a name="226"><span class="lineNum">     226 </span>            :         }</a>
+<a name="227"><span class="lineNum">     227 </span>            :     }</a>
+<a name="228"><span class="lineNum">     228 </span>            : </a>
+<a name="229"><span class="lineNum">     229 </span><span class="lineNoCov">          0 :     for (const auto &amp;row : data.second) {</span></a>
+<a name="230"><span class="lineNum">     230 </span>            :         try {</a>
+<a name="231"><span class="lineNum">     231 </span><span class="lineNoCov">          0 :             long double xi = std::stold(row[column_indices[0]]);</span></a>
+<a name="232"><span class="lineNum">     232 </span><span class="lineNoCov">          0 :             long double yi = std::stold(row[column_indices[1]]);</span></a>
+<a name="233"><span class="lineNum">     233 </span>            :             // Append x and y values to x and y vectors</a>
+<a name="234"><span class="lineNum">     234 </span><span class="lineNoCov">          0 :             x.push_back(xi);</span></a>
+<a name="235"><span class="lineNum">     235 </span><span class="lineNoCov">          0 :             y.push_back(yi);</span></a>
+<a name="236"><span class="lineNum">     236 </span>            :             // Update sum of (x * y)</a>
+<a name="237"><span class="lineNum">     237 </span><span class="lineNoCov">          0 :             sum_xy += xi * yi;</span></a>
+<a name="238"><span class="lineNum">     238 </span>            :             // Update sum of x and y</a>
+<a name="239"><span class="lineNum">     239 </span><span class="lineNoCov">          0 :             sum_x += xi;</span></a>
+<a name="240"><span class="lineNum">     240 </span><span class="lineNoCov">          0 :             sum_y += yi;</span></a>
+<a name="241"><span class="lineNum">     241 </span>            :             // Update sum of x squares and y squares</a>
+<a name="242"><span class="lineNum">     242 </span><span class="lineNoCov">          0 :             sum_x_square += xi * xi;</span></a>
+<a name="243"><span class="lineNum">     243 </span><span class="lineNoCov">          0 :             sum_y_square += yi * yi;</span></a>
+<a name="244"><span class="lineNum">     244 </span><span class="lineNoCov">          0 :         } catch (const std::exception &amp;e) {</span></a>
+<a name="245"><span class="lineNum">     245 </span>            :             // Handle parsing errors here</a>
+<a name="246"><span class="lineNum">     246 </span><span class="lineNoCov">          0 :             _log_.log(ERROR, &quot;Error parsing data: &quot; + std::string(e.what()));</span></a>
+<a name="247"><span class="lineNum">     247 </span><span class="lineNoCov">          0 :             continue;</span></a>
+<a name="248"><span class="lineNum">     248 </span><span class="lineNoCov">          0 :         }</span></a>
+<a name="249"><span class="lineNum">     249 </span>            :     }</a>
+<a name="250"><span class="lineNum">     250 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="251"><span class="lineNum">     251 </span>            : </a>
+<a name="252"><span class="lineNum">     252 </span>            : // Function to accept input data from a file</a>
+<a name="253"><span class="lineNum">     253 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::get_input(const char *file) {</span></a>
+<a name="254"><span class="lineNum">     254 </span><span class="lineNoCov">          0 :     int n = num_rows(file);</span></a>
+<a name="255"><span class="lineNum">     255 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
+<a name="256"><span class="lineNum">     256 </span>            :         /*</a>
+<a name="257"><span class="lineNum">     257 </span>            :          * In a csv file, all the values of xi and yi are separated by</a>
+<a name="258"><span class="lineNum">     258 </span>            :          * commas</a>
+<a name="259"><span class="lineNum">     259 </span>            :          */</a>
+<a name="260"><span class="lineNum">     260 </span>            :         char comma;</a>
+<a name="261"><span class="lineNum">     261 </span>            :         long double xi;</a>
+<a name="262"><span class="lineNum">     262 </span>            :         long double yi;</a>
+<a name="263"><span class="lineNum">     263 </span><span class="lineNoCov">          0 :         std::cin &gt;&gt; xi &gt;&gt; comma &gt;&gt; yi;</span></a>
+<a name="264"><span class="lineNum">     264 </span>            :         // Update sum of (x * y)</a>
+<a name="265"><span class="lineNum">     265 </span><span class="lineNoCov">          0 :         sum_xy += xi * yi;</span></a>
+<a name="266"><span class="lineNum">     266 </span>            :         // Update sum of x and y</a>
+<a name="267"><span class="lineNum">     267 </span><span class="lineNoCov">          0 :         sum_x += xi;</span></a>
+<a name="268"><span class="lineNum">     268 </span><span class="lineNoCov">          0 :         sum_y += yi;</span></a>
+<a name="269"><span class="lineNum">     269 </span>            :         // Update sum of x squares and y squares</a>
+<a name="270"><span class="lineNum">     270 </span><span class="lineNoCov">          0 :         sum_x_square += xi * xi;</span></a>
+<a name="271"><span class="lineNum">     271 </span><span class="lineNoCov">          0 :         sum_y_square += yi * yi;</span></a>
+<a name="272"><span class="lineNum">     272 </span>            :         // Append x and y values to x and y vectors</a>
+<a name="273"><span class="lineNum">     273 </span><span class="lineNoCov">          0 :         x.push_back(xi);</span></a>
+<a name="274"><span class="lineNum">     274 </span><span class="lineNoCov">          0 :         y.push_back(yi);</span></a>
+<a name="275"><span class="lineNum">     275 </span>            :     }</a>
+<a name="276"><span class="lineNum">     276 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="277"><span class="lineNum">     277 </span>            : </a>
+<a name="278"><span class="lineNum">     278 </span>            : // Function to split data into training and testing sets</a>
+<a name="279"><span class="lineNum">     279 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::split_data(double test_size,</span></a>
+<a name="280"><span class="lineNum">     280 </span>            :                                             unsigned int seed,</a>
+<a name="281"><span class="lineNum">     281 </span>            :                                             bool shuffle) {</a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineNoCov">          0 :     if (x.empty() || y.empty()) {</span></a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Training data is empty.&quot;);</span></a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineNoCov">          0 :         return;</span></a>
+<a name="285"><span class="lineNum">     285 </span>            :     }</a>
+<a name="286"><span class="lineNum">     286 </span>            : </a>
+<a name="287"><span class="lineNum">     287 </span><span class="lineNoCov">          0 :     if (test_size &lt;= 0 || test_size &gt;= 1) {</span></a>
+<a name="288"><span class="lineNum">     288 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Invalid `test_size`. Must be between 0 - 1.&quot;);</span></a>
+<a name="289"><span class="lineNum">     289 </span><span class="lineNoCov">          0 :         return;</span></a>
+<a name="290"><span class="lineNum">     290 </span>            :     }</a>
+<a name="291"><span class="lineNum">     291 </span>            : </a>
+<a name="292"><span class="lineNum">     292 </span><span class="lineNoCov">          0 :     size_t data_size = x.size();</span></a>
+<a name="293"><span class="lineNum">     293 </span><span class="lineNoCov">          0 :     size_t test_data_size = static_cast&lt;size_t&gt;(test_size * data_size);</span></a>
+<a name="294"><span class="lineNum">     294 </span>            : </a>
+<a name="295"><span class="lineNum">     295 </span>            :     // Shuffle the data randomly if specified</a>
+<a name="296"><span class="lineNum">     296 </span><span class="lineNoCov">          0 :     if (shuffle == true) {</span></a>
+<a name="297"><span class="lineNum">     297 </span>            :         // Create vector of indices</a>
+<a name="298"><span class="lineNum">     298 </span><span class="lineNoCov">          0 :         std::vector&lt;size_t&gt; indices(data_size);</span></a>
+<a name="299"><span class="lineNum">     299 </span>            :         // Fill vector sequentially w/ `iota`</a>
+<a name="300"><span class="lineNum">     300 </span><span class="lineNoCov">          0 :         std::iota(indices.begin(), indices.end(), 0);</span></a>
+<a name="301"><span class="lineNum">     301 </span>            :         // Randomly shuffle vector indices from start to end</a>
+<a name="302"><span class="lineNum">     302 </span><span class="lineNoCov">          0 :         std::shuffle(indices.begin(),</span></a>
+<a name="303"><span class="lineNum">     303 </span>            :                      indices.end(),</a>
+<a name="304"><span class="lineNum">     304 </span><span class="lineNoCov">          0 :                      std::default_random_engine(seed));</span></a>
+<a name="305"><span class="lineNum">     305 </span>            : </a>
+<a name="306"><span class="lineNum">     306 </span>            :         // Clear training and testing data vectors</a>
+<a name="307"><span class="lineNum">     307 </span><span class="lineNoCov">          0 :         x_train.clear();</span></a>
+<a name="308"><span class="lineNum">     308 </span><span class="lineNoCov">          0 :         y_train.clear();</span></a>
+<a name="309"><span class="lineNum">     309 </span><span class="lineNoCov">          0 :         x_test.clear();</span></a>
+<a name="310"><span class="lineNum">     310 </span><span class="lineNoCov">          0 :         y_test.clear();</span></a>
+<a name="311"><span class="lineNum">     311 </span>            : </a>
+<a name="312"><span class="lineNum">     312 </span>            :         // Split the data into training and testing sets based on shuffled</a>
+<a name="313"><span class="lineNum">     313 </span>            :         // indices</a>
+<a name="314"><span class="lineNum">     314 </span><span class="lineNoCov">          0 :         for (size_t i = 0; i &lt; data_size; ++i) {</span></a>
+<a name="315"><span class="lineNum">     315 </span><span class="lineNoCov">          0 :             if (i &lt; test_data_size) {</span></a>
+<a name="316"><span class="lineNum">     316 </span>            :                 // Append x test vector with shuffled x value</a>
+<a name="317"><span class="lineNum">     317 </span><span class="lineNoCov">          0 :                 x_test.push_back(x[indices[i]]);</span></a>
+<a name="318"><span class="lineNum">     318 </span><span class="lineNoCov">          0 :                 y_test.push_back(y[indices[i]]);</span></a>
+<a name="319"><span class="lineNum">     319 </span>            :             } else {</a>
+<a name="320"><span class="lineNum">     320 </span>            :                 // Append x training vector with suffled x value</a>
+<a name="321"><span class="lineNum">     321 </span><span class="lineNoCov">          0 :                 x_train.push_back(x[indices[i]]);</span></a>
+<a name="322"><span class="lineNum">     322 </span><span class="lineNoCov">          0 :                 y_train.push_back(y[indices[i]]);</span></a>
+<a name="323"><span class="lineNum">     323 </span>            :             }</a>
+<a name="324"><span class="lineNum">     324 </span>            :         }</a>
+<a name="325"><span class="lineNum">     325 </span><span class="lineNoCov">          0 :     } else {</span></a>
+<a name="326"><span class="lineNum">     326 </span>            :         // Without shuffling, split the data without changing its order by</a>
+<a name="327"><span class="lineNum">     327 </span>            :         // assigning the first training element to the training set</a>
+<a name="328"><span class="lineNum">     328 </span><span class="lineNoCov">          0 :         x_train.assign(x.begin(), x.begin() + data_size - test_data_size);</span></a>
+<a name="329"><span class="lineNum">     329 </span><span class="lineNoCov">          0 :         y_train.assign(y.begin(), y.begin() + data_size - test_data_size);</span></a>
+<a name="330"><span class="lineNum">     330 </span>            :         // Assign the 1+ testing elements to the testing test</a>
+<a name="331"><span class="lineNum">     331 </span><span class="lineNoCov">          0 :         x_test.assign(x.begin() + data_size - test_data_size, x.end());</span></a>
+<a name="332"><span class="lineNum">     332 </span><span class="lineNoCov">          0 :         y_test.assign(y.begin() + data_size - test_data_size, y.end());</span></a>
+<a name="333"><span class="lineNum">     333 </span>            :     }</a>
+<a name="334"><span class="lineNum">     334 </span>            : }</a>
+<a name="335"><span class="lineNum">     335 </span>            : </a>
+<a name="336"><span class="lineNum">     336 </span>            : // Function to display the dataset</a>
+<a name="337"><span class="lineNum">     337 </span><span class="lineNoCov">          0 : void gpmp::ml::LinearRegression::show_data() {</span></a>
+<a name="338"><span class="lineNum">     338 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; 62; i++) {</span></a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineNoCov">          0 :         printf(&quot;_&quot;);</span></a>
+<a name="340"><span class="lineNum">     340 </span>            :     }</a>
+<a name="341"><span class="lineNum">     341 </span><span class="lineNoCov">          0 :     printf(&quot;\n\n&quot;);</span></a>
+<a name="342"><span class="lineNum">     342 </span><span class="lineNoCov">          0 :     printf(&quot;|%15s%5s %15s%5s%20s\n&quot;, &quot;X&quot;, &quot;&quot;, &quot;Y&quot;, &quot;&quot;, &quot;|&quot;);</span></a>
+<a name="343"><span class="lineNum">     343 </span>            : </a>
+<a name="344"><span class="lineNum">     344 </span>            :     // Display each data point in the dataset</a>
+<a name="345"><span class="lineNum">     345 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; uint64_t(i) &lt; x.size(); i++) {</span></a>
+<a name="346"><span class="lineNum">     346 </span><span class="lineNoCov">          0 :         printf(&quot;|%20Lf %20Lf%20s\n&quot;, x[i], y[i], &quot;|&quot;);</span></a>
+<a name="347"><span class="lineNum">     347 </span>            :     }</a>
+<a name="348"><span class="lineNum">     348 </span>            : </a>
+<a name="349"><span class="lineNum">     349 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; 62; i++) {</span></a>
+<a name="350"><span class="lineNum">     350 </span><span class="lineNoCov">          0 :         printf(&quot;_&quot;);</span></a>
+<a name="351"><span class="lineNum">     351 </span>            :     }</a>
+<a name="352"><span class="lineNum">     352 </span><span class="lineNoCov">          0 :     printf(&quot;\n&quot;);</span></a>
+<a name="353"><span class="lineNum">     353 </span><span class="lineNoCov">          0 : }</span></a>
+<a name="354"><span class="lineNum">     354 </span>            : </a>
+<a name="355"><span class="lineNum">     355 </span>            : // Function to predict a value based on input x</a>
+<a name="356"><span class="lineNum">     356 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::predict(long double _x) const {</span></a>
+<a name="357"><span class="lineNum">     357 </span><span class="lineNoCov">          0 :     return coeff * _x + constant;</span></a>
+<a name="358"><span class="lineNum">     358 </span>            : }</a>
+<a name="359"><span class="lineNum">     359 </span>            : </a>
+<a name="360"><span class="lineNum">     360 </span>            : // Function to predict a value based on input x and a dataset</a>
+<a name="361"><span class="lineNum">     361 </span>            : long double</a>
+<a name="362"><span class="lineNum">     362 </span><span class="lineNoCov">          0 : gpmp::ml::LinearRegression::predict(long double _x,</span></a>
+<a name="363"><span class="lineNum">     363 </span>            :                                     const std::vector&lt;long double&gt; &amp;x_data) {</a>
+<a name="364"><span class="lineNum">     364 </span>            :     // Calculate the coefficient if not already calculated</a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineNoCov">          0 :     long double _coeff = return_coeffecient();</span></a>
+<a name="366"><span class="lineNum">     366 </span>            :     // Calculate the constant if not already calculated</a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineNoCov">          0 :     long double _constant = return_constant();</span></a>
+<a name="368"><span class="lineNum">     368 </span>            :     // TODO FIXME unused variable</a>
+<a name="369"><span class="lineNum">     369 </span><span class="lineNoCov">          0 :     return _coeff * _x + _constant + x_data[0];</span></a>
+<a name="370"><span class="lineNum">     370 </span>            : }</a>
+<a name="371"><span class="lineNum">     371 </span>            : </a>
+<a name="372"><span class="lineNum">     372 </span>            : // Function to calculate the error for a given value</a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::error_in(long double num) {</span></a>
+<a name="374"><span class="lineNum">     374 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; uint64_t(i) &lt; x.size(); i++) {</span></a>
+<a name="375"><span class="lineNum">     375 </span><span class="lineNoCov">          0 :         if (fabs(num - x[i]) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</span></a>
+<a name="376"><span class="lineNum">     376 </span><span class="lineNoCov">          0 :             return (y[i] - predict(x[i]));</span></a>
+<a name="377"><span class="lineNum">     377 </span>            :         }</a>
+<a name="378"><span class="lineNum">     378 </span>            :     }</a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineNoCov">          0 :     return 0;</span></a>
+<a name="380"><span class="lineNum">     380 </span>            : }</a>
+<a name="381"><span class="lineNum">     381 </span>            : </a>
+<a name="382"><span class="lineNum">     382 </span>            : // Function to calculate the error for a given value and a dataset</a>
+<a name="383"><span class="lineNum">     383 </span>            : long double</a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineNoCov">          0 : gpmp::ml::LinearRegression::error_in(long double num,</span></a>
+<a name="385"><span class="lineNum">     385 </span>            :                                      const std::vector&lt;long double&gt; &amp;x_data,</a>
+<a name="386"><span class="lineNum">     386 </span>            :                                      const std::vector&lt;long double&gt; &amp;y_data) {</a>
+<a name="387"><span class="lineNum">     387 </span><span class="lineNoCov">          0 :     long double prediction = predict(num, x_data);</span></a>
+<a name="388"><span class="lineNum">     388 </span>            :     // Find the corresponding y value for the input x</a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineNoCov">          0 :     for (size_t i = 0; i &lt; x_data.size(); i++) {</span></a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineNoCov">          0 :         if (fabs(num - x_data[i]) &lt; std::numeric_limits&lt;double&gt;::epsilon()) {</span></a>
+<a name="391"><span class="lineNum">     391 </span><span class="lineNoCov">          0 :             return y_data[i] - prediction;</span></a>
+<a name="392"><span class="lineNum">     392 </span>            :         }</a>
+<a name="393"><span class="lineNum">     393 </span>            :     }</a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineNoCov">          0 :     return 0;</span></a>
+<a name="395"><span class="lineNum">     395 </span>            : }</a>
+<a name="396"><span class="lineNum">     396 </span>            : </a>
+<a name="397"><span class="lineNum">     397 </span>            : // Function that returns the overall sum of the square of errors</a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::error_square() {</span></a>
+<a name="399"><span class="lineNum">     399 </span><span class="lineNoCov">          0 :     long double ans = 0;</span></a>
+<a name="400"><span class="lineNum">     400 </span>            : </a>
+<a name="401"><span class="lineNum">     401 </span>            :     // Iterate through each data point</a>
+<a name="402"><span class="lineNum">     402 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; uint64_t(i) &lt; x.size(); i++) {</span></a>
+<a name="403"><span class="lineNum">     403 </span>            :         // Calculate the square of the error (difference between predicted and</a>
+<a name="404"><span class="lineNum">     404 </span>            :         // actual values)</a>
+<a name="405"><span class="lineNum">     405 </span><span class="lineNoCov">          0 :         ans += ((predict(x[i]) - y[i]) * (predict(x[i]) - y[i]));</span></a>
+<a name="406"><span class="lineNum">     406 </span>            :     }</a>
+<a name="407"><span class="lineNum">     407 </span><span class="lineNoCov">          0 :     return ans; // Return the sum of squared errors</span></a>
+<a name="408"><span class="lineNum">     408 </span>            : }</a>
+<a name="409"><span class="lineNum">     409 </span>            : </a>
+<a name="410"><span class="lineNum">     410 </span>            : // Find the Mean Squared Error (MSE) of the given dataset</a>
+<a name="411"><span class="lineNum">     411 </span>            : long double</a>
+<a name="412"><span class="lineNum">     412 </span><span class="lineNoCov">          0 : gpmp::ml::LinearRegression::mse(const std::vector&lt;long double&gt; &amp;x_data,</span></a>
+<a name="413"><span class="lineNum">     413 </span>            :                                 const std::vector&lt;long double&gt; &amp;y_data) const {</a>
+<a name="414"><span class="lineNum">     414 </span>            :     // Check if input vectors have the same size</a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineNoCov">          0 :     if (x_data.size() != y_data.size()) {</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineNoCov">          0 :         return -1; // Return an error value</span></a>
+<a name="417"><span class="lineNum">     417 </span>            :     }</a>
+<a name="418"><span class="lineNum">     418 </span>            : </a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineNoCov">          0 :     long double mse = 0.0;</span></a>
+<a name="420"><span class="lineNum">     420 </span><span class="lineNoCov">          0 :     int64_t n = x_data.size();</span></a>
+<a name="421"><span class="lineNum">     421 </span>            : </a>
+<a name="422"><span class="lineNum">     422 </span>            :     // Iterate through each data point</a>
+<a name="423"><span class="lineNum">     423 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
+<a name="424"><span class="lineNum">     424 </span>            :         // Calculate the predicted value using the linear regression model</a>
+<a name="425"><span class="lineNum">     425 </span><span class="lineNoCov">          0 :         long double predicted = predict(x_data[i]);</span></a>
+<a name="426"><span class="lineNum">     426 </span>            :         // Calculate the error (difference between predicted and actual values)</a>
+<a name="427"><span class="lineNum">     427 </span><span class="lineNoCov">          0 :         long double error = predicted - y_data[i];</span></a>
+<a name="428"><span class="lineNum">     428 </span>            :         // Accumulate the squared error</a>
+<a name="429"><span class="lineNum">     429 </span><span class="lineNoCov">          0 :         mse += error * error;</span></a>
+<a name="430"><span class="lineNum">     430 </span>            :     }</a>
+<a name="431"><span class="lineNum">     431 </span>            : </a>
+<a name="432"><span class="lineNum">     432 </span>            :     // Calculate the Mean Squared Error by dividing the accumulated squared</a>
+<a name="433"><span class="lineNum">     433 </span>            :     // error by the number of data points</a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineNoCov">          0 :     return mse / static_cast&lt;long double&gt;(n);</span></a>
+<a name="435"><span class="lineNum">     435 </span>            : }</a>
+<a name="436"><span class="lineNum">     436 </span>            : </a>
+<a name="437"><span class="lineNum">     437 </span>            : // Determine an R^2 score value</a>
+<a name="438"><span class="lineNum">     438 </span><span class="lineNoCov">          0 : long double gpmp::ml::LinearRegression::r_sqrd(</span></a>
+<a name="439"><span class="lineNum">     439 </span>            :     const std::vector&lt;long double&gt; &amp;x_data,</a>
+<a name="440"><span class="lineNum">     440 </span>            :     const std::vector&lt;long double&gt; &amp;y_data) const {</a>
+<a name="441"><span class="lineNum">     441 </span>            :     // Check if input vectors have the same size</a>
+<a name="442"><span class="lineNum">     442 </span><span class="lineNoCov">          0 :     if (x_data.size() != y_data.size()) {</span></a>
+<a name="443"><span class="lineNum">     443 </span><span class="lineNoCov">          0 :         _log_.log(ERROR, &quot;Input vectors must have the same size.&quot;);</span></a>
+<a name="444"><span class="lineNum">     444 </span><span class="lineNoCov">          0 :         return -1; // Return an error value</span></a>
+<a name="445"><span class="lineNum">     445 </span>            :     }</a>
+<a name="446"><span class="lineNum">     446 </span>            : </a>
+<a name="447"><span class="lineNum">     447 </span><span class="lineNoCov">          0 :     long double total_sum_of_squares = 0.0;</span></a>
+<a name="448"><span class="lineNum">     448 </span><span class="lineNoCov">          0 :     long double sum_of_squared_errors = 0.0;</span></a>
+<a name="449"><span class="lineNum">     449 </span><span class="lineNoCov">          0 :     int64_t n = x_data.size();</span></a>
+<a name="450"><span class="lineNum">     450 </span>            : </a>
+<a name="451"><span class="lineNum">     451 </span><span class="lineNoCov">          0 :     long double y_mean = 0.0;</span></a>
+<a name="452"><span class="lineNum">     452 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
+<a name="453"><span class="lineNum">     453 </span>            :         // Calculate the mean of the dependent variable (Y)</a>
+<a name="454"><span class="lineNum">     454 </span><span class="lineNoCov">          0 :         y_mean += y_data[i];</span></a>
+<a name="455"><span class="lineNum">     455 </span>            :     }</a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineNoCov">          0 :     y_mean /= static_cast&lt;long double&gt;(n);</span></a>
+<a name="457"><span class="lineNum">     457 </span>            : </a>
+<a name="458"><span class="lineNum">     458 </span>            :     // Iterate through each data point</a>
+<a name="459"><span class="lineNum">     459 </span><span class="lineNoCov">          0 :     for (int64_t i = 0; i &lt; n; i++) {</span></a>
+<a name="460"><span class="lineNum">     460 </span>            :         // Calculate the predicted value using the linear regression model</a>
+<a name="461"><span class="lineNum">     461 </span><span class="lineNoCov">          0 :         long double predicted = predict(x_data[i]);</span></a>
+<a name="462"><span class="lineNum">     462 </span>            :         // Calculate the error (difference between predicted and actual values)</a>
+<a name="463"><span class="lineNum">     463 </span><span class="lineNoCov">          0 :         long double error = predicted - y_data[i];</span></a>
+<a name="464"><span class="lineNum">     464 </span>            :         // Calculate the total sum of squares and sum of squared errors</a>
+<a name="465"><span class="lineNum">     465 </span><span class="lineNoCov">          0 :         total_sum_of_squares += (y_data[i] - y_mean) * (y_data[i] - y_mean);</span></a>
+<a name="466"><span class="lineNum">     466 </span><span class="lineNoCov">          0 :         sum_of_squared_errors += error * error;</span></a>
+<a name="467"><span class="lineNum">     467 </span>            :     }</a>
+<a name="468"><span class="lineNum">     468 </span>            : </a>
+<a name="469"><span class="lineNum">     469 </span>            :     // Calculate the R-squared value using the formula 1 - (SSE / SST)</a>
+<a name="470"><span class="lineNum">     470 </span><span class="lineNoCov">          0 :     return 1.0 - (sum_of_squared_errors / total_sum_of_squares);</span></a>
+<a name="471"><span class="lineNum">     471 </span>            : }</a>
+<a name="472"><span class="lineNum">     472 </span>            : </a>
+<a name="473"><span class="lineNum">     473 </span>            : // Determine number of rows in given dataset</a>
+<a name="474"><span class="lineNum">     474 </span><span class="lineNoCov">          0 : int64_t gpmp::ml::LinearRegression::num_rows(const char *input) {</span></a>
+<a name="475"><span class="lineNum">     475 </span><span class="lineNoCov">          0 :     int64_t num = 0;</span></a>
+<a name="476"><span class="lineNum">     476 </span><span class="lineNoCov">          0 :     std::string row;</span></a>
+<a name="477"><span class="lineNum">     477 </span>            : </a>
+<a name="478"><span class="lineNum">     478 </span>            :     // create input file stream</a>
+<a name="479"><span class="lineNum">     479 </span><span class="lineNoCov">          0 :     std::ifstream file(input);</span></a>
+<a name="480"><span class="lineNum">     480 </span>            : </a>
+<a name="481"><span class="lineNum">     481 </span><span class="lineNoCov">          0 :     while (getline(file, row)) {</span></a>
+<a name="482"><span class="lineNum">     482 </span><span class="lineNoCov">          0 :         num++;</span></a>
+<a name="483"><span class="lineNum">     483 </span>            :     }</a>
+<a name="484"><span class="lineNum">     484 </span>            : </a>
+<a name="485"><span class="lineNum">     485 </span><span class="lineNoCov">          0 :     return num;</span></a>
+<a name="486"><span class="lineNum">     486 </span><span class="lineNoCov">          0 : }</span></a>
 </pre>
       </td>
     </tr>
