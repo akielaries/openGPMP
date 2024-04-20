@@ -1,8 +1,17 @@
 Modules
 ====
+* Core
+    - DataTable
+    - Threads
+    - Logging
+    - Misc. Utils
 * Arithmetic
 * Calculus
     - Differential
+    - Numerical Analysis
+    - Integral ***TODO***
+* Discrete
+    - Graphs
 * Linear Algebra
     - Linear Systems
     - Eigenvalues & Operations
@@ -29,12 +38,18 @@ Modules
 
 * Machine/Deep Learning
     - Activations
+    - Bayes Classifier
+    - Bayes Network
+    - Encoders
+    - Kohonen Network (SEO)
     - Linear Regression
     - Logistic Regression
     - Cross-Validation
     - K-Nearest Neighbors
-    - Neural Networks
-    - Classifiers
+    - Multi-Layer Perceptron
+    - Regularizers
+    - Support Vector Machine
+    - Trainers
 
 * Number Theory
     - Primality Tests
@@ -44,9 +59,12 @@ Modules
     - Logarithms
     - Greatest Common Divisors
     - Squares
-    - Cryptography
+    - Randomization
+    - RC4, RC5, RC6
 
 * Optimization
+    - Quasi-Newton Methods
+    - Functions
 
 * Statistics
     - Descriptive
