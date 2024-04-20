@@ -22,9 +22,9 @@ Modules
     modules/linalg/dgemm_kernel_4x4_sse.S
     ```
     Where:
-        * `mtx.cpp`: main interface for matrix arithmetic operations
-        * `dgemm_arr.cpp`: DGEMM implementation for matrices as arrays
-        * `dgemm_kernel_4x4_sse.S`: 4x4 block micro kernel SSE implementation
+    * `mtx.cpp`: main interface for matrix arithmetic operations
+    * `dgemm_arr.cpp`: DGEMM implementation for matrices as arrays
+    * `dgemm_kernel_4x4_sse.S`: 4x4 block micro kernel SSE implementation
     - Tensor Operations ***TODO***
 
 * Machine/Deep Learning
