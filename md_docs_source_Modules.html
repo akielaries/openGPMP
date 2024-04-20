@@ -75,43 +75,28 @@ $(function() {
 <div class="title">Modules </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ol type="1">
-<li>Arithmetic</li>
-<li>Calculus<ul>
-<li>Differential</li>
-</ul>
-</li>
-<li>Linear Algebra<ul>
+<div class="textblock"><p>Arithmetic Calculus</p><ul>
+<li>Differential Linear Algebra</li>
+<li>Linear Systems</li>
+<li>Eigenvalues &amp; Operations</li>
+<li>Singular Value Decomposition (SVD)</li>
 <li>Vector Operations</li>
-<li>Matrix Operations <div class="fragment"><div class="line">DGEMM (Double-precision General Matrix-Matrix product) </div>
-<div class="line">operations on arrays and vectors call tree:</div>
-<div class="line"> </div>
-<div class="line">modules/linalg/mtx.cpp</div>
-<div class="line">            |</div>
-<div class="line">            |</div>
-<div class="line">modules/linalg/dgemm_arr.cpp</div>
-<div class="line">            |</div>
-<div class="line">            |</div>
-<div class="line">modules/linalg/dgemm_kernel_4x4_sse.S</div>
-</div><!-- fragment --> Where:</li>
+<li>Matrix Operations ``` DGEMM (Double-precision General Matrix-Matrix product) operations on arrays and vectors call tree:</li>
 </ul>
-</li>
-</ol>
-<ul>
+<p>modules/linalg/mtx.cpp | | <a class="el" href="dgemm__arr_8cpp.html">modules/linalg/dgemm_arr.cpp</a> | | modules/linalg/dgemm_kernel_4x4_sse.S ``` Where:</p><ul>
 <li><code><a class="el" href="mtx_8cpp.html">mtx.cpp</a></code>: main interface for matrix arithmetic operations</li>
 <li><code><a class="el" href="dgemm__arr_8cpp.html">dgemm_arr.cpp</a></code>: DGEMM implementation for matrices as arrays</li>
 <li><code>dgemm_kernel_4x4_sse.S</code>: 4x4 block micro kernel SSE implementation</li>
 </ul>
-<ol type="1">
-<li>Machine/Deep Learning<ul>
+<p>Tensor Operations <em><b>TODO</b></em></p>
+<p>Machine/Deep Learning</p><ul>
 <li>Regression</li>
 <li>Cross-Validation</li>
 <li>K-Nearest Neighbors</li>
 <li>Neural Networks</li>
 <li>Classifiers</li>
 </ul>
-</li>
-<li>Number Theory<ul>
+<p>Number Theory</p><ul>
 <li>Primality Tests</li>
 <li>Primality Generation</li>
 <li>Integer Factorization</li>
@@ -121,14 +106,11 @@ $(function() {
 <li>Squares</li>
 <li>Cryptography</li>
 </ul>
-</li>
-<li>Topology/Complex<ul>
+<p>Topology/Complex <em><b>TODO</b></em></p><ul>
 <li>Dynamical Systems</li>
 <li>Topology</li>
 <li>Spline </li>
 </ul>
-</li>
-</ol>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
