@@ -1,15 +1,14 @@
 /*************************************************************************
  *
  *  Project
- *                        __  __ _______ _____  _  __
- *                       |  \/  |__   __|  __ \| |/ /
- *  ___  _ __   ___ _ __ | \  / |  | |  | |__) | ' /
- * / _ \| '_ \ / _ \ '_ \| |\/| |  | |  |  ___/|  <
- *| (_) | |_) |  __/ | | | |  | |  | |  | |    | . \
- * \___/| .__/ \___|_| |_|_|  |_|  |_|  |_|    |_|\_\
+ *                         _____ _____  __  __ _____
+ *                        / ____|  __ \|  \/  |  __ \
+ *  ___  _ __   ___ _ __ | |  __| |__) | \  / | |__) |
+ * / _ \| '_ \ / _ \ '_ \| | |_ |  ___/| |\/| |  ___/
+ *| (_) | |_) |  __/ | | | |__| | |    | |  | | |
+ * \___/| .__/ \___|_| |_|\_____|_|    |_|  |_|_|
  *      | |
  *      |_|
- *
  *
  * Copyright (C) Akiel Aries, <akiel@akiel.org>, et al.
  *
@@ -22,8 +21,7 @@
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file.
  *
  *
  *
@@ -31,8 +29,6 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/core/datatable.hpp"
-#include "../../include/core/utils.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
@@ -41,6 +37,8 @@
 #include <iomanip>
 #include <iostream>
 #include <mutex>
+#include <openGPMP/core/datatable_wip.hpp>
+#include <openGPMP/core/utils.hpp>
 #include <regex>
 #include <string>
 #include <sys/mman.h>

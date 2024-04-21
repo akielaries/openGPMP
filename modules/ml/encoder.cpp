@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/encoder.hpp"
+#include <openGPMP/ml/encoder.hpp>
 #include <algorithm>
 #include <ctime>
 #include <fstream>

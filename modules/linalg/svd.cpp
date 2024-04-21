@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/linalg/svd.hpp"
+#include <openGPMP/linalg/svd.hpp>
 #include <cmath>
 #include <iostream>
 #include <stdexcept>

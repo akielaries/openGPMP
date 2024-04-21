@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/knn.hpp"
+#include <openGPMP/ml/knn.hpp>
 #include <algorithm>
 #include <cmath>
 #include <stdexcept>

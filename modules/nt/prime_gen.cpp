@@ -31,8 +31,8 @@
  *
  ************************************************************************/
 
-#include "../../include/nt/prime_gen.hpp"
-#include "../../include/arithmetic.hpp"
+#include <openGPMP/nt/prime_gen.hpp>
+#include <openGPMP/arithmetic.hpp>
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>

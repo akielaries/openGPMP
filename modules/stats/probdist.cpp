@@ -31,8 +31,8 @@
  *
  ************************************************************************/
 
-#include "../../include/stats/probdist.hpp"
-#include "../../include/stats/describe.hpp"
+#include <openGPMP/stats/probdist.hpp>
+#include <openGPMP/stats/describe.hpp>
 #include <algorithm>
 #include <cmath>
 #include <limits>

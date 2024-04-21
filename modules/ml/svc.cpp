@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/svc.hpp"
+#include <openGPMP/ml/svc.hpp>
 #include <cmath>
 #include <iostream>
 #include <numeric>

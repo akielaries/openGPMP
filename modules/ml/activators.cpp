@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/activators.hpp"
+#include <openGPMP/ml/activators.hpp>
 #include <vector>
 
 double gpmp::ml::Activation::sigmoid(double z) {

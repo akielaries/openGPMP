@@ -32,8 +32,7 @@
  ************************************************************************/
 
 /** Double precision GEneral Matrix-Matrix product */
-
-#include "../../include/linalg/_dgemm.hpp"
+#include <openGPMP/linalg/_dgemm.hpp>
 #include <cmath>
 #include <limits>
 #include <stddef.h>

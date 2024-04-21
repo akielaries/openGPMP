@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/trainers.hpp"
+#include <openGPMP/ml/trainers.hpp>
 #include <random>
 
 std::vector<double>

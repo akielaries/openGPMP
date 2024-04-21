@@ -29,11 +29,9 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/nt/rc6.hpp"
+#include <openGPMP/nt/rc6.hpp>
 #include <cmath>
 #include <cstdint>
-
 #include <stdexcept>
 
 RC6::RC6(const std::vector<uint8_t> &key) {

@@ -34,9 +34,9 @@
 /**
  * openGPMP implementation of Linear Regression
  */
-#include "../../include/ml/linreg.hpp"
-#include "../../include/core/datatable.hpp"
-#include "../../include/core/utils.hpp"
+#include <openGPMP/ml/linreg.hpp>
+#include <openGPMP/core/datatable.hpp>
+#include <openGPMP/core/utils.hpp>
 #include <fstream>
 #include <iostream>
 #include <random>

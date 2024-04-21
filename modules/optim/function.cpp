@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/optim/function.hpp"
+#include <openGPMP/optim/function.hpp>
 #include <iostream>
 #include <vector>
 

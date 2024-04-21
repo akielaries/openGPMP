@@ -30,7 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/stats/describe.hpp"
+#include <openGPMP/stats/describe.hpp>
 #include <algorithm>
 #include <cmath>
 #include <vector>

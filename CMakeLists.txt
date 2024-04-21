@@ -34,6 +34,8 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
     set(CMAKE_Fortran_FLAGS "-O0")
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D__GPMP_CPP_API__")
+    
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
     message(STATUS "Detecting ${CMAKE_CXX_COMPILER} macros")
     execute_process(
@@ -156,7 +158,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
     # include directory for openGPMP
     target_include_directories(${PROJECT_NAME} PUBLIC 
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/openGPMP>
         $<INSTALL_INTERFACE:include>
         PRIVATE modules
     )
@@ -172,7 +174,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
     )
 
     # install include directory to /usr/local/include/openGPMP
-    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/openGPMP"
         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openGPMP"
     )
 

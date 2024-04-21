@@ -33,8 +33,7 @@
 
 /** Double precision GEneral Matrix-Matrix product kernel without accl */
 
-#include "../../include/linalg/_dgemm.hpp"
-
+#include <openGPMP/linalg/_dgemm.hpp>
 // micro kernel that multiplies panels from A and B
 void gpmp::linalg::DGEMM::dgemm_micro_kernel(int kc,
                                              double alpha,

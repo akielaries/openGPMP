@@ -32,8 +32,7 @@
  ************************************************************************/
 
 /** Single precision GEneral Matrix-Matrix product */
-
-#include "../../include/linalg/_sgemm.hpp"
+#include <openGPMP/linalg/_sgemm.hpp>
 #include <cmath>
 #include <limits>
 #include <stddef.h>

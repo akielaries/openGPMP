@@ -30,7 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../../include/linalg/vector.hpp"
+#include <openGPMP/linalg/vector.hpp>
 #include <cmath>
 #include <cstdint>
 #include <iostream>

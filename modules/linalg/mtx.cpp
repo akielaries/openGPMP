@@ -33,7 +33,7 @@
 
 /** Main Matrix operation interface for matrices as arrays & vectors */
 
-#include "../../include/linalg/_dgemm.hpp"
+#include <openGPMP/linalg/_dgemm.hpp>
 #include <cmath>
 #include <limits>
 

@@ -30,9 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/linalg/eigen.hpp"
-
+#include <openGPMP/linalg/eigen.hpp>
 #include <cmath>
 #include <iostream>
 #include <numeric>

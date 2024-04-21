@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/kohonen_net.hpp"
+#include <openGPMP/ml/kohonen_net.hpp>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>

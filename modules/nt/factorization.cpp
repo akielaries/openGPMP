@@ -35,10 +35,9 @@
  * Some core concepts seen in Number Theory specifically
  * Integer Factorization
  */
-#include "../../include/nt/factorization.hpp"
-#include "../../include/arithmetic.hpp"
-#include "../../include/nt/prime_test.hpp"
-
+#include <openGPMP/nt/factorization.hpp>
+#include <openGPMP/nt/prime_test.hpp>
+#include <openGPMP/arithmetic.hpp>
 #include <algorithm>
 #include <chrono>
 #include <cstdlib>

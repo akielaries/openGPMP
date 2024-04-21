@@ -40,7 +40,6 @@
 #ifndef FACTORIZATION_HPP
 #define FACTORIZATION_HPP
 
-#include "../core/threads.hpp"
 #include <cstdint>
 
 namespace gpmp {

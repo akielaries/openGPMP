@@ -35,9 +35,9 @@
  * Some core concepts seen in Number Theory specifically
  * Discrete Logarithms
  */
-#include "../../include/nt/logarithms.hpp"
-#include "../../include/arithmetic.hpp"
-#include "../../include/nt/prime_test.hpp"
+#include <openGPMP/nt/logarithms.hpp>
+#include <openGPMP/arithmetic.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>

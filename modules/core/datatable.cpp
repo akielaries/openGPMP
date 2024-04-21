@@ -21,8 +21,7 @@
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file.
  *
  *
  *
@@ -30,14 +29,13 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/core/datatable.hpp"
-#include "../../include/core/utils.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <openGPMP/core/datatable.hpp>
+#include <openGPMP/core/utils.hpp>
 #include <regex>
 #include <sstream>
 #include <string>

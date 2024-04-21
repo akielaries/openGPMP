@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/logreg.hpp"
+#include <openGPMP/ml/logreg.hpp>
 #include <algorithm>
 #include <cmath>
 #include <numeric>

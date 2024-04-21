@@ -35,5 +35,6 @@
 #define DISCT_HPP
 
 #include "disct/graphs.hpp"
+#include "disct/comb.hpp"
 
 #endif

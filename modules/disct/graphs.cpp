@@ -21,8 +21,7 @@
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file.
  *
  *
  *
@@ -30,14 +29,13 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/disct/graphs.hpp"
 #include <algorithm>
 #include <bitset>
 #include <cmath>
 #include <cstdint>
 #include <iostream>
 #include <limits>
+#include <openGPMP/disct/graphs.hpp>
 #include <queue>
 #include <set>
 #include <stack>
