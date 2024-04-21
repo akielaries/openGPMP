@@ -34,8 +34,8 @@
 /*
  * Implementation of the Red Pike block cipher algorithm
  */
-#include <openGPMP/nt/redpike.hpp>
 #include <cstdint>
+#include <openGPMP/nt/redpike.hpp>
 
 uint32_t gpmp::nt::RedPike::rotl(uint32_t X, int R) {
     return ((X) << ((R)&31)) | ((X) >> (32 - ((R)&31)));

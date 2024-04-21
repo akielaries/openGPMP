@@ -30,8 +30,8 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/ml/bayes_net.hpp>
 #include <iostream>
+#include <openGPMP/ml/bayes_net.hpp>
 
 BNN::BNN(int in_size, int h_size, int out_size, double p_variance)
     : input_size(in_size), hidden_size(h_size), output_size(out_size),

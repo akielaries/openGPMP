@@ -1,9 +1,9 @@
 /*
  * Testing the implementation of random cipher algorithms
  */
-#include <openGPMP/nt/cipher.hpp>
 #include <gtest/gtest.h>
 #include <limits.h>
+#include <openGPMP/nt/cipher.hpp>
 
 using ::testing::DoubleLE;
 using ::testing::FloatLE;

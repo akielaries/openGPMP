@@ -30,8 +30,8 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/nt/rc5.hpp>
 #include <cstdint>
+#include <openGPMP/nt/rc5.hpp>
 
 gpmp::nt::RC5::RC5(uint32_t rounds, uint32_t wordSize, uint32_t blockSize)
     : w(wordSize), r(rounds), b(blockSize) {

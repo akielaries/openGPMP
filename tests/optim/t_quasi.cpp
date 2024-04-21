@@ -1,11 +1,11 @@
 /**
  * Unit tests for the Optimization module's QuasiNewton methods
  */
-#include <openGPMP/optim/quasi.hpp>
 #include <cmath>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/optim/quasi.hpp>
 #include <stdexcept>
 #include <tuple>
 #include <vector>

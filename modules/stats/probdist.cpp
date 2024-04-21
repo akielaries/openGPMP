@@ -31,13 +31,13 @@
  *
  ************************************************************************/
 
-#include <openGPMP/stats/probdist.hpp>
-#include <openGPMP/stats/describe.hpp>
 #include <algorithm>
 #include <cmath>
 #include <limits>
 #include <math.h>
 #include <numeric>
+#include <openGPMP/stats/describe.hpp>
+#include <openGPMP/stats/probdist.hpp>
 #include <random>
 #include <vector>
 

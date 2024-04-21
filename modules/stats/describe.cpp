@@ -30,9 +30,9 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/stats/describe.hpp>
 #include <algorithm>
 #include <cmath>
+#include <openGPMP/stats/describe.hpp>
 #include <vector>
 
 // Arithmetic Mean

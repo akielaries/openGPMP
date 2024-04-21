@@ -35,9 +35,6 @@
  * Some core concepts seen in Number Theory specifically
  * Integer Factorization
  */
-#include <openGPMP/nt/factorization.hpp>
-#include <openGPMP/nt/prime_test.hpp>
-#include <openGPMP/arithmetic.hpp>
 #include <algorithm>
 #include <chrono>
 #include <cstdlib>
@@ -45,6 +42,9 @@
 #include <future>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/arithmetic.hpp>
+#include <openGPMP/nt/factorization.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 #include <random>
 #include <stdio.h>
 #include <string>

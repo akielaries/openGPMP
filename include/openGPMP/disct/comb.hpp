@@ -34,8 +34,8 @@
 #define __COMB_HPP__
 
 #include <cstdint>
-#include <vector>
 #include <string>
+#include <vector>
 
 namespace gpmp {
 

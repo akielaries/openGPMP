@@ -334,14 +334,15 @@ void gpmp::Comb::gen_lyndon_words(std::string prefix,
         return;
     }
 
-    for (char c = (prefix.empty() ? 'a' : prefix.back() + 1); c <= 'z' && static_cast<int>(prefix.size()) < n; ++c) {
+    for (char c = (prefix.empty() ? 'a' : prefix.back() + 1);
+         c <= 'z' && static_cast<int>(prefix.size()) < n;
+         ++c) {
         if (n % (static_cast<int>(prefix.size()) + 1) == 0) {
             gen_lyndon_words(prefix + c, n, prefix.size() + 1, lyndonWords);
         } else {
             gen_lyndon_words(prefix + c, n, max, lyndonWords);
         }
     }
-
 }
 
 // Function to compute all divisors of a positive integer

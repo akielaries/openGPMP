@@ -30,8 +30,8 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/optim/function.hpp>
 #include <iostream>
+#include <openGPMP/optim/function.hpp>
 #include <vector>
 
 std::vector<double> gpmp::optim::Func::generate_random_point(

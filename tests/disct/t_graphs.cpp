@@ -1,9 +1,9 @@
 /**
  * Unit tests for Graph related methods
  */
-#include <openGPMP/disct/graphs.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/disct/graphs.hpp>
 
 namespace {
 

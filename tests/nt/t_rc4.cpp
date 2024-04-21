@@ -2,10 +2,10 @@
  * Testing an implementation of RC4 encryption algorithm based off
  * verified plaintext->hash conversions
  */
-#include <openGPMP/nt/rc4.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <limits.h>
+#include <openGPMP/nt/rc4.hpp>
 #include <sstream>
 #include <string>
 

@@ -30,11 +30,11 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/linalg/mtx.hpp>
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
+#include <openGPMP/linalg/mtx.hpp>
 #include <vector>
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__amd64)

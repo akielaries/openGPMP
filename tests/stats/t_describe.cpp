@@ -2,11 +2,11 @@
  * Unit tests for the Statistics module's description methods
  */
 
-#include <openGPMP/stats/describe.hpp>
 #include <cmath>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/stats/describe.hpp>
 #include <stdexcept>
 #include <vector>
 

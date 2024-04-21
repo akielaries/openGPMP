@@ -30,10 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/nt/random.hpp>
 #include <chrono>
 #include <cstdint>
 #include <iostream>
+#include <openGPMP/nt/random.hpp>
 
 // dfault constructor
 gpmp::core::rndm::LCG::LCG()

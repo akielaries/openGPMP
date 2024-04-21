@@ -30,10 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/linalg/eigen.hpp>
 #include <cmath>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/linalg/eigen.hpp>
 #include <vector>
 
 gpmp::linalg::Eigen::Eigen(const std::vector<std::vector<double>> &mat)

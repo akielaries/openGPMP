@@ -30,10 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/ml/svc.hpp>
 #include <cmath>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/ml/svc.hpp>
 
 gpmp::ml::SVC::SVC(double C_, double l_rate, int max_iters, double tol)
     : C(C_), learning_rate(l_rate), max_iterations(max_iters), tolerance(tol) {

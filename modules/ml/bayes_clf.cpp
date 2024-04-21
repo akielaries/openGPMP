@@ -30,11 +30,11 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/ml/bayes_clf.hpp>
 #include <algorithm>
 #include <cmath>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/ml/bayes_clf.hpp>
 #include <string>
 #include <unordered_map>
 #include <vector>

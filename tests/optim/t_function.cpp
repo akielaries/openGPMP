@@ -1,10 +1,10 @@
 /**
  * Unit tests for the Optimization module's function class
  */
-#include <openGPMP/optim/function.hpp>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/optim/function.hpp>
 #include <stdexcept>
 #include <vector>
 

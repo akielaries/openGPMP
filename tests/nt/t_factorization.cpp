@@ -4,10 +4,10 @@
  * functionalities of the Number Theory module
  *
  */
-#include <openGPMP/nt/factorization.hpp>
-#include <openGPMP/nt/prime_test.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/nt/factorization.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 
 namespace {
 // declare primality class object

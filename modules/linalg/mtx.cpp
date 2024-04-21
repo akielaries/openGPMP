@@ -33,9 +33,9 @@
 
 /** Main Matrix operation interface for matrices as arrays & vectors */
 
-#include <openGPMP/linalg/_dgemm.hpp>
 #include <cmath>
 #include <limits>
+#include <openGPMP/linalg/_dgemm.hpp>
 
 #if defined(__USE_BLAS__)
 

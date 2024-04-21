@@ -30,10 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/ml/kohonen_net.hpp>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <openGPMP/ml/kohonen_net.hpp>
 
 gpmp::ml::KohonenNet::KohonenNet(int in_size, int m_size)
     : input_size(in_size), map_size(m_size) {

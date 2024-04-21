@@ -1,5 +1,3 @@
-#include <openGPMP/linalg/_dgemm.hpp>
-#include <openGPMP/linalg/mtx.hpp>
 #include "t_matrix.hpp"
 #include <chrono>
 #include <cmath>
@@ -7,6 +5,8 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include <limits.h>
+#include <openGPMP/linalg/_dgemm.hpp>
+#include <openGPMP/linalg/mtx.hpp>
 #include <random>
 #include <string>
 #include <vector>

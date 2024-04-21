@@ -3,11 +3,11 @@
  * functionalities of the Number Theory module
  *
  */
-#include <openGPMP/nt/logarithms.hpp>
-#include <openGPMP/nt/prime_test.hpp>
 #include <cstdint>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/nt/logarithms.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 
 namespace {
 // declare primality class object

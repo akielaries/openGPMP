@@ -30,10 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include <openGPMP/linalg/linsys.hpp>
 #include <cmath>
 #include <cstdint>
 #include <iostream>
+#include <openGPMP/linalg/linsys.hpp>
 #include <utility>
 #include <vector>
 

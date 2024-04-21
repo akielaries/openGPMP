@@ -34,12 +34,12 @@
  * Utilities implementations for different helper methods/functions
  * needed for openGPMP
  */
-#include <openGPMP/core/utils.hpp>
 #include <chrono>
 #include <ctime>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <openGPMP/core/utils.hpp>
 #include <sstream>
 #include <string>
 

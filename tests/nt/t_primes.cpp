@@ -3,10 +3,10 @@
  * functionalities of the Number Theory module
  *
  */
-#include <openGPMP/nt/prime_gen.hpp>
-#include <openGPMP/nt/prime_test.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/nt/prime_gen.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 
 namespace {
 // declare primality class object

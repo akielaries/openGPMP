@@ -1,7 +1,7 @@
-#include <openGPMP/core/threads.hpp>
 #include <chrono>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/core/threads.hpp>
 #include <random>
 #include <vector>
 

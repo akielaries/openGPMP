@@ -1,12 +1,12 @@
 /**
  * Unit tests for the Linear Algebra module's Linear Systems class
  */
-#include <openGPMP/linalg/linsys.hpp>
 #include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/linalg/linsys.hpp>
 #include <stdexcept>
 #include <utility>
 #include <vector>

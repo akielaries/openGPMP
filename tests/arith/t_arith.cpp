@@ -35,9 +35,9 @@
 /*
  * Testing Arithmetic Operations
  */
-#include <openGPMP/arithmetic.hpp>
 #include <gtest/gtest.h>
 #include <limits.h>
+#include <openGPMP/arithmetic.hpp>
 
 using ::testing::DoubleLE;
 using ::testing::FloatLE;
