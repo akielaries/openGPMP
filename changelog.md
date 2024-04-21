@@ -48,8 +48,14 @@ methods
 microarch
 
 ### ISSUES
-Some known issues:
-
+Some known issues and things that need attention:
+* Majority of the project is not optimized and contains "naive" implementation
+with no regard for execution speed
+* Use of clang/clang++ for compilation produces some issues not seen with 
+gcc/g++
+* Lots of duplicate code (everywhere for the most part, especially in the 
+unit tests directory)
+* Plenty more...
 
 # v0.10.0
 New contributions from [@eeddgg](https://github.com/eeddgg), [@sidsbrmnn](https://github.com/sidsbrmnn), [@igorsteinmacher](https://github.com/igorsteinmacher)
