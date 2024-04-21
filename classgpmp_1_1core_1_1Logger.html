@@ -184,10 +184,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00047">47</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    : <a class="code" href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">logLevel</a>(level), <a class="code" href="classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be">enableTimestamp</a>(useTimestamp), <a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a>(<a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a>),</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a>(<span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00046">46</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    : <a class="code" href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">logLevel</a>(level), <a class="code" href="classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be">enableTimestamp</a>(useTimestamp), <a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a>(<a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a>),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a>(<span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a5c982c71bd618bdfaa88df012cb6ff21"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">gpmp::core::Logger::logLevel</a></div><div class="ttdeci">LogLevel logLevel</div><div class="ttdoc">The minimum log level to record.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00152">utils.hpp:152</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a6f070ccbc3cebb67f26cb1cf3520e4ec"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">gpmp::core::Logger::logDestination</a></div><div class="ttdeci">LogDestination logDestination</div><div class="ttdoc">The log destination, which can be CONSOLE, FILE_ONLY, or CONSOLE_AND_FILE.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00163">utils.hpp:163</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_ab7758e05632eae80c1a22ead4a3618a4"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">gpmp::core::Logger::logToFile</a></div><div class="ttdeci">bool logToFile</div><div class="ttdoc">Flag indicating whether to log messages to a file.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00168">utils.hpp:168</a></div></div>
@@ -213,12 +213,12 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classgpmp_1_1core_1_1Logger.html">Logger</a> destructor, destroys the <a class="el" href="classgpmp_1_1core_1_1Logger.html">Logger</a> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00052">52</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a>) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.close();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00051">51</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a>) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.close();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a8245046df6c268f4f20ac252b5edab03"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">gpmp::core::Logger::logFileStream</a></div><div class="ttdeci">std::ofstream logFileStream</div><div class="ttdoc">The output stream for logging to a file.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00173">utils.hpp:173</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -248,10 +248,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00062">62</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                 {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be">enableTimestamp</a> = enable;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00061">61</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                 {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be">enableTimestamp</a> = enable;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,15 +299,15 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The formatted log message as a string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00126">126</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                                           {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    std::string logMessage = prefix + <span class="stringliteral">&quot; &quot;</span> + message;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be">enableTimestamp</a>) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        logMessage = <a class="code" href="classgpmp_1_1core_1_1Logger.html#a1453b759692373adbf250ead2a5192fb">getCurrentTimestamp</a>() + <span class="stringliteral">&quot; &quot;</span> + logMessage;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> logMessage;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a1453b759692373adbf250ead2a5192fb"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a1453b759692373adbf250ead2a5192fb">gpmp::core::Logger::getCurrentTimestamp</a></div><div class="ttdeci">std::string getCurrentTimestamp()</div><div class="ttdoc">Gets the current timestamp as a string.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00111">utils.cpp:111</a></div></div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00125">125</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                                                           {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::string logMessage = prefix + <span class="stringliteral">&quot; &quot;</span> + message;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#afa629d3f2a3e9fd072d692f46ec978be">enableTimestamp</a>) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        logMessage = <a class="code" href="classgpmp_1_1core_1_1Logger.html#a1453b759692373adbf250ead2a5192fb">getCurrentTimestamp</a>() + <span class="stringliteral">&quot; &quot;</span> + logMessage;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> logMessage;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a1453b759692373adbf250ead2a5192fb"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a1453b759692373adbf250ead2a5192fb">gpmp::core::Logger::getCurrentTimestamp</a></div><div class="ttdeci">std::string getCurrentTimestamp()</div><div class="ttdoc">Gets the current timestamp as a string.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00110">utils.cpp:110</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,21 +337,21 @@ Private Attributes</h2></td></tr>
 <p>Gets the current timestamp as a string. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the current timestamp. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00111">111</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                              {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">auto</span> ms = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                  now.time_since_epoch()) %</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              1000;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::time_t nowTime = std::chrono::system_clock::to_time_t(now);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::tm tm = *std::localtime(&amp;nowTime);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::ostringstream oss;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    oss &lt;&lt; std::put_time(&amp;tm, <span class="stringliteral">&quot;%H:%M:%S&quot;</span>) &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        &lt;&lt; std::setw(3) &lt;&lt; ms.count();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00110">110</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                              {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">auto</span> ms = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                  now.time_since_epoch()) %</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;              1000;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::time_t nowTime = std::chrono::system_clock::to_time_t(now);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::tm tm = *std::localtime(&amp;nowTime);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    std::ostringstream oss;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    oss &lt;&lt; std::put_time(&amp;tm, <span class="stringliteral">&quot;%H:%M:%S&quot;</span>) &lt;&lt; <span class="charliteral">&#39;.&#39;</span> &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        &lt;&lt; std::setw(3) &lt;&lt; ms.count();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -388,21 +388,21 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string representing the log prefix. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00096">96</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                     {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">switch</span> (level) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f">DEBUG</a>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[DEBUG]&quot;</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806">INFO</a>:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[INFO]&quot;</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a984de77c680eaff141ec910e25568a81">WARNING</a>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[WARN]&quot;</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90">ERROR</a>:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[ERR]&quot;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[UNKN]&quot;</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00095">95</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                     {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">switch</span> (level) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f">DEBUG</a>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[DEBUG]&quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806">INFO</a>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[INFO]&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a984de77c680eaff141ec910e25568a81">WARNING</a>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[WARN]&quot;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90">ERROR</a>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[ERR]&quot;</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;[UNKN]&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="ttc" id="autils_8hpp_html_aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f"><div class="ttname"><a href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f">DEBUG</a></div><div class="ttdeci">@ DEBUG</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00048">utils.hpp:48</a></div></div>
 <div class="ttc" id="autils_8hpp_html_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90"><div class="ttname"><a href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90">ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00048">utils.hpp:48</a></div></div>
 <div class="ttc" id="autils_8hpp_html_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806"><div class="ttname"><a href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806">INFO</a></div><div class="ttdeci">@ INFO</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00048">utils.hpp:48</a></div></div>
@@ -449,26 +449,26 @@ Private Attributes</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="linreg_8cpp-example.html#a3">linreg.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00078">78</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (level &gt;= <a class="code" href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">logLevel</a>) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::string prefix = <a class="code" href="classgpmp_1_1core_1_1Logger.html#ae3b5fa36088153fe5411c11023164aad">getLogPrefix</a>(level);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::string logMessage = <a class="code" href="classgpmp_1_1core_1_1Logger.html#a25810ff7bf3d3d9eae412766bd06a051">formatLogMessage</a>(prefix, message);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> == <a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a> || <a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> == <a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca49cf08ff55a779ae12043a83f9176ee2">CONSOLE_AND_FILE</a>) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (level == <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90">ERROR</a>) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                std::cerr &lt;&lt; logMessage &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                std::cout &lt;&lt; logMessage &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> != <a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a> &amp;&amp; <a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a> &amp;&amp; <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.is_open()) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a> &lt;&lt; logMessage &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a25810ff7bf3d3d9eae412766bd06a051"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a25810ff7bf3d3d9eae412766bd06a051">gpmp::core::Logger::formatLogMessage</a></div><div class="ttdeci">std::string formatLogMessage(const std::string &amp;prefix, const std::string &amp;message)</div><div class="ttdoc">Formats a log message with a specified prefix.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00126">utils.cpp:126</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_ae3b5fa36088153fe5411c11023164aad"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#ae3b5fa36088153fe5411c11023164aad">gpmp::core::Logger::getLogPrefix</a></div><div class="ttdeci">std::string getLogPrefix(LogLevel level)</div><div class="ttdoc">Gets the log prefix based on the log level.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00096">utils.cpp:96</a></div></div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00077">77</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (level &gt;= <a class="code" href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">logLevel</a>) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::string prefix = <a class="code" href="classgpmp_1_1core_1_1Logger.html#ae3b5fa36088153fe5411c11023164aad">getLogPrefix</a>(level);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::string logMessage = <a class="code" href="classgpmp_1_1core_1_1Logger.html#a25810ff7bf3d3d9eae412766bd06a051">formatLogMessage</a>(prefix, message);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> == <a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a> || <a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> == <a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca49cf08ff55a779ae12043a83f9176ee2">CONSOLE_AND_FILE</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">if</span> (level == <a class="code" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90">ERROR</a>) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                std::cerr &lt;&lt; logMessage &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                std::cout &lt;&lt; logMessage &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> != <a class="code" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a> &amp;&amp; <a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a> &amp;&amp; <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.is_open()) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a> &lt;&lt; logMessage &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_a25810ff7bf3d3d9eae412766bd06a051"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#a25810ff7bf3d3d9eae412766bd06a051">gpmp::core::Logger::formatLogMessage</a></div><div class="ttdeci">std::string formatLogMessage(const std::string &amp;prefix, const std::string &amp;message)</div><div class="ttdoc">Formats a log message with a specified prefix.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00125">utils.cpp:125</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1core_1_1Logger_html_ae3b5fa36088153fe5411c11023164aad"><div class="ttname"><a href="classgpmp_1_1core_1_1Logger.html#ae3b5fa36088153fe5411c11023164aad">gpmp::core::Logger::getLogPrefix</a></div><div class="ttdeci">std::string getLogPrefix(LogLevel level)</div><div class="ttdoc">Gets the log prefix based on the log level.</div><div class="ttdef"><b>Definition:</b> <a href="utils_8cpp_source.html#l00095">utils.cpp:95</a></div></div>
 <div class="ttc" id="autils_8hpp_html_a4d96f303a62a42f0088fbafbb30c850ca49cf08ff55a779ae12043a83f9176ee2"><div class="ttname"><a href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca49cf08ff55a779ae12043a83f9176ee2">CONSOLE_AND_FILE</a></div><div class="ttdeci">@ CONSOLE_AND_FILE</div><div class="ttdef"><b>Definition:</b> <a href="utils_8hpp_source.html#l00050">utils.hpp:50</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca1f7a5574b76195a27b04152509632efc">CONSOLE</a>, <a class="el" href="utils_8hpp.html#a4d96f303a62a42f0088fbafbb30c850ca49cf08ff55a779ae12043a83f9176ee2">CONSOLE_AND_FILE</a>, and <a class="el" href="utils_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90">ERROR</a>.</p>
@@ -501,10 +501,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00066">66</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> = destination;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00065">65</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#a6f070ccbc3cebb67f26cb1cf3520e4ec">logDestination</a> = destination;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,14 +532,14 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00070">70</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.open(logFile, std::ios::out | std::ios::app);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.is_open()) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: Could not open log file &quot;</span> &lt;&lt; logFile &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00069">69</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#ab7758e05632eae80c1a22ead4a3618a4">logToFile</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.open(logFile, std::ios::out | std::ios::app);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classgpmp_1_1core_1_1Logger.html#a8245046df6c268f4f20ac252b5edab03">logFileStream</a>.is_open()) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: Could not open log file &quot;</span> &lt;&lt; logFile &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -567,10 +567,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00058">58</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                               {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">logLevel</a> = level;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="utils_8cpp_source.html#l00057">57</a> of file <a class="el" href="utils_8cpp_source.html">utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                               {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classgpmp_1_1core_1_1Logger.html#a5c982c71bd618bdfaa88df012cb6ff21">logLevel</a> = level;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -706,7 +706,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/core/<a class="el" href="utils_8hpp_source.html">utils.hpp</a></li>
+<li>include/openGPMP/core/<a class="el" href="utils_8hpp_source.html">utils.hpp</a></li>
 <li>modules/core/<a class="el" href="utils_8cpp_source.html">utils.cpp</a></li>
 </ul>
 </div><!-- contents -->

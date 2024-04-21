@@ -111,437 +111,437 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../../include/linalg/linsys.hpp&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#aa8de865654ad4116adb02d36178c30d7">   41</a></span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#aa8de865654ad4116adb02d36178c30d7">gpmp::linalg::LinSys::LinSys</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;mat)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    : matrix(mat) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#afeca99537599bfcffbda4fb22cee9e01">num_rows</a> = <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a0402a7bfea30e2904086137381b15678">matrix</a>.size();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#aead57113aca75f2415f5ecf3938aca04">num_cols</a> = <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a0402a7bfea30e2904086137381b15678">matrix</a>[0].size();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// display the augmented matrix</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea">gpmp::linalg::LinSys::display_mtx</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            std::cout &lt;&lt; matrix[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#ae21d1f6b8204127a3f05bfe18b8eda0b">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#ae21d1f6b8204127a3f05bfe18b8eda0b">gpmp::linalg::LinSys::display</a>(</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;mat)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    uint32_t <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = mat.size();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint32_t <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = mat[0].size();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (uint32_t j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::cout &lt;&lt; mat[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// solve the linear system using Gaussian Elimination</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#ad94ba0159004d9f73b5c7ac729ddda8c">   71</a></span>&#160;std::vector&lt;double&gt; <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#ad94ba0159004d9f73b5c7ac729ddda8c">gpmp::linalg::LinSys::solve_gauss</a>() {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// temp matrix because our result is a vector of solutions</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; temp_mtx = matrix;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows - 1; ++i) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// perform partial pivot</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span> pivotRow = i;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = i + 1; k &lt; num_rows; ++k) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (std::abs(temp_mtx[k][i]) &gt; std::abs(temp_mtx[pivotRow][i]))</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                pivotRow = k;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::swap(temp_mtx[i], temp_mtx[pivotRow]);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// eliminate entries below pivot</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = i + 1; k &lt; num_rows; ++k) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">double</span> factor = temp_mtx[k][i] / temp_mtx[i][i];</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                temp_mtx[k][j] -= factor * temp_mtx[i][j];</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// back-substitution</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::vector&lt;double&gt; solutions(num_rows, 0);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = num_rows - 1; i &gt;= 0; --i) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_cols - 1; ++j) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            sum += temp_mtx[i][j] * solutions[j];</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        solutions[i] = (temp_mtx[i][num_cols - 1] - sum) / temp_mtx[i][i];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> solutions;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// calculate the determinant of the matrix</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">  108</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">gpmp::linalg::LinSys::determinant</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// assuming square matrix</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (num_rows != num_cols) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: Determinant is undefined for non-square matrices.&quot;</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                  &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; temp_mtx = matrix;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">double</span> det = 1.0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows - 1; ++i) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = i + 1; k &lt; num_rows; ++k) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordtype">double</span> factor = temp_mtx[k][i] / temp_mtx[i][i];</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                temp_mtx[k][j] -= factor * temp_mtx[i][j];</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        det *= temp_mtx[i][i];</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> det;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// invert the matrix</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a446e00d9d84829a3218385a173d49f33">  136</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a446e00d9d84829a3218385a173d49f33">gpmp::linalg::LinSys::invert_mtx</a>() {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// assuming square matrix</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span> (num_rows != num_cols) {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        std::cerr</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            &lt;&lt; <span class="stringliteral">&quot;Error: Matrix inversion is undefined for non-square matrices.&quot;</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; identity(</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        num_rows,</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        std::vector&lt;double&gt;(num_cols, 0.0));</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// augment the matrix with the identity matrix</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        matrix[i].insert(matrix[i].end(),</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                         identity[i].begin(),</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                         identity[i].end());</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// perform Gaussian elimination</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    solve_gauss();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// separate the inverse matrix</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        matrix[i].erase(matrix[i].begin(), matrix[i].begin() + num_rows);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;std::pair&lt;std::vector&lt;std::vector&lt;double&gt;&gt;, std::vector&lt;std::vector&lt;double&gt;&gt;&gt;</div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#abb7393138c4cf8804a459f8bc8bc041c">  166</a></span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#abb7393138c4cf8804a459f8bc8bc041c">gpmp::linalg::LinSys::lu_decomp</a>() {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; L(num_rows,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                       std::vector&lt;double&gt;(num_cols, 0.0));</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; U(num_rows,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                       std::vector&lt;double&gt;(num_cols, 0.0));</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment">// Set diagonal elements of L to 1</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        L[i][i] = 1.0;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            U[i][j] = matrix[i][j];</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; i; ++k) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                U[i][j] -= L[i][k] * U[k][j];</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_rows; ++j) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            L[j][i] = matrix[j][i];</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; i; ++k) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                L[j][i] -= L[j][k] * U[k][i];</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            L[j][i] /= U[i][i];</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> {L, U};</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">// solve the linear system using LU decomposition</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a9a3aa52566bfdb8ef19dea6df929c998">  196</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a9a3aa52566bfdb8ef19dea6df929c998">gpmp::linalg::LinSys::solve_lu</a>() {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    lu_decomp();</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// forward substitution</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows - 1; ++i) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_rows; ++j) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            matrix[j][num_cols - 1] -= matrix[j][i] * matrix[i][num_cols - 1];</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">// back-substitution</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = num_rows - 1; i &gt;= 0; --i) {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_cols - 1; ++j) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            matrix[i][num_cols - 1] -= matrix[i][j] * matrix[j][num_cols - 1];</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        matrix[i][num_cols - 1] /= matrix[i][i];</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a590a1f3d18aa7cfb181dc0ea1463e1ea">  215</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a590a1f3d18aa7cfb181dc0ea1463e1ea">gpmp::linalg::LinSys::solve_cholesky</a>() {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// assuming symmetric and positive-definite matrix</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (!is_symmetric()) {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: Cholesky decomposition is only applicable to&quot;</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                     <span class="stringliteral">&quot;symmetric positive-definite matrices\n&quot;</span>;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt;= i; ++j) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (i == j) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; j; ++k) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    sum += std::pow(matrix[j][k], 2);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                matrix[j][j] = std::sqrt(matrix[j][j] - sum);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; j; ++k) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    sum += matrix[i][k] * matrix[j][k];</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                matrix[i][j] = (matrix[i][j] - sum) / matrix[j][j];</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// forward substitution</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; i; ++j) {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            sum += matrix[i][j] * matrix[num_cols - 1][j];</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        matrix[num_cols - 1][i] =</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            (matrix[num_cols - 1][i] - sum) / matrix[i][i];</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// back-substitution</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = num_rows - 1; i &gt;= 0; --i) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_cols - 1; ++j) {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            sum += matrix[j][i] * matrix[i][num_cols - 1];</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        matrix[i][num_cols - 1] =</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            (matrix[i][num_cols - 1] - sum) / matrix[i][i];</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">// solve the linear system using Jacobi iteration</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a610e7f57611e76125cbe41dcbb898cc5">  264</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a610e7f57611e76125cbe41dcbb898cc5">gpmp::linalg::LinSys::solve_jacobi</a>(<span class="keywordtype">int</span> maxIterations, <span class="keywordtype">double</span> tolerance) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; x(num_rows, std::vector&lt;double&gt;(1, 0.0));</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; xOld = x;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; maxIterations; ++iter) {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols - 1; ++j) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">if</span> (j != i) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    sum += matrix[i][j] * xOld[j][0];</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            x[i][0] = (matrix[i][num_cols - 1] - sum) / matrix[i][i];</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// check convergence</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordtype">double</span> maxDiff = 0.0;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordtype">double</span> diff = std::abs(x[i][0] - xOld[i][0]);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordflow">if</span> (diff &gt; maxDiff) {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                maxDiff = diff;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="comment">// converged</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">if</span> (maxDiff &lt; tolerance) {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        xOld = x;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// copy the solution back to the augmented matrix</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        matrix[i][num_cols - 1] = x[i][0];</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="comment">// check if the matrix is symmetric and positive-definite</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#ae1424084fe69a92200d1953b8ddfc0a9">  303</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#ae1424084fe69a92200d1953b8ddfc0a9">gpmp::linalg::LinSys::is_symmetric</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// assuming square matrix</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordflow">if</span> (num_rows != num_cols) {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// check symmetry</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="comment">// if (matrix[i][j] != matrix[j][i]) {</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="keywordflow">if</span> (fabs(matrix[i][j] - matrix[j][i]) &gt;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                std::numeric_limits&lt;double&gt;::epsilon()) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// check positive definiteness</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        std::vector&lt;std::vector&lt;double&gt;&gt; submatrix(i + 1,</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                   std::vector&lt;double&gt;(i + 1));</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt;= i; ++j) {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= i; ++k) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                submatrix[j][k] = matrix[j][k];</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordtype">double</span> det = <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html">LinSys</a>(submatrix).<a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">determinant</a>();</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">if</span> (det &lt;= 0.0) {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        }</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a318cc5149c4d827c6c949c7d721cd097">  339</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a318cc5149c4d827c6c949c7d721cd097">gpmp::linalg::LinSys::frobenius_norm</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            sum += std::pow(matrix[i][j], 2);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        }</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">return</span> std::sqrt(sum);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="comment">// calculate the 1-norm of the matrix</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#afe95968a480263e2206943de61e2e22c">  350</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#afe95968a480263e2206943de61e2e22c">gpmp::linalg::LinSys::one_norm</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordtype">double</span> maxColSum = 0.0;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordtype">double</span> colSum = 0.0;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            colSum += std::abs(matrix[i][j]);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        maxColSum = std::max(maxColSum, colSum);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> maxColSum;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;<span class="comment">// calculate the infinity norm of the matrix</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a20604a6494faf8762281f1b5253f9508">  363</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a20604a6494faf8762281f1b5253f9508">gpmp::linalg::LinSys::inf_norm</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">double</span> maxRowSum = 0.0;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordtype">double</span> rowSum = 0.0;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            rowSum += std::abs(matrix[i][j]);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        maxRowSum = std::max(maxRowSum, rowSum);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">return</span> maxRowSum;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment">// perform Gram-Schmidt orthogonalization</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a4b11bb58c2b77c19a692fe9fceab3e92">  376</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a4b11bb58c2b77c19a692fe9fceab3e92">gpmp::linalg::LinSys::gram_schmidt</a>() {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; orthoBasis(</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        num_rows,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        std::vector&lt;double&gt;(num_cols, 0.0));</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="keywordtype">double</span> projection = 0.0;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; i; ++k) {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                projection += (matrix[i][j] * orthoBasis[k][j]) /</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                              (orthoBasis[k][j] * orthoBasis[k][j]);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            }</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            orthoBasis[i][j] = matrix[i][j] - projection;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="comment">// Replace the matrix with the orthogonalized basis</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    matrix = orthoBasis;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;}</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="comment">// check if the matrix is diagonally dominant</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a324ee8f9b6bff3b32fbd9838e3e7126f">  397</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a324ee8f9b6bff3b32fbd9838e3e7126f">gpmp::linalg::LinSys::diagonally_dominant</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordtype">double</span> diagonalValue = std::abs(matrix[i][i]);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordtype">double</span> rowSum = 0.0;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">if</span> (j != i) {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                rowSum += std::abs(matrix[i][j]);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            }</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">if</span> (diagonalValue &lt;= rowSum) {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="comment">// check if the system is consistent</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a0bddcc7dfcfd2c540a5971816c5a820c">  414</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a0bddcc7dfcfd2c540a5971816c5a820c">gpmp::linalg::LinSys::is_consistent</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordtype">bool</span> allZeros = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols - 1; ++j) {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <span class="keywordflow">if</span> (fabs(matrix[i][j]) &gt; std::numeric_limits&lt;double&gt;::epsilon()) {</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                allZeros = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            }</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        }</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">if</span> (allZeros &amp;&amp; fabs(matrix[i][num_cols - 1]) &gt;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                            std::numeric_limits&lt;double&gt;::epsilon()) {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        }</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="comment">// check if the system is homogeneous</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#adfdbb37cba185bb011d9865b4697e380">  433</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#adfdbb37cba185bb011d9865b4697e380">gpmp::linalg::LinSys::is_homogeneous</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="keywordflow">if</span> (fabs(matrix[i][num_cols - 1]) &gt;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            std::numeric_limits&lt;double&gt;::epsilon()) {</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        }</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    }</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="linsys_8hpp.html">openGPMP/linalg/linsys.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#aa8de865654ad4116adb02d36178c30d7">   40</a></span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#aa8de865654ad4116adb02d36178c30d7">gpmp::linalg::LinSys::LinSys</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;mat)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    : matrix(mat) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#afeca99537599bfcffbda4fb22cee9e01">num_rows</a> = <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a0402a7bfea30e2904086137381b15678">matrix</a>.size();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#aead57113aca75f2415f5ecf3938aca04">num_cols</a> = <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a0402a7bfea30e2904086137381b15678">matrix</a>[0].size();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// display the augmented matrix</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea">gpmp::linalg::LinSys::display_mtx</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            std::cout &lt;&lt; matrix[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#ae21d1f6b8204127a3f05bfe18b8eda0b">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#ae21d1f6b8204127a3f05bfe18b8eda0b">gpmp::linalg::LinSys::display</a>(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;mat)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint32_t <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a> = mat.size();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    uint32_t <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a> = mat[0].size();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; <a class="code" href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">rows</a>; ++i) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span> (uint32_t j = 0; j &lt; <a class="code" href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">cols</a>; ++j) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            std::cout &lt;&lt; mat[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// solve the linear system using Gaussian Elimination</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#ad94ba0159004d9f73b5c7ac729ddda8c">   70</a></span>&#160;std::vector&lt;double&gt; <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#ad94ba0159004d9f73b5c7ac729ddda8c">gpmp::linalg::LinSys::solve_gauss</a>() {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// temp matrix because our result is a vector of solutions</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; temp_mtx = matrix;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows - 1; ++i) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// perform partial pivot</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> pivotRow = i;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = i + 1; k &lt; num_rows; ++k) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span> (std::abs(temp_mtx[k][i]) &gt; std::abs(temp_mtx[pivotRow][i]))</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                pivotRow = k;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::swap(temp_mtx[i], temp_mtx[pivotRow]);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// eliminate entries below pivot</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = i + 1; k &lt; num_rows; ++k) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">double</span> factor = temp_mtx[k][i] / temp_mtx[i][i];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                temp_mtx[k][j] -= factor * temp_mtx[i][j];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// back-substitution</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::vector&lt;double&gt; solutions(num_rows, 0);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = num_rows - 1; i &gt;= 0; --i) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_cols - 1; ++j) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            sum += temp_mtx[i][j] * solutions[j];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        solutions[i] = (temp_mtx[i][num_cols - 1] - sum) / temp_mtx[i][i];</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> solutions;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// calculate the determinant of the matrix</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">  107</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">gpmp::linalg::LinSys::determinant</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// assuming square matrix</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (num_rows != num_cols) {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: Determinant is undefined for non-square matrices.&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                  &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; temp_mtx = matrix;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">double</span> det = 1.0;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows - 1; ++i) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = i + 1; k &lt; num_rows; ++k) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordtype">double</span> factor = temp_mtx[k][i] / temp_mtx[i][i];</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                temp_mtx[k][j] -= factor * temp_mtx[i][j];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        det *= temp_mtx[i][i];</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> det;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// invert the matrix</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a446e00d9d84829a3218385a173d49f33">  135</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a446e00d9d84829a3218385a173d49f33">gpmp::linalg::LinSys::invert_mtx</a>() {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// assuming square matrix</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (num_rows != num_cols) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        std::cerr</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            &lt;&lt; <span class="stringliteral">&quot;Error: Matrix inversion is undefined for non-square matrices.&quot;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; identity(</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        num_rows,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        std::vector&lt;double&gt;(num_cols, 0.0));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// augment the matrix with the identity matrix</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        matrix[i].insert(matrix[i].end(),</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                         identity[i].begin(),</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                         identity[i].end());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// perform Gaussian elimination</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    solve_gauss();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// separate the inverse matrix</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        matrix[i].erase(matrix[i].begin(), matrix[i].begin() + num_rows);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;std::pair&lt;std::vector&lt;std::vector&lt;double&gt;&gt;, std::vector&lt;std::vector&lt;double&gt;&gt;&gt;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#abb7393138c4cf8804a459f8bc8bc041c">  165</a></span>&#160;<a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#abb7393138c4cf8804a459f8bc8bc041c">gpmp::linalg::LinSys::lu_decomp</a>() {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; L(num_rows,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                       std::vector&lt;double&gt;(num_cols, 0.0));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; U(num_rows,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                       std::vector&lt;double&gt;(num_cols, 0.0));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">// Set diagonal elements of L to 1</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        L[i][i] = 1.0;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            U[i][j] = matrix[i][j];</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; i; ++k) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                U[i][j] -= L[i][k] * U[k][j];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_rows; ++j) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            L[j][i] = matrix[j][i];</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; i; ++k) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                L[j][i] -= L[j][k] * U[k][i];</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            L[j][i] /= U[i][i];</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> {L, U};</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">// solve the linear system using LU decomposition</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a9a3aa52566bfdb8ef19dea6df929c998">  195</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a9a3aa52566bfdb8ef19dea6df929c998">gpmp::linalg::LinSys::solve_lu</a>() {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    lu_decomp();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// forward substitution</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows - 1; ++i) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_rows; ++j) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            matrix[j][num_cols - 1] -= matrix[j][i] * matrix[i][num_cols - 1];</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// back-substitution</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = num_rows - 1; i &gt;= 0; --i) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_cols - 1; ++j) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            matrix[i][num_cols - 1] -= matrix[i][j] * matrix[j][num_cols - 1];</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        matrix[i][num_cols - 1] /= matrix[i][i];</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a590a1f3d18aa7cfb181dc0ea1463e1ea">  214</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a590a1f3d18aa7cfb181dc0ea1463e1ea">gpmp::linalg::LinSys::solve_cholesky</a>() {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// assuming symmetric and positive-definite matrix</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">if</span> (!is_symmetric()) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: Cholesky decomposition is only applicable to&quot;</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                     <span class="stringliteral">&quot;symmetric positive-definite matrices\n&quot;</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt;= i; ++j) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">if</span> (i == j) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; j; ++k) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    sum += std::pow(matrix[j][k], 2);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                matrix[j][j] = std::sqrt(matrix[j][j] - sum);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; j; ++k) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    sum += matrix[i][k] * matrix[j][k];</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                matrix[i][j] = (matrix[i][j] - sum) / matrix[j][j];</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// forward substitution</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; i; ++j) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            sum += matrix[i][j] * matrix[num_cols - 1][j];</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        matrix[num_cols - 1][i] =</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            (matrix[num_cols - 1][i] - sum) / matrix[i][i];</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// back-substitution</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = num_rows - 1; i &gt;= 0; --i) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; num_cols - 1; ++j) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            sum += matrix[j][i] * matrix[i][num_cols - 1];</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        matrix[i][num_cols - 1] =</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            (matrix[i][num_cols - 1] - sum) / matrix[i][i];</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">// solve the linear system using Jacobi iteration</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a610e7f57611e76125cbe41dcbb898cc5">  263</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a610e7f57611e76125cbe41dcbb898cc5">gpmp::linalg::LinSys::solve_jacobi</a>(<span class="keywordtype">int</span> maxIterations, <span class="keywordtype">double</span> tolerance) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; x(num_rows, std::vector&lt;double&gt;(1, 0.0));</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; xOld = x;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; maxIterations; ++iter) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols - 1; ++j) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">if</span> (j != i) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    sum += matrix[i][j] * xOld[j][0];</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            x[i][0] = (matrix[i][num_cols - 1] - sum) / matrix[i][i];</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="comment">// check convergence</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordtype">double</span> maxDiff = 0.0;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordtype">double</span> diff = std::abs(x[i][0] - xOld[i][0]);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordflow">if</span> (diff &gt; maxDiff) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                maxDiff = diff;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="comment">// converged</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">if</span> (maxDiff &lt; tolerance) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        xOld = x;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// copy the solution back to the augmented matrix</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        matrix[i][num_cols - 1] = x[i][0];</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment">// check if the matrix is symmetric and positive-definite</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#ae1424084fe69a92200d1953b8ddfc0a9">  302</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#ae1424084fe69a92200d1953b8ddfc0a9">gpmp::linalg::LinSys::is_symmetric</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// assuming square matrix</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span> (num_rows != num_cols) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="comment">// check symmetry</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="comment">// if (matrix[i][j] != matrix[j][i]) {</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">if</span> (fabs(matrix[i][j] - matrix[j][i]) &gt;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                std::numeric_limits&lt;double&gt;::epsilon()) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">// check positive definiteness</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        std::vector&lt;std::vector&lt;double&gt;&gt; submatrix(i + 1,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                                                   std::vector&lt;double&gt;(i + 1));</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt;= i; ++j) {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= i; ++k) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                submatrix[j][k] = matrix[j][k];</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordtype">double</span> det = <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html">LinSys</a>(submatrix).<a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">determinant</a>();</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">if</span> (det &lt;= 0.0) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a318cc5149c4d827c6c949c7d721cd097">  338</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a318cc5149c4d827c6c949c7d721cd097">gpmp::linalg::LinSys::frobenius_norm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">double</span> sum = 0.0;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            sum += std::pow(matrix[i][j], 2);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">return</span> std::sqrt(sum);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="comment">// calculate the 1-norm of the matrix</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#afe95968a480263e2206943de61e2e22c">  349</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#afe95968a480263e2206943de61e2e22c">gpmp::linalg::LinSys::one_norm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordtype">double</span> maxColSum = 0.0;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordtype">double</span> colSum = 0.0;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            colSum += std::abs(matrix[i][j]);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        }</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        maxColSum = std::max(maxColSum, colSum);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span> maxColSum;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;<span class="comment">// calculate the infinity norm of the matrix</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a20604a6494faf8762281f1b5253f9508">  362</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a20604a6494faf8762281f1b5253f9508">gpmp::linalg::LinSys::inf_norm</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">double</span> maxRowSum = 0.0;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordtype">double</span> rowSum = 0.0;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            rowSum += std::abs(matrix[i][j]);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        maxRowSum = std::max(maxRowSum, rowSum);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">return</span> maxRowSum;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment">// perform Gram-Schmidt orthogonalization</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a4b11bb58c2b77c19a692fe9fceab3e92">  375</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a4b11bb58c2b77c19a692fe9fceab3e92">gpmp::linalg::LinSys::gram_schmidt</a>() {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    std::vector&lt;std::vector&lt;double&gt;&gt; orthoBasis(</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        num_rows,</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        std::vector&lt;double&gt;(num_cols, 0.0));</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keywordtype">double</span> projection = 0.0;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; i; ++k) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                projection += (matrix[i][j] * orthoBasis[k][j]) /</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                              (orthoBasis[k][j] * orthoBasis[k][j]);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            orthoBasis[i][j] = matrix[i][j] - projection;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="comment">// Replace the matrix with the orthogonalized basis</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    matrix = orthoBasis;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="comment">// check if the matrix is diagonally dominant</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a324ee8f9b6bff3b32fbd9838e3e7126f">  396</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a324ee8f9b6bff3b32fbd9838e3e7126f">gpmp::linalg::LinSys::diagonally_dominant</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordtype">double</span> diagonalValue = std::abs(matrix[i][i]);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordtype">double</span> rowSum = 0.0;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols; ++j) {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            <span class="keywordflow">if</span> (j != i) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                rowSum += std::abs(matrix[i][j]);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (diagonalValue &lt;= rowSum) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="comment">// check if the system is consistent</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#a0bddcc7dfcfd2c540a5971816c5a820c">  413</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#a0bddcc7dfcfd2c540a5971816c5a820c">gpmp::linalg::LinSys::is_consistent</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordtype">bool</span> allZeros = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; num_cols - 1; ++j) {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            <span class="keywordflow">if</span> (fabs(matrix[i][j]) &gt; std::numeric_limits&lt;double&gt;::epsilon()) {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                allZeros = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            }</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">if</span> (allZeros &amp;&amp; fabs(matrix[i][num_cols - 1]) &gt;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                            std::numeric_limits&lt;double&gt;::epsilon()) {</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        }</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    }</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">// check if the system is homogeneous</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="line" href="classgpmp_1_1linalg_1_1LinSys.html#adfdbb37cba185bb011d9865b4697e380">  432</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classgpmp_1_1linalg_1_1LinSys.html#adfdbb37cba185bb011d9865b4697e380">gpmp::linalg::LinSys::is_homogeneous</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_rows; ++i) {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">if</span> (fabs(matrix[i][num_cols - 1]) &gt;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            std::numeric_limits&lt;double&gt;::epsilon()) {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        }</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html">gpmp::linalg::LinSys</a></div><div class="ttdoc">Class for solving linear systems and performing matrix operations.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8hpp_source.html#l00048">linsys.hpp:48</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a0402a7bfea30e2904086137381b15678"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a0402a7bfea30e2904086137381b15678">gpmp::linalg::LinSys::matrix</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; matrix</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8hpp_source.html#l00050">linsys.hpp:50</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a06613890c94d5ddc5f27739996c933ea"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea">gpmp::linalg::LinSys::display_mtx</a></div><div class="ttdeci">void display_mtx() const</div><div class="ttdoc">Display the augmented matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00048">linsys.cpp:48</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a0bddcc7dfcfd2c540a5971816c5a820c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a0bddcc7dfcfd2c540a5971816c5a820c">gpmp::linalg::LinSys::is_consistent</a></div><div class="ttdeci">bool is_consistent() const</div><div class="ttdoc">Check if the linear system is consistent.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00414">linsys.cpp:414</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a20604a6494faf8762281f1b5253f9508"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a20604a6494faf8762281f1b5253f9508">gpmp::linalg::LinSys::inf_norm</a></div><div class="ttdeci">double inf_norm() const</div><div class="ttdoc">Calculate the infinity norm of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00363">linsys.cpp:363</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a318cc5149c4d827c6c949c7d721cd097"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a318cc5149c4d827c6c949c7d721cd097">gpmp::linalg::LinSys::frobenius_norm</a></div><div class="ttdeci">double frobenius_norm() const</div><div class="ttdoc">Calculate the Frobenius norm of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00339">linsys.cpp:339</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a324ee8f9b6bff3b32fbd9838e3e7126f"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a324ee8f9b6bff3b32fbd9838e3e7126f">gpmp::linalg::LinSys::diagonally_dominant</a></div><div class="ttdeci">bool diagonally_dominant() const</div><div class="ttdoc">Check if the matrix is diagonally dominant.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00397">linsys.cpp:397</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a446e00d9d84829a3218385a173d49f33"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a446e00d9d84829a3218385a173d49f33">gpmp::linalg::LinSys::invert_mtx</a></div><div class="ttdeci">void invert_mtx()</div><div class="ttdoc">Invert the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00136">linsys.cpp:136</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a4b11bb58c2b77c19a692fe9fceab3e92"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a4b11bb58c2b77c19a692fe9fceab3e92">gpmp::linalg::LinSys::gram_schmidt</a></div><div class="ttdeci">void gram_schmidt()</div><div class="ttdoc">Perform Gram-Schmidt orthogonalization on the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00376">linsys.cpp:376</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a590a1f3d18aa7cfb181dc0ea1463e1ea"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a590a1f3d18aa7cfb181dc0ea1463e1ea">gpmp::linalg::LinSys::solve_cholesky</a></div><div class="ttdeci">void solve_cholesky()</div><div class="ttdoc">Solve the linear system using Cholesky decomposition.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00215">linsys.cpp:215</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a610e7f57611e76125cbe41dcbb898cc5"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a610e7f57611e76125cbe41dcbb898cc5">gpmp::linalg::LinSys::solve_jacobi</a></div><div class="ttdeci">void solve_jacobi(int maxIterations=100, double tolerance=1e-10)</div><div class="ttdoc">Solve the linear system using Jacobi iteration.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00264">linsys.cpp:264</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a732033a7ca2dda2bb1dfe18337d8fa2a"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">gpmp::linalg::LinSys::determinant</a></div><div class="ttdeci">double determinant() const</div><div class="ttdoc">Calculate the determinant of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00108">linsys.cpp:108</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a9a3aa52566bfdb8ef19dea6df929c998"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a9a3aa52566bfdb8ef19dea6df929c998">gpmp::linalg::LinSys::solve_lu</a></div><div class="ttdeci">void solve_lu()</div><div class="ttdoc">Solve the linear system using LU decomposition.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00196">linsys.cpp:196</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_aa8de865654ad4116adb02d36178c30d7"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#aa8de865654ad4116adb02d36178c30d7">gpmp::linalg::LinSys::LinSys</a></div><div class="ttdeci">LinSys(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;mat)</div><div class="ttdoc">Constructor for LinSys class.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00041">linsys.cpp:41</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_abb7393138c4cf8804a459f8bc8bc041c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#abb7393138c4cf8804a459f8bc8bc041c">gpmp::linalg::LinSys::lu_decomp</a></div><div class="ttdeci">std::pair&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; std::vector&lt; double &gt; &gt; &gt; lu_decomp()</div><div class="ttdoc">Perform LU decomposition of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00166">linsys.cpp:166</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_ad94ba0159004d9f73b5c7ac729ddda8c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#ad94ba0159004d9f73b5c7ac729ddda8c">gpmp::linalg::LinSys::solve_gauss</a></div><div class="ttdeci">std::vector&lt; double &gt; solve_gauss()</div><div class="ttdoc">Solve the linear system using Gaussian Elimination.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00071">linsys.cpp:71</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_adfdbb37cba185bb011d9865b4697e380"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#adfdbb37cba185bb011d9865b4697e380">gpmp::linalg::LinSys::is_homogeneous</a></div><div class="ttdeci">bool is_homogeneous() const</div><div class="ttdoc">Check if the linear system is homogeneous.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00433">linsys.cpp:433</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_ae1424084fe69a92200d1953b8ddfc0a9"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#ae1424084fe69a92200d1953b8ddfc0a9">gpmp::linalg::LinSys::is_symmetric</a></div><div class="ttdeci">bool is_symmetric() const</div><div class="ttdoc">Check if the matrix is symmetric.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00303">linsys.cpp:303</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_ae21d1f6b8204127a3f05bfe18b8eda0b"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#ae21d1f6b8204127a3f05bfe18b8eda0b">gpmp::linalg::LinSys::display</a></div><div class="ttdeci">void display(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;mat) const</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00057">linsys.cpp:57</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a06613890c94d5ddc5f27739996c933ea"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a06613890c94d5ddc5f27739996c933ea">gpmp::linalg::LinSys::display_mtx</a></div><div class="ttdeci">void display_mtx() const</div><div class="ttdoc">Display the augmented matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00047">linsys.cpp:47</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a0bddcc7dfcfd2c540a5971816c5a820c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a0bddcc7dfcfd2c540a5971816c5a820c">gpmp::linalg::LinSys::is_consistent</a></div><div class="ttdeci">bool is_consistent() const</div><div class="ttdoc">Check if the linear system is consistent.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00413">linsys.cpp:413</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a20604a6494faf8762281f1b5253f9508"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a20604a6494faf8762281f1b5253f9508">gpmp::linalg::LinSys::inf_norm</a></div><div class="ttdeci">double inf_norm() const</div><div class="ttdoc">Calculate the infinity norm of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00362">linsys.cpp:362</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a318cc5149c4d827c6c949c7d721cd097"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a318cc5149c4d827c6c949c7d721cd097">gpmp::linalg::LinSys::frobenius_norm</a></div><div class="ttdeci">double frobenius_norm() const</div><div class="ttdoc">Calculate the Frobenius norm of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00338">linsys.cpp:338</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a324ee8f9b6bff3b32fbd9838e3e7126f"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a324ee8f9b6bff3b32fbd9838e3e7126f">gpmp::linalg::LinSys::diagonally_dominant</a></div><div class="ttdeci">bool diagonally_dominant() const</div><div class="ttdoc">Check if the matrix is diagonally dominant.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00396">linsys.cpp:396</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a446e00d9d84829a3218385a173d49f33"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a446e00d9d84829a3218385a173d49f33">gpmp::linalg::LinSys::invert_mtx</a></div><div class="ttdeci">void invert_mtx()</div><div class="ttdoc">Invert the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00135">linsys.cpp:135</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a4b11bb58c2b77c19a692fe9fceab3e92"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a4b11bb58c2b77c19a692fe9fceab3e92">gpmp::linalg::LinSys::gram_schmidt</a></div><div class="ttdeci">void gram_schmidt()</div><div class="ttdoc">Perform Gram-Schmidt orthogonalization on the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00375">linsys.cpp:375</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a590a1f3d18aa7cfb181dc0ea1463e1ea"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a590a1f3d18aa7cfb181dc0ea1463e1ea">gpmp::linalg::LinSys::solve_cholesky</a></div><div class="ttdeci">void solve_cholesky()</div><div class="ttdoc">Solve the linear system using Cholesky decomposition.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00214">linsys.cpp:214</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a610e7f57611e76125cbe41dcbb898cc5"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a610e7f57611e76125cbe41dcbb898cc5">gpmp::linalg::LinSys::solve_jacobi</a></div><div class="ttdeci">void solve_jacobi(int maxIterations=100, double tolerance=1e-10)</div><div class="ttdoc">Solve the linear system using Jacobi iteration.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00263">linsys.cpp:263</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a732033a7ca2dda2bb1dfe18337d8fa2a"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a732033a7ca2dda2bb1dfe18337d8fa2a">gpmp::linalg::LinSys::determinant</a></div><div class="ttdeci">double determinant() const</div><div class="ttdoc">Calculate the determinant of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00107">linsys.cpp:107</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_a9a3aa52566bfdb8ef19dea6df929c998"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#a9a3aa52566bfdb8ef19dea6df929c998">gpmp::linalg::LinSys::solve_lu</a></div><div class="ttdeci">void solve_lu()</div><div class="ttdoc">Solve the linear system using LU decomposition.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00195">linsys.cpp:195</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_aa8de865654ad4116adb02d36178c30d7"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#aa8de865654ad4116adb02d36178c30d7">gpmp::linalg::LinSys::LinSys</a></div><div class="ttdeci">LinSys(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;mat)</div><div class="ttdoc">Constructor for LinSys class.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00040">linsys.cpp:40</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_abb7393138c4cf8804a459f8bc8bc041c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#abb7393138c4cf8804a459f8bc8bc041c">gpmp::linalg::LinSys::lu_decomp</a></div><div class="ttdeci">std::pair&lt; std::vector&lt; std::vector&lt; double &gt; &gt;, std::vector&lt; std::vector&lt; double &gt; &gt; &gt; lu_decomp()</div><div class="ttdoc">Perform LU decomposition of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00165">linsys.cpp:165</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_ad94ba0159004d9f73b5c7ac729ddda8c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#ad94ba0159004d9f73b5c7ac729ddda8c">gpmp::linalg::LinSys::solve_gauss</a></div><div class="ttdeci">std::vector&lt; double &gt; solve_gauss()</div><div class="ttdoc">Solve the linear system using Gaussian Elimination.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00070">linsys.cpp:70</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_adfdbb37cba185bb011d9865b4697e380"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#adfdbb37cba185bb011d9865b4697e380">gpmp::linalg::LinSys::is_homogeneous</a></div><div class="ttdeci">bool is_homogeneous() const</div><div class="ttdoc">Check if the linear system is homogeneous.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00432">linsys.cpp:432</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_ae1424084fe69a92200d1953b8ddfc0a9"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#ae1424084fe69a92200d1953b8ddfc0a9">gpmp::linalg::LinSys::is_symmetric</a></div><div class="ttdeci">bool is_symmetric() const</div><div class="ttdoc">Check if the matrix is symmetric.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00302">linsys.cpp:302</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_ae21d1f6b8204127a3f05bfe18b8eda0b"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#ae21d1f6b8204127a3f05bfe18b8eda0b">gpmp::linalg::LinSys::display</a></div><div class="ttdeci">void display(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;mat) const</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00056">linsys.cpp:56</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_aead57113aca75f2415f5ecf3938aca04"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#aead57113aca75f2415f5ecf3938aca04">gpmp::linalg::LinSys::num_cols</a></div><div class="ttdeci">int num_cols</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8hpp_source.html#l00052">linsys.hpp:52</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_afe95968a480263e2206943de61e2e22c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#afe95968a480263e2206943de61e2e22c">gpmp::linalg::LinSys::one_norm</a></div><div class="ttdeci">double one_norm() const</div><div class="ttdoc">Calculate the 1-norm of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00350">linsys.cpp:350</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_afe95968a480263e2206943de61e2e22c"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#afe95968a480263e2206943de61e2e22c">gpmp::linalg::LinSys::one_norm</a></div><div class="ttdeci">double one_norm() const</div><div class="ttdoc">Calculate the 1-norm of the matrix.</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8cpp_source.html#l00349">linsys.cpp:349</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1linalg_1_1LinSys_html_afeca99537599bfcffbda4fb22cee9e01"><div class="ttname"><a href="classgpmp_1_1linalg_1_1LinSys.html#afeca99537599bfcffbda4fb22cee9e01">gpmp::linalg::LinSys::num_rows</a></div><div class="ttdeci">int num_rows</div><div class="ttdef"><b>Definition:</b> <a href="linsys_8hpp_source.html#l00051">linsys.hpp:51</a></div></div>
+<div class="ttc" id="alinsys_8hpp_html"><div class="ttname"><a href="linsys_8hpp.html">linsys.hpp</a></div></div>
 <div class="ttc" id="anamespacetest__linalg_html_a176978f6f6cc9d111a747fd2202015ed"><div class="ttname"><a href="namespacetest__linalg.html#a176978f6f6cc9d111a747fd2202015ed">test_linalg.rows</a></div><div class="ttdeci">int rows</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00013">test_linalg.py:13</a></div></div>
 <div class="ttc" id="anamespacetest__linalg_html_a83ed9c138dc5b83ec747058ad3cd157e"><div class="ttname"><a href="namespacetest__linalg.html#a83ed9c138dc5b83ec747058ad3cd157e">test_linalg.cols</a></div><div class="ttdeci">int cols</div><div class="ttdef"><b>Definition:</b> <a href="test__linalg_8py_source.html#l00014">test_linalg.py:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -218,11 +218,11 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00336">336</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    : <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder</a>(in_size, h_size, out_size, l_rate),</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      <a class="code" href="classgpmp_1_1ml_1_1ContractiveAutoEncoder.html#a3eaef37e42c672a6824f1e14257b2dda">contractive_weight</a>(c_weight) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a81b271a27bee23a42d3fb737d0b54eab"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">gpmp::ml::AutoEncoder::AutoEncoder</a></div><div class="ttdeci">AutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate)</div><div class="ttdoc">Constructor for the AutoEncoder class.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00093">encoder.cpp:93</a></div></div>
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00335">335</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    : <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">AutoEncoder</a>(in_size, h_size, out_size, l_rate),</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;      <a class="code" href="classgpmp_1_1ml_1_1ContractiveAutoEncoder.html#a3eaef37e42c672a6824f1e14257b2dda">contractive_weight</a>(c_weight) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a81b271a27bee23a42d3fb737d0b54eab"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a81b271a27bee23a42d3fb737d0b54eab">gpmp::ml::AutoEncoder::AutoEncoder</a></div><div class="ttdeci">AutoEncoder(int input_size, int hidden_size, int output_size, double learning_rate)</div><div class="ttdoc">Constructor for the AutoEncoder class.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00092">encoder.cpp:92</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1ContractiveAutoEncoder_html_a3eaef37e42c672a6824f1e14257b2dda"><div class="ttname"><a href="classgpmp_1_1ml_1_1ContractiveAutoEncoder.html#a3eaef37e42c672a6824f1e14257b2dda">gpmp::ml::ContractiveAutoEncoder::contractive_weight</a></div><div class="ttdeci">double contractive_weight</div><div class="ttdoc">Weight for the contractive penalty term.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00281">encoder.hpp:281</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -274,43 +274,43 @@ Public Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classgpmp_1_1ml_1_1AutoEncoder.html#a8768d78cf66e95fbab116e22e075706a">gpmp::ml::AutoEncoder</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00345">345</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; epochs; ++epoch) {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;input : training_data) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="comment">// forward pass</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            std::vector&lt;double&gt; hidden = <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">forward</a>(input);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="comment">// backward pass (gradient descent)</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++i) {</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[j][i] -=</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a> * (hidden[i] - input[i]) * hidden[j];</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                }</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            }</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++j) {</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    <span class="keywordtype">double</span> error = 0;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++k) {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                        error += (hidden[k] - input[k]) *</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                 <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[i][k];</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                    }</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                    <span class="keywordtype">double</span> contractive_term =</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1ContractiveAutoEncoder.html#a3eaef37e42c672a6824f1e14257b2dda">contractive_weight</a> * hidden[i] * (1 - hidden[i]);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[j][i] -=</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a> * (error + contractive_term) * input[j] *</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                        (1 - hidden[i]) * hidden[i];</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                }</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="encoder_8cpp_source.html#l00344">344</a> of file <a class="el" href="encoder_8cpp_source.html">encoder.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                {</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> epoch = 0; epoch &lt; epochs; ++epoch) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;input : training_data) {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="comment">// forward pass</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            std::vector&lt;double&gt; hidden = <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">forward</a>(input);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="comment">// backward pass (gradient descent)</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++i) {</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++j) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[j][i] -=</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a> * (hidden[i] - input[i]) * hidden[j];</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">hidden_size</a>; ++i) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">input_size</a>; ++j) {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                    <span class="keywordtype">double</span> error = 0;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">output_size</a>; ++k) {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                        error += (hidden[k] - input[k]) *</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                 <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">weights_hidden_output</a>[i][k];</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                    <span class="keywordtype">double</span> contractive_term =</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1ContractiveAutoEncoder.html#a3eaef37e42c672a6824f1e14257b2dda">contractive_weight</a> * hidden[i] * (1 - hidden[i]);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">weights_input_hidden</a>[j][i] -=</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                        <a class="code" href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">learning_rate</a> * (error + contractive_term) * input[j] *</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                        (1 - hidden[i]) * hidden[i];</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a1a70487de637a2f7809058a4d5cb395f"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a1a70487de637a2f7809058a4d5cb395f">gpmp::ml::AutoEncoder::weights_input_hidden</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; weights_input_hidden</div><div class="ttdoc">Weights from the input layer to the hidden layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00097">encoder.hpp:97</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a292dd4900ae047734febe0d17269e57c"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a292dd4900ae047734febe0d17269e57c">gpmp::ml::AutoEncoder::weights_hidden_output</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; double &gt; &gt; weights_hidden_output</div><div class="ttdoc">Weights from the hidden layer to the output layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00105">encoder.hpp:105</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a3ea81882cf79b1b83889c138f0d8de72"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a3ea81882cf79b1b83889c138f0d8de72">gpmp::ml::AutoEncoder::hidden_size</a></div><div class="ttdeci">int hidden_size</div><div class="ttdoc">Size of the hidden layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00074">encoder.hpp:74</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_a88cd43b9710d93b17db59dc5b7c33bb8"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#a88cd43b9710d93b17db59dc5b7c33bb8">gpmp::ml::AutoEncoder::output_size</a></div><div class="ttdeci">int output_size</div><div class="ttdoc">Size of the output layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00082">encoder.hpp:82</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_aa0c8839e53db238e30e22c569ff21f0d"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">gpmp::ml::AutoEncoder::forward</a></div><div class="ttdeci">std::vector&lt; double &gt; forward(const std::vector&lt; double &gt; &amp;input)</div><div class="ttdoc">Forward pass through the autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00127">encoder.cpp:127</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_aa0c8839e53db238e30e22c569ff21f0d"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#aa0c8839e53db238e30e22c569ff21f0d">gpmp::ml::AutoEncoder::forward</a></div><div class="ttdeci">std::vector&lt; double &gt; forward(const std::vector&lt; double &gt; &amp;input)</div><div class="ttdoc">Forward pass through the autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8cpp_source.html#l00126">encoder.cpp:126</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_ab45f27699cb0549d1d404d0b5bd79ce9"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#ab45f27699cb0549d1d404d0b5bd79ce9">gpmp::ml::AutoEncoder::learning_rate</a></div><div class="ttdeci">double learning_rate</div><div class="ttdoc">Learning rate for training the autoencoder.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00089">encoder.hpp:89</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1AutoEncoder_html_af5cdfa0509dc9c832f0193184052cf82"><div class="ttname"><a href="classgpmp_1_1ml_1_1AutoEncoder.html#af5cdfa0509dc9c832f0193184052cf82">gpmp::ml::AutoEncoder::input_size</a></div><div class="ttdeci">int input_size</div><div class="ttdoc">Size of the input layer.</div><div class="ttdef"><b>Definition:</b> <a href="encoder_8hpp_source.html#l00066">encoder.hpp:66</a></div></div>
 </div><!-- fragment -->
@@ -338,7 +338,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/ml/<a class="el" href="encoder_8hpp_source.html">encoder.hpp</a></li>
+<li>include/openGPMP/ml/<a class="el" href="encoder_8hpp_source.html">encoder.hpp</a></li>
 <li>modules/ml/<a class="el" href="encoder_8cpp_source.html">encoder.cpp</a></li>
 </ul>
 </div><!-- contents -->

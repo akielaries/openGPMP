@@ -111,106 +111,106 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../../include/linalg/vector.hpp&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/************************************************************************</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * Standard/Naive Vector  Operations on vector&lt;&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                     std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">   57</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : vec) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        norm += value * value;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// function to normalize a vector to have unit length</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(vec);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    result.resize(vec.size());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        result[i] = vec[i] / norm;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// function to compute the projection of one vector onto another</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;double&gt; &amp;onto_vec,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(vec, onto_vec);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(onto_vec, onto_vec);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    result.resize(onto_vec.size());</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors of integers</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a412d6b99c140d811fab326151bacffab">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                     std::vector&lt;int&gt; &amp;result) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    result.resize(3);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#af6ba3d39ae5c8f0f0c4debebe8dadaec">   98</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> value : vec) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        norm += value * value;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// function to normalize a vector of integers to have unit length</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#ac9cbfbf61db5bdce8f2c548efc3dce27">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">std_vector_norm</a>(vec);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    result.resize(vec.size());</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        result[i] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(vec[i]) / norm;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// function to compute the projection of one vector of integers onto another</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a293c5fece3cedbe43e5f2f1e94dbb9c0">  117</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;int&gt; &amp;onto_vec,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(vec, onto_vec);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(onto_vec, onto_vec);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    result.resize(onto_vec.size());</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a0e4ce6c1c6c9f719b29946afdb4d6618"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a></div><div class="ttdeci">void std_cross_product(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the cross product of two 3D vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00049">vector_naive.cpp:49</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a8c57622ef169b93c8f30dc31357fa2d0"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a></div><div class="ttdeci">void std_vector_projection(const std::vector&lt; double &gt; &amp;vec, const std::vector&lt; double &gt; &amp;onto_vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the projection of one vector onto another.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00076">vector_naive.cpp:76</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_a9987a14caca7780c1f7ea89906e584d1"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a></div><div class="ttdeci">double std_vector_norm(const std::vector&lt; double &gt; &amp;vec)</div><div class="ttdoc">Compute the Euclidean norm (magnitude) of a vector.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00057">vector_naive.cpp:57</a></div></div>
-<div class="ttc" id="anamespacegpmp_1_1linalg_html_aa4eb272564e8b74b2841677c67aa300d"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a></div><div class="ttdeci">void std_vector_normalize(const std::vector&lt; double &gt; &amp;vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Normalize a vector to have unit length.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00066">vector_naive.cpp:66</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="vector_8hpp.html">openGPMP/linalg/vector.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/************************************************************************</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> * Standard/Naive Vector  Operations on vector&lt;&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> ************************************************************************/</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">   48</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec1,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec2,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                     std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">   56</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> value : vec) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        norm += value * value;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// function to normalize a vector to have unit length</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(vec);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    result.resize(vec.size());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        result[i] = vec[i] / norm;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// function to compute the projection of one vector onto another</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;vec,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;double&gt; &amp;onto_vec,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(vec, onto_vec);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(onto_vec, onto_vec);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    result.resize(onto_vec.size());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// function to compute the cross product of two 3D vectors of integers</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a412d6b99c140d811fab326151bacffab">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec1,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec2,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                     std::vector&lt;int&gt; &amp;result) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    result.resize(3);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    result[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    result[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    result[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#af6ba3d39ae5c8f0f0c4debebe8dadaec">   97</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">double</span> norm = 0.0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> value : vec) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        norm += value * value;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> std::sqrt(norm);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// function to normalize a vector of integers to have unit length</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#ac9cbfbf61db5bdce8f2c548efc3dce27">  106</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                        std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">double</span> norm = <a class="code" href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">std_vector_norm</a>(vec);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    result.resize(vec.size());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; vec.size(); ++i) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        result[i] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(vec[i]) / norm;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// function to compute the projection of one vector of integers onto another</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="namespacegpmp_1_1linalg.html#a293c5fece3cedbe43e5f2f1e94dbb9c0">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;vec,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;int&gt; &amp;onto_vec,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                         std::vector&lt;double&gt; &amp;result) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">double</span> dot = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(vec, onto_vec);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">double</span> onto_vec_norm_sq = <a class="code" href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">std_dot_product</a>(onto_vec, onto_vec);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    result.resize(onto_vec.size());</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; onto_vec.size(); ++i) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        result[i] = (dot / onto_vec_norm_sq) * onto_vec[i];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a0e4ce6c1c6c9f719b29946afdb4d6618"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a0e4ce6c1c6c9f719b29946afdb4d6618">gpmp::linalg::std_cross_product</a></div><div class="ttdeci">void std_cross_product(const std::vector&lt; double &gt; &amp;vec1, const std::vector&lt; double &gt; &amp;vec2, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the cross product of two 3D vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00048">vector_naive.cpp:48</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a8c57622ef169b93c8f30dc31357fa2d0"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a8c57622ef169b93c8f30dc31357fa2d0">gpmp::linalg::std_vector_projection</a></div><div class="ttdeci">void std_vector_projection(const std::vector&lt; double &gt; &amp;vec, const std::vector&lt; double &gt; &amp;onto_vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Compute the projection of one vector onto another.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00075">vector_naive.cpp:75</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_a9987a14caca7780c1f7ea89906e584d1"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a9987a14caca7780c1f7ea89906e584d1">gpmp::linalg::std_vector_norm</a></div><div class="ttdeci">double std_vector_norm(const std::vector&lt; double &gt; &amp;vec)</div><div class="ttdoc">Compute the Euclidean norm (magnitude) of a vector.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00056">vector_naive.cpp:56</a></div></div>
+<div class="ttc" id="anamespacegpmp_1_1linalg_html_aa4eb272564e8b74b2841677c67aa300d"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#aa4eb272564e8b74b2841677c67aa300d">gpmp::linalg::std_vector_normalize</a></div><div class="ttdeci">void std_vector_normalize(const std::vector&lt; double &gt; &amp;vec, std::vector&lt; double &gt; &amp;result)</div><div class="ttdoc">Normalize a vector to have unit length.</div><div class="ttdef"><b>Definition:</b> <a href="vector__naive_8cpp_source.html#l00065">vector_naive.cpp:65</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1linalg_html_afec4e98deecf6dd0acb42d1b323e172b"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#afec4e98deecf6dd0acb42d1b323e172b">gpmp::linalg::std_dot_product</a></div><div class="ttdeci">T std_dot_product(const std::vector&lt; T &gt; &amp;vec1, const std::vector&lt; T &gt; &amp;vec2)</div><div class="ttdoc">Compute the dot product of two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8hpp_source.html#l00681">vector.hpp:681</a></div></div>
+<div class="ttc" id="avector_8hpp_html"><div class="ttname"><a href="vector_8hpp.html">vector.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -140,9 +140,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00040">40</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                           : <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>(fold) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00039">39</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                           : <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>(fold) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Kfold_html_afcb89336924972fe9de7df3a623f4764"><div class="ttname"><a href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">gpmp::ml::Kfold::k</a></div><div class="ttdeci">int k</div><div class="ttdef"><b>Definition:</b> <a href="kfold_8hpp_source.html#l00082">kfold.hpp:82</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -164,9 +164,9 @@ Private Attributes</h2></td></tr>
 
 <p>Destructor for the <a class="el" href="classgpmp_1_1ml_1_1Kfold.html" title="Represents a k-fold cross-validation utility.">Kfold</a> class. </p>
 
-<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00043">43</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00042">42</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,25 +201,25 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00069">69</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                     {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>.empty()) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Indices not split. Call split_indices before &quot;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                               <span class="stringliteral">&quot;performing cross-validation.&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>; ++i) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// Use fold i as the validation set, train on all other folds</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::vector&lt;int&gt; validation_indices = <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>[i];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>; ++j) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">if</span> (j != i) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index : <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>[j]) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    train_and_test_func(j, index);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00068">68</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                     {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>.empty()) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Indices not split. Call split_indices before &quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                               <span class="stringliteral">&quot;performing cross-validation.&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>; ++i) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// Use fold i as the validation set, train on all other folds</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        std::vector&lt;int&gt; validation_indices = <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>[i];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>; ++j) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (j != i) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index : <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>[j]) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    train_and_test_func(j, index);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1Kfold_html_a02d6de1af308d22ff61fa95e1173b814"><div class="ttname"><a href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">gpmp::ml::Kfold::fold_indices</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; fold_indices</div><div class="ttdef"><b>Definition:</b> <a href="kfold_8hpp_source.html#l00084">kfold.hpp:84</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -254,29 +254,29 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00046">46</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                 {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a> &lt;= 1 || num_instances &lt;= 0) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="stringliteral">&quot;Invalid value of k or number of instances.&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Initialize fold_indices with k empty vectors</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>.clear();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>.resize(<a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Assign indices to each fold</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> fold_size = num_instances / <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> remainder = num_instances % <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> start_index = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>; ++i) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> fold_length = fold_size + (i &lt; remainder ? 1 : 0);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::vector&lt;int&gt; indices(fold_length);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::iota(indices.begin(), indices.end(), start_index);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>[i] = indices;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        start_index += fold_length;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="kfold_8cpp_source.html#l00045">45</a> of file <a class="el" href="kfold_8cpp_source.html">kfold.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                 {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a> &lt;= 1 || num_instances &lt;= 0) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="stringliteral">&quot;Invalid value of k or number of instances.&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Initialize fold_indices with k empty vectors</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>.clear();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>.resize(<a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Assign indices to each fold</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> fold_size = num_instances / <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">int</span> remainder = num_instances % <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> start_index = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#afcb89336924972fe9de7df3a623f4764">k</a>; ++i) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> fold_length = fold_size + (i &lt; remainder ? 1 : 0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::vector&lt;int&gt; indices(fold_length);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::iota(indices.begin(), indices.end(), start_index);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1Kfold.html#a02d6de1af308d22ff61fa95e1173b814">fold_indices</a>[i] = indices;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        start_index += fold_length;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -331,7 +331,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/ml/<a class="el" href="kfold_8hpp_source.html">kfold.hpp</a></li>
+<li>include/openGPMP/ml/<a class="el" href="kfold_8hpp_source.html">kfold.hpp</a></li>
 <li>modules/ml/<a class="el" href="kfold_8cpp_source.html">kfold.cpp</a></li>
 </ul>
 </div><!-- contents -->

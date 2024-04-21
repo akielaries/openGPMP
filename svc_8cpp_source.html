@@ -111,255 +111,255 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../../include/ml/svc.hpp&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a3ece0f255b7c01df01f6baa490756ce6">   39</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#a3ece0f255b7c01df01f6baa490756ce6">gpmp::ml::SVC::SVC</a>(<span class="keywordtype">double</span> C_, <span class="keywordtype">double</span> l_rate, <span class="keywordtype">int</span> max_iters, <span class="keywordtype">double</span> tol)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    : <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>(C_), learning_rate(l_rate), max_iterations(max_iters), tolerance(tol) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb">gpmp::ml::SVC::fit</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_train,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y_train) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Initialize weights and bias</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    weights.resize(X_train[0].size(), 0.0);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    bias = 0.0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Stochastic Gradient Descent</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; max_iterations; ++iter) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        update_weights(X_train, y_train);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// Check convergence</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">double</span> loss = compute_loss(X_train, y_train);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (loss &lt; tolerance) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;std::vector&lt;int&gt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#af695cbb50c5b23919744510b53731004">   62</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#af695cbb50c5b23919744510b53731004">gpmp::ml::SVC::predict</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_test) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::vector&lt;int&gt; predictions;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;instance : X_test) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">double</span> score = 0.0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; instance.size(); ++i) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            score += instance[i] * weights[i];</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        score += bias;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">int</span> prediction = (score &gt;= 0) ? 1 : -1;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        predictions.push_back(prediction);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> predictions;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#aed818460b420c4e38cd1f3e6b14a2b73">   76</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#aed818460b420c4e38cd1f3e6b14a2b73">gpmp::ml::SVC::hinge_loss</a>(<span class="keywordtype">double</span> prediction, <span class="keywordtype">int</span> label) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> fmax(0, 1 - label * prediction);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#affe68dd7cafb3695a42c0bf79bf07015">   80</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#affe68dd7cafb3695a42c0bf79bf07015">gpmp::ml::SVC::compute_loss</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">double</span> loss = 0.0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; X.size(); ++i) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">double</span> prediction = 0.0;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; X[i].size(); ++j) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            prediction += X[i][j] * weights[j];</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        prediction += bias;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        loss += hinge_loss(prediction, y[i]);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Add L2 regularization</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> weight : weights) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        loss += 0.5 * <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a> * weight * weight;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> loss / X.size();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a69c3366b7f74718a37093038168c098e">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a69c3366b7f74718a37093038168c098e">gpmp::ml::SVC::update_weights</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; X.size(); ++i) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">double</span> prediction = 0.0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; X[i].size(); ++j) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            prediction += X[i][j] * weights[j];</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        prediction += bias;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">double</span> loss_grad = -y[i] * (1 - prediction);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (loss_grad &gt; 0) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">// Update weights</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; X[i].size(); ++j) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                weights[j] -= learning_rate * (<a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a> * weights[j] - y[i] * X[i][j]);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">// Update bias</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            bias -= learning_rate * y[i];</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;std::vector&lt;double&gt;</div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a5da251dda1ef00116c056072aa2a7d11">  119</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#a5da251dda1ef00116c056072aa2a7d11">gpmp::ml::SVC::predict_proba</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_test) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::vector&lt;double&gt; probabilities;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;instance : X_test) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">double</span> score = 0.0;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; instance.size(); ++i) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            score += instance[i] * weights[i];</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        score += bias;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">double</span> prob = sigmoid(score);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        probabilities.push_back(prob);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> probabilities;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a4bc6511f5043a6b247319909d57a3a4d">  133</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a4bc6511f5043a6b247319909d57a3a4d">gpmp::ml::SVC::score</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_test,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                            <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y_test) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    std::vector&lt;int&gt; predictions = predict(X_test);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> accuracy(predictions, y_test);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a4a99b1c1805dee1399f110f9282e1072">  139</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a4a99b1c1805dee1399f110f9282e1072">gpmp::ml::SVC::set_kernel</a>(<span class="keyword">const</span> std::string &amp;k_type) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    this-&gt;kernel_type = k_type;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ad3c095db44280a8d31c775234e8da03b">  143</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ad3c095db44280a8d31c775234e8da03b">gpmp::ml::SVC::set_kernel_parameters</a>(<span class="keywordtype">double</span> k_param) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    this-&gt;kernel_param = k_param;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a0b4088a538d86dc2c40af79966cac1b3">  147</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a0b4088a538d86dc2c40af79966cac1b3">gpmp::ml::SVC::set_random_state</a>(<span class="keywordtype">int</span> seed) {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    this-&gt;random_state = seed;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a49dcb05b1a1123c032e92904de72004a">  151</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a49dcb05b1a1123c032e92904de72004a">gpmp::ml::SVC::set_verbose</a>(<span class="keywordtype">bool</span> vbose) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    this-&gt;verbose = vbose;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ade22093a1e45387dfea90ad7eca6ba05">  155</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ade22093a1e45387dfea90ad7eca6ba05">gpmp::ml::SVC::set_penalty</a>(<span class="keyword">const</span> std::string &amp;p_type) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    this-&gt;penalty_type = p_type;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ac04820817e71e8d79f73690a044fdbf2">  159</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ac04820817e71e8d79f73690a044fdbf2">gpmp::ml::SVC::cross_val_score</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                      <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                      <span class="keywordtype">int</span> cv) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::vector&lt;int&gt; fold_sizes = k_fold_indices(X.size(), cv);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">double</span> avg_score = 0.0;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cv; ++i) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::vector&lt;std::vector&lt;double&gt;&gt; X_train, X_valid;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        std::vector&lt;int&gt; y_train, y_valid;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> start = 0;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cv; ++j) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">if</span> (j != i) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordtype">int</span> end = start + fold_sizes[j];</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = start; k &lt; end; ++k) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    X_train.push_back(X[k]);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    y_train.push_back(y[k]);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keywordtype">int</span> end = start + fold_sizes[j];</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = start; k &lt; end; ++k) {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    X_valid.push_back(X[k]);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    y_valid.push_back(y[k]);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            start += fold_sizes[j];</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        fit(X_train, y_train);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordtype">double</span> score_val = score(X_valid, y_valid);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (verbose) {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Cross-validation fold &quot;</span> &lt;&lt; i + 1</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot; accuracy: &quot;</span> &lt;&lt; score_val &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        avg_score += score_val;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> avg_score / cv;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;std::vector&lt;double&gt;</div>
-<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#af67ac51bfb0cd3971d2e37aebc7ad36b">  196</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#af67ac51bfb0cd3971d2e37aebc7ad36b">gpmp::ml::SVC::grid_search</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                           <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                           <span class="keyword">const</span> std::vector&lt;double&gt; &amp;C_values,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                           <span class="keyword">const</span> std::vector&lt;double&gt; &amp;kernel_params,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                           <span class="keywordtype">int</span> cv) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    std::vector&lt;double&gt; best_params;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">double</span> best_score = 0.0;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> val : C_values) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> param : kernel_params) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            set_kernel_parameters(param);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            set_penalty(<span class="stringliteral">&quot;l2&quot;</span>);  <span class="comment">// Default penalty type</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            set_verbose(<span class="keyword">false</span>); <span class="comment">// Suppress verbose output</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordtype">double</span> score = cross_val_score(X, y, cv);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (score &gt; best_score) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                best_score = score;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                best_params = {val, param};</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> best_params;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ae6f44aa991535593f9370ce7472af3dc">  218</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ae6f44aa991535593f9370ce7472af3dc">gpmp::ml::SVC::kernel</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;x1,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                             <span class="keyword">const</span> std::vector&lt;double&gt; &amp;x2) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (kernel_type == <span class="stringliteral">&quot;linear&quot;</span>) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0f1ffe1b48041b9686ebb21e9db9a021">dot_product</a>(x1, x2);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// Default to linear kernel if unknown kernel type</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0f1ffe1b48041b9686ebb21e9db9a021">dot_product</a>(x1, x2);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37">  228</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37">gpmp::ml::SVC::dot_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;x1,</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;x2) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">double</span> result = 0.0;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; x1.size(); ++i) {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        result += x1[i] * x2[i];</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ab657ad390eca251b1df0196e0e282617">  237</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ab657ad390eca251b1df0196e0e282617">gpmp::ml::SVC::sigmoid</a>(<span class="keywordtype">double</span> z) {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">return</span> 1.0 / (1.0 + exp(-z));</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a6c5064dd0decbc8459d6c29199244df6">  241</a></span>&#160;std::vector&lt;int&gt; <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a6c5064dd0decbc8459d6c29199244df6">gpmp::ml::SVC::k_fold_indices</a>(<span class="keywordtype">int</span> num_instances, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    std::vector&lt;int&gt; fold_sizes(k, num_instances / k);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">int</span> remainder = num_instances % k;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; remainder; ++i) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        fold_sizes[i]++;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">return</span> fold_sizes;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8">  250</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8">gpmp::ml::SVC::accuracy</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;predictions,</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                               <span class="keyword">const</span> std::vector&lt;int&gt; &amp;labels) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">int</span> correct = 0;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; predictions.size(); ++i) {</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">if</span> (predictions[i] == labels[i]) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            correct++;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(correct) / predictions.size();</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a0b4088a538d86dc2c40af79966cac1b3"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a0b4088a538d86dc2c40af79966cac1b3">gpmp::ml::SVC::set_random_state</a></div><div class="ttdeci">void set_random_state(int seed)</div><div class="ttdoc">Set the random seed for reproducibility.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00147">svc.cpp:147</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a3a7d2c959ac2a21134f78049ad650e37"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37">gpmp::ml::SVC::dot_product</a></div><div class="ttdeci">double dot_product(const std::vector&lt; double &gt; &amp;x1, const std::vector&lt; double &gt; &amp;x2)</div><div class="ttdoc">Compute the dot product between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00228">svc.cpp:228</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a3ece0f255b7c01df01f6baa490756ce6"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a3ece0f255b7c01df01f6baa490756ce6">gpmp::ml::SVC::SVC</a></div><div class="ttdeci">SVC(double C_=1.0, double l_rate=0.01, int max_iters=1000, double tol=1e-4)</div><div class="ttdoc">Constructor for SVC class.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00039">svc.cpp:39</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a49dcb05b1a1123c032e92904de72004a"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a49dcb05b1a1123c032e92904de72004a">gpmp::ml::SVC::set_verbose</a></div><div class="ttdeci">void set_verbose(bool vbose)</div><div class="ttdoc">Enable or disable verbose output during training.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00151">svc.cpp:151</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a4a99b1c1805dee1399f110f9282e1072"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a4a99b1c1805dee1399f110f9282e1072">gpmp::ml::SVC::set_kernel</a></div><div class="ttdeci">void set_kernel(const std::string &amp;k_type)</div><div class="ttdoc">Set the kernel type for the SVC.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00139">svc.cpp:139</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a4bc6511f5043a6b247319909d57a3a4d"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a4bc6511f5043a6b247319909d57a3a4d">gpmp::ml::SVC::score</a></div><div class="ttdeci">double score(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_test, const std::vector&lt; int &gt; &amp;y_test)</div><div class="ttdoc">Calculate the accuracy of the model on given test data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00133">svc.cpp:133</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a5da251dda1ef00116c056072aa2a7d11"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a5da251dda1ef00116c056072aa2a7d11">gpmp::ml::SVC::predict_proba</a></div><div class="ttdeci">std::vector&lt; double &gt; predict_proba(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_test)</div><div class="ttdoc">Predict class probabilities for given test data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00119">svc.cpp:119</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a69c3366b7f74718a37093038168c098e"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a69c3366b7f74718a37093038168c098e">gpmp::ml::SVC::update_weights</a></div><div class="ttdeci">void update_weights(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y)</div><div class="ttdoc">Update weights and bias using stochastic gradient descent.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00098">svc.cpp:98</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a6c5064dd0decbc8459d6c29199244df6"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a6c5064dd0decbc8459d6c29199244df6">gpmp::ml::SVC::k_fold_indices</a></div><div class="ttdeci">std::vector&lt; int &gt; k_fold_indices(int num_instances, int k)</div><div class="ttdoc">Generate k-fold indices for cross-validation.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00241">svc.cpp:241</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ab657ad390eca251b1df0196e0e282617"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ab657ad390eca251b1df0196e0e282617">gpmp::ml::SVC::sigmoid</a></div><div class="ttdeci">double sigmoid(double z)</div><div class="ttdoc">Sigmoid activation function.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00237">svc.cpp:237</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_abef434133a05a3d9ca3b7399e7d98abb"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb">gpmp::ml::SVC::fit</a></div><div class="ttdeci">void fit(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_train, const std::vector&lt; int &gt; &amp;y_train)</div><div class="ttdoc">Fit the SVC model to the training data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00043">svc.cpp:43</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ac04820817e71e8d79f73690a044fdbf2"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ac04820817e71e8d79f73690a044fdbf2">gpmp::ml::SVC::cross_val_score</a></div><div class="ttdeci">double cross_val_score(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y, int cv=5)</div><div class="ttdoc">Perform k-fold cross-validation on the model.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00159">svc.cpp:159</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ad3c095db44280a8d31c775234e8da03b"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ad3c095db44280a8d31c775234e8da03b">gpmp::ml::SVC::set_kernel_parameters</a></div><div class="ttdeci">void set_kernel_parameters(double k_param)</div><div class="ttdoc">Set the kernel parameters for the SVC.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00143">svc.cpp:143</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ade22093a1e45387dfea90ad7eca6ba05"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ade22093a1e45387dfea90ad7eca6ba05">gpmp::ml::SVC::set_penalty</a></div><div class="ttdeci">void set_penalty(const std::string &amp;p_type)</div><div class="ttdoc">Set the penalty type for regularization.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00155">svc.cpp:155</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ae6f44aa991535593f9370ce7472af3dc"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ae6f44aa991535593f9370ce7472af3dc">gpmp::ml::SVC::kernel</a></div><div class="ttdeci">double kernel(const std::vector&lt; double &gt; &amp;x1, const std::vector&lt; double &gt; &amp;x2)</div><div class="ttdoc">Compute the kernel function between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00218">svc.cpp:218</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_aed818460b420c4e38cd1f3e6b14a2b73"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#aed818460b420c4e38cd1f3e6b14a2b73">gpmp::ml::SVC::hinge_loss</a></div><div class="ttdeci">double hinge_loss(double prediction, int label)</div><div class="ttdoc">Compute the hinge loss for a given prediction and true label.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00076">svc.cpp:76</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_af030681b5acf493d3725ec279c8e5ac8"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8">gpmp::ml::SVC::accuracy</a></div><div class="ttdeci">double accuracy(const std::vector&lt; int &gt; &amp;predictions, const std::vector&lt; int &gt; &amp;labels)</div><div class="ttdoc">Compute the accuracy of predictions.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00250">svc.cpp:250</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_af67ac51bfb0cd3971d2e37aebc7ad36b"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#af67ac51bfb0cd3971d2e37aebc7ad36b">gpmp::ml::SVC::grid_search</a></div><div class="ttdeci">std::vector&lt; double &gt; grid_search(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y, const std::vector&lt; double &gt; &amp;C_values, const std::vector&lt; double &gt; &amp;kernel_params, int cv=5)</div><div class="ttdoc">Perform grid search for hyperparameter tuning.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00196">svc.cpp:196</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_af695cbb50c5b23919744510b53731004"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#af695cbb50c5b23919744510b53731004">gpmp::ml::SVC::predict</a></div><div class="ttdeci">std::vector&lt; int &gt; predict(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_test)</div><div class="ttdoc">Predict labels for given test data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00062">svc.cpp:62</a></div></div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_affe68dd7cafb3695a42c0bf79bf07015"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#affe68dd7cafb3695a42c0bf79bf07015">gpmp::ml::SVC::compute_loss</a></div><div class="ttdeci">double compute_loss(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y)</div><div class="ttdoc">Compute the total loss (including regularization) for the model.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00080">svc.cpp:80</a></div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="svc_8hpp.html">openGPMP/ml/svc.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a3ece0f255b7c01df01f6baa490756ce6">   38</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#a3ece0f255b7c01df01f6baa490756ce6">gpmp::ml::SVC::SVC</a>(<span class="keywordtype">double</span> C_, <span class="keywordtype">double</span> l_rate, <span class="keywordtype">int</span> max_iters, <span class="keywordtype">double</span> tol)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    : <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>(C_), learning_rate(l_rate), max_iterations(max_iters), tolerance(tol) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb">gpmp::ml::SVC::fit</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_train,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y_train) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Initialize weights and bias</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    weights.resize(X_train[0].size(), 0.0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    bias = 0.0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Stochastic Gradient Descent</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iter = 0; iter &lt; max_iterations; ++iter) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        update_weights(X_train, y_train);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// Check convergence</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">double</span> loss = compute_loss(X_train, y_train);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (loss &lt; tolerance) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;std::vector&lt;int&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#af695cbb50c5b23919744510b53731004">   61</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#af695cbb50c5b23919744510b53731004">gpmp::ml::SVC::predict</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_test) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::vector&lt;int&gt; predictions;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;instance : X_test) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">double</span> score = 0.0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; instance.size(); ++i) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            score += instance[i] * weights[i];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        score += bias;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">int</span> prediction = (score &gt;= 0) ? 1 : -1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        predictions.push_back(prediction);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> predictions;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#aed818460b420c4e38cd1f3e6b14a2b73">   75</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#aed818460b420c4e38cd1f3e6b14a2b73">gpmp::ml::SVC::hinge_loss</a>(<span class="keywordtype">double</span> prediction, <span class="keywordtype">int</span> label) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> fmax(0, 1 - label * prediction);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#affe68dd7cafb3695a42c0bf79bf07015">   79</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#affe68dd7cafb3695a42c0bf79bf07015">gpmp::ml::SVC::compute_loss</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">double</span> loss = 0.0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; X.size(); ++i) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">double</span> prediction = 0.0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; X[i].size(); ++j) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            prediction += X[i][j] * weights[j];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        prediction += bias;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        loss += hinge_loss(prediction, y[i]);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Add L2 regularization</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> weight : weights) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        loss += 0.5 * <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a> * weight * weight;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> loss / X.size();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a69c3366b7f74718a37093038168c098e">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a69c3366b7f74718a37093038168c098e">gpmp::ml::SVC::update_weights</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; X.size(); ++i) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">double</span> prediction = 0.0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; X[i].size(); ++j) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            prediction += X[i][j] * weights[j];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        prediction += bias;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">double</span> loss_grad = -y[i] * (1 - prediction);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (loss_grad &gt; 0) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="comment">// Update weights</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; X[i].size(); ++j) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                weights[j] -= learning_rate * (<a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a> * weights[j] - y[i] * X[i][j]);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">// Update bias</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            bias -= learning_rate * y[i];</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;std::vector&lt;double&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a5da251dda1ef00116c056072aa2a7d11">  118</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#a5da251dda1ef00116c056072aa2a7d11">gpmp::ml::SVC::predict_proba</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_test) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;double&gt; probabilities;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;instance : X_test) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">double</span> score = 0.0;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; instance.size(); ++i) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            score += instance[i] * weights[i];</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        score += bias;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">double</span> prob = sigmoid(score);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        probabilities.push_back(prob);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> probabilities;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a4bc6511f5043a6b247319909d57a3a4d">  132</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a4bc6511f5043a6b247319909d57a3a4d">gpmp::ml::SVC::score</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X_test,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                            <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y_test) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::vector&lt;int&gt; predictions = predict(X_test);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> accuracy(predictions, y_test);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a4a99b1c1805dee1399f110f9282e1072">  138</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a4a99b1c1805dee1399f110f9282e1072">gpmp::ml::SVC::set_kernel</a>(<span class="keyword">const</span> std::string &amp;k_type) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    this-&gt;kernel_type = k_type;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ad3c095db44280a8d31c775234e8da03b">  142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ad3c095db44280a8d31c775234e8da03b">gpmp::ml::SVC::set_kernel_parameters</a>(<span class="keywordtype">double</span> k_param) {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    this-&gt;kernel_param = k_param;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a0b4088a538d86dc2c40af79966cac1b3">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a0b4088a538d86dc2c40af79966cac1b3">gpmp::ml::SVC::set_random_state</a>(<span class="keywordtype">int</span> seed) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    this-&gt;random_state = seed;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a49dcb05b1a1123c032e92904de72004a">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a49dcb05b1a1123c032e92904de72004a">gpmp::ml::SVC::set_verbose</a>(<span class="keywordtype">bool</span> vbose) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    this-&gt;verbose = vbose;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ade22093a1e45387dfea90ad7eca6ba05">  154</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ade22093a1e45387dfea90ad7eca6ba05">gpmp::ml::SVC::set_penalty</a>(<span class="keyword">const</span> std::string &amp;p_type) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    this-&gt;penalty_type = p_type;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ac04820817e71e8d79f73690a044fdbf2">  158</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ac04820817e71e8d79f73690a044fdbf2">gpmp::ml::SVC::cross_val_score</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                      <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                      <span class="keywordtype">int</span> cv) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    std::vector&lt;int&gt; fold_sizes = k_fold_indices(X.size(), cv);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">double</span> avg_score = 0.0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cv; ++i) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        std::vector&lt;std::vector&lt;double&gt;&gt; X_train, X_valid;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::vector&lt;int&gt; y_train, y_valid;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordtype">int</span> start = 0;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cv; ++j) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span> (j != i) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordtype">int</span> end = start + fold_sizes[j];</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = start; k &lt; end; ++k) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    X_train.push_back(X[k]);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    y_train.push_back(y[k]);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordtype">int</span> end = start + fold_sizes[j];</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = start; k &lt; end; ++k) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    X_valid.push_back(X[k]);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    y_valid.push_back(y[k]);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            start += fold_sizes[j];</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        fit(X_train, y_train);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordtype">double</span> score_val = score(X_valid, y_valid);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">if</span> (verbose) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Cross-validation fold &quot;</span> &lt;&lt; i + 1</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                      &lt;&lt; <span class="stringliteral">&quot; accuracy: &quot;</span> &lt;&lt; score_val &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        avg_score += score_val;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> avg_score / cv;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;std::vector&lt;double&gt;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#af67ac51bfb0cd3971d2e37aebc7ad36b">  195</a></span>&#160;<a class="code" href="classgpmp_1_1ml_1_1SVC.html#af67ac51bfb0cd3971d2e37aebc7ad36b">gpmp::ml::SVC::grid_search</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;double&gt;&gt; &amp;X,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                           <span class="keyword">const</span> std::vector&lt;int&gt; &amp;y,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                           <span class="keyword">const</span> std::vector&lt;double&gt; &amp;C_values,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                           <span class="keyword">const</span> std::vector&lt;double&gt; &amp;kernel_params,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                           <span class="keywordtype">int</span> cv) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    std::vector&lt;double&gt; best_params;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">double</span> best_score = 0.0;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">double</span> val : C_values) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">double</span> param : kernel_params) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            set_kernel_parameters(param);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            set_penalty(<span class="stringliteral">&quot;l2&quot;</span>);  <span class="comment">// Default penalty type</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            set_verbose(<span class="keyword">false</span>); <span class="comment">// Suppress verbose output</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordtype">double</span> score = cross_val_score(X, y, cv);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">if</span> (score &gt; best_score) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                best_score = score;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                best_params = {val, param};</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> best_params;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ae6f44aa991535593f9370ce7472af3dc">  217</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ae6f44aa991535593f9370ce7472af3dc">gpmp::ml::SVC::kernel</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;x1,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                             <span class="keyword">const</span> std::vector&lt;double&gt; &amp;x2) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">if</span> (kernel_type == <span class="stringliteral">&quot;linear&quot;</span>) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0f1ffe1b48041b9686ebb21e9db9a021">dot_product</a>(x1, x2);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// Default to linear kernel if unknown kernel type</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacegpmp_1_1linalg.html#a0f1ffe1b48041b9686ebb21e9db9a021">dot_product</a>(x1, x2);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37">  227</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37">gpmp::ml::SVC::dot_product</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;x1,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                  <span class="keyword">const</span> std::vector&lt;double&gt; &amp;x2) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">double</span> result = 0.0;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; x1.size(); ++i) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        result += x1[i] * x2[i];</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#ab657ad390eca251b1df0196e0e282617">  236</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#ab657ad390eca251b1df0196e0e282617">gpmp::ml::SVC::sigmoid</a>(<span class="keywordtype">double</span> z) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> 1.0 / (1.0 + exp(-z));</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#a6c5064dd0decbc8459d6c29199244df6">  240</a></span>&#160;std::vector&lt;int&gt; <a class="code" href="classgpmp_1_1ml_1_1SVC.html#a6c5064dd0decbc8459d6c29199244df6">gpmp::ml::SVC::k_fold_indices</a>(<span class="keywordtype">int</span> num_instances, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    std::vector&lt;int&gt; fold_sizes(k, num_instances / k);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordtype">int</span> remainder = num_instances % k;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; remainder; ++i) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        fold_sizes[i]++;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">return</span> fold_sizes;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8">  249</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8">gpmp::ml::SVC::accuracy</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;predictions,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                               <span class="keyword">const</span> std::vector&lt;int&gt; &amp;labels) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">int</span> correct = 0;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; predictions.size(); ++i) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">if</span> (predictions[i] == labels[i]) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            correct++;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(correct) / predictions.size();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a0b4088a538d86dc2c40af79966cac1b3"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a0b4088a538d86dc2c40af79966cac1b3">gpmp::ml::SVC::set_random_state</a></div><div class="ttdeci">void set_random_state(int seed)</div><div class="ttdoc">Set the random seed for reproducibility.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00146">svc.cpp:146</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a3a7d2c959ac2a21134f78049ad650e37"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a3a7d2c959ac2a21134f78049ad650e37">gpmp::ml::SVC::dot_product</a></div><div class="ttdeci">double dot_product(const std::vector&lt; double &gt; &amp;x1, const std::vector&lt; double &gt; &amp;x2)</div><div class="ttdoc">Compute the dot product between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00227">svc.cpp:227</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a3ece0f255b7c01df01f6baa490756ce6"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a3ece0f255b7c01df01f6baa490756ce6">gpmp::ml::SVC::SVC</a></div><div class="ttdeci">SVC(double C_=1.0, double l_rate=0.01, int max_iters=1000, double tol=1e-4)</div><div class="ttdoc">Constructor for SVC class.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00038">svc.cpp:38</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a49dcb05b1a1123c032e92904de72004a"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a49dcb05b1a1123c032e92904de72004a">gpmp::ml::SVC::set_verbose</a></div><div class="ttdeci">void set_verbose(bool vbose)</div><div class="ttdoc">Enable or disable verbose output during training.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00150">svc.cpp:150</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a4a99b1c1805dee1399f110f9282e1072"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a4a99b1c1805dee1399f110f9282e1072">gpmp::ml::SVC::set_kernel</a></div><div class="ttdeci">void set_kernel(const std::string &amp;k_type)</div><div class="ttdoc">Set the kernel type for the SVC.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00138">svc.cpp:138</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a4bc6511f5043a6b247319909d57a3a4d"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a4bc6511f5043a6b247319909d57a3a4d">gpmp::ml::SVC::score</a></div><div class="ttdeci">double score(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_test, const std::vector&lt; int &gt; &amp;y_test)</div><div class="ttdoc">Calculate the accuracy of the model on given test data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00132">svc.cpp:132</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a5da251dda1ef00116c056072aa2a7d11"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a5da251dda1ef00116c056072aa2a7d11">gpmp::ml::SVC::predict_proba</a></div><div class="ttdeci">std::vector&lt; double &gt; predict_proba(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_test)</div><div class="ttdoc">Predict class probabilities for given test data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00118">svc.cpp:118</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a69c3366b7f74718a37093038168c098e"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a69c3366b7f74718a37093038168c098e">gpmp::ml::SVC::update_weights</a></div><div class="ttdeci">void update_weights(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y)</div><div class="ttdoc">Update weights and bias using stochastic gradient descent.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00097">svc.cpp:97</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_a6c5064dd0decbc8459d6c29199244df6"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#a6c5064dd0decbc8459d6c29199244df6">gpmp::ml::SVC::k_fold_indices</a></div><div class="ttdeci">std::vector&lt; int &gt; k_fold_indices(int num_instances, int k)</div><div class="ttdoc">Generate k-fold indices for cross-validation.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00240">svc.cpp:240</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ab657ad390eca251b1df0196e0e282617"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ab657ad390eca251b1df0196e0e282617">gpmp::ml::SVC::sigmoid</a></div><div class="ttdeci">double sigmoid(double z)</div><div class="ttdoc">Sigmoid activation function.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00236">svc.cpp:236</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_abef434133a05a3d9ca3b7399e7d98abb"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#abef434133a05a3d9ca3b7399e7d98abb">gpmp::ml::SVC::fit</a></div><div class="ttdeci">void fit(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_train, const std::vector&lt; int &gt; &amp;y_train)</div><div class="ttdoc">Fit the SVC model to the training data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00042">svc.cpp:42</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ac04820817e71e8d79f73690a044fdbf2"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ac04820817e71e8d79f73690a044fdbf2">gpmp::ml::SVC::cross_val_score</a></div><div class="ttdeci">double cross_val_score(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y, int cv=5)</div><div class="ttdoc">Perform k-fold cross-validation on the model.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00158">svc.cpp:158</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ad3c095db44280a8d31c775234e8da03b"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ad3c095db44280a8d31c775234e8da03b">gpmp::ml::SVC::set_kernel_parameters</a></div><div class="ttdeci">void set_kernel_parameters(double k_param)</div><div class="ttdoc">Set the kernel parameters for the SVC.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00142">svc.cpp:142</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ade22093a1e45387dfea90ad7eca6ba05"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ade22093a1e45387dfea90ad7eca6ba05">gpmp::ml::SVC::set_penalty</a></div><div class="ttdeci">void set_penalty(const std::string &amp;p_type)</div><div class="ttdoc">Set the penalty type for regularization.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00154">svc.cpp:154</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_ae6f44aa991535593f9370ce7472af3dc"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#ae6f44aa991535593f9370ce7472af3dc">gpmp::ml::SVC::kernel</a></div><div class="ttdeci">double kernel(const std::vector&lt; double &gt; &amp;x1, const std::vector&lt; double &gt; &amp;x2)</div><div class="ttdoc">Compute the kernel function between two vectors.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00217">svc.cpp:217</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_aed818460b420c4e38cd1f3e6b14a2b73"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#aed818460b420c4e38cd1f3e6b14a2b73">gpmp::ml::SVC::hinge_loss</a></div><div class="ttdeci">double hinge_loss(double prediction, int label)</div><div class="ttdoc">Compute the hinge loss for a given prediction and true label.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00075">svc.cpp:75</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_af030681b5acf493d3725ec279c8e5ac8"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#af030681b5acf493d3725ec279c8e5ac8">gpmp::ml::SVC::accuracy</a></div><div class="ttdeci">double accuracy(const std::vector&lt; int &gt; &amp;predictions, const std::vector&lt; int &gt; &amp;labels)</div><div class="ttdoc">Compute the accuracy of predictions.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00249">svc.cpp:249</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_af67ac51bfb0cd3971d2e37aebc7ad36b"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#af67ac51bfb0cd3971d2e37aebc7ad36b">gpmp::ml::SVC::grid_search</a></div><div class="ttdeci">std::vector&lt; double &gt; grid_search(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y, const std::vector&lt; double &gt; &amp;C_values, const std::vector&lt; double &gt; &amp;kernel_params, int cv=5)</div><div class="ttdoc">Perform grid search for hyperparameter tuning.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00195">svc.cpp:195</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_af695cbb50c5b23919744510b53731004"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#af695cbb50c5b23919744510b53731004">gpmp::ml::SVC::predict</a></div><div class="ttdeci">std::vector&lt; int &gt; predict(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X_test)</div><div class="ttdoc">Predict labels for given test data.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00061">svc.cpp:61</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1SVC_html_affe68dd7cafb3695a42c0bf79bf07015"><div class="ttname"><a href="classgpmp_1_1ml_1_1SVC.html#affe68dd7cafb3695a42c0bf79bf07015">gpmp::ml::SVC::compute_loss</a></div><div class="ttdeci">double compute_loss(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;X, const std::vector&lt; int &gt; &amp;y)</div><div class="ttdoc">Compute the total loss (including regularization) for the model.</div><div class="ttdef"><b>Definition:</b> <a href="svc_8cpp_source.html#l00079">svc.cpp:79</a></div></div>
 <div class="ttc" id="anamespacegpmp_1_1linalg_html_a0f1ffe1b48041b9686ebb21e9db9a021"><div class="ttname"><a href="namespacegpmp_1_1linalg.html#a0f1ffe1b48041b9686ebb21e9db9a021">gpmp::linalg::dot_product</a></div><div class="ttdeci">int dot_product(const std::vector&lt; int8_t &gt; &amp;vec1, const std::vector&lt; int8_t &gt; &amp;vec2)</div><div class="ttdoc">Computes the dot product for vectors of signed 8-bit integers.</div></div>
 <div class="ttc" id="anamespacepython_1_1linalg_html_a0f8ef2cae18ed75d69a2636fd24ae97a"><div class="ttname"><a href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg.C</a></div><div class="ttdeci">list C</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00024">linalg.py:24</a></div></div>
+<div class="ttc" id="asvc_8hpp_html"><div class="ttname"><a href="svc_8hpp.html">svc.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

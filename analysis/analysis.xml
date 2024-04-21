@@ -2,18 +2,6 @@
 <results version="2">
     <cppcheck version="2.7"/>
     <errors>
-        <error id="constParameter" severity="style" msg="Parameter &apos;arr&apos; can be declared with const" verbose="Parameter &apos;arr&apos; can be declared with const" cwe="398" file0="../../modules/arithmetic/arith.cpp">
-            <location file="../../include/arithmetic.hpp" line="68" column="17" info="Parameter &apos;arr&apos; can be declared with const"/>
-            <symbol>arr</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;arr&apos; can be declared with const" verbose="Parameter &apos;arr&apos; can be declared with const" cwe="398" file0="../../modules/arithmetic/arith.cpp">
-            <location file="../../include/arithmetic.hpp" line="77" column="17" info="Parameter &apos;arr&apos; can be declared with const"/>
-            <symbol>arr</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;arr&apos; can be declared with const" verbose="Parameter &apos;arr&apos; can be declared with const" cwe="398" file0="../../modules/arithmetic/arith.cpp">
-            <location file="../../include/arithmetic.hpp" line="86" column="17" info="Parameter &apos;arr&apos; can be declared with const"/>
-            <symbol>arr</symbol>
-        </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: i" verbose="Unused variable: i" cwe="563" file0="../../modules/complex/Mandelbrot.c">
             <location file="../../modules/complex/Mandelbrot.c" line="15" column="15"/>
             <symbol>i</symbol>
@@ -43,15 +31,15 @@
             <symbol>errorcode</symbol>
         </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: i" verbose="Unused variable: i" cwe="563" file0="../../modules/complex/Mandelbrot.cpp">
-            <location file="../../modules/complex/Mandelbrot.cpp" line="46" column="15"/>
+            <location file="../../modules/complex/Mandelbrot.cpp" line="44" column="15"/>
             <symbol>i</symbol>
         </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: j" verbose="Unused variable: j" cwe="563" file0="../../modules/complex/Mandelbrot.cpp">
-            <location file="../../modules/complex/Mandelbrot.cpp" line="46" column="18"/>
+            <location file="../../modules/complex/Mandelbrot.cpp" line="44" column="18"/>
             <symbol>j</symbol>
         </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: errorcode" verbose="Unused variable: errorcode" cwe="563" file0="../../modules/complex/Mandelbrot.cpp">
-            <location file="../../modules/complex/Mandelbrot.cpp" line="118" column="26"/>
+            <location file="../../modules/complex/Mandelbrot.cpp" line="116" column="26"/>
             <symbol>errorcode</symbol>
         </error>
         <error id="syntaxError" severity="error" msg="Code &apos;classCamera{&apos; is invalid C code. Use --std or --language to configure the language." verbose="Code &apos;classCamera{&apos; is invalid C code. Use --std or --language to configure the language." file0="../../modules/complex/openGL_bounce.c">
@@ -65,54 +53,15 @@
             <location file="../../modules/complex/openGL_example00.c" line="32" column="14"/>
             <symbol>y</symbol>
         </error>
-        <error id="useInitializationList" severity="performance" msg="Variable &apos;data_&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;data_&apos; a value by passing the value to the constructor in the initialization list." cwe="398" file0="../../modules/core/datatable.cpp">
-            <location file="../../include/core/datatable.hpp" line="93" column="9"/>
-            <symbol>data_</symbol>
-        </error>
-        <error id="useInitializationList" severity="performance" msg="Variable &apos;headers_&apos; is assigned in constructor body. Consider performing initialization in initialization list." verbose="When an object of a class is created, the constructors of all member variables are called consecutively in the order the variables are declared, even if you don&apos;t explicitly write them to the initialization list. You could avoid assigning &apos;headers_&apos; a value by passing the value to the constructor in the initialization list." cwe="398" file0="../../modules/core/datatable.cpp">
-            <location file="../../include/core/datatable.hpp" line="94" column="9"/>
-            <symbol>headers_</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;num_omitted_rows&apos; can be reduced." verbose="The scope of the variable &apos;num_omitted_rows&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/core/datatable.cpp">
-            <location file="../../include/core/datatable.hpp" line="221" column="13"/>
-            <symbol>num_omitted_rows</symbol>
-        </error>
-        <error id="passedByValue" severity="performance" msg="Function parameter &apos;filename&apos; should be passed by const reference." verbose="Parameter &apos;filename&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="../../modules/core/datatable.cpp">
-            <location file="../../modules/core/datatable.cpp" line="59" column="45"/>
-            <symbol>filename</symbol>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/core/datatable.cpp">
-            <location file="../../modules/core/datatable.cpp" line="285" column="23"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/core/datatable.cpp">
-            <location file="../../modules/core/datatable.cpp" line="311" column="22"/>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;num_omitted_rows&apos; is assigned a value that is never used." verbose="Variable &apos;num_omitted_rows&apos; is assigned a value that is never used." cwe="563" file0="../../modules/core/datatable.cpp">
-            <location file="../../include/core/datatable.hpp" line="221" column="30"/>
-            <symbol>num_omitted_rows</symbol>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/core/datatable1.cpp">
-            <location file="../../modules/core/datatable1.cpp" line="484" column="23"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/core/datatable1.cpp">
-            <location file="../../modules/core/datatable1.cpp" line="510" column="22"/>
-        </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;num_omitted_rows&apos; can be reduced." verbose="The scope of the variable &apos;num_omitted_rows&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/core/datatable2.cpp">
-            <location file="../../modules/core/datatable2.cpp" line="202" column="9"/>
+            <location file="../../modules/core/datatable2.cpp" line="200" column="9"/>
             <symbol>num_omitted_rows</symbol>
-        </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Graph&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Graph&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/disct/graphs.cpp">
-            <location file="../../include/disct/graphs.hpp" line="58" column="5"/>
-            <symbol>Graph</symbol>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::any_of algorithm instead of a raw loop." verbose="Consider using std::any_of algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
-            <location file="../../modules/disct/graphs.cpp" line="408" column="44"/>
+            <location file="../../modules/disct/graphs.cpp" line="406" column="44"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
-            <location file="../../modules/disct/graphs.cpp" line="678" column="24"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/disct/graphs.cpp">
-            <location file="../../modules/disct/graphs.cpp" line="713" column="24"/>
+            <location file="../../modules/disct/graphs.cpp" line="676" column="24"/>
         </error>
         <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/arm/mtx_arm_vec_f32.cpp">
             <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="73" column="15" info="c is overwritten"/>
@@ -175,20 +124,16 @@
             <symbol>c</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
-            <location file="../../modules/linalg/dgemm_arr.cpp" line="148" column="12"/>
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="147" column="12"/>
             <symbol>j</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;i&apos; can be reduced." verbose="The scope of the variable &apos;i&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
-            <location file="../../modules/linalg/dgemm_arr.cpp" line="196" column="9"/>
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="195" column="9"/>
             <symbol>i</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;nc&apos; can be reduced." verbose="The scope of the variable &apos;nc&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/dgemm_arr.cpp">
-            <location file="../../modules/linalg/dgemm_arr.cpp" line="404" column="13"/>
+            <location file="../../modules/linalg/dgemm_arr.cpp" line="403" column="13"/>
             <symbol>nc</symbol>
-        </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Eigen&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/eigen.cpp">
-            <location file="../../include/linalg/eigen.hpp" line="57" column="5"/>
-            <symbol>Eigen</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
@@ -238,73 +183,65 @@
             <location file="../../modules/linalg/gpu/mtx_x86.c" line="9" column="5"/>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/igemm_arr.cpp">
-            <location file="../../modules/linalg/igemm_arr.cpp" line="77" column="12"/>
+            <location file="../../modules/linalg/igemm_arr.cpp" line="76" column="12"/>
             <symbol>j</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;i&apos; can be reduced." verbose="The scope of the variable &apos;i&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/igemm_arr.cpp">
-            <location file="../../modules/linalg/igemm_arr.cpp" line="125" column="9"/>
+            <location file="../../modules/linalg/igemm_arr.cpp" line="124" column="9"/>
             <symbol>i</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;nr&apos; can be reduced." verbose="The scope of the variable &apos;nr&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/igemm_arr.cpp">
-            <location file="../../modules/linalg/igemm_arr.cpp" line="281" column="13"/>
+            <location file="../../modules/linalg/igemm_arr.cpp" line="280" column="13"/>
             <symbol>nr</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;nc&apos; can be reduced." verbose="The scope of the variable &apos;nc&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/igemm_arr.cpp">
-            <location file="../../modules/linalg/igemm_arr.cpp" line="354" column="13"/>
+            <location file="../../modules/linalg/igemm_arr.cpp" line="353" column="13"/>
             <symbol>nc</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;LinSys&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/linsys.cpp">
-            <location file="../../include/linalg/linsys.hpp" line="58" column="5"/>
-            <symbol>LinSys</symbol>
-        </error>
-        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/linalg/mtx_naive.cpp">
-            <location file="../../modules/linalg/mtx_naive.cpp" line="58" column="36"/>
-            <location file="../../modules/linalg/mtx_naive.cpp" line="57" column="22" info="&apos;rows&apos; is assigned value &apos;A.size()&apos; here."/>
-        </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;j&apos; can be reduced." verbose="The scope of the variable &apos;j&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/sgemm_arr.cpp">
-            <location file="../../modules/linalg/sgemm_arr.cpp" line="77" column="12"/>
+            <location file="../../modules/linalg/sgemm_arr.cpp" line="76" column="12"/>
             <symbol>j</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;i&apos; can be reduced." verbose="The scope of the variable &apos;i&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/sgemm_arr.cpp">
-            <location file="../../modules/linalg/sgemm_arr.cpp" line="125" column="9"/>
+            <location file="../../modules/linalg/sgemm_arr.cpp" line="124" column="9"/>
             <symbol>i</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;nr&apos; can be reduced." verbose="The scope of the variable &apos;nr&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/sgemm_arr.cpp">
-            <location file="../../modules/linalg/sgemm_arr.cpp" line="282" column="13"/>
+            <location file="../../modules/linalg/sgemm_arr.cpp" line="281" column="13"/>
             <symbol>nr</symbol>
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;nc&apos; can be reduced." verbose="The scope of the variable &apos;nc&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/linalg/sgemm_arr.cpp">
-            <location file="../../modules/linalg/sgemm_arr.cpp" line="355" column="13"/>
+            <location file="../../modules/linalg/sgemm_arr.cpp" line="354" column="13"/>
             <symbol>nc</symbol>
         </error>
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp" line="91" column="0"/>
         </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp">
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_f32.cpp:91] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_f32.cpp" line="0" column="0"/>
         </error>
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp" line="92" column="0"/>
         </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp">
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_f64.cpp:92] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_f64.cpp" line="0" column="0"/>
         </error>
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp" line="87" column="0"/>
         </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp">
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i16.cpp:87] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_i16.cpp" line="0" column="0"/>
         </error>
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp" line="98" column="0"/>
         </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp">
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i32.cpp:98] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_i32.cpp" line="0" column="0"/>
         </error>
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp" line="87" column="0"/>
         </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp">
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_arr_i8.cpp:87] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp">
             <location file="../../modules/linalg/sse/mtx_sse2_arr_i8.cpp" line="0" column="0"/>
         </error>
         <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/sse/mtx_sse2_vec_f32.cpp">
@@ -315,7 +252,7 @@
         <error id="preprocessorErrorDirective" severity="error" msg="#endif without #if" verbose="#endif without #if">
             <location file="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp" line="182" column="0"/>
         </error>
-        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__ARM_ARCH;__ARM_ARCH_ISA_A64;__ARM_NEON;__aarch64__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__GPMP_CPP_API__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__GPMP_PYTHON_API__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__i386;__i386__;__x86_64__;i386 : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp">
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__SSE2__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if\012__amd64;__amd64__;__x86_64__ : [../../modules/linalg/sse/mtx_sse2_vec_f64.cpp:182] #endif without #if" file0="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp">
             <location file="../../modules/linalg/sse/mtx_sse2_vec_f64.cpp" line="0" column="0"/>
         </error>
         <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;c&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp">
@@ -328,210 +265,95 @@
             <location file="../../modules/linalg/sse/mtx_sse2_vec_i32.cpp" line="109" column="23" info="c is initialized"/>
             <symbol>c</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Tensor&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/linalg/tensor.cpp">
-            <location file="../../include/linalg/tensor.hpp" line="75" column="5"/>
-            <symbol>Tensor</symbol>
-        </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/tensor.cpp">
-            <location file="../../modules/linalg/tensor.cpp" line="54" column="19"/>
+            <location file="../../modules/linalg/tensor.cpp" line="53" column="19"/>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;totalSize&apos; is assigned a value that is never used." verbose="Variable &apos;totalSize&apos; is assigned a value that is never used." cwe="563" file0="../../modules/linalg/tensor.cpp">
-            <location file="../../modules/linalg/tensor.cpp" line="52" column="22"/>
+            <location file="../../modules/linalg/tensor.cpp" line="51" column="22"/>
             <symbol>totalSize</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;totalSize&apos; is assigned a value that is never used." verbose="Variable &apos;totalSize&apos; is assigned a value that is never used." cwe="563" file0="../../modules/linalg/tensor.cpp">
-            <location file="../../modules/linalg/tensor.cpp" line="54" column="19"/>
+            <location file="../../modules/linalg/tensor.cpp" line="53" column="19"/>
             <symbol>totalSize</symbol>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/vector_naive.cpp">
-            <location file="../../modules/linalg/vector_naive.cpp" line="60" column="14"/>
+            <location file="../../modules/linalg/vector_naive.cpp" line="59" column="14"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/linalg/vector_naive.cpp">
-            <location file="../../modules/linalg/vector_naive.cpp" line="101" column="14"/>
+            <location file="../../modules/linalg/vector_naive.cpp" line="100" column="14"/>
         </error>
         <error id="unpreciseMathCall" severity="style" msg="Expression &apos;log(1 + x)&apos; can be replaced by &apos;log1p(x)&apos; to avoid loss of precision." verbose="Expression &apos;log(1 + x)&apos; can be replaced by &apos;log1p(x)&apos; to avoid loss of precision." cwe="758" file0="../../modules/ml/activators.cpp">
-            <location file="../../modules/ml/activators.cpp" line="124" column="12"/>
+            <location file="../../modules/ml/activators.cpp" line="123" column="12"/>
         </error>
         <error id="unpreciseMathCall" severity="style" msg="Expression &apos;exp(x) - 1&apos; can be replaced by &apos;expm1(x)&apos; to avoid loss of precision." verbose="Expression &apos;exp(x) - 1&apos; can be replaced by &apos;expm1(x)&apos; to avoid loss of precision." cwe="758" file0="../../modules/ml/activators.cpp">
-            <location file="../../modules/ml/activators.cpp" line="128" column="34"/>
+            <location file="../../modules/ml/activators.cpp" line="127" column="34"/>
         </error>
         <error id="unpreciseMathCall" severity="style" msg="Expression &apos;exp(x) - 1&apos; can be replaced by &apos;expm1(x)&apos; to avoid loss of precision." verbose="Expression &apos;exp(x) - 1&apos; can be replaced by &apos;expm1(x)&apos; to avoid loss of precision." cwe="758" file0="../../modules/ml/activators.cpp">
-            <location file="../../modules/ml/activators.cpp" line="136" column="43"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/activators.cpp">
-            <location file="../../modules/ml/activators.cpp" line="62" column="16"/>
-        </error>
-        <error id="stlFindInsert" severity="performance" msg="Searching before insertion is not necessary. Instead of &apos;feature_probs[label]=std::vector&lt;double&gt;(features.size(),0.0)&apos; consider using &apos;feature_probs.try_emplace(label, std::vector&lt;double&gt;(features.size(),0.0));&apos;." verbose="Searching before insertion is not necessary. Instead of &apos;feature_probs[label]=std::vector&lt;double&gt;(features.size(),0.0)&apos; consider using &apos;feature_probs.try_emplace(label, std::vector&lt;double&gt;(features.size(),0.0));&apos;." cwe="398" file0="../../modules/ml/bayes_clf.cpp">
-            <location file="../../modules/ml/bayes_clf.cpp" line="69" column="55"/>
-        </error>
-        <error id="stlFindInsert" severity="performance" msg="Searching before insertion is not necessary. Instead of &apos;mean[label]=std::vector&lt;double&gt;(num_features,0.0)&apos; consider using &apos;mean.try_emplace(label, std::vector&lt;double&gt;(num_features,0.0));&apos;." verbose="Searching before insertion is not necessary. Instead of &apos;mean[label]=std::vector&lt;double&gt;(num_features,0.0)&apos; consider using &apos;mean.try_emplace(label, std::vector&lt;double&gt;(num_features,0.0));&apos;." cwe="398" file0="../../modules/ml/bayes_clf.cpp">
-            <location file="../../modules/ml/bayes_clf.cpp" line="259" column="46"/>
-        </error>
-        <error id="stlFindInsert" severity="performance" msg="Searching before insertion is not necessary. Instead of &apos;feature_probs[label]=std::vector&lt;double&gt;(num_features,0.0)&apos; consider using &apos;feature_probs.try_emplace(label, std::vector&lt;double&gt;(num_features,0.0));&apos;." verbose="Searching before insertion is not necessary. Instead of &apos;feature_probs[label]=std::vector&lt;double&gt;(num_features,0.0)&apos; consider using &apos;feature_probs.try_emplace(label, std::vector&lt;double&gt;(num_features,0.0));&apos;." cwe="398" file0="../../modules/ml/bayes_clf.cpp">
-            <location file="../../modules/ml/bayes_clf.cpp" line="375" column="55"/>
+            <location file="../../modules/ml/activators.cpp" line="135" column="43"/>
         </error>
         <error id="unpreciseMathCall" severity="style" msg="Expression &apos;log(1 + x)&apos; can be replaced by &apos;log1p(x)&apos; to avoid loss of precision." verbose="Expression &apos;log(1 + x)&apos; can be replaced by &apos;log1p(x)&apos; to avoid loss of precision." cwe="758" file0="../../modules/ml/encoder.cpp">
-            <location file="../../modules/ml/encoder.cpp" line="410" column="52"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/encoder.cpp">
-            <location file="../../modules/ml/encoder.cpp" line="121" column="16"/>
+            <location file="../../modules/ml/encoder.cpp" line="409" column="52"/>
         </error>
         <error id="unusedVariable" severity="style" msg="Unused variable: generator" verbose="Unused variable: generator" cwe="563" file0="../../modules/ml/encoder.cpp">
-            <location file="../../modules/ml/encoder.cpp" line="556" column="32"/>
+            <location file="../../modules/ml/encoder.cpp" line="555" column="32"/>
             <symbol>generator</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Kfold&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;Kfold&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/ml/kfold.cpp">
-            <location file="../../include/ml/kfold.hpp" line="54" column="5"/>
-            <symbol>Kfold</symbol>
-        </error>
-        <error id="selfInitialization" severity="error" msg="Member variable &apos;cols&apos; is initialized by itself." verbose="Member variable &apos;cols&apos; is initialized by itself." cwe="665" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="78" column="9"/>
-            <symbol>cols</symbol>
-        </error>
-        <error id="selfInitialization" severity="error" msg="Member variable &apos;rows&apos; is initialized by itself." verbose="Member variable &apos;rows&apos; is initialized by itself." cwe="665" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="78" column="21"/>
-            <symbol>rows</symbol>
-        </error>
-        <error id="noCopyConstructor" severity="warning" msg="Class &apos;PrimaryMLP&apos; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &apos;PrimaryMLP&apos; does not have a copy constructor which is recommended since it has dynamic memory/resource allocation(s)." cwe="398" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../modules/ml/mlp_network.cpp" line="71" column="5"/>
-            <symbol>PrimaryMLP</symbol>
-        </error>
-        <error id="noOperatorEq" severity="warning" msg="Class &apos;PrimaryMLP&apos; does not have a operator= which is recommended since it has dynamic memory/resource allocation(s)." verbose="Class &apos;PrimaryMLP&apos; does not have a operator= which is recommended since it has dynamic memory/resource allocation(s)." cwe="398" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../modules/ml/mlp_network.cpp" line="71" column="5"/>
-            <symbol>PrimaryMLP</symbol>
-        </error>
-        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;dimension=0&apos; is always false" verbose="Condition &apos;dimension=0&apos; is always false" cwe="570" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="285" column="31" info="Condition &apos;dimension=0&apos; is always false"/>
-        </error>
-        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;row&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;row&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="94" column="18" info="Unsigned positive"/>
-            <symbol>row</symbol>
-        </error>
-        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;col&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;col&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="95" column="18" info="Unsigned positive"/>
-            <symbol>col</symbol>
-        </error>
-        <error id="unsignedPositive" severity="style" msg="Unsigned expression &apos;dimension&apos; can&apos;t be negative so it is unnecessary to test it." verbose="Unsigned expression &apos;dimension&apos; can&apos;t be negative so it is unnecessary to test it." cwe="570" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="284" column="18" info="Unsigned positive"/>
-            <symbol>dimension</symbol>
-        </error>
-        <error id="funcArgOrderDifferent" severity="warning" msg="Function &apos;rand_int&apos; argument order different: declaration &apos;low, hi&apos; definition &apos;hi, low&apos;" verbose="Function &apos;rand_int&apos; argument order different: declaration &apos;low, hi&apos; definition &apos;hi, low&apos;" cwe="683" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../modules/ml/mlp_network.cpp" line="54" column="48"/>
-            <location file="../../include/ml/mlp_net.hpp" line="91" column="30"/>
-            <symbol>rand_int</symbol>
-        </error>
-        <error id="passedByValue" severity="performance" msg="Function parameter &apos;_layer_units&apos; should be passed by const reference." verbose="Parameter &apos;_layer_units&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/ml/mlp_net.hpp" line="194" column="47"/>
-            <symbol>_layer_units</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;target&apos; can be declared with const" verbose="Parameter &apos;target&apos; can be declared with const" cwe="398" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/linalg/mtx_tmpl.hpp" line="208" column="24" info="Parameter &apos;target&apos; can be declared with const"/>
-            <symbol>target</symbol>
-        </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;npl&apos; can be declared with const" verbose="Parameter &apos;npl&apos; can be declared with const" cwe="398" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../modules/ml/mlp_network.cpp" line="64" column="54" info="Parameter &apos;npl&apos; can be declared with const"/>
-            <symbol>npl</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;y&apos; is assigned a value that is never used." verbose="Variable &apos;y&apos; is assigned a value that is never used." cwe="563" file0="../../modules/ml/mlp_network.cpp">
-            <location file="../../include/ml/mlp_net.hpp" line="248" column="16"/>
-            <symbol>y</symbol>
-        </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="54" column="17"/>
+            <location file="../../modules/ml/regularizers.cpp" line="53" column="17"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="99" column="17"/>
+            <location file="../../modules/ml/regularizers.cpp" line="98" column="17"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="109" column="14"/>
+            <location file="../../modules/ml/regularizers.cpp" line="108" column="14"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="115" column="20"/>
+            <location file="../../modules/ml/regularizers.cpp" line="114" column="20"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="124" column="16"/>
+            <location file="../../modules/ml/regularizers.cpp" line="123" column="16"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="137" column="18"/>
+            <location file="../../modules/ml/regularizers.cpp" line="136" column="18"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="143" column="22"/>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;patience&apos; is assigned a value that is never used." verbose="Variable &apos;patience&apos; is assigned a value that is never used." cwe="563" file0="../../modules/ml/regularizers.cpp">
-            <location file="../../modules/ml/regularizers.cpp" line="79" column="18"/>
-            <symbol>patience</symbol>
-        </error>
-        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::kernel_param&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::kernel_param&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
-            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
-            <symbol>SVC::kernel_param</symbol>
-        </error>
-        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::random_state&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::random_state&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
-            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
-            <symbol>SVC::random_state</symbol>
-        </error>
-        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::verbose&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::verbose&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
-            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
-            <symbol>SVC::verbose</symbol>
-        </error>
-        <error id="uninitMemberVar" severity="warning" msg="Member variable &apos;SVC::bias&apos; is not initialized in the constructor." verbose="Member variable &apos;SVC::bias&apos; is not initialized in the constructor." cwe="398" file0="../../modules/ml/svc.cpp">
-            <location file="../../modules/ml/svc.cpp" line="39" column="16"/>
-            <symbol>SVC::bias</symbol>
+            <location file="../../modules/ml/regularizers.cpp" line="142" column="22"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/ml/svc.cpp">
-            <location file="../../modules/ml/svc.cpp" line="93" column="14"/>
-        </error>
-        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;nb_threads_hint==0&apos; is always false" verbose="Condition &apos;nb_threads_hint==0&apos; is always false" cwe="570" file0="../../modules/nt/factorization.cpp">
-            <location file="../../include/core/threads.hpp" line="251" column="43" info="Condition &apos;nb_threads_hint==0&apos; is always false"/>
-            <location file="../../include/core/threads.hpp" line="250" column="32" info="Assignment &apos;nb_threads_hint=10&apos;, assigned value is 10"/>
-        </error>
-        <error id="redundantAssignment" severity="style" msg="Variable &apos;pool.enqueue&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;pool.enqueue&apos; is reassigned a value before the old one has been used." cwe="563" file0="../../modules/nt/factorization.cpp">
-            <location file="../../include/core/threads.hpp" line="225" column="21" info="pool.enqueue is overwritten"/>
-            <location file="../../include/core/threads.hpp" line="225" column="21" info="pool.enqueue is assigned"/>
-            <symbol>pool.enqueue</symbol>
+            <location file="../../modules/ml/svc.cpp" line="92" column="14"/>
         </error>
         <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;x&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;x&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/nt/logarithms.cpp">
             <location file="../../modules/nt/logarithms.cpp" line="63" column="7" info="x is overwritten"/>
             <location file="../../modules/nt/logarithms.cpp" line="59" column="16" info="x is initialized"/>
             <symbol>x</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;LCG&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;LCG&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/nt/random.cpp">
-            <location file="../../include/nt/random.hpp" line="90" column="5"/>
-            <symbol>LCG</symbol>
-        </error>
         <error id="redundantInitialization" severity="style" msg="Redundant initialization for &apos;swapped&apos;. The initialized value is overwritten before it is read." verbose="Redundant initialization for &apos;swapped&apos;. The initialized value is overwritten before it is read." cwe="563" file0="../../modules/nt/rc4.cpp">
             <location file="../../modules/nt/rc4.cpp" line="51" column="13" info="swapped is overwritten"/>
             <location file="../../modules/nt/rc4.cpp" line="50" column="21" info="swapped is initialized"/>
             <symbol>swapped</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;RC6&apos; has a constructor with 1 argument that is not explicit." verbose="Class &apos;RC6&apos; has a constructor with 1 argument that is not explicit. Such constructors should in general be explicit for type safety reasons. Using the explicit keyword in the constructor means some mistakes when using the class can be avoided." cwe="398" file0="../../modules/nt/rc6.cpp">
-            <location file="../../include/nt/rc6.hpp" line="50" column="5"/>
-            <symbol>RC6</symbol>
-        </error>
         <error id="uninitvar" severity="error" msg="Uninitialized variable: block[j/4]" verbose="Uninitialized variable: block[j/4]" cwe="457" file0="../../modules/nt/rc6.cpp">
-            <location file="../../modules/nt/rc6.cpp" line="113" column="18"/>
+            <location file="../../modules/nt/rc6.cpp" line="111" column="18"/>
             <symbol>block[j/4]</symbol>
         </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::transform algorithm instead of a raw loop." verbose="Consider using std::transform algorithm instead of a raw loop." cwe="398" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="111" column="16"/>
-        </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;best_point&apos; is assigned a value that is never used." verbose="Variable &apos;best_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="245" column="35"/>
+            <location file="../../modules/optim/function.cpp" line="244" column="35"/>
             <symbol>best_point</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;best_point&apos; is assigned a value that is never used." verbose="Variable &apos;best_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="255" column="24"/>
+            <location file="../../modules/optim/function.cpp" line="254" column="24"/>
             <symbol>best_point</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." verbose="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="459" column="71"/>
+            <location file="../../modules/optim/function.cpp" line="458" column="71"/>
             <symbol>sum_x_cubed</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." verbose="Variable &apos;sum_x_cubed&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/function.cpp">
-            <location file="../../modules/optim/function.cpp" line="469" column="21"/>
+            <location file="../../modules/optim/function.cpp" line="468" column="21"/>
             <symbol>sum_x_cubed</symbol>
         </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;updated_point&apos; is assigned a value that is never used." verbose="Variable &apos;updated_point&apos; is assigned a value that is never used." cwe="563" file0="../../modules/optim/quasi.cpp">
-            <location file="../../modules/optim/quasi.cpp" line="233" column="39"/>
+            <location file="../../modules/optim/quasi.cpp" line="231" column="39"/>
             <symbol>updated_point</symbol>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
@@ -543,852 +365,23 @@
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
             <location file="../../modules/stats/describe.cpp" line="80" column="13"/>
         </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="129" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="175" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="185" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="203" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="214" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="223" column="13"/>
-        </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="234" column="13"/>
-        </error>
         <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/stats/probdist.cpp">
             <location file="../../modules/stats/probdist.cpp" line="107" column="23"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::count_if algorithm instead of a raw loop." verbose="Consider using std::count_if algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/probdist.cpp">
             <location file="../../modules/stats/probdist.cpp" line="173" column="13"/>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;AKS&apos; is never used." verbose="The function &apos;AKS&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_test.cpp" line="228" column="0"/>
-            <symbol>AKS</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;BSGS&apos; is never used." verbose="The function &apos;BSGS&apos; is never used." cwe="561">
-            <location file="../../modules/nt/logarithms.cpp" line="98" column="0"/>
-            <symbol>BSGS</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;BootstrapResampling&apos; is never used." verbose="The function &apos;BootstrapResampling&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="338" column="0"/>
-            <symbol>BootstrapResampling</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;ConfidenceInterval&apos; is never used." verbose="The function &apos;ConfidenceInterval&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="253" column="0"/>
-            <symbol>ConfidenceInterval</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;ETF&apos; is never used." verbose="The function &apos;ETF&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_test.cpp" line="410" column="0"/>
-            <symbol>ETF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;JackknifeResampling&apos; is never used." verbose="The function &apos;JackknifeResampling&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="369" column="0"/>
-            <symbol>JackknifeResampling</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;LikelihoodInterval&apos; is never used." verbose="The function &apos;LikelihoodInterval&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="294" column="0"/>
-            <symbol>LikelihoodInterval</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;Median&apos; is never used." verbose="The function &apos;Median&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="114" column="0"/>
-            <symbol>Median</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;Pivot&apos; is never used." verbose="The function &apos;Pivot&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="271" column="0"/>
-            <symbol>Pivot</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;PivotFunctionForConfidenceInterval&apos; is never used." verbose="The function &apos;PivotFunctionForConfidenceInterval&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="282" column="0"/>
-            <symbol>PivotFunctionForConfidenceInterval</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;PredictionInterval&apos; is never used." verbose="The function &apos;PredictionInterval&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="310" column="0"/>
-            <symbol>PredictionInterval</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;ToleranceInterval&apos; is never used." verbose="The function &apos;ToleranceInterval&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="324" column="0"/>
-            <symbol>ToleranceInterval</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;add_vec_gpu&apos; is never used." verbose="The function &apos;add_vec_gpu&apos; is never used." cwe="561">
             <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_add.c" line="4" column="0"/>
             <symbol>add_vec_gpu</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;avg_abs_dev&apos; is never used." verbose="The function &apos;avg_abs_dev&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="125" column="0"/>
-            <symbol>avg_abs_dev</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;batch_normalization&apos; is never used." verbose="The function &apos;batch_normalization&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="128" column="0"/>
-            <symbol>batch_normalization</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bellman_ford&apos; is never used." verbose="The function &apos;bellman_ford&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="118" column="0"/>
-            <symbol>bellman_ford</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;best_fit&apos; is never used." verbose="The function &apos;best_fit&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="110" column="0"/>
-            <symbol>best_fit</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;betweenness_centrality&apos; is never used." verbose="The function &apos;betweenness_centrality&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="300" column="0"/>
-            <symbol>betweenness_centrality</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bfgs_optimize&apos; is never used." verbose="The function &apos;bfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="147" column="0"/>
-            <symbol>bfgs_optimize</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bfs&apos; is never used." verbose="The function &apos;bfs&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="67" column="0"/>
-            <symbol>bfs</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bhhh_optimize&apos; is never used." verbose="The function &apos;bhhh_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="60" column="0"/>
-            <symbol>bhhh_optimize</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;binary_step&apos; is never used." verbose="The function &apos;binary_step&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="85" column="0"/>
-            <symbol>binary_step</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;bisection_method&apos; is never used." verbose="The function &apos;bisection_method&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="363" column="0"/>
-            <symbol>bisection_method</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;caesar&apos; is never used." verbose="The function &apos;caesar&apos; is never used." cwe="561">
-            <location file="../../modules/nt/cipher.cpp" line="46" column="0"/>
-            <symbol>caesar</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;carmichael_num&apos; is never used." verbose="The function &apos;carmichael_num&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_test.cpp" line="351" column="0"/>
-            <symbol>carmichael_num</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;chain_rule&apos; is never used." verbose="The function &apos;chain_rule&apos; is never used." cwe="561">
-            <location file="../../modules/calculus/differential.cpp" line="81" column="0"/>
-            <symbol>chain_rule</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;chromatic_number&apos; is never used." verbose="The function &apos;chromatic_number&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="469" column="0"/>
-            <symbol>chromatic_number</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;classify&apos; is never used." verbose="The function &apos;classify&apos; is never used." cwe="561">
-            <location file="../../modules/ml/kohonen_net.cpp" line="71" column="0"/>
-            <symbol>classify</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;clt&apos; is never used." verbose="The function &apos;clt&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="191" column="0"/>
-            <symbol>clt</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compress&apos; is never used." verbose="The function &apos;compress&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="695" column="0"/>
-            <symbol>compress</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute&apos; is never used." verbose="The function &apos;compute&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc4.cpp" line="142" column="0"/>
-            <symbol>compute</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;compute_miller_rabin&apos; is never used." verbose="The function &apos;compute_miller_rabin&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_test.cpp" line="121" column="0"/>
-            <symbol>compute_miller_rabin</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;connected_components&apos; is never used." verbose="The function &apos;connected_components&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="256" column="0"/>
-            <symbol>connected_components</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;cost_function&apos; is never used." verbose="The function &apos;cost_function&apos; is never used." cwe="561">
-            <location file="../../modules/ml/logreg.cpp" line="146" column="0"/>
-            <symbol>cost_function</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;csv_read&apos; is never used." verbose="The function &apos;csv_read&apos; is never used." cwe="561">
-            <location file="../../modules/core/datatable.cpp" line="59" column="0"/>
-            <symbol>csv_read</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;cubic_fit&apos; is never used." verbose="The function &apos;cubic_fit&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="450" column="0"/>
-            <symbol>cubic_fit</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;cubic_interpolation&apos; is never used." verbose="The function &apos;cubic_interpolation&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="148" column="0"/>
-            <symbol>cubic_interpolation</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;data_augmentation&apos; is never used." verbose="The function &apos;data_augmentation&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="159" column="0"/>
-            <symbol>data_augmentation</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;datetime&apos; is never used." verbose="The function &apos;datetime&apos; is never used." cwe="561">
-            <location file="../../modules/core/datatable.cpp" line="149" column="0"/>
-            <symbol>datetime</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;decompress&apos; is never used." verbose="The function &apos;decompress&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="721" column="0"/>
-            <symbol>decompress</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;decrypt&apos; is never used." verbose="The function &apos;decrypt&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc5.cpp" line="59" column="0"/>
-            <symbol>decrypt</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;dfs&apos; is never used." verbose="The function &apos;dfs&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="51" column="0"/>
-            <symbol>dfs</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;dgemm_nn&apos; is never used." verbose="The function &apos;dgemm_nn&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/dgemm_arr.cpp" line="382" column="0"/>
-            <symbol>dgemm_nn</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;diagonally_dominant&apos; is never used." verbose="The function &apos;diagonally_dominant&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="397" column="0"/>
-            <symbol>diagonally_dominant</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;display_mtx&apos; is never used." verbose="The function &apos;display_mtx&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="48" column="0"/>
-            <symbol>display_mtx</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;dropout_regularization&apos; is never used." verbose="The function &apos;dropout_regularization&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="68" column="0"/>
-            <symbol>dropout_regularization</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;early_stopping&apos; is never used." verbose="The function &apos;early_stopping&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="73" column="0"/>
-            <symbol>early_stopping</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;elastic_net_regularization&apos; is never used." verbose="The function &apos;elastic_net_regularization&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="59" column="0"/>
-            <symbol>elastic_net_regularization</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;elu_derivative&apos; is never used." verbose="The function &apos;elu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="131" column="0"/>
-            <symbol>elu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;emp_CDF&apos; is never used." verbose="The function &apos;emp_CDF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="168" column="0"/>
-            <symbol>emp_CDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;emp_PMF&apos; is never used." verbose="The function &apos;emp_PMF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="180" column="0"/>
-            <symbol>emp_PMF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;enableTimestamps&apos; is never used." verbose="The function &apos;enableTimestamps&apos; is never used." cwe="561">
-            <location file="../../modules/core/utils.cpp" line="62" column="0"/>
-            <symbol>enableTimestamps</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;ensemble_predictions&apos; is never used." verbose="The function &apos;ensemble_predictions&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="88" column="0"/>
-            <symbol>ensemble_predictions</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;error_in&apos; is never used." verbose="The function &apos;error_in&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="373" column="0"/>
-            <symbol>error_in</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;error_square&apos; is never used." verbose="The function &apos;error_square&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="398" column="0"/>
-            <symbol>error_square</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;eval&apos; is never used." verbose="The function &apos;eval&apos; is never used." cwe="561">
-            <location file="../../modules/calculus/differential.cpp" line="113" column="0"/>
-            <symbol>eval</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;exp_PDF&apos; is never used." verbose="The function &apos;exp_PDF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="150" column="0"/>
-            <symbol>exp_PDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;feature_scaling&apos; is never used." verbose="The function &apos;feature_scaling&apos; is never used." cwe="561">
-            <location file="../../modules/ml/logreg.cpp" line="117" column="0"/>
-            <symbol>feature_scaling</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;fibonacci_search&apos; is never used." verbose="The function &apos;fibonacci_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="290" column="0"/>
-            <symbol>fibonacci_search</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;fit_linear&apos; is never used." verbose="The function &apos;fit_linear&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="265" column="0"/>
-            <symbol>fit_linear</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;floyd_warshall&apos; is never used." verbose="The function &apos;floyd_warshall&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="172" column="0"/>
-            <symbol>floyd_warshall</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;frobenius_norm&apos; is never used." verbose="The function &apos;frobenius_norm&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="339" column="0"/>
-            <symbol>frobenius_norm</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;gelu&apos; is never used." verbose="The function &apos;gelu&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="107" column="0"/>
-            <symbol>gelu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;gelu_derivative&apos; is never used." verbose="The function &apos;gelu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="112" column="0"/>
-            <symbol>gelu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;getLeftSingularVectors&apos; is never used." verbose="The function &apos;getLeftSingularVectors&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/svd.cpp" line="52" column="0"/>
-            <symbol>getLeftSingularVectors</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;getRightSingularVectors&apos; is never used." verbose="The function &apos;getRightSingularVectors&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/svd.cpp" line="57" column="0"/>
-            <symbol>getRightSingularVectors</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;getSingularValues&apos; is never used." verbose="The function &apos;getSingularValues&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/svd.cpp" line="47" column="0"/>
-            <symbol>getSingularValues</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;get_increment&apos; is never used." verbose="The function &apos;get_increment&apos; is never used." cwe="561">
-            <location file="../../modules/nt/random.cpp" line="76" column="0"/>
-            <symbol>get_increment</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;get_input&apos; is never used." verbose="The function &apos;get_input&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="157" column="0"/>
-            <symbol>get_input</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;get_multiplier&apos; is never used." verbose="The function &apos;get_multiplier&apos; is never used." cwe="561">
-            <location file="../../modules/nt/random.cpp" line="72" column="0"/>
-            <symbol>get_multiplier</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;get_seed&apos; is never used." verbose="The function &apos;get_seed&apos; is never used." cwe="561">
-            <location file="../../modules/nt/random.cpp" line="80" column="0"/>
-            <symbol>get_seed</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;golden_section_search&apos; is never used." verbose="The function &apos;golden_section_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="123" column="0"/>
-            <symbol>golden_section_search</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;golden_section_search_multivariate&apos; is never used." verbose="The function &apos;golden_section_search_multivariate&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="201" column="0"/>
-            <symbol>golden_section_search_multivariate</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;gradientdesc&apos; is never used." verbose="The function &apos;gradientdesc&apos; is never used." cwe="561">
-            <location file="../../modules/ml/trainers.cpp" line="38" column="0"/>
-            <symbol>gradientdesc</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;gram_schmidt&apos; is never used." verbose="The function &apos;gram_schmidt&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="376" column="0"/>
-            <symbol>gram_schmidt</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;greatest_power&apos; is never used." verbose="The function &apos;greatest_power&apos; is never used." cwe="561">
-            <location file="../../modules/arithmetic/arith.cpp" line="40" column="0"/>
-            <symbol>greatest_power</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;greedy_coloring&apos; is never used." verbose="The function &apos;greedy_coloring&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="513" column="0"/>
-            <symbol>greedy_coloring</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;grid_search&apos; is never used." verbose="The function &apos;grid_search&apos; is never used." cwe="561">
-            <location file="../../modules/ml/svc.cpp" line="196" column="0"/>
-            <symbol>grid_search</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;group_by&apos; is never used." verbose="The function &apos;group_by&apos; is never used." cwe="561">
-            <location file="../../modules/core/datatable.cpp" line="252" column="0"/>
-            <symbol>group_by</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;has_eulerian_path&apos; is never used." verbose="The function &apos;has_eulerian_path&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="383" column="0"/>
-            <symbol>has_eulerian_path</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;has_hamiltonian_circuit&apos; is never used." verbose="The function &apos;has_hamiltonian_circuit&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="369" column="0"/>
-            <symbol>has_hamiltonian_circuit</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;igemm_nn&apos; is never used." verbose="The function &apos;igemm_nn&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/igemm_arr.cpp" line="332" column="0"/>
-            <symbol>igemm_nn</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;inf_norm&apos; is never used." verbose="The function &apos;inf_norm&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="363" column="0"/>
-            <symbol>inf_norm</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;inverse_emp_CDF&apos; is never used." verbose="The function &apos;inverse_emp_CDF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="186" column="0"/>
-            <symbol>inverse_emp_CDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;invert_mtx&apos; is never used." verbose="The function &apos;invert_mtx&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="136" column="0"/>
-            <symbol>invert_mtx</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;iq_range&apos; is never used." verbose="The function &apos;iq_range&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="142" column="0"/>
-            <symbol>iq_range</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;is_bipartite&apos; is never used." verbose="The function &apos;is_bipartite&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="271" column="0"/>
-            <symbol>is_bipartite</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;is_consistent&apos; is never used." verbose="The function &apos;is_consistent&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="414" column="0"/>
-            <symbol>is_consistent</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;is_homogeneous&apos; is never used." verbose="The function &apos;is_homogeneous&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="433" column="0"/>
-            <symbol>is_homogeneous</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;is_planar&apos; is never used." verbose="The function &apos;is_planar&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="591" column="0"/>
-            <symbol>is_planar</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;jordan_normal_form&apos; is never used." verbose="The function &apos;jordan_normal_form&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/eigen.cpp" line="214" column="0"/>
-            <symbol>jordan_normal_form</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;kendalls_tau&apos; is never used." verbose="The function &apos;kendalls_tau&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="287" column="0"/>
-            <symbol>kendalls_tau</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;keyword&apos; is never used." verbose="The function &apos;keyword&apos; is never used." cwe="561">
-            <location file="../../modules/nt/cipher.cpp" line="99" column="0"/>
-            <symbol>keyword</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;keyword_encode&apos; is never used." verbose="The function &apos;keyword_encode&apos; is never used." cwe="561">
-            <location file="../../modules/nt/cipher.cpp" line="63" column="0"/>
-            <symbol>keyword_encode</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;kruskal&apos; is never used." verbose="The function &apos;kruskal&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="141" column="0"/>
-            <symbol>kruskal</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;kurtosis&apos; is never used." verbose="The function &apos;kurtosis&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="199" column="0"/>
-            <symbol>kurtosis</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;lbfgs_optimize&apos; is never used." verbose="The function &apos;lbfgs_optimize&apos; is never used." cwe="561">
-            <location file="../../modules/optim/quasi.cpp" line="329" column="0"/>
-            <symbol>lbfgs_optimize</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;leaky_relu&apos; is never used." verbose="The function &apos;leaky_relu&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="144" column="0"/>
-            <symbol>leaky_relu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;leaky_relu_derivative&apos; is never used." verbose="The function &apos;leaky_relu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="148" column="0"/>
-            <symbol>leaky_relu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;limit_at&apos; is never used." verbose="The function &apos;limit_at&apos; is never used." cwe="561">
-            <location file="../../modules/calculus/differential.cpp" line="121" column="0"/>
-            <symbol>limit_at</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;limit_at_infinity&apos; is never used." verbose="The function &apos;limit_at_infinity&apos; is never used." cwe="561">
-            <location file="../../modules/calculus/differential.cpp" line="131" column="0"/>
-            <symbol>limit_at_infinity</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;linear_interpolation&apos; is never used." verbose="The function &apos;linear_interpolation&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="140" column="0"/>
-            <symbol>linear_interpolation</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;lmoment1&apos; is never used." verbose="The function &apos;lmoment1&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="210" column="0"/>
-            <symbol>lmoment1</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;lmoment2&apos; is never used." verbose="The function &apos;lmoment2&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="219" column="0"/>
-            <symbol>lmoment2</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;load&apos; is never used." verbose="The function &apos;load&apos; is never used." cwe="561">
-            <location file="../../modules/ml/encoder.cpp" line="60" column="0"/>
-            <symbol>load</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;lrate_set&apos; is never used." verbose="The function &apos;lrate_set&apos; is never used." cwe="561">
-            <location file="../../modules/ml/encoder.cpp" line="78" column="0"/>
-            <symbol>lrate_set</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;lrate_update&apos; is never used." verbose="The function &apos;lrate_update&apos; is never used." cwe="561">
-            <location file="../../modules/ml/encoder.cpp" line="82" column="0"/>
-            <symbol>lrate_update</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;map_file&apos; is never used." verbose="The function &apos;map_file&apos; is never used." cwe="561">
-            <location file="../../modules/core/datatable2.cpp" line="76" column="0"/>
+            <location file="../../modules/core/datatable2.cpp" line="74" column="0"/>
             <symbol>map_file</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;match_cardinality&apos; is never used." verbose="The function &apos;match_cardinality&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="537" column="0"/>
-            <symbol>match_cardinality</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;match_wt&apos; is never used." verbose="The function &apos;match_wt&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="559" column="0"/>
-            <symbol>match_wt</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;matrixMul&apos; is never used." verbose="The function &apos;matrixMul&apos; is never used." cwe="561">
             <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="4" column="0"/>
             <symbol>matrixMul</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;max_norm_regularization&apos; is never used." verbose="The function &apos;max_norm_regularization&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="105" column="0"/>
-            <symbol>max_norm_regularization</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_cubic&apos; is never used." verbose="The function &apos;mean_cubic&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="57" column="0"/>
-            <symbol>mean_cubic</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_geo&apos; is never used." verbose="The function &apos;mean_geo&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="48" column="0"/>
-            <symbol>mean_geo</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_geo_pow&apos; is never used." verbose="The function &apos;mean_geo_pow&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="67" column="0"/>
-            <symbol>mean_geo_pow</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_harmonic&apos; is never used." verbose="The function &apos;mean_harmonic&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="77" column="0"/>
-            <symbol>mean_harmonic</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_heinz&apos; is never used." verbose="The function &apos;mean_heinz&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="95" column="0"/>
-            <symbol>mean_heinz</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_heronian&apos; is never used." verbose="The function &apos;mean_heronian&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="86" column="0"/>
-            <symbol>mean_heronian</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mean_lehmer&apos; is never used." verbose="The function &apos;mean_lehmer&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="104" column="0"/>
-            <symbol>mean_lehmer</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;median_uniased&apos; is never used." verbose="The function &apos;median_uniased&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="235" column="0"/>
-            <symbol>median_uniased</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;miller_rabin&apos; is never used." verbose="The function &apos;miller_rabin&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_test.cpp" line="209" column="0"/>
-            <symbol>miller_rabin</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;minibatch_gradientdesc&apos; is never used." verbose="The function &apos;minibatch_gradientdesc&apos; is never used." cwe="561">
-            <location file="../../modules/ml/trainers.cpp" line="104" column="0"/>
-            <symbol>minibatch_gradientdesc</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mle_est&apos; is never used." verbose="The function &apos;mle_est&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="220" column="0"/>
-            <symbol>mle_est</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mom&apos; is never used." verbose="The function &apos;mom&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="208" column="0"/>
-            <symbol>mom</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mse&apos; is never used." verbose="The function &apos;mse&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="412" column="0"/>
-            <symbol>mse</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mtx_add&apos; is never used." verbose="The function &apos;mtx_add&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="57" column="0"/>
-            <symbol>mtx_add</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mtx_add_f90&apos; is never used." verbose="The function &apos;mtx_add_f90&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_arr_f90.cpp" line="69" column="0"/>
-            <symbol>mtx_add_f90</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult&apos; is never used." verbose="The function &apos;mtx_mult&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/avx/mtx_avx2_arr_f64.cpp" line="90" column="0"/>
-            <symbol>mtx_mult</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mtx_mult_f90&apos; is never used." verbose="The function &apos;mtx_mult_f90&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/mtx_arr_f90.cpp" line="85" column="0"/>
-            <symbol>mtx_mult_f90</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mtx_sub&apos; is never used." verbose="The function &apos;mtx_sub&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="87" column="0"/>
-            <symbol>mtx_sub</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mtx_tpose&apos; is never used." verbose="The function &apos;mtx_tpose&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/arm/mtx_arm_vec_f32.cpp" line="116" column="0"/>
-            <symbol>mtx_tpose</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;multiply&apos; is never used." verbose="The function &apos;multiply&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/tensor.cpp" line="98" column="0"/>
-            <symbol>multiply</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;mumv&apos; is never used." verbose="The function &apos;mumv&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="226" column="0"/>
-            <symbol>mumv</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;nelder_mead&apos; is never used." verbose="The function &apos;nelder_mead&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="520" column="0"/>
-            <symbol>nelder_mead</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;newton_method&apos; is never used." verbose="The function &apos;newton_method&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="394" column="0"/>
-            <symbol>newton_method</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;normal_CDF&apos; is never used." verbose="The function &apos;normal_CDF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="135" column="0"/>
-            <symbol>normal_CDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;normal_PDF&apos; is never used." verbose="The function &apos;normal_PDF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="127" column="0"/>
-            <symbol>normal_PDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;nth_derivative&apos; is never used." verbose="The function &apos;nth_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/calculus/differential.cpp" line="105" column="0"/>
-            <symbol>nth_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;one_norm&apos; is never used." verbose="The function &apos;one_norm&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="350" column="0"/>
-            <symbol>one_norm</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;partial_corr&apos; is never used." verbose="The function &apos;partial_corr&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="256" column="0"/>
-            <symbol>partial_corr</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;pcg32_init&apos; is never used." verbose="The function &apos;pcg32_init&apos; is never used." cwe="561">
-            <location file="../../modules/nt/random.cpp" line="148" column="0"/>
-            <symbol>pcg32_init</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;percentile&apos; is never used." verbose="The function &apos;percentile&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="154" column="0"/>
-            <symbol>percentile</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;perform_cross_validation&apos; is never used." verbose="The function &apos;perform_cross_validation&apos; is never used." cwe="561">
-            <location file="../../modules/ml/kfold.cpp" line="69" column="0"/>
-            <symbol>perform_cross_validation</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;planar_gen&apos; is never used." verbose="The function &apos;planar_gen&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="599" column="0"/>
-            <symbol>planar_gen</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;pollard_rho_log&apos; is never used." verbose="The function &apos;pollard_rho_log&apos; is never used." cwe="561">
-            <location file="../../modules/nt/logarithms.cpp" line="58" column="0"/>
-            <symbol>pollard_rho_log</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;power_iter&apos; is never used." verbose="The function &apos;power_iter&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/eigen.cpp" line="50" column="0"/>
-            <symbol>power_iter</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;predict_proba&apos; is never used." verbose="The function &apos;predict_proba&apos; is never used." cwe="561">
-            <location file="../../modules/ml/svc.cpp" line="119" column="0"/>
-            <symbol>predict_proba</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;prelu&apos; is never used." verbose="The function &apos;prelu&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="152" column="0"/>
-            <symbol>prelu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;prelu_derivative&apos; is never used." verbose="The function &apos;prelu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="156" column="0"/>
-            <symbol>prelu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;r_sqrd&apos; is never used." verbose="The function &apos;r_sqrd&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="438" column="0"/>
-            <symbol>r_sqrd</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;rand_init&apos; is never used." verbose="The function &apos;rand_init&apos; is never used." cwe="561">
-            <location file="../../modules/ml/mlp_network.cpp" line="48" column="0"/>
-            <symbol>rand_init</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;rand_int&apos; is never used." verbose="The function &apos;rand_int&apos; is never used." cwe="561">
-            <location file="../../modules/ml/mlp_network.cpp" line="54" column="0"/>
-            <symbol>rand_int</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;rand_real&apos; is never used." verbose="The function &apos;rand_real&apos; is never used." cwe="561">
-            <location file="../../modules/ml/mlp_network.cpp" line="59" column="0"/>
-            <symbol>rand_real</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;random_search&apos; is never used." verbose="The function &apos;random_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="234" column="0"/>
-            <symbol>random_search</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;rayleigh_iter&apos; is never used." verbose="The function &apos;rayleigh_iter&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/eigen.cpp" line="239" column="0"/>
-            <symbol>rayleigh_iter</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;regula_falsi&apos; is never used." verbose="The function &apos;regula_falsi&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="415" column="0"/>
-            <symbol>regula_falsi</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;relu&apos; is never used." verbose="The function &apos;relu&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="46" column="0"/>
-            <symbol>relu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;relu_derivative&apos; is never used." verbose="The function &apos;relu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="50" column="0"/>
-            <symbol>relu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;save&apos; is never used." verbose="The function &apos;save&apos; is never used." cwe="561">
-            <location file="../../modules/ml/encoder.cpp" line="42" column="0"/>
-            <symbol>save</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;schur_decomp&apos; is never used." verbose="The function &apos;schur_decomp&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/eigen.cpp" line="183" column="0"/>
-            <symbol>schur_decomp</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;selu&apos; is never used." verbose="The function &apos;selu&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="135" column="0"/>
-            <symbol>selu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;selu_derivative&apos; is never used." verbose="The function &apos;selu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="140" column="0"/>
-            <symbol>selu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;sensitivity&apos; is never used." verbose="The function &apos;sensitivity&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/eigen.cpp" line="156" column="0"/>
-            <symbol>sensitivity</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;set&apos; is never used." verbose="The function &apos;set&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/tensor.cpp" line="160" column="0"/>
-            <symbol>set</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;setLogDestination&apos; is never used." verbose="The function &apos;setLogDestination&apos; is never used." cwe="561">
-            <location file="../../modules/core/utils.cpp" line="66" column="0"/>
-            <symbol>setLogDestination</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;setLogFile&apos; is never used." verbose="The function &apos;setLogFile&apos; is never used." cwe="561">
-            <location file="../../modules/core/utils.cpp" line="70" column="0"/>
-            <symbol>setLogFile</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;setLogLevel&apos; is never used." verbose="The function &apos;setLogLevel&apos; is never used." cwe="561">
-            <location file="../../modules/core/utils.cpp" line="58" column="0"/>
-            <symbol>setLogLevel</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;set_kernel&apos; is never used." verbose="The function &apos;set_kernel&apos; is never used." cwe="561">
-            <location file="../../modules/ml/svc.cpp" line="139" column="0"/>
-            <symbol>set_kernel</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;set_random_state&apos; is never used." verbose="The function &apos;set_random_state&apos; is never used." cwe="561">
-            <location file="../../modules/ml/svc.cpp" line="147" column="0"/>
-            <symbol>set_random_state</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;sgemm_nn&apos; is never used." verbose="The function &apos;sgemm_nn&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/sgemm_arr.cpp" line="333" column="0"/>
-            <symbol>sgemm_nn</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;show_data&apos; is never used." verbose="The function &apos;show_data&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="337" column="0"/>
-            <symbol>show_data</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;sieve_of_eratosthenes&apos; is never used." verbose="The function &apos;sieve_of_eratosthenes&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_gen.cpp" line="51" column="0"/>
-            <symbol>sieve_of_eratosthenes</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;sigmoid_derivative&apos; is never used." verbose="The function &apos;sigmoid_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="41" column="0"/>
-            <symbol>sigmoid_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;silu&apos; is never used." verbose="The function &apos;silu&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="160" column="0"/>
-            <symbol>silu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;silu_derivative&apos; is never used." verbose="The function &apos;silu_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="164" column="0"/>
-            <symbol>silu_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;skewness&apos; is never used." verbose="The function &apos;skewness&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="229" column="0"/>
-            <symbol>skewness</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;smht_derivative&apos; is never used." verbose="The function &apos;smht_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="102" column="0"/>
-            <symbol>smht_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;softmax_derivative&apos; is never used." verbose="The function &apos;softmax_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="68" column="0"/>
-            <symbol>softmax_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;softplus&apos; is never used." verbose="The function &apos;softplus&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="123" column="0"/>
-            <symbol>softplus</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;solovoy_strassen&apos; is never used." verbose="The function &apos;solovoy_strassen&apos; is never used." cwe="561">
-            <location file="../../modules/nt/prime_test.cpp" line="327" column="0"/>
-            <symbol>solovoy_strassen</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;solve_cholesky&apos; is never used." verbose="The function &apos;solve_cholesky&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="215" column="0"/>
-            <symbol>solve_cholesky</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;solve_jacobi&apos; is never used." verbose="The function &apos;solve_jacobi&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="264" column="0"/>
-            <symbol>solve_jacobi</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;solve_lu&apos; is never used." verbose="The function &apos;solve_lu&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/linsys.cpp" line="196" column="0"/>
-            <symbol>solve_lu</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;spearmans_rho&apos; is never used." verbose="The function &apos;spearmans_rho&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="309" column="0"/>
-            <symbol>spearmans_rho</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;split_data&apos; is never used." verbose="The function &apos;split_data&apos; is never used." cwe="561">
-            <location file="../../modules/ml/linreg.cpp" line="279" column="0"/>
-            <symbol>split_data</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;split_indices&apos; is never used." verbose="The function &apos;split_indices&apos; is never used." cwe="561">
-            <location file="../../modules/ml/kfold.cpp" line="46" column="0"/>
-            <symbol>split_indices</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;std_cross_product&apos; is never used." verbose="The function &apos;std_cross_product&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/vector_naive.cpp" line="49" column="0"/>
-            <symbol>std_cross_product</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;std_vector_normalize&apos; is never used." verbose="The function &apos;std_vector_normalize&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/vector_naive.cpp" line="66" column="0"/>
-            <symbol>std_vector_normalize</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;std_vector_projection&apos; is never used." verbose="The function &apos;std_vector_projection&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/vector_naive.cpp" line="76" column="0"/>
-            <symbol>std_vector_projection</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;stoch_gradientdesc&apos; is never used." verbose="The function &apos;stoch_gradientdesc&apos; is never used." cwe="561">
-            <location file="../../modules/ml/trainers.cpp" line="74" column="0"/>
-            <symbol>stoch_gradientdesc</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;store_hash&apos; is never used." verbose="The function &apos;store_hash&apos; is never used." cwe="561">
-            <location file="../../modules/nt/rc4.cpp" line="117" column="0"/>
-            <symbol>store_hash</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;str_to_double&apos; is never used." verbose="The function &apos;str_to_double&apos; is never used." cwe="561">
-            <location file="../../modules/core/datatable.cpp" line="372" column="0"/>
-            <symbol>str_to_double</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;str_to_int&apos; is never used." verbose="The function &apos;str_to_int&apos; is never used." cwe="561">
-            <location file="../../modules/core/datatable.cpp" line="349" column="0"/>
-            <symbol>str_to_int</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;tanh_derivative&apos; is never used." verbose="The function &apos;tanh_derivative&apos; is never used." cwe="561">
-            <location file="../../modules/ml/activators.cpp" line="93" column="0"/>
-            <symbol>tanh_derivative</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;ternary_search&apos; is never used." verbose="The function &apos;ternary_search&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="332" column="0"/>
-            <symbol>ternary_search</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;topo_sort&apos; is never used." verbose="The function &apos;topo_sort&apos; is never used." cwe="561">
-            <location file="../../modules/disct/graphs.cpp" line="211" column="0"/>
-            <symbol>topo_sort</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;train&apos; is never used." verbose="The function &apos;train&apos; is never used." cwe="561">
-            <location file="../../modules/ml/bayes_clf.cpp" line="53" column="0"/>
-            <symbol>train</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;uniform_CDF&apos; is never used." verbose="The function &apos;uniform_CDF&apos; is never used." cwe="561">
-            <location file="../../modules/stats/probdist.cpp" line="142" column="0"/>
-            <symbol>uniform_CDF</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;var_coeff&apos; is never used." verbose="The function &apos;var_coeff&apos; is never used." cwe="561">
-            <location file="../../modules/stats/describe.cpp" line="135" column="0"/>
-            <symbol>var_coeff</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;vector_add&apos; is never used." verbose="The function &apos;vector_add&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/arm/vector_arm_f64.cpp" line="58" column="0"/>
-            <symbol>vector_add</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;vector_addition&apos; is never used." verbose="The function &apos;vector_addition&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="75" column="0"/>
-            <symbol>vector_addition</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;vector_scalar_multiply&apos; is never used." verbose="The function &apos;vector_scalar_multiply&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="106" column="0"/>
-            <symbol>vector_scalar_multiply</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;vector_sub&apos; is never used." verbose="The function &apos;vector_sub&apos; is never used." cwe="561">
-            <location file="../../modules/linalg/arm/vector_arm_f64.cpp" line="88" column="0"/>
-            <symbol>vector_sub</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;vector_subtraction&apos; is never used." verbose="The function &apos;vector_subtraction&apos; is never used." cwe="561">
-            <location file="../../modules/optim/function.cpp" line="91" column="0"/>
-            <symbol>vector_subtraction</symbol>
-        </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;weight_decay_regularization&apos; is never used." verbose="The function &apos;weight_decay_regularization&apos; is never used." cwe="561">
-            <location file="../../modules/ml/regularizers.cpp" line="120" column="0"/>
-            <symbol>weight_decay_regularization</symbol>
         </error>
         <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
     </errors>

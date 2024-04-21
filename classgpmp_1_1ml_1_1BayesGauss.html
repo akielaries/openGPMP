@@ -201,27 +201,27 @@ Private Member Functions</h2></td></tr>
 <p>Display the learned probabilities. </p>
 <dl class="section note"><dt>Note</dt><dd>This method is for debugging purposes </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00324">324</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                     {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Class Probabilities:\n&quot;</span>;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        std::cout &lt;&lt; entry.first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; entry.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nMean and Variance:\n&quot;</span>;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;class_entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>) {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        std::cout &lt;&lt; class_entry.first &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;  Mean: &quot;</span>;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; class_entry.second.size(); ++j) {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            std::cout &lt;&lt; class_entry.second[j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n  Variance: &quot;</span>;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(class_entry.first).size(); ++j) {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            std::cout &lt;&lt; <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(class_entry.first).at(j) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00323">323</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                     {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Class Probabilities:\n&quot;</span>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        std::cout &lt;&lt; entry.first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; entry.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\nMean and Variance:\n&quot;</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;class_entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>) {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        std::cout &lt;&lt; class_entry.first &lt;&lt; <span class="stringliteral">&quot;:\n&quot;</span>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;  Mean: &quot;</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; class_entry.second.size(); ++j) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            std::cout &lt;&lt; class_entry.second[j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n  Variance: &quot;</span>;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(class_entry.first).size(); ++j) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            std::cout &lt;&lt; <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(class_entry.first).at(j) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1BayesGauss_html_a556e487e3235198fd565d8921f9d9cbd"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">gpmp::ml::BayesGauss::mean</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::vector&lt; double &gt; &gt; mean</div><div class="ttdoc">Map storing the mean values for each feature in each class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00187">bayes_clf.hpp:187</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1BayesGauss_html_ae6e02cd73555e205e6e17199914ed538"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">gpmp::ml::BayesGauss::class_probs</a></div><div class="ttdeci">std::unordered_map&lt; std::string, double &gt; class_probs</div><div class="ttdoc">Map storing the probabilities of each class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00180">bayes_clf.hpp:180</a></div></div>
 <div class="ttc" id="aclassgpmp_1_1ml_1_1BayesGauss_html_aff6c0878afa2aaa6b34fb2c0fdd2eb9a"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">gpmp::ml::BayesGauss::variance</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::vector&lt; double &gt; &gt; variance</div><div class="ttdoc">Map storing the variance values for each feature in each class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8hpp_source.html#l00194">bayes_clf.hpp:194</a></div></div>
@@ -273,57 +273,57 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00246">246</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                        {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">size_t</span> num_features = data[0].size();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; data.size(); ++i) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keyword">const</span> std::string &amp;label = labels[i];</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keyword">const</span> std::vector&lt;double&gt; &amp;features = data[i];</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label] += 1.0;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// initialize mean[label] and variance[label] if not present</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>.find(label) == <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>.end()) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">// update mean</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>[label][j] += features[j];</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// calculate mean</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>) {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordtype">double</span> class_count = <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label];</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            entry.second[j] /= class_count;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// calculate variance</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; data.size(); ++i) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">const</span> std::string &amp;label = labels[i];</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keyword">const</span> std::vector&lt;double&gt; &amp;features = data[i];</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>[label][j] += std::pow(features[j] - <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>[label][j], 2);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>) {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordtype">double</span> class_count = <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label];</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            entry.second[j] /= class_count;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00245">245</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                        {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">size_t</span> num_features = data[0].size();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; data.size(); ++i) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keyword">const</span> std::string &amp;label = labels[i];</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keyword">const</span> std::vector&lt;double&gt; &amp;features = data[i];</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label] += 1.0;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="comment">// initialize mean[label] and variance[label] if not present</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>.find(label) == <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>.end()) {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>[label] = std::vector&lt;double&gt;(num_features, 0.0);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// update mean</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>[label][j] += features[j];</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// calculate mean</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>) {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordtype">double</span> class_count = <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label];</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            entry.second[j] /= class_count;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// calculate variance</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; data.size(); ++i) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keyword">const</span> std::string &amp;label = labels[i];</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">const</span> std::vector&lt;double&gt; &amp;features = data[i];</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>[label][j] += std::pow(features[j] - <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>[label][j], 2);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordtype">double</span> class_count = <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label];</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; num_features; ++j) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            entry.second[j] /= class_count;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,30 +352,30 @@ Private Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The predicted class label as a string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00300">300</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                                                {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">double</span> max_prob = -std::numeric_limits&lt;double&gt;::infinity();</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    std::string predicted_class;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>) {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordtype">double</span> probability = log(entry.second);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; newData.size(); ++j) {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            probability -=</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                0.5 * (std::log(2 * M_PI * <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(label).at(j)) +</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                       std::pow(newData[j] - <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>.at(label).at(j), 2) /</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                           (2 * <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(label).at(j)));</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">if</span> (probability &gt; max_prob) {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            max_prob = probability;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            predicted_class = label;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">return</span> predicted_class;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00299">299</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                                                {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">double</span> max_prob = -std::numeric_limits&lt;double&gt;::infinity();</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    std::string predicted_class;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>) {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keyword">const</span> std::string &amp;label = entry.first;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordtype">double</span> probability = log(entry.second);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; newData.size(); ++j) {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            probability -=</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                0.5 * (std::log(2 * M_PI * <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(label).at(j)) +</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                       std::pow(newData[j] - <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#a556e487e3235198fd565d8921f9d9cbd">mean</a>.at(label).at(j), 2) /</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                           (2 * <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#aff6c0878afa2aaa6b34fb2c0fdd2eb9a">variance</a>.at(label).at(j)));</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">if</span> (probability &gt; max_prob) {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            max_prob = probability;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            predicted_class = label;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">return</span> predicted_class;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -416,23 +416,23 @@ Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00229">229</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                                                     {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// calculate class occurrences</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;label : labels) {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label] += 1.0;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// calculate mean and variance for each feature in each class</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ab746aaaf9f7fefd1cab2c33d0bbedca3">mean_and_var</a>(data, labels);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// calculate class probabilities</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">double</span> total_instances = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(data.size());</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        entry.second /= total_instances;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
-<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesGauss_html_ab746aaaf9f7fefd1cab2c33d0bbedca3"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesGauss.html#ab746aaaf9f7fefd1cab2c33d0bbedca3">gpmp::ml::BayesGauss::mean_and_var</a></div><div class="ttdeci">void mean_and_var(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;data, const std::vector&lt; std::string &gt; &amp;labels)</div><div class="ttdoc">Calculate the mean and variance for each class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00246">bayes_clf.cpp:246</a></div></div>
+<p class="definition">Definition at line <a class="el" href="bayes__clf_8cpp_source.html#l00228">228</a> of file <a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// calculate class occurrences</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;label : labels) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>[label] += 1.0;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// calculate mean and variance for each feature in each class</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ab746aaaf9f7fefd1cab2c33d0bbedca3">mean_and_var</a>(data, labels);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// calculate class probabilities</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">double</span> total_instances = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(data.size());</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : <a class="code" href="classgpmp_1_1ml_1_1BayesGauss.html#ae6e02cd73555e205e6e17199914ed538">class_probs</a>) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        entry.second /= total_instances;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1ml_1_1BayesGauss_html_ab746aaaf9f7fefd1cab2c33d0bbedca3"><div class="ttname"><a href="classgpmp_1_1ml_1_1BayesGauss.html#ab746aaaf9f7fefd1cab2c33d0bbedca3">gpmp::ml::BayesGauss::mean_and_var</a></div><div class="ttdeci">void mean_and_var(const std::vector&lt; std::vector&lt; double &gt;&gt; &amp;data, const std::vector&lt; std::string &gt; &amp;labels)</div><div class="ttdoc">Calculate the mean and variance for each class.</div><div class="ttdef"><b>Definition:</b> <a href="bayes__clf_8cpp_source.html#l00245">bayes_clf.cpp:245</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="bayes_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>.</p>
 
@@ -497,7 +497,7 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/ml/<a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a></li>
+<li>include/openGPMP/ml/<a class="el" href="bayes__clf_8hpp_source.html">bayes_clf.hpp</a></li>
 <li>modules/ml/<a class="el" href="bayes__clf_8cpp_source.html">bayes_clf.cpp</a></li>
 </ul>
 </div><!-- contents -->

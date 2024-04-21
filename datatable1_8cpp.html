@@ -82,14 +82,14 @@ $(function() {
 <div class="title">datatable1.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="datatable_8hpp_source.html">../../include/core/datatable.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="utils_8hpp_source.html">../../include/core/utils.hpp</a>&quot;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;<a class="el" href="datatable__wip_8hpp_source.html">openGPMP/core/datatable_wip.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="utils_8hpp_source.html">openGPMP/core/utils.hpp</a>&gt;</code><br />
 <code>#include &lt;regex&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -131,20 +131,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00165">165</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                           {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">switch</span> (type) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">gpmp::core::DataType::dt_int64</a>:</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;int64&quot;</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">gpmp::core::DataType::dt_ldouble</a>:</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;long double&quot;</span>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">gpmp::core::DataType::dt_str</a>:</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;std::string&quot;</span>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// TODO : Add more cases if needed</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00163">163</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                           {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">switch</span> (type) {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">gpmp::core::DataType::dt_int64</a>:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;int64&quot;</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">gpmp::core::DataType::dt_ldouble</a>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;long double&quot;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">gpmp::core::DataType::dt_str</a>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;std::string&quot;</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// TODO : Add more cases if needed</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda7b28ab7cca4a57eb3f679f660076213e">gpmp::core::DataType::dt_int64</a></div><div class="ttdeci">@ dt_int64</div></div>
 <div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cda8e172fd69b45c33fe26624ee3ee08679">gpmp::core::DataType::dt_ldouble</a></div><div class="ttdeci">@ dt_ldouble</div></div>
 <div class="ttc" id="anamespacegpmp_1_1core_html_a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2"><div class="ttname"><a href="namespacegpmp_1_1core.html#a9b1fd1118812c658cd9c6786aeb281cdae344aa929bf926a9ab2a497d672da9d2">gpmp::core::DataType::dt_str</a></div><div class="ttdeci">@ dt_str</div></div>
@@ -171,10 +171,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00132">132</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                     {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> std::regex_match(str, std::regex(R<span class="stringliteral">&quot;(-?\d+\.\d+)&quot;));</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral">}</span></div>
+<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00130">130</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                     {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> std::regex_match(str, std::regex(R<span class="stringliteral">&quot;(-?\d+\.\d+)&quot;));</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="stringliteral">}</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1DataTable.html#a0df73442b1f799346e82b3625a8a9075">gpmp::core::DataTable::inferType()</a>.</p>
 
@@ -196,11 +196,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00126">126</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                  {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// TODO : determine type of int based on length of largest val?</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> std::regex_match(str, std::regex(R<span class="stringliteral">&quot;(-?\d+)&quot;));</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">}</span></div>
+<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00124">124</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                  {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// TODO : determine type of int based on length of largest val?</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> std::regex_match(str, std::regex(R<span class="stringliteral">&quot;(-?\d+)&quot;));</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">}</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1DataTable.html#a0df73442b1f799346e82b3625a8a9075">gpmp::core::DataTable::inferType()</a>.</p>
 
@@ -228,7 +228,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Logger class object </p>
 
-<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00051">51</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="datatable1_8cpp_source.html#l00049">49</a> of file <a class="el" href="datatable1_8cpp_source.html">datatable1.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classgpmp_1_1core_1_1DataTable.html#a0df73442b1f799346e82b3625a8a9075">gpmp::core::DataTable::inferType()</a>, and <a class="el" href="classgpmp_1_1core_1_1DataTable.html#a886738d11fc751bbc9349d5881ab54bc">gpmp::core::DataTable::native_type()</a>.</p>
 
