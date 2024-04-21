@@ -222,3 +222,11 @@ EXXEGOEXSRGI
 JCNNWILP
 ```
 
+# Why?
+The rationale/why behind this project is mostly because I find high 
+performance & numerical computing, low level programming, computational
+mathematics, C, C++, Fortran, Assembly, Julia, etc, etc all interesting.
+As far as usability and practicality, that may become more solidified 
+with more contributors and time spent but I do aim to design and implement
+the project with real-world usage as the primary focus...
+
