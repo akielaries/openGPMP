@@ -1,7 +1,7 @@
 /**
  * Unit tests for Graph related methods
  */
-#include "../../include/disct/graphs.hpp"
+#include <openGPMP/disct/graphs.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
 

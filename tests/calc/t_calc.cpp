@@ -35,7 +35,7 @@
 /*
  * Testing Calculus Operations
  */
-#include "../../include/calculus/differential.hpp"
+#include <openGPMP/calculus/differential.hpp>
 #include <gtest/gtest.h>
 #include <limits.h>
 #include <string>

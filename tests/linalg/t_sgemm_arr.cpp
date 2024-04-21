@@ -1,5 +1,5 @@
-#include "../../include/linalg/_sgemm.hpp"
-#include "../../include/linalg/mtx.hpp"
+#include <openGPMP/linalg/mtx.hpp>
+#include <openGPMP/linalg/_sgemm.hpp>
 #include "t_matrix.hpp"
 #include <chrono>
 #include <cmath>

@@ -1,7 +1,7 @@
 /**
  * Unit tests for the Optimization module's QuasiNewton methods
  */
-#include "../../include/optim/quasi.hpp"
+#include <openGPMP/optim/quasi.hpp>
 #include <cmath>
 #include <cstdlib>
 #include <gtest/gtest.h>

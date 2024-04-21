@@ -35,7 +35,7 @@
 /*
  * Testing Arithmetic Operations
  */
-#include "../../include/arithmetic.hpp"
+#include <openGPMP/arithmetic.hpp>
 #include <gtest/gtest.h>
 #include <limits.h>
 

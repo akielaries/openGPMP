@@ -1,8 +1,7 @@
 /**
  * Unit tests for the Statistics module's probabilistic distribution methods
  */
-
-#include "../../include/stats/probdist.hpp"
+#include <openGPMP/stats/probdist.hpp>
 #include <cmath>
 #include <cstdlib>
 #include <gtest/gtest.h>

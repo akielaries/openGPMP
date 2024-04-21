@@ -1,7 +1,7 @@
 /**
  * Unit tests for the Linear Algebra module's Linear Systems class
  */
-#include "../../include/linalg/linsys.hpp"
+#include <openGPMP/linalg/linsys.hpp>
 #include <cmath>
 #include <cstdint>
 #include <cstdlib>

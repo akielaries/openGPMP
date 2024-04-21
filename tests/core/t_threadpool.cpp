@@ -1,4 +1,4 @@
-#include "../../include/core/threads.hpp"
+#include <openGPMP/core/threads.hpp>
 #include <chrono>
 #include <gtest/gtest.h>
 #include <iostream>

@@ -1,7 +1,7 @@
 /**
  * Unit tests for the Number Theory modules PRNGs
  */
-#include "../../include/nt/random.hpp"
+#include <openGPMP/nt/random.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
 

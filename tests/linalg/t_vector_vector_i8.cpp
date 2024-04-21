@@ -1,7 +1,7 @@
 /**
  * Unit tests for the Linear Algebra module's Vector operations
  */
-#include "../../include/linalg/vector.hpp"
+#include <openGPMP/linalg/vector.hpp>
 #include <chrono>
 #include <cstdint>
 #include <cstdlib>

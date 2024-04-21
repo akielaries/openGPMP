@@ -1,7 +1,7 @@
 /**
  * Unit tests for the Linear Algebra module's Eigen class
  */
-#include "../../include/linalg/eigen.hpp"
+#include <openGPMP/linalg/eigen.hpp>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>

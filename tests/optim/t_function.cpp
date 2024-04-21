@@ -1,7 +1,7 @@
 /**
  * Unit tests for the Optimization module's function class
  */
-#include "../../include/optim/function.hpp"
+#include <openGPMP/optim/function.hpp>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
