@@ -1,9 +1,10 @@
+#include <cstdint>
 #include <iostream>
 #include <openGPMP/disct/comb.hpp>
 #include <vector>
 
 int main() {
-    Comb comb_obj;
+    gpmp::Comb comb_obj;
     int n = 5;
     int r = 3;
     std::cout << "Permutations: " << comb_obj.permutation(n, r) << std::endl;
@@ -42,7 +43,7 @@ int main() {
     }
 
     std::cout << "Bell numbers up to " << n << ":" << std::endl;
-    std::vector<long long> bell = comb_obj.bell_num(n);
+    std::vector<int64_t> bell = comb_obj.bell_num(n);
     for (int i = 0; i <= n; ++i) {
         std::cout << "B(" << i << ") = " << bell[i] << std::endl;
     }

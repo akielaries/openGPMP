@@ -200,26 +200,6 @@ class ProbDist {
      */
     std::pair<double, double> ToleranceInterval(const std::vector<double> &data,
                                                 double alpha);
-
-    /**
-     * @brief Compute the bootstrap resampling confidence interval for a given
-     * dataset and number of samples
-     * @param data The dataset
-     * @param numSamples The number of bootstrap samples
-     * @return A pair representing the lower and upper bounds of the bootstrap
-     * resampling confidence interval
-     */
-    std::pair<double, double>
-    BootstrapResampling(const std::vector<double> &data, int numSamples);
-    /**
-     * @brief Compute the Jackknife resampling confidence interval for a given
-     * dataset
-     * @param data The dataset
-     * @return A pair representing the lower and upper bounds of the Jackknife
-     * resampling confidence interval
-     */
-    std::pair<double, double>
-    JackknifeResampling(const std::vector<double> &data);
 };
 
 } // namespace stats

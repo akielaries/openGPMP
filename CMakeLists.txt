@@ -175,7 +175,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
     # install include directory to /usr/local/include/openGPMP
     install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/openGPMP"
-        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/openGPMP"
+        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
     )
 
     install(EXPORT openGPMPConfig DESTINATION share/openGPMP/cmake)

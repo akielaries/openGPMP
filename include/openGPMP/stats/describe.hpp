@@ -44,12 +44,22 @@ namespace stats {
 class Describe {
   public:
     /**
+     * @brief Calculates U statistic given two samples
+     *
+     * @param sample1
+     * @param sample2
+     * @return U statistic
+     */
+    static double u_stat(const std::vector<double> &sample1,
+                         const std::vector<double> &sample2);
+
+    /**
      * @brief Calculates the arithmetic mean of a given dataset
      *
      * @param data The input dataset
      * @return The arithmetic mean
      */
-    double mean_arith(const std::vector<double> &data);
+    static double mean_arith(const std::vector<double> &data);
 
     /**
      * @brief Calculates the geometric mean of a given dataset
@@ -167,7 +177,7 @@ class Describe {
      * @param mean The mean of the dataset
      * @return The standard deviation
      */
-    double stdev(const std::vector<double> &data, double mean);
+    static double stdev(const std::vector<double> &data, double mean);
     /**
      * @brief Calculates the variance of a given dataset, given the mean
      *
@@ -175,7 +185,7 @@ class Describe {
      * @param mean The mean of the dataset
      * @return The variance
      */
-    double variance(const std::vector<double> &data, double mean);
+    static double variance(const std::vector<double> &data, double mean);
 
     /**
      * @brief Calculates the standard error of the mean using the Central Limit
