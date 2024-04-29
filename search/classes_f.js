@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['secondarymlp_1194',['SecondaryMLP',['../classgpmp_1_1ml_1_1SecondaryMLP.html',1,'gpmp::ml']]],
-  ['sgemm_1195',['SGEMM',['../classgpmp_1_1linalg_1_1SGEMM.html',1,'gpmp::linalg']]],
-  ['sparseautoencoder_1196',['SparseAutoEncoder',['../classgpmp_1_1ml_1_1SparseAutoEncoder.html',1,'gpmp::ml']]],
-  ['squares_1197',['Squares',['../classgpmp_1_1Squares.html',1,'gpmp']]],
-  ['stats_1198',['Stats',['../classgpmp_1_1ml_1_1Stats.html',1,'gpmp::ml']]],
-  ['svc_1199',['SVC',['../classgpmp_1_1ml_1_1SVC.html',1,'gpmp::ml']]],
-  ['svd_1200',['SVD',['../classgpmp_1_1linalg_1_1SVD.html',1,'gpmp::linalg']]]
+  ['rc4_1266',['RC4',['../classgpmp_1_1RC4.html',1,'gpmp::RC4'],['../classpygpmp_1_1nt_1_1nt_1_1RC4.html',1,'pygpmp.nt.nt.RC4']]],
+  ['rc5_1267',['RC5',['../classgpmp_1_1nt_1_1RC5.html',1,'gpmp::nt']]],
+  ['rc6_1268',['RC6',['../classRC6.html',1,'']]],
+  ['recurrentautoencoder_1269',['RecurrentAutoEncoder',['../classgpmp_1_1ml_1_1RecurrentAutoEncoder.html',1,'gpmp::ml']]],
+  ['redpike_1270',['RedPike',['../classgpmp_1_1nt_1_1RedPike.html',1,'gpmp::nt']]],
+  ['regularize_1271',['Regularize',['../classgpmp_1_1ml_1_1Regularize.html',1,'gpmp::ml']]],
+  ['resampling_1272',['Resampling',['../classgpmp_1_1stats_1_1Resampling.html',1,'gpmp::stats']]]
 ];

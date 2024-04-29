@@ -81,7 +81,8 @@ $(function() {
 <div class="title">combinatorics.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;<a class="el" href="comb_8hpp_source.html">openGPMP/disct/comb.hpp</a>&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
@@ -109,121 +110,144 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="combinatorics_8cpp_source.html#l00005">5</a> of file <a class="el" href="combinatorics_8cpp_source.html">combinatorics.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;           {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    Comb comb_obj;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> n = 5;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> r = 3;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Permutations: &quot;</span> &lt;&lt; comb_obj.permutation(n, r) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Combinations: &quot;</span> &lt;&lt; comb_obj.combination(n, r) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Binomial Coefficient: &quot;</span> &lt;&lt; comb_obj.binom_coeff(n, r)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;              &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Factorial: &quot;</span> &lt;&lt; comb_obj.factorial(n) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::vector&lt;int&gt; vec = {1, 2, 3};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; perms = comb_obj.permutations(vec);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Permutations of {1, 2, 3}:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;perm : perms) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : perm) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; combs = comb_obj.combinations(vec, r);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Combinations of size &quot;</span> &lt;&lt; r</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; from {1, 2, 3}:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;comb : combs) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : comb) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Partitions of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; partitions = comb_obj.partitions(n);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;partition : partitions) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : partition) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Bell numbers up to &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::vector&lt;long long&gt; bell = comb_obj.bell_num(n);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= n; ++i) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;B(&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; bell[i] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Stirling numbers of the second kind (S(5, 3)): &quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;              &lt;&lt; comb_obj.stirling_num(5, 3) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Gray code of length 3:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;int&gt; gray = comb_obj.gray_code(3);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : gray) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of derangements for n=5: &quot;</span> &lt;&lt; comb_obj.subfactorial(5)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;              &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of increasing subsequences of length 2 in a &quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                 <span class="stringliteral">&quot;permutation of length 5: &quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;              &lt;&lt; comb_obj.subsequences(5, 2) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Partitions of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; using distinct parts:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; partition_distinct =</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        comb_obj.partition_distinct(n);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;partition : partition_distinct) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : partition) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Compositions of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; compositions = comb_obj.compositions(n);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;composition : compositions) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : composition) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of Dyck words of length 10: &quot;</span> &lt;&lt; comb_obj.dyck_words(5)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;              &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Dyck words of length 2 * 3:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::vector&lt;std::string&gt; dyck_words = comb_obj.gen_dyck_words_until(3);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;word : dyck_words) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        std::cout &lt;&lt; word &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of necklaces with 4 beads of 2 different colors: &quot;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;              &lt;&lt; comb_obj.necklaces(4, 2) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Necklaces with 4 beads of 2 different colors:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; necklaces = comb_obj.generateNecklaces(4, 2);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;necklace : necklaces) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> color : necklace) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            std::cout &lt;&lt; color &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of Lyndon words of length 3: &quot;</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;              &lt;&lt; comb_obj.lyndonWords(3) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Lyndon words of length 3:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::vector&lt;std::string&gt; lyndonWords = comb_obj.generateLyndonWords(3);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;word : lyndonWords) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        std::cout &lt;&lt; word &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="combinatorics_8cpp_source.html#l00006">6</a> of file <a class="el" href="combinatorics_8cpp_source.html">combinatorics.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;           {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="classgpmp_1_1Comb.html">gpmp::Comb</a> comb_obj;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> n = 5;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> r = 3;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Permutations: &quot;</span> &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a73d1a5388d33410d376c2ffcc2da9c1b">permutation</a>(n, r) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Combinations: &quot;</span> &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a752a5e11686001e864f55ff044414d9e">combination</a>(n, r) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Binomial Coefficient: &quot;</span> &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a57d57bb0e9cfda561f69d5802056fbe4">binom_coeff</a>(n, r)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;              &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Factorial: &quot;</span> &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a60c3dfcc50d4798af0feb7899accdded">factorial</a>(n) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;int&gt; vec = {1, 2, 3};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; perms = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#acf77d98e91c62c6c3f1a13f4ff14902b">permutations</a>(vec);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Permutations of {1, 2, 3}:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;perm : perms) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : perm) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; combs = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#ac0869b4b99753a560cf8c58cc878e771">combinations</a>(vec, r);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Combinations of size &quot;</span> &lt;&lt; r</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;              &lt;&lt; <span class="stringliteral">&quot; from {1, 2, 3}:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;comb : combs) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : comb) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Partitions of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; partitions = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a626fdb98c5c6da5cafcbee226a9644b3">partitions</a>(n);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;partition : partitions) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : partition) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Bell numbers up to &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::vector&lt;int64_t&gt; bell = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a535cba374ae14430400bc9f53b19b315">bell_num</a>(n);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= n; ++i) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;B(&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; bell[i] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Stirling numbers of the second kind (S(5, 3)): &quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;              &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a744007e512ab1a2cc91e3f6a7afab704">stirling_num</a>(5, 3) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Gray code of length 3:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::vector&lt;int&gt; gray = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a65ec9243d1cfbf0f0ce6bb58d54ad87c">gray_code</a>(3);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : gray) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of derangements for n=5: &quot;</span> &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a03a94627ec9bf5bcb9f5fac97d55fead">subfactorial</a>(5)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;              &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of increasing subsequences of length 2 in a &quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                 <span class="stringliteral">&quot;permutation of length 5: &quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;              &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a93f16905526d9078d94fc063079140f9">subsequences</a>(5, 2) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Partitions of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot; using distinct parts:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; partition_distinct =</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a7281e57eab0f8942b9f2d6137f7ca2c4">partition_distinct</a>(n);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;partition : partition_distinct) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : partition) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Compositions of &quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; compositions = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a7ae59dfaf84729cc2928831cbb5e24f4">compositions</a>(n);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;composition : compositions) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x : composition) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of Dyck words of length 10: &quot;</span> &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a537448259da259c6aede13a8c231964d">dyck_words</a>(5)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;              &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Dyck words of length 2 * 3:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::vector&lt;std::string&gt; dyck_words = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#adbf6fabdd187705b91e57837e2d482a6">gen_dyck_words_until</a>(3);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;word : dyck_words) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        std::cout &lt;&lt; word &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of necklaces with 4 beads of 2 different colors: &quot;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;              &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a0a3410a424b87db1339f798c86aded85">necklaces</a>(4, 2) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Necklaces with 4 beads of 2 different colors:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::vector&lt;std::vector&lt;int&gt;&gt; necklaces = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#ae014f54778be6e42c6a886941cda78d7">generateNecklaces</a>(4, 2);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;necklace : necklaces) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> color : necklace) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            std::cout &lt;&lt; color &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Number of Lyndon words of length 3: &quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;              &lt;&lt; comb_obj.<a class="code" href="classgpmp_1_1Comb.html#a514992318900caf2957449a51286e526">lyndonWords</a>(3) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Lyndon words of length 3:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::vector&lt;std::string&gt; lyndonWords = comb_obj.<a class="code" href="classgpmp_1_1Comb.html#ac60ae9333b8d8db58d3276d3ebf2bde7">generateLyndonWords</a>(3);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;word : lyndonWords) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        std::cout &lt;&lt; word &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html"><div class="ttname"><a href="classgpmp_1_1Comb.html">gpmp::Comb</a></div><div class="ttdoc">A class providing various combinatorial functions and algorithms.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8hpp_source.html#l00047">comb.hpp:47</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a03a94627ec9bf5bcb9f5fac97d55fead"><div class="ttname"><a href="classgpmp_1_1Comb.html#a03a94627ec9bf5bcb9f5fac97d55fead">gpmp::Comb::subfactorial</a></div><div class="ttdeci">int64_t subfactorial(int n)</div><div class="ttdoc">Calculate the subfactorial (!n) or derangement of n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00131">comb.cpp:131</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a0a3410a424b87db1339f798c86aded85"><div class="ttname"><a href="classgpmp_1_1Comb.html#a0a3410a424b87db1339f798c86aded85">gpmp::Comb::necklaces</a></div><div class="ttdeci">int64_t necklaces(int n, int k)</div><div class="ttdoc">Calculate the number of necklaces of length n with k colors.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00188">comb.cpp:188</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a514992318900caf2957449a51286e526"><div class="ttname"><a href="classgpmp_1_1Comb.html#a514992318900caf2957449a51286e526">gpmp::Comb::lyndonWords</a></div><div class="ttdeci">int64_t lyndonWords(int n)</div><div class="ttdoc">Calculate the number of Lyndon words of length n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00224">comb.cpp:224</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a535cba374ae14430400bc9f53b19b315"><div class="ttname"><a href="classgpmp_1_1Comb.html#a535cba374ae14430400bc9f53b19b315">gpmp::Comb::bell_num</a></div><div class="ttdeci">std::vector&lt; int64_t &gt; bell_num(int n)</div><div class="ttdoc">Calculate the Bell numbers.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00099">comb.cpp:99</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a537448259da259c6aede13a8c231964d"><div class="ttname"><a href="classgpmp_1_1Comb.html#a537448259da259c6aede13a8c231964d">gpmp::Comb::dyck_words</a></div><div class="ttdeci">int64_t dyck_words(int n)</div><div class="ttdoc">Calculate the number of Dyck words of length 2n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00175">comb.cpp:175</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a57d57bb0e9cfda561f69d5802056fbe4"><div class="ttname"><a href="classgpmp_1_1Comb.html#a57d57bb0e9cfda561f69d5802056fbe4">gpmp::Comb::binom_coeff</a></div><div class="ttdeci">int64_t binom_coeff(int n, int r)</div><div class="ttdoc">Calculate the binomial coefficient (n choose r)</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00065">comb.cpp:65</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a60c3dfcc50d4798af0feb7899accdded"><div class="ttname"><a href="classgpmp_1_1Comb.html#a60c3dfcc50d4798af0feb7899accdded">gpmp::Comb::factorial</a></div><div class="ttdeci">int64_t factorial(int n)</div><div class="ttdoc">Calculate the factorial of a number.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00080">comb.cpp:80</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a626fdb98c5c6da5cafcbee226a9644b3"><div class="ttname"><a href="classgpmp_1_1Comb.html#a626fdb98c5c6da5cafcbee226a9644b3">gpmp::Comb::partitions</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; partitions(int n)</div><div class="ttdoc">Generate all partitions of a positive integer n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00091">comb.cpp:91</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a65ec9243d1cfbf0f0ce6bb58d54ad87c"><div class="ttname"><a href="classgpmp_1_1Comb.html#a65ec9243d1cfbf0f0ce6bb58d54ad87c">gpmp::Comb::gray_code</a></div><div class="ttdeci">std::vector&lt; int &gt; gray_code(int n)</div><div class="ttdoc">Generate the Gray code sequence of length n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00122">comb.cpp:122</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a7281e57eab0f8942b9f2d6137f7ca2c4"><div class="ttname"><a href="classgpmp_1_1Comb.html#a7281e57eab0f8942b9f2d6137f7ca2c4">gpmp::Comb::partition_distinct</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; partition_distinct(int n)</div><div class="ttdoc">Generate all distinct partitions of a positive integer n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00159">comb.cpp:159</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a73d1a5388d33410d376c2ffcc2da9c1b"><div class="ttname"><a href="classgpmp_1_1Comb.html#a73d1a5388d33410d376c2ffcc2da9c1b">gpmp::Comb::permutation</a></div><div class="ttdeci">int64_t permutation(int n, int r)</div><div class="ttdoc">Calculate the number of permutations (nPr)</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00041">comb.cpp:41</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a744007e512ab1a2cc91e3f6a7afab704"><div class="ttname"><a href="classgpmp_1_1Comb.html#a744007e512ab1a2cc91e3f6a7afab704">gpmp::Comb::stirling_num</a></div><div class="ttdeci">int64_t stirling_num(int n, int k)</div><div class="ttdoc">Calculate the Stirling number of the second kind.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00111">comb.cpp:111</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a752a5e11686001e864f55ff044414d9e"><div class="ttname"><a href="classgpmp_1_1Comb.html#a752a5e11686001e864f55ff044414d9e">gpmp::Comb::combination</a></div><div class="ttdeci">int64_t combination(int n, int r)</div><div class="ttdoc">Calculate the number of combinations (nCr)</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00052">comb.cpp:52</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a7ae59dfaf84729cc2928831cbb5e24f4"><div class="ttname"><a href="classgpmp_1_1Comb.html#a7ae59dfaf84729cc2928831cbb5e24f4">gpmp::Comb::compositions</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; compositions(int n)</div><div class="ttdoc">Generate all compositions of a positive integer n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00167">comb.cpp:167</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_a93f16905526d9078d94fc063079140f9"><div class="ttname"><a href="classgpmp_1_1Comb.html#a93f16905526d9078d94fc063079140f9">gpmp::Comb::subsequences</a></div><div class="ttdeci">int64_t subsequences(int n, int k)</div><div class="ttdoc">Calculate the number of subsequences of length k from n items.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00141">comb.cpp:141</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_ac0869b4b99753a560cf8c58cc878e771"><div class="ttname"><a href="classgpmp_1_1Comb.html#ac0869b4b99753a560cf8c58cc878e771">gpmp::Comb::combinations</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; T &gt; &gt; combinations(const std::vector&lt; T &gt; &amp;vec, int r)</div><div class="ttdoc">Generate all combinations of a vector.</div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_ac60ae9333b8d8db58d3276d3ebf2bde7"><div class="ttname"><a href="classgpmp_1_1Comb.html#ac60ae9333b8d8db58d3276d3ebf2bde7">gpmp::Comb::generateLyndonWords</a></div><div class="ttdeci">std::vector&lt; std::string &gt; generateLyndonWords(int n)</div><div class="ttdoc">Generate all Lyndon words of length n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00233">comb.cpp:233</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_acf77d98e91c62c6c3f1a13f4ff14902b"><div class="ttname"><a href="classgpmp_1_1Comb.html#acf77d98e91c62c6c3f1a13f4ff14902b">gpmp::Comb::permutations</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; T &gt; &gt; permutations(const std::vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">Generate all permutations of a vector.</div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_adbf6fabdd187705b91e57837e2d482a6"><div class="ttname"><a href="classgpmp_1_1Comb.html#adbf6fabdd187705b91e57837e2d482a6">gpmp::Comb::gen_dyck_words_until</a></div><div class="ttdeci">std::vector&lt; std::string &gt; gen_dyck_words_until(int n)</div><div class="ttdoc">Generate Dyck words up to length n.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00180">comb.cpp:180</a></div></div>
+<div class="ttc" id="aclassgpmp_1_1Comb_html_ae014f54778be6e42c6a886941cda78d7"><div class="ttname"><a href="classgpmp_1_1Comb.html#ae014f54778be6e42c6a886941cda78d7">gpmp::Comb::generateNecklaces</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; generateNecklaces(int n, int k)</div><div class="ttdoc">Generate all necklaces of length n with k colors.</div><div class="ttdef"><b>Definition:</b> <a href="comb_8cpp_source.html#l00216">comb.cpp:216</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="classgpmp_1_1Comb.html#a535cba374ae14430400bc9f53b19b315">gpmp::Comb::bell_num()</a>, <a class="el" href="classgpmp_1_1Comb.html#a57d57bb0e9cfda561f69d5802056fbe4">gpmp::Comb::binom_coeff()</a>, <a class="el" href="classgpmp_1_1Comb.html#a752a5e11686001e864f55ff044414d9e">gpmp::Comb::combination()</a>, <a class="el" href="classgpmp_1_1Comb.html#ac0869b4b99753a560cf8c58cc878e771">gpmp::Comb::combinations()</a>, <a class="el" href="classgpmp_1_1Comb.html#a7ae59dfaf84729cc2928831cbb5e24f4">gpmp::Comb::compositions()</a>, <a class="el" href="classgpmp_1_1Comb.html#a537448259da259c6aede13a8c231964d">gpmp::Comb::dyck_words()</a>, <a class="el" href="classgpmp_1_1Comb.html#a60c3dfcc50d4798af0feb7899accdded">gpmp::Comb::factorial()</a>, <a class="el" href="classgpmp_1_1Comb.html#adbf6fabdd187705b91e57837e2d482a6">gpmp::Comb::gen_dyck_words_until()</a>, <a class="el" href="classgpmp_1_1Comb.html#ac60ae9333b8d8db58d3276d3ebf2bde7">gpmp::Comb::generateLyndonWords()</a>, <a class="el" href="classgpmp_1_1Comb.html#ae014f54778be6e42c6a886941cda78d7">gpmp::Comb::generateNecklaces()</a>, <a class="el" href="classgpmp_1_1Comb.html#a65ec9243d1cfbf0f0ce6bb58d54ad87c">gpmp::Comb::gray_code()</a>, <a class="el" href="classgpmp_1_1Comb.html#a514992318900caf2957449a51286e526">gpmp::Comb::lyndonWords()</a>, <a class="el" href="classgpmp_1_1Comb.html#a0a3410a424b87db1339f798c86aded85">gpmp::Comb::necklaces()</a>, <a class="el" href="classgpmp_1_1Comb.html#a7281e57eab0f8942b9f2d6137f7ca2c4">gpmp::Comb::partition_distinct()</a>, <a class="el" href="classgpmp_1_1Comb.html#a626fdb98c5c6da5cafcbee226a9644b3">gpmp::Comb::partitions()</a>, <a class="el" href="classgpmp_1_1Comb.html#a73d1a5388d33410d376c2ffcc2da9c1b">gpmp::Comb::permutation()</a>, <a class="el" href="classgpmp_1_1Comb.html#acf77d98e91c62c6c3f1a13f4ff14902b">gpmp::Comb::permutations()</a>, <a class="el" href="classgpmp_1_1Comb.html#a744007e512ab1a2cc91e3f6a7afab704">gpmp::Comb::stirling_num()</a>, <a class="el" href="classgpmp_1_1Comb.html#a03a94627ec9bf5bcb9f5fac97d55fead">gpmp::Comb::subfactorial()</a>, and <a class="el" href="classgpmp_1_1Comb.html#a93f16905526d9078d94fc063079140f9">gpmp::Comb::subsequences()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

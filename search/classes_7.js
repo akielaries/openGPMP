@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['igemm_1165',['IGEMM',['../classgpmp_1_1linalg_1_1IGEMM.html',1,'gpmp::linalg']]]
+  ['hypothesistest_1240',['HypothesisTest',['../classgpmp_1_1stats_1_1HypothesisTest.html',1,'gpmp::stats']]]
 ];

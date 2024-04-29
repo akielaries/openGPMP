@@ -168,21 +168,22 @@
        <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
        <table>
            <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>22</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="useStlAlgorithm" name="useStlAlgorithm" checked></td><td>18</td><td>useStlAlgorithm</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantInitialization" name="redundantInitialization" checked></td><td>17</td><td>redundantInitialization</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="useStlAlgorithm" name="useStlAlgorithm" checked></td><td>17</td><td>useStlAlgorithm</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>14</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>16</td><td>unreadVariable</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedVariable" name="unusedVariable" checked></td><td>12</td><td>unusedVariable</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>11</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedFunction" name="unusedFunction" checked></td><td>8</td><td>unusedFunction</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameter" name="constParameter" checked></td><td>6</td><td>constParameter</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="noValidConfiguration" name="noValidConfiguration" checked></td><td>6</td><td>noValidConfiguration</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="preprocessorErrorDirective" name="preprocessorErrorDirective" checked></td><td>6</td><td>preprocessorErrorDirective</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unpreciseMathCall" name="unpreciseMathCall" checked></td><td>4</td><td>unpreciseMathCall</td></tr>
-            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedFunction" name="unusedFunction" checked></td><td>3</td><td>unusedFunction</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="syntaxError" name="syntaxError" checked></td><td>2</td><td>syntaxError</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="duplicateExpression" name="duplicateExpression" checked></td><td>1</td><td>duplicateExpression</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>1</td><td>knownConditionTrueFalse</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
             <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>1</td><td>uninitvar</td></tr>
-           <tr><td></td><td>101</td><td>total</td></tr>
+           <tr><td></td><td>121</td><td>total</td></tr>
        </table>
        <p><a href="stats.html">Statistics</a></p>
     </div>
@@ -191,7 +192,7 @@
        <table class="summaryTable">
        <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="44.html"></a></td></tr>
+       <tr><td colspan="5"><a href="47.html"></a></td></tr>
          <tr class="missingInclude sev_information issue"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="0.html">../../modules/complex/Mandelbrot.c</a></td></tr>
@@ -258,8 +259,8 @@
          <tr class="variableScope sev_style issue"><td><a href="15.html#line-195">195</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;i&apos; can be reduced.</td></tr>
          <tr class="variableScope sev_style issue"><td><a href="15.html#line-403">403</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;nc&apos; can be reduced.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="43.html">../../modules/linalg/gpu/_gpu_kernel_mtx_add.c</a></td></tr>
-         <tr class="unusedFunction sev_style issue"><td><a href="43.html#line-4">4</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;add_vec_gpu&apos; is never used.</td></tr>
+       <tr><td colspan="5"><a href="46.html">../../modules/linalg/gpu/_gpu_kernel_mtx_add.c</a></td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="46.html#line-4">4</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;add_vec_gpu&apos; is never used.</td></tr>
       <tbody class="fileEntry">
        <tr><td colspan="5"><a href="16.html">../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c</a></td></tr>
          <tr class="unusedFunction sev_style issue"><td><a href="16.html#line-4">4</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;matrixMul&apos; is never used.</td></tr>
@@ -373,14 +374,40 @@
        <tr><td colspan="5"><a href="40.html">../../modules/optim/quasi.cpp</a></td></tr>
          <tr class="unreadVariable sev_style issue"><td><a href="40.html#line-231">231</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;updated_point&apos; is assigned a value that is never used.</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="41.html">../../modules/stats/describe.cpp</a></td></tr>
-         <tr class="useStlAlgorithm sev_style issue"><td><a href="41.html#line-42">42</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>
-         <tr class="useStlAlgorithm sev_style issue"><td><a href="41.html#line-51">51</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>
-         <tr class="useStlAlgorithm sev_style issue"><td><a href="41.html#line-80">80</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>
+       <tr><td colspan="5"><a href="41.html">../../modules/stats/cdfs.cpp</a></td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="41.html#line-56">56</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;x&gt;=1&apos; is always true</td></tr>
       <tbody class="fileEntry">
-       <tr><td colspan="5"><a href="42.html">../../modules/stats/probdist.cpp</a></td></tr>
-         <tr class="duplicateExpression sev_style issue"><td><a href="42.html#line-107">107</a></td><td>duplicateExpression</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Same expression on both sides of &apos;/&apos;.</td></tr>
-         <tr class="useStlAlgorithm sev_style issue"><td><a href="42.html#line-173">173</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::count_if algorithm instead of a raw loop.</td></tr>
+       <tr><td colspan="5"><a href="42.html">../../modules/stats/describe.cpp</a></td></tr>
+         <tr class="useStlAlgorithm sev_style issue"><td><a href="42.html#line-44">44</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::count_if algorithm instead of a raw loop.</td></tr>
+         <tr class="useStlAlgorithm sev_style issue"><td><a href="42.html#line-55">55</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>
+         <tr class="useStlAlgorithm sev_style issue"><td><a href="42.html#line-64">64</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>
+         <tr class="useStlAlgorithm sev_style issue"><td><a href="42.html#line-93">93</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::accumulate algorithm instead of a raw loop.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="43.html">../../modules/stats/probdist.cpp</a></td></tr>
+         <tr class="duplicateExpression sev_style issue"><td><a href="43.html#line-107">107</a></td><td>duplicateExpression</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Same expression on both sides of &apos;/&apos;.</td></tr>
+         <tr class="useStlAlgorithm sev_style issue"><td><a href="43.html#line-173">173</a></td><td>useStlAlgorithm</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Consider using std::count_if algorithm instead of a raw loop.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="44.html">../../modules/stats/quantiles.cpp</a></td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="44.html#line-45">45</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;bernoulli&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="44.html#line-66">66</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;binomial&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="44.html#line-79">79</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;cauchy&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="44.html#line-84">84</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;chiSquared&apos; is never used.</td></tr>
+         <tr class="unusedFunction sev_style issue"><td><a href="44.html#line-91">91</a></td><td>unusedFunction</td><td><a href="https://cwe.mitre.org/data/definitions/561.html">561</a></td><td>style</td><td>The function &apos;exponential&apos; is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="44.html#line-121">121</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;maxIterations&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="44.html#line-122">122</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;epsilon&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-165">165</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;aold&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="44.html#line-165">165</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;aold&apos; is assigned a value that is never used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;em&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;tem&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;d&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;ap&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;bp&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;app&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="44.html#line-166">166</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;bpp&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="45.html">../../modules/stats/resampling.cpp</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="45.html#line-256">256</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;permutedData1&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="45.html#line-257">257</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;permutedData2&apos; is assigned a value that is never used.</td></tr>
       </tbody>
        </table>
     </div>

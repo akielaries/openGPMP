@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">150</td>
-            <td class="headerCovTableEntry">191</td>
-            <td class="headerCovTableEntryMed">78.5 %</td>
+            <td class="headerCovTableEntry">114</td>
+            <td class="headerCovTableEntry">153</td>
+            <td class="headerCovTableEntryLo">74.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-21 23:24:50</td>
+            <td class="headerValue">2024-04-29 19:00:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">20</td>
-            <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntryMed">87.0 %</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -403,68 +403,6 @@
 <a name="333"><span class="lineNum">     333 </span>            : </a>
 <a name="334"><span class="lineNum">     334 </span><span class="lineCov">          1 :     return {lowerBound, upperBound};</span></a>
 <a name="335"><span class="lineNum">     335 </span>            : }</a>
-<a name="336"><span class="lineNum">     336 </span>            : </a>
-<a name="337"><span class="lineNum">     337 </span>            : std::pair&lt;double, double&gt;</a>
-<a name="338"><span class="lineNum">     338 </span><span class="lineCov">          1 : gpmp::stats::ProbDist::BootstrapResampling(const std::vector&lt;double&gt; &amp;data,</span></a>
-<a name="339"><span class="lineNum">     339 </span>            :                                            int numSamples) {</a>
-<a name="340"><span class="lineNum">     340 </span><span class="lineCov">          1 :     if (data.empty() || numSamples &lt;= 0) {</span></a>
-<a name="341"><span class="lineNum">     341 </span><span class="lineNoCov">          0 :         return {0.0, 0.0}; // Invalid input, return an empty interval</span></a>
-<a name="342"><span class="lineNum">     342 </span>            :     }</a>
-<a name="343"><span class="lineNum">     343 </span>            : </a>
-<a name="344"><span class="lineNum">     344 </span><span class="lineCov">          1 :     std::vector&lt;double&gt; resampledMeans;</span></a>
-<a name="345"><span class="lineNum">     345 </span><span class="lineCov">          1 :     resampledMeans.reserve(numSamples);</span></a>
-<a name="346"><span class="lineNum">     346 </span>            : </a>
-<a name="347"><span class="lineNum">     347 </span><span class="lineCov">          1 :     std::mt19937 gen(std::random_device{}());</span></a>
-<a name="348"><span class="lineNum">     348 </span><span class="lineCov">          1 :     std::uniform_int_distribution&lt;size_t&gt; distribution(0, data.size() - 1);</span></a>
-<a name="349"><span class="lineNum">     349 </span>            :     gpmp::stats::Describe desc;</a>
-<a name="350"><span class="lineNum">     350 </span>            : </a>
-<a name="351"><span class="lineNum">     351 </span><span class="lineCov">       1001 :     for (int i = 0; i &lt; numSamples; ++i) {</span></a>
-<a name="352"><span class="lineNum">     352 </span><span class="lineCov">       1000 :         std::vector&lt;double&gt; resampledData;</span></a>
-<a name="353"><span class="lineNum">     353 </span><span class="lineCov">       1000 :         resampledData.reserve(data.size());</span></a>
-<a name="354"><span class="lineNum">     354 </span><span class="lineCov">       6000 :         for (size_t j = 0; j &lt; data.size(); ++j) {</span></a>
-<a name="355"><span class="lineNum">     355 </span><span class="lineCov">       5000 :             resampledData.push_back(data[distribution(gen)]);</span></a>
-<a name="356"><span class="lineNum">     356 </span>            :         }</a>
-<a name="357"><span class="lineNum">     357 </span><span class="lineCov">       1000 :         resampledMeans.push_back(desc.mean_arith(resampledData));</span></a>
-<a name="358"><span class="lineNum">     358 </span><span class="lineCov">       1000 :     }</span></a>
-<a name="359"><span class="lineNum">     359 </span>            : </a>
-<a name="360"><span class="lineNum">     360 </span><span class="lineCov">          1 :     std::sort(resampledMeans.begin(), resampledMeans.end());</span></a>
-<a name="361"><span class="lineNum">     361 </span>            : </a>
-<a name="362"><span class="lineNum">     362 </span><span class="lineCov">          1 :     double lowerBound = resampledMeans[numSamples / 20];</span></a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">          1 :     double upperBound = resampledMeans[19 * numSamples / 20];</span></a>
-<a name="364"><span class="lineNum">     364 </span>            : </a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineCov">          1 :     return {lowerBound, upperBound};</span></a>
-<a name="366"><span class="lineNum">     366 </span><span class="lineCov">          1 : }</span></a>
-<a name="367"><span class="lineNum">     367 </span>            : </a>
-<a name="368"><span class="lineNum">     368 </span>            : std::pair&lt;double, double&gt;</a>
-<a name="369"><span class="lineNum">     369 </span><span class="lineCov">          1 : gpmp::stats::ProbDist::JackknifeResampling(const std::vector&lt;double&gt; &amp;data) {</span></a>
-<a name="370"><span class="lineNum">     370 </span><span class="lineCov">          1 :     if (data.empty()) {</span></a>
-<a name="371"><span class="lineNum">     371 </span><span class="lineNoCov">          0 :         return {0.0, 0.0}; // Invalid input, return an empty interval</span></a>
-<a name="372"><span class="lineNum">     372 </span>            :     }</a>
-<a name="373"><span class="lineNum">     373 </span>            : </a>
-<a name="374"><span class="lineNum">     374 </span><span class="lineCov">          1 :     size_t n = data.size();</span></a>
-<a name="375"><span class="lineNum">     375 </span>            : </a>
-<a name="376"><span class="lineNum">     376 </span><span class="lineCov">          1 :     std::vector&lt;double&gt; resampledMeans;</span></a>
-<a name="377"><span class="lineNum">     377 </span><span class="lineCov">          1 :     resampledMeans.reserve(n);</span></a>
-<a name="378"><span class="lineNum">     378 </span>            :     gpmp::stats::Describe desc;</a>
-<a name="379"><span class="lineNum">     379 </span>            : </a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">          6 :     for (size_t i = 0; i &lt; n; ++i) {</span></a>
-<a name="381"><span class="lineNum">     381 </span><span class="lineCov">          5 :         std::vector&lt;double&gt; resampledData;</span></a>
-<a name="382"><span class="lineNum">     382 </span><span class="lineCov">          5 :         resampledData.reserve(n - 1);</span></a>
-<a name="383"><span class="lineNum">     383 </span><span class="lineCov">         30 :         for (size_t j = 0; j &lt; n; ++j) {</span></a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">         25 :             if (j != i) {</span></a>
-<a name="385"><span class="lineNum">     385 </span><span class="lineCov">         20 :                 resampledData.push_back(data[j]);</span></a>
-<a name="386"><span class="lineNum">     386 </span>            :             }</a>
-<a name="387"><span class="lineNum">     387 </span>            :         }</a>
-<a name="388"><span class="lineNum">     388 </span><span class="lineCov">          5 :         resampledMeans.push_back(desc.mean_arith(resampledData));</span></a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineCov">          5 :     }</span></a>
-<a name="390"><span class="lineNum">     390 </span>            : </a>
-<a name="391"><span class="lineNum">     391 </span><span class="lineCov">          1 :     std::sort(resampledMeans.begin(), resampledMeans.end());</span></a>
-<a name="392"><span class="lineNum">     392 </span>            : </a>
-<a name="393"><span class="lineNum">     393 </span><span class="lineCov">          1 :     double lowerBound = resampledMeans[n / 20];</span></a>
-<a name="394"><span class="lineNum">     394 </span><span class="lineCov">          1 :     double upperBound = resampledMeans[19 * n / 20];</span></a>
-<a name="395"><span class="lineNum">     395 </span>            : </a>
-<a name="396"><span class="lineNum">     396 </span><span class="lineCov">          1 :     return {lowerBound, upperBound};</span></a>
-<a name="397"><span class="lineNum">     397 </span><span class="lineCov">          1 : }</span></a>
 </pre>
       </td>
     </tr>

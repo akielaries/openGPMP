@@ -135,13 +135,13 @@
             <location file="../../modules/linalg/dgemm_arr.cpp" line="403" column="13"/>
             <symbol>nc</symbol>
         </error>
-        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
-            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
-            <symbol>B</symbol>
-        </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;A&apos; can be declared with const" verbose="Parameter &apos;A&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
             <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="5" column="41" info="Parameter &apos;A&apos; can be declared with const"/>
             <symbol>A</symbol>
+        </error>
+        <error id="constParameter" severity="style" msg="Parameter &apos;B&apos; can be declared with const" verbose="Parameter &apos;B&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c">
+            <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_mul.c" line="6" column="41" info="Parameter &apos;B&apos; can be declared with const"/>
+            <symbol>B</symbol>
         </error>
         <error id="constParameter" severity="style" msg="Parameter &apos;v1&apos; can be declared with const" verbose="Parameter &apos;v1&apos; can be declared with const" cwe="398" file0="../../modules/linalg/gpu/_gpu_mtx_add.c">
             <location file="../../modules/linalg/gpu/_gpu_mtx_add.c" line="85" column="24" info="Parameter &apos;v1&apos; can be declared with const"/>
@@ -356,14 +356,21 @@
             <location file="../../modules/optim/quasi.cpp" line="231" column="39"/>
             <symbol>updated_point</symbol>
         </error>
-        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="42" column="13"/>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;x&gt;=1&apos; is always true" verbose="Condition &apos;x&gt;=1&apos; is always true" cwe="571" file0="../../modules/stats/cdfs.cpp">
+            <location file="../../modules/stats/cdfs.cpp" line="56" column="16" info="Condition &apos;x&gt;=1&apos; is always true"/>
+            <location file="../../modules/stats/cdfs.cpp" line="54" column="11" info="Assuming that condition &apos;x&lt;=0&apos; is not redundant"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::count_if algorithm instead of a raw loop." verbose="Consider using std::count_if algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="44" column="17"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="51" column="17"/>
+            <location file="../../modules/stats/describe.cpp" line="55" column="13"/>
         </error>
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
-            <location file="../../modules/stats/describe.cpp" line="80" column="13"/>
+            <location file="../../modules/stats/describe.cpp" line="64" column="17"/>
+        </error>
+        <error id="useStlAlgorithm" severity="style" msg="Consider using std::accumulate algorithm instead of a raw loop." verbose="Consider using std::accumulate algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/describe.cpp">
+            <location file="../../modules/stats/describe.cpp" line="93" column="13"/>
         </error>
         <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;/&apos;." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="../../modules/stats/probdist.cpp">
             <location file="../../modules/stats/probdist.cpp" line="107" column="23"/>
@@ -371,9 +378,81 @@
         <error id="useStlAlgorithm" severity="style" msg="Consider using std::count_if algorithm instead of a raw loop." verbose="Consider using std::count_if algorithm instead of a raw loop." cwe="398" file0="../../modules/stats/probdist.cpp">
             <location file="../../modules/stats/probdist.cpp" line="173" column="13"/>
         </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;aold&apos; can be reduced." verbose="The scope of the variable &apos;aold&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="165" column="16"/>
+            <symbol>aold</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;em&apos; can be reduced." verbose="The scope of the variable &apos;em&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="16"/>
+            <symbol>em</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;tem&apos; can be reduced." verbose="The scope of the variable &apos;tem&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="20"/>
+            <symbol>tem</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;d&apos; can be reduced." verbose="The scope of the variable &apos;d&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="25"/>
+            <symbol>d</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;ap&apos; can be reduced." verbose="The scope of the variable &apos;ap&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="28"/>
+            <symbol>ap</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;bp&apos; can be reduced." verbose="The scope of the variable &apos;bp&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="32"/>
+            <symbol>bp</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;app&apos; can be reduced." verbose="The scope of the variable &apos;app&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="36"/>
+            <symbol>app</symbol>
+        </error>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;bpp&apos; can be reduced." verbose="The scope of the variable &apos;bpp&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="166" column="41"/>
+            <symbol>bpp</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;maxIterations&apos; is assigned a value that is never used." verbose="Variable &apos;maxIterations&apos; is assigned a value that is never used." cwe="563" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="121" column="33"/>
+            <symbol>maxIterations</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;epsilon&apos; is assigned a value that is never used." verbose="Variable &apos;epsilon&apos; is assigned a value that is never used." cwe="563" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="122" column="30"/>
+            <symbol>epsilon</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;aold&apos; is assigned a value that is never used." verbose="Variable &apos;aold&apos; is assigned a value that is never used." cwe="563" file0="../../modules/stats/quantiles.cpp">
+            <location file="../../modules/stats/quantiles.cpp" line="165" column="21"/>
+            <symbol>aold</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;permutedData1&apos; is assigned a value that is never used." verbose="Variable &apos;permutedData1&apos; is assigned a value that is never used." cwe="563" file0="../../modules/stats/resampling.cpp">
+            <location file="../../modules/stats/resampling.cpp" line="256" column="38"/>
+            <symbol>permutedData1</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;permutedData2&apos; is assigned a value that is never used." verbose="Variable &apos;permutedData2&apos; is assigned a value that is never used." cwe="563" file0="../../modules/stats/resampling.cpp">
+            <location file="../../modules/stats/resampling.cpp" line="257" column="38"/>
+            <symbol>permutedData2</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;add_vec_gpu&apos; is never used." verbose="The function &apos;add_vec_gpu&apos; is never used." cwe="561">
             <location file="../../modules/linalg/gpu/_gpu_kernel_mtx_add.c" line="4" column="0"/>
             <symbol>add_vec_gpu</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;bernoulli&apos; is never used." verbose="The function &apos;bernoulli&apos; is never used." cwe="561">
+            <location file="../../modules/stats/quantiles.cpp" line="45" column="0"/>
+            <symbol>bernoulli</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;binomial&apos; is never used." verbose="The function &apos;binomial&apos; is never used." cwe="561">
+            <location file="../../modules/stats/quantiles.cpp" line="66" column="0"/>
+            <symbol>binomial</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;cauchy&apos; is never used." verbose="The function &apos;cauchy&apos; is never used." cwe="561">
+            <location file="../../modules/stats/quantiles.cpp" line="79" column="0"/>
+            <symbol>cauchy</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;chiSquared&apos; is never used." verbose="The function &apos;chiSquared&apos; is never used." cwe="561">
+            <location file="../../modules/stats/quantiles.cpp" line="84" column="0"/>
+            <symbol>chiSquared</symbol>
+        </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;exponential&apos; is never used." verbose="The function &apos;exponential&apos; is never used." cwe="561">
+            <location file="../../modules/stats/quantiles.cpp" line="91" column="0"/>
+            <symbol>exponential</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;map_file&apos; is never used." verbose="The function &apos;map_file&apos; is never used." cwe="561">
             <location file="../../modules/core/datatable2.cpp" line="74" column="0"/>
