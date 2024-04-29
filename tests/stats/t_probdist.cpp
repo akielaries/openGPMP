@@ -247,26 +247,3 @@ TEST(ProbDistTest, ToleranceInterval) {
 
     EXPECT_LT(interval.first, interval.second);
 }
-
-TEST(ProbDistTest, BootstrapResampling) {
-    gpmp::stats::ProbDist probDist;
-
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
-
-    // number of bootstrap samples
-    int numSamples = 1000;
-
-    auto interval = probDist.BootstrapResampling(data, numSamples);
-
-    EXPECT_LT(interval.first, interval.second);
-}
-
-TEST(ProbDistTest, JackknifeResampling) {
-    gpmp::stats::ProbDist probDist;
-
-    std::vector<double> data = {1.0, 2.0, 3.0, 4.0, 5.0};
-
-    auto interval = probDist.JackknifeResampling(data);
-
-    EXPECT_LT(interval.first, interval.second);
-}

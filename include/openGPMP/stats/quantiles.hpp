@@ -33,11 +33,7 @@
 #define QUANTILES_HPP
 
 namespace gpmp {
-namespace stats {
-
-
-
-} // namespace stats
+namespace stats {} // namespace stats
 } // namespace gpmp
 
 #endif

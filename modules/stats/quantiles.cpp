@@ -34,13 +34,13 @@
 #include <cmath>
 #include <limits>
 #include <numeric>
-//#include <openGPMP/stats/quantiles.hpp>
+// #include <openGPMP/stats/quantiles.hpp>
 #include <random>
 #include <stdexcept>
 #include <vector>
 
 class Quantile {
-public:
+  public:
     // Bernoulli distribution quantile function
     static double bernoulli(double p, double q) {
         return (q < p) ? 0.0 : 1.0;
@@ -48,15 +48,17 @@ public:
 
     // Beta distribution quantile function
     static double beta(double alpha, double beta, double q) {
-        if (q <= 0.0) return 0.0;
-        if (q >= 1.0) return 1.0;
-        
+        if (q <= 0.0)
+            return 0.0;
+        if (q >= 1.0)
+            return 1.0;
+
         double result = 0.0;
         if (q > 0.5)
             result = 1.0 - incompleteBeta(beta, alpha, 1.0 - q);
         else
             result = incompleteBeta(alpha, beta, q);
-        
+
         return result;
     }
 
@@ -80,40 +82,49 @@ public:
 
     // Chi-squared distribution quantile function
     static double chiSquared(int df, double q) {
-        if (q < 0.0 || q > 1.0 || df < 1) return NAN;
+        if (q < 0.0 || q > 1.0 || df < 1)
+            return NAN;
         return df * inverseGamma(0.5 * df, q);
     }
 
     // Exponential distribution quantile function
     static double exponential(double lambda, double q) {
-        if (q < 0.0 || q > 1.0 || lambda <= 0.0) return NAN;
+        if (q < 0.0 || q > 1.0 || lambda <= 0.0)
+            return NAN;
         return -log(1.0 - q) / lambda;
     }
 
     // F distribution quantile function
     static double f(int df1, int df2, double q) {
-        if (q <= 0.0 || q >= 1.0 || df1 <= 0 || df2 <= 0) return NAN;
-        return (inverseBeta(0.5 * df2, 0.5 * df1, q) * df2) / (inverseBeta(0.5 * df2, 0.5 * df1, 1.0 - q) * df1);
+        if (q <= 0.0 || q >= 1.0 || df1 <= 0 || df2 <= 0)
+            return NAN;
+        return (inverseBeta(0.5 * df2, 0.5 * df1, q) * df2) /
+               (inverseBeta(0.5 * df2, 0.5 * df1, 1.0 - q) * df1);
     }
 
     // Gamma distribution quantile function
     static double gamma(double shape, double scale, double q) {
-        if (q < 0.0 || q > 1.0 || shape <= 0.0 || scale <= 0.0) return NAN;
+        if (q < 0.0 || q > 1.0 || shape <= 0.0 || scale <= 0.0)
+            return NAN;
         return shape * scale * inverseGamma(shape, q);
     }
 
     // Inverse-Gamma distribution quantile function
     static double inverseGamma(double shape, double q) {
-        if (q < 0.0 || q > 1.0 || shape <= 0.0) return NAN;
+        if (q < 0.0 || q > 1.0 || shape <= 0.0)
+            return NAN;
         return 1.0 / gamma(shape, 1.0 / shape, 1.0 - q);
     }
 
-private:
+  private:
     static double incompleteBeta(double a, double b, double x) {
         const int maxIterations = 200;
         const double epsilon = 1.0e-15;
 
-        double bt = (x == 0.0 || x == 1.0) ? 0.0 : exp(gammaLn(a + b) - gammaLn(a) - gammaLn(b) + a * log(x) + b * log(1.0 - x));
+        double bt = (x == 0.0 || x == 1.0)
+                        ? 0.0
+                        : exp(gammaLn(a + b) - gammaLn(a) - gammaLn(b) +
+                              a * log(x) + b * log(1.0 - x));
 
         if (x < (a + 1.0) / (a + b + 2.0))
             return bt * betaContinuedFraction(a, b, x) / a;
@@ -123,7 +134,12 @@ private:
 
     static double gammaLn(double xx) {
         double x, y, tmp, ser;
-        static const double cof[6] = {76.18009172947146, -86.50532032941677, 24.01409824083091, -1.231739572450155, 0.1208650973866179e-2, -0.5395239384953e-5};
+        static const double cof[6] = {76.18009172947146,
+                                      -86.50532032941677,
+                                      24.01409824083091,
+                                      -1.231739572450155,
+                                      0.1208650973866179e-2,
+                                      -0.5395239384953e-5};
         int j;
 
         y = x = xx;
@@ -176,8 +192,10 @@ private:
     }
 
     static int binomialCoefficient(int n, int k) {
-        if (k < 0 || k > n) return 0;
-        if (k == 0 || k == n) return 1;
+        if (k < 0 || k > n)
+            return 0;
+        if (k == 0 || k == n)
+            return 1;
 
         int result = 1;
         if (k > n - k)
@@ -191,4 +209,3 @@ private:
         return result;
     }
 };
-

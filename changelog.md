@@ -55,7 +55,10 @@ with no regard for execution speed
 gcc/g++
 * Lots of duplicate code (everywhere for the most part, especially in the 
 unit tests directory)
-* Plenty more...
+* Test coverage is minimal and many methods are not tested as strongly as they
+should be
+* And some more...
+
 
 # v0.10.0
 New contributions from [@eeddgg](https://github.com/eeddgg), [@sidsbrmnn](https://github.com/sidsbrmnn), [@igorsteinmacher](https://github.com/igorsteinmacher)
