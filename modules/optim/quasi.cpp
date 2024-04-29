@@ -21,8 +21,7 @@
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file.
  *
  *
  *
@@ -30,12 +29,11 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/optim/quasi.hpp"
 #include <cmath>
 #include <functional>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/optim/quasi.hpp>
 #include <tuple>
 #include <vector>
 
@@ -366,7 +364,9 @@ gpmp::optim::QuasiNewton::lbfgs_optimize(
 
         // L-BFGS two-loop recursion
         size_t start = std::min(iter, memory_size);
-        for (size_t i = start - 1; i >= 0; --i) {
+        // for (size_t i = start - 1; i >= 0; --i) {
+        for (size_t i = start; i > 0; --i) {
+
             rho[i] = 1.0 /
                      inner_product(s[i].begin(), s[i].end(), y[i].begin(), 0.0);
             double alpha =

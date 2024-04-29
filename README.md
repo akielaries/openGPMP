@@ -34,9 +34,7 @@ RasPi OS | ARMv6/v7 | [![cppRPi](https://github.com/akielaries/openGPMP/actions/
 | ubuntu 22.10 | RISCV64      | [![riscCPP](https://github.com/akielaries/openGPMP/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | [![riscPy](https://github.com/akielaries/openGPMP/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      |
 | ubuntu 22.10 | S390X        | [![s390xCPP](https://github.com/akielaries/openGPMP/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)     | [![s390xPy](https://github.com/akielaries/openGPMP/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)     |
 | ubuntu 22.10 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openGPMP/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) | [![ppc64lePy](https://github.com/akielaries/openGPMP/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) |
-ubuntu 22.10  | Intel GPU | [![INTELGPU](https://github.com/akielaries/openGPMP/actions/workflows/intel_opencl.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
 ubuntu 18.04  | Nvidia GPU (CUDA) | [![NVIDIACUDA](https://github.com/akielaries/openGPMP/actions/workflows/CUDA.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
-ubuntu 18.04  | Nvidia GPU (OpenCL) | [![NVIDIAOPENCL](https://github.com/akielaries/openGPMP/actions/workflows/nvid_opencl.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
 > **Note** Testing on Apple specific hardware (M1, M2) is in progress. 
 
 ## C++ (source)
@@ -65,7 +63,8 @@ $ cmake -S ../
     * `-DCMAKE_C_COMPILER=/path/to/C/compiler`
     * `-DCMAKE_CXX_COMPILER=/path/to/CPP/compiler`
     * `-DCMAKE_FC_COMPILER=/path/to/Fortran/compiler`
-> **Note** ATM OSX requires GCC for compilation
+
+> **Note** For now, OSX requires GCC for compilation
 
 Install the compiled static library and headers:
 ```
@@ -115,8 +114,17 @@ $ cd build
 $ sudo make uninstall
 ```
 ## tinygpmp
+> **Note** In progress
 [`tinygpmp`](/tinygpmp) targets low-voltage, resource-constrained devices and is currently aiming to support
 AVR series MCUs, STM32 chips, and other embedded devices.
+
+tinygpmp can be built using the following CMake options:
+```
+    * `-DTINYGPMP_AVR=ON` ***todo***
+    * `-DTINYGPMP_ARM32=ON` ***todo***
+    * `-DTINYGPMP_DYN=ON` ***todo***
+    * `-DTINYGPMP_STAT=ON` ***todo***
+```
 
 ## Modules
 
@@ -213,4 +221,12 @@ EXXEGOEXSRGI
 >>> print(hashtext)
 JCNNWILP
 ```
+
+# Why?
+The rationale/why behind this project is mostly because I find high 
+performance & numerical computing, low level programming, computational
+mathematics, C, C++, Fortran, Assembly, Julia, etc, etc all interesting.
+As far as usability and practicality, that may become more solidified 
+with more contributors and time spent but I do aim to design and implement
+the project with real-world usage as the primary focus...
 

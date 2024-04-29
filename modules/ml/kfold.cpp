@@ -30,11 +30,10 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/kfold.hpp"
 #include <algorithm>
 #include <functional>
 #include <numeric>
+#include <openGPMP/ml/kfold.hpp>
 #include <stdexcept>
 
 gpmp::ml::Kfold::Kfold(int fold) : k(fold) {

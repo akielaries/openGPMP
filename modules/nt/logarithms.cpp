@@ -35,15 +35,15 @@
  * Some core concepts seen in Number Theory specifically
  * Discrete Logarithms
  */
-#include "../../include/nt/logarithms.hpp"
-#include "../../include/arithmetic.hpp"
-#include "../../include/nt/prime_test.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/arithmetic.hpp>
+#include <openGPMP/nt/logarithms.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 #include <string>
 #include <unordered_map>
 

@@ -34,8 +34,8 @@
 /*
  * Implementation of a Multi-Layered Perceptron Neural Network
  */
-#include "../../include/ml/mlp_net.hpp"
 #include <math.h>
+#include <openGPMP/ml/mlp_net.hpp>
 #include <stdio.h>
 #include <string.h>
 #include <time.h>

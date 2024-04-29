@@ -30,10 +30,23 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-#include "../../include/stats/describe.hpp"
 #include <algorithm>
 #include <cmath>
+#include <openGPMP/stats/describe.hpp>
 #include <vector>
+
+double gpmp::stats::Describe::u_stat(const std::vector<double> &sample1,
+                                     const std::vector<double> &sample2) {
+    double U = 0;
+    for (double x1 : sample1) {
+        for (double x2 : sample2) {
+            if (x1 < x2) {
+                U++;
+            }
+        }
+    }
+    return U;
+}
 
 // Arithmetic Mean
 double gpmp::stats::Describe::mean_arith(const std::vector<double> &data) {

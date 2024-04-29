@@ -35,10 +35,10 @@
  * This file shows the implementation of some basic stream cipher
  * algorithms
  */
-#include "../../include/nt/cipher.hpp"
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <openGPMP/nt/cipher.hpp>
 #include <sstream>
 #include <stdio.h>
 #include <string>

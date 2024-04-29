@@ -1,12 +1,12 @@
 /**
  * Unit tests for the Linear Algebra module's Vector operations
  */
-#include "../../include/linalg/vector.hpp"
 #include <chrono>
 #include <cstdint>
 #include <cstdlib>
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/linalg/vector.hpp>
 #include <random>
 #include <stdexcept>
 #include <vector>

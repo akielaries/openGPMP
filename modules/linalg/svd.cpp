@@ -30,10 +30,9 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/linalg/svd.hpp"
 #include <cmath>
 #include <iostream>
+#include <openGPMP/linalg/svd.hpp>
 #include <stdexcept>
 
 gpmp::linalg::SVD::SVD(std::vector<std::vector<double>> &matrix) {

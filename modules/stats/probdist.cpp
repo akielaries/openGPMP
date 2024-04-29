@@ -31,12 +31,13 @@
  *
  ************************************************************************/
 
-#include "../../include/stats/probdist.hpp"
-#include "../../include/stats/describe.hpp"
 #include <algorithm>
 #include <cmath>
+#include <limits>
 #include <math.h>
 #include <numeric>
+#include <openGPMP/stats/describe.hpp>
+#include <openGPMP/stats/probdist.hpp>
 #include <random>
 #include <vector>
 
@@ -104,8 +105,10 @@ float my_logf(float a) {
         r = a + a;                                 // silence NaNs if necessary
         if (a < 0.0f)
             r = (0.0f / 0.0f); //  NaN
-        if (a == 0.0f)
+        // if (a == 0.0f)
+        if (fabs(a - 0.0f) < std::numeric_limits<double>::epsilon()) {
             r = (-1.0f / 0.0f); // -Inf
+        }
     }
     return r;
 }
@@ -327,68 +330,6 @@ gpmp::stats::ProbDist::ToleranceInterval(const std::vector<double> &data,
     // Placeholder, implement tolerance interval calculation
     double lowerBound = 0.0;
     double upperBound = 1.0;
-
-    return {lowerBound, upperBound};
-}
-
-std::pair<double, double>
-gpmp::stats::ProbDist::BootstrapResampling(const std::vector<double> &data,
-                                           int numSamples) {
-    if (data.empty() || numSamples <= 0) {
-        return {0.0, 0.0}; // Invalid input, return an empty interval
-    }
-
-    std::vector<double> resampledMeans;
-    resampledMeans.reserve(numSamples);
-
-    std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<size_t> distribution(0, data.size() - 1);
-    gpmp::stats::Describe desc;
-
-    for (int i = 0; i < numSamples; ++i) {
-        std::vector<double> resampledData;
-        resampledData.reserve(data.size());
-        for (size_t j = 0; j < data.size(); ++j) {
-            resampledData.push_back(data[distribution(gen)]);
-        }
-        resampledMeans.push_back(desc.mean_arith(resampledData));
-    }
-
-    std::sort(resampledMeans.begin(), resampledMeans.end());
-
-    double lowerBound = resampledMeans[numSamples / 20];
-    double upperBound = resampledMeans[19 * numSamples / 20];
-
-    return {lowerBound, upperBound};
-}
-
-std::pair<double, double>
-gpmp::stats::ProbDist::JackknifeResampling(const std::vector<double> &data) {
-    if (data.empty()) {
-        return {0.0, 0.0}; // Invalid input, return an empty interval
-    }
-
-    size_t n = data.size();
-
-    std::vector<double> resampledMeans;
-    resampledMeans.reserve(n);
-    gpmp::stats::Describe desc;
-
-    for (size_t i = 0; i < n; ++i) {
-        std::vector<double> resampledData;
-        resampledData.reserve(n - 1);
-        for (size_t j = 0; j < n; ++j) {
-            if (j != i) {
-                resampledData.push_back(data[j]);
-            }
-        }
-        resampledMeans.push_back(desc.mean_arith(resampledData));
-    }
-
-    std::sort(resampledMeans.begin(), resampledMeans.end());
-
-    double lowerBound = resampledMeans[n / 20];
-    double upperBound = resampledMeans[19 * n / 20];
 
     return {lowerBound, upperBound};
 }

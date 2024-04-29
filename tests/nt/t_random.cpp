@@ -1,9 +1,9 @@
 /**
  * Unit tests for the Number Theory modules PRNGs
  */
-#include "../../include/nt/random.hpp"
 #include <gtest/gtest.h>
 #include <iostream>
+#include <openGPMP/nt/random.hpp>
 
 TEST(LCGTest, DefaultConstructor) {
     gpmp::core::rndm::LCG generator;

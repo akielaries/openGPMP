@@ -35,19 +35,16 @@
  * Some core concepts seen in Number Theory specifically
  * Integer Factorization
  */
-#include "../../include/nt/factorization.hpp"
-#include "../../include/arithmetic.hpp"
-#include "../../include/core/threads.hpp"
-#include "../../include/nt/prime_test.hpp"
-
 #include <algorithm>
 #include <chrono>
-// #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <future>
 #include <iostream>
 #include <numeric>
+#include <openGPMP/arithmetic.hpp>
+#include <openGPMP/nt/factorization.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 #include <random>
 #include <stdio.h>
 #include <string>

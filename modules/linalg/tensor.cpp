@@ -30,8 +30,7 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/linalg/tensor.hpp"
+#include <openGPMP/linalg/tensor.hpp>
 #include <stdexcept>
 
 // Constructors

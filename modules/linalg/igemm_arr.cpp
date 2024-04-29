@@ -32,10 +32,9 @@
  ************************************************************************/
 
 /** Integer type GEneral Matrix-Matrix product */
-
-#include "../../include/linalg/_igemm.hpp"
 #include <cmath>
 #include <limits>
+#include <openGPMP/linalg/_igemm.hpp>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>

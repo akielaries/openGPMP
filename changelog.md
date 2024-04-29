@@ -2,21 +2,63 @@
 
 # v1.0.0-rc.1
 ## What's Changed
+Reverted many changes from v0.10.0.
 ### Documentation
 * Added static analysis coverage https://akielaries.github.io/openGPMP/analysis/index.html
 * Added unit test coverage https://akielaries.github.io/openGPMP/testing/index.html
 * Reworked CI/CD actions for building/generating documentation
+
 ### Testing and Analysis
 * Updated some unit tests to increase overall coverage
 * Included static analysis workflows with clang-tidy, clang-analyze, cppcheck, osv-scanner, and
 infer
 
-### Complex
 ### Core
+* Base DataTable, Logging, Threading, and other miscellaneous utilities
+
 ### Disrete
+* Added class related to graphs
+
+### Linear Algebra
+* Mass rewrite to support AVX, SSE, and ARM platforms for now
+* Support for matrices as arrays and vectors
+* For now there are two main paths for this module. One is using somewhat
+naive methods that use naive blocking tricks and SIMD intrinsics, the other
+is the formal BLAS routine type of route that makes use of cache alignment,
+large blocking, assembly kernels, SIMD registers (AVX, SSE, MMX, ARM for now)
+* Added methods for eigenvalues, SVD, and linear systems, and (tensor methods
+which are still a large TODO)
+
 ### Machine Learning
-### Number Theory
+* Added several naive implementations for neural networks, classifiers, 
+regression methods, and more
+* These will need to be optimized and using the linalg module
+
 ### Statistics
+* Added classes for probability distribution and descriptive statistics
+methods
+
+### tinygpmp
+* This is a subproject intended for MCUs (AVR and STM for now)
+* Big TODO as there is nothing formally implemented and just tests for now
+
+### Build System
+* Added options for building tinygpmp, including OpenBLAS in linking
+* Additional options for building tests, specifying tinygpmp build and
+microarch
+
+### ISSUES
+Some known issues and things that need attention:
+* Majority of the project is not optimized and contains "naive" implementation
+with no regard for execution speed
+* Use of clang/clang++ for compilation produces some issues not seen with 
+gcc/g++
+* Lots of duplicate code (everywhere for the most part, especially in the 
+unit tests directory)
+* Test coverage is minimal and many methods are not tested as strongly as they
+should be
+* And some more...
+
 
 # v0.10.0
 New contributions from [@eeddgg](https://github.com/eeddgg), [@sidsbrmnn](https://github.com/sidsbrmnn), [@igorsteinmacher](https://github.com/igorsteinmacher)

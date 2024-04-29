@@ -4,6 +4,7 @@ message("-- Including Discrete Mathematics Module")
 
 set(SOURCE_FILES
     graphs.cpp
+    comb.cpp
 )
 
 

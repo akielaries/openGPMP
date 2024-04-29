@@ -36,10 +36,10 @@
  * encryption algorithm created by Ron Rivest using either a
  * traditional swap method or with the XOR operator
  */
-#include "../../include/nt/rc4.hpp"
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <openGPMP/nt/rc4.hpp>
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>

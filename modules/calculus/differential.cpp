@@ -21,8 +21,7 @@
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file.
  *
  *
  *
@@ -34,11 +33,11 @@
 /*
  * Implementing various derivative related functions in C++
  */
-#include "../../include/calculus/differential.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <openGPMP/calculus/differential.hpp>
 #include <sstream>
 #include <stdio.h>
 #include <string>

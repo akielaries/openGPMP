@@ -31,13 +31,13 @@
  *
  ************************************************************************/
 
-#include "../../include/nt/prime_gen.hpp"
-#include "../../include/arithmetic.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include <openGPMP/arithmetic.hpp>
+#include <openGPMP/nt/prime_gen.hpp>
 #include <random>
 #include <stdio.h>
 #include <string>

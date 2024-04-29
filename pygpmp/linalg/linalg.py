@@ -128,3 +128,4 @@ class Mtx(object):
 
 # Register Mtx in _linalg:
 _linalg.Mtx_swigregister(Mtx)
+

@@ -35,9 +35,8 @@
  * Some core concepts seen in Number Theory primarily prime number
  * based equations, formulas, algorithms.
  */
-#include "../../include/nt/prime_test.hpp"
-#include "../../include/arithmetic.hpp"
-#include "../../include/core/threads.hpp"
+#include <openGPMP/arithmetic.hpp>
+#include <openGPMP/nt/prime_test.hpp>
 
 #include <algorithm>
 #include <cmath>

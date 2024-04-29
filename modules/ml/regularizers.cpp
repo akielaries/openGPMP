@@ -30,10 +30,9 @@
  * WARRANTY OF ANY KIND, either express or implied.
  *
  ************************************************************************/
-
-#include "../../include/ml/regularizers.hpp"
 #include <algorithm>
 #include <cmath>
+#include <openGPMP/ml/regularizers.hpp>
 #include <random>
 
 double
