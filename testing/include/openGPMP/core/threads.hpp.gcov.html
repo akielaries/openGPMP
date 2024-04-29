@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-04-29 19:00:56</td>
+            <td class="headerValue">2024-04-29 19:08:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">37</td>
@@ -176,7 +176,7 @@
 <a name="106"><span class="lineNum">     106 </span>            :                         // queued task), wait() locks/unlocks based on condition</a>
 <a name="107"><span class="lineNum">     107 </span>            :                         // result</a>
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">       1141 :                         this-&gt;condition.wait(lock, [this] {</span></a>
-<a name="109"><span class="lineNum">     109 </span><span class="lineCov">       2271 :                             return this-&gt;stop || !this-&gt;tasks.empty();</span></a>
+<a name="109"><span class="lineNum">     109 </span><span class="lineCov">       2274 :                             return this-&gt;stop || !this-&gt;tasks.empty();</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :                         });</a>
 <a name="111"><span class="lineNum">     111 </span>            :                         // based on stop OR awaiting tasks, return from the</a>
 <a name="112"><span class="lineNum">     112 </span>            :                         // thread</a>
