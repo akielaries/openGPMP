@@ -68,9 +68,9 @@ gpmp::Differential gpmp::Differential::power_rule() const {
     gpmp::Differential result;
     for (const auto &term : terms) {
         if (term.exponent > 0) {
-            double newCoefficient = term.coefficient * term.exponent;
-            int newExponent = term.exponent - 1;
-            result.add_term(newCoefficient, newExponent);
+            double new_coefficient = term.coefficient * term.exponent;
+            int new_exponent = term.exponent - 1;
+            result.add_term(new_coefficient, new_exponent);
         }
     }
     return result;
@@ -80,21 +80,21 @@ gpmp::Differential
 gpmp::Differential::chain_rule(const gpmp::Differential &inner) const {
     gpmp::Differential result;
 
-    for (const auto &outerTerm : terms) {
+    for (const auto &outer_term : terms) {
         // Apply the chain rule to each term of the outer function
-        gpmp::Differential innerDerivative = inner.power_rule();
+        gpmp::Differential inner_derivative = inner.power_rule();
 
-        // Multiply each term of innerDerivative by the coefficient of the outer
+        // Multiply each term of inner_derivative by the coefficient of the outer
         // term
-        for (auto &innerTerm : innerDerivative.terms) {
-            innerTerm.coefficient *= outerTerm.coefficient;
+        for (auto &inner_term : inner_derivative.terms) {
+            inner_term.coefficient *= outer_term.coefficient;
         }
 
         // Multiply the inner derivative by the derivative of the outer term
-        for (const auto &innerTerm : innerDerivative.terms) {
-            double newCoefficient = innerTerm.coefficient;
-            int newExponent = outerTerm.exponent + innerTerm.exponent;
-            result.add_term(newCoefficient, newExponent);
+        for (const auto &inner_term : inner_derivative.terms) {
+            double new_coefficient = inner_term.coefficient;
+            int new_exponent = outer_term.exponent + inner_term.exponent;
+            result.add_term(new_coefficient, new_exponent);
         }
     }
 

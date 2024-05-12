@@ -156,6 +156,8 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
         get_target_property(project_link_libraries ${PROJECT_NAME} INTERFACE_LINK_LIBRARIES)
     endif()
 
+    include(GNUInstallDirs)
+    
     # include directory for openGPMP
     target_include_directories(${PROJECT_NAME} PUBLIC 
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/openGPMP>
@@ -208,8 +210,6 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
     endif()
 
-
-    include(GNUInstallDirs)
 
 endif()
 

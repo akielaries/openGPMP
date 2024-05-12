@@ -15,6 +15,12 @@ set(SOURCE_FILES
     random.cpp
 )
 
+if (SIMD_ISA STREQUAL "AVX2" OR SIMD_ISA STREQUAL "SSE")
+    list(APPEND SOURCE_FILES
+        sse_sieve_erat.S
+    )  
+
+endif()
 
 add_library(nt OBJECT ${SOURCE_FILES})
 
