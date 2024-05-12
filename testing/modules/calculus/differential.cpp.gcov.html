@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-12 23:17:18</td>
+            <td class="headerValue">2024-05-12 23:22:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -154,8 +154,8 @@
 <a name="84"><span class="lineNum">      84 </span>            :         // Apply the chain rule to each term of the outer function</a>
 <a name="85"><span class="lineNum">      85 </span><span class="lineNoCov">          0 :         gpmp::Differential inner_derivative = inner.power_rule();</span></a>
 <a name="86"><span class="lineNum">      86 </span>            : </a>
-<a name="87"><span class="lineNum">      87 </span>            :         // Multiply each term of inner_derivative by the coefficient of the outer</a>
-<a name="88"><span class="lineNum">      88 </span>            :         // term</a>
+<a name="87"><span class="lineNum">      87 </span>            :         // Multiply each term of inner_derivative by the coefficient of the</a>
+<a name="88"><span class="lineNum">      88 </span>            :         // outer term</a>
 <a name="89"><span class="lineNum">      89 </span><span class="lineNoCov">          0 :         for (auto &amp;inner_term : inner_derivative.terms) {</span></a>
 <a name="90"><span class="lineNum">      90 </span><span class="lineNoCov">          0 :             inner_term.coefficient *= outer_term.coefficient;</span></a>
 <a name="91"><span class="lineNum">      91 </span>            :         }</a>
