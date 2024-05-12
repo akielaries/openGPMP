@@ -27,6 +27,7 @@ jobs:
 
   deploy:
     needs: [ changes ]
+    if: needs.changes.outputs.src_changed == 'True'
     runs-on: ubuntu-latest
     defaults:
       run:
