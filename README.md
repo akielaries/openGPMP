@@ -81,24 +81,6 @@ $ pip install .
 > **Note** In progress
 The Julia interface is built with the help of [wrapit](https://github.com/grasph/wrapit).
 
-
-To test the installation build some of the example drivers in the projects 
-[samples](https://github.com/akielaries/openGPMP/tree/main/samples) directory.
-
-```
-# compile yourself
-$ cd samples/cpp
-$ g++ mtx.cpp -lopenGPMP -o mtx
-$ g++ primes.cpp -lopenGPMP -o primes
-```
-
-To uninstall files related to openGPMP, simply run the following:
-
-```
-# enter the build dir from installation
-$ cd build
-$ sudo make uninstall
-```
 ## tinygpmp
 > **Note** In progress
 [`tinygpmp`](/tinygpmp) targets low-voltage, resource-constrained devices and is currently aiming to support
@@ -110,6 +92,14 @@ tinygpmp can be built using the following CMake options:
     * `-DTINYGPMP_ARM32=ON` ***todo***
     * `-DTINYGPMP_DYN=ON` ***todo***
     * `-DTINYGPMP_STAT=ON` ***todo***
+```
+# Uninstall
+To uninstall files related to openGPMP, simply run the following:
+
+```
+# enter the build dir from installation
+$ cd build
+$ sudo make uninstall
 ```
 
 ## Modules
@@ -136,21 +126,12 @@ For more details view the project [documentation](https://akielaries.github.io/o
 View the simple examples on how to use some of the modules in different languages [here](https://github.com/akielaries/openGPMP/tree/main/samples).
 
 ```
-# clone the repo and enter
+# clone the repo and enter the samples dir
 $ git clone git@github.com:akielaries/openGPMP.git 
-$ cd openGPMP/scripts
-
-# to run all examples 
-$ ./all.sh
-
-# to remove the generated binaries
-$ cd ../ && make clean-mods
-
-# run unit tests and other checking methods
-$ make run-tests
-
-# clean up generated test files
-$ make clean-tests
+$ cd samples
+# compile an example and link against openGPMP
+$ g++ cpp/linreg.cpp -lopenGPMP -o example
+$ ./example
 ```
 
 Example C++ driver file for running Caesar Cipher & Mono-Alphabetic Substitution
@@ -214,5 +195,5 @@ performance & numerical computing, low level programming, computational
 mathematics, C, C++, Fortran, Assembly, Julia, etc, etc all interesting.
 As far as usability and practicality, that may become more solidified 
 with more contributors and time spent but I do aim to design and implement
-the project with real-world usage as the primary focus...
+the project with real-world usage as a focus...
 
