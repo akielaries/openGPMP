@@ -42,11 +42,10 @@
 #include <string>
 
 extern "C" {
-    // sieve of eratosthenes assembly kernel
-    std::vector<int> _Z19sieveOfEratosthenesi(int n);
+// sieve of eratosthenes assembly kernel
+std::vector<int> _Z19sieveOfEratosthenesi(int n);
 }
 
 std::vector<int> gpmp::PrimalityGen::sieve_of_eratosthenes(int n) {
     return _Z19sieveOfEratosthenesi(n);
 }
-

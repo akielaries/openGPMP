@@ -11,7 +11,7 @@ int add2(int a, int b) {
 }
 
 // Define the benchmark for add1
-static void BM_Add1(benchmark::State& state) {
+static void BM_Add1(benchmark::State &state) {
     int a = 10;
     int b = 20;
     for (auto _ : state) {
@@ -21,7 +21,7 @@ static void BM_Add1(benchmark::State& state) {
 BENCHMARK(BM_Add1);
 
 // Define the benchmark for add2
-static void BM_Add2(benchmark::State& state) {
+static void BM_Add2(benchmark::State &state) {
     int a = 10;
     int b = 20;
     for (auto _ : state) {
@@ -32,4 +32,3 @@ BENCHMARK(BM_Add2);
 
 // Run the benchmarks
 BENCHMARK_MAIN();
-

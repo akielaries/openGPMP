@@ -40,9 +40,7 @@ namespace gpmp {
 
 class PrimalityGen {
   public:
-    
     static std::vector<int> sieve_of_eratosthenes(int n);
-
 };
 
 } // namespace gpmp

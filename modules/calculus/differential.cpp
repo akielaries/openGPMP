@@ -84,8 +84,8 @@ gpmp::Differential::chain_rule(const gpmp::Differential &inner) const {
         // Apply the chain rule to each term of the outer function
         gpmp::Differential inner_derivative = inner.power_rule();
 
-        // Multiply each term of inner_derivative by the coefficient of the outer
-        // term
+        // Multiply each term of inner_derivative by the coefficient of the
+        // outer term
         for (auto &inner_term : inner_derivative.terms) {
             inner_term.coefficient *= outer_term.coefficient;
         }

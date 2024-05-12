@@ -2,10 +2,8 @@
 #include <cmath>
 #include <iostream>
 #include <openGPMP/nt/prime_gen.hpp>
-#include <vector>
 #include <random>
-
-
+#include <vector>
 
 int main() {
     std::random_device rd;
@@ -14,7 +12,8 @@ int main() {
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    std::vector<int> primes = gpmp::PrimalityGen::sieve_of_eratosthenes(max_number);
+    std::vector<int> primes =
+        gpmp::PrimalityGen::sieve_of_eratosthenes(max_number);
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
@@ -26,11 +25,11 @@ int main() {
     if (!primes.empty()) {
         std::uniform_int_distribution<> distrib(0, primes.size() - 1);
         int random_index = distrib(gen);
-        std::cout << "Random prime number: " << primes[random_index] << std::endl;
+        std::cout << "Random prime number: " << primes[random_index]
+                  << std::endl;
     } else {
         std::cout << "No prime numbers generated." << std::endl;
     }
 
     return 0;
 }
-
