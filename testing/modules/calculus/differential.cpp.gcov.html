@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2024-05-12 03:48:11</td>
+            <td class="headerValue">2024-05-12 23:17:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -138,9 +138,9 @@
 <a name="68"><span class="lineNum">      68 </span><span class="lineCov">          1 :     gpmp::Differential result;</span></a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">          4 :     for (const auto &amp;term : terms) {</span></a>
 <a name="70"><span class="lineNum">      70 </span><span class="lineCov">          3 :         if (term.exponent &gt; 0) {</span></a>
-<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          2 :             double newCoefficient = term.coefficient * term.exponent;</span></a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">          2 :             int newExponent = term.exponent - 1;</span></a>
-<a name="73"><span class="lineNum">      73 </span><span class="lineCov">          2 :             result.add_term(newCoefficient, newExponent);</span></a>
+<a name="71"><span class="lineNum">      71 </span><span class="lineCov">          2 :             double new_coefficient = term.coefficient * term.exponent;</span></a>
+<a name="72"><span class="lineNum">      72 </span><span class="lineCov">          2 :             int new_exponent = term.exponent - 1;</span></a>
+<a name="73"><span class="lineNum">      73 </span><span class="lineCov">          2 :             result.add_term(new_coefficient, new_exponent);</span></a>
 <a name="74"><span class="lineNum">      74 </span>            :         }</a>
 <a name="75"><span class="lineNum">      75 </span>            :     }</a>
 <a name="76"><span class="lineNum">      76 </span><span class="lineCov">          1 :     return result;</span></a>
@@ -150,21 +150,21 @@
 <a name="80"><span class="lineNum">      80 </span><span class="lineNoCov">          0 : gpmp::Differential::chain_rule(const gpmp::Differential &amp;inner) const {</span></a>
 <a name="81"><span class="lineNum">      81 </span><span class="lineNoCov">          0 :     gpmp::Differential result;</span></a>
 <a name="82"><span class="lineNum">      82 </span>            : </a>
-<a name="83"><span class="lineNum">      83 </span><span class="lineNoCov">          0 :     for (const auto &amp;outerTerm : terms) {</span></a>
+<a name="83"><span class="lineNum">      83 </span><span class="lineNoCov">          0 :     for (const auto &amp;outer_term : terms) {</span></a>
 <a name="84"><span class="lineNum">      84 </span>            :         // Apply the chain rule to each term of the outer function</a>
-<a name="85"><span class="lineNum">      85 </span><span class="lineNoCov">          0 :         gpmp::Differential innerDerivative = inner.power_rule();</span></a>
+<a name="85"><span class="lineNum">      85 </span><span class="lineNoCov">          0 :         gpmp::Differential inner_derivative = inner.power_rule();</span></a>
 <a name="86"><span class="lineNum">      86 </span>            : </a>
-<a name="87"><span class="lineNum">      87 </span>            :         // Multiply each term of innerDerivative by the coefficient of the outer</a>
+<a name="87"><span class="lineNum">      87 </span>            :         // Multiply each term of inner_derivative by the coefficient of the outer</a>
 <a name="88"><span class="lineNum">      88 </span>            :         // term</a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineNoCov">          0 :         for (auto &amp;innerTerm : innerDerivative.terms) {</span></a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineNoCov">          0 :             innerTerm.coefficient *= outerTerm.coefficient;</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineNoCov">          0 :         for (auto &amp;inner_term : inner_derivative.terms) {</span></a>
+<a name="90"><span class="lineNum">      90 </span><span class="lineNoCov">          0 :             inner_term.coefficient *= outer_term.coefficient;</span></a>
 <a name="91"><span class="lineNum">      91 </span>            :         }</a>
 <a name="92"><span class="lineNum">      92 </span>            : </a>
 <a name="93"><span class="lineNum">      93 </span>            :         // Multiply the inner derivative by the derivative of the outer term</a>
-<a name="94"><span class="lineNum">      94 </span><span class="lineNoCov">          0 :         for (const auto &amp;innerTerm : innerDerivative.terms) {</span></a>
-<a name="95"><span class="lineNum">      95 </span><span class="lineNoCov">          0 :             double newCoefficient = innerTerm.coefficient;</span></a>
-<a name="96"><span class="lineNum">      96 </span><span class="lineNoCov">          0 :             int newExponent = outerTerm.exponent + innerTerm.exponent;</span></a>
-<a name="97"><span class="lineNum">      97 </span><span class="lineNoCov">          0 :             result.add_term(newCoefficient, newExponent);</span></a>
+<a name="94"><span class="lineNum">      94 </span><span class="lineNoCov">          0 :         for (const auto &amp;inner_term : inner_derivative.terms) {</span></a>
+<a name="95"><span class="lineNum">      95 </span><span class="lineNoCov">          0 :             double new_coefficient = inner_term.coefficient;</span></a>
+<a name="96"><span class="lineNum">      96 </span><span class="lineNoCov">          0 :             int new_exponent = outer_term.exponent + inner_term.exponent;</span></a>
+<a name="97"><span class="lineNum">      97 </span><span class="lineNoCov">          0 :             result.add_term(new_coefficient, new_exponent);</span></a>
 <a name="98"><span class="lineNum">      98 </span>            :         }</a>
 <a name="99"><span class="lineNum">      99 </span><span class="lineNoCov">          0 :     }</span></a>
 <a name="100"><span class="lineNum">     100 </span>            : </a>
