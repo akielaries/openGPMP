@@ -23,20 +23,6 @@ Look in the [samples](https://github.com/akielaries/openGPMP/tree/main/samples) 
 on how to use some of openGPMP's functionalities and the in-depth [documentation](https://akielaries.github.io/openGPMP/).
 
 # Installation
-openGPMP C++ & Python is tested on the following:
-| OS    | Architecture | Status |
-|-------|--------------|--------|
-OSX Monterey 12.6.3 | x86 | [![darwin](https://github.com/akielaries/openGPMP/actions/workflows/build_osx.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) | 
-RasPi OS | ARMv6/v7 | [![cppRPi](https://github.com/akielaries/openGPMP/actions/workflows/cpp_rpi.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) |
-| bullseye 11.6 | ARMv6        | [![arm6CPP](https://github.com/akielaries/openGPMP/actions/workflows/ARMV6cpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | 
-| ubuntu 22.10 | ARMv7        | [![arm7CPP](https://github.com/akielaries/openGPMP/actions/workflows/ARMV7cpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | 
-| ubuntu 22.10 | ARMv8        | [![arm8CPP](https://github.com/akielaries/openGPMP/actions/workflows/ARMV8cpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | [![arm8Py](https://github.com/akielaries/openGPMP/actions/workflows/ARMV8py.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      |
-| ubuntu 22.10 | RISCV64      | [![riscCPP](https://github.com/akielaries/openGPMP/actions/workflows/RISCVcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      | [![riscPy](https://github.com/akielaries/openGPMP/actions/workflows/RISCVpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)      |
-| ubuntu 22.10 | S390X        | [![s390xCPP](https://github.com/akielaries/openGPMP/actions/workflows/S390Xcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)     | [![s390xPy](https://github.com/akielaries/openGPMP/actions/workflows/S390Xpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)     |
-| ubuntu 22.10 | PPC64LE      | [![ppc64leCPP](https://github.com/akielaries/openGPMP/actions/workflows/PPC64LEcpp.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) | [![ppc64lePy](https://github.com/akielaries/openGPMP/actions/workflows/PPC64LEpy.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/) |
-ubuntu 18.04  | Nvidia GPU (CUDA) | [![NVIDIACUDA](https://github.com/akielaries/openGPMP/actions/workflows/CUDA.yml/badge.svg)](https://github.com/akielaries/openGPMP/actions/)  |
-> **Note** Testing on Apple specific hardware (M1, M2) is in progress. 
-
 ## C++ (source)
 ### Requirements
 * Linux/OSX
