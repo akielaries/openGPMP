@@ -215,4 +215,14 @@ class Logger(object):
 
 # Register Logger in _core:
 _core.Logger_swigregister(Logger)
+class Misc(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        _core.Misc_swiginit(self, _core.new_Misc())
+    __swig_destroy__ = _core.delete_Misc
+
+# Register Misc in _core:
+_core.Misc_swigregister(Misc)
 

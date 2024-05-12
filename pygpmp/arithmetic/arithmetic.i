@@ -7,9 +7,9 @@
 %include "std_string.i"
 
 %{
-    #include "../../include/arithmetic.hpp"
+    #include "../../include/openGPMP/arithmetic.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/arithmetic.hpp"
+%include "../../include/openGPMP/arithmetic.hpp"
 

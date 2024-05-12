@@ -9,9 +9,9 @@
 %module linalg
 
 %{
-    #include "../../include/linalg/mtx.hpp"
+    #include "../../include/openGPMP/linalg/mtx.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/linalg/mtx.hpp"
+%include "../../include/openGPMP/linalg/mtx.hpp"
 

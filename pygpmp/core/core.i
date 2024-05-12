@@ -6,13 +6,13 @@
 %include <stdint.i>
 
 %{
-    #include "../../include/core/datatable.hpp"
-    #include "../../include/core/utils.hpp"
+    #include "../../include/openGPMP/core/datatable.hpp"
+    #include "../../include/openGPMP/core/utils.hpp"
     //#include "../../include/core/threads.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/core/datatable.hpp"
-%include "../../include/core/utils.hpp"
+%include "../../include/openGPMP/core/datatable.hpp"
+%include "../../include/openGPMP/core/utils.hpp"
 //%include "../../include/core/threads.hpp"
 

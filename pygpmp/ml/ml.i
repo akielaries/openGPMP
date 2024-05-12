@@ -6,9 +6,9 @@
 %include <stdint.i>
 
 %{
-    #include "../../include/ml/linreg.hpp"
+    #include "../../include/openGPMP/ml/linreg.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/ml/linreg.hpp"
+%include "../../include/openGPMP/ml/linreg.hpp"
 

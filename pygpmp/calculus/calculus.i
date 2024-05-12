@@ -8,9 +8,9 @@
 %include "std_string.i"
 
 %{
-    #include "../../include/calculus/differential.hpp"
+    #include "../../include/openGPMP/calculus/differential.hpp"
     using namespace gpmp;
 %}
 
-%include "../../include/calculus/differential.hpp"
+%include "../../include/openGPMP/calculus/differential.hpp"
 

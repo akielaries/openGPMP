@@ -174,7 +174,7 @@ A Python example showing the same functionalities.
 >>> from pygpmp import nt
 >>> c = nt.Cipher()
 >>> text0 = c.caesar('Plaintext', 5)
->>> print(ciphertext_0)
+>>> print(text0)
 Uqfnsyjcy
 >>> 
 >>> text1 = c.caesar('ATTACKATONCE', 4)
