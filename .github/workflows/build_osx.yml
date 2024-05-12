@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ macos-latest ]
-        architecture: [ x86 , x64 ]
+        architecture: [ x86 ]
     defaults:
       run:
         shell: bash -l {0}
@@ -37,7 +37,7 @@ jobs:
 
       - name: Configure CMake (GCC)
         run: |
-          cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-13 -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-13 -DCMAKE_Fortran_COMPILER=/usr/local/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON -DCMAKE_VERBOSE_MAKEFILE=ON
+          cmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/opt/homebrew/bin/g++-13 -DCMAKE_Fortran_COMPILER=/opt/homebrew/bin/gfortran -B ${{github.workspace}}/build -DBUILD_TESTS=ON -DCMAKE_VERBOSE_MAKEFILE=ON
 
       - name: Build (GCC)
         run: |
