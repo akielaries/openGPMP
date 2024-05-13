@@ -21,8 +21,7 @@
  * You may opt to use, copy, modify, merge, publish, distribute
  * and/or sell copies of the Software, and permit persons to whom
  * the Software is furnished to do so, under the terms of the
- * LICENSE file. As this is an Open Source effort, all implementations
- * must be of the same methodology.
+ * LICENSE file.
  *
  *
  *
@@ -34,6 +33,7 @@
 /** Main Matrix operation interface for matrices as arrays & vectors */
 
 #include <cmath>
+#include <vector>
 #include <limits>
 #include <openGPMP/linalg/_dgemm.hpp>
 
@@ -42,3 +42,12 @@
 #include <cblas.h>
 
 #endif
+
+void mtx_mult(std::vector<double> A, std::vector<double> B, std::vector<double> C);
+
+
+//void mtx_mult(char *A, char *B, char *C) {
+//    gpmp::linalg::DGEMM dgemm;
+//}
+
+

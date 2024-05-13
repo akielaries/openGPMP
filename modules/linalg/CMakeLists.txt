@@ -4,6 +4,7 @@ message("-- Including Linear Algebra Module")
 
 option(BUILD_GPU_OPENCL "Build OpenCL Linear Algebra Extension" OFF)
 
+# BASE SOURCE FILES
 set(SOURCE_FILES
     mtx.cpp
     mtx_routines.f90
@@ -22,7 +23,7 @@ set(SOURCE_FILES
     dgemm_arr.cpp
 )
 
-# Add files depending on the detected SIMD ISA
+# Add files depending on the detected ISA
 if (SIMD_ISA STREQUAL "AVX2")
     list(APPEND SOURCE_FILES
         avx/mtx_avx2_arr_i8.cpp
