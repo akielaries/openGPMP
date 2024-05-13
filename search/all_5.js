@@ -4,7 +4,7 @@ var searchData=
   ['eccentricity_332',['eccentricity',['../classgpmp_1_1Graph.html#a778acf534662d2cf06a9eaca12ab5443',1,'gpmp::Graph']]],
   ['edge_333',['Edge',['../structEdge.html',1,'']]],
   ['eigen_334',['Eigen',['../classgpmp_1_1linalg_1_1Eigen.html#af77be987ebb8c5a416aa3a369f6d80b7',1,'gpmp::linalg::Eigen::Eigen()'],['../classgpmp_1_1linalg_1_1Eigen.html',1,'gpmp::linalg::Eigen']]],
-  ['eigen_2ecpp_335',['eigen.cpp',['../eigen_8cpp.html',1,'']]],
+  ['eigen_2ecpp_335',['eigen.cpp',['../modules_2linalg_2eigen_8cpp.html',1,'(Global Namespace)'],['../samples_2cpp_2eigen_8cpp.html',1,'(Global Namespace)']]],
   ['eigen_2ehpp_336',['eigen.hpp',['../eigen_8hpp.html',1,'']]],
   ['elastic_5fnet_5fregularization_337',['elastic_net_regularization',['../classgpmp_1_1ml_1_1Regularize.html#a90ce048a50c8c8c05ac03a1a5c703b0d',1,'gpmp::ml::Regularize']]],
   ['elu_338',['elu',['../classgpmp_1_1ml_1_1Activation.html#ac69f4912c7beb48908c8aeef5ae71ff0',1,'gpmp::ml::Activation']]],

@@ -102,17 +102,17 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * You may opt to use, copy, modify, merge, publish, distribute</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * and/or sell copies of the Software, and permit persons to whom</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * the Software is furnished to do so, under the terms of the</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * LICENSE file. As this is an Open Source effort, all implementations</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * must be of the same methodology.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * LICENSE file.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * This software is distributed on an AS IS basis, WITHOUT</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> ************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * This software is distributed on an AS IS basis, WITHOUT</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * WARRANTY OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> ************************************************************************/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="__dgemm_8hpp.html">openGPMP/linalg/_dgemm.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -121,7 +121,20 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;cblas.h&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="modules_2linalg_2mtx_8cpp.html#a2b83c551bed9d16022a586b087e5b94d">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="modules_2linalg_2mtx_8cpp.html#a2b83c551bed9d16022a586b087e5b94d">mtx_mult</a>(std::vector&lt;double&gt; <a class="code" href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">A</a>, std::vector&lt;double&gt; <a class="code" href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">B</a>, std::vector&lt;double&gt; <a class="code" href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">C</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//void mtx_mult(char *A, char *B, char *C) {</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//    gpmp::linalg::DGEMM dgemm;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//}</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="ttc" id="a__dgemm_8hpp_html"><div class="ttname"><a href="__dgemm_8hpp.html">_dgemm.hpp</a></div></div>
+<div class="ttc" id="amodules_2linalg_2mtx_8cpp_html_a2b83c551bed9d16022a586b087e5b94d"><div class="ttname"><a href="modules_2linalg_2mtx_8cpp.html#a2b83c551bed9d16022a586b087e5b94d">mtx_mult</a></div><div class="ttdeci">void mtx_mult(std::vector&lt; double &gt; A, std::vector&lt; double &gt; B, std::vector&lt; double &gt; C)</div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a0f8ef2cae18ed75d69a2636fd24ae97a"><div class="ttname"><a href="namespacepython_1_1linalg.html#a0f8ef2cae18ed75d69a2636fd24ae97a">python.linalg.C</a></div><div class="ttdeci">list C</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00024">linalg.py:24</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a738e4c85e499d9e4b6450cba9d9e5211"><div class="ttname"><a href="namespacepython_1_1linalg.html#a738e4c85e499d9e4b6450cba9d9e5211">python.linalg.A</a></div><div class="ttdeci">list A</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00022">linalg.py:22</a></div></div>
+<div class="ttc" id="anamespacepython_1_1linalg_html_a8ea58a34239179215b0abb1a76c28ab1"><div class="ttname"><a href="namespacepython_1_1linalg.html#a8ea58a34239179215b0abb1a76c28ab1">python.linalg.B</a></div><div class="ttdeci">list B</div><div class="ttdef"><b>Definition:</b> <a href="samples_2python_2linalg_8py_source.html#l00023">linalg.py:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
