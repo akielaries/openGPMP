@@ -31,8 +31,9 @@
  *
  ************************************************************************/
 #include <iostream>
-#include <openGPMP/optim/function.hpp>
+#include <algorithm>
 #include <vector>
+#include <openGPMP/optim/function.hpp>
 
 std::vector<double> gpmp::optim::Func::generate_random_point(
     const std::vector<double> &lower_bounds,

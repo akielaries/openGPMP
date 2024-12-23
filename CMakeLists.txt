@@ -196,7 +196,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
         # run C++ and Fortran unit tests
         add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
-        add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+        add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS)
     endif()
 
     # uninstall target
