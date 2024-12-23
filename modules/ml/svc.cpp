@@ -250,9 +250,7 @@ double gpmp::ml::SVC::accuracy(const std::vector<int> &predictions,
                                const std::vector<int> &labels) {
     int correct = 0;
     for (size_t i = 0; i < predictions.size(); ++i) {
-        if (predictions[i] == labels[i]) {
-            correct++;
-        }
+            correct += (predictions[i] == labels[i]);
     }
     return static_cast<double>(correct) / predictions.size();
 }
