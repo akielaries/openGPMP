@@ -36,6 +36,7 @@
 #include <openGPMP/ml/logreg.hpp>
 #include <stdexcept>
 #include <vector>
+//#include <omp.h>
 
 gpmp::ml::LogReg::LogReg(double l_rate, int num_iters, double lda)
     : learning_rate(l_rate), num_iterations(num_iters), lambda(lda) {
@@ -70,6 +71,7 @@ void gpmp::ml::LogReg::train(const std::vector<std::vector<double>> &X_train,
         }
 
         // Update weights using gradient descent
+        //#pragma omp parallel for
         for (size_t j = 0; j < weights.size(); ++j) {
             weights[j] -= learning_rate *
                           (gradient[j] / X_train.size() + lambda * weights[j]);
@@ -101,10 +103,8 @@ gpmp::ml::LogReg::accuracy(const std::vector<std::vector<double>> &X_test,
     std::vector<double> predictions = predict(X_test);
     int correct = 0;
     for (size_t i = 0; i < predictions.size(); ++i) {
-        if ((predictions[i] >= 0.5 && y_test[i] == 1) ||
-            (predictions[i] < 0.5 && y_test[i] == 0)) {
-            correct++;
-        }
+        correct += ((predictions[i] >= 0.5 && y_test[i] == 1) ||
+                    (predictions[i] < 0.5 && y_test[i] == 0));
     }
     return static_cast<double>(correct) / y_test.size();
 }
@@ -134,6 +134,18 @@ gpmp::ml::LogReg::precision(const std::vector<std::vector<double>> &X_test,
 }
 
 double
+gpmp::ml::LogReg::precision(const std::vector<double> &predictions,
+                            const std::vector<int> &y_test){
+    int true_positives = 0;
+    int false_positives = 0;
+    for (size_t i = 0; i < predictions.size(); ++i) {
+        true_positives += (predictions[i] >= 0.5 && y_test[i] == 1);
+        false_positives += (predictions[i] >= 0.5 && y_test[i] == 0); 
+    }
+    return static_cast<double>(true_positives / (true_positives + false_positives));       
+}
+
+double
 gpmp::ml::LogReg::recall(const std::vector<std::vector<double>> &X_test,
                              const std::vector<int> &y_test){
     std::vector<double> predictions = predict(X_test);
@@ -144,6 +156,18 @@ gpmp::ml::LogReg::recall(const std::vector<std::vector<double>> &X_test,
         false_negatives += (predictions[i] < 0.5 && y_test[i] == 1);
     }
     return static_cast<double>(true_positives / (true_positives + false_negatives));
+}
+
+double
+gpmp::ml::LogReg::recall(const std::vector<double> &predictions,
+                            const std::vector<int> &y_test){
+    int true_positives = 0;
+    int false_negatives = 0;
+    for (size_t i = 0; i < predictions.size(); ++i) {
+        true_positives += (predictions[i] >= 0.5 && y_test[i] == 1);
+        false_negatives += (predictions[i] < 0.5 && y_test[i] == 1);
+    }
+    return static_cast<double>(true_positives / (true_positives + false_negatives));    
 }
 
 double gpmp::ml::LogReg::sigmoid(double z) {
