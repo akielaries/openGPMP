@@ -1,5 +1,24 @@
-enable_testing()
-find_package(GTest REQUIRED)
+include(FetchContent)
+
+find_package(GTest QUIET)
+
+message(STATUS "Detecting GoogleTest")
+if(NOT GTest_FOUND)
+    message(STATUS "GoogleTest not found")
+    message(STATUS "Fetching GoogleTest")
+    # If GoogleTest is not found, fetch and build it
+    include(FetchContent)
+    FetchContent_Declare(
+        googletest
+        #URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        URL https://github.com/google/googletest/archive/b75ecf1bed2fcd416b66c86cb6fe79122abf132e.zip
+    )
+    FetchContent_MakeAvailable(googletest)
+    message(STATUS "Fetching GoogleTest - done")
+
+else()
+    message(STATUS "GoogleTest found")
+endif()
 
 message(STATUS "Detecting GoogleTest - done")
 
@@ -110,9 +129,7 @@ target_compile_options(
 
 target_link_libraries(
     test_openGPMP_cpp
-    #GTest::gtest_main 
-    GTest::GTest 
-    GTest::Main
+    GTest::gtest_main 
     pthread
     --coverage
     -fprofile-arcs
@@ -122,7 +139,7 @@ target_link_libraries(
 
 target_link_libraries(
     test_openGPMP_fortran
-    #GTest::gtest_main
+    GTest::gtest_main
     pthread
     -lgfortran
     --coverage
