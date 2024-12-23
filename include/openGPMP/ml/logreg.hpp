@@ -88,7 +88,7 @@ class LogReg {
      * @return A vector of predicted probabilities
      */
     std::vector<double> predict(const std::vector<std::vector<double>> &X_test);
-
+    
     /**
      * @brief Computes the accuracy of the model on the given test data
      * @param X_test The feature matrix of the test data
@@ -98,6 +98,32 @@ class LogReg {
     double accuracy(const std::vector<std::vector<double>> &X_test,
                     const std::vector<int> &y_test);
 
+    /**
+     * @brief Computes the accuracy of the model on the given test data
+     * @param predictions The predicted labels of the test data
+     * @param y_test The true labels of the test data
+     * @return The accuracy of the model
+     */
+    double accuracy(const std::vector<double> &predictions,
+                    const std::vector<int> &y_test);
+
+    /*
+     * @brief Computes the precision of the model on the given test data
+     * @param X_test The feature matrix on the test data
+     * @param y_test The true labels of the test data
+     * @return The precision of the model
+     */
+    double precision(const std::vector<std::vector<double>> &X_test,
+                     const std::vector<int> &y_test);
+
+    /*
+     * @brief Computes the recall of the model on the given test data
+     * @param X_test The feature matrix on the test data
+     * @param y_test The true labels of the test data
+     * @return The recall of the model
+     */
+    double recall(const std::vector<std::vector<double>> &X_test,
+                     const std::vector<int> &y_test);
     /**
      * @brief Performs feature scaling on the input feature matrix
      * @param X The feature matrix to be scaled
