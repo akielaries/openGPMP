@@ -98,6 +98,7 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(long kc,
     long kb = kc / 4;
     long kl = kc % 4;
 
+#ifdef __x86_64__
     dgemm_kernel_asm(A,
                      B,
                      C,
@@ -109,6 +110,7 @@ void gpmp::linalg::DGEMM::dgemm_micro_kernel(long kc,
                      incColC,
                      alpha,
                      beta);
+#endif
 }
 
 // MATRIX BUFFERS
