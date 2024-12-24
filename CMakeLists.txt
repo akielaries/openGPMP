@@ -120,6 +120,20 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
     endif()
     message(STATUS "Detecting OpenBLAS - done")
 
+    # Check if OpenMP is available for hardware multi-threading in applicable modules
+
+    message(STATUS "Detecting OpenMP")
+
+    find_package(OpenMP)
+    check_include_file_cxx("omp.h" OPENMP_HEADER)
+    if(OpenMP_CXX_FOUND)
+        message(STATUS "OpenMP found")
+    else()
+        message(STATUS "OpenMP not found")
+    endif()
+
+    message(STATUS "Detecting OpenMP - done")
+
     message(STATUS "Building source C++ API")
 
     ############################################################
@@ -153,6 +167,11 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
         # link against OpenBLAS if found
         target_link_libraries(${PROJECT_NAME} PRIVATE openblas)
         # Verify that the linking was successful
+        get_target_property(project_link_libraries ${PROJECT_NAME} INTERFACE_LINK_LIBRARIES)
+    endif()
+
+    if(OpenMP_CXX_FOUND)
+        target_link_libraries(${PROJECT_NAME} PRIVATE OpenMP::OpenMP_CXX)
         get_target_property(project_link_libraries ${PROJECT_NAME} INTERFACE_LINK_LIBRARIES)
     endif()
 
