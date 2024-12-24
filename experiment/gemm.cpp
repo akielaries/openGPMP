@@ -73,7 +73,7 @@ void print_matrix(const std::vector<float>& mat, size_t rows, size_t cols) {
 
 int main() {
     // Dimensions of matrices (use larger sizes for more meaningful benchmarks)
-    size_t M = 512, N = 512, K = 512;
+    size_t M = 384, N = 384, K = 384;
 
     // Initialize matrices with random values
     std::vector<float> A(M * K, 1.0f);
