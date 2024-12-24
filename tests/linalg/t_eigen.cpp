@@ -7,6 +7,8 @@
 #include <openGPMP/linalg/eigen.hpp>
 #include <stdexcept>
 #include <vector>
+#include <algorithm>
+
 
 const double TOLERANCE = 1e-3;
 

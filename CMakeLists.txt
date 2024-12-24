@@ -2,7 +2,7 @@
 # Root CMake file for the openGPMP project
 # *************************************************************************/
 
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.20)
 set (CMAKE_CXX_STANDARD 20)
 include(CheckIncludeFileCXX)
 
@@ -196,7 +196,7 @@ if(NOT BUILD_TINYGPMP AND NOT BUILD_PYGPMP OR BUILD_OPENGPMP)
 
         # run C++ and Fortran unit tests
         add_dependencies(${PROJECT_NAME} RUN_CPP_TESTS)
-        add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS) 
+        add_dependencies(${PROJECT_NAME} RUN_FORTRAN_TESTS)
     endif()
 
     # uninstall target
