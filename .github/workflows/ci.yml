@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  context:
+    name: Derive CI Context
+    runs-on: ubuntu-latest
+    outputs:
+      skip_all: ${{ steps.eval.outputs.skip_all }}
+      run_build: ${{ steps.eval.outputs.run_build }}
+      run_test: ${{ steps.eval.outputs.run_test }}
+    steps:
+      - id: eval
+        shell: bash
+        run: |
+          # On pull_request, head_commit.message is not present; treat as PR
+          is_pr="${{ github.event_name == 'pull_request' }}"
+          msg="${{ github.event.head_commit.message }}"
+          run_build=false
+          run_test=false
+          skip_all=false
+
+          # Skip tokens
+          if [[ "$msg" == *"[ci skip]"* || "$msg" == *"skip-ci"* ]]; then
+            skip_all=true
+          elif [[ "$is_pr" == "true" ]]; then
+            run_build=true
+            run_test=true
+          else
+            # Hash-prefixed categories per CONTRIBUTING.md
+            case "$msg" in
+              \#BUILD:*)    run_build=true ;;
+              \#BUG:*|\#FEAT:*|\#UPDATES:*|\#EDITS:*)
+                           run_build=true; run_test=true ;;
+              *)            run_build=true; run_test=true ;; # default
+            esac
+          fi
+
+          echo "skip_all=$skip_all" >> $GITHUB_OUTPUT
+          echo "run_build=$run_build" >> $GITHUB_OUTPUT
+          echo "run_test=$run_test" >> $GITHUB_OUTPUT
+
+  build:
+    name: CMake Build (Release)
+    needs: context
+    if: needs.context.outputs.skip_all != 'true' && needs.context.outputs.run_build == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up CMake >= 3.25
+        uses: lukka/get-cmake@v3
+        with:
+          cmakeVersion: 3.25.0
+      - name: Configure
+        run: |
+          cmake -S . -B build \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBUILD_OPENGPMP=ON \
+            -DBUILD_TESTS=ON
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+  test:
+    name: CTest
+    needs: [context, build]
+    if: needs.context.outputs.skip_all != 'true' && needs.context.outputs.run_test == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up CMake >= 3.25
+        uses: lukka/get-cmake@v3
+        with:
+          cmakeVersion: 3.25.0
+      - name: Configure (ensure tests built)
+        run: |
+          cmake -S . -B build \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBUILD_OPENGPMP=ON \
+            -DBUILD_TESTS=ON
+      - name: Build (ensure up-to-date)
+        run: cmake --build build --config Release --parallel
+      - name: Run tests
+        working-directory: build
+        run: ctest --output-on-failure -C Release
